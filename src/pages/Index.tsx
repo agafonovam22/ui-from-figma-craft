@@ -1,10 +1,12 @@
 import React from 'react';
 import Header from '@/components/Header';
+import Banner from '@/components/Banner';
 
 const Index: React.FC = () => {
   return (
     <main className="min-h-screen bg-gray-50">
       <Header />
+      <Banner />
       
       <section className="container mx-auto px-4 py-16">
         <div className="text-center">
