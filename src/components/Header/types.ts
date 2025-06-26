@@ -1,3 +1,4 @@
+
 export interface CityButtonProps {
   city: string;
   onClick?: () => void;
@@ -27,6 +28,7 @@ export interface CategoryItem {
   id: string;
   label: string;
   icon: string;
+  iconImage?: string;
   href?: string;
   onClick?: () => void;
 }
