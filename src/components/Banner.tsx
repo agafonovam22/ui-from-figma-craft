@@ -3,9 +3,9 @@ import React from 'react';
 
 const Banner: React.FC = () => {
   return (
-    <section className="relative bg-gray-100 overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-4 py-12">
-        <div className="flex items-center justify-between min-h-[400px] w-full">
+    <section className="relative bg-gray-100 overflow-hidden w-full">
+      <div className="max-w-[1200px] mx-auto px-4 py-12 relative">
+        <div className="flex items-center justify-between min-h-[400px]">
           {/* Левая часть с текстом */}
           <div className="flex-1 max-w-lg z-10">
             <div className="mb-6">
@@ -40,9 +40,9 @@ const Banner: React.FC = () => {
           </div>
           
           {/* Правая часть с изображением - обрезанный круг */}
-          <div className="absolute right-4 top-0 bottom-0 flex items-center">
+          <div className="absolute -right-[150px] top-0 bottom-0 flex items-center">
             <div className="relative">
-              <div className="w-[500px] h-[500px] bg-[#F53B49] rounded-full flex items-center justify-center translate-x-[150px]">
+              <div className="w-[500px] h-[500px] bg-[#F53B49] rounded-full flex items-center justify-center">
                 <img 
                   src="/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png"
                   alt="Мужчина на велотренажере"
