@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { SearchBarProps, UserAction } from './types';
 
@@ -6,7 +7,7 @@ const Logo: React.FC = () => (
     <img 
       src="/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png" 
       alt="Well Fitness" 
-      className="h-[22px] w-auto"
+      className="h-[28px] w-auto"
     />
   </div>
 );
@@ -43,7 +44,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Поиск", onSea
   return (
     <form
       onSubmit={handleSubmit}
-      className={`flex flex-1 h-[41px] justify-between items-center bg-[#262631] pl-5 pr-4 py-3.5 rounded-[5px] max-w-[500px] ${className}`}
+      className={`flex flex-1 h-[41px] justify-between items-center bg-[#262631] pl-5 pr-4 py-3.5 rounded-[5px] max-w-[700px] ${className}`}
     >
       <input
         type="text"
@@ -107,7 +108,7 @@ const MidMenu: React.FC = () => {
       <div className="flex w-full max-w-[1800px] justify-between items-center gap-4">
         <Logo />
         
-        <div className="flex items-center gap-2.5 flex-1 max-w-[600px]">
+        <div className="flex items-center gap-2.5 flex-1 max-w-[750px]">
           <CatalogButton />
           <SearchBar onSearch={handleSearch} />
         </div>
