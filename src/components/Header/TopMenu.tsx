@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { CityButtonProps, NavigationItem, ButtonProps } from './types';
 
@@ -43,11 +44,11 @@ const TopMenu: React.FC = () => {
     { label: 'Услуги' },
     { label: 'Поддержка' },
     { label: 'Где купить' },
-    { label: 'Контак��ы' }
+    { label: 'Контакты' }
   ];
 
   return (
-    <header className="flex w-full justify-center items-center gap-[60px] bg-[#17171E] px-[130px] py-0 border-b-[rgba(255,255,255,0.10)] border-b border-solid max-md:px-5 max-sm:px-4">
+    <header className="flex w-[1920px] justify-center items-center gap-[60px] bg-[#17171E] px-[130px] py-0 border-b border-solid border-[rgba(255,255,255,0.10)] max-md:w-full max-md:px-5 max-sm:px-4">
       <div className="flex w-full max-w-[1660px] h-[53px] justify-between items-center">
         <CityButton city="Москва" onClick={() => console.log('City selector clicked')} />
         
