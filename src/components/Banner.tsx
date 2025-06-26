@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Banner: React.FC = () => {
@@ -42,7 +41,7 @@ const Banner: React.FC = () => {
               </div>
               
               {/* Правая часть с изображением - обрезанный круг */}
-              <div className="absolute -right-[150px] top-0 bottom-0 flex items-center">
+              <div className="absolute top-0 bottom-0 flex items-center" style={{ right: '130px' }}>
                 <div className="relative">
                   <div className="w-[500px] h-[500px] bg-[#F53B49] rounded-full flex items-center justify-center">
                     <img 
