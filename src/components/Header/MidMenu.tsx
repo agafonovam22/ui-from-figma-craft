@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { SearchBarProps, UserAction } from './types';
 
@@ -15,7 +16,7 @@ const Logo: React.FC = () => (
 
 const CatalogButton: React.FC = () => (
   <button
-    className="flex justify-center items-center gap-2 bg-[#F53B49] px-6 py-3.5 rounded-[5px] hover:bg-[#e63946] transition-colors"
+    className="flex justify-center items-center gap-2 bg-[#F53B49] px-6 py-3.5 rounded-[5px] hover:bg-[#e63946] transition-colors whitespace-nowrap"
     onClick={() => console.log('Catalog clicked')}
     aria-label="Открыть каталог товаров"
   >
@@ -45,7 +46,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Поиск", onSea
   return (
     <form
       onSubmit={handleSubmit}
-      className={`flex w-[929px] h-[41px] justify-between items-center bg-[#262631] pl-5 pr-4 py-3.5 rounded-[5px] max-md:w-[400px] max-sm:w-[200px] ${className}`}
+      className={`flex flex-1 h-[41px] justify-between items-center bg-[#262631] pl-5 pr-4 py-3.5 rounded-[5px] max-w-[500px] ${className}`}
     >
       <input
         type="text"
@@ -65,29 +66,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Поиск", onSea
 };
 
 const UserActions: React.FC = () => {
-  const userActions: UserAction[] = [
-    {
-      icon: 'person',
-      label: 'Профиль пользователя',
-      onClick: () => console.log('Profile clicked')
-    },
-    {
-      icon: 'cart',
-      label: 'Корзина',
-      onClick: () => console.log('Cart clicked')
-    },
-    {
-      icon: 'analytics',
-      label: 'Аналитика',
-      onClick: () => console.log('Analytics clicked')
-    },
-    {
-      icon: 'favorites',
-      label: 'Избранное',
-      onClick: () => console.log('Favorites clicked')
-    }
-  ];
-
   return (
     <div className="flex items-center gap-5 max-sm:gap-2.5">
       <button
@@ -128,11 +106,11 @@ const MidMenu: React.FC = () => {
   };
 
   return (
-    <section className="flex w-full justify-between items-center bg-[#17171E] px-[130px] py-3 max-md:px-5 max-sm:px-4">
-      <div className="flex w-full max-w-[1660px] justify-between items-center">
+    <section className="flex w-full justify-center items-center bg-[#17171E] px-[130px] py-3 max-md:px-5 max-sm:px-4">
+      <div className="flex w-full max-w-[1660px] justify-between items-center gap-4">
         <Logo />
         
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2.5 flex-1 max-w-[600px]">
           <CatalogButton />
           <SearchBar onSearch={handleSearch} />
         </div>
