@@ -1,16 +1,13 @@
-
 import React, { useState } from 'react';
 import { SearchBarProps, UserAction } from './types';
 
 const Logo: React.FC = () => (
   <div className="flex justify-center items-start gap-[5.856px]">
-    <svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 0.337891H7.78865C9.62876 0.337891 11.3356 1.29773 12.2915 2.87007L23.6787 21.6004H15.8901C14.0499 21.6004 12.3431 20.6406 11.3872 19.0682L0 0.337891Z" fill="white" />
-      <path d="M12.6846 0.338379H20.4732C22.3133 0.338379 24.0202 1.29822 24.9761 2.87056L36.3633 21.6009H28.5746C26.7345 21.6009 25.0277 20.641 24.0718 19.0687L12.6846 0.338379Z" fill="white" />
-      <path d="M25.1279 0.338379H49.2899L46.6683 4.55566C45.7067 6.10264 44.0143 7.04332 42.1928 7.04332H29.1751L25.1279 0.338379Z" fill="#F53B49" />
-      <path d="M29.9609 8.43213H43.9749L41.3533 12.6494C40.3917 14.1964 38.6993 15.1371 36.8778 15.1371H34.0081L29.9609 8.43213Z" fill="#F53B49" />
-    </svg>
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1e3d3068ba88d5bd5de3185ee898f30b2f7f6b2f" alt="Frame 14" className="flex flex-col items-center gap-[3.66px]" />
+    <img 
+      src="/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png" 
+      alt="Well Fitness" 
+      className="h-[22px] w-auto"
+    />
   </div>
 );
 
@@ -106,8 +103,8 @@ const MidMenu: React.FC = () => {
   };
 
   return (
-    <section className="flex w-full justify-center items-center bg-[#17171E] px-[130px] py-3 max-md:px-5 max-sm:px-4">
-      <div className="flex w-full max-w-[1660px] justify-between items-center gap-4">
+    <section className="flex w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 lg:px-[60px] py-3 max-md:px-5 max-sm:px-4">
+      <div className="flex w-full max-w-[1800px] justify-between items-center gap-4">
         <Logo />
         
         <div className="flex items-center gap-2.5 flex-1 max-w-[600px]">
