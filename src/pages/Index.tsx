@@ -1,10 +1,11 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Banner from '@/components/Banner';
 
 const Index: React.FC = () => {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 flex flex-col items-center gap-[50px]">
       <Header />
       <Banner />
       
