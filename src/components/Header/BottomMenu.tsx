@@ -6,16 +6,12 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
   isActive = false 
 }) => (
   <button
-    className={`flex h-[46px] items-center gap-2.5 bg-[#262631] px-6 py-3.5 rounded-[5px] max-sm:whitespace-nowrap max-sm:px-4 max-sm:py-3.5 hover:bg-[#3a3a47] transition-colors ${
-      isActive ? 'bg-[#F53B49] hover:bg-[#e63946]' : ''
-    }`}
+    className={`flex h-[46px] items-center gap-2.5 bg-[#262631] px-6 py-3.5 rounded-[5px] max-sm:whitespace-nowrap max-sm:px-4 max-sm:py-3.5 hover:bg-[#3a3a47] transition-colors group`}
     onClick={category.onClick}
     aria-label={`Категория: ${category.label}`}
   >
     <div dangerouslySetInnerHTML={{ __html: category.icon }} />
-    <span className={`text-sm font-normal leading-[14px] ${
-      isActive ? 'text-white' : 'text-[#778093]'
-    }`}>
+    <span className="text-sm font-normal leading-[14px] text-[#778093] group-hover:text-white transition-colors">
       {category.label}
     </span>
   </button>
@@ -98,11 +94,11 @@ const BottomMenu: React.FC = () => {
 
   return (
     <nav 
-      className="flex w-full justify-center items-center gap-[5px] bg-[#262631] px-0 py-1 max-md:overflow-x-auto"
+      className="flex w-full justify-center items-center gap-[5px] bg-[#262631] px-2 sm:px-4 lg:px-[60px] py-1 max-md:overflow-x-auto"
       role="navigation"
       aria-label="Категории товаров"
     >
-      <div className="flex w-full max-w-[1660px] items-center gap-[5px] relative max-md:w-auto max-md:min-w-full">
+      <div className="flex w-full max-w-[1800px] items-center gap-[5px] relative max-md:w-auto max-md:min-w-full">
         <div 
           ref={scrollContainerRef}
           className="flex items-center gap-[5px] overflow-x-auto scrollbar-hide scroll-smooth"
@@ -110,7 +106,7 @@ const BottomMenu: React.FC = () => {
         >
           {categories.map((category, index) => (
             <React.Fragment key={category.id}>
-              <CategoryButton category={category} isActive={index === 0} />
+              <CategoryButton category={category} />
               {index < categories.length - 1 && (
                 <div className="w-px h-9 opacity-20 bg-[#5C6476] flex-shrink-0" />
               )}
