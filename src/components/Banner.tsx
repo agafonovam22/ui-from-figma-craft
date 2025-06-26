@@ -1,9 +1,8 @@
-
 import React from 'react';
 
 const Banner: React.FC = () => {
   return (
-    <section className="relative bg-gray-100 overflow-hidden w-full">
+    <section className="relative bg-gray-100 overflow-hidden">
       <div className="container mx-auto px-4 py-12">
         <div className="flex items-center justify-between min-h-[400px]">
           {/* Левая часть с текстом */}
