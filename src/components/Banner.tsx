@@ -3,8 +3,8 @@ import React from 'react';
 
 const Banner: React.FC = () => {
   return (
-    <section className="relative bg-gray-100 overflow-hidden w-full">
-      <div className="max-w-[1200px] mx-auto px-4 py-12 relative">
+    <section className="w-full bg-gray-100 overflow-hidden">
+      <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-12 relative">
         <div className="flex items-center justify-between min-h-[400px]">
           {/* Левая часть с текстом */}
           <div className="flex-1 max-w-lg z-10">
