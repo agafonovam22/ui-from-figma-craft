@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { CityButtonProps, NavigationItem, ButtonProps } from './types';
 
@@ -48,16 +49,16 @@ const TopMenu: React.FC = () => {
   ];
 
   return (
-    <header className="flex w-[1920px] justify-center items-center gap-[60px] bg-[#17171E] px-[130px] py-0 border-b border-solid border-[rgba(255,255,255,0.10)] max-md:w-full max-md:px-5 max-sm:px-4">
-      <div className="flex w-full max-w-[1660px] h-[53px] justify-between items-center">
+    <header className="flex w-full justify-center items-center bg-[#17171E] px-4 sm:px-8 lg:px-[130px] py-0 border-b border-solid border-[rgba(255,255,255,0.10)]">
+      <div className="flex w-full max-w-[1660px] h-[53px] justify-between items-center gap-4 lg:gap-[60px]">
         <CityButton city="Москва" onClick={() => console.log('City selector clicked')} />
         
-        <nav className="flex items-start gap-[30px] max-md:hidden" role="navigation" aria-label="Основная навигация">
+        <nav className="flex items-start gap-4 lg:gap-[30px] max-md:hidden" role="navigation" aria-label="Основная навигация">
           {navigationItems.map((item, index) => (
             <a
               key={index}
               href={item.href || '#'}
-              className="text-[#5C6476] text-xs font-normal leading-3 hover:text-white transition-colors"
+              className="text-[#5C6476] text-xs font-normal leading-3 hover:text-white transition-colors whitespace-nowrap"
               onClick={item.onClick}
             >
               {item.label}
@@ -88,3 +89,4 @@ const TopMenu: React.FC = () => {
 };
 
 export default TopMenu;
+
