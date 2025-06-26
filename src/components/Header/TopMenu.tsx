@@ -1,5 +1,6 @@
 
 
+
 import React from 'react';
 import { CityButtonProps, NavigationItem, ButtonProps } from './types';
 
@@ -49,11 +50,11 @@ const TopMenu: React.FC = () => {
   ];
 
   return (
-    <header className="flex w-full justify-center items-center bg-[#17171E] px-4 sm:px-8 lg:px-[130px] py-0 border-b border-solid border-[rgba(255,255,255,0.10)]">
-      <div className="flex w-full max-w-[1660px] h-[53px] justify-between items-center gap-4 lg:gap-[60px]">
+    <header className="flex w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 lg:px-[80px] py-0 border-b border-solid border-[rgba(255,255,255,0.10)]">
+      <div className="flex w-full max-w-[1660px] h-[53px] justify-between items-center gap-2 lg:gap-[40px]">
         <CityButton city="Москва" onClick={() => console.log('City selector clicked')} />
         
-        <nav className="flex items-start gap-4 lg:gap-[30px] max-md:hidden" role="navigation" aria-label="Основная навигация">
+        <nav className="flex items-start gap-2 lg:gap-[20px] max-md:hidden" role="navigation" aria-label="Основная навигация">
           {navigationItems.map((item, index) => (
             <a
               key={index}
@@ -66,7 +67,7 @@ const TopMenu: React.FC = () => {
           ))}
         </nav>
 
-        <div className="flex items-end gap-2.5 max-sm:hidden">
+        <div className="flex items-end gap-1.5 max-sm:hidden">
           <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')}>
             Для диллеров
           </ActionButton>
@@ -75,7 +76,7 @@ const TopMenu: React.FC = () => {
           </ActionButton>
         </div>
 
-        <div className="flex items-end gap-2.5 max-sm:hidden">
+        <div className="flex items-end gap-1.5 max-sm:hidden">
           <ActionButton variant="primary" onClick={() => console.log('Phone clicked')}>
             +7 (800) 775-12-17
           </ActionButton>
@@ -89,4 +90,5 @@ const TopMenu: React.FC = () => {
 };
 
 export default TopMenu;
+
 
