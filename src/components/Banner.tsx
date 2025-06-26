@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const Banner: React.FC = () => {
@@ -6,7 +7,7 @@ const Banner: React.FC = () => {
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
         <div className="bg-gray-100 overflow-hidden relative">
           <div className="py-12 relative">
-            <div className="flex items-center justify-between min-h-[400px]">
+            <div className="flex items-center justify-between" style={{ minHeight: '200px' }}>
               {/* Левая часть с текстом */}
               <div className="flex-1 max-w-lg z-10" style={{ paddingTop: '60px', paddingLeft: '60px' }}>
                 <div className="mb-6">
