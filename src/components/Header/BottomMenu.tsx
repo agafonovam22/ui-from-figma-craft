@@ -12,7 +12,7 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
     aria-label={`Категория: ${category.label}`}
   >
     {category.iconImage ? (
-      <img src={category.iconImage} alt={category.label} className="w-5 h-5" />
+      <img src={category.iconImage} alt={category.label} className="w-6 h-6" />
     ) : (
       <div dangerouslySetInnerHTML={{ __html: category.icon }} />
     )}
