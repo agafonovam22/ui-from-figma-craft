@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 
 const Banner: React.FC = () => {
@@ -42,7 +43,7 @@ const Banner: React.FC = () => {
               </div>
               
               {/* Правая часть с изображением - увеличенное фото смещенное вправо */}
-              <div className="absolute" style={{ right: '45px', top: '30px' }}>
+              <div className="absolute" style={{ right: '30px', top: '30px' }}>
                 <div className="relative">
                   <div className="w-[500px] h-[500px] bg-[#F53B49] rounded-full flex items-center justify-center">
                     <img 
@@ -90,3 +91,4 @@ const Banner: React.FC = () => {
 };
 
 export default Banner;
+
