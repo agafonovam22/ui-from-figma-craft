@@ -5,9 +5,9 @@ const Banner: React.FC = () => {
   return (
     <section className="w-full">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-        <div className="bg-gray-100 overflow-hidden relative">
-          <div className="py-12 relative">
-            <div className="flex items-center justify-between" style={{ minHeight: '200px' }}>
+        <div className="bg-gray-100 overflow-hidden relative" style={{ height: '400px' }}>
+          <div className="py-12 relative h-full">
+            <div className="flex items-center justify-between h-full">
               {/* Левая часть с текстом */}
               <div className="flex-1 max-w-lg z-10" style={{ paddingTop: '60px', paddingLeft: '60px' }}>
                 <div className="mb-6">
@@ -41,14 +41,15 @@ const Banner: React.FC = () => {
                 </button>
               </div>
               
-              {/* Правая часть с изображением - обрезанный круг */}
-              <div className="absolute top-0 bottom-0 flex items-center" style={{ right: '130px' }}>
+              {/* Правая часть с изображением - круг частично обрезан снизу */}
+              <div className="absolute" style={{ right: '60px', top: '-50px' }}>
                 <div className="relative">
                   <div className="w-[500px] h-[500px] bg-[#F53B49] rounded-full flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png"
                       alt="Мужчина на велотренажере"
-                      className="w-[420px] h-[420px] object-contain"
+                      className="w-full h-full object-cover rounded-full"
+                      style={{ objectPosition: 'center bottom' }}
                     />
                   </div>
                 </div>
@@ -56,7 +57,7 @@ const Banner: React.FC = () => {
             </div>
             
             {/* Навигационные точки */}
-            <div className="flex justify-center mt-8 space-x-2">
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
               <div className="w-8 h-1 bg-[#F53B49] rounded"></div>
               <div className="w-2 h-1 bg-gray-300 rounded"></div>
               <div className="w-2 h-1 bg-gray-300 rounded"></div>
