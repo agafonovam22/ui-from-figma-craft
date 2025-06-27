@@ -80,17 +80,17 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
           </svg>
         </button>
       </DialogTrigger>
-      <DialogContent className="max-w-4xl w-full p-0 bg-white">
-        <div className="flex h-[500px]">
+      <DialogContent className="max-w-2xl w-full p-0 bg-white">
+        <div className="flex h-[350px]">
           {/* Left side - Popular cities */}
-          <div className="w-1/2 p-8 border-r border-gray-200">
-            <h2 className="text-2xl font-bold text-black mb-8">Популярные</h2>
-            <div className="space-y-4">
+          <div className="w-1/2 p-6 border-r border-gray-200">
+            <h2 className="text-xl font-bold text-black mb-6">Популярные</h2>
+            <div className="space-y-3">
               {popularCities.map((city) => (
                 <button
                   key={city}
                   onClick={() => handleCitySelect(city)}
-                  className={`block text-left text-lg hover:text-[#F53B49] transition-colors ${
+                  className={`block text-left text-base hover:text-[#F53B49] transition-colors ${
                     selectedCity === city ? 'text-[#F53B49] font-medium' : 'text-gray-700'
                   }`}
                 >
@@ -101,10 +101,10 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
           </div>
 
           {/* Right side - Search */}
-          <div className="w-1/2 p-8">
-            <h2 className="text-2xl font-bold text-black mb-8">Выберите город</h2>
+          <div className="w-1/2 p-6">
+            <h2 className="text-xl font-bold text-black mb-6">Выберите город</h2>
             
-            <div className="relative mb-6">
+            <div className="relative mb-4">
               <Input
                 type="text"
                 placeholder="Введите название города"
@@ -121,23 +121,26 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
               </Button>
             </div>
 
-            <div className="max-h-80 overflow-y-auto">
-              {filteredCities.length > 0 ? (
-                filteredCities.map((city) => (
-                  <button
-                    key={city}
-                    onClick={() => handleCitySelect(city)}
-                    className={`block w-full text-left px-4 py-2 text-base hover:bg-gray-50 hover:text-[#F53B49] transition-colors rounded ${
-                      selectedCity === city ? 'text-[#F53B49] font-medium' : 'text-gray-700'
-                    }`}
-                  >
-                    {city}
-                  </button>
-                ))
-              ) : (
-                <p className="text-gray-500 text-center py-4">Города не найдены</p>
-              )}
-            </div>
+            {/* Show filtered cities only when searching */}
+            {searchQuery && (
+              <div className="max-h-48 overflow-y-auto">
+                {filteredCities.length > 0 ? (
+                  filteredCities.map((city) => (
+                    <button
+                      key={city}
+                      onClick={() => handleCitySelect(city)}
+                      className={`block w-full text-left px-3 py-2 text-sm hover:bg-gray-50 hover:text-[#F53B49] transition-colors rounded ${
+                        selectedCity === city ? 'text-[#F53B49] font-medium' : 'text-gray-700'
+                      }`}
+                    >
+                      {city}
+                    </button>
+                  ))
+                ) : (
+                  <p className="text-gray-500 text-center py-4 text-sm">Города не найдены</p>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </DialogContent>
