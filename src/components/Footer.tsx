@@ -1,5 +1,6 @@
 
 import React from 'react';
+import CallRequestDialog from './Header/CallRequestDialog';
 
 const Footer: React.FC = () => {
   return (
@@ -78,9 +79,11 @@ const Footer: React.FC = () => {
                     <p className="text-white text-[14px]">info@wellfitness.ru</p>
                   </div>
                   <div className="mt-4">
-                    <button className="bg-[#F53B49] text-white px-4 py-2 rounded hover:bg-[#e63946] transition-colors text-[14px]">
-                      Заказать звонок
-                    </button>
+                    <CallRequestDialog>
+                      <button className="bg-[#F53B49] text-white px-4 py-2 rounded hover:bg-[#e63946] transition-colors text-[14px]">
+                        Заказать звонок
+                      </button>
+                    </CallRequestDialog>
                   </div>
                 </div>
                 
