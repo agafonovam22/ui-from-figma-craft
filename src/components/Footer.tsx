@@ -135,7 +135,7 @@ const Footer: React.FC = () => {
             </div>
             
             {/* Links - right aligned */}
-            <div className="flex flex-col gap-2 text-sm text-gray-300">
+            <div className="flex flex-col gap-2 text-sm text-gray-300 items-end">
               <div className="flex gap-6">
                 <a href="#" className="hover:text-white transition-colors">Для дилеров</a>
                 <a href="#" className="hover:text-white transition-colors">For suppliers</a>
