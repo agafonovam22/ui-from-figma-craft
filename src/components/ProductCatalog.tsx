@@ -96,7 +96,7 @@ const ProductCatalog: React.FC = () => {
           Каталог продукции
         </h2>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-6">
           {/* Первые 7 товаров в стандартном размере */}
           {products.slice(0, 7).map((product) => (
             <div key={product.id} className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer">
@@ -116,7 +116,10 @@ const ProductCatalog: React.FC = () => {
               )}
             </div>
           ))}
-          
+        </div>
+        
+        {/* Вторая строка со специальным блоком и оставшимися товарами */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-6 mt-6">
           {/* Специальный блок для фитнес-клуба - занимает 2 колонки */}
           <div className="lg:col-span-2 bg-[#3A3A45] rounded-lg p-8 text-white relative overflow-hidden">
             <div className="relative z-10">
