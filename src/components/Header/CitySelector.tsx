@@ -96,8 +96,8 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
                 <button
                   key={city}
                   onClick={() => handleCitySelect(city)}
-                  className={`block text-left text-base hover:text-[#F53B49] transition-colors ${
-                    selectedCity === city ? 'text-[#F53B49] font-medium' : 'text-gray-700'
+                  className={`block text-left text-base hover:text-[#F53B49] transition-colors w-full px-2 py-1 rounded ${
+                    selectedCity === city ? 'bg-[#F8F8FD] text-gray-700' : 'text-gray-700'
                   }`}
                 >
                   {city}
@@ -116,12 +116,12 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
                 placeholder="Введите название города"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pr-20 px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
+                className="w-full pr-24 px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
                 onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
               />
               <Button
                 onClick={handleSearch}
-                className="absolute right-1 top-1/2 transform -translate-y-1/2 w-16 h-10 bg-[#CECFD7] hover:bg-[#b8b9c1] text-black rounded-md p-0 flex items-center justify-center gap-1"
+                className="absolute right-1 top-1/2 transform -translate-y-1/2 w-20 h-10 bg-[#F8F8FD] hover:bg-[#e8e8f8] text-black rounded-md p-0 flex items-center justify-center gap-1"
               >
                 <Search size={16} />
                 Найти
