@@ -143,14 +143,16 @@ const Footer: React.FC = () => {
             </div>
             
             {/* Links - right aligned */}
-            <div className="flex flex-col gap-3 text-[17px] text-gray-300 items-end">
-              <div className="flex gap-6">
-                <a href="#" className="hover:text-white transition-colors">Для дилеров</a>
-                <a href="#" className="hover:text-white transition-colors">For suppliers</a>
+            <div className="flex flex-col gap-3 items-end">
+              <div className="flex gap-6 items-center">
+                <a href="#" className="text-white text-[17px] hover:opacity-80 transition-opacity">Для дилеров</a>
+                <button className="bg-white text-black px-4 py-2 rounded text-[17px] hover:bg-gray-100 transition-colors">
+                  For suppliers
+                </button>
               </div>
               <div className="flex gap-6">
-                <a href="#" className="hover:text-white transition-colors">Политика конфиденциальности</a>
-                <a href="#" className="hover:text-white transition-colors">Публичная оферта</a>
+                <a href="#" className="text-gray-300 text-[13px] hover:text-white transition-colors">Политика конфиденциальности</a>
+                <a href="#" className="text-gray-300 text-[13px] hover:text-white transition-colors">Публичная оферта</a>
               </div>
             </div>
           </div>
