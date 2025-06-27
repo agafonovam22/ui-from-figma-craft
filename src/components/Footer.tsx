@@ -116,7 +116,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom section with #17171E background */}
-      <div className="bg-[#17171E] py-6">
+      <div className="bg-[#17171E] py-8">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
             {/* Logo and copyright - left aligned */}
@@ -126,11 +126,11 @@ const Footer: React.FC = () => {
                 alt="WELL.FITNESS"
                 className="h-[48px] w-auto"
               />
-              <span className="text-gray-300 text-[15px]">© WellFitness, 2005-2024 Все права защищены</span>
+              <span className="text-gray-300 text-[13px]">© WellFitness, 2005-2024 Все права защищены</span>
             </div>
             
             {/* Links - right aligned */}
-            <div className="flex flex-col gap-3 text-[15px] text-gray-300 items-end">
+            <div className="flex flex-col gap-3 text-[17px] text-gray-300 items-end">
               <div className="flex gap-6">
                 <a href="#" className="hover:text-white transition-colors">Для дилеров</a>
                 <a href="#" className="hover:text-white transition-colors">For suppliers</a>
