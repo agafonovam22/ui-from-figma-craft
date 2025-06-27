@@ -42,13 +42,13 @@ const Banner: React.FC = () => {
               </div>
               
               {/* Правая часть с изображением - круг частично обрезан снизу */}
-              <div className="absolute" style={{ right: '60px', top: '-50px' }}>
+              <div className="absolute" style={{ right: '60px', top: '30px' }}>
                 <div className="relative">
                   <div className="w-[500px] h-[500px] bg-[#F53B49] rounded-full flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png"
                       alt="Мужчина на велотренажере"
-                      className="w-full h-full object-cover rounded-full"
+                      className="w-[400px] h-[400px] object-cover rounded-full"
                       style={{ objectPosition: 'center bottom' }}
                     />
                   </div>
