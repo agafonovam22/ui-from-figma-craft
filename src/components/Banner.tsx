@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 
 const Banner: React.FC = () => {
@@ -41,14 +42,14 @@ const Banner: React.FC = () => {
                 </button>
               </div>
               
-              {/* Правая часть с изображением - уменьшенный круг с центрированным человеком */}
-              <div className="absolute" style={{ right: '80px', top: '50px' }}>
+              {/* Правая часть с изображением - увеличенное фото смещенное вправо */}
+              <div className="absolute" style={{ right: '30px', top: '30px' }}>
                 <div className="relative">
-                  <div className="w-[300px] h-[300px] bg-[#F53B49] rounded-full flex items-center justify-center">
+                  <div className="w-[500px] h-[500px] bg-[#F53B49] rounded-full flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png?v=1"
                       alt="Мужчина на беговой дорожке"
-                      className="w-[280px] h-[280px] object-contain"
+                      className="w-[480px] h-[480px] object-contain"
                       style={{ objectPosition: 'center center' }}
                       onError={(e) => {
                         console.log('Ошибка загрузки изображения:', e);
@@ -90,3 +91,4 @@ const Banner: React.FC = () => {
 };
 
 export default Banner;
+
