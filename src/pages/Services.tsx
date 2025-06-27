@@ -85,7 +85,9 @@ const Services: React.FC = () => {
                   Наши специалисты свяжутся с вами в кратчайшие сроки!
                 </p>
                 
-                <div className="relative mt-auto">
+                <div className="flex-1"></div>
+                
+                <div className="relative">
                   <img 
                     src="/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png"
                     alt="Женщина тренируется в спортзале"
