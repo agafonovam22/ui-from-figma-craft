@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Banner from '@/components/Banner';
 import ProductCatalog from '@/components/ProductCatalog';
+import NewProducts from '@/components/NewProducts';
 
 const Index: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const Index: React.FC = () => {
       <Header />
       <Banner />
       <ProductCatalog />
+      <NewProducts />
       
       <section className="container mx-auto px-4 py-12">
         <div className="text-center">
