@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Banner from '@/components/Banner';
@@ -7,13 +6,13 @@ import NewProducts from '@/components/NewProducts';
 
 const Index: React.FC = () => {
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col items-center gap-[50px]">
+    <main className="min-h-screen bg-white flex flex-col items-center gap-[50px]">
       <Header />
       <Banner />
       <ProductCatalog />
       <NewProducts />
       
-      <section className="container mx-auto px-4 py-12">
+      <section className="container mx-auto px-4 py-12 bg-white">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">
             Добро пожаловать в мир фитнеса
