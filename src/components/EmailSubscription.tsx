@@ -15,7 +15,7 @@ const EmailSubscription: React.FC = () => {
 
   return (
     <section className="w-full bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 py-16">
-      <div className="container mx-auto px-4">
+      <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
         <div className="flex items-center justify-between">
           {/* Left side - Text and Form */}
           <div className="flex-1 max-w-2xl">

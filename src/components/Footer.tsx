@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
     <footer className="w-full text-white">
       {/* Main content section with #262631 background */}
       <div className="bg-[#262631] py-12">
-        <div className="container mx-auto px-4">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
             {/* Каталог */}
             <div>
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
 
       {/* Bottom section with #17171E background */}
       <div className="bg-[#17171E] py-8">
-        <div className="container mx-auto px-4">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
             {/* Logo and copyright - left aligned */}
             <div className="flex flex-col items-start gap-4">
