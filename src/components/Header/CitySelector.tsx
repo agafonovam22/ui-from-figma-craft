@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Dialog, DialogContent, DialogTrigger, DialogOverlay } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Search } from 'lucide-react';
@@ -86,8 +85,10 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
           </svg>
         </button>
       </DialogTrigger>
-      <DialogOverlay className="bg-black/30" />
-      <DialogContent className="max-w-4xl w-full p-0 bg-white">
+      <DialogContent 
+        className="max-w-4xl w-full p-0 bg-white"
+        overlayClassName="bg-black/30"
+      >
         <div className="flex h-[250px]">
           {/* Left side - Popular cities (narrower) */}
           <div className="w-1/3 p-6 border-r border-gray-200">
