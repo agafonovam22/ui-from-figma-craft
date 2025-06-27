@@ -26,13 +26,31 @@ const Services: React.FC = () => {
     description: ''
   });
 
+  // Form data for fitness clubs tab
+  const [fitnessFormData, setFitnessFormData] = useState({
+    fullName: '',
+    phone: '',
+    email: '',
+    city: '',
+    organization: ''
+  });
+
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleFitnessInputChange = (field: string, value: string) => {
+    setFitnessFormData(prev => ({ ...prev, [field]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
+  };
+
+  const handleFitnessSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Fitness form submitted:', fitnessFormData);
   };
 
   const tabs = [
@@ -52,11 +70,15 @@ const Services: React.FC = () => {
           <div className="text-sm text-gray-500 mb-8">
             <span>Сервис</span>
             <span className="mx-2">{'>'}</span>
-            <span>Оставить заявку на сервис</span>
+            <span>
+              {activeTab === 'fitness-clubs' ? 'Обслуживание фитнес клубов' : 'Оставить заявку на сервис'}
+            </span>
           </div>
 
           {/* Page Title */}
-          <h1 className="text-4xl font-bold text-gray-900 mb-8">Оставить заявку на сервис</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-8">
+            {activeTab === 'fitness-clubs' ? 'Обслуживание фитнес клубов' : 'Оставить заявку на сервис'}
+          </h1>
 
           {/* Tabs */}
           <div className="flex gap-2 mb-8">
@@ -75,7 +97,7 @@ const Services: React.FC = () => {
             ))}
           </div>
 
-          {/* Content based on active tab */}
+          {/* Service Request Tab Content */}
           {activeTab === 'service-request' && (
             <div className="flex gap-12 items-stretch">
               {/* Left side - Text and Image */}
@@ -222,8 +244,169 @@ const Services: React.FC = () => {
             </div>
           )}
 
+          {/* Fitness Clubs Tab Content */}
+          {activeTab === 'fitness-clubs' && (
+            <div className="space-y-12">
+              {/* First section with image and text */}
+              <div className="flex gap-8 items-center">
+                <div className="flex-1">
+                  <img 
+                    src="/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png"
+                    alt="Женщина тренируется в спортзале"
+                    className="w-full h-[300px] object-cover rounded-lg"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </h2>
+                  <div className="grid grid-cols-2 gap-6 text-gray-600">
+                    <div>
+                      <p className="mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                    </div>
+                    <div>
+                      <p className="mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 mt-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+                    ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                    laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+              </div>
+
+              {/* Second section with text and images */}
+              <div className="flex gap-8 items-center">
+                <div className="flex-1">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </h2>
+                  <p className="text-gray-600 mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+                    ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                    laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+                <div className="flex-1">
+                  <div className="grid grid-cols-3 gap-4">
+                    <img 
+                      src="/lovable-uploads/94f85ba4-b118-4ce1-b7e5-12a4ce35107c.png"
+                      alt="Спортивное оборудование"
+                      className="w-full h-32 object-cover rounded-lg"
+                    />
+                    <img 
+                      src="/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png"
+                      alt="Спортивное оборудование"
+                      className="w-full h-32 object-cover rounded-lg"
+                    />
+                    <img 
+                      src="/lovable-uploads/949b1384-82af-4a1c-bbc2-e4f225491933.png"
+                      alt="Спортивное оборудование"
+                      className="w-full h-32 object-cover rounded-lg"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Image carousel section */}
+              <div className="space-y-4">
+                <div className="flex gap-4 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png"
+                    alt="Спортивное оборудование"
+                    className="w-1/3 h-64 object-cover rounded-lg"
+                  />
+                  <img 
+                    src="/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png"
+                    alt="Женщина тренируется"
+                    className="w-1/3 h-64 object-cover rounded-lg"
+                  />
+                  <img 
+                    src="/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png"
+                    alt="Люди бегают"
+                    className="w-1/3 h-64 object-cover rounded-lg"
+                  />
+                </div>
+                {/* Carousel dots */}
+                <div className="flex justify-center gap-2">
+                  <div className="w-3 h-3 bg-[#F53B49] rounded-full"></div>
+                  <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+                  <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+                  <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+                  <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+                  <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Contact form section */}
+              <div className="flex gap-8 items-stretch bg-gray-50 rounded-lg p-8">
+                <div className="flex-1">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Оставьте заявку!</h2>
+                  <form onSubmit={handleFitnessSubmit} className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <Input
+                        placeholder="ФИО"
+                        value={fitnessFormData.fullName}
+                        onChange={(e) => handleFitnessInputChange('fullName', e.target.value)}
+                      />
+                      <Input
+                        placeholder="Телефон"
+                        value={fitnessFormData.phone}
+                        onChange={(e) => handleFitnessInputChange('phone', e.target.value)}
+                      />
+                      <Input
+                        placeholder="E-mail"
+                        type="email"
+                        value={fitnessFormData.email}
+                        onChange={(e) => handleFitnessInputChange('email', e.target.value)}
+                      />
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <Input
+                        placeholder="Город"
+                        value={fitnessFormData.city}
+                        onChange={(e) => handleFitnessInputChange('city', e.target.value)}
+                      />
+                      <Input
+                        placeholder="Организация"
+                        value={fitnessFormData.organization}
+                        onChange={(e) => handleFitnessInputChange('organization', e.target.value)}
+                      />
+                    </div>
+                    <Button 
+                      type="submit"
+                      className="bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 font-semibold rounded-lg"
+                    >
+                      Заказать звонок
+                    </Button>
+                  </form>
+                </div>
+                <div className="flex-1">
+                  <img 
+                    src="/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png"
+                    alt="Люди бегают"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Other tab content placeholders */}
-          {activeTab !== 'service-request' && (
+          {activeTab !== 'service-request' && activeTab !== 'fitness-clubs' && (
             <div className="py-12 text-center">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 {tabs.find(tab => tab.id === activeTab)?.label}
