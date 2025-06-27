@@ -61,7 +61,7 @@ const EmailSubscription: React.FC = () => {
                     <img 
                       src="/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png"
                       alt="Мужчина тренируется на велотренажере"
-                      className="w-[320px] h-[320px] object-contain"
+                      className="w-[400px] h-[400px] object-contain"
                       style={{ objectPosition: 'center right', transform: 'translateX(20px) translateY(-80px)' }}
                     />
                   </div>
