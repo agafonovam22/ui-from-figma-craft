@@ -57,7 +57,7 @@ const EmailSubscription: React.FC = () => {
               {/* Right side - Image */}
               <div className="absolute" style={{ right: '60px', top: '30px' }}>
                 <div className="relative">
-                  <div className="w-[400px] h-[400px] rounded-full bg-gray-500 overflow-hidden flex items-center justify-center">
+                  <div className="w-[600px] h-[600px] rounded-full bg-gray-500 overflow-hidden flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png"
                       alt="Мужчина тренируется на велотренажере"
