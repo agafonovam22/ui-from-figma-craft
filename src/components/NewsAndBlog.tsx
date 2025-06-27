@@ -103,8 +103,8 @@ const NewsAndBlog: React.FC = () => {
           ))}
         </div>
 
-        {/* Show All Button */}
-        <div className="text-center">
+        {/* Show All Button - Left aligned */}
+        <div className="text-left">
           <button className="border border-[#F53B49] text-[#F53B49] px-8 py-2 rounded hover:bg-[#F53B49] hover:text-white transition-colors">
             Показать все
           </button>
