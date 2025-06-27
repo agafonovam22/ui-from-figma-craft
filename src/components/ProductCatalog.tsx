@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const ProductCatalog: React.FC = () => {
@@ -219,16 +220,16 @@ const ProductCatalog: React.FC = () => {
         {/* Первый ряд - 6 карточек */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 mb-6">
           {currentProducts.slice(0, 6).map((product) => (
-            <div key={product.id} className="bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
-              <div className="aspect-square mb-3 flex items-center justify-center">
+            <div key={product.id} className="bg-gray-50 rounded-lg p-3 hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="aspect-square mb-2 flex items-center justify-center">
                 <img 
                   src={product.image} 
                   alt={product.title}
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-lg font-medium text-[#262631] mb-2">{product.title}</h3>
-              <p className="text-gray-600 text-sm mb-3">{product.price}</p>
+              <h3 className="text-lg font-medium text-[#262631] mb-1">{product.title}</h3>
+              <p className="text-gray-600 text-sm mb-2">{product.price}</p>
               {(product.id === 1 || product.id === 13) && (
                 <button className="bg-[#262631] text-white px-4 py-2 rounded text-sm hover:bg-gray-800 transition-colors">
                   Перейти →
@@ -241,15 +242,15 @@ const ProductCatalog: React.FC = () => {
         {/* Второй ряд - 6 карточек */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
           {currentProducts.slice(6, 12).map((product) => (
-            <div key={product.id} className="bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
-              <div className="aspect-square mb-3 flex items-center justify-center">
+            <div key={product.id} className="bg-gray-50 rounded-lg p-3 hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="aspect-square mb-2 flex items-center justify-center">
                 <img 
                   src={product.image} 
                   alt={product.title}
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-lg font-medium text-[#262631] mb-2">{product.title}</h3>
+              <h3 className="text-lg font-medium text-[#262631] mb-1">{product.title}</h3>
               <p className="text-gray-600 text-sm">{product.price}</p>
             </div>
           ))}
