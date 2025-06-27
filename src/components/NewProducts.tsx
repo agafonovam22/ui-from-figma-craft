@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const NewProducts: React.FC = () => {
@@ -117,7 +116,7 @@ const NewProducts: React.FC = () => {
     <section className="w-full py-16 bg-white">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
         <div className="flex justify-between items-center mb-12">
-          <h2 className="text-4xl font-bold text-[#262631]">
+          <h2 className="text-2xl font-bold text-[#262631]">
             Новинки
           </h2>
           <div className="flex gap-3">

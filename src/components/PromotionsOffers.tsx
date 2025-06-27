@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -46,7 +45,7 @@ const PromotionsOffers: React.FC = () => {
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
         {/* Header with navigation */}
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl font-bold text-gray-900">Акции и спецпредложения</h2>
+          <h2 className="text-2xl font-bold text-gray-900">Акции и спецпредложения</h2>
           <div className="flex items-center gap-4">
             <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
               <ChevronLeft className="w-5 h-5 text-gray-600" />

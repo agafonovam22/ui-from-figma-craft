@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -47,7 +46,7 @@ const NewsAndBlog: React.FC = () => {
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
         {/* Header with navigation */}
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900">Новости и блог</h2>
+          <h2 className="text-2xl font-bold text-gray-900">Новости и блог</h2>
           
           <div className="flex items-center gap-4">
             <button className="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors">
