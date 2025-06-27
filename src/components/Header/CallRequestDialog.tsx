@@ -39,12 +39,12 @@ const CallRequestDialog: React.FC<CallRequestDialogProps> = ({ children }) => {
       <DialogPortal>
         <DialogOverlay className="bg-black/50" />
         <DialogContent className="max-w-[900px] w-full p-0 bg-white rounded-lg">
-          <div className="flex h-[400px]">
+          <div className="flex h-[320px]">
             {/* Left side - Form */}
             <div className="w-1/2 p-8">
-              <h2 className="text-2xl font-bold text-black mb-8">Заказать звонок</h2>
+              <h2 className="text-2xl font-bold text-black mb-6">Заказать звонок</h2>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <Input
                     type="text"
@@ -77,7 +77,7 @@ const CallRequestDialog: React.FC<CallRequestDialogProps> = ({ children }) => {
 
                 <Button
                   type="submit"
-                  className="w-fit bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 rounded-md text-base font-medium transition-colors"
+                  className="w-fit bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 rounded-md text-base font-medium transition-colors mt-6"
                 >
                   Заказать звонок
                 </Button>
