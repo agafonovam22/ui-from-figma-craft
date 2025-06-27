@@ -20,8 +20,8 @@ const EmailSubscription: React.FC = () => {
           <div className="py-12 relative h-full">
             <div className="flex items-center justify-between h-full">
               {/* Left side - Text and Form */}
-              <div className="flex-1 max-w-lg z-10" style={{ paddingTop: '30px', paddingLeft: '60px' }}>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+              <div className="flex-1 max-w-lg z-10" style={{ paddingTop: '20px', paddingLeft: '60px' }}>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
                   Подписывайтесь
                   <br />
                   на наши новости
@@ -57,12 +57,12 @@ const EmailSubscription: React.FC = () => {
               {/* Right side - Image */}
               <div className="absolute" style={{ right: '60px', top: '30px' }}>
                 <div className="relative">
-                  <div className="w-[600px] h-[600px] rounded-full bg-gray-500 overflow-hidden flex items-center justify-center">
+                  <div className="w-[400px] h-[400px] rounded-full bg-gray-500 overflow-hidden flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png"
                       alt="Мужчина тренируется на велотренажере"
-                      className="w-[600px] h-[600px] object-contain"
-                      style={{ objectPosition: 'center right', transform: 'translateX(30px)' }}
+                      className="w-[400px] h-[400px] object-contain"
+                      style={{ objectPosition: 'center right', transform: 'translateX(20px)' }}
                     />
                   </div>
                 </div>
