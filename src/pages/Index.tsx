@@ -1,8 +1,10 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Banner from '@/components/Banner';
 import ProductCatalog from '@/components/ProductCatalog';
 import NewProducts from '@/components/NewProducts';
+import PromotionsOffers from '@/components/PromotionsOffers';
 
 const Index: React.FC = () => {
   return (
@@ -11,6 +13,7 @@ const Index: React.FC = () => {
       <Banner />
       <ProductCatalog />
       <NewProducts />
+      <PromotionsOffers />
       
       <section className="container mx-auto px-4 py-12 bg-white">
         <div className="text-center">
