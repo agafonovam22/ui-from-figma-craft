@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Banner: React.FC = () => {
@@ -46,7 +45,7 @@ const Banner: React.FC = () => {
                 <div className="relative">
                   <div className="w-[500px] h-[500px] bg-[#F53B49] rounded-full flex items-center justify-center">
                     <img 
-                      src="/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png"
+                      src="/lovable-uploads/f99f3115-1f00-49f0-af93-08b6318f8cf4.png"
                       alt="Мужчина на велотренажере"
                       className="w-[400px] h-[400px] object-cover rounded-full"
                       style={{ objectPosition: 'center bottom' }}
