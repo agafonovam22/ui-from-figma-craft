@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { NavigationItem, ButtonProps } from './types';
 import CitySelector from './CitySelector';
+import CallRequestDialog from './CallRequestDialog';
 
 const ActionButton: React.FC<ButtonProps> = ({ children, variant = 'primary', onClick, className = '' }) => {
   const baseClasses = "text-xs font-normal leading-3 gap-2.5 px-3.5 py-3 rounded-[5px] transition-colors";
@@ -71,9 +72,11 @@ const TopMenu: React.FC = () => {
           <ActionButton variant="primary" onClick={() => console.log('Phone clicked')}>
             +7 (800) 775-12-17
           </ActionButton>
-          <ActionButton variant="danger" onClick={() => console.log('Callback clicked')}>
-            Заказать звонок
-          </ActionButton>
+          <CallRequestDialog>
+            <ActionButton variant="danger">
+              Заказать звонок
+            </ActionButton>
+          </CallRequestDialog>
         </div>
       </div>
     </header>
