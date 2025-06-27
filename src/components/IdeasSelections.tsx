@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 
@@ -56,10 +55,9 @@ const IdeasSelections: React.FC = () => {
             <div
               key={idea.id}
               className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 group hover:shadow-md transition-shadow"
-              style={{ width: '402px', height: '549px' }}
             >
               {/* Image */}
-              <div className="h-full overflow-hidden relative">
+              <div className="aspect-[4/3] overflow-hidden relative">
                 <img 
                   src={idea.image} 
                   alt={idea.title}
