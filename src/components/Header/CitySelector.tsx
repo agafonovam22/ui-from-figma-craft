@@ -52,7 +52,14 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
     'Томск',
     'Оренбург',
     'Кемерово',
-    'Сочи'
+    'Сочи',
+    'Малоярославец',
+    'Мурманск',
+    'Магнитогорск',
+    'Майкоп',
+    'Минеральные воды',
+    'Мирный',
+    'Мытищи'
   ];
 
   const filteredCities = allCities.filter(city =>
@@ -70,6 +77,10 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
       handleCitySelect(filteredCities[0]);
     }
   };
+
+  // Разделяем отфильтрованные города на две колонки
+  const leftColumnCities = filteredCities.filter((_, index) => index % 2 === 0);
+  const rightColumnCities = filteredCities.filter((_, index) => index % 2 === 1);
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -89,7 +100,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
       <DialogPortal>
         <DialogOverlay className="bg-black/30" />
         <DialogContent className="max-w-4xl w-full p-0 bg-white">
-          <div className="flex h-[250px]">
+          <div className="flex h-[400px]">
             {/* Left side - Popular cities (narrower) */}
             <div className="w-1/3 p-6 border-r border-gray-200">
               <h2 className="text-xl font-bold text-black mb-5">Популярные</h2>
@@ -130,21 +141,40 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
                 </Button>
               </div>
 
-              {/* Show filtered cities only when searching */}
+              {/* Show filtered cities in two columns when searching */}
               {searchQuery && (
-                <div className="max-h-32 overflow-y-auto">
+                <div className="max-h-72 overflow-y-auto">
                   {filteredCities.length > 0 ? (
-                    filteredCities.map((city) => (
-                      <button
-                        key={city}
-                        onClick={() => handleCitySelect(city)}
-                        className={`block w-full text-left px-3 py-2 text-sm hover:bg-gray-50 hover:text-[#F53B49] transition-colors rounded ${
-                          selectedCity === city ? 'text-[#F53B49] font-medium' : 'text-gray-700'
-                        }`}
-                      >
-                        {city}
-                      </button>
-                    ))
+                    <div className="grid grid-cols-2 gap-x-4">
+                      {/* Left column */}
+                      <div className="space-y-1">
+                        {leftColumnCities.map((city) => (
+                          <button
+                            key={city}
+                            onClick={() => handleCitySelect(city)}
+                            className={`block w-full text-left px-3 py-2 text-sm hover:bg-gray-50 hover:text-[#F53B49] transition-colors rounded ${
+                              selectedCity === city ? 'text-[#F53B49] font-medium' : 'text-gray-700'
+                            }`}
+                          >
+                            {city}
+                          </button>
+                        ))}
+                      </div>
+                      {/* Right column */}
+                      <div className="space-y-1">
+                        {rightColumnCities.map((city) => (
+                          <button
+                            key={city}
+                            onClick={() => handleCitySelect(city)}
+                            className={`block w-full text-left px-3 py-2 text-sm hover:bg-gray-50 hover:text-[#F53B49] transition-colors rounded ${
+                              selectedCity === city ? 'text-[#F53B49] font-medium' : 'text-gray-700'
+                            }`}
+                          >
+                            {city}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
                   ) : (
                     <p className="text-gray-500 text-center py-4 text-sm">Города не найдены</p>
                   )}
