@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -42,7 +43,7 @@ const NewsAndBlog: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-white py-12">
+    <section className="w-full bg-white py-6">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
         {/* Header with navigation */}
         <div className="flex justify-between items-center mb-8">

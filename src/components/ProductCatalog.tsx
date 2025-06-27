@@ -181,7 +181,7 @@ const ProductCatalog: React.FC = () => {
   const currentProducts = activeFilter === 'home' ? homeProducts : fitnessProducts;
 
   return (
-    <section className="w-full py-16 bg-white">
+    <section className="w-full py-6 bg-white">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
         <div className="flex items-center gap-8 mb-12">
           <h2 className="text-2xl font-bold text-[#262631]">
