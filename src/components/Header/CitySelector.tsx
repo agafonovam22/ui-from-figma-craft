@@ -1,6 +1,9 @@
 
 import React, { useState } from 'react';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Search } from 'lucide-react';
 
 interface CitySelectorProps {
   selectedCity: string;
@@ -9,8 +12,16 @@ interface CitySelectorProps {
 
 const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const cities = [
+  const popularCities = [
+    'Москва',
+    'Санкт-Петербург',
+    'Саратов',
+    'Сочи'
+  ];
+
+  const allCities = [
     'Москва',
     'Санкт-Петербург',
     'Новосибирск',
@@ -40,17 +51,23 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
     'Махачкала',
     'Томск',
     'Оренбург',
-    'Кемерово'
+    'Кемерово',
+    'Сочи'
   ];
+
+  const filteredCities = allCities.filter(city =>
+    city.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const handleCitySelect = (city: string) => {
     onCitySelect(city);
     setIsOpen(false);
+    setSearchQuery('');
   };
 
   return (
-    <Popover open={isOpen} onOpenChange={setIsOpen}>
-      <PopoverTrigger asChild>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogTrigger asChild>
         <button
           className="flex items-center gap-1.5 hover:opacity-80 transition-opacity"
           aria-label={`Выбрать город: ${selectedCity}`}
@@ -62,34 +79,69 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
             <path d="M4.5 6.5L8.39711 0.5H0.602886L4.5 6.5Z" fill="white" />
           </svg>
         </button>
-      </PopoverTrigger>
-      <PopoverContent 
-        className="w-64 p-0 bg-white border border-gray-200 shadow-lg z-50" 
-        align="start"
-        sideOffset={5}
-      >
-        <div className="max-h-80 overflow-y-auto">
-          <div className="p-3 border-b border-gray-100">
-            <h3 className="text-sm font-medium text-gray-900">Выберите город</h3>
+      </DialogTrigger>
+      <DialogContent className="max-w-4xl w-full p-0 bg-white">
+        <div className="flex h-[500px]">
+          {/* Left side - Popular cities */}
+          <div className="w-1/2 p-8 border-r border-gray-200">
+            <h2 className="text-2xl font-bold text-black mb-8">Популярные</h2>
+            <div className="space-y-4">
+              {popularCities.map((city) => (
+                <button
+                  key={city}
+                  onClick={() => handleCitySelect(city)}
+                  className={`block text-left text-lg hover:text-[#F53B49] transition-colors ${
+                    selectedCity === city ? 'text-[#F53B49] font-medium' : 'text-gray-700'
+                  }`}
+                >
+                  {city}
+                </button>
+              ))}
+            </div>
           </div>
-          <div className="py-1">
-            {cities.map((city) => (
-              <button
-                key={city}
-                onClick={() => handleCitySelect(city)}
-                className={`w-full text-left px-3 py-2 text-sm hover:bg-gray-50 transition-colors ${
-                  selectedCity === city 
-                    ? 'bg-gray-100 text-[#F53B49] font-medium' 
-                    : 'text-gray-700'
-                }`}
+
+          {/* Right side - Search */}
+          <div className="w-1/2 p-8">
+            <h2 className="text-2xl font-bold text-black mb-8">Выберите город</h2>
+            
+            <div className="relative mb-6">
+              <Input
+                type="text"
+                placeholder="Введите название города"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-4 pr-12 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
+              />
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-[#F53B49]"
               >
-                {city}
-              </button>
-            ))}
+                <Search className="h-5 w-5" />
+              </Button>
+            </div>
+
+            <div className="max-h-80 overflow-y-auto">
+              {filteredCities.length > 0 ? (
+                filteredCities.map((city) => (
+                  <button
+                    key={city}
+                    onClick={() => handleCitySelect(city)}
+                    className={`block w-full text-left px-4 py-2 text-base hover:bg-gray-50 hover:text-[#F53B49] transition-colors rounded ${
+                      selectedCity === city ? 'text-[#F53B49] font-medium' : 'text-gray-700'
+                    }`}
+                  >
+                    {city}
+                  </button>
+                ))
+              ) : (
+                <p className="text-gray-500 text-center py-4">Города не найдены</p>
+              )}
+            </div>
           </div>
         </div>
-      </PopoverContent>
-    </Popover>
+      </DialogContent>
+    </Dialog>
   );
 };
 
