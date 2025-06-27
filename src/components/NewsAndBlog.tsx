@@ -44,7 +44,7 @@ const NewsAndBlog: React.FC = () => {
 
   return (
     <section className="w-full bg-white py-12">
-      <div className="container mx-auto px-4">
+      <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
         {/* Header with navigation */}
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold text-gray-900">Новости и блог</h2>
