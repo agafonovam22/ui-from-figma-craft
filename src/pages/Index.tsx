@@ -16,7 +16,7 @@ const Index: React.FC = () => {
   return (
     <main className="min-h-screen bg-white flex flex-col items-center">
       <Header />
-      <div className="flex flex-col gap-[50px] w-full pt-[50px]">
+      <div className="flex flex-col gap-6 w-full pt-6">
         <Banner />
         <ProductCatalog />
         <NewProducts />
