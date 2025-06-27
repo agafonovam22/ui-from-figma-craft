@@ -116,13 +116,14 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
                 placeholder="Введите название города"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pr-16 px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
+                className="w-full pr-20 px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
                 onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
               />
               <Button
                 onClick={handleSearch}
-                className="absolute right-1 top-1/2 transform -translate-y-1/2 w-12 h-10 bg-gray-400 hover:bg-gray-500 text-white rounded-md p-0 flex items-center justify-center"
+                className="absolute right-1 top-1/2 transform -translate-y-1/2 w-16 h-10 bg-[#CECFD7] hover:bg-[#b8b9c1] text-black rounded-md p-0 flex items-center justify-center gap-1"
               >
+                <Search size={16} />
                 Найти
               </Button>
             </div>
