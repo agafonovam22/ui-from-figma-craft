@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -21,8 +20,8 @@ const EmailSubscription: React.FC = () => {
           <div className="py-12 relative h-full">
             <div className="flex items-center justify-between h-full">
               {/* Left side - Text and Form */}
-              <div className="flex-1 max-w-lg z-10" style={{ paddingTop: '60px', paddingLeft: '60px' }}>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+              <div className="flex-1 max-w-lg z-10" style={{ paddingTop: '30px', paddingLeft: '60px' }}>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
                   Подписывайтесь
                   <br />
                   на наши новости
@@ -30,7 +29,7 @@ const EmailSubscription: React.FC = () => {
                   и события
                 </h2>
                 
-                <form onSubmit={handleSubmit} className="flex gap-4 mb-6">
+                <form onSubmit={handleSubmit} className="flex gap-4 mb-4">
                   <Input
                     type="email"
                     placeholder="Введите Email"
@@ -47,7 +46,7 @@ const EmailSubscription: React.FC = () => {
                   </Button>
                 </form>
                 
-                <p className="text-gray-300 text-sm">
+                <p className="text-gray-300 text-xs">
                   Подписываясь на рассылку, Вы соглашаетесь с условиями{' '}
                   <a href="#" className="underline hover:no-underline">
                     политики конфиденциальности
@@ -56,11 +55,11 @@ const EmailSubscription: React.FC = () => {
               </div>
               
               {/* Right side - Image */}
-              <div className="absolute" style={{ right: '60px', top: '30px' }}>
+              <div className="absolute" style={{ right: '60px', top: '50%', transform: 'translateY(-50%)' }}>
                 <div className="relative">
                   <div className="w-[600px] h-[600px] rounded-full bg-gray-500 overflow-hidden flex items-center justify-center">
                     <img 
-                      src="/lovable-uploads/32484ced-ddd4-4761-9855-fa657187f020.png"
+                      src="/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png"
                       alt="Мужчина тренируется на велотренажере"
                       className="w-[600px] h-[600px] object-contain"
                       style={{ objectPosition: 'center right', transform: 'translateX(30px)' }}
@@ -77,4 +76,3 @@ const EmailSubscription: React.FC = () => {
 };
 
 export default EmailSubscription;
-
