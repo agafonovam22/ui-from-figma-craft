@@ -34,7 +34,7 @@ const IdeasSelections: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-white py-12">
+    <section className="w-full bg-white py-6">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
         {/* Header with navigation */}
         <div className="flex items-center justify-between mb-8">

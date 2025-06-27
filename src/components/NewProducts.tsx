@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const NewProducts: React.FC = () => {
@@ -49,7 +48,7 @@ const NewProducts: React.FC = () => {
   ];
 
   return (
-    <section className="w-full py-4 bg-white">
+    <section className="w-full py-6 bg-white">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
         <h2 className="text-2xl font-bold text-[#262631] mb-8">Новинки</h2>
         
