@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Dialog, DialogContent, DialogTrigger, DialogOverlay, DialogPortal } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Search } from 'lucide-react';
@@ -86,74 +86,71 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
           </svg>
         </button>
       </DialogTrigger>
-      <DialogPortal>
-        <DialogOverlay className="bg-black/30" />
-        <DialogContent className="max-w-4xl w-full p-0 bg-white">
-          <div className="flex h-[250px]">
-            {/* Left side - Popular cities (narrower) */}
-            <div className="w-1/3 p-6 border-r border-gray-200">
-              <h2 className="text-xl font-bold text-black mb-5">Популярные</h2>
-              <div className="space-y-3">
-                {popularCities.map((city) => (
-                  <button
-                    key={city}
-                    onClick={() => handleCitySelect(city)}
-                    className={`block text-left text-base hover:text-[#F53B49] transition-colors w-full px-2 py-1 rounded ${
-                      selectedCity === city ? 'bg-[#F8F8FD] text-gray-700' : 'text-gray-700'
-                    }`}
-                  >
-                    {city}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Right side - Search (wider) */}
-            <div className="w-2/3 p-6">
-              <h2 className="text-xl font-bold text-black mb-5">Выберите город</h2>
-              
-              <div className="relative mb-4">
-                <Input
-                  type="text"
-                  placeholder="Введите название города"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pr-28 px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
-                  onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                />
-                <Button
-                  onClick={handleSearch}
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 w-24 h-8 bg-[#F8F8FD] hover:bg-[#e8e8f8] text-black rounded-none p-0 flex items-center justify-center gap-1"
+      <DialogContent className="max-w-4xl w-full p-0 bg-white">
+        <div className="flex h-[250px]">
+          {/* Left side - Popular cities (narrower) */}
+          <div className="w-1/3 p-6 border-r border-gray-200">
+            <h2 className="text-xl font-bold text-black mb-5">Популярные</h2>
+            <div className="space-y-3">
+              {popularCities.map((city) => (
+                <button
+                  key={city}
+                  onClick={() => handleCitySelect(city)}
+                  className={`block text-left text-base hover:text-[#F53B49] transition-colors w-full px-2 py-1 rounded ${
+                    selectedCity === city ? 'bg-[#F8F8FD] text-gray-700' : 'text-gray-700'
+                  }`}
                 >
-                  <Search size={16} />
-                  Найти
-                </Button>
-              </div>
-
-              {/* Show filtered cities only when searching */}
-              {searchQuery && (
-                <div className="max-h-32 overflow-y-auto">
-                  {filteredCities.length > 0 ? (
-                    filteredCities.map((city) => (
-                      <button
-                        key={city}
-                        onClick={() => handleCitySelect(city)}
-                        className={`block w-full text-left px-3 py-2 text-sm hover:bg-gray-50 hover:text-[#F53B49] transition-colors rounded ${
-                          selectedCity === city ? 'text-[#F53B49] font-medium' : 'text-gray-700'
-                        }`}
-                      >
-                        {city}
-                      </button>
-                    ))
-                  ) : (
-                    <p className="text-gray-500 text-center py-4 text-sm">Города не найдены</p>
-                  ))}
-                </div>
-              )}
+                  {city}
+                </button>
+              ))}
             </div>
           </div>
-        </DialogContent>
-      </DialogPortal>
+
+          {/* Right side - Search (wider) */}
+          <div className="w-2/3 p-6">
+            <h2 className="text-xl font-bold text-black mb-5">Выберите город</h2>
+            
+            <div className="relative mb-4">
+              <Input
+                type="text"
+                placeholder="Введите название города"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pr-28 px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
+                onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+              />
+              <Button
+                onClick={handleSearch}
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 w-24 h-8 bg-[#F8F8FD] hover:bg-[#e8e8f8] text-black rounded-none p-0 flex items-center justify-center gap-1"
+              >
+                <Search size={16} />
+                Найти
+              </Button>
+            </div>
+
+            {/* Show filtered cities only when searching */}
+            {searchQuery && (
+              <div className="max-h-32 overflow-y-auto">
+                {filteredCities.length > 0 ? (
+                  filteredCities.map((city) => (
+                    <button
+                      key={city}
+                      onClick={() => handleCitySelect(city)}
+                      className={`block w-full text-left px-3 py-2 text-sm hover:bg-gray-50 hover:text-[#F53B49] transition-colors rounded ${
+                        selectedCity === city ? 'text-[#F53B49] font-medium' : 'text-gray-700'
+                      }`}
+                    >
+                      {city}
+                    </button>
+                  ))
+                ) : (
+                  <p className="text-gray-500 text-center py-4 text-sm">Города не найдены</p>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </DialogContent>
     </Dialog>
   );
 };
