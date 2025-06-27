@@ -5,13 +5,13 @@ const Footer: React.FC = () => {
   return (
     <footer className="w-full text-white">
       {/* Main content section with #262631 background */}
-      <div className="bg-[#262631] py-12">
+      <div className="bg-[#262631] py-6">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
             {/* Каталог */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Каталог</h3>
-              <ul className="space-y-2 text-gray-300">
+              <h3 className="text-base font-semibold mb-2">Каталог</h3>
+              <ul className="space-y-1 text-gray-300 text-sm">
                 <li><a href="#" className="hover:text-white transition-colors">Для дома</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Для фитнес-клуба</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Наши бренды</a></li>
@@ -20,8 +20,8 @@ const Footer: React.FC = () => {
 
             {/* Поддержка */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Поддержка</h3>
-              <ul className="space-y-2 text-gray-300">
+              <h3 className="text-base font-semibold mb-2">Поддержка</h3>
+              <ul className="space-y-1 text-gray-300 text-sm">
                 <li><a href="#" className="hover:text-white transition-colors">Доставка и оплата</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Условия возврата</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Гарантия</a></li>
@@ -31,8 +31,8 @@ const Footer: React.FC = () => {
 
             {/* О компании */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">О компании</h3>
-              <ul className="space-y-2 text-gray-300">
+              <h3 className="text-base font-semibold mb-2">О компании</h3>
+              <ul className="space-y-1 text-gray-300 text-sm">
                 <li><a href="#" className="hover:text-white transition-colors">О нас</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Миссия</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Команда</a></li>
@@ -44,8 +44,8 @@ const Footer: React.FC = () => {
 
             {/* Услуги */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Услуги</h3>
-              <ul className="space-y-2 text-gray-300">
+              <h3 className="text-base font-semibold mb-2">Услуги</h3>
+              <ul className="space-y-1 text-gray-300 text-sm">
                 <li><a href="#" className="hover:text-white transition-colors">3D проект</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Бизнес-конфигурирование</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Готовые решения</a></li>
@@ -58,9 +58,9 @@ const Footer: React.FC = () => {
 
             {/* Контакты Москва */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Для Москвы</h3>
-              <div className="text-gray-300 space-y-2">
-                <p className="text-xl font-semibold text-white">+7 (499) 677-56-32</p>
+              <h3 className="text-base font-semibold mb-2">Для Москвы</h3>
+              <div className="text-gray-300 space-y-1">
+                <p className="text-lg font-semibold text-white">+7 (499) 677-56-32</p>
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 bg-gray-600 rounded-full flex items-center justify-center">
                     <span className="text-xs">VK</span>
@@ -77,13 +77,13 @@ const Footer: React.FC = () => {
 
             {/* Контакты Россия */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Для дома</h3>
-              <div className="text-gray-300 space-y-3">
-                <p>Для России</p>
-                <p className="text-xl font-semibold text-white">+7 (800) 775-12-17</p>
-                <p>Для дома</p>
-                <p className="text-sm">E-mail</p>
-                <p className="text-white">info@wellfitness.ru</p>
+              <h3 className="text-base font-semibold mb-2">Для дома</h3>
+              <div className="text-gray-300 space-y-2">
+                <p className="text-sm">Для России</p>
+                <p className="text-lg font-semibold text-white">+7 (800) 775-12-17</p>
+                <p className="text-sm">Для дома</p>
+                <p className="text-xs">E-mail</p>
+                <p className="text-white text-sm">info@wellfitness.ru</p>
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 bg-gray-600 rounded-full flex items-center justify-center">
                     <span className="text-xs">VK</span>
@@ -95,13 +95,13 @@ const Footer: React.FC = () => {
                     <span className="text-xs">YT</span>
                   </div>
                 </div>
-                <div className="mt-4">
-                  <button className="bg-[#F53B49] text-white px-6 py-2 rounded hover:bg-[#e63946] transition-colors">
+                <div className="mt-3">
+                  <button className="bg-[#F53B49] text-white px-4 py-2 rounded hover:bg-[#e63946] transition-colors text-sm">
                     Заказать звонок
                   </button>
                 </div>
-                <div className="mt-4">
-                  <p className="text-sm mb-2">Принимаем к оплате</p>
+                <div className="mt-3">
+                  <p className="text-xs mb-1">Принимаем к оплате</p>
                   <div className="flex gap-1">
                     <div className="w-8 h-5 bg-white rounded text-xs flex items-center justify-center text-black font-bold">VISA</div>
                     <div className="w-8 h-5 bg-white rounded text-xs flex items-center justify-center text-black font-bold">VISA</div>
