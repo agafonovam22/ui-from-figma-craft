@@ -1,124 +1,236 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Card, CardContent } from '@/components/ui/card';
 
 const Services: React.FC = () => {
+  const [activeTab, setActiveTab] = useState('service-request');
+  const [formData, setFormData] = useState({
+    fullName: '',
+    phone: '',
+    email: '',
+    city: '',
+    street: '',
+    house: '',
+    building: '',
+    apartment: '',
+    brand: '',
+    model: '',
+    purchaseDate: '',
+    serialNumber: '',
+    warrantyNumber: '',
+    description: ''
+  });
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+  };
+
+  const tabs = [
+    { id: 'service-request', label: 'Заявка на сервис', active: true },
+    { id: 'fitness-clubs', label: 'Обслуживание фитнес клубов', active: false },
+    { id: 'instructions', label: 'Инструкции', active: false },
+    { id: 'video-instructions', label: 'Видео-инструкции', active: false }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
       
       <main className="py-12">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Наши сервисы</h1>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Мы предоставляем полный спектр услуг для обслуживания и поддержки вашего спортивного оборудования
-            </p>
+          {/* Breadcrumb */}
+          <div className="text-sm text-gray-500 mb-8">
+            <span>Сервис</span>
+            <span className="mx-2">></span>
+            <span>Оставить заявку на сервис</span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Service 1 */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-[#F53B49] text-4xl mb-4">🔧</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Техническое обслуживание</h3>
-              <p className="text-gray-600 mb-4">
-                Профессиональное обслуживание всех видов тренажеров и спортивного оборудования
-              </p>
-              <ul className="text-sm text-gray-500 space-y-1">
-                <li>• Плановое техобслуживание</li>
-                <li>• Диагностика неисправностей</li>
-                <li>• Замена расходных материалов</li>
-              </ul>
-            </div>
+          {/* Page Title */}
+          <h1 className="text-4xl font-bold text-gray-900 mb-8">Оставить заявку на сервис</h1>
 
-            {/* Service 2 */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-[#F53B49] text-4xl mb-4">⚡</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Ремонт оборудования</h3>
-              <p className="text-gray-600 mb-4">
-                Быстрый и качественный ремонт любой сложности с использованием оригинальных запчастей
-              </p>
-              <ul className="text-sm text-gray-500 space-y-1">
-                <li>• Экстренный ремонт</li>
-                <li>• Восстановление электроники</li>
-                <li>• Замена деталей</li>
-              </ul>
-            </div>
-
-            {/* Service 3 */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-[#F53B49] text-4xl mb-4">🚚</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Доставка и установка</h3>
-              <p className="text-gray-600 mb-4">
-                Профессиональная доставка, сборка и установка тренажеров в любой точке города
-              </p>
-              <ul className="text-sm text-gray-500 space-y-1">
-                <li>• Бесплатная доставка</li>
-                <li>• Сборка и настройка</li>
-                <li>• Обучение пользованию</li>
-              </ul>
-            </div>
-
-            {/* Service 4 */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-[#F53B49] text-4xl mb-4">📞</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Консультации</h3>
-              <p className="text-gray-600 mb-4">
-                Экспертные консультации по выбору оборудования и организации тренировочного процесса
-              </p>
-              <ul className="text-sm text-gray-500 space-y-1">
-                <li>• Подбор оборудования</li>
-                <li>• Планировка зала</li>
-                <li>• Техническая поддержка</li>
-              </ul>
-            </div>
-
-            {/* Service 5 */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-[#F53B49] text-4xl mb-4">🏃</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Обучение и тренинги</h3>
-              <p className="text-gray-600 mb-4">
-                Обучение персонала работе с оборудованием и организации безопасных тренировок
-              </p>
-              <ul className="text-sm text-gray-500 space-y-1">
-                <li>• Обучение персонала</li>
-                <li>• Инструктаж по безопасности</li>
-                <li>• Методические материалы</li>
-              </ul>
-            </div>
-
-            {/* Service 6 */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-[#F53B49] text-4xl mb-4">📋</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Гарантийное обслуживание</h3>
-              <p className="text-gray-600 mb-4">
-                Полное гарантийное обслуживание всего приобретенного у нас оборудования
-              </p>
-              <ul className="text-sm text-gray-500 space-y-1">
-                <li>• Гарантия до 3 лет</li>
-                <li>• Бесплатные профилактики</li>
-                <li>• Приоритетное обслуживание</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Contact section */}
-          <div className="bg-gray-50 rounded-lg p-8 mt-12 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Нужна помощь?</h2>
-            <p className="text-gray-600 mb-6">
-              Свяжитесь с нами для получения подробной консультации по любому из наших сервисов
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#F53B49] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#e63946] transition-colors">
-                Заказать звонок
+          {/* Tabs */}
+          <div className="flex gap-2 mb-8">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-6 py-3 rounded-lg font-medium transition-colors ${
+                  activeTab === tab.id
+                    ? 'bg-[#F53B49] text-white'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                {tab.label}
               </button>
-              <a href="tel:+78007751217" className="border border-[#F53B49] text-[#F53B49] px-6 py-3 rounded-lg font-semibold hover:bg-[#F53B49] hover:text-white transition-colors">
-                +7 (800) 775-12-17
-              </a>
-            </div>
+            ))}
           </div>
+
+          {/* Content based on active tab */}
+          {activeTab === 'service-request' && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Left side - Image and Description */}
+              <div>
+                <p className="text-gray-600 mb-6">
+                  Заполните заявку на сервис онлайн, и мы подберем наиболее удобный для вас вариант обслуживания. 
+                  Наши специалисты свяжутся с вами в кратчайшие сроки!
+                </p>
+                
+                <div className="relative">
+                  <img 
+                    src="/lovable-uploads/545dcde0-ccd7-452b-a29a-80c8a35efc1d.png"
+                    alt="Женщина тренируется в спортзале"
+                    className="w-full h-[400px] object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+
+              {/* Right side - Form */}
+              <div>
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  {/* Personal Data */}
+                  <Card>
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-semibold text-gray-900 mb-4">Личные данные</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <Input
+                          placeholder="ФИО"
+                          value={formData.fullName}
+                          onChange={(e) => handleInputChange('fullName', e.target.value)}
+                        />
+                        <Input
+                          placeholder="Телефон"
+                          value={formData.phone}
+                          onChange={(e) => handleInputChange('phone', e.target.value)}
+                        />
+                        <Input
+                          placeholder="E-mail"
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => handleInputChange('email', e.target.value)}
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Address */}
+                  <Card>
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-semibold text-gray-900 mb-4">Адрес</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <Input
+                          placeholder="Город"
+                          value={formData.city}
+                          onChange={(e) => handleInputChange('city', e.target.value)}
+                        />
+                        <Input
+                          placeholder="Улица"
+                          value={formData.street}
+                          onChange={(e) => handleInputChange('street', e.target.value)}
+                        />
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <Input
+                          placeholder="Дом"
+                          value={formData.house}
+                          onChange={(e) => handleInputChange('house', e.target.value)}
+                        />
+                        <Input
+                          placeholder="Корпус"
+                          value={formData.building}
+                          onChange={(e) => handleInputChange('building', e.target.value)}
+                        />
+                        <Input
+                          placeholder="Квартира"
+                          value={formData.apartment}
+                          onChange={(e) => handleInputChange('apartment', e.target.value)}
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Details */}
+                  <Card>
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-semibold text-gray-900 mb-4">Подробности</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                        <select className="w-full p-3 border border-gray-300 rounded-lg">
+                          <option value="">Бренд</option>
+                          <option value="technogym">Technogym</option>
+                          <option value="precor">Precor</option>
+                          <option value="matrix">Matrix</option>
+                        </select>
+                        <select className="w-full p-3 border border-gray-300 rounded-lg">
+                          <option value="">Модель</option>
+                        </select>
+                        <Input
+                          placeholder="Дата покупки"
+                          type="date"
+                          value={formData.purchaseDate}
+                          onChange={(e) => handleInputChange('purchaseDate', e.target.value)}
+                        />
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <Input
+                          placeholder="Серийный номер"
+                          value={formData.serialNumber}
+                          onChange={(e) => handleInputChange('serialNumber', e.target.value)}
+                        />
+                        <Input
+                          placeholder="Номер гарантийного талона"
+                          value={formData.warrantyNumber}
+                          onChange={(e) => handleInputChange('warrantyNumber', e.target.value)}
+                        />
+                      </div>
+                      <Textarea
+                        placeholder="Описание неисправности"
+                        value={formData.description}
+                        onChange={(e) => handleInputChange('description', e.target.value)}
+                        rows={4}
+                      />
+                    </CardContent>
+                  </Card>
+
+                  {/* File Upload */}
+                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                    <button
+                      type="button"
+                      className="text-[#F53B49] border border-[#F53B49] px-6 py-3 rounded-lg hover:bg-[#F53B49] hover:text-white transition-colors"
+                    >
+                      Загрузить файл, не больше 10 МБ
+                    </button>
+                  </div>
+
+                  {/* Submit Button */}
+                  <Button 
+                    type="submit"
+                    className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-4 text-lg font-semibold"
+                  >
+                    Отправить заявку
+                  </Button>
+                </form>
+              </div>
+            </div>
+          )}
+
+          {/* Other tab content placeholders */}
+          {activeTab !== 'service-request' && (
+            <div className="py-12 text-center">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                {tabs.find(tab => tab.id === activeTab)?.label}
+              </h2>
+              <p className="text-gray-600">Содержание этого раздела будет добавлено позже.</p>
+            </div>
+          )}
         </div>
       </main>
 
