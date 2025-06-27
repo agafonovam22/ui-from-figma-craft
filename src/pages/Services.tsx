@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -78,17 +77,15 @@ const Services: React.FC = () => {
 
           {/* Content based on active tab */}
           {activeTab === 'service-request' && (
-            <div className="flex gap-12 items-start">
+            <div className="flex gap-12 items-start min-h-[600px]">
               {/* Left side - Text and Image */}
-              <div className="flex-1 flex flex-col h-full">
+              <div className="flex-1 flex flex-col justify-between min-h-[600px]">
                 <p className="text-gray-600 mb-6">
                   Заполните заявку на сервис онлайн, и мы подберем наиболее удобный для вас вариант обслуживания. 
                   Наши специалисты свяжутся с вами в кратчайшие сроки!
                 </p>
                 
-                <div className="flex-1"></div>
-                
-                <div className="relative mt-auto">
+                <div className="mt-auto">
                   <img 
                     src="/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png"
                     alt="Женщина тренируется в спортзале"
