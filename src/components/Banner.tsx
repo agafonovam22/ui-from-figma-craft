@@ -46,7 +46,7 @@ const Banner: React.FC = () => {
                 <div className="relative">
                   <div className="w-[500px] h-[500px] bg-[#F53B49] rounded-full flex items-center justify-center">
                     <img 
-                      src="/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png"
+                      src="/lovable-uploads/91a7315e-c2c2-476d-b2c2-36a69a7817d5.png"
                       alt="Мужчина на велотренажере"
                       className="w-[400px] h-[400px] object-cover rounded-full"
                       style={{ objectPosition: 'center bottom' }}
