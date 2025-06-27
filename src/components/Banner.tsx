@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const Banner: React.FC = () => {
@@ -40,14 +41,14 @@ const Banner: React.FC = () => {
                 </button>
               </div>
               
-              {/* Правая часть с изображением - полное фото без обрезки */}
-              <div className="absolute" style={{ right: '60px', top: '30px' }}>
+              {/* Правая часть с изображением - увеличенное фото смещенное вправо */}
+              <div className="absolute" style={{ right: '45px', top: '30px' }}>
                 <div className="relative">
                   <div className="w-[500px] h-[500px] bg-[#F53B49] rounded-full flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png?v=1"
                       alt="Мужчина на беговой дорожке"
-                      className="w-[450px] h-[450px] object-contain"
+                      className="w-[480px] h-[480px] object-contain"
                       style={{ objectPosition: 'center center' }}
                       onError={(e) => {
                         console.log('Ошибка загрузки изображения:', e);
