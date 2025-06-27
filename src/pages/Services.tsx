@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import EmailSubscription from '@/components/EmailSubscription';
 
 const Services: React.FC = () => {
   return (
@@ -121,6 +122,8 @@ const Services: React.FC = () => {
         </div>
       </main>
 
+      <EmailSubscription />
+      <div className="h-[70px]"></div>
       <Footer />
     </div>
   );
