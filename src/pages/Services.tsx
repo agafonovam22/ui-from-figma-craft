@@ -78,14 +78,25 @@ const Services: React.FC = () => {
 
           {/* Content based on active tab */}
           {activeTab === 'service-request' && (
-            <div className="flex gap-12 items-end">
-              {/* Left side - Form (takes about 70% width) */}
-              <div className="flex-[0_0_70%]">
+            <div className="flex gap-12">
+              {/* Left side - Text and Image */}
+              <div className="flex-1">
                 <p className="text-gray-600 mb-6">
                   Заполните заявку на сервис онлайн, и мы подберем наиболее удобный для вас вариант обслуживания. 
                   Наши специалисты свяжутся с вами в кратчайшие сроки!
                 </p>
+                
+                <div className="relative">
+                  <img 
+                    src="/lovable-uploads/a9cdba5b-ec91-4ce6-91c8-a7ad5b270716.png"
+                    alt="Женщина тренируется в спортзале"
+                    className="w-full max-w-[400px] h-auto object-cover rounded-lg"
+                  />
+                </div>
+              </div>
 
+              {/* Right side - Form (takes about 70% width) */}
+              <div className="flex-[0_0_70%]">
                 <form onSubmit={handleSubmit} className="space-y-8">
                   {/* Personal Data */}
                   <Card>
@@ -208,17 +219,6 @@ const Services: React.FC = () => {
                     Отправить заявку
                   </Button>
                 </form>
-              </div>
-
-              {/* Right side - Image (takes remaining width) */}
-              <div className="flex-1 flex justify-end">
-                <div className="relative">
-                  <img 
-                    src="/lovable-uploads/52b103e9-b2f9-4abd-a5ac-6f7932a30414.png"
-                    alt="Женщина тренируется в спортзале"
-                    className="w-full max-w-[400px] h-auto object-cover rounded-lg"
-                  />
-                </div>
               </div>
             </div>
           )}
