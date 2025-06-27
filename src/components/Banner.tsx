@@ -41,15 +41,21 @@ const Banner: React.FC = () => {
                 </button>
               </div>
               
-              {/* Правая часть с изображением - круг частично обрезан снизу */}
+              {/* Правая часть с изображением - используем новое фото с параметром версии */}
               <div className="absolute" style={{ right: '60px', top: '30px' }}>
                 <div className="relative">
                   <div className="w-[500px] h-[500px] bg-[#F53B49] rounded-full flex items-center justify-center">
                     <img 
-                      src="/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png"
-                      alt="Мужчина на велотренажере"
-                      className="w-[400px] h-[400px] object-cover rounded-full"
-                      style={{ objectPosition: 'center bottom' }}
+                      src="/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png?v=1"
+                      alt="Мужчина на беговой дорожке"
+                      className="w-[450px] h-[450px] object-cover rounded-full"
+                      style={{ objectPosition: 'center center' }}
+                      onError={(e) => {
+                        console.log('Ошибка загрузки изображения:', e);
+                      }}
+                      onLoad={() => {
+                        console.log('Изображение успешно загружено');
+                      }}
                     />
                   </div>
                 </div>
