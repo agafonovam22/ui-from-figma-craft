@@ -1,23 +1,7 @@
 
-
-
-import React from 'react';
-import { CityButtonProps, NavigationItem, ButtonProps } from './types';
-
-const CityButton: React.FC<CityButtonProps> = ({ city, onClick }) => (
-  <button
-    onClick={onClick}
-    className="flex items-center gap-1.5 hover:opacity-80 transition-opacity"
-    aria-label={`Выбрать город: ${city}`}
-  >
-    <span className="text-white text-sm font-normal leading-[14px]">
-      {city}
-    </span>
-    <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4.5 6.5L8.39711 0.5H0.602886L4.5 6.5Z" fill="white" />
-    </svg>
-  </button>
-);
+import React, { useState } from 'react';
+import { NavigationItem, ButtonProps } from './types';
+import CitySelector from './CitySelector';
 
 const ActionButton: React.FC<ButtonProps> = ({ children, variant = 'primary', onClick, className = '' }) => {
   const baseClasses = "text-xs font-normal leading-3 gap-2.5 px-3.5 py-3 rounded-[5px] transition-colors";
@@ -39,6 +23,8 @@ const ActionButton: React.FC<ButtonProps> = ({ children, variant = 'primary', on
 };
 
 const TopMenu: React.FC = () => {
+  const [selectedCity, setSelectedCity] = useState('Москва');
+
   const navigationItems: NavigationItem[] = [
     { label: 'О компании' },
     { label: 'Бренды' },
@@ -49,10 +35,15 @@ const TopMenu: React.FC = () => {
     { label: 'Контакты' }
   ];
 
+  const handleCitySelect = (city: string) => {
+    setSelectedCity(city);
+    console.log('Selected city:', city);
+  };
+
   return (
     <header className="flex w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 lg:px-[60px] py-0 border-b border-solid border-[rgba(255,255,255,0.10)]">
       <div className="flex w-full max-w-[1800px] h-[53px] justify-between items-center gap-2 lg:gap-[50px]">
-        <CityButton city="Москва" onClick={() => console.log('City selector clicked')} />
+        <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
         
         <nav className="flex items-start gap-2 lg:gap-[25px] max-md:hidden" role="navigation" aria-label="Основная навигация">
           {navigationItems.map((item, index) => (
@@ -90,5 +81,3 @@ const TopMenu: React.FC = () => {
 };
 
 export default TopMenu;
-
-
