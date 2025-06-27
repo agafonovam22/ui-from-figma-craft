@@ -10,20 +10,24 @@ import PopularBrands from '@/components/PopularBrands';
 import Showrooms from '@/components/Showrooms';
 import NewsAndBlog from '@/components/NewsAndBlog';
 import EmailSubscription from '@/components/EmailSubscription';
+import Footer from '@/components/Footer';
 
 const Index: React.FC = () => {
   return (
-    <main className="min-h-screen bg-white flex flex-col items-center gap-[50px]">
+    <main className="min-h-screen bg-white flex flex-col items-center">
       <Header />
-      <Banner />
-      <ProductCatalog />
-      <NewProducts />
-      <PromotionsOffers />
-      <IdeasSelections />
-      <PopularBrands />
-      <Showrooms />
-      <NewsAndBlog />
+      <div className="flex flex-col gap-[50px] w-full">
+        <Banner />
+        <ProductCatalog />
+        <NewProducts />
+        <PromotionsOffers />
+        <IdeasSelections />
+        <PopularBrands />
+        <Showrooms />
+        <NewsAndBlog />
+      </div>
       <EmailSubscription />
+      <Footer />
     </main>
   );
 };
