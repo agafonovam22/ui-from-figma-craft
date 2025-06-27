@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
             {/* Каталог */}
             <div>
               <h3 className="text-[16px] font-semibold mb-4">Каталог</h3>
-              <ul className="space-y-3 text-gray-300 text-[14px]">
+              <ul className="space-y-3 text-[#778093] text-[14px]">
                 <li><a href="#" className="hover:text-white transition-colors">Для дома</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Для фитнес-клуба</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Наши бренды</a></li>
@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             {/* Поддержка */}
             <div>
               <h3 className="text-[16px] font-semibold mb-4">Поддержка</h3>
-              <ul className="space-y-3 text-gray-300 text-[14px]">
+              <ul className="space-y-3 text-[#778093] text-[14px]">
                 <li><a href="#" className="hover:text-white transition-colors">Доставка и оплата</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Условия возврата</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Гарантия</a></li>
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
             {/* О компании */}
             <div>
               <h3 className="text-[16px] font-semibold mb-4">О компании</h3>
-              <ul className="space-y-3 text-gray-300 text-[14px]">
+              <ul className="space-y-3 text-[#778093] text-[14px]">
                 <li><a href="#" className="hover:text-white transition-colors">О нас</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Миссия</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Команда</a></li>
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
             {/* Услуги */}
             <div>
               <h3 className="text-[16px] font-semibold mb-4">Услуги</h3>
-              <ul className="space-y-3 text-gray-300 text-[14px]">
+              <ul className="space-y-3 text-[#778093] text-[14px]">
                 <li><a href="#" className="hover:text-white transition-colors">3D проект</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Бизнес-конфигурирование</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Готовые решения</a></li>
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
             <div className="lg:col-span-2">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {/* Левая часть - контакты */}
-                <div className="text-gray-300 space-y-3">
+                <div className="text-[#778093] space-y-3">
                   <div>
                     <p className="text-[14px] mb-1">Для Москвы</p>
                     <p className="text-[16px] font-semibold text-white">+7 (499) 677-56-32</p>
@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
                 </div>
                 
                 {/* Правая часть */}
-                <div className="text-gray-300 space-y-4">
+                <div className="text-[#778093] space-y-4">
                   <div>
                     <p className="text-[16px] font-semibold text-white mb-2">Для дома</p>
                     <div className="flex items-center gap-2">
@@ -113,7 +113,7 @@ const Footer: React.FC = () => {
                   </div>
                   
                   <div>
-                    <p className="text-[14px] mb-2 text-gray-300">Принимаем к оплате</p>
+                    <p className="text-[14px] mb-2 text-[#778093]">Принимаем к оплате</p>
                     <div className="flex gap-1">
                       <div className="bg-white rounded px-2 py-1 text-[10px] text-black font-bold">VISA</div>
                       <div className="bg-white rounded px-2 py-1 text-[10px] text-black font-bold">VISA</div>
@@ -139,7 +139,7 @@ const Footer: React.FC = () => {
                 alt="WELL.FITNESS"
                 className="h-[48px] w-auto"
               />
-              <span className="text-gray-300 text-[13px]">© WellFitness, 2005-2024 Все права защищены</span>
+              <span className="text-[#778093] text-[13px]">© WellFitness, 2005-2024 Все права защищены</span>
             </div>
             
             {/* Links - right aligned */}
@@ -151,8 +151,8 @@ const Footer: React.FC = () => {
                 </button>
               </div>
               <div className="flex gap-6">
-                <a href="#" className="text-gray-300 text-[13px] hover:text-white transition-colors">Политика конфиденциальности</a>
-                <a href="#" className="text-gray-300 text-[13px] hover:text-white transition-colors">Публичная оферта</a>
+                <a href="#" className="text-[#778093] text-[13px] hover:text-white transition-colors">Политика конфиденциальности</a>
+                <a href="#" className="text-[#778093] text-[13px] hover:text-white transition-colors">Публичная оферта</a>
               </div>
             </div>
           </div>
