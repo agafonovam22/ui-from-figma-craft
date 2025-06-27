@@ -102,7 +102,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
       <DialogPortal>
         <DialogOverlay className="bg-black/30" />
         <DialogContent className="max-w-4xl w-full p-0 bg-white">
-          <div className="flex h-[400px]">
+          <div className="flex h-[350px]">
             {/* Left side - Popular cities (narrower) */}
             <div className="w-1/3 p-6 border-r border-gray-200">
               <h2 className="text-xl font-bold text-black mb-5">Популярные</h2>
@@ -145,7 +145,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
 
               {/* Show filtered cities in two columns when searching */}
               {searchQuery && (
-                <div className="max-h-72 overflow-y-auto">
+                <div className="max-h-60 overflow-y-auto">
                   {filteredCities.length > 0 ? (
                     <div className="grid grid-cols-2 gap-x-4">
                       {/* Left column */}
