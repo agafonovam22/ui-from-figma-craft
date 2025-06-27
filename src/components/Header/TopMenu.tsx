@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { NavigationItem, ButtonProps } from './types';
 import CitySelector from './CitySelector';
 import CallRequestDialog from './CallRequestDialog';
@@ -29,7 +30,7 @@ const TopMenu: React.FC = () => {
   const navigationItems: NavigationItem[] = [
     { label: 'О компании' },
     { label: 'Бренды' },
-    { label: 'Сервис' },
+    { label: 'Сервис', href: '/services' },
     { label: 'Услуги' },
     { label: 'Поддержка' },
     { label: 'Где купить' },
@@ -48,14 +49,24 @@ const TopMenu: React.FC = () => {
         
         <nav className="flex items-start gap-2 lg:gap-[25px] max-md:hidden" role="navigation" aria-label="Основная навигация">
           {navigationItems.map((item, index) => (
-            <a
-              key={index}
-              href={item.href || '#'}
-              className="text-[#5C6476] text-xs font-normal leading-3 hover:text-white transition-colors whitespace-nowrap"
-              onClick={item.onClick}
-            >
-              {item.label}
-            </a>
+            item.href ? (
+              <Link
+                key={index}
+                to={item.href}
+                className="text-[#5C6476] text-xs font-normal leading-3 hover:text-white transition-colors whitespace-nowrap"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={index}
+                href={item.href || '#'}
+                className="text-[#5C6476] text-xs font-normal leading-3 hover:text-white transition-colors whitespace-nowrap"
+                onClick={item.onClick}
+              >
+                {item.label}
+              </a>
+            )
           ))}
         </nav>
 
