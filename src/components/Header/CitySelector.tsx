@@ -65,6 +65,12 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
     setSearchQuery('');
   };
 
+  const handleSearch = () => {
+    if (filteredCities.length > 0) {
+      handleCitySelect(filteredCities[0]);
+    }
+  };
+
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
@@ -80,10 +86,10 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
           </svg>
         </button>
       </DialogTrigger>
-      <DialogContent className="max-w-2xl w-full p-0 bg-white">
+      <DialogContent className="max-w-4xl w-full p-0 bg-white">
         <div className="flex h-[250px]">
-          {/* Left side - Popular cities */}
-          <div className="w-1/2 p-6 border-r border-gray-200">
+          {/* Left side - Popular cities (narrower) */}
+          <div className="w-1/3 p-6 border-r border-gray-200">
             <h2 className="text-xl font-bold text-black mb-6">Популярные</h2>
             <div className="space-y-3">
               {popularCities.map((city) => (
@@ -100,24 +106,24 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
             </div>
           </div>
 
-          {/* Right side - Search */}
-          <div className="w-1/2 p-6">
+          {/* Right side - Search (wider) */}
+          <div className="w-2/3 p-6">
             <h2 className="text-xl font-bold text-black mb-6">Выберите город</h2>
             
-            <div className="relative mb-4">
+            <div className="flex gap-3 mb-4">
               <Input
                 type="text"
                 placeholder="Введите название города"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-4 pr-12 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
+                className="flex-1 px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
+                onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
               />
               <Button
-                variant="ghost"
-                size="icon"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-[#F53B49]"
+                onClick={handleSearch}
+                className="px-6 py-3 bg-[#F53B49] hover:bg-[#e63946] text-white rounded-lg font-medium"
               >
-                <Search className="h-5 w-5" />
+                Найти
               </Button>
             </div>
 
