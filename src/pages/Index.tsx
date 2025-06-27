@@ -2,12 +2,14 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Banner from '@/components/Banner';
+import ProductCatalog from '@/components/ProductCatalog';
 
 const Index: React.FC = () => {
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col items-center gap-[50px]">
       <Header />
       <Banner />
+      <ProductCatalog />
       
       <section className="container mx-auto px-4 py-12">
         <div className="text-center">
