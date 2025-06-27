@@ -81,7 +81,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
         </button>
       </DialogTrigger>
       <DialogContent className="max-w-2xl w-full p-0 bg-white">
-        <div className="flex h-[350px]">
+        <div className="flex h-[250px]">
           {/* Left side - Popular cities */}
           <div className="w-1/2 p-6 border-r border-gray-200">
             <h2 className="text-xl font-bold text-black mb-6">Популярные</h2>
@@ -123,7 +123,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
 
             {/* Show filtered cities only when searching */}
             {searchQuery && (
-              <div className="max-h-48 overflow-y-auto">
+              <div className="max-h-32 overflow-y-auto">
                 {filteredCities.length > 0 ? (
                   filteredCities.map((city) => (
                     <button
