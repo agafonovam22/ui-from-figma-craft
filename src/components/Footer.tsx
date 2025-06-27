@@ -121,16 +121,11 @@ const Footer: React.FC = () => {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
             {/* Logo and copyright - left aligned */}
             <div className="flex flex-col items-start gap-4">
-              <div className="flex items-center">
-                <div className="text-2xl font-bold">
-                  <span className="text-white">WELL</span>
-                  <span className="text-[#F53B49]">.</span>
-                  <span className="text-[#F53B49]">FITNESS</span>
-                </div>
-              </div>
-              <div className="text-xs text-gray-400 uppercase tracking-wider">
-                DISTRIBUTION • RETAIL • CLUBS
-              </div>
+              <img 
+                src="/lovable-uploads/c0d88562-7d2a-4b3e-84b1-f6a4d6cb029b.png" 
+                alt="WELL.FITNESS"
+                className="h-auto"
+              />
               <span className="text-gray-300 text-sm">© WellFitness, 2005-2024 Все права защищены</span>
             </div>
             
