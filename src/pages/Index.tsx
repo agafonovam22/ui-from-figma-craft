@@ -27,6 +27,7 @@ const Index: React.FC = () => {
         <NewsAndBlog />
       </div>
       <EmailSubscription />
+      <div className="h-[70px]"></div>
       <Footer />
     </main>
   );
