@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import EmailSubscription from '@/components/EmailSubscription';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -555,7 +554,6 @@ const Services: React.FC = () => {
         </div>
       </main>
 
-      <EmailSubscription />
       <div className="h-[70px]"></div>
       <Footer />
     </div>
