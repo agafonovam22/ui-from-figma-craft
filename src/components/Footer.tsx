@@ -56,57 +56,70 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Контакты Москва */}
-            <div>
-              <h3 className="text-[16px] font-semibold mb-4">Для Москвы</h3>
-              <div className="text-gray-300 space-y-3">
-                <p className="text-[16px] font-semibold text-white">+7 (499) 677-56-32</p>
-                <div className="flex items-center gap-1">
-                  <div className="w-3 h-3 bg-gray-600 rounded-full flex items-center justify-center">
-                    <span className="text-[7px]">VK</span>
+            {/* Контакты */}
+            <div className="lg:col-span-2">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {/* Левая часть - контакты */}
+                <div className="text-gray-300 space-y-3">
+                  <div>
+                    <p className="text-[14px] mb-1">Для Москвы</p>
+                    <p className="text-[16px] font-semibold text-white">+7 (499) 677-56-32</p>
                   </div>
-                  <div className="w-3 h-3 bg-gray-600 rounded-full flex items-center justify-center">
-                    <span className="text-[7px]">TG</span>
+                  <div>
+                    <p className="text-[14px] mb-1">Для России</p>
+                    <p className="text-[16px] font-semibold text-white">+7 (800) 775-12-17</p>
                   </div>
-                  <div className="w-3 h-3 bg-gray-600 rounded-full flex items-center justify-center">
-                    <span className="text-[7px]">YT</span>
+                  <div>
+                    <p className="text-[14px] mb-1">E-mail</p>
+                    <p className="text-white text-[14px]">info@wellfitness.ru</p>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Контакты Россия */}
-            <div>
-              <h3 className="text-[16px] font-semibold mb-4">Для дома</h3>
-              <div className="text-gray-300 space-y-3">
-                <p className="text-[14px]">Для России</p>
-                <p className="text-[16px] font-semibold text-white">+7 (800) 775-12-17</p>
-                <p className="text-[14px]">Для дома</p>
-                <p className="text-[14px]">E-mail</p>
-                <p className="text-white text-[14px]">info@wellfitness.ru</p>
-                <div className="flex items-center gap-1">
-                  <div className="w-3 h-3 bg-gray-600 rounded-full flex items-center justify-center">
-                    <span className="text-[7px]">VK</span>
-                  </div>
-                  <div className="w-3 h-3 bg-gray-600 rounded-full flex items-center justify-center">
-                    <span className="text-[7px]">TG</span>
-                  </div>
-                  <div className="w-3 h-3 bg-gray-600 rounded-full flex items-center justify-center">
-                    <span className="text-[7px]">YT</span>
+                  <div className="mt-4">
+                    <button className="bg-[#F53B49] text-white px-4 py-2 rounded hover:bg-[#e63946] transition-colors text-[14px]">
+                      Заказать звонок
+                    </button>
                   </div>
                 </div>
-                <div className="mt-3">
-                  <button className="bg-[#F53B49] text-white px-3 py-2 rounded hover:bg-[#e63946] transition-colors text-[14px]">
-                    Заказать звонок
-                  </button>
-                </div>
-                <div className="mt-3">
-                  <p className="text-[14px] mb-2">Принимаем к оплате</p>
-                  <div className="flex gap-0.5">
-                    <div className="w-5 h-2.5 bg-white rounded text-[7px] flex items-center justify-center text-black font-bold">VISA</div>
-                    <div className="w-5 h-2.5 bg-white rounded text-[7px] flex items-center justify-center text-black font-bold">VISA</div>
-                    <div className="w-5 h-2.5 bg-white rounded text-[7px] flex items-center justify-center text-black font-bold">VISA</div>
-                    <div className="w-5 h-2.5 bg-white rounded text-[7px] flex items-center justify-center text-black font-bold">VISA</div>
+                
+                {/* Правая часть */}
+                <div className="text-gray-300 space-y-4">
+                  <div>
+                    <p className="text-[16px] font-semibold text-white mb-2">Для дома</p>
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
+                        <span className="text-[10px] text-white font-bold">VK</span>
+                      </div>
+                      <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
+                        <span className="text-[10px] text-white font-bold">TG</span>
+                      </div>
+                      <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
+                        <span className="text-[10px] text-white font-bold">YT</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <p className="text-[16px] font-semibold text-white mb-2">Для дома</p>
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
+                        <span className="text-[10px] text-white font-bold">VK</span>
+                      </div>
+                      <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
+                        <span className="text-[10px] text-white font-bold">TG</span>
+                      </div>
+                      <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
+                        <span className="text-[10px] text-white font-bold">YT</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <p className="text-[14px] mb-2 text-gray-300">Принимаем к оплате</p>
+                    <div className="flex gap-1">
+                      <div className="bg-white rounded px-2 py-1 text-[10px] text-black font-bold">VISA</div>
+                      <div className="bg-white rounded px-2 py-1 text-[10px] text-black font-bold">VISA</div>
+                      <div className="bg-white rounded px-2 py-1 text-[10px] text-black font-bold">VISA</div>
+                      <div className="bg-white rounded px-2 py-1 text-[10px] text-black font-bold">VISA</div>
+                    </div>
                   </div>
                 </div>
               </div>
