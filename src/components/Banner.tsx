@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const Banner: React.FC = () => {
@@ -48,7 +49,7 @@ const Banner: React.FC = () => {
                       src="/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png?v=1"
                       alt="Мужчина на беговой дорожке"
                       className="w-[430px] h-[430px] object-contain"
-                      style={{ objectPosition: 'center center' }}
+                      style={{ objectPosition: 'center right', transform: 'translateX(10px)' }}
                       onError={(e) => {
                         console.log('Ошибка загрузки изображения:', e);
                       }}
