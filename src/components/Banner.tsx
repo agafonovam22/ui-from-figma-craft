@@ -41,7 +41,7 @@ const Banner: React.FC = () => {
               </div>
               
               {/* Правая часть с изображением - уменьшенный круг */}
-              <div className="absolute" style={{ right: '30px', top: '30px' }}>
+              <div className="absolute" style={{ right: '60px', top: '30px' }}>
                 <div className="relative">
                   <div className="w-[450px] h-[450px] bg-[#F53B49] rounded-full flex items-center justify-center">
                     <img 
