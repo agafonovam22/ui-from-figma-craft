@@ -110,18 +110,18 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
           <div className="w-2/3 p-6">
             <h2 className="text-xl font-bold text-black mb-6">Выберите город</h2>
             
-            <div className="flex gap-3 mb-4">
+            <div className="relative mb-4">
               <Input
                 type="text"
                 placeholder="Введите название города"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="flex-1 px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
+                className="w-full pr-16 px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
                 onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
               />
               <Button
                 onClick={handleSearch}
-                className="px-6 py-3 bg-[#F53B49] hover:bg-[#e63946] text-white rounded-lg font-medium"
+                className="absolute right-1 top-1/2 transform -translate-y-1/2 w-12 h-10 bg-gray-400 hover:bg-gray-500 text-white rounded-md p-0 flex items-center justify-center"
               >
                 Найти
               </Button>
