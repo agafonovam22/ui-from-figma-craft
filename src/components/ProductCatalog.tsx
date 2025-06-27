@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const ProductCatalog: React.FC = () => {
@@ -52,54 +53,124 @@ const ProductCatalog: React.FC = () => {
       price: 'от 29 990 ₽',
       image: '/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png',
       category: 'elliptical'
+    },
+    {
+      id: 8,
+      title: 'Степперы',
+      price: 'от 19 990 ₽',
+      image: '/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png',
+      category: 'stepper'
+    },
+    {
+      id: 9,
+      title: 'Тренажеры для пресса',
+      price: 'от 15 990 ₽',
+      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      category: 'abs'
+    },
+    {
+      id: 10,
+      title: 'Турники и брусья',
+      price: 'от 9 990 ₽',
+      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      category: 'bars'
+    },
+    {
+      id: 11,
+      title: 'Массажеры',
+      price: 'от 12 990 ₽',
+      image: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
+      category: 'massage'
+    },
+    {
+      id: 12,
+      title: 'Коврики и маты',
+      price: 'от 2 990 ₽',
+      image: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png',
+      category: 'mats'
     }
   ];
 
   const fitnessProducts = [
     {
-      id: 8,
+      id: 13,
       title: 'Профессиональные беговые дорожки',
       price: 'от 89 990 ₽',
       image: '/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png',
       category: 'treadmill-pro'
     },
     {
-      id: 9,
+      id: 14,
       title: 'Мультистанции',
       price: 'от 159 990 ₽',
       image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
       category: 'multistation'
     },
     {
-      id: 10,
+      id: 15,
       title: 'Коммерческие велотренажеры',
       price: 'от 79 990 ₽',
       image: '/lovable-uploads/31e0c62c-257c-4fe3-96b0-d53a4a23f8ca.png',
       category: 'bike-commercial'
     },
     {
-      id: 11,
+      id: 16,
       title: 'Силовые рамы',
       price: 'от 129 990 ₽',
       image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
       category: 'power-rack'
     },
     {
-      id: 12,
+      id: 17,
       title: 'Кардио зона',
       price: 'от 199 990 ₽',
       image: '/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png',
       category: 'cardio-zone'
     },
     {
-      id: 13,
+      id: 18,
       title: 'Функциональные тренажеры',
       price: 'от 89 990 ₽',
       image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
       category: 'functional'
     },
     {
-      id: 14,
+      id: 19,
+      title: 'Профессиональные эллипсоиды',
+      price: 'от 119 990 ₽',
+      image: '/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png',
+      category: 'elliptical-pro'
+    },
+    {
+      id: 20,
+      title: 'Тренажеры для реабилитации',
+      price: 'от 99 990 ₽',
+      image: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
+      category: 'rehabilitation'
+    },
+    {
+      id: 21,
+      title: 'Системы TRX',
+      price: 'от 39 990 ₽',
+      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      category: 'trx'
+    },
+    {
+      id: 22,
+      title: 'Профессиональные гребные',
+      price: 'от 149 990 ₽',
+      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      category: 'rowing-pro'
+    },
+    {
+      id: 23,
+      title: 'Кроссфит оборудование',
+      price: 'от 69 990 ₽',
+      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      category: 'crossfit'
+    },
+    {
+      id: 24,
       title: 'Аксессуары для фитнес-клуба',
       price: 'от 9 990 ₽',
       image: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png',
@@ -108,13 +179,6 @@ const ProductCatalog: React.FC = () => {
   ];
 
   const currentProducts = activeFilter === 'home' ? homeProducts : fitnessProducts;
-
-  const specialProduct = {
-    title: activeFilter === 'home' ? 'Готовые решения для дома' : 'Полное оснащение фитнес-клуба',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
-    buttonText: 'Перейти в каталог',
-    image: '/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png'
-  };
 
   return (
     <section className="w-full py-16 bg-white">
@@ -153,9 +217,9 @@ const ProductCatalog: React.FC = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-6">
-          {/* Первые 7 товаров в стандартном размере */}
-          {currentProducts.slice(0, 7).map((product) => (
+        {/* Первый ряд - 6 карточек */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 mb-6">
+          {currentProducts.slice(0, 6).map((product) => (
             <div key={product.id} className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer">
               <div className="aspect-square mb-4 flex items-center justify-center">
                 <img 
@@ -166,54 +230,31 @@ const ProductCatalog: React.FC = () => {
               </div>
               <h3 className="text-lg font-medium text-[#262631] mb-2">{product.title}</h3>
               <p className="text-gray-600 text-sm mb-4">{product.price}</p>
-              {product.id === 1 || product.id === 8 ? (
+              {(product.id === 1 || product.id === 13) && (
                 <button className="bg-[#262631] text-white px-4 py-2 rounded text-sm hover:bg-gray-800 transition-colors">
                   Перейти →
                 </button>
-              ) : null}
+              )}
             </div>
           ))}
         </div>
         
-        {/* Вторая строка со специальным блоком и оставшимися товарами */}
-        {currentProducts.length > 7 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-6 mt-6">
-            {/* Специальный блок - занимает 2 колонки */}
-            <div className="lg:col-span-2 bg-[#3A3A45] rounded-lg p-8 text-white relative overflow-hidden">
-              <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-4">{specialProduct.title}</h3>
-                <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
-                  {specialProduct.description}
-                </p>
-                <button className="bg-white text-[#262631] px-6 py-3 rounded font-medium hover:bg-gray-100 transition-colors">
-                  {specialProduct.buttonText} →
-                </button>
-              </div>
-              <div className="absolute right-0 top-0 w-1/2 h-full">
+        {/* Второй ряд - 6 карточек */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+          {currentProducts.slice(6, 12).map((product) => (
+            <div key={product.id} className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="aspect-square mb-4 flex items-center justify-center">
                 <img 
-                  src={specialProduct.image}
-                  alt="Специальное предложение"
-                  className="w-full h-full object-contain opacity-20"
+                  src={product.image} 
+                  alt={product.title}
+                  className="w-full h-full object-contain"
                 />
               </div>
+              <h3 className="text-lg font-medium text-[#262631] mb-2">{product.title}</h3>
+              <p className="text-gray-600 text-sm">{product.price}</p>
             </div>
-            
-            {/* Остальные товары */}
-            {currentProducts.slice(7).map((product) => (
-              <div key={product.id} className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer">
-                <div className="aspect-square mb-4 flex items-center justify-center">
-                  <img 
-                    src={product.image} 
-                    alt={product.title}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <h3 className="text-lg font-medium text-[#262631] mb-2">{product.title}</h3>
-                <p className="text-gray-600 text-sm">{product.price}</p>
-              </div>
-            ))}
-          </div>
-        )}
+          ))}
+        </div>
         
         {/* Кнопка "Показать все" */}
         <div className="mt-12 flex justify-start">
