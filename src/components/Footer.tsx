@@ -122,7 +122,7 @@ const Footer: React.FC = () => {
             {/* Logo and copyright - left aligned */}
             <div className="flex flex-col items-start gap-4">
               <img 
-                src="/lovable-uploads/c0d88562-7d2a-4b3e-84b1-f6a4d6cb029b.png" 
+                src="/lovable-uploads/d50cad00-318e-48ea-96f2-b94cab77942b.png" 
                 alt="WELL.FITNESS"
                 className="h-auto"
               />
