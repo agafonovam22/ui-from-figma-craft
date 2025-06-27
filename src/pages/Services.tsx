@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -51,7 +52,7 @@ const Services: React.FC = () => {
           {/* Breadcrumb */}
           <div className="text-sm text-gray-500 mb-8">
             <span>Сервис</span>
-            <span className="mx-2">></span>
+            <span className="mx-2">{'>'}</span>
             <span>Оставить заявку на сервис</span>
           </div>
 
@@ -77,25 +78,14 @@ const Services: React.FC = () => {
 
           {/* Content based on active tab */}
           {activeTab === 'service-request' && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Left side - Image and Description */}
-              <div>
+            <div className="flex gap-12 items-end">
+              {/* Left side - Form (takes about 70% width) */}
+              <div className="flex-[0_0_70%]">
                 <p className="text-gray-600 mb-6">
                   Заполните заявку на сервис онлайн, и мы подберем наиболее удобный для вас вариант обслуживания. 
                   Наши специалисты свяжутся с вами в кратчайшие сроки!
                 </p>
-                
-                <div className="relative">
-                  <img 
-                    src="/lovable-uploads/545dcde0-ccd7-452b-a29a-80c8a35efc1d.png"
-                    alt="Женщина тренируется в спортзале"
-                    className="w-full h-[400px] object-cover rounded-lg"
-                  />
-                </div>
-              </div>
 
-              {/* Right side - Form */}
-              <div>
                 <form onSubmit={handleSubmit} className="space-y-8">
                   {/* Personal Data */}
                   <Card>
@@ -218,6 +208,17 @@ const Services: React.FC = () => {
                     Отправить заявку
                   </Button>
                 </form>
+              </div>
+
+              {/* Right side - Image (takes remaining width) */}
+              <div className="flex-1 flex justify-end">
+                <div className="relative">
+                  <img 
+                    src="/lovable-uploads/52b103e9-b2f9-4abd-a5ac-6f7932a30414.png"
+                    alt="Женщина тренируется в спортзале"
+                    className="w-full max-w-[400px] h-auto object-cover rounded-lg"
+                  />
+                </div>
               </div>
             </div>
           )}
