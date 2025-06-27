@@ -48,6 +48,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
     'Хабаровск',
     'Ярославль',
     'Владивосток',
+    'Владимир',
     'Махачкала',
     'Томск',
     'Оренбург',
@@ -62,8 +63,9 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
     'Мытищи'
   ];
 
+  // Изменяем фильтрацию - теперь ищем города, которые НАЧИНАЮТСЯ с введенного текста
   const filteredCities = allCities.filter(city =>
-    city.toLowerCase().includes(searchQuery.toLowerCase())
+    city.toLowerCase().startsWith(searchQuery.toLowerCase())
   );
 
   const handleCitySelect = (city: string) => {
