@@ -96,12 +96,12 @@ const Services: React.FC = () => {
 
               {/* Right side - Form (takes about 70% width) */}
               <div className="flex-[0_0_70%]">
-                <form onSubmit={handleSubmit} className="space-y-8">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   {/* Personal Data */}
                   <Card>
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">Личные данные</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <CardContent className="p-4">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">Личные данные</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                         <Input
                           placeholder="ФИО"
                           value={formData.fullName}
@@ -124,9 +124,9 @@ const Services: React.FC = () => {
 
                   {/* Address */}
                   <Card>
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">Адрес</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <CardContent className="p-4">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">Адрес</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
                         <Input
                           placeholder="Город"
                           value={formData.city}
@@ -138,7 +138,7 @@ const Services: React.FC = () => {
                           onChange={(e) => handleInputChange('street', e.target.value)}
                         />
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                         <Input
                           placeholder="Дом"
                           value={formData.house}
@@ -160,9 +160,9 @@ const Services: React.FC = () => {
 
                   {/* Details */}
                   <Card>
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">Подробности</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <CardContent className="p-4">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">Подробности</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
                         <select className="w-full p-3 border border-gray-300 rounded-lg">
                           <option value="">Бренд</option>
                           <option value="technogym">Technogym</option>
@@ -179,7 +179,7 @@ const Services: React.FC = () => {
                           onChange={(e) => handleInputChange('purchaseDate', e.target.value)}
                         />
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
                         <Input
                           placeholder="Серийный номер"
                           value={formData.serialNumber}
@@ -195,16 +195,16 @@ const Services: React.FC = () => {
                         placeholder="Описание неисправности"
                         value={formData.description}
                         onChange={(e) => handleInputChange('description', e.target.value)}
-                        rows={4}
+                        rows={3}
                       />
                     </CardContent>
                   </Card>
 
                   {/* File Upload */}
-                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
                     <button
                       type="button"
-                      className="text-[#F53B49] border border-[#F53B49] px-6 py-3 rounded-lg hover:bg-[#F53B49] hover:text-white transition-colors"
+                      className="text-[#F53B49] border border-[#F53B49] px-6 py-2 rounded-lg hover:bg-[#F53B49] hover:text-white transition-colors"
                     >
                       Загрузить файл, не больше 10 МБ
                     </button>
@@ -213,7 +213,7 @@ const Services: React.FC = () => {
                   {/* Submit Button */}
                   <Button 
                     type="submit"
-                    className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-4 text-lg font-semibold"
+                    className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-3 text-lg font-semibold"
                   >
                     Отправить заявку
                   </Button>
