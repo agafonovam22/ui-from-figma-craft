@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const ProductCatalog: React.FC = () => {
@@ -121,29 +120,35 @@ const ProductCatalog: React.FC = () => {
     <section className="w-full py-16 bg-white">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
         <div className="flex items-center gap-8 mb-12">
-          <h2 className="text-4xl font-bold text-[#262631]">
+          <h2 className="text-2xl font-bold text-[#262631]">
             Каталог продукции
           </h2>
           <div className="flex items-center gap-6">
             <button
               onClick={() => setActiveFilter('home')}
-              className={`text-lg font-medium transition-colors ${
+              className={`text-lg font-medium transition-colors relative ${
                 activeFilter === 'home'
                   ? 'text-[#F53B49]'
                   : 'text-gray-500 hover:text-[#262631]'
               }`}
             >
               Тренажеры для дома
+              {activeFilter === 'home' && (
+                <div className="absolute bottom-[-4px] left-0 right-0 h-[2px] bg-[#F53B49]"></div>
+              )}
             </button>
             <button
               onClick={() => setActiveFilter('fitness')}
-              className={`text-lg font-medium transition-colors ${
+              className={`text-lg font-medium transition-colors relative ${
                 activeFilter === 'fitness'
                   ? 'text-[#F53B49]'
                   : 'text-gray-500 hover:text-[#262631]'
               }`}
             >
               Фитнес клуба
+              {activeFilter === 'fitness' && (
+                <div className="absolute bottom-[-4px] left-0 right-0 h-[2px] bg-[#F53B49]"></div>
+              )}
             </button>
           </div>
         </div>
