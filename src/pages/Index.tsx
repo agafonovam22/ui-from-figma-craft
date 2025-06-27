@@ -8,6 +8,7 @@ import PromotionsOffers from '@/components/PromotionsOffers';
 import IdeasSelections from '@/components/IdeasSelections';
 import PopularBrands from '@/components/PopularBrands';
 import Showrooms from '@/components/Showrooms';
+import NewsAndBlog from '@/components/NewsAndBlog';
 
 const Index: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const Index: React.FC = () => {
       <IdeasSelections />
       <PopularBrands />
       <Showrooms />
+      <NewsAndBlog />
       
       <section className="container mx-auto px-4 py-12 bg-white">
         <div className="text-center">
