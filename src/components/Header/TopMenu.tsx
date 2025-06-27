@@ -69,9 +69,9 @@ const TopMenu: React.FC = () => {
         </div>
 
         <div className="flex items-end gap-2 max-sm:hidden">
-          <ActionButton variant="primary" onClick={() => console.log('Phone clicked')}>
+          <a href="tel:+78007751217" className="text-xs font-normal leading-3 gap-2.5 px-3.5 py-3 rounded-[5px] transition-colors text-white hover:bg-white/10">
             +7 (800) 775-12-17
-          </ActionButton>
+          </a>
           <CallRequestDialog>
             <ActionButton variant="danger">
               Заказать звонок
