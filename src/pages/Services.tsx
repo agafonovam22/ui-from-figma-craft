@@ -78,9 +78,9 @@ const Services: React.FC = () => {
 
           {/* Content based on active tab */}
           {activeTab === 'service-request' && (
-            <div className="flex gap-12">
+            <div className="flex gap-12 items-end">
               {/* Left side - Text and Image */}
-              <div className="flex-1">
+              <div className="flex-1 flex flex-col justify-between">
                 <p className="text-gray-600 mb-6">
                   Заполните заявку на сервис онлайн, и мы подберем наиболее удобный для вас вариант обслуживания. 
                   Наши специалисты свяжутся с вами в кратчайшие сроки!
@@ -88,7 +88,7 @@ const Services: React.FC = () => {
                 
                 <div className="relative">
                   <img 
-                    src="/lovable-uploads/a9cdba5b-ec91-4ce6-91c8-a7ad5b270716.png"
+                    src="/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png"
                     alt="Женщина тренируется в спортзале"
                     className="w-full max-w-[400px] h-auto object-cover rounded-lg"
                   />
