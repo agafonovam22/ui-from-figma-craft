@@ -257,7 +257,7 @@ const ProductCatalog: React.FC = () => {
         </div>
         
         {/* Кнопка "Показать все" */}
-        <div className="mt-12 flex justify-start">
+        <div className="mt-8 flex justify-start">
           <button className="border-2 border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors">
             Показать все
           </button>
