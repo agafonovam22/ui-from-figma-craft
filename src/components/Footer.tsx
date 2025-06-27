@@ -124,7 +124,7 @@ const Footer: React.FC = () => {
               <img 
                 src="/lovable-uploads/d50cad00-318e-48ea-96f2-b94cab77942b.png" 
                 alt="WELL.FITNESS"
-                className="h-auto w-32"
+                className="h-[28px] w-auto"
               />
               <span className="text-gray-300 text-sm">© WellFitness, 2005-2024 Все права защищены</span>
             </div>
