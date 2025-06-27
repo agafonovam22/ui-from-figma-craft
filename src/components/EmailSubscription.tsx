@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -57,11 +58,11 @@ const EmailSubscription: React.FC = () => {
               {/* Right side - Image */}
               <div className="absolute" style={{ right: '60px', top: '30px' }}>
                 <div className="relative">
-                  <div className="w-[500px] h-[500px] rounded-full bg-gray-500 overflow-hidden flex items-center justify-center">
+                  <div className="w-[600px] h-[600px] rounded-full bg-gray-500 overflow-hidden flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/32484ced-ddd4-4761-9855-fa657187f020.png"
                       alt="Мужчина тренируется на велотренажере"
-                      className="w-[500px] h-[500px] object-contain"
+                      className="w-[600px] h-[600px] object-contain"
                       style={{ objectPosition: 'center right', transform: 'translateX(30px)' }}
                     />
                   </div>
@@ -76,3 +77,4 @@ const EmailSubscription: React.FC = () => {
 };
 
 export default EmailSubscription;
+
