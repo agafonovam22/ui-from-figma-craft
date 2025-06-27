@@ -86,7 +86,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
           </svg>
         </button>
       </DialogTrigger>
-      <DialogContent className="max-w-4xl w-full p-0 bg-white">
+      <DialogContent className="max-w-4xl w-full p-0 bg-white" overlayClassName="bg-black/30">
         <div className="flex h-[250px]">
           {/* Left side - Popular cities (narrower) */}
           <div className="w-1/3 p-6 border-r border-gray-200">
