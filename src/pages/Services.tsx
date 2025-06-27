@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
+import { Play } from 'lucide-react';
 
 const Services: React.FC = () => {
   const [activeTab, setActiveTab] = useState('service-request');
@@ -35,6 +36,9 @@ const Services: React.FC = () => {
     organization: ''
   });
 
+  // Video instructions filter state
+  const [selectedFilter, setSelectedFilter] = useState('Все');
+
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
@@ -60,6 +64,63 @@ const Services: React.FC = () => {
     { id: 'video-instructions', label: 'Видео-инструкции', active: false }
   ];
 
+  const filterCategories = [
+    'Все',
+    'Беговые дорожки',
+    'Эллиптические тренажеры',
+    'Велотренажеры',
+    'Гребные тренажеры',
+    'Силовые тренажеры'
+  ];
+
+  const videoInstructions = [
+    {
+      id: 1,
+      title: 'Видео инструкция тренажеры Nautilus',
+      thumbnail: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png'
+    },
+    {
+      id: 2,
+      title: 'Видео инструкция тренажеры Nautilus',
+      thumbnail: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png'
+    },
+    {
+      id: 3,
+      title: 'Видео инструкция тренажеры Nautilus',
+      thumbnail: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png'
+    },
+    {
+      id: 4,
+      title: 'Видео инструкция тренажеры Nautilus',
+      thumbnail: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png'
+    },
+    {
+      id: 5,
+      title: 'Видео инструкция тренажеры Nautilus',
+      thumbnail: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png'
+    },
+    {
+      id: 6,
+      title: 'Видео инструкция тренажеры Nautilus',
+      thumbnail: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png'
+    },
+    {
+      id: 7,
+      title: 'Видео инструкция тренажеры Nautilus',
+      thumbnail: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png'
+    },
+    {
+      id: 8,
+      title: 'Видео инструкция тренажеры Nautilus',
+      thumbnail: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png'
+    },
+    {
+      id: 9,
+      title: 'Видео инструкция тренажеры Nautilus',
+      thumbnail: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -71,13 +132,17 @@ const Services: React.FC = () => {
             <span>Сервис</span>
             <span className="mx-2">{'>'}</span>
             <span>
-              {activeTab === 'fitness-clubs' ? 'Обслуживание фитнес клубов' : 'Оставить заявку на сервис'}
+              {activeTab === 'fitness-clubs' ? 'Обслуживание фитнес клубов' : 
+               activeTab === 'video-instructions' ? 'Видео-инструкции' :
+               'Оставить заявку на сервис'}
             </span>
           </div>
 
           {/* Page Title */}
           <h1 className="text-4xl font-bold text-gray-900 mb-8">
-            {activeTab === 'fitness-clubs' ? 'Обслуживание фитнес клубов' : 'Оставить заявку на сервис'}
+            {activeTab === 'fitness-clubs' ? 'Обслуживание фитнес клубов' : 
+             activeTab === 'video-instructions' ? 'Видео-инструкции' :
+             'Оставить заявку на сервис'}
           </h1>
 
           {/* Tabs */}
@@ -100,7 +165,6 @@ const Services: React.FC = () => {
           {/* Service Request Tab Content */}
           {activeTab === 'service-request' && (
             <div className="flex gap-12 items-stretch">
-              {/* Left side - Text and Image */}
               <div className="flex-1 flex flex-col min-h-[800px]">
                 <p className="text-gray-600 mb-6">
                   Заполните заявку на сервис онлайн, и мы подберем наиболее удобный для вас вариант обслуживания. 
@@ -116,7 +180,6 @@ const Services: React.FC = () => {
                 />
               </div>
 
-              {/* Right side - Form (takes about 70% width) */}
               <div className="flex-[0_0_70%]">
                 <form onSubmit={handleSubmit} className="space-y-5">
                   {/* Personal Data */}
@@ -405,12 +468,87 @@ const Services: React.FC = () => {
             </div>
           )}
 
-          {/* Other tab content placeholders */}
-          {activeTab !== 'service-request' && activeTab !== 'fitness-clubs' && (
+          {/* Video Instructions Tab Content */}
+          {activeTab === 'video-instructions' && (
+            <div className="flex gap-8">
+              {/* Filter Sidebar */}
+              <div className="w-64 flex-shrink-0">
+                <div className="space-y-6">
+                  {/* Filter Categories */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Фильтр</h3>
+                    <div className="space-y-2">
+                      {filterCategories.map((category) => (
+                        <button
+                          key={category}
+                          onClick={() => setSelectedFilter(category)}
+                          className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                            selectedFilter === category
+                              ? 'bg-gray-800 text-white'
+                              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                          }`}
+                        >
+                          {category}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="space-y-3">
+                    <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white">
+                      Применить
+                    </Button>
+                    <Button variant="outline" className="w-full">
+                      Сбросить
+                    </Button>
+                  </div>
+
+                  {/* Advertisement Block */}
+                  <div className="bg-gray-800 text-white p-6 rounded-lg">
+                    <h3 className="text-xl font-bold mb-4">Место для рекламы</h3>
+                    <p className="text-sm text-gray-300 mb-4">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                    </p>
+                    <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white">
+                      Перейти
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Video Grid */}
+              <div className="flex-1">
+                <div className="grid grid-cols-3 gap-6">
+                  {videoInstructions.map((video) => (
+                    <div key={video.id} className="relative group cursor-pointer">
+                      <div className="relative overflow-hidden rounded-lg">
+                        <img
+                          src={video.thumbnail}
+                          alt={video.title}
+                          className="w-full h-48 object-cover transition-transform group-hover:scale-105"
+                        />
+                        {/* Play Button Overlay */}
+                        <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                          <div className="bg-white bg-opacity-90 rounded-full p-3">
+                            <Play className="w-6 h-6 text-[#F53B49] fill-current" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="mt-3">
+                        <h4 className="font-medium text-gray-900">{video.title}</h4>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Instructions Tab Content Placeholder */}
+          {activeTab === 'instructions' && (
             <div className="py-12 text-center">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                {tabs.find(tab => tab.id === activeTab)?.label}
-              </h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Инструкции</h2>
               <p className="text-gray-600">Содержание этого раздела будет добавлено позже.</p>
             </div>
           )}
