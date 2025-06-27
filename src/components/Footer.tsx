@@ -129,7 +129,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom section with #17171E background */}
-      <div className="bg-[#17171E] py-8">
+      <div className="bg-[#17171E] py-6">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
             {/* Logo and copyright - left aligned */}
