@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const Project: React.FC = () => {
   return (
@@ -408,6 +409,109 @@ const Project: React.FC = () => {
                     Качественная защитная<br />
                     сеть
                   </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-16 bg-white">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <h2 className="text-3xl font-bold text-[#17171E] mb-12">
+              Вопрос-ответ
+            </h2>
+            
+            <Accordion type="single" collapsible className="space-y-4">
+              {/* First FAQ Item - Expanded by default */}
+              <AccordionItem value="item-1" className="border border-gray-200 rounded-lg px-6">
+                <AccordionTrigger className="text-left text-base font-medium text-gray-800 hover:no-underline py-6">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?
+                </AccordionTrigger>
+                <AccordionContent className="pb-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-600 leading-relaxed">
+                    <div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                    </div>
+                    <div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                    </div>
+                    <div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-4 text-sm text-gray-600 leading-relaxed">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Second FAQ Item */}
+              <AccordionItem value="item-2" className="border border-gray-200 rounded-lg px-6">
+                <AccordionTrigger className="text-left text-base font-medium text-gray-800 hover:no-underline py-6">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?
+                </AccordionTrigger>
+                <AccordionContent className="pb-6">
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Third FAQ Item */}
+              <AccordionItem value="item-3" className="border border-gray-200 rounded-lg px-6">
+                <AccordionTrigger className="text-left text-base font-medium text-gray-800 hover:no-underline py-6">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?
+                </AccordionTrigger>
+                <AccordionContent className="pb-6">
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </section>
+
+        {/* Final Text and Image Section */}
+        <section className="py-16 bg-gray-100">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="bg-white rounded-lg overflow-hidden shadow-sm">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                {/* Left side - Text content */}
+                <div className="p-8 lg:p-12">
+                  <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  </h2>
+                  
+                  <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Right side - Image */}
+                <div className="relative">
+                  <img 
+                    src="/lovable-uploads/18faacf7-e430-4d02-a07c-914de261e587.png"
+                    alt="Спортивное оборудование"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
