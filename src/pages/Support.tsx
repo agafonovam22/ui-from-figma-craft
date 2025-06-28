@@ -10,6 +10,12 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Link } from 'react-router-dom';
 
 const Support: React.FC = () => {
@@ -523,9 +529,79 @@ const Support: React.FC = () => {
 
           {activeTab === 'faq' && (
             <div className="space-y-6">
-              <h3 className="text-2xl font-semibold">Часто задаваемые вопросы</h3>
-              <div className="prose max-w-none">
-                <p>Здесь будут ответы на часто задаваемые вопросы.</p>
+              <div className="mb-8">
+                <p className="text-gray-700 mb-8 leading-relaxed">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua? Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                
+                <p className="text-gray-700 mb-8 leading-relaxed">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+
+              <Accordion type="single" collapsible className="w-full space-y-4">
+                <AccordionItem value="item-1" className="border border-gray-200 rounded-lg px-4">
+                  <AccordionTrigger className="text-left hover:no-underline py-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua? Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua? Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua? Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2" className="border border-gray-200 rounded-lg px-4">
+                  <AccordionTrigger className="text-left hover:no-underline py-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua? Ut enim
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3" className="border border-gray-200 rounded-lg px-4">
+                  <AccordionTrigger className="text-left hover:no-underline py-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-0">
+                    Lorem ipsum dolor sit amet
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className="border border-gray-200 rounded-lg px-4">
+                  <AccordionTrigger className="text-left hover:no-underline py-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-0">
+                    Lorem ipsum
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-5" className="border border-gray-200 rounded-lg px-4">
+                  <AccordionTrigger className="text-left hover:no-underline py-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-0">
+                    Lorem ipsum dolor sit amet
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-6" className="border border-gray-200 rounded-lg px-4">
+                  <AccordionTrigger className="text-left hover:no-underline py-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-0">
+                    Lorem ipsum dolor sit amet, consectetur
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+
+              <div className="flex gap-4 mt-8">
+                <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors">
+                  Сервис
+                </button>
+                <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded hover:bg-gray-50 transition-colors">
+                  Помощь покупателю
+                </button>
               </div>
             </div>
           )}
