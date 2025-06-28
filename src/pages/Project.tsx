@@ -415,8 +415,38 @@ const Project: React.FC = () => {
           </div>
         </section>
 
-        {/* FAQ Section */}
+        {/* Recommendations Section */}
         <section className="py-16 bg-white">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="border-2 border-red-300 rounded-lg p-12 bg-red-50">
+              <h2 className="text-3xl font-bold text-[#17171E] mb-8">
+                Рекомендации
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-600 text-sm leading-relaxed">
+                <div className="space-y-4">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="mt-6 text-gray-600 text-sm leading-relaxed">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-16 bg-gray-50">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <h2 className="text-3xl font-bold text-[#17171E] mb-12">
               Вопрос-ответ
@@ -481,97 +511,34 @@ const Project: React.FC = () => {
           </div>
         </section>
 
-        {/* Trampoline Section */}
-        <section className="py-16 bg-gray-50">
+        {/* Bottom Banner from Main Page */}
+        <section className="w-full bg-[#F53B49] py-16">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Left side - Trampoline image */}
-              <div className="relative">
-                <img 
-                  src="/lovable-uploads/f872751c-f187-4794-b1d8-66d545afba51.png"
-                  alt="Батуты на заднем дворе"
-                  className="w-full h-[400px] object-cover rounded-lg"
-                />
-              </div>
-
-              {/* Right side - Text content */}
-              <div className="space-y-6">
-                <h2 className="text-3xl font-bold text-gray-700 mb-6">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            <div className="flex items-center justify-between">
+              {/* Left side - Text content */}
+              <div className="flex-1 max-w-2xl">
+                <h2 className="text-white text-4xl font-bold mb-6 leading-tight">
+                  Получите консультацию<br />
+                  наших специалистов
                 </h2>
-                
-                <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
+                <p className="text-white/90 text-lg mb-8 leading-relaxed">
+                  Наши эксперты помогут вам выбрать идеальное спортивное оборудование
+                  для ваших целей и бюджета
+                </p>
+                <button className="bg-white text-[#F53B49] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                  Получить консультацию
+                </button>
               </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Final Text and Image Section */}
-        <section className="py-16 bg-gray-100">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="bg-white rounded-lg overflow-hidden shadow-sm">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                {/* Left side - Text content */}
-                <div className="p-8 lg:p-12">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                  </h2>
-                  
-                  <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Right side - Image */}
+              {/* Right side - Image */}
+              <div className="hidden lg:block flex-shrink-0 ml-12">
                 <div className="relative">
                   <img 
-                    src="/lovable-uploads/18faacf7-e430-4d02-a07c-914de261e587.png"
+                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop"
                     alt="Спортивное оборудование"
-                    className="w-full h-full object-cover"
+                    className="w-[400px] h-[300px] object-cover rounded-lg"
                   />
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Recommendations Section - Moved to the very end */}
-        <section className="py-16 bg-white">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="border-2 border-red-300 rounded-lg p-12 bg-red-50">
-              <h2 className="text-3xl font-bold text-[#17171E] mb-8">
-                Рекомендации
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-600 text-sm leading-relaxed">
-                <div className="space-y-4">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-                <div className="space-y-4">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="mt-6 text-gray-600 text-sm leading-relaxed">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
               </div>
             </div>
           </div>
