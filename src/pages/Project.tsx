@@ -1,0 +1,206 @@
+import React from 'react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { Link } from 'react-router-dom';
+
+const Project: React.FC = () => {
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+      
+      <main className="w-full">
+        {/* Breadcrumb and Title */}
+        <section className="py-8">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            {/* Breadcrumb */}
+            <div className="mb-8">
+              <span className="text-gray-400 text-sm">
+                <Link to="/" className="hover:text-gray-600">Главная</Link> → 
+                <Link to="/about" className="hover:text-gray-600"> О компании</Link> → 
+                Lorem Ipsum
+              </span>
+            </div>
+            
+            {/* Main Title */}
+            <h1 className="text-[40px] font-bold text-[#17171E] mb-8 leading-tight">
+              Lorem Ipsum
+            </h1>
+          </div>
+        </section>
+
+        {/* Banner - keeping the same banner from About page */}
+        <section className="w-full">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="bg-gray-100 overflow-hidden relative" style={{ height: '300px' }}>
+              <div className="py-12 relative h-full">
+                <div className="flex items-center justify-between h-full">
+                  {/* Левая часть с текстом */}
+                  <div className="flex-1 max-w-lg z-10" style={{ paddingTop: '40px', paddingLeft: '60px' }}>
+                    <div className="mb-6">
+                      <span 
+                        className="text-sm tracking-[3.78px] uppercase"
+                        style={{ 
+                          color: '#F53B49',
+                          fontWeight: 400,
+                          lineHeight: '110%'
+                        }}
+                      >
+                        ZERO RUNNER
+                      </span>
+                    </div>
+                    
+                    <h1 
+                      className="text-4xl mb-6 leading-tight"
+                      style={{
+                        color: '#262631',
+                        fontWeight: 400,
+                        lineHeight: '105%'
+                      }}
+                    >
+                      Бег с нулевой<br />
+                      ударной нагрузкой<br />
+                      на суставы
+                    </h1>
+                    
+                    <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors">
+                      Узнать больше
+                    </button>
+                  </div>
+                  
+                  {/* Правая часть с изображением */}
+                  <div className="absolute" style={{ right: '60px', top: '10px' }}>
+                    <div className="relative">
+                      <div className="w-[350px] h-[350px] bg-[#F53B49] rounded-full flex items-center justify-center">
+                        <img 
+                          src="/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png?v=1"
+                          alt="Мужчина на беговой дорожке"
+                          className="w-[350px] h-[350px] object-contain"
+                          style={{ objectPosition: 'center right', transform: 'translateX(20px)' }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Навигационные точки */}
+                <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                  <div className="w-8 h-1 bg-[#F53B49] rounded"></div>
+                  <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                  <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                  <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                </div>
+              </div>
+              
+              {/* Стрелки навигации */}
+              <button className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors z-20">
+                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 5L1 9" stroke="#262631" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              
+              <button className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors z-20">
+                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 9L1 5L5 1" stroke="#262631" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Project Content */}
+        <section className="py-16">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Left side - Image */}
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop"
+                  alt="Lorem Ipsum project"
+                  className="w-full h-[400px] object-cover rounded-lg"
+                />
+              </div>
+
+              {/* Right side - Content */}
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold text-[#17171E] mb-6">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </h2>
+                
+                <div className="space-y-4 text-gray-700">
+                  <p className="leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  
+                  <p className="leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 mt-8">
+                  <p className="text-gray-700 leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  
+                  <p className="text-gray-700 leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Bottom section with text and images */}
+        <section className="py-16">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-[#17171E] mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </h3>
+              <p className="text-gray-700 leading-relaxed max-w-4xl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+
+            {/* Images grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="h-[200px] bg-gray-200 rounded-lg overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=300&h=200&fit=crop"
+                  alt="Project image 1"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="h-[200px] bg-gray-200 rounded-lg overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=300&h=200&fit=crop"
+                  alt="Project image 2"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="h-[200px] bg-gray-200 rounded-lg overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=200&fit=crop"
+                  alt="Project image 3"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="h-[200px] bg-gray-200 rounded-lg overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop"
+                  alt="Project image 4"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      
+      <div className="h-[70px]"></div>
+      <Footer />
+    </div>
+  );
+};
+
+export default Project;
