@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -64,6 +63,69 @@ const About: React.FC = () => {
       description: 'Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение',
       phone: '+7 900 000-00-00',
       email: 'info@wellfitness.ru'
+    }
+  ];
+
+  const projects = [
+    {
+      id: 1,
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+      title: "Lorem Ipsum",
+      description: "представляем тренажеры Nautilus 626 серии"
+    },
+    {
+      id: 2,
+      image: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400&h=300&fit=crop",
+      title: "Lorem Ipsum", 
+      description: "представляем тренажеры Nautilus 626 серии"
+    },
+    {
+      id: 3,
+      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop",
+      title: "Lorem Ipsum",
+      description: "представляем тренажеры Nautilus 626 серии"
+    },
+    {
+      id: 4,
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
+      title: "Lorem Ipsum",
+      description: "представляем тренажеры Nautilus 626 серии"
+    },
+    {
+      id: 5,
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
+      title: "Lorem Ipsum",
+      description: "представляем тренажеры Nautilus 626 серии"
+    },
+    {
+      id: 6,
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop",
+      title: "Lorem Ipsum",
+      description: "представляем тренажеры Nautilus 626 серии"
+    },
+    {
+      id: 7,
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop",
+      title: "Lorem Ipsum",
+      description: "представляем тренажеры Nautilus 626 серии"
+    },
+    {
+      id: 8,
+      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=300&fit=crop",
+      title: "Lorem Ipsum",
+      description: "представляем тренажеры Nautilus 626 серии"
+    },
+    {
+      id: 9,
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+      title: "Lorem Ipsum",
+      description: "представляем тренажеры Nautilus 626 серии"
+    },
+    {
+      id: 10,
+      image: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400&h=300&fit=crop",
+      title: "Lorem Ipsum",
+      description: "представляем тренажеры Nautilus 626 серии"
     }
   ];
 
@@ -262,6 +324,46 @@ const About: React.FC = () => {
                         </div>
                         <div className="flex items-center gap-2">
                           <span className="text-[#F53B49] text-sm">{member.email}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {activeTab === 'projects' && (
+          <section className="py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+                {projects.map((project) => (
+                  <div key={project.id} className="relative rounded-lg overflow-hidden group cursor-pointer">
+                    <div className="aspect-[4/3] relative">
+                      <img 
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                      
+                      {/* Content overlay */}
+                      <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
+                        <div>
+                          <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                          <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-sm">
+                            {project.description}
+                          </div>
+                        </div>
+                        
+                        <div className="flex justify-start">
+                          <button className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors flex items-center gap-2">
+                            Перейти
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </button>
                         </div>
                       </div>
                     </div>
