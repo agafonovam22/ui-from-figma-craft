@@ -8,11 +8,10 @@ const About: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <Banner />
       
       <main className="w-full">
-        {/* Hero Section */}
-        <section className="py-16">
+        {/* Breadcrumb and Title */}
+        <section className="py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             {/* Breadcrumb */}
             <div className="mb-8">
@@ -20,96 +19,69 @@ const About: React.FC = () => {
             </div>
             
             {/* Main Title */}
-            <h1 className="text-[80px] font-bold text-[#17171E] mb-16 leading-tight">
+            <h1 className="text-[80px] font-bold text-[#17171E] mb-8 leading-tight">
               О КОМПАНИИ
             </h1>
-            
-            <div className="flex flex-col lg:flex-row items-start gap-12">
-              {/* Left side - Text and navigation */}
-              <div className="flex-1">
-                <h2 className="text-[48px] font-normal text-[#17171E] mb-8 leading-tight">
-                  Well Fitness — <span className="text-[#F53B49]">надёжный партнёр с 2005 года</span><br />
-                  для сотен компаний<br />
-                  от Калининграда<br />
-                  до Владивостока.
-                </h2>
-                
-                {/* Navigation tabs */}
-                <div className="flex gap-4 mb-8">
-                  <button className="bg-[#F53B49] text-white px-6 py-3 rounded text-sm font-medium">
-                    О нас
-                  </button>
-                  <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-50 transition-colors">
-                    Наша миссия
-                  </button>
-                  <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-50 transition-colors">
-                    Наша команда
-                  </button>
-                  <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-50 transition-colors">
-                    Наши проекты
-                  </button>
-                  <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-50 transition-colors">
-                    Новости
-                  </button>
-                </div>
-              </div>
-              
-              {/* Right side - Image */}
-              <div className="flex-1">
-                <img 
-                  src="/lovable-uploads/c79ce5b4-e65e-4374-8f85-8614962b7c3e.png" 
-                  alt="Тренажерный зал с оборудованием" 
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
+          </div>
+        </section>
+
+        {/* Banner - same as homepage */}
+        <Banner />
+        
+        {/* Navigation tabs */}
+        <section className="py-8">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="flex gap-4">
+              <button className="bg-[#F53B49] text-white px-6 py-3 rounded text-sm font-medium">
+                О нас
+              </button>
+              <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-50 transition-colors">
+                Наша миссия
+              </button>
+              <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-50 transition-colors">
+                Наша команда
+              </button>
+              <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-50 transition-colors">
+                Наши проекты
+              </button>
+              <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-50 transition-colors">
+                Новости
+              </button>
             </div>
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-16">
+        {/* Statistics Banner - same size as main banner */}
+        <section className="w-full">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="flex flex-col lg:flex-row items-center gap-12">
-              {/* Left side - Image */}
-              <div className="flex-1">
-                <img 
-                  src="/lovable-uploads/949b1384-82af-4a1c-bbc2-e4f225491933.png" 
-                  alt="Девушка в спортивной одежде" 
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
-              
-              {/* Right side - Stats */}
-              <div className="flex-1 bg-white p-8 rounded-lg border border-gray-200">
-                <p className="text-gray-600 mb-12 text-lg leading-relaxed">
-                  За годы успешного развития нам удалось консолидировать в своем ассортименте 
-                  продукцию лучших мировых брендов, собрать команду профессионалов, 
-                  завоевать доверие десятков тысяч лояльных покупателей и стать настоящим лидером 
-                  рынка.
-                </p>
-                
-                <div className="grid grid-cols-2 gap-8">
-                  <div>
-                    <div className="text-[48px] font-bold text-[#17171E] mb-2">2005</div>
-                    <div className="text-gray-600">Год появления на рынке</div>
+            <div className="bg-gray-100 overflow-hidden relative" style={{ height: '400px' }}>
+              <div className="py-12 relative h-full">
+                <div className="flex items-center justify-between h-full">
+                  {/* Statistics content */}
+                  <div className="flex-1 z-10" style={{ paddingTop: '60px', paddingLeft: '60px' }}>
+                    <div className="grid grid-cols-3 gap-8 max-w-lg">
+                      <div>
+                        <div className="text-[48px] font-bold text-[#17171E] mb-2">2005</div>
+                        <div className="text-gray-600 text-sm">Год появления на рынке</div>
+                      </div>
+                      <div>
+                        <div className="text-[48px] font-bold text-[#17171E] mb-2">10 000+</div>
+                        <div className="text-gray-600 text-sm">Складских помещений</div>
+                      </div>
+                      <div>
+                        <div className="text-[48px] font-bold text-[#17171E] mb-2">60+</div>
+                        <div className="text-gray-600 text-sm">Квалифицированных сотрудников</div>
+                      </div>
+                      <div>
+                        <div className="text-[48px] font-bold text-[#17171E] mb-2">20+</div>
+                        <div className="text-gray-600 text-sm">Ведущих мировых брендов</div>
+                      </div>
+                      <div>
+                        <div className="text-[48px] font-bold text-[#17171E] mb-2">3000+</div>
+                        <div className="text-gray-600 text-sm">SKU</div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-[48px] font-bold text-[#17171E] mb-2">10 000+</div>
-                    <div className="text-gray-600">Складских помещений</div>
-                  </div>
-                  <div>
-                    <div className="text-[48px] font-bold text-[#17171E] mb-2">60+</div>
-                    <div className="text-gray-600">Квалифицированных сотредников</div>
-                  </div>
-                  <div>
-                    <div className="text-[48px] font-bold text-[#17171E] mb-2">20+</div>
-                    <div className="text-gray-600">Ведущих мировых брендов</div>
-                  </div>
-                </div>
-                
-                <div className="mt-8">
-                  <div className="text-[48px] font-bold text-[#17171E] mb-2">3000+</div>
-                  <div className="text-gray-600">SKU</div>
                 </div>
               </div>
             </div>
