@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
@@ -116,12 +117,12 @@ const Account: React.FC = () => {
 
               {/* Forgot Password */}
               <div className="text-left">
-                <button
-                  type="button"
+                <Link
+                  to="/password-reset"
                   className="text-sm text-[#007BFF] hover:underline"
                 >
                   Забыли пароль? Восстановить
-                </button>
+                </Link>
               </div>
 
               {/* Login Button */}
