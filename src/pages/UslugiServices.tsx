@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
 const UslugiServices: React.FC = () => {
   const [activeTab, setActiveTab] = useState('3d-project');
@@ -110,6 +110,53 @@ const UslugiServices: React.FC = () => {
       subtitle: 'представляем тренажеры Nautilus G2G серии',
       buttonText: 'представляем тренажеры Nautilus G2G серии',
       image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+    }
+  ];
+
+  const installmentPlans = [
+    {
+      id: 1,
+      plan: '0-0-12',
+      bank: 'Тинькофф',
+      monthlyPayment: '5 000 ₽',
+      overpayment: 'нет',
+      term: '0 - 6',
+      rate: 'Ставка от 21,5%',
+      firstPayment: 'Первый взнос 0%',
+      duration: 'Срок 12 месяцев'
+    },
+    {
+      id: 2,
+      plan: '0-0-6',
+      bank: 'Тинькофф',
+      monthlyPayment: '5 000 ₽',
+      overpayment: 'нет',
+      term: '0 - 6',
+      rate: 'Ставка от 21,5%',
+      firstPayment: 'Первый взнос 0%',
+      duration: 'Срок 12 месяцев'
+    },
+    {
+      id: 3,
+      plan: '0-0-6',
+      bank: 'Сбербанк',
+      monthlyPayment: '5 000 ₽',
+      overpayment: 'нет',
+      term: '0 - 6',
+      rate: 'Ставка от 21,5%',
+      firstPayment: 'Первый взнос 0%',
+      duration: 'Срок 12 месяцев'
+    },
+    {
+      id: 4,
+      plan: '0-0-6',
+      bank: 'Сбербанк',
+      monthlyPayment: '5 000 ₽',
+      overpayment: 'нет',
+      term: '0 - 6',
+      rate: 'Ставка от 21,5%',
+      firstPayment: 'Первый взнос 0%',
+      duration: 'Срок 12 месяцев'
     }
   ];
 
@@ -252,8 +299,95 @@ const UslugiServices: React.FC = () => {
             </div>
           )}
 
+          {/* Installment Tab Content */}
+          {activeTab === 'installment' && (
+            <div className="space-y-8">
+              <div className="flex flex-col lg:flex-row gap-8">
+                {/* Left side - Text content */}
+                <div className="flex-1">
+                  <h2 className="text-4xl font-bold text-gray-900 mb-6">В рассрочку</h2>
+                  
+                  <div className="space-y-4 text-gray-600 mb-8">
+                    <p>
+                      Оформить кредит на сайте — быстро и легко. При оформлении заказа в корзине укажите способ 
+                      оплаты «Кредит».
+                    </p>
+                    <p>
+                      Вы будете перенаправлены на сайт банка для заполнения анкеты. После заполнения анкеты с вами 
+                      свяжется представитель банка. Вашу заявку рассмотрят в течение 20—30 минут.
+                    </p>
+                    <p>
+                      Также вы можете оформить рассрочку или кредит в любом магазине, сделав заказ на самовывоз. 
+                      Пожалуйста, будьте готовы предоставить паспорт при получении кредита. Также банки вправе 
+                      потребовать иные дополнительные документы и подтверждение доходов заемщика.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Right side - Image */}
+                <div className="flex-1">
+                  <img 
+                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop"
+                    alt="Спортивное оборудование"
+                    className="w-full h-64 lg:h-80 object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+
+              {/* Installment Table */}
+              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="bg-gray-50">
+                      <TableHead className="font-semibold text-gray-900">Рассрочка</TableHead>
+                      <TableHead className="font-semibold text-gray-900">Ежемесячный платеж</TableHead>
+                      <TableHead className="font-semibold text-gray-900">Переплата</TableHead>
+                      <TableHead className="font-semibold text-gray-900">Срок</TableHead>
+                      <TableHead className="font-semibold text-gray-900"></TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {installmentPlans.map((plan) => (
+                      <TableRow key={plan.id} className="hover:bg-gray-50">
+                        <TableCell>
+                          <div>
+                            <div className="font-semibold text-gray-900">{plan.plan}</div>
+                            <div className="text-sm text-gray-600">{plan.bank}</div>
+                          </div>
+                        </TableCell>
+                        <TableCell className="font-semibold">{plan.monthlyPayment}</TableCell>
+                        <TableCell>{plan.overpayment}</TableCell>
+                        <TableCell>{plan.term}</TableCell>
+                        <TableCell>
+                          <div className="flex flex-wrap gap-2">
+                            <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                              {plan.rate}
+                            </span>
+                            <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                              {plan.firstPayment}
+                            </span>
+                            <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                              {plan.duration}
+                            </span>
+                          </div>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+
+              {/* Submit Button */}
+              <div className="flex justify-start">
+                <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 text-lg font-semibold rounded-lg">
+                  Оставить заявку
+                </Button>
+              </div>
+            </div>
+          )}
+
           {/* Other tabs content placeholders */}
-          {activeTab !== '3d-project' && (
+          {activeTab !== '3d-project' && activeTab !== 'installment' && (
             <div className="py-16 text-center">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 {tabs.find(tab => tab.id === activeTab)?.label}
