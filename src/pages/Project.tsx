@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -131,6 +132,73 @@ const Project: React.FC = () => {
                   alt="Lorem Ipsum project"
                   className="w-full h-[400px] object-cover rounded-lg"
                 />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* First additional section - Text left, Image right */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              {/* Left side - Text content in dotted border box */}
+              <div className="border-2 border-dashed border-blue-300 p-8 bg-white">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </h2>
+                
+                <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                  <p>
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right side - Trampolines image */}
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=400&fit=crop"
+                  alt="Батуты"
+                  className="w-full h-[300px] object-cover rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Second additional section - Image left, Extended text right */}
+        <section className="py-16">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              {/* Left side - Woman image */}
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=500&fit=crop"
+                  alt="Женщина с ноутбуком"
+                  className="w-full h-[500px] object-cover rounded-lg"
+                />
+              </div>
+
+              {/* Right side - Extended text content in bordered box */}
+              <div className="border-2 border-solid border-black p-8 bg-gray-50">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                </h2>
+                
+                <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
