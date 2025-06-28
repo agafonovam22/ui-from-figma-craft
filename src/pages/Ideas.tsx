@@ -4,6 +4,14 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ArrowRight } from 'lucide-react';
 import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbPage,
+} from "@/components/ui/breadcrumb";
+import {
   Pagination,
   PaginationContent,
   PaginationItem,
@@ -11,6 +19,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { Link } from 'react-router-dom';
 
 const Ideas: React.FC = () => {
   const ideas = [
@@ -88,46 +97,76 @@ const Ideas: React.FC = () => {
     }
   ];
 
+  const renderCard = (idea: typeof ideas[0]) => (
+    <div
+      key={idea.id}
+      className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 group hover:shadow-md transition-shadow"
+    >
+      {/* Image */}
+      <div className="aspect-[4/3] overflow-hidden relative">
+        <img 
+          src={idea.image} 
+          alt={idea.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+        {/* Overlay content */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-4">
+          <h3 className="text-white font-bold text-lg mb-1">{idea.title}</h3>
+          <p className="text-white/90 text-sm mb-3">{idea.subtitle}</p>
+          
+          {idea.isSpecial ? (
+            <button className="bg-white text-gray-900 px-4 py-2 rounded font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2 w-fit">
+              {idea.buttonText}
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          ) : (
+            <button className="bg-[#F53B49] text-white px-4 py-2 rounded font-semibold hover:bg-[#e63946] transition-colors w-fit">
+              {idea.buttonText}
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <main className="min-h-screen bg-white">
       <Header />
       
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+        {/* Breadcrumbs */}
+        <Breadcrumb className="mb-6">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to="/">Главная</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Идеи и подборки</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Идеи и подборки</h1>
         
-        {/* Ideas Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {ideas.map((idea) => (
-            <div
-              key={idea.id}
-              className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 group hover:shadow-md transition-shadow"
-            >
-              {/* Image */}
-              <div className="aspect-[4/3] overflow-hidden relative">
-                <img 
-                  src={idea.image} 
-                  alt={idea.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                {/* Overlay content */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-4">
-                  <h3 className="text-white font-bold text-lg mb-1">{idea.title}</h3>
-                  <p className="text-white/90 text-sm mb-3">{idea.subtitle}</p>
-                  
-                  {idea.isSpecial ? (
-                    <button className="bg-white text-gray-900 px-4 py-2 rounded font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2 w-fit">
-                      {idea.buttonText}
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  ) : (
-                    <button className="bg-[#F53B49] text-white px-4 py-2 rounded font-semibold hover:bg-[#e63946] transition-colors w-fit">
-                      {idea.buttonText}
-                    </button>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
+        {/* Ideas Layout: 3-4-3 */}
+        <div className="mb-12">
+          {/* First row - 3 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            {ideas.slice(0, 3).map(renderCard)}
+          </div>
+          
+          {/* Second row - 4 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+            {ideas.slice(3, 7).map(renderCard)}
+          </div>
+          
+          {/* Third row - 3 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {ideas.slice(7, 10).map(renderCard)}
+          </div>
         </div>
 
         {/* Show More Button */}
