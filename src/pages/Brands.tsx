@@ -26,24 +26,24 @@ const Brands: React.FC = () => {
   ];
 
   const brands = [
-    { name: 'BowFlex', logo: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png' },
-    { name: 'kernel', logo: null },
-    { name: 'kernel', logo: null },
-    { name: 'kernel', logo: null },
-    { name: 'kernel', logo: null },
-    { name: 'kernel', logo: null },
-    { name: 'BowFlex', logo: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png' },
-    { name: 'kernel', logo: null },
-    { name: 'kernel', logo: null },
-    { name: 'kernel', logo: null },
-    { name: 'kernel', logo: null },
-    { name: 'kernel', logo: null },
-    { name: 'BowFlex', logo: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png' },
-    { name: 'kernel', logo: null },
-    { name: 'kernel', logo: null },
-    { name: 'kernel', logo: null },
-    { name: 'kernel', logo: null },
-    { name: 'kernel', logo: null }
+    { name: 'BowFlex', logo: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png', slug: 'bowflex' },
+    { name: 'kernel', logo: null, slug: 'kernel' },
+    { name: 'kernel', logo: null, slug: 'kernel' },
+    { name: 'kernel', logo: null, slug: 'kernel' },
+    { name: 'kernel', logo: null, slug: 'kernel' },
+    { name: 'kernel', logo: null, slug: 'kernel' },
+    { name: 'BowFlex', logo: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png', slug: 'bowflex' },
+    { name: 'kernel', logo: null, slug: 'kernel' },
+    { name: 'kernel', logo: null, slug: 'kernel' },
+    { name: 'kernel', logo: null, slug: 'kernel' },
+    { name: 'kernel', logo: null, slug: 'kernel' },
+    { name: 'kernel', logo: null, slug: 'kernel' },
+    { name: 'BowFlex', logo: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png', slug: 'bowflex' },
+    { name: 'kernel', logo: null, slug: 'kernel' },
+    { name: 'kernel', logo: null, slug: 'kernel' },
+    { name: 'kernel', logo: null, slug: 'kernel' },
+    { name: 'kernel', logo: null, slug: 'kernel' },
+    { name: 'kernel', logo: null, slug: 'kernel' }
   ];
 
   const toggleFilter = (filter: string) => {
@@ -122,8 +122,9 @@ const Brands: React.FC = () => {
         {/* Brands Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
           {brands.map((brand, index) => (
-            <div
+            <Link
               key={index}
+              to={`/brands/${brand.slug}`}
               className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-32 hover:shadow-md transition-shadow cursor-pointer"
             >
               {brand.logo ? (
@@ -135,7 +136,7 @@ const Brands: React.FC = () => {
               ) : (
                 <span className="text-gray-400 text-lg font-medium">{brand.name}</span>
               )}
-            </div>
+            </Link>
           ))}
         </div>
       </div>
