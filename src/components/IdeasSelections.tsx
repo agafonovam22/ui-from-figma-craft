@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const IdeasSelections: React.FC = () => {
   const ideas = [
@@ -54,7 +56,7 @@ const IdeasSelections: React.FC = () => {
           {ideas.map((idea) => (
             <div
               key={idea.id}
-              className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 group hover:shadow-md transition-shadow"
+              className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 group hover:shadow-md transition-shadow cursor-pointer"
             >
               {/* Image */}
               <div className="aspect-[4/3] overflow-hidden relative">
@@ -86,9 +88,12 @@ const IdeasSelections: React.FC = () => {
 
         {/* Show All Button */}
         <div className="flex justify-start">
-          <button className="px-6 py-3 border border-[#F53B49] text-[#F53B49] rounded-lg font-semibold hover:bg-[#F53B49] hover:text-white transition-colors">
+          <Link 
+            to="/ideas"
+            className="px-6 py-3 border border-[#F53B49] text-[#F53B49] rounded-lg font-semibold hover:bg-[#F53B49] hover:text-white transition-colors"
+          >
             Показать все
-          </button>
+          </Link>
         </div>
       </div>
     </section>
