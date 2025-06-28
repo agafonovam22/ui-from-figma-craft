@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
@@ -93,7 +92,7 @@ const PasswordReset: React.FC = () => {
                 </div>
               </>
             ) : (
-              <>
+              <div className="mx-auto">
                 <div className="flex items-start gap-8 mb-12">
                   <div className="flex-shrink-0">
                     <div className="w-24 h-24 bg-[#F53B49] rounded-full flex items-center justify-center">
@@ -116,7 +115,7 @@ const PasswordReset: React.FC = () => {
                   </div>
                 </div>
                 
-                <div className="text-left space-y-6 mb-12 max-w-3xl">
+                <div className="text-left space-y-6 mb-12 max-w-3xl mx-auto">
                   <p className="text-[#262631] text-base leading-relaxed">
                     <span className="font-medium">1.</span> Зайдите в свой почтовый ящик и найдите письмо от info@wellfitness.ru. Если вы не нашли письма, проверьте папку «Спам».
                   </p>
@@ -129,7 +128,7 @@ const PasswordReset: React.FC = () => {
                 </div>
 
                 {/* Back to Home Button */}
-                <div className="max-w-lg">
+                <div className="max-w-lg mx-auto">
                   <Button
                     onClick={() => navigate('/')}
                     className="w-full h-12 bg-[#F53B49] hover:bg-[#e63946] text-white text-base font-medium rounded-md"
@@ -137,7 +136,7 @@ const PasswordReset: React.FC = () => {
                     Вернуться на главную
                   </Button>
                 </div>
-              </>
+              </div>
             )}
           </div>
         </section>
