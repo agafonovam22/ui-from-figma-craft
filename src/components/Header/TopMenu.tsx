@@ -28,7 +28,7 @@ const TopMenu: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState('Москва');
 
   const navigationItems: NavigationItem[] = [
-    { label: 'О компании' },
+    { label: 'О компании', href: '/about' },
     { label: 'Бренды' },
     { label: 'Сервис', href: '/services' },
     { label: 'Услуги' },
