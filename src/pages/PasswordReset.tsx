@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
@@ -92,7 +93,7 @@ const PasswordReset: React.FC = () => {
                 </div>
               </>
             ) : (
-              <div className="mx-auto">
+              <div className="max-w-4xl mx-auto">
                 <div className="flex items-start gap-8 mb-12">
                   <div className="flex-shrink-0">
                     <div className="w-24 h-24 bg-[#F53B49] rounded-full flex items-center justify-center">
@@ -115,7 +116,7 @@ const PasswordReset: React.FC = () => {
                   </div>
                 </div>
                 
-                <div className="text-left space-y-6 mb-12 max-w-3xl mx-auto">
+                <div className="text-left space-y-6 mb-12 max-w-4xl">
                   <p className="text-[#262631] text-base leading-relaxed">
                     <span className="font-medium">1.</span> Зайдите в свой почтовый ящик и найдите письмо от info@wellfitness.ru. Если вы не нашли письма, проверьте папку «Спам».
                   </p>
