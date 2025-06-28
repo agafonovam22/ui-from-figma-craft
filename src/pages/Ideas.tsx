@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import EmailSubscription from '@/components/EmailSubscription';
 import { ArrowRight } from 'lucide-react';
 import {
   Breadcrumb,
@@ -201,6 +202,8 @@ const Ideas: React.FC = () => {
         </Pagination>
       </div>
 
+      <EmailSubscription />
+      <div className="h-[70px]"></div>
       <Footer />
     </main>
   );
