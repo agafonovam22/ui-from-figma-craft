@@ -337,38 +337,146 @@ const About: React.FC = () => {
         {activeTab === 'projects' && (
           <section className="py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-                {projects.map((project) => (
-                  <div key={project.id} className="relative rounded-lg overflow-hidden group cursor-pointer">
-                    <div className="aspect-[4/3] relative">
-                      <img 
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-                      
-                      {/* Content overlay */}
-                      <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
-                        <div>
-                          <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                          <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-sm">
-                            {project.description}
-                          </div>
-                        </div>
+              <div className="space-y-6">
+                {/* Первый ряд - 3 карточки */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {projects.slice(0, 3).map((project) => (
+                    <div key={project.id} className="relative rounded-lg overflow-hidden group cursor-pointer">
+                      <div className="aspect-[4/3] relative">
+                        <img 
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                         
-                        <div className="flex justify-start">
-                          <button className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors flex items-center gap-2">
-                            Перейти
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                          </button>
+                        {/* Content overlay */}
+                        <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
+                          <div>
+                            <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-sm">
+                              {project.description}
+                            </div>
+                          </div>
+                          
+                          <div className="flex justify-start">
+                            <button className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors flex items-center gap-2">
+                              Перейти
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+
+                {/* Второй ряд - 2 карточки */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {projects.slice(3, 5).map((project) => (
+                    <div key={project.id} className="relative rounded-lg overflow-hidden group cursor-pointer">
+                      <div className="aspect-[4/3] relative">
+                        <img 
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                        
+                        {/* Content overlay */}
+                        <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
+                          <div>
+                            <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-sm">
+                              {project.description}
+                            </div>
+                          </div>
+                          
+                          <div className="flex justify-start">
+                            <button className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors flex items-center gap-2">
+                              Перейти
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Третий ряд - 3 карточки */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {projects.slice(5, 8).map((project) => (
+                    <div key={project.id} className="relative rounded-lg overflow-hidden group cursor-pointer">
+                      <div className="aspect-[4/3] relative">
+                        <img 
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                        
+                        {/* Content overlay */}
+                        <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
+                          <div>
+                            <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-sm">
+                              {project.description}
+                            </div>
+                          </div>
+                          
+                          <div className="flex justify-start">
+                            <button className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors flex items-center gap-2">
+                              Перейти
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Четвертый ряд - 2 карточки */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {projects.slice(8, 10).map((project) => (
+                    <div key={project.id} className="relative rounded-lg overflow-hidden group cursor-pointer">
+                      <div className="aspect-[4/3] relative">
+                        <img 
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                        
+                        {/* Content overlay */}
+                        <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
+                          <div>
+                            <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-sm">
+                              {project.description}
+                            </div>
+                          </div>
+                          
+                          <div className="flex justify-start">
+                            <button className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors flex items-center gap-2">
+                              Перейти
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </section>
