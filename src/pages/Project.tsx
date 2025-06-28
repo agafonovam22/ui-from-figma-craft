@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -295,6 +294,121 @@ const Project: React.FC = () => {
                   alt="Спортивные тренировки"
                   className="w-full h-[500px] object-cover rounded-lg"
                 />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Long Text Section */}
+        <section className="py-16 bg-white">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="max-w-[1200px]">
+              <h2 className="text-3xl font-bold text-[#17171E] mb-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-600 text-sm leading-relaxed">
+                <div className="space-y-4">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="mt-8 text-gray-600 text-sm leading-relaxed">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Advantages Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <h2 className="text-3xl font-bold text-[#17171E] mb-12">
+              Преимущества
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Card 1 - Trampoline */}
+              <div className="bg-white rounded-lg overflow-hidden shadow-sm">
+                <div className="aspect-[4/3] relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400&h=300&fit=crop"
+                    alt="Батут"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-gray-800 text-center">
+                    2 варианта цвета<br />
+                    защитного мата
+                  </h3>
+                </div>
+              </div>
+
+              {/* Card 2 - Marina/Port */}
+              <div className="bg-white rounded-lg overflow-hidden shadow-sm">
+                <div className="aspect-[4/3] relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
+                    alt="Марина"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-gray-800 text-center">
+                    Совершенное качества<br />
+                    прыжка
+                  </h3>
+                </div>
+              </div>
+
+              {/* Card 3 - Jumping Person */}
+              <div className="bg-white rounded-lg overflow-hidden shadow-sm">
+                <div className="aspect-[4/3] relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop"
+                    alt="Прыжок"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-gray-800 text-center">
+                    Безопасный защитный<br />
+                    мат
+                  </h3>
+                </div>
+              </div>
+
+              {/* Card 4 - Trampoline in Garden */}
+              <div className="bg-white rounded-lg overflow-hidden shadow-sm">
+                <div className="aspect-[4/3] relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400&h=300&fit=crop"
+                    alt="Батут в саду"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-gray-800 text-center">
+                    Качественная защитная<br />
+                    сеть
+                  </h3>
+                </div>
               </div>
             </div>
           </div>
