@@ -169,6 +169,24 @@ const About: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* География продаж */}
+        <section className="py-8">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <h2 className="text-[40px] font-bold text-[#17171E] mb-8 leading-tight">
+              География продаж
+            </h2>
+            
+            <div className="w-full bg-white rounded-lg overflow-hidden">
+              <img 
+                src="/lovable-uploads/80ae9fd1-6366-4282-90a5-44d024b6ccac.png"
+                alt="Карта России с городами присутствия"
+                className="w-full h-auto"
+                style={{ maxHeight: '600px', objectFit: 'contain' }}
+              />
+            </div>
+          </div>
+        </section>
       </main>
       
       <div className="h-[70px]"></div>
