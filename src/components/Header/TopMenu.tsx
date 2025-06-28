@@ -29,7 +29,7 @@ const TopMenu: React.FC = () => {
 
   const navigationItems: NavigationItem[] = [
     { label: 'О компании', href: '/about' },
-    { label: 'Бренды' },
+    { label: 'Бренды', href: '/brands' },
     { label: 'Сервис', href: '/services' },
     { label: 'Услуги' },
     { label: 'Поддержка' },
