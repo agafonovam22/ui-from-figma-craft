@@ -94,33 +94,33 @@ const PasswordReset: React.FC = () => {
               </>
             ) : (
               <>
-                <div className="text-center mb-8">
-                  <div className="flex justify-center mb-6">
+                <div className="text-center">
+                  <div className="flex justify-center mb-8">
                     <div className="w-24 h-24 bg-[#F53B49] rounded-full flex items-center justify-center">
                       <Check size={48} color="white" strokeWidth={3} />
                     </div>
                   </div>
                   
-                  <h1 className="text-3xl font-bold text-[#262631] mb-6">
+                  <h1 className="text-3xl font-bold text-[#262631] mb-6 leading-tight">
                     Мы отправили вам письмо со ссылкой для восстановления пароля
                   </h1>
                   
-                  <p className="text-[#262631] mb-2">
+                  <p className="text-[#262631] mb-2 text-lg">
                     на указанный e-mail: <span className="text-[#007BFF]">{email}</span>
                   </p>
                   
-                  <p className="text-[#262631] mb-8 font-medium">
-                    Осталось сделать 3 шага:
+                  <p className="text-[#262631] mb-12 font-medium text-lg">
+                    Осталось сделать 3 шага.
                   </p>
                   
-                  <div className="text-left space-y-3 mb-8">
-                    <p className="text-[#262631]">
+                  <div className="text-left space-y-6 mb-12 max-w-md mx-auto">
+                    <p className="text-[#262631] text-base leading-relaxed">
                       <span className="font-medium">1.</span> Зайдите в свой почтовый ящик и найдите письмо от info@wellfitness.ru. Если вы не нашли письма, проверьте папку «Спам».
                     </p>
-                    <p className="text-[#262631]">
+                    <p className="text-[#262631] text-base leading-relaxed">
                       <span className="font-medium">2.</span> Перейдите по ссылке, указанной в письме.
                     </p>
-                    <p className="text-[#262631]">
+                    <p className="text-[#262631] text-base leading-relaxed">
                       <span className="font-medium">3.</span> Придумайте и введите новый пароль
                     </p>
                   </div>
