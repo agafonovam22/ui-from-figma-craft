@@ -14,6 +14,7 @@ import Brand from "./pages/Brand";
 import NewsAndBlog from "./pages/NewsAndBlog";
 import NewsArticle from "./pages/NewsArticle";
 import Account from "./pages/Account";
+import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/news" element={<NewsAndBlog />} />
           <Route path="/news/:articleSlug" element={<NewsArticle />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/register" element={<Register />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

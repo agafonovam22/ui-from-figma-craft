@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
@@ -7,20 +8,29 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Eye, EyeOff } from 'lucide-react';
 
-const Account: React.FC = () => {
-  const navigate = useNavigate();
+const Register: React.FC = () => {
   const [userType, setUserType] = useState<'buyer' | 'dealer'>('buyer');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    password: '',
+    confirmPassword: ''
+  });
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Login attempt:', { userType, email, password });
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSocialLogin = (provider: 'google' | 'facebook') => {
-    console.log(`Login with ${provider}`);
+  const handleRegister = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Registration attempt:', { userType, ...formData });
+  };
+
+  const handleSocialRegister = (provider: 'google' | 'facebook') => {
+    console.log(`Register with ${provider}`);
   };
 
   return (
@@ -40,19 +50,19 @@ const Account: React.FC = () => {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Личный кабинет</BreadcrumbPage>
+                  <BreadcrumbPage>Регистрация</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
           </div>
         </section>
 
-        {/* Login Form */}
+        {/* Registration Form */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 max-w-lg">
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-[#262631] mb-8">
-                Вход в личный кабинет
+                Регистрация
               </h1>
               
               {/* User Type Toggle */}
@@ -82,14 +92,38 @@ const Account: React.FC = () => {
               </div>
             </div>
 
-            <form onSubmit={handleLogin} className="space-y-6">
+            <form onSubmit={handleRegister} className="space-y-6">
+              {/* Full Name Input */}
+              <div>
+                <Input
+                  type="text"
+                  placeholder="ФИО"
+                  value={formData.fullName}
+                  onChange={(e) => handleInputChange('fullName', e.target.value)}
+                  className="w-full h-12 px-4 border border-gray-300 rounded-md text-base placeholder:text-gray-400"
+                  required
+                />
+              </div>
+
               {/* Email Input */}
               <div>
                 <Input
                   type="email"
                   placeholder="E-mail"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={formData.email}
+                  onChange={(e) => handleInputChange('email', e.target.value)}
+                  className="w-full h-12 px-4 border border-gray-300 rounded-md text-base placeholder:text-gray-400"
+                  required
+                />
+              </div>
+
+              {/* Phone Input */}
+              <div>
+                <Input
+                  type="tel"
+                  placeholder="Телефон"
+                  value={formData.phone}
+                  onChange={(e) => handleInputChange('phone', e.target.value)}
                   className="w-full h-12 px-4 border border-gray-300 rounded-md text-base placeholder:text-gray-400"
                   required
                 />
@@ -100,8 +134,8 @@ const Account: React.FC = () => {
                 <Input
                   type={showPassword ? "text" : "password"}
                   placeholder="Пароль"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={formData.password}
+                  onChange={(e) => handleInputChange('password', e.target.value)}
                   className="w-full h-12 px-4 pr-12 border border-gray-300 rounded-md text-base placeholder:text-gray-400"
                   required
                 />
@@ -114,34 +148,43 @@ const Account: React.FC = () => {
                 </button>
               </div>
 
-              {/* Forgot Password */}
-              <div className="text-left">
+              {/* Confirm Password Input */}
+              <div className="relative">
+                <Input
+                  type={showConfirmPassword ? "text" : "password"}
+                  placeholder="Повторите пароль"
+                  value={formData.confirmPassword}
+                  onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
+                  className="w-full h-12 px-4 pr-12 border border-gray-300 rounded-md text-base placeholder:text-gray-400"
+                  required
+                />
                 <button
                   type="button"
-                  className="text-sm text-[#007BFF] hover:underline"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 >
-                  Забыли пароль? Восстановить
+                  {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
 
-              {/* Login Button */}
+              {/* Register Button */}
               <Button
                 type="submit"
                 className="w-full h-12 bg-[#F53B49] hover:bg-[#e63946] text-white text-base font-medium rounded-md"
               >
-                Войти
+                Регистрация
               </Button>
             </form>
 
-            {/* Social Login */}
+            {/* Social Registration */}
             <div className="mt-8">
               <p className="text-center text-sm text-gray-600 mb-4">
-                Или войти с помощью
+                Или зарегистрируйтесь с помощью
               </p>
               
               <div className="flex gap-4">
                 <button
-                  onClick={() => handleSocialLogin('google')}
+                  onClick={() => handleSocialRegister('google')}
                   className="flex-1 h-12 flex items-center justify-center gap-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -154,7 +197,7 @@ const Account: React.FC = () => {
                 </button>
                 
                 <button
-                  onClick={() => handleSocialLogin('facebook')}
+                  onClick={() => handleSocialRegister('facebook')}
                   className="flex-1 h-12 flex items-center justify-center gap-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2">
@@ -165,16 +208,15 @@ const Account: React.FC = () => {
               </div>
             </div>
 
-            {/* Registration Link */}
+            {/* Login Link */}
             <div className="mt-8 text-center">
-              <p className="text-sm text-gray-600 mb-4">Нет аккаунта?</p>
-              <button
-                type="button"
-                onClick={() => navigate('/register')}
-                className="w-full h-12 border border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white transition-colors rounded-md text-base font-medium"
+              <p className="text-sm text-gray-600 mb-4">Уже есть аккаунт?</p>
+              <Link
+                to="/account"
+                className="w-full h-12 border border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white transition-colors rounded-md text-base font-medium flex items-center justify-center"
               >
-                Регистрация
-              </button>
+                Войти
+              </Link>
             </div>
           </div>
         </section>
@@ -185,4 +227,4 @@ const Account: React.FC = () => {
   );
 };
 
-export default Account;
+export default Register;
