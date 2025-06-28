@@ -1,10 +1,72 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Banner from '@/components/Banner';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const About: React.FC = () => {
+  const [activeTab, setActiveTab] = useState('about');
+
+  const teamMembers = [
+    {
+      name: 'Фамилия Имя Отчество',
+      position: 'Должность',
+      description: 'Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение',
+      phone: '+7 900 000-00-00',
+      email: 'info@wellfitness.ru'
+    },
+    {
+      name: 'Фамилия Имя Отчество',
+      position: 'Должность',
+      description: 'Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение',
+      phone: '+7 900 000-00-00',
+      email: 'info@wellfitness.ru'
+    },
+    {
+      name: 'Фамилия Имя Отчество',
+      position: 'Должность',
+      description: 'Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение',
+      phone: '+7 900 000-00-00',
+      email: 'info@wellfitness.ru'
+    },
+    {
+      name: 'Фамилия Имя Отчество',
+      position: 'Должность',
+      description: 'Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение',
+      phone: '+7 900 000-00-00',
+      email: 'info@wellfitness.ru'
+    },
+    {
+      name: 'Фамилия Имя Отчество',
+      position: 'Должность',
+      description: 'Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение',
+      phone: '+7 900 000-00-00',
+      email: 'info@wellfitness.ru'
+    },
+    {
+      name: 'Фамилия Имя Отчество',
+      position: 'Должность',
+      description: 'Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение',
+      phone: '+7 900 000-00-00',
+      email: 'info@wellfitness.ru'
+    },
+    {
+      name: 'Фамилия Имя Отчество',
+      position: 'Должность',
+      description: 'Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение',
+      phone: '+7 900 000-00-00',
+      email: 'info@wellfitness.ru'
+    },
+    {
+      name: 'Фамилия Имя Отчество',
+      position: 'Должность',
+      description: 'Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение',
+      phone: '+7 900 000-00-00',
+      email: 'info@wellfitness.ru'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -114,231 +176,312 @@ const About: React.FC = () => {
         <section className="py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="flex gap-4">
-              <button className="bg-[#F53B49] text-white px-6 py-3 rounded text-sm font-medium">
+              <button 
+                onClick={() => setActiveTab('about')}
+                className={`px-6 py-3 rounded text-sm font-medium transition-colors ${
+                  activeTab === 'about' 
+                    ? 'bg-[#F53B49] text-white' 
+                    : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                }`}
+              >
                 О нас
               </button>
-              <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-50 transition-colors">
+              <button 
+                onClick={() => setActiveTab('mission')}
+                className={`px-6 py-3 rounded text-sm font-medium transition-colors ${
+                  activeTab === 'mission' 
+                    ? 'bg-[#F53B49] text-white' 
+                    : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                }`}
+              >
                 Наша миссия
               </button>
-              <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-50 transition-colors">
+              <button 
+                onClick={() => setActiveTab('team')}
+                className={`px-6 py-3 rounded text-sm font-medium transition-colors ${
+                  activeTab === 'team' 
+                    ? 'bg-[#F53B49] text-white' 
+                    : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                }`}
+              >
                 Наша команда
               </button>
-              <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-50 transition-colors">
+              <button 
+                onClick={() => setActiveTab('projects')}
+                className={`px-6 py-3 rounded text-sm font-medium transition-colors ${
+                  activeTab === 'projects' 
+                    ? 'bg-[#F53B49] text-white' 
+                    : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                }`}
+              >
                 Наши проекты
               </button>
-              <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded text-sm font-medium hover:bg-gray-50 transition-colors">
+              <button 
+                onClick={() => setActiveTab('news')}
+                className={`px-6 py-3 rounded text-sm font-medium transition-colors ${
+                  activeTab === 'news' 
+                    ? 'bg-[#F53B49] text-white' 
+                    : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                }`}
+              >
                 Новости
               </button>
             </div>
           </div>
         </section>
 
-        {/* Statistics Banner - same size as main banner */}
-        <section className="w-full">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="bg-gray-100 overflow-hidden relative" style={{ height: '300px' }}>
-              <div className="py-12 relative h-full">
-                <div className="flex items-center justify-between h-full">
-                  {/* Statistics content */}
-                  <div className="flex-1 z-10" style={{ paddingTop: '40px', paddingLeft: '60px' }}>
-                    <div className="grid grid-cols-3 gap-8 max-w-lg">
-                      <div>
-                        <div className="text-[48px] font-bold text-[#17171E] mb-2">2005</div>
-                        <div className="text-gray-600 text-sm">Год появления на рынке</div>
+        {/* Tab Content */}
+        {activeTab === 'team' && (
+          <section className="py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {teamMembers.map((member, index) => (
+                  <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm">
+                    {/* Image placeholder with background from mockup */}
+                    <div 
+                      className="h-64 bg-cover bg-center relative"
+                      style={{
+                        backgroundImage: 'url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face")'
+                      }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                      <div className="absolute bottom-4 left-4 text-white">
+                        <h3 className="font-bold text-lg mb-1">{member.name}</h3>
                       </div>
-                      <div>
-                        <div className="text-[48px] font-bold text-[#17171E] mb-2">10 000+</div>
-                        <div className="text-gray-600 text-sm">Складских помещений</div>
+                    </div>
+                    
+                    {/* Content card */}
+                    <div className="p-4 bg-white">
+                      <h4 className="font-semibold text-gray-900 mb-2">{member.position}</h4>
+                      <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                        {member.description}
+                      </p>
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2">
+                          <span className="text-[#F53B49] text-sm font-medium">{member.phone}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-[#F53B49] text-sm">{member.email}</span>
+                        </div>
                       </div>
-                      <div>
-                        <div className="text-[48px] font-bold text-[#17171E] mb-2">60+</div>
-                        <div className="text-gray-600 text-sm">Квалифицированных сотрудников</div>
-                      </div>
-                      <div>
-                        <div className="text-[48px] font-bold text-[#17171E] mb-2">20+</div>
-                        <div className="text-gray-600 text-sm">Ведущих мировых брендов</div>
-                      </div>
-                      <div>
-                        <div className="text-[48px] font-bold text-[#17171E] mb-2">3000+</div>
-                        <div className="text-gray-600 text-sm">SKU</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {activeTab === 'about' && (
+          <>
+            {/* Statistics Banner - same size as main banner */}
+            <section className="w-full">
+              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+                <div className="bg-gray-100 overflow-hidden relative" style={{ height: '300px' }}>
+                  <div className="py-12 relative h-full">
+                    <div className="flex items-center justify-between h-full">
+                      {/* Statistics content */}
+                      <div className="flex-1 z-10" style={{ paddingTop: '40px', paddingLeft: '60px' }}>
+                        <div className="grid grid-cols-3 gap-8 max-w-lg">
+                          <div>
+                            <div className="text-[48px] font-bold text-[#17171E] mb-2">2005</div>
+                            <div className="text-gray-600 text-sm">Год появления на рынке</div>
+                          </div>
+                          <div>
+                            <div className="text-[48px] font-bold text-[#17171E] mb-2">10 000+</div>
+                            <div className="text-gray-600 text-sm">Складских помещений</div>
+                          </div>
+                          <div>
+                            <div className="text-[48px] font-bold text-[#17171E] mb-2">60+</div>
+                            <div className="text-gray-600 text-sm">Квалифицированных сотрудников</div>
+                          </div>
+                          <div>
+                            <div className="text-[48px] font-bold text-[#17171E] mb-2">20+</div>
+                            <div className="text-gray-600 text-sm">Ведущих мировых брендов</div>
+                          </div>
+                          <div>
+                            <div className="text-[48px] font-bold text-[#17171E] mb-2">3000+</div>
+                            <div className="text-gray-600 text-sm">SKU</div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
+            </section>
 
-        {/* География продаж */}
-        <section className="py-8">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <h2 className="text-[40px] font-bold text-[#17171E] mb-8 leading-tight">
-              География продаж
-            </h2>
-            
-            <div className="w-full bg-white rounded-lg overflow-hidden">
-              <img 
-                src="/lovable-uploads/80ae9fd1-6366-4282-90a5-44d024b6ccac.png"
-                alt="Карта России с городами присутствия"
-                className="w-full h-auto"
-                style={{ maxHeight: '600px', objectFit: 'contain' }}
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Мы сегодня - это */}
-        <section className="py-16">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <h2 className="text-[40px] font-bold text-[#17171E] mb-12 leading-tight">
-              Мы сегодня - это:
-            </h2>
-            
-            {/* Шесть информационных блоков */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              <div className="bg-white p-6">
-                <div className="w-16 h-16 bg-gray-200 mb-4"></div>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Слаженная команда людей, любящих спорт и здоровый образ жизни знающих свое дело и ориентирующихся во всех нюансах фитнес оборудования;
-                </p>
+            {/* География продаж */}
+            <section className="py-8">
+              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+                <h2 className="text-[40px] font-bold text-[#17171E] mb-8 leading-tight">
+                  География продаж
+                </h2>
+                
+                <div className="w-full bg-white rounded-lg overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/80ae9fd1-6366-4282-90a5-44d024b6ccac.png"
+                    alt="Карта России с городами присутствия"
+                    className="w-full h-auto"
+                    style={{ maxHeight: '600px', objectFit: 'contain' }}
+                  />
+                </div>
               </div>
+            </section>
 
-              <div className="bg-white p-6">
-                <div className="w-16 h-16 bg-gray-200 mb-4"></div>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Склад запчастей для обеспечения качественного сервиса и бесперебойной работы оборудования;
-                </p>
-              </div>
+            {/* Мы сегодня - это */}
+            <section className="py-16">
+              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+                <h2 className="text-[40px] font-bold text-[#17171E] mb-12 leading-tight">
+                  Мы сегодня - это:
+                </h2>
+                
+                {/* Шесть информационных блоков */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                  <div className="bg-white p-6">
+                    <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Слаженная команда людей, любящих спорт и здоровый образ жизни знающих свое дело и ориентирующихся во всех нюансах фитнес оборудования;
+                    </p>
+                  </div>
 
-              <div className="bg-white p-6">
-                <div className="w-16 h-16 bg-gray-200 mb-4"></div>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Строгое соблюдение всех обязательств перед партнерами;
-                </p>
-              </div>
+                  <div className="bg-white p-6">
+                    <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Склад запчастей для обеспечения качественного сервиса и бесперебойной работы оборудования;
+                    </p>
+                  </div>
 
-              <div className="bg-white p-6">
-                <div className="w-16 h-16 bg-gray-200 mb-4"></div>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Широкая номенклатура качественной продукции ведущих мировых брендов с огромным выбором товаров в наличии;
-                </p>
-              </div>
+                  <div className="bg-white p-6">
+                    <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Строгое соблюдение всех обязательств перед партнерами;
+                    </p>
+                  </div>
 
-              <div className="bg-white p-6">
-                <div className="w-16 h-16 bg-gray-200 mb-4"></div>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Полный послепродажный сервис с информационной и технической поддержкой;
-                </p>
-              </div>
+                  <div className="bg-white p-6">
+                    <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Широкая номенклатура качественной продукции ведущих мировых брендов с огромным выбором товаров в наличии;
+                    </p>
+                  </div>
 
-              <div className="bg-white p-6">
-                <div className="w-16 h-16 bg-gray-200 mb-4"></div>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Отличные цены и эксклюзивные условия для постоянных партнеров.
-                </p>
-              </div>
-            </div>
+                  <div className="bg-white p-6">
+                    <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Полный послепродажный сервис с информационной и технической поддержкой;
+                    </p>
+                  </div>
 
-            {/* Карусель изображений */}
-            <div className="relative">
-              <Carousel className="w-full">
-                <CarouselContent>
-                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                    <div className="h-[400px] bg-gray-200 rounded-lg overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop"
-                        alt="Фитнес оборудование"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                    <div className="h-[400px] bg-gray-200 rounded-lg overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop"
-                        alt="Тренировка в спортзале"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                    <div className="h-[400px] bg-gray-200 rounded-lg overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400&h=400&fit=crop"
-                        alt="Спортивная активность"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </CarouselItem>
-                </CarouselContent>
-                <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2" />
-                <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2" />
-              </Carousel>
-
-              {/* Навигационные точки */}
-              <div className="flex justify-center mt-6 gap-2">
-                <div className="w-8 h-1 bg-[#F53B49] rounded"></div>
-                <div className="w-2 h-1 bg-gray-300 rounded"></div>
-                <div className="w-2 h-1 bg-gray-300 rounded"></div>
-                <div className="w-2 h-1 bg-gray-300 rounded"></div>
-                <div className="w-2 h-1 bg-gray-300 rounded"></div>
-                <div className="w-2 h-1 bg-gray-300 rounded"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* В чем причина нашего успеха? */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <h2 className="text-[40px] font-bold text-[#17171E] mb-8 leading-tight">
-              В чем причина нашего успеха?
-            </h2>
-            
-            <p className="text-gray-700 text-base mb-12 max-w-6xl leading-relaxed">
-              На сегодняшний день в каталоге Well Fitness представлены лучшие мировые бренды спортивного оборудования, среди которых Sole Fitness, Nautilus Fitness, Bowflex, CardioPower, PROSKI Simulator, Eclipse и др. Продукция этих марок отличается безупречным балансом качества и функциональности, возглавляет ведущие мировые рейтинги и пользуется доверием покупателей по всему миру. Если вы ищете надежного поставщика спортивного оборудования - мы будем рады видеть вас в числе наших партнеров и готовы предложить лучшие условия для выгодного дилерского сотрудничества!
-            </p>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-              {/* Первый блок */}
-              <div className="relative rounded-lg overflow-hidden">
-                <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=300&fit=crop")'}}>
-                  <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <p className="text-sm leading-relaxed">
-                      Во-первых, мы особенно дорожим своей безупречной репутацией и регулярно повышаем планку качества сервиса. Знак, находясь другим может оказаться доверие покупателя, специалисты Well Fitness всегда ориентируются на интересы клиентов.
+                  <div className="bg-white p-6">
+                    <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Отличные цены и эксклюзивные условия для постоянных партнеров.
                     </p>
                   </div>
                 </div>
-              </div>
 
-              {/* Второй блок */}
-              <div className="relative rounded-lg overflow-hidden">
-                <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=300&fit=crop")'}}>
-                  <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <p className="text-sm leading-relaxed">
-                      Во-вторых, мы поставляем только самую качественную и надежную продукцию. Перед выводом на российский рынок, мы тщательно тестируем каждую модель, поэтому все предлагаемое оборудование высоко ценится покупателями и имеет минимум сервисных проблем.
-                    </p>
+                {/* Карусель изображений */}
+                <div className="relative">
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                        <div className="h-[400px] bg-gray-200 rounded-lg overflow-hidden">
+                          <img 
+                            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop"
+                            alt="Фитнес оборудование"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </CarouselItem>
+                      <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                        <div className="h-[400px] bg-gray-200 rounded-lg overflow-hidden">
+                          <img 
+                            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop"
+                            alt="Тренировка в спортзале"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </CarouselItem>
+                      <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                        <div className="h-[400px] bg-gray-200 rounded-lg overflow-hidden">
+                          <img 
+                            src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400&h=400&fit=crop"
+                            alt="Спортивная активность"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </CarouselItem>
+                    </CarouselContent>
+                    <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2" />
+                    <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2" />
+                  </Carousel>
+
+                  {/* Навигационные точки */}
+                  <div className="flex justify-center mt-6 gap-2">
+                    <div className="w-8 h-1 bg-[#F53B49] rounded"></div>
+                    <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                    <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                    <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                    <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                    <div className="w-2 h-1 bg-gray-300 rounded"></div>
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
 
-            {/* Третий блок - полная ширина */}
-            <div className="relative rounded-lg overflow-hidden">
-              <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=300&fit=crop")'}}>
-                <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white max-w-4xl">
-                  <p className="text-sm leading-relaxed">
-                    Значимость этих проблем настолько очевидна, что рамки и место обучения кадров требуют от нас анализа существенных финансовых и административных условий. С другой стороны начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.
-                  </p>
+            {/* В чем причина нашего успеха? */}
+            <section className="py-16 bg-gray-50">
+              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+                <h2 className="text-[40px] font-bold text-[#17171E] mb-8 leading-tight">
+                  В чем причина нашего успеха?
+                </h2>
+                
+                <p className="text-gray-700 text-base mb-12 max-w-6xl leading-relaxed">
+                  На сегодняшний день в каталоге Well Fitness представлены лучшие мировые бренды спортивного оборудования, среди которых Sole Fitness, Nautilus Fitness, Bowflex, CardioPower, PROSKI Simulator, Eclipse и др. Продукция этих марок отличается безупречным балансом качества и функциональности, возглавляет ведущие мировые рейтинги и пользуется доверием покупателей по всему миру. Если вы ищете надежного поставщика спортивного оборудования - мы будем рады видеть вас в числе наших партнеров и готовы предложить лучшие условия для выгодного дилерского сотрудничества!
+                </p>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                  {/* Первый блок */}
+                  <div className="relative rounded-lg overflow-hidden">
+                    <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=300&fit=crop")'}}>
+                      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                      <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <p className="text-sm leading-relaxed">
+                          Во-первых, мы особенно дорожим своей безупречной репутацией и регулярно повышаем планку качества сервиса. Знак, находясь другим может оказаться доверие покупателя, специалисты Well Fitness всегда ориентируются на интересы клиентов.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Второй блок */}
+                  <div className="relative rounded-lg overflow-hidden">
+                    <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=300&fit=crop")'}}>
+                      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                      <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <p className="text-sm leading-relaxed">
+                          Во-вторых, мы поставляем только самую качественную и надежную продукцию. Перед выводом на российский рынок, мы тщательно тестируем каждую модель, поэтому все предлагаемое оборудование высоко ценится покупателями и имеет минимум сервисных проблем.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Третий блок - полная ширина */}
+                <div className="relative rounded-lg overflow-hidden">
+                  <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=300&fit=crop")'}}>
+                    <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white max-w-4xl">
+                      <p className="text-sm leading-relaxed">
+                        Значимость этих проблем настолько очевидна, что рамки и место обучения кадров требуют от нас анализа существенных финансовых и административных условий. С другой стороны начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
+            </section>
+          </>
+        )}
       </main>
       
       <div className="h-[70px]"></div>
