@@ -107,11 +107,24 @@ const Project: React.FC = () => {
           </div>
         </section>
 
-        {/* Project Content */}
+        {/* Main Content - Text left, Large image right */}
         <section className="py-16">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Left side - Image */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              {/* Left side - Text content */}
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold text-[#17171E] mb-6">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </h2>
+                
+                <div className="space-y-6 text-gray-700">
+                  <p className="leading-relaxed text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right side - Single large image */}
               <div className="relative">
                 <img 
                   src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop"
@@ -119,49 +132,13 @@ const Project: React.FC = () => {
                   className="w-full h-[400px] object-cover rounded-lg"
                 />
               </div>
-
-              {/* Right side - Content */}
-              <div className="space-y-6">
-                <h2 className="text-3xl font-bold text-[#17171E] mb-6">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </h2>
-                
-                <div className="space-y-4 text-gray-700">
-                  <p className="leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  
-                  <p className="leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mt-8">
-                  <p className="text-gray-700 leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  
-                  <p className="text-gray-700 leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
-        {/* Bottom section with text and images */}
+        {/* Bottom section with 4 images grid */}
         <section className="py-16">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold text-[#17171E] mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-              </h3>
-              <p className="text-gray-700 leading-relaxed max-w-4xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-
             {/* Images grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="h-[200px] bg-gray-200 rounded-lg overflow-hidden">
