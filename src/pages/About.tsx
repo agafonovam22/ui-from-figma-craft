@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -285,6 +284,57 @@ const About: React.FC = () => {
                 <div className="w-2 h-1 bg-gray-300 rounded"></div>
                 <div className="w-2 h-1 bg-gray-300 rounded"></div>
                 <div className="w-2 h-1 bg-gray-300 rounded"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* В чем причина нашего успеха? */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <h2 className="text-[40px] font-bold text-[#17171E] mb-8 leading-tight">
+              В чем причина нашего успеха?
+            </h2>
+            
+            <p className="text-gray-700 text-base mb-12 max-w-6xl leading-relaxed">
+              На сегодняшний день в каталоге Well Fitness представлены лучшие мировые бренды спортивного оборудования, среди которых Sole Fitness, Nautilus Fitness, Bowflex, CardioPower, PROSKI Simulator, Eclipse и др. Продукция этих марок отличается безупречным балансом качества и функциональности, возглавляет ведущие мировые рейтинги и пользуется доверием покупателей по всему миру. Если вы ищете надежного поставщика спортивного оборудования - мы будем рады видеть вас в числе наших партнеров и готовы предложить лучшие условия для выгодного дилерского сотрудничества!
+            </p>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+              {/* Первый блок */}
+              <div className="relative rounded-lg overflow-hidden">
+                <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=300&fit=crop")'}}>
+                  <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <p className="text-sm leading-relaxed">
+                      Во-первых, мы особенно дорожим своей безупречной репутацией и регулярно повышаем планку качества сервиса. Знак, находясь другим может оказаться доверие покупателя, специалисты Well Fitness всегда ориентируются на интересы клиентов.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Второй блок */}
+              <div className="relative rounded-lg overflow-hidden">
+                <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=300&fit=crop")'}}>
+                  <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <p className="text-sm leading-relaxed">
+                      Во-вторых, мы поставляем только самую качественную и надежную продукцию. Перед выводом на российский рынок, мы тщательно тестируем каждую модель, поэтому все предлагаемое оборудование высоко ценится покупателями и имеет минимум сервисных проблем.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Третий блок - полная ширина */}
+            <div className="relative rounded-lg overflow-hidden">
+              <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=300&fit=crop")'}}>
+                <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white max-w-4xl">
+                  <p className="text-sm leading-relaxed">
+                    Значимость этих проблем настолько очевидна, что рамки и место обучения кадров требуют от нас анализа существенных финансовых и административных условий. С другой стороны начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
