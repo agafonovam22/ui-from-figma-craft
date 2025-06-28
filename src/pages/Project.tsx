@@ -203,6 +203,102 @@ const Project: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Image Carousel Section */}
+        <section className="py-16 bg-white">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            {/* Carousel container */}
+            <div className="relative mb-16">
+              <div className="flex gap-4 overflow-hidden">
+                <div className="flex-shrink-0 w-1/3">
+                  <img 
+                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop"
+                    alt="Спортивное оборудование"
+                    className="w-full h-[250px] object-cover rounded-lg"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-1/3">
+                  <img 
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"
+                    alt="Женщина тренируется"
+                    className="w-full h-[250px] object-cover rounded-lg"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-1/3">
+                  <img 
+                    src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400&h=300&fit=crop"
+                    alt="Люди бегают"
+                    className="w-full h-[250px] object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+              
+              {/* Navigation dots */}
+              <div className="flex justify-center mt-6 space-x-2">
+                <div className="w-8 h-1 bg-[#F53B49] rounded"></div>
+                <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                <div className="w-2 h-1 bg-gray-300 rounded"></div>
+              </div>
+
+              {/* Navigation arrows */}
+              <button className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors">
+                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 9L1 5L5 1" stroke="#262631" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              
+              <button className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors">
+                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 5L1 9" stroke="#262631" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Text and Image Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              {/* Left side - Text content in two columns */}
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold text-[#17171E] mb-8">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700 text-sm leading-relaxed">
+                  <div className="space-y-4">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                  <div className="space-y-4">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right side - Large image */}
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=500&fit=crop"
+                  alt="Спортивные тренировки"
+                  className="w-full h-[500px] object-cover rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       
       <div className="h-[70px]"></div>
