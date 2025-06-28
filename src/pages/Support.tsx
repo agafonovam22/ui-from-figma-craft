@@ -26,6 +26,11 @@ const Support: React.FC = () => {
     { id: 'b2b', label: 'B2B кабинет' }
   ];
 
+  const getActiveTabLabel = () => {
+    const activeTabObject = tabs.find(tab => tab.id === activeTab);
+    return activeTabObject ? activeTabObject.label : 'Поддержка';
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -48,7 +53,7 @@ const Support: React.FC = () => {
           </Breadcrumb>
           
           <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-            Поддержка
+            {getActiveTabLabel()}
           </h1>
         </section>
 
@@ -59,7 +64,7 @@ const Support: React.FC = () => {
             <div className="flex flex-col lg:flex-row items-center justify-between">
               <div className="lg:w-1/2 mb-8 lg:mb-0">
                 <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-                  Доставка и оплата
+                  {getActiveTabLabel()}
                 </h1>
                 <div className="lg:w-1/3">
                   <h2 className="text-3xl lg:text-5xl font-bold mb-6">
