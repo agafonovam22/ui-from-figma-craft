@@ -110,34 +110,6 @@ const UslugiServices: React.FC = () => {
                   ))}
                 </div>
               </div>
-
-              {/* Additional Content */}
-              <div className="bg-gray-50 rounded-lg p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      Профессиональное планирование пространства
-                    </h3>
-                    <p className="text-gray-600 mb-4">
-                      Наши специалисты создадут детальный 3D-проект вашего будущего спортивного зала, 
-                      учитывая все особенности помещения и ваши требования.
-                    </p>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>• Оптимальное размещение оборудования</li>
-                      <li>• Максимальная функциональность пространства</li>
-                      <li>• Соблюдение норм безопасности</li>
-                      <li>• Эргономичные решения</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <img 
-                      src="/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png"
-                      alt="Планирование пространства"
-                      className="w-full h-64 object-cover rounded-lg"
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
           )}
 
