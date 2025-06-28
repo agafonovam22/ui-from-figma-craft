@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Banner from '@/components/Banner';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const About: React.FC = () => {
   return (
@@ -184,6 +185,107 @@ const About: React.FC = () => {
                 className="w-full h-auto"
                 style={{ maxHeight: '600px', objectFit: 'contain' }}
               />
+            </div>
+          </div>
+        </section>
+
+        {/* Мы сегодня - это */}
+        <section className="py-16">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <h2 className="text-[40px] font-bold text-[#17171E] mb-12 leading-tight">
+              Мы сегодня - это:
+            </h2>
+            
+            {/* Шесть информационных блоков */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              <div className="bg-white p-6">
+                <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Слаженная команда людей, любящих спорт и здоровый образ жизни знающих свое дело и ориентирующихся во всех нюансах фитнес оборудования;
+                </p>
+              </div>
+
+              <div className="bg-white p-6">
+                <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Склад запчастей для обеспечения качественного сервиса и бесперебойной работы оборудования;
+                </p>
+              </div>
+
+              <div className="bg-white p-6">
+                <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Строгое соблюдение всех обязательств перед партнерами;
+                </p>
+              </div>
+
+              <div className="bg-white p-6">
+                <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Широкая номенклатура качественной продукции ведущих мировых брендов с огромным выбором товаров в наличии;
+                </p>
+              </div>
+
+              <div className="bg-white p-6">
+                <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Полный послепродажный сервис с информационной и технической поддержкой;
+                </p>
+              </div>
+
+              <div className="bg-white p-6">
+                <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Отличные цены и эксклюзивные условия для постоянных партнеров.
+                </p>
+              </div>
+            </div>
+
+            {/* Карусель изображений */}
+            <div className="relative">
+              <Carousel className="w-full">
+                <CarouselContent>
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                    <div className="h-[400px] bg-gray-200 rounded-lg overflow-hidden">
+                      <img 
+                        src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop"
+                        alt="Фитнес оборудование"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                    <div className="h-[400px] bg-gray-200 rounded-lg overflow-hidden">
+                      <img 
+                        src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop"
+                        alt="Тренировка в спортзале"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                    <div className="h-[400px] bg-gray-200 rounded-lg overflow-hidden">
+                      <img 
+                        src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400&h=400&fit=crop"
+                        alt="Спортивная активность"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2" />
+                <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2" />
+              </Carousel>
+
+              {/* Навигационные точки */}
+              <div className="flex justify-center mt-6 gap-2">
+                <div className="w-8 h-1 bg-[#F53B49] rounded"></div>
+                <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                <div className="w-2 h-1 bg-gray-300 rounded"></div>
+              </div>
             </div>
           </div>
         </section>
