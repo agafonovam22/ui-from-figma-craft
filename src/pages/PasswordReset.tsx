@@ -45,7 +45,7 @@ const PasswordReset: React.FC = () => {
 
         {/* Password Reset Form or Success Message */}
         <section className="py-16 bg-white">
-          <div className="container mx-auto px-4 max-w-lg">
+          <div className={`container mx-auto px-4 ${!isEmailSent ? 'max-w-lg' : 'max-w-4xl'}`}>
             {!isEmailSent ? (
               <>
                 <div className="text-center mb-8">
@@ -113,7 +113,7 @@ const PasswordReset: React.FC = () => {
                     Осталось сделать 3 шага.
                   </p>
                   
-                  <div className="text-left space-y-6 mb-12 max-w-md mx-auto">
+                  <div className="text-left space-y-6 mb-12 max-w-3xl mx-auto">
                     <p className="text-[#262631] text-base leading-relaxed">
                       <span className="font-medium">1.</span> Зайдите в свой почтовый ящик и найдите письмо от info@wellfitness.ru. Если вы не нашли письма, проверьте папку «Спам».
                     </p>
@@ -127,12 +127,14 @@ const PasswordReset: React.FC = () => {
                 </div>
 
                 {/* Back to Home Button */}
-                <Button
-                  onClick={() => navigate('/')}
-                  className="w-full h-12 bg-[#F53B49] hover:bg-[#e63946] text-white text-base font-medium rounded-md"
-                >
-                  Вернуться на главную
-                </Button>
+                <div className="max-w-lg mx-auto">
+                  <Button
+                    onClick={() => navigate('/')}
+                    className="w-full h-12 bg-[#F53B49] hover:bg-[#e63946] text-white text-base font-medium rounded-md"
+                  >
+                    Вернуться на главную
+                  </Button>
+                </div>
               </>
             )}
           </div>
