@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -45,7 +46,8 @@ const NewsAndBlogPage: React.FC = () => {
       title: 'Wellfitness PRO в Сколково 2023',
       description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие фитнес-России: бизнес-форум, фитнес-конвенция, выставка.',
       image: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
-      size: 'large'
+      size: 'large',
+      slug: 'wellfitness-pro-skolkovo-2023'
     },
     {
       id: 2,
@@ -54,7 +56,8 @@ const NewsAndBlogPage: React.FC = () => {
       title: 'Wellfitness PRO в Сколково 2023',
       description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие фитнес-России: бизнес-форум, фитнес-конвенция, выставка.',
       image: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
-      size: 'medium'
+      size: 'medium',
+      slug: 'wellfitness-pro-skolkovo-2023-2'
     },
     {
       id: 3,
@@ -63,7 +66,8 @@ const NewsAndBlogPage: React.FC = () => {
       title: 'Wellfitness PRO в Сколково 2023',
       description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие фитнес-России: бизнес-форум, фитнес-конвенция, выставка.',
       image: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
-      size: 'small'
+      size: 'small',
+      slug: 'wellfitness-pro-skolkovo-2023-3'
     },
     {
       id: 4,
@@ -72,7 +76,8 @@ const NewsAndBlogPage: React.FC = () => {
       title: 'Wellfitness PRO в Сколково 2023',
       description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие фитнес-России: бизнес-форум, фитнес-конвенция, выставка.',
       image: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
-      size: 'medium'
+      size: 'medium',
+      slug: 'wellfitness-pro-skolkovo-2023-4'
     },
     {
       id: 5,
@@ -81,7 +86,8 @@ const NewsAndBlogPage: React.FC = () => {
       title: 'Wellfitness PRO в Сколково 2023',
       description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие фитнес-России: бизнес-форум, фитнес-конвенция, выставка.',
       image: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
-      size: 'small'
+      size: 'small',
+      slug: 'wellfitness-pro-skolkovo-2023-5'
     },
     {
       id: 6,
@@ -90,7 +96,8 @@ const NewsAndBlogPage: React.FC = () => {
       title: 'Wellfitness PRO в Сколково 2023',
       description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие фитнес-России: бизнес-форум, фитнес-конвенция, выставка.',
       image: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
-      size: 'large'
+      size: 'large',
+      slug: 'wellfitness-pro-skolkovo-2023-6'
     },
     {
       id: 7,
@@ -99,7 +106,8 @@ const NewsAndBlogPage: React.FC = () => {
       title: 'Wellfitness PRO в Сколково 2023',
       description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие фитнес-России: бизнес-форум, фитнес-конвенция, выставка.',
       image: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
-      size: 'medium'
+      size: 'medium',
+      slug: 'wellfitness-pro-skolkovo-2023-7'
     },
     {
       id: 8,
@@ -108,7 +116,8 @@ const NewsAndBlogPage: React.FC = () => {
       title: 'Wellfitness PRO в Сколково 2023',
       description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие фитнес-России: бизнес-форум, фитнес-конвенция, выставка.',
       image: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
-      size: 'small'
+      size: 'small',
+      slug: 'wellfitness-pro-skolkovo-2023-8'
     }
   ];
 
@@ -226,8 +235,9 @@ const NewsAndBlogPage: React.FC = () => {
         {/* News Grid - Masonry Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-max mb-12">
           {filteredItems.map((item) => (
-            <div
+            <Link
               key={item.id}
+              to={`/news/${item.slug}`}
               className={`bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer ${getCardClasses(item.size)}`}
             >
               {/* Image */}
@@ -263,7 +273,7 @@ const NewsAndBlogPage: React.FC = () => {
                   {item.description}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

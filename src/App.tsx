@@ -12,6 +12,7 @@ import Ideas from "./pages/Ideas";
 import Brands from "./pages/Brands";
 import Brand from "./pages/Brand";
 import NewsAndBlog from "./pages/NewsAndBlog";
+import NewsArticle from "./pages/NewsArticle";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/brands" element={<Brands />} />
           <Route path="/brands/:brandSlug" element={<Brand />} />
           <Route path="/news" element={<NewsAndBlog />} />
+          <Route path="/news/:articleSlug" element={<NewsArticle />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
