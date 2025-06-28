@@ -2,6 +2,16 @@
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import {
+  Breadcrumb,
+  BreadcrumbEllipsis,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { Link } from 'react-router-dom';
 
 const Support: React.FC = () => {
   const [activeTab, setActiveTab] = useState('delivery');
@@ -21,6 +31,27 @@ const Support: React.FC = () => {
       <Header />
       
       <main className="pt-6">
+        {/* Breadcrumbs and Title */}
+        <section className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-6">
+          <Breadcrumb className="mb-4">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/">Главная</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Поддержка</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+          
+          <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+            Поддержка
+          </h1>
+        </section>
+
         {/* Hero Section */}
         <section className="relative bg-gradient-to-r from-gray-800 to-gray-600 text-white">
           <div className="absolute inset-0 bg-black/20"></div>
