@@ -16,6 +16,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { ChevronUp, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Support: React.FC = () => {
@@ -34,6 +40,15 @@ const Support: React.FC = () => {
   const getActiveTabLabel = () => {
     const activeTabObject = tabs.find(tab => tab.id === activeTab);
     return activeTabObject ? activeTabObject.label : 'Поддержка';
+  };
+
+  const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({});
+
+  const toggleSection = (sectionId: string) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [sectionId]: !prev[sectionId]
+    }));
   };
 
   return (
@@ -590,7 +605,7 @@ const Support: React.FC = () => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
                   </AccordionTrigger>
                   <AccordionContent className="pb-4 pt-0">
-                    Lorem ipsum dolor sit amet, consectetur
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua?
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -607,11 +622,116 @@ const Support: React.FC = () => {
           )}
 
           {activeTab === 'instructions' && (
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold">Инструкции</h3>
-              <div className="prose max-w-none">
-                <p>Здесь будут инструкции по использованию.</p>
-              </div>
+            <div className="space-y-4">
+              {/* Беговые дорожки */}
+              <Collapsible 
+                open={openSections['treadmills']} 
+                onOpenChange={() => toggleSection('treadmills')}
+                className="border border-gray-200 rounded-lg"
+              >
+                <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-gray-800 text-white rounded-t-lg hover:bg-gray-700 transition-colors">
+                  <span className="font-medium">Беговые дорожки</span>
+                  {openSections['treadmills'] ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
+                </CollapsibleTrigger>
+                <CollapsibleContent className="bg-white">
+                  <div className="divide-y divide-gray-100">
+                    {[1, 2, 3, 4, 5, 6].map((item) => (
+                      <div key={item} className="flex items-center justify-between p-4">
+                        <span className="text-gray-700">Беговая дорожка CardioPower T10</span>
+                        <button className="bg-[#F53B49] text-white px-4 py-2 rounded hover:bg-[#e63946] transition-colors text-sm">
+                          Скачать
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+
+              {/* Велотренажеры */}
+              <Collapsible 
+                open={openSections['bikes']} 
+                onOpenChange={() => toggleSection('bikes')}
+                className="border border-gray-200 rounded-lg"
+              >
+                <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-gray-100 text-gray-700 rounded-t-lg hover:bg-gray-200 transition-colors">
+                  <span className="font-medium">Велотренажеры</span>
+                  {openSections['bikes'] ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
+                </CollapsibleTrigger>
+                <CollapsibleContent className="bg-white">
+                  <div className="space-y-2 p-4">
+                    {/* Гребные тренажеры */}
+                    <Collapsible 
+                      open={openSections['rowing']} 
+                      onOpenChange={() => toggleSection('rowing')}
+                      className="border border-gray-100 rounded"
+                    >
+                      <CollapsibleTrigger className="flex items-center justify-between w-full p-3 bg-gray-50 text-gray-700 rounded hover:bg-gray-100 transition-colors">
+                        <span className="text-sm">Гребные тренажеры</span>
+                        {openSections['rowing'] ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="bg-white">
+                        <div className="p-2">
+                          <p className="text-sm text-gray-600">Гребные тренажеры контент</p>
+                        </div>
+                      </CollapsibleContent>
+                    </Collapsible>
+
+                    {/* Эллиптические тренажеры */}
+                    <Collapsible 
+                      open={openSections['elliptical']} 
+                      onOpenChange={() => toggleSection('elliptical')}
+                      className="border border-gray-100 rounded"
+                    >
+                      <CollapsibleTrigger className="flex items-center justify-between w-full p-3 bg-gray-50 text-gray-700 rounded hover:bg-gray-100 transition-colors">
+                        <span className="text-sm">Эллиптические тренажеры</span>
+                        {openSections['elliptical'] ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="bg-white">
+                        <div className="p-2">
+                          <p className="text-sm text-gray-600">Эллиптические тренажеры контент</p>
+                        </div>
+                      </CollapsibleContent>
+                    </Collapsible>
+
+                    {/* Велотренажеры */}
+                    <Collapsible 
+                      open={openSections['bikes-sub']} 
+                      onOpenChange={() => toggleSection('bikes-sub')}
+                      className="border border-gray-100 rounded"
+                    >
+                      <CollapsibleTrigger className="flex items-center justify-between w-full p-3 bg-gray-50 text-gray-700 rounded hover:bg-gray-100 transition-colors">
+                        <span className="text-sm">Велотренажеры</span>
+                        {openSections['bikes-sub'] ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="bg-white">
+                        <div className="p-2">
+                          <p className="text-sm text-gray-600">Велотренажеры контент</p>
+                        </div>
+                      </CollapsibleContent>
+                    </Collapsible>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+
+              {/* Bowflex sections */}
+              {['Bowflex', 'Bowflex', 'Bowflex', 'Bowflex', 'Bowflex', 'Bowflex'].map((title, index) => (
+                <Collapsible 
+                  key={`bowflex-${index}`}
+                  open={openSections[`bowflex-${index}`]} 
+                  onOpenChange={() => toggleSection(`bowflex-${index}`)}
+                  className="border border-gray-200 rounded-lg"
+                >
+                  <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-gray-100 text-gray-700 rounded-t-lg hover:bg-gray-200 transition-colors">
+                    <span className="font-medium">{title}</span>
+                    {openSections[`bowflex-${index}`] ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="bg-white">
+                    <div className="p-4">
+                      <p className="text-gray-600">Контент для {title}</p>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              ))}
             </div>
           )}
 
