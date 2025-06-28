@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
+import { Search } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -11,6 +11,13 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   Pagination,
   PaginationContent,
@@ -23,10 +30,12 @@ import {
 import { Link } from 'react-router-dom';
 
 const NewsAndBlogPage: React.FC = () => {
-  const [selectedFilter, setSelectedFilter] = useState('Все');
+  const [selectedFilter, setSelectedFilter] = useState('Новости');
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState('популярности');
 
-  const filters = ['Все', 'Новости', 'Блог'];
+  const filters = ['Новости', 'Блог'];
 
   const newsItems = [
     {
@@ -151,23 +160,67 @@ const NewsAndBlogPage: React.FC = () => {
           </BreadcrumbList>
         </Breadcrumb>
 
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">Новости и блог</h1>
+        <h1 className="text-[48px] font-bold text-gray-900 mb-8">Новости и блог</h1>
         
-        {/* Filters */}
-        <div className="flex gap-3 mb-8">
-          {filters.map((filter) => (
-            <button
-              key={filter}
-              onClick={() => setSelectedFilter(filter)}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                selectedFilter === filter
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              {filter}
-            </button>
-          ))}
+        {/* Top Controls Bar */}
+        <div className="flex items-center justify-between mb-8 gap-4">
+          {/* Left side - Filters */}
+          <div className="flex items-center gap-2">
+            {filters.map((filter) => (
+              <button
+                key={filter}
+                onClick={() => setSelectedFilter(filter)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  selectedFilter === filter
+                    ? 'bg-gray-900 text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                {filter}
+                {selectedFilter === filter && (
+                  <button 
+                    className="ml-2 text-white hover:text-gray-300"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedFilter('Новости');
+                    }}
+                  >
+                    ×
+                  </button>
+                )}
+              </button>
+            ))}
+          </div>
+
+          {/* Right side - Search and Sort */}
+          <div className="flex items-center gap-4">
+            {/* Search Bar */}
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Поиск"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-64 px-4 py-2 border border-gray-300 rounded-lg pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            </div>
+
+            {/* Sort Dropdown */}
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-gray-600 whitespace-nowrap">Сортировать:</span>
+              <Select value={sortBy} onValueChange={setSortBy}>
+                <SelectTrigger className="w-48">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="популярности">По популярности</SelectItem>
+                  <SelectItem value="дате">По дате</SelectItem>
+                  <SelectItem value="названию">По названию</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
         </div>
 
         {/* News Grid - Masonry Layout */}
