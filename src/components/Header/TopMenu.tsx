@@ -32,7 +32,7 @@ const TopMenu: React.FC = () => {
     { label: 'Бренды', href: '/brands' },
     { label: 'Сервис', href: '/services' },
     { label: 'Услуги', href: '/uslugi' },
-    { label: 'Поддержка' },
+    { label: 'Поддержка', href: '/support' },
     { label: 'Где купить' },
     { label: 'Контакты' }
   ];

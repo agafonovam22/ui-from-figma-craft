@@ -17,6 +17,7 @@ import NewsArticle from "./pages/NewsArticle";
 import Account from "./pages/Account";
 import Register from "./pages/Register";
 import PasswordReset from "./pages/PasswordReset";
+import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/account" element={<Account />} />
           <Route path="/register" element={<Register />} />
           <Route path="/password-reset" element={<PasswordReset />} />
+          <Route path="/support" element={<Support />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
