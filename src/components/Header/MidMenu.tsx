@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { SearchBarProps, UserAction } from './types';
 
 const Logo: React.FC = () => (
@@ -66,16 +67,16 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Поиск", onSea
 const UserActions: React.FC = () => {
   return (
     <div className="flex items-center gap-5 max-sm:gap-2.5">
-      <button
+      <Link
+        to="/account"
         className="w-6 h-6 relative"
-        onClick={() => console.log('Profile clicked')}
         aria-label="Профиль пользователя"
       >
         <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute left-1 top-0.5">
           <path d="M8.99998 8.89216C7.87083 8.89216 6.91354 8.49946 6.12813 7.71406C5.34271 6.92865 4.95 5.97136 4.95 4.84221C4.95 3.71305 5.34271 2.75576 6.12813 1.97036C6.91354 1.18494 7.87083 0.792236 8.99998 0.792236C10.1291 0.792236 11.0864 1.18494 11.8718 1.97036C12.6572 2.75576 13.05 3.71305 13.05 4.84221C13.05 5.97136 12.6572 6.92865 11.8718 7.71406C11.0864 8.49946 10.1291 8.89216 8.99998 8.89216ZM0.75 18.3325V15.3345C0.75 14.7281 0.901241 14.18 1.20372 13.6901C1.50621 13.2002 1.91009 12.824 2.41537 12.5614C3.47051 12.0268 4.55019 11.6259 5.65443 11.3586C6.75864 11.0913 7.87306 10.9576 8.99767 10.9576C10.1223 10.9576 11.2375 11.0913 12.3432 11.3586C13.449 11.6259 14.5294 12.0268 15.5846 12.5614C16.0899 12.824 16.4937 13.2002 16.7962 13.6901C17.0987 14.18 17.25 14.7281 17.25 15.3345V18.3325H0.75Z" fill="white" />
         </svg>
         <div className="flex w-2.5 h-2.5 flex-col justify-center items-center gap-[2.344px] shrink-0 absolute bg-[#F53B49] p-[0.938px] rounded-[23.438px] border-[1.25px] border-solid border-[#17171E] left-3.5 top-3.5" />
-      </button>
+      </Link>
 
       <button onClick={() => console.log('Cart clicked')} aria-label="Корзина">
         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
