@@ -135,43 +135,6 @@ const Project: React.FC = () => {
             </div>
           </div>
         </section>
-
-        {/* Bottom section with 4 images grid */}
-        <section className="py-16">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            {/* Images grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="h-[200px] bg-gray-200 rounded-lg overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=300&h=200&fit=crop"
-                  alt="Project image 1"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="h-[200px] bg-gray-200 rounded-lg overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=300&h=200&fit=crop"
-                  alt="Project image 2"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="h-[200px] bg-gray-200 rounded-lg overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=200&fit=crop"
-                  alt="Project image 3"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="h-[200px] bg-gray-200 rounded-lg overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop"
-                  alt="Project image 4"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       
       <div className="h-[70px]"></div>
