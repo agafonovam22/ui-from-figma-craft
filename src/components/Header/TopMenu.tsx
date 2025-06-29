@@ -34,7 +34,7 @@ const TopMenu: React.FC = () => {
     { label: 'Услуги', href: '/uslugi' },
     { label: 'Поддержка', href: '/support' },
     { label: 'Где купить', href: '/where-to-buy' },
-    { label: 'Контакты' }
+    { label: 'Контакты', href: '/contacts' }
   ];
 
   const handleCitySelect = (city: string) => {
