@@ -20,6 +20,8 @@ import PasswordReset from "./pages/PasswordReset";
 import Support from "./pages/Support";
 import WhereToBuy from "./pages/WhereToBuy";
 import Contacts from "./pages/Contacts";
+import HomeFitnessEquipment from "./pages/HomeFitnessEquipment";
+import GymEquipment from "./pages/GymEquipment";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -47,6 +49,8 @@ const App = () => (
           <Route path="/support" element={<Support />} />
           <Route path="/where-to-buy" element={<WhereToBuy />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/home-fitness-equipment" element={<HomeFitnessEquipment />} />
+          <Route path="/gym-equipment" element={<GymEquipment />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

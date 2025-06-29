@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ProductCatalog: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<'home' | 'fitness'>('home');
@@ -258,9 +259,12 @@ const ProductCatalog: React.FC = () => {
         
         {/* Кнопка "Показать все" */}
         <div className="mt-8 flex justify-start">
-          <button className="border-2 border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors">
+          <Link 
+            to={activeFilter === 'home' ? '/home-fitness-equipment' : '/gym-equipment'}
+            className="border-2 border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors"
+          >
             Показать все
-          </button>
+          </Link>
         </div>
       </div>
     </section>
