@@ -4,7 +4,7 @@ const Banner: React.FC = () => {
   return (
     <section className="w-full">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-        <div className="bg-gray-100 overflow-hidden relative" style={{ height: '400px' }}>
+        <div className="bg-gray-100 overflow-hidden relative rounded-lg" style={{ height: '400px' }}>
           <div className="py-12 relative h-full">
             <div className="flex items-center justify-between h-full">
               {/* Левая часть с текстом */}
