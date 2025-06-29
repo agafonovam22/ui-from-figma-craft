@@ -21,6 +21,14 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { ChevronUp, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -534,10 +542,178 @@ const Support: React.FC = () => {
           )}
 
           {activeTab === 'warranty' && (
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold">Гарантия</h3>
-              <div className="prose max-w-none">
-                <p>Здесь будет информация о гарантийных условиях.</p>
+            <div className="space-y-8">
+              {/* Warranty Period Section */}
+              <div>
+                <div className="mb-8">
+                  <h3 className="text-2xl font-semibold mb-2">Гарантийный период</h3>
+                  <p className="text-gray-600 mb-6">на продукцию составляет</p>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-8">
+                  {/* Running Equipment */}
+                  <div>
+                    <h4 className="text-lg font-medium mb-6">Беговые дорожки</h4>
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center py-2">
+                        <span className="text-gray-700">Sole Fitness</span>
+                        <span className="text-[#F53B49] font-medium">24 месяца</span>
+                      </div>
+                      <div className="flex justify-between items-center py-2">
+                        <span className="text-gray-700">Nautilus</span>
+                        <span className="text-[#F53B49] font-medium">24 месяца</span>
+                      </div>
+                      <div className="py-2">
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="text-gray-700">на мотор</span>
+                          <span className="text-[#F53B49] font-medium">3 года</span>
+                        </div>
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="text-gray-700">беговое полотно</span>
+                          <span className="text-[#F53B49] font-medium">6 месяцев</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-gray-700">рама</span>
+                          <span className="text-[#F53B49] font-medium">10 лет</span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center py-2">
+                        <span className="text-gray-700">Bowflex</span>
+                        <span className="text-[#F53B49] font-medium">24 месяца</span>
+                      </div>
+                      <div className="flex justify-between items-center py-2">
+                        <span className="text-gray-700">CardioPower</span>
+                        <span className="text-[#F53B49] font-medium">24 месяца</span>
+                      </div>
+                      <div className="flex justify-between items-center py-2">
+                        <span className="text-gray-700">Optima Fitness</span>
+                        <span className="text-[#F53B49] font-medium">24 месяца</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Elliptical Equipment */}
+                  <div>
+                    <h4 className="text-lg font-medium mb-6">Эллиптические тренажеры</h4>
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center py-2">
+                        <span className="text-gray-700">Sole Fitness</span>
+                        <span className="text-[#F53B49] font-medium">24 месяца</span>
+                      </div>
+                      <div className="flex justify-between items-center py-2">
+                        <span className="text-gray-700">Nautilus</span>
+                        <span className="text-[#F53B49] font-medium">24 месяца</span>
+                      </div>
+                      <div className="py-2">
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="text-gray-700">на мотор</span>
+                          <span className="text-[#F53B49] font-medium">10 лет</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-gray-700">рама</span>
+                          <span className="text-[#F53B49] font-medium">10 лет</span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center py-2">
+                        <span className="text-gray-700">Bowflex</span>
+                        <span className="text-[#F53B49] font-medium">24 месяца</span>
+                      </div>
+                      <div className="flex justify-between items-center py-2">
+                        <span className="text-gray-700">CardioPower</span>
+                        <span className="text-[#F53B49] font-medium">24 месяца</span>
+                      </div>
+                      <div className="flex justify-between items-center py-2">
+                        <span className="text-gray-700">Optima Fitness</span>
+                        <span className="text-[#F53B49] font-medium">24 месяца</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Download Button */}
+                <div className="mb-12">
+                  <button className="bg-[#F53B49] text-white px-8 py-3 rounded hover:bg-[#e63946] transition-colors font-medium">
+                    Скачать файлы по рекомендации тех. обслуживания
+                  </button>
+                </div>
+              </div>
+
+              {/* Warranty Loss Section */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-semibold mb-6">Гарантия теряет силу</h3>
+                <p className="text-gray-600 mb-8">в случаях</p>
+
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <p className="text-gray-700 text-sm">
+                      Истечения гарантийного срока, указанного в гарантийном талоне
+                    </p>
+                  </div>
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <p className="text-gray-700 text-sm">
+                      Отсутствия или неправильного заполнения гарантийного талона
+                    </p>
+                  </div>
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <p className="text-gray-700 text-sm">
+                      При неправильной эксплуатации тренажера и не соблюдении рекомендаций по техническому обслуживанию
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <p className="text-gray-700 text-sm">
+                      На все части тренажера подверженные естественному износу и относящиеся к расходным материалам
+                    </p>
+                  </div>
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <p className="text-gray-700 text-sm">
+                      Ненадлежащего ремонта, переделки или механических повреждений нанесенных изделию во время транспортировки, хранения и использования изделия покупателем или третьими лицами
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <p className="text-gray-700 text-sm">
+                    При появлении дефектов на поверхностях и в их структуре, вызванных внешними воздействиями (таким как: перепады напряжения в сети электропитания, повышенной влажности и сухости воздуха в помещении, нарушения температурного режима и т.д.)
+                  </p>
+                </div>
+              </div>
+
+              {/* Recommendations Section */}
+              <div>
+                <div className="border-2 border-[#F53B49] rounded-lg p-8">
+                  <h3 className="text-2xl font-semibold mb-6">Рекомендации по тех. обслуживанию тренажера</h3>
+                  <p className="text-gray-700 mb-6">
+                    Производится покупателем самостоятельно (не реже 1 раз в 6 месяцев или чаще в случаях усиленной эксплуатации)
+                  </p>
+
+                  <div className="space-y-6">
+                    <div>
+                      <p className="font-medium text-gray-900 mb-2">
+                        <strong>Беговые дорожки:</strong> смазка беговой деки / регулировка натяжения бегового полотна
+                      </p>
+                      <div className="text-sm text-gray-700 space-y-1">
+                        <p>Легкая эксплуатация (меньше 3 час/нед) — каждые 60 дней</p>
+                        <p>Средняя эксплуатация (3-5 час/нед) — каждые 45 дней</p>
+                        <p>Повышенная эксплуатация (больше 5 час/нед) — каждые 30 дней</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="font-medium text-gray-900 mb-2">
+                        <strong>Эллиптические тренажеры / Велотренажеры:</strong> протирка болтов соединений
+                      </p>
+                      <p className="text-sm text-gray-700 mb-2">
+                        Рекомендована установка ИБП (источника бесперебойного питания)
+                      </p>
+                      <p className="text-sm text-gray-700">
+                        К расходным материалам относятся: Ремни, беговые полотна, беговые деки.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           )}
