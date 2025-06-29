@@ -22,6 +22,7 @@ import WhereToBuy from "./pages/WhereToBuy";
 import Contacts from "./pages/Contacts";
 import HomeFitnessEquipment from "./pages/HomeFitnessEquipment";
 import GymEquipment from "./pages/GymEquipment";
+import Catalog from "./pages/Catalog";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -51,6 +52,7 @@ const App = () => (
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/home-fitness-equipment" element={<HomeFitnessEquipment />} />
           <Route path="/gym-equipment" element={<GymEquipment />} />
+          <Route path="/catalog" element={<Catalog />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

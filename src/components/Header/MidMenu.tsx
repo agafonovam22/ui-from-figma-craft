@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SearchBarProps, UserAction } from './types';
@@ -14,9 +13,9 @@ const Logo: React.FC = () => (
 );
 
 const CatalogButton: React.FC = () => (
-  <button
+  <Link
+    to="/catalog"
     className="flex justify-center items-center gap-2 bg-[#F53B49] px-6 py-3.5 rounded-[5px] hover:bg-[#e63946] transition-colors whitespace-nowrap"
-    onClick={() => console.log('Catalog clicked')}
     aria-label="Открыть каталог товаров"
   >
     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +30,7 @@ const CatalogButton: React.FC = () => (
       <path d="M10 10H13V13H10V10Z" fill="white" />
     </svg>
     <span className="text-white text-sm font-normal leading-[14px]">Каталог</span>
-  </button>
+  </Link>
 );
 
 const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Поиск", onSearch, className = "" }) => {
