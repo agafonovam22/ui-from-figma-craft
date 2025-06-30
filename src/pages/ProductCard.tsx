@@ -1,11 +1,11 @@
-
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Heart, Star } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ChevronLeft, ChevronRight, Heart, Star, Play } from 'lucide-react';
 
 const ProductCard: React.FC = () => {
   const { productId } = useParams();
@@ -338,31 +338,185 @@ const ProductCard: React.FC = () => {
           </div>
         </div>
 
-        {/* Tabs Navigation */}
-        <div className="mt-12 border-b border-gray-200">
-          <nav className="flex space-x-8">
-            <button className="py-3 px-1 border-b-2 border-[#F53B49] text-[#F53B49] font-medium text-sm">
-              Описание
-            </button>
-            <button className="py-3 px-1 text-gray-500 hover:text-gray-700 font-medium text-sm">
-              Характеристики
-            </button>
-            <button className="py-3 px-1 text-gray-500 hover:text-gray-700 font-medium text-sm">
-              Отзывы (10)
-            </button>
-            <button className="py-3 px-1 text-gray-500 hover:text-gray-700 font-medium text-sm">
-              Доставка и оплата
-            </button>
-            <button className="py-3 px-1 text-gray-500 hover:text-gray-700 font-medium text-sm">
-              Рассрочка
-            </button>
-            <button className="py-3 px-1 text-gray-500 hover:text-gray-700 font-medium text-sm">
-              Услуги
-            </button>
-            <button className="ml-auto py-3 px-4 text-[#F53B49] border border-[#F53B49] rounded hover:bg-[#F53B49] hover:text-white transition-colors text-sm">
-              Скачать инструкцию
-            </button>
-          </nav>
+        {/* Tabs Section */}
+        <div className="mt-12">
+          <Tabs defaultValue="description" className="w-full">
+            <TabsList className="w-full justify-start bg-transparent border-b border-gray-200 rounded-none h-auto p-0">
+              <TabsTrigger 
+                value="description" 
+                className="border-b-2 border-transparent data-[state=active]:border-[#F53B49] data-[state=active]:text-[#F53B49] bg-transparent rounded-none px-4 py-3"
+              >
+                Описание
+              </TabsTrigger>
+              <TabsTrigger 
+                value="specifications" 
+                className="border-b-2 border-transparent data-[state=active]:border-[#F53B49] data-[state=active]:text-[#F53B49] bg-transparent rounded-none px-4 py-3"
+              >
+                Характеристики
+              </TabsTrigger>
+              <TabsTrigger 
+                value="reviews" 
+                className="border-b-2 border-transparent data-[state=active]:border-[#F53B49] data-[state=active]:text-[#F53B49] bg-transparent rounded-none px-4 py-3"
+              >
+                Отзывы (10)
+              </TabsTrigger>
+              <TabsTrigger 
+                value="delivery" 
+                className="border-b-2 border-transparent data-[state=active]:border-[#F53B49] data-[state=active]:text-[#F53B49] bg-transparent rounded-none px-4 py-3"
+              >
+                Доставка и оплата
+              </TabsTrigger>
+              <TabsTrigger 
+                value="installment" 
+                className="border-b-2 border-transparent data-[state=active]:border-[#F53B49] data-[state=active]:text-[#F53B49] bg-transparent rounded-none px-4 py-3"
+              >
+                Рассрочка
+              </TabsTrigger>
+              <TabsTrigger 
+                value="services" 
+                className="border-b-2 border-transparent data-[state=active]:border-[#F53B49] data-[state=active]:text-[#F53B49] bg-transparent rounded-none px-4 py-3"
+              >
+                Услуги
+              </TabsTrigger>
+              <div className="ml-auto">
+                <Button variant="outline" className="text-[#F53B49] border-[#F53B49] hover:bg-[#F53B49] hover:text-white">
+                  Скачать инструкцию
+                </Button>
+              </div>
+            </TabsList>
+
+            <TabsContent value="description" className="mt-8">
+              {/* Description Content */}
+              <div className="space-y-12">
+                {/* Description Section */}
+                <div>
+                  <h2 className="text-2xl font-bold text-[#262631] mb-6">Описание</h2>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <div className="space-y-4 text-gray-700 leading-relaxed">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+                        ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                    </div>
+                    <div className="space-y-4 text-gray-700 leading-relaxed">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+                        ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Video Section */}
+                  <div className="mt-8">
+                    <div className="relative w-full aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/f4e554ea-7370-4b23-85ae-f3045c81543a.png" 
+                        alt="Product demonstration video"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <button className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors shadow-lg">
+                          <Play className="w-8 h-8 text-gray-700 ml-1" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Advantages Section */}
+                <div>
+                  <h2 className="text-2xl font-bold text-[#262631] mb-8">Преимущества</h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="relative group">
+                      <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                        <img 
+                          src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=500&h=500" 
+                          alt="2 варианта цвета защитного мата"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
+                        <h3 className="font-medium text-center">
+                          2 варианта цвета<br />защитного мата
+                        </h3>
+                      </div>
+                    </div>
+
+                    <div className="relative group">
+                      <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                        <img 
+                          src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=500&h=500" 
+                          alt="Совершенное качество прыжка"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
+                        <h3 className="font-medium text-center">
+                          Совершенное качество<br />прыжка
+                        </h3>
+                      </div>
+                    </div>
+
+                    <div className="relative group">
+                      <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                        <img 
+                          src="https://images.unsplash.com/photo-1518877593221-1f28583780b4?auto=format&fit=crop&w=500&h=500" 
+                          alt="Безопасный защитный мат"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
+                        <h3 className="font-medium text-center">
+                          Безопасный защитный<br />мат
+                        </h3>
+                      </div>
+                    </div>
+
+                    <div className="relative group">
+                      <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                        <img 
+                          src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=500&h=500" 
+                          alt="Качественная защитная сеть"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
+                        <h3 className="font-medium text-center">
+                          Качественная защитная<br />сеть
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="specifications" className="mt-8">
+              <div className="text-gray-600">Характеристики будут добавлены позже</div>
+            </TabsContent>
+
+            <TabsContent value="reviews" className="mt-8">
+              <div className="text-gray-600">Отзывы будут добавлены позже</div>
+            </TabsContent>
+
+            <TabsContent value="delivery" className="mt-8">
+              <div className="text-gray-600">Информация о доставке и оплате будет добавлена позже</div>
+            </TabsContent>
+
+            <TabsContent value="installment" className="mt-8">
+              <div className="text-gray-600">Информация о рассрочке будет добавлена позже</div>
+            </TabsContent>
+
+            <TabsContent value="services" className="mt-8">
+              <div className="text-gray-600">Информация об услугах будет добавлена позже</div>
+            </TabsContent>
+          </Tabs>
         </div>
       </main>
       
