@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ReviewDialog from '@/components/ReviewDialog';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -13,6 +14,7 @@ const ProductCard: React.FC = () => {
   const [selectedSize, setSelectedSize] = useState('14');
   const [quantity, setQuantity] = useState(1);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [reviewDialogOpen, setReviewDialogOpen] = useState(false);
 
   // Mock product data - в реальном приложении это будет загружаться по productId
   const product = {
@@ -1194,6 +1196,7 @@ const ProductCard: React.FC = () => {
 
                   {/* Write review button */}
                   <Button 
+                    onClick={() => setReviewDialogOpen(true)}
                     variant="outline" 
                     className="w-full text-[#F53B49] border-[#F53B49] hover:bg-[#F53B49] hover:text-white"
                   >
@@ -1265,6 +1268,12 @@ const ProductCard: React.FC = () => {
       </main>
       
       <Footer />
+
+      {/* Review Dialog */}
+      <ReviewDialog 
+        open={reviewDialogOpen} 
+        onOpenChange={setReviewDialogOpen} 
+      />
     </div>
   );
 };
