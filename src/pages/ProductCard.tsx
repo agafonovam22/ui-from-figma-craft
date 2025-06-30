@@ -1207,7 +1207,254 @@ const ProductCard: React.FC = () => {
             </TabsContent>
 
             <TabsContent value="delivery" className="mt-8">
-              <div className="text-gray-600">Информация о доставке и оплате будет добавлена позже</div>
+              <div className="space-y-8">
+                {/* Город доставки */}
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Город доставки Москва</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* Самовывоз */}
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="font-semibold text-gray-900">Самовывоз</h4>
+                        <span className="text-2xl font-bold">0 ₽</span>
+                      </div>
+                      <p className="text-sm text-gray-600">
+                        Вы можете самостоятельно забрать заказ из нашего магазина
+                      </p>
+                    </div>
+
+                    {/* Курьерская доставка */}
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="font-semibold text-gray-900">Курьерская Доставка</h4>
+                        <span className="text-2xl font-bold">0 ₽</span>
+                      </div>
+                      <p className="text-sm text-gray-600">
+                        Доставляем службой Доставки
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Доставка по России */}
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Доставка по России</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Стоимость</h4>
+                      <p className="text-sm text-gray-600 mb-2">
+                        Стоимость доставки 300 руб. (в пределах МКАД/КАД)
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Стоимость доставки по области оговаривается отдельно.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Оформление</h4>
+                      <p className="text-sm text-gray-600">
+                        После оформления заказа, наш специалист свяжется с Вами для уточнения условий доставки и сборки.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Выполнение</h4>
+                      <p className="text-sm text-gray-600 mb-2">
+                        При заказе товара до 12:00 часов, доставка возможна в день обращения
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        При заказе товара после 12:00, доставка возможна на следующий день
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Самовывоз - таблица */}
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Самовывоз</h3>
+                  
+                  {/* Для Москвы */}
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Для Москвы</h4>
+                    <div className="overflow-x-auto">
+                      <table className="w-full border-collapse border border-gray-300">
+                        <thead>
+                          <tr className="bg-gray-50">
+                            <th className="border border-gray-300 px-4 py-2 text-left">Магазин</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left">Адрес</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left">Наличие</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left">Режим работы</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left">Дополнительно</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="border border-gray-300 px-4 py-2">Магазин</td>
+                            <td className="border border-gray-300 px-4 py-2">
+                              Московская область, Красногорский р-н, д. Голицыно, улица Центральная д.1, 64А.
+                            </td>
+                            <td className="border border-gray-300 px-4 py-2">
+                              <span className="inline-flex items-center">
+                                <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                В наличии
+                              </span>
+                            </td>
+                            <td className="border border-gray-300 px-4 py-2">пн - пт с 09:30-18:00</td>
+                            <td className="border border-gray-300 px-4 py-2">-</td>
+                          </tr>
+                          <tr>
+                            <td className="border border-gray-300 px-4 py-2">Магазин</td>
+                            <td className="border border-gray-300 px-4 py-2">
+                              Московская область, Химки, микрорайон Сходня, улица Некрасова д.2.
+                            </td>
+                            <td className="border border-gray-300 px-4 py-2">
+                              <span className="inline-flex items-center">
+                                <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                В наличии
+                              </span>
+                            </td>
+                            <td className="border border-gray-300 px-4 py-2">пн - пт с 09:30-18:00</td>
+                            <td className="border border-gray-300 px-4 py-2">
+                              Выдача осуществляется оформленных заказов, при согласовании даты и времени приезда
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  {/* Для Санкт-Петербурга */}
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Для Санкт-Петербурга</h4>
+                    <div className="overflow-x-auto">
+                      <table className="w-full border-collapse border border-gray-300">
+                        <thead>
+                          <tr className="bg-gray-50">
+                            <th className="border border-gray-300 px-4 py-2 text-left">Магазин</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left">Адрес</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left">Наличие</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left">Режим работы</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left">Дополнительно</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="border border-gray-300 px-4 py-2">Магазин</td>
+                            <td className="border border-gray-300 px-4 py-2">
+                              Красногвардейский пер 25 квт Е, территория завода "Ижора", завод в Колпино Ижорский, корпус
+                            </td>
+                            <td className="border border-gray-300 px-4 py-2">
+                              <span className="inline-flex items-center">
+                                <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                В наличии
+                              </span>
+                            </td>
+                            <td className="border border-gray-300 px-4 py-2">пн - пт с 10:00-18:00</td>
+                            <td className="border border-gray-300 px-4 py-2">
+                              Выдача осуществляется оформленных заказов, при согласовании даты и времени приезда
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Сборка */}
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Сборка</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Стоимость</h4>
+                      <p className="text-sm text-gray-600">
+                        Стоимость и условия сборки рассчитывается индивидуально
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">Условия</h4>
+                      <p className="text-sm text-gray-600">
+                        Бесплатная сборка не распространяется на товары, приобретенные по акции или по специальной скидке. А в случае, если стоимость сборки составляет более 15 % от стоимости товара
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Оплата для физ. лиц */}
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Оплата для физ. лиц</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    {/* Оплата наличными */}
+                    <div className="bg-gray-800 text-white rounded-lg p-4">
+                      <h4 className="font-semibold mb-2">Оплата наличными</h4>
+                      <p className="text-sm">
+                        Возможна при оформлении всех способов доставки. Вы можете расплачиваться наличными при получении заказа с курьером или принести наличную оплату и терминалы наших партнерских пунктов выдачи и пунктов выдачи услуги.
+                      </p>
+                    </div>
+
+                    {/* Оплата картой */}
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Оплата картой</h4>
+                      <p className="text-sm text-gray-600">
+                        Возможна при оформлении всех способов доставки: вы можете расплачиваться, а также курьеру при получении.
+                      </p>
+                    </div>
+
+                    {/* Оплата онлайн */}
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Оплата онлайн</h4>
+                      <p className="text-sm text-gray-600">
+                        Предварительная оплата банковскими картами для перевода в платежную систему. Произвольная оплата можно всеми видами банковских карт системы. Об успехе операции через терминалы без комиссии.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {/* Наложенный платеж */}
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Наложенный платеж</h4>
+                      <p className="text-sm text-gray-600">
+                        При отправке в регионы. Рассчитывается по тарифам транспортных компаний и составляет обычно 3-5% от стоимости товара. переводчики «ПЭК» и «Деловые линии»
+                      </p>
+                    </div>
+
+                    {/* В рассрочку */}
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">В рассрочку</h4>
+                      <p className="text-sm text-gray-600">
+                        от банков партнеров ОТП, Хоум, Тинькофф, Сбербанк
+                      </p>
+                    </div>
+
+                    {/* Безналичная оплата */}
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Безналичная оплата</h4>
+                      <p className="text-sm text-gray-600">
+                        Выставление счета
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Оплата для юр. лиц */}
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Оплата для юр. лиц</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Оплата онлайн */}
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Оплата онлайн</h4>
+                      <p className="text-sm text-gray-600">
+                        Предварительная оплата банковскими картами для перевода в платежную систему. Произвольная оплату можно всеми видами банковских карт электронными деньгами, а также через терминалы без комиссии.
+                      </p>
+                    </div>
+
+                    {/* Безналичная оплата */}
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Безналичная оплата</h4>
+                      <p className="text-sm text-gray-600">
+                        Выставление счета
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </TabsContent>
 
             <TabsContent value="installment" className="mt-8">
@@ -1239,7 +1486,7 @@ const ProductCard: React.FC = () => {
                       product.badge === 'NEW' ? 'bg-green-500' :
                       product.badge === 'СКИДКА' ? 'bg-orange-500' :
                       'bg-purple-500'
-                    } text-white text-xs px-2 py-1`}
+                    } text-white text-xs px-2 py-1"}
                   >
                     {product.badge}
                   </Badge>
