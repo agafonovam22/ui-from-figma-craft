@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -221,7 +220,11 @@ const ProductCatalog: React.FC = () => {
         {/* Первый ряд - 6 карточек */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 mb-6">
           {currentProducts.slice(0, 6).map((product) => (
-            <div key={product.id} className="bg-gray-50 rounded-lg p-3 hover:shadow-lg transition-shadow cursor-pointer">
+            <Link 
+              key={product.id} 
+              to={`/product/${product.id}`}
+              className="bg-gray-50 rounded-lg p-3 hover:shadow-lg transition-shadow cursor-pointer"
+            >
               <div className="aspect-square mb-2 flex items-center justify-center">
                 <img 
                   src={product.image} 
@@ -236,14 +239,18 @@ const ProductCatalog: React.FC = () => {
                   Перейти →
                 </button>
               )}
-            </div>
+            </Link>
           ))}
         </div>
         
         {/* Второй ряд - 6 карточек */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
           {currentProducts.slice(6, 12).map((product) => (
-            <div key={product.id} className="bg-gray-50 rounded-lg p-3 hover:shadow-lg transition-shadow cursor-pointer">
+            <Link 
+              key={product.id} 
+              to={`/product/${product.id}`}
+              className="bg-gray-50 rounded-lg p-3 hover:shadow-lg transition-shadow cursor-pointer"
+            >
               <div className="aspect-square mb-2 flex items-center justify-center">
                 <img 
                   src={product.image} 
@@ -253,7 +260,7 @@ const ProductCatalog: React.FC = () => {
               </div>
               <h3 className="text-lg font-medium text-[#262631] mb-1">{product.title}</h3>
               <p className="text-gray-600 text-sm">{product.price}</p>
-            </div>
+            </Link>
           ))}
         </div>
         

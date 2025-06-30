@@ -1,4 +1,6 @@
+
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NewProducts: React.FC = () => {
   const products = [
@@ -54,7 +56,11 @@ const NewProducts: React.FC = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
           {products.map((product) => (
-            <div key={product.id} className="bg-white border border-gray-100 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
+            <Link 
+              key={product.id} 
+              to={`/product/${product.id}`}
+              className="bg-white border border-gray-100 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer"
+            >
               {/* Badge */}
               <div className="flex justify-start mb-3">
                 <span className={`text-xs px-2 py-1 rounded ${
@@ -99,14 +105,20 @@ const NewProducts: React.FC = () => {
               </div>
 
               {/* Button */}
-              <button className={`w-full py-2 px-4 rounded text-sm font-medium transition-colors ${
-                product.id === 3 
-                  ? 'border border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white'
-                  : 'bg-[#F53B49] text-white hover:bg-red-600'
-              }`}>
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log('Add to cart:', product.id);
+                }}
+                className={`w-full py-2 px-4 rounded text-sm font-medium transition-colors ${
+                  product.id === 3 
+                    ? 'border border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white'
+                    : 'bg-[#F53B49] text-white hover:bg-red-600'
+                }`}
+              >
                 {product.id === 3 ? 'Запросить цену' : 'Купить'}
               </button>
-            </div>
+            </Link>
           ))}
         </div>
         
