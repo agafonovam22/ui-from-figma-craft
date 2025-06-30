@@ -495,80 +495,148 @@ const ProductCard: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Additional Content Section */}
+                {/* Product Features Section */}
                 <div>
-                  <h2 className="text-2xl font-bold text-[#262631] mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-                  
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-                    <div className="space-y-4 text-gray-700 leading-relaxed">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                        laboris nisi ut aliquip ex ea commodo consequat.
-                      </p>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-12">
+                    <div className="space-y-8">
+                      {/* Left side with trampoline image */}
+                      <div className="rounded-lg overflow-hidden">
+                        <img 
+                          src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&h=400" 
+                          alt="Батут в саду"
+                          className="w-full h-[400px] object-cover"
+                        />
+                      </div>
                     </div>
-                    <div className="space-y-4 text-gray-700 leading-relaxed">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                        laboris nisi ut aliquip ex ea commodo consequat.
+                    
+                    <div className="space-y-6">
+                      {/* Right side with text content */}
+                      <h2 className="text-2xl font-bold text-[#262631]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                      </h2>
+                      
+                      <p className="text-gray-700 leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+                        ea commodo consequat.
                       </p>
+
+                      {/* Features grid */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                          <h3 className="font-semibold text-[#262631] mb-2">
+                            Безопасный и удобный вход внутрь
+                          </h3>
+                          <p className="text-gray-600 text-sm leading-relaxed">
+                            Не нужно беспокоиться о закрытой молнии безопасность вашего 
+                            ребенка всегда будет на высоте.
+                          </p>
+                        </div>
+
+                        <div>
+                          <h3 className="font-semibold text-[#262631] mb-2">
+                            Лестница с антискользящими ступеньками
+                          </h3>
+                          <p className="text-gray-600 text-sm leading-relaxed">
+                            Надежная фиксация и удобные нескользящие ступени лестницы 
+                            созданы для максимального комфорта и безопасности.
+                          </p>
+                        </div>
+
+                        <div>
+                          <h3 className="font-semibold text-[#262631] mb-2">
+                            Двойная конструкция ножек
+                          </h3>
+                          <p className="text-gray-600 text-sm leading-relaxed">
+                            Устойчивость и защита от качания обеспечивается усиленная 
+                            конструкция с двойными ножек. Это придают устойчивости при 
+                            использовании батутов несколькими пользователями одновременно.
+                          </p>
+                        </div>
+
+                        <div>
+                          <h3 className="font-semibold text-[#262631] mb-2">
+                            Нижняя Защитная сеть
+                          </h3>
+                          <p className="text-gray-600 text-sm leading-relaxed">
+                            Нижняя защитная сеть входит в комплект ко всем моделям и 
+                            размерам батутов Scholle. Она обезопасит от проникновения 
+                            детей и домашних животных под батут во время использования.
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Two Images Section */}
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
-                    <div className="rounded-lg overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=400" 
-                        alt="Product demonstration"
-                        className="w-full h-[300px] object-cover"
-                      />
-                    </div>
-                    <div className="rounded-lg overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&h=400" 
-                        alt="Product in use"
-                        className="w-full h-[300px] object-cover"
-                      />
+                  {/* Large image with overlay text */}
+                  <div className="relative rounded-lg overflow-hidden mb-12">
+                    <img 
+                      src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&h=600" 
+                      alt="Морская пристань"
+                      className="w-full h-[500px] object-cover"
+                    />
+                    
+                    {/* Overlay content */}
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-end pr-8">
+                      <div className="bg-white/95 p-8 rounded-lg max-w-md">
+                        <h2 className="text-2xl font-bold text-[#262631] mb-4">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        </h2>
+                        <p className="text-gray-700 text-sm leading-relaxed mb-6">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+                          ea commodo consequat.
+                        </p>
+                        
+                        {/* Statistics */}
+                        <div className="space-y-4">
+                          <div>
+                            <div className="text-3xl font-bold text-[#262631]">177</div>
+                            <div className="text-gray-600 text-sm">Lorem ipsum dolor</div>
+                          </div>
+                          <div>
+                            <div className="text-3xl font-bold text-[#262631]">20+</div>
+                            <div className="text-gray-600 text-sm">Lorem ipsum dolor</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Final Section */}
+                {/* Final text section */}
                 <div>
-                  <div className="relative w-full h-[400px] rounded-lg overflow-hidden mb-8">
-                    <img 
-                      src="https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=1600&h=400" 
-                      alt="Large product showcase"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-
-                  <h2 className="text-2xl font-bold text-[#262631] mb-6">
+                  <h2 className="text-3xl font-bold text-[#262631] mb-8">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   </h2>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-700 leading-relaxed">
-                    <div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-700 leading-relaxed">
+                    <div className="space-y-4">
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                        nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                        commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+                        ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                        commodo consequat.
                       </p>
                     </div>
-                    <div>
+                    <div className="space-y-4">
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                        nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                        commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+                        ut aliquip ex ea commodo consequat.
                       </p>
-                    </div>
-                    <div>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                        nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                        commodo consequat.
                       </p>
                     </div>
                   </div>
