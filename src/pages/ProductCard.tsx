@@ -494,6 +494,85 @@ const ProductCard: React.FC = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* Additional Content Section */}
+                <div>
+                  <h2 className="text-2xl font-bold text-[#262631] mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                  
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                    <div className="space-y-4 text-gray-700 leading-relaxed">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                    </div>
+                    <div className="space-y-4 text-gray-700 leading-relaxed">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Two Images Section */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+                    <div className="rounded-lg overflow-hidden">
+                      <img 
+                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=400" 
+                        alt="Product demonstration"
+                        className="w-full h-[300px] object-cover"
+                      />
+                    </div>
+                    <div className="rounded-lg overflow-hidden">
+                      <img 
+                        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&h=400" 
+                        alt="Product in use"
+                        className="w-full h-[300px] object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Final Section */}
+                <div>
+                  <div className="relative w-full h-[400px] rounded-lg overflow-hidden mb-8">
+                    <img 
+                      src="https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=1600&h=400" 
+                      alt="Large product showcase"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <h2 className="text-2xl font-bold text-[#262631] mb-6">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </h2>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-700 leading-relaxed">
+                    <div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                        nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                    </div>
+                    <div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                        nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                    </div>
+                    <div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                        nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </TabsContent>
 
