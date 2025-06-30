@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -821,7 +822,7 @@ const ProductCard: React.FC = () => {
 
         {/* Similar Products Section */}
         <div className="mt-16">
-          <h2 className="text-2xl font-bold text-[#262631] mb-8">Похожие товары</h2>
+          <h2 className="text-2xl font-bold text-[#262631] mb-8">Вы смотрели</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {similarProducts.map((product) => (
               <div key={product.id} className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
