@@ -3,12 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { ReviewDialog } from "@/components/ReviewDialog";
+import ReviewDialog from "@/components/ReviewDialog";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 
 const ProductCard = () => {
   const [selectedInstallment, setSelectedInstallment] = useState<string>("");
+  const [reviewDialogOpen, setReviewDialogOpen] = useState(false);
 
   const installmentOptions = [
     {
@@ -196,7 +197,9 @@ const ProductCard = () => {
               
               <TabsContent value="reviews" className="space-y-4">
                 <h3 className="text-lg font-semibold">Customer Reviews</h3>
-                <ReviewDialog />
+                <Button onClick={() => setReviewDialogOpen(true)}>
+                  Написать отзыв
+                </Button>
               </TabsContent>
             </Tabs>
           </div>
@@ -218,6 +221,11 @@ const ProductCard = () => {
           </div>
         </div>
       </div>
+
+      <ReviewDialog 
+        open={reviewDialogOpen} 
+        onOpenChange={setReviewDialogOpen} 
+      />
     </div>
   );
 };
