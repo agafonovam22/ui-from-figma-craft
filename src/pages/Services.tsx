@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
-import { Play } from 'lucide-react';
+import { Play, Truck, Wrench, CreditCard, Clock, Home } from 'lucide-react';
 
 const Services: React.FC = () => {
   const [activeTab, setActiveTab] = useState('service-request');
@@ -60,6 +60,7 @@ const Services: React.FC = () => {
     { id: 'service-request', label: 'Заявка на сервис', active: true },
     { id: 'fitness-clubs', label: 'Обслуживание фитнес клубов', active: false },
     { id: 'instructions', label: 'Инструкции', active: false },
+    { id: 'services', label: 'Услуги', active: false },
     { id: 'video-instructions', label: 'Видео-инструкции', active: false }
   ];
 
@@ -120,6 +121,44 @@ const Services: React.FC = () => {
     }
   ];
 
+  const services = [
+    {
+      id: 1,
+      title: 'Доставка',
+      description: 'Быстрая и надежная доставка спортивного оборудования по всей стране',
+      icon: Truck,
+      color: 'bg-blue-500'
+    },
+    {
+      id: 2,
+      title: 'Сборка',
+      description: 'Профессиональная сборка и установка тренажеров нашими специалистами',
+      icon: Wrench,
+      color: 'bg-green-500'
+    },
+    {
+      id: 3,
+      title: 'Различные способы оплаты',
+      description: 'Удобные варианты оплаты: наличными, картой, банковским переводом',
+      icon: CreditCard,
+      color: 'bg-purple-500'
+    },
+    {
+      id: 4,
+      title: 'Рассрочка',
+      description: 'Покупайте оборудование в рассрочку на выгодных условиях',
+      icon: Clock,
+      color: 'bg-orange-500'
+    },
+    {
+      id: 5,
+      title: 'Демонтаж и переезд',
+      description: 'Услуги по демонтажу старого оборудования и переезду в новое помещение',
+      icon: Home,
+      color: 'bg-red-500'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -133,6 +172,7 @@ const Services: React.FC = () => {
             <span>
               {activeTab === 'fitness-clubs' ? 'Обслуживание фитнес клубов' : 
                activeTab === 'video-instructions' ? 'Видео-инструкции' :
+               activeTab === 'services' ? 'Услуги' :
                'Оставить заявку на сервис'}
             </span>
           </div>
@@ -141,6 +181,7 @@ const Services: React.FC = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-8">
             {activeTab === 'fitness-clubs' ? 'Обслуживание фитнес клубов' : 
              activeTab === 'video-instructions' ? 'Видео-инструкции' :
+             activeTab === 'services' ? 'Услуги' :
              'Оставить заявку на сервис'}
           </h1>
 
@@ -467,6 +508,38 @@ const Services: React.FC = () => {
             </div>
           )}
 
+          {/* Instructions Tab Content Placeholder */}
+          {activeTab === 'instructions' && (
+            <div className="py-12 text-center">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Инструкции</h2>
+              <p className="text-gray-600">Содержание этого раздела будет добавлено позже.</p>
+            </div>
+          )}
+
+          {/* Services Tab Content */}
+          {activeTab === 'services' && (
+            <div className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {services.map((service) => {
+                  const IconComponent = service.icon;
+                  return (
+                    <Card key={service.id} className="hover:shadow-lg transition-shadow">
+                      <CardContent className="p-6">
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className={`${service.color} p-3 rounded-lg text-white`}>
+                            <IconComponent className="w-6 h-6" />
+                          </div>
+                          <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
+                        </div>
+                        <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           {/* Video Instructions Tab Content */}
           {activeTab === 'video-instructions' && (
             <div className="flex gap-8">
@@ -541,14 +614,6 @@ const Services: React.FC = () => {
                   ))}
                 </div>
               </div>
-            </div>
-          )}
-
-          {/* Instructions Tab Content Placeholder */}
-          {activeTab === 'instructions' && (
-            <div className="py-12 text-center">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Инструкции</h2>
-              <p className="text-gray-600">Содержание этого раздела будет добавлено позже.</p>
             </div>
           )}
         </div>
