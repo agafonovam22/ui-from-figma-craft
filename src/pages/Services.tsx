@@ -125,37 +125,37 @@ const Services: React.FC = () => {
     {
       id: 1,
       title: 'Доставка',
-      description: 'Быстрая и надежная доставка спортивного оборудования по всей стране',
-      icon: Truck,
-      color: 'bg-blue-500'
+      description: 'У нас работают высококвалифицированные сотрудники со стажем более 5 лет. Мы оперативно доставляем заказы наших клиентов в любую точку г. Москвы и Санкт-Петербурга, а также других регионов России.',
+      backgroundImage: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png',
+      buttonText: 'Перейти'
     },
     {
       id: 2,
       title: 'Сборка',
-      description: 'Профессиональная сборка и установка тренажеров нашими специалистами',
-      icon: Wrench,
-      color: 'bg-green-500'
+      description: 'Наша компания оказывает полный спектр услуг по подъему и сборке оборудования. Сотрудники оснащены всем необходимым инструментом и имеют огромный опыт.',
+      backgroundImage: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
+      buttonText: 'Перейти'
     },
     {
       id: 3,
       title: 'Различные способы оплаты',
-      description: 'Удобные варианты оплаты: наличными, картой, банковским переводом',
-      icon: CreditCard,
-      color: 'bg-purple-500'
+      description: 'У всех экипажей нашей компании присутствуют терминалы для безналичной оплаты, вы можете оплатить свою покупку различными способами: наличными, банковской картой, через QR код или оплатить товар по счету.',
+      backgroundImage: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
+      buttonText: 'Перейти'
     },
     {
       id: 4,
       title: 'Рассрочка',
-      description: 'Покупайте оборудование в рассрочку на выгодных условиях',
-      icon: Clock,
-      color: 'bg-orange-500'
+      description: 'Вы можете оформить рассрочку сроком до 12 месяцев, без переплат, без первоначального взноса, оставьте заявку и менеджеры банков-партнеров свяжутся с вами.',
+      backgroundImage: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png',
+      buttonText: 'Перейти'
     },
     {
       id: 5,
       title: 'Демонтаж и переезд',
-      description: 'Услуги по демонтажу старого оборудования и переезду в новое помещение',
-      icon: Home,
-      color: 'bg-red-500'
+      description: 'Также вы можете заказать услуги по перевозке спортивного оборудования с полным демонтажом и сборкой на новом месте. Хотите перевезти свой тренажер в новую квартиру или загородный дом - это к нам!',
+      backgroundImage: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
+      buttonText: 'Перейти'
     }
   ];
 
@@ -202,7 +202,7 @@ const Services: React.FC = () => {
             ))}
           </div>
 
-          {/* Service Request Tab Content */}
+          {/* Service Request Tab Content - keep existing code */}
           {activeTab === 'service-request' && (
             <div className="flex gap-12 items-stretch">
               <div className="flex-1 flex flex-col min-h-[800px]">
@@ -347,7 +347,7 @@ const Services: React.FC = () => {
             </div>
           )}
 
-          {/* Fitness Clubs Tab Content */}
+          {/* Fitness Clubs Tab Content - keep existing code */}
           {activeTab === 'fitness-clubs' && (
             <div className="space-y-12">
               {/* First section with image and text */}
@@ -516,31 +516,38 @@ const Services: React.FC = () => {
             </div>
           )}
 
-          {/* Services Tab Content - FIXED */}
+          {/* Services Tab Content */}
           {activeTab === 'services' && (
             <div className="space-y-8">
+              <h2 className="text-3xl font-bold text-gray-900">Услуги</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {services.map((service) => {
-                  const IconComponent = service.icon;
-                  return (
-                    <Card key={service.id} className="hover:shadow-lg transition-shadow">
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-4 mb-4">
-                          <div className={`${service.color} p-3 rounded-lg text-white`}>
-                            <IconComponent className="w-6 h-6" />
-                          </div>
-                          <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
-                        </div>
-                        <p className="text-gray-600 leading-relaxed">{service.description}</p>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
+                {services.map((service) => (
+                  <div 
+                    key={service.id} 
+                    className="relative rounded-lg overflow-hidden h-64 group cursor-pointer"
+                  >
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{ backgroundImage: `url(${service.backgroundImage})` }}
+                    >
+                      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                    </div>
+                    <div className="relative h-full p-6 flex flex-col text-white">
+                      <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                      <p className="text-sm leading-relaxed mb-4 flex-grow">
+                        {service.description}
+                      </p>
+                      <button className="bg-white text-black px-4 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-colors self-start">
+                        {service.buttonText} →
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           )}
 
-          {/* Video Instructions Tab Content */}
+          {/* Video Instructions Tab Content - keep existing code */}
           {activeTab === 'video-instructions' && (
             <div className="flex gap-8">
               {/* Filter Sidebar */}
