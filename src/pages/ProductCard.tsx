@@ -65,6 +65,55 @@ const ProductCard: React.FC = () => {
     paymentOptions: 'Безналичная оплата, оплата онлайн'
   };
 
+  // Similar products data
+  const similarProducts = [
+    {
+      id: 1,
+      title: 'Батут Berg Champion 380 см',
+      price: '49 900 ₽',
+      originalPrice: '55 000 ₽',
+      discount: '-10%',
+      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
+      badge: 'ХИТ'
+    },
+    {
+      id: 2,
+      title: 'Батут Hasttings Classic 305 см',
+      price: '24 900 ₽',
+      originalPrice: '29 900 ₽',
+      discount: '-17%',
+      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
+      badge: 'АКЦИЯ'
+    },
+    {
+      id: 3,
+      title: 'Батут Oxygen Fitness Standard 244 см',
+      price: '15 900 ₽',
+      originalPrice: '18 900 ₽',
+      discount: '-16%',
+      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
+      badge: 'NEW'
+    },
+    {
+      id: 4,
+      title: 'Батут Diamond fitness Internal 183 см',
+      price: '8 900 ₽',
+      originalPrice: '12 900 ₽',
+      discount: '-31%',
+      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
+      badge: 'СКИДКА'
+    },
+    {
+      id: 5,
+      title: 'Батут Oxygen Fitness Standard 366 см',
+      price: '23 900 ₽',
+      originalPrice: '26 900 ₽',
+      discount: '-11%',
+      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
+      badge: 'ТОП'
+    }
+  ];
+
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % product.images.length);
   };
@@ -495,145 +544,249 @@ const ProductCard: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Product Features Section */}
-                <div>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-12">
-                    <div className="space-y-8">
-                      {/* Left side with trampoline image */}
-                      <div className="rounded-lg overflow-hidden">
-                        <img 
-                          src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&h=400" 
-                          alt="Батут в саду"
-                          className="w-full h-[400px] object-cover"
-                        />
+                {/* Large Image with Water Section */}
+                <div className="relative rounded-lg overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&h=600" 
+                    alt="Батут у воды"
+                    className="w-full h-[500px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <div className="text-center text-white">
+                      <h2 className="text-4xl font-bold mb-4">Lorem ipsum dolor sit amet</h2>
+                      <p className="text-lg max-w-2xl mx-auto">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Four Features Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="relative group">
+                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                      <img 
+                        src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=500&h=500" 
+                        alt="Feature 1"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
+                      <h3 className="font-medium text-center text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div className="relative group">
+                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                      <img 
+                        src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=500&h=500" 
+                        alt="Feature 2"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
+                      <h3 className="font-medium text-center text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div className="relative group">
+                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                      <img 
+                        src="https://images.unsplash.com/photo-1518877593221-1f28583780b4?auto=format&fit=crop&w=500&h=500" 
+                        alt="Feature 3"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
+                      <h3 className="font-medium text-center text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div className="relative group">
+                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                      <img 
+                        src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=500&h=500" 
+                        alt="Feature 4"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
+                      <h3 className="font-medium text-center text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Left Image Right Text Section */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                  <div className="rounded-lg overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&h=400" 
+                      alt="Батут в саду"
+                      className="w-full h-[400px] object-cover"
+                    />
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <h2 className="text-2xl font-bold text-[#262631]">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    </h2>
+                    
+                    <p className="text-gray-700 leading-relaxed">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+                      ea commodo consequat.
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div>
+                        <h3 className="font-semibold text-[#262631] mb-2">
+                          Безопасный и удобный вход внутрь
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          Не нужно беспокоиться о закрытой молнии безопасность вашего 
+                          ребенка всегда будет на высоте.
+                        </p>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-[#262631] mb-2">
+                          Лестница с антискользящими ступеньками
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          Надежная фиксация и удобные нескользящие ступени лестницы 
+                          созданы для максимального комфорта и безопасности.
+                        </p>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-[#262631] mb-2">
+                          Двойная конструкция ножек
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          Устойчивость и защита от качания обеспечивается усиленная 
+                          конструкция с двойными ножек. Это придают устойчивости при 
+                          использовании батутов несколькими пользователями одновременно.
+                        </p>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-[#262631] mb-2">
+                          Нижняя Защитная сеть
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          Нижняя защитная сеть входит в комплект ко всем моделям и 
+                          размерам батутов Scholle. Она обезопасит от проникновения 
+                          детей и домашних животных под батут во время использования.
+                        </p>
                       </div>
                     </div>
-                    
-                    <div className="space-y-6">
-                      {/* Right side with text content */}
-                      <h2 className="text-2xl font-bold text-[#262631]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </div>
+                </div>
+
+                {/* Large image with overlay text */}
+                <div className="relative rounded-lg overflow-hidden mb-12">
+                  <img 
+                    src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&h=600" 
+                    alt="Морская пристань"
+                    className="w-full h-[500px] object-cover"
+                  />
+                  
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-end pr-8">
+                    <div className="bg-white/95 p-8 rounded-lg max-w-md">
+                      <h2 className="text-2xl font-bold text-[#262631] mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                       </h2>
-                      
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-gray-700 text-sm leading-relaxed mb-6">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
                         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
                         ea commodo consequat.
                       </p>
-
-                      {/* Features grid */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      
+                      <div className="space-y-4">
                         <div>
-                          <h3 className="font-semibold text-[#262631] mb-2">
-                            Безопасный и удобный вход внутрь
-                          </h3>
-                          <p className="text-gray-600 text-sm leading-relaxed">
-                            Не нужно беспокоиться о закрытой молнии безопасность вашего 
-                            ребенка всегда будет на высоте.
-                          </p>
+                          <div className="text-3xl font-bold text-[#262631]">177</div>
+                          <div className="text-gray-600 text-sm">Lorem ipsum dolor</div>
                         </div>
-
                         <div>
-                          <h3 className="font-semibold text-[#262631] mb-2">
-                            Лестница с антискользящими ступеньками
-                          </h3>
-                          <p className="text-gray-600 text-sm leading-relaxed">
-                            Надежная фиксация и удобные нескользящие ступени лестницы 
-                            созданы для максимального комфорта и безопасности.
-                          </p>
-                        </div>
-
-                        <div>
-                          <h3 className="font-semibold text-[#262631] mb-2">
-                            Двойная конструкция ножек
-                          </h3>
-                          <p className="text-gray-600 text-sm leading-relaxed">
-                            Устойчивость и защита от качания обеспечивается усиленная 
-                            конструкция с двойными ножек. Это придают устойчивости при 
-                            использовании батутов несколькими пользователями одновременно.
-                          </p>
-                        </div>
-
-                        <div>
-                          <h3 className="font-semibold text-[#262631] mb-2">
-                            Нижняя Защитная сеть
-                          </h3>
-                          <p className="text-gray-600 text-sm leading-relaxed">
-                            Нижняя защитная сеть входит в комплект ко всем моделям и 
-                            размерам батутов Scholle. Она обезопасит от проникновения 
-                            детей и домашних животных под батут во время использования.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Large image with overlay text */}
-                  <div className="relative rounded-lg overflow-hidden mb-12">
-                    <img 
-                      src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&h=600" 
-                      alt="Морская пристань"
-                      className="w-full h-[500px] object-cover"
-                    />
-                    
-                    {/* Overlay content */}
-                    <div className="absolute inset-0 bg-black/40 flex items-center justify-end pr-8">
-                      <div className="bg-white/95 p-8 rounded-lg max-w-md">
-                        <h2 className="text-2xl font-bold text-[#262631] mb-4">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                        </h2>
-                        <p className="text-gray-700 text-sm leading-relaxed mb-6">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                          ea commodo consequat.
-                        </p>
-                        
-                        {/* Statistics */}
-                        <div className="space-y-4">
-                          <div>
-                            <div className="text-3xl font-bold text-[#262631]">177</div>
-                            <div className="text-gray-600 text-sm">Lorem ipsum dolor</div>
-                          </div>
-                          <div>
-                            <div className="text-3xl font-bold text-[#262631]">20+</div>
-                            <div className="text-gray-600 text-sm">Lorem ipsum dolor</div>
-                          </div>
+                          <div className="text-3xl font-bold text-[#262631]">20+</div>
+                          <div className="text-gray-600 text-sm">Lorem ipsum dolor</div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Final text section */}
-                <div>
-                  <h2 className="text-3xl font-bold text-[#262631] mb-8">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </h2>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-700 leading-relaxed">
-                    <div className="space-y-4">
-                      <p>
+                {/* Two Large Images Side by Side with Text */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <img 
+                      src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&h=400" 
+                      alt="Left image"
+                      className="w-full h-[300px] object-cover rounded-lg"
+                    />
+                    <div className="space-y-4 text-gray-700 leading-relaxed">
+                      <h3 className="text-xl font-bold text-[#262631]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                      </h3>
+                      <p className="text-sm">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
                         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                        commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-                        ut aliquip ex ea commodo consequat.
+                        commodo consequat.
                       </p>
-                      <p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <img 
+                      src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&h=400" 
+                      alt="Right image"
+                      className="w-full h-[300px] object-cover rounded-lg"
+                    />
+                    <div className="space-y-4 text-gray-700 leading-relaxed">
+                      <h3 className="text-xl font-bold text-[#262631]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                      </h3>
+                      <p className="text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                        commodo consequat.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Large Blue Water/Port Image */}
+                <div className="rounded-lg overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&h=500" 
+                    alt="Port/Marina view"
+                    className="w-full h-[400px] object-cover"
+                  />
+                </div>
+
+                {/* Final Text Block */}
+                <div className="space-y-6">
+                  <h2 className="text-2xl font-bold text-[#262631]">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-700 leading-relaxed">
+                    <div className="space-y-4">
+                      <p className="text-sm">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
                         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
                         commodo consequat.
                       </p>
                     </div>
                     <div className="space-y-4">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                        commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-                        ut aliquip ex ea commodo consequat.
-                      </p>
-                      <p>
+                      <p className="text-sm">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
                         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
                         commodo consequat.
@@ -664,6 +817,52 @@ const ProductCard: React.FC = () => {
               <div className="text-gray-600">Информация об услугах будет добавлена позже</div>
             </TabsContent>
           </Tabs>
+        </div>
+
+        {/* Similar Products Section */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold text-[#262631] mb-8">Похожие товары</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {similarProducts.map((product) => (
+              <div key={product.id} className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative">
+                  <img 
+                    src={product.image} 
+                    alt={product.title}
+                    className="w-full h-48 object-contain bg-gray-50"
+                  />
+                  <Badge 
+                    className={`absolute top-2 left-2 ${
+                      product.badge === 'АКЦИЯ' ? 'bg-red-500' :
+                      product.badge === 'ХИТ' ? 'bg-blue-500' :
+                      product.badge === 'NEW' ? 'bg-green-500' :
+                      product.badge === 'СКИДКА' ? 'bg-orange-500' :
+                      'bg-purple-500'
+                    } text-white text-xs px-2 py-1`}
+                  >
+                    {product.badge}
+                  </Badge>
+                </div>
+                
+                <div className="p-4">
+                  <h3 className="text-sm font-medium text-gray-900 mb-2 line-clamp-2">
+                    {product.title}
+                  </h3>
+                  
+                  <div className="flex items-center gap-2 mb-3">
+                    <Badge className="bg-red-500 text-white text-xs">{product.discount}</Badge>
+                    <span className="text-gray-400 line-through text-xs">{product.originalPrice}</span>
+                  </div>
+                  
+                  <div className="text-lg font-bold text-[#262631] mb-3">{product.price}</div>
+                  
+                  <Button className="w-full bg-[#F53B49] hover:bg-red-600 text-white text-sm py-2">
+                    В корзину
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
       
