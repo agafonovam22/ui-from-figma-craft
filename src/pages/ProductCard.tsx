@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -556,7 +555,8 @@ const ProductCard: React.FC = () => {
                     <div className="text-center text-white">
                       <h2 className="text-4xl font-bold mb-4">Lorem ipsum dolor sit amet</h2>
                       <p className="text-lg max-w-2xl mx-auto">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                        dolore magna aliqua.
                       </p>
                     </div>
                   </div>
@@ -799,7 +799,265 @@ const ProductCard: React.FC = () => {
             </TabsContent>
 
             <TabsContent value="specifications" className="mt-8">
-              <div className="text-gray-600">Характеристики будут добавлены позже</div>
+              <div className="space-y-8">
+                <h2 className="text-2xl font-bold text-[#262631]">Характеристики</h2>
+                
+                {/* Основные характеристики */}
+                <div>
+                  <h3 className="text-lg font-semibold text-[#262631] mb-4">Основные характеристики</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full border-collapse">
+                      <tbody>
+                        <tr className="border-b border-gray-200">
+                          <td className="py-3 text-gray-600 w-1/3">Тип продукции</td>
+                          <td className="py-3 text-gray-900 font-medium">Батуты</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                          <td className="py-3 text-gray-600">Бренд</td>
+                          <td className="py-3 text-gray-900 font-medium">Scholle</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                          <td className="py-3 text-gray-600">Тип защитной сетки</td>
+                          <td className="py-3 text-gray-900 font-medium">внутренняя</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                          <td className="py-3 text-gray-600">Форма батута</td>
+                          <td className="py-3 text-gray-900 font-medium">круг</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                          <td className="py-3 text-gray-600">Защитный мат</td>
+                          <td className="py-3 text-gray-900 font-medium">есть</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                          <td className="py-3 text-gray-600">Цвет</td>
+                          <td className="py-3 text-gray-900 font-medium">красный/синий</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                          <td className="py-3 text-gray-600">Ширина защитного мата, см</td>
+                          <td className="py-3 text-gray-900 font-medium">25</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                          <td className="py-3 text-gray-600">Материал защитного мата</td>
+                          <td className="py-3 text-gray-900 font-medium">вспененный РР</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                          <td className="py-3 text-gray-600">Диаметр батута, ft</td>
+                          <td className="py-3 text-gray-900 font-medium">8</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                          <td className="py-3 text-gray-600">Диаметр батута, см</td>
+                          <td className="py-3 text-gray-900 font-medium">244</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                          <td className="py-3 text-gray-600">Диаметр прыжкового полотна, см</td>
+                          <td className="py-3 text-gray-900 font-medium">227.3</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                          <td className="py-3 text-gray-600">Материал прыжкового полотна</td>
+                          <td className="py-3 text-gray-900 font-medium">permatron</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                          <td className="py-3 text-gray-600">Количество пружин, шт</td>
+                          <td className="py-3 text-gray-900 font-medium">48</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                          <td className="py-3 text-gray-600">Длина пружин, мм</td>
+                          <td className="py-3 text-gray-900 font-medium">165</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                          <td className="py-3 text-gray-600">Диаметр пружины, см</td>
+                          <td className="py-3 text-gray-900 font-medium">2.4</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                {/* Три колонки характеристик */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {/* Габариты в рабочем состоянии */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-[#262631] mb-4">Габариты в рабочем состоянии</h3>
+                    <div className="space-y-3">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Размер в рабочем состоянии Длина, см</span>
+                        <span className="text-gray-900 font-medium">244</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Размер в рабочем состоянии Ширина, см</span>
+                        <span className="text-gray-900 font-medium">244</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Размер в рабочем состоянии Высота, см</span>
+                        <span className="text-gray-900 font-medium">255</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Дополнительные характеристики */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-[#262631] mb-4">Дополнительные характеристики</h3>
+                    <div className="space-y-3">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Рама</span>
+                        <span className="text-gray-900 font-medium">оцинкованная сталь</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Лестница</span>
+                        <span className="text-gray-900 font-medium">есть</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Серия</span>
+                        <span className="text-gray-900 font-medium">Space</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Упаковка */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-[#262631] mb-4">Упаковка</h3>
+                    <div className="space-y-3">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Габариты упаковки Длина, см</span>
+                        <span className="text-gray-900 font-medium">129</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Габариты упаковки Ширина, см</span>
+                        <span className="text-gray-900 font-medium">47</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Габариты упаковки Высота, см</span>
+                        <span className="text-gray-900 font-medium">26</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Дополнительные характеристики в таблице */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div>
+                    <div className="space-y-3">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Тип пружины</span>
+                        <span className="text-gray-900 font-medium">боченкообразные</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Материал пружины</span>
+                        <span className="text-gray-900 font-medium">гальванизированная сталь</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Диаметр нити пружины, см</span>
+                        <span className="text-gray-900 font-medium">0.3</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Верхняя защитная сеть</span>
+                        <span className="text-gray-900 font-medium">есть</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Вход на батут</span>
+                        <span className="text-gray-900 font-medium">клапан (в наличии)</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Высота защитной сетки, см</span>
+                        <span className="text-gray-900 font-medium">170</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Материал защитной сетки</span>
+                        <span className="text-gray-900 font-medium">полипропилен</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Количество верхних стоек</span>
+                        <span className="text-gray-900 font-medium">6</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Высота основания батута, см</span>
+                        <span className="text-gray-900 font-medium">55</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Нижняя защитная сеть</span>
+                        <span className="text-gray-900 font-medium">есть</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Профиль труб основания батута, см</span>
+                        <span className="text-gray-900 font-medium">38 x 1.5</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Профиль труб ножек, см</span>
+                        <span className="text-gray-900 font-medium">38 x 1.2</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Профиль труб верхних стоек, см</span>
+                        <span className="text-gray-900 font-medium">25x1.2</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Вес пользователя, кг</span>
+                        <span className="text-gray-900 font-medium">150</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Вес и Гарантия */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Вес */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-[#262631] mb-4">Вес</h3>
+                    <div className="space-y-3">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Вес Нетто, кг</span>
+                        <span className="text-gray-900 font-medium">39</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Вес Брутто, кг</span>
+                        <span className="text-gray-900 font-medium">47</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Гарантия и Сертификация */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-[#262631] mb-4">Гарантия и Сертификация</h3>
+                    <div className="space-y-3">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Гарантия на домашнее использование</span>
+                        <span className="text-gray-900 font-medium">1 год</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Страна бренда</span>
+                        <span className="text-gray-900 font-medium">Германия</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Страна изготовления</span>
+                        <span className="text-gray-900 font-medium">КНР</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 text-sm">Артикул</span>
+                        <span className="text-gray-900 font-medium">Space 8RBT</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Схемы */}
+                <div className="mt-8">
+                  <div className="flex gap-8 justify-center">
+                    <div className="text-center">
+                      <img 
+                        src="/lovable-uploads/56e1b9c3-6c2f-413c-9aac-7210bf1fc900.png" 
+                        alt="Схема батута вид сверху" 
+                        className="w-32 h-32 object-contain mx-auto mb-2"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <img 
+                        src="/lovable-uploads/56e1b9c3-6c2f-413c-9aac-7210bf1fc900.png" 
+                        alt="Схема батута вид сбоку" 
+                        className="w-32 h-32 object-contain mx-auto mb-2"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </TabsContent>
 
             <TabsContent value="reviews" className="mt-8">
