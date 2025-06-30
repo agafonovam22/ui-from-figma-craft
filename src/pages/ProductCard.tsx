@@ -1,1525 +1,645 @@
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { useParams } from 'react-router-dom';
+import { Heart, Share2, Star, Minus, Plus, ShoppingCart, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Label } from '@/components/ui/label';
 import ReviewDialog from '@/components/ReviewDialog';
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ChevronLeft, ChevronRight, Heart, Star, Play } from 'lucide-react';
 
-const ProductCard: React.FC = () => {
-  const { productId } = useParams();
-  const [selectedColor, setSelectedColor] = useState('blue');
-  const [selectedSize, setSelectedSize] = useState('14');
+const ProductCard = () => {
+  const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [reviewDialogOpen, setReviewDialogOpen] = useState(false);
+  const [selectedInstallment, setSelectedInstallment] = useState('');
+  const [isReviewDialogOpen, setIsReviewDialogOpen] = useState(false);
 
-  // Mock product data - в реальном приложении это будет загружаться по productId
   const product = {
-    id: productId,
-    title: 'Батут Scholle Space Twin Blue/Red 8FT (2.44м)',
-    brand: 'CardioPower',
-    rating: 4,
-    maxRating: 5,
-    originalPrice: '5 000₽',
-    currentPrice: '4 610 ₽',
-    discount: '-15%',
+    id: 1,
+    name: 'Беговая дорожка OXYGEN FITNESS NEW CLASSIC AURUM LCD',
+    price: 179900,
+    oldPrice: 199900,
     images: [
-      '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png'
+      '/lovable-uploads/32484ced-ddd4-4761-9855-fa657187f020.png',
+      '/lovable-uploads/52b103e9-b2f9-4abd-a5ac-6f7932a30414.png',
+      '/lovable-uploads/63223971-7b48-4bd9-824c-f4c52e54d9fb.png'
     ],
-    badges: ['АКЦИЯ', 'ХИТ ПРОДАЖ'],
+    rating: 4.5,
+    reviews: 24,
     availability: 'В наличии',
-    inStock: true,
-    specifications: {
-      type: 'Беговые дорожки для дома',
-      brand: 'CardioPower',
-      purpose: 'Домашние',
-      motorType: 'Постоянного тока DC',
-      motorPower: '1.5',
-      peakPower: '2.5',
-      beltType: 'Электрические',
-      minSpeed: '0.8',
-      maxSpeed: '10',
-      incline: 'Механический'
-    },
-    colors: [
-      { name: 'Красный/синий', value: 'blue' },
-      { name: 'Зеленый/желтый', value: 'green' }
-    ],
-    sizes: [
-      { size: '8', price: '(-15 000₽)' },
-      { size: '10', price: '(-10 000₽)' },
-      { size: '12', price: '(-5 000₽)' },
-      { size: '14', price: '', selected: true },
-      { size: '16', price: '(+10 000₽)' }
-    ],
-    delivery: {
-      price: '300 руб.',
-      note: '(в пределах МКАД/КАД)',
-      description: 'Рассчитывается индивидуально'
-    },
-    assembly: 'Наличными, картой, безналичная, онлайн, в рассрочку',
-    paymentOptions: 'Безналичная оплата, оплата онлайн'
+    brand: 'OXYGEN FITNESS',
+    model: 'NEW CLASSIC AURUM LCD',
+    warranty: '2 года',
+    delivery: 'Бесплатная доставка по Москве'
   };
 
-  // Similar products data
-  const similarProducts = [
+  const installmentOptions = [
     {
-      id: 1,
-      title: 'Батут Berg Champion 380 см',
-      price: '49 900 ₽',
-      originalPrice: '55 000 ₽',
-      discount: '-10%',
-      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      badge: 'ХИТ'
+      id: 'tinkoff-0-0-12',
+      bank: 'О-О-12\nТинькофф',
+      monthlyPayment: '5 000 ₽',
+      overpayment: 'нет',
+      term: '0 - 6',
+      tags: ['Ставка от 21,5%', 'Первый взнос 0%', 'Срок 12 месяцев']
     },
     {
+      id: 'tinkoff-0-0-6',
+      bank: 'О-О-6\nТинькофф',
+      monthlyPayment: '5 000 ₽',
+      overpayment: 'нет',
+      term: '0 - 6',
+      tags: ['Ставка от 21,5%', 'Первый взнос 0%', 'Срок 12 месяцев']
+    },
+    {
+      id: 'sberbank-0-0-6',
+      bank: 'О-О-6\nСбербанк',
+      monthlyPayment: '5 000 ₽',
+      overpayment: 'нет',
+      term: '0 - 6',
+      tags: ['Ставка от 21,5%', 'Первый взнос 0%', 'Срок 12 месяцев']
+    },
+    {
+      id: 'sberbank-0-0-6-alt',
+      bank: 'О-О-6\nСбербанк',
+      monthlyPayment: '5 000 ₽',
+      overpayment: 'нет',
+      term: '0 - 6',
+      tags: ['Ставка от 21,5%', 'Первый взнос 0%', 'Срок 12 месяцев']
+    }
+  ];
+
+  const relatedProducts = [
+    {
       id: 2,
-      title: 'Батут Hasttings Classic 305 см',
-      price: '24 900 ₽',
-      originalPrice: '29 900 ₽',
-      discount: '-17%',
-      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      badge: 'АКЦИЯ'
+      name: 'Беговая дорожка OXYGEN FITNESS WIDER T25',
+      price: 89900,
+      oldPrice: 99900,
+      image: '/lovable-uploads/52b103e9-b2f9-4abd-a5ac-6f7932a30414.png',
+      rating: 4.3,
+      reviews: 18
     },
     {
       id: 3,
-      title: 'Батут Oxygen Fitness Standard 244 см',
-      price: '15 900 ₽',
-      originalPrice: '18 900 ₽',
-      discount: '-16%',
-      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      badge: 'NEW'
+      name: 'Беговая дорожка OXYGEN FITNESS CARDIO CONCEPT III',
+      price: 129900,
+      oldPrice: 149900,
+      image: '/lovable-uploads/63223971-7b48-4bd9-824c-f4c52e54d9fb.png',
+      rating: 4.7,
+      reviews: 31
     },
     {
       id: 4,
-      title: 'Батут Diamond fitness Internal 183 см',
-      price: '8 900 ₽',
-      originalPrice: '12 900 ₽',
-      discount: '-31%',
-      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      badge: 'СКИДКА'
-    },
-    {
-      id: 5,
-      title: 'Батут Oxygen Fitness Standard 366 см',
-      price: '23 900 ₽',
-      originalPrice: '26 900 ₽',
-      discount: '-11%',
-      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      badge: 'ТОП'
+      name: 'Беговая дорожка OXYGEN FITNESS PLASMA III LCD',
+      price: 159900,
+      image: '/lovable-uploads/32484ced-ddd4-4761-9855-fa657187f020.png',
+      rating: 4.6,
+      reviews: 22
     }
   ];
 
-  // Mock reviews data
-  const reviews = [
-    {
-      id: 1,
-      userName: 'Имя Фамилия',
-      date: 'Вчера, 22:01',
-      rating: 4,
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-    },
-    {
-      id: 2,
-      userName: 'Имя Фамилия',
-      date: 'Вчера, 22:01',
-      rating: 4,
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-    }
-  ];
-
-  // Rating categories
-  const ratingCategories = [
-    { name: 'Качество', rating: 4.5, maxRating: 5 },
-    { name: 'Цена', rating: 4.8, maxRating: 5 },
-    { name: 'Функциональность', rating: 3.5, maxRating: 5 },
-    { name: 'Скорость', rating: 4.2, maxRating: 5 },
-    { name: 'Легкость в сборке', rating: 3.8, maxRating: 5 }
-  ];
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % product.images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + product.images.length) % product.images.length);
-  };
-
-  const increaseQuantity = () => setQuantity(prev => prev + 1);
-  const decreaseQuantity = () => setQuantity(prev => Math.max(1, prev - 1));
-
-  // Rating bar component
-  const RatingBar = ({ rating, maxRating }: { rating: number; maxRating: number }) => {
-    const filledBars = Math.floor(rating);
-    const hasHalfBar = rating % 1 !== 0;
-    
-    return (
-      <div className="flex gap-1">
-        {[...Array(maxRating)].map((_, index) => (
-          <div
-            key={index}
-            className={`w-4 h-3 ${
-              index < filledBars
-                ? 'bg-red-500'
-                : index === filledBars && hasHalfBar
-                ? 'bg-red-300'
-                : 'bg-gray-200'
-            }`}
-          />
-        ))}
-      </div>
-    );
-  };
+  const incrementQuantity = () => setQuantity(prev => prev + 1);
+  const decrementQuantity = () => setQuantity(prev => Math.max(1, prev - 1));
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      
-      <main className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-6">
-        {/* Breadcrumb */}
-        <nav className="flex items-center space-x-2 text-sm text-gray-500 mb-6">
-          <Link to="/" className="hover:text-[#F53B49]">Главная</Link>
-          <span>/</span>
-          <Link to="/catalog" className="hover:text-[#F53B49]">Каталог</Link>
-          <span>/</span>
-          <span className="text-gray-900">{product.title}</span>
-        </nav>
+    <div className="min-h-screen bg-gray-50">
+      <nav className="bg-white py-4 border-b">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center space-x-2 text-sm text-gray-600">
+            <span>Главная</span>
+            <span>/</span>
+            <span>Каталог</span>
+            <span>/</span>
+            <span>Беговые дорожки</span>
+            <span>/</span>
+            <span className="text-black">{product.name}</span>
+          </div>
+        </div>
+      </nav>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Левая часть - Изображения */}
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          {/* Product Images */}
           <div className="space-y-4">
-            {/* Badges */}
-            <div className="flex gap-2 mb-4">
-              {product.badges.map((badge, index) => (
-                <Badge 
-                  key={index}
-                  className={`${
-                    badge === 'АКЦИЯ' 
-                      ? 'bg-red-500 text-white hover:bg-red-600' 
-                      : 'bg-blue-500 text-white hover:bg-blue-600'
-                  } px-3 py-1 text-sm font-medium`}
-                >
-                  {badge}
-                </Badge>
-              ))}
-            </div>
-
-            {/* Main Image */}
-            <div className="relative bg-gray-50 rounded-lg overflow-hidden">
-              <img 
-                src={product.images[currentImageIndex]} 
-                alt={product.title}
-                className="w-full h-[400px] object-contain"
+            <div className="aspect-square bg-white rounded-lg overflow-hidden">
+              <img
+                src={product.images[0]}
+                alt={product.name}
+                className="w-full h-full object-contain"
               />
-              
-              {/* Navigation arrows */}
-              <button
-                onClick={prevImage}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                onClick={nextImage}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
             </div>
-
-            {/* Thumbnail Images */}
-            <div className="flex gap-2">
-              {product.images.map((image, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentImageIndex(index)}
-                  className={`w-20 h-20 rounded-lg overflow-hidden border-2 ${
-                    currentImageIndex === index ? 'border-[#F53B49]' : 'border-gray-200'
-                  }`}
-                >
-                  <img 
-                    src={image} 
-                    alt={`${product.title} ${index + 1}`}
-                    className="w-full h-full object-contain bg-gray-50"
+            <div className="grid grid-cols-3 gap-2">
+              {product.images.slice(1).map((image, index) => (
+                <div key={index} className="aspect-square bg-white rounded-lg overflow-hidden">
+                  <img
+                    src={image}
+                    alt={`${product.name} ${index + 2}`}
+                    className="w-full h-full object-contain"
                   />
-                </button>
+                </div>
               ))}
             </div>
           </div>
 
-          {/* Правая часть - Информация о товаре */}
+          {/* Product Details */}
           <div className="space-y-6">
-            {/* Availability and Wishlist */}
-            <div className="flex justify-between items-start">
-              <div className="flex gap-3">
-                <Badge className="bg-green-100 text-green-600 hover:bg-green-100">
-                  ● В наличии
-                </Badge>
-                <Button variant="outline" size="sm" className="text-gray-500 border-gray-300">
-                  В сравнение
-                </Button>
-                <Button variant="outline" size="sm" className="text-gray-500 border-gray-300">
-                  <Heart className="w-4 h-4 mr-1" />
-                  В избранное
-                </Button>
-              </div>
-            </div>
-
-            {/* Product Title */}
-            <h1 className="text-2xl font-bold text-[#262631]">{product.title}</h1>
-
-            {/* Rating */}
-            <div className="flex items-center gap-2">
-              <div className="flex text-yellow-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star 
-                    key={i} 
-                    className={`w-5 h-5 ${i < product.rating ? 'fill-current' : 'text-gray-300'}`} 
-                  />
-                ))}
-              </div>
-              <span className="text-gray-600">{product.rating}/{product.maxRating}</span>
-            </div>
-
-            {/* Specifications Table */}
-            <div className="grid grid-cols-2 gap-y-2 text-sm">
-              <div className="text-gray-600">Тип продукции:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.type}</div>
-              
-              <div className="text-gray-600">Бренд:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.brand}</div>
-              
-              <div className="text-gray-600">Назначение:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.purpose}</div>
-              
-              <div className="text-gray-600">Тип двигателя:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.motorType}</div>
-              
-              <div className="text-gray-600">Мощность двигателя, л.с.:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.motorPower}</div>
-
-              <div className="text-gray-600">Пиковая мощность, л.с.:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.peakPower}</div>
-
-              <div className="text-gray-600">Тип беговой дорожки:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.beltType}</div>
-
-              <div className="text-gray-600">Минимальная скорость, км/ч:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.minSpeed}</div>
-
-              <div className="text-gray-600">Максимальная скорость, км/ч:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.maxSpeed}</div>
-
-              <div className="text-gray-600">Угол наклона:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.incline}</div>
-            </div>
-
-            {/* Show all characteristics link */}
-            <Link to="#" className="text-[#F53B49] text-sm font-medium hover:underline inline-flex items-center">
-              Все характеристики →
-            </Link>
-
-            {/* Color Selection */}
             <div>
-              <div className="text-sm font-medium text-gray-900 mb-2">Цвет</div>
-              <div className="flex gap-2">
-                {product.colors.map((color) => (
-                  <button
-                    key={color.value}
-                    onClick={() => setSelectedColor(color.value)}
-                    className={`px-4 py-2 rounded text-sm font-medium border ${
-                      selectedColor === color.value
-                        ? 'bg-[#262631] text-white border-[#262631]'
-                        : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
-                    }`}
-                  >
-                    {color.name}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Size Selection */}
-            <div>
-              <div className="text-sm font-medium text-gray-900 mb-2">Диаметр, ft</div>
-              <div className="flex gap-2">
-                {product.sizes.map((size) => (
-                  <button
-                    key={size.size}
-                    onClick={() => setSelectedSize(size.size)}
-                    className={`px-3 py-2 rounded text-sm font-medium border min-w-[60px] ${
-                      selectedSize === size.size
-                        ? 'bg-[#262631] text-white border-[#262631]'
-                        : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
-                    }`}
-                  >
-                    <div>{size.size}</div>
-                    {size.price && (
-                      <div className="text-xs text-gray-500">{size.price}</div>
-                    )}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Price and Add to Cart */}
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <div className="flex items-center gap-2 mb-3">
-                <Badge className="bg-red-500 text-white">{product.discount}</Badge>
-                <span className="text-gray-400 line-through text-sm">{product.originalPrice}</span>
-              </div>
-              
-              <div className="text-3xl font-bold text-[#262631] mb-4">{product.currentPrice}</div>
-
-              <div className="flex items-center gap-4 mb-4">
-                <div className="flex items-center border border-gray-300 rounded">
-                  <button
-                    onClick={decreaseQuantity}
-                    className="px-3 py-2 hover:bg-gray-100"
-                  >
-                    −
-                  </button>
-                  <span className="px-4 py-2 border-x border-gray-300">{quantity}</span>
-                  <button
-                    onClick={increaseQuantity}
-                    className="px-3 py-2 hover:bg-gray-100"
-                  >
-                    +
-                  </button>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex items-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className={`w-4 h-4 ${i < Math.floor(product.rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`} />
+                  ))}
                 </div>
-                
-                <Button className="flex-1 bg-[#F53B49] hover:bg-red-600 text-white py-3">
-                  Добавить в корзину
+                <span className="text-sm text-gray-600">({product.reviews} отзывов)</span>
+                <Button
+                  variant="link"
+                  className="p-0 h-auto text-blue-600"
+                  onClick={() => setIsReviewDialogOpen(true)}
+                >
+                  Оставить отзыв
                 </Button>
               </div>
+              <h1 className="text-2xl font-bold mb-4">{product.name}</h1>
+              <Badge variant="secondary" className="bg-green-100 text-green-800 mb-4">
+                {product.availability}
+              </Badge>
             </div>
 
-            {/* Delivery and Payment Info */}
-            <div className="space-y-3 text-sm">
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 bg-gray-400 rounded-sm flex items-center justify-center">
-                  <div className="w-2 h-2 bg-white rounded-sm"></div>
-                </div>
-                <span className="text-gray-600">Доставка</span>
-                <span className="ml-auto text-gray-900 font-medium">
-                  {product.delivery.price} {product.delivery.note}
-                </span>
+            <div className="space-y-2">
+              <div className="flex items-center gap-4">
+                <span className="text-3xl font-bold text-red-600">{product.price.toLocaleString()} ₽</span>
+                {product.oldPrice && (
+                  <span className="text-xl text-gray-500 line-through">{product.oldPrice.toLocaleString()} ₽</span>
+                )}
               </div>
-              
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 bg-gray-400 rounded-sm flex items-center justify-center">
-                  <div className="w-2 h-2 bg-white rounded-sm"></div>
-                </div>
-                <span className="text-gray-600">Сборка</span>
-                <span className="ml-auto text-gray-900">{product.delivery.description}</span>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <span className="text-gray-600">Бренд:</span>
+                <span className="ml-2 font-medium">{product.brand}</span>
               </div>
-              
-              <div className="flex items-start gap-2">
-                <div className="w-4 h-4 bg-gray-400 rounded-sm flex items-center justify-center mt-0.5">
-                  <div className="w-2 h-2 bg-white rounded-sm"></div>
-                </div>
-                <span className="text-gray-600">Оплата для физ лиц</span>
-                <span className="ml-auto text-gray-900 text-right max-w-[200px]">{product.assembly}</span>
+              <div>
+                <span className="text-gray-600">Модель:</span>
+                <span className="ml-2 font-medium">{product.model}</span>
               </div>
-              
-              <div className="flex items-start gap-2">
-                <div className="w-4 h-4 bg-gray-400 rounded-sm flex items-center justify-center mt-0.5">
-                  <div className="w-2 h-2 bg-white rounded-sm"></div>
-                </div>
-                <span className="text-gray-600">Оплата для юр лиц</span>
-                <span className="ml-auto text-gray-900 text-right max-w-[200px]">{product.paymentOptions}</span>
+              <div>
+                <span className="text-gray-600">Гарантия:</span>
+                <span className="ml-2 font-medium">{product.warranty}</span>
               </div>
+              <div>
+                <span className="text-gray-600">Доставка:</span>
+                <span className="ml-2 font-medium text-green-600">{product.delivery}</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="flex items-center border rounded-lg">
+                <Button variant="ghost" size="sm" onClick={decrementQuantity}>
+                  <Minus className="w-4 h-4" />
+                </Button>
+                <span className="px-4 py-2 font-medium">{quantity}</span>
+                <Button variant="ghost" size="sm" onClick={incrementQuantity}>
+                  <Plus className="w-4 h-4" />
+                </Button>
+              </div>
+              <Button className="flex-1 bg-red-600 hover:bg-red-700">
+                <ShoppingCart className="w-4 h-4 mr-2" />
+                В корзину
+              </Button>
+              <Button variant="outline" size="icon">
+                <Heart className="w-4 h-4" />
+              </Button>
+              <Button variant="outline" size="icon">
+                <Share2 className="w-4 h-4" />
+              </Button>
             </div>
           </div>
         </div>
 
-        {/* Tabs Section */}
-        <div className="mt-12">
-          <Tabs defaultValue="description" className="w-full">
-            <TabsList className="w-full justify-start bg-transparent border-b border-gray-200 rounded-none h-auto p-0">
-              <TabsTrigger 
-                value="description" 
-                className="border-b-2 border-transparent data-[state=active]:border-[#F53B49] data-[state=active]:text-[#F53B49] bg-transparent rounded-none px-4 py-3"
-              >
-                Описание
-              </TabsTrigger>
-              <TabsTrigger 
-                value="specifications" 
-                className="border-b-2 border-transparent data-[state=active]:border-[#F53B49] data-[state=active]:text-[#F53B49] bg-transparent rounded-none px-4 py-3"
-              >
-                Характеристики
-              </TabsTrigger>
-              <TabsTrigger 
-                value="reviews" 
-                className="border-b-2 border-transparent data-[state=active]:border-[#F53B49] data-[state=active]:text-[#F53B49] bg-transparent rounded-none px-4 py-3"
-              >
-                Отзывы (10)
-              </TabsTrigger>
-              <TabsTrigger 
-                value="delivery" 
-                className="border-b-2 border-transparent data-[state=active]:border-[#F53B49] data-[state=active]:text-[#F53B49] bg-transparent rounded-none px-4 py-3"
-              >
-                Доставка и оплата
-              </TabsTrigger>
-              <TabsTrigger 
-                value="installment" 
-                className="border-b-2 border-transparent data-[state=active]:border-[#F53B49] data-[state=active]:text-[#F53B49] bg-transparent rounded-none px-4 py-3"
-              >
-                Рассрочка
-              </TabsTrigger>
-              <TabsTrigger 
-                value="services" 
-                className="border-b-2 border-transparent data-[state=active]:border-[#F53B49] data-[state=active]:text-[#F53B49] bg-transparent rounded-none px-4 py-3"
-              >
-                Услуги
-              </TabsTrigger>
-              <div className="ml-auto">
-                <Button variant="outline" className="text-[#F53B49] border-[#F53B49] hover:bg-[#F53B49] hover:text-white">
-                  Скачать инструкцию
+        {/* Product Information Tabs */}
+        <Tabs defaultValue="description" className="w-full">
+          <TabsList className="grid w-full grid-cols-6">
+            <TabsTrigger value="description">Описание</TabsTrigger>
+            <TabsTrigger value="characteristics">Характеристики</TabsTrigger>
+            <TabsTrigger value="reviews">Отзывы</TabsTrigger>
+            <TabsTrigger value="delivery">Доставка и оплата</TabsTrigger>
+            <TabsTrigger value="installment">Рассрочка</TabsTrigger>
+            <TabsTrigger value="warranty">Гарантия</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="description" className="mt-6">
+            <div className="bg-white rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-4">Описание товара</h3>
+              <div className="prose max-w-none">
+                <p className="mb-4">
+                  Беговая дорожка OXYGEN FITNESS NEW CLASSIC AURUM LCD представляет собой профессиональное оборудование 
+                  для домашнего использования. Модель отличается надежностью, функциональностью и современным дизайном.
+                </p>
+                <p className="mb-4">
+                  Особенности модели:
+                </p>
+                <ul className="list-disc pl-6 mb-4">
+                  <li>Мощный двигатель постоянного тока</li>
+                  <li>Широкое беговое полотно для комфортных тренировок</li>
+                  <li>Система амортизации для защиты суставов</li>
+                  <li>LCD-дисплей с отображением всех параметров тренировки</li>
+                  <li>Множество программ тренировок</li>
+                  <li>Возможность складывания для экономии места</li>
+                </ul>
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="characteristics" className="mt-6">
+            <div className="bg-white rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-4">Технические характеристики</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-3">
+                  <div className="flex justify-between border-b pb-2">
+                    <span className="text-gray-600">Максимальная скорость</span>
+                    <span className="font-medium">16 км/ч</span>
+                  </div>
+                  <div className="flex justify-between border-b pb-2">
+                    <span className="text-gray-600">Максимальный вес пользователя</span>
+                    <span className="font-medium">130 кг</span>
+                  </div>
+                  <div className="flex justify-between border-b pb-2">
+                    <span className="text-gray-600">Размер бегового полотна</span>
+                    <span className="font-medium">125 x 42 см</span>
+                  </div>
+                  <div className="flex justify-between border-b pb-2">
+                    <span className="text-gray-600">Мощность двигателя</span>
+                    <span className="font-medium">2.0 л.с.</span>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex justify-between border-b pb-2">
+                    <span className="text-gray-600">Угол наклона</span>
+                    <span className="font-medium">0-15%</span>
+                  </div>
+                  <div className="flex justify-between border-b pb-2">
+                    <span className="text-gray-600">Программы тренировок</span>
+                    <span className="font-medium">12</span>
+                  </div>
+                  <div className="flex justify-between border-b pb-2">
+                    <span className="text-gray-600">Размеры (Д×Ш×В)</span>
+                    <span className="font-medium">160×70×130 см</span>
+                  </div>
+                  <div className="flex justify-between border-b pb-2">
+                    <span className="text-gray-600">Вес</span>
+                    <span className="font-medium">65 кг</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="reviews" className="mt-6">
+            <div className="bg-white rounded-lg p-6">
+              <div className="flex justify-between items-center mb-6">
+                <h3 className="text-xl font-semibold">Отзывы покупателей</h3>
+                <Button
+                  onClick={() => setIsReviewDialogOpen(true)}
+                  className="bg-red-600 hover:bg-red-700"
+                >
+                  Оставить отзыв
                 </Button>
               </div>
-            </TabsList>
-
-            <TabsContent value="description" className="mt-8">
-              {/* Description Content */}
-              <div className="space-y-12">
-                {/* Description Section */}
-                <div>
-                  <h2 className="text-2xl font-bold text-[#262631] mb-6">Описание</h2>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                    <div className="space-y-4 text-gray-700 leading-relaxed">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                        ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                        laboris nisi ut aliquip ex ea commodo consequat.
-                      </p>
-                    </div>
-                    <div className="space-y-4 text-gray-700 leading-relaxed">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                        ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                        laboris nisi ut aliquip ex ea commodo consequat.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Video Section */}
-                  <div className="mt-8">
-                    <div className="relative w-full aspect-video bg-gray-100 rounded-lg overflow-hidden">
-                      <img 
-                        src="/lovable-uploads/f4e554ea-7370-4b23-85ae-f3045c81543a.png" 
-                        alt="Product demonstration video"
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <button className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors shadow-lg">
-                          <Play className="w-8 h-8 text-gray-700 ml-1" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Advantages Section */}
-                <div>
-                  <h2 className="text-2xl font-bold text-[#262631] mb-8">Преимущества</h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div className="relative group">
-                      <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                        <img 
-                          src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=500&h=500" 
-                          alt="2 варианта цвета защитного мата"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
-                        <h3 className="font-medium text-center">
-                          2 варианта цвета<br />защитного мата
-                        </h3>
-                      </div>
-                    </div>
-
-                    <div className="relative group">
-                      <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                        <img 
-                          src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=500&h=500" 
-                          alt="Совершенное качество прыжка"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
-                        <h3 className="font-medium text-center">
-                          Совершенное качество<br />прыжка
-                        </h3>
-                      </div>
-                    </div>
-
-                    <div className="relative group">
-                      <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                        <img 
-                          src="https://images.unsplash.com/photo-1518877593221-1f28583780b4?auto=format&fit=crop&w=500&h=500" 
-                          alt="Безопасный защитный мат"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
-                        <h3 className="font-medium text-center">
-                          Безопасный защитный<br />мат
-                        </h3>
-                      </div>
-                    </div>
-
-                    <div className="relative group">
-                      <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                        <img 
-                          src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=500&h=500" 
-                          alt="Качественная защитная сеть"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
-                        <h3 className="font-medium text-center">
-                          Качественная защитная<br />сеть
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Large Image with Water Section */}
-                <div className="relative rounded-lg overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&h=600" 
-                    alt="Батут у воды"
-                    className="w-full h-[500px] object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <h2 className="text-4xl font-bold mb-4">Lorem ipsum dolor sit amet</h2>
-                      <p className="text-lg max-w-2xl mx-auto">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Four Features Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <div className="relative group">
-                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=500&h=500" 
-                        alt="Feature 1"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
-                      <h3 className="font-medium text-center text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div className="relative group">
-                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=500&h=500" 
-                        alt="Feature 2"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
-                      <h3 className="font-medium text-center text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div className="relative group">
-                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1518877593221-1f28583780b4?auto=format&fit=crop&w=500&h=500" 
-                        alt="Feature 3"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
-                      <h3 className="font-medium text-center text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div className="relative group">
-                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=500&h=500" 
-                        alt="Feature 4"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-4 rounded-b-lg">
-                      <h3 className="font-medium text-center text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Left Image Right Text Section */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                  <div className="rounded-lg overflow-hidden">
-                    <img 
-                      src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&h=400" 
-                      alt="Батут в саду"
-                      className="w-full h-[400px] object-cover"
-                    />
-                  </div>
-                  
-                  <div className="space-y-6">
-                    <h2 className="text-2xl font-bold text-[#262631]">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    </h2>
-                    
-                    <p className="text-gray-700 leading-relaxed">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                      ea commodo consequat.
-                    </p>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div>
-                        <h3 className="font-semibold text-[#262631] mb-2">
-                          Безопасный и удобный вход внутрь
-                        </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          Не нужно беспокоиться о закрытой молнии безопасность вашего 
-                          ребенка всегда будет на высоте.
-                        </p>
-                      </div>
-
-                      <div>
-                        <h3 className="font-semibold text-[#262631] mb-2">
-                          Лестница с антискользящими ступеньками
-                        </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          Надежная фиксация и удобные нескользящие ступени лестницы 
-                          созданы для максимального комфорта и безопасности.
-                        </p>
-                      </div>
-
-                      <div>
-                        <h3 className="font-semibold text-[#262631] mb-2">
-                          Двойная конструкция ножек
-                        </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          Устойчивость и защита от качания обеспечивается усиленная 
-                          конструкция с двойными ножек. Это придают устойчивости при 
-                          использовании батутов несколькими пользователями одновременно.
-                        </p>
-                      </div>
-
-                      <div>
-                        <h3 className="font-semibold text-[#262631] mb-2">
-                          Нижняя Защитная сеть
-                        </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          Нижняя защитная сеть входит в комплект ко всем моделям и 
-                          размерам батутов Scholle. Она обезопасит от проникновения 
-                          детей и домашних животных под батут во время использования.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Large image with overlay text */}
-                <div className="relative rounded-lg overflow-hidden mb-12">
-                  <img 
-                    src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&h=600" 
-                    alt="Морская пристань"
-                    className="w-full h-[500px] object-cover"
-                  />
-                  
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-end pr-8">
-                    <div className="bg-white/95 p-8 rounded-lg max-w-md">
-                      <h2 className="text-2xl font-bold text-[#262631] mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                      </h2>
-                      <p className="text-gray-700 text-sm leading-relaxed mb-6">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                        ea commodo consequat.
-                      </p>
-                      
-                      <div className="space-y-4">
-                        <div>
-                          <div className="text-3xl font-bold text-[#262631]">177</div>
-                          <div className="text-gray-600 text-sm">Lorem ipsum dolor</div>
-                        </div>
-                        <div>
-                          <div className="text-3xl font-bold text-[#262631]">20+</div>
-                          <div className="text-gray-600 text-sm">Lorem ipsum dolor</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Two Large Images Side by Side with Text */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <img 
-                      src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&h=400" 
-                      alt="Left image"
-                      className="w-full h-[300px] object-cover rounded-lg"
-                    />
-                    <div className="space-y-4 text-gray-700 leading-relaxed">
-                      <h3 className="text-xl font-bold text-[#262631]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                      </h3>
-                      <p className="text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                        commodo consequat.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <img 
-                      src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&h=400" 
-                      alt="Right image"
-                      className="w-full h-[300px] object-cover rounded-lg"
-                    />
-                    <div className="space-y-4 text-gray-700 leading-relaxed">
-                      <h3 className="text-xl font-bold text-[#262631]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                      </h3>
-                      <p className="text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                        commodo consequat.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Large Blue Water/Port Image */}
-                <div className="rounded-lg overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&h=500" 
-                    alt="Port/Marina view"
-                    className="w-full h-[400px] object-cover"
-                  />
-                </div>
-
-                {/* Final Text Block */}
-                <div className="space-y-6">
-                  <h2 className="text-2xl font-bold text-[#262631]">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-700 leading-relaxed">
-                    <div className="space-y-4">
-                      <p className="text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                        commodo consequat.
-                      </p>
-                    </div>
-                    <div className="space-y-4">
-                      <p className="text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                        commodo consequat.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="specifications" className="mt-8">
-              <div className="space-y-8">
-                <h2 className="text-2xl font-bold text-[#262631]">Характеристики</h2>
-                
-                {/* Основные характеристики */}
-                <div>
-                  <h3 className="text-lg font-semibold text-[#262631] mb-4">Основные характеристики</h3>
-                  <div className="overflow-x-auto">
-                    <table className="w-full border-collapse">
-                      <tbody>
-                        <tr className="border-b border-gray-200">
-                          <td className="py-3 text-gray-600 w-1/3">Тип продукции</td>
-                          <td className="py-3 text-gray-900 font-medium">Батуты</td>
-                        </tr>
-                        <tr className="border-b border-gray-200">
-                          <td className="py-3 text-gray-600">Бренд</td>
-                          <td className="py-3 text-gray-900 font-medium">Scholle</td>
-                        </tr>
-                        <tr className="border-b border-gray-200">
-                          <td className="py-3 text-gray-600">Тип защитной сетки</td>
-                          <td className="py-3 text-gray-900 font-medium">внутренняя</td>
-                        </tr>
-                        <tr className="border-b border-gray-200">
-                          <td className="py-3 text-gray-600">Форма батута</td>
-                          <td className="py-3 text-gray-900 font-medium">круг</td>
-                        </tr>
-                        <tr className="border-b border-gray-200">
-                          <td className="py-3 text-gray-600">Защитный мат</td>
-                          <td className="py-3 text-gray-900 font-medium">есть</td>
-                        </tr>
-                        <tr className="border-b border-gray-200">
-                          <td className="py-3 text-gray-600">Цвет</td>
-                          <td className="py-3 text-gray-900 font-medium">красный/синий</td>
-                        </tr>
-                        <tr className="border-b border-gray-200">
-                          <td className="py-3 text-gray-600">Ширина защитного мата, см</td>
-                          <td className="py-3 text-gray-900 font-medium">25</td>
-                        </tr>
-                        <tr className="border-b border-gray-200">
-                          <td className="py-3 text-gray-600">Материал защитного мата</td>
-                          <td className="py-3 text-gray-900 font-medium">вспененный РР</td>
-                        </tr>
-                        <tr className="border-b border-gray-200">
-                          <td className="py-3 text-gray-600">Диаметр батута, ft</td>
-                          <td className="py-3 text-gray-900 font-medium">8</td>
-                        </tr>
-                        <tr className="border-b border-gray-200">
-                          <td className="py-3 text-gray-600">Диаметр батута, см</td>
-                          <td className="py-3 text-gray-900 font-medium">244</td>
-                        </tr>
-                        <tr className="border-b border-gray-200">
-                          <td className="py-3 text-gray-600">Диаметр прыжкового полотна, см</td>
-                          <td className="py-3 text-gray-900 font-medium">227.3</td>
-                        </tr>
-                        <tr className="border-b border-gray-200">
-                          <td className="py-3 text-gray-600">Материал прыжкового полотна</td>
-                          <td className="py-3 text-gray-900 font-medium">permatron</td>
-                        </tr>
-                        <tr className="border-b border-gray-200">
-                          <td className="py-3 text-gray-600">Количество пружин, шт</td>
-                          <td className="py-3 text-gray-900 font-medium">48</td>
-                        </tr>
-                        <tr className="border-b border-gray-200">
-                          <td className="py-3 text-gray-600">Длина пружин, мм</td>
-                          <td className="py-3 text-gray-900 font-medium">165</td>
-                        </tr>
-                        <tr className="border-b border-gray-200">
-                          <td className="py-3 text-gray-600">Диаметр пружины, см</td>
-                          <td className="py-3 text-gray-900 font-medium">2.4</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-
-                {/* Три колонки характеристик */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {/* Габариты в рабочем состоянии */}
-                  <div>
-                    <h3 className="text-lg font-semibold text-[#262631] mb-4">Габариты в рабочем состоянии</h3>
-                    <div className="space-y-3">
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Размер в рабочем состоянии Длина, см</span>
-                        <span className="text-gray-900 font-medium">244</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Размер в рабочем состоянии Ширина, см</span>
-                        <span className="text-gray-900 font-medium">244</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Размер в рабочем состоянии Высота, см</span>
-                        <span className="text-gray-900 font-medium">255</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Дополнительные характеристики */}
-                  <div>
-                    <h3 className="text-lg font-semibold text-[#262631] mb-4">Дополнительные характеристики</h3>
-                    <div className="space-y-3">
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Рама</span>
-                        <span className="text-gray-900 font-medium">оцинкованная сталь</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Лестница</span>
-                        <span className="text-gray-900 font-medium">есть</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Серия</span>
-                        <span className="text-gray-900 font-medium">Space</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Упаковка */}
-                  <div>
-                    <h3 className="text-lg font-semibold text-[#262631] mb-4">Упаковка</h3>
-                    <div className="space-y-3">
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Габариты упаковки Длина, см</span>
-                        <span className="text-gray-900 font-medium">129</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Габариты упаковки Ширина, см</span>
-                        <span className="text-gray-900 font-medium">47</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Габариты упаковки Высота, см</span>
-                        <span className="text-gray-900 font-medium">26</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Дополнительные характеристики в таблице */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div>
-                    <div className="space-y-3">
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Тип пружины</span>
-                        <span className="text-gray-900 font-medium">боченкообразные</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Материал пружины</span>
-                        <span className="text-gray-900 font-medium">гальванизированная сталь</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Диаметр нити пружины, см</span>
-                        <span className="text-gray-900 font-medium">0.3</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Верхняя защитная сеть</span>
-                        <span className="text-gray-900 font-medium">есть</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Вход на батут</span>
-                        <span className="text-gray-900 font-medium">клапан (в наличии)</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Высота защитной сетки, см</span>
-                        <span className="text-gray-900 font-medium">170</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Материал защитной сетки</span>
-                        <span className="text-gray-900 font-medium">полипропилен</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Количество верхних стоек</span>
-                        <span className="text-gray-900 font-medium">6</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Высота основания батута, см</span>
-                        <span className="text-gray-900 font-medium">55</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Нижняя защитная сеть</span>
-                        <span className="text-gray-900 font-medium">есть</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Профиль труб основания батута, см</span>
-                        <span className="text-gray-900 font-medium">38 x 1.5</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Профиль труб ножек, см</span>
-                        <span className="text-gray-900 font-medium">38 x 1.2</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Профиль труб верхних стоек, см</span>
-                        <span className="text-gray-900 font-medium">25x1.2</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Вес пользователя, кг</span>
-                        <span className="text-gray-900 font-medium">150</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Вес и Гарантия */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {/* Вес */}
-                  <div>
-                    <h3 className="text-lg font-semibold text-[#262631] mb-4">Вес</h3>
-                    <div className="space-y-3">
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Вес Нетто, кг</span>
-                        <span className="text-gray-900 font-medium">39</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Вес Брутто, кг</span>
-                        <span className="text-gray-900 font-medium">47</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Гарантия и Сертификация */}
-                  <div>
-                    <h3 className="text-lg font-semibold text-[#262631] mb-4">Гарантия и Сертификация</h3>
-                    <div className="space-y-3">
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Гарантия на домашнее использование</span>
-                        <span className="text-gray-900 font-medium">1 год</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Страна бренда</span>
-                        <span className="text-gray-900 font-medium">Германия</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Страна изготовления</span>
-                        <span className="text-gray-900 font-medium">КНР</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600 text-sm">Артикул</span>
-                        <span className="text-gray-900 font-medium">Space 8RBT</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Схемы */}
-                <div className="mt-8">
-                  <div className="flex gap-8 justify-center">
-                    <div className="text-center">
-                      <img 
-                        src="/lovable-uploads/56e1b9c3-6c2f-413c-9aac-7210bf1fc900.png" 
-                        alt="Схема батута вид сверху" 
-                        className="w-32 h-32 object-contain mx-auto mb-2"
-                      />
-                    </div>
-                    <div className="text-center">
-                      <img 
-                        src="/lovable-uploads/56e1b9c3-6c2f-413c-9aac-7210bf1fc900.png" 
-                        alt="Схема батута вид сбоку" 
-                        className="w-32 h-32 object-contain mx-auto mb-2"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="reviews" className="mt-8">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Left column - Reviews */}
-                <div className="lg:col-span-2 space-y-6">
-                  <h2 className="text-2xl font-bold text-[#262631]">Отзывы (10)</h2>
-                  
-                  {/* Reviews list */}
-                  <div className="space-y-8">
-                    {reviews.map((review) => (
-                      <div key={review.id} className="border-b border-gray-200 pb-6">
-                        <div className="flex items-start gap-4">
-                          {/* Avatar */}
-                          <div className="w-12 h-12 bg-gray-400 rounded-full flex-shrink-0"></div>
-                          
-                          <div className="flex-1">
-                            {/* User info and rating */}
-                            <div className="flex items-center justify-between mb-2">
-                              <div>
-                                <div className="font-medium text-gray-900">{review.userName}</div>
-                                <div className="text-sm text-gray-500">{review.date}</div>
-                              </div>
-                              
-                              <div className="flex text-yellow-400">
-                                {[...Array(5)].map((_, i) => (
-                                  <Star 
-                                    key={i} 
-                                    className={`w-4 h-4 ${i < review.rating ? 'fill-current' : 'text-gray-300'}`} 
-                                  />
-                                ))}
-                              </div>
-                            </div>
-                            
-                            {/* Review text */}
-                            <p className="text-gray-700 text-sm leading-relaxed">{review.text}</p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Product images */}
-                  <div className="flex gap-4 mt-6">
-                    <img 
-                      src="/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png" 
-                      alt="Product image 1"
-                      className="w-24 h-24 object-contain bg-gray-50 rounded-lg"
-                    />
-                    <img 
-                      src="/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png" 
-                      alt="Product image 2"
-                      className="w-24 h-24 object-contain bg-gray-50 rounded-lg"
-                    />
-                  </div>
-                </div>
-
-                {/* Right column - Rating summary */}
-                <div className="space-y-6">
-                  {/* Rating categories */}
-                  <div className="space-y-4">
-                    {ratingCategories.map((category) => (
-                      <div key={category.name} className="flex items-center justify-between">
-                        <span className="text-sm text-gray-600">{category.name}</span>
-                        <RatingBar rating={category.rating} maxRating={category.maxRating} />
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Overall rating */}
-                  <div className="text-center py-6 border-t border-gray-200">
-                    <div className="text-sm text-gray-600 mb-2">Общий рейтинг</div>
-                    <div className="text-4xl font-bold text-gray-900 mb-2">4.5</div>
-                    <div className="flex justify-center text-yellow-400 mb-2">
+              
+              <div className="space-y-6">
+                <div className="border-b pb-6">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="flex items-center">
                       {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className={`w-5 h-5 ${i < 4 || (i === 4 && 0.5 > 0) ? 'fill-current' : 'text-gray-300'}`} 
-                        />
+                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
-                    <div className="text-sm text-gray-500">10 оценок</div>
+                    <span className="font-medium">Александр П.</span>
+                    <span className="text-gray-500 text-sm">15 марта 2024</span>
                   </div>
-
-                  {/* Write review button */}
-                  <Button 
-                    onClick={() => setReviewDialogOpen(true)}
-                    variant="outline" 
-                    className="w-full text-[#F53B49] border-[#F53B49] hover:bg-[#F53B49] hover:text-white"
-                  >
-                    Написать отзыв
-                  </Button>
-                </div>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="delivery" className="mt-8">
-              <div className="space-y-10">
-                {/* Город доставки */}
-                <div>
-                  <div className="flex items-center gap-2 mb-6">
-                    <h2 className="text-lg font-semibold text-gray-900">Город доставки</h2>
-                    <span className="text-[#F53B49] font-medium">Москва</span>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-gray-100 p-6 rounded-lg">
-                      <h3 className="font-semibold text-gray-900 mb-2">Самовывоз</h3>
-                      <p className="text-sm text-gray-600 mb-4">
-                        Вы можете самостоятельно забрать заказ из нашего магазина
-                      </p>
-                      <div className="text-2xl font-bold text-gray-900">0 ₽</div>
-                    </div>
-                    
-                    <div className="bg-gray-100 p-6 rounded-lg">
-                      <h3 className="font-semibold text-gray-900 mb-2">Курьерская Доставка</h3>
-                      <p className="text-sm text-gray-600 mb-4">
-                        Собственная служба Доставки
-                      </p>
-                      <div className="text-2xl font-bold text-gray-900">0 ₽</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Доставка по России */}
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-900 mb-6">Доставка по России</h2>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-4">Стоимость</h3>
-                      <p className="text-sm text-gray-600">
-                        Стоимость доставки 300 руб. (в пределах МКАД/КАД)
-                      </p>
-                      <p className="text-sm text-gray-600 mt-2">
-                        За пределы доставка по области обсуждается отдельно.
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-4">Оформление</h3>
-                      <p className="text-sm text-gray-600">
-                        После оформления заказа, наш специалист свяжется с Вами для уточнения условий 
-                        доставки и сборки
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-4">Выполнение</h3>
-                      <p className="text-sm text-gray-600">
-                        При заказе товара до 12.00 часов, доставка возможна в день оборудования.
-                      </p>
-                      <p className="text-sm text-gray-600 mt-2">
-                        В противном случае, доставка возможна на следующий день.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Самовывоз для Москвы */}
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-900 mb-6">Самовывоз</h2>
-                  
-                  <div className="space-y-8">
-                    <div>
-                      <h3 className="font-medium text-gray-900 mb-4">Для Москвы</h3>
-                      
-                      <div className="overflow-x-auto">
-                        <table className="w-full border-collapse">
-                          <thead>
-                            <tr className="bg-gray-50">
-                              <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Магазин</th>
-                              <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Адрес</th>
-                              <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Наличие</th>
-                              <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Режим работы</th>
-                              <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Дополнительно</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td className="border border-gray-200 px-4 py-3 text-sm">Магазин</td>
-                              <td className="border border-gray-200 px-4 py-3 text-sm">
-                                Московская область, Красногорский р-н, п. Голиценция, улица Центральная ул., 24А
-                              </td>
-                              <td className="border border-gray-200 px-4 py-3 text-sm">
-                                <span className="text-green-600 font-medium">В наличии ●●●</span>
-                              </td>
-                              <td className="border border-gray-200 px-4 py-3 text-sm">пн - пт с 09:30-18:00</td>
-                              <td className="border border-gray-200 px-4 py-3 text-sm">-</td>
-                            </tr>
-                            <tr className="bg-gray-50">
-                              <td className="border border-gray-200 px-4 py-3 text-sm">Магазин</td>
-                              <td className="border border-gray-200 px-4 py-3 text-sm">
-                                Московская область, Химки, микрорайон Сходня, улица Нсхорская д.2
-                              </td>
-                              <td className="border border-gray-200 px-4 py-3 text-sm">
-                                <span className="text-green-600 font-medium">В наличии ●●●</span>
-                              </td>
-                              <td className="border border-gray-200 px-4 py-3 text-sm">пн - пт с 09:30-18:00</td>
-                              <td className="border border-gray-200 px-4 py-3 text-sm">
-                                Выдача осуществляется оформленных заказов. При смотреть мин кол-во и времени приезда
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h3 className="font-medium text-gray-900 mb-4">Для Санкт-Петербурга</h3>
-                      
-                      <div className="overflow-x-auto">
-                        <table className="w-full border-collapse">
-                          <thead>
-                            <tr className="bg-gray-50">
-                              <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Магазин</th>
-                              <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Адрес</th>
-                              <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Наличие</th>
-                              <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Режим работы</th>
-                              <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Дополнительно</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td className="border border-gray-200 px-4 py-3 text-sm">Магазин</td>
-                              <td className="border border-gray-200 px-4 py-3 text-sm">
-                                Красногородский пер 25 лит Г, территория завода "Ильич", здесь с Базового проезда
-                              </td>
-                              <td className="border border-gray-200 px-4 py-3 text-sm">
-                                <span className="text-green-600 font-medium">В наличии ●●●</span>
-                              </td>
-                              <td className="border border-gray-200 px-4 py-3 text-sm">пн - пт с 10:00-18:00</td>
-                              <td className="border border-gray-200 px-4 py-3 text-sm">
-                                Выдача осуществляется оформленных заказов. При смотреть мин кол-во и времени приезда
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Сборка */}
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-900 mb-6">Сборка</h2>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-4">Стоимость</h3>
-                      <p className="text-sm text-gray-600">
-                        Стоимость и условия сборки рассчитывается индивидуально
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-4">Условия</h3>
-                      <p className="text-sm text-gray-600">
-                        Бесплатная сборка не распространяется на товары, приобретенные 
-                        по акции или по специальной скидке, а в случаях, если стоимость 
-                        сборки составляет более 10 % от стоимости товара
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Оплата для физ. лиц */}
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-900 mb-6">Оплата для физ. лиц</h2>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="bg-gray-800 text-white p-6 rounded-lg">
-                      <h3 className="font-semibold mb-3">Оплата наличными</h3>
-                      <p className="text-sm text-gray-300 mb-4">
-                        Возможна при оформлении всех способов доставки во время получения товара или в магазинах 
-                        партнеров, предоставляющих курьерские услуги
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">Оплата картой</h3>
-                      <p className="text-sm text-gray-600 mb-4">
-                        Возможна при оформлении всех способов доставки во время доставки либо самовывоза, в том числе 
-                        курьеру при получении
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">Оплата онлайн</h3>
-                      <p className="text-sm text-gray-600 mb-4">
-                        Покупателю направляется защищенная ссылка для перевода в платежную систему. 
-                        Возможна оплата всеми видами банковских карт, электронными деньгами, а также 
-                        через терминалы без комиссии
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">Наложенный платеж</h3>
-                      <p className="text-sm text-gray-600">
-                        При отправке в регионы. Рассчитывается по тарифам транспортных компаний и 
-                        осуществляется с помощью партнеров, предоставляющих курьерские услуги
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">В рассрочку</h3>
-                      <p className="text-sm text-gray-600">
-                        от банков-партнеров ОПТ. Халва ТОлькард, Хеяорбанк
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">Безналичная оплата</h3>
-                      <p className="text-sm text-gray-600">
-                        Выставление счета
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Оплата для юр. лиц */}
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-900 mb-6">Оплата для юр. лиц</h2>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">Оплата онлайн</h3>
-                      <p className="text-sm text-gray-600">
-                        Покупателю направляется защищенная ссылка для перевода в 
-                        платежную систему. Произведена оплату можно всеми видами банковских 
-                        карт, электронными деньгами, а также через терминалы без комиссии
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">Безналичная оплата</h3>
-                      <p className="text-sm text-gray-600">
-                        Выставление счета
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="installment" className="mt-8">
-              <div className="text-gray-600">Информация о рассрочке будет добавлена позже</div>
-            </TabsContent>
-
-            <TabsContent value="services" className="mt-8">
-              <div className="text-gray-600">Информация об услугах будет добавлена позже</div>
-            </TabsContent>
-          </Tabs>
-        </div>
-
-        {/* Similar Products Section */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-[#262631] mb-8">Вы смотрели</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {similarProducts.map((product) => (
-              <div key={product.id} className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="relative">
-                  <img 
-                    src={product.image} 
-                    alt={product.title}
-                    className="w-full h-48 object-contain bg-gray-50"
-                  />
-                  <Badge 
-                    className={`absolute top-2 left-2 ${
-                      product.badge === 'АКЦИЯ' ? 'bg-red-500' :
-                      product.badge === 'ХИТ' ? 'bg-blue-500' :
-                      product.badge === 'NEW' ? 'bg-green-500' :
-                      product.badge === 'СКИДКА' ? 'bg-orange-500' :
-                      'bg-purple-500'
-                    } text-white text-xs px-2 py-1`}
-                  >
-                    {product.badge}
-                  </Badge>
+                  <p className="text-gray-700">
+                    Отличная беговая дорожка! Использую уже полгода, очень доволен качеством и функциональностью. 
+                    Тихая работа, удобное управление.
+                  </p>
                 </div>
                 
-                <div className="p-4">
-                  <h3 className="text-sm font-medium text-gray-900 mb-2 line-clamp-2">
-                    {product.title}
-                  </h3>
-                  
-                  <div className="flex items-center gap-2 mb-3">
-                    <Badge className="bg-red-500 text-white text-xs">{product.discount}</Badge>
-                    <span className="text-gray-400 line-through text-xs">{product.originalPrice}</span>
+                <div className="border-b pb-6">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="flex items-center">
+                      {[...Array(4)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                      <Star className="w-4 h-4 text-gray-300" />
+                    </div>
+                    <span className="font-medium">Мария К.</span>
+                    <span className="text-gray-500 text-sm">8 марта 2024</span>
                   </div>
+                  <p className="text-gray-700">
+                    Хорошая дорожка за свои деньги. Единственный минус - занимает много места, 
+                    но это проблема всех беговых дорожек.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="delivery" className="mt-6">
+            <div className="bg-white rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-6">Доставка и оплата</h3>
+              
+              <div className="space-y-8">
+                {/* Delivery Section */}
+                <div>
+                  <h4 className="text-lg font-medium mb-4">Доставка</h4>
                   
-                  <div className="text-lg font-bold text-[#262631] mb-3">{product.price}</div>
+                  <div className="space-y-6">
+                    {/* City/Russia Delivery */}
+                    <div>
+                      <h5 className="font-medium mb-3">Доставка по городу/России</h5>
+                      <Table>
+                        <TableHeader>
+                          <TableRow>
+                            <TableHead>Вид доставки</TableHead>
+                            <TableHead>Стоимость</TableHead>
+                            <TableHead>Срок доставки</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          <TableRow>
+                            <TableCell>Курьерская доставка по Москве</TableCell>
+                            <TableCell>Бесплатно</TableCell>
+                            <TableCell>1-2 дня</TableCell>
+                          </TableRow>
+                          <TableRow>
+                            <TableCell>Доставка по России</TableCell>
+                            <TableCell>Рассчитывается индивидуально</TableCell>
+                            <TableCell>3-7 дней</TableCell>
+                          </TableRow>
+                        </TableBody>
+                      </Table>
+                    </div>
+
+                    {/* Pickup Tables */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                      {/* Moscow Pickup */}
+                      <div>
+                        <h5 className="font-medium mb-3">Самовывоз в Москве</h5>
+                        <Table>
+                          <TableHeader>
+                            <TableRow>
+                              <TableHead>Адрес</TableHead>
+                              <TableHead>Время работы</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            <TableRow>
+                              <TableCell>ул. Примерная, 123</TableCell>
+                              <TableCell>Пн-Пт: 9:00-19:00<br />Сб-Вс: 10:00-18:00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell>ул. Образцовая, 456</TableCell>
+                              <TableCell>Пн-Пт: 9:00-19:00<br />Сб-Вс: 10:00-18:00</TableCell>
+                            </TableRow>
+                          </TableBody>
+                        </Table>
+                      </div>
+
+                      {/* St. Petersburg Pickup */}
+                      <div>
+                        <h5 className="font-medium mb-3">Самовывоз в СПб</h5>
+                        <Table>
+                          <TableHeader>
+                            <TableRow>
+                              <TableHead>Адрес</TableHead>
+                              <TableHead>Время работы</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            <TableRow>
+                              <TableCell>пр. Невский, 789</TableCell>
+                              <TableCell>Пн-Пт: 9:00-19:00<br />Сб-Вс: 10:00-18:00</TableCell>
+                            </TableRow>
+                          </TableBody>
+                        </Table>
+                      </div>
+                    </div>
+
+                    {/* Assembly */}
+                    <div>
+                      <h5 className="font-medium mb-3">Сборка</h5>
+                      <Table>
+                        <TableHeader>
+                          <TableRow>
+                            <TableHead>Услуга</TableHead>
+                            <TableHead>Стоимость</TableHead>
+                            <TableHead>Описание</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          <TableRow>
+                            <TableCell>Сборка тренажера</TableCell>
+                            <TableCell>2 500 ₽</TableCell>
+                            <TableCell>Профессиональная сборка на дому</TableCell>
+                          </TableRow>
+                        </TableBody>
+                      </Table>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Payment Section */}
+                <div>
+                  <h4 className="text-lg font-medium mb-4">Способы оплаты</h4>
                   
-                  <Button className="w-full bg-[#F53B49] hover:bg-red-600 text-white text-sm py-2">
-                    В корзину
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {/* For Individuals */}
+                    <div>
+                      <h5 className="font-medium mb-3">Для физических лиц</h5>
+                      <ul className="space-y-2 text-sm text-gray-700">
+                        <li>• Наличными курьеру</li>
+                        <li>• Банковской картой курьеру</li>
+                        <li>• Онлайн на сайте</li>
+                        <li>• Банковский перевод</li>
+                        <li>• Рассрочка 0%</li>
+                      </ul>
+                    </div>
+
+                    {/* For Legal Entities */}
+                    <div>
+                      <h5 className="font-medium mb-3">Для юридических лиц</h5>
+                      <ul className="space-y-2 text-sm text-gray-700">
+                        <li>• Безналичный расчет</li>
+                        <li>• По счету с НДС</li>
+                        <li>• Банковский перевод</li>
+                        <li>• Корпоративные карты</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="installment" className="mt-6">
+            <div className="bg-white rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-6">Рассрочка</h3>
+              
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-lg font-medium mb-4">Доставка по России</h4>
+                  <p className="text-gray-600 mb-6">
+                    Оформить кредит на сайте — быстро и легко. При оформлении заказа в корзине укажите способ оплаты «Кредит». 
+                    Вы будете перенаправлены на сайт банка для заполнения анкеты. После заполнения анкеты банк-представитель банка. Ваша заявка рассмотрят в течение 20—30 минут. 
+                    Также вы можете оформить рассрочку или кредит в любом магазине, сделав заказ на самовывоз.
+                  </p>
+                  <p className="text-gray-600 mb-6">
+                    Пожалуйста, будьте готовы предоставить паспорт при получении кредита. Также банки вправе потребовать иные дополнительные документы и подтверждение доходов заемщика.
+                  </p>
+                </div>
+
+                <div>
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="w-1/12"></TableHead>
+                        <TableHead className="w-2/12">Рассрочка</TableHead>
+                        <TableHead className="w-2/12">Ежемесячный платеж</TableHead>
+                        <TableHead className="w-2/12">Переплата</TableHead>
+                        <TableHead className="w-2/12">Срок</TableHead>
+                        <TableHead className="w-3/12">Условия</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <RadioGroup value={selectedInstallment} onValueChange={setSelectedInstallment}>
+                        {installmentOptions.map((option) => (
+                          <TableRow key={option.id}>
+                            <TableCell>
+                              <RadioGroupItem value={option.id} id={option.id} />
+                            </TableCell>
+                            <TableCell>
+                              <Label htmlFor={option.id} className="cursor-pointer whitespace-pre-line">
+                                {option.bank}
+                              </Label>
+                            </TableCell>
+                            <TableCell>
+                              <Label htmlFor={option.id} className="cursor-pointer">
+                                {option.monthlyPayment}
+                              </Label>
+                            </TableCell>
+                            <TableCell>
+                              <Label htmlFor={option.id} className="cursor-pointer">
+                                {option.overpayment}
+                              </Label>
+                            </TableCell>
+                            <TableCell>
+                              <Label htmlFor={option.id} className="cursor-pointer">
+                                {option.term}
+                              </Label>
+                            </TableCell>
+                            <TableCell>
+                              <div className="flex flex-wrap gap-1">
+                                {option.tags.map((tag, index) => (
+                                  <Badge key={index} variant="outline" className="text-xs">
+                                    {tag}
+                                  </Badge>
+                                ))}
+                              </div>
+                            </TableCell>
+                          </TableRow>
+                        ))}
+                      </RadioGroup>
+                    </TableBody>
+                  </Table>
+                </div>
+
+                <div className="flex justify-start">
+                  <Button 
+                    className="bg-red-600 hover:bg-red-700 px-8 py-3"
+                    disabled={!selectedInstallment}
+                  >
+                    Оставить заявку
                   </Button>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </main>
-      
-      <Footer />
 
-      {/* Review Dialog */}
-      <ReviewDialog 
-        open={reviewDialogOpen} 
-        onOpenChange={setReviewDialogOpen} 
+              {/* You Viewed Section */}
+              <div className="mt-12 pt-8 border-t">
+                <div className="flex items-center justify-between mb-6">
+                  <h4 className="text-xl font-semibold">Вы смотрели</h4>
+                  <div className="flex gap-2">
+                    <Button variant="outline" size="sm">
+                      <ArrowLeft className="w-4 h-4" />
+                    </Button>
+                    <Button variant="outline" size="sm">
+                      <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {relatedProducts.map((relatedProduct) => (
+                    <div key={relatedProduct.id} className="bg-white border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                      <div className="aspect-square bg-gray-50 p-4">
+                        <img
+                          src={relatedProduct.image}
+                          alt={relatedProduct.name}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h5 className="font-medium text-sm mb-2 line-clamp-2">{relatedProduct.name}</h5>
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="flex items-center">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className={`w-3 h-3 ${i < Math.floor(relatedProduct.rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`} />
+                            ))}
+                          </div>
+                          <span className="text-xs text-gray-500">({relatedProduct.reviews})</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="font-bold text-red-600">{relatedProduct.price.toLocaleString()} ₽</span>
+                          {relatedProduct.oldPrice && (
+                            <span className="text-sm text-gray-500 line-through">{relatedProduct.oldPrice.toLocaleString()} ₽</span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="warranty" className="mt-6">
+            <div className="bg-white rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-4">Гарантийные условия</h3>
+              <div className="prose max-w-none">
+                <p className="mb-4">
+                  На данный товар предоставляется официальная гарантия производителя сроком 2 года.
+                </p>
+                <h4 className="text-lg font-medium mb-3">Гарантия включает:</h4>
+                <ul className="list-disc pl-6 mb-4">
+                  <li>Бесплатный ремонт или замену неисправных деталей</li>
+                  <li>Техническую поддержку и консультации</li>
+                  <li>Выезд специалиста на дом при необходимости</li>
+                </ul>
+                <h4 className="text-lg font-medium mb-3">Условия гарантии:</h4>
+                <ul className="list-disc pl-6">
+                  <li>Соблюдение правил эксплуатации</li>
+                  <li>Отсутствие механических повреждений</li>
+                  <li>Наличие гарантийного талона и чека</li>
+                </ul>
+              </div>
+            </div>
+          </TabsContent>
+        </Tabs>
+      </div>
+
+      <ReviewDialog
+        isOpen={isReviewDialogOpen}
+        onClose={() => setIsReviewDialogOpen(false)}
+        productName={product.name}
       />
     </div>
   );
