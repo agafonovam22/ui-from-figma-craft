@@ -114,6 +114,33 @@ const ProductCard: React.FC = () => {
     }
   ];
 
+  // Mock reviews data
+  const reviews = [
+    {
+      id: 1,
+      userName: 'Имя Фамилия',
+      date: 'Вчера, 22:01',
+      rating: 4,
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    },
+    {
+      id: 2,
+      userName: 'Имя Фамилия',
+      date: 'Вчера, 22:01',
+      rating: 4,
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    }
+  ];
+
+  // Rating categories
+  const ratingCategories = [
+    { name: 'Качество', rating: 4.5, maxRating: 5 },
+    { name: 'Цена', rating: 4.8, maxRating: 5 },
+    { name: 'Функциональность', rating: 3.5, maxRating: 5 },
+    { name: 'Скорость', rating: 4.2, maxRating: 5 },
+    { name: 'Легкость в сборке', rating: 3.8, maxRating: 5 }
+  ];
+
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % product.images.length);
   };
@@ -124,6 +151,29 @@ const ProductCard: React.FC = () => {
 
   const increaseQuantity = () => setQuantity(prev => prev + 1);
   const decreaseQuantity = () => setQuantity(prev => Math.max(1, prev - 1));
+
+  // Rating bar component
+  const RatingBar = ({ rating, maxRating }: { rating: number; maxRating: number }) => {
+    const filledBars = Math.floor(rating);
+    const hasHalfBar = rating % 1 !== 0;
+    
+    return (
+      <div className="flex gap-1">
+        {[...Array(maxRating)].map((_, index) => (
+          <div
+            key={index}
+            className={`w-4 h-3 ${
+              index < filledBars
+                ? 'bg-red-500'
+                : index === filledBars && hasHalfBar
+                ? 'bg-red-300'
+                : 'bg-gray-200'
+            }`}
+          />
+        ))}
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -1061,7 +1111,96 @@ const ProductCard: React.FC = () => {
             </TabsContent>
 
             <TabsContent value="reviews" className="mt-8">
-              <div className="text-gray-600">Отзывы будут добавлены позже</div>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {/* Left column - Reviews */}
+                <div className="lg:col-span-2 space-y-6">
+                  <h2 className="text-2xl font-bold text-[#262631]">Отзывы (10)</h2>
+                  
+                  {/* Reviews list */}
+                  <div className="space-y-8">
+                    {reviews.map((review) => (
+                      <div key={review.id} className="border-b border-gray-200 pb-6">
+                        <div className="flex items-start gap-4">
+                          {/* Avatar */}
+                          <div className="w-12 h-12 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          
+                          <div className="flex-1">
+                            {/* User info and rating */}
+                            <div className="flex items-center justify-between mb-2">
+                              <div>
+                                <div className="font-medium text-gray-900">{review.userName}</div>
+                                <div className="text-sm text-gray-500">{review.date}</div>
+                              </div>
+                              
+                              <div className="flex text-yellow-400">
+                                {[...Array(5)].map((_, i) => (
+                                  <Star 
+                                    key={i} 
+                                    className={`w-4 h-4 ${i < review.rating ? 'fill-current' : 'text-gray-300'}`} 
+                                  />
+                                ))}
+                              </div>
+                            </div>
+                            
+                            {/* Review text */}
+                            <p className="text-gray-700 text-sm leading-relaxed">{review.text}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Product images */}
+                  <div className="flex gap-4 mt-6">
+                    <img 
+                      src="/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png" 
+                      alt="Product image 1"
+                      className="w-24 h-24 object-contain bg-gray-50 rounded-lg"
+                    />
+                    <img 
+                      src="/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png" 
+                      alt="Product image 2"
+                      className="w-24 h-24 object-contain bg-gray-50 rounded-lg"
+                    />
+                  </div>
+                </div>
+
+                {/* Right column - Rating summary */}
+                <div className="space-y-6">
+                  {/* Rating categories */}
+                  <div className="space-y-4">
+                    {ratingCategories.map((category) => (
+                      <div key={category.name} className="flex items-center justify-between">
+                        <span className="text-sm text-gray-600">{category.name}</span>
+                        <RatingBar rating={category.rating} maxRating={category.maxRating} />
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Overall rating */}
+                  <div className="text-center py-6 border-t border-gray-200">
+                    <div className="text-sm text-gray-600 mb-2">Общий рейтинг</div>
+                    <div className="text-4xl font-bold text-gray-900 mb-2">4.5</div>
+                    <div className="flex justify-center text-yellow-400 mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star 
+                          key={i} 
+                          className={`w-5 h-5 ${i < 4 || (i === 4 && 0.5 > 0) ? 'fill-current' : 'text-gray-300'}`} 
+                        />
+                      ))}
+                    </div>
+                    <div className="text-sm text-gray-500">10 оценок</div>
+                  </div>
+
+                  {/* Write review button */}
+                  <Button 
+                    variant="outline" 
+                    className="w-full text-[#F53B49] border-[#F53B49] hover:bg-[#F53B49] hover:text-white"
+                  >
+                    Написать отзыв
+                  </Button>
+                </div>
+              </div>
             </TabsContent>
 
             <TabsContent value="delivery" className="mt-8">
