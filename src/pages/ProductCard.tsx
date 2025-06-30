@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Star, Heart, ShoppingCart, Truck, CreditCard, Calculator, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, Heart, ShoppingCart, Truck, CreditCard, Calculator, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -389,28 +389,28 @@ const ProductCard = () => {
             <CardContent className="p-6">
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">Доставка по России</h3>
+                  <h3 className="text-lg font-semibold mb-4">Рассрочка и кредит</h3>
                   <div className="space-y-3 text-sm text-gray-700">
                     <p>Оформить кредит на сайте — быстро и легко! При оформлении заказа в корзине укажите способ оплаты «Кредит».</p>
-                    <p>Вы будете перенаправлены на сайт банка для заполнения заявки. После заполнения заявки — представитель банка. Вашу заявку рассмотрят в течение 20—30 минут.</p>
+                    <p>Вы будете перенаправлены на сайт банка для заполнения заявки. После заполнения заявки — представитель банка свяжется с вами. Вашу заявку рассмотрят в течение 20—30 минут.</p>
                     <p>Также вы можете оформить рассрочку или кредит в любом магазине, сделав заказ на самовывоз.</p>
                     <p>Пожалуйста, будьте готовы предоставить паспорт для получения кредита. Также банки вправе потребовать иные дополнительные документы и подтверждение доходов заемщика.</p>
                   </div>
                 </div>
 
                 <div>
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead>Рассрочка</TableHead>
-                        <TableHead>Ежемесячный платеж</TableHead>
-                        <TableHead>Переплата</TableHead>
-                        <TableHead>Срок</TableHead>
-                        <TableHead></TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      <RadioGroup value={selectedInstallment} onValueChange={setSelectedInstallment}>
+                  <RadioGroup value={selectedInstallment} onValueChange={setSelectedInstallment}>
+                    <Table>
+                      <TableHeader>
+                        <TableRow>
+                          <TableHead>Рассрочка</TableHead>
+                          <TableHead>Ежемесячный платеж</TableHead>
+                          <TableHead>Переплата</TableHead>
+                          <TableHead>Срок</TableHead>
+                          <TableHead></TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
                         {installmentOptions.map((option) => (
                           <TableRow key={option.id} className={selectedInstallment === option.id ? 'bg-blue-50' : ''}>
                             <TableCell>
@@ -436,9 +436,9 @@ const ProductCard = () => {
                             </TableCell>
                           </TableRow>
                         ))}
-                      </RadioGroup>
-                    </TableBody>
-                  </Table>
+                      </TableBody>
+                    </Table>
+                  </RadioGroup>
                 </div>
 
                 <div>
