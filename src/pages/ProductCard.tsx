@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ReviewDialog from '@/components/ReviewDialog';
+import EmailSubscription from '@/components/EmailSubscription';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -181,266 +182,271 @@ const ProductCard: React.FC = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-6">
-        {/* Breadcrumb */}
-        <nav className="flex items-center space-x-2 text-sm text-gray-500 mb-6">
-          <Link to="/" className="hover:text-[#F53B49]">Главная</Link>
-          <span>/</span>
-          <Link to="/catalog" className="hover:text-[#F53B49]">Каталог</Link>
-          <span>/</span>
-          <span className="text-gray-900">{product.title}</span>
-        </nav>
+      <main className="w-full">
+        {/* Breadcrumbs */}
+        <section className="bg-[#F8F9FA] py-4">
+          <nav className="flex items-center space-x-2 text-sm text-gray-500 mb-6">
+            <Link to="/" className="hover:text-[#F53B49]">Главная</Link>
+            <span>/</span>
+            <Link to="/catalog" className="hover:text-[#F53B49]">Каталог</Link>
+            <span>/</span>
+            <span className="text-gray-900">{product.title}</span>
+          </nav>
+        </section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Левая часть - Изображения */}
-          <div className="space-y-4">
-            {/* Badges */}
-            <div className="flex gap-2 mb-4">
-              {product.badges.map((badge, index) => (
-                <Badge 
-                  key={index}
-                  className={`${
-                    badge === 'АКЦИЯ' 
-                      ? 'bg-red-500 text-white hover:bg-red-600' 
-                      : 'bg-blue-500 text-white hover:bg-blue-600'
-                  } px-3 py-1 text-sm font-medium`}
-                >
-                  {badge}
-                </Badge>
-              ))}
-            </div>
+        {/* Product Details */}
+        <section className="py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Left part - Images */}
+            <div className="space-y-4">
+              {/* Badges */}
+              <div className="flex gap-2 mb-4">
+                {product.badges.map((badge, index) => (
+                  <Badge 
+                    key={index}
+                    className={`${
+                      badge === 'АКЦИЯ' 
+                        ? 'bg-red-500 text-white hover:bg-red-600' 
+                        : 'bg-blue-500 text-white hover:bg-blue-600'
+                    } px-3 py-1 text-sm font-medium`}
+                  >
+                    {badge}
+                  </Badge>
+                ))}
+              </div>
 
-            {/* Main Image */}
-            <div className="relative bg-gray-50 rounded-lg overflow-hidden">
-              <img 
-                src={product.images[currentImageIndex]} 
-                alt={product.title}
-                className="w-full h-[400px] object-contain"
-              />
-              
-              {/* Navigation arrows */}
-              <button
-                onClick={prevImage}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                onClick={nextImage}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-
-            {/* Thumbnail Images */}
-            <div className="flex gap-2">
-              {product.images.map((image, index) => (
+              {/* Main Image */}
+              <div className="relative bg-gray-50 rounded-lg overflow-hidden">
+                <img 
+                  src={product.images[currentImageIndex]} 
+                  alt={product.title}
+                  className="w-full h-[400px] object-contain"
+                />
+                
+                {/* Navigation arrows */}
                 <button
-                  key={index}
-                  onClick={() => setCurrentImageIndex(index)}
-                  className={`w-20 h-20 rounded-lg overflow-hidden border-2 ${
-                    currentImageIndex === index ? 'border-[#F53B49]' : 'border-gray-200'
-                  }`}
+                  onClick={prevImage}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
                 >
-                  <img 
-                    src={image} 
-                    alt={`${product.title} ${index + 1}`}
-                    className="w-full h-full object-contain bg-gray-50"
-                  />
+                  <ChevronLeft className="w-5 h-5" />
                 </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Правая часть - Информация о товаре */}
-          <div className="space-y-6">
-            {/* Availability and Wishlist */}
-            <div className="flex justify-between items-start">
-              <div className="flex gap-3">
-                <Badge className="bg-green-100 text-green-600 hover:bg-green-100">
-                  ● В наличии
-                </Badge>
-                <Button variant="outline" size="sm" className="text-gray-500 border-gray-300">
-                  В сравнение
-                </Button>
-                <Button variant="outline" size="sm" className="text-gray-500 border-gray-300">
-                  <Heart className="w-4 h-4 mr-1" />
-                  В избранное
-                </Button>
+                <button
+                  onClick={nextImage}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
-            </div>
 
-            {/* Product Title */}
-            <h1 className="text-2xl font-bold text-[#262631]">{product.title}</h1>
-
-            {/* Rating */}
-            <div className="flex items-center gap-2">
-              <div className="flex text-yellow-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star 
-                    key={i} 
-                    className={`w-5 h-5 ${i < product.rating ? 'fill-current' : 'text-gray-300'}`} 
-                  />
-                ))}
-              </div>
-              <span className="text-gray-600">{product.rating}/{product.maxRating}</span>
-            </div>
-
-            {/* Specifications Table */}
-            <div className="grid grid-cols-2 gap-y-2 text-sm">
-              <div className="text-gray-600">Тип продукции:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.type}</div>
-              
-              <div className="text-gray-600">Бренд:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.brand}</div>
-              
-              <div className="text-gray-600">Назначение:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.purpose}</div>
-              
-              <div className="text-gray-600">Тип двигателя:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.motorType}</div>
-              
-              <div className="text-gray-600">Мощность двигателя, л.с.:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.motorPower}</div>
-
-              <div className="text-gray-600">Пиковая мощность, л.с.:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.peakPower}</div>
-
-              <div className="text-gray-600">Тип беговой дорожки:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.beltType}</div>
-
-              <div className="text-gray-600">Минимальная скорость, км/ч:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.minSpeed}</div>
-
-              <div className="text-gray-600">Максимальная скорость, км/ч:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.maxSpeed}</div>
-
-              <div className="text-gray-600">Угол наклона:</div>
-              <div className="text-gray-900 font-medium">{product.specifications.incline}</div>
-            </div>
-
-            {/* Show all characteristics link */}
-            <Link to="#" className="text-[#F53B49] text-sm font-medium hover:underline inline-flex items-center">
-              Все характеристики →
-            </Link>
-
-            {/* Color Selection */}
-            <div>
-              <div className="text-sm font-medium text-gray-900 mb-2">Цвет</div>
+              {/* Thumbnail Images */}
               <div className="flex gap-2">
-                {product.colors.map((color) => (
+                {product.images.map((image, index) => (
                   <button
-                    key={color.value}
-                    onClick={() => setSelectedColor(color.value)}
-                    className={`px-4 py-2 rounded text-sm font-medium border ${
-                      selectedColor === color.value
-                        ? 'bg-[#262631] text-white border-[#262631]'
-                        : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-20 h-20 rounded-lg overflow-hidden border-2 ${
+                      currentImageIndex === index ? 'border-[#F53B49]' : 'border-gray-200'
                     }`}
                   >
-                    {color.name}
+                    <img 
+                      src={image} 
+                      alt={`${product.title} ${index + 1}`}
+                      className="w-full h-full object-contain bg-gray-50"
+                    />
                   </button>
                 ))}
               </div>
             </div>
 
-            {/* Size Selection */}
-            <div>
-              <div className="text-sm font-medium text-gray-900 mb-2">Диаметр, ft</div>
-              <div className="flex gap-2">
-                {product.sizes.map((size) => (
-                  <button
-                    key={size.size}
-                    onClick={() => setSelectedSize(size.size)}
-                    className={`px-3 py-2 rounded text-sm font-medium border min-w-[60px] ${
-                      selectedSize === size.size
-                        ? 'bg-[#262631] text-white border-[#262631]'
-                        : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
-                    }`}
-                  >
-                    <div>{size.size}</div>
-                    {size.price && (
-                      <div className="text-xs text-gray-500">{size.price}</div>
-                    )}
-                  </button>
-                ))}
+            {/* Right part - Product information */}
+            <div className="space-y-6">
+              {/* Availability and Wishlist */}
+              <div className="flex justify-between items-start">
+                <div className="flex gap-3">
+                  <Badge className="bg-green-100 text-green-600 hover:bg-green-100">
+                    ● В наличии
+                  </Badge>
+                  <Button variant="outline" size="sm" className="text-gray-500 border-gray-300">
+                    В сравнение
+                  </Button>
+                  <Button variant="outline" size="sm" className="text-gray-500 border-gray-300">
+                    <Heart className="w-4 h-4 mr-1" />
+                    В избранное
+                  </Button>
+                </div>
               </div>
-            </div>
 
-            {/* Price and Add to Cart */}
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <div className="flex items-center gap-2 mb-3">
-                <Badge className="bg-red-500 text-white">{product.discount}</Badge>
-                <span className="text-gray-400 line-through text-sm">{product.originalPrice}</span>
+              {/* Product Title */}
+              <h1 className="text-2xl font-bold text-[#262631]">{product.title}</h1>
+
+              {/* Rating */}
+              <div className="flex items-center gap-2">
+                <div className="flex text-yellow-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star 
+                      key={i} 
+                      className={`w-5 h-5 ${i < product.rating ? 'fill-current' : 'text-gray-300'}`} 
+                    />
+                  ))}
+                </div>
+                <span className="text-gray-600">{product.rating}/{product.maxRating}</span>
               </div>
-              
-              <div className="text-3xl font-bold text-[#262631] mb-4">{product.currentPrice}</div>
 
-              <div className="flex items-center gap-4 mb-4">
-                <div className="flex items-center border border-gray-300 rounded">
-                  <button
-                    onClick={decreaseQuantity}
-                    className="px-3 py-2 hover:bg-gray-100"
-                  >
-                    −
-                  </button>
-                  <span className="px-4 py-2 border-x border-gray-300">{quantity}</span>
-                  <button
-                    onClick={increaseQuantity}
-                    className="px-3 py-2 hover:bg-gray-100"
-                  >
-                    +
-                  </button>
+              {/* Specifications Table */}
+              <div className="grid grid-cols-2 gap-y-2 text-sm">
+                <div className="text-gray-600">Тип продукции:</div>
+                <div className="text-gray-900 font-medium">{product.specifications.type}</div>
+                
+                <div className="text-gray-600">Бренд:</div>
+                <div className="text-gray-900 font-medium">{product.specifications.brand}</div>
+                
+                <div className="text-gray-600">Назначение:</div>
+                <div className="text-gray-900 font-medium">{product.specifications.purpose}</div>
+                
+                <div className="text-gray-600">Тип двигателя:</div>
+                <div className="text-gray-900 font-medium">{product.specifications.motorType}</div>
+                
+                <div className="text-gray-600">Мощность двигателя, л.с.:</div>
+                <div className="text-gray-900 font-medium">{product.specifications.motorPower}</div>
+
+                <div className="text-gray-600">Пиковая мощность, л.с.:</div>
+                <div className="text-gray-900 font-medium">{product.specifications.peakPower}</div>
+
+                <div className="text-gray-600">Тип беговой дорожки:</div>
+                <div className="text-gray-900 font-medium">{product.specifications.beltType}</div>
+
+                <div className="text-gray-600">Минимальная скорость, км/ч:</div>
+                <div className="text-gray-900 font-medium">{product.specifications.minSpeed}</div>
+
+                <div className="text-gray-600">Максимальная скорость, км/ч:</div>
+                <div className="text-gray-900 font-medium">{product.specifications.maxSpeed}</div>
+
+                <div className="text-gray-600">Угол наклона:</div>
+                <div className="text-gray-900 font-medium">{product.specifications.incline}</div>
+              </div>
+
+              {/* Show all characteristics link */}
+              <Link to="#" className="text-[#F53B49] text-sm font-medium hover:underline inline-flex items-center">
+                Все характеристики →
+              </Link>
+
+              {/* Color Selection */}
+              <div>
+                <div className="text-sm font-medium text-gray-900 mb-2">Цвет</div>
+                <div className="flex gap-2">
+                  {product.colors.map((color) => (
+                    <button
+                      key={color.value}
+                      onClick={() => setSelectedColor(color.value)}
+                      className={`px-4 py-2 rounded text-sm font-medium border ${
+                        selectedColor === color.value
+                          ? 'bg-[#262631] text-white border-[#262631]'
+                          : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
+                      }`}
+                    >
+                      {color.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Size Selection */}
+              <div>
+                <div className="text-sm font-medium text-gray-900 mb-2">Диаметр, ft</div>
+                <div className="flex gap-2">
+                  {product.sizes.map((size) => (
+                    <button
+                      key={size.size}
+                      onClick={() => setSelectedSize(size.size)}
+                      className={`px-3 py-2 rounded text-sm font-medium border min-w-[60px] ${
+                        selectedSize === size.size
+                          ? 'bg-[#262631] text-white border-[#262631]'
+                          : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
+                      }`}
+                    >
+                      <div>{size.size}</div>
+                      {size.price && (
+                        <div className="text-xs text-gray-500">{size.price}</div>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Price and Add to Cart */}
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="flex items-center gap-2 mb-3">
+                  <Badge className="bg-red-500 text-white">{product.discount}</Badge>
+                  <span className="text-gray-400 line-through text-sm">{product.originalPrice}</span>
                 </div>
                 
-                <Button className="flex-1 bg-[#F53B49] hover:bg-red-600 text-white py-3">
-                  Добавить в корзину
-                </Button>
-              </div>
-            </div>
+                <div className="text-3xl font-bold text-[#262631] mb-4">{product.currentPrice}</div>
 
-            {/* Delivery and Payment Info */}
-            <div className="space-y-3 text-sm">
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 bg-gray-400 rounded-sm flex items-center justify-center">
-                  <div className="w-2 h-2 bg-white rounded-sm"></div>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center border border-gray-300 rounded">
+                    <button
+                      onClick={decreaseQuantity}
+                      className="px-3 py-2 hover:bg-gray-100"
+                    >
+                      −
+                    </button>
+                    <span className="px-4 py-2 border-x border-gray-300">{quantity}</span>
+                    <button
+                      onClick={increaseQuantity}
+                      className="px-3 py-2 hover:bg-gray-100"
+                    >
+                      +
+                    </button>
+                  </div>
+                  
+                  <Button className="flex-1 bg-[#F53B49] hover:bg-red-600 text-white py-3">
+                    Добавить в корзину
+                  </Button>
                 </div>
-                <span className="text-gray-600">Доставка</span>
-                <span className="ml-auto text-gray-900 font-medium">
-                  {product.delivery.price} {product.delivery.note}
-                </span>
               </div>
-              
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 bg-gray-400 rounded-sm flex items-center justify-center">
-                  <div className="w-2 h-2 bg-white rounded-sm"></div>
+
+              {/* Delivery and Payment Info */}
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 bg-gray-400 rounded-sm flex items-center justify-center">
+                    <div className="w-2 h-2 bg-white rounded-sm"></div>
+                  </div>
+                  <span className="text-gray-600">Доставка</span>
+                  <span className="ml-auto text-gray-900 font-medium">
+                    {product.delivery.price} {product.delivery.note}
+                  </span>
                 </div>
-                <span className="text-gray-600">Сборка</span>
-                <span className="ml-auto text-gray-900">{product.delivery.description}</span>
-              </div>
-              
-              <div className="flex items-start gap-2">
-                <div className="w-4 h-4 bg-gray-400 rounded-sm flex items-center justify-center mt-0.5">
-                  <div className="w-2 h-2 bg-white rounded-sm"></div>
+                
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 bg-gray-400 rounded-sm flex items-center justify-center">
+                    <div className="w-2 h-2 bg-white rounded-sm"></div>
+                  </div>
+                  <span className="text-gray-600">Сборка</span>
+                  <span className="ml-auto text-gray-900">{product.delivery.description}</span>
                 </div>
-                <span className="text-gray-600">Оплата для физ лиц</span>
-                <span className="ml-auto text-gray-900 text-right max-w-[200px]">{product.assembly}</span>
-              </div>
-              
-              <div className="flex items-start gap-2">
-                <div className="w-4 h-4 bg-gray-400 rounded-sm flex items-center justify-center mt-0.5">
-                  <div className="w-2 h-2 bg-white rounded-sm"></div>
+                
+                <div className="flex items-start gap-2">
+                  <div className="w-4 h-4 bg-gray-400 rounded-sm flex items-center justify-center mt-0.5">
+                    <div className="w-2 h-2 bg-white rounded-sm"></div>
+                  </div>
+                  <span className="text-gray-600">Оплата для физ лиц</span>
+                  <span className="ml-auto text-gray-900 text-right max-w-[200px]">{product.assembly}</span>
                 </div>
-                <span className="text-gray-600">Оплата для юр лиц</span>
-                <span className="ml-auto text-gray-900 text-right max-w-[200px]">{product.paymentOptions}</span>
+                
+                <div className="flex items-start gap-2">
+                  <div className="w-4 h-4 bg-gray-400 rounded-sm flex items-center justify-center mt-0.5">
+                    <div className="w-2 h-2 bg-white rounded-sm"></div>
+                  </div>
+                  <span className="text-gray-600">Оплата для юр лиц</span>
+                  <span className="ml-auto text-gray-900 text-right max-w-[200px]">{product.paymentOptions}</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Tabs Section */}
-        <div className="mt-12">
+        {/* Product Information Tabs */}
+        <section className="py-12 bg-gray-50">
           <Tabs defaultValue="description" className="w-full">
             <TabsList className="w-full justify-start bg-transparent border-b border-gray-200 rounded-none h-auto p-0">
               <TabsTrigger 
@@ -854,7 +860,7 @@ const ProductCard: React.FC = () => {
               <div className="space-y-8">
                 <h2 className="text-2xl font-bold text-[#262631]">Характеристики</h2>
                 
-                {/* Основные характеристики */}
+                {/* Main characteristics */}
                 <div>
                   <h3 className="text-lg font-semibold text-[#262631] mb-4">Основные характеристики</h3>
                   <div className="overflow-x-auto">
@@ -925,9 +931,9 @@ const ProductCard: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Три колонки характеристик */}
+                {/* Additional characteristics */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {/* Габариты в рабочем состоянии */}
+                  {/* Dimensions in working condition */}
                   <div>
                     <h3 className="text-lg font-semibold text-[#262631] mb-4">Габариты в рабочем состоянии</h3>
                     <div className="space-y-3">
@@ -946,7 +952,7 @@ const ProductCard: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Дополнительные характеристики */}
+                  {/* Additional characteristics */}
                   <div>
                     <h3 className="text-lg font-semibold text-[#262631] mb-4">Дополнительные характеристики</h3>
                     <div className="space-y-3">
@@ -965,7 +971,7 @@ const ProductCard: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Упаковка */}
+                  {/* Packaging */}
                   <div>
                     <h3 className="text-lg font-semibold text-[#262631] mb-4">Упаковка</h3>
                     <div className="space-y-3">
@@ -985,7 +991,7 @@ const ProductCard: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Дополнительные характеристики в таблице */}
+                {/* Additional characteristics in table */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div>
                     <div className="space-y-3">
@@ -1049,9 +1055,9 @@ const ProductCard: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Вес и Гарантия */}
+                {/* Weight and Warranty */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {/* Вес */}
+                  {/* Weight */}
                   <div>
                     <h3 className="text-lg font-semibold text-[#262631] mb-4">Вес</h3>
                     <div className="space-y-3">
@@ -1066,7 +1072,7 @@ const ProductCard: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Гарантия и Сертификация */}
+                  {/* Warranty and Certification */}
                   <div>
                     <h3 className="text-lg font-semibold text-[#262631] mb-4">Гарантия и Сертификация</h3>
                     <div className="space-y-3">
@@ -1090,7 +1096,7 @@ const ProductCard: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Схемы */}
+                {/* Schemes */}
                 <div className="mt-8">
                   <div className="flex gap-8 justify-center">
                     <div className="text-center">
@@ -1208,7 +1214,7 @@ const ProductCard: React.FC = () => {
 
             <TabsContent value="delivery" className="mt-8">
               <div className="space-y-10">
-                {/* Город доставки */}
+                {/* Delivery city */}
                 <div>
                   <div className="flex items-center gap-2 mb-6">
                     <h2 className="text-lg font-semibold text-gray-900">Город доставки</h2>
@@ -1234,7 +1240,7 @@ const ProductCard: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Доставка по России */}
+                {/* Delivery to Russia */}
                 <div>
                   <h2 className="text-lg font-semibold text-gray-900 mb-6">Доставка по России</h2>
                   
@@ -1269,7 +1275,7 @@ const ProductCard: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Самовывоз для Москвы */}
+                {/* Self-pickup for Moscow */}
                 <div>
                   <h2 className="text-lg font-semibold text-gray-900 mb-6">Самовывоз</h2>
                   
@@ -1353,7 +1359,7 @@ const ProductCard: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Сборка */}
+                {/* Assembly */}
                 <div>
                   <h2 className="text-lg font-semibold text-gray-900 mb-6">Сборка</h2>
                   
@@ -1376,7 +1382,7 @@ const ProductCard: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Оплата для физ. лиц */}
+                {/* Payment for individuals */}
                 <div>
                   <h2 className="text-lg font-semibold text-gray-900 mb-6">Оплата для физ. лиц</h2>
                   
@@ -1432,7 +1438,7 @@ const ProductCard: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Оплата для юр. лиц */}
+                {/* Payment for legal entities */}
                 <div>
                   <h2 className="text-lg font-semibold text-gray-900 mb-6">Оплата для юр. лиц</h2>
                   
@@ -1465,10 +1471,10 @@ const ProductCard: React.FC = () => {
               <div className="text-gray-600">Информация об услугах будет добавлена позже</div>
             </TabsContent>
           </Tabs>
-        </div>
+        </section>
 
-        {/* Similar Products Section */}
-        <div className="mt-16">
+        {/* Related Products */}
+        <section className="py-16 bg-white">
           <h2 className="text-2xl font-bold text-[#262631] mb-8">Вы смотрели</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {similarProducts.map((product) => (
@@ -1511,9 +1517,11 @@ const ProductCard: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
+        </section>
       </main>
-      
+
+      <EmailSubscription />
+      <div className="h-[70px]"></div>
       <Footer />
 
       {/* Review Dialog */}

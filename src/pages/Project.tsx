@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import EmailSubscription from '@/components/EmailSubscription';
 import { Link } from 'react-router-dom';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -592,6 +593,7 @@ const Project: React.FC = () => {
         </section>
       </main>
       
+      <EmailSubscription />
       <div className="h-[70px]"></div>
       <Footer />
     </div>
