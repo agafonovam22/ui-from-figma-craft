@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -13,6 +12,9 @@ import {
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Link } from 'react-router-dom';
 import { Truck, CreditCard, User } from 'lucide-react';
 
@@ -22,6 +24,15 @@ const Checkout: React.FC = () => {
   const [selectedPickupPoint, setSelectedPickupPoint] = useState('warehouse1');
   const [selectedPayment, setSelectedPayment] = useState('card-online');
   const [useBonuses, setUseBonuses] = useState(false);
+  const [customerType, setCustomerType] = useState('individual');
+  const [hasAccount, setHasAccount] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    phone: '',
+    email: '',
+    acceptPrivacy: false,
+    subscribeNews: false
+  });
 
   const total = 40610;
   const discount = 4610;
@@ -40,6 +51,13 @@ const Checkout: React.FC = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
     }
+  };
+
+  const handleInputChange = (field: string, value: string | boolean) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
   };
 
   return (
@@ -349,9 +367,135 @@ const Checkout: React.FC = () => {
             {/* Step 3: User Data */}
             {currentStep === 3 && (
               <div className="bg-white">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Ваши данные</h2>
-                <p className="text-gray-600 mb-6">Заполните форму для оформления заказа</p>
-                {/* Add form fields here */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Left Column - Form */}
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Ваши данные</h2>
+                    
+                    {/* Customer Type Selection */}
+                    <div className="mb-6">
+                      <div className="flex gap-4">
+                        <label className="flex items-center gap-2 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="customerType"
+                            value="individual"
+                            checked={customerType === 'individual'}
+                            onChange={(e) => setCustomerType(e.target.value)}
+                            className="w-4 h-4"
+                          />
+                          <span className="text-gray-900">Физическое лицо</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="customerType"
+                            value="legal"
+                            checked={customerType === 'legal'}
+                            onChange={(e) => setCustomerType(e.target.value)}
+                            className="w-4 h-4"
+                          />
+                          <span className="text-gray-900">Юридическое лицо</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    {/* Form Fields */}
+                    <div className="space-y-4">
+                      <div>
+                        <Label htmlFor="fullName" className="text-gray-700 mb-2 block">ФИО</Label>
+                        <Input
+                          id="fullName"
+                          type="text"
+                          value={formData.fullName}
+                          onChange={(e) => handleInputChange('fullName', e.target.value)}
+                          className="w-full"
+                          placeholder="Введите ваше ФИО"
+                        />
+                      </div>
+
+                      <div>
+                        <Label htmlFor="phone" className="text-gray-700 mb-2 block">Телефон</Label>
+                        <Input
+                          id="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => handleInputChange('phone', e.target.value)}
+                          className="w-full"
+                          placeholder="Введите номер телефона"
+                        />
+                      </div>
+
+                      <div>
+                        <Label htmlFor="email" className="text-gray-700 mb-2 block">E-mail</Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => handleInputChange('email', e.target.value)}
+                          className="w-full"
+                          placeholder="Введите электронную почту"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Privacy Policy */}
+                    <div className="mt-6 space-y-4">
+                      <div className="flex items-start gap-3">
+                        <Checkbox
+                          id="privacy"
+                          checked={formData.acceptPrivacy}
+                          onCheckedChange={(checked) => handleInputChange('acceptPrivacy', checked as boolean)}
+                        />
+                        <label htmlFor="privacy" className="text-sm text-gray-700 leading-relaxed">
+                          Я принимаю условия{' '}
+                          <Link to="#" className="text-blue-600 underline">
+                            политики конфиденциальности
+                          </Link>{' '}
+                          и даю{' '}
+                          <Link to="#" className="text-blue-600 underline">
+                            согласие на обработку своих персональных данных
+                          </Link>
+                        </label>
+                      </div>
+
+                      <div className="flex items-start gap-3">
+                        <Checkbox
+                          id="newsletter"
+                          checked={formData.subscribeNews}
+                          onCheckedChange={(checked) => handleInputChange('subscribeNews', checked as boolean)}
+                        />
+                        <label htmlFor="newsletter" className="text-sm text-gray-700">
+                          Хочу подписаться на рассылку новостей WellFitness.
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column - Account Info */}
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Есть личный кабинет?</h2>
+                    <p className="text-red-500 text-sm mb-4">Войдите для отслеживания статуса заказа</p>
+                    
+                    <div className="bg-gray-50 rounded-lg p-6 mb-6">
+                      <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                        Создание учётной записи поможет делать покупки быстрее и удобнее, 
+                        не вносить одни и те же данные многократно (адрес доставки, имя, 
+                        телефон и т.д.) Вы также, сможете отслеживать статус своего заказа, 
+                        пользоваться Закладками, видеть свои предыдущие заказы, 
+                        накапливать бонусные баллы (на них тоже можно покупать товары!) 
+                        или получать скидку как постоянный покупатель.
+                      </p>
+                      
+                      <Button 
+                        variant="outline" 
+                        className="w-full border-red-500 text-red-500 hover:bg-red-50"
+                      >
+                        Войти в личный кабинет
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
 
@@ -413,12 +557,10 @@ const Checkout: React.FC = () => {
               
               <div className="mb-6">
                 <div className="flex items-start gap-3">
-                  <input 
-                    type="checkbox" 
+                  <Checkbox 
                     id="bonusCheckout" 
                     checked={useBonuses}
-                    onChange={(e) => setUseBonuses(e.target.checked)}
-                    className="mt-1 rounded" 
+                    onCheckedChange={(checked) => setUseBonuses(checked as boolean)}
                   />
                   <label htmlFor="bonusCheckout" className="text-sm text-gray-700 leading-relaxed">
                     Использовать бонусные баллы. Требуется{' '}
