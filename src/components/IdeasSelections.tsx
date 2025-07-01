@@ -56,16 +56,13 @@ const IdeasSelections: React.FC = () => {
           {ideas.map((idea) => (
             <div
               key={idea.id}
-              className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 group hover:shadow-md transition-shadow cursor-pointer"
+              className="rounded-lg overflow-hidden h-[444px] hover:shadow-lg transition-shadow cursor-pointer"
             >
-              {/* Image */}
-              <div className="aspect-[4/3] overflow-hidden relative">
-                <img 
-                  src={idea.image} 
-                  alt={idea.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
+              <img 
+                src={idea.image} 
+                alt={idea.title}
+                className="w-full h-full object-cover"
+              />
             </div>
           ))}
         </div>
