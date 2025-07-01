@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -103,14 +102,12 @@ const Ideas: React.FC = () => {
       key={idea.id}
       className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 group hover:shadow-md transition-shadow"
     >
-      {/* Image */}
       <div className="aspect-[4/3] overflow-hidden relative">
         <img 
           src={idea.image} 
           alt={idea.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
-        {/* Overlay content */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-4">
           <h3 className="text-white font-bold text-lg mb-1">{idea.title}</h3>
           <p className="text-white/90 text-sm mb-3">{idea.subtitle}</p>
@@ -172,7 +169,7 @@ const Ideas: React.FC = () => {
 
         {/* Show More Button */}
         <div className="flex justify-center mb-8">
-          <button className="px-6 py-3 border border-[#F53B49] text-[#F53B49] rounded-lg font-semibold hover:bg-[#F53B49] hover:text-white transition-colors">
+          <button className="px-6 py-3 border border-[#F53B49] text-[#F53B49] rounded-lg font-semibold hover:bg-[#F53B49] hover:text-white transition-colors font-benzin font-normal">
             Показать еще
           </button>
         </div>

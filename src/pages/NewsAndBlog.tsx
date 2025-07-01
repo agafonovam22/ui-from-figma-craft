@@ -265,7 +265,7 @@ const NewsAndBlogPage: React.FC = () => {
         </div>
 
         <div className="text-center mb-8">
-          <button className="border border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors">
+          <button className="border border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors font-benzin font-normal">
             Показать еще
           </button>
         </div>

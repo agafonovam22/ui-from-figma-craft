@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -160,7 +159,6 @@ const ProductCatalog: React.FC = () => {
           </div>
         </div>
         
-        {/* Первый ряд - 6 карточек */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 mb-6">
           {currentProducts.slice(0, 6).map((product) => (
             <Link 
@@ -177,7 +175,6 @@ const ProductCatalog: React.FC = () => {
           ))}
         </div>
         
-        {/* Второй ряд - 5 карточек */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
           {currentProducts.slice(6, 11).map((product) => (
             <Link 
@@ -194,11 +191,10 @@ const ProductCatalog: React.FC = () => {
           ))}
         </div>
         
-        {/* Кнопка "Показать все" */}
         <div className="mt-8 flex justify-start">
           <Link 
             to={activeFilter === 'home' ? '/home-fitness-equipment' : '/gym-equipment'}
-            className="border-2 border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors"
+            className="border-2 border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors font-benzin font-normal"
           >
             Показать все
           </Link>
