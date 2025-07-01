@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import EmailSubscription from '../components/EmailSubscription';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -143,6 +143,8 @@ const PasswordReset: React.FC = () => {
         </section>
       </main>
 
+      <EmailSubscription />
+      <div className="h-[70px]"></div>
       <Footer />
     </div>
   );

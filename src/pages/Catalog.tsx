@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronDown, Search, Heart, ShoppingCart, BarChart3 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import EmailSubscription from '@/components/EmailSubscription';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -553,6 +554,8 @@ const Catalog: React.FC = () => {
           </div>
         </div>
       </div>
+      <EmailSubscription />
+      <div className="h-[70px]"></div>
       <Footer />
     </>
   );
