@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -27,72 +28,72 @@ const Ideas: React.FC = () => {
       id: 1,
       title: "Беговая дорожка Nautilus T628",
       subtitle: "для подготовки к марафону",
-      buttonText: "Перейти",
-      image: "/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png",
-      isSpecial: true
+      buttonText: "для подготовки к марафону",
+      image: "/lovable-uploads/6717b602-6adb-4b02-818d-90623f40d264.png"
     },
     {
       id: 2,
       title: "Беговая дорожка Nautilus T628",
       subtitle: "для подготовки к марафону",
       buttonText: "для подготовки к марафону",
-      image: "/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png"
+      image: "/lovable-uploads/7da5f939-e8eb-494e-b0ba-46036e537da1.png"
     },
     {
       id: 3,
       title: "Беговая дорожка Nautilus T628",
       subtitle: "для подготовки к марафону", 
       buttonText: "для подготовки к марафону",
-      image: "/lovable-uploads/f99f3115-1f00-49f0-af93-08b6318f8cf4.png"
+      image: "/lovable-uploads/a1331dd7-212c-4d15-a930-7bd880228278.png"
     },
     {
       id: 4,
       title: "Беговая дорожка Nautilus T628",
       subtitle: "для подготовки к марафону",
-      buttonText: "для подготовки к марафону", 
-      image: "/lovable-uploads/31e0c62c-257c-4fe3-96b0-d53a4a23f8ca.png"
+      buttonText: "Перейти",
+      image: "/lovable-uploads/e604f20a-8484-4c5c-9ac2-1d7e772e921b.png",
+      isSpecial: true
     },
     {
       id: 5,
       title: "Беговая дорожка Nautilus T628",
       subtitle: "для подготовки к марафону",
       buttonText: "для подготовки к марафону",
-      image: "/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png"
+      image: "/lovable-uploads/36fbe1e1-9337-40a5-86d1-920e48f744df.png"
     },
     {
       id: 6,
       title: "Беговая дорожка Nautilus T628", 
       subtitle: "для подготовки к марафону",
       buttonText: "для подготовки к марафону",
-      image: "/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png"
+      image: "/lovable-uploads/854faa18-ebd7-4c90-84dc-c2b3e6e5a346.png"
     },
     {
       id: 7,
       title: "Беговая дорожка Nautilus T628",
       subtitle: "для подготовки к марафону",
       buttonText: "для подготовки к марафону",
-      image: "/lovable-uploads/f99f3115-1f00-49f0-af93-08b6318f8cf4.png"
+      image: "/lovable-uploads/20f69011-5716-4d55-a663-c1b0ddfbb074.png"
     },
     {
       id: 8,
       title: "Беговая дорожка Nautilus T628",
       subtitle: "для подготовки к марафону",
       buttonText: "для подготовки к марафону",
-      image: "/lovable-uploads/31e0c62c-257c-4fe3-96b0-d53a4a23f8ca.png"
+      image: "/lovable-uploads/6717b602-6adb-4b02-818d-90623f40d264.png"
     },
     {
       id: 9,
       title: "Беговая дорожка Nautilus T628",
       subtitle: "для подготовки к марафону", 
       buttonText: "для подготовки к марафону",
-      image: "/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png"
+      image: "/lovable-uploads/7da5f939-e8eb-494e-b0ba-46036e537da1.png"
     },
     {
       id: 10,
       title: "Беговая дорожка Nautilus T628",
       subtitle: "для подготовки к марафону",
       buttonText: "Перейти",
-      image: "/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png",
+      image: "/lovable-uploads/a1331dd7-212c-4d15-a930-7bd880228278.png",
       isSpecial: true
     }
   ];
@@ -149,11 +150,19 @@ const Ideas: React.FC = () => {
 
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Идеи и подборки</h1>
         
-        {/* Ideas Layout: 3-4-3 */}
+        {/* Ideas Layout: правильное выравнивание 3-4-3 */}
         <div className="mb-12">
-          {/* First row - 3 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-            {ideas.slice(0, 3).map(renderCard)}
+          {/* First row - 3 cards with special alignment */}
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-6 mb-6">
+            <div className="md:col-span-2">
+              {renderCard(ideas[0])}
+            </div>
+            <div className="md:col-span-2">
+              {renderCard(ideas[1])}
+            </div>
+            <div className="md:col-span-2">
+              {renderCard(ideas[2])}
+            </div>
           </div>
           
           {/* Second row - 4 cards */}
@@ -161,9 +170,17 @@ const Ideas: React.FC = () => {
             {ideas.slice(3, 7).map(renderCard)}
           </div>
           
-          {/* Third row - 3 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {ideas.slice(7, 10).map(renderCard)}
+          {/* Third row - 3 cards with same alignment as first row */}
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
+            <div className="md:col-span-2">
+              {renderCard(ideas[7])}
+            </div>
+            <div className="md:col-span-2">
+              {renderCard(ideas[8])}
+            </div>
+            <div className="md:col-span-2">
+              {renderCard(ideas[9])}
+            </div>
           </div>
         </div>
 
