@@ -46,23 +46,23 @@ const ProductCard = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+      <main className="container mx-auto px-6 py-8 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
           {/* Product Images */}
-          <div className="space-y-4">
-            <div className="aspect-square bg-gray-50 rounded-lg overflow-hidden">
+          <div className="space-y-6">
+            <div className="aspect-square bg-gray-50 rounded-lg overflow-hidden p-4">
               <img
                 src={product.images[selectedImage]}
                 alt={product.name}
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-3">
               {product.images.map((image, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedImage(index)}
-                  className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-colors ${
+                  className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-colors p-1 ${
                     selectedImage === index ? "border-blue-500" : "border-gray-200"
                   }`}
                 >
@@ -77,16 +77,16 @@ const ProductCard = () => {
           </div>
 
           {/* Product Info */}
-          <div className="space-y-6">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-4">{product.name}</h1>
+          <div className="space-y-8 pl-4">
+            <div className="space-y-6">
+              <h1 className="text-3xl font-bold text-gray-900 leading-tight">{product.name}</h1>
               
-              <div className="flex items-center gap-4 mb-4">
-                <div className="flex items-center gap-1">
+              <div className="flex items-center gap-6">
+                <div className="flex items-center gap-2">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      size={16}
+                      size={18}
                       className={`${
                         i < Math.floor(product.rating)
                           ? "fill-yellow-400 text-yellow-400"
@@ -100,14 +100,14 @@ const ProductCard = () => {
                 </div>
                 
                 {product.inStock && (
-                  <Badge variant="outline" className="text-green-600 border-green-600">
+                  <Badge variant="outline" className="text-green-600 border-green-600 px-3 py-1">
                     В наличии
                   </Badge>
                 )}
               </div>
 
-              <div className="flex items-center gap-4 mb-6">
-                <span className="text-3xl font-bold text-blue-600">
+              <div className="flex items-center gap-6">
+                <span className="text-4xl font-bold text-blue-600">
                   {product.price.toLocaleString()} ₽
                 </span>
                 {product.oldPrice && (
@@ -118,48 +118,48 @@ const ProductCard = () => {
               </div>
             </div>
 
-            <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <span className="text-sm font-medium text-gray-700">Количество:</span>
+            <div className="space-y-6">
+              <div className="flex items-center gap-6">
+                <span className="text-base font-medium text-gray-700">Количество:</span>
                 <div className="flex items-center border border-gray-300 rounded-lg">
                   <button
                     onClick={decrementQuantity}
-                    className="p-2 hover:bg-gray-100 transition-colors"
+                    className="p-3 hover:bg-gray-100 transition-colors"
                   >
                     <Minus size={16} />
                   </button>
-                  <span className="px-4 py-2 font-medium">{quantity}</span>
+                  <span className="px-6 py-3 font-medium text-lg">{quantity}</span>
                   <button
                     onClick={incrementQuantity}
-                    className="p-2 hover:bg-gray-100 transition-colors"
+                    className="p-3 hover:bg-gray-100 transition-colors"
                   >
                     <Plus size={16} />
                   </button>
                 </div>
               </div>
 
-              <div className="flex gap-3">
-                <Button size="lg" className="flex-1">
-                  <ShoppingCart size={20} className="mr-2" />
+              <div className="flex gap-4">
+                <Button size="lg" className="flex-1 py-4 px-6 text-base">
+                  <ShoppingCart size={20} className="mr-3" />
                   Добавить в корзину
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" className="p-4">
                   <Heart size={20} />
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" className="p-4">
                   <BarChart3 size={20} />
                 </Button>
               </div>
             </div>
 
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="font-semibold text-lg mb-4">Основные характеристики</h3>
-                <div className="space-y-3">
+            <Card className="mt-8">
+              <CardContent className="p-8">
+                <h3 className="font-semibold text-xl mb-6">Основные характеристики</h3>
+                <div className="space-y-4">
                   {product.characteristics.slice(0, 3).map((char, index) => (
-                    <div key={index} className="flex justify-between">
-                      <span className="text-gray-600">{char.name}</span>
-                      <span className="font-medium">{char.value}</span>
+                    <div key={index} className="flex justify-between py-2">
+                      <span className="text-gray-600 text-base">{char.name}</span>
+                      <span className="font-medium text-base">{char.value}</span>
                     </div>
                   ))}
                 </div>
@@ -169,31 +169,31 @@ const ProductCard = () => {
         </div>
 
         {/* Product Details Tabs */}
-        <div className="mb-12">
+        <div className="mb-16 px-2">
           <Tabs defaultValue="description" className="w-full">
-            <TabsList className="grid w-full grid-cols-4">
-              <TabsTrigger value="description">Описание</TabsTrigger>
-              <TabsTrigger value="characteristics">Характеристики</TabsTrigger>
-              <TabsTrigger value="reviews">Отзывы</TabsTrigger>
-              <TabsTrigger value="delivery">Доставка</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-4 mb-8">
+              <TabsTrigger value="description" className="py-3 px-6">Описание</TabsTrigger>
+              <TabsTrigger value="characteristics" className="py-3 px-6">Характеристики</TabsTrigger>
+              <TabsTrigger value="reviews" className="py-3 px-6">Отзывы</TabsTrigger>
+              <TabsTrigger value="delivery" className="py-3 px-6">Доставка</TabsTrigger>
             </TabsList>
             
-            <TabsContent value="description" className="mt-6">
+            <TabsContent value="description">
               <Card>
-                <CardContent className="p-6">
-                  <p className="text-gray-700 leading-relaxed">{product.description}</p>
+                <CardContent className="p-8">
+                  <p className="text-gray-700 leading-relaxed text-base">{product.description}</p>
                 </CardContent>
               </Card>
             </TabsContent>
             
-            <TabsContent value="characteristics" className="mt-6">
+            <TabsContent value="characteristics">
               <Card>
-                <CardContent className="p-6">
-                  <div className="space-y-4">
+                <CardContent className="p-8">
+                  <div className="space-y-6">
                     {product.characteristics.map((char, index) => (
-                      <div key={index} className="flex justify-between border-b border-gray-100 pb-2">
-                        <span className="text-gray-600">{char.name}</span>
-                        <span className="font-medium">{char.value}</span>
+                      <div key={index} className="flex justify-between border-b border-gray-100 pb-4">
+                        <span className="text-gray-600 text-base">{char.name}</span>
+                        <span className="font-medium text-base">{char.value}</span>
                       </div>
                     ))}
                   </div>
@@ -201,29 +201,29 @@ const ProductCard = () => {
               </Card>
             </TabsContent>
             
-            <TabsContent value="reviews" className="mt-6">
+            <TabsContent value="reviews">
               <Card>
-                <CardContent className="p-6">
-                  <p className="text-gray-600">Отзывы пользователей будут добавлены позже.</p>
+                <CardContent className="p-8">
+                  <p className="text-gray-600 text-base">Отзывы пользователей будут добавлены позже.</p>
                 </CardContent>
               </Card>
             </TabsContent>
             
-            <TabsContent value="delivery" className="mt-6">
+            <TabsContent value="delivery">
               <Card>
-                <CardContent className="p-6">
-                  <div className="space-y-4">
+                <CardContent className="p-8">
+                  <div className="space-y-6">
                     <div>
-                      <h4 className="font-semibold mb-2">Способы доставки</h4>
-                      <ul className="space-y-2 text-gray-600">
+                      <h4 className="font-semibold mb-4 text-lg">Способы доставки</h4>
+                      <ul className="space-y-3 text-gray-600 text-base">
                         <li>• Курьерская доставка по Москве - 500 ₽</li>
                         <li>• Доставка по России - от 1000 ₽</li>
                         <li>• Самовывоз из магазина - бесплатно</li>
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-2">Сроки доставки</h4>
-                      <ul className="space-y-2 text-gray-600">
+                      <h4 className="font-semibold mb-4 text-lg">Сроки доставки</h4>
+                      <ul className="space-y-3 text-gray-600 text-base">
                         <li>• По Москве - 1-2 дня</li>
                         <li>• По России - 3-7 дней</li>
                       </ul>
