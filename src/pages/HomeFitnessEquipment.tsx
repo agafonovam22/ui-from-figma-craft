@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -20,53 +19,53 @@ const HomeFitnessEquipment: React.FC = () => {
     {
       title: 'Беговые дорожки',
       price: 'от 29 990 ₽',
-      image: '/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png',
+      image: '/lovable-uploads/f9b72daf-4aef-4d8d-b310-9c89ab9d2935.png',
       hasButton: true
     },
     {
       title: 'Велотренажеры',
       price: 'от 29 990 ₽',
-      image: '/lovable-uploads/31e0c62c-257c-4fe3-96b0-d53a4a23f8ca.png'
+      image: '/lovable-uploads/69fdc332-0059-4da9-bb96-e2a33ad78690.png'
     },
     {
       title: 'Гребные тренажеры',
       price: 'от 29 990 ₽',
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png'
+      image: '/lovable-uploads/b434aaab-a2a1-477c-b1b7-dc8498469b1d.png'
     },
     {
       title: 'Эллиптические тренажеры',
       price: 'от 29 990 ₽',
-      image: '/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png'
+      image: '/lovable-uploads/51a61095-ad58-47e3-8e00-c553a9375652.png'
     },
     {
       title: 'Настольный теннис',
       price: 'от 29 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      image: '/lovable-uploads/8017e182-f4c2-4df6-9cf5-4576a253034c.png'
     },
     {
       title: 'Аксессуары к тренажерам',
       price: 'от 29 990 ₽',
-      image: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png'
+      image: '/lovable-uploads/46f01d9e-1277-4b59-ad56-ed1b519c6e6d.png'
     },
     {
       title: 'Силовые тренажеры',
       price: 'от 29 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      image: '/lovable-uploads/d2eb71f9-548b-4767-959b-ccd95c181201.png'
     },
     {
       title: 'Инверсионные столы',
       price: 'от 29 990 ₽',
-      image: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png'
+      image: '/lovable-uploads/c4fbfa9e-af20-4a86-87a4-93a9d834a095.png'
     },
     {
       title: 'Горизонтальные тренажеры',
       price: 'от 29 990 ₽',
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png'
+      image: '/lovable-uploads/273e9dfe-c852-4292-9c95-8d70317bc41c.png'
     },
     {
       title: 'Уличные виды спорта',
       price: 'от 29 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      image: '/lovable-uploads/26b0854f-4f46-4c7c-a27a-1af9ad7b0c62.png'
     },
     {
       title: 'Батуты',
