@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -154,7 +153,6 @@ const NewsAndBlogPage: React.FC = () => {
       <Header />
       
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
-        {/* Breadcrumbs */}
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -171,9 +169,7 @@ const NewsAndBlogPage: React.FC = () => {
 
         <h1 className="text-[48px] font-bold text-gray-900 mb-8">Новости и блог</h1>
         
-        {/* Top Controls Bar */}
         <div className="flex items-center justify-between mb-8 gap-4">
-          {/* Left side - Filters */}
           <div className="flex items-center gap-2">
             {filters.map((filter) => (
               <button
@@ -201,9 +197,7 @@ const NewsAndBlogPage: React.FC = () => {
             ))}
           </div>
 
-          {/* Right side - Search and Sort */}
           <div className="flex items-center gap-4">
-            {/* Search Bar */}
             <div className="relative">
               <input
                 type="text"
@@ -215,7 +209,6 @@ const NewsAndBlogPage: React.FC = () => {
               <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             </div>
 
-            {/* Sort Dropdown */}
             <div className="flex items-center gap-2">
               <span className="text-sm text-gray-600 whitespace-nowrap">Сортировать:</span>
               <Select value={sortBy} onValueChange={setSortBy}>
@@ -232,7 +225,6 @@ const NewsAndBlogPage: React.FC = () => {
           </div>
         </div>
 
-        {/* News Grid - Masonry Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-max mb-12">
           {filteredItems.map((item) => (
             <Link
@@ -240,7 +232,6 @@ const NewsAndBlogPage: React.FC = () => {
               to={`/news/${item.slug}`}
               className={`bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer ${getCardClasses(item.size)}`}
             >
-              {/* Image */}
               <div className={`relative overflow-hidden ${getImageHeight(item.size)}`}>
                 <img 
                   src={item.image} 
@@ -249,9 +240,7 @@ const NewsAndBlogPage: React.FC = () => {
                 />
               </div>
               
-              {/* Content */}
               <div className="p-4">
-                {/* Category and Date */}
                 <div className="flex items-center gap-3 mb-3">
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                     item.type === 'Новости' 
@@ -263,12 +252,10 @@ const NewsAndBlogPage: React.FC = () => {
                   <span className="text-gray-500 text-xs">{item.date}</span>
                 </div>
                 
-                {/* Title */}
                 <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">
                   {item.title}
                 </h3>
                 
-                {/* Description */}
                 <p className="text-gray-600 text-sm line-clamp-3">
                   {item.description}
                 </p>
@@ -277,14 +264,12 @@ const NewsAndBlogPage: React.FC = () => {
           ))}
         </div>
 
-        {/* Show More Button */}
         <div className="text-center mb-8">
           <button className="border border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors">
             Показать еще
           </button>
         </div>
 
-        {/* Pagination */}
         <Pagination className="mb-8">
           <PaginationContent>
             <PaginationItem>
