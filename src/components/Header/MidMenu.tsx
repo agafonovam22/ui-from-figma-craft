@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { SearchBarProps, UserAction } from './types';
 import SearchPopup from './SearchPopup';
 import CartPopup from './CartPopup';
+import FavoritesPopup from './FavoritesPopup';
 
 const Logo: React.FC = () => (
   <div className="flex justify-center items-start gap-[5.856px]">
@@ -81,6 +81,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Поиск", onSea
 
 const UserActions: React.FC = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isFavoritesOpen, setIsFavoritesOpen] = useState(false);
 
   return (
     <div className="flex items-center gap-5 max-sm:gap-2.5">
@@ -109,11 +110,13 @@ const UserActions: React.FC = () => {
         </svg>
       </button>
 
-      <button onClick={() => console.log('Favorites clicked')} aria-label="Избранное">
-        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12.3 22.4769L10.7962 21.0846C8.98849 19.4141 7.51349 18.0009 6.37118 16.8452C5.22887 15.6894 4.33241 14.6775 3.68177 13.8096C3.03112 12.9416 2.58817 12.1477 2.35292 11.4279C2.11764 10.708 2 9.96536 2 9.19998C2 7.59743 2.55353 6.24679 3.66058 5.14808C4.76764 4.04936 6.13078 3.5 7.75 3.5C8.55642 3.5 9.35642 3.68334 10.15 4.05003C10.9436 4.41669 11.6602 4.93977 12.3 5.61925C12.9397 4.93977 13.6564 4.41669 14.45 4.05003C15.2436 3.68334 16.0436 3.5 16.85 3.5C18.4692 3.5 19.8323 4.04936 20.9394 5.14808C22.0464 6.24679 22.6 7.59743 22.6 9.19998C22.6 9.96536 22.4823 10.708 22.2471 11.4279C22.0118 12.1477 21.5689 12.9416 20.9182 13.8096C20.2676 14.6775 19.3727 15.6894 18.2336 16.8452C17.0945 18.0009 15.6179 19.4141 13.8038 21.0846L12.3 22.4769Z" fill="#5C6476" />
-        </svg>
-      </button>
+      <FavoritesPopup isOpen={isFavoritesOpen} onOpenChange={setIsFavoritesOpen}>
+        <button aria-label="Избранное">
+          <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.3 22.4769L10.7962 21.0846C8.98849 19.4141 7.51349 18.0009 6.37118 16.8452C5.22887 15.6894 4.33241 14.6775 3.68177 13.8096C3.03112 12.9416 2.58817 12.1477 2.35292 11.4279C2.11764 10.708 2 9.96536 2 9.19998C2 7.59743 2.55353 6.24679 3.66058 5.14808C4.76764 4.04936 6.13078 3.5 7.75 3.5C8.55642 3.5 9.35642 3.68334 10.15 4.05003C10.9436 4.41669 11.6602 4.93977 12.3 5.61925C12.9397 4.93977 13.6564 4.41669 14.45 4.05003C15.2436 3.68334 16.0436 3.5 16.85 3.5C18.4692 3.5 19.8323 4.04936 20.9394 5.14808C22.0464 6.24679 22.6 7.59743 22.6 9.19998C22.6 9.96536 22.4823 10.708 22.2471 11.4279C22.0118 12.1477 21.5689 12.9416 20.9182 13.8096C20.2676 14.6775 19.3727 15.6894 18.2336 16.8452C17.0945 18.0009 15.6179 19.4141 13.8038 21.0846L12.3 22.4769Z" fill="#5C6476" />
+          </svg>
+        </button>
+      </FavoritesPopup>
     </div>
   );
 };
