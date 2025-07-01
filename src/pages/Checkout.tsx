@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
@@ -19,6 +20,7 @@ import { Link } from 'react-router-dom';
 import { Truck, CreditCard, User } from 'lucide-react';
 
 const Checkout: React.FC = () => {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedDelivery, setSelectedDelivery] = useState('pickup');
   const [selectedPickupPoint, setSelectedPickupPoint] = useState('warehouse1');
@@ -58,6 +60,12 @@ const Checkout: React.FC = () => {
       ...prev,
       [field]: value
     }));
+  };
+
+  const handleOrderSubmit = () => {
+    // Здесь можно добавить валидацию формы
+    // Переход на страницу успеха
+    navigate('/order-success');
   };
 
   return (
@@ -502,9 +510,8 @@ const Checkout: React.FC = () => {
             {/* Action buttons */}
             <div className="flex gap-4">
               <Button 
-                onClick={handleNextStep}
+                onClick={currentStep === 3 ? handleOrderSubmit : handleNextStep}
                 className="bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 text-lg font-medium"
-                disabled={currentStep === 3}
               >
                 {currentStep === 3 ? 'Оформить заказ' : 'Далее'}
               </Button>
