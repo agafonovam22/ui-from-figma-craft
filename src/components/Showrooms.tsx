@@ -2,12 +2,35 @@
 import React from 'react';
 
 const Showrooms: React.FC = () => {
+  const cities = [
+    'Москва',
+    'Санкт-Петербург', 
+    'Саратов',
+    'Сочи',
+    'Новосибирск',
+    'Екатеринбург'
+  ];
+
   return (
     <section className="w-full bg-white py-6">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
         {/* Header */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900">Шоурумы</h2>
+        </div>
+
+        {/* Cities List */}
+        <div className="flex flex-wrap gap-6 mb-8">
+          {cities.map((city, index) => (
+            <button
+              key={city}
+              className={`text-lg font-medium transition-colors hover:text-[#F53B49] ${
+                index === 0 ? 'text-[#F53B49]' : 'text-gray-600'
+              }`}
+            >
+              {city}
+            </button>
+          ))}
         </div>
 
         {/* Single Photo */}
