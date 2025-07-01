@@ -25,6 +25,7 @@ import GymEquipment from "./pages/GymEquipment";
 import Catalog from "./pages/Catalog";
 import ProductCard from "./pages/ProductCard";
 import Search from "./pages/Search";
+import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -57,6 +58,7 @@ const App = () => (
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/product/:productId" element={<ProductCard />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/cart" element={<Cart />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
