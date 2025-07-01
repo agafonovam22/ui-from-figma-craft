@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -7,86 +8,62 @@ const ProductCatalog: React.FC = () => {
   const homeProducts = [
     {
       id: 1,
-      title: 'Беговые дорожки',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png',
+      image: '/lovable-uploads/adc295d0-3df0-4921-bf2d-590bbe41296d.png',
       category: 'treadmill'
     },
     {
       id: 2,
-      title: 'Велотренажеры',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/31e0c62c-257c-4fe3-96b0-d53a4a23f8ca.png',
+      image: '/lovable-uploads/052844f7-bb47-4b45-ba40-d4123336188f.png',
       category: 'bike'
     },
     {
       id: 3,
-      title: 'Гребные тренажеры',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      image: '/lovable-uploads/465cd1ff-17d9-433c-834d-3c4eb1b0607c.png',
       category: 'rowing'
     },
     {
       id: 4,
-      title: 'Силовые тренажеры',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      image: '/lovable-uploads/c493cd4e-d0cd-4df5-b2bf-f6a4ae3dc165.png',
       category: 'strength'
     },
     {
       id: 5,
-      title: 'Инверсионные столы',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
+      image: '/lovable-uploads/efbda2a7-32c3-4183-aee8-179088031eb1.png',
       category: 'inversion'
     },
     {
       id: 6,
-      title: 'Аксессуары для дома',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png',
+      image: '/lovable-uploads/80aa55be-947f-4d32-b001-8d28a6b48d11.png',
       category: 'accessories'
     },
     {
       id: 7,
-      title: 'Эллиптические тренажеры',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png',
+      image: '/lovable-uploads/ba5d833b-7740-4da6-a952-ebefe2bf10ef.png',
       category: 'elliptical'
     },
     {
       id: 8,
-      title: 'Степперы',
-      price: 'от 19 990 ₽',
-      image: '/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png',
+      image: '/lovable-uploads/744c0c6f-bb19-4939-82f1-cf7f5c03f909.png',
       category: 'stepper'
     },
     {
       id: 9,
-      title: 'Тренажеры для пресса',
-      price: 'от 15 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      image: '/lovable-uploads/842da711-ef80-457f-b98c-1dfaa642526b.png',
       category: 'abs'
     },
     {
       id: 10,
-      title: 'Турники и брусья',
-      price: 'от 9 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      image: '/lovable-uploads/1750d2c2-52ec-4fb6-8d57-e1787f527e83.png',
       category: 'bars'
     },
     {
       id: 11,
-      title: 'Массажеры',
-      price: 'от 12 990 ₽',
-      image: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
+      image: '/lovable-uploads/80aa55be-947f-4d32-b001-8d28a6b48d11.png',
       category: 'massage'
     },
     {
       id: 12,
-      title: 'Коврики и маты',
-      price: 'от 2 990 ₽',
-      image: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png',
+      image: '/lovable-uploads/1750d2c2-52ec-4fb6-8d57-e1787f527e83.png',
       category: 'mats'
     }
   ];
@@ -94,86 +71,62 @@ const ProductCatalog: React.FC = () => {
   const fitnessProducts = [
     {
       id: 13,
-      title: 'Профессиональные беговые дорожки',
-      price: 'от 89 990 ₽',
-      image: '/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png',
+      image: '/lovable-uploads/adc295d0-3df0-4921-bf2d-590bbe41296d.png',
       category: 'treadmill-pro'
     },
     {
       id: 14,
-      title: 'Мультистанции',
-      price: 'от 159 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      image: '/lovable-uploads/c493cd4e-d0cd-4df5-b2bf-f6a4ae3dc165.png',
       category: 'multistation'
     },
     {
       id: 15,
-      title: 'Коммерческие велотренажеры',
-      price: 'от 79 990 ₽',
-      image: '/lovable-uploads/31e0c62c-257c-4fe3-96b0-d53a4a23f8ca.png',
+      image: '/lovable-uploads/052844f7-bb47-4b45-ba40-d4123336188f.png',
       category: 'bike-commercial'
     },
     {
       id: 16,
-      title: 'Силовые рамы',
-      price: 'от 129 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      image: '/lovable-uploads/c493cd4e-d0cd-4df5-b2bf-f6a4ae3dc165.png',
       category: 'power-rack'
     },
     {
       id: 17,
-      title: 'Кардио зона',
-      price: 'от 199 990 ₽',
-      image: '/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png',
+      image: '/lovable-uploads/ba5d833b-7740-4da6-a952-ebefe2bf10ef.png',
       category: 'cardio-zone'
     },
     {
       id: 18,
-      title: 'Функциональные тренажеры',
-      price: 'от 89 990 ₽',
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      image: '/lovable-uploads/465cd1ff-17d9-433c-834d-3c4eb1b0607c.png',
       category: 'functional'
     },
     {
       id: 19,
-      title: 'Профессиональные эллипсоиды',
-      price: 'от 119 990 ₽',
-      image: '/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png',
+      image: '/lovable-uploads/ba5d833b-7740-4da6-a952-ebefe2bf10ef.png',
       category: 'elliptical-pro'
     },
     {
       id: 20,
-      title: 'Тренажеры для реабилитации',
-      price: 'от 99 990 ₽',
-      image: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
+      image: '/lovable-uploads/efbda2a7-32c3-4183-aee8-179088031eb1.png',
       category: 'rehabilitation'
     },
     {
       id: 21,
-      title: 'Системы TRX',
-      price: 'от 39 990 ₽',
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      image: '/lovable-uploads/465cd1ff-17d9-433c-834d-3c4eb1b0607c.png',
       category: 'trx'
     },
     {
       id: 22,
-      title: 'Профессиональные гребные',
-      price: 'от 149 990 ₽',
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      image: '/lovable-uploads/465cd1ff-17d9-433c-834d-3c4eb1b0607c.png',
       category: 'rowing-pro'
     },
     {
       id: 23,
-      title: 'Кроссфит оборудование',
-      price: 'от 69 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      image: '/lovable-uploads/744c0c6f-bb19-4939-82f1-cf7f5c03f909.png',
       category: 'crossfit'
     },
     {
       id: 24,
-      title: 'Аксессуары для фитнес-клуба',
-      price: 'от 9 990 ₽',
-      image: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png',
+      image: '/lovable-uploads/80aa55be-947f-4d32-b001-8d28a6b48d11.png',
       category: 'accessories-gym'
     }
   ];
@@ -223,22 +176,13 @@ const ProductCatalog: React.FC = () => {
             <Link 
               key={product.id} 
               to={`/product/${product.id}`}
-              className="bg-gray-50 rounded-lg p-3 hover:shadow-lg transition-shadow cursor-pointer"
+              className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
             >
-              <div className="aspect-square mb-2 flex items-center justify-center">
-                <img 
-                  src={product.image} 
-                  alt={product.title}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="text-lg font-medium text-[#262631] mb-1">{product.title}</h3>
-              <p className="text-gray-600 text-sm mb-2">{product.price}</p>
-              {(product.id === 1 || product.id === 13) && (
-                <button className="bg-[#262631] text-white px-4 py-2 rounded text-sm hover:bg-gray-800 transition-colors">
-                  Перейти →
-                </button>
-              )}
+              <img 
+                src={product.image} 
+                alt="Категория товаров"
+                className="w-full h-full object-cover"
+              />
             </Link>
           ))}
         </div>
@@ -249,17 +193,13 @@ const ProductCatalog: React.FC = () => {
             <Link 
               key={product.id} 
               to={`/product/${product.id}`}
-              className="bg-gray-50 rounded-lg p-3 hover:shadow-lg transition-shadow cursor-pointer"
+              className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
             >
-              <div className="aspect-square mb-2 flex items-center justify-center">
-                <img 
-                  src={product.image} 
-                  alt={product.title}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="text-lg font-medium text-[#262631] mb-1">{product.title}</h3>
-              <p className="text-gray-600 text-sm">{product.price}</p>
+              <img 
+                src={product.image} 
+                alt="Категория товаров"
+                className="w-full h-full object-cover"
+              />
             </Link>
           ))}
         </div>
