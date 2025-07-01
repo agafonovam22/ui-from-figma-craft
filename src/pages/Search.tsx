@@ -4,6 +4,8 @@ import { useSearchParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Badge } from "@/components/ui/badge";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Search: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -18,41 +20,88 @@ const Search: React.FC = () => {
     { id: 'идеи', label: 'Идеи и подборки', count: 10 }
   ];
 
-  // Данные для товаров (все одинаковые батуты как на макете)
-  const products = Array(10).fill(null).map((_, index) => ({
-    id: index + 1,
-    name: "Гребной тренажер CardioPowe PRO CR300",
-    image: "/lovable-uploads/be85c55b-4881-41b1-beb7-89b0cea7d083.png",
-    price: "4 610 ₽",
-    rating: 4.5,
-    reviews: 4,
-    badges: index % 5 === 0 ? ['АКЦИЯ', 'ХИТ ПРОДАЖ'] : 
-           index % 5 === 1 ? ['АКЦИЯ', 'ХИТ ПРОДАЖ'] :
-           index % 5 === 2 ? ['ОТЛИЧНОЕ ПРЕДЛОЖЕНИЕ'] :
-           index % 5 === 3 ? ['НОВИНКА'] : ['НОВИНКА'],
-    availability: index % 3 === 0 ? 'Осталось мало' : 
-                 index % 3 === 1 ? 'Нет в наличии' : 'В наличии',
-    availabilityColor: index % 3 === 0 ? 'text-orange-500' : 
-                      index % 3 === 1 ? 'text-red-500' : 'text-green-500',
-    discount: index % 4 === 0 ? 15 : index % 4 === 1 ? 20 : null,
-    isInShop: index % 2 === 0
-  }));
-
-  const getBadgeColor = (badge: string) => {
-    switch (badge) {
-      case 'АКЦИЯ': return 'bg-red-500';
-      case 'ХИТ ПРОДАЖ': return 'bg-blue-500';
-      case 'ОТЛИЧНОЕ ПРЕДЛОЖЕНИЕ': return 'bg-orange-500';
-      case 'НОВИНКА': return 'bg-green-500';
-      default: return 'bg-gray-500';
+  // Products from NewProducts component (duplicated to create 10 items)
+  const products = [
+    {
+      id: 1,
+      image: '/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png'
+    },
+    {
+      id: 2,
+      image: '/lovable-uploads/f86d41dd-f2f8-4cab-a66e-40c3a81d9cbf.png'
+    },
+    {
+      id: 3,
+      image: '/lovable-uploads/43ad4887-adce-485a-b310-3d8582e01128.png'
+    },
+    {
+      id: 4,
+      image: '/lovable-uploads/4daf7315-525c-4043-a1d0-72dcc05b49bf.png'
+    },
+    {
+      id: 5,
+      image: '/lovable-uploads/225fbdeb-52a8-41c5-8d82-91fda1b8d960.png'
+    },
+    // Duplicate the first 5 for second row
+    {
+      id: 6,
+      image: '/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png'
+    },
+    {
+      id: 7,
+      image: '/lovable-uploads/f86d41dd-f2f8-4cab-a66e-40c3a81d9cbf.png'
+    },
+    {
+      id: 8,
+      image: '/lovable-uploads/43ad4887-adce-485a-b310-3d8582e01128.png'
+    },
+    {
+      id: 9,
+      image: '/lovable-uploads/4daf7315-525c-4043-a1d0-72dcc05b49bf.png'
+    },
+    {
+      id: 10,
+      image: '/lovable-uploads/225fbdeb-52a8-41c5-8d82-91fda1b8d960.png'
     }
-  };
+  ];
+
+  // Ideas from IdeasSelections component
+  const ideas = [
+    {
+      id: 1,
+      title: "Беговая дорожка Nautilus T628",
+      subtitle: "для подготовки к марафону",
+      buttonText: "Перейти",
+      image: "/lovable-uploads/2be1b7b3-024f-49cd-a6ed-c3b6797c3118.png"
+    },
+    {
+      id: 2,
+      title: "Беговая дорожка Nautilus T628",
+      subtitle: "для подготовки к марафону",
+      buttonText: "для подготовки к марафону",
+      image: "/lovable-uploads/a9a3aea2-cbe4-49f2-81a9-cef25eaa7fb4.png"
+    },
+    {
+      id: 3,
+      title: "Беговая дорожка Nautilus T628",
+      subtitle: "для подготовки к марафону",
+      buttonText: "для подготовки к марафону",
+      image: "/lovable-uploads/b5c5bae5-0847-4917-87f3-3015c813643b.png"
+    },
+    {
+      id: 4,
+      title: "Беговая дорожка Nautilus T628",
+      subtitle: "для подготовки к марафону",
+      buttonText: "для подготовки к марафону",
+      image: "/lovable-uploads/e32f0db3-70c9-4381-bb50-39cb86857ad6.png"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-white">
       <Header />
       
-      <div className="container mx-auto px-4 py-8">
+      <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
         {/* Breadcrumb */}
         <nav className="flex items-center space-x-2 text-sm text-gray-500 mb-6">
           <a href="/" className="hover:text-gray-700">Главная</a>
@@ -81,101 +130,71 @@ const Search: React.FC = () => {
         </div>
 
         {/* Products Section */}
-        <div className="mb-8">
+        <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Товары</h2>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
             {products.map((product) => (
-              <div key={product.id} className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="relative p-4">
-                  {/* Badges */}
-                  <div className="absolute top-2 left-2 flex flex-col gap-1">
-                    {product.badges.map((badge, index) => (
-                      <Badge key={index} className={`${getBadgeColor(badge)} text-white text-xs px-2 py-1`}>
-                        {badge}
-                      </Badge>
-                    ))}
-                  </div>
-                  
-                  {/* Discount Badge */}
-                  {product.discount && (
-                    <div className="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
-                      -{product.discount}%
-                    </div>
-                  )}
+              <Link 
+                key={product.id} 
+                to={`/product/${product.id}`}
+                className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              >
+                <img 
+                  src={product.image} 
+                  alt="Товар"
+                  className="w-full h-full object-cover"
+                />
+              </Link>
+            ))}
+          </div>
+          
+          <div className="flex justify-start">
+            <button className="border-2 border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors font-benzin">
+              Показать все товары
+            </button>
+          </div>
+        </div>
 
-                  {/* Product Image */}
-                  <div className="flex justify-center mb-4">
-                    <img 
-                      src={product.image} 
-                      alt={product.name}
-                      className="w-full h-32 object-contain"
-                    />
-                  </div>
+        {/* Ideas and Selections Section */}
+        <div className="mb-12">
+          {/* Header with navigation */}
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-bold text-gray-900">Идеи и подборки</h2>
+            <div className="flex items-center gap-4">
+              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
+                <ChevronLeft className="w-5 h-5 text-gray-600" />
+              </button>
+              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
+                <ChevronRight className="w-5 h-5 text-gray-600" />
+              </button>
+            </div>
+          </div>
 
-                  {/* Availability */}
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className={`w-2 h-2 rounded-full ${
-                      product.availability === 'В наличии' ? 'bg-green-500' : 
-                      product.availability === 'Осталось мало' ? 'bg-orange-500' : 'bg-red-500'
-                    }`} />
-                    <span className={`text-xs ${product.availabilityColor}`}>
-                      {product.availability}
-                    </span>
-                    <div className="flex gap-1">
-                      <div className={`w-2 h-2 rounded-full ${product.availability === 'В наличии' ? 'bg-green-500' : 'bg-gray-300'}`} />
-                      <div className={`w-2 h-2 rounded-full ${product.availability !== 'Нет в наличии' ? 'bg-green-500' : 'bg-gray-300'}`} />
-                      <div className="w-2 h-2 rounded-full bg-gray-300" />
-                    </div>
-                  </div>
-
-                  {/* Product Name */}
-                  <h3 className="text-sm font-medium text-gray-900 mb-2 line-clamp-2">
-                    {product.name}
-                  </h3>
-
-                  {/* Rating */}
-                  <div className="flex items-center gap-1 mb-3">
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <span key={i} className={`text-xs ${i < Math.floor(product.rating) ? 'text-orange-400' : 'text-gray-300'}`}>
-                          ★
-                        </span>
-                      ))}
-                    </div>
-                    <span className="text-xs text-gray-500">
-                      {product.rating} ({product.reviews})
-                    </span>
-                  </div>
-
-                  {/* Price */}
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-lg font-bold text-gray-900">{product.price}</span>
-                    {product.isInShop && (
-                      <span className="text-xs text-blue-600">Есть в шоуруме</span>
-                    )}
-                  </div>
-
-                  {/* Action Button */}
-                  {product.availability === 'Нет в наличии' ? (
-                    <button className="w-full py-2 px-4 border border-red-500 text-red-500 text-sm rounded hover:bg-red-50 transition-colors">
-                      Запросить цену
-                    </button>
-                  ) : (
-                    <button className="w-full py-2 px-4 bg-red-500 text-white text-sm rounded hover:bg-red-600 transition-colors">
-                      Купить
-                    </button>
-                  )}
-                </div>
+          {/* Ideas Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {ideas.map((idea) => (
+              <div
+                key={idea.id}
+                className="rounded-lg overflow-hidden h-[444px] hover:shadow-lg transition-shadow cursor-pointer"
+              >
+                <img 
+                  src={idea.image} 
+                  alt={idea.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
             ))}
           </div>
 
-          {/* Load More Button */}
-          <div className="flex justify-center mt-8">
-            <button className="px-6 py-2 border border-red-500 text-red-500 rounded hover:bg-red-50 transition-colors">
+          {/* Show All Button */}
+          <div className="flex justify-start">
+            <Link 
+              to="/ideas"
+              className="px-6 py-3 border border-[#F53B49] text-[#F53B49] rounded-lg font-semibold hover:bg-[#F53B49] hover:text-white transition-colors"
+            >
               Показать все
-            </button>
+            </Link>
           </div>
         </div>
       </div>
