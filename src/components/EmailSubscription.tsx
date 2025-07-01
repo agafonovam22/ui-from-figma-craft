@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -20,7 +19,7 @@ const EmailSubscription: React.FC = () => {
           <div className="py-12 relative h-full">
             <div className="flex items-center justify-between h-full">
               {/* Left side - Text and Form */}
-              <div className="flex-1 max-w-lg z-10" style={{ paddingTop: '20px', paddingLeft: '60px' }}>
+              <div className="flex-1 max-w-2xl z-10" style={{ paddingTop: '20px', paddingLeft: '60px' }}>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: 'Benzin-Semibold' }}>
                   Подписывайтесь
                   <br />
@@ -30,13 +29,13 @@ const EmailSubscription: React.FC = () => {
                 </h2>
                 
                 <form onSubmit={handleSubmit} className="mb-4">
-                  <div className="relative flex items-center">
+                  <div className="relative flex items-center" style={{ maxWidth: '500px' }}>
                     <Input
                       type="email"
                       placeholder="Введите Email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="flex-1 h-12 bg-white border-0 text-gray-900 placeholder:text-gray-500 pr-32"
+                      className="flex-1 h-12 bg-white border-0 text-gray-900 placeholder:text-gray-500 pr-36"
                       required
                     />
                     <Button 
@@ -51,7 +50,7 @@ const EmailSubscription: React.FC = () => {
                   </div>
                 </form>
                 
-                <p className="text-gray-300 text-xs" style={{ fontFamily: 'Montserrat' }}>
+                <p className="text-gray-300 text-xs whitespace-nowrap" style={{ fontFamily: 'Montserrat' }}>
                   Подписываясь на рассылку, Вы соглашаетесь с условиями{' '}
                   <a href="#" className="underline hover:no-underline">
                     политики конфиденциальности
