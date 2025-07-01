@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -214,10 +215,10 @@ const HomeFitnessEquipment: React.FC = () => {
             </button>
           </div>
         </section>
-
-        {/* New Products */}
-        <NewProducts />
       </div>
+
+      {/* New Products - выносим из контейнера */}
+      <NewProducts />
       
       <EmailSubscription />
       <div className="h-[70px]"></div>
