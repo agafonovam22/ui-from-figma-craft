@@ -1,16 +1,186 @@
-import React, { useState } from 'react';
+
+import React, { useState, memo, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { Star, Heart, ShoppingCart, Plus, Minus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 
+// Мемоизированный компонент для вкладки "Описание"
+const DescriptionTab = memo(() => (
+  <div className="prose max-w-none">
+    <h3 className="text-xl font-semibold mb-4">Подробное описание</h3>
+    <p className="mb-4">
+      Профессиональная беговая дорожка ProRun X5 - это идеальное решение для тех, кто серьезно относится к своему здоровью и физической форме. Эта модель сочетает в себе надежность, функциональность и современный дизайн.
+    </p>
+    <p className="mb-4">
+      Мощный двигатель 3.5 л.с. обеспечивает плавную и тихую работу даже при интенсивных тренировках. Беговое полотно размером 150x50 см предоставляет достаточно места для комфортного бега, а система амортизации защищает ваши суставы от ударных нагрузок.
+    </p>
+    <h4 className="text-lg font-semibold mb-2">Особенности:</h4>
+    <ul className="list-disc pl-6 mb-4">
+      <li>Интуитивно понятная панель управления с LCD-дисплеем</li>
+      <li>12 предустановленных программ тренировок</li>
+      <li>Пульсометр для контроля сердечного ритма</li>
+      <li>Система безопасности с ключом экстренной остановки</li>
+      <li>Складная конструкция для экономии места</li>
+    </ul>
+  </div>
+));
+
+// Мемоизированный компонент для вкладки "Характеристики"
+const SpecificationsTab = memo(({ specifications }) => (
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <h3 className="text-xl font-semibold mb-4">Технические характеристики</h3>
+      <dl className="space-y-2">
+        {Object.entries(specifications).map(([key, value]) => (
+          <div key={key} className="flex justify-between py-2 border-b border-gray-100">
+            <dt className="font-medium text-gray-600">{key}:</dt>
+            <dd className="text-gray-900">{value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+    <div>
+      <h3 className="text-xl font-semibold mb-4">Дополнительная информация</h3>
+      <ul className="space-y-2 text-gray-600">
+        <li>• Сертификат качества CE</li>
+        <li>• Соответствие стандартам безопасности</li>
+        <li>• Профессиональная сборка в сервисном центре</li>
+        <li>• Техническая поддержка 24/7</li>
+        <li>• Возможность расширенной гарантии</li>
+      </ul>
+    </div>
+  </div>
+));
+
+// Мемоизированный компонент для вкладки "Отзывы"
+const ReviewsTab = memo(({ product }) => {
+  const reviews = useMemo(() => [
+    {
+      name: "Анна К.",
+      rating: 5,
+      date: "15 марта 2024",
+      text: "Отличная беговая дорожка! Купила месяц назад и очень довольна. Работает тихо, много программ тренировок. Качество сборки на высоте."
+    },
+    {
+      name: "Михаил П.",
+      rating: 5,
+      date: "8 марта 2024",
+      text: "Пользуюсь уже полгода. Очень надежная и функциональная модель. Особенно нравится система амортизации - бегать комфортно даже длительное время."
+    },
+    {
+      name: "Елена С.",
+      rating: 4,
+      date: "1 марта 2024",
+      text: "Хорошая дорожка за свои деньги. Единственный минус - занимает много места, но это особенность всех беговых дорожек."
+    }
+  ], []);
+
+  return (
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <h3 className="text-xl font-semibold">Отзывы покупателей</h3>
+        <Button variant="outline">Написать отзыв</Button>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="text-center">
+          <div className="text-3xl font-bold text-orange-600 mb-2">{product.rating}</div>
+          <div className="flex justify-center mb-2">
+            {[...Array(5)].map((_, i) => (
+              <Star
+                key={i}
+                className={`w-5 h-5 ${
+                  i < Math.floor(product.rating)
+                    ? 'text-yellow-400 fill-current'
+                    : 'text-gray-300'
+                }`}
+              />
+            ))}
+          </div>
+          <div className="text-gray-600">{product.reviews} отзывов</div>
+        </div>
+        
+        <div className="col-span-2 space-y-2">
+          {[5,4,3,2,1].map(rating => (
+            <div key={rating} className="flex items-center space-x-2">
+              <span className="w-3">{rating}</span>
+              <Star className="w-4 h-4 text-yellow-400 fill-current" />
+              <div className="flex-1 bg-gray-200 rounded-full h-2">
+                <div 
+                  className="bg-yellow-400 h-2 rounded-full" 
+                  style={{width: `${rating === 5 ? 70 : rating === 4 ? 20 : rating === 3 ? 7 : rating === 2 ? 2 : 1}%`}}
+                />
+              </div>
+              <span className="text-sm text-gray-600 w-8">
+                {rating === 5 ? 89 : rating === 4 ? 25 : rating === 3 ? 9 : rating === 2 ? 3 : 1}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="space-y-6">
+        {reviews.map((review, index) => (
+          <div key={index} className="border-b border-gray-100 pb-6">
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center space-x-4">
+                <span className="font-medium">{review.name}</span>
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`w-4 h-4 ${
+                        i < review.rating
+                          ? 'text-yellow-400 fill-current'
+                          : 'text-gray-300'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+              <span className="text-gray-500 text-sm">{review.date}</span>
+            </div>
+            <p className="text-gray-600">{review.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+});
+
+// Мемоизированный компонент для вкладки "Рассрочка"
+const InstallmentTab = memo(() => (
+  <div className="space-y-6">
+    <h3 className="text-2xl font-bold">Рассрочка</h3>
+    
+    <div className="space-y-4">
+      <h4 className="text-lg font-semibold">Доставка по России</h4>
+      <div className="space-y-3 text-gray-700">
+        <p>
+          Оформить кредит на сайте — быстро и легко. При оформлении заказа в корзине укажите способ оплаты «Кредит».
+        </p>
+        <p>
+          Вы будете перенаправлены на сайт — банка для заполнения анкеты. После заполнения анкеты представитель банка. Вашу заявку рассмотрят в течение 20—30 минут.
+        </p>
+        <p>
+          Также вы можете оформить рассрочку или кредит в любом магазине, сделав заказ на самовывоз.
+        </p>
+        <p>
+          Пожалуйста, будьте готовы предоставить паспорт при получении кредита. Также банки вправе потребовать иные дополнительные документы и подтверждение доходов заемщика.
+        </p>
+      </div>
+    </div>
+  </div>
+));
+
 const ProductCard = () => {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
 
-  const product = {
+  const product = useMemo(() => ({
     id: 1,
     name: "Профессиональная беговая дорожка ProRun X5",
     price: 89900,
@@ -35,7 +205,7 @@ const ProductCard = () => {
       "Вес": "85 кг",
       "Гарантия": "2 года"
     }
-  };
+  }), []);
 
   const increaseQuantity = () => setQuantity(prev => prev + 1);
   const decreaseQuantity = () => setQuantity(prev => Math.max(1, prev - 1));
@@ -163,164 +333,19 @@ const ProductCard = () => {
         </TabsList>
 
         <TabsContent value="description" className="mt-6">
-          <div className="prose max-w-none">
-            <h3 className="text-xl font-semibold mb-4">Подробное описание</h3>
-            <p className="mb-4">
-              Профессиональная беговая дорожка ProRun X5 - это идеальное решение для тех, кто серьезно относится к своему здоровью и физической форме. Эта модель сочетает в себе надежность, функциональность и современный дизайн.
-            </p>
-            <p className="mb-4">
-              Мощный двигатель 3.5 л.с. обеспечивает плавную и тихую работу даже при интенсивных тренировках. Беговое полотно размером 150x50 см предоставляет достаточно места для комфортного бега, а система амортизации защищает ваши суставы от ударных нагрузок.
-            </p>
-            <h4 className="text-lg font-semibold mb-2">Особенности:</h4>
-            <ul className="list-disc pl-6 mb-4">
-              <li>Интуитивно понятная панель управления с LCD-дисплеем</li>
-              <li>12 предустановленных программ тренировок</li>
-              <li>Пульсометр для контроля сердечного ритма</li>
-              <li>Система безопасности с ключом экстренной остановки</li>
-              <li>Складная конструкция для экономии места</li>
-            </ul>
-          </div>
+          <DescriptionTab />
         </TabsContent>
 
         <TabsContent value="specifications" className="mt-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Технические характеристики</h3>
-              <dl className="space-y-2">
-                {Object.entries(product.specifications).map(([key, value]) => (
-                  <div key={key} className="flex justify-between py-2 border-b border-gray-100">
-                    <dt className="font-medium text-gray-600">{key}:</dt>
-                    <dd className="text-gray-900">{value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Дополнительная информация</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Сертификат качества CE</li>
-                <li>• Соответствие стандартам безопасности</li>
-                <li>• Профессиональная сборка в сервисном центре</li>
-                <li>• Техническая поддержка 24/7</li>
-                <li>• Возможность расширенной гарантии</li>
-              </ul>
-            </div>
-          </div>
+          <SpecificationsTab specifications={product.specifications} />
         </TabsContent>
 
         <TabsContent value="reviews" className="mt-6">
-          <div className="space-y-6">
-            <div className="flex items-center justify-between">
-              <h3 className="text-xl font-semibold">Отзывы покупателей</h3>
-              <Button variant="outline">Написать отзыв</Button>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-orange-600 mb-2">{product.rating}</div>
-                <div className="flex justify-center mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-5 h-5 ${
-                        i < Math.floor(product.rating)
-                          ? 'text-yellow-400 fill-current'
-                          : 'text-gray-300'
-                      }`}
-                    />
-                  ))}
-                </div>
-                <div className="text-gray-600">{product.reviews} отзывов</div>
-              </div>
-              
-              <div className="col-span-2 space-y-2">
-                {[5,4,3,2,1].map(rating => (
-                  <div key={rating} className="flex items-center space-x-2">
-                    <span className="w-3">{rating}</span>
-                    <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                    <div className="flex-1 bg-gray-200 rounded-full h-2">
-                      <div 
-                        className="bg-yellow-400 h-2 rounded-full" 
-                        style={{width: `${rating === 5 ? 70 : rating === 4 ? 20 : rating === 3 ? 7 : rating === 2 ? 2 : 1}%`}}
-                      />
-                    </div>
-                    <span className="text-sm text-gray-600 w-8">
-                      {rating === 5 ? 89 : rating === 4 ? 25 : rating === 3 ? 9 : rating === 2 ? 3 : 1}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              {[
-                {
-                  name: "Анна К.",
-                  rating: 5,
-                  date: "15 марта 2024",
-                  text: "Отличная беговая дорожка! Купила месяц назад и очень довольна. Работает тихо, много программ тренировок. Качество сборки на высоте."
-                },
-                {
-                  name: "Михаил П.",
-                  rating: 5,
-                  date: "8 марта 2024",
-                  text: "Пользуюсь уже полгода. Очень надежная и функциональная модель. Особенно нравится система амортизации - бегать комфортно даже длительное время."
-                },
-                {
-                  name: "Елена С.",
-                  rating: 4,
-                  date: "1 марта 2024",
-                  text: "Хорошая дорожка за свои деньги. Единственный минус - занимает много места, но это особенность всех беговых дорожек."
-                }
-              ].map((review, index) => (
-                <div key={index} className="border-b border-gray-100 pb-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center space-x-4">
-                      <span className="font-medium">{review.name}</span>
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-4 h-4 ${
-                              i < review.rating
-                                ? 'text-yellow-400 fill-current'
-                                : 'text-gray-300'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                    <span className="text-gray-500 text-sm">{review.date}</span>
-                  </div>
-                  <p className="text-gray-600">{review.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <ReviewsTab product={product} />
         </TabsContent>
 
         <TabsContent value="installment" className="mt-6">
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold">Рассрочка</h3>
-            
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold">Доставка по России</h4>
-              <div className="space-y-3 text-gray-700">
-                <p>
-                  Оформить кредит на сайте — быстро и легко. При оформлении заказа в корзине укажите способ оплаты «Кредит».
-                </p>
-                <p>
-                  Вы будете перенаправлены на сайт — банка для заполнения анкеты. После заполнения анкеты представитель банка. Вашу заявку рассмотрят в течение 20—30 минут.
-                </p>
-                <p>
-                  Также вы можете оформить рассрочку или кредит в любом магазине, сделав заказ на самовывоз.
-                </p>
-                <p>
-                  Пожалуйста, будьте готовы предоставить паспорт при получении кредита. Также банки вправе потребовать иные дополнительные документы и подтверждение доходов заемщика.
-                </p>
-              </div>
-            </div>
-          </div>
+          <InstallmentTab />
         </TabsContent>
       </Tabs>
     </div>
