@@ -126,76 +126,74 @@ const Cart: React.FC = () => {
           {/* Cart Items */}
           <div className="lg:col-span-3 space-y-6">
             {cartItems.map((item) => (
-              <div key={item.id} className="flex items-start gap-6 p-6 bg-white border rounded-lg">
+              <div key={item.id} className="flex items-center gap-6 p-4 bg-white border rounded-lg h-[157px] relative">
                 {/* Product Badge */}
                 {item.isNew && (
-                  <div className="absolute bg-green-500 text-white text-xs px-2 py-1 rounded uppercase font-medium">
+                  <div className="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded uppercase font-medium z-10">
                     НОВИНКА
                   </div>
                 )}
                 
-                <div className="relative">
+                <div className="relative flex-shrink-0">
                   <img 
                     src={item.image} 
                     alt={item.name}
-                    className="w-32 h-32 object-cover rounded"
+                    className="w-24 h-24 object-cover rounded"
                   />
                 </div>
                 
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <StarRating rating={item.rating} />
                   
-                  <h3 className="text-lg font-bold text-gray-900 mt-2 mb-3">
+                  <h3 className="text-base font-bold text-gray-900 mt-1 mb-2 line-clamp-2">
                     {item.name}
                   </h3>
                   
-                  <div className="text-sm text-gray-600 mb-4 space-y-1">
+                  <div className="text-sm text-gray-600 mb-2 space-y-1">
                     <div>Цвет: {item.color}</div>
                     <div>Диаметр: {item.diameter}</div>
                   </div>
                   
-                  <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-center gap-2">
                     <span className="text-green-600 text-sm">● В наличии</span>
                     <span className="text-green-600 text-sm">●●○</span>
                   </div>
+                </div>
+                
+                <div className="flex items-center gap-8">
+                  {/* Quantity Control */}
+                  <div className="flex items-center border rounded">
+                    <button className="p-2 hover:bg-gray-100 text-gray-600">
+                      <Minus className="w-4 h-4" />
+                    </button>
+                    <span className="px-4 py-2 border-x min-w-[3rem] text-center">{item.quantity}</span>
+                    <button className="p-2 hover:bg-gray-100 text-gray-600">
+                      <Plus className="w-4 h-4" />
+                    </button>
+                  </div>
                   
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                      {/* Quantity Control */}
-                      <div className="flex items-center border rounded">
-                        <button className="p-2 hover:bg-gray-100 text-gray-600">
-                          <Minus className="w-4 h-4" />
-                        </button>
-                        <span className="px-4 py-2 border-x min-w-[3rem] text-center">{item.quantity}</span>
-                        <button className="p-2 hover:bg-gray-100 text-gray-600">
-                          <Plus className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </div>
-                    
-                    {/* Price */}
-                    <div className="text-right">
-                      <div className="flex items-center gap-2 mb-1">
-                        {item.discount && (
-                          <span className="bg-red-500 text-white text-sm px-2 py-1 rounded">
-                            -{item.discount}% В ОБЗОРЕ
-                          </span>
-                        )}
-                      </div>
-                      <div className="text-2xl font-bold text-gray-900">
-                        {item.price.toLocaleString()} ₽
-                      </div>
-                      {item.originalPrice && (
-                        <div className="text-gray-400 line-through text-sm">
-                          {item.originalPrice.toLocaleString()} ₽
-                        </div>
+                  {/* Price */}
+                  <div className="text-right">
+                    <div className="flex items-center gap-2 mb-1">
+                      {item.discount && (
+                        <span className="bg-red-500 text-white text-sm px-2 py-1 rounded">
+                          -{item.discount}% В ОБЗОРЕ
+                        </span>
                       )}
                     </div>
+                    <div className="text-xl font-bold text-gray-900">
+                      {item.price.toLocaleString()} ₽
+                    </div>
+                    {item.originalPrice && (
+                      <div className="text-gray-400 line-through text-sm">
+                        {item.originalPrice.toLocaleString()} ₽
+                      </div>
+                    )}
                   </div>
                 </div>
                 
                 {/* Action Icons */}
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2 flex-shrink-0">
                   <button className="p-2 hover:bg-gray-100 rounded text-gray-400">
                     <BarChart className="w-5 h-5" />
                   </button>
@@ -212,52 +210,52 @@ const Cart: React.FC = () => {
 
           {/* Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-gray-50 p-6 rounded-lg sticky top-4">
-              <h2 className="text-xl font-bold text-gray-900 mb-6">Оформить</h2>
+            <div className="bg-white border rounded-lg p-6 sticky top-4">
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Оформить</h2>
               
-              <div className="space-y-4 mb-6">
-                <div className="flex justify-between text-sm">
-                  <span>Товары, {totalItems} шт</span>
-                  <span>{total.toLocaleString()} ₽</span>
+              <div className="space-y-4 mb-8">
+                <div className="flex justify-between text-lg">
+                  <span className="text-gray-600">Товары, {totalItems} шт</span>
+                  <span className="font-medium">{total.toLocaleString()} ₽</span>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span>Скидка</span>
-                  <span className="text-red-500">-{discount.toLocaleString()} ₽</span>
+                <div className="flex justify-between text-lg">
+                  <span className="text-gray-600">Скидка</span>
+                  <span className="text-red-500 font-medium">-{discount.toLocaleString()} ₽</span>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span>Бонусы</span>
-                  <span className="text-green-600">+{bonus} Б</span>
+                <div className="flex justify-between text-lg">
+                  <span className="text-gray-600">Бонусы</span>
+                  <span className="text-green-600 font-medium">+{bonus} Б</span>
                 </div>
-                <div className="border-t pt-4 flex justify-between text-xl font-bold">
+                <div className="border-t pt-6 flex justify-between text-2xl font-bold">
                   <span>Итого</span>
                   <span>{(total - discount).toLocaleString()} ₽</span>
                 </div>
               </div>
               
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center gap-2">
-                  <input type="checkbox" id="bonus" className="rounded" />
-                  <label htmlFor="bonus" className="text-sm">
-                    Использовать бонусные баллы. Требуется <Link to="/auth" className="text-blue-600 underline">авторизация</Link>
+              <div className="mb-8">
+                <div className="flex items-start gap-3">
+                  <input type="checkbox" id="bonus" className="mt-1 rounded" />
+                  <label htmlFor="bonus" className="text-base text-gray-700 leading-relaxed">
+                    Использовать бонусные баллы. Требуется <Link to="/auth" className="text-blue-600 underline">авторизации</Link>
                   </label>
                 </div>
               </div>
               
-              <div className="space-y-3">
-                <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-3 text-base font-medium">
+              <div className="space-y-4">
+                <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-4 text-lg font-medium rounded-lg">
                   Оформить заказ
                 </Button>
                 
                 <Button 
                   variant="outline" 
-                  className="w-full border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white py-3 text-base font-medium"
+                  className="w-full border-2 border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white py-4 text-lg font-medium rounded-lg"
                 >
                   Купить в 1 клик
                 </Button>
                 
                 <Button 
                   variant="outline" 
-                  className="w-full py-3 text-base font-medium"
+                  className="w-full border-2 border-gray-300 text-[#F53B49] hover:bg-gray-50 py-4 text-lg font-medium rounded-lg"
                 >
                   Сделать коммерческое предложение
                 </Button>
@@ -268,11 +266,15 @@ const Cart: React.FC = () => {
       </div>
 
       {/* You Viewed Section */}
-      <div className="py-8">
+      <div className="py-16 bg-gray-50">
         <NewProducts title="Вы смотрели" />
       </div>
 
-      <EmailSubscription />
+      {/* Bottom Banner */}
+      <div className="py-16">
+        <EmailSubscription />
+      </div>
+
       <div className="h-[70px]"></div>
       <Footer />
     </main>
