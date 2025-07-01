@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const Banner: React.FC = () => {
@@ -35,7 +36,7 @@ const Banner: React.FC = () => {
                   на суставы
                 </h1>
                 
-                <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors">
+                <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors font-benzin">
                   Узнать больше
                 </button>
               </div>

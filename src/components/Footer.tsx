@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
                   </div>
                   <div className="mt-4">
                     <CallRequestDialog>
-                      <button className="bg-[#F53B49] text-white px-4 py-2 rounded hover:bg-[#e63946] transition-colors text-[14px]">
+                      <button className="bg-[#F53B49] text-white px-4 py-2 rounded hover:bg-[#e63946] transition-colors text-[14px] font-benzin">
                         Заказать звонок
                       </button>
                     </CallRequestDialog>
@@ -153,7 +153,7 @@ const Footer: React.FC = () => {
             <div className="flex flex-col gap-3 items-end">
               <div className="flex gap-6 items-center">
                 <a href="#" className="text-white text-[17px] hover:opacity-80 transition-opacity">Для дилеров</a>
-                <button className="bg-white text-black px-4 py-2 rounded text-[17px] hover:bg-gray-100 transition-colors">
+                <button className="bg-white text-black px-4 py-2 rounded text-[17px] hover:bg-gray-100 transition-colors font-benzin">
                   For suppliers
                 </button>
               </div>

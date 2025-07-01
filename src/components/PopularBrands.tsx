@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const PopularBrands: React.FC = () => {
@@ -21,7 +22,7 @@ const PopularBrands: React.FC = () => {
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
         {/* Header */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900">Популярные бренды</h2>
+          <h2 className="text-2xl font-bold text-gray-900 font-benzin-semibold">Популярные бренды</h2>
         </div>
 
         {/* Brands Grid */}
@@ -42,7 +43,7 @@ const PopularBrands: React.FC = () => {
 
         {/* Show All Button */}
         <div className="flex justify-start">
-          <button className="px-6 py-3 border border-[#F53B49] text-[#F53B49] rounded-lg font-semibold hover:bg-[#F53B49] hover:text-white transition-colors">
+          <button className="px-6 py-3 border border-[#F53B49] text-[#F53B49] rounded-lg hover:bg-[#F53B49] hover:text-white transition-colors font-benzin">
             Показать все
           </button>
         </div>

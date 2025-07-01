@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -20,7 +21,7 @@ const EmailSubscription: React.FC = () => {
             <div className="flex items-center justify-between h-full">
               {/* Left side - Text and Form */}
               <div className="flex-1 max-w-2xl z-10" style={{ paddingTop: '20px', paddingLeft: '60px' }}>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: 'Benzin-Semibold' }}>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight font-benzin-semibold">
                   Подписывайтесь
                   <br />
                   на наши новости
@@ -40,7 +41,7 @@ const EmailSubscription: React.FC = () => {
                     />
                     <Button 
                       type="submit"
-                      className="absolute right-1 bg-[#F53B49] hover:bg-[#e63946] text-white px-6 h-10 font-medium flex items-center gap-2"
+                      className="absolute right-1 bg-[#F53B49] hover:bg-[#e63946] text-white px-6 h-10 flex items-center gap-2 font-benzin"
                     >
                       Подписаться
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
