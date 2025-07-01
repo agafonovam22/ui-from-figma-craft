@@ -32,7 +32,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({ children, isOpen, onOpenChang
   const products = Array(9).fill(null).map((_, index) => ({
     id: index + 1,
     name: "Гребной тренажер CardioPowe PRO CR300",
-    image: "/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png",
+    image: "/lovable-uploads/be85c55b-4881-41b1-beb7-89b0cea7d083.png",
     badge: "НОВИНКА"
   }));
 
@@ -42,7 +42,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({ children, isOpen, onOpenChang
         {children}
       </PopoverTrigger>
       <PopoverContent 
-        className="w-[900px] p-0 bg-white border border-gray-200 shadow-lg z-50"
+        className="w-[750px] p-0 bg-white border border-gray-200 shadow-lg z-50"
         align="start"
         side="bottom"
         sideOffset={5}
