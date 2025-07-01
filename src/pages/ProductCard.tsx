@@ -1,3 +1,4 @@
+
 import React, { useState, memo, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { Star, Heart, ShoppingCart, Plus, Minus } from 'lucide-react';
