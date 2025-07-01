@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
+import IdeasSelections from '@/components/IdeasSelections';
 import { Link, useParams } from 'react-router-dom';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import {
@@ -196,84 +197,8 @@ const Brand: React.FC = () => {
           </div>
         </section>
 
-        {/* Product Features Section */}
-        <section className="py-16">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <h2 className="text-3xl font-bold text-[#17171E] mb-12">
-              Линейка продуктов
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Product 1 */}
-              <div className="bg-white rounded-lg overflow-hidden shadow-sm border">
-                <div className="aspect-[4/3] relative">
-                  <img 
-                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop"
-                    alt="Беговые дорожки"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-gray-800 text-center">
-                    Беговые<br />
-                    дорожки
-                  </h3>
-                </div>
-              </div>
-
-              {/* Product 2 */}
-              <div className="bg-white rounded-lg overflow-hidden shadow-sm border">
-                <div className="aspect-[4/3] relative">
-                  <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"
-                    alt="Эллиптические тренажеры"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-gray-800 text-center">
-                    Эллиптические<br />
-                    тренажеры
-                  </h3>
-                </div>
-              </div>
-
-              {/* Product 3 */}
-              <div className="bg-white rounded-lg overflow-hidden shadow-sm border">
-                <div className="aspect-[4/3] relative">
-                  <img 
-                    src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400&h=300&fit=crop"
-                    alt="Велотренажеры"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-gray-800 text-center">
-                    Велотренажеры<br />
-                    и спин-байки
-                  </h3>
-                </div>
-              </div>
-
-              {/* Product 4 */}
-              <div className="bg-white rounded-lg overflow-hidden shadow-sm border">
-                <div className="aspect-[4/3] relative">
-                  <img 
-                    src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400&h=300&fit=crop"
-                    alt="Силовые тренажеры"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-gray-800 text-center">
-                    Силовые<br />
-                    тренажеры
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Ideas and Selections - заменяем блок "Линейка продуктов" на компонент с главной страницы */}
+        <IdeasSelections />
 
         {/* FAQ Section */}
         <section className="py-16 bg-gray-50">

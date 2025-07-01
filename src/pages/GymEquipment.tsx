@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
 import NewProducts from '@/components/NewProducts';
+import IdeasSelections from '@/components/IdeasSelections';
 import { 
   Breadcrumb, 
   BreadcrumbItem, 
@@ -79,33 +80,6 @@ const GymEquipment: React.FC = () => {
     }
   ];
 
-  const ideasAndSelections = [
-    {
-      title: 'Беговая дорожка Nautilus T628',
-      subtitle: 'для подготовки к марафону',
-      buttonText: 'для подготовки к марафону',
-      image: '/lovable-uploads/f872751c-f187-4794-b1d8-66d545afba51.png'
-    },
-    {
-      title: 'Беговая дорожка Nautilus T628',
-      subtitle: 'для подготовки к марафону',
-      buttonText: 'для подготовки к марафону',
-      image: '/lovable-uploads/f872751c-f187-4794-b1d8-66d545afba51.png'
-    },
-    {
-      title: 'Беговая дорожка Nautilus T628',
-      subtitle: 'для подготовки к марафону',
-      buttonText: 'для подготовки к марафону',
-      image: '/lovable-uploads/f872751c-f187-4794-b1d8-66d545afba51.png'
-    },
-    {
-      title: 'Беговая дорожка Nautilus T628',
-      subtitle: 'для подготовки к марафону',
-      buttonText: 'для подготовки к марафону',
-      image: '/lovable-uploads/f872751c-f187-4794-b1d8-66d545afba51.png'
-    }
-  ];
-
   return (
     <main className="min-h-screen bg-white">
       <Header />
@@ -160,41 +134,10 @@ const GymEquipment: React.FC = () => {
             </div>
           ))}
         </div>
-
-        {/* Ideas and Selections */}
-        <section className="mb-12">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-[#262631]">Идеи и подборки</h2>
-            <div className="flex gap-2">
-              <button className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100">
-                ←
-              </button>
-              <button className="w-8 h-8 rounded-full bg-[#262631] text-white flex items-center justify-center">
-                →
-              </button>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {ideasAndSelections.map((item, index) => (
-              <div key={index} className="relative rounded-lg overflow-hidden">
-                <img 
-                  src={item.image} 
-                  alt={item.title}
-                  className="w-full h-64 object-cover"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-4">
-                  <h3 className="text-white font-bold text-lg mb-1">{item.title}</h3>
-                  <p className="text-white text-sm mb-3">{item.subtitle}</p>
-                  <button className="bg-[#F53B49] text-white px-4 py-2 rounded text-sm w-fit hover:bg-red-600 transition-colors">
-                    {item.buttonText}
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
       </div>
+
+      {/* Ideas and Selections - заменяем на компонент с главной страницы */}
+      <IdeasSelections />
 
       {/* New Products - выносим из контейнера */}
       <NewProducts />
