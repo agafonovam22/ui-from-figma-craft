@@ -49,33 +49,33 @@ const GymEquipment: React.FC = () => {
     },
     {
       id: 7,
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
-      category: 'smith-machine'
+      image: '/lovable-uploads/860d6abe-7f36-40a8-b2d7-bd9d1c212692.png',
+      category: 'game-tables'
     },
     {
       id: 8,
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
-      category: 'functional'
+      image: '/lovable-uploads/dd7d88b7-d0e8-43c0-b81c-99bafa89bafc.png',
+      category: 'free-weights'
     },
     {
       id: 9,
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
-      category: 'cable-machines'
+      image: '/lovable-uploads/b2857e06-f776-42f3-ae7f-5f9b648d5573.png',
+      category: 'home-accessories'
     },
     {
       id: 10,
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
-      category: 'plate-loaded'
+      image: '/lovable-uploads/bb62bd6c-3aa5-407c-a8cc-f646a749c002.png',
+      category: 'massage'
     },
     {
       id: 11,
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
-      category: 'plates-bars'
+      image: '/lovable-uploads/3c82fff2-c170-4587-bf6e-a78575d01863.png',
+      category: 'trampoline'
     },
     {
       id: 12,
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
-      category: 'group-programs'
+      image: '/lovable-uploads/d7fc81b8-4878-417a-93f6-ba955910acad.png',
+      category: 'outdoor'
     }
   ];
 
