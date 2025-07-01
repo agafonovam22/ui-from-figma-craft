@@ -11,15 +11,16 @@ const PromotionsOffers: React.FC = () => {
       discount: "-15%",
       originalPrice: "5 000₽",
       currentPrice: "от 29 990 ₽",
-      bgColor: "bg-red-500",
-      image: "/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png"
+      bgColor: "bg-blue-500",
+      image: "/lovable-uploads/d294b845-a5d4-43a0-be83-034677d44ada.png"
     },
     {
       id: 2,
       type: "Беспроцентная рассрочка",
       title: "На все беговые дорожки до конца марта",
       bgColor: "bg-gray-700",
-      showPercent: true
+      showPercent: true,
+      image: "/lovable-uploads/374fac70-02ad-4d4b-ab99-8575d92cc3d0.png"
     },
     {
       id: 3,
@@ -29,15 +30,15 @@ const PromotionsOffers: React.FC = () => {
       originalPrice: "5 000₽",
       currentPrice: "от 29 990 ₽",
       bgColor: "bg-green-500",
-      image: "/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png"
+      image: "/lovable-uploads/8110153d-5476-4d29-b92d-d576ab40dd7c.png"
     },
     {
       id: 4,
       type: "Специальная цена",
       title: "Скидка на велотренажер CardioPower B35",
-      bgColor: "bg-blue-500",
+      bgColor: "bg-red-500",
       showButton: true,
-      image: "/lovable-uploads/94f85ba4-b118-4ce1-b7e5-12a4ce35107c.png"
+      image: "/lovable-uploads/3d02e2f8-84b4-4cd8-9734-a4087812b608.png"
     }
   ];
 
@@ -62,7 +63,7 @@ const PromotionsOffers: React.FC = () => {
           {promotions.map((promo) => (
             <div
               key={promo.id}
-              className={`${promo.bgColor} rounded-lg p-6 text-white relative overflow-hidden h-64`}
+              className={`${promo.bgColor} rounded-lg p-6 text-white relative overflow-hidden h-[354px]`}
             >
               {/* Background Image */}
               {promo.image && (
@@ -75,7 +76,7 @@ const PromotionsOffers: React.FC = () => {
                 </div>
               )}
 
-              {/* Special % symbol for rассрочка */}
+              {/* Special % symbol for рассрочка */}
               {promo.showPercent && (
                 <div className="absolute right-4 top-1/2 transform -translate-y-1/2 opacity-20">
                   <span className="text-8xl font-bold">%</span>
