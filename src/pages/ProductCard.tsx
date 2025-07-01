@@ -1,10 +1,21 @@
-
 import React, { useState, memo, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { Star, Heart, ShoppingCart, Plus, Minus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
+
+// Типы для пропсов компонентов
+interface SpecificationsTabProps {
+  specifications: Record<string, string>;
+}
+
+interface ReviewsTabProps {
+  product: {
+    rating: number;
+    reviews: number;
+  };
+}
 
 // Мемоизированный компонент для вкладки "Описание"
 const DescriptionTab = memo(() => (
@@ -28,7 +39,7 @@ const DescriptionTab = memo(() => (
 ));
 
 // Мемоизированный компонент для вкладки "Характеристики"
-const SpecificationsTab = memo(({ specifications }) => (
+const SpecificationsTab = memo(({ specifications }: SpecificationsTabProps) => (
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
     <div>
       <h3 className="text-xl font-semibold mb-4">Технические характеристики</h3>
@@ -55,7 +66,7 @@ const SpecificationsTab = memo(({ specifications }) => (
 ));
 
 // Мемоизированный компонент для вкладки "Отзывы"
-const ReviewsTab = memo(({ product }) => {
+const ReviewsTab = memo(({ product }: ReviewsTabProps) => {
   const reviews = useMemo(() => [
     {
       name: "Анна К.",
