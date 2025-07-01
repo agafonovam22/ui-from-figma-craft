@@ -103,11 +103,11 @@ const Ideas: React.FC = () => {
       key={idea.id}
       className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 group hover:shadow-md transition-shadow"
     >
-      <div className="aspect-[4/3] overflow-hidden relative">
+      <div className="aspect-[16/10] overflow-hidden relative">
         <img 
           src={idea.image} 
           alt={idea.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-contain bg-gray-50"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-4">
           <h3 className="text-white font-bold text-lg mb-1">{idea.title}</h3>
