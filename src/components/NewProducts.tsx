@@ -2,7 +2,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NewProducts: React.FC = () => {
+interface NewProductsProps {
+  title?: string;
+}
+
+const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) => {
   const products = [
     {
       id: 1,
@@ -29,7 +33,7 @@ const NewProducts: React.FC = () => {
   return (
     <section className="w-full py-6 bg-white">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-        <h2 className="text-2xl font-bold text-[#262631] mb-8 font-benzin-semibold">Новинки</h2>
+        <h2 className="text-2xl font-bold text-[#262631] mb-8 font-benzin-semibold">{title}</h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
           {products.map((product) => (

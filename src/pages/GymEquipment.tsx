@@ -1,8 +1,8 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
+import NewProducts from '@/components/NewProducts';
 import { 
   Breadcrumb, 
   BreadcrumbItem, 
@@ -105,59 +105,6 @@ const GymEquipment: React.FC = () => {
     }
   ];
 
-  const newProducts = [
-    {
-      title: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610 ₽',
-      originalPrice: null,
-      discount: null,
-      rating: 4.5,
-      reviews: 12,
-      image: '/lovable-uploads/f872751c-f187-4794-b1d8-66d545afba51.png',
-      badges: ['АКЦИЯ', 'ХИТ ПРОДАЖ']
-    },
-    {
-      title: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610 ₽',
-      originalPrice: null,
-      discount: null,
-      rating: 4.5,
-      reviews: 12,
-      image: '/lovable-uploads/f872751c-f187-4794-b1d8-66d545afba51.png',
-      badges: ['АКЦИЯ', 'ХИТ ПРОДАЖ']
-    },
-    {
-      title: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610 ₽',
-      originalPrice: '5 890 ₽',
-      discount: 'Запросить цену',
-      rating: 4.5,
-      reviews: 12,
-      image: '/lovable-uploads/f872751c-f187-4794-b1d8-66d545afba51.png',
-      badges: ['РАСПРОДАЖА', 'ХИТ ПРОДАЖ']
-    },
-    {
-      title: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610 ₽',
-      originalPrice: null,
-      discount: null,
-      rating: 4.5,
-      reviews: 12,
-      image: '/lovable-uploads/f872751c-f187-4794-b1d8-66d545afba51.png',
-      badges: ['ХИТ', 'НОВИНКА']
-    },
-    {
-      title: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610 ₽',
-      originalPrice: null,
-      discount: null,
-      rating: 4.5,
-      reviews: 12,
-      image: '/lovable-uploads/f872751c-f187-4794-b1d8-66d545afba51.png',
-      badges: ['ХИТ', 'НОВИНКА']
-    }
-  ];
-
   return (
     <main className="min-h-screen bg-white">
       <Header />
@@ -248,78 +195,7 @@ const GymEquipment: React.FC = () => {
         </section>
 
         {/* New Products */}
-        <section className="mb-12">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-[#262631]">Новинки</h2>
-            <div className="flex gap-2">
-              <button className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100">
-                ←
-              </button>
-              <button className="w-8 h-8 rounded-full bg-[#262631] text-white flex items-center justify-center">
-                →
-              </button>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {newProducts.map((product, index) => (
-              <div key={index} className="bg-white border rounded-lg p-4 hover:shadow-lg transition-shadow">
-                <div className="relative mb-3">
-                  <img 
-                    src={product.image} 
-                    alt={product.title}
-                    className="w-full h-40 object-contain"
-                  />
-                  <div className="absolute top-2 left-2 flex flex-col gap-1">
-                    {product.badges.map((badge, badgeIndex) => (
-                      <span 
-                        key={badgeIndex}
-                        className={`px-2 py-1 text-xs rounded ${
-                          badge === 'АКЦИЯ' ? 'bg-red-500 text-white' :
-                          badge === 'ХИТ ПРОДАЖ' ? 'bg-blue-500 text-white' :
-                          badge === 'РАСПРОДАЖА' ? 'bg-orange-500 text-white' :
-                          badge === 'ХИТ' ? 'bg-red-500 text-white' :
-                          badge === 'НОВИНКА' ? 'bg-green-500 text-white' :
-                          'bg-gray-500 text-white'
-                        }`}
-                      >
-                        {badge}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-1 mb-2">
-                  <div className="flex text-yellow-400">
-                    {'★'.repeat(Math.floor(product.rating))}
-                    {'☆'.repeat(5 - Math.floor(product.rating))}
-                  </div>
-                  <span className="text-sm text-gray-500">({product.reviews})</span>
-                </div>
-                
-                <h3 className="text-sm font-medium text-[#262631] mb-2 line-clamp-2">{product.title}</h3>
-                
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-lg font-bold text-[#262631]">{product.price}</span>
-                  {product.originalPrice && (
-                    <span className="text-sm text-gray-500 line-through">{product.originalPrice}</span>
-                  )}
-                  {product.discount === 'Запросить цену' ? (
-                    <button className="text-xs text-[#F53B49] border border-[#F53B49] px-2 py-1 rounded">
-                      Запросить цену
-                    </button>
-                  ) : product.discount && (
-                    <span className="text-sm text-red-500">{product.discount}</span>
-                  )}
-                </div>
-                
-                <button className="w-full bg-[#F53B49] text-white py-2 rounded hover:bg-red-600 transition-colors">
-                  Купить
-                </button>
-              </div>
-            ))}
-          </div>
-        </section>
+        <NewProducts />
       </div>
       
       <EmailSubscription />
