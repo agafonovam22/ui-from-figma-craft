@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogTrigger, DialogOverlay, DialogPortal } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
@@ -111,7 +112,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
                     key={city}
                     onClick={() => handleCitySelect(city)}
                     className={`block text-left text-base hover:text-[#F53B49] transition-colors w-full px-2 py-1 rounded ${
-                      selectedCity === city ? 'bg-[#F8F8FD] text-gray-700' : 'text-gray-700'
+                      selectedCity === city ? 'bg-[#F8F8FD] text-black' : 'text-gray-700'
                     }`}
                   >
                     {city}
@@ -154,7 +155,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
                             key={city}
                             onClick={() => handleCitySelect(city)}
                             className={`block w-full text-left px-3 py-2 text-sm hover:bg-gray-50 hover:text-[#F53B49] transition-colors rounded ${
-                              selectedCity === city ? 'text-[#F53B49] font-medium' : 'text-gray-700'
+                              selectedCity === city ? 'bg-[#F8F8FD] text-black font-medium' : 'text-gray-700'
                             }`}
                           >
                             {city}
@@ -168,7 +169,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
                             key={city}
                             onClick={() => handleCitySelect(city)}
                             className={`block w-full text-left px-3 py-2 text-sm hover:bg-gray-50 hover:text-[#F53B49] transition-colors rounded ${
-                              selectedCity === city ? 'text-[#F53B49] font-medium' : 'text-gray-700'
+                              selectedCity === city ? 'bg-[#F8F8FD] text-black font-medium' : 'text-gray-700'
                             }`}
                           >
                             {city}
