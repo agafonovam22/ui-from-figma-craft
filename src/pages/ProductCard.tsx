@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -26,7 +27,7 @@ const ProductCard: React.FC = () => {
   const [product, setProduct] = useState<Product | null>(null);
 
   // Mock product data
-  useState(() => {
+  useEffect(() => {
     // Simulate fetching product data
     setTimeout(() => {
       setProduct({
