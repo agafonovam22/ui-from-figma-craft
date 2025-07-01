@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import EmailSubscription from '@/components/EmailSubscription';
 import { 
   Breadcrumb, 
   BreadcrumbItem, 
@@ -321,6 +322,8 @@ const GymEquipment: React.FC = () => {
         </section>
       </div>
       
+      <EmailSubscription />
+      <div className="h-[70px]"></div>
       <Footer />
     </main>
   );
