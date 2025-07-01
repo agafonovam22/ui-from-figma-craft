@@ -242,9 +242,11 @@ const Cart: React.FC = () => {
               </div>
               
               <div className="space-y-4">
-                <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-4 text-lg font-medium rounded-lg">
-                  Оформить заказ
-                </Button>
+                <Link to="/checkout">
+                  <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-4 text-lg font-medium rounded-lg">
+                    Оформить заказ
+                  </Button>
+                </Link>
                 
                 <Button 
                   variant="outline" 

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { X, Trash2 } from 'lucide-react';
@@ -129,12 +128,13 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
               </div>
               
               <div className="space-y-3">
-                <Button 
-                  className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-3 text-base font-medium"
-                  onClick={() => onOpenChange(false)}
-                >
-                  Оформить заказ
-                </Button>
+                <Link to="/checkout" onClick={() => onOpenChange(false)}>
+                  <Button 
+                    className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-3 text-base font-medium"
+                  >
+                    Оформить заказ
+                  </Button>
+                </Link>
                 
                 <Link to="/cart" onClick={() => onOpenChange(false)}>
                   <Button 
