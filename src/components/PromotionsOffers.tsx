@@ -8,11 +8,9 @@ const PromotionsOffers: React.FC = () => {
       id: 1,
       type: "Специальная цена",
       title: "Скидка на велотренажер CardioPower B35",
-      discount: "-15%",
-      originalPrice: "5 000₽",
-      currentPrice: "от 29 990 ₽",
-      bgColor: "bg-blue-500",
-      image: "/lovable-uploads/d294b845-a5d4-43a0-be83-034677d44ada.png"
+      bgColor: "bg-red-500",
+      showButton: true,
+      image: "/lovable-uploads/3d02e2f8-84b4-4cd8-9734-a4087812b608.png"
     },
     {
       id: 2,
@@ -36,9 +34,11 @@ const PromotionsOffers: React.FC = () => {
       id: 4,
       type: "Специальная цена",
       title: "Скидка на велотренажер CardioPower B35",
-      bgColor: "bg-red-500",
-      showButton: true,
-      image: "/lovable-uploads/3d02e2f8-84b4-4cd8-9734-a4087812b608.png"
+      discount: "-15%",
+      originalPrice: "5 000₽",
+      currentPrice: "от 29 990 ₽",
+      bgColor: "bg-blue-500",
+      image: "/lovable-uploads/d294b845-a5d4-43a0-be83-034677d44ada.png"
     }
   ];
 
@@ -64,18 +64,13 @@ const PromotionsOffers: React.FC = () => {
             <div
               key={promo.id}
               className={`${promo.bgColor} rounded-lg p-6 text-white relative overflow-hidden h-[354px]`}
+              style={{
+                backgroundImage: promo.image ? `url(${promo.image})` : 'none',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundBlendMode: 'overlay'
+              }}
             >
-              {/* Background Image */}
-              {promo.image && (
-                <div className="absolute inset-0 opacity-30">
-                  <img 
-                    src={promo.image} 
-                    alt="" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              )}
-
               {/* Special % symbol for рассрочка */}
               {promo.showPercent && (
                 <div className="absolute right-4 top-1/2 transform -translate-y-1/2 opacity-20">
