@@ -1,20 +1,19 @@
-
 import React from 'react';
 
 const PopularBrands: React.FC = () => {
   const brands = [
-    { id: 1, name: "BowFlex", logo: "/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png" },
-    { id: 2, name: "kernel", logo: "/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png" },
-    { id: 3, name: "kernel", logo: "/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png" },
-    { id: 4, name: "kernel", logo: "/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png" },
-    { id: 5, name: "kernel", logo: "/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png" },
-    { id: 6, name: "kernel", logo: "/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png" },
-    { id: 7, name: "BowFlex", logo: "/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png" },
-    { id: 8, name: "kernel", logo: "/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png" },
-    { id: 9, name: "kernel", logo: "/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png" },
-    { id: 10, name: "kernel", logo: "/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png" },
-    { id: 11, name: "kernel", logo: "/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png" },
-    { id: 12, name: "kernel", logo: "/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png" }
+    { id: 1, name: "BowFlex", logo: "/lovable-uploads/a80bf39b-ac41-4faf-992e-dcd6a6de297b.png" },
+    { id: 2, name: "kernel", logo: "/lovable-uploads/0462b888-2df8-4ad7-bb09-8316f32e5fd1.png" },
+    { id: 3, name: "kernel", logo: "/lovable-uploads/0462b888-2df8-4ad7-bb09-8316f32e5fd1.png" },
+    { id: 4, name: "kernel", logo: "/lovable-uploads/0462b888-2df8-4ad7-bb09-8316f32e5fd1.png" },
+    { id: 5, name: "kernel", logo: "/lovable-uploads/0462b888-2df8-4ad7-bb09-8316f32e5fd1.png" },
+    { id: 6, name: "kernel", logo: "/lovable-uploads/0462b888-2df8-4ad7-bb09-8316f32e5fd1.png" },
+    { id: 7, name: "BowFlex", logo: "/lovable-uploads/a80bf39b-ac41-4faf-992e-dcd6a6de297b.png" },
+    { id: 8, name: "kernel", logo: "/lovable-uploads/0462b888-2df8-4ad7-bb09-8316f32e5fd1.png" },
+    { id: 9, name: "kernel", logo: "/lovable-uploads/0462b888-2df8-4ad7-bb09-8316f32e5fd1.png" },
+    { id: 10, name: "kernel", logo: "/lovable-uploads/0462b888-2df8-4ad7-bb09-8316f32e5fd1.png" },
+    { id: 11, name: "kernel", logo: "/lovable-uploads/0462b888-2df8-4ad7-bb09-8316f32e5fd1.png" },
+    { id: 12, name: "kernel", logo: "/lovable-uploads/0462b888-2df8-4ad7-bb09-8316f32e5fd1.png" }
   ];
 
   return (
