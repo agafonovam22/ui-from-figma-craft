@@ -63,12 +63,14 @@ const NewsAndBlog: React.FC = () => {
         {/* News Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {newsItems.map((item) => (
-            <div key={item.id} className="rounded-lg overflow-hidden h-[444px] hover:shadow-lg transition-shadow cursor-pointer">
-              <img 
-                src={item.image} 
-                alt={item.title}
-                className="w-full h-full object-cover"
-              />
+            <div key={item.id} className="rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="w-full h-[300px]">
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           ))}
         </div>
