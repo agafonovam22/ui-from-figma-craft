@@ -10,28 +10,28 @@ const IdeasSelections: React.FC = () => {
       title: "Беговая дорожка Nautilus T628",
       subtitle: "для подготовки к марафону",
       buttonText: "Перейти",
-      image: "/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png"
+      image: "/lovable-uploads/2be1b7b3-024f-49cd-a6ed-c3b6797c3118.png"
     },
     {
       id: 2,
       title: "Беговая дорожка Nautilus T628",
       subtitle: "для подготовки к марафону",
       buttonText: "для подготовки к марафону",
-      image: "/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png"
+      image: "/lovable-uploads/a9a3aea2-cbe4-49f2-81a9-cef25eaa7fb4.png"
     },
     {
       id: 3,
       title: "Беговая дорожка Nautilus T628",
       subtitle: "для подготовки к марафону",
       buttonText: "для подготовки к марафону",
-      image: "/lovable-uploads/f99f3115-1f00-49f0-af93-08b6318f8cf4.png"
+      image: "/lovable-uploads/b5c5bae5-0847-4917-87f3-3015c813643b.png"
     },
     {
       id: 4,
       title: "Беговая дорожка Nautilus T628",
       subtitle: "для подготовки к марафону",
       buttonText: "для подготовки к марафону",
-      image: "/lovable-uploads/31e0c62c-257c-4fe3-96b0-d53a4a23f8ca.png"
+      image: "/lovable-uploads/e32f0db3-70c9-4381-bb50-39cb86857ad6.png"
     }
   ];
 
@@ -65,22 +65,6 @@ const IdeasSelections: React.FC = () => {
                   alt={idea.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                {/* Overlay content */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-4">
-                  <h3 className="text-white font-bold text-lg mb-1">{idea.title}</h3>
-                  <p className="text-white/90 text-sm mb-3">{idea.subtitle}</p>
-                  
-                  {idea.id === 1 ? (
-                    <button className="bg-white text-gray-900 px-4 py-2 rounded font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2 w-fit">
-                      {idea.buttonText}
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  ) : (
-                    <button className="bg-[#F53B49] text-white px-4 py-2 rounded font-semibold hover:bg-[#e63946] transition-colors w-fit">
-                      {idea.buttonText}
-                    </button>
-                  )}
-                </div>
               </div>
             </div>
           ))}
