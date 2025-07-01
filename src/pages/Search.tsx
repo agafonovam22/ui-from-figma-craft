@@ -1,8 +1,9 @@
-
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import NewsAndBlog from '../components/NewsAndBlog';
+import EmailSubscription from '../components/EmailSubscription';
 import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -198,6 +199,15 @@ const Search: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* News and Blog Section */}
+      <NewsAndBlog />
+      
+      {/* Email Subscription Banner */}
+      <EmailSubscription />
+      
+      {/* Spacer */}
+      <div className="h-[70px]"></div>
 
       <Footer />
     </div>
