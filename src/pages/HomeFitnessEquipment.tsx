@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -17,80 +18,79 @@ import { Link } from 'react-router-dom';
 const HomeFitnessEquipment: React.FC = () => {
   const equipmentCategories = [
     {
-      title: 'Беговые дорожки',
-      price: 'от 29 990 ₽',
+      id: 1,
       image: '/lovable-uploads/f9b72daf-4aef-4d8d-b310-9c89ab9d2935.png',
-      hasButton: true
+      category: 'treadmill'
     },
     {
-      title: 'Велотренажеры',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/69fdc332-0059-4da9-bb96-e2a33ad78690.png'
+      id: 2,
+      image: '/lovable-uploads/69fdc332-0059-4da9-bb96-e2a33ad78690.png',
+      category: 'bike'
     },
     {
-      title: 'Гребные тренажеры',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/b434aaab-a2a1-477c-b1b7-dc8498469b1d.png'
+      id: 3,
+      image: '/lovable-uploads/b434aaab-a2a1-477c-b1b7-dc8498469b1d.png',
+      category: 'rowing'
     },
     {
-      title: 'Эллиптические тренажеры',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/51a61095-ad58-47e3-8e00-c553a9375652.png'
+      id: 4,
+      image: '/lovable-uploads/51a61095-ad58-47e3-8e00-c553a9375652.png',
+      category: 'elliptical'
     },
     {
-      title: 'Настольный теннис',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/8017e182-f4c2-4df6-9cf5-4576a253034c.png'
+      id: 5,
+      image: '/lovable-uploads/8017e182-f4c2-4df6-9cf5-4576a253034c.png',
+      category: 'table-tennis'
     },
     {
-      title: 'Аксессуары к тренажерам',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/46f01d9e-1277-4b59-ad56-ed1b519c6e6d.png'
+      id: 6,
+      image: '/lovable-uploads/46f01d9e-1277-4b59-ad56-ed1b519c6e6d.png',
+      category: 'accessories'
     },
     {
-      title: 'Силовые тренажеры',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/d2eb71f9-548b-4767-959b-ccd95c181201.png'
+      id: 7,
+      image: '/lovable-uploads/d2eb71f9-548b-4767-959b-ccd95c181201.png',
+      category: 'strength'
     },
     {
-      title: 'Инверсионные столы',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/c4fbfa9e-af20-4a86-87a4-93a9d834a095.png'
+      id: 8,
+      image: '/lovable-uploads/c4fbfa9e-af20-4a86-87a4-93a9d834a095.png',
+      category: 'inversion'
     },
     {
-      title: 'Горизонтальные тренажеры',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/273e9dfe-c852-4292-9c95-8d70317bc41c.png'
+      id: 9,
+      image: '/lovable-uploads/273e9dfe-c852-4292-9c95-8d70317bc41c.png',
+      category: 'horizontal'
     },
     {
-      title: 'Уличные виды спорта',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/26b0854f-4f46-4c7c-a27a-1af9ad7b0c62.png'
+      id: 10,
+      image: '/lovable-uploads/26b0854f-4f46-4c7c-a27a-1af9ad7b0c62.png',
+      category: 'outdoor'
     },
     {
-      title: 'Батуты',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      id: 11,
+      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      category: 'trampoline'
     },
     {
-      title: 'Массажные кресла',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png'
+      id: 12,
+      image: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
+      category: 'massage'
     },
     {
-      title: 'Аксессуары для дома',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png'
+      id: 13,
+      image: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png',
+      category: 'home-accessories'
     },
     {
-      title: 'Свободные веса',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      id: 14,
+      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      category: 'free-weights'
     },
     {
-      title: 'Игровые столы',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      id: 15,
+      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      category: 'game-tables'
     }
   ];
 
@@ -127,33 +127,62 @@ const HomeFitnessEquipment: React.FC = () => {
           </Link>
         </div>
 
-        {/* Equipment Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
-          {equipmentCategories.map((item, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
-              <div className="aspect-square mb-3 flex items-center justify-center">
-                <img 
-                  src={item.image} 
-                  alt={item.title}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="text-sm font-medium text-[#262631] mb-2">{item.title}</h3>
-              <p className="text-gray-600 text-sm mb-3">{item.price}</p>
-              {item.hasButton && (
-                <button className="bg-[#262631] text-white px-3 py-2 rounded text-xs hover:bg-gray-800 transition-colors">
-                  Перейти →
-                </button>
-              )}
-            </div>
+        {/* Equipment Grid - First 6 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 mb-6">
+          {equipmentCategories.slice(0, 6).map((product) => (
+            <Link 
+              key={product.id} 
+              to={`/product/${product.id}`}
+              className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+            >
+              <img 
+                src={product.image} 
+                alt="Категория товаров"
+                className="w-full h-full object-cover"
+              />
+            </Link>
+          ))}
+        </div>
+        
+        {/* Equipment Grid - Next 5 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 mb-6">
+          {equipmentCategories.slice(6, 11).map((product) => (
+            <Link 
+              key={product.id} 
+              to={`/product/${product.id}`}
+              className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+            >
+              <img 
+                src={product.image} 
+                alt="Категория товаров"
+                className="w-full h-full object-cover"
+              />
+            </Link>
+          ))}
+        </div>
+
+        {/* Equipment Grid - Last 4 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 mb-12">
+          {equipmentCategories.slice(11, 15).map((product) => (
+            <Link 
+              key={product.id} 
+              to={`/product/${product.id}`}
+              className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+            >
+              <img 
+                src={product.image} 
+                alt="Категория товаров"
+                className="w-full h-full object-cover"
+              />
+            </Link>
           ))}
         </div>
       </div>
 
-      {/* Ideas and Selections - заменяем на компонент с главной страницы */}
+      {/* Ideas and Selections */}
       <IdeasSelections />
 
-      {/* New Products - выносим из контейнера */}
+      {/* New Products */}
       <NewProducts />
       
       <EmailSubscription />
