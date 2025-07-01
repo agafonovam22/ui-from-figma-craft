@@ -58,13 +58,8 @@ const ProductCatalog: React.FC = () => {
     },
     {
       id: 11,
-      image: '/lovable-uploads/80aa55be-947f-4d32-b001-8d28a6b48d11.png',
-      category: 'massage'
-    },
-    {
-      id: 12,
-      image: '/lovable-uploads/1750d2c2-52ec-4fb6-8d57-e1787f527e83.png',
-      category: 'mats'
+      image: '/lovable-uploads/2384c4ae-190f-4278-aaf8-daaa6e67e846.png',
+      category: 'skiing'
     }
   ];
 
@@ -123,11 +118,6 @@ const ProductCatalog: React.FC = () => {
       id: 23,
       image: '/lovable-uploads/744c0c6f-bb19-4939-82f1-cf7f5c03f909.png',
       category: 'crossfit'
-    },
-    {
-      id: 24,
-      image: '/lovable-uploads/80aa55be-947f-4d32-b001-8d28a6b48d11.png',
-      category: 'accessories-gym'
     }
   ];
 
@@ -187,9 +177,9 @@ const ProductCatalog: React.FC = () => {
           ))}
         </div>
         
-        {/* Второй ряд - 6 карточек */}
+        {/* Второй ряд - 5 карточек */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
-          {currentProducts.slice(6, 12).map((product) => (
+          {currentProducts.slice(6, 11).map((product) => (
             <Link 
               key={product.id} 
               to={`/product/${product.id}`}
