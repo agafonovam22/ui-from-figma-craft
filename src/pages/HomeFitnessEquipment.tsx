@@ -69,27 +69,27 @@ const HomeFitnessEquipment: React.FC = () => {
     },
     {
       id: 11,
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      image: '/lovable-uploads/d29f2e5b-0be1-4064-9d2f-79c41531c16e.png',
       category: 'trampoline'
     },
     {
       id: 12,
-      image: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
+      image: '/lovable-uploads/71d6d35f-f9b7-478c-87b4-300ee0a39a48.png',
       category: 'massage'
     },
     {
       id: 13,
-      image: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png',
+      image: '/lovable-uploads/a419c85d-e258-4217-9706-fc711f1b4523.png',
       category: 'home-accessories'
     },
     {
       id: 14,
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      image: '/lovable-uploads/f60c9b28-0384-4770-97ba-40b6bdcd451e.png',
       category: 'free-weights'
     },
     {
       id: 15,
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      image: '/lovable-uploads/78ad7bbd-765e-4fb2-bbbf-62e11f323384.png',
       category: 'game-tables'
     }
   ];
@@ -127,9 +127,9 @@ const HomeFitnessEquipment: React.FC = () => {
           </Link>
         </div>
 
-        {/* Equipment Grid - First 6 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 mb-6">
-          {equipmentCategories.slice(0, 6).map((product) => (
+        {/* Equipment Grid - First 5 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
+          {equipmentCategories.slice(0, 5).map((product) => (
             <Link 
               key={product.id} 
               to={`/product/${product.id}`}
@@ -145,8 +145,8 @@ const HomeFitnessEquipment: React.FC = () => {
         </div>
         
         {/* Equipment Grid - Next 5 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 mb-6">
-          {equipmentCategories.slice(6, 11).map((product) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
+          {equipmentCategories.slice(5, 10).map((product) => (
             <Link 
               key={product.id} 
               to={`/product/${product.id}`}
@@ -161,9 +161,9 @@ const HomeFitnessEquipment: React.FC = () => {
           ))}
         </div>
 
-        {/* Equipment Grid - Last 4 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 mb-12">
-          {equipmentCategories.slice(11, 15).map((product) => (
+        {/* Equipment Grid - Last 5 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
+          {equipmentCategories.slice(10, 15).map((product) => (
             <Link 
               key={product.id} 
               to={`/product/${product.id}`}
