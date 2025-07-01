@@ -18,65 +18,64 @@ import { Link } from 'react-router-dom';
 const GymEquipment: React.FC = () => {
   const equipmentCategories = [
     {
-      title: 'Профессиональные беговые дорожки',
-      price: 'от 89 990 ₽',
-      image: '/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png',
-      hasButton: true
+      id: 1,
+      image: '/lovable-uploads/8359c4fb-ab19-4e0f-904f-17c62a9694cc.png',
+      category: 'treadmill'
     },
     {
-      title: 'Профессиональные велотренажеры',
-      price: 'от 79 990 ₽',
-      image: '/lovable-uploads/31e0c62c-257c-4fe3-96b0-d53a4a23f8ca.png'
+      id: 2,
+      image: '/lovable-uploads/17488a84-d62c-4ec5-83c9-21552aebadc8.png',
+      category: 'bike'
     },
     {
-      title: 'Профессиональные гребные тренажеры',
-      price: 'от 149 990 ₽',
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png'
+      id: 3,
+      image: '/lovable-uploads/03483cd7-94a8-4050-b663-8e2a5d663e53.png',
+      category: 'rowing'
     },
     {
-      title: 'Профессиональные эллиптические тренажеры',
-      price: 'от 119 990 ₽',
-      image: '/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png'
+      id: 4,
+      image: '/lovable-uploads/11f76f2c-1e15-40b4-bac6-6fb49f30b1a1.png',
+      category: 'elliptical'
     },
     {
-      title: 'Профессиональные мультистанции',
-      price: 'от 159 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      id: 5,
+      image: '/lovable-uploads/13df76f8-a392-4e5d-b2e0-340738c67fcf.png',
+      category: 'multistation'
     },
     {
-      title: 'Скамьи и стойки',
-      price: 'от 29 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      id: 6,
+      image: '/lovable-uploads/a6128dc6-0488-4742-8921-e4eb380e0e9d.png',
+      category: 'bench'
     },
     {
-      title: 'Машина Смита',
-      price: 'от 129 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      id: 7,
+      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      category: 'smith-machine'
     },
     {
-      title: 'Функциональный тренажер',
-      price: 'от 89 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      id: 8,
+      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      category: 'functional'
     },
     {
-      title: 'Грузоблочные тренажеры',
-      price: 'от 99 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      id: 9,
+      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      category: 'cable-machines'
     },
     {
-      title: 'Нагружаемые дискавми',
-      price: 'от 59 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      id: 10,
+      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      category: 'plate-loaded'
     },
     {
-      title: 'Диски и грифы',
-      price: 'от 9 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      id: 11,
+      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      category: 'plates-bars'
     },
     {
-      title: 'Групповые программы',
-      price: 'от 19 990 ₽',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      id: 12,
+      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      category: 'group-programs'
     }
   ];
 
@@ -113,33 +112,45 @@ const GymEquipment: React.FC = () => {
           </Link>
         </div>
 
-        {/* Equipment Grid */}
+        {/* Equipment Grid - First 6 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 mb-6">
+          {equipmentCategories.slice(0, 6).map((product) => (
+            <Link 
+              key={product.id} 
+              to={`/product/${product.id}`}
+              className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+            >
+              <img 
+                src={product.image} 
+                alt="Категория товаров"
+                className="w-full h-full object-cover"
+              />
+            </Link>
+          ))}
+        </div>
+        
+        {/* Equipment Grid - Last 6 items */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 mb-12">
-          {equipmentCategories.map((item, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
-              <div className="aspect-square mb-3 flex items-center justify-center">
-                <img 
-                  src={item.image} 
-                  alt={item.title}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="text-sm font-medium text-[#262631] mb-2">{item.title}</h3>
-              <p className="text-gray-600 text-sm mb-3">{item.price}</p>
-              {item.hasButton && (
-                <button className="bg-[#262631] text-white px-3 py-2 rounded text-xs hover:bg-gray-800 transition-colors">
-                  Перейти →
-                </button>
-              )}
-            </div>
+          {equipmentCategories.slice(6, 12).map((product) => (
+            <Link 
+              key={product.id} 
+              to={`/product/${product.id}`}
+              className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+            >
+              <img 
+                src={product.image} 
+                alt="Категория товаров"
+                className="w-full h-full object-cover"
+              />
+            </Link>
           ))}
         </div>
       </div>
 
-      {/* Ideas and Selections - заменяем на компонент с главной страницы */}
+      {/* Ideas and Selections */}
       <IdeasSelections />
 
-      {/* New Products - выносим из контейнера */}
+      {/* New Products */}
       <NewProducts />
       
       <EmailSubscription />
