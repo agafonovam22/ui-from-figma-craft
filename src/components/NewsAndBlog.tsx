@@ -7,38 +7,38 @@ const NewsAndBlog: React.FC = () => {
   const newsItems = [
     {
       id: 1,
-      type: 'Новости',
+      type: 'Блог',
       date: '12 Января 2024',
       title: 'Wellfitness PRO в Сколково 2023',
       description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес-Россия: бизнес-форум, фитнес-конвенция, выставка.',
-      image: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
+      image: '/lovable-uploads/4de8ac86-4117-4c20-8d99-e0583f469b1e.png',
       isActive: true
     },
     {
       id: 2,
-      type: 'Блог',
-      date: '12 Января 2024',
-      title: 'Wellfitness PRO в Сколково 2023',
-      description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес-Россия: бизнес-форум, фитнес-конвенция, выставка.',
-      image: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
-      isActive: false
-    },
-    {
-      id: 3,
       type: 'Новости',
       date: '12 Января 2024',
       title: 'Wellfitness PRO в Сколково 2023',
       description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес-Россия: бизнес-форум, фитнес-конвенция, выставка.',
-      image: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
+      image: '/lovable-uploads/43a8ceb6-b7c1-4678-9a74-6ecb281cd53c.png',
       isActive: false
     },
     {
-      id: 4,
+      id: 3,
       type: 'Блог',
       date: '12 Января 2024',
       title: 'Wellfitness PRO в Сколково 2023',
       description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес-Россия: бизнес-форум, фитнес-конвенция, выставка.',
-      image: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
+      image: '/lovable-uploads/ef69eacd-d803-450f-abea-e857771f2e59.png',
+      isActive: false
+    },
+    {
+      id: 4,
+      type: 'Новости',
+      date: '12 Января 2024',
+      title: 'Wellfitness PRO в Сколково 2023',
+      description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес-Россия: бизнес-форум, фитнес-конвенция, выставка.',
+      image: '/lovable-uploads/4de8ac86-4117-4c20-8d99-e0583f469b1e.png',
       isActive: false
     }
   ];
@@ -63,43 +63,12 @@ const NewsAndBlog: React.FC = () => {
         {/* News Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {newsItems.map((item) => (
-            <div key={item.id} className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              {/* Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={item.image} 
-                  alt={item.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              {/* Content */}
-              <div className="p-4">
-                {/* Category and Date */}
-                <div className="flex items-center gap-3 mb-3">
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    item.type === 'Новости' 
-                      ? 'bg-blue-100 text-blue-700' 
-                      : 'bg-orange-100 text-orange-700'
-                  }`}>
-                    {item.type}
-                  </span>
-                  <div className="flex items-center gap-1 text-gray-500 text-xs">
-                    {item.isActive && <div className="w-2 h-2 bg-green-500 rounded-full"></div>}
-                    <span>{item.date}</span>
-                  </div>
-                </div>
-                
-                {/* Title */}
-                <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">
-                  {item.title}
-                </h3>
-                
-                {/* Description */}
-                <p className="text-gray-600 text-sm line-clamp-3">
-                  {item.description}
-                </p>
-              </div>
+            <div key={item.id} className="rounded-lg overflow-hidden h-[444px] hover:shadow-lg transition-shadow cursor-pointer">
+              <img 
+                src={item.image} 
+                alt={item.title}
+                className="w-full h-full object-cover"
+              />
             </div>
           ))}
         </div>
@@ -108,7 +77,7 @@ const NewsAndBlog: React.FC = () => {
         <div className="text-left">
           <Link
             to="/news"
-            className="border border-[#F53B49] text-[#F53B49] px-8 py-2 rounded hover:bg-[#F53B49] hover:text-white transition-colors inline-block"
+            className="border border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors inline-block"
           >
             Показать все
           </Link>
