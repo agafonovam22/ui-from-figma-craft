@@ -141,6 +141,17 @@ const Brand: React.FC = () => {
           </div>
         </section>
 
+        {/* Second full-width image section */}
+        <section className="w-full">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <img 
+              src="/lovable-uploads/25a08481-5846-4c6a-8f84-9089de2749fd.png"
+              alt="Тренировки и статистика"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </section>
+
         {/* Ideas and Selections */}
         <IdeasSelections />
 
