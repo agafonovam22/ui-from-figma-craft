@@ -4,6 +4,7 @@ import { SearchBarProps, UserAction } from './types';
 import SearchPopup from './SearchPopup';
 import CartPopup from './CartPopup';
 import FavoritesPopup from './FavoritesPopup';
+import ComparisonPopup from './ComparisonPopup';
 
 const Logo: React.FC = () => (
   <div className="flex justify-center items-start gap-[5.856px]">
@@ -82,6 +83,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Поиск", onSea
 const UserActions: React.FC = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isFavoritesOpen, setIsFavoritesOpen] = useState(false);
+  const [isComparisonOpen, setIsComparisonOpen] = useState(false);
 
   return (
     <div className="flex items-center gap-5 max-sm:gap-2.5">
@@ -104,11 +106,13 @@ const UserActions: React.FC = () => {
         </button>
       </CartPopup>
 
-      <button onClick={() => console.log('Analytics clicked')} aria-label="Аналитика">
-        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2.08496 21.7999V9.19995H7.56184V21.7999H2.08496ZM9.16569 21.7999V3.19995H14.8349V21.7999H9.16569ZM16.4387 21.7999V11.2H21.9156V21.7999H16.4387Z" fill="#5C6476" />
-        </svg>
-      </button>
+      <ComparisonPopup isOpen={isComparisonOpen} onOpenChange={setIsComparisonOpen}>
+        <button aria-label="Сравнение">
+          <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.08496 21.7999V9.19995H7.56184V21.7999H2.08496ZM9.16569 21.7999V3.19995H14.8349V21.7999H9.16569ZM16.4387 21.7999V11.2H21.9156V21.7999H16.4387Z" fill="#5C6476" />
+          </svg>
+        </button>
+      </ComparisonPopup>
 
       <FavoritesPopup isOpen={isFavoritesOpen} onOpenChange={setIsFavoritesOpen}>
         <button aria-label="Избранное">

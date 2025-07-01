@@ -28,6 +28,7 @@ import Search from "./pages/Search";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/OrderSuccess";
+import Comparison from "./pages/Comparison";
 import NotFound from "./pages/NotFound";
 import Favorites from "./pages/Favorites";
 
@@ -64,6 +65,7 @@ const App = () => (
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/order-success" element={<OrderSuccess />} />
+          <Route path="/comparison" element={<Comparison />} />
           <Route path="/favorites" element={<Favorites />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
