@@ -26,10 +26,9 @@ const Brand: React.FC = () => {
       <Header />
       
       <main className="w-full">
-        {/* Breadcrumb and Title */}
+        {/* Breadcrumb */}
         <section className="py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            {/* Breadcrumb */}
             <Breadcrumb className="mb-8">
               <BreadcrumbList>
                 <BreadcrumbItem>
@@ -49,11 +48,6 @@ const Brand: React.FC = () => {
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
-            
-            {/* Main Title */}
-            <h1 className="text-[40px] font-bold text-[#17171E] mb-8 leading-tight">
-              {brandName}
-            </h1>
           </div>
         </section>
 
@@ -136,68 +130,18 @@ const Brand: React.FC = () => {
           </div>
         </section>
 
-        {/* Main Content - Text left, Large image right */}
-        <section className="py-16">
+        {/* Full-width image section */}
+        <section className="w-full">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              {/* Left side - Text content */}
-              <div className="space-y-6">
-                <h2 className="text-3xl font-bold text-[#17171E] mb-6">
-                  О бренде {brandName}
-                </h2>
-                
-                <div className="space-y-6 text-gray-700">
-                  <p className="leading-relaxed text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              </div>
-
-              {/* Right side - Single large image */}
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop"
-                  alt={`${brandName} продукция`}
-                  className="w-full h-[400px] object-cover rounded-lg"
-                />
-              </div>
-            </div>
+            <img 
+              src="/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png"
+              alt="Спортивные тренировки"
+              className="w-full h-auto object-cover"
+            />
           </div>
         </section>
 
-        {/* First additional section - Text left, Image right */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Left side - Text content in dotted border box */}
-              <div className="border-2 border-dashed border-blue-300 p-8 bg-white">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                  Преимущества бренда {brandName}
-                </h2>
-                
-                <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                  </p>
-                  <p>
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              </div>
-
-              {/* Right side - Equipment image */}
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=400&fit=crop"
-                  alt="Спортивное оборудование"
-                  className="w-full h-[300px] object-cover rounded-lg"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Ideas and Selections - заменяем блок "Линейка продуктов" на компонент с главной страницы */}
+        {/* Ideas and Selections */}
         <IdeasSelections />
 
         {/* FAQ Section */}
