@@ -3,8 +3,11 @@ import { useParams, Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
+import ServiceTabs from '@/components/Services/ServiceTabs';
+import ServiceBenefits from '@/components/Services/ServiceBenefits';
+import ServiceProjects from '@/components/Services/ServiceProjects';
+import InstallmentTable from '@/components/Services/InstallmentTable';
 
 const UslugiServices: React.FC = () => {
   const { category } = useParams<{ category: string }>();
@@ -188,35 +191,6 @@ const UslugiServices: React.FC = () => {
     }
   ];
 
-  const renderProjectCard = (project: typeof projects[0]) => (
-    <div
-      key={project.id}
-      className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 group hover:shadow-md transition-shadow"
-    >
-      <div className="aspect-[4/3] overflow-hidden relative">
-        <img 
-          src={project.image} 
-          alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-4">
-          <h3 className="text-white font-bold text-lg mb-1">{project.title}</h3>
-          <p className="text-white/90 text-sm mb-3">{project.subtitle}</p>
-          
-          {project.isSpecial ? (
-            <button className="bg-white text-gray-900 px-4 py-2 rounded font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2 w-fit">
-              {project.buttonText}
-            </button>
-          ) : (
-            <button className="bg-[#F53B49] text-white px-4 py-2 rounded font-semibold hover:bg-[#e63946] transition-colors w-fit">
-              {project.buttonText}
-            </button>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -256,7 +230,7 @@ const UslugiServices: React.FC = () => {
                   3D-проект<br />
                   бесплатно!
                 </h2>
-                <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 text-lg font-semibold rounded-lg">
+                <Button className="bg-brand-red hover:bg-brand-red-hover text-white px-8 py-3 text-lg font-semibold rounded-lg">
                   Оставить заявку
                 </Button>
               </div>
@@ -271,168 +245,19 @@ const UslugiServices: React.FC = () => {
           </div>
 
           {/* Tabs */}
-          <div className="flex gap-2 mb-8 flex-wrap">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-6 py-3 rounded-lg font-medium transition-colors whitespace-nowrap ${
-                  activeTab === tab.id
-                    ? 'bg-[#F53B49] text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+          <ServiceTabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
 
           {/* 3D Project Tab Content */}
           {activeTab === '3d-project' && (
             <div className="space-y-12">
-              {/* Benefits Section */}
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                  Что вы получите от <span className="text-[#F53B49]">3D-проекта</span>
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {benefits.map((benefit) => (
-                    <div key={benefit.id} className="bg-white rounded-lg overflow-hidden shadow-md">
-                      <img
-                        src={benefit.image}
-                        alt={benefit.title}
-                        className="w-full h-48 object-cover"
-                      />
-                      <div className="p-4">
-                        <h3 className="font-semibold text-gray-900">{benefit.title}</h3>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Our Projects Section */}
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">Наши проекты</h2>
-                
-                {/* Projects Layout: 3-2-3-2 */}
-                <div className="mb-8">
-                  {/* First row - 3 cards */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                    {projects.slice(0, 3).map(renderProjectCard)}
-                  </div>
-                  
-                  {/* Second row - 2 cards */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    {projects.slice(3, 5).map(renderProjectCard)}
-                  </div>
-                  
-                  {/* Third row - 3 cards */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                    {projects.slice(5, 8).map(renderProjectCard)}
-                  </div>
-                  
-                  {/* Fourth row - 2 cards */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {projects.slice(8, 10).map(renderProjectCard)}
-                  </div>
-                </div>
-
-                {/* Show More Button */}
-                <div className="flex justify-center">
-                  <button className="px-6 py-3 border border-[#F53B49] text-[#F53B49] rounded-lg font-semibold hover:bg-[#F53B49] hover:text-white transition-colors">
-                    Показать еще
-                  </button>
-                </div>
-              </div>
+              <ServiceBenefits benefits={benefits} />
+              <ServiceProjects projects={projects} />
             </div>
           )}
 
           {/* Installment Tab Content */}
           {activeTab === 'installment' && (
-            <div className="space-y-8">
-              <div className="flex flex-col lg:flex-row gap-8">
-                {/* Left side - Text content */}
-                <div className="flex-1">
-                  <h2 className="text-4xl font-bold text-gray-900 mb-6">В рассрочку</h2>
-                  
-                  <div className="space-y-4 text-gray-600 mb-8">
-                    <p>
-                      Оформить кредит на сайте — быстро и легко. При оформлении заказа в корзине укажите способ 
-                      оплаты «Кредит».
-                    </p>
-                    <p>
-                      Вы будете перенаправлены на сайт банка для заполнения анкеты. После заполнения анкеты с вами 
-                      свяжется представитель банка. Вашу заявку рассмотрят в течение 20—30 минут.
-                    </p>
-                    <p>
-                      Также вы можете оформить рассрочку или кредит в любом магазине, сделав заказ на самовывоз. 
-                      Пожалуйста, будьте готовы предоставить паспорт при получении кредита. Также банки вправе 
-                      потребовать иные дополнительные документы и подтверждение доходов заемщика.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Right side - Image */}
-                <div className="flex-1">
-                  <img 
-                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop"
-                    alt="Спортивное оборудование"
-                    className="w-full h-64 lg:h-80 object-cover rounded-lg"
-                  />
-                </div>
-              </div>
-
-              {/* Installment Table */}
-              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-                <Table>
-                  <TableHeader>
-                    <TableRow className="bg-gray-50">
-                      <TableHead className="font-semibold text-gray-900">Рассрочка</TableHead>
-                      <TableHead className="font-semibold text-gray-900">Ежемесячный платеж</TableHead>
-                      <TableHead className="font-semibold text-gray-900">Переплата</TableHead>
-                      <TableHead className="font-semibold text-gray-900">Срок</TableHead>
-                      <TableHead className="font-semibold text-gray-900"></TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {installmentPlans.map((plan) => (
-                      <TableRow key={plan.id} className="hover:bg-gray-50">
-                        <TableCell>
-                          <div>
-                            <div className="font-semibold text-gray-900">{plan.plan}</div>
-                            <div className="text-sm text-gray-600">{plan.bank}</div>
-                          </div>
-                        </TableCell>
-                        <TableCell className="font-semibold">{plan.monthlyPayment}</TableCell>
-                        <TableCell>{plan.overpayment}</TableCell>
-                        <TableCell>{plan.term}</TableCell>
-                        <TableCell>
-                          <div className="flex flex-wrap gap-2">
-                            <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
-                              {plan.rate}
-                            </span>
-                            <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
-                              {plan.firstPayment}
-                            </span>
-                            <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
-                              {plan.duration}
-                            </span>
-                          </div>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </div>
-
-              {/* Submit Button */}
-              <div className="flex justify-start">
-                <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 text-lg font-semibold rounded-lg">
-                  Оставить заявку
-                </Button>
-              </div>
-            </div>
+            <InstallmentTable plans={installmentPlans} />
           )}
 
           {/* Other tabs content placeholders */}
