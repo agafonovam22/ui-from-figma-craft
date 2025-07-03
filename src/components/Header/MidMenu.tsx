@@ -7,13 +7,13 @@ import FavoritesPopup from './FavoritesPopup';
 import ComparisonPopup from './ComparisonPopup';
 
 const Logo: React.FC = () => (
-  <div className="flex justify-center items-start gap-[5.856px]">
+  <Link to="/" className="flex justify-center items-start gap-[5.856px]">
     <img 
       src="/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png" 
       alt="Well Fitness" 
       className="h-[28px] w-auto"
     />
-  </div>
+  </Link>
 );
 
 const CatalogButton: React.FC = () => (

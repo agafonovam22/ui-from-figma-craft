@@ -43,9 +43,9 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Услуги */}
+            {/* Для Бизнеса */}
             <div>
-              <h3 className="text-[16px] font-semibold mb-4">Услуги</h3>
+              <h3 className="text-[16px] font-semibold mb-4">Для Бизнеса</h3>
               <ul className="space-y-3 text-[#778093] text-[14px]">
                 <li><a href="#" className="hover:text-white transition-colors">3D проект</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Бизнес-конфигурирование</a></li>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 
 const UslugiCategories: React.FC = () => {
   const categories = [
@@ -35,6 +36,21 @@ const UslugiCategories: React.FC = () => {
       
       <main className="py-12">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+          {/* Breadcrumbs */}
+          <Breadcrumb className="mb-6">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/">Главная</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Услуги</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+
           {/* Page Title */}
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Услуги</h1>
           <p className="text-lg text-gray-600 mb-12">
