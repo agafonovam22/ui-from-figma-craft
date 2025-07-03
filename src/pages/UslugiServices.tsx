@@ -1,20 +1,47 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
 const UslugiServices: React.FC = () => {
+  const { category } = useParams<{ category: string }>();
   const [activeTab, setActiveTab] = useState('3d-project');
 
-  const tabs = [
-    { id: '3d-project', label: '3D-проект', active: true },
-    { id: 'business-planning', label: 'Бизнес планирование', active: false },
-    { id: 'staff-training', label: 'Обучение персонала', active: false },
-    { id: 'leasing', label: 'Лизинг', active: false },
-    { id: 'trade-in', label: 'Trade-In', active: false },
-    { id: 'installment', label: 'В рассрочку', active: false }
-  ];
+  // Define services by category
+  const servicesByCategory = {
+    business: [
+      { id: '3d-project', label: '3D-проект' },
+      { id: 'business-planning', label: 'Бизнес планирование' },
+      { id: 'staff-training', label: 'Обучение персонала' },
+      { id: 'leasing', label: 'Лизинг' }
+    ],
+    individuals: [
+      { id: '3d-project', label: '3D-проект' },
+      { id: 'installment', label: 'В рассрочку' },
+      { id: 'trade-in', label: 'Trade-In' }
+    ],
+    service: [
+      { id: 'maintenance', label: 'Техобслуживание' },
+      { id: 'repair', label: 'Ремонт' },
+      { id: 'warranty', label: 'Гарантийное обслуживание' }
+    ]
+  };
+
+  const tabs = category && servicesByCategory[category as keyof typeof servicesByCategory] 
+    ? servicesByCategory[category as keyof typeof servicesByCategory] 
+    : servicesByCategory.business;
+
+  // Get category title
+  const getCategoryTitle = () => {
+    switch (category) {
+      case 'business': return 'Услуги для бизнеса';
+      case 'individuals': return 'Услуги для физ лиц';
+      case 'service': return 'Сервис';
+      default: return 'Услуги';
+    }
+  };
 
   const benefits = [
     {
@@ -196,7 +223,7 @@ const UslugiServices: React.FC = () => {
       <main className="py-12">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
           {/* Page Title */}
-          <h1 className="text-4xl font-bold text-gray-900 mb-12">Услуги</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-12">{getCategoryTitle()}</h1>
 
           {/* Hero Section */}
           <div className="bg-gradient-to-r from-gray-800 to-gray-600 rounded-lg p-8 mb-12 text-white relative overflow-hidden">

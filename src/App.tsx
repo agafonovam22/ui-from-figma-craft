@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import UslugiServices from "./pages/UslugiServices";
+import UslugiCategories from "./pages/UslugiCategories";
 import About from "./pages/About";
 import Project from "./pages/Project";
 import Ideas from "./pages/Ideas";
@@ -43,7 +44,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/uslugi" element={<UslugiServices />} />
+          <Route path="/uslugi" element={<UslugiCategories />} />
+          <Route path="/uslugi/:category" element={<UslugiServices />} />
           <Route path="/about" element={<About />} />
           <Route path="/project" element={<Project />} />
           <Route path="/ideas" element={<Ideas />} />
