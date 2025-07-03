@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Map from '@/components/Map';
 import { 
   Breadcrumb, 
   BreadcrumbList, 
@@ -10,42 +11,50 @@ import {
   BreadcrumbSeparator, 
   BreadcrumbPage 
 } from '@/components/ui/breadcrumb';
-import { MapPin, Phone, Clock } from 'lucide-react';
+import { Switch } from '@/components/ui/switch';
+import { MapPin, Phone, Clock, Map as MapIcon } from 'lucide-react';
 
 const WhereToBuy: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState('Москва');
   const [activeTab, setActiveTab] = useState('stores');
+  const [sortBy, setSortBy] = useState('list');
+  const [showMap, setShowMap] = useState(false);
 
   const partnerStores = [
     {
       name: 'Спорт Дома',
       address: 'Москва, ТРК VEGAS Крокус Сити, м. Мякинино, ул. Международная 12, G6 км МКАД',
       phone: '+7 (499) 677-56-32',
-      hours: '10:00 - 22:00'
+      hours: '10:00 - 22:00',
+      coordinates: [37.4188, 55.8297] as [number, number]
     },
     {
       name: 'Тренмаркет.ру',
       address: 'Москва, ТРК VEGAS Крокус Сити, м. Мякинино, ул. Международная 12, G6 км МКАД',
       phone: '+7 (499) 677-56-32',
-      hours: '10:00 - 22:00'
+      hours: '10:00 - 22:00',
+      coordinates: [37.5983, 55.7558] as [number, number]
     },
     {
       name: 'Goldgym',
       address: 'Москва, ТРК VEGAS Крокус Сити, м. Мякинино, ул. Международная 12, G6 км МКАД',
       phone: '+7 (499) 677-56-32',
-      hours: '10:00 - 22:00'
+      hours: '10:00 - 22:00',
+      coordinates: [37.6800, 55.7030] as [number, number]
     },
     {
       name: 'Sportpremier',
       address: 'Москва, ТРК VEGAS Крокус Сити, м. Мякинино, ул. Международная 12, G6 км МКАД',
       phone: '+7 (499) 677-56-32',
-      hours: '10:00 - 22:00'
+      hours: '10:00 - 22:00',
+      coordinates: [37.5200, 55.8000] as [number, number]
     },
     {
       name: 'Wellgallery',
       address: 'Москва, ТРК VEGAS Крокус Сити, м. Мякинино, ул. Международная 12, G6 км МКАД',
       phone: '+7 (499) 677-56-32',
-      hours: '10:00 - 22:00'
+      hours: '10:00 - 22:00',
+      coordinates: [37.7500, 55.6800] as [number, number]
     }
   ];
 
@@ -123,61 +132,84 @@ const WhereToBuy: React.FC = () => {
 
           <div className="flex items-center gap-2 ml-auto">
             <span className="text-gray-600">Сортировать:</span>
-            <select className="px-3 py-1 border border-gray-300 rounded-md bg-white text-gray-700">
-              <option>Список</option>
-              <option>По алфавиту</option>
-              <option>По расстоянию</option>
+            <select 
+              value={sortBy} 
+              onChange={(e) => setSortBy(e.target.value)}
+              className="px-3 py-1 border border-gray-300 rounded-md bg-white text-gray-700"
+            >
+              <option value="list">Список</option>
+              <option value="map">Карта</option>
             </select>
           </div>
         </div>
 
-        {/* Company Store Section */}
+        {/* Show on Map Toggle */}
+        <div className="flex justify-end mb-6">
+          <div className="flex items-center gap-3">
+            <MapIcon className="w-5 h-5 text-gray-600" />
+            <span className="text-gray-700 font-medium">Показать на карте</span>
+            <Switch
+              checked={showMap}
+              onCheckedChange={setShowMap}
+              className="data-[state=checked]:bg-[#F53B49]"
+            />
+          </div>
+        </div>
+
+        {/* Company Store Section or Map */}
         <div className="mb-12">
-          <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-between">
-            <div className="flex-1">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Фирменный магазин<br />Well Fitness
-              </h2>
-              
-              <div className="space-y-3 text-gray-700">
-                <div className="flex items-start gap-2">
-                  <MapPin className="w-5 h-5 text-gray-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium">Адрес</p>
-                    <p className="text-sm">
-                      Москва, ТРК VEGAS Крокус Сити,<br />
-                      м.Мякинино, ул. Международная 12,<br />
-                      G6 км МКАД
-                    </p>
-                  </div>
-                </div>
+          {showMap || sortBy === 'map' ? (
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Магазины на карте</h2>
+              <Map stores={partnerStores} />
+            </div>
+          ) : (
+            <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-between">
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  Фирменный магазин<br />Well Fitness
+                </h2>
                 
-                <div className="flex items-center gap-2">
-                  <Phone className="w-5 h-5 text-gray-500 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium">Телефон</p>
-                    <p className="text-sm">+7 (499) 677-56-32</p>
+                <div className="space-y-3 text-gray-700">
+                  <div className="flex items-start gap-2">
+                    <MapPin className="w-5 h-5 text-gray-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium">Адрес</p>
+                      <p className="text-sm">
+                        Москва, ТРК VEGAS Крокус Сити,<br />
+                        м.Мякинино, ул. Международная 12,<br />
+                        G6 км МКАД
+                      </p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-gray-500 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium">Режим работы</p>
-                    <p className="text-sm">10:00 - 22:00</p>
+                  
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-5 h-5 text-gray-500 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium">Телефон</p>
+                      <p className="text-sm">+7 (499) 677-56-32</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-5 h-5 text-gray-500 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium">Режим работы</p>
+                      <p className="text-sm">10:00 - 22:00</p>
+                    </div>
                   </div>
                 </div>
               </div>
+              
+              <div className="flex-shrink-0 ml-8">
+                <img 
+                  src="/lovable-uploads/63223971-7b48-4bd9-824c-f4c52e54d9fb.png"
+                  alt="Фирменный магазин Well Fitness"
+                  className="w-[400px] h-[240px] object-cover rounded-lg"
+                />
+              </div>
             </div>
-            
-            <div className="flex-shrink-0 ml-8">
-              <img 
-                src="/lovable-uploads/63223971-7b48-4bd9-824c-f4c52e54d9fb.png"
-                alt="Фирменный магазин Well Fitness"
-                className="w-[400px] h-[240px] object-cover rounded-lg"
-              />
-            </div>
-          </div>
+          )}
         </div>
 
         {/* Content based on active tab */}
