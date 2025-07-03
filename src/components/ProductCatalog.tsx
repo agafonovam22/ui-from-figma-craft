@@ -189,6 +189,16 @@ const ProductCatalog: React.FC = () => {
               />
             </Link>
           ))}
+          <Link 
+            to="/catalog"
+            className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+          >
+            <img 
+              src="/lovable-uploads/20ea1fa7-dfc5-4353-a56f-56deceadd1c9.png" 
+              alt="Перейти в каталог"
+              className="w-full h-full object-cover"
+            />
+          </Link>
         </div>
         
         <div className="mt-8 flex justify-start">
