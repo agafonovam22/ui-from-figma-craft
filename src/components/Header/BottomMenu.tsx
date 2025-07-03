@@ -115,12 +115,12 @@ const BottomMenu: React.FC = () => {
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {categories.map((category, index) => (
-            <React.Fragment key={category.id}>
+            <div key={category.id} className="flex items-center gap-[5px]">
               <CategoryButton category={category} />
               {index < categories.length - 1 && (
                 <div className="w-px h-9 opacity-20 bg-[#5C6476] flex-shrink-0" />
               )}
-            </React.Fragment>
+            </div>
           ))}
         </div>
         
