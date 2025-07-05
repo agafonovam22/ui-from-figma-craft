@@ -12,27 +12,27 @@ const ProductCatalog: React.FC = () => {
     },
     {
       id: 2,
-      image: '/lovable-uploads/052844f7-bb47-4b45-ba40-d4123336188f.png',
+      image: '/lovable-uploads/e7d74397-06f3-4670-afdc-0bc336160950.png',
       category: 'bike'
     },
     {
       id: 3,
-      image: '/lovable-uploads/465cd1ff-17d9-433c-834d-3c4eb1b0607c.png',
+      image: '/lovable-uploads/a0586dcb-0684-4efa-b928-acf39eb65e77.png',
       category: 'rowing'
     },
     {
       id: 4,
-      image: '/lovable-uploads/c493cd4e-d0cd-4df5-b2bf-f6a4ae3dc165.png',
+      image: '/lovable-uploads/824098f8-7764-4486-b8f8-c7747fd05db9.png',
       category: 'strength'
     },
     {
       id: 5,
-      image: '/lovable-uploads/efbda2a7-32c3-4183-aee8-179088031eb1.png',
+      image: '/lovable-uploads/ebd9e79f-c0c0-4839-9029-0352b827f19d.png',
       category: 'inversion'
     },
     {
       id: 6,
-      image: '/lovable-uploads/80aa55be-947f-4d32-b001-8d28a6b48d11.png',
+      image: '/lovable-uploads/1f807af3-c594-4625-9e6c-8756ec7f4e3b.png',
       category: 'accessories'
     },
     {
