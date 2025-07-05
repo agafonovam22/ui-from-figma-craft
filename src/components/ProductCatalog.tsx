@@ -167,11 +167,11 @@ const ProductCatalog: React.FC = () => {
               />
               <Link 
                 to="/product/1"
-                className="absolute bottom-4 left-4 bg-[#262631] text-white px-4 py-2 rounded-lg transition-all hover:bg-[#F53B49] font-benzin text-sm"
+                className="absolute bottom-4 left-4 bg-[#262631] text-white px-4 py-2 rounded-lg transition-all hover:bg-[#F53B49] font-benzin text-sm w-[120px] h-[40px] flex items-center justify-center"
               >
                 <span className="group-hover:hidden">от 29 990 ₽</span>
-                <span className="hidden group-hover:inline-flex items-center gap-2">
-                  Перейти <ArrowRight className="w-4 h-4" />
+                <span className="hidden group-hover:inline-flex items-center gap-1">
+                  Перейти <ArrowRight className="w-3 h-3" />
                 </span>
               </Link>
             </div>
@@ -191,11 +191,11 @@ const ProductCatalog: React.FC = () => {
               />
               <Link 
                 to="/product/1"
-                className="absolute bottom-4 left-4 bg-[#262631] text-white px-4 py-2 rounded-lg transition-all hover:bg-[#F53B49] font-benzin text-sm"
+                className="absolute bottom-4 left-4 bg-[#262631] text-white px-4 py-2 rounded-lg transition-all hover:bg-[#F53B49] font-benzin text-sm w-[120px] h-[40px] flex items-center justify-center"
               >
                 <span className="group-hover:hidden">от 29 990 ₽</span>
-                <span className="hidden group-hover:inline-flex items-center gap-2">
-                  Перейти <ArrowRight className="w-4 h-4" />
+                <span className="hidden group-hover:inline-flex items-center gap-1">
+                  Перейти <ArrowRight className="w-3 h-3" />
                 </span>
               </Link>
             </div>
