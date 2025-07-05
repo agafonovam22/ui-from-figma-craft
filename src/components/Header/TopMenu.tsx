@@ -53,7 +53,8 @@ const TopMenu: React.FC = () => {
               <Link
                 key={index}
                 to={item.href}
-                className="text-[#5C6476] text-xs font-normal leading-3 hover:text-white transition-colors whitespace-nowrap"
+                className="text-layout-grey-nav font-benzin text-xs font-normal leading-[12px] hover:text-white transition-colors whitespace-nowrap"
+                style={{ lineHeight: '100%' }}
               >
                 {item.label}
               </Link>
@@ -61,7 +62,8 @@ const TopMenu: React.FC = () => {
               <a
                 key={index}
                 href={item.href || '#'}
-                className="text-[#5C6476] text-xs font-normal leading-3 hover:text-white transition-colors whitespace-nowrap"
+                className="text-layout-grey-nav font-benzin text-xs font-normal leading-[12px] hover:text-white transition-colors whitespace-nowrap"
+                style={{ lineHeight: '100%' }}
                 onClick={item.onClick}
               >
                 {item.label}
