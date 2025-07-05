@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 const ProductCatalog: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<'home' | 'fitness'>('home');
@@ -166,9 +167,12 @@ const ProductCatalog: React.FC = () => {
               />
               <Link 
                 to="/product-card"
-                className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#F53B49] hover:text-white transition-colors"
+                className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center justify-center"
               >
-                от 29 990 ₽
+                <span className="group-hover:hidden">от 29 990 ₽</span>
+                <span className="hidden group-hover:flex items-center gap-2">
+                  Перейти <ArrowRight className="w-4 h-4" />
+                </span>
               </Link>
             </div>
           ))}
