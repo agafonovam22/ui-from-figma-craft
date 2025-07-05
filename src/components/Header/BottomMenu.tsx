@@ -7,12 +7,12 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
   isActive = false 
 }) => (
   <button
-    className={`flex h-[46px] items-center gap-2.5 bg-[#262631] px-6 py-3.5 rounded-[5px] max-sm:whitespace-nowrap max-sm:px-4 max-sm:py-3.5 hover:bg-[#3a3a47] transition-colors group`}
+    className={`flex h-[46px] items-center gap-2 bg-[#262631] px-5 py-3 rounded-[5px] max-sm:whitespace-nowrap max-sm:px-4 max-sm:py-3 hover:bg-[#3a3a47] transition-colors group flex-shrink-0`}
     onClick={category.onClick}
     aria-label={`Категория: ${category.label}`}
   >
     {category.iconImage ? (
-      <img src={category.iconImage} alt={category.label} className="w-6 h-6" />
+      <img src={category.iconImage} alt={category.label} className="w-5 h-5 flex-shrink-0" />
     ) : (
       <div dangerouslySetInnerHTML={{ __html: category.icon }} />
     )}

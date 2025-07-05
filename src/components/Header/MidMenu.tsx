@@ -7,11 +7,11 @@ import FavoritesPopup from './FavoritesPopup';
 import ComparisonPopup from './ComparisonPopup';
 
 const Logo: React.FC = () => (
-  <Link to="/" className="flex justify-center items-start gap-[5.856px]">
+  <Link to="/" className="flex justify-center items-center gap-[5.856px] flex-shrink-0">
     <img 
       src="/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png" 
       alt="Well Fitness" 
-      className="h-[28px] w-auto"
+      className="h-[32px] w-auto"
     />
   </Link>
 );
@@ -19,7 +19,7 @@ const Logo: React.FC = () => (
 const CatalogButton: React.FC = () => (
   <Link
     to="/catalog"
-    className="flex justify-center items-center gap-2 bg-[#F53B49] px-6 py-3.5 rounded-[5px] hover:bg-[#e63946] transition-colors whitespace-nowrap"
+    className="flex justify-center items-center gap-2 bg-[#F53B49] px-5 py-3 rounded-[5px] hover:bg-[#e63946] transition-colors whitespace-nowrap h-[41px] flex-shrink-0"
     aria-label="Открыть каталог товаров"
   >
     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +86,7 @@ const UserActions: React.FC = () => {
   const [isComparisonOpen, setIsComparisonOpen] = useState(false);
 
   return (
-    <div className="flex items-center gap-5 max-sm:gap-2.5">
+    <div className="flex items-center gap-4 max-sm:gap-2.5 flex-shrink-0">
       <Link
         to="/account"
         className="w-6 h-6 relative"

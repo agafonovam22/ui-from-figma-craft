@@ -6,7 +6,7 @@ import CitySelector from './CitySelector';
 import CallRequestDialog from './CallRequestDialog';
 
 const ActionButton: React.FC<ButtonProps> = ({ children, variant = 'primary', onClick, className = '' }) => {
-  const baseClasses = "text-[10px] font-normal leading-[10px] gap-2.5 px-3.5 py-3 rounded-[5px] transition-colors";
+  const baseClasses = "text-[10px] font-normal leading-[10px] gap-2 px-3 py-2.5 rounded-[5px] transition-colors flex-shrink-0";
   const variantClasses = {
     primary: "text-white hover:bg-white/10",
     secondary: "text-[#262631] bg-white hover:bg-gray-100",
@@ -82,7 +82,7 @@ const TopMenu: React.FC = () => {
         </div>
 
         <div className="flex items-end gap-2 max-sm:hidden">
-          <a href="tel:+78007751217" className="text-[10px] font-normal leading-[10px] gap-2.5 px-3.5 py-3 rounded-[5px] transition-colors text-white hover:bg-white/10">
+          <a href="tel:+78007751217" className="text-[10px] font-normal leading-[10px] gap-2 px-3 py-2.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0">
             +7 (800) 775-12-17
           </a>
           <CallRequestDialog>
