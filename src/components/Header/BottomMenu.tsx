@@ -125,8 +125,7 @@ const BottomMenu: React.FC = () => {
           ))}
         </div>
         
-        <div className="hidden md:flex absolute right-0 items-center gap-2 bg-gradient-to-l from-[#262631] via-[#262631] to-transparent pl-8">
-          <ScrollButton direction="left" onClick={() => scroll('left')} />
+        <div className="hidden md:flex absolute right-0 items-center bg-gradient-to-l from-[#262631] via-[#262631] to-transparent pl-8">
           <ScrollButton direction="right" onClick={() => scroll('right')} />
         </div>
       </div>
