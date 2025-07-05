@@ -20,8 +20,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'benzin': ['Work Sans', 'sans-serif'],
-				'benzin-semibold': ['Work Sans', 'sans-serif'],
+				'benzin': ['Benzin-Regular', 'sans-serif'],
+				'benzin-semibold': ['Benzin-Semibold', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
