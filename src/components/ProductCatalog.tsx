@@ -7,7 +7,7 @@ const ProductCatalog: React.FC = () => {
   const homeProducts = [
     {
       id: 1,
-      image: '/lovable-uploads/adc295d0-3df0-4921-bf2d-590bbe41296d.png',
+      image: '/lovable-uploads/20ada6c4-ae62-4233-9179-8defd1593a18.png',
       category: 'treadmill'
     },
     {
