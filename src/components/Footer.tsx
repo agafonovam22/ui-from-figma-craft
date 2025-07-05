@@ -11,8 +11,8 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
             {/* Каталог */}
             <div>
-              <h3 className="text-white text-base font-benzin-semibold mb-4">Каталог</h3>
-              <ul className="space-y-2 text-[#778093] text-sm">
+              <h3 className="text-white text-sm font-benzin-semibold mb-3">Каталог</h3>
+              <ul className="space-y-2 text-[#778093] text-xs">
                 <li><a href="#" className="hover:text-white transition-colors">Для дома</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Для фитнес-клуба</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Наши бренды</a></li>
@@ -21,8 +21,8 @@ const Footer: React.FC = () => {
 
             {/* Поддержка */}
             <div>
-              <h3 className="text-white text-base font-benzin-semibold mb-4">Поддержка</h3>
-              <ul className="space-y-2 text-[#778093] text-sm">
+              <h3 className="text-white text-sm font-benzin-semibold mb-3">Поддержка</h3>
+              <ul className="space-y-2 text-[#778093] text-xs">
                 <li><a href="#" className="hover:text-white transition-colors">Доставка и оплата</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Условия возврата</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Гарантия</a></li>
@@ -32,8 +32,8 @@ const Footer: React.FC = () => {
 
             {/* О компании */}
             <div>
-              <h3 className="text-white text-base font-benzin-semibold mb-4">О компании</h3>
-              <ul className="space-y-2 text-[#778093] text-sm">
+              <h3 className="text-white text-sm font-benzin-semibold mb-3">О компании</h3>
+              <ul className="space-y-2 text-[#778093] text-xs">
                 <li><a href="#" className="hover:text-white transition-colors">О нас</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Миссия</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Команда</a></li>
@@ -45,8 +45,8 @@ const Footer: React.FC = () => {
 
             {/* Для Бизнеса */}
             <div>
-              <h3 className="text-white text-base font-benzin-semibold mb-4">Для Бизнеса</h3>
-              <ul className="space-y-2 text-[#778093] text-sm">
+              <h3 className="text-white text-sm font-benzin-semibold mb-3">Для Бизнеса</h3>
+              <ul className="space-y-2 text-[#778093] text-xs">
                 <li><a href="#" className="hover:text-white transition-colors">3D проект</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Бизнес планирование</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Готовые решения</a></li>
@@ -61,26 +61,26 @@ const Footer: React.FC = () => {
             <div className="lg:col-span-2">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Левая часть - контакты */}
-                <div className="text-[#778093] space-y-4">
+                <div className="text-[#778093] space-y-3">
                   <div>
-                    <p className="text-sm mb-1">Для Москвы</p>
-                    <a href="tel:+74996775632" className="text-base font-benzin-semibold text-white hover:text-gray-300 transition-colors">
+                    <p className="text-xs mb-1">Для Москвы</p>
+                    <a href="tel:+74996775632" className="text-sm font-benzin-semibold text-white hover:text-gray-300 transition-colors">
                       +7 (499) 677-56-32
                     </a>
                   </div>
                   <div>
-                    <p className="text-sm mb-1">Для России</p>
-                    <a href="tel:+78007751217" className="text-base font-benzin-semibold text-white hover:text-gray-300 transition-colors">
+                    <p className="text-xs mb-1">Для России</p>
+                    <a href="tel:+78007751217" className="text-sm font-benzin-semibold text-white hover:text-gray-300 transition-colors">
                       +7 (800) 775-12-17
                     </a>
                   </div>
                   <div>
-                    <p className="text-sm mb-1">E-mail</p>
-                    <p className="text-white text-sm">info@wellfitness.ru</p>
+                    <p className="text-xs mb-1">E-mail</p>
+                    <p className="text-white text-xs">info@wellfitness.ru</p>
                   </div>
-                  <div className="mt-6">
+                  <div className="mt-4">
                     <CallRequestDialog>
-                      <button className="bg-[#F53B49] text-white px-6 py-2.5 rounded-[5px] hover:bg-[#e63946] transition-colors text-sm font-benzin">
+                      <button className="bg-[#F53B49] text-white px-4 py-2 rounded-[5px] hover:bg-[#e63946] transition-colors text-xs font-benzin">
                         Заказать звонок
                       </button>
                     </CallRequestDialog>
@@ -88,9 +88,9 @@ const Footer: React.FC = () => {
                 </div>
                 
                 {/* Правая часть */}
-                <div className="text-[#778093] space-y-6">
+                <div className="text-[#778093] space-y-4">
                   <div>
-                    <p className="text-base font-benzin-semibold text-white mb-3">Для дома</p>
+                    <p className="text-sm font-benzin-semibold text-white mb-2">Для дома</p>
                     <div className="flex items-center gap-2">
                       <div className="w-8 h-8 bg-[#5C6476] rounded-full flex items-center justify-center">
                         <span className="text-xs text-white font-bold">VK</span>
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
                   </div>
                   
                   <div>
-                    <p className="text-base font-benzin-semibold text-white mb-3">Для дома</p>
+                    <p className="text-sm font-benzin-semibold text-white mb-2">Для дома</p>
                     <div className="flex items-center gap-2">
                       <div className="w-8 h-8 bg-[#5C6476] rounded-full flex items-center justify-center">
                         <span className="text-xs text-white font-bold">VK</span>
@@ -120,7 +120,7 @@ const Footer: React.FC = () => {
                   </div>
                   
                   <div>
-                    <p className="text-sm mb-3 text-[#778093]">Принимаем к оплате</p>
+                    <p className="text-xs mb-2 text-[#778093]">Принимаем к оплате</p>
                     <div className="flex gap-1">
                       <div className="bg-white rounded px-2 py-1 text-xs text-black font-bold">VISA</div>
                       <div className="bg-white rounded px-2 py-1 text-xs text-black font-bold">VISA</div>
