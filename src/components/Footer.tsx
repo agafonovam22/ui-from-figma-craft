@@ -146,7 +146,7 @@ const Footer: React.FC = () => {
                 alt="WELL.FITNESS"
                 className="h-[48px] w-auto"
               />
-              <span className="text-[#778093] text-sm">© WellFitness, 2005-2024 Все права защищены</span>
+              <span className="text-[#778093] text-[10px]">© WellFitness, 2005-2024 Все права защищены</span>
             </div>
             
             {/* Links - right aligned */}
@@ -158,8 +158,8 @@ const Footer: React.FC = () => {
                 </button>
               </div>
               <div className="flex gap-6">
-                <a href="#" className="text-[#778093] text-sm hover:text-white transition-colors">Политика конфиденциальности</a>
-                <a href="#" className="text-[#778093] text-sm hover:text-white transition-colors">Публичная оферта</a>
+                <a href="#" className="text-[#778093] text-[10px] hover:text-white transition-colors">Политика конфиденциальности</a>
+                <a href="#" className="text-[#778093] text-[10px] hover:text-white transition-colors">Публичная оферта</a>
               </div>
             </div>
           </div>
