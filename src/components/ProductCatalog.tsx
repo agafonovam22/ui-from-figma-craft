@@ -37,22 +37,22 @@ const ProductCatalog: React.FC = () => {
     },
     {
       id: 7,
-      image: '/lovable-uploads/ba5d833b-7740-4da6-a952-ebefe2bf10ef.png',
+      image: '/lovable-uploads/ef816493-63e0-456b-9a81-a821e2916f6b.png',
       category: 'elliptical'
     },
     {
       id: 8,
-      image: '/lovable-uploads/744c0c6f-bb19-4939-82f1-cf7f5c03f909.png',
+      image: '/lovable-uploads/88c44b8a-27d1-46e8-85f5-3ac95201bf35.png',
       category: 'stepper'
     },
     {
       id: 9,
-      image: '/lovable-uploads/842da711-ef80-457f-b98c-1dfaa642526b.png',
+      image: '/lovable-uploads/54f02e6f-19d4-4fdd-8311-dc574e386bc3.png',
       category: 'abs'
     },
     {
       id: 10,
-      image: '/lovable-uploads/1750d2c2-52ec-4fb6-8d57-e1787f527e83.png',
+      image: '/lovable-uploads/e98f3175-2d34-4325-8fdc-246b9abcedeb.png',
       category: 'bars'
     },
     {
@@ -188,7 +188,7 @@ const ProductCatalog: React.FC = () => {
             className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2"
           >
             <img 
-              src="/lovable-uploads/20ea1fa7-dfc5-4353-a56f-56deceadd1c9.png" 
+              src="/lovable-uploads/956cbbc6-fbc2-4dec-a47f-035bf5c9bdad.png" 
               alt="Перейти в каталог"
               className="w-full h-full object-cover"
             />
