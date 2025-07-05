@@ -125,36 +125,30 @@ const ProductCatalog: React.FC = () => {
   return (
     <section className="w-full py-6 bg-white">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-        <div className="flex items-center gap-8 mb-12">
+        <div className="flex items-center justify-between mb-12">
           <h2 className="text-2xl font-bold text-[#262631]">
             Каталог продукции
           </h2>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
             <button
               onClick={() => setActiveFilter('home')}
-              className={`text-lg font-medium transition-colors relative ${
+              className={`px-6 py-3 rounded-lg font-medium transition-colors ${
                 activeFilter === 'home'
-                  ? 'text-[#F53B49]'
-                  : 'text-gray-500 hover:text-[#262631]'
+                  ? 'bg-[#F53B49] text-white'
+                  : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
               }`}
             >
               Тренажеры для дома
-              {activeFilter === 'home' && (
-                <div className="absolute bottom-[-4px] left-0 right-0 h-[2px] bg-[#F53B49]"></div>
-              )}
             </button>
             <button
               onClick={() => setActiveFilter('fitness')}
-              className={`text-lg font-medium transition-colors relative ${
+              className={`px-6 py-3 rounded-lg font-medium transition-colors ${
                 activeFilter === 'fitness'
-                  ? 'text-[#F53B49]'
-                  : 'text-gray-500 hover:text-[#262631]'
+                  ? 'bg-[#F53B49] text-white'
+                  : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
               }`}
             >
               Фитнес клуба
-              {activeFilter === 'fitness' && (
-                <div className="absolute bottom-[-4px] left-0 right-0 h-[2px] bg-[#F53B49]"></div>
-              )}
             </button>
           </div>
         </div>
@@ -176,7 +170,7 @@ const ProductCatalog: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
-          {currentProducts.slice(6, 11).map((product) => (
+          {currentProducts.slice(6, 10).map((product) => (
             <Link 
               key={product.id} 
               to={`/product/${product.id}`}
@@ -191,7 +185,7 @@ const ProductCatalog: React.FC = () => {
           ))}
           <Link 
             to="/catalog"
-            className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+            className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2"
           >
             <img 
               src="/lovable-uploads/20ea1fa7-dfc5-4353-a56f-56deceadd1c9.png" 
