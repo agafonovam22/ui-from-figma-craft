@@ -138,25 +138,26 @@ const Footer: React.FC = () => {
       {/* Bottom section with #17171E background */}
       <div className="bg-[#17171E] py-6">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-            {/* Logo and copyright - left aligned */}
-            <div className="flex flex-col items-start gap-3">
+          <div className="flex flex-col gap-6">
+            {/* Top row - Logo and buttons */}
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
               <img 
                 src="/lovable-uploads/d50cad00-318e-48ea-96f2-b94cab77942b.png" 
                 alt="WELL.FITNESS"
                 className="h-[48px] w-auto"
               />
-              <span className="text-[#778093] text-[10px]">© WellFitness, 2005-2024 Все права защищены</span>
-            </div>
-            
-            {/* Links - right aligned */}
-            <div className="flex flex-col gap-3 items-end">
+              
               <div className="flex gap-6 items-center">
                 <a href="#" className="text-white text-[10px] hover:opacity-80 transition-opacity font-benzin">Для дилеров</a>
                 <button className="bg-white text-[#262631] px-3 py-2 rounded-[5px] text-[10px] hover:bg-gray-100 transition-colors font-benzin">
                   For suppliers
                 </button>
               </div>
+            </div>
+            
+            {/* Bottom row - copyright and links aligned on same line */}
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3">
+              <span className="text-[#778093] text-[10px]">© WellFitness, 2005-2024 Все права защищены</span>
               <div className="flex gap-6">
                 <a href="#" className="text-[#778093] text-[10px] hover:text-white transition-colors">Политика конфиденциальности</a>
                 <a href="#" className="text-[#778093] text-[10px] hover:text-white transition-colors">Публичная оферта</a>
