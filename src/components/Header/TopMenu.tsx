@@ -44,7 +44,7 @@ const TopMenu: React.FC = () => {
 
   return (
     <header className="flex w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 lg:px-[60px] py-0 border-b border-solid border-[rgba(255,255,255,0.10)]">
-      <div className="flex w-full max-w-[1800px] h-[53px] justify-between items-center gap-2 lg:gap-[50px]">
+      <div className="flex w-full max-w-[1200px] h-[53px] justify-between items-center gap-2 lg:gap-[50px] flex-shrink-0">
         <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
         
         <nav className="flex items-start gap-2 lg:gap-[25px] max-md:hidden" role="navigation" aria-label="Основная навигация">
