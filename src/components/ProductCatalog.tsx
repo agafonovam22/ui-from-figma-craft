@@ -53,8 +53,8 @@ const ProductCatalog: React.FC = () => {
     },
     {
       id: 10,
-      image: '/lovable-uploads/7919df46-5d23-4cdc-8384-edd08bf27547.png',
-      category: 'accessories'
+      image: '/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png',
+      category: 'treadmill'
     },
     {
       id: 11,
@@ -187,16 +187,24 @@ const ProductCatalog: React.FC = () => {
               <img 
                 src={product.image} 
                 alt="Категория товаров"
-                className="w-full h-full object-cover object-center"
+                className={`w-full h-full object-cover ${product.id === 10 ? 'object-right' : 'object-center'}`}
               />
               <Link 
-                to="/product-card"
+                to={product.id === 10 ? "/catalog" : "/product-card"}
                 className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center justify-center"
               >
-                <span className="group-hover:hidden">от 29 990 ₽</span>
-                <span className="hidden group-hover:flex items-center gap-2">
-                  Перейти <ArrowRight className="w-4 h-4" />
-                </span>
+                {product.id === 10 ? (
+                  <span className="flex items-center gap-2">
+                    Перейти в каталог <ArrowRight className="w-4 h-4" />
+                  </span>
+                ) : (
+                  <>
+                    <span className="group-hover:hidden">от 29 990 ₽</span>
+                    <span className="hidden group-hover:flex items-center gap-2">
+                      Перейти <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </>
+                )}
               </Link>
             </div>
           ))}
