@@ -22,6 +22,8 @@ export default {
 			fontFamily: {
 				'benzin': ['Benzin-Regular', 'sans-serif'],
 				'benzin-semibold': ['Benzin-Semibold', 'sans-serif'],
+				'sans': ['Benzin-Regular', 'sans-serif'],
+				'heading': ['Benzin-Semibold', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
