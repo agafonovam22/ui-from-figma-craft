@@ -109,7 +109,7 @@ const BottomMenu: React.FC = () => {
       role="navigation"
       aria-label="Категории товаров"
     >
-      <div className="flex w-full max-w-[1200px] h-[54px] items-center gap-[5px] relative max-md:w-auto max-md:min-w-full flex-shrink-0">
+      <div className="flex w-full max-w-[1800px] h-[54px] items-center gap-[5px] relative max-md:w-auto max-md:min-w-full flex-shrink-0">
         <div 
           ref={scrollContainerRef}
           className="flex items-center gap-[5px] overflow-x-auto scrollbar-hide scroll-smooth"
