@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 
 const ProductCatalog: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<'home' | 'fitness'>('home');
@@ -8,32 +7,32 @@ const ProductCatalog: React.FC = () => {
   const homeProducts = [
     {
       id: 1,
-      image: '/lovable-uploads/20ada6c4-ae62-4233-9179-8defd1593a18.png',
+      image: '/lovable-uploads/e7893606-f51a-4e53-9c80-ab83d081c16c.png',
       category: 'treadmill'
     },
     {
       id: 2,
-      image: '/lovable-uploads/e7d74397-06f3-4670-afdc-0bc336160950.png',
+      image: '/lovable-uploads/41b47400-6434-4309-9474-38fd8527c0f9.png',
       category: 'bike'
     },
     {
       id: 3,
-      image: '/lovable-uploads/a0586dcb-0684-4efa-b928-acf39eb65e77.png',
+      image: '/lovable-uploads/7eb18ab6-a47c-4127-a2e4-520345b3a636.png',
       category: 'rowing'
     },
     {
       id: 4,
-      image: '/lovable-uploads/824098f8-7764-4486-b8f8-c7747fd05db9.png',
+      image: '/lovable-uploads/9deaa8d7-89aa-4671-b709-82d6af4d5f19.png',
       category: 'strength'
     },
     {
       id: 5,
-      image: '/lovable-uploads/ebd9e79f-c0c0-4839-9029-0352b827f19d.png',
+      image: '/lovable-uploads/dcac2877-3c35-4f7d-8abf-95aacc72562e.png',
       category: 'inversion'
     },
     {
       id: 6,
-      image: '/lovable-uploads/1f807af3-c594-4625-9e6c-8756ec7f4e3b.png',
+      image: '/lovable-uploads/34f32079-9172-481c-a342-ebee3d47cd47.png',
       category: 'accessories'
     },
     {
@@ -165,15 +164,6 @@ const ProductCatalog: React.FC = () => {
                 alt="Категория товаров"
                 className="w-full h-full object-cover"
               />
-              <Link 
-                to="/product/1"
-                className="absolute bottom-4 left-4 bg-[#262631] text-white px-4 py-3 rounded-lg transition-all hover:bg-[#F53B49] font-benzin text-sm w-[140px] h-[44px] flex items-center justify-center"
-              >
-                <span className="group-hover:hidden">от 29 990 ₽</span>
-                <span className="hidden group-hover:inline-flex items-center gap-2">
-                  Перейти <ArrowRight className="w-4 h-4" />
-                </span>
-              </Link>
             </div>
           ))}
         </div>
@@ -189,15 +179,6 @@ const ProductCatalog: React.FC = () => {
                 alt="Категория товаров"
                 className="w-full h-full object-cover"
               />
-              <Link 
-                to="/product/1"
-                className="absolute bottom-4 left-4 bg-[#262631] text-white px-4 py-3 rounded-lg transition-all hover:bg-[#F53B49] font-benzin text-sm w-[140px] h-[44px] flex items-center justify-center"
-              >
-                <span className="group-hover:hidden">от 29 990 ₽</span>
-                <span className="hidden group-hover:inline-flex items-center gap-2">
-                  Перейти <ArrowRight className="w-4 h-4" />
-                </span>
-              </Link>
             </div>
           ))}
           <Link 
