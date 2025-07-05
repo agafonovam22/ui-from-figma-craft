@@ -38,23 +38,23 @@ const ProductCatalog: React.FC = () => {
     },
     {
       id: 7,
-      image: '/lovable-uploads/ef816493-63e0-456b-9a81-a821e2916f6b.png',
-      category: 'elliptical'
+      image: '/lovable-uploads/c05b2484-8dc7-4ac6-bd32-3876e288da9a.png',
+      category: 'street'
     },
     {
       id: 8,
-      image: '/lovable-uploads/88c44b8a-27d1-46e8-85f5-3ac95201bf35.png',
-      category: 'stepper'
+      image: '/lovable-uploads/0c78e89b-223e-41c0-a7c1-3e594b9c0a92.png',
+      category: 'elliptical'
     },
     {
       id: 9,
-      image: '/lovable-uploads/54f02e6f-19d4-4fdd-8311-dc574e386bc3.png',
-      category: 'abs'
+      image: '/lovable-uploads/bc820bdc-17a0-4d70-a621-8d5a0ebf37ad.png',
+      category: 'tennis'
     },
     {
       id: 10,
-      image: '/lovable-uploads/e98f3175-2d34-4325-8fdc-246b9abcedeb.png',
-      category: 'bars'
+      image: '/lovable-uploads/7919df46-5d23-4cdc-8384-edd08bf27547.png',
+      category: 'accessories'
     },
     {
       id: 11,
@@ -187,8 +187,17 @@ const ProductCatalog: React.FC = () => {
               <img 
                 src={product.image} 
                 alt="Категория товаров"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
               />
+              <Link 
+                to="/product-card"
+                className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center justify-center"
+              >
+                <span className="group-hover:hidden">от 29 990 ₽</span>
+                <span className="hidden group-hover:flex items-center gap-2">
+                  Перейти <ArrowRight className="w-4 h-4" />
+                </span>
+              </Link>
             </div>
           ))}
           <Link 
