@@ -167,7 +167,7 @@ const ProductCatalog: React.FC = () => {
               />
               <Link 
                 to="/product/1"
-                className="absolute bottom-4 left-4 bg-[#262631] text-white px-4 py-2 rounded-lg transition-all hover:bg-[#F53B49] font-benzin text-sm w-[120px] h-[40px] flex items-center justify-center"
+                className="absolute bottom-4 left-4 bg-[#262631] text-white px-3 py-2 rounded-lg transition-all hover:bg-[#F53B49] font-benzin text-xs w-[110px] h-[36px] flex items-center justify-center"
               >
                 <span className="group-hover:hidden">от 29 990 ₽</span>
                 <span className="hidden group-hover:inline-flex items-center gap-1">
@@ -191,7 +191,7 @@ const ProductCatalog: React.FC = () => {
               />
               <Link 
                 to="/product/1"
-                className="absolute bottom-4 left-4 bg-[#262631] text-white px-4 py-2 rounded-lg transition-all hover:bg-[#F53B49] font-benzin text-sm w-[120px] h-[40px] flex items-center justify-center"
+                className="absolute bottom-4 left-4 bg-[#262631] text-white px-3 py-2 rounded-lg transition-all hover:bg-[#F53B49] font-benzin text-xs w-[110px] h-[36px] flex items-center justify-center"
               >
                 <span className="group-hover:hidden">от 29 990 ₽</span>
                 <span className="hidden group-hover:inline-flex items-center gap-1">
