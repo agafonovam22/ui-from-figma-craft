@@ -6,13 +6,13 @@ const Footer: React.FC = () => {
   return (
     <footer className="w-full text-white">
       {/* Main content section with #262631 background */}
-      <div className="bg-[#262631] py-6">
+      <div className="bg-[#262631] py-8">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
             {/* Каталог */}
             <div>
-              <h3 className="text-[16px] font-semibold mb-4">Каталог</h3>
-              <ul className="space-y-3 text-[#778093] text-[14px]">
+              <h3 className="text-white text-base font-benzin-semibold mb-4">Каталог</h3>
+              <ul className="space-y-2 text-[#778093] text-sm">
                 <li><a href="#" className="hover:text-white transition-colors">Для дома</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Для фитнес-клуба</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Наши бренды</a></li>
@@ -21,8 +21,8 @@ const Footer: React.FC = () => {
 
             {/* Поддержка */}
             <div>
-              <h3 className="text-[16px] font-semibold mb-4">Поддержка</h3>
-              <ul className="space-y-3 text-[#778093] text-[14px]">
+              <h3 className="text-white text-base font-benzin-semibold mb-4">Поддержка</h3>
+              <ul className="space-y-2 text-[#778093] text-sm">
                 <li><a href="#" className="hover:text-white transition-colors">Доставка и оплата</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Условия возврата</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Гарантия</a></li>
@@ -32,8 +32,8 @@ const Footer: React.FC = () => {
 
             {/* О компании */}
             <div>
-              <h3 className="text-[16px] font-semibold mb-4">О компании</h3>
-              <ul className="space-y-3 text-[#778093] text-[14px]">
+              <h3 className="text-white text-base font-benzin-semibold mb-4">О компании</h3>
+              <ul className="space-y-2 text-[#778093] text-sm">
                 <li><a href="#" className="hover:text-white transition-colors">О нас</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Миссия</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Команда</a></li>
@@ -45,42 +45,42 @@ const Footer: React.FC = () => {
 
             {/* Для Бизнеса */}
             <div>
-              <h3 className="text-[16px] font-semibold mb-4">Для Бизнеса</h3>
-              <ul className="space-y-3 text-[#778093] text-[14px]">
+              <h3 className="text-white text-base font-benzin-semibold mb-4">Для Бизнеса</h3>
+              <ul className="space-y-2 text-[#778093] text-sm">
                 <li><a href="#" className="hover:text-white transition-colors">3D проект</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Бизнес-конфигурирование</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Бизнес планирование</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Готовые решения</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Обучение персонала</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Лизинг</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Trade-in</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Trade-In</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">В рассрочку</a></li>
               </ul>
             </div>
 
             {/* Контакты */}
             <div className="lg:col-span-2">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Левая часть - контакты */}
-                <div className="text-[#778093] space-y-3">
+                <div className="text-[#778093] space-y-4">
                   <div>
-                    <p className="text-[14px] mb-1">Для Москвы</p>
-                    <a href="tel:+74996775632" className="text-[16px] font-semibold text-white hover:text-gray-300 transition-colors">
+                    <p className="text-sm mb-1">Для Москвы</p>
+                    <a href="tel:+74996775632" className="text-base font-benzin-semibold text-white hover:text-gray-300 transition-colors">
                       +7 (499) 677-56-32
                     </a>
                   </div>
                   <div>
-                    <p className="text-[14px] mb-1">Для России</p>
-                    <a href="tel:+78007751217" className="text-[16px] font-semibold text-white hover:text-gray-300 transition-colors">
+                    <p className="text-sm mb-1">Для России</p>
+                    <a href="tel:+78007751217" className="text-base font-benzin-semibold text-white hover:text-gray-300 transition-colors">
                       +7 (800) 775-12-17
                     </a>
                   </div>
                   <div>
-                    <p className="text-[14px] mb-1">E-mail</p>
-                    <p className="text-white text-[14px]">info@wellfitness.ru</p>
+                    <p className="text-sm mb-1">E-mail</p>
+                    <p className="text-white text-sm">info@wellfitness.ru</p>
                   </div>
-                  <div className="mt-4">
+                  <div className="mt-6">
                     <CallRequestDialog>
-                      <button className="bg-[#F53B49] text-white px-4 py-2 rounded hover:bg-[#e63946] transition-colors text-[14px] font-benzin">
+                      <button className="bg-[#F53B49] text-white px-6 py-2.5 rounded-[5px] hover:bg-[#e63946] transition-colors text-sm font-benzin">
                         Заказать звонок
                       </button>
                     </CallRequestDialog>
@@ -88,44 +88,44 @@ const Footer: React.FC = () => {
                 </div>
                 
                 {/* Правая часть */}
-                <div className="text-[#778093] space-y-4">
+                <div className="text-[#778093] space-y-6">
                   <div>
-                    <p className="text-[16px] font-semibold text-white mb-2">Для дома</p>
+                    <p className="text-base font-benzin-semibold text-white mb-3">Для дома</p>
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
-                        <span className="text-[10px] text-white font-bold">VK</span>
+                      <div className="w-8 h-8 bg-[#5C6476] rounded-full flex items-center justify-center">
+                        <span className="text-xs text-white font-bold">VK</span>
                       </div>
-                      <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
-                        <span className="text-[10px] text-white font-bold">TG</span>
+                      <div className="w-8 h-8 bg-[#5C6476] rounded-full flex items-center justify-center">
+                        <span className="text-xs text-white font-bold">TG</span>
                       </div>
-                      <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
-                        <span className="text-[10px] text-white font-bold">YT</span>
+                      <div className="w-8 h-8 bg-[#5C6476] rounded-full flex items-center justify-center">
+                        <span className="text-xs text-white font-bold">YT</span>
                       </div>
                     </div>
                   </div>
                   
                   <div>
-                    <p className="text-[16px] font-semibold text-white mb-2">Для дома</p>
+                    <p className="text-base font-benzin-semibold text-white mb-3">Для дома</p>
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
-                        <span className="text-[10px] text-white font-bold">VK</span>
+                      <div className="w-8 h-8 bg-[#5C6476] rounded-full flex items-center justify-center">
+                        <span className="text-xs text-white font-bold">VK</span>
                       </div>
-                      <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
-                        <span className="text-[10px] text-white font-bold">TG</span>
+                      <div className="w-8 h-8 bg-[#5C6476] rounded-full flex items-center justify-center">
+                        <span className="text-xs text-white font-bold">TG</span>
                       </div>
-                      <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
-                        <span className="text-[10px] text-white font-bold">YT</span>
+                      <div className="w-8 h-8 bg-[#5C6476] rounded-full flex items-center justify-center">
+                        <span className="text-xs text-white font-bold">YT</span>
                       </div>
                     </div>
                   </div>
                   
                   <div>
-                    <p className="text-[14px] mb-2 text-[#778093]">Принимаем к оплате</p>
+                    <p className="text-sm mb-3 text-[#778093]">Принимаем к оплате</p>
                     <div className="flex gap-1">
-                      <div className="bg-white rounded px-2 py-1 text-[10px] text-black font-bold">VISA</div>
-                      <div className="bg-white rounded px-2 py-1 text-[10px] text-black font-bold">VISA</div>
-                      <div className="bg-white rounded px-2 py-1 text-[10px] text-black font-bold">VISA</div>
-                      <div className="bg-white rounded px-2 py-1 text-[10px] text-black font-bold">VISA</div>
+                      <div className="bg-white rounded px-2 py-1 text-xs text-black font-bold">VISA</div>
+                      <div className="bg-white rounded px-2 py-1 text-xs text-black font-bold">VISA</div>
+                      <div className="bg-white rounded px-2 py-1 text-xs text-black font-bold">VISA</div>
+                      <div className="bg-white rounded px-2 py-1 text-xs text-black font-bold">VISA</div>
                     </div>
                   </div>
                 </div>
@@ -146,20 +146,20 @@ const Footer: React.FC = () => {
                 alt="WELL.FITNESS"
                 className="h-[48px] w-auto"
               />
-              <span className="text-[#778093] text-[13px]">© WellFitness, 2005-2024 Все права защищены</span>
+              <span className="text-[#778093] text-sm">© WellFitness, 2005-2024 Все права защищены</span>
             </div>
             
             {/* Links - right aligned */}
             <div className="flex flex-col gap-3 items-end">
               <div className="flex gap-6 items-center">
-                <a href="#" className="text-white text-[17px] hover:opacity-80 transition-opacity">Для дилеров</a>
-                <button className="bg-white text-black px-4 py-2 rounded text-[17px] hover:bg-gray-100 transition-colors font-benzin">
+                <a href="#" className="text-white text-[10px] hover:opacity-80 transition-opacity font-benzin">Для дилеров</a>
+                <button className="bg-white text-[#262631] px-3 py-2 rounded-[5px] text-[10px] hover:bg-gray-100 transition-colors font-benzin">
                   For suppliers
                 </button>
               </div>
               <div className="flex gap-6">
-                <a href="#" className="text-[#778093] text-[13px] hover:text-white transition-colors">Политика конфиденциальности</a>
-                <a href="#" className="text-[#778093] text-[13px] hover:text-white transition-colors">Публичная оферта</a>
+                <a href="#" className="text-[#778093] text-sm hover:text-white transition-colors">Политика конфиденциальности</a>
+                <a href="#" className="text-[#778093] text-sm hover:text-white transition-colors">Публичная оферта</a>
               </div>
             </div>
           </div>
