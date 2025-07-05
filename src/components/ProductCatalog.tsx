@@ -166,7 +166,7 @@ const ProductCatalog: React.FC = () => {
               />
               <Link 
                 to="/product-card"
-                className="absolute bottom-4 left-4 bg-[#262631] text-white px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#F53B49] transition-colors"
+                className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#F53B49] hover:text-white transition-colors"
               >
                 от 29 990 ₽
               </Link>
