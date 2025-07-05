@@ -162,8 +162,14 @@ const ProductCatalog: React.FC = () => {
               <img 
                 src={product.image} 
                 alt="Категория товаров"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
               />
+              <Link 
+                to="/product-card"
+                className="absolute bottom-4 left-4 bg-[#262631] text-white px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#F53B49] transition-colors"
+              >
+                от 29 990 ₽
+              </Link>
             </div>
           ))}
         </div>
