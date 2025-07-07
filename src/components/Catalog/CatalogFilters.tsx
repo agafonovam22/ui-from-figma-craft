@@ -223,14 +223,21 @@ const CatalogFilters: React.FC = () => {
           )}
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="mt-5 mb-5" />
 
         {/* Apply Filters Button */}
-        <Button size="sm" className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white mb-3">
+        <Button 
+          className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white mb-3 h-12 rounded-lg text-[16px]" 
+          style={{fontFamily: 'Benzin-Regular'}}
+        >
           Применить
         </Button>
         
-        <Button size="sm" variant="outline" className="w-full">
+        <Button 
+          variant="outline" 
+          className="w-full border-[#262631] text-[#262631] hover:bg-gray-50 h-12 rounded-lg text-[16px]" 
+          style={{fontFamily: 'Benzin-Regular'}}
+        >
           Сбросить
         </Button>
       </div>
