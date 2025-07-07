@@ -159,7 +159,7 @@ const About: React.FC = () => {
                   {/* Левая часть с текстом - 3/5 ширины */}
                   <div className="w-3/5 z-10 pl-16 flex flex-col justify-center">
                     <div className="mb-4">
-                      <h2 className="text-5xl font-bold leading-tight">
+                      <h2 className="text-3xl font-benzin-semibold leading-tight">
                         <span className="text-[#262631]">Well Fitness — </span>
                         <span className="text-[#F53B49]">надежный<br />партнер с 2005 года<br /></span>
                         <span className="text-[#262631]">для сотен компаний<br />от Калининграда<br />до Владивостока.</span>
