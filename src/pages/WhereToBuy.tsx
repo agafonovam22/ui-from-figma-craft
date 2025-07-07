@@ -166,8 +166,8 @@ const WhereToBuy: React.FC = () => {
               <Map stores={partnerStores} />
             </div>
           ) : (
-            <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-between h-[328px]">
-              <div className="flex-1 w-1/3">
+            <div className="bg-gray-50 rounded-lg flex h-[328px] overflow-hidden">
+              <div className="flex-1 w-1/3 p-6">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
                   Фирменный магазин<br />Well Fitness
                 </h2>
@@ -203,11 +203,11 @@ const WhereToBuy: React.FC = () => {
                 </div>
               </div>
               
-              <div className="w-2/3 h-full ml-8">
+              <div className="w-2/3 h-full">
                 <img 
                   src="/lovable-uploads/e0b32acd-ffda-47fd-8521-94ebe288876d.png"
                   alt="Фирменный магазин Well Fitness"
-                  className="w-full h-full object-cover rounded-lg"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
