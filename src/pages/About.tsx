@@ -563,8 +563,8 @@ const About: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Карусель изображений с центральным элементом */}
-                <div className="relative">
+                {/* Карусель изображений во всю ширину экрана */}
+                <div className="relative -mx-2 sm:-mx-4 lg:-mx-[60px]">
                   <Carousel className="w-full" 
                     opts={{
                       align: "center",
@@ -572,10 +572,10 @@ const About: React.FC = () => {
                       slidesToScroll: 1,
                     }}
                   >
-                    <CarouselContent className="-ml-2 md:-ml-4">
-                      {/* Боковые изображения меньше */}
-                      <CarouselItem className="pl-2 md:pl-4 basis-1/3">
-                        <div className="h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
+                    <CarouselContent className="ml-0">
+                      {/* Первое изображение - частично скрыто слева */}
+                      <CarouselItem className="basis-[66.66%] flex justify-center">
+                        <div className="w-[400px] h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-500 opacity-70 scale-90">
                           <img 
                             src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop"
                             alt="Фитнес оборудование"
@@ -584,9 +584,9 @@ const About: React.FC = () => {
                         </div>
                       </CarouselItem>
                       
-                      {/* Центральное изображение больше */}
-                      <CarouselItem className="pl-2 md:pl-4 basis-1/3">
-                        <div className="h-[350px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-100 scale-105 relative z-10">
+                      {/* Центральное изображение - в фокусе */}
+                      <CarouselItem className="basis-[66.66%] flex justify-center">
+                        <div className="w-[500px] h-[350px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-500 opacity-100 scale-100 relative z-10">
                           <img 
                             src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop"
                             alt="Тренировка в спортзале"
@@ -595,9 +595,9 @@ const About: React.FC = () => {
                         </div>
                       </CarouselItem>
                       
-                      {/* Боковые изображения меньше */}
-                      <CarouselItem className="pl-2 md:pl-4 basis-1/3">
-                        <div className="h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
+                      {/* Третье изображение - частично скрыто справа */}
+                      <CarouselItem className="basis-[66.66%] flex justify-center">
+                        <div className="w-[400px] h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-500 opacity-70 scale-90">
                           <img 
                             src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=400&fit=crop"
                             alt="Спортивная активность"
@@ -606,8 +606,8 @@ const About: React.FC = () => {
                         </div>
                       </CarouselItem>
                       
-                      <CarouselItem className="pl-2 md:pl-4 basis-1/3">
-                        <div className="h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
+                      <CarouselItem className="basis-[66.66%] flex justify-center">
+                        <div className="w-[400px] h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-500 opacity-70 scale-90">
                           <img 
                             src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop"
                             alt="Фитнес центр"
@@ -616,8 +616,8 @@ const About: React.FC = () => {
                         </div>
                       </CarouselItem>
                       
-                      <CarouselItem className="pl-2 md:pl-4 basis-1/3">
-                        <div className="h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
+                      <CarouselItem className="basis-[66.66%] flex justify-center">
+                        <div className="w-[400px] h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-500 opacity-70 scale-90">
                           <img 
                             src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop"
                             alt="Спортивное оборудование"
@@ -627,18 +627,18 @@ const About: React.FC = () => {
                       </CarouselItem>
                     </CarouselContent>
                     
-                    <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-0 shadow-lg" />
-                    <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-0 shadow-lg" />
+                    <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-0 shadow-lg z-20" />
+                    <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-0 shadow-lg z-20" />
                   </Carousel>
-
-                  {/* Навигационные точки */}
-                  <div className="flex justify-center mt-6 gap-2">
-                    <div className="w-8 h-1 bg-[#F53B49] rounded"></div>
-                    <div className="w-2 h-1 bg-gray-300 rounded"></div>
-                    <div className="w-2 h-1 bg-gray-300 rounded"></div>
-                    <div className="w-2 h-1 bg-gray-300 rounded"></div>
-                    <div className="w-2 h-1 bg-gray-300 rounded"></div>
-                  </div>
+                </div>
+                
+                {/* Навигационные точки */}
+                <div className="flex justify-center mt-6 gap-2">
+                  <div className="w-8 h-1 bg-[#F53B49] rounded"></div>
+                  <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                  <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                  <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                  <div className="w-2 h-1 bg-gray-300 rounded"></div>
                 </div>
               </div>
             </section>
