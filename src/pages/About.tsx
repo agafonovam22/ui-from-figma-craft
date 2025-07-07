@@ -144,8 +144,8 @@ const About: React.FC = () => {
             </div>
             
             {/* Main Title - уменьшен в 2 раза */}
-            <h1 className="text-[40px] font-bold text-[#17171E] mb-8 leading-tight">
-              О КОМПАНИИ
+            <h1 className="text-[40px] font-bold text-[#17171E] leading-tight" style={{ marginBottom: '40px' }}>
+              О компании
             </h1>
           </div>
         </section>
@@ -153,7 +153,7 @@ const About: React.FC = () => {
         {/* Banner - уменьшен на 100px */}
         <section className="w-full">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="bg-gray-100 overflow-hidden relative" style={{ height: '300px' }}>
+            <div className="bg-gray-100 overflow-hidden relative rounded-lg" style={{ height: '236px' }}>
               <div className="py-12 relative h-full">
                 <div className="flex items-center justify-between h-full">
                   {/* Левая часть с текстом */}
@@ -500,7 +500,7 @@ const About: React.FC = () => {
             {/* Statistics Banner - same size as main banner */}
             <section className="w-full">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-                <div className="bg-gray-100 overflow-hidden relative" style={{ height: '300px' }}>
+                <div className="bg-gray-100 overflow-hidden relative rounded-lg" style={{ height: '236px' }}>
                   <div className="py-12 relative h-full">
                     <div className="flex items-center justify-between h-full">
                       {/* Statistics content */}
