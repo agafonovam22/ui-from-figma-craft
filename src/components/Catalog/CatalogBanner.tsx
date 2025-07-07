@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const CatalogBanner: React.FC = () => {
   return (
-    <div className="bg-gradient-to-r from-white to-red-100 rounded-lg p-8 mb-8 relative overflow-hidden">
+    <div className="bg-gradient-to-r from-white to-red-100 rounded-lg p-8 mb-8 relative overflow-hidden h-[319px] flex items-center">
       <div className="flex items-center justify-between">
         <div className="max-w-md">
           <div className="text-xs text-[#F53B49] font-medium mb-2">ZERO RUNNER</div>
