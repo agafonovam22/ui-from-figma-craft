@@ -187,7 +187,7 @@ const About: React.FC = () => {
             <div className="flex gap-4">
               <button 
                 onClick={() => setActiveTab('about')}
-                className={`px-6 py-3 rounded-xl text-base font-benzin transition-colors ${
+                className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
                   activeTab === 'about' 
                     ? 'bg-[#F53B49] text-white' 
                     : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
@@ -197,7 +197,7 @@ const About: React.FC = () => {
               </button>
               <button 
                 onClick={() => setActiveTab('mission')}
-                className={`px-6 py-3 rounded-xl text-base font-benzin transition-colors ${
+                className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
                   activeTab === 'mission' 
                     ? 'bg-[#F53B49] text-white' 
                     : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
@@ -207,7 +207,7 @@ const About: React.FC = () => {
               </button>
               <button 
                 onClick={() => setActiveTab('team')}
-                className={`px-6 py-3 rounded-xl text-base font-benzin transition-colors ${
+                className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
                   activeTab === 'team' 
                     ? 'bg-[#F53B49] text-white' 
                     : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
@@ -217,7 +217,7 @@ const About: React.FC = () => {
               </button>
               <button 
                 onClick={() => setActiveTab('projects')}
-                className={`px-6 py-3 rounded-xl text-base font-benzin transition-colors ${
+                className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
                   activeTab === 'projects' 
                     ? 'bg-[#F53B49] text-white' 
                     : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
@@ -227,7 +227,7 @@ const About: React.FC = () => {
               </button>
               <button 
                 onClick={() => setActiveTab('news')}
-                className={`px-6 py-3 rounded-xl text-base font-benzin transition-colors ${
+                className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
                   activeTab === 'news' 
                     ? 'bg-[#F53B49] text-white' 
                     : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
