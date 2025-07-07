@@ -103,8 +103,8 @@ const PasswordReset: React.FC = () => {
                         <img 
                           src="/lovable-uploads/163791b0-3a3a-443b-9703-750e208fd889.png" 
                           alt="Checkmark" 
-                          className="w-24 h-auto"
-                          style={{ height: '120px', objectFit: 'contain' }}
+                          className="w-48 h-auto"
+                          style={{ height: '240px', objectFit: 'contain' }}
                         />
                       </div>
                       
