@@ -55,7 +55,7 @@ const CatalogFilters: React.FC = () => {
               <input type="radio" name="price" className="mr-2" />
               до 100 000 ₽
             </label>
-            <button className="text-[#F53B49] text-[14px] mt-2" style={{fontFamily: 'Manrope'}}>Показать все</button>
+            <button className="text-[#F53B49] text-[12px] mt-2 text-center w-full" style={{fontFamily: 'Benzin-Regular'}}>Показать все</button>
           </div>
         </div>
 
@@ -84,7 +84,7 @@ const CatalogFilters: React.FC = () => {
               <input type="checkbox" className="mr-2" />
               DKN
             </label>
-            <button className="text-[#F53B49] text-[14px] mt-2" style={{fontFamily: 'Manrope'}}>Показать все</button>
+            <button className="text-[#F53B49] text-[12px] mt-2 text-center w-full" style={{fontFamily: 'Benzin-Regular'}}>Показать все</button>
           </div>
         </div>
 
