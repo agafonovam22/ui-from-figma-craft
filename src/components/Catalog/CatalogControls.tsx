@@ -40,7 +40,7 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({ sortBy, setSortBy }) 
       <div className="bg-[#F8F8FD] rounded-lg p-4 mb-6">
         <div className="flex flex-wrap items-center gap-3">
           {/* Removable filter */}
-          <div className="flex items-center bg-[#262631] text-white px-3 py-1 rounded text-xs">
+          <div className="flex items-center bg-[#262631] text-white px-4 py-2 rounded-full font-benzin" style={{ fontSize: '12px' }}>
             В наличии
             <button className="ml-2 text-white hover:text-gray-300">
               ×
@@ -48,15 +48,15 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({ sortBy, setSortBy }) 
           </div>
           
           {/* Status filters */}
-          <button className="bg-[#F53B49] text-white px-3 py-1 rounded text-xs hover:bg-[#e63946]">
+          <button className="bg-white text-[#F53B49] border border-[#F53B49] px-4 py-2 rounded-full font-benzin hover:bg-[#F53B49] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
             Акция
           </button>
           
-          <button className="bg-green-500 text-white px-3 py-1 rounded text-xs hover:bg-green-600">
+          <button className="bg-white text-[#31BF00] border border-[#31BF00] px-4 py-2 rounded-full font-benzin hover:bg-[#31BF00] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
             Новинка
           </button>
           
-          <button className="bg-blue-500 text-white px-3 py-1 rounded text-xs hover:bg-blue-600">
+          <button className="bg-white text-[#4B7EE8] border border-[#4B7EE8] px-4 py-2 rounded-full font-benzin hover:bg-[#4B7EE8] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
             Хит продаж
           </button>
           
