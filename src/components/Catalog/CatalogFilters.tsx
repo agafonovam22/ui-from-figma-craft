@@ -32,7 +32,7 @@ const CatalogFilters: React.FC = () => {
         {/* Price Filter */}
         <div className="mb-6">
           <h3 
-            className="text-[14px] text-[#262631] mb-3 flex items-center justify-between cursor-pointer" 
+            className="text-[14px] text-[#262631] mb-[14px] flex items-center justify-between cursor-pointer" 
             style={{fontFamily: 'Benzin-Regular'}}
             onClick={() => toggleFilter('price')}
           >
@@ -75,18 +75,18 @@ const CatalogFilters: React.FC = () => {
                   <input type="radio" name="price" className="mr-2" />
                   до 100 000 ₽
                 </label>
-                <button className="text-[#F53B49] text-[12px] mt-2 text-center w-full" style={{fontFamily: 'Benzin-Regular'}}>Показать все</button>
+                <button className="text-[#F53B49] text-[12px] mt-5 text-center w-full" style={{fontFamily: 'Benzin-Regular'}}>Показать все</button>
               </div>
             </>
           )}
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="mt-5 mb-5" />
 
         {/* Brand Filter */}
         <div className="mb-6">
           <h3 
-            className="text-[14px] text-[#262631] mb-3 flex items-center justify-between cursor-pointer" 
+            className="text-[14px] text-[#262631] mb-[14px] flex items-center justify-between cursor-pointer" 
             style={{fontFamily: 'Benzin-Regular'}}
             onClick={() => toggleFilter('brand')}
           >
@@ -111,17 +111,17 @@ const CatalogFilters: React.FC = () => {
                 <input type="checkbox" className="mr-2" />
                 DKN
               </label>
-              <button className="text-[#F53B49] text-[12px] mt-2 text-center w-full" style={{fontFamily: 'Benzin-Regular'}}>Показать все</button>
+              <button className="text-[#F53B49] text-[12px] mt-5 text-center w-full" style={{fontFamily: 'Benzin-Regular'}}>Показать все</button>
             </div>
           )}
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="mt-5 mb-5" />
 
         {/* Type Filter */}
         <div className="mb-6">
           <h3 
-            className="text-[14px] text-[#262631] mb-3 flex items-center justify-between cursor-pointer" 
+            className="text-[14px] text-[#262631] mb-[14px] flex items-center justify-between cursor-pointer" 
             style={{fontFamily: 'Benzin-Regular'}}
             onClick={() => toggleFilter('type')}
           >
@@ -146,12 +146,12 @@ const CatalogFilters: React.FC = () => {
           )}
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="mt-5 mb-5" />
 
         {/* Power Filter */}
         <div className="mb-6">
           <h3 
-            className="text-[14px] text-[#262631] mb-3 flex items-center justify-between cursor-pointer" 
+            className="text-[14px] text-[#262631] mb-[14px] flex items-center justify-between cursor-pointer" 
             style={{fontFamily: 'Benzin-Regular'}}
             onClick={() => toggleFilter('power')}
           >
@@ -175,12 +175,12 @@ const CatalogFilters: React.FC = () => {
           )}
         </div>
 
-        <Separator className="my-6" />
+        <Separator className="mt-5 mb-5" />
 
         {/* Trainer Type Filter */}
         <div className="mb-6">
           <h3 
-            className="text-[14px] text-[#262631] mb-3 flex items-center justify-between cursor-pointer" 
+            className="text-[14px] text-[#262631] mb-[14px] flex items-center justify-between cursor-pointer" 
             style={{fontFamily: 'Benzin-Regular'}}
             onClick={() => toggleFilter('trainer')}
           >
