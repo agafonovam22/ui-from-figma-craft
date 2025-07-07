@@ -454,7 +454,7 @@ const About: React.FC = () => {
                     style={{ objectPosition: 'center right' }}
                   />
                   {/* Statistics content overlay */}
-                  <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[410px] bg-white rounded-lg p-6 shadow-lg">
+                  <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[590px] bg-white rounded-lg p-6 shadow-lg">
                     <div className="h-full flex flex-col justify-between">
                       <div className="mb-6">
                         <p className="text-gray-700 text-sm leading-relaxed">
