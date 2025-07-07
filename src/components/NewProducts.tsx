@@ -106,17 +106,17 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
           <div className="flex items-center gap-2">
             <button
               onClick={scrollLeft}
-              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-[#262631] hover:text-white hover:border-[#262631] transition-colors"
               aria-label="Прокрутить влево"
             >
-              <ChevronLeft className="w-5 h-5 text-gray-600" />
+              <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={scrollRight}
-              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-[#262631] hover:text-white hover:border-[#262631] transition-colors"
               aria-label="Прокрутить вправо"
             >
-              <ChevronRight className="w-5 h-5 text-gray-600" />
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
         </div>
@@ -129,13 +129,13 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
           {products.map((product, index) => (
             <div 
               key={product.id}
-              className="relative flex-shrink-0 w-60"
+              className="relative flex-shrink-0 w-72"
               onMouseEnter={() => setHoveredProduct(product.id)}
               onMouseLeave={() => setHoveredProduct(null)}
             >
               <Link 
                 to={`/product/${product.id}`}
-                className="block bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-60"
+                className="block bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
               >
                 <img 
                   src={product.image} 
