@@ -7,7 +7,6 @@ import CatalogFilters from '@/components/Catalog/CatalogFilters';
 import CatalogBanner from '@/components/Catalog/CatalogBanner';
 import CatalogControls from '@/components/Catalog/CatalogControls';
 import CatalogGrid from '@/components/Catalog/CatalogGrid';
-import { Button } from '@/components/ui/button';
 import {
   Breadcrumb,
   BreadcrumbList,

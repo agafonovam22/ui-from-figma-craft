@@ -32,7 +32,6 @@ import OrderSuccess from "./pages/OrderSuccess";
 import Comparison from "./pages/Comparison";
 import NotFound from "./pages/NotFound";
 import Favorites from "./pages/Favorites";
-import ProductCardConfigurator from "./pages/ProductCardConfigurator";
 
 const queryClient = new QueryClient();
 
@@ -70,7 +69,6 @@ const App = () => (
           <Route path="/order-success" element={<OrderSuccess />} />
           <Route path="/comparison" element={<Comparison />} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="/product-card-configurator" element={<ProductCardConfigurator />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
