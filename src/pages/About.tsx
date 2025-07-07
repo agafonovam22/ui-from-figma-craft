@@ -513,8 +513,9 @@ const About: React.FC = () => {
             {/* Мы сегодня - это */}
             <section className="py-16">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-                <h2 className="text-[40px] font-bold text-[#17171E] mb-12 leading-tight">
-                  Мы сегодня - это:
+                <h2 className="mb-12 leading-tight" style={{ fontSize: '32px', fontFamily: 'Benzin-Semibold' }}>
+                  <span style={{ color: 'var(--Dark-Grey, #262631)' }}>Мы сегодня </span>
+                  <span style={{ color: '#778093' }}>- это:</span>
                 </h2>
                 
                 {/* Шесть информационных блоков */}
