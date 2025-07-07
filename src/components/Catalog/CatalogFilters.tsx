@@ -12,7 +12,7 @@ const CatalogFilters: React.FC = () => {
       <h1 className="text-xl font-bold text-[#262631] mb-6">Каталог</h1>
       
       {/* Filters Container */}
-      <div className="bg-gray-100 rounded-lg p-6 mb-6">
+      <div className="bg-[#F8F8FD] rounded-lg p-6 mb-6">
         <h2 className="text-lg font-semibold text-[#262631] mb-6">Фильтр</h2>
         
         {/* Price Filter */}
