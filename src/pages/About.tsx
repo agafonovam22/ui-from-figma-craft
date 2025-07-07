@@ -563,12 +563,18 @@ const About: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Карусель изображений */}
+                {/* Карусель изображений с центральным элементом */}
                 <div className="relative">
-                  <Carousel className="w-full">
-                    <CarouselContent>
-                      <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                        <div className="h-[400px] bg-gray-200 rounded-lg overflow-hidden">
+                  <Carousel className="w-full" 
+                    opts={{
+                      align: "center",
+                      loop: true,
+                    }}
+                  >
+                    <CarouselContent className="-ml-2 md:-ml-4">
+                      {/* Первое изображение */}
+                      <CarouselItem className="pl-2 md:pl-4 basis-4/5 md:basis-2/5 lg:basis-1/4">
+                        <div className="h-[300px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
                           <img 
                             src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop"
                             alt="Фитнес оборудование"
@@ -576,17 +582,21 @@ const About: React.FC = () => {
                           />
                         </div>
                       </CarouselItem>
-                      <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                        <div className="h-[400px] bg-gray-200 rounded-lg overflow-hidden">
+                      
+                      {/* Центральное изображение */}
+                      <CarouselItem className="pl-2 md:pl-4 basis-4/5 md:basis-2/5 lg:basis-2/5">
+                        <div className="h-[400px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 scale-100 opacity-100 z-10 relative">
                           <img 
-                            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop"
+                            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop"
                             alt="Тренировка в спортзале"
                             className="w-full h-full object-cover"
                           />
                         </div>
                       </CarouselItem>
-                      <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                        <div className="h-[400px] bg-gray-200 rounded-lg overflow-hidden">
+                      
+                      {/* Третье изображение */}
+                      <CarouselItem className="pl-2 md:pl-4 basis-4/5 md:basis-2/5 lg:basis-1/4">
+                        <div className="h-[300px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
                           <img 
                             src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400&h=400&fit=crop"
                             alt="Спортивная активность"
@@ -594,15 +604,36 @@ const About: React.FC = () => {
                           />
                         </div>
                       </CarouselItem>
+                      
+                      {/* Дополнительные изображения для цикличности */}
+                      <CarouselItem className="pl-2 md:pl-4 basis-4/5 md:basis-2/5 lg:basis-1/4">
+                        <div className="h-[300px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
+                          <img 
+                            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=400&fit=crop"
+                            alt="Фитнес центр"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </CarouselItem>
+                      
+                      <CarouselItem className="pl-2 md:pl-4 basis-4/5 md:basis-2/5 lg:basis-1/4">
+                        <div className="h-[300px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
+                          <img 
+                            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=400&fit=crop"
+                            alt="Спортивное оборудование"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </CarouselItem>
                     </CarouselContent>
-                    <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2" />
-                    <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2" />
+                    
+                    <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-0 shadow-lg" />
+                    <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-0 shadow-lg" />
                   </Carousel>
 
                   {/* Навигационные точки */}
                   <div className="flex justify-center mt-6 gap-2">
                     <div className="w-8 h-1 bg-[#F53B49] rounded"></div>
-                    <div className="w-2 h-1 bg-gray-300 rounded"></div>
                     <div className="w-2 h-1 bg-gray-300 rounded"></div>
                     <div className="w-2 h-1 bg-gray-300 rounded"></div>
                     <div className="w-2 h-1 bg-gray-300 rounded"></div>
