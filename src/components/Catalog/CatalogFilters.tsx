@@ -26,7 +26,7 @@ const CatalogFilters: React.FC = () => {
       <h1 className="text-[48px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Каталог</h1>
       
       {/* Filters Container */}
-      <div className="bg-[#F8F8FD] rounded-lg p-6 mb-6">
+      <div className="bg-[#F8F8FD] rounded-lg p-6 mb-6 mt-[74px]">
         <h2 className="text-[20px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h2>
         
         {/* Price Filter */}
