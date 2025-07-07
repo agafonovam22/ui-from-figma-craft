@@ -569,57 +569,57 @@ const About: React.FC = () => {
                     opts={{
                       align: "center",
                       loop: true,
+                      slidesToScroll: 1,
                     }}
                   >
                     <CarouselContent className="-ml-2 md:-ml-4">
-                      {/* Первое изображение */}
-                      <CarouselItem className="pl-2 md:pl-4 basis-4/5 md:basis-2/5 lg:basis-1/4">
-                        <div className="h-[300px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
+                      {/* Боковые изображения меньше */}
+                      <CarouselItem className="pl-2 md:pl-4 basis-1/3">
+                        <div className="h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
                           <img 
-                            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop"
+                            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop"
                             alt="Фитнес оборудование"
                             className="w-full h-full object-cover"
                           />
                         </div>
                       </CarouselItem>
                       
-                      {/* Центральное изображение */}
-                      <CarouselItem className="pl-2 md:pl-4 basis-4/5 md:basis-2/5 lg:basis-2/5">
-                        <div className="h-[400px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 scale-100 opacity-100 z-10 relative">
+                      {/* Центральное изображение больше */}
+                      <CarouselItem className="pl-2 md:pl-4 basis-1/3">
+                        <div className="h-[350px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-100 scale-105 relative z-10">
                           <img 
-                            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop"
+                            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop"
                             alt="Тренировка в спортзале"
                             className="w-full h-full object-cover"
                           />
                         </div>
                       </CarouselItem>
                       
-                      {/* Третье изображение */}
-                      <CarouselItem className="pl-2 md:pl-4 basis-4/5 md:basis-2/5 lg:basis-1/4">
-                        <div className="h-[300px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
+                      {/* Боковые изображения меньше */}
+                      <CarouselItem className="pl-2 md:pl-4 basis-1/3">
+                        <div className="h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
                           <img 
-                            src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400&h=400&fit=crop"
+                            src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=400&fit=crop"
                             alt="Спортивная активность"
                             className="w-full h-full object-cover"
                           />
                         </div>
                       </CarouselItem>
                       
-                      {/* Дополнительные изображения для цикличности */}
-                      <CarouselItem className="pl-2 md:pl-4 basis-4/5 md:basis-2/5 lg:basis-1/4">
-                        <div className="h-[300px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
+                      <CarouselItem className="pl-2 md:pl-4 basis-1/3">
+                        <div className="h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
                           <img 
-                            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=400&fit=crop"
+                            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop"
                             alt="Фитнес центр"
                             className="w-full h-full object-cover"
                           />
                         </div>
                       </CarouselItem>
                       
-                      <CarouselItem className="pl-2 md:pl-4 basis-4/5 md:basis-2/5 lg:basis-1/4">
-                        <div className="h-[300px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
+                      <CarouselItem className="pl-2 md:pl-4 basis-1/3">
+                        <div className="h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-300 opacity-70 scale-90">
                           <img 
-                            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=400&fit=crop"
+                            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop"
                             alt="Спортивное оборудование"
                             className="w-full h-full object-cover"
                           />
