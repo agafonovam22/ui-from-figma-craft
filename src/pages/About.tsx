@@ -501,7 +501,7 @@ const About: React.FC = () => {
                 
                 <div className="w-full bg-white rounded-lg overflow-hidden">
                   <img 
-                    src="/lovable-uploads/80ae9fd1-6366-4282-90a5-44d024b6ccac.png"
+                    src="/lovable-uploads/b06c69dd-14f1-40c1-9e8a-9b08c05e47aa.png"
                     alt="Карта России с городами присутствия"
                     className="w-full h-auto"
                     style={{ maxHeight: '600px', objectFit: 'contain' }}
