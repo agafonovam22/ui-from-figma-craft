@@ -58,7 +58,7 @@ const CatalogFilters: React.FC = () => {
                 />
               </div>
               
-              <div className="space-y-2 text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
+              <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
                 <label className="flex items-center">
                   <input type="radio" name="price" className="mr-2" />
                   до 500 ₽
@@ -94,7 +94,7 @@ const CatalogFilters: React.FC = () => {
             {expandedFilters.brand ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
           </h3>
           {expandedFilters.brand && (
-            <div className="space-y-2 text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
+            <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
               <label className="flex items-center">
                 <input type="checkbox" className="mr-2" />
                 True
@@ -129,7 +129,7 @@ const CatalogFilters: React.FC = () => {
             {expandedFilters.type ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
           </h3>
           {expandedFilters.type && (
-            <div className="space-y-2 text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
+            <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
               <label className="flex items-center">
                 <input type="checkbox" className="mr-2" />
                 Домашние
@@ -159,7 +159,7 @@ const CatalogFilters: React.FC = () => {
             {expandedFilters.power ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
           </h3>
           {expandedFilters.power && (
-            <div className="space-y-2 text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
+            <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
               <div className="flex items-center justify-between">
                 <span>1,25CHP</span>
                 <span>2x 5600 л.с</span>
@@ -188,7 +188,7 @@ const CatalogFilters: React.FC = () => {
             {expandedFilters.trainer ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
           </h3>
           {expandedFilters.trainer && (
-            <div className="space-y-2 text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
+            <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
               <label className="flex items-center">
                 <input type="radio" name="trainer-type" className="mr-2" />
                 Магнитный
