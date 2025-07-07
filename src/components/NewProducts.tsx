@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 interface NewProductsProps {
@@ -7,26 +7,78 @@ interface NewProductsProps {
 }
 
 const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) => {
+  const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
+
   const products = [
     {
       id: 1,
-      image: '/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png'
+      image: '/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png',
+      specs: [
+        'Максимальный вес пользователя: 120 кг',
+        'Скорость: 1-16 км/ч',
+        'Угол наклона: 0-15%',
+        'Размер бегового полотна: 42×125 см',
+        'Дисплей LCD 5"',
+        'Программы тренировок: 12',
+        'Складная конструкция',
+        'Размеры: 160×70×135 см'
+      ]
     },
     {
       id: 2,
-      image: '/lovable-uploads/f86d41dd-f2f8-4cab-a66e-40c3a81d9cbf.png'
+      image: '/lovable-uploads/f86d41dd-f2f8-4cab-a66e-40c3a81d9cbf.png',
+      specs: [
+        'Максимальный вес пользователя: 110 кг',
+        'Система нагружения: магнитная',
+        'Уровни нагрузки: 16',
+        'Маховик: 6 кг',
+        'Дисплей LCD 4"',
+        'Программы тренировок: 9',
+        'Встроенные динамики',
+        'Размеры: 95×55×140 см'
+      ]
     },
     {
       id: 3,
-      image: '/lovable-uploads/43ad4887-adce-485a-b310-3d8582e01128.png'
+      image: '/lovable-uploads/43ad4887-adce-485a-b310-3d8582e01128.png',
+      specs: [
+        'Максимальный вес пользователя: 100 кг',
+        'Система нагружения: воздушная',
+        'Длина хода: 54 см',
+        'Дисплей LCD 3.5"',
+        'Программы тренировок: 6',
+        'Складная конструкция',
+        'Транспортировочные ролики',
+        'Размеры: 210×56×86 см'
+      ]
     },
     {
       id: 4,
-      image: '/lovable-uploads/4daf7315-525c-4043-a1d0-72dcc05b49bf.png'
+      image: '/lovable-uploads/4daf7315-525c-4043-a1d0-72dcc05b49bf.png',
+      specs: [
+        'Максимальный вес пользователя: 130 кг',
+        'Длина шага: 40 см',
+        'Система нагружения: магнитная',
+        'Уровни нагрузки: 20',
+        'Дисплей LCD 5"',
+        'Программы тренировок: 15',
+        'Встроенный пульсометр',
+        'Размеры: 170×65×160 см'
+      ]
     },
     {
       id: 5,
-      image: '/lovable-uploads/225fbdeb-52a8-41c5-8d82-91fda1b8d960.png'
+      image: '/lovable-uploads/225fbdeb-52a8-41c5-8d82-91fda1b8d960.png',
+      specs: [
+        'Максимальный вес: 150 кг',
+        'Углы наклона: 7 позиций',
+        'Стойка для штанги в комплекте',
+        'Регулируемые упоры',
+        'Подушки из экокожи',
+        'Стальная рама 50×50 мм',
+        'Нескользящие ножки',
+        'Размеры: 140×110×45 см'
+      ]
     }
   ];
 
@@ -36,18 +88,48 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
         <h2 className="text-2xl font-bold text-[#262631] mb-8 font-benzin-semibold">{title}</h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
-          {products.map((product) => (
-            <Link 
-              key={product.id} 
-              to={`/product/${product.id}`}
-              className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+          {products.map((product, index) => (
+            <div 
+              key={product.id}
+              className="relative"
+              onMouseEnter={() => setHoveredProduct(product.id)}
+              onMouseLeave={() => setHoveredProduct(null)}
             >
-              <img 
-                src={product.image} 
-                alt="Товар"
-                className="w-full h-full object-cover"
-              />
-            </Link>
+              <Link 
+                to={`/product/${product.id}`}
+                className="block bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              >
+                <img 
+                  src={product.image} 
+                  alt="Товар"
+                  className="w-full h-full object-cover"
+                />
+              </Link>
+              
+              {/* Всплывающая карточка с характеристиками */}
+              {hoveredProduct === product.id && (
+                <div 
+                  className={`absolute z-50 bg-white rounded-lg shadow-2xl border p-4 w-80 animate-fade-in ${
+                    index < 2 ? 'left-full ml-4' : 'right-full mr-4'
+                  } top-0`}
+                >
+                  <h3 className="font-benzin-semibold text-[#262631] mb-3 text-sm">
+                    Характеристики товара
+                  </h3>
+                  <ul className="space-y-2">
+                    {product.specs.map((spec, specIndex) => (
+                      <li 
+                        key={specIndex}
+                        className="text-xs text-[#666] flex items-start"
+                      >
+                        <span className="w-1.5 h-1.5 bg-[#F53B49] rounded-full mt-1.5 mr-2 flex-shrink-0"></span>
+                        {spec}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           ))}
         </div>
         
