@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import ProductCard from '@/components/ProductCard';
 
 const ProductCatalog: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<'home' | 'fitness'>('home');
@@ -156,49 +157,13 @@ const ProductCatalog: React.FC = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 mb-6">
           {currentProducts.slice(0, 6).map((product) => (
-            <div 
-              key={product.id} 
-              className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-[300px]"
-            >
-              <img 
-                src={product.image} 
-                alt="Категория товаров"
-                className="w-full h-full object-cover object-center"
-              />
-              <Link 
-                to="/product-card"
-                className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center justify-center"
-              >
-                <span className="group-hover:hidden">от 29 990 ₽</span>
-                <span className="hidden group-hover:flex items-center gap-2">
-                  Перейти <ArrowRight className="w-4 h-4" />
-                </span>
-              </Link>
-            </div>
+            <ProductCard key={product.id} product={product} variant="grid" linkTo="/product-card" />
           ))}
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
           {currentProducts.slice(6, 10).map((product) => (
-            <div 
-              key={product.id} 
-              className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-[300px]"
-            >
-              <img 
-                src={product.image} 
-                alt="Категория товаров"
-                className="w-full h-full object-cover object-center"
-              />
-              <Link 
-                to="/product-card"
-                className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center justify-center"
-              >
-                <span className="group-hover:hidden">от 29 990 ₽</span>
-                <span className="hidden group-hover:flex items-center gap-2">
-                  Перейти <ArrowRight className="w-4 h-4" />
-                </span>
-              </Link>
-            </div>
+            <ProductCard key={product.id} product={product} variant="grid" linkTo="/product-card" />
           ))}
           <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px]">
             <img 

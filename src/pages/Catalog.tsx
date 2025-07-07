@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown, Search, Heart, ShoppingCart, BarChart3 } from 'lucide-react';
+import { ChevronDown, Search } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
+import ProductCard from '@/components/ProductCard';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -345,88 +346,7 @@ const Catalog: React.FC = () => {
               {/* Products Grid */}
               <div className="grid grid-cols-4 gap-6 mb-8">
                 {allProducts.map((product) => (
-                  <div key={product.id} className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow">
-                    <div className="relative mb-4">
-                      <img 
-                        src={product.image} 
-                        alt={product.name}
-                        className="w-full h-48 object-contain"
-                      />
-                      
-                      {/* Badges */}
-                      <div className="absolute top-2 left-2 flex flex-col gap-1">
-                        <Badge className={`${product.badgeColor} text-white text-xs px-2 py-1`}>
-                          {product.badge}
-                        </Badge>
-                        {product.hasComparison && (
-                          <Badge variant="secondary" className="bg-blue-100 text-blue-800 text-xs px-2 py-1">
-                            Выбрать для сравнения
-                          </Badge>
-                        )}
-                      </div>
-
-                      {/* Action buttons */}
-                      <div className="absolute top-2 right-2 flex flex-col gap-2">
-                        <button className="p-1 bg-white rounded shadow hover:bg-gray-50">
-                          <Heart className="w-4 h-4 text-gray-400" />
-                        </button>
-                        <button className="p-1 bg-white rounded shadow hover:bg-gray-50">
-                          <BarChart3 className="w-4 h-4 text-gray-400" />
-                        </button>
-                      </div>
-
-                      {/* Stock indicator */}
-                      <div className="absolute bottom-2 right-2">
-                        <div className={`w-3 h-3 rounded-full ${product.inStock ? 'bg-green-500' : 'bg-red-500'}`}></div>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <h3 className="text-sm font-medium text-[#262631] line-clamp-2">
-                        {product.name}
-                      </h3>
-                      
-                      <div className="flex items-center space-x-1">
-                        <div className="flex text-yellow-400">
-                          {'★'.repeat(Math.floor(product.rating))}
-                          {'☆'.repeat(5 - Math.floor(product.rating))}
-                        </div>
-                        <span className="text-xs text-gray-500">
-                          {product.rating} ({product.reviews})
-                        </span>
-                      </div>
-
-                      {product.inStock ? (
-                        <div className="text-sm text-green-600">В наличии ●●</div>
-                      ) : (
-                        <div className="text-sm text-red-600">Нет в наличии</div>
-                      )}
-
-                      <div className="text-sm text-blue-600 cursor-pointer hover:underline">
-                        Есть в интернете
-                      </div>
-
-                      {product.price ? (
-                        <div className="text-lg font-bold text-[#262631]">
-                          {product.price}
-                        </div>
-                      ) : (
-                        <div className="text-sm text-gray-500">Цена по запросу</div>
-                      )}
-
-                      <div className="flex gap-2">
-                        {product.isAvailable ? (
-                          <Button className="flex-1 bg-[#F53B49] hover:bg-[#e63946] text-white text-sm py-2">
-                            Купить
-                          </Button>
-                        ) : (
-                          <Button variant="outline" className="flex-1 text-sm py-2">
-                            Запросить цену
-                          </Button>
-                        )}
-                      </div>
-                    </div>
-                  </div>
+                  <ProductCard key={product.id} product={product} variant="catalog" />
                 ))}
               </div>
 
@@ -448,85 +368,7 @@ const Catalog: React.FC = () => {
               {/* More Products */}
               <div className="grid grid-cols-4 gap-6 mb-8">
                 {allProducts.slice(0, 8).map((product) => (
-                  <div key={`second-${product.id}`} className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow">
-                    <div className="relative mb-4">
-                      <img 
-                        src={product.image} 
-                        alt={product.name}
-                        className="w-full h-48 object-contain"
-                      />
-                      
-                      <div className="absolute top-2 left-2 flex flex-col gap-1">
-                        <Badge className={`${product.badgeColor} text-white text-xs px-2 py-1`}>
-                          {product.badge}
-                        </Badge>
-                        {product.hasComparison && (
-                          <Badge variant="secondary" className="bg-blue-100 text-blue-800 text-xs px-2 py-1">
-                            Выбрать для сравнения
-                          </Badge>
-                        )}
-                      </div>
-
-                      <div className="absolute top-2 right-2 flex flex-col gap-2">
-                        <button className="p-1 bg-white rounded shadow hover:bg-gray-50">
-                          <Heart className="w-4 h-4 text-gray-400" />
-                        </button>
-                        <button className="p-1 bg-white rounded shadow hover:bg-gray-50">
-                          <BarChart3 className="w-4 h-4 text-gray-400" />
-                        </button>
-                      </div>
-
-                      <div className="absolute bottom-2 right-2">
-                        <div className={`w-3 h-3 rounded-full ${product.inStock ? 'bg-green-500' : 'bg-red-500'}`}></div>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <h3 className="text-sm font-medium text-[#262631] line-clamp-2">
-                        {product.name}
-                      </h3>
-                      
-                      <div className="flex items-center space-x-1">
-                        <div className="flex text-yellow-400">
-                          {'★'.repeat(Math.floor(product.rating))}
-                          {'☆'.repeat(5 - Math.floor(product.rating))}
-                        </div>
-                        <span className="text-xs text-gray-500">
-                          {product.rating} ({product.reviews})
-                        </span>
-                      </div>
-
-                      {product.inStock ? (
-                        <div className="text-sm text-green-600">В наличии ●●</div>
-                      ) : (
-                        <div className="text-sm text-red-600">Нет в наличии</div>
-                      )}
-
-                      <div className="text-sm text-blue-600 cursor-pointer hover:underline">
-                        Есть в интернете
-                      </div>
-
-                      {product.price ? (
-                        <div className="text-lg font-bold text-[#262631]">
-                          {product.price}
-                        </div>
-                      ) : (
-                        <div className="text-sm text-gray-500">Цена по запросу</div>
-                      )}
-
-                      <div className="flex gap-2">
-                        {product.isAvailable ? (
-                          <Button className="flex-1 bg-[#F53B49] hover:bg-[#e63946] text-white text-sm py-2">
-                            Купить
-                          </Button>
-                        ) : (
-                          <Button variant="outline" className="flex-1 text-sm py-2">
-                            Запросить цену
-                          </Button>
-                        )}
-                      </div>
-                    </div>
-                  </div>
+                  <ProductCard key={`second-${product.id}`} product={product} variant="catalog" />
                 ))}
               </div>
 
