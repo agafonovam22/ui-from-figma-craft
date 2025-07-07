@@ -1,6 +1,7 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface NewProductsProps {
   title?: string;
@@ -8,6 +9,19 @@ interface NewProductsProps {
 
 const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) => {
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  };
 
   const products = [
     {
@@ -85,19 +99,43 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
   return (
     <section className="w-full py-6 bg-white">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-        <h2 className="text-2xl font-bold text-[#262631] mb-8 font-benzin-semibold">{title}</h2>
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-2xl font-bold text-[#262631] font-benzin-semibold">{title}</h2>
+          
+          {/* Кнопки прокрутки */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={scrollLeft}
+              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+              aria-label="Прокрутить влево"
+            >
+              <ChevronLeft className="w-5 h-5 text-gray-600" />
+            </button>
+            <button
+              onClick={scrollRight}
+              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+              aria-label="Прокрутить вправо"
+            >
+              <ChevronRight className="w-5 h-5 text-gray-600" />
+            </button>
+          </div>
+        </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
+        <div 
+          ref={scrollContainerRef}
+          className="flex gap-6 mb-6 overflow-x-auto scrollbar-hide pb-2"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {products.map((product, index) => (
             <div 
               key={product.id}
-              className="relative"
+              className="relative flex-shrink-0 w-60"
               onMouseEnter={() => setHoveredProduct(product.id)}
               onMouseLeave={() => setHoveredProduct(null)}
             >
               <Link 
                 to={`/product/${product.id}`}
-                className="block bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+                className="block bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-60"
               >
                 <img 
                   src={product.image} 
