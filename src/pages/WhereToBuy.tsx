@@ -88,7 +88,7 @@ const WhereToBuy: React.FC = () => {
         </h1>
 
         {/* City Selector and Tabs */}
-        <div className="flex flex-wrap items-center gap-4 h-[52px] mb-10">
+        <div className="flex flex-wrap items-center justify-between gap-4 h-[52px] mb-10">
           <select 
             value={selectedCity} 
             onChange={(e) => setSelectedCity(e.target.value)}
@@ -132,7 +132,7 @@ const WhereToBuy: React.FC = () => {
             </button>
           </div>
 
-          <div className="flex items-center gap-2 ml-auto">
+          <div className="flex items-center gap-2">
             <span className="text-gray-600 text-[12px]">Сортировать:</span>
             <select 
               value={sortBy} 
