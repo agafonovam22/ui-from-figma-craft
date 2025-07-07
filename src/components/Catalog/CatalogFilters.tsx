@@ -142,6 +142,10 @@ const CatalogFilters: React.FC = () => {
                 <input type="checkbox" className="mr-2" />
                 Профессиональные
               </label>
+              <label className="flex items-center">
+                <input type="checkbox" className="mr-2" />
+                Реабилитация
+              </label>
             </div>
           )}
         </div>
@@ -160,17 +164,35 @@ const CatalogFilters: React.FC = () => {
           </h3>
           {expandedFilters.power && (
             <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
-              <div className="flex items-center justify-between">
-                <span>1,25CHP</span>
-                <span>2x 5600 л.с</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span className="text-[14px]">до 3 л.с</span>
-                <div className="flex-1 h-1 bg-gray-200 rounded">
-                  <div className="w-1/3 h-full bg-[#F53B49] rounded"></div>
+              {/* Input fields for power range */}
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="flex-1">
+                  <input 
+                    type="text" 
+                    placeholder="от 1.2500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded text-gray-600 text-[14px]"
+                    style={{fontFamily: 'Manrope'}}
+                  />
                 </div>
-                <span className="text-[14px]">3-6 л.с</span>
+                <div className="flex-1">
+                  <input 
+                    type="text" 
+                    placeholder="до 24 560"
+                    className="w-full px-3 py-2 border border-gray-300 rounded text-gray-600 text-[14px]"
+                    style={{fontFamily: 'Manrope'}}
+                  />
+                </div>
               </div>
+              
+              {/* Checkbox options */}
+              <label className="flex items-center">
+                <input type="checkbox" className="mr-2" />
+                до 3 л.с.
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" className="mr-2" />
+                3-4 л.с.
+              </label>
             </div>
           )}
         </div>
