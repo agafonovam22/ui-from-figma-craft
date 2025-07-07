@@ -66,58 +66,58 @@ const ProductCatalog: React.FC = () => {
   const fitnessProducts = [
     {
       id: 13,
-      image: '/lovable-uploads/869d52d6-1884-42fd-aa16-03b76deac288.png',
-      category: 'treadmill-pro'
+      image: '/lovable-uploads/e7893606-f51a-4e53-9c80-ab83d081c16c.png',
+      category: 'treadmill'
     },
     {
       id: 14,
-      image: '/lovable-uploads/3a529c7f-0b56-45b3-b730-7b9c87c5e860.png',
-      category: 'bike-commercial'
+      image: '/lovable-uploads/41b47400-6434-4309-9474-38fd8527c0f9.png',
+      category: 'bike'
     },
     {
       id: 15,
-      image: '/lovable-uploads/12a6cfba-5d94-472c-bd06-210dde020f33.png',
-      category: 'rowing-pro'
+      image: '/lovable-uploads/7eb18ab6-a47c-4127-a2e4-520345b3a636.png',
+      category: 'rowing'
     },
     {
       id: 16,
-      image: '/lovable-uploads/a264018f-4c7d-44c6-9249-bdc333346fa6.png',
-      category: 'power-rack'
+      image: '/lovable-uploads/9deaa8d7-89aa-4671-b709-82d6af4d5f19.png',
+      category: 'strength'
     },
     {
       id: 17,
-      image: '/lovable-uploads/e7338ec8-827f-424d-82d6-5ec10aca18a1.png',
-      category: 'multistation'
+      image: '/lovable-uploads/dcac2877-3c35-4f7d-8abf-95aacc72562e.png',
+      category: 'inversion'
     },
     {
       id: 18,
-      image: '/lovable-uploads/323030b4-2002-4ea2-bfe4-66d67776494d.png',
-      category: 'functional'
+      image: '/lovable-uploads/34f32079-9172-481c-a342-ebee3d47cd47.png',
+      category: 'accessories'
     },
     {
       id: 19,
-      image: '/lovable-uploads/ba5d833b-7740-4da6-a952-ebefe2bf10ef.png',
-      category: 'elliptical-pro'
+      image: '/lovable-uploads/c05b2484-8dc7-4ac6-bd32-3876e288da9a.png',
+      category: 'street'
     },
     {
       id: 20,
-      image: '/lovable-uploads/efbda2a7-32c3-4183-aee8-179088031eb1.png',
-      category: 'rehabilitation'
+      image: '/lovable-uploads/0c78e89b-223e-41c0-a7c1-3e594b9c0a92.png',
+      category: 'elliptical'
     },
     {
       id: 21,
-      image: '/lovable-uploads/465cd1ff-17d9-433c-834d-3c4eb1b0607c.png',
-      category: 'trx'
+      image: '/lovable-uploads/bc820bdc-17a0-4d70-a621-8d5a0ebf37ad.png',
+      category: 'tennis'
     },
     {
       id: 22,
-      image: '/lovable-uploads/465cd1ff-17d9-433c-834d-3c4eb1b0607c.png',
-      category: 'rowing-pro'
+      image: '/lovable-uploads/7919df46-5d23-4cdc-8384-edd08bf27547.png',
+      category: 'accessories'
     },
     {
       id: 23,
-      image: '/lovable-uploads/744c0c6f-bb19-4939-82f1-cf7f5c03f909.png',
-      category: 'crossfit'
+      image: '/lovable-uploads/2384c4ae-190f-4278-aaf8-daaa6e67e846.png',
+      category: 'skiing'
     }
   ];
 
