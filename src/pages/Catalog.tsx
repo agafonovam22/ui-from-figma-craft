@@ -119,14 +119,6 @@ const Catalog: React.FC = () => {
         </div>
 
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
-          <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-bold text-gray-900">Каталог товаров</h1>
-            <Link to="/product-card-configurator">
-              <Button variant="outline" className="flex items-center gap-2">
-                🎨 Настроить карточку товара
-              </Button>
-            </Link>
-          </div>
           <div className="flex gap-8">
             {/* Left Sidebar - Filters */}
             <CatalogFilters />
