@@ -83,10 +83,12 @@ const WhereToBuy: React.FC = () => {
         </Breadcrumb>
 
         {/* Page Title */}
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Где купить</h1>
+        <h1 className="font-heading text-[48px] text-layout-dark-grey mb-10 leading-none">
+          Где купить
+        </h1>
 
         {/* City Selector and Tabs */}
-        <div className="flex flex-wrap items-center gap-4 mb-8">
+        <div className="flex flex-wrap items-center gap-4 h-[52px] mb-10">
           <select 
             value={selectedCity} 
             onChange={(e) => setSelectedCity(e.target.value)}
@@ -164,7 +166,7 @@ const WhereToBuy: React.FC = () => {
               <Map stores={partnerStores} />
             </div>
           ) : (
-            <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-between">
+            <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-between h-[328px]">
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
                   Фирменный магазин<br />Well Fitness

@@ -71,6 +71,7 @@ export default {
 					'light-bg': 'hsl(var(--light-bg))',
 					'text-muted': 'hsl(var(--text-muted))',
 					'grey-nav': 'hsl(var(--grey-nav))',
+					'dark-grey': 'hsl(var(--dark-grey))',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
