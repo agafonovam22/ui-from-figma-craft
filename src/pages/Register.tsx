@@ -58,15 +58,15 @@ const Register: React.FC = () => {
         </section>
 
         {/* Registration Form */}
-        <section className="py-16 bg-white">
+        <section className="py-8 bg-white">
           <div className="container mx-auto px-4 max-w-lg">
-            <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold text-[#262631] mb-8">
+            <div className="text-center mb-6">
+              <h1 className="text-2xl font-bold text-[#262631] mb-6">
                 Регистрация
               </h1>
               
               {/* User Type Toggle */}
-              <div className="flex rounded-lg border border-gray-200 overflow-hidden mb-8">
+              <div className="flex rounded-lg border border-gray-200 overflow-hidden mb-6">
                 <button
                   type="button"
                   onClick={() => setUserType('buyer')}
@@ -92,7 +92,7 @@ const Register: React.FC = () => {
               </div>
             </div>
 
-            <form onSubmit={handleRegister} className="space-y-6">
+            <form onSubmit={handleRegister} className="space-y-4">
               {/* Full Name Input */}
               <div>
                 <Input
@@ -177,7 +177,7 @@ const Register: React.FC = () => {
             </form>
 
             {/* Social Registration */}
-            <div className="mt-8">
+            <div className="mt-6">
               <p className="text-center text-sm text-gray-600 mb-4">
                 Или зарегистрируйтесь с помощью
               </p>
@@ -209,7 +209,7 @@ const Register: React.FC = () => {
             </div>
 
             {/* Login Link */}
-            <div className="mt-8 text-center">
+            <div className="mt-6 text-center">
               <p className="text-sm text-gray-600 mb-4">Уже есть аккаунт?</p>
               <Link
                 to="/account"
