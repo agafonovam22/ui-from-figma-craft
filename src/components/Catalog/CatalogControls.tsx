@@ -36,29 +36,50 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({ sortBy, setSortBy }) 
         </div>
       </div>
 
-      {/* Filter Tags */}
-      <div className="flex flex-wrap items-center gap-2 mb-6">
-        <Badge variant="secondary" className="bg-gray-100 text-xs">Все категории</Badge>
-        <Badge variant="secondary" className="bg-gray-100 text-xs">Акции</Badge>
-        <Badge variant="secondary" className="bg-gray-100 text-xs">Новинки</Badge>
-        <Badge variant="secondary" className="bg-gray-100 text-xs">Хит продаж</Badge>
-        <select className="border border-gray-300 rounded px-3 py-1 text-xs">
-          <option>Массопоказатель весе</option>
-        </select>
-        <select className="border border-gray-300 rounded px-3 py-1 text-xs">
-          <option>Длина полотна, см</option>
-        </select>
-        <select className="border border-gray-300 rounded px-3 py-1 text-xs">
-          <option>Ширина полотна, см</option>
-        </select>
-      </div>
-
-      <div className="flex items-center justify-between mb-4">
-        <div className="text-xs text-gray-600">
-          Соответует 1246 товарам
-        </div>
-        <div className="text-xs text-gray-600">
-          Производительность ▲
+      {/* Horizontal Filter Tags */}
+      <div className="bg-[#F8F8FD] rounded-lg p-4 mb-6">
+        <div className="flex flex-wrap items-center gap-3">
+          {/* Removable filter */}
+          <div className="flex items-center bg-[#262631] text-white px-3 py-1 rounded text-xs">
+            В наличии
+            <button className="ml-2 text-white hover:text-gray-300">
+              ×
+            </button>
+          </div>
+          
+          {/* Status filters */}
+          <button className="bg-[#F53B49] text-white px-3 py-1 rounded text-xs hover:bg-[#e63946]">
+            Акция
+          </button>
+          
+          <button className="bg-green-500 text-white px-3 py-1 rounded text-xs hover:bg-green-600">
+            Новинка
+          </button>
+          
+          <button className="bg-blue-500 text-white px-3 py-1 rounded text-xs hover:bg-blue-600">
+            Хит продаж
+          </button>
+          
+          {/* Dropdown filters */}
+          <select className="border border-gray-300 rounded px-3 py-1 text-xs bg-white">
+            <option>Максимальный вес ↓</option>
+          </select>
+          
+          <select className="border border-gray-300 rounded px-3 py-1 text-xs bg-white">
+            <option>Длина полотна, см ↓</option>
+          </select>
+          
+          <select className="border border-gray-300 rounded px-3 py-1 text-xs bg-white">
+            <option>Ширина полотна, см ↓</option>
+          </select>
+          
+          <select className="border border-gray-300 rounded px-3 py-1 text-xs bg-white">
+            <option>Скорость полотна, км/ч ↓</option>
+          </select>
+          
+          <select className="border border-gray-300 rounded px-3 py-1 text-xs bg-white">
+            <option>Производитель ↓</option>
+          </select>
         </div>
       </div>
     </>
