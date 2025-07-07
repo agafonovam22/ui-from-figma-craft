@@ -1,8 +1,21 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const PromotionsOffers: React.FC = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  };
   const promotions = [
     {
       id: 1,
@@ -29,21 +42,33 @@ const PromotionsOffers: React.FC = () => {
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold text-gray-900 font-benzin-semibold">Акции и спецпредложения</h2>
           <div className="flex items-center gap-4">
-            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
-              <ChevronLeft className="w-5 h-5 text-gray-600" />
+            <button 
+              onClick={scrollLeft}
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-[#262631] hover:text-white hover:border-[#262631] transition-colors"
+              aria-label="Прокрутить влево"
+            >
+              <ChevronLeft className="w-5 h-5" />
             </button>
-            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
-              <ChevronRight className="w-5 h-5 text-gray-600" />
+            <button 
+              onClick={scrollRight}
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-[#262631] hover:text-white hover:border-[#262631] transition-colors"
+              aria-label="Прокрутить вправо"
+            >
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
         </div>
 
-        {/* Promotions Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        {/* Promotions Scroll */}
+        <div 
+          ref={scrollContainerRef}
+          className="flex gap-6 mb-8 overflow-x-auto scrollbar-hide pb-2"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {promotions.map((promo) => (
             <div
               key={promo.id}
-              className="rounded-lg overflow-hidden h-[444px] hover:shadow-lg transition-shadow cursor-pointer"
+              className="flex-shrink-0 w-80 rounded-lg overflow-hidden h-[444px] hover:shadow-lg transition-shadow cursor-pointer"
             >
               <img 
                 src={promo.image} 
