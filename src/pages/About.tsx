@@ -144,7 +144,7 @@ const About: React.FC = () => {
             </div>
             
             {/* Main Title - уменьшен в 2 раза */}
-            <h1 className="text-[40px] font-bold text-[#17171E] leading-tight" style={{ marginBottom: '20px' }}>
+            <h1 className="text-[40px] font-bold text-[#17171E] leading-tight" style={{ marginBottom: '10px' }}>
               О компании
             </h1>
           </div>
