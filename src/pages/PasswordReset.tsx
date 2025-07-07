@@ -96,10 +96,10 @@ const PasswordReset: React.FC = () => {
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
                 {/* Gray background container stretched full width */}
                 <div className="bg-gray-100 py-12">
-                  <div style={{ paddingLeft: '300px', paddingRight: '60px' }}>
+                  <div style={{ paddingLeft: '220px', paddingRight: '60px' }}>
                     <div className="flex items-start gap-6">
-                      {/* Checkmark icon - larger and spanning from title top to first paragraph bottom */}
-                      <div className="flex-shrink-0">
+                      {/* Checkmark icon - larger and aligned with title top */}
+                      <div className="flex-shrink-0" style={{ marginTop: '-8px' }}>
                         <img 
                           src="/lovable-uploads/163791b0-3a3a-443b-9703-750e208fd889.png" 
                           alt="Checkmark" 
