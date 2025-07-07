@@ -44,21 +44,21 @@ const PasswordReset: React.FC = () => {
         </section>
 
         {/* Password Reset Form or Success Message */}
-        <section className="py-16 bg-white">
+        <section className="py-8 bg-white">
           <div className={`container mx-auto px-4 ${!isEmailSent ? 'max-w-lg' : 'max-w-4xl'}`}>
             {!isEmailSent ? (
               <>
-                <div className="text-center mb-8">
-                  <h1 className="text-3xl font-bold text-[#262631] mb-4">
+                <div className="text-center mb-6">
+                  <h1 className="text-2xl font-bold text-[#262631] mb-4">
                     Восстановление пароля
                   </h1>
                   
-                  <p className="text-[#262631] mb-8">
+                  <p className="text-[#262631] mb-6 text-center">
                     Мы отправим письмо со ссылкой для смены пароля на указанный Вами при регистрации адрес. Откройте письмо и перейдите по ссылке из письма.
                   </p>
                 </div>
 
-                <form onSubmit={handleResetPassword} className="space-y-6">
+                <form onSubmit={handleResetPassword} className="space-y-4">
                   {/* Email Input */}
                   <div>
                     <Input
@@ -81,7 +81,7 @@ const PasswordReset: React.FC = () => {
                 </form>
 
                 {/* Back to Login */}
-                <div className="mt-8 text-center">
+                <div className="mt-6 text-center">
                   <p className="text-sm text-gray-600 mb-4">Нет аккаунта?</p>
                   <button
                     type="button"
