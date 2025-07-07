@@ -154,21 +154,27 @@ const About: React.FC = () => {
         <section className="w-full">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="overflow-hidden relative rounded-lg" style={{ height: '236px', backgroundColor: '#EEEFF6' }}>
-              <div className="py-12 relative h-full">
+              <div className="relative h-full">
                 <div className="flex items-center h-full">
                   {/* Левая часть с текстом - 3/5 ширины */}
-                  <div className="w-3/5 z-10 px-16 flex items-center">
-                    <p className="text-2xl text-[#262631] leading-relaxed">
-                      Well Fitness - надежный партнер с 2005 года для сотен компаний от Калининграда до Владивостока
-                    </p>
+                  <div className="w-3/5 z-10 pl-16 flex flex-col justify-center">
+                    <div className="mb-4">
+                      <h2 className="text-5xl font-bold leading-tight">
+                        <span className="text-[#262631]">Well Fitness — </span>
+                        <span className="text-[#F53B49]">надежный<br />партнер с 2005 года<br /></span>
+                        <span className="text-[#262631]">для сотен компаний<br />от Калининграда<br />до Владивостока.</span>
+                      </h2>
+                    </div>
+                    {/* Красная декоративная линия */}
+                    <div className="w-16 h-1 bg-[#F53B49]"></div>
                   </div>
                   
                   {/* Правая часть с изображением - 2/5 ширины */}
-                  <div className="w-2/5 h-full flex items-center justify-center">
+                  <div className="w-2/5 h-full">
                     <img 
-                      src="/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png"
+                      src="/lovable-uploads/af6b9051-5569-45e0-bbdf-4232fe514f1c.png"
                       alt="Спортивное оборудование"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover rounded-r-lg"
                     />
                   </div>
                 </div>
