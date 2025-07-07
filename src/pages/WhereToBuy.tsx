@@ -168,37 +168,26 @@ const WhereToBuy: React.FC = () => {
           ) : (
             <div className="bg-gray-50 rounded-lg flex h-[328px] overflow-hidden">
               <div className="flex-1 w-1/3 p-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Фирменный магазин<br />Well Fitness
+                <h2 className="font-heading text-[32px] text-layout-dark-grey mb-6 leading-none">
+                  Шоу-рум WellFitness
                 </h2>
                 
-                <div className="space-y-3 text-gray-700">
-                  <div className="flex items-start gap-2">
-                    <MapPin className="w-5 h-5 text-gray-500 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium">Адрес</p>
-                      <p className="text-sm">
-                        Москва, ТРК VEGAS Крокус Сити,<br />
-                        м.Мякинино, ул. Международная 12,<br />
-                        G6 км МКАД
-                      </p>
-                    </div>
+                <div className="space-y-4 text-layout-dark-grey">
+                  <div>
+                    <p className="font-medium text-[16px] leading-none">Адрес</p>
+                    <p className="text-[16px] leading-none mt-1">
+                      Москва, ТЦ Капитолий, Правобережная улица, 1Б
+                    </p>
                   </div>
                   
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-5 h-5 text-gray-500 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium">Телефон</p>
-                      <p className="text-sm">+7 (499) 677-56-32</p>
-                    </div>
+                  <div>
+                    <p className="text-[16px] leading-none">10:00 - 22:00</p>
                   </div>
                   
-                  <div className="flex items-center gap-2">
-                    <Clock className="w-5 h-5 text-gray-500 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium">Режим работы</p>
-                      <p className="text-sm">10:00 - 22:00</p>
-                    </div>
+                  <div>
+                    <p className="text-[16px] leading-none">
+                      Телефон +7 (499) 677-56-32 доб. 337
+                    </p>
                   </div>
                 </div>
               </div>
