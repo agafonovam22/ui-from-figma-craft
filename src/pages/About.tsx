@@ -443,39 +443,15 @@ const About: React.FC = () => {
 
         {activeTab === 'about' && (
           <>
-            {/* Statistics Banner - same size as main banner */}
+            {/* Statistics Banner - updated height and image */}
             <section className="w-full">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-                <div className="bg-gray-100 overflow-hidden relative rounded-lg" style={{ height: '236px' }}>
-                  <div className="py-12 relative h-full">
-                    <div className="flex items-center justify-between h-full">
-                      {/* Statistics content */}
-                      <div className="flex-1 z-10" style={{ paddingTop: '40px', paddingLeft: '60px' }}>
-                        <div className="grid grid-cols-3 gap-8 max-w-lg">
-                          <div>
-                            <div className="text-[48px] font-bold text-[#17171E] mb-2">2005</div>
-                            <div className="text-gray-600 text-sm">Год появления на рынке</div>
-                          </div>
-                          <div>
-                            <div className="text-[48px] font-bold text-[#17171E] mb-2">10 000+</div>
-                            <div className="text-gray-600 text-sm">Складских помещений</div>
-                          </div>
-                          <div>
-                            <div className="text-[48px] font-bold text-[#17171E] mb-2">60+</div>
-                            <div className="text-gray-600 text-sm">Квалифицированных сотрудников</div>
-                          </div>
-                          <div>
-                            <div className="text-[48px] font-bold text-[#17171E] mb-2">20+</div>
-                            <div className="text-gray-600 text-sm">Ведущих мировых брендов</div>
-                          </div>
-                          <div>
-                            <div className="text-[48px] font-bold text-[#17171E] mb-2">3000+</div>
-                            <div className="text-gray-600 text-sm">SKU</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="overflow-hidden relative rounded-lg" style={{ height: '508px' }}>
+                  <img 
+                    src="/lovable-uploads/4e2028e8-e27d-4a58-a4eb-6a7b09d988db.png"
+                    alt="О компании - статистика"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </section>
