@@ -9,15 +9,15 @@ const CatalogFilters: React.FC = () => {
 
   return (
     <div className="w-64 flex-shrink-0">
-      <h1 className="text-xl font-bold text-[#262631] mb-6">Каталог</h1>
+      <h1 className="text-[48px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Каталог</h1>
       
       {/* Filters Container */}
       <div className="bg-[#F8F8FD] rounded-lg p-6 mb-6">
-        <h2 className="text-lg font-semibold text-[#262631] mb-6">Фильтр</h2>
+        <h2 className="text-[20px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h2>
         
         {/* Price Filter */}
         <div className="mb-6">
-          <h3 className="text-sm font-semibold text-[#262631] mb-3 flex items-center justify-between">
+          <h3 className="text-[14px] text-[#262631] mb-3 flex items-center justify-between" style={{fontFamily: 'Benzin-Regular'}}>
             Цена
             <ChevronDown className="w-4 h-4" />
           </h3>
@@ -63,7 +63,7 @@ const CatalogFilters: React.FC = () => {
 
         {/* Brand Filter */}
         <div className="mb-6">
-          <h3 className="text-sm font-semibold text-[#262631] mb-3 flex items-center justify-between">
+          <h3 className="text-[14px] text-[#262631] mb-3 flex items-center justify-between" style={{fontFamily: 'Benzin-Regular'}}>
             Бренд
             <ChevronDown className="w-4 h-4" />
           </h3>
@@ -92,7 +92,7 @@ const CatalogFilters: React.FC = () => {
 
         {/* Type Filter */}
         <div className="mb-6">
-          <h3 className="text-sm font-semibold text-[#262631] mb-3 flex items-center justify-between">
+          <h3 className="text-[14px] text-[#262631] mb-3 flex items-center justify-between" style={{fontFamily: 'Benzin-Regular'}}>
             Тип назначения
             <ChevronDown className="w-4 h-4" />
           </h3>
@@ -116,7 +116,7 @@ const CatalogFilters: React.FC = () => {
 
         {/* Power Filter */}
         <div className="mb-6">
-          <h3 className="text-sm font-semibold text-[#262631] mb-3 flex items-center justify-between">
+          <h3 className="text-[14px] text-[#262631] mb-3 flex items-center justify-between" style={{fontFamily: 'Benzin-Regular'}}>
             Мощность двигателя
             <ChevronDown className="w-4 h-4" />
           </h3>
@@ -139,7 +139,7 @@ const CatalogFilters: React.FC = () => {
 
         {/* Trainer Type Filter */}
         <div className="mb-6">
-          <h3 className="text-sm font-semibold text-[#262631] mb-3 flex items-center justify-between">
+          <h3 className="text-[14px] text-[#262631] mb-3 flex items-center justify-between" style={{fontFamily: 'Benzin-Regular'}}>
             Тип тренажера
             <ChevronDown className="w-4 h-4" />
           </h3>
