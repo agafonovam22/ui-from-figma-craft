@@ -149,7 +149,7 @@ const WhereToBuy: React.FC = () => {
         <div className="flex justify-end mb-6">
           <div className="flex items-center gap-3">
             <MapIcon className="w-5 h-5 text-gray-600" />
-            <span className="text-gray-700 font-medium">Показать на карте</span>
+            <span className="text-gray-700 font-medium text-[14px]">Показать на карте</span>
             <Switch
               checked={showMap}
               onCheckedChange={setShowMap}
@@ -167,7 +167,7 @@ const WhereToBuy: React.FC = () => {
             </div>
           ) : (
             <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-between h-[328px]">
-              <div className="flex-1">
+              <div className="flex-1 w-1/3">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
                   Фирменный магазин<br />Well Fitness
                 </h2>
@@ -203,11 +203,11 @@ const WhereToBuy: React.FC = () => {
                 </div>
               </div>
               
-              <div className="flex-shrink-0 ml-8">
+              <div className="w-2/3 h-full ml-8">
                 <img 
-                  src="/lovable-uploads/63223971-7b48-4bd9-824c-f4c52e54d9fb.png"
+                  src="/lovable-uploads/e0b32acd-ffda-47fd-8521-94ebe288876d.png"
                   alt="Фирменный магазин Well Fitness"
-                  className="w-[400px] h-[240px] object-cover rounded-lg"
+                  className="w-full h-full object-cover rounded-lg"
                 />
               </div>
             </div>
