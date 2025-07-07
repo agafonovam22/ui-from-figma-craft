@@ -123,7 +123,7 @@ const Catalog: React.FC = () => {
             <CatalogFilters />
 
             {/* Main Content */}
-            <div className="flex-1 mt-[74px]">
+            <div className="flex-1 mt-[90px]">
               <CatalogBanner />
               <CatalogControls sortBy={sortBy} setSortBy={setSortBy} />
               <CatalogGrid products={allProducts} />
