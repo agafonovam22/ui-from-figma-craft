@@ -92,7 +92,7 @@ const WhereToBuy: React.FC = () => {
           <select 
             value={selectedCity} 
             onChange={(e) => setSelectedCity(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700"
+            className="px-4 h-12 border border-[#CECFD7] rounded-md bg-white text-[12px] text-gray-700"
           >
             <option value="Москва">Москва</option>
             <option value="Санкт-Петербург">Санкт-Петербург</option>
@@ -102,30 +102,30 @@ const WhereToBuy: React.FC = () => {
           <div className="flex gap-2">
             <button
               onClick={() => setActiveTab('stores')}
-              className={`px-6 py-2 rounded-md font-medium transition-colors ${
+              className={`px-6 h-12 rounded-md text-[12px] font-medium transition-colors ${
                 activeTab === 'stores'
                   ? 'bg-[#F53B49] text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  : 'bg-white text-gray-700 border border-[#CECFD7] hover:bg-gray-50'
               }`}
             >
               Все магазины
             </button>
             <button
               onClick={() => setActiveTab('partners')}
-              className={`px-6 py-2 rounded-md font-medium transition-colors ${
+              className={`px-6 h-12 rounded-md text-[12px] font-medium transition-colors ${
                 activeTab === 'partners'
                   ? 'bg-[#F53B49] text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  : 'bg-white text-gray-700 border border-[#CECFD7] hover:bg-gray-50'
               }`}
             >
               Магазины партнеров
             </button>
             <button
               onClick={() => setActiveTab('online')}
-              className={`px-6 py-2 rounded-md font-medium transition-colors ${
+              className={`px-6 h-12 rounded-md text-[12px] font-medium transition-colors ${
                 activeTab === 'online'
                   ? 'bg-[#F53B49] text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  : 'bg-white text-gray-700 border border-[#CECFD7] hover:bg-gray-50'
               }`}
             >
               Интернет-магазины
@@ -133,11 +133,11 @@ const WhereToBuy: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2 ml-auto">
-            <span className="text-gray-600">Сортировать:</span>
+            <span className="text-gray-600 text-[12px]">Сортировать:</span>
             <select 
               value={sortBy} 
               onChange={(e) => setSortBy(e.target.value)}
-              className="px-3 py-1 border border-gray-300 rounded-md bg-white text-gray-700"
+              className="px-3 h-12 border border-[#CECFD7] rounded-md bg-white text-[12px] text-gray-700"
             >
               <option value="list">Список</option>
               <option value="map">Карта</option>
