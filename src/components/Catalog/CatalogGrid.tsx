@@ -36,8 +36,8 @@ const CatalogGrid: React.FC<CatalogGridProps> = ({ products }) => {
       <div className="bg-gray-800 text-white p-8 rounded-lg mb-8">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-xl font-bold mb-2">Место для рекламы</h3>
-            <p className="text-gray-300">
+            <h3 className="text-lg font-bold mb-2">Место для рекламы</h3>
+            <p className="text-sm text-gray-300">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
             </p>
           </div>
@@ -56,7 +56,7 @@ const CatalogGrid: React.FC<CatalogGridProps> = ({ products }) => {
 
       {/* Load More Button */}
       <div className="text-center mb-8">
-        <Button variant="outline" className="px-8 py-3">
+        <Button variant="outline" className="px-6 py-2 text-sm">
           Показать еще
         </Button>
       </div>

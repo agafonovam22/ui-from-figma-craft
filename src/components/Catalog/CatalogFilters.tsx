@@ -5,15 +5,15 @@ import { Button } from "@/components/ui/button";
 const CatalogFilters: React.FC = () => {
   return (
     <div className="w-64 flex-shrink-0">
-      <h1 className="text-2xl font-bold text-[#262631] mb-8">Каталог</h1>
+      <h1 className="text-xl font-bold text-[#262631] mb-6">Каталог</h1>
       
       {/* Price Filter */}
       <div className="mb-8">
-        <h3 className="font-semibold text-[#262631] mb-4 flex items-center justify-between">
+        <h3 className="text-sm font-semibold text-[#262631] mb-3 flex items-center justify-between">
           Цена
           <ChevronDown className="w-4 h-4" />
         </h3>
-        <div className="space-y-2 text-sm text-gray-600">
+        <div className="space-y-2 text-xs text-gray-600">
           <label className="flex items-center">
             <input type="radio" name="price" className="mr-2" />
             до 500 ₽
@@ -30,17 +30,17 @@ const CatalogFilters: React.FC = () => {
             <input type="radio" name="price" className="mr-2" />
             до 100 000 ₽
           </label>
-          <button className="text-[#F53B49] text-sm mt-2">Показать все</button>
+          <button className="text-[#F53B49] text-xs mt-2">Показать все</button>
         </div>
       </div>
 
       {/* Brand Filter */}
       <div className="mb-8">
-        <h3 className="font-semibold text-[#262631] mb-4 flex items-center justify-between">
+        <h3 className="text-sm font-semibold text-[#262631] mb-3 flex items-center justify-between">
           Бренд
           <ChevronDown className="w-4 h-4" />
         </h3>
-        <div className="space-y-2 text-sm text-gray-600">
+        <div className="space-y-2 text-xs text-gray-600">
           <label className="flex items-center">
             <input type="checkbox" className="mr-2" />
             True
@@ -57,17 +57,17 @@ const CatalogFilters: React.FC = () => {
             <input type="checkbox" className="mr-2" />
             DKN
           </label>
-          <button className="text-[#F53B49] text-sm mt-2">Показать все</button>
+          <button className="text-[#F53B49] text-xs mt-2">Показать все</button>
         </div>
       </div>
 
       {/* Type Filter */}
       <div className="mb-8">
-        <h3 className="font-semibold text-[#262631] mb-4 flex items-center justify-between">
+        <h3 className="text-sm font-semibold text-[#262631] mb-3 flex items-center justify-between">
           Тип назначения
           <ChevronDown className="w-4 h-4" />
         </h3>
-        <div className="space-y-2 text-sm text-gray-600">
+        <div className="space-y-2 text-xs text-gray-600">
           <label className="flex items-center">
             <input type="checkbox" className="mr-2" />
             Домашние
@@ -85,11 +85,11 @@ const CatalogFilters: React.FC = () => {
 
       {/* Power Filter */}
       <div className="mb-8">
-        <h3 className="font-semibold text-[#262631] mb-4 flex items-center justify-between">
+        <h3 className="text-sm font-semibold text-[#262631] mb-3 flex items-center justify-between">
           Мощность двигателя
           <ChevronDown className="w-4 h-4" />
         </h3>
-        <div className="space-y-2 text-sm text-gray-600">
+        <div className="space-y-2 text-xs text-gray-600">
           <div className="flex items-center justify-between">
             <span>1,25CHP</span>
             <span>2x 5600 л.с</span>
@@ -106,11 +106,11 @@ const CatalogFilters: React.FC = () => {
 
       {/* Trainer Type Filter */}
       <div className="mb-8">
-        <h3 className="font-semibold text-[#262631] mb-4 flex items-center justify-between">
+        <h3 className="text-sm font-semibold text-[#262631] mb-3 flex items-center justify-between">
           Тип тренажера
           <ChevronDown className="w-4 h-4" />
         </h3>
-        <div className="space-y-2 text-sm text-gray-600">
+        <div className="space-y-2 text-xs text-gray-600">
           <label className="flex items-center">
             <input type="radio" name="trainer-type" className="mr-2" />
             Магнитный
@@ -123,21 +123,21 @@ const CatalogFilters: React.FC = () => {
       </div>
 
       {/* Apply Filters Button */}
-      <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white mb-4">
+      <Button size="sm" className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white mb-3">
         Применить
       </Button>
       
-      <Button variant="outline" className="w-full">
+      <Button size="sm" variant="outline" className="w-full">
         Сбросить
       </Button>
 
       {/* Ad Banner */}
       <div className="mt-8 bg-gray-800 text-white p-6 rounded-lg">
-        <h3 className="text-lg font-bold mb-2">Место для рекламы</h3>
-        <p className="text-sm text-gray-300 mb-4">
+        <h3 className="text-sm font-bold mb-2">Место для рекламы</h3>
+        <p className="text-xs text-gray-300 mb-3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white">
+        <Button size="sm" className="bg-[#F53B49] hover:bg-[#e63946] text-white">
           Перейти →
         </Button>
       </div>

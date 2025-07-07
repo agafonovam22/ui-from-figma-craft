@@ -18,15 +18,15 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({ sortBy, setSortBy }) 
             <input 
               type="text" 
               placeholder="Поиск"
-              className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-64"
+              className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-64 text-sm"
             />
           </div>
           <div className="flex items-center space-x-2">
-            <span className="text-sm text-gray-600">Сортировать:</span>
+            <span className="text-xs text-gray-600">Сортировать:</span>
             <select 
               value={sortBy} 
               onChange={(e) => setSortBy(e.target.value)}
-              className="border border-gray-300 rounded px-3 py-2 text-sm"
+              className="border border-gray-300 rounded px-3 py-2 text-xs"
             >
               <option value="popular">По популярности</option>
               <option value="price-low">По цене (по возрастанию)</option>
@@ -39,26 +39,26 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({ sortBy, setSortBy }) 
 
       {/* Filter Tags */}
       <div className="flex flex-wrap items-center gap-2 mb-6">
-        <Badge variant="secondary" className="bg-gray-100">Все категории</Badge>
-        <Badge variant="secondary" className="bg-gray-100">Акции</Badge>
-        <Badge variant="secondary" className="bg-gray-100">Новинки</Badge>
-        <Badge variant="secondary" className="bg-gray-100">Хит продаж</Badge>
-        <select className="border border-gray-300 rounded px-3 py-1 text-sm">
+        <Badge variant="secondary" className="bg-gray-100 text-xs">Все категории</Badge>
+        <Badge variant="secondary" className="bg-gray-100 text-xs">Акции</Badge>
+        <Badge variant="secondary" className="bg-gray-100 text-xs">Новинки</Badge>
+        <Badge variant="secondary" className="bg-gray-100 text-xs">Хит продаж</Badge>
+        <select className="border border-gray-300 rounded px-3 py-1 text-xs">
           <option>Массопоказатель весе</option>
         </select>
-        <select className="border border-gray-300 rounded px-3 py-1 text-sm">
+        <select className="border border-gray-300 rounded px-3 py-1 text-xs">
           <option>Длина полотна, см</option>
         </select>
-        <select className="border border-gray-300 rounded px-3 py-1 text-sm">
+        <select className="border border-gray-300 rounded px-3 py-1 text-xs">
           <option>Ширина полотна, см</option>
         </select>
       </div>
 
       <div className="flex items-center justify-between mb-4">
-        <div className="text-sm text-gray-600">
+        <div className="text-xs text-gray-600">
           Соответует 1246 товарам
         </div>
-        <div className="text-sm text-gray-600">
+        <div className="text-xs text-gray-600">
           Производительность ▲
         </div>
       </div>

@@ -98,9 +98,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
       <div className="space-y-2">
         {product.name && (
-          <h3 className="text-sm font-medium text-[#262631] line-clamp-2">
-            {product.name}
-          </h3>
+        <h3 className="text-xs font-medium text-[#262631] line-clamp-2">
+          {product.name}
+        </h3>
         )}
         
         {product.rating && product.reviews && (
@@ -109,7 +109,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               {'★'.repeat(Math.floor(product.rating))}
               {'☆'.repeat(5 - Math.floor(product.rating))}
             </div>
-            <span className="text-xs text-gray-500">
+            <span className="text-[10px] text-gray-500">
               {product.rating} ({product.reviews})
             </span>
           </div>
@@ -118,32 +118,32 @@ const ProductCard: React.FC<ProductCardProps> = ({
         {typeof product.inStock === 'boolean' && (
           <>
             {product.inStock ? (
-              <div className="text-sm text-green-600">В наличии ●●</div>
+              <div className="text-xs text-green-600">В наличии ●●</div>
             ) : (
-              <div className="text-sm text-red-600">Нет в наличии</div>
+              <div className="text-xs text-red-600">Нет в наличии</div>
             )}
           </>
         )}
 
-        <div className="text-sm text-blue-600 cursor-pointer hover:underline">
+        <div className="text-xs text-blue-600 cursor-pointer hover:underline">
           Есть в интернете
         </div>
 
         {product.price ? (
-          <div className="text-lg font-bold text-[#262631]">
+          <div className="text-sm font-bold text-[#262631]">
             {product.price}
           </div>
         ) : (
-          <div className="text-sm text-gray-500">Цена по запросу</div>
+          <div className="text-xs text-gray-500">Цена по запросу</div>
         )}
 
         <div className="flex gap-2">
           {product.isAvailable ? (
-            <Button className="flex-1 bg-[#F53B49] hover:bg-[#e63946] text-white text-sm py-2">
+            <Button size="sm" className="flex-1 bg-[#F53B49] hover:bg-[#e63946] text-white text-xs py-1">
               Купить
             </Button>
           ) : (
-            <Button variant="outline" className="flex-1 text-sm py-2">
+            <Button size="sm" variant="outline" className="flex-1 text-xs py-1">
               Запросить цену
             </Button>
           )}
