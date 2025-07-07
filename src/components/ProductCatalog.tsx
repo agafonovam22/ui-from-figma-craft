@@ -66,32 +66,32 @@ const ProductCatalog: React.FC = () => {
   const fitnessProducts = [
     {
       id: 13,
-      image: '/lovable-uploads/adc295d0-3df0-4921-bf2d-590bbe41296d.png',
+      image: '/lovable-uploads/869d52d6-1884-42fd-aa16-03b76deac288.png',
       category: 'treadmill-pro'
     },
     {
       id: 14,
-      image: '/lovable-uploads/c493cd4e-d0cd-4df5-b2bf-f6a4ae3dc165.png',
-      category: 'multistation'
-    },
-    {
-      id: 15,
-      image: '/lovable-uploads/052844f7-bb47-4b45-ba40-d4123336188f.png',
+      image: '/lovable-uploads/3a529c7f-0b56-45b3-b730-7b9c87c5e860.png',
       category: 'bike-commercial'
     },
     {
+      id: 15,
+      image: '/lovable-uploads/12a6cfba-5d94-472c-bd06-210dde020f33.png',
+      category: 'rowing-pro'
+    },
+    {
       id: 16,
-      image: '/lovable-uploads/c493cd4e-d0cd-4df5-b2bf-f6a4ae3dc165.png',
+      image: '/lovable-uploads/a264018f-4c7d-44c6-9249-bdc333346fa6.png',
       category: 'power-rack'
     },
     {
       id: 17,
-      image: '/lovable-uploads/ba5d833b-7740-4da6-a952-ebefe2bf10ef.png',
-      category: 'cardio-zone'
+      image: '/lovable-uploads/e7338ec8-827f-424d-82d6-5ec10aca18a1.png',
+      category: 'multistation'
     },
     {
       id: 18,
-      image: '/lovable-uploads/465cd1ff-17d9-433c-834d-3c4eb1b0607c.png',
+      image: '/lovable-uploads/323030b4-2002-4ea2-bfe4-66d67776494d.png',
       category: 'functional'
     },
     {
