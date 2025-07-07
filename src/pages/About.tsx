@@ -157,7 +157,7 @@ const About: React.FC = () => {
               <div className="relative h-full">
                 <div className="flex items-center h-full">
                   {/* Левая часть с текстом - 55% ширины */}
-                  <div className="w-[55%] z-10 pl-16 flex flex-col justify-center">
+                  <div className="w-[55%] z-10 flex flex-col justify-center" style={{ paddingLeft: '94px' }}>
                     <div>
                       <h2 className="text-3xl font-benzin-semibold leading-tight">
                         <span className="text-[#262631]">Well Fitness — </span>
