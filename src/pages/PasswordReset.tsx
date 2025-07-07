@@ -96,7 +96,7 @@ const PasswordReset: React.FC = () => {
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
                 {/* Gray background container stretched full width */}
                 <div className="bg-gray-100 py-12">
-                  <div style={{ paddingLeft: '60px', paddingRight: '60px' }}>
+                  <div style={{ paddingLeft: '300px', paddingRight: '60px' }}>
                     <div className="flex items-start gap-6">
                       {/* Checkmark icon */}
                       <div className="flex-shrink-0">
