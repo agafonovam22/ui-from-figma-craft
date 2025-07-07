@@ -61,25 +61,25 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({ sortBy, setSortBy }) 
           </button>
           
           {/* Dropdown filters */}
-          <select className="border border-gray-300 rounded px-3 py-1 text-xs bg-white">
-            <option>Максимальный вес ↓</option>
-          </select>
+          <button className="bg-white text-[#778093] border border-[#778093] px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+            Максимальный вес
+          </button>
           
-          <select className="border border-gray-300 rounded px-3 py-1 text-xs bg-white">
-            <option>Длина полотна, см ↓</option>
-          </select>
+          <button className="bg-white text-[#778093] border border-[#778093] px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+            Длина полотна, см
+          </button>
           
-          <select className="border border-gray-300 rounded px-3 py-1 text-xs bg-white">
-            <option>Ширина полотна, см ↓</option>
-          </select>
+          <button className="bg-white text-[#778093] border border-[#778093] px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+            Ширина полотна, см
+          </button>
           
-          <select className="border border-gray-300 rounded px-3 py-1 text-xs bg-white">
-            <option>Скорость полотна, км/ч ↓</option>
-          </select>
+          <button className="bg-white text-[#778093] border border-[#778093] px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+            Скорость полотна, км/ч
+          </button>
           
-          <select className="border border-gray-300 rounded px-3 py-1 text-xs bg-white">
-            <option>Производитель ↓</option>
-          </select>
+          <button className="bg-white text-[#778093] border border-[#778093] px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+            Производитель
+          </button>
         </div>
       </div>
     </>
