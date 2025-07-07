@@ -184,7 +184,7 @@ const ProductCard: React.FC = () => {
       
       <main className="w-full">
         {/* Breadcrumbs */}
-        <section className="bg-[#F8F9FA] py-4">
+        <section className="bg-white py-4">
           <nav className="flex items-center space-x-2 text-sm text-gray-500 mb-6">
             <Link to="/" className="hover:text-[#F53B49]">Главная</Link>
             <span>/</span>

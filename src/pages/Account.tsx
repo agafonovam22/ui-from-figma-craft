@@ -31,7 +31,7 @@ const Account: React.FC = () => {
       
       <main className="flex-1">
         {/* Breadcrumbs */}
-        <section className="bg-[#F8F9FA] py-4">
+        <section className="bg-white py-4">
           <div className="container mx-auto px-4 lg:px-[60px]">
             <Breadcrumb>
               <BreadcrumbList>
