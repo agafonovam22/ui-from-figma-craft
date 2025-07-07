@@ -182,9 +182,9 @@ const About: React.FC = () => {
         </section>
         
         {/* Navigation tabs */}
-        <section className="py-8">
+        <section className="pt-2.5 pb-10">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="flex gap-4">
+            <div className="flex gap-2.5">
               <button 
                 onClick={() => setActiveTab('about')}
                 className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
