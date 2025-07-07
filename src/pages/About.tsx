@@ -158,21 +158,19 @@ const About: React.FC = () => {
                 <div className="flex items-center h-full">
                   {/* Левая часть с текстом - 3/5 ширины */}
                   <div className="w-3/5 z-10 pl-16 flex flex-col justify-center">
-                    <div className="mb-4">
+                    <div>
                       <h2 className="text-3xl font-benzin-semibold leading-tight">
                         <span className="text-[#262631]">Well Fitness — </span>
                         <span className="text-[#F53B49]">надежный<br />партнер с 2005 года<br /></span>
                         <span className="text-[#262631]">для сотен компаний<br />от Калининграда<br />до Владивостока.</span>
                       </h2>
                     </div>
-                    {/* Красная декоративная линия */}
-                    <div className="w-16 h-1 bg-[#F53B49]"></div>
                   </div>
                   
                   {/* Правая часть с изображением - 2/5 ширины */}
                   <div className="w-2/5 h-full">
                     <img 
-                      src="/lovable-uploads/af6b9051-5569-45e0-bbdf-4232fe514f1c.png"
+                      src="/lovable-uploads/7e51159c-56a9-4851-b1e6-165d114d982b.png"
                       alt="Спортивное оборудование"
                       className="w-full h-full object-cover rounded-r-lg"
                     />
