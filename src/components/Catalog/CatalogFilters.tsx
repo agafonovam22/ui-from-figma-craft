@@ -227,7 +227,7 @@ const CatalogFilters: React.FC = () => {
 
         {/* Apply Filters Button */}
         <Button 
-          className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white mb-3 h-12 rounded-lg text-[16px]" 
+          className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white mb-3 h-12 rounded-lg text-[12px]" 
           style={{fontFamily: 'Benzin-Regular'}}
         >
           Применить
@@ -235,7 +235,7 @@ const CatalogFilters: React.FC = () => {
         
         <Button 
           variant="outline" 
-          className="w-full border-[#262631] text-[#262631] hover:bg-gray-50 h-12 rounded-lg text-[16px]" 
+          className="w-full border-[#262631] text-[#262631] hover:bg-gray-50 h-12 rounded-lg text-[12px]" 
           style={{fontFamily: 'Benzin-Regular'}}
         >
           Сбросить
