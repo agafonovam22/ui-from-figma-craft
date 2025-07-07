@@ -24,7 +24,7 @@ const CatalogFilters: React.FC = () => {
           
           {/* Price Range Slider */}
           <div className="mb-4">
-            <div className="flex justify-between text-xs text-gray-600 mb-2">
+            <div className="flex justify-between text-[14px] text-gray-600 mb-2" style={{fontFamily: 'Manrope'}}>
               <span>{priceRange[0].toLocaleString()} ₽</span>
               <span>{priceRange[1].toLocaleString()} ₽</span>
             </div>
@@ -38,7 +38,7 @@ const CatalogFilters: React.FC = () => {
             />
           </div>
           
-          <div className="space-y-2 text-xs text-gray-600">
+          <div className="space-y-2 text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
             <label className="flex items-center">
               <input type="radio" name="price" className="mr-2" />
               до 500 ₽
@@ -55,7 +55,7 @@ const CatalogFilters: React.FC = () => {
               <input type="radio" name="price" className="mr-2" />
               до 100 000 ₽
             </label>
-            <button className="text-[#F53B49] text-xs mt-2">Показать все</button>
+            <button className="text-[#F53B49] text-[14px] mt-2" style={{fontFamily: 'Manrope'}}>Показать все</button>
           </div>
         </div>
 
@@ -67,7 +67,7 @@ const CatalogFilters: React.FC = () => {
             Бренд
             <ChevronDown className="w-4 h-4" />
           </h3>
-          <div className="space-y-2 text-xs text-gray-600">
+          <div className="space-y-2 text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
             <label className="flex items-center">
               <input type="checkbox" className="mr-2" />
               True
@@ -84,7 +84,7 @@ const CatalogFilters: React.FC = () => {
               <input type="checkbox" className="mr-2" />
               DKN
             </label>
-            <button className="text-[#F53B49] text-xs mt-2">Показать все</button>
+            <button className="text-[#F53B49] text-[14px] mt-2" style={{fontFamily: 'Manrope'}}>Показать все</button>
           </div>
         </div>
 
@@ -96,7 +96,7 @@ const CatalogFilters: React.FC = () => {
             Тип назначения
             <ChevronDown className="w-4 h-4" />
           </h3>
-          <div className="space-y-2 text-xs text-gray-600">
+          <div className="space-y-2 text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
             <label className="flex items-center">
               <input type="checkbox" className="mr-2" />
               Домашние
@@ -120,17 +120,17 @@ const CatalogFilters: React.FC = () => {
             Мощность двигателя
             <ChevronDown className="w-4 h-4" />
           </h3>
-          <div className="space-y-2 text-xs text-gray-600">
+          <div className="space-y-2 text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
             <div className="flex items-center justify-between">
               <span>1,25CHP</span>
               <span>2x 5600 л.с</span>
             </div>
             <div className="flex items-center space-x-2">
-              <span className="text-xs">до 3 л.с</span>
+              <span className="text-[14px]">до 3 л.с</span>
               <div className="flex-1 h-1 bg-gray-200 rounded">
                 <div className="w-1/3 h-full bg-[#F53B49] rounded"></div>
               </div>
-              <span className="text-xs">3-6 л.с</span>
+              <span className="text-[14px]">3-6 л.с</span>
             </div>
           </div>
         </div>
@@ -143,7 +143,7 @@ const CatalogFilters: React.FC = () => {
             Тип тренажера
             <ChevronDown className="w-4 h-4" />
           </h3>
-          <div className="space-y-2 text-xs text-gray-600">
+          <div className="space-y-2 text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
             <label className="flex items-center">
               <input type="radio" name="trainer-type" className="mr-2" />
               Магнитный
