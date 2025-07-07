@@ -446,9 +446,9 @@ const About: React.FC = () => {
             {/* Statistics Banner - updated height and image */}
             <section className="w-full">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-                <div className="overflow-hidden relative rounded-lg" style={{ height: '508px' }}>
+                <div className="overflow-hidden relative rounded-lg" style={{ height: '458px' }}>
                   <img 
-                    src="/lovable-uploads/4e2028e8-e27d-4a58-a4eb-6a7b09d988db.png"
+                    src="/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"
                     alt="О компании - статистика"
                     className="w-full h-full object-cover"
                     style={{ objectPosition: 'center right' }}
