@@ -17,7 +17,7 @@ const Project: React.FC = () => {
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             {/* Breadcrumb */}
             <div className="mb-8">
-              <span className="text-gray-400 text-sm">
+              <span className="text-gray-400 text-xs">
                 <Link to="/" className="hover:text-gray-600">Главная</Link> → 
                 <Link to="/about" className="hover:text-gray-600"> О компании</Link> → 
                 Lorem Ipsum

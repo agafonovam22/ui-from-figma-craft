@@ -140,11 +140,11 @@ const About: React.FC = () => {
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             {/* Breadcrumb */}
             <div className="mb-8">
-              <span className="text-gray-400 text-sm">Главная → О компании</span>
+              <span className="text-gray-400 text-xs">Главная → О компании</span>
             </div>
             
             {/* Main Title - уменьшен в 2 раза */}
-            <h1 className="text-[40px] font-bold text-[#17171E] leading-tight" style={{ marginBottom: '40px' }}>
+            <h1 className="text-[40px] font-bold text-[#17171E] leading-tight" style={{ marginBottom: '20px' }}>
               О компании
             </h1>
           </div>
@@ -156,8 +156,8 @@ const About: React.FC = () => {
             <div className="overflow-hidden relative rounded-lg" style={{ height: '236px', backgroundColor: '#EEEFF6' }}>
               <div className="relative h-full">
                 <div className="flex items-center h-full">
-                  {/* Левая часть с текстом - 3/5 ширины */}
-                  <div className="w-3/5 z-10 pl-16 flex flex-col justify-center">
+                  {/* Левая часть с текстом - 55% ширины */}
+                  <div className="w-[55%] z-10 pl-16 flex flex-col justify-center">
                     <div>
                       <h2 className="text-3xl font-benzin-semibold leading-tight">
                         <span className="text-[#262631]">Well Fitness — </span>
@@ -167,8 +167,8 @@ const About: React.FC = () => {
                     </div>
                   </div>
                   
-                  {/* Правая часть с изображением - 2/5 ширины */}
-                  <div className="w-2/5 h-full">
+                  {/* Правая часть с изображением - 45% ширины */}
+                  <div className="w-[45%] h-full">
                     <img 
                       src="/lovable-uploads/7e51159c-56a9-4851-b1e6-165d114d982b.png"
                       alt="Спортивное оборудование"
