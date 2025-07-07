@@ -451,6 +451,7 @@ const About: React.FC = () => {
                     src="/lovable-uploads/4e2028e8-e27d-4a58-a4eb-6a7b09d988db.png"
                     alt="О компании - статистика"
                     className="w-full h-full object-cover"
+                    style={{ objectPosition: 'center right' }}
                   />
                 </div>
               </div>
