@@ -93,51 +93,56 @@ const PasswordReset: React.FC = () => {
                 </div>
               </>
             ) : (
-              <div className="max-w-4xl mx-auto">
-                {/* Gray background container */}
-                <div className="bg-gray-100 rounded-lg p-8 mb-8">
-                  <div className="flex items-start gap-6 mb-6">
+              <div className="max-w-[1800px] mx-auto px-4 lg:px-[60px]">
+                {/* Gray background container with sharp corners and proper padding */}
+                <div className="bg-gray-100 mb-8" style={{ paddingTop: '60px', paddingBottom: '60px', paddingLeft: '60px', paddingRight: '60px' }}>
+                  <div className="flex items-start gap-6">
+                    {/* Checkmark icon */}
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-[#F53B49] rounded-full flex items-center justify-center border-4 border-white">
-                        <Check size={24} color="white" strokeWidth={3} />
-                      </div>
+                      <img 
+                        src="/lovable-uploads/163791b0-3a3a-443b-9703-750e208fd889.png" 
+                        alt="Checkmark" 
+                        className="w-16 h-auto"
+                      />
                     </div>
                     
+                    {/* Text content - all aligned to start from same line */}
                     <div className="flex-1">
                       <h1 className="text-2xl font-bold text-[#262631] mb-2 leading-tight">
-                        Мы отправили вам письмо со ссылкой<br />для восстановления пароля
+                        Мы отправили вам письмо со ссылкой<br />
+                        для восстановления пароля
                       </h1>
                       
-                      <p className="text-[#262631] text-base mb-4">
+                      <p className="text-[#262631] text-base mb-6">
                         на указанный e-mail: <span className="text-[#007BFF]">{email}</span>
                       </p>
-                    </div>
-                  </div>
-                  
-                  <p className="text-[#262631] font-medium text-base mb-6">
-                    Осталось сделать 3 шага.
-                  </p>
-                  
-                  <div className="space-y-3 mb-8">
-                    <p className="text-[#262631] text-sm leading-relaxed">
-                      <span className="font-medium">1.</span> Зайдите в свой почтовый ящик и найдите письмо от info@wellfitness.ru. Если вы не нашли письма, проверьте папку «Спам».
-                    </p>
-                    <p className="text-[#262631] text-sm leading-relaxed">
-                      <span className="font-medium">2.</span> Перейдите по ссылке, указанной в письме.
-                    </p>
-                    <p className="text-[#262631] text-sm leading-relaxed">
-                      <span className="font-medium">3.</span> Придумайте и введите новый пароль
-                    </p>
-                  </div>
+                      
+                      <p className="text-[#262631] font-medium mb-6" style={{ fontSize: '16px', fontFamily: 'Manrope' }}>
+                        Осталось сделать 3 шага.
+                      </p>
+                      
+                      <div className="space-y-3 mb-8">
+                        <p className="text-[#262631] leading-relaxed" style={{ fontSize: '16px', fontFamily: 'Manrope' }}>
+                          <span className="font-medium">1.</span> Зайдите в свой почтовый ящик и найдите письмо от info@wellfitness.ru. Если вы не нашли письма, проверьте папку «Спам».
+                        </p>
+                        <p className="text-[#262631] leading-relaxed" style={{ fontSize: '16px', fontFamily: 'Manrope' }}>
+                          <span className="font-medium">2.</span> Перейдите по ссылке, указанной в письме.
+                        </p>
+                        <p className="text-[#262631] leading-relaxed" style={{ fontSize: '16px', fontFamily: 'Manrope' }}>
+                          <span className="font-medium">3.</span> Придумайте и введите новый пароль
+                        </p>
+                      </div>
 
-                  {/* Back to Home Button */}
-                  <div className="flex justify-center">
-                    <Button
-                      onClick={() => navigate('/')}
-                      className="w-64 h-12 bg-[#F53B49] hover:bg-[#e63946] text-white text-base font-medium rounded-md"
-                    >
-                      Вернуться на главную
-                    </Button>
+                      {/* Back to Home Button */}
+                      <div className="flex justify-center">
+                        <Button
+                          onClick={() => navigate('/')}
+                          className="w-64 h-12 bg-[#F53B49] hover:bg-[#e63946] text-white text-base font-medium rounded-md"
+                        >
+                          Вернуться на главную
+                        </Button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
