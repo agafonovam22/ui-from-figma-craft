@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { Slider } from "@/components/ui/slider";
 
 const CatalogFilters: React.FC = () => {
+  const [priceRange, setPriceRange] = useState([0, 100000]);
+
   return (
     <div className="w-64 flex-shrink-0">
       <h1 className="text-xl font-bold text-[#262631] mb-6">Каталог</h1>
@@ -13,6 +16,23 @@ const CatalogFilters: React.FC = () => {
           Цена
           <ChevronDown className="w-4 h-4" />
         </h3>
+        
+        {/* Price Range Slider */}
+        <div className="mb-4">
+          <div className="flex justify-between text-xs text-gray-600 mb-2">
+            <span>{priceRange[0].toLocaleString()} ₽</span>
+            <span>{priceRange[1].toLocaleString()} ₽</span>
+          </div>
+          <Slider
+            value={priceRange}
+            onValueChange={setPriceRange}
+            max={150000}
+            min={0}
+            step={1000}
+            className="w-full"
+          />
+        </div>
+        
         <div className="space-y-2 text-xs text-gray-600">
           <label className="flex items-center">
             <input type="radio" name="price" className="mr-2" />
