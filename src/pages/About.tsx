@@ -494,12 +494,12 @@ const About: React.FC = () => {
             {/* География продаж */}
             <section className="py-8">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-                <h2 className="mb-8 leading-tight" style={{ fontSize: '32px', fontFamily: 'Benzin-Semibold' }}>
+                <h2 className="mb-0 leading-tight" style={{ fontSize: '32px', fontFamily: 'Benzin-Semibold' }}>
                   <span style={{ color: 'var(--Light-Grey, #778093)' }}>География </span>
                   <span style={{ color: '#262631' }}>продаж</span>
                 </h2>
                 
-                <div className="w-full bg-white rounded-lg overflow-hidden">
+                <div className="w-full bg-white rounded-lg overflow-hidden" style={{ marginTop: '-15px' }}>
                   <img 
                     src="/lovable-uploads/b06c69dd-14f1-40c1-9e8a-9b08c05e47aa.png"
                     alt="Карта России с городами присутствия"
