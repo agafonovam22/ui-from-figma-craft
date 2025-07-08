@@ -88,8 +88,8 @@ const OfficeMap: React.FC = () => {
   }
 
   return (
-    <div className="relative w-full h-full">
-      <div ref={mapContainer} className="absolute inset-0 rounded-lg" />
+    <div className="w-full h-full">
+      <div ref={mapContainer} className="w-full h-full rounded-lg" />
     </div>
   );
 };
