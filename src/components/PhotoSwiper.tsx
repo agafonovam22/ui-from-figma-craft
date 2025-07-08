@@ -75,7 +75,7 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
 
   return (
     <div 
-      className="relative w-screen h-[300px] overflow-x-visible bg-gray-100 group -mx-[50vw] left-1/2"
+      className="relative w-full h-[300px] overflow-hidden rounded-lg bg-gray-100 group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
@@ -83,12 +83,12 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
       onTouchEnd={handleTouchEnd}
       ref={sliderRef}
     >
-      {/* Main carousel container extending beyond screen */}
+      {/* Main carousel container with side previews */}
       <div className="relative w-full h-full flex items-center justify-center overflow-visible">
-        {/* Previous image - extends beyond left edge */}
+        {/* Previous image */}
         {currentIndex > 0 && (
           <div 
-            className="absolute -left-32 w-80 h-4/5 cursor-pointer z-10 opacity-60 hover:opacity-80 transition-opacity"
+            className="absolute left-4 w-1/4 h-4/5 cursor-pointer z-10 opacity-60 hover:opacity-80 transition-opacity"
             onClick={() => goToSlide(currentIndex - 1)}
           >
             <img
@@ -101,40 +101,19 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
         )}
 
         {/* Current central image */}
-        <div className="relative w-96 h-full mx-auto z-20">
+        <div className="relative w-3/5 h-full mx-auto z-20">
           <img
             src={images[currentIndex]}
             alt={`Slide ${currentIndex + 1}`}
             className="w-full h-full object-cover rounded-lg shadow-xl"
             draggable={false}
           />
-          
-          {/* Navigation arrows positioned beside the central image */}
-          {images.length > 1 && (
-            <>
-              <button
-                onClick={prevSlide}
-                className="absolute -left-16 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white shadow-lg z-30"
-                aria-label="Previous image"
-              >
-                <ChevronLeft className="w-6 h-6 text-gray-700" />
-              </button>
-              
-              <button
-                onClick={nextSlide}
-                className="absolute -right-16 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white shadow-lg z-30"
-                aria-label="Next image"
-              >
-                <ChevronRight className="w-6 h-6 text-gray-700" />
-              </button>
-            </>
-          )}
         </div>
 
-        {/* Next image - extends beyond right edge */}
+        {/* Next image */}
         {currentIndex < images.length - 1 && (
           <div 
-            className="absolute -right-32 w-80 h-4/5 cursor-pointer z-10 opacity-60 hover:opacity-80 transition-opacity"
+            className="absolute right-4 w-1/4 h-4/5 cursor-pointer z-10 opacity-60 hover:opacity-80 transition-opacity"
             onClick={() => goToSlide(currentIndex + 1)}
           >
             <img
@@ -146,6 +125,27 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
           </div>
         )}
       </div>
+
+      {/* Navigation arrows - only show on hover on desktop */}
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white/90 z-10"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-5 h-5 text-gray-700" />
+          </button>
+          
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white/90 z-10"
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-5 h-5 text-gray-700" />
+          </button>
+        </>
+      )}
 
       {/* Progress indicator */}
       {images.length > 1 && (
