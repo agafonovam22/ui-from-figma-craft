@@ -298,17 +298,16 @@ const Contacts: React.FC = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="font-heading text-[24px] text-layout-dark-grey mb-4 leading-none">Склад. Москва</h3>
+              <h3 className="font-heading text-[24px] text-layout-dark-grey mb-4 leading-none">Красногорск (Основной / МО)</h3>
               
-              <div className="space-y-4">
+              <div className="space-y-4 mb-6">
                 <div className="flex items-start gap-3">
                   <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
                     <p className="text-[16px] text-layout-dark-grey font-medium">
-                      Московская область,<br />
-                      Красногорский р-н пос.Гольево,<br />
-                      Транспортная ул. дом #1
+                      Московская область, Красногорский р-н,<br />
+                      пос. Гольево, ул. Центральная
                     </p>
                   </div>
                 </div>
@@ -321,18 +320,23 @@ const Contacts: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              <button className="w-full py-2 border border-gray-300 text-gray-700 text-sm rounded-md hover:bg-gray-50 transition-colors">
+                Как проехать
+              </button>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="font-heading text-[24px] text-layout-dark-grey mb-4 leading-none">Дополнительный склад. Москва</h3>
+              <h3 className="font-heading text-[24px] text-layout-dark-grey mb-4 leading-none">Химки (МО)</h3>
               
-              <div className="space-y-4">
+              <div className="space-y-4 mb-6">
                 <div className="flex items-start gap-3">
                   <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
                     <p className="text-[16px] text-layout-dark-grey font-medium">
-                      Москва, ул. Промышленная 1А
+                      Московская область, г. Химки,<br />
+                      мкр Сходня, ул. Некрасова, д. 2
                     </p>
                   </div>
                 </div>
@@ -345,6 +349,10 @@ const Contacts: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              <button className="w-full py-2 border border-gray-300 text-gray-700 text-sm rounded-md hover:bg-gray-50 transition-colors">
+                Как проехать
+              </button>
             </div>
           </div>
         </div>
