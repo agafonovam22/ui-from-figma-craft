@@ -83,24 +83,50 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
       onTouchEnd={handleTouchEnd}
       ref={sliderRef}
     >
-      {/* Main slider container */}
-      <div 
-        className="flex transition-transform duration-500 ease-out h-full"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className="flex-shrink-0 w-full h-full"
-          >
-            <img
-              src={image}
-              alt={`Slide ${index + 1}`}
-              className="w-full h-full object-cover"
-              draggable={false}
-            />
-          </div>
-        ))}
+      {/* Main carousel container with padding for side previews */}
+      <div className="relative w-full h-full px-16">
+        <div 
+          className="flex transition-transform duration-500 ease-out h-full"
+          style={{ 
+            transform: `translateX(calc(-${currentIndex * 100}% + ${currentIndex * 0}px))`,
+            width: `${images.length * 100}%`
+          }}
+        >
+          {images.map((image, index) => {
+            const isActive = index === currentIndex;
+            const isPrev = index === currentIndex - 1;
+            const isNext = index === currentIndex + 1;
+            const isVisible = isActive || isPrev || isNext;
+            
+            return (
+              <div
+                key={index}
+                className={`relative transition-all duration-500 ease-out ${
+                  isVisible ? 'opacity-100' : 'opacity-0'
+                }`}
+                style={{ 
+                  width: `${100 / images.length}%`,
+                  transform: isActive 
+                    ? 'scale(1) translateX(0)' 
+                    : 'scale(0.85) translateX(0)',
+                  zIndex: isActive ? 10 : 5
+                }}
+              >
+                <div className={`w-full h-full mx-2 rounded-lg overflow-hidden ${
+                  !isActive ? 'opacity-60' : ''
+                }`}>
+                  <img
+                    src={image}
+                    alt={`Slide ${index + 1}`}
+                    className="w-full h-full object-cover cursor-pointer"
+                    draggable={false}
+                    onClick={() => !isActive && goToSlide(index)}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       {/* Navigation arrows - only show on hover on desktop */}
