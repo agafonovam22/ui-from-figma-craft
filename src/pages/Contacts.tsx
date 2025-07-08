@@ -20,9 +20,10 @@ const Contacts: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    '/lovable-uploads/0ca2ce85-be53-48e6-9b67-c8f73524f2aa.png',
-    '/lovable-uploads/98295c24-9608-4ae5-9959-7570f3f0f0b1.png',
-    '/lovable-uploads/6894ed62-5cb2-4d73-bcaa-d2d66f2344f7.png'
+    '/lovable-uploads/a7a10f7b-32fb-4a8d-940d-364ba0c4a1d0.png',
+    '/lovable-uploads/a9d600d0-b136-4d10-b09c-618bf653fa04.png',
+    '/lovable-uploads/2b609d2f-6fc7-4781-b57a-142e817a9825.png',
+    '/lovable-uploads/bce5f4f3-1a91-454a-b10f-92c2f907b7c1.png'
   ];
 
   const nextImage = () => {
@@ -326,9 +327,6 @@ const Contacts: React.FC = () => {
                   </div>
                 </div>
 
-                <button className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors">
-                  Как проехать
-                </button>
               </div>
 
               <div className="bg-gray-50 rounded-lg p-4">
@@ -355,9 +353,6 @@ const Contacts: React.FC = () => {
                   </div>
                 </div>
 
-                <button className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors">
-                  Как проехать
-                </button>
               </div>
             </div>
           ) : (
@@ -386,9 +381,6 @@ const Contacts: React.FC = () => {
                   </div>
                 </div>
 
-                <button className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors">
-                  Как проехать
-                </button>
               </div>
             </div>
           )}
