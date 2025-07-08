@@ -344,7 +344,7 @@ const WhereToBuy: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {onlineStores.map((store, index) => (
                 <div key={index} className="bg-gray-50 rounded-lg p-4 text-center">
-                  <a href="#" className="text-gray-700 hover:text-[#F53B49] transition-colors">
+                  <a href="#" className="text-gray-700 hover:text-[#F53B49] transition-colors font-heading text-[16px]">
                     {store}
                   </a>
                 </div>
@@ -359,7 +359,7 @@ const WhereToBuy: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                 {Array(16).fill('zonasporta.com').map((store, index) => (
                   <div key={index} className="bg-gray-50 rounded-lg p-4 text-center">
-                    <span className="text-gray-700">{store}</span>
+                    <span className="text-gray-700 font-heading text-[16px]">{store}</span>
                   </div>
                 ))}
               </div>
@@ -413,7 +413,7 @@ const WhereToBuy: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 {onlineStores.map((store, index) => (
                   <div key={index} className="bg-gray-50 rounded-lg p-4 text-center">
-                    <a href="#" className="text-gray-700 hover:text-[#F53B49] transition-colors">
+                    <a href="#" className="text-gray-700 hover:text-[#F53B49] transition-colors font-heading text-[16px]">
                       {store}
                     </a>
                   </div>
@@ -428,7 +428,7 @@ const WhereToBuy: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                   {Array(16).fill('zonasporta.com').map((store, index) => (
                     <div key={index} className="bg-gray-50 rounded-lg p-4 text-center">
-                      <span className="text-gray-700">{store}</span>
+                      <span className="text-gray-700 font-heading text-[16px]">{store}</span>
                     </div>
                   ))}
                 </div>
