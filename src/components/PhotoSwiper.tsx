@@ -75,7 +75,7 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
 
   return (
     <div 
-      className="relative w-full h-[300px] overflow-hidden bg-gray-100 group -mx-4 sm:-mx-8 lg:-mx-16"
+      className="relative w-full h-[300px] overflow-hidden bg-gray-100 group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
@@ -83,12 +83,12 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
       onTouchEnd={handleTouchEnd}
       ref={sliderRef}
     >
-      {/* Main carousel container extending beyond viewport */}
-      <div className="relative w-full h-full flex items-center justify-center">
+      {/* Main carousel container extending beyond viewport symmetrically */}
+      <div className="relative w-[120%] h-full -ml-[10%] flex items-center justify-center">
         {/* Previous image */}
         {currentIndex > 0 && (
           <div 
-            className="absolute left-[10%] w-[25%] h-[80%] cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
+            className="absolute left-[8%] w-[25%] h-[80%] cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
             onClick={() => goToSlide(currentIndex - 1)}
           >
             <img
@@ -134,7 +134,7 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
         {/* Next image */}
         {currentIndex < images.length - 1 && (
           <div 
-            className="absolute right-[10%] w-[25%] h-[80%] cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
+            className="absolute right-[8%] w-[25%] h-[80%] cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
             onClick={() => goToSlide(currentIndex + 1)}
           >
             <img

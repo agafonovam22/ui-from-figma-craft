@@ -20,9 +20,9 @@ const Contacts: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    '/lovable-uploads/32968eea-0eb6-4361-94d2-2871b2bec66f.png',
-    '/lovable-uploads/92e9b953-ee04-4867-8d5b-1bfcf39adcee.png',
-    '/lovable-uploads/e236b9ee-b2a8-44b0-8e42-a9ea45b4382d.png'
+    '/lovable-uploads/0ca2ce85-be53-48e6-9b67-c8f73524f2aa.png',
+    '/lovable-uploads/98295c24-9608-4ae5-9959-7570f3f0f0b1.png',
+    '/lovable-uploads/6894ed62-5cb2-4d73-bcaa-d2d66f2344f7.png'
   ];
 
   const nextImage = () => {
