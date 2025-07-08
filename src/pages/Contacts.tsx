@@ -294,62 +294,54 @@ const Contacts: React.FC = () => {
 
         {/* Warehouses */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Склады</h2>
+          <h2 className="font-heading text-[32px] text-layout-dark-grey mb-6 leading-none">Склады</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Склад. Москва</h3>
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="font-heading text-[24px] text-layout-dark-grey mb-4 leading-none">Склад. Москва</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-4 text-gray-700">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium text-sm text-gray-500 mb-1">Адрес</p>
-                      <p className="text-sm">
-                        Московская область,<br />
-                        Красногорский р-н пос.Гольево,<br />
-                        Транспортная ул. дом #1
-                      </p>
-                    </div>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-sm text-layout-dark-grey mb-1">Адрес</p>
+                    <p className="text-[16px] text-layout-dark-grey font-medium">
+                      Московская область,<br />
+                      Красногорский р-н пос.Гольево,<br />
+                      Транспортная ул. дом #1
+                    </p>
                   </div>
                 </div>
                 
-                <div className="space-y-4 text-gray-700">
-                  <div className="flex items-start gap-3">
-                    <Phone className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium text-sm text-gray-500 mb-1">Телефон</p>
-                      <p className="text-sm">+7 (499) 677-56-32 доб. 1</p>
-                    </div>
+                <div className="flex items-start gap-3">
+                  <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-sm text-layout-dark-grey mb-1">Телефон</p>
+                    <p className="text-[16px] text-layout-dark-grey font-medium">+7 (499) 677-56-32 доб. 1</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Дополнительный склад. Москва</h3>
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="font-heading text-[24px] text-layout-dark-grey mb-4 leading-none">Дополнительный склад. Москва</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-4 text-gray-700">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium text-sm text-gray-500 mb-1">Адрес</p>
-                      <p className="text-sm">
-                        Москва, ул. Промышленная 1А
-                      </p>
-                    </div>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-sm text-layout-dark-grey mb-1">Адрес</p>
+                    <p className="text-[16px] text-layout-dark-grey font-medium">
+                      Москва, ул. Промышленная 1А
+                    </p>
                   </div>
                 </div>
                 
-                <div className="space-y-4 text-gray-700">
-                  <div className="flex items-start gap-3">
-                    <Phone className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
-                    <div>
-                      <p className="font-medium text-sm text-gray-500 mb-1">Телефон</p>
-                      <p className="text-sm">+7 (499) 677-56-32 доб. 1</p>
-                    </div>
+                <div className="flex items-start gap-3">
+                  <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-sm text-layout-dark-grey mb-1">Телефон</p>
+                    <p className="text-[16px] text-layout-dark-grey font-medium">+7 (499) 677-56-32 доб. 1</p>
                   </div>
                 </div>
               </div>
