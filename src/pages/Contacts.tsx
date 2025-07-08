@@ -221,7 +221,8 @@ const Contacts: React.FC = () => {
                 <Phone className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                  <p className="text-sm">+7 (499) 677-56-32 доб. 1</p>
+                  <p className="text-sm">+7 (499) 677-56-32 доб. 1-1</p>
+                  <p className="text-sm">+7 (499) 677-56-32 доб. 1-2</p>
                 </div>
               </div>
               
@@ -231,7 +232,7 @@ const Contacts: React.FC = () => {
                   <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
                   <p className="text-sm">info@wellfitness.ru</p>
                   <p className="text-xs text-gray-500 mt-1">
-                    по общим вопросам вопросам сотрудничества, жалобам и<br />
+                    по общим вопросам, вопросам сотрудничества, жалобам и<br />
                     предложениям
                   </p>
                   <p className="text-sm mt-2">zakaz@wellfitness.ru</p>
@@ -251,7 +252,7 @@ const Contacts: React.FC = () => {
 
         {/* Accounting and Service Departments */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          <div>
+          <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Отдел бухгалтерии</h3>
             
             <div className="space-y-4 text-gray-700">
@@ -259,7 +260,7 @@ const Contacts: React.FC = () => {
                 <Phone className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                  <p className="text-sm">+7 (499) 677-56-32 доб. 3</p>
+                  <p className="text-sm">+7 (499) 677-56-32 доб. 4</p>
                 </div>
               </div>
               
@@ -267,13 +268,13 @@ const Contacts: React.FC = () => {
                 <Mail className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
-                  <p className="text-sm">info@wellfitness.ru</p>
+                  <p className="text-sm">buh@wellfitness.ru</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div>
+          <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Сервисная служба</h3>
             
             <div className="space-y-4 text-gray-700">
@@ -281,7 +282,7 @@ const Contacts: React.FC = () => {
                 <Phone className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                  <p className="text-sm">+7 (499) 677-56-32 доб. 3</p>
+                  <p className="text-sm">+7 (499) 677-56-32 доб. 2</p>
                 </div>
               </div>
               
@@ -290,6 +291,9 @@ const Contacts: React.FC = () => {
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
                   <p className="text-sm">service@wellfitness.ru</p>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Звонки принимаются с 9 до 18, заявки на почту - круглосуточно.
+                  </p>
                 </div>
               </div>
             </div>
