@@ -12,7 +12,7 @@ import {
   BreadcrumbPage 
 } from '@/components/ui/breadcrumb';
 import { Switch } from '@/components/ui/switch';
-import { MapPin, Phone, Clock, Map as MapIcon } from 'lucide-react';
+import { MapPin, Phone, Globe, Clock, Map as MapIcon } from 'lucide-react';
 
 const WhereToBuy: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState('Москва');
@@ -267,9 +267,9 @@ const WhereToBuy: React.FC = () => {
                     </div>
                     
                     <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-gray-500 flex-shrink-0" />
+                      <Globe className="w-4 h-4 text-gray-500 flex-shrink-0" />
                       <div>
-                        <p className="font-medium text-sm">Режим работы</p>
+                        <p className="font-medium text-sm">Сайт</p>
                         <p className="text-sm">{store.hours}</p>
                       </div>
                     </div>
@@ -337,9 +337,9 @@ const WhereToBuy: React.FC = () => {
                       </div>
                       
                       <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-gray-500 flex-shrink-0" />
+                        <Globe className="w-4 h-4 text-gray-500 flex-shrink-0" />
                         <div>
-                          <p className="font-medium text-sm">Режим работы</p>
+                          <p className="font-medium text-sm">Сайт</p>
                           <p className="text-sm">{store.hours}</p>
                         </div>
                       </div>
