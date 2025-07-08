@@ -93,7 +93,7 @@ const Contacts: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-gray-500 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-sm text-gray-500 mb-1">Адрес</p>
+                    <p className="text-[16px] text-grey-text mb-1">Адрес</p>
                     <p className="text-sm">
                       Москва, ТРК VEGAS Крокус Сити,<br />
                       м.Мякинино, ул. Международная 12,<br />
@@ -105,7 +105,7 @@ const Contacts: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <Phone className="w-5 h-5 text-gray-500 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-sm text-gray-500 mb-1">Телефон</p>
+                    <p className="text-[16px] text-grey-text mb-1">Телефон</p>
                     <p className="text-sm">+7 (499) 677-56-32</p>
                   </div>
                 </div>
@@ -113,7 +113,7 @@ const Contacts: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <Clock className="w-5 h-5 text-gray-500 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-sm text-gray-500 mb-1">Режим работы</p>
+                    <p className="text-[16px] text-grey-text mb-1">Режим работы</p>
                     <p className="text-sm">10:00 - 22:00</p>
                   </div>
                 </div>
@@ -185,7 +185,7 @@ const Contacts: React.FC = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-sm text-gray-500 mb-1">Адрес</p>
+                  <p className="text-[16px] text-grey-text mb-1">Адрес</p>
                   <p className="text-sm">
                     Москва ул. Маршала Прокляхова<br />
                     30 офис 407 БЦ Этмект Плаза
@@ -196,7 +196,7 @@ const Contacts: React.FC = () => {
               <div className="flex items-start gap-3">
                 <Clock className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-sm text-gray-500 mb-1">Режим работы</p>
+                  <p className="text-[16px] text-grey-text mb-1">Режим работы</p>
                   <p className="text-sm">10:00 - 22:00</p>
                 </div>
               </div>
@@ -220,7 +220,7 @@ const Contacts: React.FC = () => {
               <div className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-sm text-gray-500 mb-1">Телефон</p>
+                  <p className="text-[16px] text-grey-text mb-1">Телефон</p>
                   <p className="text-sm">+7 (499) 677-56-32 доб. 1</p>
                 </div>
               </div>
@@ -228,7 +228,7 @@ const Contacts: React.FC = () => {
               <div className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-sm text-gray-500 mb-1">E-mail</p>
+                  <p className="text-[16px] text-grey-text mb-1">E-mail</p>
                   <p className="text-sm">info@wellfitness.ru</p>
                   <p className="text-xs text-gray-500 mt-1">
                     по вопросам консультирования, поставкам, гарантийным<br />
@@ -254,7 +254,7 @@ const Contacts: React.FC = () => {
               <div className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-sm text-gray-500 mb-1">Телефон</p>
+                  <p className="text-[16px] text-grey-text mb-1">Телефон</p>
                   <p className="text-sm">+7 (499) 677-56-32 доб. 3</p>
                 </div>
               </div>
@@ -262,7 +262,7 @@ const Contacts: React.FC = () => {
               <div className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-sm text-gray-500 mb-1">E-mail</p>
+                  <p className="text-[16px] text-grey-text mb-1">E-mail</p>
                   <p className="text-sm">info@wellfitness.ru</p>
                 </div>
               </div>
@@ -276,7 +276,7 @@ const Contacts: React.FC = () => {
               <div className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-sm text-gray-500 mb-1">Телефон</p>
+                  <p className="text-[16px] text-grey-text mb-1">Телефон</p>
                   <p className="text-sm">+7 (499) 677-56-32 доб. 3</p>
                 </div>
               </div>
@@ -284,7 +284,7 @@ const Contacts: React.FC = () => {
               <div className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-sm text-gray-500 mb-1">E-mail</p>
+                  <p className="text-[16px] text-grey-text mb-1">E-mail</p>
                   <p className="text-sm">service@wellfitness.ru</p>
                 </div>
               </div>
@@ -304,7 +304,7 @@ const Contacts: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-sm text-layout-dark-grey mb-1">Адрес</p>
+                    <p className="text-[16px] text-grey-text mb-1">Адрес</p>
                     <p className="text-[16px] text-layout-dark-grey font-medium">
                       Московская область,<br />
                       Красногорский р-н пос.Гольево,<br />
@@ -316,7 +316,7 @@ const Contacts: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-sm text-layout-dark-grey mb-1">Телефон</p>
+                    <p className="text-[16px] text-grey-text mb-1">Телефон</p>
                     <p className="text-[16px] text-layout-dark-grey font-medium">+7 (499) 677-56-32 доб. 1</p>
                   </div>
                 </div>
@@ -330,7 +330,7 @@ const Contacts: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-sm text-layout-dark-grey mb-1">Адрес</p>
+                    <p className="text-[16px] text-grey-text mb-1">Адрес</p>
                     <p className="text-[16px] text-layout-dark-grey font-medium">
                       Москва, ул. Промышленная 1А
                     </p>
@@ -340,7 +340,7 @@ const Contacts: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-sm text-layout-dark-grey mb-1">Телефон</p>
+                    <p className="text-[16px] text-grey-text mb-1">Телефон</p>
                     <p className="text-[16px] text-layout-dark-grey font-medium">+7 (499) 677-56-32 доб. 1</p>
                   </div>
                 </div>
