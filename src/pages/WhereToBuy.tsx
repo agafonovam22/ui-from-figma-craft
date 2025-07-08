@@ -169,7 +169,7 @@ const WhereToBuy: React.FC = () => {
             <div className="bg-gray-50 rounded-lg flex h-[328px] overflow-hidden">
               <div className="flex-1 w-1/3 p-6">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Фирменный магазин<br />Well Fitness
+                  Шоу-рум WellFitness
                 </h2>
                 
                 <div className="space-y-3 text-gray-700">
@@ -178,9 +178,7 @@ const WhereToBuy: React.FC = () => {
                     <div>
                       <p className="font-medium">Адрес</p>
                       <p className="text-sm">
-                        Москва, ТРК VEGAS Крокус Сити,<br />
-                        м.Мякинино, ул. Международная 12,<br />
-                        G6 км МКАД
+                        Москва, ТЦ Капитолий, Правобережная улица, 1Б
                       </p>
                     </div>
                   </div>
@@ -189,7 +187,7 @@ const WhereToBuy: React.FC = () => {
                     <Phone className="w-5 h-5 text-gray-500 flex-shrink-0" />
                     <div>
                       <p className="font-medium">Телефон</p>
-                      <p className="text-sm">+7 (499) 677-56-32</p>
+                      <p className="text-sm">+7 (499) 677-56-32 доб. 337</p>
                     </div>
                   </div>
                   
