@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import OfficeMap from '@/components/OfficeMap';
 import ShowroomMap from '@/components/ShowroomMap';
 import { 
   Breadcrumb, 
@@ -184,21 +185,21 @@ const Contacts: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="space-y-4 text-gray-700">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
+                  <img src="/lovable-uploads/31c0ee66-1daf-4513-8947-c2990045d4a6.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
                     <p className="text-sm">
-                      Москва ул. Маршала Прошлякова<br />
-                      30 офис 407 БЦ Зенит Плаза
+                      Москва, ул. Маршала Прошлякова,<br />
+                      д. 30, офис 407, БЦ "Зенит Плаза"
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-3">
-                  <Clock className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
+                  <img src="/lovable-uploads/f90ab0e0-2a09-45ef-a7ac-3f95d97744c7.png" alt="Time" className="w-4 h-4 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-[16px] text-layout-grey-text mb-1">Режим работы</p>
-                    <p className="text-sm">10:00 - 22:00</p>
+                    <p className="text-sm">09:30 – 17:30</p>
                   </div>
                 </div>
 
@@ -207,10 +208,8 @@ const Contacts: React.FC = () => {
                 </button>
               </div>
 
-              <div className="bg-gray-200 rounded-lg flex items-center justify-center relative overflow-hidden h-[200px]">
-                <div className="w-full h-full bg-green-100 flex items-center justify-center">
-                  <div className="w-3 h-3 bg-[#F53B49] rounded-full"></div>
-                </div>
+              <div className="h-[200px] rounded-lg overflow-hidden">
+                <OfficeMap />
               </div>
             </div>
           </div>
