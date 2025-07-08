@@ -168,23 +168,29 @@ const WhereToBuy: React.FC = () => {
           ) : (
             <div className="bg-gray-50 rounded-lg flex h-[328px] overflow-hidden">
               <div className="flex-1 w-1/3 p-6">
-                <h2 className="font-heading text-[32px] text-layout-dark-grey mb-4 leading-none">
-                  Шоу-рум WellFitness
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  Фирменный магазин<br />Well Fitness
                 </h2>
                 
-                <div className="space-y-3">
-                  <div>
-                    <p className="font-heading text-[16px] text-layout-dark-grey leading-none mb-1">Адрес</p>
-                    <p className="font-heading text-[16px] text-layout-dark-grey leading-none">
-                      Москва, ТЦ Капитолий, Правобережная улица, 1Б
-                    </p>
+                <div className="space-y-3 text-gray-700">
+                  <div className="flex items-start gap-2">
+                    <MapPin className="w-5 h-5 text-gray-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium">Адрес</p>
+                      <p className="text-sm">
+                        Москва, ТРК VEGAS Крокус Сити,<br />
+                        м.Мякинино, ул. Международная 12,<br />
+                        G6 км МКАД
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-heading text-[16px] text-layout-dark-grey leading-none">10:00 - 22:00</p>
-                  </div>
-                  <div>
-                    <p className="font-heading text-[16px] text-layout-dark-grey leading-none mb-1">Телефон</p>
-                    <p className="font-heading text-[16px] text-layout-dark-grey leading-none">+7 (499) 677-56-32 доб. 337</p>
+                  
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-5 h-5 text-gray-500 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium">Телефон</p>
+                      <p className="text-sm">+7 (499) 677-56-32</p>
+                    </div>
                   </div>
                   
                   <div className="flex items-center gap-2">
@@ -212,7 +218,7 @@ const WhereToBuy: React.FC = () => {
         {activeTab === 'partners' && (
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Магазины партнеров</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {partnerStores.map((store, index) => (
                 <div key={index} className="bg-gray-50 rounded-lg p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">{store.name}</h3>
@@ -282,7 +288,7 @@ const WhereToBuy: React.FC = () => {
             {/* Partner Stores Section */}
             <section className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Магазины партнеров</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {partnerStores.map((store, index) => (
                   <div key={index} className="bg-gray-50 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-4">{store.name}</h3>
