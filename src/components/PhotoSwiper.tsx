@@ -83,50 +83,47 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
       onTouchEnd={handleTouchEnd}
       ref={sliderRef}
     >
-      {/* Main carousel container with padding for side previews */}
-      <div className="relative w-full h-full px-16">
-        <div 
-          className="flex transition-transform duration-500 ease-out h-full"
-          style={{ 
-            transform: `translateX(calc(-${currentIndex * 100}% + ${currentIndex * 0}px))`,
-            width: `${images.length * 100}%`
-          }}
-        >
-          {images.map((image, index) => {
-            const isActive = index === currentIndex;
-            const isPrev = index === currentIndex - 1;
-            const isNext = index === currentIndex + 1;
-            const isVisible = isActive || isPrev || isNext;
-            
-            return (
-              <div
-                key={index}
-                className={`relative transition-all duration-500 ease-out ${
-                  isVisible ? 'opacity-100' : 'opacity-0'
-                }`}
-                style={{ 
-                  width: `${100 / images.length}%`,
-                  transform: isActive 
-                    ? 'scale(1) translateX(0)' 
-                    : 'scale(0.85) translateX(0)',
-                  zIndex: isActive ? 10 : 5
-                }}
-              >
-                <div className={`w-full h-full mx-2 rounded-lg overflow-hidden ${
-                  !isActive ? 'opacity-60' : ''
-                }`}>
-                  <img
-                    src={image}
-                    alt={`Slide ${index + 1}`}
-                    className="w-full h-full object-cover cursor-pointer"
-                    draggable={false}
-                    onClick={() => !isActive && goToSlide(index)}
-                  />
-                </div>
-              </div>
-            );
-          })}
+      {/* Main carousel container with side previews */}
+      <div className="relative w-full h-full flex items-center justify-center overflow-visible">
+        {/* Previous image */}
+        {currentIndex > 0 && (
+          <div 
+            className="absolute left-4 w-1/4 h-4/5 cursor-pointer z-10 opacity-60 hover:opacity-80 transition-opacity"
+            onClick={() => goToSlide(currentIndex - 1)}
+          >
+            <img
+              src={images[currentIndex - 1]}
+              alt={`Slide ${currentIndex}`}
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+              draggable={false}
+            />
+          </div>
+        )}
+
+        {/* Current central image */}
+        <div className="relative w-3/5 h-full mx-auto z-20">
+          <img
+            src={images[currentIndex]}
+            alt={`Slide ${currentIndex + 1}`}
+            className="w-full h-full object-cover rounded-lg shadow-xl"
+            draggable={false}
+          />
         </div>
+
+        {/* Next image */}
+        {currentIndex < images.length - 1 && (
+          <div 
+            className="absolute right-4 w-1/4 h-4/5 cursor-pointer z-10 opacity-60 hover:opacity-80 transition-opacity"
+            onClick={() => goToSlide(currentIndex + 1)}
+          >
+            <img
+              src={images[currentIndex + 1]}
+              alt={`Slide ${currentIndex + 2}`}
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+              draggable={false}
+            />
+          </div>
+        )}
       </div>
 
       {/* Navigation arrows - only show on hover on desktop */}
