@@ -231,6 +231,13 @@ const WhereToBuy: React.FC = () => {
           </div>
         </div>
 
+        {/* Intro Text */}
+        <div className="mb-8">
+          <p className="text-gray-700 text-lg leading-relaxed text-center max-w-4xl mx-auto">
+            Наши бренды представлены у партнеров и в интернет-магазинах, а также в нашем шоу-руме – приходите, тестируйте и убедитесь: только оригиналы, высочайшее качество!
+          </p>
+        </div>
+
         {/* Show on Map Toggle */}
         <div className="flex justify-end mb-6">
           <div className="flex items-center gap-3">
