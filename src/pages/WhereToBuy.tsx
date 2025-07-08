@@ -233,7 +233,7 @@ const WhereToBuy: React.FC = () => {
 
         {/* Intro Text */}
         <div className="mb-8">
-          <p className="text-gray-700 text-lg leading-relaxed text-left max-w-4xl">
+          <p className="text-gray-700 text-lg leading-relaxed text-left w-full">
             Наши бренды представлены у партнеров и в интернет-магазинах, а также в нашем шоу-руме – приходите, тестируйте и убедитесь: только оригиналы, высочайшее качество!
           </p>
         </div>
