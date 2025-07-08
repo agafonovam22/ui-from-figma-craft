@@ -176,8 +176,8 @@ const Contacts: React.FC = () => {
           </div>
         </div>
 
-        {/* Office and Sales Department */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        {/* Office, Map and Sales Department */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Офис</h3>
             
@@ -187,8 +187,8 @@ const Contacts: React.FC = () => {
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
                   <p className="text-sm">
-                    Москва ул. Маршала Прокляхова<br />
-                    30 офис 407 БЦ Этмект Плаза
+                    Москва ул. Маршала Прошлякова<br />
+                    30 офис 407 БЦ Зенит Плаза
                   </p>
                 </div>
               </div>
@@ -202,18 +202,18 @@ const Contacts: React.FC = () => {
               </div>
             </div>
 
-            <div className="w-full h-[150px] bg-gray-200 rounded-lg mb-4 relative">
-              <div className="w-full h-full bg-green-100 flex items-center justify-center">
-                <div className="w-3 h-3 bg-[#F53B49] rounded-full"></div>
-              </div>
-            </div>
-
             <button className="w-full py-2 border border-gray-300 text-gray-700 text-sm rounded-md hover:bg-gray-50 transition-colors">
               Как проехать
             </button>
           </div>
 
-          <div>
+          <div className="bg-gray-200 rounded-lg flex items-center justify-center relative overflow-hidden">
+            <div className="w-full h-full bg-green-100 flex items-center justify-center">
+              <div className="w-3 h-3 bg-[#F53B49] rounded-full"></div>
+            </div>
+          </div>
+
+          <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Отдел продаж</h3>
             
             <div className="space-y-4 text-gray-700">
@@ -231,14 +231,18 @@ const Contacts: React.FC = () => {
                   <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
                   <p className="text-sm">info@wellfitness.ru</p>
                   <p className="text-xs text-gray-500 mt-1">
-                    по вопросам консультирования, поставкам, гарантийным<br />
-                    претензиям
+                    по общим вопросам вопросам сотрудничества, жалобам и<br />
+                    предложениям
                   </p>
                   <p className="text-sm mt-2">zakaz@wellfitness.ru</p>
                   <p className="text-xs text-gray-500 mt-1">
-                    для оформления заказов на оборудование, инвентарь
+                    для приема дилерских заказов на оборудование, аксессуары,<br />
+                    запчасти
                   </p>
                   <p className="text-sm mt-2">agent@wellfitness.ru</p>
+                  <p className="text-xs text-gray-500 mt-1">
+                    для приема агентских заказов
+                  </p>
                 </div>
               </div>
             </div>
