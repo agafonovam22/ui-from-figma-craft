@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ShowroomMap from '@/components/ShowroomMap';
 import { 
   Breadcrumb, 
   BreadcrumbList, 
@@ -133,11 +134,7 @@ const Contacts: React.FC = () => {
             </div>
             
             <div className="w-2/3 h-full">
-              <img 
-                src="/lovable-uploads/e0b32acd-ffda-47fd-8521-94ebe288876d.png"
-                alt="Шоу-рум WellFitness"
-                className="w-full h-full object-cover"
-              />
+              <ShowroomMap />
             </div>
           </div>
         </div>
