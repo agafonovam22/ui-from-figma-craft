@@ -22,39 +22,67 @@ const WhereToBuy: React.FC = () => {
 
   const partnerStores = [
     {
-      name: 'Спорт Дома',
-      address: 'Москва, ТРК VEGAS Крокус Сити, м. Мякинино, ул. Международная 12, G6 км МКАД',
-      phone: '+7 (499) 677-56-32',
-      hours: '10:00 - 22:00',
-      coordinates: [37.4188, 55.8297] as [number, number]
+      name: 'Выставочный зал Юг - МТЦ «АрмадаХоум»',
+      address: 'г. Москва, Кировоградская ул., 11, к. 1, МТЦ «АрмадаХоум», 1 этаж, секция №5',
+      phone: '8 (495) 150-95-00, 8 (800) 500-94-27',
+      hours: 'fitnesslook.ru',
+      coordinates: [37.5983, 55.6558] as [number, number]
     },
     {
-      name: 'Тренмаркет.ру',
-      address: 'Москва, ТРК VEGAS Крокус Сити, м. Мякинино, ул. Международная 12, G6 км МКАД',
-      phone: '+7 (499) 677-56-32',
-      hours: '10:00 - 22:00',
-      coordinates: [37.5983, 55.7558] as [number, number]
+      name: 'Выставочный зал Север - МЦ «Империя»',
+      address: 'г. Москва, Дмитровское шоссе 161Б, МЦ Империя, 5 этаж, секция 5А',
+      phone: '8 (495) 150-95-00, 8 (800) 500-94-27',
+      hours: 'fitnesslook.ru',
+      coordinates: [37.5200, 55.8500] as [number, number]
     },
     {
-      name: 'Goldgym',
-      address: 'Москва, ТРК VEGAS Крокус Сити, м. Мякинино, ул. Международная 12, G6 км МКАД',
-      phone: '+7 (499) 677-56-32',
-      hours: '10:00 - 22:00',
-      coordinates: [37.6800, 55.7030] as [number, number]
+      name: 'WellGallery',
+      address: 'Москва, Калужское шоссе, 1 км от МКАД, ТЦ "Славянский Град", 1 этаж',
+      phone: '+7 (800) 555-70-38',
+      hours: 'wellgallery.ru',
+      coordinates: [37.5400, 55.6200] as [number, number]
     },
     {
       name: 'Sportpremier',
-      address: 'Москва, ТРК VEGAS Крокус Сити, м. Мякинино, ул. Международная 12, G6 км МКАД',
-      phone: '+7 (499) 677-56-32',
-      hours: '10:00 - 22:00',
-      coordinates: [37.5200, 55.8000] as [number, number]
+      address: 'Москва, м. Румянцево, БП "Румянцево", блок Д',
+      phone: '+7 (495) 150-84-44',
+      hours: 'sportpremier.ru',
+      coordinates: [37.4400, 55.6300] as [number, number]
     },
     {
-      name: 'Wellgallery',
-      address: 'Москва, ТРК VEGAS Крокус Сити, м. Мякинино, ул. Международная 12, G6 км МКАД',
-      phone: '+7 (499) 677-56-32',
-      hours: '10:00 - 22:00',
-      coordinates: [37.7500, 55.6800] as [number, number]
+      name: 'wellmir.ru',
+      address: 'Москва, Новорижское шоссе, 5км от МКАД, ТК "Юнимолл", -1 этаж',
+      phone: '+7 (495) 989 80 70',
+      hours: 'well-mir.ru',
+      coordinates: [37.3500, 55.7800] as [number, number]
+    },
+    {
+      name: 'Элептика',
+      address: 'Москва, Ленинский пр-т, д. 54, ТЦ "Москва", 3 этаж',
+      phone: '8 (495) 545-41-22',
+      hours: 'eleptika.ru',
+      coordinates: [37.5800, 55.7200] as [number, number]
+    },
+    {
+      name: 'Тренмаркет.ру',
+      address: 'Москва, Ленинский пр-т, д. 99',
+      phone: '+7 (495) 123-88-23',
+      hours: 'trenmarket.ru',
+      coordinates: [37.5600, 55.7000] as [number, number]
+    },
+    {
+      name: 'Спорт Дома',
+      address: 'Москва, м. Алексеевская, ул. Маломосковская, д. 22, стр.1',
+      phone: '+7 (495) 241-95-49',
+      hours: 'sportdoma.ru',
+      coordinates: [37.6400, 55.8100] as [number, number]
+    },
+    {
+      name: 'Desire-Fitness.Store',
+      address: 'Москва, Рублевское шоссе, д. 52А, ТЦ "Западный", 2 этаж, павильон 206',
+      phone: '+7 (495) 292-52-73',
+      hours: 'desire-fitness.store',
+      coordinates: [37.3800, 55.7400] as [number, number]
     }
   ];
 
