@@ -178,38 +178,40 @@ const Contacts: React.FC = () => {
 
         {/* Office, Map and Sales Department */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          <div className="bg-gray-50 rounded-lg p-6">
+          <div className="bg-gray-50 rounded-lg p-6 lg:col-span-2">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Офис</h3>
             
-            <div className="space-y-4 text-gray-700 mb-6">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
-                  <p className="text-sm">
-                    Москва ул. Маршала Прошлякова<br />
-                    30 офис 407 БЦ Зенит Плаза
-                  </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="space-y-4 text-gray-700">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
+                    <p className="text-sm">
+                      Москва ул. Маршала Прошлякова<br />
+                      30 офис 407 БЦ Зенит Плаза
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <Clock className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-[16px] text-layout-grey-text mb-1">Режим работы</p>
+                    <p className="text-sm">10:00 - 22:00</p>
+                  </div>
+                </div>
+
+                <button className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors">
+                  Как проехать
+                </button>
+              </div>
+
+              <div className="bg-gray-200 rounded-lg flex items-center justify-center relative overflow-hidden h-[200px]">
+                <div className="w-full h-full bg-green-100 flex items-center justify-center">
+                  <div className="w-3 h-3 bg-[#F53B49] rounded-full"></div>
                 </div>
               </div>
-              
-              <div className="flex items-start gap-3">
-                <Clock className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1">Режим работы</p>
-                  <p className="text-sm">10:00 - 22:00</p>
-                </div>
-              </div>
-            </div>
-
-            <button className="w-full py-2 border border-gray-300 text-gray-700 text-sm rounded-md hover:bg-gray-50 transition-colors">
-              Как проехать
-            </button>
-          </div>
-
-          <div className="bg-gray-200 rounded-lg flex items-center justify-center relative overflow-hidden">
-            <div className="w-full h-full bg-green-100 flex items-center justify-center">
-              <div className="w-3 h-3 bg-[#F53B49] rounded-full"></div>
             </div>
           </div>
 
@@ -330,7 +332,7 @@ const Contacts: React.FC = () => {
                   </div>
                 </div>
 
-                <button className="w-full py-2 border border-gray-300 text-gray-700 text-sm rounded-md hover:bg-gray-50 transition-colors">
+                <button className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors">
                   Как проехать
                 </button>
               </div>
@@ -359,7 +361,7 @@ const Contacts: React.FC = () => {
                   </div>
                 </div>
 
-                <button className="w-full py-2 border border-gray-300 text-gray-700 text-sm rounded-md hover:bg-gray-50 transition-colors">
+                <button className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors">
                   Как проехать
                 </button>
               </div>
@@ -390,7 +392,7 @@ const Contacts: React.FC = () => {
                   </div>
                 </div>
 
-                <button className="w-full py-2 border border-gray-300 text-gray-700 text-sm rounded-md hover:bg-gray-50 transition-colors">
+                <button className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors">
                   Как проехать
                 </button>
               </div>
