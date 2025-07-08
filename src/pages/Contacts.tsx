@@ -219,7 +219,7 @@ const Contacts: React.FC = () => {
             
             <div className="space-y-4 text-gray-700">
               <div className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
+                <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
                   <p className="text-sm">+7 (499) 677-56-32 доб. 1-1</p>
@@ -228,7 +228,7 @@ const Contacts: React.FC = () => {
               </div>
               
               <div className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
+                <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
                   <p className="text-sm">info@wellfitness.ru</p>
@@ -251,14 +251,14 @@ const Contacts: React.FC = () => {
           </div>
         </div>
 
-        {/* Accounting and Service Departments */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12">
+        {/* Accounting, Service and Logistics Departments */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-12">
           <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Отдел бухгалтерии</h3>
             
             <div className="space-y-4 text-gray-700">
               <div className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
+                <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
                   <p className="text-sm">+7 (499) 677-56-32 доб. 4</p>
@@ -266,7 +266,7 @@ const Contacts: React.FC = () => {
               </div>
               
               <div className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
+                <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
                   <p className="text-sm">buh@wellfitness.ru</p>
@@ -280,7 +280,7 @@ const Contacts: React.FC = () => {
             
             <div className="space-y-4 text-gray-700">
               <div className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
+                <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
                   <p className="text-sm">+7 (499) 677-56-32 доб. 2</p>
@@ -288,13 +288,35 @@ const Contacts: React.FC = () => {
               </div>
               
               <div className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
+                <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
                   <p className="text-sm">service@wellfitness.ru</p>
                   <p className="text-xs text-gray-500 mt-1">
                     Звонки принимаются с 9 до 18, заявки на почту - круглосуточно.
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gray-50 rounded-lg p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Отдел логистики</h3>
+            
+            <div className="space-y-4 text-gray-700">
+              <div className="flex items-start gap-3">
+                <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
+                  <p className="text-sm">+7 (499) 677-56-32 доб. 3</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
+                  <p className="text-sm">logist@wellfitness.ru</p>
                 </div>
               </div>
             </div>
