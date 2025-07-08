@@ -88,43 +88,41 @@ const Contacts: React.FC = () => {
 
         {/* Company Store Section with Map */}
         <div className="mb-12">
-          <div className="bg-gray-50 rounded-lg p-6 flex gap-8">
-            <div className="flex-1">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Фирменный магазин<br />Well Fitness
+          <div className="bg-gray-50 rounded-lg flex h-[328px] overflow-hidden">
+            <div className="flex-1 w-1/3 p-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                Шоу-рум WellFitness
               </h2>
               
-              <div className="space-y-4 text-gray-700 mb-6">
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-gray-500 mt-1 flex-shrink-0" />
+              <div className="space-y-3 text-gray-700">
+                <div className="flex items-start gap-2">
+                  <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-5 h-5 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
+                    <p className="font-medium">Адрес</p>
                     <p className="text-sm">
-                      Москва, ТРК VEGAS Крокус Сити,<br />
-                      м.Мякинино, ул. Международная 12,<br />
-                      G6 км МКАД
+                      Москва, ТЦ Капитолий, Правобережная улица, 1Б
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-gray-500 mt-1 flex-shrink-0" />
+                <div className="flex items-center gap-2">
+                  <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-5 h-5 flex-shrink-0" />
                   <div>
-                    <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                    <p className="text-sm">+7 (499) 677-56-32</p>
+                    <p className="font-medium">Телефон</p>
+                    <p className="text-sm">+7 (499) 677-56-32 доб. 337</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-3">
-                  <Clock className="w-5 h-5 text-gray-500 mt-1 flex-shrink-0" />
+                <div className="flex items-center gap-2">
+                  <img src="/lovable-uploads/5303d3e6-d397-4aa6-af39-40d3dbe6d3c4.png" alt="Режим работы" className="w-5 h-5 flex-shrink-0" />
                   <div>
-                    <p className="text-[16px] text-layout-grey-text mb-1">Режим работы</p>
+                    <p className="font-medium">Режим работы</p>
                     <p className="text-sm">10:00 - 22:00</p>
                   </div>
                 </div>
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex gap-3 mt-6">
                 <button className="px-4 py-2 bg-[#F53B49] text-white text-sm rounded-md hover:bg-[#e63946] transition-colors">
                   Оставить заявку
                 </button>
@@ -134,12 +132,12 @@ const Contacts: React.FC = () => {
               </div>
             </div>
             
-            <div className="flex-1">
-              <div className="w-full h-[280px] bg-gray-200 rounded-lg relative overflow-hidden">
-                <div className="w-full h-full bg-green-100 flex items-center justify-center">
-                  <div className="w-3 h-3 bg-[#F53B49] rounded-full"></div>
-                </div>
-              </div>
+            <div className="w-2/3 h-full">
+              <img 
+                src="/lovable-uploads/e0b32acd-ffda-47fd-8521-94ebe288876d.png"
+                alt="Шоу-рум WellFitness"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
