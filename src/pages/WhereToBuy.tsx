@@ -12,7 +12,7 @@ import {
   BreadcrumbPage 
 } from '@/components/ui/breadcrumb';
 import { Switch } from '@/components/ui/switch';
-import { MapPin, Phone, Globe, Clock, Map as MapIcon } from 'lucide-react';
+import { Globe, Clock, Map as MapIcon } from 'lucide-react';
 
 const WhereToBuy: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState('Москва');
@@ -260,7 +260,7 @@ const WhereToBuy: React.FC = () => {
                 
                 <div className="space-y-3 text-gray-700">
                   <div className="flex items-start gap-2">
-                    <MapPin className="w-5 h-5 text-gray-500 mt-0.5 flex-shrink-0" />
+                    <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-5 h-5 mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="font-medium">Адрес</p>
                       <p className="text-sm">
@@ -270,7 +270,7 @@ const WhereToBuy: React.FC = () => {
                   </div>
                   
                   <div className="flex items-center gap-2">
-                    <Phone className="w-5 h-5 text-gray-500 flex-shrink-0" />
+                    <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-5 h-5 flex-shrink-0" />
                     <div>
                       <p className="font-medium">Телефон</p>
                       <p className="text-sm">+7 (499) 677-56-32 доб. 337</p>
@@ -278,7 +278,7 @@ const WhereToBuy: React.FC = () => {
                   </div>
                   
                   <div className="flex items-center gap-2">
-                    <Clock className="w-5 h-5 text-gray-500 flex-shrink-0" />
+                    <img src="/lovable-uploads/5303d3e6-d397-4aa6-af39-40d3dbe6d3c4.png" alt="Режим работы" className="w-5 h-5 flex-shrink-0" />
                     <div>
                       <p className="font-medium">Режим работы</p>
                       <p className="text-sm">10:00 - 22:00</p>
@@ -308,16 +308,16 @@ const WhereToBuy: React.FC = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-4">{store.name}</h3>
                   
                   <div className="space-y-3 text-gray-700">
-                    <div className="flex items-start gap-2">
-                      <MapPin className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
+                     <div className="flex items-start gap-2">
+                       <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-4 h-4 mt-1 flex-shrink-0" />
                       <div>
                         <p className="font-medium text-sm">Адрес</p>
                         <p className="text-sm">{store.address}</p>
                       </div>
                     </div>
                     
-                    <div className="flex items-center gap-2">
-                      <Phone className="w-4 h-4 text-gray-500 flex-shrink-0" />
+                     <div className="flex items-center gap-2">
+                       <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-4 h-4 flex-shrink-0" />
                       <div>
                         <p className="font-medium text-sm">Телефон</p>
                         <p className="text-sm">{store.phone}</p>
@@ -378,16 +378,16 @@ const WhereToBuy: React.FC = () => {
                     <h3 className="text-xl font-bold text-gray-900 mb-4">{store.name}</h3>
                     
                     <div className="space-y-3 text-gray-700">
-                      <div className="flex items-start gap-2">
-                        <MapPin className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
+                       <div className="flex items-start gap-2">
+                         <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-4 h-4 mt-1 flex-shrink-0" />
                         <div>
                           <p className="font-medium text-sm">Адрес</p>
                           <p className="text-sm">{store.address}</p>
                         </div>
                       </div>
                       
-                      <div className="flex items-center gap-2">
-                        <Phone className="w-4 h-4 text-gray-500 flex-shrink-0" />
+                       <div className="flex items-center gap-2">
+                         <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-4 h-4 flex-shrink-0" />
                         <div>
                           <p className="font-medium text-sm">Телефон</p>
                           <p className="text-sm">{store.phone}</p>
