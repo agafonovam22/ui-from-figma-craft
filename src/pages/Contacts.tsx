@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import OfficeMap from '@/components/OfficeMap';
+import PhotoSwiper from '@/components/PhotoSwiper';
 import ShowroomMap from '@/components/ShowroomMap';
 import { 
   Breadcrumb, 
@@ -140,41 +141,13 @@ const Contacts: React.FC = () => {
           </div>
         </div>
 
-        {/* Image Gallery */}
+        {/* Photo Swiper Gallery */}
         <div className="mb-12">
-          <div className="relative">
-            <div className="flex gap-4 overflow-hidden">
-              <div className="w-1/3 h-[200px] bg-gray-200 rounded-lg"></div>
-              <div className="w-1/3 h-[200px] bg-gray-200 rounded-lg"></div>
-              <div className="w-1/3 h-[200px] bg-gray-200 rounded-lg"></div>
-            </div>
-            
-            <button 
-              onClick={prevImage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors"
-            >
-              <ChevronLeft className="w-5 h-5 text-gray-600" />
-            </button>
-            
-            <button 
-              onClick={nextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors"
-            >
-              <ChevronRight className="w-5 h-5 text-gray-600" />
-            </button>
-
-            <div className="flex justify-center mt-4 gap-2">
-              {images.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentImageIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    index === currentImageIndex ? 'bg-[#F53B49]' : 'bg-gray-300'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
+          <PhotoSwiper 
+            images={images}
+            autoplay={true}
+            autoplayInterval={5000}
+          />
         </div>
 
         {/* Office, Map and Sales Department */}
