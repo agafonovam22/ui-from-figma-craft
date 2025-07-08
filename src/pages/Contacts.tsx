@@ -53,7 +53,9 @@ const Contacts: React.FC = () => {
         </Breadcrumb>
 
         {/* Page Title */}
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Контакты</h1>
+        <h1 className="font-heading text-[48px] text-layout-dark-grey mb-10 leading-none">
+          Контакты
+        </h1>
 
         {/* City Tabs */}
         <div className="flex gap-2 mb-8">
