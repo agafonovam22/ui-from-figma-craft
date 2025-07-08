@@ -389,6 +389,100 @@ const Contacts: React.FC = () => {
             </div>
           )}
         </div>
+
+        {/* Legal Information */}
+        <div className="border border-[#F53B49] rounded-lg p-6 bg-white mb-12">
+          <h2 className="font-heading text-[32px] text-layout-dark-grey mb-6 leading-none">Юридическая информация</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <div>
+                <p className="text-[16px] text-layout-grey-text mb-1">Полное наименование организации</p>
+                <p className="text-[16px] text-layout-dark-grey font-medium">
+                  Общество с ограниченной ответственностью "Оптима Импорт"
+                </p>
+              </div>
+              
+              <div>
+                <p className="text-[16px] text-layout-grey-text mb-1">Сокращенное наименование организации</p>
+                <p className="text-[16px] text-layout-dark-grey font-medium">ООО "Оптима Импорт"</p>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <p className="text-[16px] text-layout-grey-text mb-1">ИНН</p>
+                  <p className="text-[16px] text-layout-dark-grey font-medium">7734728519</p>
+                </div>
+                <div>
+                  <p className="text-[16px] text-layout-grey-text mb-1">КПП</p>
+                  <p className="text-[16px] text-layout-dark-grey font-medium">773401001</p>
+                </div>
+              </div>
+              
+              <div>
+                <p className="text-[16px] text-layout-grey-text mb-1">Юридический адрес</p>
+                <p className="text-[16px] text-layout-dark-grey font-medium">
+                  123458, г. Москва, ул. Маршала Прошлякова, д.30, офис 407
+                </p>
+              </div>
+              
+              <div>
+                <p className="text-[16px] text-layout-grey-text mb-1">Фактический адрес</p>
+                <p className="text-[16px] text-layout-dark-grey font-medium">
+                  123458, г. Москва, ул. Маршала Прошлякова, д.30, офис 407
+                </p>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              <div>
+                <p className="text-[16px] text-layout-grey-text mb-1">Наименование банка</p>
+                <p className="text-[16px] text-layout-dark-grey font-medium">ПАО Сбербанк</p>
+              </div>
+              
+              <div>
+                <p className="text-[16px] text-layout-grey-text mb-1">Номер расчетного счета</p>
+                <p className="text-[16px] text-layout-dark-grey font-medium">40702810038000279897</p>
+              </div>
+              
+              <div>
+                <p className="text-[16px] text-layout-grey-text mb-1">Корреспондентский счет</p>
+                <p className="text-[16px] text-layout-dark-grey font-medium">30101810400000000225</p>
+              </div>
+              
+              <div>
+                <p className="text-[16px] text-layout-grey-text mb-1">БИК</p>
+                <p className="text-[16px] text-layout-dark-grey font-medium">044525225</p>
+              </div>
+              
+              <div>
+                <p className="text-[16px] text-layout-grey-text mb-1">Статистические коды</p>
+                <div className="text-[14px] text-layout-dark-grey font-medium space-y-1">
+                  <p>ОГРН 1147746799727</p>
+                  <p>ОКПО 26478934</p>
+                  <p>ОКОПФ 12165/ ОКФС 16</p>
+                  <p>ОКТМО 45370000000 (ОКАТО 45283577000)</p>
+                </div>
+              </div>
+              
+              <div>
+                <p className="text-[16px] text-layout-grey-text mb-1">Контакты</p>
+                <div className="text-[16px] text-layout-dark-grey font-medium space-y-1">
+                  <p>Тел/Факс: 499-677-56-32</p>
+                  <p>E-mail: info@wellfitness.ru</p>
+                </div>
+              </div>
+              
+              <div>
+                <p className="text-[16px] text-layout-grey-text mb-1">Руководство</p>
+                <div className="text-[16px] text-layout-dark-grey font-medium space-y-1">
+                  <p>Генеральный директор: Ротенберг Евгений Ефимович</p>
+                  <p>Главный бухгалтер: Охрянская Елена Анатольевна</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
 
       <Footer />
