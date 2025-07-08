@@ -352,14 +352,14 @@ const WhereToBuy: React.FC = () => {
             </div>
 
             {/* Disclaimer */}
-            <div className="border border-[#F53B49] rounded-lg p-6 bg-red-50">
-              <h3 className="font-bold text-gray-900 mb-4">
+            <div className="border border-[#F53B49] rounded-lg p-6 bg-white">
+              <h3 className="font-heading text-[32px] text-gray-900 mb-4">
                 WellFitness <span className="text-[#F53B49]">не сотрудничает</span> с магазинами
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                 {Array(16).fill('zonasporta.com').map((store, index) => (
-                  <div key={index} className="text-gray-600 text-sm">
-                    {store}
+                  <div key={index} className="bg-gray-50 rounded-lg p-4 text-center">
+                    <span className="text-gray-700">{store}</span>
                   </div>
                 ))}
               </div>
@@ -421,14 +421,14 @@ const WhereToBuy: React.FC = () => {
               </div>
 
               {/* Disclaimer */}
-              <div className="border border-[#F53B49] rounded-lg p-6 bg-red-50">
-                <h3 className="font-bold text-gray-900 mb-4">
+              <div className="border border-[#F53B49] rounded-lg p-6 bg-white">
+                <h3 className="font-heading text-[32px] text-gray-900 mb-4">
                   WellFitness <span className="text-[#F53B49]">не сотрудничает</span> с магазинами
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                   {Array(16).fill('zonasporta.com').map((store, index) => (
-                    <div key={index} className="text-gray-600 text-sm">
-                      {store}
+                    <div key={index} className="bg-gray-50 rounded-lg p-4 text-center">
+                      <span className="text-gray-700">{store}</span>
                     </div>
                   ))}
                 </div>
