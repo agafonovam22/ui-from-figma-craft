@@ -151,39 +151,59 @@ const Contacts: React.FC = () => {
           />
         </div>
 
-        {/* Office, Map and Sales Department */}
+        {/* Office and Sales Departments */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
-          <div className="bg-gray-50 rounded-lg p-6 lg:col-span-2">
+          <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Офис</h3>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="space-y-4 text-gray-700">
-                <div className="flex items-start gap-3">
-                  <img src="/lovable-uploads/31c0ee66-1daf-4513-8947-c2990045d4a6.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
-                    <p className="text-sm">
-                      Москва, ул. Маршала Прошлякова,<br />
-                      д. 30, офис 407, БЦ "Зенит Плаза"
-                    </p>
-                  </div>
+            <div className="space-y-4 text-gray-700">
+              <div className="flex items-start gap-3">
+                <img src="/lovable-uploads/31c0ee66-1daf-4513-8947-c2990045d4a6.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
+                  <p className="text-sm">
+                    Москва, ул. Маршала Прошлякова,<br />
+                    д. 30, офис 407, БЦ "Зенит Плаза"
+                  </p>
                 </div>
-                
-                <div className="flex items-start gap-3">
-                  <img src="/lovable-uploads/f90ab0e0-2a09-45ef-a7ac-3f95d97744c7.png" alt="Time" className="w-4 h-4 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="text-[16px] text-layout-grey-text mb-1">Режим работы</p>
-                    <p className="text-sm">09:30 – 17:30</p>
-                  </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <img src="/lovable-uploads/f90ab0e0-2a09-45ef-a7ac-3f95d97744c7.png" alt="Time" className="w-4 h-4 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-[16px] text-layout-grey-text mb-1">Режим работы</p>
+                  <p className="text-sm">09:30 – 17:30</p>
                 </div>
-
-                <button className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors">
-                  Как проехать
-                </button>
               </div>
 
-              <div className="h-[200px] rounded-lg overflow-hidden">
-                <OfficeMap />
+              <button className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors">
+                Как проехать
+              </button>
+            </div>
+          </div>
+
+          <div className="bg-gray-50 rounded-lg p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Отдел продаж PRO</h3>
+            
+            <div className="space-y-4 text-gray-700">
+              <div className="flex items-start gap-3">
+                <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
+                  <p className="text-sm">+7 (499) 677-56-32 доб. 5</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
+                  <p className="text-sm">pro@wellfitness.ru</p>
+                  <p className="text-xs text-gray-500 mt-1">
+                    для консультаций по профессиональному оборудованию<br />
+                    и комплексным решениям
+                  </p>
+                </div>
               </div>
             </div>
           </div>
