@@ -203,6 +203,11 @@ const Contacts: React.FC = () => {
                     для консультаций по профессиональному оборудованию<br />
                     и комплексным решениям
                   </p>
+                  <p className="text-sm mt-2">zakaz@wellfitness.ru</p>
+                  <p className="text-xs text-gray-500 mt-1">
+                    для приема дилерских заказов на оборудование, аксессуары,<br />
+                    запчасти
+                  </p>
                 </div>
               </div>
             </div>
@@ -229,11 +234,6 @@ const Contacts: React.FC = () => {
                   <p className="text-xs text-gray-500 mt-1">
                     по общим вопросам, вопросам сотрудничества, жалобам и<br />
                     предложениям
-                  </p>
-                  <p className="text-sm mt-2">zakaz@wellfitness.ru</p>
-                  <p className="text-xs text-gray-500 mt-1">
-                    для приема дилерских заказов на оборудование, аксессуары,<br />
-                    запчасти
                   </p>
                   <p className="text-sm mt-2">agent@wellfitness.ru</p>
                   <p className="text-xs text-gray-500 mt-1">
