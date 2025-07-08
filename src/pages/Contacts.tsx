@@ -298,26 +298,26 @@ const Contacts: React.FC = () => {
           
           {activeTab === 'moscow' ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="font-heading text-[24px] text-layout-dark-grey mb-4 leading-none">Красногорск (Основной / МО)</h3>
+              <div className="bg-gray-50 rounded-lg p-4">
+                <h3 className="font-heading text-[20px] text-layout-dark-grey mb-3 leading-none">Красногорск (Основной / МО)</h3>
                 
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-start gap-3">
+                <div className="space-y-3 mb-4">
+                  <div className="flex items-start gap-2">
                     <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
-                      <p className="text-[16px] text-layout-dark-grey font-medium">
+                      <p className="text-[14px] text-layout-grey-text mb-1">Адрес</p>
+                      <p className="text-[14px] text-layout-dark-grey font-medium">
                         Московская область, Красногорский р-н,<br />
                         пос. Гольево, ул. Центральная
                       </p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-2">
                     <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                      <p className="text-[16px] text-layout-dark-grey font-medium">+7 (499) 677-56-32 доб. 1</p>
+                      <p className="text-[14px] text-layout-grey-text mb-1">Телефон</p>
+                      <p className="text-[14px] text-layout-dark-grey font-medium">+7 (499) 677-56-32 доб. 1</p>
                     </div>
                   </div>
                 </div>
@@ -327,26 +327,26 @@ const Contacts: React.FC = () => {
                 </button>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="font-heading text-[24px] text-layout-dark-grey mb-4 leading-none">Химки (МО)</h3>
+              <div className="bg-gray-50 rounded-lg p-4">
+                <h3 className="font-heading text-[20px] text-layout-dark-grey mb-3 leading-none">Химки (МО)</h3>
                 
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-start gap-3">
+                <div className="space-y-3 mb-4">
+                  <div className="flex items-start gap-2">
                     <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
-                      <p className="text-[16px] text-layout-dark-grey font-medium">
+                      <p className="text-[14px] text-layout-grey-text mb-1">Адрес</p>
+                      <p className="text-[14px] text-layout-dark-grey font-medium">
                         Московская область, г. Химки,<br />
                         мкр Сходня, ул. Некрасова, д. 2
                       </p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-2">
                     <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                      <p className="text-[16px] text-layout-dark-grey font-medium">+7 (499) 677-56-32 доб. 1</p>
+                      <p className="text-[14px] text-layout-grey-text mb-1">Телефон</p>
+                      <p className="text-[14px] text-layout-dark-grey font-medium">+7 (499) 677-56-32 доб. 1</p>
                     </div>
                   </div>
                 </div>
@@ -358,26 +358,26 @@ const Contacts: React.FC = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="font-heading text-[24px] text-layout-dark-grey mb-4 leading-none">Санкт-Петербург (СПБ)</h3>
+              <div className="bg-gray-50 rounded-lg p-4">
+                <h3 className="font-heading text-[20px] text-layout-dark-grey mb-3 leading-none">Санкт-Петербург (СПБ)</h3>
                 
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-start gap-3">
+                <div className="space-y-3 mb-4">
+                  <div className="flex items-start gap-2">
                     <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
-                      <p className="text-[16px] text-layout-dark-grey font-medium">
+                      <p className="text-[14px] text-layout-grey-text mb-1">Адрес</p>
+                      <p className="text-[14px] text-layout-dark-grey font-medium">
                         г. Санкт-Петербург, Красногвардейский пер 23 лит Е,<br />
                         Территория завода "Ильич". Заезд с Вазаского переулка
                       </p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-2">
                     <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                      <p className="text-[16px] text-layout-dark-grey font-medium">+7 (905) 254-28-04</p>
+                      <p className="text-[14px] text-layout-grey-text mb-1">Телефон</p>
+                      <p className="text-[14px] text-layout-dark-grey font-medium">+7 (905) 254-28-04</p>
                     </div>
                   </div>
                 </div>
