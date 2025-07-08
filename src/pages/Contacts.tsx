@@ -298,91 +298,55 @@ const Contacts: React.FC = () => {
           
           {activeTab === 'moscow' ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="font-heading text-[24px] text-layout-dark-grey mb-4 leading-none">Красногорск (Основной / МО)</h3>
-                
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-start gap-3">
-                    <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
-                    <div>
-                      <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
-                      <p className="text-[16px] text-layout-dark-grey font-medium">
-                        Московская область, Красногорский р-н,<br />
-                        пос. Гольево, ул. Центральная
-                      </p>
-                    </div>
+              <div className="bg-gray-50 rounded-lg px-3 py-1 h-[30px] flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <h3 className="font-heading text-[10px] text-layout-dark-grey">Красногорск (Основной / МО)</h3>
+                  <div className="flex items-center gap-1">
+                    <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-2 h-2" />
+                    <span className="text-[8px] text-layout-dark-grey">Московская область, Красногорский р-н, пос. Гольево, ул. Центральная</span>
                   </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
-                    <div>
-                      <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                      <p className="text-[16px] text-layout-dark-grey font-medium">+7 (499) 677-56-32 доб. 1</p>
-                    </div>
+                  <div className="flex items-center gap-1">
+                    <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-2 h-2" />
+                    <span className="text-[8px] text-layout-dark-grey">+7 (499) 677-56-32 доб. 1</span>
                   </div>
                 </div>
-
-                <button className="w-full py-2 border border-gray-300 text-gray-700 text-sm rounded-md hover:bg-gray-50 transition-colors">
+                <button className="px-2 py-0.5 border border-gray-300 text-gray-700 text-[8px] rounded hover:bg-gray-50 transition-colors">
                   Как проехать
                 </button>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="font-heading text-[24px] text-layout-dark-grey mb-4 leading-none">Химки (МО)</h3>
-                
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-start gap-3">
-                    <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
-                    <div>
-                      <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
-                      <p className="text-[16px] text-layout-dark-grey font-medium">
-                        Московская область, г. Химки,<br />
-                        мкр Сходня, ул. Некрасова, д. 2
-                      </p>
-                    </div>
+              <div className="bg-gray-50 rounded-lg px-3 py-1 h-[30px] flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <h3 className="font-heading text-[10px] text-layout-dark-grey">Химки (МО)</h3>
+                  <div className="flex items-center gap-1">
+                    <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-2 h-2" />
+                    <span className="text-[8px] text-layout-dark-grey">Московская область, г. Химки, мкр Сходня, ул. Некрасова, д. 2</span>
                   </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
-                    <div>
-                      <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                      <p className="text-[16px] text-layout-dark-grey font-medium">+7 (499) 677-56-32 доб. 1</p>
-                    </div>
+                  <div className="flex items-center gap-1">
+                    <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-2 h-2" />
+                    <span className="text-[8px] text-layout-dark-grey">+7 (499) 677-56-32 доб. 1</span>
                   </div>
                 </div>
-
-                <button className="w-full py-2 border border-gray-300 text-gray-700 text-sm rounded-md hover:bg-gray-50 transition-colors">
+                <button className="px-2 py-0.5 border border-gray-300 text-gray-700 text-[8px] rounded hover:bg-gray-50 transition-colors">
                   Как проехать
                 </button>
               </div>
             </div>
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="font-heading text-[24px] text-layout-dark-grey mb-4 leading-none">Санкт-Петербург (СПБ)</h3>
-                
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-start gap-3">
-                    <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
-                    <div>
-                      <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
-                      <p className="text-[16px] text-layout-dark-grey font-medium">
-                        г. Санкт-Петербург, Красногвардейский пер 23 лит Е,<br />
-                        Территория завода "Ильич". Заезд с Вазаского переулка
-                      </p>
-                    </div>
+              <div className="bg-gray-50 rounded-lg px-3 py-1 h-[30px] flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <h3 className="font-heading text-[10px] text-layout-dark-grey">Санкт-Петербург (СПБ)</h3>
+                  <div className="flex items-center gap-1">
+                    <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-2 h-2" />
+                    <span className="text-[8px] text-layout-dark-grey">г. Санкт-Петербург, Красногвардейский пер 23 лит Е</span>
                   </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
-                    <div>
-                      <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                      <p className="text-[16px] text-layout-dark-grey font-medium">+7 (905) 254-28-04</p>
-                    </div>
+                  <div className="flex items-center gap-1">
+                    <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-2 h-2" />
+                    <span className="text-[8px] text-layout-dark-grey">+7 (905) 254-28-04</span>
                   </div>
                 </div>
-
-                <button className="w-full py-2 border border-gray-300 text-gray-700 text-sm rounded-md hover:bg-gray-50 transition-colors">
+                <button className="px-2 py-0.5 border border-gray-300 text-gray-700 text-[8px] rounded hover:bg-gray-50 transition-colors">
                   Как проехать
                 </button>
               </div>
