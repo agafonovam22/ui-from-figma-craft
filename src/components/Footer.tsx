@@ -144,7 +144,7 @@ const Footer: React.FC = () => {
               <img 
                 src="/lovable-uploads/989588d0-dab0-48b9-9268-db2cc02cf4da.png" 
                 alt="WELL.FITNESS"
-                className="h-[48px] w-auto"
+                className="h-[32px] w-auto"
               />
               
               <div className="flex gap-6 items-center">
