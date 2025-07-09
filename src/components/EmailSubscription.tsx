@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -53,9 +54,9 @@ const EmailSubscription: React.FC = () => {
                 
                 <p className="text-gray-300 text-xs whitespace-nowrap" style={{ fontFamily: 'Montserrat' }}>
                   Подписываясь на рассылку, Вы соглашаетесь с условиями{' '}
-                  <a href="#" className="underline hover:no-underline">
+                  <Link to="/privacy-policy" className="underline hover:no-underline">
                     политики конфиденциальности
-                  </a>
+                  </Link>
                 </p>
               </div>
               

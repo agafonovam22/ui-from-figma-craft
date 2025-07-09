@@ -457,7 +457,7 @@ const Checkout: React.FC = () => {
                         />
                         <label htmlFor="privacy" className="text-sm text-gray-700 leading-relaxed">
                           Я принимаю условия{' '}
-                          <Link to="#" className="text-blue-600 underline">
+                          <Link to="/privacy-policy" className="text-blue-600 underline">
                             политики конфиденциальности
                           </Link>{' '}
                           и даю{' '}
