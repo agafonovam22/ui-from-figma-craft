@@ -11,8 +11,8 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
             {/* Каталог */}
             <div>
-              <h3 className="text-white text-sm font-benzin-semibold mb-3">Каталог</h3>
-              <ul className="space-y-2 text-[#778093] text-xs">
+              <h3 className="text-white text-xs font-benzin-semibold mb-2">Каталог</h3>
+              <ul className="space-y-1 text-[#778093] text-[10px]">
                 <li><a href="#" className="hover:text-white transition-colors">Для дома</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Для фитнес-клуба</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Наши бренды</a></li>
@@ -21,8 +21,8 @@ const Footer: React.FC = () => {
 
             {/* Поддержка */}
             <div>
-              <h3 className="text-white text-sm font-benzin-semibold mb-3">Поддержка</h3>
-              <ul className="space-y-2 text-[#778093] text-xs">
+              <h3 className="text-white text-xs font-benzin-semibold mb-2">Поддержка</h3>
+              <ul className="space-y-1 text-[#778093] text-[10px]">
                 <li><a href="#" className="hover:text-white transition-colors">Доставка и оплата</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Условия возврата</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Гарантия</a></li>
@@ -32,8 +32,8 @@ const Footer: React.FC = () => {
 
             {/* О компании */}
             <div>
-              <h3 className="text-white text-sm font-benzin-semibold mb-3">О компании</h3>
-              <ul className="space-y-2 text-[#778093] text-xs">
+              <h3 className="text-white text-xs font-benzin-semibold mb-2">О компании</h3>
+              <ul className="space-y-1 text-[#778093] text-[10px]">
                 <li><a href="#" className="hover:text-white transition-colors">О нас</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Миссия</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Команда</a></li>
@@ -45,8 +45,8 @@ const Footer: React.FC = () => {
 
             {/* Для Бизнеса */}
             <div>
-              <h3 className="text-white text-sm font-benzin-semibold mb-3">Для Бизнеса</h3>
-              <ul className="space-y-2 text-[#778093] text-xs">
+              <h3 className="text-white text-xs font-benzin-semibold mb-2">Для Бизнеса</h3>
+              <ul className="space-y-1 text-[#778093] text-[10px]">
                 <li><a href="#" className="hover:text-white transition-colors">3D проект</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Бизнес планирование</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Готовые решения</a></li>
@@ -90,42 +90,44 @@ const Footer: React.FC = () => {
                 {/* Правая часть */}
                 <div className="text-[#778093] space-y-4">
                   <div>
-                    <p className="text-sm font-benzin-semibold text-white mb-2">Для дома</p>
+                    <p className="text-xs font-benzin-semibold text-white mb-2">Для HOME</p>
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-[#5C6476] rounded-full flex items-center justify-center">
-                        <span className="text-xs text-white font-bold">VK</span>
-                      </div>
-                      <div className="w-8 h-8 bg-[#5C6476] rounded-full flex items-center justify-center">
-                        <span className="text-xs text-white font-bold">TG</span>
-                      </div>
-                      <div className="w-8 h-8 bg-[#5C6476] rounded-full flex items-center justify-center">
-                        <span className="text-xs text-white font-bold">YT</span>
-                      </div>
+                      <a href="https://vk.com/wellfitness_russia" target="_blank" rel="noopener noreferrer" className="w-6 h-6 bg-[#5C6476] rounded-full flex items-center justify-center hover:bg-[#6C7A8A] transition-colors">
+                        <span className="text-[8px] text-white font-bold">VK</span>
+                      </a>
+                      <a href="https://t.me/WellfitnessRussia" target="_blank" rel="noopener noreferrer" className="w-6 h-6 bg-[#5C6476] rounded-full flex items-center justify-center hover:bg-[#6C7A8A] transition-colors">
+                        <span className="text-[8px] text-white font-bold">TG</span>
+                      </a>
+                      <a href="https://www.youtube.com/channel/UCBv18t91ZGM0zMEnWUfKBCA/featured" target="_blank" rel="noopener noreferrer" className="w-6 h-6 bg-[#5C6476] rounded-full flex items-center justify-center hover:bg-[#6C7A8A] transition-colors">
+                        <span className="text-[8px] text-white font-bold">YT</span>
+                      </a>
                     </div>
                   </div>
                   
                   <div>
-                    <p className="text-sm font-benzin-semibold text-white mb-2">Для дома</p>
+                    <p className="text-xs font-benzin-semibold text-white mb-2">Для PRO</p>
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-[#5C6476] rounded-full flex items-center justify-center">
-                        <span className="text-xs text-white font-bold">VK</span>
-                      </div>
-                      <div className="w-8 h-8 bg-[#5C6476] rounded-full flex items-center justify-center">
-                        <span className="text-xs text-white font-bold">TG</span>
-                      </div>
-                      <div className="w-8 h-8 bg-[#5C6476] rounded-full flex items-center justify-center">
-                        <span className="text-xs text-white font-bold">YT</span>
-                      </div>
+                      <a href="https://vk.com/wellfitnesspro" target="_blank" rel="noopener noreferrer" className="w-6 h-6 bg-[#5C6476] rounded-full flex items-center justify-center hover:bg-[#6C7A8A] transition-colors">
+                        <span className="text-[8px] text-white font-bold">VK</span>
+                      </a>
+                      <a href="https://t.me/wellfitnessPRO" target="_blank" rel="noopener noreferrer" className="w-6 h-6 bg-[#5C6476] rounded-full flex items-center justify-center hover:bg-[#6C7A8A] transition-colors">
+                        <span className="text-[8px] text-white font-bold">TG</span>
+                      </a>
+                      <a href="https://www.youtube.com/channel/UCRUEzmESwZuS_VB0dnhvd7w" target="_blank" rel="noopener noreferrer" className="w-6 h-6 bg-[#5C6476] rounded-full flex items-center justify-center hover:bg-[#6C7A8A] transition-colors">
+                        <span className="text-[8px] text-white font-bold">YT</span>
+                      </a>
+                      <a href="https://dzen.ru/id/622e49b2a228967ff233de4d?share_to=link" target="_blank" rel="noopener noreferrer" className="w-6 h-6 bg-[#5C6476] rounded-full flex items-center justify-center hover:bg-[#6C7A8A] transition-colors">
+                        <span className="text-[8px] text-white font-bold">DZ</span>
+                      </a>
                     </div>
                   </div>
                   
                   <div>
-                    <p className="text-xs mb-2 text-[#778093]">Принимаем к оплате</p>
+                    <p className="text-[10px] mb-2 text-[#778093]">Принимаем к оплате</p>
                     <div className="flex gap-1">
-                      <div className="bg-white rounded px-2 py-1 text-xs text-black font-bold">VISA</div>
-                      <div className="bg-white rounded px-2 py-1 text-xs text-black font-bold">VISA</div>
-                      <div className="bg-white rounded px-2 py-1 text-xs text-black font-bold">VISA</div>
-                      <div className="bg-white rounded px-2 py-1 text-xs text-black font-bold">VISA</div>
+                      <div className="bg-white rounded px-1.5 py-0.5 text-[8px] text-black font-bold">VISA</div>
+                      <div className="bg-white rounded px-1.5 py-0.5 text-[8px] text-black font-bold">MC</div>
+                      <div className="bg-white rounded px-1.5 py-0.5 text-[8px] text-black font-bold">PP</div>
                     </div>
                   </div>
                 </div>
