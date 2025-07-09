@@ -19,6 +19,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import CallRequestDialog from '@/components/Header/CallRequestDialog';
 import { MapPin, Phone, Clock, Mail, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Contacts: React.FC = () => {
@@ -133,9 +134,11 @@ const Contacts: React.FC = () => {
               </div>
 
               <div className="flex gap-3 mt-6">
-                <button className="px-4 py-2 bg-[#F53B49] text-white text-sm rounded-md hover:bg-[#e63946] transition-colors">
-                  Записаться на посещение
-                </button>
+                <CallRequestDialog>
+                  <button className="px-4 py-2 bg-[#F53B49] text-white text-sm rounded-md hover:bg-[#e63946] transition-colors">
+                    Записаться на посещение
+                  </button>
+                </CallRequestDialog>
               </div>
             </div>
             
