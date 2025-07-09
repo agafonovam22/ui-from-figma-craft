@@ -142,7 +142,7 @@ const Footer: React.FC = () => {
             {/* Top row - Logo and buttons */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
               <img 
-                src="/lovable-uploads/d50cad00-318e-48ea-96f2-b94cab77942b.png" 
+                src="/lovable-uploads/989588d0-dab0-48b9-9268-db2cc02cf4da.png" 
                 alt="WELL.FITNESS"
                 className="h-[48px] w-auto"
               />

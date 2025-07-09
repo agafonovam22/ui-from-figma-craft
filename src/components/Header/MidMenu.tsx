@@ -9,7 +9,7 @@ import ComparisonPopup from './ComparisonPopup';
 const Logo: React.FC = () => (
   <Link to="/" className="flex justify-center items-center gap-[5.856px] flex-shrink-0">
     <img 
-      src="/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png" 
+      src="/lovable-uploads/989588d0-dab0-48b9-9268-db2cc02cf4da.png" 
       alt="Well Fitness" 
       className="h-[32px] w-auto"
     />
