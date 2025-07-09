@@ -134,10 +134,7 @@ const Contacts: React.FC = () => {
 
               <div className="flex gap-3 mt-6">
                 <button className="px-4 py-2 bg-[#F53B49] text-white text-sm rounded-md hover:bg-[#e63946] transition-colors">
-                  Оставить заявку
-                </button>
-                <button className="px-4 py-2 border border-gray-300 text-gray-700 text-sm rounded-md hover:bg-gray-50 transition-colors">
-                  Как проехать
+                  Записаться на посещение
                 </button>
               </div>
             </div>
@@ -160,7 +157,7 @@ const Contacts: React.FC = () => {
         {/* Office and Sales Departments */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
           <div className="bg-gray-50 rounded-lg p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Офис</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Офис WellFitness</h3>
             
             <div className="space-y-4 text-gray-700">
               <div className="flex items-start gap-3">
