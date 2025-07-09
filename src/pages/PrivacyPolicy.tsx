@@ -2,6 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { 
+  Breadcrumb, 
+  BreadcrumbList, 
+  BreadcrumbItem, 
+  BreadcrumbLink, 
+  BreadcrumbSeparator, 
+  BreadcrumbPage 
+} from '@/components/ui/breadcrumb';
 
 const PrivacyPolicy: React.FC = () => {
   return (
@@ -13,11 +21,21 @@ const PrivacyPolicy: React.FC = () => {
         <section className="py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             {/* Breadcrumb */}
-            <div className="mb-8">
-              <span className="text-gray-400 text-xs">
-                <Link to="/" className="hover:text-gray-600">Главная</Link> → Политика конфиденциальности
-              </span>
-            </div>
+            <Breadcrumb className="mb-8">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink href="/" className="text-gray-500 hover:text-gray-700">
+                    Главная
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage className="text-gray-900 font-medium">
+                    Политика конфиденциальности
+                  </BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
             
             {/* Main Title */}
             <h1 className="text-[40px] font-bold text-[#17171E] leading-tight mb-8">
