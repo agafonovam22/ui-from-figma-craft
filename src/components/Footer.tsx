@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CallRequestDialog from './Header/CallRequestDialog';
 
 const Footer: React.FC = () => {
@@ -161,7 +162,7 @@ const Footer: React.FC = () => {
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3">
               <span className="text-[#778093] text-[10px]">© WellFitness, 2005-2024 Все права защищены</span>
               <div className="flex gap-6">
-                <a href="#" className="text-[#778093] text-[10px] hover:text-white transition-colors">Политика конфиденциальности</a>
+                <Link to="/privacy-policy" className="text-[#778093] text-[10px] hover:text-white transition-colors">Политика конфиденциальности</Link>
                 <a href="#" className="text-[#778093] text-[10px] hover:text-white transition-colors">Публичная оферта</a>
               </div>
             </div>
