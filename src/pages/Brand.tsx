@@ -214,61 +214,45 @@ const Brand: React.FC = () => {
           </div>
         </section>
 
-        {/* Third Content Block - Leader in Industry Banner */}
+        {/* Third Content Block - Image Left, Text Right */}
         <section className="w-full py-16">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="overflow-hidden relative rounded-lg" style={{ height: '300px', backgroundColor: '#EEEFF6' }}>
-              <div className="relative h-full">
-                <div className="flex items-center h-full">
-                  {/* Левая часть с изображением - 45% ширины */}
-                  <div className="w-[45%] h-full">
-                    <img 
-                      src="/lovable-uploads/b65af7ed-4fdd-4a53-8bda-4c2a8b320ac3.png"
-                      alt="Женщина в спортивной одежде"
-                      className="w-full h-full object-cover rounded-l-lg"
-                    />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Image */}
+              <div className="order-1">
+                <img 
+                  src="/lovable-uploads/54f02e6f-19d4-4fdd-8311-dc574e386bc3.png"
+                  alt="Производство тренажеров TRUE"
+                  className="w-full h-auto object-cover rounded-lg"
+                />
+              </div>
+              
+              {/* Right Text */}
+              <div className="order-2 lg:pl-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  Лидер в индустрии
+                </h2>
+                
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-3">50+ лет на рынке</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      собственные инженерные разработки и строгий контроль производства
+                    </p>
                   </div>
                   
-                  {/* Правая часть с текстом и статистикой - 55% ширины */}
-                  <div className="w-[55%] z-10 flex flex-col justify-center" style={{ paddingLeft: '60px', paddingRight: '60px' }}>
-                    <div className="mb-8">
-                      <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                        За годы успешного развития нам удалось консолидировать в своем ассортименте продукцию лучших мировых брендов, собрать команду профессионалов, завоевать доверие десятков тысяч лояльных покупателей и стать настоящим лидером рынка.
-                      </p>
-                    </div>
-                    
-                    {/* Статистика в сетке 2x3 */}
-                    <div className="grid grid-cols-2 gap-x-12 gap-y-6">
-                      <div>
-                        <div className="text-3xl font-bold text-[#262631] mb-1">1972</div>
-                        <div className="text-sm text-gray-600">Год появления на рынке</div>
-                      </div>
-                      
-                      <div>
-                        <div className="text-3xl font-bold text-[#262631] mb-1">50+</div>
-                        <div className="text-sm text-gray-600">Лет производства оборудования</div>
-                      </div>
-                      
-                      <div>
-                        <div className="text-3xl font-bold text-[#262631] mb-1">200+</div>
-                        <div className="text-sm text-gray-600">Квалифицированных сотрудников</div>
-                      </div>
-                      
-                      <div>
-                        <div className="text-3xl font-bold text-[#262631] mb-1">100+</div>
-                        <div className="text-sm text-gray-600">Стран продаж</div>
-                      </div>
-                      
-                      <div>
-                        <div className="text-3xl font-bold text-[#262631] mb-1">10000+</div>
-                        <div className="text-sm text-gray-600">Довольных клиентов</div>
-                      </div>
-                      
-                      <div>
-                        <div className="text-3xl font-bold text-[#262631] mb-1">500+</div>
-                        <div className="text-sm text-gray-600">Моделей оборудования</div>
-                      </div>
-                    </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-3">Технологии и безопасность</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      передовые системы амортизации, износостойкие компоненты и интеллектуальное управление
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-3">Экономия на обслуживании</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      минимальные затраты благодаря надежной конструкции и доступности запчастей
+                    </p>
                   </div>
                 </div>
               </div>
