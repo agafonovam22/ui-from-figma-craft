@@ -19,7 +19,15 @@ const Brand: React.FC = () => {
   const { brandSlug } = useParams();
   
   // В реальном приложении здесь бы был запрос к API для получения данных бренда
-  const brandName = brandSlug === 'bowflex' ? 'BowFlex' : 'kernel';
+  const getBrandName = (slug: string) => {
+    switch(slug) {
+      case 'bowflex': return 'BowFlex';
+      case 'true': return 'TRUE';
+      default: return 'kernel';
+    }
+  };
+  
+  const brandName = getBrandName(brandSlug || 'kernel');
 
   return (
     <div className="min-h-screen bg-white">
@@ -72,18 +80,16 @@ const Brand: React.FC = () => {
                       </span>
                     </div>
                     
-                    <h1 
-                      className="text-4xl mb-6 leading-tight"
-                      style={{
-                        color: '#262631',
-                        fontWeight: 400,
-                        lineHeight: '105%'
-                      }}
-                    >
-                      Качественное<br />
-                      спортивное<br />
-                      оборудование
-                    </h1>
+                     <h1 
+                       className="text-4xl mb-6 leading-tight"
+                       style={{
+                         color: '#262631',
+                         fontWeight: 400,
+                         lineHeight: '105%'
+                       }}
+                     >
+                       {brandSlug === 'true' ? 'МЫ – TRUE' : 'Качественное спортивное оборудование'}
+                     </h1>
                     
                     <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors">
                       Узнать больше
@@ -130,25 +136,100 @@ const Brand: React.FC = () => {
           </div>
         </section>
 
-        {/* Full-width image section */}
-        <section className="w-full">
+        {/* First Content Block - Image Left, Text Right */}
+        <section className="w-full py-16">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <img 
-              src="/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png"
-              alt="Спортивные тренировки"
-              className="w-full h-auto object-cover"
-            />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Image */}
+              <div className="order-1">
+                <img 
+                  src="/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png"
+                  alt="Спортивные тренировки"
+                  className="w-full h-auto object-cover rounded-lg"
+                />
+              </div>
+              
+              {/* Right Text */}
+              <div className="order-2 lg:pl-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  consectetur adipiscing elit
+                </h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </div>
+                
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Second full-width image section */}
-        <section className="w-full">
+        {/* Second Content Block - Text Left, Image Right */}
+        <section className="w-full py-16 bg-gray-50">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <img 
-              src="/lovable-uploads/25a08481-5846-4c6a-8f84-9089de2749fd.png"
-              alt="Тренировки и статистика"
-              className="w-full h-auto object-cover"
-            />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Text */}
+              <div className="order-2 lg:order-1 lg:pr-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </h2>
+                
+                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-3">Lorem ipsum dolor sit amet</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-3">Lorem ipsum dolor sit amet</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-3">Lorem ipsum dolor sit amet</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-3">Lorem ipsum dolor sit amet</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Right Image */}
+              <div className="order-1 lg:order-2">
+                <img 
+                  src="/lovable-uploads/25a08481-5846-4c6a-8f84-9089de2749fd.png"
+                  alt="Тренировки и статистика"
+                  className="w-full h-auto object-cover rounded-lg"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
