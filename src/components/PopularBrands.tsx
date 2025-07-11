@@ -30,7 +30,7 @@ const PopularBrands: React.FC = () => {
               <img 
                 src={brand.logo} 
                 alt={brand.name}
-                className="max-w-full max-h-12 object-contain opacity-70 hover:opacity-100 transition-opacity"
+                className="max-w-full max-h-12 object-contain hover:opacity-90 transition-opacity"
               />
             </div>
           ))}
