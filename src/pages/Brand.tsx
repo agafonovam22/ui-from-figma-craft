@@ -62,7 +62,7 @@ const Brand: React.FC = () => {
         {/* Banner */}
         <section className="w-full">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="bg-gray-100 overflow-hidden relative" style={{ height: '300px' }}>
+            <div className="bg-white overflow-hidden relative" style={{ height: '300px' }}>
               <div className="py-12 relative h-full">
                 <div className="flex items-center justify-between h-full">
                   {/* Левая часть с текстом */}
@@ -169,7 +169,7 @@ const Brand: React.FC = () => {
         </section>
 
         {/* Second Content Block - Text Left, Image Right */}
-        <section className="w-full py-16 bg-gray-50">
+        <section className="w-full py-16">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Text */}
@@ -261,7 +261,7 @@ const Brand: React.FC = () => {
         </section>
 
         {/* Fourth Content Block - Text Left, Image Right */}
-        <section className="w-full py-16 bg-gray-50">
+        <section className="w-full py-16">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Text */}
