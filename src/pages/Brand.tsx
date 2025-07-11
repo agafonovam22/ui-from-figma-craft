@@ -175,39 +175,28 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  Наше оборудование выбирают:
                 </h2>
                 
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-6">
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-3">Lorem ipsum dolor sit amet</h3>
+                    <h3 className="font-semibold text-gray-900 mb-3">Фитнес-клубы премиум-класса</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      для коммерческого использования с высокой нагрузкой
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-3">Lorem ipsum dolor sit amet</h3>
+                    <h3 className="font-semibold text-gray-900 mb-3">Тренеры и спортсмены</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      для профессиональных тренировок
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-3">Lorem ipsum dolor sit amet</h3>
+                    <h3 className="font-semibold text-gray-900 mb-3">Владельцы домашних студий</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-3">Lorem ipsum dolor sit amet</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      кто ценит долговечность и премиальный комфорт
                     </p>
                   </div>
                 </div>
