@@ -416,10 +416,9 @@ const Brand: React.FC = () => {
             <div className="flex gap-8">
               {/* Left Sidebar - Full Filters (without brand filter) */}
               <div className="w-64 flex-shrink-0">
-                <h2 className="text-[20px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h2>
-                
                 {/* Filters Container */}
                 <div className="bg-[#F8F8FD] rounded-lg p-6 mb-6">
+                  <h2 className="text-[20px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h2>
                   {/* Price Filter */}
                   <div className="mb-6">
                     <h3 
@@ -591,16 +590,62 @@ const Brand: React.FC = () => {
                   
                   <Button 
                     variant="outline" 
-                    className="w-full border-[#262631] text-[#262631] hover:bg-gray-50 h-12 rounded-lg text-[12px]" 
+                    className="w-full border-[#F53B49] text-[#F53B49] bg-transparent hover:bg-[#F53B49] hover:text-white h-12 rounded-lg text-[12px]" 
                     style={{fontFamily: 'Benzin-Regular'}}
                   >
-                    Сбросить
+                    Показать все
                   </Button>
                 </div>
               </div>
 
-              {/* Main Content - Only 2 rows, no search/sort */}
+              {/* Main Content - только горизонтальные фильтры без поиска и сортировки */}
               <div className="flex-1">
+                {/* Horizontal Filter Tags только без поиска и сортировки */}
+                <div className="bg-[#F8F8FD] rounded-lg p-4 mb-6">
+                  <div className="flex flex-wrap items-center gap-3">
+                    {/* Removable filter */}
+                    <div className="flex items-center bg-[#262631] text-white px-4 py-2 rounded-full font-benzin" style={{ fontSize: '12px' }}>
+                      В наличии
+                      <button className="ml-2 text-white hover:text-gray-300">
+                        ×
+                      </button>
+                    </div>
+                    
+                    {/* Status filters */}
+                    <button className="bg-white text-[#F53B49] border border-[#F53B49] px-4 py-2 rounded-full font-benzin hover:bg-[#F53B49] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+                      Акция
+                    </button>
+                    
+                    <button className="bg-white text-[#31BF00] border border-[#31BF00] px-4 py-2 rounded-full font-benzin hover:bg-[#31BF00] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+                      Новинка
+                    </button>
+                    
+                    <button className="bg-white text-[#4B7EE8] border border-[#4B7EE8] px-4 py-2 rounded-full font-benzin hover:bg-[#4B7EE8] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+                      Хит продаж
+                    </button>
+                    
+                    {/* Dropdown filters */}
+                    <button className="bg-white text-[#778093] border border-[#778093] px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+                      Максимальный вес
+                    </button>
+                    
+                    <button className="bg-white text-[#778093] border border-[#778093] px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+                      Длина полотна, см
+                    </button>
+                    
+                    <button className="bg-white text-[#778093] border border-[#778093] px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+                      Ширина полотна, см
+                    </button>
+                    
+                    <button className="bg-white text-[#778093] border border-[#778093] px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+                      Скорость полотна, км/ч
+                    </button>
+                    
+                    <button className="bg-white text-[#778093] border border-[#778093] px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+                      Производитель
+                    </button>
+                  </div>
+                </div>
                 {/* Products Grid - only 8 products (2 rows) */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
                   {allProducts.slice(0, 8).map((productData) => (
@@ -618,8 +663,13 @@ const Brand: React.FC = () => {
                   </Button>
                 </div>
 
-                {/* Pagination - Round with active page styling */}
+                {/* Pagination - Round with active page styling and arrows */}
                 <div className="flex justify-center items-center space-x-2 mb-8">
+                  {/* Left arrow */}
+                  <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-medium hover:bg-gray-50 flex items-center justify-center">
+                    ←
+                  </button>
+                  
                   <button className="w-10 h-10 rounded-full bg-[#262631] text-white text-[14px] font-medium">
                     1
                   </button>
@@ -632,6 +682,11 @@ const Brand: React.FC = () => {
                   <span className="text-gray-400">...</span>
                   <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-medium hover:bg-gray-50">
                     15
+                  </button>
+                  
+                  {/* Right arrow */}
+                  <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-medium hover:bg-gray-50 flex items-center justify-center">
+                    →
                   </button>
                 </div>
               </div>
