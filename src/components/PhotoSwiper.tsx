@@ -80,72 +80,74 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
   const getNextIndex = (index: number) => (index + 1) % images.length;
 
   return (
-    <div 
-      className="relative w-screen h-[480px] overflow-hidden group -mx-2 sm:-mx-4 lg:-mx-[60px]"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-      ref={sliderRef}
-    >
-      {/* Main carousel container extending beyond viewport symmetrically */}
-      <div className="relative w-[120%] h-full -ml-[10%] flex items-center justify-center">
-        {/* Previous image - always show with circular navigation */}
-        <div 
-          className="absolute left-[8%] w-[25%] h-[380px] cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
-          onClick={() => goToSlide(getPrevIndex(currentIndex))}
-        >
-          <img
-            src={images[getPrevIndex(currentIndex)]}
-            alt={`Slide ${getPrevIndex(currentIndex) + 1}`}
-            className="w-full h-full object-cover rounded-lg shadow-lg"
-            draggable={false}
-          />
-        </div>
+    <div className="w-full">
+      <div 
+        className="relative w-screen h-[480px] overflow-hidden group -mx-2 sm:-mx-4 lg:-mx-[60px]"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        ref={sliderRef}
+      >
+        {/* Main carousel container extending beyond viewport symmetrically */}
+        <div className="relative w-[120%] h-full -ml-[10%] flex items-center justify-center">
+          {/* Previous image - always show with circular navigation */}
+          <div 
+            className="absolute left-[8%] w-[25%] h-[380px] cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
+            onClick={() => goToSlide(getPrevIndex(currentIndex))}
+          >
+            <img
+              src={images[getPrevIndex(currentIndex)]}
+              alt={`Slide ${getPrevIndex(currentIndex) + 1}`}
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+              draggable={false}
+            />
+          </div>
 
-        {/* Current central image */}
-        <div className="relative w-[925px] h-[480px] mx-auto z-20 flex items-center justify-center">
-          <img
-            src={images[currentIndex]}
-            alt={`Slide ${currentIndex + 1}`}
-            className="w-full h-full object-cover rounded-lg shadow-2xl"
-            draggable={false}
-          />
-          
-          {/* Navigation arrows positioned by the central image */}
-          {images.length > 1 && (
-            <>
-              <button
-                onClick={prevSlide}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white shadow-lg z-30"
-                aria-label="Previous image"
-              >
-                <ChevronLeft className="w-5 h-5 text-gray-700" />
-              </button>
-              
-              <button
-                onClick={nextSlide}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white shadow-lg z-30"
-                aria-label="Next image"
-              >
-                <ChevronRight className="w-5 h-5 text-gray-700" />
-              </button>
-            </>
-          )}
-        </div>
+          {/* Current central image */}
+          <div className="relative w-[925px] h-[480px] mx-auto z-20 flex items-center justify-center">
+            <img
+              src={images[currentIndex]}
+              alt={`Slide ${currentIndex + 1}`}
+              className="w-full h-full object-cover rounded-lg shadow-2xl"
+              draggable={false}
+            />
+            
+            {/* Navigation arrows positioned by the central image */}
+            {images.length > 1 && (
+              <>
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white shadow-lg z-30"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="w-5 h-5 text-gray-700" />
+                </button>
+                
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white shadow-lg z-30"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="w-5 h-5 text-gray-700" />
+                </button>
+              </>
+            )}
+          </div>
 
-        {/* Next image - always show with circular navigation */}
-        <div 
-          className="absolute right-[8%] w-[25%] h-[380px] cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
-          onClick={() => goToSlide(getNextIndex(currentIndex))}
-        >
-          <img
-            src={images[getNextIndex(currentIndex)]}
-            alt={`Slide ${getNextIndex(currentIndex) + 1}`}
-            className="w-full h-full object-cover rounded-lg shadow-lg"
-            draggable={false}
-          />
+          {/* Next image - always show with circular navigation */}
+          <div 
+            className="absolute right-[8%] w-[25%] h-[380px] cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
+            onClick={() => goToSlide(getNextIndex(currentIndex))}
+          >
+            <img
+              src={images[getNextIndex(currentIndex)]}
+              alt={`Slide ${getNextIndex(currentIndex) + 1}`}
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+              draggable={false}
+            />
+          </div>
         </div>
       </div>
 
@@ -166,7 +168,6 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
           ))}
         </div>
       )}
-
     </div>
   );
 };
