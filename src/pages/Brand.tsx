@@ -748,23 +748,23 @@ const Brand: React.FC = () => {
           <section className="w-full py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Left Text */}
-                <div className="order-2 lg:order-1 lg:pr-8">
+                {/* Left Image */}
+                <div className="order-1">
+                  <img 
+                    src="/lovable-uploads/50075a6c-9bd8-430f-b4df-f87515187a19.png"
+                    alt="Schwinn тренировка"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                
+                {/* Right Text */}
+                <div className="order-2 lg:pl-8">
                   <h2 className="text-3xl font-benzin text-gray-900 mb-6">
                     Выбирая Schwinn
                   </h2>
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                     Выбирая Schwinn, вы приобретаете не просто тренажер, а надежного партнера в достижении ваших фитнес-целей. Это оборудование, которое вдохновляет на регулярные тренировки, делая их комфортными и эффективными. Доверие миллионов пользователей по всему миру и более чем столетний опыт — лучшая гарантия качества продукции этого легендарного бренда.
                   </p>
-                </div>
-                
-                {/* Right Image */}
-                <div className="order-1 lg:order-2">
-                  <img 
-                    src="/lovable-uploads/50075a6c-9bd8-430f-b4df-f87515187a19.png"
-                    alt="Schwinn тренировка"
-                    className="w-full h-full object-cover rounded-lg"
-                  />
                 </div>
               </div>
             </div>
