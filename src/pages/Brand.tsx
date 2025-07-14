@@ -428,7 +428,7 @@ const Brand: React.FC = () => {
                       </div>
                     </div>
                   ) : brandSlug === 'schwinn' ? (
-                    <div className="mt-6">
+                    <div className="mt-4">
                       <h3 className="font-semibold text-gray-900 mb-3">Инновации на основе традиций</h3>
                       <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                         Оставаясь верным своим принципам, Schwinn внедряет современные технологии: сенсорные экраны, обучающие программы, автоматическая регулировка нагрузки и синхронизация с фитнес-трекерами.
