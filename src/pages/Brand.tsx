@@ -214,45 +214,47 @@ const Brand: React.FC = () => {
           </div>
         </section>
 
-        {/* Third Content Block - Image Left, Text Right */}
+        {/* Statistics Banner from About page */}
         <section className="w-full py-16">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Image */}
-              <div className="order-1">
-                <img 
-                  src="/lovable-uploads/54f02e6f-19d4-4fdd-8311-dc574e386bc3.png"
-                  alt="Производство тренажеров TRUE"
-                  className="w-full h-auto object-cover rounded-lg"
-                />
-              </div>
-              
-              {/* Right Text */}
-              <div className="order-2 lg:pl-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Лидер в индустрии
-                </h2>
-                
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-3">50+ лет на рынке</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                      собственные инженерные разработки и строгий контроль производства
+            <div className="overflow-hidden relative rounded-lg" style={{ height: '408px' }}>
+              <img 
+                src="/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"
+                alt="О компании - статистика"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: 'center right' }}
+              />
+              {/* Statistics content overlay */}
+              <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-6 shadow-lg">
+                <div className="h-full flex flex-col justify-between">
+                  <div className="mb-6">
+                    <p className="text-gray-700 text-sm leading-relaxed font-manrope">
+                      За годы успешного развития нам удалось консолидировать в своем ассортименте продукцию лучших мировых брендов, собрать команду профессионалов, завоевать доверие десятков тысяч лояльных покупателей и стать настоящим лидером рынка.
                     </p>
                   </div>
                   
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-3">Технологии и безопасность</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                      передовые системы амортизации, износостойкие компоненты и интеллектуальное управление
-                    </p>
+                  <div className="grid grid-cols-2 gap-6">
+                    <div>
+                      <div className="text-4xl font-bold text-[#17171E] mb-1">2005</div>
+                      <div className="text-gray-600 text-sm">Год появления на рынке</div>
+                    </div>
+                    <div>
+                      <div className="text-4xl font-bold text-[#17171E] mb-1">10 000+</div>
+                      <div className="text-gray-600 text-sm">Складских помещений</div>
+                    </div>
+                    <div>
+                      <div className="text-4xl font-bold text-[#17171E] mb-1">60+</div>
+                      <div className="text-gray-600 text-sm">Квалифицированных сотрудников</div>
+                    </div>
+                    <div>
+                      <div className="text-4xl font-bold text-[#17171E] mb-1">20+</div>
+                      <div className="text-gray-600 text-sm">Ведущих мировых брендов</div>
+                    </div>
                   </div>
                   
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-3">Экономия на обслуживании</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                      минимальные затраты благодаря надежной конструкции и доступности запчастей
-                    </p>
+                  <div className="mt-4">
+                    <div className="text-4xl font-bold text-[#17171E] mb-1">3000+</div>
+                    <div className="text-gray-600 text-sm">SKU</div>
                   </div>
                 </div>
               </div>
