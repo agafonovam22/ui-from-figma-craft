@@ -156,10 +156,10 @@ const Brand: React.FC = () => {
                 </h2>
                 
                 <div className="mb-8">
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
                     TRUE Fitness – премиальное оборудование для тех, кто ценит качество и надежность
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                     TRUE – один из ведущих мировых брендов премиального фитнес-оборудования, входящий в топ-5 крупнейших производителей индустрии. С 1972 года мы создаем тренажеры, которые сочетают инновационные технологии, безупречную надежность и эргономичный дизайн.
                   </p>
                 </div>

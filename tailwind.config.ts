@@ -24,6 +24,7 @@ export default {
 				'benzin-semibold': ['Benzin-Semibold', 'sans-serif'],
 				'sans': ['Benzin-Regular', 'sans-serif'],
 				'heading': ['Benzin-Semibold', 'sans-serif'],
+				'manrope': ['Manrope', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
