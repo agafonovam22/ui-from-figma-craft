@@ -685,16 +685,19 @@ const Brand: React.FC = () => {
         </section>
 
         {/* Fifth Content Block - Full Width Text (only for Schwinn) */}
-        {brandSlug === 'schwinn' && (
+        {(brandSlug === 'schwinn' || brandSlug === 'sole-fitness') && (
           <section className="w-full py-8 bg-gray-50">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
               <div className="bg-white rounded-lg p-8 shadow-sm">
                 <div className="text-center max-w-4xl mx-auto">
                   <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                    Выбирая Schwinn
+                    {brandSlug === 'schwinn' ? 'Выбирая Schwinn' : 'Выбирайте Sole – инженерное совершенство для ваших результатов.'}
                   </h2>
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                    Выбирая Schwinn, вы приобретаете не просто тренажер, а надежного партнера в достижении ваших фитнес-целей. Это оборудование, которое вдохновляет на регулярные тренировки, делая их комфортными и эффективными. Доверие миллионов пользователей по всему миру и более чем столетний опыт — лучшая гарантия качества продукции этого легендарного бренда.
+                    {brandSlug === 'schwinn' ? 
+                      'Выбирая Schwinn, вы приобретаете не просто тренажер, а надежного партнера в достижении ваших фитнес-целей. Это оборудование, которое вдохновляет на регулярные тренировки, делая их комфортными и эффективными. Доверие миллионов пользователей по всему миру и более чем столетний опыт — лучшая гарантия качества продукции этого легендарного бренда.' :
+                      ''
+                    }
                   </p>
                 </div>
               </div>
