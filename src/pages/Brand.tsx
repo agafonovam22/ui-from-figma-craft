@@ -384,8 +384,8 @@ const Brand: React.FC = () => {
               />
               {/* Statistics content overlay */}
               <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-6 shadow-lg">
-                <div className="h-full flex flex-col justify-between">
-                  <div className="mb-6">
+                <div className="h-full flex flex-col">
+                  <div className="mb-4">
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">
                       {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : 'Лидер в индустрии'}
                     </h2>
@@ -428,7 +428,7 @@ const Brand: React.FC = () => {
                       </div>
                     </div>
                   ) : brandSlug === 'schwinn' ? (
-                    <div className="mt-4">
+                    <div>
                       <h3 className="font-semibold text-gray-900 mb-3">Инновации на основе традиций</h3>
                       <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                         Оставаясь верным своим принципам, Schwinn внедряет современные технологии: сенсорные экраны, обучающие программы, автоматическая регулировка нагрузки и синхронизация с фитнес-трекерами.
