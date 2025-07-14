@@ -81,7 +81,7 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
 
   return (
     <div 
-      className="relative w-screen h-[450px] overflow-hidden group -mx-2 sm:-mx-4 lg:-mx-[60px]"
+      className="relative w-screen h-[350px] overflow-hidden group -mx-2 sm:-mx-4 lg:-mx-[60px]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
