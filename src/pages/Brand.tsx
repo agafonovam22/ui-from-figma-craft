@@ -439,7 +439,7 @@ const Brand: React.FC = () => {
               {/* Right Image */}
               <div className="order-1 lg:order-2">
                 <img 
-                  src={brandSlug === 'bowflex' ? '/lovable-uploads/0838e433-093a-4bb6-a996-3a7c584ed057.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/769683fd-be5a-426c-83b4-126c0b9ab58c.png' : brandSlug === 'gym80' ? '/lovable-uploads/9a83cb7e-5b75-43be-8efd-54d8244acdc8.png' : '/lovable-uploads/25a08481-5846-4c6a-8f84-9089de2749fd.png'}
+                  src={brandSlug === 'bowflex' ? '/lovable-uploads/0838e433-093a-4bb6-a996-3a7c584ed057.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/769683fd-be5a-426c-83b4-126c0b9ab58c.png' : brandSlug === 'gym80' ? '/lovable-uploads/c7015807-1028-470c-acbb-db73c3b5f2b8.png' : '/lovable-uploads/25a08481-5846-4c6a-8f84-9089de2749fd.png'}
                   alt="Тренировки и статистика"
                   className="w-full object-cover rounded-lg"
                   style={{ height: 'calc(100% - 100px)', maxHeight: '350px' }}
