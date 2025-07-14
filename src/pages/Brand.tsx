@@ -1,11 +1,14 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
 import IdeasSelections from '@/components/IdeasSelections';
 import { Link, useParams } from 'react-router-dom';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import CatalogFilters from '@/components/Catalog/CatalogFilters';
+import CatalogControls from '@/components/Catalog/CatalogControls';
+import CatalogGrid from '@/components/Catalog/CatalogGrid';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -17,6 +20,76 @@ import {
 
 const Brand: React.FC = () => {
   const { brandSlug } = useParams();
+  
+  const [sortBy, setSortBy] = useState('popular');
+  
+  const products = [
+    {
+      id: 1,
+      name: 'Гребной тренажер CardioPower PRO CR300',
+      price: '4 610 ₽',
+      originalPrice: null,
+      discount: null,
+      rating: 4.8,
+      reviews: 124,
+      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      badge: 'Новинка',
+      badgeColor: 'bg-green-500',
+      isAvailable: true,
+      hasComparison: true,
+      inStock: true
+    },
+    {
+      id: 2,
+      name: 'Гребной тренажер CardioPower PRO CR300',
+      price: null,
+      originalPrice: null,
+      discount: null,
+      rating: 4.6,
+      reviews: 89,
+      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      badge: 'Хит продаж',
+      badgeColor: 'bg-orange-500',
+      isAvailable: false,
+      hasComparison: true,
+      inStock: false
+    },
+    {
+      id: 3,
+      name: 'Гребной тренажер CardioPower PRO CR300',
+      price: '4 610 ₽',
+      originalPrice: null,
+      discount: null,
+      rating: 4.7,
+      reviews: 67,
+      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      badge: 'Скидка',
+      badgeColor: 'bg-green-500',
+      isAvailable: true,
+      hasComparison: true,
+      inStock: true
+    },
+    {
+      id: 4,
+      name: 'Гребной тренажер CardioPower PRO CR300',
+      price: '4 610 ₽',
+      originalPrice: null,
+      discount: null,
+      rating: 4.9,
+      reviews: 156,
+      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      badge: 'Скидка',
+      badgeColor: 'bg-green-500',
+      isAvailable: true,
+      hasComparison: true,
+      inStock: true
+    }
+  ];
+
+  const allProducts = Array(8).fill(null).map((_, index) => ({
+    ...products[index % 4],
+    id: index + 1
+  }));
   
   // В реальном приложении здесь бы был запрос к API для получения данных бренда
   const getBrandName = (slug: string) => {
@@ -319,52 +392,41 @@ const Brand: React.FC = () => {
         {/* Ideas and Selections */}
         <IdeasSelections />
 
-        {/* FAQ Section */}
-        <section className="py-16 bg-gray-50">
+        {/* Catalog Section */}
+        <section className="py-16 bg-white">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <h2 className="text-3xl font-bold text-[#17171E] mb-12">
-              Часто задаваемые вопросы
+              Все товары {brandName}
             </h2>
             
-            <Accordion type="single" collapsible className="space-y-4">
-              {/* First FAQ Item */}
-              <AccordionItem value="item-1" className="border border-gray-200 rounded-lg px-6">
-                <AccordionTrigger className="text-left text-base font-medium text-gray-800 hover:no-underline py-6">
-                  Какая гарантия предоставляется на оборудование {brandName}?
-                </AccordionTrigger>
-                <AccordionContent className="pb-6">
-                  <div className="text-sm text-gray-600 leading-relaxed">
-                    <p>
-                      На все оборудование {brandName} предоставляется расширенная гарантия от 2 до 5 лет в зависимости от модели. Гарантия покрывает все механические части, электронику и двигатели.
-                    </p>
+            <div className="flex gap-8">
+              {/* Left Sidebar - Filters */}
+              <div className="w-64 flex-shrink-0">
+                <div className="bg-[#F8F8FD] rounded-lg p-6 mb-6">
+                  <h3 className="text-[20px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h3>
+                  
+                  {/* Quick brand filter */}
+                  <div className="mb-6">
+                    <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
+                      <label className="flex items-center">
+                        <input type="checkbox" className="mr-2" defaultChecked />
+                        В наличии
+                      </label>
+                      <label className="flex items-center">
+                        <input type="checkbox" className="mr-2" />
+                        Велотренажеры
+                      </label>
+                    </div>
                   </div>
-                </AccordionContent>
-              </AccordionItem>
+                </div>
+              </div>
 
-              {/* Second FAQ Item */}
-              <AccordionItem value="item-2" className="border border-gray-200 rounded-lg px-6">
-                <AccordionTrigger className="text-left text-base font-medium text-gray-800 hover:no-underline py-6">
-                  Есть ли сервисное обслуживание оборудования {brandName}?
-                </AccordionTrigger>
-                <AccordionContent className="pb-6">
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Да, мы предоставляем полный спектр сервисных услуг включая установку, настройку, техническое обслуживание и ремонт оборудования {brandName}.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              {/* Third FAQ Item */}
-              <AccordionItem value="item-3" className="border border-gray-200 rounded-lg px-6">
-                <AccordionTrigger className="text-left text-base font-medium text-gray-800 hover:no-underline py-6">
-                  Можно ли заказать индивидуальную конфигурацию оборудования?
-                </AccordionTrigger>
-                <AccordionContent className="pb-6">
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Да, мы предлагаем индивидуальные решения и можем адаптировать оборудование под специфические требования вашего спортивного зала или домашнего использования.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+              {/* Main Content */}
+              <div className="flex-1">
+                <CatalogControls sortBy={sortBy} setSortBy={setSortBy} />
+                <CatalogGrid products={allProducts} />
+              </div>
+            </div>
           </div>
         </section>
 
