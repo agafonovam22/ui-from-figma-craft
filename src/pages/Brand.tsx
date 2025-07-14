@@ -181,21 +181,21 @@ const Brand: React.FC = () => {
                 <div className="space-y-6">
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-3">Фитнес-клубы премиум-класса</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       для коммерческого использования с высокой нагрузкой
                     </p>
                   </div>
                   
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-3">Тренеры и спортсмены</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       для профессиональных тренировок
                     </p>
                   </div>
                   
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-3">Владельцы домашних студий</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       кто ценит долговечность и премиальный комфорт
                     </p>
                   </div>
@@ -236,21 +236,21 @@ const Brand: React.FC = () => {
                 <div className="space-y-6">
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-3">50+ лет на рынке</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       собственные инженерные разработки и строгий контроль производства
                     </p>
                   </div>
                   
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-3">Технологии и безопасность</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       передовые системы амортизации, износостойкие компоненты и интеллектуальное управление
                     </p>
                   </div>
                   
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-3">Экономия на обслуживании</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       минимальные затраты благодаря надежной конструкции и доступности запчастей
                     </p>
                   </div>
@@ -270,7 +270,7 @@ const Brand: React.FC = () => {
                   TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат
                 </h2>
                 
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
                   Наше оборудование выбирают, потому что оно:
                 </p>
                 
@@ -279,7 +279,7 @@ const Brand: React.FC = () => {
                     <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-2">Работает безотказно</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                         даже при интенсивной эксплуатации
                       </p>
                     </div>
@@ -289,7 +289,7 @@ const Brand: React.FC = () => {
                     <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-2">Сохраняет актуальность</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                         регулярные апгрейды и совместимость с новыми технологиями
                       </p>
                     </div>
@@ -299,7 +299,7 @@ const Brand: React.FC = () => {
                     <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-2">Обеспечивает максимальный комфорт</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                         продуманная эргономика снижает нагрузку на суставы
                       </p>
                     </div>
