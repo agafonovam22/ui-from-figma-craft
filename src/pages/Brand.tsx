@@ -315,68 +315,6 @@ const Brand: React.FC = () => {
           </div>
         </section>
 
-        {/* Fifth Content Block - Equipment Categories Slider */}
-        <section className="w-full py-16">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Выбирайте TRUE – оборудование, которое работает на ваш успех
-              </h2>
-              <p className="text-gray-600 text-lg">
-                Хотите протестировать или получить консультацию?
-              </p>
-            </div>
-            
-            {/* Categories Slider */}
-            <div className="relative">
-              {/* Red transparent background strip */}
-              <div className="absolute inset-0 h-20 bg-gradient-to-r from-transparent via-[#F53B49]/20 to-transparent"></div>
-              
-              <div className="relative overflow-hidden">
-                <div className="flex items-center justify-center py-6 space-x-8 min-w-max">
-                  {/* Previous (transparent) */}
-                  <div className="opacity-30 px-6 py-4 text-center min-w-[200px]">
-                    <h3 className="text-lg font-medium text-gray-600">Велотренажеры</h3>
-                  </div>
-                  
-                  {/* Current (main/active) */}
-                  <div className="opacity-100 px-8 py-6 text-center min-w-[250px] bg-white/80 rounded-lg shadow-md">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Беговые дорожки</h3>
-                    <p className="text-sm text-gray-600">Профессиональные беговые дорожки для любых целей</p>
-                  </div>
-                  
-                  {/* Next (transparent) */}
-                  <div className="opacity-30 px-6 py-4 text-center min-w-[200px]">
-                    <h3 className="text-lg font-medium text-gray-600">Эллиптические тренажеры</h3>
-                  </div>
-                </div>
-                
-                {/* Navigation arrows */}
-                <button className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors">
-                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 9L1 5L5 1" stroke="#262631" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-                
-                <button className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors">
-                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L5 5L1 9" stroke="#262631" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-              </div>
-              
-              {/* Category indicators */}
-              <div className="flex justify-center mt-6 space-x-2">
-                {["Беговые дорожки", "Велотренажеры", "Эллиптические тренажеры", "Грузоблочные тренажеры", "Мультистанции", "Скамьи и стойки", "Тренажеры нагружаемые дисками", "Функциональные комплексы"].map((category, index) => (
-                  <div 
-                    key={category}
-                    className={`w-2 h-2 rounded-full transition-colors ${index === 0 ? 'bg-[#F53B49]' : 'bg-gray-300'}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Ideas and Selections */}
         <IdeasSelections />
