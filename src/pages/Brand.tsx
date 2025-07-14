@@ -235,7 +235,7 @@ const Brand: React.FC = () => {
               {/* Left Image */}
               <div className="order-1">
                 <img 
-                  src={brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/f5a28d98-6ba4-48b2-84c4-45f27a4ad81c.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
+                  src={brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
                   alt="Спортивные тренировки"
                   className="w-full object-cover rounded-lg"
                   style={{ height: 'calc(100% - 100px)', maxHeight: '350px' }}
@@ -434,7 +434,7 @@ const Brand: React.FC = () => {
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="overflow-hidden relative rounded-lg" style={{ height: '408px' }}>
               <img 
-                src={brandSlug === 'peach-builder' ? "/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png" : "/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"}
+                src={brandSlug === 'peach-builder' ? "/lovable-uploads/f5a28d98-6ba4-48b2-84c4-45f27a4ad81c.png" : "/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"}
                 alt="О компании - статистика"
                 className="w-full h-full object-cover"
                 style={{ objectPosition: 'center right' }}
