@@ -355,7 +355,7 @@ const Brand: React.FC = () => {
               <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-6 shadow-lg">
                 <div className="h-full flex flex-col justify-between">
                   <div className="mb-6">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
                       {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : 'Лидер в индустрии'}
                     </h2>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
@@ -364,34 +364,34 @@ const Brand: React.FC = () => {
                   </div>
                   
                   {brandSlug === 'cardio-power' ? (
-                    <div className="space-y-4">
+                    <div className="space-y-3">
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
                           Самая широкая линейка кардиотренажеров в России
                         </p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
                           Безопасность и комфорт благодаря продуманным системам амортизации и защиты от перегрузок
                         </p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
                           Технологии для реальных результатов: от базовых моделей до премиальных решений
                         </p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
                           Доступная цена без ущерба качеству – оптимизированное производство и логистика
                         </p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
                           Сервис и поддержка для быстрых поставок запчастей и помощи специалистов
                         </p>
                       </div>
