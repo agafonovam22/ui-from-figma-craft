@@ -10,7 +10,11 @@ const PopularBrands: React.FC = () => {
     { id: 4, name: "Cardio Power", logo: "/lovable-uploads/b32017a9-0774-4a12-9fcd-39bd50910a86.png", slug: "cardio-power" },
     { id: 5, name: "Benmore", logo: "/lovable-uploads/82b98e94-1117-4bad-875a-d9313a38b737.png", slug: "benmore" },
     { id: 6, name: "Nautilus", logo: "/lovable-uploads/e6c7e1c5-85ea-40ca-9d67-c478fe5165d9.png", slug: "nautilus" },
-    { id: 7, name: "Sole Fitness", logo: "/lovable-uploads/1b02aa63-1000-4235-928d-c0a3dda8b467.png", slug: "sole-fitness" }
+    { id: 7, name: "Sole Fitness", logo: "/lovable-uploads/1b02aa63-1000-4235-928d-c0a3dda8b467.png", slug: "sole-fitness" },
+    { id: 8, name: "PEACH BUILDER", logo: "/lovable-uploads/f60c9b28-0384-4770-97ba-40b6bdcd451e.png", slug: "peach-builder" },
+    { id: 9, name: "октан", logo: "/lovable-uploads/a80bf39b-ac41-4faf-992e-dcd6a6de297b.png", slug: "oktan" },
+    { id: 10, name: "Gym80", logo: "/lovable-uploads/c4fbfa9e-af20-4a86-87a4-93a9d834a095.png", slug: "gym80" },
+    { id: 11, name: "Visbody", logo: "/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png", slug: "visbody" }
   ];
 
   return (
