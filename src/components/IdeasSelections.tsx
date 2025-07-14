@@ -91,16 +91,6 @@ const IdeasSelections: React.FC = () => {
             </div>
           ))}
         </div>
-
-        {/* Show All Button */}
-        <div className="flex justify-start">
-          <Link 
-            to="/ideas"
-            className="px-6 py-3 border border-[#F53B49] text-[#F53B49] rounded-lg font-semibold hover:bg-[#F53B49] hover:text-white transition-colors"
-          >
-            Показать все
-          </Link>
-        </div>
       </div>
     </section>
   );

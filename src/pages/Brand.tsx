@@ -224,7 +224,7 @@ const Brand: React.FC = () => {
         </section>
 
         {/* First Content Block - Image Left, Text Right */}
-        <section className="w-full py-16">
+        <section className="w-full py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Image */}
@@ -256,7 +256,7 @@ const Brand: React.FC = () => {
         </section>
 
         {/* Second Content Block - Text Left, Image Right */}
-        <section className="w-full py-16">
+        <section className="w-full py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Text */}
@@ -302,7 +302,7 @@ const Brand: React.FC = () => {
         </section>
 
         {/* Statistics Banner from About page */}
-        <section className="w-full py-16">
+        <section className="w-full py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="overflow-hidden relative rounded-lg" style={{ height: '408px' }}>
               <img 
@@ -344,7 +344,7 @@ const Brand: React.FC = () => {
         </section>
 
         {/* Fourth Content Block - Text Left, Image Right */}
-        <section className="w-full py-16">
+        <section className="w-full py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Text */}
@@ -407,7 +407,7 @@ const Brand: React.FC = () => {
         <IdeasSelections />
 
         {/* Catalog Section */}
-        <section className="py-16 bg-white">
+        <section className="py-8 bg-white">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <h2 className="text-3xl font-bold text-[#17171E] mb-12">
               Все товары {brandName}
