@@ -91,7 +91,7 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
         ref={sliderRef}
       >
         {/* Main carousel container extending beyond viewport symmetrically */}
-        <div className="relative w-[120%] h-full -ml-[10%] flex items-center justify-center gap-5">
+        <div className="relative w-[120%] h-full -ml-[10%] flex items-center justify-center gap-2.5">
           {/* Previous image - always show with circular navigation */}
           <div 
             className="w-[25%] h-[380px] cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
