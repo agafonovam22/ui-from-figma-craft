@@ -93,7 +93,7 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
       <div className="relative w-[120%] h-full -ml-[10%] flex items-center justify-center">
         {/* Previous image - always show with circular navigation */}
         <div 
-          className="absolute left-[8%] w-[25%] h-full cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
+          className="absolute left-[8%] w-[25%] h-[380px] cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
           onClick={() => goToSlide(getPrevIndex(currentIndex))}
         >
           <img
@@ -137,7 +137,7 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
 
         {/* Next image - always show with circular navigation */}
         <div 
-          className="absolute right-[8%] w-[25%] h-full cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
+          className="absolute right-[8%] w-[25%] h-[380px] cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
           onClick={() => goToSlide(getNextIndex(currentIndex))}
         >
           <img
