@@ -112,6 +112,7 @@ const Brand: React.FC = () => {
       case 'true': return 'TRUE';
       case 'cardio-power': return 'Cardio Power';
       case 'schwinn': return 'Schwinn';
+      case 'nautilus': return 'Nautilus';
       default: return 'kernel';
     }
   };
@@ -177,7 +178,7 @@ const Brand: React.FC = () => {
                          lineHeight: '105%'
                        }}
                       >
-                         {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'SCHWINN' : 'Качественное спортивное оборудование'}
+                         {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'SCHWINN' : brandSlug === 'nautilus' ? 'NAUTILUS' : 'Качественное спортивное оборудование'}
                       </h1>
                     
                     <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors">
@@ -242,7 +243,7 @@ const Brand: React.FC = () => {
               {/* Right Text */}
               <div className="order-2 lg:pl-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : 'МЫ – TRUE'}
+                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : 'МЫ – TRUE'}
                 </h2>
                 
                 <div className="mb-8">
@@ -268,6 +269,17 @@ const Brand: React.FC = () => {
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       С момента своего основания в 1895 году компания Schwinn стала символом инноваций и надежности в мире спортивного оборудования. Начав с производства велосипедов, которые завоевали сердца миллионов, бренд перенес свои лучшие традиции в сферу домашнего фитнеса, создавая кардиотренажеры, сочетающие в себе проверенное качество и современные технологии.
                     </p>
+                  ) : brandSlug === 'nautilus' ? (
+                    <>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                        С 1986 года мы не просто создаем тренажеры – мы проектируем будущее фитнес-индустрии. Сегодня Nautilus Inc. – это:
+                      </p>
+                      <ul className="text-gray-600 text-sm leading-relaxed font-manrope mb-4 ml-4">
+                        <li>- Мировой лидер в ТОП-3 производителей фитнес-оборудования</li>
+                        <li>- 4 легендарных бренда в портфолио: Nautilus, Bowflex, Schwinn, Universal</li>
+                        <li>- Технологии, которые задают тренды – 130+ стран доверяют нашему качеству</li>
+                      </ul>
+                    </>
                   ) : (
                     <>
                       <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
@@ -291,7 +303,7 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : 'Наше оборудование выбирают:'}
+                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : 'Наше оборудование выбирают:'}
                 </h2>
                 
                 {brandSlug === 'cardio-power' ? (
@@ -332,6 +344,28 @@ const Brand: React.FC = () => {
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       Каждый найдет в линейке Schwinn оборудование, отвечающее именно его потребностям и целям – от легких поддерживающих тренировок до профессиональной подготовки.
                     </p>
+                  </>
+                ) : brandSlug === 'nautilus' ? (
+                  <>
+                    <div className="mb-6">
+                      <p className="text-gray-600 text-sm leading-relaxed mb-4 font-manrope">
+                        <strong>Для дома:</strong>
+                      </p>
+                      <ul className="text-gray-600 text-sm leading-relaxed font-manrope mb-6 ml-4">
+                        <li>- Цифровые connected-решения Bowflex – фитнес будущего уже сегодня</li>
+                        <li>- Умные тренажеры Schwinn – когда важны точность и комфорт</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-4 font-manrope">
+                        <strong>Для премиум-залов:</strong>
+                      </p>
+                      <ul className="text-gray-600 text-sm leading-relaxed font-manrope ml-4">
+                        <li>- Профессиональная линейка Nautilus – бесперебойная работа 24/7</li>
+                        <li>- Инновационные системы Universal – для самых взыскательных клиентов</li>
+                      </ul>
+                    </div>
                   </>
                 ) : (
                   <div className="space-y-6">
