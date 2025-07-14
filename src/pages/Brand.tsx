@@ -115,6 +115,7 @@ const Brand: React.FC = () => {
       case 'nautilus': return 'Nautilus';
       case 'sole-fitness': return 'Sole Fitness';
       case 'peach-builder': return 'PEACH BUILDER';
+      case 'gym80': return 'Gym80';
       default: return 'kernel';
     }
   };
@@ -180,7 +181,7 @@ const Brand: React.FC = () => {
                          lineHeight: '105%'
                        }}
                       >
-                         {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'SCHWINN' : brandSlug === 'nautilus' ? 'NAUTILUS' : brandSlug === 'sole-fitness' ? 'SOLE FITNESS' : brandSlug === 'peach-builder' ? 'PEACH BUILDER' : 'Качественное спортивное оборудование'}
+                         {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'SCHWINN' : brandSlug === 'nautilus' ? 'NAUTILUS' : brandSlug === 'sole-fitness' ? 'SOLE FITNESS' : brandSlug === 'peach-builder' ? 'PEACH BUILDER' : brandSlug === 'gym80' ? 'GYM80' : 'Качественное спортивное оборудование'}
                       </h1>
                     
                     <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors font-manrope">
@@ -235,7 +236,7 @@ const Brand: React.FC = () => {
               {/* Left Image */}
               <div className="order-1">
                 <img 
-                  src={brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
+                  src={brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
                   alt="Спортивные тренировки"
                   className="w-full h-full object-cover rounded-lg"
                 />
@@ -244,7 +245,7 @@ const Brand: React.FC = () => {
               {/* Right Text */}
               <div className="order-2 lg:pl-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьёз' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — революция в тренировке ягодичных мышц' : 'МЫ – TRUE'}
+                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьёз' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — революция в тренировке ягодичных мышц' : brandSlug === 'gym80' ? 'GYM80 — немецкое качество для профессиональных результатов' : 'МЫ – TRUE'}
                 </h2>
                 
                 <div className="mb-8">
@@ -285,6 +286,15 @@ const Brand: React.FC = () => {
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       С момента основания в 1999 году Sole Fitness зарекомендовал себя как бренд, для которого не существует компромиссов между качеством, технологичностью и долговечностью. Наше оборудование – это не просто тренажеры, а инвестиция в ваше здоровье на десятилетия вперед. Мы понимаем, что настоящие ценители фитнеса заслуживают оборудования, которое не подведет в самый ответственный момент тренировки, поэтому каждую деталь наших беговых дорожек, эллиптических и велотренажеров мы проектируем максимально прочными.
                     </p>
+                  ) : brandSlug === 'gym80' ? (
+                    <>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                        С 1980 года GYM80 устанавливает новые стандарты в производстве профессионального силового оборудования. Основанная в Германии, компания объединила традиции немецкого инженерного мастерства с передовыми технологиями, создавая тренажеры, которые выбирают ведущие спортивные клубы, реабилитационные центры и профессиональные атлеты по всему миру.
+                      </p>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        Каждый тренажер GYM80 — это воплощение точности, надежности и эффективности. Мы не просто производим оборудование, мы создаем инструменты для достижения выдающихся результатов, будь то реабилитация после травм или подготовка к олимпийским играм.
+                      </p>
+                    </>
                   ) : brandSlug === 'peach-builder' ? (
                     <>
                       <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
@@ -317,7 +327,7 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : brandSlug === 'sole-fitness' ? 'Что делает Sole Fitness особенным?' : brandSlug === 'peach-builder' ? 'Для кого создан PEACH BUILDER?' : 'Наше оборудование выбирают:'}
+                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : brandSlug === 'sole-fitness' ? 'Что делает Sole Fitness особенным?' : brandSlug === 'peach-builder' ? 'Для кого создан PEACH BUILDER?' : brandSlug === 'gym80' ? 'Философия GYM80' : 'Наше оборудование выбирают:'}
                 </h2>
                 
                 {brandSlug === 'cardio-power' ? (
@@ -385,6 +395,18 @@ const Brand: React.FC = () => {
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                     Это уникальное сочетание американской инженерной мысли и строжайших стандартов контроля качества. В то время как многие производители идут по пути удешевления компонентов, мы продолжаем использовать только высококачественные материалы. Наши инженеры разрабатывают тренажеры с расчетом на интенсивную эксплуатацию.
                   </p>
+                ) : brandSlug === 'gym80' ? (
+                  <>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      <strong>Научный подход к тренировкам:</strong> Наше оборудование создается на основе глубоких биомеханических исследований, обеспечивая максимально эффективную и безопасную работу каждой группы мышц.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      <strong>Надежность класса премиум:</strong> Используя только высококачественные материалы и компоненты, мы создаем тренажеры, рассчитанные на десятилетия интенсивного использования.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                      <strong>Инновации для результата:</strong> Каждый элемент конструкции продуман до мелочей – от эргономичных рукояток до точной системы нагружения, все направлено на достижение максимального результата.
+                    </p>
+                  </>
                 ) : brandSlug === 'peach-builder' ? (
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                     Профессиональные атлеты и фитнес-модели выбирают это оборудование за возможность изолированной проработки целевых мышц. Владельцы премиальных студий и персональные тренеры ценят его за безупречное качество и способность привлекать вдохновлённых клиентов. Девушки, для которых тренировки — часть образа жизни, находят в этих тренажёрах идеального союзника в создании тела мечты.
@@ -418,7 +440,7 @@ const Brand: React.FC = () => {
               {/* Right Image */}
               <div className="order-1 lg:order-2">
                 <img 
-                  src={brandSlug === 'bowflex' ? '/lovable-uploads/0838e433-093a-4bb6-a996-3a7c584ed057.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/769683fd-be5a-426c-83b4-126c0b9ab58c.png' : '/lovable-uploads/25a08481-5846-4c6a-8f84-9089de2749fd.png'}
+                  src={brandSlug === 'bowflex' ? '/lovable-uploads/0838e433-093a-4bb6-a996-3a7c584ed057.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/769683fd-be5a-426c-83b4-126c0b9ab58c.png' : brandSlug === 'gym80' ? '/lovable-uploads/d921e660-a7c9-4492-a723-7406fa695880.png' : '/lovable-uploads/25a08481-5846-4c6a-8f84-9089de2749fd.png'}
                   alt="Тренировки и статистика"
                   className="w-full object-cover rounded-lg"
                   style={{ height: 'calc(100% - 100px)', maxHeight: '350px' }}
@@ -433,7 +455,7 @@ const Brand: React.FC = () => {
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="overflow-hidden relative rounded-lg" style={{ height: '408px' }}>
               <img 
-                src={brandSlug === 'peach-builder' ? "/lovable-uploads/f5a28d98-6ba4-48b2-84c4-45f27a4ad81c.png" : "/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"}
+                src={brandSlug === 'peach-builder' ? "/lovable-uploads/f5a28d98-6ba4-48b2-84c4-45f27a4ad81c.png" : brandSlug === 'gym80' ? "/lovable-uploads/aea12343-149b-4ab1-b46b-0d8a5a97c7d5.png" : "/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"}
                 alt="О компании - статистика"
                 className="w-full h-full object-cover"
                 style={{ objectPosition: 'center right' }}
@@ -443,7 +465,7 @@ const Brand: React.FC = () => {
                 <div className="h-full flex flex-col">
                   <div className="mb-4">
                     <h2 className="text-3xl font-benzin text-gray-900 mb-4">
-                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : brandSlug === 'peach-builder' ? 'Философия бренда строится на трёх принципах:' : 'Лидер в индустрии'}
+                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : brandSlug === 'peach-builder' ? 'Философия бренда строится на трёх принципах:' : brandSlug === 'gym80' ? 'Более 40 лет в служении фитнесу' : 'Лидер в индустрии'}
                     </h2>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
                       {brandSlug === 'cardio-power' ? '' : brandSlug === 'schwinn' ? 'Уже более века Schwinn сохраняет безупречную репутацию благодаря строгим тестам на безопасность и долговечность. Тренажёры созданы из качественных материалов и служат годами.' : brandSlug === 'nautilus' ? '' : brandSlug === 'sole-fitness' ? '' : brandSlug === 'peach-builder' ? '' : '50+ лет на рынке, собственные инженерные разработки и строгий контроль производства'}
@@ -570,6 +592,33 @@ const Brand: React.FC = () => {
                         От Hip Thruster с его революционной системой настройки до Belt Squat, снимающего нагрузку с позвоночника — оборудование PEACH BUILDER открывает новые горизонты в тренировочном процессе.
                       </p>
                     </>
+                  ) : brandSlug === 'gym80' ? (
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Более 90% олимпийских тренировочных центров используют наше оборудование
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Тренажеры выдерживают более 1 миллиона циклов работы
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Используются в 85+ странах мира ведущими спортивными организациями
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Каждый тренажер проходит 200+ проверок качества перед отгрузкой
+                        </p>
+                      </div>
+                    </div>
                   ) : (
                     <div className="grid grid-cols-2 gap-6">
                       <div>
@@ -599,7 +648,7 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : brandSlug === 'nautilus' ? 'Nautilus – когда важен не просто результат, а технологичное превосходство.' : brandSlug === 'sole-fitness' ? 'Выбирайте Sole – инженерное совершенство для ваших результатов.' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — это больше чем оборудование' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
+                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : brandSlug === 'nautilus' ? 'Nautilus – когда важен не просто результат, а технологичное превосходство.' : brandSlug === 'sole-fitness' ? 'Выбирайте Sole – инженерное совершенство для ваших результатов.' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — это больше чем оборудование' : brandSlug === 'gym80' ? 'Выбирая GYM80, вы выбираете лучшее' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
                 </h2>
                 
                 {brandSlug === 'cardio-power' ? (
@@ -610,6 +659,18 @@ const Brand: React.FC = () => {
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                     От компактных велотренажеров для небольших квартир до профессиональных эллипсоидов с плавным ходом — ассортимент Schwinn охватывает весь спектр домашнего кардиооборудования. Особой популярностью пользуются гибридные модели, сочетающие в себе функции нескольких тренажеров, позволяя разнообразить тренировочный процесс.
                   </p>
+                ) : brandSlug === 'gym80' ? (
+                  <>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      Каждый тренажер GYM80 — это результат десятилетий опыта и непрерывного совершенствования. Мы не создаем оборудование для массового рынка — мы производим инструменты для достижения выдающихся результатов.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      Когда профессиональные атлеты готовятся к Олимпийским играм, когда реабилитационные центры восстанавливают людей после серьезных травм, когда элитные фитнес-клубы хотят предложить своим клиентам лучшее — они выбирают GYM80.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope italic">
+                      Потому что совершенство не терпит компромиссов.
+                    </p>
+                  </>
                 ) : brandSlug === 'peach-builder' ? (
                   <>
                     <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
@@ -674,7 +735,7 @@ const Brand: React.FC = () => {
               {/* Right Image */}
               <div className="order-1 lg:order-2">
                 <img 
-                  src={brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
+                  src={brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : brandSlug === 'gym80' ? '/lovable-uploads/42bcc377-bf54-43ff-9c74-f5adc729ee38.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
                   alt="Качество и надежность TRUE"
                   className="w-full h-full object-cover rounded-lg"
                 />
