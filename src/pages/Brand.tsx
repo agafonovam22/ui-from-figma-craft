@@ -234,7 +234,7 @@ const Brand: React.FC = () => {
                   src={brandSlug === 'bowflex' ? '/lovable-uploads/4bc8a64d-e8cf-47fe-b358-0a796698689b.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
                   alt="Спортивные тренировки"
                   className="w-full object-cover rounded-lg"
-                  style={{ height: 'calc(100% - 50px)', maxHeight: '400px' }}
+                  style={{ height: 'calc(100% - 100px)', maxHeight: '350px' }}
                 />
               </div>
               
@@ -336,7 +336,7 @@ const Brand: React.FC = () => {
                   src={brandSlug === 'bowflex' ? '/lovable-uploads/0838e433-093a-4bb6-a996-3a7c584ed057.png' : '/lovable-uploads/25a08481-5846-4c6a-8f84-9089de2749fd.png'}
                   alt="Тренировки и статистика"
                   className="w-full object-cover rounded-lg"
-                  style={{ height: 'calc(100% - 50px)', maxHeight: '400px' }}
+                  style={{ height: 'calc(100% - 100px)', maxHeight: '350px' }}
                 />
               </div>
             </div>
