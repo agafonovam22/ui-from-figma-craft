@@ -4,11 +4,12 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
 import IdeasSelections from '@/components/IdeasSelections';
+import ProductCard from '@/components/ProductCard';
 import { Link, useParams } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import CatalogFilters from '@/components/Catalog/CatalogFilters';
-import CatalogControls from '@/components/Catalog/CatalogControls';
-import CatalogGrid from '@/components/Catalog/CatalogGrid';
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { Slider } from "@/components/ui/slider";
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -21,7 +22,20 @@ import {
 const Brand: React.FC = () => {
   const { brandSlug } = useParams();
   
-  const [sortBy, setSortBy] = useState('popular');
+  const [priceRange, setPriceRange] = useState([0, 100000]);
+  const [expandedFilters, setExpandedFilters] = useState({
+    price: true,
+    type: true,
+    power: true,
+    trainer: true
+  });
+
+  const toggleFilter = (filterName: keyof typeof expandedFilters) => {
+    setExpandedFilters(prev => ({
+      ...prev,
+      [filterName]: !prev[filterName]
+    }));
+  };
   
   const products = [
     {
@@ -400,31 +414,226 @@ const Brand: React.FC = () => {
             </h2>
             
             <div className="flex gap-8">
-              {/* Left Sidebar - Filters */}
+              {/* Left Sidebar - Full Filters (without brand filter) */}
               <div className="w-64 flex-shrink-0">
+                <h2 className="text-[20px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h2>
+                
+                {/* Filters Container */}
                 <div className="bg-[#F8F8FD] rounded-lg p-6 mb-6">
-                  <h3 className="text-[20px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h3>
-                  
-                  {/* Quick brand filter */}
+                  {/* Price Filter */}
                   <div className="mb-6">
-                    <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
-                      <label className="flex items-center">
-                        <input type="checkbox" className="mr-2" defaultChecked />
-                        В наличии
-                      </label>
-                      <label className="flex items-center">
-                        <input type="checkbox" className="mr-2" />
-                        Велотренажеры
-                      </label>
-                    </div>
+                    <h3 
+                      className="text-[14px] text-[#262631] mb-[14px] flex items-center justify-between cursor-pointer" 
+                      style={{fontFamily: 'Benzin-Regular'}}
+                      onClick={() => toggleFilter('price')}
+                    >
+                      Цена
+                      {expandedFilters.price ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                    </h3>
+                    
+                    {expandedFilters.price && (
+                      <>
+                        {/* Price Range Slider */}
+                        <div className="mb-4">
+                          <div className="flex justify-between text-[14px] text-gray-600 mb-2" style={{fontFamily: 'Manrope'}}>
+                            <span>{priceRange[0].toLocaleString()} ₽</span>
+                            <span>{priceRange[1].toLocaleString()} ₽</span>
+                          </div>
+                          <Slider
+                            value={priceRange}
+                            onValueChange={setPriceRange}
+                            max={150000}
+                            min={0}
+                            step={1000}
+                            className="w-full"
+                          />
+                        </div>
+                        
+                        <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
+                          <label className="flex items-center">
+                            <input type="radio" name="price" className="mr-2" />
+                            до 500 ₽
+                          </label>
+                          <label className="flex items-center">
+                            <input type="radio" name="price" className="mr-2" />
+                            до 20 000 ₽
+                          </label>
+                          <label className="flex items-center">
+                            <input type="radio" name="price" className="mr-2" />
+                            до 50 000 ₽
+                          </label>
+                          <label className="flex items-center">
+                            <input type="radio" name="price" className="mr-2" />
+                            до 100 000 ₽
+                          </label>
+                          <button className="text-[#F53B49] text-[12px] mt-5 text-center w-full" style={{fontFamily: 'Benzin-Regular'}}>Показать все</button>
+                        </div>
+                      </>
+                    )}
                   </div>
+
+                  <Separator className="mt-5 mb-5" />
+
+                  {/* Type Filter */}
+                  <div className="mb-6">
+                    <h3 
+                      className="text-[14px] text-[#262631] mb-[14px] flex items-center justify-between cursor-pointer" 
+                      style={{fontFamily: 'Benzin-Regular'}}
+                      onClick={() => toggleFilter('type')}
+                    >
+                      Тип назначения
+                      {expandedFilters.type ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                    </h3>
+                    {expandedFilters.type && (
+                      <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
+                        <label className="flex items-center">
+                          <input type="checkbox" className="mr-2" />
+                          Домашние
+                        </label>
+                        <label className="flex items-center">
+                          <input type="checkbox" className="mr-2" />
+                          Полупрофессиональные
+                        </label>
+                        <label className="flex items-center">
+                          <input type="checkbox" className="mr-2" />
+                          Профессиональные
+                        </label>
+                        <label className="flex items-center">
+                          <input type="checkbox" className="mr-2" />
+                          Реабилитация
+                        </label>
+                      </div>
+                    )}
+                  </div>
+
+                  <Separator className="mt-5 mb-5" />
+
+                  {/* Power Filter */}
+                  <div className="mb-6">
+                    <h3 
+                      className="text-[14px] text-[#262631] mb-[14px] flex items-center justify-between cursor-pointer" 
+                      style={{fontFamily: 'Benzin-Regular'}}
+                      onClick={() => toggleFilter('power')}
+                    >
+                      Мощность двигателя
+                      {expandedFilters.power ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                    </h3>
+                    {expandedFilters.power && (
+                      <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
+                        {/* Input fields for power range */}
+                        <div className="flex items-center space-x-2 mb-4">
+                          <div className="flex-1">
+                            <input 
+                              type="text" 
+                              placeholder="от 1.2500"
+                              className="w-full px-3 py-2 border border-gray-300 rounded text-gray-600 text-[14px]"
+                              style={{fontFamily: 'Manrope'}}
+                            />
+                          </div>
+                          <div className="flex-1">
+                            <input 
+                              type="text" 
+                              placeholder="до 24 560"
+                              className="w-full px-3 py-2 border border-gray-300 rounded text-gray-600 text-[14px]"
+                              style={{fontFamily: 'Manrope'}}
+                            />
+                          </div>
+                        </div>
+                        
+                        {/* Checkbox options */}
+                        <label className="flex items-center">
+                          <input type="checkbox" className="mr-2" />
+                          до 3 л.с.
+                        </label>
+                        <label className="flex items-center">
+                          <input type="checkbox" className="mr-2" />
+                          3-4 л.с.
+                        </label>
+                      </div>
+                    )}
+                  </div>
+
+                  <Separator className="mt-5 mb-5" />
+
+                  {/* Trainer Type Filter */}
+                  <div className="mb-6">
+                    <h3 
+                      className="text-[14px] text-[#262631] mb-[14px] flex items-center justify-between cursor-pointer" 
+                      style={{fontFamily: 'Benzin-Regular'}}
+                      onClick={() => toggleFilter('trainer')}
+                    >
+                      Тип тренажера
+                      {expandedFilters.trainer ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                    </h3>
+                    {expandedFilters.trainer && (
+                      <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
+                        <label className="flex items-center">
+                          <input type="radio" name="trainer-type" className="mr-2" />
+                          Магнитный
+                        </label>
+                        <label className="flex items-center">
+                          <input type="radio" name="trainer-type" className="mr-2" />
+                          Полупрофессиональный
+                        </label>
+                      </div>
+                    )}
+                  </div>
+
+                  <Separator className="mt-5 mb-5" />
+
+                  {/* Apply Filters Button */}
+                  <Button 
+                    className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white mb-3 h-12 rounded-lg text-[12px]" 
+                    style={{fontFamily: 'Benzin-Regular'}}
+                  >
+                    Применить
+                  </Button>
+                  
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-[#262631] text-[#262631] hover:bg-gray-50 h-12 rounded-lg text-[12px]" 
+                    style={{fontFamily: 'Benzin-Regular'}}
+                  >
+                    Сбросить
+                  </Button>
                 </div>
               </div>
 
-              {/* Main Content */}
+              {/* Main Content - Only 2 rows, no search/sort */}
               <div className="flex-1">
-                <CatalogControls sortBy={sortBy} setSortBy={setSortBy} />
-                <CatalogGrid products={allProducts} />
+                {/* Products Grid - only 8 products (2 rows) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+                  {allProducts.slice(0, 8).map((productData) => (
+                    <ProductCard key={productData.id} product={productData} />
+                  ))}
+                </div>
+
+                {/* Show More Button - Red color */}
+                <div className="text-center mb-8">
+                  <Button 
+                    className="bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 rounded-lg text-[14px]"
+                    style={{fontFamily: 'Benzin-Regular'}}
+                  >
+                    Показать еще
+                  </Button>
+                </div>
+
+                {/* Pagination - Round with active page styling */}
+                <div className="flex justify-center items-center space-x-2 mb-8">
+                  <button className="w-10 h-10 rounded-full bg-[#262631] text-white text-[14px] font-medium">
+                    1
+                  </button>
+                  <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-medium hover:bg-gray-50">
+                    2
+                  </button>
+                  <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-medium hover:bg-gray-50">
+                    3
+                  </button>
+                  <span className="text-gray-400">...</span>
+                  <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-medium hover:bg-gray-50">
+                    15
+                  </button>
+                </div>
               </div>
             </div>
           </div>
