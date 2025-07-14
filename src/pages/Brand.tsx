@@ -237,8 +237,7 @@ const Brand: React.FC = () => {
                 <img 
                   src={brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
                   alt="Спортивные тренировки"
-                  className="w-full object-cover rounded-lg"
-                  style={{ height: 'calc(100% - 100px)', maxHeight: '350px' }}
+                  className="w-full h-full object-cover rounded-lg"
                 />
               </div>
               
@@ -677,7 +676,7 @@ const Brand: React.FC = () => {
                 <img 
                   src={brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
                   alt="Качество и надежность TRUE"
-                  className="w-full h-auto object-cover rounded-lg"
+                  className="w-full h-full object-cover rounded-lg"
                 />
               </div>
             </div>
