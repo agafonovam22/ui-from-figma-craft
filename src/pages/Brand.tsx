@@ -113,6 +113,7 @@ const Brand: React.FC = () => {
       case 'cardio-power': return 'Cardio Power';
       case 'schwinn': return 'Schwinn';
       case 'nautilus': return 'Nautilus';
+      case 'sole-fitness': return 'Sole Fitness';
       default: return 'kernel';
     }
   };
@@ -178,7 +179,7 @@ const Brand: React.FC = () => {
                          lineHeight: '105%'
                        }}
                       >
-                         {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'SCHWINN' : brandSlug === 'nautilus' ? 'NAUTILUS' : 'Качественное спортивное оборудование'}
+                         {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'SCHWINN' : brandSlug === 'nautilus' ? 'NAUTILUS' : brandSlug === 'sole-fitness' ? 'SOLE FITNESS' : 'Качественное спортивное оборудование'}
                       </h1>
                     
                     <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors font-manrope">
@@ -243,7 +244,7 @@ const Brand: React.FC = () => {
               {/* Right Text */}
               <div className="order-2 lg:pl-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : 'МЫ – TRUE'}
+                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьёз' : 'МЫ – TRUE'}
                 </h2>
                 
                 <div className="mb-8">
@@ -280,6 +281,10 @@ const Brand: React.FC = () => {
                         <li>- Технологии, которые задают тренды – 130+ стран доверяют нашему качеству</li>
                       </ul>
                     </>
+                  ) : brandSlug === 'sole-fitness' ? (
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                      С момента основания в 1999 году Sole Fitness зарекомендовал себя как бренд, для которого не существует компромиссов между качеством, технологичностью и долговечностью. Наше оборудование – это не просто тренажеры, а инвестиция в ваше здоровье на десятилетия вперед. Мы понимаем, что настоящие ценители фитнеса заслуживают оборудования, которое не подведет в самый ответственный момент тренировки, поэтому каждую деталь наших беговых дорожек, эллиптических и велотренажеров мы проектируем максимально прочными.
+                    </p>
                   ) : (
                     <>
                       <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
@@ -303,7 +308,7 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : 'Наше оборудование выбирают:'}
+                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : brandSlug === 'sole-fitness' ? 'Что делает Sole Fitness особенным?' : 'Наше оборудование выбирают:'}
                 </h2>
                 
                 {brandSlug === 'cardio-power' ? (
@@ -367,6 +372,10 @@ const Brand: React.FC = () => {
                       </ul>
                     </div>
                   </>
+                ) : brandSlug === 'sole-fitness' ? (
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Это уникальное сочетание американской инженерной мысли и строжайших стандартов контроля качества. В то время как многие производители идут по пути удешевления компонентов, мы продолжаем использовать только высококачественные материалы. Наши инженеры разрабатывают тренажеры с расчетом на интенсивную эксплуатацию.
+                  </p>
                 ) : (
                   <div className="space-y-6">
                     <div>
@@ -421,10 +430,10 @@ const Brand: React.FC = () => {
                 <div className="h-full flex flex-col">
                   <div className="mb-4">
                     <h2 className="text-3xl font-benzin text-gray-900 mb-4">
-                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : brandSlug === 'nautilus' ? 'Nautilus:' : 'Лидер в индустрии'}
+                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : 'Лидер в индустрии'}
                     </h2>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
-                      {brandSlug === 'cardio-power' ? '' : brandSlug === 'schwinn' ? 'Уже более века Schwinn сохраняет безупречную репутацию благодаря строгим тестам на безопасность и долговечность. Тренажёры созданы из качественных материалов и служат годами.' : brandSlug === 'nautilus' ? '' : '50+ лет на рынке, собственные инженерные разработки и строгий контроль производства'}
+                      {brandSlug === 'cardio-power' ? '' : brandSlug === 'schwinn' ? 'Уже более века Schwinn сохраняет безупречную репутацию благодаря строгим тестам на безопасность и долговечность. Тренажёры созданы из качественных материалов и служат годами.' : brandSlug === 'nautilus' ? '' : brandSlug === 'sole-fitness' ? '' : '50+ лет на рынке, собственные инженерные разработки и строгий контроль производства'}
                     </p>
                   </div>
                   
@@ -495,6 +504,33 @@ const Brand: React.FC = () => {
                         </p>
                       </div>
                     </div>
+                  ) : brandSlug === 'sole-fitness' ? (
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Система Cushion Flex (беговые дорожки) – защита суставов
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Отрицательный угол наклона (беговые дорожки) – для тренировки спусков и подъемов
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Magnetic Resistance (велотренажёры) – плавность хода
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Эргономичные конструкции – тренировки без дискомфорта
+                        </p>
+                      </div>
+                    </div>
                   ) : (
                     <div className="grid grid-cols-2 gap-6">
                       <div>
@@ -524,7 +560,7 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : brandSlug === 'nautilus' ? 'Nautilus – когда важен не просто результат, а технологичное превосходство.' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
+                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : brandSlug === 'nautilus' ? 'Nautilus – когда важен не просто результат, а технологичное превосходство.' : brandSlug === 'sole-fitness' ? 'Выбирайте Sole – инженерное совершенство для ваших результатов.' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
                 </h2>
                 
                 {brandSlug === 'cardio-power' ? (
@@ -534,6 +570,10 @@ const Brand: React.FC = () => {
                 ) : brandSlug === 'schwinn' ? (
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                     От компактных велотренажеров для небольших квартир до профессиональных эллипсоидов с плавным ходом — ассортимент Schwinn охватывает весь спектр домашнего кардиооборудования. Особой популярностью пользуются гибридные модели, сочетающие в себе функции нескольких тренажеров, позволяя разнообразить тренировочный процесс.
+                  </p>
+                ) : brandSlug === 'sole-fitness' ? (
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    
                   </p>
                 ) : brandSlug === 'nautilus' ? (
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
