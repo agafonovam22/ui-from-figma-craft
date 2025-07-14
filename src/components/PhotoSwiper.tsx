@@ -73,9 +73,15 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
     );
   }
 
+  // Helper function to get previous index with circular navigation
+  const getPrevIndex = (index: number) => (index - 1 + images.length) % images.length;
+  
+  // Helper function to get next index with circular navigation
+  const getNextIndex = (index: number) => (index + 1) % images.length;
+
   return (
     <div 
-      className="relative w-full h-[300px] overflow-hidden bg-gray-100 group"
+      className="relative w-screen h-[300px] overflow-hidden group -mx-2 sm:-mx-4 lg:-mx-[60px]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
@@ -85,20 +91,18 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
     >
       {/* Main carousel container extending beyond viewport symmetrically */}
       <div className="relative w-[120%] h-full -ml-[10%] flex items-center justify-center">
-        {/* Previous image */}
-        {currentIndex > 0 && (
-          <div 
-            className="absolute left-[8%] w-[25%] h-[80%] cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
-            onClick={() => goToSlide(currentIndex - 1)}
-          >
-            <img
-              src={images[currentIndex - 1]}
-              alt={`Slide ${currentIndex}`}
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-              draggable={false}
-            />
-          </div>
-        )}
+        {/* Previous image - always show with circular navigation */}
+        <div 
+          className="absolute left-[8%] w-[25%] h-[80%] cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
+          onClick={() => goToSlide(getPrevIndex(currentIndex))}
+        >
+          <img
+            src={images[getPrevIndex(currentIndex)]}
+            alt={`Slide ${getPrevIndex(currentIndex) + 1}`}
+            className="w-full h-full object-cover rounded-lg shadow-lg"
+            draggable={false}
+          />
+        </div>
 
         {/* Current central image */}
         <div className="relative w-[50%] h-full mx-auto z-20">
@@ -131,20 +135,18 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
           )}
         </div>
 
-        {/* Next image */}
-        {currentIndex < images.length - 1 && (
-          <div 
-            className="absolute right-[8%] w-[25%] h-[80%] cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
-            onClick={() => goToSlide(currentIndex + 1)}
-          >
-            <img
-              src={images[currentIndex + 1]}
-              alt={`Slide ${currentIndex + 2}`}
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-              draggable={false}
-            />
-          </div>
-        )}
+        {/* Next image - always show with circular navigation */}
+        <div 
+          className="absolute right-[8%] w-[25%] h-[80%] cursor-pointer z-10 opacity-50 hover:opacity-70 transition-all duration-300"
+          onClick={() => goToSlide(getNextIndex(currentIndex))}
+        >
+          <img
+            src={images[getNextIndex(currentIndex)]}
+            alt={`Slide ${getNextIndex(currentIndex) + 1}`}
+            className="w-full h-full object-cover rounded-lg shadow-lg"
+            draggable={false}
+          />
+        </div>
       </div>
 
       {/* Progress indicator */}
