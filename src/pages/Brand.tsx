@@ -171,7 +171,7 @@ const Brand: React.FC = () => {
                     </div>
                     
                      <h1 
-                       className="text-4xl mb-6 leading-tight"
+                       className="text-4xl mb-6 leading-tight font-benzin"
                        style={{
                          color: '#262631',
                          fontWeight: 400,
@@ -181,7 +181,7 @@ const Brand: React.FC = () => {
                          {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'SCHWINN' : brandSlug === 'nautilus' ? 'NAUTILUS' : 'Качественное спортивное оборудование'}
                       </h1>
                     
-                    <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors">
+                    <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors font-manrope">
                       Узнать больше
                     </button>
                   </div>
@@ -242,7 +242,7 @@ const Brand: React.FC = () => {
               
               {/* Right Text */}
               <div className="order-2 lg:pl-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-benzin text-gray-900 mb-6">
                   {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : 'МЫ – TRUE'}
                 </h2>
                 
@@ -302,7 +302,7 @@ const Brand: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-benzin text-gray-900 mb-6">
                   {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : 'Наше оборудование выбирают:'}
                 </h2>
                 
@@ -370,21 +370,21 @@ const Brand: React.FC = () => {
                 ) : (
                   <div className="space-y-6">
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">Фитнес-клубы премиум-класса</h3>
+                      <h3 className="font-benzin text-gray-900 mb-3">Фитнес-клубы премиум-класса</h3>
                       <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                         для коммерческого использования с высокой нагрузкой
                       </p>
                     </div>
                     
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">Тренеры и спортсмены</h3>
+                      <h3 className="font-benzin text-gray-900 mb-3">Тренеры и спортсмены</h3>
                       <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                         для профессиональных тренировок
                       </p>
                     </div>
                     
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">Владельцы домашних студий</h3>
+                      <h3 className="font-benzin text-gray-900 mb-3">Владельцы домашних студий</h3>
                       <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                         кто ценит долговечность и премиальный комфорт
                       </p>
@@ -420,7 +420,7 @@ const Brand: React.FC = () => {
               <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-6 shadow-lg">
                 <div className="h-full flex flex-col">
                   <div className="mb-4">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                    <h2 className="text-3xl font-benzin text-gray-900 mb-4">
                       {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : brandSlug === 'nautilus' ? 'Nautilus:' : 'Лидер в индустрии'}
                     </h2>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
@@ -463,7 +463,7 @@ const Brand: React.FC = () => {
                     </div>
                   ) : brandSlug === 'schwinn' ? (
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">Инновации на основе традиций</h3>
+                      <h3 className="font-benzin text-gray-900 mb-3">Инновации на основе традиций</h3>
                       <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                         Оставаясь верным своим принципам, Schwinn внедряет современные технологии: сенсорные экраны, обучающие программы, автоматическая регулировка нагрузки и синхронизация с фитнес-трекерами.
                       </p>
@@ -498,13 +498,13 @@ const Brand: React.FC = () => {
                   ) : (
                     <div className="grid grid-cols-2 gap-6">
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-3">Технологии и безопасность</h3>
+                        <h3 className="font-benzin text-gray-900 mb-3">Технологии и безопасность</h3>
                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                           передовые системы амортизации, износостойкие компоненты и интеллектуальное управление
                         </p>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-3">Экономия на обслуживании</h3>
+                        <h3 className="font-benzin text-gray-900 mb-3">Экономия на обслуживании</h3>
                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                           минимальные затраты благодаря надежной конструкции и доступности запчастей
                         </p>
@@ -523,7 +523,7 @@ const Brand: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-benzin text-gray-900 mb-6">
                   {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : brandSlug === 'nautilus' ? 'Nautilus – когда важен не просто результат, а технологичное превосходство.' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
                 </h2>
                 
@@ -549,7 +549,7 @@ const Brand: React.FC = () => {
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <div>
-                          <h3 className="font-semibold text-gray-900 mb-2">Работает безотказно</h3>
+                          <h3 className="font-benzin text-gray-900 mb-2">Работает безотказно</h3>
                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                             даже при интенсивной эксплуатации
                           </p>
@@ -559,7 +559,7 @@ const Brand: React.FC = () => {
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <div>
-                          <h3 className="font-semibold text-gray-900 mb-2">Сохраняет актуальность</h3>
+                          <h3 className="font-benzin text-gray-900 mb-2">Сохраняет актуальность</h3>
                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                             регулярные апгрейды и совместимость с новыми технологиями
                           </p>
@@ -569,7 +569,7 @@ const Brand: React.FC = () => {
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <div>
-                          <h3 className="font-semibold text-gray-900 mb-2">Обеспечивает максимальный комфорт</h3>
+                          <h3 className="font-benzin text-gray-900 mb-2">Обеспечивает максимальный комфорт</h3>
                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                             продуманная эргономика снижает нагрузку на суставы
                           </p>
@@ -598,7 +598,7 @@ const Brand: React.FC = () => {
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
               <div className="bg-white rounded-lg p-8 shadow-sm">
                 <div className="text-center max-w-4xl mx-auto">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  <h2 className="text-3xl font-benzin text-gray-900 mb-6">
                     Выбирая Schwinn
                   </h2>
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
@@ -616,7 +616,7 @@ const Brand: React.FC = () => {
         {/* Catalog Section */}
         <section className="py-8 bg-white">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <h2 className="text-3xl font-bold text-[#17171E] mb-12">
+            <h2 className="text-3xl font-benzin text-[#17171E] mb-12">
               Все товары {brandName}
             </h2>
             
@@ -625,7 +625,7 @@ const Brand: React.FC = () => {
               <div className="w-64 flex-shrink-0">
                 {/* Filters Container */}
                 <div className="bg-[#F8F8FD] rounded-lg p-6 mb-6">
-                  <h2 className="text-[20px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h2>
+                  <h2 className="text-[20px] font-benzin text-[#262631] mb-6">Фильтр</h2>
                   {/* Price Filter */}
                   <div className="mb-6">
                     <h3 
