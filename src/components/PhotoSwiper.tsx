@@ -149,17 +149,17 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
         </div>
       </div>
 
-      {/* Progress indicator */}
+      {/* Progress indicator under the slider */}
       {images.length > 1 && (
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
+        <div className="flex gap-2 justify-center mt-6">
           {images.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-8 h-1 rounded-full transition-all duration-300 ${
+              className={`h-1 rounded-full transition-all duration-300 ${
                 index === currentIndex 
-                  ? 'bg-white' 
-                  : 'bg-white/40 hover:bg-white/60'
+                  ? 'bg-[#F53B49] w-16' 
+                  : 'bg-gray-300 w-8 hover:bg-gray-400'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
