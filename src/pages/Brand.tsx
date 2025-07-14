@@ -160,7 +160,7 @@ const Brand: React.FC = () => {
                   <div className="flex-1 max-w-lg z-10" style={{ paddingTop: '40px', paddingLeft: '60px' }}>
                     <div className="mb-6">
                       <span 
-                        className="text-sm tracking-[3.78px] uppercase"
+                        className="text-sm tracking-[3.78px] uppercase font-benzin"
                         style={{ 
                           color: '#F53B49',
                           fontWeight: 400,
@@ -913,26 +913,26 @@ const Brand: React.FC = () => {
                 {/* Pagination - Round with active page styling and arrows */}
                 <div className="flex justify-center items-center space-x-2 mb-8">
                   {/* Left arrow */}
-                  <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-medium hover:bg-gray-50 flex items-center justify-center">
+                  <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-manrope hover:bg-gray-50 flex items-center justify-center">
                     ←
                   </button>
                   
-                  <button className="w-10 h-10 rounded-full bg-[#262631] text-white text-[14px] font-medium">
+                  <button className="w-10 h-10 rounded-full bg-[#262631] text-white text-[14px] font-manrope">
                     1
                   </button>
-                  <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-medium hover:bg-gray-50">
+                  <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-manrope hover:bg-gray-50">
                     2
                   </button>
-                  <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-medium hover:bg-gray-50">
+                  <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-manrope hover:bg-gray-50">
                     3
                   </button>
-                  <span className="text-gray-400">...</span>
-                  <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-medium hover:bg-gray-50">
+                  <span className="text-gray-400 font-manrope">...</span>
+                  <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-manrope hover:bg-gray-50">
                     15
                   </button>
                   
                   {/* Right arrow */}
-                  <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-medium hover:bg-gray-50 flex items-center justify-center">
+                  <button className="w-10 h-10 rounded-full border border-gray-300 text-gray-600 text-[14px] font-manrope hover:bg-gray-50 flex items-center justify-center">
                     →
                   </button>
                 </div>
