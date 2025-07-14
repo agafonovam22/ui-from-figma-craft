@@ -167,8 +167,6 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
         </div>
       )}
 
-      {/* Gradient overlay for better UI visibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
     </div>
   );
 };
