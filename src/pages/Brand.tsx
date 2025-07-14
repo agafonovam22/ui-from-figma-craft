@@ -366,31 +366,31 @@ const Brand: React.FC = () => {
                   {brandSlug === 'cardio-power' ? (
                     <div className="space-y-4">
                       <div className="flex items-start">
-                        <span className="text-[#F53B49] mr-3 text-lg">🔹</span>
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                           Самая широкая линейка кардиотренажеров в России
                         </p>
                       </div>
                       <div className="flex items-start">
-                        <span className="text-[#F53B49] mr-3 text-lg">🔹</span>
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                           Безопасность и комфорт благодаря продуманным системам амортизации и защиты от перегрузок
                         </p>
                       </div>
                       <div className="flex items-start">
-                        <span className="text-[#F53B49] mr-3 text-lg">🔹</span>
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                           Технологии для реальных результатов: от базовых моделей до премиальных решений
                         </p>
                       </div>
                       <div className="flex items-start">
-                        <span className="text-[#F53B49] mr-3 text-lg">🔹</span>
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                           Доступная цена без ущерба качеству – оптимизированное производство и логистика
                         </p>
                       </div>
                       <div className="flex items-start">
-                        <span className="text-[#F53B49] mr-3 text-lg">🔹</span>
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                           Сервис и поддержка для быстрых поставок запчастей и помощи специалистов
                         </p>
