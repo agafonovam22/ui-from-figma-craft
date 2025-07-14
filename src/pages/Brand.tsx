@@ -228,33 +228,27 @@ const Brand: React.FC = () => {
               <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-6 shadow-lg">
                 <div className="h-full flex flex-col justify-between">
                   <div className="mb-6">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                      Лидер в индустрии
+                    </h2>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
-                      За годы успешного развития нам удалось консолидировать в своем ассортименте продукцию лучших мировых брендов, собрать команду профессионалов, завоевать доверие десятков тысяч лояльных покупателей и стать настоящим лидером рынка.
+                      50+ лет на рынке, собственные инженерные разработки и строгий контроль производства
                     </p>
                   </div>
                   
                   <div className="grid grid-cols-2 gap-6">
                     <div>
-                      <div className="text-4xl font-bold text-[#17171E] mb-1">2005</div>
-                      <div className="text-gray-600 text-sm">Год появления на рынке</div>
+                      <h3 className="font-semibold text-gray-900 mb-3">Технологии и безопасность</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        передовые системы амортизации, износостойкие компоненты и интеллектуальное управление
+                      </p>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold text-[#17171E] mb-1">10 000+</div>
-                      <div className="text-gray-600 text-sm">Складских помещений</div>
+                      <h3 className="font-semibold text-gray-900 mb-3">Экономия на обслуживании</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        минимальные затраты благодаря надежной конструкции и доступности запчастей
+                      </p>
                     </div>
-                    <div>
-                      <div className="text-4xl font-bold text-[#17171E] mb-1">60+</div>
-                      <div className="text-gray-600 text-sm">Квалифицированных сотрудников</div>
-                    </div>
-                    <div>
-                      <div className="text-4xl font-bold text-[#17171E] mb-1">20+</div>
-                      <div className="text-gray-600 text-sm">Ведущих мировых брендов</div>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-4">
-                    <div className="text-4xl font-bold text-[#17171E] mb-1">3000+</div>
-                    <div className="text-gray-600 text-sm">SKU</div>
                   </div>
                 </div>
               </div>
