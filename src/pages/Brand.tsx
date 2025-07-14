@@ -111,6 +111,7 @@ const Brand: React.FC = () => {
       case 'bowflex': return 'BowFlex';
       case 'true': return 'TRUE';
       case 'cardio-power': return 'Cardio Power';
+      case 'schwinn': return 'Schwinn';
       default: return 'kernel';
     }
   };
@@ -176,7 +177,7 @@ const Brand: React.FC = () => {
                          lineHeight: '105%'
                        }}
                       >
-                        {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : 'Качественное спортивное оборудование'}
+                         {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'SCHWINN' : 'Качественное спортивное оборудование'}
                       </h1>
                     
                     <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors">
@@ -241,7 +242,7 @@ const Brand: React.FC = () => {
               {/* Right Text */}
               <div className="order-2 lg:pl-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : 'МЫ – TRUE'}
+                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : 'МЫ – TRUE'}
                 </h2>
                 
                 <div className="mb-8">
@@ -263,6 +264,10 @@ const Brand: React.FC = () => {
                         Наша философия проста: «Хороший кардиотренажер – не роскошь, а ваш надежный партнер».
                       </p>
                     </>
+                  ) : brandSlug === 'schwinn' ? (
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                      С момента своего основания в 1895 году компания Schwinn стала символом инноваций и надежности в мире спортивного оборудования. Начав с производства велосипедов, которые завоевали сердца миллионов, бренд перенес свои лучшие традиции в сферу домашнего фитнеса, создавая кардиотренажеры, сочетающие в себе проверенное качество и современные технологии.
+                    </p>
                   ) : (
                     <>
                       <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
@@ -286,7 +291,7 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : 'Наше оборудование выбирают:'}
+                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : 'Наше оборудование выбирают:'}
                 </h2>
                 
                 {brandSlug === 'cardio-power' ? (
@@ -302,6 +307,30 @@ const Brand: React.FC = () => {
                     </p>
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       CardioPower — это технологии, созданные специально для кардио. Будь то бег, интервалы, ВИИТ или восстановительные тренировки — с нашим оборудованием вы получите максимум от каждого занятия.
+                    </p>
+                  </>
+                ) : brandSlug === 'schwinn' ? (
+                  <>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      Это идеальное решение для тех, кто ценит комфорт, эффективность и проверенное качество домашних тренировок.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4 font-manrope">
+                      <strong>Для профессиональных спортсменов и велосипедистов</strong> – когда плохая погода или короткий световой день мешают уличным тренировкам, тренажеры Schwinn с точной имитацией сопротивления позволяют поддерживать форму и готовиться к сезону, не выходя из дома.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4 font-manrope">
+                      <strong>Для любителей активного образа жизни</strong>, которые хотят разнообразить свои тренировки – инновационные программы и возможность виртуальных маршрутов превращают обычные занятия в увлекательное приключение.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4 font-manrope">
+                      <strong>Для молодых мам</strong>, стремящихся поддерживать форму, не выходя из дома – удобные и безопасные тренажеры позволяют заниматься даже при плотном графике ухода за ребенком.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4 font-manrope">
+                      <strong>Для офисных работников</strong>, компенсирующих малоподвижный образ жизни – эргономичные модели помогают оставаться в тонусе после рабочего дня.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      <strong>Для пенсионеров</strong>, заботящихся о своем здоровье – продуманная конструкция и плавный ход обеспечивают комфортные тренировки без излишней нагрузки на суставы.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                      Каждый найдет в линейке Schwinn оборудование, отвечающее именно его потребностям и целям – от легких поддерживающих тренировок до профессиональной подготовки.
                     </p>
                   </>
                 ) : (
@@ -358,10 +387,10 @@ const Brand: React.FC = () => {
                 <div className="h-full flex flex-col justify-between">
                   <div className="mb-6">
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : 'Лидер в индустрии'}
+                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'schwinn' ? 'Наследие, которому можно доверять' : 'Лидер в индустрии'}
                     </h2>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
-                      {brandSlug === 'cardio-power' ? '' : '50+ лет на рынке, собственные инженерные разработки и строгий контроль производства'}
+                      {brandSlug === 'cardio-power' ? '' : brandSlug === 'schwinn' ? 'За более чем вековую историю Schwinn заслужил репутацию бренда, который не идет на компромиссы в вопросах качества. Все тренажеры проходят многократные тестирования на безопасность и долговечность. Использование высококачественных материалов и продуманная конструкция обеспечивают бесперебойную работу оборудования на протяжении многих лет.' : '50+ лет на рынке, собственные инженерные разработки и строгий контроль производства'}
                     </p>
                   </div>
                   
@@ -398,6 +427,13 @@ const Brand: React.FC = () => {
                         </p>
                       </div>
                     </div>
+                  ) : brandSlug === 'schwinn' ? (
+                    <div className="mt-6">
+                      <h3 className="font-semibold text-gray-900 mb-3">Современный подход к традиционному качеству</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        Сохраняя верность своим корням, Schwinn постоянно внедряет инновационные решения. Последние модели оснащены сенсорными экранами с доступом к обучающим программам, системой автоматической регулировки нагрузки и возможностью синхронизации с популярными фитнес-трекерами.
+                      </p>
+                    </div>
                   ) : (
                     <div className="grid grid-cols-2 gap-6">
                       <div>
@@ -427,12 +463,16 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
+                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
                 </h2>
                 
                 {brandSlug === 'cardio-power' ? (
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                     CardioPower – это преемственность традициям качества. Наша продукция собирается из самых качественных комплектующих и проходит многоэтапную систему контроля качества. Наши тренажеры рассчитаны на долгосрочную службу в условиях интенсивной эксплуатации. Мы уделяем особое внимание работе послепродажного сервиса, обеспечивая оперативную техническую поддержку и наличие склада запасных частей.
+                  </p>
+                ) : brandSlug === 'schwinn' ? (
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    От компактных велотренажеров для небольших квартир до профессиональных эллипсоидов с плавным ходом — ассортимент Schwinn охватывает весь спектр домашнего кардиооборудования. Особой популярностью пользуются гибридные модели, сочетающие в себе функции нескольких тренажеров, позволяя разнообразить тренировочный процесс.
                   </p>
                 ) : (
                   <>
@@ -487,6 +527,23 @@ const Brand: React.FC = () => {
           </div>
         </section>
 
+        {/* Fifth Content Block - Full Width Text (only for Schwinn) */}
+        {brandSlug === 'schwinn' && (
+          <section className="w-full py-8 bg-gray-50">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="bg-white rounded-lg p-8 shadow-sm">
+                <div className="text-center max-w-4xl mx-auto">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                    Выбирая Schwinn
+                  </h2>
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Выбирая Schwinn, вы приобретаете не просто тренажер, а надежного партнера в достижении ваших фитнес-целей. Это оборудование, которое вдохновляет на регулярные тренировки, делая их комфортными и эффективными. Доверие миллионов пользователей по всему миру и более чем столетний опыт — лучшая гарантия качества продукции этого легендарного бренда.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Ideas and Selections */}
         <IdeasSelections />
