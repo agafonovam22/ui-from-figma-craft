@@ -110,6 +110,7 @@ const Brand: React.FC = () => {
     switch(slug) {
       case 'bowflex': return 'BowFlex';
       case 'true': return 'TRUE';
+      case 'cardio-power': return 'Cardio Power';
       default: return 'kernel';
     }
   };
@@ -174,9 +175,9 @@ const Brand: React.FC = () => {
                          fontWeight: 400,
                          lineHeight: '105%'
                        }}
-                     >
-                       {brandSlug === 'true' ? 'МЫ – TRUE' : 'Качественное спортивное оборудование'}
-                     </h1>
+                      >
+                        {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : 'Качественное спортивное оборудование'}
+                      </h1>
                     
                     <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors">
                       Узнать больше
@@ -239,16 +240,38 @@ const Brand: React.FC = () => {
               {/* Right Text */}
               <div className="order-2 lg:pl-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  МЫ – TRUE
+                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : 'МЫ – TRUE'}
                 </h2>
                 
                 <div className="mb-8">
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
-                    TRUE Fitness – премиальное оборудование для тех, кто ценит качество и надежность
-                  </p>
-                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                    TRUE – один из ведущих мировых брендов премиального фитнес-оборудования, входящий в топ-5 крупнейших производителей индустрии. С 1972 года мы создаем тренажеры, которые сочетают инновационные технологии, безупречную надежность и эргономичный дизайн.
-                  </p>
+                  {brandSlug === 'cardio-power' ? (
+                    <>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                        CardioPower – это передовые технологии, надежность и доступность в мире кардиотренажеров. С 2010 года мы создаем оборудование, которое помогает добиваться результатов – как дома, так и в профессиональных залах. Наши тренажеры выбирают те, кто ценит качество, безопасность и инновации без переплат.
+                      </p>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope mb-4">
+                        Мы делаем только то, в чем действительно сильны:
+                      </p>
+                      <ul className="text-gray-600 text-sm leading-relaxed font-manrope mb-4 ml-4">
+                        <li>- Беговые дорожки, где каждый шаг – это комфорт и мощность</li>
+                        <li>- Эллипсы с плавностью профессионального уровня</li>
+                        <li>- Сайклы, заряженные энергией групповых тренировок</li>
+                        <li>- Гребные тренажеры для комплексной нагрузки</li>
+                      </ul>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        Наша философия проста: «Хороший кардиотренажер – не роскошь, а ваш надежный партнер».
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                        TRUE Fitness – премиальное оборудование для тех, кто ценит качество и надежность
+                      </p>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        TRUE – один из ведущих мировых брендов премиального фитнес-оборудования, входящий в топ-5 крупнейших производителей индустрии. С 1972 года мы создаем тренажеры, которые сочетают инновационные технологии, безупречную надежность и эргономичный дизайн.
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
@@ -262,31 +285,48 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Наше оборудование выбирают:
+                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : 'Наше оборудование выбирают:'}
                 </h2>
                 
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-3">Фитнес-клубы премиум-класса</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                      для коммерческого использования с высокой нагрузкой
+                {brandSlug === 'cardio-power' ? (
+                  <>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      <strong>Для дома</strong> – если хотите эффективное кардио без компромиссов: от утренних пробежек до интервальных тренировок.
                     </p>
-                  </div>
-                  
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-3">Тренеры и спортсмены</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                      для профессиональных тренировок
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      <strong>Для фитнес-клубов</strong> – профессиональные кардиотренажеры, выдерживающие многочасовые нагрузки каждый день.
                     </p>
-                  </div>
-                  
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-3">Владельцы домашних студий</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                      кто ценит долговечность и премиальный комфорт
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      <strong>Для тренеров и спортсменов</strong> – точная биомеханика и настраиваемые программы для работы на выносливость, жиросжигание и функциональный тренинг.
                     </p>
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                      CardioPower — это технологии, созданные специально для кардио. Будь то бег, интервалы, ВИИТ или восстановительные тренировки — с нашим оборудованием вы получите максимум от каждого занятия.
+                    </p>
+                  </>
+                ) : (
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-3">Фитнес-клубы премиум-класса</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        для коммерческого использования с высокой нагрузкой
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-3">Тренеры и спортсмены</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        для профессиональных тренировок
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-3">Владельцы домашних студий</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        кто ценит долговечность и премиальный комфорт
+                      </p>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
               
               {/* Right Image */}
@@ -316,27 +356,62 @@ const Brand: React.FC = () => {
                 <div className="h-full flex flex-col justify-between">
                   <div className="mb-6">
                     <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                      Лидер в индустрии
+                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : 'Лидер в индустрии'}
                     </h2>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
-                      50+ лет на рынке, собственные инженерные разработки и строгий контроль производства
+                      {brandSlug === 'cardio-power' ? '' : '50+ лет на рынке, собственные инженерные разработки и строгий контроль производства'}
                     </p>
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-6">
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">Технологии и безопасность</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                        передовые системы амортизации, износостойкие компоненты и интеллектуальное управление
-                      </p>
+                  {brandSlug === 'cardio-power' ? (
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-[#F53B49] mr-3 text-lg">🔹</span>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Самая широкая линейка кардиотренажеров в России
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-[#F53B49] mr-3 text-lg">🔹</span>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Безопасность и комфорт благодаря продуманным системам амортизации и защиты от перегрузок
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-[#F53B49] mr-3 text-lg">🔹</span>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Технологии для реальных результатов: от базовых моделей до премиальных решений
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-[#F53B49] mr-3 text-lg">🔹</span>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Доступная цена без ущерба качеству – оптимизированное производство и логистика
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-[#F53B49] mr-3 text-lg">🔹</span>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Сервис и поддержка для быстрых поставок запчастей и помощи специалистов
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">Экономия на обслуживании</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                        минимальные затраты благодаря надежной конструкции и доступности запчастей
-                      </p>
+                  ) : (
+                    <div className="grid grid-cols-2 gap-6">
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-3">Технологии и безопасность</h3>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          передовые системы амортизации, износостойкие компоненты и интеллектуальное управление
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-3">Экономия на обслуживании</h3>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          минимальные затраты благодаря надежной конструкции и доступности запчастей
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -350,44 +425,52 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат
+                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
                 </h2>
                 
-                <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
-                  Наше оборудование выбирают, потому что оно:
-                </p>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Работает безотказно</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                        даже при интенсивной эксплуатации
-                      </p>
+                {brandSlug === 'cardio-power' ? (
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    CardioPower – это преемственность традициям качества. Наша продукция собирается из самых качественных комплектующих и проходит многоэтапную систему контроля качества. Наши тренажеры рассчитаны на долгосрочную службу в условиях интенсивной эксплуатации. Мы уделяем особое внимание работе послепродажного сервиса, обеспечивая оперативную техническую поддержку и наличие склада запасных частей.
+                  </p>
+                ) : (
+                  <>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      Наше оборудование выбирают, потому что оно:
+                    </p>
+                    
+                    <div className="space-y-6">
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div>
+                          <h3 className="font-semibold text-gray-900 mb-2">Работает безотказно</h3>
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                            даже при интенсивной эксплуатации
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div>
+                          <h3 className="font-semibold text-gray-900 mb-2">Сохраняет актуальность</h3>
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                            регулярные апгрейды и совместимость с новыми технологиями
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div>
+                          <h3 className="font-semibold text-gray-900 mb-2">Обеспечивает максимальный комфорт</h3>
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                            продуманная эргономика снижает нагрузку на суставы
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Сохраняет актуальность</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                        регулярные апгрейды и совместимость с новыми технологиями
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Обеспечивает максимальный комфорт</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                        продуманная эргономика снижает нагрузку на суставы
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  </>
+                )}
               </div>
               
               {/* Right Image */}
