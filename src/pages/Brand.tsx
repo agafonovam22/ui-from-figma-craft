@@ -455,7 +455,7 @@ const Brand: React.FC = () => {
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="overflow-hidden relative rounded-lg" style={{ height: '408px' }}>
               <img 
-                src={brandSlug === 'peach-builder' ? "/lovable-uploads/f5a28d98-6ba4-48b2-84c4-45f27a4ad81c.png" : brandSlug === 'gym80' ? "/lovable-uploads/aea12343-149b-4ab1-b46b-0d8a5a97c7d5.png" : "/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"}
+                src={brandSlug === 'peach-builder' ? "/lovable-uploads/f5a28d98-6ba4-48b2-84c4-45f27a4ad81c.png" : brandSlug === 'gym80' ? "/lovable-uploads/42bcc377-bf54-43ff-9c74-f5adc729ee38.png" : "/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"}
                 alt="О компании - статистика"
                 className="w-full h-full object-cover"
                 style={{ objectPosition: 'center right' }}
@@ -735,7 +735,7 @@ const Brand: React.FC = () => {
               {/* Right Image */}
               <div className="order-1 lg:order-2">
                 <img 
-                  src={brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : brandSlug === 'gym80' ? '/lovable-uploads/42bcc377-bf54-43ff-9c74-f5adc729ee38.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
+                  src={brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : brandSlug === 'gym80' ? '/lovable-uploads/aea12343-149b-4ab1-b46b-0d8a5a97c7d5.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
                   alt="Качество и надежность TRUE"
                   className="w-full h-full object-cover rounded-lg"
                 />
