@@ -421,10 +421,10 @@ const Brand: React.FC = () => {
                 <div className="h-full flex flex-col">
                   <div className="mb-4">
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : 'Лидер в индустрии'}
+                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : brandSlug === 'nautilus' ? 'Nautilus:' : 'Лидер в индустрии'}
                     </h2>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
-                      {brandSlug === 'cardio-power' ? '' : brandSlug === 'schwinn' ? 'Уже более века Schwinn сохраняет безупречную репутацию благодаря строгим тестам на безопасность и долговечность. Тренажёры созданы из качественных материалов и служат годами.' : '50+ лет на рынке, собственные инженерные разработки и строгий контроль производства'}
+                      {brandSlug === 'cardio-power' ? '' : brandSlug === 'schwinn' ? 'Уже более века Schwinn сохраняет безупречную репутацию благодаря строгим тестам на безопасность и долговечность. Тренажёры созданы из качественных материалов и служат годами.' : brandSlug === 'nautilus' ? '' : '50+ лет на рынке, собственные инженерные разработки и строгий контроль производства'}
                     </p>
                   </div>
                   
@@ -468,6 +468,33 @@ const Brand: React.FC = () => {
                         Оставаясь верным своим принципам, Schwinn внедряет современные технологии: сенсорные экраны, обучающие программы, автоматическая регулировка нагрузки и синхронизация с фитнес-трекерами.
                       </p>
                     </div>
+                  ) : brandSlug === 'nautilus' ? (
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Абсолютный рекордсмен по инновациям в отрасли
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Индивидуализированный тренировочный опыт с цифровой экосистемой
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Доказанная надежность – оборудование работает десятилетиями
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Глобальная сервисная сеть – поддержка в любой точке мира
+                        </p>
+                      </div>
+                    </div>
                   ) : (
                     <div className="grid grid-cols-2 gap-6">
                       <div>
@@ -497,7 +524,7 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
+                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : brandSlug === 'nautilus' ? 'Nautilus – когда важен не просто результат, а технологичное превосходство.' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
                 </h2>
                 
                 {brandSlug === 'cardio-power' ? (
@@ -507,6 +534,10 @@ const Brand: React.FC = () => {
                 ) : brandSlug === 'schwinn' ? (
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                     От компактных велотренажеров для небольших квартир до профессиональных эллипсоидов с плавным ходом — ассортимент Schwinn охватывает весь спектр домашнего кардиооборудования. Особой популярностью пользуются гибридные модели, сочетающие в себе функции нескольких тренажеров, позволяя разнообразить тренировочный процесс.
+                  </p>
+                ) : brandSlug === 'nautilus' ? (
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    
                   </p>
                 ) : (
                   <>
