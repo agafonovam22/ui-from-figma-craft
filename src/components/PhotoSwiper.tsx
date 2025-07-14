@@ -81,7 +81,7 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
 
   return (
     <div 
-      className="relative w-screen h-[350px] overflow-hidden group -mx-2 sm:-mx-4 lg:-mx-[60px]"
+      className="relative w-screen h-[480px] overflow-hidden group -mx-2 sm:-mx-4 lg:-mx-[60px]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
@@ -105,7 +105,7 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
         </div>
 
         {/* Current central image */}
-        <div className="relative w-[925px] h-[480px] mx-auto z-20">
+        <div className="relative w-[925px] h-[480px] mx-auto z-20 flex items-center justify-center">
           <img
             src={images[currentIndex]}
             alt={`Slide ${currentIndex + 1}`}
