@@ -547,7 +547,7 @@ const Brand: React.FC = () => {
                     </div>
                   ) : brandSlug === 'peach-builder' ? (
                     <>
-                      <div className="space-y-3 mb-6">
+                      <div className="space-y-3 mb-4">
                         <div className="flex items-start">
                           <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                           <p className="text-gray-600 text-base leading-relaxed font-manrope">
@@ -685,19 +685,16 @@ const Brand: React.FC = () => {
         </section>
 
         {/* Fifth Content Block - Full Width Text (only for Schwinn) */}
-        {(brandSlug === 'schwinn' || brandSlug === 'sole-fitness') && (
+        {brandSlug === 'schwinn' && (
           <section className="w-full py-8 bg-gray-50">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
               <div className="bg-white rounded-lg p-8 shadow-sm">
                 <div className="text-center max-w-4xl mx-auto">
                   <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                    {brandSlug === 'schwinn' ? 'Выбирая Schwinn' : 'Выбирайте Sole – инженерное совершенство для ваших результатов.'}
+                    Выбирая Schwinn
                   </h2>
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                    {brandSlug === 'schwinn' ? 
-                      'Выбирая Schwinn, вы приобретаете не просто тренажер, а надежного партнера в достижении ваших фитнес-целей. Это оборудование, которое вдохновляет на регулярные тренировки, делая их комфортными и эффективными. Доверие миллионов пользователей по всему миру и более чем столетний опыт — лучшая гарантия качества продукции этого легендарного бренда.' :
-                      ''
-                    }
+                    Выбирая Schwinn, вы приобретаете не просто тренажер, а надежного партнера в достижении ваших фитнес-целей. Это оборудование, которое вдохновляет на регулярные тренировки, делая их комфортными и эффективными. Доверие миллионов пользователей по всему миру и более чем столетний опыт — лучшая гарантия качества продукции этого легендарного бренда.
                   </p>
                 </div>
               </div>
