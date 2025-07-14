@@ -235,7 +235,7 @@ const Brand: React.FC = () => {
               {/* Left Image */}
               <div className="order-1">
                 <img 
-                  src={brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
+                  src={brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : brandSlug === 'schwinn' ? '/lovable-uploads/5a7d56a3-1cee-438a-b65a-a3479013fe70.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
                   alt="Спортивные тренировки"
                   className="w-full h-full object-cover rounded-lg"
                 />
@@ -439,7 +439,7 @@ const Brand: React.FC = () => {
               {/* Right Image */}
               <div className="order-1 lg:order-2">
                 <img 
-                  src={brandSlug === 'bowflex' ? '/lovable-uploads/0838e433-093a-4bb6-a996-3a7c584ed057.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/769683fd-be5a-426c-83b4-126c0b9ab58c.png' : brandSlug === 'gym80' ? '/lovable-uploads/c7015807-1028-470c-acbb-db73c3b5f2b8.png' : '/lovable-uploads/25a08481-5846-4c6a-8f84-9089de2749fd.png'}
+                  src={brandSlug === 'bowflex' ? '/lovable-uploads/0838e433-093a-4bb6-a996-3a7c584ed057.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/769683fd-be5a-426c-83b4-126c0b9ab58c.png' : brandSlug === 'gym80' ? '/lovable-uploads/c7015807-1028-470c-acbb-db73c3b5f2b8.png' : brandSlug === 'schwinn' ? '/lovable-uploads/6e0ee794-cc9c-4134-90b0-3760dd16638c.png' : '/lovable-uploads/25a08481-5846-4c6a-8f84-9089de2749fd.png'}
                   alt="Тренировки и статистика"
                   className="w-full object-cover rounded-lg"
                   style={{ height: 'calc(100% - 100px)', maxHeight: '350px' }}
@@ -734,7 +734,7 @@ const Brand: React.FC = () => {
               {/* Right Image */}
               <div className="order-1 lg:order-2">
                 <img 
-                  src={brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : brandSlug === 'gym80' ? '/lovable-uploads/08975827-d091-4c00-9cb5-85e93a4b1853.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
+                  src={brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : brandSlug === 'gym80' ? '/lovable-uploads/08975827-d091-4c00-9cb5-85e93a4b1853.png' : brandSlug === 'schwinn' ? '/lovable-uploads/af9da9ea-dbaa-4e9f-ae2f-831cda031eba.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
                   alt="Качество и надежность TRUE"
                   className="w-full h-full object-cover rounded-lg"
                 />
@@ -743,18 +743,28 @@ const Brand: React.FC = () => {
           </div>
         </section>
 
-        {/* Fifth Content Block - Full Width Text (only for Schwinn) */}
+        {/* Fifth Content Block - Image with Text (only for Schwinn) */}
         {brandSlug === 'schwinn' && (
-          <section className="w-full py-8 bg-gray-50">
+          <section className="w-full py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-              <div className="bg-white rounded-lg p-8 shadow-sm">
-                <div className="text-center max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Text */}
+                <div className="order-2 lg:order-1 lg:pr-8">
                   <h2 className="text-3xl font-benzin text-gray-900 mb-6">
                     Выбирая Schwinn
                   </h2>
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                     Выбирая Schwinn, вы приобретаете не просто тренажер, а надежного партнера в достижении ваших фитнес-целей. Это оборудование, которое вдохновляет на регулярные тренировки, делая их комфортными и эффективными. Доверие миллионов пользователей по всему миру и более чем столетний опыт — лучшая гарантия качества продукции этого легендарного бренда.
                   </p>
+                </div>
+                
+                {/* Right Image */}
+                <div className="order-1 lg:order-2">
+                  <img 
+                    src="/lovable-uploads/50075a6c-9bd8-430f-b4df-f87515187a19.png"
+                    alt="Schwinn тренировка"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
                 </div>
               </div>
             </div>
