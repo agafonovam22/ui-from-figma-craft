@@ -454,7 +454,7 @@ const Brand: React.FC = () => {
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="overflow-hidden relative rounded-lg" style={{ height: '408px' }}>
               <img 
-                src={brandSlug === 'peach-builder' ? "/lovable-uploads/f5a28d98-6ba4-48b2-84c4-45f27a4ad81c.png" : brandSlug === 'gym80' ? "/lovable-uploads/08d1344d-ca43-44d2-b953-28d3cb4c83d2.png" : "/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"}
+                src={brandSlug === 'peach-builder' ? "/lovable-uploads/f5a28d98-6ba4-48b2-84c4-45f27a4ad81c.png" : brandSlug === 'gym80' ? "/lovable-uploads/08d1344d-ca43-44d2-b953-28d3cb4c83d2.png" : brandSlug === 'schwinn' ? "/lovable-uploads/8e7658e7-6a4b-45d9-a6b2-466878f4027c.png" : "/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"}
                 alt="О компании - статистика"
                 className="w-full h-full object-cover"
                 style={{ objectPosition: 'center right' }}
