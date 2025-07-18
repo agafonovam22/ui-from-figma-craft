@@ -175,7 +175,7 @@ const Brand = () => {
                 </div>
                 <div>
                   <img 
-                    src="/lovable-uploads/fdb2c107-4d4a-4359-ad9e-e0956210e114.png" 
+                    src="/lovable-uploads/3e61bab3-70f2-4c06-aa43-e5edbceaeb6c.png" 
                     alt="TRUE беговые дорожки" 
                     className="w-full h-64 object-cover rounded-lg"
                   />
@@ -185,7 +185,7 @@ const Brand = () => {
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="order-2 md:order-1">
                   <img 
-                    src="/lovable-uploads/efed9e00-b7a6-41f7-9a09-fda3063fb2d1.png" 
+                    src="/lovable-uploads/ceebc822-8db3-4308-9f17-5f0ed6caabcf.png" 
                     alt="TRUE кардио оборудование" 
                     className="w-full h-64 object-cover rounded-lg"
                   />
@@ -207,7 +207,7 @@ const Brand = () => {
                 </div>
                 <div>
                   <img 
-                    src="/lovable-uploads/420b5083-d5d6-4a7e-832a-14c1b055fb02.png" 
+                    src="/lovable-uploads/59f87f52-1e5d-4cf3-b11a-ef0a85ccaa4c.png" 
                     alt="TRUE силовые тренажеры" 
                     className="w-full h-64 object-cover rounded-lg"
                   />
@@ -217,7 +217,7 @@ const Brand = () => {
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="order-2 md:order-1">
                   <img 
-                    src="/lovable-uploads/9e88f8c8-81a6-4cd5-9d9c-3308b5056f9c.png" 
+                    src="/lovable-uploads/3f75bb64-0145-4a01-86b2-ebf6e46e7b2b.png" 
                     alt="TRUE велотренажеры" 
                     className="w-full h-64 object-cover rounded-lg"
                   />
