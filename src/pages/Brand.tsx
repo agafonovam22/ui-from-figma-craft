@@ -237,7 +237,7 @@ const Brand: React.FC = () => {
               {/* Left Image */}
               <div className="order-1">
                 <img 
-                  src={brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : brandSlug === 'schwinn' ? '/lovable-uploads/5a7d56a3-1cee-438a-b65a-a3479013fe70.png' : brandSlug === 'oktan' ? '/lovable-uploads/b7860c53-38e6-490f-a402-9811296c1da3.png' : brandSlug === 'visbody' ? '/lovable-uploads/7f518539-41a1-4a19-8284-3b07384c5521.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
+                  src={brandSlug === 'true' ? '/lovable-uploads/21b038a7-1ec4-44c6-a96c-6a342c3603de.png' : brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : brandSlug === 'schwinn' ? '/lovable-uploads/5a7d56a3-1cee-438a-b65a-a3479013fe70.png' : brandSlug === 'oktan' ? '/lovable-uploads/b7860c53-38e6-490f-a402-9811296c1da3.png' : brandSlug === 'visbody' ? '/lovable-uploads/7f518539-41a1-4a19-8284-3b07384c5521.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
                   alt="Спортивные тренировки"
                   className="w-full h-full object-cover rounded-lg"
                 />
@@ -485,7 +485,7 @@ const Brand: React.FC = () => {
               {/* Right Image */}
               <div className="order-1 lg:order-2">
                 <img 
-                  src={brandSlug === 'bowflex' ? '/lovable-uploads/0838e433-093a-4bb6-a996-3a7c584ed057.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/769683fd-be5a-426c-83b4-126c0b9ab58c.png' : brandSlug === 'gym80' ? '/lovable-uploads/c7015807-1028-470c-acbb-db73c3b5f2b8.png' : brandSlug === 'schwinn' ? '/lovable-uploads/6e0ee794-cc9c-4134-90b0-3760dd16638c.png' : brandSlug === 'oktan' ? '/lovable-uploads/6b0d5cba-7d6c-4f31-a309-5f2e0d37d4ca.png' : brandSlug === 'visbody' ? '/lovable-uploads/d78f60d4-86ca-4348-b8c7-b83d2abcb9cb.png' : '/lovable-uploads/25a08481-5846-4c6a-8f84-9089de2749fd.png'}
+                  src={brandSlug === 'true' ? '/lovable-uploads/feb4ffe7-84a2-4e4f-b926-cb0d7fc4e3dc.png' : brandSlug === 'bowflex' ? '/lovable-uploads/0838e433-093a-4bb6-a996-3a7c584ed057.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/769683fd-be5a-426c-83b4-126c0b9ab58c.png' : brandSlug === 'gym80' ? '/lovable-uploads/c7015807-1028-470c-acbb-db73c3b5f2b8.png' : brandSlug === 'schwinn' ? '/lovable-uploads/6e0ee794-cc9c-4134-90b0-3760dd16638c.png' : brandSlug === 'oktan' ? '/lovable-uploads/6b0d5cba-7d6c-4f31-a309-5f2e0d37d4ca.png' : brandSlug === 'visbody' ? '/lovable-uploads/d78f60d4-86ca-4348-b8c7-b83d2abcb9cb.png' : '/lovable-uploads/25a08481-5846-4c6a-8f84-9089de2749fd.png'}
                   alt="Тренировки и статистика"
                   className="w-full object-cover rounded-lg"
                   style={{ height: 'calc(100% - 100px)', maxHeight: '350px' }}
@@ -500,7 +500,7 @@ const Brand: React.FC = () => {
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="overflow-hidden relative rounded-lg" style={{ height: '408px' }}>
               <img 
-                src={brandSlug === 'peach-builder' ? "/lovable-uploads/f5a28d98-6ba4-48b2-84c4-45f27a4ad81c.png" : brandSlug === 'gym80' ? "/lovable-uploads/08d1344d-ca43-44d2-b953-28d3cb4c83d2.png" : brandSlug === 'schwinn' ? "/lovable-uploads/df10970b-3001-4bd2-85b9-1a306850b1da.png" : brandSlug === 'oktan' ? "/lovable-uploads/cd54ddcf-333b-4408-ab25-a7e2c382f6d7.png" : brandSlug === 'visbody' ? "/lovable-uploads/53c6106b-ad5a-4c16-ae24-283a957ebd3a.png" : "/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"}
+                src={brandSlug === 'true' ? "/lovable-uploads/de89d231-771d-4288-af42-6ed99213ee24.png" : brandSlug === 'peach-builder' ? "/lovable-uploads/f5a28d98-6ba4-48b2-84c4-45f27a4ad81c.png" : brandSlug === 'gym80' ? "/lovable-uploads/08d1344d-ca43-44d2-b953-28d3cb4c83d2.png" : brandSlug === 'schwinn' ? "/lovable-uploads/df10970b-3001-4bd2-85b9-1a306850b1da.png" : brandSlug === 'oktan' ? "/lovable-uploads/cd54ddcf-333b-4408-ab25-a7e2c382f6d7.png" : brandSlug === 'visbody' ? "/lovable-uploads/53c6106b-ad5a-4c16-ae24-283a957ebd3a.png" : "/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"}
                 alt="О компании - статистика"
                 className="w-full h-full object-cover"
                 style={{ objectPosition: 'center right' }}
@@ -853,7 +853,7 @@ const Brand: React.FC = () => {
               {/* Right Image */}
               <div className="order-1 lg:order-2">
                 <img 
-                  src={brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : brandSlug === 'gym80' ? '/lovable-uploads/08975827-d091-4c00-9cb5-85e93a4b1853.png' : brandSlug === 'schwinn' ? '/lovable-uploads/af9da9ea-dbaa-4e9f-ae2f-831cda031eba.png' : brandSlug === 'oktan' ? '/lovable-uploads/52c07468-4317-41f4-8313-bcc245be5785.png' : brandSlug === 'visbody' ? '/lovable-uploads/5c83f7c6-b329-4314-b2f2-d9c78efdb039.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
+                  src={brandSlug === 'true' ? '/lovable-uploads/f0b8744d-a5e4-418e-9512-534ed70c17e6.png' : brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : brandSlug === 'gym80' ? '/lovable-uploads/08975827-d091-4c00-9cb5-85e93a4b1853.png' : brandSlug === 'schwinn' ? '/lovable-uploads/af9da9ea-dbaa-4e9f-ae2f-831cda031eba.png' : brandSlug === 'oktan' ? '/lovable-uploads/52c07468-4317-41f4-8313-bcc245be5785.png' : brandSlug === 'visbody' ? '/lovable-uploads/5c83f7c6-b329-4314-b2f2-d9c78efdb039.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
                   alt="Качество и надежность TRUE"
                   className="w-full h-full object-cover rounded-lg"
                 />
