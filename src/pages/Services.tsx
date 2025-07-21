@@ -325,7 +325,6 @@ const Services: React.FC = () => {
                     <button
                       type="button"
                       className="bg-[#F53B49] text-white px-6 py-2 rounded-lg hover:bg-[#e63946] transition-colors"
-                      style={{width: '349px', height: '16px', padding: '8px 16px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
                     >
                       Загрузить файл, не больше 10 МБ
                     </button>
@@ -335,8 +334,7 @@ const Services: React.FC = () => {
                   <div className="flex justify-end">
                     <Button 
                       type="submit"
-                      className="bg-[#F53B49] hover:bg-[#e63946] text-white py-2 text-lg font-semibold"
-                      style={{width: '191px', height: '16px', padding: '8px 16px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                      className="bg-[#F53B49] hover:bg-[#e63946] text-white py-3 text-lg font-semibold"
                     >
                       Отправить заявку
                     </Button>
