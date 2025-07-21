@@ -480,20 +480,20 @@ const Brand: React.FC = () => {
             <section className="w-full py-8">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div className="order-1">
-                    <img 
-                      src="/lovable-uploads/cb496ca8-8206-42b7-9094-7ab9a37ae510.png"
-                      alt="Smith оборудование"
-                      className="w-full h-full object-cover rounded-lg"
-                    />
-                  </div>
-                  <div className="order-2 lg:pl-8">
+                  <div className="order-2 lg:order-1 lg:pr-8">
                     <h2 className="text-3xl font-benzin text-gray-900 mb-6">
                       Для тех, кто ценит разумный баланс
                     </h2>
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       SMITH занимает золотую середину между премиальными и бюджетными брендами. Это оборудование не самое дешевое на рынке, но его цена полностью оправдана исключительным качеством и долговечностью. Именно такое сочетание делает SMITH идеальным выбором для владельцев фитнес-клубов, которые хотят получить надежное оборудование без переплаты за имя.
                     </p>
+                  </div>
+                  <div className="order-1 lg:order-2">
+                    <img 
+                      src="/lovable-uploads/b908e99f-5626-44f6-91a3-5c3680b244eb.png"
+                      alt="Smith оборудование"
+                      className="w-full h-full object-cover rounded-lg"
+                    />
                   </div>
                 </div>
               </div>
