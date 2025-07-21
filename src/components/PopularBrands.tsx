@@ -14,7 +14,10 @@ const PopularBrands: React.FC = () => {
     { id: 8, name: "PEACH BUILDER", logo: "/lovable-uploads/f60c9b28-0384-4770-97ba-40b6bdcd451e.png", slug: "peach-builder" },
     { id: 9, name: "Gym80", logo: "/lovable-uploads/9b48df46-394f-465b-8136-a397de87b82b.png", slug: "gym80" },
     { id: 10, name: "октан", logo: "/lovable-uploads/05ba64f8-caa1-4ce9-8069-6889a6182ae3.png", slug: "oktan" },
-    { id: 11, name: "Visbody", logo: "/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png", slug: "visbody" }
+    { id: 11, name: "Visbody", logo: "/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png", slug: "visbody" },
+    { id: 12, name: "Matrix", logo: "/lovable-uploads/d50cad00-318e-48ea-96f2-b94cab77942b.png", slug: "matrix" },
+    { id: 13, name: "Life Fitness", logo: "/lovable-uploads/ef816493-63e0-456b-9a81-a821e2916f6b.png", slug: "life-fitness" },
+    { id: 14, name: "Technogym", logo: "/lovable-uploads/c4fbfa9e-af20-4a86-87a4-93a9d834a095.png", slug: "technogym" }
   ];
 
   return (
