@@ -448,7 +448,32 @@ const Brand: React.FC = () => {
 
         {/* Statistics Banner from About page */}
 
-        {/* Smith Blocks 5-8 - Additional content only for Smith */}
+        {/* Fourth Block - Text left, photo right */}
+        <section className="w-full py-8">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Text */}
+              <div className="order-2 lg:order-1 lg:pr-8">
+                <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                  {brandSlug === 'smith' ? 'Немецкая надежность в каждой детали' : 'Качество и надежность'}
+                </h2>
+                <p className="text-gray-700 text-sm leading-relaxed font-manrope">
+                  {brandSlug === 'smith' ? 'Производственные стандарты SMITH – это отдельная история. Рамы из высокопрочной стали с овальным профилем, двойное порошковое покрытие для защиты от повреждений, тросы, тестируемые трижды в день под нагрузкой 900 кг – такие требования к качеству говорят сами за себя. Бренд не экономит на материалах и контроле, поэтому его оборудование служит годами даже при интенсивной эксплуатации в коммерческих залах.' : 'Высочайшие стандарты качества и производства для максимальной надежности оборудования.'}
+                </p>
+              </div>
+              
+              {/* Right Image */}
+              <div className="order-1 lg:order-2">
+                <img 
+                  src={brandSlug === 'smith' ? '/lovable-uploads/caeab3d5-7582-417d-a49c-8a63cc6e24aa.png' : '/lovable-uploads/default-image.png'}
+                  alt="Качество и надежность"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {brandSlug === 'smith' && (
           <>
             {/* Smith Block 5 - Разумный баланс */}
