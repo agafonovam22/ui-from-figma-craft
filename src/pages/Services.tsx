@@ -204,16 +204,14 @@ const Services: React.FC = () => {
 
           {/* Service Request Tab Content - keep existing code */}
           {activeTab === 'service-request' && (
-            <div className="flex gap-12 items-stretch">
-              <div className="flex-1 flex flex-col min-h-[800px]">
+            <div className="flex gap-12 items-end">
+              <div className="flex-1 flex flex-col">
                 <p className="text-gray-600 mb-6 font-manrope">
                   Заполните заявку на сервис онлайн, и мы подберем наиболее удобный для вас вариант обслуживания. 
                   Наши специалисты свяжутся с вами в кратчайшие сроки!
                 </p>
                 
-                <div className="flex-grow"></div>
-                
-                <div className="self-end">
+                <div className="mt-auto">
                   <img 
                     src="/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png"
                     alt="Женщина тренируется в спортзале"
@@ -221,7 +219,7 @@ const Services: React.FC = () => {
                   />
                   
                   {/* Progress indicators */}
-                  <div className="flex justify-center gap-2 mt-[22px]">
+                  <div className="flex justify-center gap-2 mt-4">
                     <div className="h-1 w-8 bg-[#F53B49] rounded-full"></div>
                     <div className="h-1 w-8 bg-gray-300 rounded-full"></div>
                     <div className="h-1 w-8 bg-gray-300 rounded-full"></div>
