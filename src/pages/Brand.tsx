@@ -117,7 +117,7 @@ const Brand: React.FC = () => {
       case 'gym80': return 'Gym80';
       case 'oktan': return 'Octane';
       case 'visbody': return 'Visbody';
-      case 'scholle': return 'SCHOLLE';
+      case 'smith': return 'SMITH';
       default: return 'kernel';
     }
   };

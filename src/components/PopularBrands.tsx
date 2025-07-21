@@ -17,7 +17,8 @@ const PopularBrands: React.FC = () => {
     { id: 11, name: "Visbody", logo: "/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png", slug: "visbody" },
     { id: 12, name: "SCHOLLE", logo: "/lovable-uploads/644a6485-04f6-4064-9ee8-cacae87e8c09.png", slug: "scholle" },
     { id: 13, name: "Life Fitness", logo: "/lovable-uploads/ef816493-63e0-456b-9a81-a821e2916f6b.png", slug: "life-fitness" },
-    { id: 14, name: "Technogym", logo: "/lovable-uploads/c4fbfa9e-af20-4a86-87a4-93a9d834a095.png", slug: "technogym" }
+    { id: 14, name: "Technogym", logo: "/lovable-uploads/c4fbfa9e-af20-4a86-87a4-93a9d834a095.png", slug: "technogym" },
+    { id: 15, name: "SMITH", logo: "/lovable-uploads/d50cad00-318e-48ea-96f2-b94cab77942b.png", slug: "smith" }
   ];
 
   return (
