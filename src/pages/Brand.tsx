@@ -423,24 +423,23 @@ const Brand: React.FC = () => {
         <section className="w-full py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Text */}
-              <div className="order-2 lg:order-1 lg:pr-8">
+              {/* Left Image */}
+              <div className="order-1 lg:order-1">
+                <img 
+                  src={brandSlug === 'smith' ? '/lovable-uploads/95a48b46-5ff6-4b23-9e6e-b3c2b1cc4da6.png' : '/lovable-uploads/b5c5bae5-0847-4917-87f3-3015c813643b.png'}
+                  alt="Качество и комфорт"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              
+              {/* Right Text */}
+              <div className="order-2 lg:order-2 lg:pl-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
                   {brandSlug === 'smith' ? 'Комфорт как главный приоритет' : 'Лидер в индустрии'}
                 </h2>
                 <p className="text-gray-700 text-sm leading-relaxed font-manrope">
                   {brandSlug === 'smith' ? 'SMITH понимает, что успешные тренировки – это не только эффективность, но и удовольствие от процесса. Поэтому каждая деталь тренажеров продумана для максимального комфорта: мягкие сиденья из износостойкой синтетической кожи, нескользящие рукоятки, магнитные селекторы нагрузки, система снижения стартового сопротивления. Даже упаковка оборудования разработана специально для безопасной транспортировки – прочный гофрокартон надежно защищает тренажеры при перевозке.' : '50+ лет на рынке, собственные инженерные разработки и строгий контроль производства'}
                 </p>
-              </div>
-              
-              {/* Right Image */}
-              <div className="order-1 lg:order-2">
-                <img 
-                  src={brandSlug === 'true' ? "/lovable-uploads/de89d231-771d-4288-af42-6ed99213ee24.png" : brandSlug === 'peach-builder' ? "/lovable-uploads/f5a28d98-6ba4-48b2-84c4-45f27a4ad81c.png" : brandSlug === 'gym80' ? "/lovable-uploads/08d1344d-ca43-44d2-b953-28d3cb4c83d2.png" : brandSlug === 'schwinn' ? "/lovable-uploads/df10970b-3001-4bd2-85b9-1a306850b1da.png" : brandSlug === 'oktan' ? "/lovable-uploads/cd54ddcf-333b-4408-ab25-a7e2c382f6d7.png" : brandSlug === 'visbody' ? "/lovable-uploads/53c6106b-ad5a-4c16-ae24-283a957ebd3a.png" : brandSlug === 'matrix' ? "/lovable-uploads/cb496ca8-8206-42b7-9094-7ab9a37ae510.png" : brandSlug === 'smith' ? "/lovable-uploads/3576352e-7ce8-4843-87ef-53969ecb2cf0.png" : brandSlug === 'technogym' ? "/lovable-uploads/a6bb124f-0c6a-489d-a512-751c98397f37.png" : "/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"}
-                  alt="О компании - статистика"
-                  className="w-full object-cover rounded-lg"
-                  style={{ height: 'calc(100% - 100px)', maxHeight: '350px' }}
-                />
               </div>
             </div>
           </div>
