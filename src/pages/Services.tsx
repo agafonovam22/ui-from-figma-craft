@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { Play, Truck, Wrench, CreditCard, Clock, Home } from 'lucide-react';
+import EmailSubscription from '@/components/EmailSubscription';
 
 const Services: React.FC = () => {
   const [activeTab, setActiveTab] = useState('service-request');
@@ -633,6 +634,9 @@ const Services: React.FC = () => {
                   ))}
                 </div>
               </div>
+
+              {/* Email Subscription Banner */}
+              <EmailSubscription />
             </div>
           )}
         </div>
