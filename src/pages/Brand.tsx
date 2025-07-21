@@ -571,6 +571,41 @@ const Brand: React.FC = () => {
           </>
         )}
 
+        {brandSlug === 'scholle' && (
+          <>
+            {/* Scholle Block 1 - Широкий ассортимент */}
+            <section className="w-full py-8">
+              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className="order-2 lg:order-1 lg:pr-8">
+                    <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                      Широкий ассортимент для активного отдыха
+                    </h2>
+                    <div className="text-gray-600 text-sm leading-relaxed font-manrope">
+                      <p className="mb-4">В ассортименте SCHOLLE каждый найдет оборудование по душе:</p>
+                      <ul className="mb-4 ml-4">
+                        <li>• Профессиональные батуты с защитными сетками для безопасных прыжков</li>
+                        <li>• Теннисные столы для любителей динамичных парных игр</li>
+                        <li>• Оборудование для баскетбола и футбола</li>
+                        <li>• Аэрохоккей для увлекательных семейных турниров</li>
+                        <li>• Инверсионные столы для релаксации и восстановления</li>
+                      </ul>
+                      <p>Бренд идеально подходит для семей, ценящих активный отдых и качественный инвентарь. Родители могут быть спокойны за безопасность детей, занимающихся на батутах SCHOLLE. Любители спортивных игр оценят надежность теннисных столов и комплектов для баскетбола. Те, кто заботится о здоровье позвоночника, найдут решение в линейке инверсионных столов.</p>
+                    </div>
+                  </div>
+                  <div className="order-1 lg:order-2">
+                    <img 
+                      src="/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png"
+                      alt="Ассортимент SCHOLLE"
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </>
+        )}
+
         {/* Fifth Content Block - Image with Text (only for Schwinn) */}
         {brandSlug === 'schwinn' && (
           <section className="w-full py-8">
