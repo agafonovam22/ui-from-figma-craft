@@ -308,10 +308,10 @@ const Brand: React.FC = () => {
                   ) : brandSlug === 'oktan' ? (
                     <>
                       <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
-                        С 1999 года Octane Fitness является пионером в создании эллиптических тренажеров, которые устанавливают новые стандарты в индустрии кардиооборудования. Каждый тренажер Octane — это воплощение передовых технологий, эргономичного дизайна и непревзойденного качества.
+                        Octane Fitness — это бренд, который придумал, как сделать кардиотренировки удобными, эффективными и безопасными для всех. Компания появилась в 2001 году и сразу решила сосредоточиться на главном — создавать лучшие в мире эллиптические тренажеры. За эти годы Octane успела придумать множество новых решений, которых не было ни у кого.
                       </p>
                       <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                        Мы создаем не просто тренажеры — мы разрабатываем инновационные решения для эффективного кардиотренинга, которые помогают людям достигать своих фитнес-целей с максимальным комфортом и результативностью.
+                        Главная идея бренда — помочь людям больше двигаться и получать от этого удовольствие. Все тренажёры Octane продуманы до мелочей: они удобные, тихие, красивые и занимают мало места. На них могут тренироваться и новички, и опытные спортсмены, и те, кому нужно восстановить силы после болезни или травмы.
                       </p>
                     </>
                   ) : brandSlug === 'visbody' ? (
@@ -430,15 +430,9 @@ const Brand: React.FC = () => {
                   </p>
                 ) : brandSlug === 'oktan' ? (
                   <>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
-                      <strong>Технология Zero Runner:</strong> Революционная беговая поверхность без традиционного полотна обеспечивает естественную биомеханику движения и снижает нагрузку на суставы.
-                    </p>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
-                      <strong>Система CROSS-CiRCUIT:</strong> Уникальные программы, сочетающие кардионагрузку с силовыми упражнениями для максимально эффективного тренинга.
-                    </p>
-                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                      <strong>SmartStride Technology:</strong> Интеллектуальная технология автоматически подстраивается под естественную длину шага каждого пользователя.
-                    </p>
+                     <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                       Сегодня тренажеры Octane можно встретить по всему миру: в фитнес‑клубах, университетах, реабилитационных центрах, отелях и даже в тренировочных центрах вооруженных сил США. Но теперь такие тренажеры доступны и для дома. Они не только компактные и красивые, но и такие же надёжные и качественные, как в профессиональных спортзалах.
+                     </p>
                   </>
                 ) : brandSlug === 'visbody' ? (
                   <>
@@ -647,32 +641,9 @@ const Brand: React.FC = () => {
                       </p>
                     </>
                   ) : brandSlug === 'oktan' ? (
-                    <div className="space-y-3">
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
-                          #1 бренд эллиптических тренажеров премиум-класса в мире
-                        </p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
-                          Более 30 запатентованных технологий для максимального комфорта
-                        </p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
-                          Используются в элитных фитнес-клубах более чем в 60 странах
-                        </p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
-                          Сжигание калорий на 23% эффективнее по сравнению с обычными эллипсоидами
-                        </p>
-                      </div>
-                    </div>
+                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                       Заниматься на Octane легко и приятно. Даже 10–15 минут в день дают заряд энергии и поднимают настроение. Компания придумала много интересных функций, которые делают тренировки более разнообразными и эффективными, например, специальные рукоятки, которые задействуют мышцы верхней части тела, или сидячие тренажёры, подходящие людям с любым уровнем подготовки.
+                     </p>
                   ) : brandSlug === 'visbody' ? (
                     <div className="space-y-3">
                       <div className="flex items-start">
@@ -775,15 +746,12 @@ const Brand: React.FC = () => {
                   </p>
                 ) : brandSlug === 'oktan' ? (
                   <>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
-                      Более 25 лет инноваций привели к созданию тренажеров, которые не просто обеспечивают эффективную тренировку, но и делают каждое движение максимально естественным и комфортным.
-                    </p>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
-                      Выбирая Octane Fitness, вы инвестируете в технологии будущего, которые уже сегодня помогают достигать лучших результатов в кардиотренировках.
-                    </p>
-                    <p className="text-gray-600 text-sm leading-relaxed font-manrope italic">
-                      Опыт каждой тренировки с Octane — это шаг к новому уровню фитнеса.
-                    </p>
+                     <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                       Octane Fitness выбирают те, кто хочет быть в форме и заботиться о своём здоровье, но при этом ценит комфорт и качество. Тренажёры помогают вам оставаться активными и достигать своих целей в удобном для вас ритме — дома или в зале.
+                     </p>
+                     <p className="text-gray-600 text-sm leading-relaxed font-manrope italic">
+                       Мы верим, что движение должно приносить радость. И поэтому делаем всё, чтобы вам хотелось тренироваться снова и снова.
+                     </p>
                   </>
                 ) : brandSlug === 'visbody' ? (
                   <>
