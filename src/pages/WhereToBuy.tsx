@@ -87,63 +87,40 @@ const WhereToBuy: React.FC = () => {
   ];
 
   const onlineStores = [
-    '01sport.ru',
-    'atlet-torg.ru',
-    'atletcity.ru',
-    'beg-dorozhki.ru',
-    'beger.ru',
-    'bezsporta.com',
-    'bigar-sport.ru',
     'buyfit.ru',
-    'centersporta.ru',
-    'desire-fitness.store',
-    'domsporta.com',
-    'domsporta.com',
-    'ekatfit.ru',
-    'eleptika.ru',
-    'ellipticheskiy-trenazher.su',
-    'fazasporta.com',
-    'fit-torg.ru',
-    'fit-trade.ru',
-    'fitdelight.ru',
-    'fitnesscolor.ru',
-    'fitnessdoctor.ru',
-    'fitnesslook.ru',
-    'fitnessmagazin.ru',
-    'fitnessnw.ru',
-    'getstronger.ru',
-    'globaldrive.ru',
-    'gipersport.ru',
-    'helpsport.ru',
-    'ilandsport.ru',
-    'inside-sport.ru',
-    'interatletika.su',
-    'magazin-velotrenazherov.ru',
-    'medium-plus.ru',
-    'mir-sporta.com',
-    'mirfitness.ru',
-    'mosolympia.ru',
-    'musculshop.ru',
-    'mwt.ru',
-    'olsp.ru',
-    'omegasport.ru',
-    'ostrovsporta.ru',
-    'papasport.ru',
-    'PROFIFIT.shop',
-    'slavsila.com',
-    'sport-dostavka.ru',
-    'sport-l.ru',
-    'sport78.ru',
-    'sportcity74.ru',
-    'sportforce.ru',
-    'sportofice.ru',
-    'sportvital.ru',
-    'sryukzakom.ru',
-    'strongpeople.ru',
-    't-sport66.ru',
-    'well-mir.ru',
-    'zonasporta.com',
-    'спортсеть.рф'
+    'aquarius-sport.ru',
+    'dynamic-sport.ru',
+    'forsport.pro',
+    'wildsportprof.ru',
+    'velocube.ru',
+    'csport.ru',
+    'sportsgoods.ru',
+    'sportprofi.ru',
+    '2train.by',
+    'sport-center.by',
+    'sport-land.by',
+    'open-fit.ru',
+    'qwerty96.ru',
+    'ekaterinburgsport.ru',
+    'rfsport16.ru',
+    'le-store.pro',
+    'bodyactiv.ru',
+    'kupisilu.ru',
+    'sportaim-shop.ru',
+    'sportimperial.ru',
+    'luckygym.ru',
+    'mehran.ru',
+    'pitersport24.ru',
+    'powertomsk.ru',
+    'sportprivate.ru',
+    'zm33.ru',
+    'trenazher35.ru',
+    'sportosnova.ru',
+    'goldgym.ru',
+    'ksg.ru',
+    'petrasport.ru',
+    'sportvagon.ru',
+    'wellgallery.ru'
   ];
 
   return (
@@ -350,11 +327,16 @@ const WhereToBuy: React.FC = () => {
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Интернет-магазины</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {onlineStores.map((store, index) => (
-                <div key={index} className="bg-gray-50 rounded-lg p-4 text-center">
-                  <a href="#" className="text-gray-700 hover:text-[#F53B49] transition-colors font-heading text-[16px]">
-                    {store}
-                  </a>
-                </div>
+                  <div key={index} className="bg-gray-50 rounded-lg p-4 text-center">
+                    <a 
+                      href={`https://${store}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-gray-700 hover:text-[#F53B49] transition-colors font-heading text-[16px]"
+                    >
+                      {store}
+                    </a>
+                  </div>
               ))}
             </div>
 
@@ -406,11 +388,16 @@ const WhereToBuy: React.FC = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Интернет-магазины</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 {onlineStores.map((store, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4 text-center">
-                    <a href="#" className="text-gray-700 hover:text-[#F53B49] transition-colors font-heading text-[16px]">
-                      {store}
-                    </a>
-                  </div>
+                    <div key={index} className="bg-gray-50 rounded-lg p-4 text-center">
+                      <a 
+                        href={`https://${store}`} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-700 hover:text-[#F53B49] transition-colors font-heading text-[16px]"
+                      >
+                        {store}
+                      </a>
+                    </div>
                 ))}
               </div>
 
