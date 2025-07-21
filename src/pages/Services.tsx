@@ -213,11 +213,20 @@ const Services: React.FC = () => {
                 
                 <div className="flex-grow"></div>
                 
-                <img 
-                  src="/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png"
-                  alt="Женщина тренируется в спортзале"
-                  className="w-full max-w-[400px] h-auto object-cover rounded-lg self-end"
-                />
+                <div className="self-end">
+                  <img 
+                    src="/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png"
+                    alt="Женщина тренируется в спортзале"
+                    className="w-full max-w-[400px] h-auto object-cover rounded-lg"
+                  />
+                  
+                  {/* Progress indicators */}
+                  <div className="flex justify-center gap-2 mt-4">
+                    <div className="h-1 w-8 bg-[#F53B49] rounded-full"></div>
+                    <div className="h-1 w-8 bg-gray-300 rounded-full"></div>
+                    <div className="h-1 w-8 bg-gray-300 rounded-full"></div>
+                  </div>
+                </div>
               </div>
 
               <div className="flex-[0_0_70%]">
