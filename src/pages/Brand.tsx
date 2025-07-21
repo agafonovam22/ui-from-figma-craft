@@ -994,23 +994,23 @@ const Brand: React.FC = () => {
           <section className="w-full py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Left Image */}
-                <div className="order-1">
-                  <img 
-                    src="/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png"
-                    alt="SMITH инвестиция"
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                </div>
-                
-                {/* Right Text */}
-                <div className="order-2 lg:pl-8">
+                {/* Left Text */}
+                <div className="order-2 lg:order-1 lg:pr-8">
                   <h2 className="text-3xl font-benzin text-gray-900 mb-6">
                     Инвестиция в успех
                   </h2>
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                     Выбирая SMITH, вы инвестируете в оборудование, которое будет приносить прибыль годами. Это бренд для тех, кто понимает разницу между дешевым аналогом и по-настоящему качественным продуктом. Оборудование, которое не просто стоит в зале, а помогает создавать историю успеха вашего фитнес-бизнеса.
                   </p>
+                </div>
+                
+                {/* Right Image */}
+                <div className="order-1 lg:order-2">
+                  <img 
+                    src="/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png"
+                    alt="SMITH инвестиция"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
                 </div>
               </div>
             </div>
