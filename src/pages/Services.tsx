@@ -205,13 +205,15 @@ const Services: React.FC = () => {
           {/* Service Request Tab Content - keep existing code */}
           {activeTab === 'service-request' && (
             <div className="flex gap-12 items-end">
-              <div className="flex-1 flex flex-col">
+              <div className="flex-1 flex flex-col min-h-[800px]">
                 <p className="text-gray-600 mb-6 font-manrope">
                   Заполните заявку на сервис онлайн, и мы подберем наиболее удобный для вас вариант обслуживания. 
                   Наши специалисты свяжутся с вами в кратчайшие сроки!
                 </p>
                 
-                <div className="mt-auto">
+                <div className="flex-grow"></div>
+                
+                <div>
                   <img 
                     src="/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png"
                     alt="Женщина тренируется в спортзале"
