@@ -191,7 +191,7 @@ const Services: React.FC = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-6 py-3 rounded-lg font-medium transition-colors ${
+                className={`px-6 h-[52px] rounded-lg font-medium transition-colors ${
                   activeTab === tab.id
                     ? 'bg-[#F53B49] text-white'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -298,6 +298,10 @@ const Services: React.FC = () => {
                         type="date"
                         value={formData.purchaseDate}
                         onChange={(e) => handleInputChange('purchaseDate', e.target.value)}
+                        onFocus={(e) => e.target.showPicker()}
+                        style={{
+                          color: formData.purchaseDate ? 'inherit' : '#9CA3AF'
+                        }}
                       />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
