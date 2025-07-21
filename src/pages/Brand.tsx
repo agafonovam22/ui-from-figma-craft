@@ -120,7 +120,6 @@ const Brand: React.FC = () => {
       case 'matrix': return 'Matrix';
       case 'smith': return 'Smith';
       case 'technogym': return 'Technogym';
-      case 'scholle': return 'Scholle';
       default: return 'kernel';
     }
   };
@@ -186,7 +185,7 @@ const Brand: React.FC = () => {
                          lineHeight: '105%'
                        }}
                       >
-                         {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'SCHWINN' : brandSlug === 'nautilus' ? 'NAUTILUS' : brandSlug === 'sole-fitness' ? 'SOLE FITNESS' : brandSlug === 'peach-builder' ? 'PEACH BUILDER' : brandSlug === 'gym80' ? 'GYM80' : brandSlug === 'oktan' ? 'OCTANE FITNESS' : brandSlug === 'visbody' ? 'VISBODY' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'matrix' ? 'MATRIX' : brandSlug === 'smith' ? 'SMITH' : brandSlug === 'technogym' ? 'TECHNOGYM' : brandSlug === 'scholle' ? 'SCHOLLE' : 'Качественное спортивное оборудование'}
+                         {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'SCHWINN' : brandSlug === 'nautilus' ? 'NAUTILUS' : brandSlug === 'sole-fitness' ? 'SOLE FITNESS' : brandSlug === 'peach-builder' ? 'PEACH BUILDER' : brandSlug === 'gym80' ? 'GYM80' : brandSlug === 'oktan' ? 'OCTANE FITNESS' : brandSlug === 'visbody' ? 'VISBODY' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'matrix' ? 'MATRIX' : brandSlug === 'smith' ? 'SMITH' : brandSlug === 'technogym' ? 'TECHNOGYM' : 'Качественное спортивное оборудование'}
                       </h1>
                     
                     <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors font-manrope">
@@ -250,7 +249,7 @@ const Brand: React.FC = () => {
               {/* Right Text */}
               <div className="order-2 lg:pl-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьёз' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — революция в тренировке ягодичных мышц' : brandSlug === 'gym80' ? 'GYM80 — немецкое качество для профессиональных результатов' : brandSlug === 'oktan' ? 'Octane Fitness — эллиптические тренажеры нового поколения' : brandSlug === 'visbody' ? 'Visbody — инновационные технологии для анализа тела' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'matrix' ? 'Matrix — инновационные технологии для профессионального фитнеса' : brandSlug === 'smith' ? 'Smith — профессиональное оборудование для силовых тренировок' : brandSlug === 'technogym' ? 'Technogym — итальянское качество и инновации' : brandSlug === 'scholle' ? 'SCHOLLE: Немецкое качество для активного образа жизни' : 'МЫ – TRUE'}
+                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьёз' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — революция в тренировке ягодичных мышц' : brandSlug === 'gym80' ? 'GYM80 — немецкое качество для профессиональных результатов' : brandSlug === 'oktan' ? 'Octane Fitness — эллиптические тренажеры нового поколения' : brandSlug === 'visbody' ? 'Visbody — инновационные технологии для анализа тела' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'matrix' ? 'Matrix — инновационные технологии для профессионального фитнеса' : brandSlug === 'smith' ? 'Smith — профессиональное оборудование для силовых тренировок' : brandSlug === 'technogym' ? 'Technogym — итальянское качество и инновации' : 'МЫ – TRUE'}
                 </h2>
                 
                 <div className="mb-8">
@@ -351,10 +350,6 @@ const Brand: React.FC = () => {
                         Каждый продукт Technogym воплощает в себе итальянский дизайн, передовые технологии и научный подход к фитнесу. Бренд предлагает не просто тренажеры, а комплексные решения для здоровья и благополучия, которые интегрируются в повседневную жизнь пользователей.
                       </p>
                     </>
-                  ) : brandSlug === 'scholle' ? (
-                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                      На протяжении десяти лет немецкий бренд SCHOLLE завоевывает доверие потребителей, предлагая исключительно качественное спортивное оборудование для всей семьи. Специализируясь на производстве батутов, инверсионных столов и разнообразного спортинвентаря, компания воплощает в своих продуктах традиционную немецкую педантичность и внимание к деталям.
-                    </p>
                   ) : brandSlug === 'bowflex' ? (
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       Bowflex — это бренд из США с богатой историей, который уже почти сорок лет помогает людям по всему миру тренироваться дома и чувствовать себя лучше. С 1986 года компания создаёт удобные, надежные и современные тренажёры, которые подходят всем — от новичков до опытных спортсменов.
@@ -390,7 +385,7 @@ const Brand: React.FC = () => {
                 <div className="h-full flex flex-col">
                   <div className="mb-4">
                     <h2 className="text-3xl font-benzin text-gray-900 mb-4">
-                      {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : brandSlug === 'sole-fitness' ? 'Что делает Sole Fitness особенным?' : brandSlug === 'peach-builder' ? 'Для кого создан PEACH BUILDER?' : brandSlug === 'gym80' ? 'Философия GYM80' : brandSlug === 'oktan' ? 'Инновации Octane Fitness' : brandSlug === 'visbody' ? 'Технологии Visbody' : brandSlug === 'bowflex' ? 'BOWFLEX ДЕЛАЕТ ТРЕНИРОВКИ ОСОБЕННЫМИ' : brandSlug === 'matrix' ? 'Кому подходят тренажеры Matrix?' : brandSlug === 'smith' ? 'Инновации, проверенные временем' : brandSlug === 'technogym' ? 'Философия Technogym' : brandSlug === 'scholle' ? 'Надежность, проверенная временем' : 'Наше оборудование выбирают:'}
+                      {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : brandSlug === 'sole-fitness' ? 'Что делает Sole Fitness особенным?' : brandSlug === 'peach-builder' ? 'Для кого создан PEACH BUILDER?' : brandSlug === 'gym80' ? 'Философия GYM80' : brandSlug === 'oktan' ? 'Инновации Octane Fitness' : brandSlug === 'visbody' ? 'Технологии Visbody' : brandSlug === 'bowflex' ? 'BOWFLEX ДЕЛАЕТ ТРЕНИРОВКИ ОСОБЕННЫМИ' : brandSlug === 'matrix' ? 'Кому подходят тренажеры Matrix?' : brandSlug === 'smith' ? 'Инновации, проверенные временем' : brandSlug === 'technogym' ? 'Философия Technogym' : 'Наше оборудование выбирают:'}
                     </h2>
                   </div>
                   
@@ -407,10 +402,6 @@ const Brand: React.FC = () => {
                           <strong>Для тренеров и спортсменов</strong> – точная биомеханика и настраиваемые программы для работы на выносливость, жиросжигание и функциональный тренинг.
                         </p>
                       </>
-                    ) : brandSlug === 'scholle' ? (
-                      <p>
-                        Каждое изделие SCHOLLE — это результат тщательного проектирования и строгого контроля качества на всех этапах производства. Бренд придерживается европейских стандартов, гарантируя безопасность и долговечность своей продукции. Особое внимание уделяется прочности материалов: от износостойких тканей прыжковых поверхностей батутов до ударопрочных конструкций теннисных столов.
-                      </p>
                     ) : brandSlug === 'smith' ? (
                       <p>
                         Каждый тренажер SMITH начинается с тщательного проектирования в современных 3D-программах. Такой подход позволяет выявить и устранить даже малейшие недочеты еще до начала производства. Бренд не просто следит за трендами – он их задает, внедряя передовые решения в индустрии фитнес-оборудования. От беговых дорожек до многофункциональных силовых станций – все продукты SMITH объединяет одно: безупречная эргономика и продуманность до мелочей.
@@ -435,10 +426,10 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'smith' ? 'Комфорт как главный приоритет' : brandSlug === 'scholle' ? 'Широкий ассортимент для активного отдыха' : 'Лидер в индустрии'}
+                  {brandSlug === 'smith' ? 'Комфорт как главный приоритет' : 'Лидер в индустрии'}
                 </h2>
                 <p className="text-gray-700 text-sm leading-relaxed font-manrope">
-                  {brandSlug === 'smith' ? 'SMITH понимает, что успешные тренировки – это не только эффективность, но и удовольствие от процесса. Поэтому каждая деталь тренажеров продумана для максимального комфорта: мягкие сиденья из износостойкой синтетической кожи, нескользящие рукоятки, магнитные селекторы нагрузки, система снижения стартового сопротивления. Даже упаковка оборудования разработана специально для безопасной транспортировки – прочный гофрокартон надежно защищает тренажеры при перевозке.' : brandSlug === 'scholle' ? 'В ассортименте SCHOLLE каждый найдет оборудование по душе: Профессиональные батуты с защитными сетками для безопасных прыжков, Теннисные столы для любителей динамичных парных игр, Оборудование для баскетбола и футбола, Аэрохоккей для увлекательных семейных турниров, Инверсионные столы для релаксации и восстановления. Бренд идеально подходит для семей, ценящих активный отдых и качественный инвентарь.' : '50+ лет на рынке, собственные инженерные разработки и строгий контроль производства'}
+                  {brandSlug === 'smith' ? 'SMITH понимает, что успешные тренировки – это не только эффективность, но и удовольствие от процесса. Поэтому каждая деталь тренажеров продумана для максимального комфорта: мягкие сиденья из износостойкой синтетической кожи, нескользящие рукоятки, магнитные селекторы нагрузки, система снижения стартового сопротивления. Даже упаковка оборудования разработана специально для безопасной транспортировки – прочный гофрокартон надежно защищает тренажеры при перевозке.' : '50+ лет на рынке, собственные инженерные разработки и строгий контроль производства'}
                 </p>
               </div>
               
@@ -456,53 +447,375 @@ const Brand: React.FC = () => {
         </section>
 
         {/* Statistics Banner from About page */}
-
-        {/* Fourth Block - Text left, photo right */}
         <section className="w-full py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Image */}
-              <div className="order-1">
-                <img 
-                  src={brandSlug === 'smith' ? '/lovable-uploads/caeab3d5-7582-417d-a49c-8a63cc6e24aa.png' : '/lovable-uploads/default-image.png'}
-                  alt="Качество и надежность"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-              
-              {/* Right Text */}
-              <div className="order-2 lg:pl-8">
-                <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'smith' ? 'Немецкая надежность в каждой детали' : brandSlug === 'scholle' ? 'Немецкие традиции в каждом изделии' : 'Качество и надежность'}
-                </h2>
-                <p className="text-gray-700 text-sm leading-relaxed font-manrope">
-                  {brandSlug === 'smith' ? 'Производственные стандарты SMITH – это отдельная история. Рамы из высокопрочной стали с овальным профилем, двойное порошковое покрытие для защиты от повреждений, тросы, тестируемые трижды в день под нагрузкой 900 кг – такие требования к качеству говорят сами за себя. Бренд не экономит на материалах и контроле, поэтому его оборудование служит годами даже при интенсивной эксплуатации в коммерческих залах.' : brandSlug === 'scholle' ? 'SCHOLLE сочетает в своей продукции проверенные временем технологии и современные разработки. Особенностью бренда является продуманная эргономика: будь то система регулировки инверсионного стола или антискользящее покрытие ручек баскетбольных щитов. Выбирая SCHOLLE, вы приобретаете не просто спортивный инвентарь, а надежного спутника для поддержания активного образа жизни всей семьи. Это оборудование, которое годами сохраняет свои потребительские свойства, доказывая, что немецкое качество — не просто слова, а стандарт, которому стоит доверять. С десятилетним опытом на рынке SCHOLLE продолжает развиваться, оставаясь верным своим принципам: безопасность, надежность и доступность качественного спортивного оборудования для каждого дома.' : 'Высочайшие стандарты качества и производства для максимальной надежности оборудования.'}
-                </p>
+            <div className="overflow-hidden relative rounded-lg" style={{ height: '408px' }}>
+              <img 
+                src={brandSlug === 'true' ? '/lovable-uploads/feb4ffe7-84a2-4e4f-b926-cb0d7fc4e3dc.png' : brandSlug === 'bowflex' ? '/lovable-uploads/0838e433-093a-4bb6-a996-3a7c584ed057.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/769683fd-be5a-426c-83b4-126c0b9ab58c.png' : brandSlug === 'gym80' ? '/lovable-uploads/c7015807-1028-470c-acbb-db73c3b5f2b8.png' : brandSlug === 'schwinn' ? '/lovable-uploads/6e0ee794-cc9c-4134-90b0-3760dd16638c.png' : brandSlug === 'oktan' ? '/lovable-uploads/6b0d5cba-7d6c-4f31-a309-5f2e0d37d4ca.png' : brandSlug === 'visbody' ? '/lovable-uploads/d78f60d4-86ca-4348-b8c7-b83d2abcb9cb.png' : brandSlug === 'matrix' ? '/lovable-uploads/cb496ca8-8206-42b7-9094-7ab9a37ae510.png' : brandSlug === 'smith' ? '/lovable-uploads/e7031645-99e8-4776-a3b6-4edba61ea50b.png' : brandSlug === 'technogym' ? '/lovable-uploads/a6bb124f-0c6a-489d-a512-751c98397f37.png' : '/lovable-uploads/25a08481-5846-4c6a-8f84-9089de2749fd.png'}
+                alt="О компании - статистика"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: 'center right' }}
+              />
+              {/* Statistics content overlay */}
+              <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-6 shadow-lg">
+                <div className="h-full flex flex-col">
+                  <div className="mb-4">
+                    <h2 className="text-3xl font-benzin text-gray-900 mb-4">
+                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : brandSlug === 'peach-builder' ? 'Философия бренда строится на трёх принципах:' : brandSlug === 'gym80' ? 'Более 40 лет в служении фитнесу' : brandSlug === 'oktan' ? 'Преимущества Octane Fitness' : brandSlug === 'visbody' ? 'Почему выбирают Visbody?' : brandSlug === 'bowflex' ? 'BOWFLEX ВДОХНОВЛЯЕТ' : brandSlug === 'matrix' ? 'Инновации Matrix' : brandSlug === 'smith' ? 'Комфорт как главный приоритет' : brandSlug === 'technogym' ? 'Technogym — лидер инноваций' : 'Лидер в индустрии'}
+                    </h2>
+                    <p className="text-gray-700 text-sm leading-relaxed font-manrope">
+                      {brandSlug === 'cardio-power' ? '' : brandSlug === 'schwinn' ? 'Уже более века Schwinn сохраняет безупречную репутацию благодаря строгим тестам на безопасность и долговечность. Тренажёры созданы из качественных материалов и служат годами.' : brandSlug === 'nautilus' ? '' : brandSlug === 'sole-fitness' ? '' : brandSlug === 'peach-builder' ? '' : brandSlug === 'oktan' ? 'SMITH понимает, что успешные тренировки – это не только эффективность, но и удовольствие от процесса. Поэтому каждая деталь тренажеров продумана для максимального комфорта: мягкие сиденья из износостойкой синтетической кожи, нескользящие рукоятки, магнитные селекторы нагрузки, система снижения стартового сопротивления. Даже упаковка оборудования разработана специально для безопасной транспортировки – прочный гофрокартон надежно защищает тренажеры при перевозке.' : brandSlug === 'visbody' ? 'Единственные в отрасли технологии сочетания биоимпедансометрии и 3D-сканирования для максимально точного анализа тела.' : brandSlug === 'bowflex' ? '' : brandSlug === 'matrix' ? 'Matrix сочетает профессиональное качество с инновационными технологиями для достижения максимальных результатов.' : brandSlug === 'smith' ? 'SMITH понимает, что успешные тренировки – это не только эффективность, но и удовольствие от процесса. Поэтому каждая деталь тренажеров продумана для максимального комфорта.' : brandSlug === 'technogym' ? 'Technogym объединяет итальянский дизайн с передовыми технологиями для создания уникального опыта тренировок.' : '50+ лет на рынке, собственные инженерные разработки и строгий контроль производства'}
+                    </p>
+                  </div>
+                  
+                  {brandSlug === 'cardio-power' ? (
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Самая широкая линейка кардиотренажеров в России
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Безопасность и комфорт благодаря продуманным системам амортизации и защиты от перегрузок
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Технологии для реальных результатов: от базовых моделей до премиальных решений
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Доступная цена без ущерба качеству – оптимизированное производство и логистика
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Сервис и поддержка для быстрых поставок запчастей и помощи специалистов
+                        </p>
+                      </div>
+                    </div>
+                  ) : brandSlug === 'schwinn' ? (
+                    <div>
+                      <h3 className="font-benzin text-gray-900 mb-3">Инновации на основе традиций</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        Оставаясь верным своим принципам, Schwinn внедряет современные технологии: сенсорные экраны, обучающие программы, автоматическая регулировка нагрузки и синхронизация с фитнес-трекерами.
+                      </p>
+                    </div>
+                  ) : brandSlug === 'nautilus' ? (
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Абсолютный рекордсмен по инновациям в отрасли
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Индивидуализированный тренировочный опыт с цифровой экосистемой
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Доказанная надежность – оборудование работает десятилетиями
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Глобальная сервисная сеть – поддержка в любой точке мира
+                        </p>
+                      </div>
+                    </div>
+                  ) : brandSlug === 'sole-fitness' ? (
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Система Cushion Flex (беговые дорожки) – защита суставов
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Отрицательный угол наклона (беговые дорожки) – для тренировки спусков и подъемов
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Magnetic Resistance (велотренажёры) – плавность хода
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Эргономичные конструкции – тренировки без дискомфорта
+                        </p>
+                      </div>
+                    </div>
+                  ) : brandSlug === 'peach-builder' ? (
+                    <>
+                      <div className="space-y-3 mb-2">
+                        <div className="flex items-start">
+                          <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                            Анатомическая точность – каждое движение рассчитано до миллиметра для максимального вовлечения ягодичных мышц
+                          </p>
+                        </div>
+                        <div className="flex items-start">
+                          <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                            Премиальные материалы – холоднокатаная сталь, амортизирующие подушки, износостойкие покрытия
+                          </p>
+                        </div>
+                        <div className="flex items-start">
+                          <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                            Технологический подход — регулируемые элементы позволяют адаптировать нагрузку под любой уровень подготовки
+                          </p>
+                        </div>
+                      </div>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        От Hip Thruster с его революционной системой настройки до Belt Squat, снимающего нагрузку с позвоночника — оборудование PEACH BUILDER открывает новые горизонты в тренировочном процессе.
+                      </p>
+                    </>
+                  ) : brandSlug === 'gym80' ? (
+                    <>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                        Мы гордимся своей биомеханикой, ведь каждая деталь и каждое движение на наших тренажерах создаются с опорой на науку и многолетний опыт. Всё, чему мы научились за десятилетия работы, мы воплощаем в тренажерах, которые служат эталоном для всей индустрии. Мы не копируем — мы создаём. Над каждым нашим продуктом трудится команда инженеров, спортсменов, врачей и кинезиологов, чтобы довести его до совершенства.
+                      </p>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        С 1996 года мы тесно сотрудничаем с Кельнским университетом спорта, который обеспечивает нам научную базу для разработки тренажеров, максимально соответствующих естественной биомеханике человека. Опытные инженеры, медики и профессиональные атлеты вместе разрабатывают решения, которые помогают достигать максимальных результатов безопасно и эффективно.
+                      </p>
+                    </>
+                  ) : brandSlug === 'oktan' ? (
+                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                       Заниматься на Octane легко и приятно. Даже 10–15 минут в день дают заряд энергии и поднимают настроение. Компания придумала много интересных функций, которые делают тренировки более разнообразными и эффективными, например, специальные рукоятки, которые задействуют мышцы верхней части тела, или сидячие тренажёры, подходящие людям с любым уровнем подготовки.
+                     </p>
+                  ) : brandSlug === 'visbody' ? (
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Точность измерений до 98% — уровень медицинского оборудования
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Анализ 20+ параметров тела всего за 30 секунд
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Используется в 1000+ фитнес-клубов и медицинских центров мира
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                          Первая в мире система с интеграцией 3D-сканирования и биоимпеданса
+                        </p>
+                      </div>
+                     </div>
+                  ) : brandSlug === 'smith' ? (
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                      Мягкие сиденья из износостойкой синтетической кожи, нескользящие рукоятки, магнитные селекторы нагрузки, система снижения стартового сопротивления. Даже упаковка оборудования разработана специально для безопасной транспортировки – прочный гофрокартон надежно защищает тренажеры при перевозке.
+                    </p>
+                  ) : brandSlug === 'bowflex' ? (
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                      Каждый наш тренажёр создан, чтобы вдохновлять. Мы верим, что даже 10 минут движения в день могут подарить вам заряд энергии и улучшить настроение на целый день. Мы приносим радость движения в ваш дом, чтобы вы всегда были рядом с тем, что наполняет вас силами.
+                    </p>
+                  ) : (
+                    <div className="grid grid-cols-2 gap-6">
+                      <div>
+                        <h3 className="font-benzin text-gray-900 mb-3">Технологии и безопасность</h3>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          передовые системы амортизации, износостойкие компоненты и интеллектуальное управление
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="font-benzin text-gray-900 mb-3">Экономия на обслуживании</h3>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          минимальные затраты благодаря надежной конструкции и доступности запчастей
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
+        {/* Fourth Content Block - Text Left, Image Right */}
+        <section className="w-full py-8">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Text */}
+              <div className="order-2 lg:order-1 lg:pr-8">
+                <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : brandSlug === 'nautilus' ? 'Nautilus – когда важен не просто результат, а технологичное превосходство.' : brandSlug === 'sole-fitness' ? 'Выбирайте Sole – инженерное совершенство для ваших результатов.' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — это больше чем оборудование' : brandSlug === 'gym80' ? 'Выбирая GYM80, вы выбираете лучшее' : brandSlug === 'oktan' ? 'Выбирайте Octane Fitness — лидера инноваций' : brandSlug === 'visbody' ? 'Будущее анализа тела уже здесь' : brandSlug === 'bowflex' ? 'BOWFLEX — ДЛЯ ТЕХ, КТО ВЫБИРАЕТ ДВИЖЕНИЕ' : brandSlug === 'matrix' ? 'Matrix — профессиональные решения' : brandSlug === 'smith' ? 'Немецкая надежность в каждой детали' : brandSlug === 'technogym' ? 'Technogym — инвестиция в будущее' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
+                </h2>
+                
+                {brandSlug === 'cardio-power' ? (
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    CardioPower – это преемственность традициям качества. Наша продукция собирается из самых качественных комплектующих и проходит многоэтапную систему контроля качества. Наши тренажеры рассчитаны на долгосрочную службу в условиях интенсивной эксплуатации. Мы уделяем особое внимание работе послепродажного сервиса, обеспечивая оперативную техническую поддержку и наличие склада запасных частей.
+                  </p>
+                ) : brandSlug === 'schwinn' ? (
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    От компактных велотренажеров для небольших квартир до профессиональных эллипсоидов с плавным ходом — ассортимент Schwinn охватывает весь спектр домашнего кардиооборудования. Особой популярностью пользуются гибридные модели, сочетающие в себе функции нескольких тренажеров, позволяя разнообразить тренировочный процесс.
+                  </p>
+                ) : brandSlug === 'gym80' ? (
+                  <>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      Мы остаёмся верны своим корням и традициям, производя тренажёры в Германии и следуя философии настоящего «Made in Germany». Для нас это не просто знак качества, а символ уважения к каждому клиенту, который выбирает лучшее. Gym80 выбирают те, кто серьёзно относится к своему делу, кто ценит безупречную механику движения, надёжность и долговечность оборудования.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      Gym80 — это история о силе, науке и стремлении к совершенству, рассказанная на языке железа. Мы создаём тренажёры, которые становятся частью больших побед и помогают раскрывать потенциал каждого спортсмена. Gym80 — это выбор профессионалов.
+                    </p>
+                  </>
+                ) : brandSlug === 'peach-builder' ? (
+                  <>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      Это философия тренировок нового поколения, где красота встречается с функциональностью, а мечты о идеальной форме становятся реальностью. Выбирая эти тренажёры, вы выбираете путь к телу, которое будет вдохновлять.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      Готовы перевести свои тренировки на новый уровень? PEACH BUILDER ждёт вас в нашем шоу-руме, где вы сможете лично оценить инновационный подход к формированию ягодичных мышц.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope italic">
+                      Создано профессионалами. Проверено чемпионами. Вдохновлено совершенством.
+                    </p>
+                  </>
+                ) : brandSlug === 'sole-fitness' ? (
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    
+                  </p>
+                ) : brandSlug === 'nautilus' ? (
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    
+                  </p>
+                ) : brandSlug === 'oktan' ? (
+                  <>
+                     <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                       Octane Fitness выбирают те, кто хочет быть в форме и заботиться о своём здоровье, но при этом ценит комфорт и качество. Тренажёры помогают вам оставаться активными и достигать своих целей в удобном для вас ритме — дома или в зале.
+                     </p>
+                     <p className="text-gray-600 text-sm leading-relaxed font-manrope italic">
+                       Мы верим, что движение должно приносить радость. И поэтому делаем всё, чтобы вам хотелось тренироваться снова и снова.
+                     </p>
+                  </>
+                ) : brandSlug === 'visbody' ? (
+                  <>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      Технологии Visbody открывают новую эру в фитнес-диагностике, предоставляя точную, быструю и комплексную оценку физического состояния.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      Будущее уже здесь — и оно начинается с понимания своего тела на качественно новом уровне.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope italic">
+                      Измеряй. Анализируй. Прогрессируй.
+                    </p>
+                   </>
+                ) : brandSlug === 'smith' ? (
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Производственные стандарты SMITH – это отдельная история. Рамы из высокопрочной стали с овальным профилем, двойное порошковое покрытие для защиты от повреждений, тросы, тестируемые трижды в день под нагрузкой 900 кг – такие требования к качеству говорят сами за себя. Бренд не экономит на материалах и контроле, поэтому его оборудование служит годами даже при интенсивной эксплуатации в коммерческих залах.
+                  </p>
+                ) : brandSlug === 'bowflex' ? (
+                  <>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      Bowflex — это не просто оборудование. Это поддержка и комфорт, которые всегда с вами, помогая двигаться к своим целям. Каждый человек выбирает свой путь, свой стиль и свои любимые упражнения — у нас есть решения для каждого. Что бы вас ни мотивировало, с Bowflex вы сможете двигаться так, как нравится именно вам.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      Мы создаём тренажёры, которые делают фитнес доступным и вдохновляющим. Дома, в своем ритме и на своих условиях. Просто начните, и вы почувствуете разницу.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope italic">
+                      Bowflex — для тех, кто выбирает движение.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      Наше оборудование выбирают, потому что оно:
+                    </p>
+                    
+                    <div className="space-y-6">
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div>
+                          <h3 className="font-benzin text-gray-900 mb-2">Работает безотказно</h3>
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                            даже при интенсивной эксплуатации
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div>
+                          <h3 className="font-benzin text-gray-900 mb-2">Сохраняет актуальность</h3>
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                            регулярные апгрейды и совместимость с новыми технологиями
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div>
+                          <h3 className="font-benzin text-gray-900 mb-2">Обеспечивает максимальный комфорт</h3>
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                            продуманная эргономика снижает нагрузку на суставы
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+              
+              {/* Right Image */}
+              <div className="order-1 lg:order-2">
+                <img 
+                  src={brandSlug === 'true' ? '/lovable-uploads/f0b8744d-a5e4-418e-9512-534ed70c17e6.png' : brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : brandSlug === 'gym80' ? '/lovable-uploads/08975827-d091-4c00-9cb5-85e93a4b1853.png' : brandSlug === 'schwinn' ? '/lovable-uploads/af9da9ea-dbaa-4e9f-ae2f-831cda031eba.png' : brandSlug === 'oktan' ? '/lovable-uploads/52c07468-4317-41f4-8313-bcc245be5785.png' : brandSlug === 'visbody' ? '/lovable-uploads/5c83f7c6-b329-4314-b2f2-d9c78efdb039.png' : brandSlug === 'matrix' ? '/lovable-uploads/cb496ca8-8206-42b7-9094-7ab9a37ae510.png' : brandSlug === 'smith' ? '/lovable-uploads/29a13612-d204-41d9-ba40-7a7881a0393b.png' : brandSlug === 'technogym' ? '/lovable-uploads/a6bb124f-0c6a-489d-a512-751c98397f37.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
+                  alt="Качество и надежность"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Smith Blocks 5-8 - Additional content only for Smith */}
         {brandSlug === 'smith' && (
           <>
             {/* Smith Block 5 - Разумный баланс */}
             <section className="w-full py-8">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div className="order-2 lg:order-1 lg:pr-8">
+                  <div className="order-1">
+                    <img 
+                      src="/lovable-uploads/cb496ca8-8206-42b7-9094-7ab9a37ae510.png"
+                      alt="Smith оборудование"
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
+                  <div className="order-2 lg:pl-8">
                     <h2 className="text-3xl font-benzin text-gray-900 mb-6">
                       Для тех, кто ценит разумный баланс
                     </h2>
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       SMITH занимает золотую середину между премиальными и бюджетными брендами. Это оборудование не самое дешевое на рынке, но его цена полностью оправдана исключительным качеством и долговечностью. Именно такое сочетание делает SMITH идеальным выбором для владельцев фитнес-клубов, которые хотят получить надежное оборудование без переплаты за имя.
                     </p>
-                  </div>
-                  <div className="order-1 lg:order-2">
-                    <img 
-                      src="/lovable-uploads/b908e99f-5626-44f6-91a3-5c3680b244eb.png"
-                      alt="Smith оборудование"
-                      className="w-full h-full object-cover rounded-lg"
-                    />
                   </div>
                 </div>
               </div>
@@ -512,21 +825,21 @@ const Brand: React.FC = () => {
             <section className="w-full py-8">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div className="order-1">
-                    <img 
-                      src="/lovable-uploads/9e9999cd-9452-4e0b-a1dd-3868bf5430fd.png"
-                      alt="Smith коммерческий успех"
-                      className="w-full object-cover rounded-lg"
-                      style={{ height: 'calc(100% - 100px)', maxHeight: '350px' }}
-                    />
-                  </div>
-                  <div className="order-2 lg:pl-8">
+                  <div className="order-2 lg:order-1 lg:pr-8">
                     <h2 className="text-3xl font-benzin text-gray-900 mb-6">
                       Коммерческий успех начинается здесь
                     </h2>
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       Бренд SMITH — это не просто поставщик тренажеров, а партнер в построении успешного фитнес-бизнеса. Команда помогает с нуля оборудовать залы, модернизировать существующие пространства и подбирать оптимальные решения под любой бюджет. С двумя вариантами цвета рам и тремя вариантами обивки можно создать уникальный дизайн зала, который запомнится клиентам.
                     </p>
+                  </div>
+                  <div className="order-1 lg:order-2">
+                    <img 
+                      src="/lovable-uploads/a6bb124f-0c6a-489d-a512-751c98397f37.png"
+                      alt="Smith коммерческий успех"
+                      className="w-full object-cover rounded-lg"
+                      style={{ height: 'calc(100% - 100px)', maxHeight: '350px' }}
+                    />
                   </div>
                 </div>
               </div>
@@ -565,41 +878,6 @@ const Brand: React.FC = () => {
                   <p className="text-gray-600 text-lg leading-relaxed font-manrope">
                     Выбирая SMITH, вы инвестируете в оборудование, которое будет приносить прибыль годами. Это бренд для тех, кто понимает разницу между дешевым аналогом и по-настоящему качественным продуктом. Оборудование, которое не просто стоит в зале, а помогает создавать историю успеха вашего фитнес-бизнеса.
                   </p>
-                </div>
-              </div>
-            </section>
-          </>
-        )}
-
-        {brandSlug === 'scholle' && (
-          <>
-            {/* Scholle Block 1 - Широкий ассортимент */}
-            <section className="w-full py-8">
-              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div className="order-2 lg:order-1 lg:pr-8">
-                    <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                      Широкий ассортимент для активного отдыха
-                    </h2>
-                    <div className="text-gray-600 text-sm leading-relaxed font-manrope">
-                      <p className="mb-4">В ассортименте SCHOLLE каждый найдет оборудование по душе:</p>
-                      <ul className="mb-4 ml-4">
-                        <li>• Профессиональные батуты с защитными сетками для безопасных прыжков</li>
-                        <li>• Теннисные столы для любителей динамичных парных игр</li>
-                        <li>• Оборудование для баскетбола и футбола</li>
-                        <li>• Аэрохоккей для увлекательных семейных турниров</li>
-                        <li>• Инверсионные столы для релаксации и восстановления</li>
-                      </ul>
-                      <p>Бренд идеально подходит для семей, ценящих активный отдых и качественный инвентарь. Родители могут быть спокойны за безопасность детей, занимающихся на батутах SCHOLLE. Любители спортивных игр оценят надежность теннисных столов и комплектов для баскетбола. Те, кто заботится о здоровье позвоночника, найдут решение в линейке инверсионных столов.</p>
-                    </div>
-                  </div>
-                  <div className="order-1 lg:order-2">
-                    <img 
-                      src="/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png"
-                      alt="Ассортимент SCHOLLE"
-                      className="w-full h-full object-cover rounded-lg"
-                    />
-                  </div>
                 </div>
               </div>
             </section>
