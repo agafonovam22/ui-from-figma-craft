@@ -966,23 +966,23 @@ const Brand: React.FC = () => {
           <section className="w-full py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Left Text */}
-                <div className="order-2 lg:order-1 lg:pr-8">
+                {/* Left Image */}
+                <div className="order-1">
+                  <img 
+                    src="/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png"
+                    alt="SMITH домашние тренажеры"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                
+                {/* Right Text */}
+                <div className="order-2 lg:pl-8">
                   <h2 className="text-3xl font-benzin text-gray-900 mb-6">
                     Домашние тренировки профессионального уровня
                   </h2>
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                     Хотя SMITH ориентирован в первую очередь на коммерческий сегмент, его компактные модели для дома – это тот редкий случай, когда профессиональное качество доступно для частного использования. Домашние тренажеры бренда сохраняют все преимущества своих «старших братьев»: надежность, эргономику и продуманный дизайн.
                   </p>
-                </div>
-                
-                {/* Right Image */}
-                <div className="order-1 lg:order-2">
-                  <img 
-                    src="/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png"
-                    alt="SMITH домашние тренажеры"
-                    className="w-full h-full object-cover rounded-lg"
-                  />
                 </div>
               </div>
             </div>
