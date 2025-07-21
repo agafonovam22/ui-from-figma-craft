@@ -117,6 +117,9 @@ const Brand: React.FC = () => {
       case 'gym80': return 'Gym80';
       case 'oktan': return 'Octane';
       case 'visbody': return 'Visbody';
+      case 'matrix': return 'Matrix';
+      case 'life-fitness': return 'Life Fitness';
+      case 'technogym': return 'Technogym';
       default: return 'kernel';
     }
   };
@@ -182,7 +185,7 @@ const Brand: React.FC = () => {
                          lineHeight: '105%'
                        }}
                       >
-                         {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'SCHWINN' : brandSlug === 'nautilus' ? 'NAUTILUS' : brandSlug === 'sole-fitness' ? 'SOLE FITNESS' : brandSlug === 'peach-builder' ? 'PEACH BUILDER' : brandSlug === 'gym80' ? 'GYM80' : brandSlug === 'oktan' ? 'OCTANE FITNESS' : brandSlug === 'visbody' ? 'VISBODY' : brandSlug === 'bowflex' ? 'BOWFLEX' : 'Качественное спортивное оборудование'}
+                         {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'SCHWINN' : brandSlug === 'nautilus' ? 'NAUTILUS' : brandSlug === 'sole-fitness' ? 'SOLE FITNESS' : brandSlug === 'peach-builder' ? 'PEACH BUILDER' : brandSlug === 'gym80' ? 'GYM80' : brandSlug === 'oktan' ? 'OCTANE FITNESS' : brandSlug === 'visbody' ? 'VISBODY' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'matrix' ? 'MATRIX' : brandSlug === 'life-fitness' ? 'LIFE FITNESS' : brandSlug === 'technogym' ? 'TECHNOGYM' : 'Качественное спортивное оборудование'}
                       </h1>
                     
                     <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors font-manrope">
@@ -237,7 +240,7 @@ const Brand: React.FC = () => {
               {/* Left Image */}
               <div className="order-1">
                 <img 
-                  src={brandSlug === 'true' ? '/lovable-uploads/21b038a7-1ec4-44c6-a96c-6a342c3603de.png' : brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : brandSlug === 'schwinn' ? '/lovable-uploads/5a7d56a3-1cee-438a-b65a-a3479013fe70.png' : brandSlug === 'oktan' ? '/lovable-uploads/b7860c53-38e6-490f-a402-9811296c1da3.png' : brandSlug === 'visbody' ? '/lovable-uploads/7f518539-41a1-4a19-8284-3b07384c5521.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
+                  src={brandSlug === 'true' ? '/lovable-uploads/21b038a7-1ec4-44c6-a96c-6a342c3603de.png' : brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : brandSlug === 'schwinn' ? '/lovable-uploads/5a7d56a3-1cee-438a-b65a-a3479013fe70.png' : brandSlug === 'oktan' ? '/lovable-uploads/b7860c53-38e6-490f-a402-9811296c1da3.png' : brandSlug === 'visbody' ? '/lovable-uploads/7f518539-41a1-4a19-8284-3b07384c5521.png' : brandSlug === 'matrix' ? '/lovable-uploads/9deaa8d7-89aa-4671-b709-82d6af4d5f19.png' : brandSlug === 'life-fitness' ? '/lovable-uploads/323030b4-2002-4ea2-bfe4-66d67776494d.png' : brandSlug === 'technogym' ? '/lovable-uploads/4de8ac86-4117-4c20-8d99-e0583f469b1e.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
                   alt="Спортивные тренировки"
                   className="w-full h-full object-cover rounded-lg"
                 />
@@ -246,7 +249,7 @@ const Brand: React.FC = () => {
               {/* Right Text */}
               <div className="order-2 lg:pl-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьёз' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — революция в тренировке ягодичных мышц' : brandSlug === 'gym80' ? 'GYM80 — немецкое качество для профессиональных результатов' : brandSlug === 'oktan' ? 'Octane Fitness — эллиптические тренажеры нового поколения' : brandSlug === 'visbody' ? 'Visbody — инновационные технологии для анализа тела' : brandSlug === 'bowflex' ? 'BOWFLEX' : 'МЫ – TRUE'}
+                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьёз' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — революция в тренировке ягодичных мышц' : brandSlug === 'gym80' ? 'GYM80 — немецкое качество для профессиональных результатов' : brandSlug === 'oktan' ? 'Octane Fitness — эллиптические тренажеры нового поколения' : brandSlug === 'visbody' ? 'Visbody — инновационные технологии для анализа тела' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'matrix' ? 'Matrix — инновационные технологии для профессионального фитнеса' : brandSlug === 'life-fitness' ? 'Life Fitness — мировой лидер в производстве фитнес-оборудования' : brandSlug === 'technogym' ? 'Technogym — итальянское качество и инновации' : 'МЫ – TRUE'}
                 </h2>
                 
                 <div className="mb-8">
@@ -323,6 +326,33 @@ const Brand: React.FC = () => {
                         Наши системы используются в ведущих фитнес-клубах, медицинских центрах и исследовательских институтах по всему миру, помогая специалистам принимать обоснованные решения и отслеживать прогресс с научной точностью.
                       </p>
                     </>
+                  ) : brandSlug === 'matrix' ? (
+                    <>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                        Matrix — это бренд, который представляет собой идеальное сочетание инновационных технологий и профессионального качества. Компания появилась как подразделение Johnson Health Tech — одного из крупнейших производителей фитнес-оборудования в мире. За годы своего существования Matrix зарекомендовал себя как создатель оборудования, которое объединяет в себе надежность, функциональность и передовые решения.
+                      </p>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        Главная идея Matrix — предоставить пользователям возможность тренироваться с максимальным комфортом и эффективностью. Все тренажеры Matrix созданы с учетом потребностей как профессиональных спортсменов, так и любителей фитнеса, предлагая широкий спектр возможностей для достижения любых целей.
+                      </p>
+                    </>
+                  ) : brandSlug === 'life-fitness' ? (
+                    <>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                        Life Fitness — это легендарный американский бренд, который уже более 50 лет устанавливает стандарты в индустрии фитнес-оборудования. Компания была основана в 1968 году и с тех пор стала синонимом качества, надежности и инноваций. Life Fitness создает оборудование, которое помогает людям по всему миру вести активный и здоровый образ жизни.
+                      </p>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        Философия Life Fitness проста — каждый человек заслуживает доступа к качественному фитнес-оборудованию, которое поможет ему достичь своих целей. Тренажеры Life Fitness отличаются исключительной надежностью, продуманной эргономикой и инновационными технологиями, которые делают тренировки более эффективными и приятными.
+                      </p>
+                    </>
+                  ) : brandSlug === 'technogym' ? (
+                    <>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                        Technogym — это итальянский бренд премиум-класса, который уже более 35 лет создает фитнес-оборудование мирового уровня. Компания была основана в 1983 году в Италии и с тех пор стала официальным поставщиком Олимпийских игр и ведущих спортивных событий мира. Technogym — это не просто производитель тренажеров, это создатель целой экосистемы для здорового образа жизни.
+                      </p>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        Каждый продукт Technogym воплощает в себе итальянский дизайн, передовые технологии и научный подход к фитнесу. Бренд предлагает не просто тренажеры, а комплексные решения для здоровья и благополучия, которые интегрируются в повседневную жизнь пользователей.
+                      </p>
+                    </>
                   ) : brandSlug === 'bowflex' ? (
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       Bowflex — это бренд из США с богатой историей, который уже почти сорок лет помогает людям по всему миру тренироваться дома и чувствовать себя лучше. С 1986 года компания создаёт удобные, надежные и современные тренажёры, которые подходят всем — от новичков до опытных спортсменов.
@@ -350,7 +380,7 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : brandSlug === 'sole-fitness' ? 'Что делает Sole Fitness особенным?' : brandSlug === 'peach-builder' ? 'Для кого создан PEACH BUILDER?' : brandSlug === 'gym80' ? 'Философия GYM80' : brandSlug === 'oktan' ? 'Инновации Octane Fitness' : brandSlug === 'visbody' ? 'Технологии Visbody' : brandSlug === 'bowflex' ? 'BOWFLEX ДЕЛАЕТ ТРЕНИРОВКИ ОСОБЕННЫМИ' : 'Наше оборудование выбирают:'}
+                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : brandSlug === 'sole-fitness' ? 'Что делает Sole Fitness особенным?' : brandSlug === 'peach-builder' ? 'Для кого создан PEACH BUILDER?' : brandSlug === 'gym80' ? 'Философия GYM80' : brandSlug === 'oktan' ? 'Инновации Octane Fitness' : brandSlug === 'visbody' ? 'Технологии Visbody' : brandSlug === 'bowflex' ? 'BOWFLEX ДЕЛАЕТ ТРЕНИРОВКИ ОСОБЕННЫМИ' : brandSlug === 'matrix' ? 'Кому подходят тренажеры Matrix?' : brandSlug === 'life-fitness' ? 'Преимущества Life Fitness' : brandSlug === 'technogym' ? 'Философия Technogym' : 'Наше оборудование выбирают:'}
                 </h2>
                 
                 {brandSlug === 'cardio-power' ? (
@@ -446,6 +476,18 @@ const Brand: React.FC = () => {
                       <strong>Умная аналитика:</strong> Персонализированные рекомендации по питанию и тренировкам на основе данных о составе тела.
                     </p>
                   </>
+                ) : brandSlug === 'matrix' ? (
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Сегодня тренажеры Matrix можно найти в ведущих фитнес-клубах и домашних спортзалах по всему миру. Они сочетают в себе профессиональное качество и интуитивно понятный интерфейс, что делает их подходящими как для опытных атлетов, так и для начинающих. Matrix — это выбор тех, кто ценит инновации и стремится к достижению лучших результатов.
+                  </p>
+                ) : brandSlug === 'life-fitness' ? (
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Заниматься на Life Fitness легко и приятно. Даже короткие тренировки дают заряд энергии и помогают достигать поставленных целей. Компания создала множество инновационных решений, которые делают тренировки более разнообразными и эффективными. Life Fitness — это выбор тех, кто серьезно относится к своему здоровью и ценит проверенное качество.
+                  </p>
+                ) : brandSlug === 'technogym' ? (
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Technogym выбирают те, кто хочет получить не просто тренажер, а целую экосистему для здорового образа жизни. Оборудование помогает достигать целей в удобном темпе, предоставляя полный контроль над процессом тренировок. Мы верим, что здоровье должно приносить радость, и поэтому создаем продукты, которые вдохновляют на активный образ жизни.
+                  </p>
                 ) : brandSlug === 'bowflex' ? (
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                     Тренажеры Bowflex легко узнать по их стильному дизайну, продуманной конструкции и высоким технологиям. Мы делаем всё, чтобы занятия были не только эффективными, но и приятными. Bowflex помогает сэкономить время и пространство, при этом вы получаете результат, как в настоящем спортзале.
