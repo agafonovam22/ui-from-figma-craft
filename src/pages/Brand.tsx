@@ -426,7 +426,7 @@ const Brand: React.FC = () => {
               {/* Left Image */}
               <div className="order-1 lg:order-1">
                 <img 
-                  src={brandSlug === 'smith' ? '/lovable-uploads/95a48b46-5ff6-4b23-9e6e-b3c2b1cc4da6.png' : '/lovable-uploads/b5c5bae5-0847-4917-87f3-3015c813643b.png'}
+                  src={brandSlug === 'smith' ? '/lovable-uploads/115516d2-e685-428d-8904-1aebdaec16f6.png' : '/lovable-uploads/b5c5bae5-0847-4917-87f3-3015c813643b.png'}
                   alt="Качество и комфорт"
                   className="w-full h-full object-cover rounded-lg"
                 />
