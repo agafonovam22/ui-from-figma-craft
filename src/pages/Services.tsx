@@ -206,7 +206,7 @@ const Services: React.FC = () => {
           {activeTab === 'service-request' && (
             <div className="flex gap-12 items-stretch">
               <div className="flex-1 flex flex-col min-h-[800px]">
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 mb-6 font-manrope">
                   Заполните заявку на сервис онлайн, и мы подберем наиболее удобный для вас вариант обслуживания. 
                   Наши специалисты свяжутся с вами в кратчайшие сроки!
                 </p>
@@ -223,125 +223,124 @@ const Services: React.FC = () => {
               <div className="flex-[0_0_70%]">
                 <form onSubmit={handleSubmit} className="space-y-5">
                   {/* Personal Data */}
-                  <Card>
-                    <CardContent className="p-4">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">Личные данные</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <Input
-                          placeholder="ФИО"
-                          value={formData.fullName}
-                          onChange={(e) => handleInputChange('fullName', e.target.value)}
-                        />
-                        <Input
-                          placeholder="Телефон"
-                          value={formData.phone}
-                          onChange={(e) => handleInputChange('phone', e.target.value)}
-                        />
-                        <Input
-                          placeholder="E-mail"
-                          type="email"
-                          value={formData.email}
-                          onChange={(e) => handleInputChange('email', e.target.value)}
-                        />
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-semibold mb-3" style={{color: '#5C6476'}}>Личные данные</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                      <Input
+                        placeholder="ФИО"
+                        value={formData.fullName}
+                        onChange={(e) => handleInputChange('fullName', e.target.value)}
+                      />
+                      <Input
+                        placeholder="Телефон"
+                        value={formData.phone}
+                        onChange={(e) => handleInputChange('phone', e.target.value)}
+                      />
+                      <Input
+                        placeholder="E-mail"
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => handleInputChange('email', e.target.value)}
+                      />
+                    </div>
+                  </div>
 
                   {/* Address */}
-                  <Card>
-                    <CardContent className="p-4">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">Адрес</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
-                        <Input
-                          placeholder="Город"
-                          value={formData.city}
-                          onChange={(e) => handleInputChange('city', e.target.value)}
-                        />
-                        <Input
-                          placeholder="Улица"
-                          value={formData.street}
-                          onChange={(e) => handleInputChange('street', e.target.value)}
-                        />
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <Input
-                          placeholder="Дом"
-                          value={formData.house}
-                          onChange={(e) => handleInputChange('house', e.target.value)}
-                        />
-                        <Input
-                          placeholder="Корпус"
-                          value={formData.building}
-                          onChange={(e) => handleInputChange('building', e.target.value)}
-                        />
-                        <Input
-                          placeholder="Квартира"
-                          value={formData.apartment}
-                          onChange={(e) => handleInputChange('apartment', e.target.value)}
-                        />
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-semibold mb-3" style={{color: '#5C6476'}}>Адрес</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+                      <Input
+                        placeholder="Город"
+                        value={formData.city}
+                        onChange={(e) => handleInputChange('city', e.target.value)}
+                      />
+                      <Input
+                        placeholder="Улица"
+                        value={formData.street}
+                        onChange={(e) => handleInputChange('street', e.target.value)}
+                      />
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                      <Input
+                        placeholder="Дом"
+                        value={formData.house}
+                        onChange={(e) => handleInputChange('house', e.target.value)}
+                      />
+                      <Input
+                        placeholder="Корпус"
+                        value={formData.building}
+                        onChange={(e) => handleInputChange('building', e.target.value)}
+                      />
+                      <Input
+                        placeholder="Квартира"
+                        value={formData.apartment}
+                        onChange={(e) => handleInputChange('apartment', e.target.value)}
+                      />
+                    </div>
+                  </div>
 
                   {/* Details */}
-                  <Card>
-                    <CardContent className="p-4">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">Подробности</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
-                        <select className="w-full p-3 border border-gray-300 rounded-lg">
-                          <option value="">Бренд</option>
-                          <option value="technogym">Technogym</option>
-                          <option value="precor">Precor</option>
-                          <option value="matrix">Matrix</option>
-                        </select>
-                        <select className="w-full p-3 border border-gray-300 rounded-lg">
-                          <option value="">Модель</option>
-                        </select>
-                        <Input
-                          placeholder="Дата покупки"
-                          type="date"
-                          value={formData.purchaseDate}
-                          onChange={(e) => handleInputChange('purchaseDate', e.target.value)}
-                        />
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
-                        <Input
-                          placeholder="Серийный номер"
-                          value={formData.serialNumber}
-                          onChange={(e) => handleInputChange('serialNumber', e.target.value)}
-                        />
-                        <Input
-                          placeholder="Номер гарантийного талона"
-                          value={formData.warrantyNumber}
-                          onChange={(e) => handleInputChange('warrantyNumber', e.target.value)}
-                        />
-                      </div>
-                      <Textarea
-                        placeholder="Описание неисправности"
-                        value={formData.description}
-                        onChange={(e) => handleInputChange('description', e.target.value)}
-                        rows={3}
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-semibold mb-3" style={{color: '#5C6476'}}>Подробности</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
+                      <Input
+                        placeholder="Бренд"
+                        value={formData.brand}
+                        onChange={(e) => handleInputChange('brand', e.target.value)}
                       />
-                    </CardContent>
-                  </Card>
+                      <Input
+                        placeholder="Модель"
+                        value={formData.model}
+                        onChange={(e) => handleInputChange('model', e.target.value)}
+                      />
+                      <Input
+                        placeholder="Дата покупки"
+                        type="date"
+                        value={formData.purchaseDate}
+                        onChange={(e) => handleInputChange('purchaseDate', e.target.value)}
+                      />
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+                      <Input
+                        placeholder="Серийный номер"
+                        value={formData.serialNumber}
+                        onChange={(e) => handleInputChange('serialNumber', e.target.value)}
+                      />
+                      <Input
+                        placeholder="Номер гарантийного талона"
+                        value={formData.warrantyNumber}
+                        onChange={(e) => handleInputChange('warrantyNumber', e.target.value)}
+                      />
+                    </div>
+                    <Textarea
+                      placeholder="Описание неисправности"
+                      value={formData.description}
+                      onChange={(e) => handleInputChange('description', e.target.value)}
+                      rows={3}
+                    />
+                  </div>
 
                   {/* File Upload */}
-                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                  <div className="flex justify-end">
                     <button
                       type="button"
-                      className="text-[#F53B49] border border-[#F53B49] px-6 py-2 rounded-lg hover:bg-[#F53B49] hover:text-white transition-colors"
+                      className="bg-[#F53B49] text-white px-6 py-2 rounded-lg hover:bg-[#e63946] transition-colors"
+                      style={{width: '349px', height: '16px', padding: '8px 16px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
                     >
                       Загрузить файл, не больше 10 МБ
                     </button>
                   </div>
 
                   {/* Submit Button */}
-                  <Button 
-                    type="submit"
-                    className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-3 text-lg font-semibold"
-                  >
-                    Отправить заявку
-                  </Button>
+                  <div className="flex justify-end">
+                    <Button 
+                      type="submit"
+                      className="bg-[#F53B49] hover:bg-[#e63946] text-white py-2 text-lg font-semibold"
+                      style={{width: '191px', height: '16px', padding: '8px 16px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                    >
+                      Отправить заявку
+                    </Button>
+                  </div>
                 </form>
               </div>
             </div>
