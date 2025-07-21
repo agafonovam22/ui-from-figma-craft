@@ -157,62 +157,6 @@ const Contacts: React.FC = () => {
           />
         </div>
 
-        {/* Single Image Gallery with Indicators */}
-        <div className="mb-12">
-          <div className="flex gap-8">
-            <div className="w-1/3">
-              <div className="relative">
-                <img 
-                  src={images[currentImageIndex]}
-                  alt={`Image ${currentImageIndex + 1}`}
-                  className="w-full h-[300px] object-cover rounded-lg"
-                />
-                
-                {/* Navigation arrows */}
-                <button
-                  onClick={prevImage}
-                  className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white shadow-lg transition-all duration-300"
-                  aria-label="Previous image"
-                >
-                  <ChevronLeft className="w-4 h-4 text-gray-700" />
-                </button>
-                
-                <button
-                  onClick={nextImage}
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white shadow-lg transition-all duration-300"
-                  aria-label="Next image"
-                >
-                  <ChevronRight className="w-4 h-4 text-gray-700" />
-                </button>
-              </div>
-              
-              {/* Progress indicator under the image */}
-              {images.length > 1 && (
-                <div className="flex gap-2 justify-center mt-4">
-                  {images.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentImageIndex(index)}
-                      className={`h-1 rounded-full transition-all duration-300 ${
-                        index === currentImageIndex 
-                          ? 'bg-[#F53B49] w-16' 
-                          : 'bg-gray-300 w-8 hover:bg-gray-400'
-                      }`}
-                      aria-label={`Go to slide ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
-            
-            <div className="w-2/3">
-              <div className="text-gray-700">
-                <p>Содержимое справа от изображения</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Office and Sales Departments */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
           <div className="bg-gray-50 rounded-lg p-6">
