@@ -333,7 +333,7 @@ const Services: React.FC = () => {
                   <div className="flex justify-start">
                     <button
                       type="button"
-                      className="bg-[#F53B49] text-white px-6 py-2 rounded-lg hover:bg-[#e63946] transition-colors"
+                      className="bg-transparent border border-[#F53B49] text-[#F53B49] px-6 py-2 rounded-lg hover:bg-[#F53B49] hover:text-white transition-colors"
                     >
                       Загрузить файл, не больше 10 МБ
                     </button>
