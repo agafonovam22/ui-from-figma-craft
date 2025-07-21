@@ -295,12 +295,17 @@ const Services: React.FC = () => {
                       />
                       <Input
                         placeholder="Дата покупки"
-                        type="date"
+                        type={formData.purchaseDate ? "date" : "text"}
                         value={formData.purchaseDate}
                         onChange={(e) => handleInputChange('purchaseDate', e.target.value)}
-                        onFocus={(e) => e.target.showPicker()}
-                        style={{
-                          color: formData.purchaseDate ? 'inherit' : '#9CA3AF'
+                        onFocus={(e) => {
+                          e.target.type = "date";
+                          e.target.showPicker();
+                        }}
+                        onBlur={(e) => {
+                          if (!e.target.value) {
+                            e.target.type = "text";
+                          }
                         }}
                       />
                     </div>
