@@ -204,7 +204,7 @@ const Services: React.FC = () => {
 
           {/* Service Request Tab Content - keep existing code */}
           {activeTab === 'service-request' && (
-            <div className="flex gap-12 items-end">
+            <div className="flex gap-12 items-stretch">
               <div className="flex-1 flex flex-col min-h-[800px]">
                 <p className="text-gray-600 mb-6 font-manrope">
                   Заполните заявку на сервис онлайн, и мы подберем наиболее удобный для вас вариант обслуживания. 
