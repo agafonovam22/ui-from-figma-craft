@@ -503,21 +503,21 @@ const Brand: React.FC = () => {
             <section className="w-full py-8">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div className="order-2 lg:order-1 lg:pr-8">
+                  <div className="order-1">
+                    <img 
+                      src="/lovable-uploads/9e9999cd-9452-4e0b-a1dd-3868bf5430fd.png"
+                      alt="Smith коммерческий успех"
+                      className="w-full object-cover rounded-lg"
+                      style={{ height: 'calc(100% - 100px)', maxHeight: '350px' }}
+                    />
+                  </div>
+                  <div className="order-2 lg:pl-8">
                     <h2 className="text-3xl font-benzin text-gray-900 mb-6">
                       Коммерческий успех начинается здесь
                     </h2>
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       Бренд SMITH — это не просто поставщик тренажеров, а партнер в построении успешного фитнес-бизнеса. Команда помогает с нуля оборудовать залы, модернизировать существующие пространства и подбирать оптимальные решения под любой бюджет. С двумя вариантами цвета рам и тремя вариантами обивки можно создать уникальный дизайн зала, который запомнится клиентам.
                     </p>
-                  </div>
-                  <div className="order-1 lg:order-2">
-                    <img 
-                      src="/lovable-uploads/a6bb124f-0c6a-489d-a512-751c98397f37.png"
-                      alt="Smith коммерческий успех"
-                      className="w-full object-cover rounded-lg"
-                      style={{ height: 'calc(100% - 100px)', maxHeight: '350px' }}
-                    />
                   </div>
                 </div>
               </div>
