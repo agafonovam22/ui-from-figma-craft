@@ -321,7 +321,7 @@ const Services: React.FC = () => {
                   </div>
 
                   {/* File Upload */}
-                  <div className="flex justify-end">
+                  <div className="flex justify-start">
                     <button
                       type="button"
                       className="bg-[#F53B49] text-white px-6 py-2 rounded-lg hover:bg-[#e63946] transition-colors"
@@ -331,7 +331,7 @@ const Services: React.FC = () => {
                   </div>
 
                   {/* Submit Button */}
-                  <div className="flex justify-end">
+                  <div className="flex justify-start">
                     <Button 
                       type="submit"
                       className="bg-[#F53B49] hover:bg-[#e63946] text-white py-3 text-lg font-semibold"
