@@ -869,8 +869,9 @@ const Brand: React.FC = () => {
               <div className="order-1 lg:order-2">
                 <img 
                   src={brandSlug === 'true' ? '/lovable-uploads/f0b8744d-a5e4-418e-9512-534ed70c17e6.png' : brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : brandSlug === 'gym80' ? '/lovable-uploads/08975827-d091-4c00-9cb5-85e93a4b1853.png' : brandSlug === 'schwinn' ? '/lovable-uploads/af9da9ea-dbaa-4e9f-ae2f-831cda031eba.png' : brandSlug === 'oktan' ? '/lovable-uploads/52c07468-4317-41f4-8313-bcc245be5785.png' : brandSlug === 'visbody' ? '/lovable-uploads/5c83f7c6-b329-4314-b2f2-d9c78efdb039.png' : brandSlug === 'matrix' ? '/lovable-uploads/cb496ca8-8206-42b7-9094-7ab9a37ae510.png' : brandSlug === 'smith' ? '/lovable-uploads/29a13612-d204-41d9-ba40-7a7881a0393b.png' : brandSlug === 'technogym' ? '/lovable-uploads/a6bb124f-0c6a-489d-a512-751c98397f37.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
-                  alt="Качество и надежность TRUE"
-                  className="w-full h-full object-cover rounded-lg"
+                  alt="Качество и надежность"
+                  className="w-full object-cover rounded-lg"
+                  style={{ height: '400px', maxWidth: '500px' }}
                 />
               </div>
             </div>
