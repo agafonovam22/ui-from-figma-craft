@@ -1045,6 +1045,158 @@ const Brand: React.FC = () => {
           </section>
         )}
 
+        {/* INSPIRE Content Blocks */}
+        {/* First Content Block - INSPIRE Block 1 */}
+        {brandSlug === 'inspire' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Text */}
+                <div className="order-2 lg:order-1 lg:pr-8">
+                  <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                    INSPIRE: Американское качество для профессионального тренинга
+                  </h2>
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    На протяжении четверти века бренд INSPIRE остается символом надежности и инноваций в мире фитнес-оборудования. С момента основания в 2003 году компания завоевала доверие профессионалов и любителей фитнеса по всему миру, предлагая уникальные решения для спортивных залов и домашних тренировок.
+                  </p>
+                </div>
+                
+                {/* Right Image */}
+                <div className="order-1 lg:order-2">
+                  <img 
+                    src="/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png"
+                    alt="INSPIRE тренажеры"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Second Content Block - INSPIRE Block 2 */}
+        {brandSlug === 'inspire' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Image */}
+                <div className="order-1">
+                  <img 
+                    src="/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png"
+                    alt="INSPIRE инженерное превосходство"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                
+                {/* Right Text */}
+                <div className="order-2 lg:pl-8">
+                  <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                    Инженерное превосходство в каждой детали
+                  </h2>
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Оборудование INSPIRE создается с применением передовых технологий и материалов премиум-класса. Прочные стальные трубы с антикоррозийным покрытием формируют основу конструкции, гарантируя исключительную долговечность даже при интенсивной эксплуатации. Особое внимание уделяется подвижным элементам: шкивы из армированного нейлона и металлические шарикоподшипники обеспечивают плавность хода и бесшумность работы на протяжении многих лет.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Third Content Block - INSPIRE Block 3 */}
+        {brandSlug === 'inspire' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Text */}
+                <div className="order-2 lg:order-1 lg:pr-8">
+                  <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                    Уникальные особенности тренажеров INSPIRE
+                  </h2>
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Главной отличительной чертой оборудования INSPIRE является продуманная многофункциональность. Каждая машина сочетает в себе несколько тренировочных зон, позволяя прорабатывать различные группы мышц без необходимости использования дополнительных устройств. Конструкторы бренда уделяют особое внимание компактности, что делает их продукцию идеальным решением даже для малогабаритных помещений.
+                    <br /><br />
+                    Биомеханически совершенные угловые конструкции обеспечивают естественную траекторию движений, минимизируя нагрузку на суставы. Ортопедические подушки и регулируемые элементы создают непревзойденный комфорт во время тренировок, а тросы с нагрузочной способностью до одной тонны гарантируют абсолютную безопасность.
+                  </p>
+                </div>
+                
+                {/* Right Image */}
+                <div className="order-1 lg:order-2">
+                  <img 
+                    src="/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png"
+                    alt="INSPIRE уникальные особенности"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Fourth Content Block - INSPIRE Block 4 */}
+        {brandSlug === 'inspire' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Image */}
+                <div className="order-1">
+                  <img 
+                    src="/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png"
+                    alt="INSPIRE ассортимент"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                
+                {/* Right Text */}
+                <div className="order-2 lg:pl-8">
+                  <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                    Широкий ассортимент для комплексных решений
+                  </h2>
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    INSPIRE предлагает полный спектр оборудования для профессионального и домашнего использования:
+                    <br />• Многофункциональные силовые станции
+                    <br />• Кардиотренажеры
+                    <br />• Скамьи и стойки
+                    <br />• Рамы и машины Смита
+                    <br />• Специализированные мультистанции
+                    <br /><br />
+                    Профессиональные тренеры выбирают INSPIRE за безупречное качество и продуманную эргономику. Владельцы фитнес-клубов ценят надежность и долговечность, снижающие эксплуатационные расходы. Для домашних пользователей бренд предлагает компактные решения, сочетающие в себе функциональность профессионального оборудования с удобством бытового использования.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Fifth Content Block - INSPIRE Block 5 */}
+        {brandSlug === 'inspire' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Text */}
+                <div className="order-2 lg:order-1 lg:pr-8">
+                  <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                    Глобальное признание
+                  </h2>
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    С момента основания INSPIRE успешно завоевал рынки Северной Америки, Европы и Азии, став синонимом американского качества в фитнес-индустрии. Постоянные инновации и внимание к потребностям клиентов позволяют бренду оставаться на передовой спортивных технологий, предлагая оборудование, которое не просто соответствует текущим стандартам, а задает новые тенденции в мире фитнеса.
+                    <br /><br />
+                    Выбирая INSPIRE, вы инвестируете в оборудование, которое будет служить годами, помогая достигать спортивных целей с комфортом и безопасностью. Это выбор тех, кто ценит проверенное качество и стремится к совершенству в каждой тренировке.
+                  </p>
+                </div>
+                
+                {/* Right Image */}
+                <div className="order-1 lg:order-2">
+                  <img 
+                    src="/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png"
+                    alt="INSPIRE глобальное признание"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Ideas and Selections */}
         <IdeasSelections />
 
