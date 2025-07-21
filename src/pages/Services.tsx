@@ -211,7 +211,7 @@ const Services: React.FC = () => {
                   Наши специалисты свяжутся с вами в кратчайшие сроки!
                 </p>
                 
-                <div className="mt-[280px]">
+                <div className="mt-[310px]">
                   <img 
                     src="/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png"
                     alt="Женщина тренируется в спортзале"
