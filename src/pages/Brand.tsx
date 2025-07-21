@@ -923,7 +923,7 @@ const Brand: React.FC = () => {
                 {/* Right Image */}
                 <div className="order-1 lg:order-2">
                   <img 
-                    src="/lovable-uploads/3f75976a-d8e7-4175-9622-e96a69902537.png"
+                    src="/lovable-uploads/19009cbe-8de2-44a4-8a86-3cb639e09eec.png"
                     alt="SMITH оборудование"
                     className="w-full h-full object-cover rounded-lg"
                   />
