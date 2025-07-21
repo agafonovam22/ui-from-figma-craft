@@ -221,7 +221,7 @@ const Services: React.FC = () => {
                   />
                   
                   {/* Progress indicators */}
-                  <div className="flex justify-center gap-2 mt-4">
+                  <div className="flex justify-center gap-2 mt-[22px]">
                     <div className="h-1 w-8 bg-[#F53B49] rounded-full"></div>
                     <div className="h-1 w-8 bg-gray-300 rounded-full"></div>
                     <div className="h-1 w-8 bg-gray-300 rounded-full"></div>
