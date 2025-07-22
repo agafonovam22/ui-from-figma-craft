@@ -584,49 +584,6 @@ const Support: React.FC = () => {
                 </div>
               </div>
 
-              {/* Разделительная линия */}
-              <div className="h-px bg-gray-300"></div>
-
-              {/* Условия возврата товара */}
-              <div className="flex gap-8">
-                <div className="w-80 flex-shrink-0">
-                  <h3 style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '20px'
-                  }}>Условия возврата товара</h3>
-                </div>
-                <div className="flex-1">
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-lg font-medium mb-4">Возврат товара надлежащего качества возможен при условии:</h4>
-                      <div className="space-y-4">
-                        <div className="flex gap-4">
-                          <span className="text-[#F53B49] font-bold text-lg">1</span>
-                          <p className="text-gray-700">
-                            Сохранения его потребительских свойств и товарного вида (отсутствие следов эксплуатации и носки, наличие оригинальной и неповрежденной упаковки и ярлыков).
-                          </p>
-                        </div>
-                        <div className="flex gap-4">
-                          <span className="text-[#F53B49] font-bold text-lg">2</span>
-                          <p className="text-gray-700">
-                            Наличия документа, подтверждающего факт и условия покупки товара (кассовый чек или товарный чек)*.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-medium mb-4">Возврат товара не надлежащего качества возможен при условии:</h4>
-                      <p className="text-gray-700">
-                        Возврат товара ненадлежащего качества возможен при условии сохранения документа, подтверждающего факт и условия покупки указанного товара (кассовый чек или товарный чек)*.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Разделительная линия */}
-              <div className="h-px bg-gray-300"></div>
-
               {/* Возврат товара по качеству */}
               <div className="flex gap-8">
                 <div className="w-80 flex-shrink-0">
