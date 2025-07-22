@@ -269,10 +269,11 @@ const Support: React.FC = () => {
                         fontFamily: 'Benzin-Medium',
                         fontSize: '20px'
                       }}>Склад</h4>
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-700 flex-1">
-                          Московская область, Красногорский р-н, д. Гольево, улица Центральная ул., с44,
-                        </span>
+                      <div className="flex justify-between items-start">
+                        <div className="text-gray-700 flex-1">
+                          <div>Московская область, Красногорский р-н, д.</div>
+                          <div>Гольево, улица Центральная ул., с44,</div>
+                        </div>
                         <div className="flex items-center gap-2 ml-4">
                           <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                           <span className="text-sm text-green-600 font-medium">В наличии</span>
@@ -290,17 +291,21 @@ const Support: React.FC = () => {
                         fontFamily: 'Benzin-Medium',
                         fontSize: '20px'
                       }}>Дополнительный склад</h4>
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-700 flex-1">
-                          Красногвардейский пер 23 лит Е, территория завода "Ильич", заезд с Вязского переулка.
-                        </span>
-                        <div className="flex items-center gap-2 ml-4">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <span className="text-sm text-green-600 font-medium">В наличии</span>
-                          <span className="text-sm text-gray-600 ml-2">пн - пт с 10:00-18:00</span>
-                          <span className="text-sm text-gray-600 ml-4">
-                            Выдача осуществляется оформленных заказов, при согласовании даты и времени приезда
-                          </span>
+                      <div className="flex justify-between items-start">
+                        <div className="text-gray-700 flex-1">
+                          <div>Красногвардейский пер 23 лит Е, территория</div>
+                          <div>завода "Ильич", заезд с Вязского переулка.</div>
+                        </div>
+                        <div className="flex flex-col items-end gap-1 ml-4">
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span className="text-sm text-green-600 font-medium">В наличии</span>
+                            <span className="text-sm text-gray-600 ml-2">пн - пт с 10:00-18:00</span>
+                          </div>
+                          <div className="text-sm text-gray-600 text-right">
+                            <div>Выдача осуществляется оформленных заказов, при</div>
+                            <div>согласовании даты и времени приезда</div>
+                          </div>
                         </div>
                       </div>
                     </div>
