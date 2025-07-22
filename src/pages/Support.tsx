@@ -452,14 +452,17 @@ const Support: React.FC = () => {
                     </div>
                   </div>
                 </div>
+              </div>
 
-                {/* Оплата для физ. лиц */}
-                <div className="mb-8">
+              {/* Оплата для физ. лиц */}
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
                   <h4 className="mb-6" style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Оплата для физ. лиц</h4>
-                  
+                </div>
+                <div className="flex-1">
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                     {/* Оплата наличными */}
                     <div className="bg-gray-800 text-white p-6 rounded-lg">
@@ -512,14 +515,17 @@ const Support: React.FC = () => {
                     </div>
                   </div>
                 </div>
+              </div>
 
-                {/* Оплата для юр. лиц */}
-                <div>
+              {/* Оплата для юр. лиц */}
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
                   <h4 className="mb-6" style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Оплата для юр. лиц</h4>
-                  
+                </div>
+                <div className="flex-1">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Оплата онлайн */}
                     <div className="bg-gray-50 p-6 rounded-lg">
