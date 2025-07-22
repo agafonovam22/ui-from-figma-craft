@@ -678,12 +678,14 @@ const Support: React.FC = () => {
               </div>
 
               {/* Сроки возврата денежных средств */}
-              <div className="mb-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              <div className="flex gap-8 mb-8">
+                <div className="w-80 flex-shrink-0">
                   <h3 style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Сроки возврата денежных средств</h3>
+                </div>
+                <div className="flex-1">
                   <div className="bg-gray-100 p-6 rounded-lg">
                     <p className="text-gray-700">
                       Срок возврата денежных средств зависит от способа возврата товара и составляет не более 10 дней с даты поступления возвращенного товара в интернет-магазин вместе с заполненным заявлением на возврат. По итогам проведения экспертизы товара принимается решение о возврате или не возврате денежных средств.
