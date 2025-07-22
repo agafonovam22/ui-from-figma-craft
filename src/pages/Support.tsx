@@ -422,44 +422,43 @@ const Support: React.FC = () => {
                       </div>
 
                       {/* Delivery Options */}
-                      <div className="space-y-4">
-                        <h5 className="font-medium mb-4">Варианты доставки:</h5>
+                       <div className="space-y-4">
                         <div className="space-y-3">
-                          <div className="grid grid-cols-3 gap-4 items-center">
-                            <div>
-                              <div className="font-medium">СДЭК</div>
-                              <div className="text-sm text-gray-600">До 2 дней</div>
-                            </div>
-                            <div className="text-sm text-gray-600">До пункта выдачи</div>
-                            <div className="font-medium">2 000 ₽</div>
-                          </div>
+                           <div className="grid grid-cols-3 gap-4 items-center">
+                             <div>
+                               <div className="font-medium" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>СДЭК</div>
+                               <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
+                             </div>
+                             <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До пункта выдачи</div>
+                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000 ₽</div>
+                           </div>
                           <div className="h-px bg-gray-300"></div>
-                          <div className="grid grid-cols-3 gap-4 items-center">
-                            <div>
-                              <div className="font-medium">СДЭК</div>
-                              <div className="text-sm text-gray-600">До 2 дней</div>
-                            </div>
-                            <div className="text-sm text-gray-600">До двери</div>
-                            <div className="font-medium">2 000 ₽</div>
-                          </div>
+                           <div className="grid grid-cols-3 gap-4 items-center">
+                             <div>
+                               <div className="font-medium" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>СДЭК</div>
+                               <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
+                             </div>
+                             <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До двери</div>
+                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000 ₽</div>
+                           </div>
                           <div className="h-px bg-gray-300"></div>
-                          <div className="grid grid-cols-3 gap-4 items-center">
-                            <div>
-                              <div className="font-medium">Деловые линии</div>
-                              <div className="text-sm text-gray-600">До 2 дней</div>
-                            </div>
-                            <div className="text-sm text-gray-600">До пункта выдачи</div>
-                            <div className="font-medium">2 000 ₽</div>
-                          </div>
+                           <div className="grid grid-cols-3 gap-4 items-center">
+                             <div>
+                               <div className="font-medium" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Деловые линии</div>
+                               <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
+                             </div>
+                             <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До пункта выдачи</div>
+                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000 ₽</div>
+                           </div>
                           <div className="h-px bg-gray-300"></div>
-                          <div className="grid grid-cols-3 gap-4 items-center">
-                            <div>
-                              <div className="font-medium">Деловые линии</div>
-                              <div className="text-sm text-gray-600">До 2 дней</div>
-                            </div>
-                            <div className="text-sm text-gray-600">До пункта выдачи</div>
-                            <div className="font-medium">2 000 ₽</div>
-                          </div>
+                           <div className="grid grid-cols-3 gap-4 items-center">
+                             <div>
+                               <div className="font-medium" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Деловые линии</div>
+                               <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
+                             </div>
+                             <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До пункта выдачи</div>
+                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000 ₽</div>
+                           </div>
                         </div>
                       </div>
                     </div>
