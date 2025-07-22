@@ -597,7 +597,7 @@ const Services: React.FC = () => {
                         <img
                           src={video.thumbnail}
                           alt={video.title}
-                          className="w-full object-cover transition-transform group-hover:scale-105" style={{ height: '286px' }}
+                          className="w-full object-cover transition-transform group-hover:scale-105" style={{ height: '216px' }}
                         />
                         {/* Play Button Overlay */}
                         <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
