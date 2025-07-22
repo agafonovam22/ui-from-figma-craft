@@ -645,7 +645,7 @@ const Support: React.FC = () => {
                       <h4 className="text-lg font-medium mb-4">Возврат товара надлежащего качества возможен при условии:</h4>
                       <div className="space-y-4">
                         <div className="flex items-start gap-4">
-                          <div className="bg-[#F53B49] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                          <div className="text-[#F53B49] font-bold text-lg flex-shrink-0">
                             1
                           </div>
                           <p className="text-gray-700">
