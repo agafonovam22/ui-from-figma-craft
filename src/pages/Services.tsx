@@ -534,8 +534,9 @@ const Services: React.FC = () => {
           {/* Video Instructions Tab Content */}
           {activeTab === 'video-instructions' && (
             <div className="flex gap-8">
-              {/* Filter Sidebar in Gray Container */}
-              <div className="w-64 flex-shrink-0">
+              {/* Filter Sidebar */}
+              <div className="w-64 flex-shrink-0 space-y-6">
+                {/* Filter Categories and Buttons in Gray Container */}
                 <div className="bg-gray-100 p-6 rounded space-y-6">
                   {/* Filter Categories */}
                   <div>
@@ -566,24 +567,24 @@ const Services: React.FC = () => {
                       Сбросить
                     </Button>
                   </div>
+                </div>
 
-                  {/* Advertisement Block */}
-                  <div className="bg-gray-800 text-white p-6 rounded">
-                    <h3 
-                      className="mb-4"
-                      style={{
-                        fontFamily: 'Benzin-Semibold',
-                        fontSize: '24px',
-                        fontStyle: 'normal',
-                        color: '#FFF'
-                      }}
-                    >
-                      Место для рекламы
-                    </h3>
-                    <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white flex items-center gap-2">
-                      Перейти <ChevronRight className="w-4 h-4" />
-                    </Button>
-                  </div>
+                {/* Advertisement Block - Outside the gray container */}
+                <div className="bg-gray-800 text-white p-6 rounded">
+                  <h3 
+                    className="mb-4"
+                    style={{
+                      fontFamily: 'Benzin-Semibold',
+                      fontSize: '24px',
+                      fontStyle: 'normal',
+                      color: '#FFF'
+                    }}
+                  >
+                    Место для рекламы
+                  </h3>
+                  <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white flex items-center gap-2">
+                    Перейти <ChevronRight className="w-4 h-4" />
+                  </Button>
                 </div>
               </div>
 
