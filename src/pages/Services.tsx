@@ -535,7 +535,7 @@ const Services: React.FC = () => {
           {activeTab === 'video-instructions' && (
             <div className="flex gap-8">
               {/* Filter Sidebar */}
-              <div className="w-64 flex-shrink-0 space-y-8">
+              <div className="w-64 flex-shrink-0">
                 {/* Filter Categories and Buttons in Gray Container */}
                 <div className="bg-gray-100 p-4 rounded space-y-4 h-[300px]">
                   {/* Filter Categories */}
@@ -570,7 +570,7 @@ const Services: React.FC = () => {
                 </div>
 
                 {/* Advertisement Block - Outside the gray container */}
-                <div className="bg-gray-800 text-white p-6 rounded mt-[120px]">
+                <div className="bg-gray-800 text-white p-6 rounded" style={{ marginTop: '120px' }}>
                   <h3 
                     className="mb-4"
                     style={{
