@@ -18,7 +18,7 @@ const About: React.FC = () => {
 
   const teamMembers = [
     {
-      name: 'Эмилия Имя Отчество',
+      name: 'Фамилия Имя Отчество',
       position: 'Должность',
       description: 'Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение',
       phone: '+7 900 000-00-00',
@@ -269,7 +269,7 @@ const About: React.FC = () => {
                       }}
                     >
                       {/* Name above white container */}
-                      <div className="absolute bottom-[120px] left-4 text-white">
+                      <div className="absolute bottom-[140px] left-4 text-white">
                         <h3 className="text-base font-medium" style={{ fontFamily: 'Benzin-Semibold' }}>
                           {member.name}
                         </h3>
