@@ -164,7 +164,14 @@ const Support: React.FC = () => {
               {/* Стоимость доставки */}
               <div className="flex gap-8">
                 <div className="w-80 flex-shrink-0">
-                  <h3 className="text-2xl font-semibold text-gray-900">Стоимость доставки</h3>
+                  <h3 className="text-[20px] leading-[140%]" style={{
+                    color: 'var(--Dark-Grey, #262631)',
+                    fontFamily: 'Benzin-Medium, sans-serif',
+                    fontSize: '20px',
+                    fontStyle: 'normal',
+                    fontWeight: '400',
+                    lineHeight: '140%'
+                  }}>Стоимость доставки</h3>
                 </div>
                 <div className="flex-1">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -203,7 +210,14 @@ const Support: React.FC = () => {
 
               {/* Самовывоз со склада */}
               <div>
-                <h3 className="text-2xl font-semibold mb-6">Самовывоз со склада</h3>
+                <h3 className="text-[20px] leading-[140%] mb-6" style={{
+                  color: 'var(--Dark-Grey, #262631)',
+                  fontFamily: 'Benzin-Medium, sans-serif',
+                  fontSize: '20px',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: '140%'
+                }}>Самовывоз со склада</h3>
                 
                 {/* Warehouse Information */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
@@ -239,7 +253,14 @@ const Support: React.FC = () => {
 
                 {/* Доставка по России */}
                 <div className="mb-8">
-                  <h4 className="text-xl font-semibold mb-4">Доставка по России</h4>
+                  <h4 className="text-[20px] leading-[140%] mb-4" style={{
+                    color: 'var(--Dark-Grey, #262631)',
+                    fontFamily: 'Benzin-Medium, sans-serif',
+                    fontSize: '20px',
+                    fontStyle: 'normal',
+                    fontWeight: '400',
+                    lineHeight: '140%'
+                  }}>Доставка по России</h4>
                   <p className="text-gray-700 mb-4">
                     Определяется сроками доставки транспортной компании. Доставка товара на склад транспортной компании осуществляется в течение 1-2 дней с момента заказа, в режиме работы: Понедельник - Пятница
                   </p>
@@ -284,7 +305,14 @@ const Support: React.FC = () => {
 
                 {/* Калькулятор доставки */}
                 <div>
-                  <h4 className="text-xl font-semibold mb-6">Калькулятор доставки</h4>
+                  <h4 className="text-[20px] leading-[140%] mb-6" style={{
+                    color: 'var(--Dark-Grey, #262631)',
+                    fontFamily: 'Benzin-Medium, sans-serif',
+                    fontSize: '20px',
+                    fontStyle: 'normal',
+                    fontWeight: '400',
+                    lineHeight: '140%'
+                  }}>Калькулятор доставки</h4>
                   
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Calculator Form */}
@@ -370,7 +398,14 @@ const Support: React.FC = () => {
 
                 {/* Оплата для физ. лиц */}
                 <div className="mb-8">
-                  <h4 className="text-xl font-semibold mb-6">Оплата для физ. лиц</h4>
+                  <h4 className="text-[20px] leading-[140%] mb-6" style={{
+                    color: 'var(--Dark-Grey, #262631)',
+                    fontFamily: 'Benzin-Medium, sans-serif',
+                    fontSize: '20px',
+                    fontStyle: 'normal',
+                    fontWeight: '400',
+                    lineHeight: '140%'
+                  }}>Оплата для физ. лиц</h4>
                   
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                     {/* Оплата наличными */}
@@ -427,7 +462,14 @@ const Support: React.FC = () => {
 
                 {/* Оплата для юр. лиц */}
                 <div>
-                  <h4 className="text-xl font-semibold mb-6">Оплата для юр. лиц</h4>
+                  <h4 className="text-[20px] leading-[140%] mb-6" style={{
+                    color: 'var(--Dark-Grey, #262631)',
+                    fontFamily: 'Benzin-Medium, sans-serif',
+                    fontSize: '20px',
+                    fontStyle: 'normal',
+                    fontWeight: '400',
+                    lineHeight: '140%'
+                  }}>Оплата для юр. лиц</h4>
                   
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Оплата онлайн */}
