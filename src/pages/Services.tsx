@@ -363,7 +363,7 @@ const Services: React.FC = () => {
 
           {/* Fitness Clubs Tab Content - keep existing code */}
           {activeTab === 'fitness-clubs' && (
-            <div className="space-y-12 mb-[100px]">
+            <div className="space-y-12">
               {/* First section with image and text */}
               <div className="flex gap-8 items-center">
                 <div className="flex-1">
