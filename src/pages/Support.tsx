@@ -177,14 +177,9 @@ const Support: React.FC = () => {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Left Column */}
                     <div className="bg-gray-50 p-6 rounded-lg">
-                      <h4 className="mb-4" style={{
-                        color: 'var(--Dark-Grey, #262631)',
+                      <h4 className="mb-4 pb-3 border-b" style={{
                         fontFamily: 'Benzin-Medium, sans-serif',
-                        fontSize: '16px',
-                        fontStyle: 'normal',
-                        fontWeight: '400',
-                        lineHeight: '110%',
-                        letterSpacing: '0.32px'
+                        fontSize: '16px'
                       }}>Заказ от 30 001 ₽</h4>
                       <div className="space-y-4">
                         <div className="flex justify-between items-center py-3 border-b">
@@ -227,15 +222,10 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* Right Column */}
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h4 className="mb-4" style={{
-                        color: 'var(--Dark-Grey, #262631)',
+                    <div className="bg-gray-50 p-6 rounded-lg" style={{ minHeight: 'auto' }}>
+                      <h4 className="mb-4 pb-3 border-b" style={{
                         fontFamily: 'Benzin-Medium, sans-serif',
-                        fontSize: '16px',
-                        fontStyle: 'normal',
-                        fontWeight: '400',
-                        lineHeight: '110%',
-                        letterSpacing: '0.32px'
+                        fontSize: '16px'
                       }}>Заказ до 30 000 ₽</h4>
                       <div className="space-y-4">
                         <div className="flex justify-between items-center py-3 border-b">
@@ -250,6 +240,7 @@ const Support: React.FC = () => {
                           }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
                           <span className="text-[#F53B49] font-semibold">1000 ₽</span>
                         </div>
+                        <div className="pb-8"></div>
                       </div>
                     </div>
                   </div>
