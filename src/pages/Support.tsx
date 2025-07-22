@@ -130,49 +130,59 @@ const Support: React.FC = () => {
 
           {/* Tab Content */}
           {activeTab === 'delivery' && (
-            <div className="space-y-8">
-              {/* Delivery Info */}
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4">
-                  Город доставки <span className="text-[#F53B49]">Москва</span>
-                </h3>
-                <p className="text-gray-700">
-                  Доставка по Москве осуществляется в течение 1-2 дней с момента заказа.<br />
-                  Ежедневно с 9:00 до 21:00
-                </p>
+            <div className="space-y-12">
+              {/* Город доставки */}
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
+                  <h3 className="text-2xl font-semibold text-gray-900">Город доставки</h3>
+                </div>
+                <div className="flex-1">
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <h4 className="text-xl font-semibold mb-4">
+                      Город доставки <span className="text-[#F53B49]">Москва</span>
+                    </h4>
+                    <p className="text-gray-700">
+                      Доставка по Москве осуществляется в течение 1-2 дней с момента заказа.<br />
+                      Ежедневно с 9:00 до 21:00
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              {/* Delivery Cost */}
-              <div>
-                <h3 className="text-2xl font-semibold mb-6">Стоимость доставки</h3>
-                
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {/* Left Column */}
-                  <div>
-                    <h4 className="text-lg font-medium mb-4">Заказ от 30 001 ₽</h4>
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-center py-3 border-b">
-                        <span className="text-gray-700">Автомобильная доставка по г. Москве в пределах МКАД</span>
-                        <span className="text-[#F53B49] font-semibold">Бесплатно</span>
-                      </div>
-                      <div className="flex justify-between items-center py-3 border-b">
-                        <span className="text-gray-700">Автомобильная доставка по Московской Области</span>
-                        <span className="text-[#F53B49] font-semibold">30₽/км</span>
-                      </div>
-                      <div className="flex justify-between items-center py-3 border-b">
-                        <span className="text-gray-700">Курьерская доставка (вес до 3 кг)</span>
-                        <span className="text-[#F53B49] font-semibold">500₽</span>
+              {/* Стоимость доставки */}
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
+                  <h3 className="text-2xl font-semibold text-gray-900">Стоимость доставки</h3>
+                </div>
+                <div className="flex-1">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {/* Left Column */}
+                    <div>
+                      <h4 className="text-lg font-medium mb-4">Заказ от 30 001 ₽</h4>
+                      <div className="space-y-4">
+                        <div className="flex justify-between items-center py-3 border-b">
+                          <span className="text-gray-700">Автомобильная доставка по г. Москве в пределах МКАД</span>
+                          <span className="text-[#F53B49] font-semibold">Бесплатно</span>
+                        </div>
+                        <div className="flex justify-between items-center py-3 border-b">
+                          <span className="text-gray-700">Автомобильная доставка по Московской Области</span>
+                          <span className="text-[#F53B49] font-semibold">30₽/км</span>
+                        </div>
+                        <div className="flex justify-between items-center py-3 border-b">
+                          <span className="text-gray-700">Курьерская доставка (вес до 3 кг)</span>
+                          <span className="text-[#F53B49] font-semibold">500₽</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Right Column */}
-                  <div>
-                    <h4 className="text-lg font-medium mb-4">Заказ до 30 000 ₽</h4>
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-center py-3 border-b">
-                        <span className="text-gray-700">Автомобильная доставка по г. Москве в пределах МКАД</span>
-                        <span className="text-[#F53B49] font-semibold">1000 ₽</span>
+                    {/* Right Column */}
+                    <div>
+                      <h4 className="text-lg font-medium mb-4">Заказ до 30 000 ₽</h4>
+                      <div className="space-y-4">
+                        <div className="flex justify-between items-center py-3 border-b">
+                          <span className="text-gray-700">Автомобильная доставка по г. Москве в пределах МКАД</span>
+                          <span className="text-[#F53B49] font-semibold">1000 ₽</span>
+                        </div>
                       </div>
                     </div>
                   </div>
