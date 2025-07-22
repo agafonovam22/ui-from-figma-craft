@@ -139,31 +139,35 @@ const Support: React.FC = () => {
                   <h3 className="text-2xl font-semibold text-gray-900">Самовывоз со склада</h3>
                 </div>
                 <div className="flex-1">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                    {/* Main Warehouse */}
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h4 className="text-lg font-medium mb-4">Склад</h4>
-                      <p className="text-gray-700 mb-4">
-                        Московская область, Красногорский р-н, д. Гольево, улица Центральная ул., с44,
-                      </p>
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                        <span className="text-sm text-green-600 font-medium">В наличии</span>
+                  <div className="space-y-6">
+                    {/* Склад */}
+                    <div>
+                      <div className="flex items-center gap-4 mb-2">
+                        <h4 className="text-lg font-medium text-gray-900">Склад</h4>
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                          <span className="text-sm text-green-600 font-medium">В наличии</span>
+                        </div>
                         <span className="text-sm text-gray-600">пн - пт с 09:30-18:00</span>
                       </div>
+                      <p className="text-gray-700">
+                        Московская область, Красногорский р-н, д. Гольево, улица Центральная ул., с44,
+                      </p>
                     </div>
 
-                    {/* Additional Warehouse */}
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h4 className="text-lg font-medium mb-4">Дополнительные склад</h4>
-                      <p className="text-gray-700 mb-4">
-                        Красногвардейский пер 23 лит Е, территория завода "Ильич", заезд с Вязского переулка.
-                      </p>
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                        <span className="text-sm text-green-600 font-medium">В наличии</span>
+                    {/* Дополнительные склад */}
+                    <div>
+                      <div className="flex items-center gap-4 mb-2">
+                        <h4 className="text-lg font-medium text-gray-900">Дополнительные склад</h4>
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                          <span className="text-sm text-green-600 font-medium">В наличии</span>
+                        </div>
                         <span className="text-sm text-gray-600">пн - пт с 10:00-18:00</span>
                       </div>
+                      <p className="text-gray-700 mb-2">
+                        Красногвардейский пер 23 лит Е, территория завода "Ильич", заезд с Вязского переулка.
+                      </p>
                       <p className="text-sm text-gray-600">
                         Выдача осуществляется оформленных заказов, при согласовании даты и времени приезда
                       </p>
@@ -186,35 +190,35 @@ const Support: React.FC = () => {
                   </p>
 
                   {/* Transport Companies */}
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                  <div className="grid grid-cols-3 gap-8">
                     <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2">
-                        <span className="font-medium">DPD</span>
+                      <div className="bg-gray-100 p-4 rounded-lg mb-2 h-16 flex items-center justify-center">
+                        <span className="font-medium text-gray-700">DPD</span>
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2">
-                        <span className="font-medium">DPD</span>
+                      <div className="bg-gray-100 p-4 rounded-lg mb-2 h-16 flex items-center justify-center">
+                        <span className="font-medium text-gray-700">DPD</span>
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2">
-                        <span className="font-medium">СДЭК</span>
+                      <div className="bg-gray-100 p-4 rounded-lg mb-2 h-16 flex items-center justify-center">
+                        <span className="font-medium text-gray-700">СДЭК</span>
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2">
-                        <span className="font-medium">СДЭК</span>
+                      <div className="bg-gray-100 p-4 rounded-lg mb-2 h-16 flex items-center justify-center">
+                        <span className="font-medium text-gray-700">СДЭК</span>
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2">
-                        <span className="font-medium">Байкал сервис</span>
+                      <div className="bg-gray-100 p-4 rounded-lg mb-2 h-16 flex items-center justify-center">
+                        <span className="font-medium text-gray-700">Байкал сервис</span>
                       </div>
                     </div>
                     <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2">
-                        <span className="font-medium">Байкал сервис</span>
+                      <div className="bg-gray-100 p-4 rounded-lg mb-2 h-16 flex items-center justify-center">
+                        <span className="font-medium text-gray-700">Байкал сервис</span>
                       </div>
                     </div>
                   </div>
