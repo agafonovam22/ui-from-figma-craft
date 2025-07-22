@@ -272,7 +272,7 @@ const Support: React.FC = () => {
                              fontSize: '20px'
                            }}>Склад</h4>
                            <p className="text-gray-700">
-                             МО, Красногорский р-н, д. Гольево, ул. Центральная, с44
+                             Московская область, Красногорский р-н, д. Гольево, улица Центральная ул., с44,
                            </p>
                          </div>
                          <div className="flex items-center gap-2 ml-8">
@@ -294,7 +294,7 @@ const Support: React.FC = () => {
                              fontSize: '20px'
                            }}>Дополнительные склад</h4>
                            <p className="text-gray-700">
-                             Красногвардейский пер 23 лит Е, завод "Ильич"
+                             Красногвардейский пер 23 лит Е, территория завода "Ильич", заезд с Вязского переулка.
                            </p>
                          </div>
                          <div className="flex items-center gap-2 ml-8">
