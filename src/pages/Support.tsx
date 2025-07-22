@@ -341,21 +341,21 @@ const Support: React.FC = () => {
                         {/* DPD Row */}
                         <div className="flex">
                           <span className="font-medium">DPD</span>
-                          <span className="font-medium ml-[60px]">DPD</span>
+                          <span className="font-medium ml-[60px] text-left">DPD</span>
                         </div>
                         <div className="h-px bg-gray-300"></div>
                         
                         {/* СДЭК Row */}
                         <div className="flex">
                           <span className="font-medium">СДЭК</span>
-                          <span className="font-medium ml-[60px]">СДЭК</span>
+                          <span className="font-medium ml-[60px] text-left">СДЭК</span>
                         </div>
                         <div className="h-px bg-gray-300"></div>
                         
                         {/* Байкал Сервис Row */}
                         <div className="flex">
                           <span className="font-medium">Байкал Сервис</span>
-                          <span className="font-medium ml-[60px]">Байкал Сервис</span>
+                          <span className="font-medium ml-[60px] text-left">Байкал Сервис</span>
                         </div>
                       </div>
                     </div>
