@@ -262,18 +262,12 @@ const Support: React.FC = () => {
                   }}>Самовывоз со склада</h3>
                 </div>
                 <div className="flex-1">
-                  <div className="space-y-6">
+                  <div className="space-y-4">
                     {/* Main Warehouse */}
-                    <div className="flex justify-between items-start">
-                      <div className="flex-1">
-                        <h4 className="mb-2" style={{
-                          fontFamily: 'Benzin-Medium',
-                          fontSize: '20px'
-                        }}>Склад</h4>
-                        <span className="text-gray-700">
-                          Московская область, Красногорский р-н, д. Гольево, улица Центральная ул., с44,
-                        </span>
-                      </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-700 flex-1">
+                        Московская область, Красногорский р-н, д. Гольево, улица Центральная ул., с44,
+                      </span>
                       <div className="flex items-center gap-2 ml-4">
                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                         <span className="text-sm text-green-600 font-medium">В наличии</span>
@@ -281,17 +275,14 @@ const Support: React.FC = () => {
                       </div>
                     </div>
                     
+                    {/* Separator */}
+                    <div className="h-px bg-gray-300"></div>
+                    
                     {/* Additional Warehouse */}
-                    <div className="flex justify-between items-start">
-                      <div className="flex-1">
-                        <h4 className="mb-2" style={{
-                          fontFamily: 'Benzin-Medium',
-                          fontSize: '20px'
-                        }}>Дополнительные склад</h4>
-                        <span className="text-gray-700">
-                          Красногвардейский пер 23 лит Е, территория завода "Ильич", заезд с Вязского переулка.
-                        </span>
-                      </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-700 flex-1">
+                        Красногвардейский пер 23 лит Е, территория завода "Ильич", заезд с Вязского переулка.
+                      </span>
                       <div className="flex items-center gap-2 ml-4">
                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                         <span className="text-sm text-green-600 font-medium">В наличии</span>
