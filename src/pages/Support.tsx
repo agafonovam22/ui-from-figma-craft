@@ -63,9 +63,9 @@ const Support: React.FC = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="pt-6">
+      <main>
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
         {/* Breadcrumbs and Title */}
-        <section className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
           <Breadcrumb className="mb-6">
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -83,7 +83,7 @@ const Support: React.FC = () => {
           <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
             {getActiveTabLabel()}
           </h1>
-        </section>
+        </div>
 
         {/* Hero Section */}
         <section className="relative bg-gradient-to-r from-gray-800 to-gray-600 text-white">
@@ -115,7 +115,7 @@ const Support: React.FC = () => {
         </section>
 
         {/* Tabs Section */}
-        <section className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
           <div className="flex flex-wrap gap-2 mb-8">
             {tabs.map((tab) => (
               <button
@@ -928,7 +928,7 @@ const Support: React.FC = () => {
               </div>
             </div>
           )}
-        </section>
+        </div>
       </main>
 
       <Footer />
