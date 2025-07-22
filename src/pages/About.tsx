@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Banner from '@/components/Banner';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import PhotoSwiper from '@/components/PhotoSwiper';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -578,82 +578,19 @@ const About: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Карусель изображений во всю ширину экрана */}
-                <div className="relative -mx-2 sm:-mx-4 lg:-mx-[60px]">
-                  <Carousel className="w-full" 
-                    opts={{
-                      align: "center",
-                      loop: true,
-                      slidesToScroll: 1,
-                    }}
-                  >
-                    <CarouselContent className="ml-0">
-                      {/* Первое изображение - частично скрыто слева */}
-                      <CarouselItem className="basis-[66.66%] flex justify-center">
-                        <div className="w-[400px] h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-500 opacity-70 scale-90">
-                          <img 
-                            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop"
-                            alt="Фитнес оборудование"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </CarouselItem>
-                      
-                      {/* Центральное изображение - в фокусе */}
-                      <CarouselItem className="basis-[66.66%] flex justify-center">
-                        <div className="w-[500px] h-[350px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-500 opacity-100 scale-100 relative z-10">
-                          <img 
-                            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop"
-                            alt="Тренировка в спортзале"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </CarouselItem>
-                      
-                      {/* Третье изображение - частично скрыто справа */}
-                      <CarouselItem className="basis-[66.66%] flex justify-center">
-                        <div className="w-[400px] h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-500 opacity-70 scale-90">
-                          <img 
-                            src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=400&fit=crop"
-                            alt="Спортивная активность"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </CarouselItem>
-                      
-                      <CarouselItem className="basis-[66.66%] flex justify-center">
-                        <div className="w-[400px] h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-500 opacity-70 scale-90">
-                          <img 
-                            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop"
-                            alt="Фитнес центр"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </CarouselItem>
-                      
-                      <CarouselItem className="basis-[66.66%] flex justify-center">
-                        <div className="w-[400px] h-[280px] bg-gray-200 rounded-lg overflow-hidden transition-all duration-500 opacity-70 scale-90">
-                          <img 
-                            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop"
-                            alt="Спортивное оборудование"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </CarouselItem>
-                    </CarouselContent>
-                    
-                    <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-0 shadow-lg z-20" />
-                    <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white border-0 shadow-lg z-20" />
-                  </Carousel>
-                </div>
-                
-                {/* Навигационные точки */}
-                <div className="flex justify-center mt-6 gap-2">
-                  <div className="w-8 h-1 bg-[#F53B49] rounded"></div>
-                  <div className="w-2 h-1 bg-gray-300 rounded"></div>
-                  <div className="w-2 h-1 bg-gray-300 rounded"></div>
-                  <div className="w-2 h-1 bg-gray-300 rounded"></div>
-                  <div className="w-2 h-1 bg-gray-300 rounded"></div>
+                {/* Photo Swiper Gallery */}
+                <div className="mb-12">
+                  <PhotoSwiper 
+                    images={[
+                      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
+                      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop",
+                      "https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=400&fit=crop",
+                      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
+                      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop"
+                    ]}
+                    autoplay={true}
+                    autoplayInterval={5000}
+                  />
                 </div>
               </div>
             </section>
