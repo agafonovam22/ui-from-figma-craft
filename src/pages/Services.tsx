@@ -599,15 +599,12 @@ const Services: React.FC = () => {
                           alt={video.title}
                           className="w-full object-cover transition-transform group-hover:scale-105" style={{ height: '216px' }}
                         />
-                        {/* Play Button Overlay */}
-                        <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-                          <div className="bg-white bg-opacity-90 rounded-full p-3">
-                            <Play className="w-6 h-6 text-[#F53B49] fill-current" />
-                          </div>
-                        </div>
-                        {/* Title overlay at bottom */}
-                        <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                          <h4 className="font-medium">{video.title}</h4>
+                      </div>
+                      {/* White container at bottom with title and play button */}
+                      <div className="bg-white p-4 rounded-b-lg flex items-center justify-between">
+                        <h4 className="font-medium text-gray-900 flex-1">{video.title}</h4>
+                        <div className="bg-pink-200 rounded-full p-3 ml-4">
+                          <Play className="w-6 h-6 text-[#F53B49] fill-current" />
                         </div>
                       </div>
                     </div>
