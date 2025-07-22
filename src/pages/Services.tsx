@@ -487,13 +487,6 @@ const Services: React.FC = () => {
                     </form>
                   </div>
                 </div>
-                <div className="flex-1">
-                  <img 
-                    src="/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png"
-                    alt="Люди бегают"
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                </div>
               </div>
             </div>
           )}
