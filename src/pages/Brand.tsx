@@ -193,11 +193,11 @@ const Brand: React.FC = () => {
                   <div className="absolute" style={{ right: '60px', top: '10px' }}>
                     <div className="relative">
                       <div className="w-[350px] h-[350px] bg-[#F53B49] rounded-full flex items-center justify-center">
-                        <img 
-                          src={brandSlug === 'bowflex' ? '/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png' : '/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png'}
-                          alt={`${brandName} оборудование`}
-                          className="w-[350px] h-[350px] object-contain"
-                          style={{ objectPosition: 'center right', transform: 'translateX(20px)' }}
+                         <img 
+                           src={brandSlug === 'cardio-power' ? '/lovable-uploads/be145ea3-c494-46b2-adfa-04b5f147e8ee.png' : brandSlug === 'bowflex' ? '/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png' : '/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png'}
+                           alt={`${brandName} оборудование`}
+                           className="w-[350px] h-[350px] object-contain"
+                           style={{ objectPosition: 'center right', transform: 'translateX(20px)' }}
                         />
                       </div>
                     </div>
@@ -236,7 +236,7 @@ const Brand: React.FC = () => {
               {/* Left Image */}
               <div className="order-1">
                 <img 
-                  src={brandSlug === 'true' ? '/lovable-uploads/21b038a7-1ec4-44c6-a96c-6a342c3603de.png' : brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : brandSlug === 'schwinn' ? '/lovable-uploads/5a7d56a3-1cee-438a-b65a-a3479013fe70.png' : brandSlug === 'oktan' ? '/lovable-uploads/b7860c53-38e6-490f-a402-9811296c1da3.png' : brandSlug === 'visbody' ? '/lovable-uploads/7f518539-41a1-4a19-8284-3b07384c5521.png' : brandSlug === 'smith' ? '/lovable-uploads/65e88678-9ddb-4054-8aa5-9168061e974c.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
+                  src={brandSlug === 'cardio-power' ? '/lovable-uploads/5d3fabd0-e44f-4744-b616-a617d020cc35.png' : brandSlug === 'true' ? '/lovable-uploads/21b038a7-1ec4-44c6-a96c-6a342c3603de.png' : brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : brandSlug === 'schwinn' ? '/lovable-uploads/5a7d56a3-1cee-438a-b65a-a3479013fe70.png' : brandSlug === 'oktan' ? '/lovable-uploads/b7860c53-38e6-490f-a402-9811296c1da3.png' : brandSlug === 'visbody' ? '/lovable-uploads/7f518539-41a1-4a19-8284-3b07384c5521.png' : brandSlug === 'smith' ? '/lovable-uploads/65e88678-9ddb-4054-8aa5-9168061e974c.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
                   alt="Спортивные тренировки"
                   className="w-full h-full object-cover rounded-lg"
                 />
@@ -894,7 +894,7 @@ const Brand: React.FC = () => {
               {/* Right Image */}
               <div className="order-1 lg:order-2">
                 <img 
-                  src={brandSlug === 'true' ? '/lovable-uploads/f0b8744d-a5e4-418e-9512-534ed70c17e6.png' : brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : brandSlug === 'gym80' ? '/lovable-uploads/08975827-d091-4c00-9cb5-85e93a4b1853.png' : brandSlug === 'schwinn' ? '/lovable-uploads/af9da9ea-dbaa-4e9f-ae2f-831cda031eba.png' : brandSlug === 'oktan' ? '/lovable-uploads/52c07468-4317-41f4-8313-bcc245be5785.png' : brandSlug === 'visbody' ? '/lovable-uploads/5c83f7c6-b329-4314-b2f2-d9c78efdb039.png' : brandSlug === 'smith' ? '/lovable-uploads/3f75976a-d8e7-4175-9622-e96a69902537.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
+                  src={brandSlug === 'cardio-power' ? '/lovable-uploads/859075b3-5eb8-4de5-8c70-e5bf770045a6.png' : brandSlug === 'true' ? '/lovable-uploads/f0b8744d-a5e4-418e-9512-534ed70c17e6.png' : brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : brandSlug === 'gym80' ? '/lovable-uploads/08975827-d091-4c00-9cb5-85e93a4b1853.png' : brandSlug === 'schwinn' ? '/lovable-uploads/af9da9ea-dbaa-4e9f-ae2f-831cda031eba.png' : brandSlug === 'oktan' ? '/lovable-uploads/52c07468-4317-41f4-8313-bcc245be5785.png' : brandSlug === 'visbody' ? '/lovable-uploads/5c83f7c6-b329-4314-b2f2-d9c78efdb039.png' : brandSlug === 'smith' ? '/lovable-uploads/3f75976a-d8e7-4175-9622-e96a69902537.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
                   alt="Качество и надежность TRUE"
                   className="w-full h-full object-cover rounded-lg"
                 />
