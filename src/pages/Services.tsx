@@ -545,7 +545,7 @@ const Services: React.FC = () => {
                         <button
                           key={category}
                           onClick={() => setSelectedFilter(category)}
-                          className={`w-full text-left px-4 py-2 rounded transition-colors ${
+                          className={`w-full text-left px-4 py-2 rounded transition-colors text-sm ${
                             selectedFilter === category
                               ? 'bg-gray-800 text-white'
                               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -573,7 +573,7 @@ const Services: React.FC = () => {
                       className="mb-4"
                       style={{
                         fontFamily: 'Benzin-Semibold',
-                        fontSize: '32px',
+                        fontSize: '24px',
                         fontStyle: 'normal',
                         color: '#FFF'
                       }}
