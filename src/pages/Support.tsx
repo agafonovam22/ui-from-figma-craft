@@ -336,10 +336,10 @@ const Support: React.FC = () => {
                 <div className="flex-1">
                   <div className="grid grid-cols-2 gap-6">
                     <div className="bg-gray-100 p-6 rounded-lg">
-                      <p className="text-gray-700 mb-4">
+                      <p className="text-gray-700 mb-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Определяется сроками доставки транспортной компании. Доставка товара на склад транспортной компании осуществляется в течение 1-2 дней с момента заказа, в режиме работы: Понедельник - Пятница
                       </p>
-                      <p className="text-gray-700">
+                      <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Стоимость доставки определяется тарифами транспортных компаний, оплата за доставку осуществляется при получении товара
                       </p>
                     </div>
@@ -347,10 +347,10 @@ const Support: React.FC = () => {
                     {/* Transport Companies */}
                     <div className="bg-gray-100 p-6 rounded-lg">
                       <div className="space-y-2">
-                        <div className="font-medium">СДЭК до 2 дней</div>
-                        <div className="font-medium">СДЭК до 2 дней</div>
-                        <div className="font-medium">Деловые линии до 2 дней</div>
-                        <div className="font-medium">Деловые линии до 2 дней</div>
+                        <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>СДЭК до 2 дней</div>
+                        <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>СДЭК до 2 дней</div>
+                        <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Деловые линии до 2 дней</div>
+                        <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Деловые линии до 2 дней</div>
                       </div>
                     </div>
                   </div>
