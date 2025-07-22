@@ -334,7 +334,7 @@ const Support: React.FC = () => {
                   }}>Доставка по России</h4>
                 </div>
                 <div className="flex-1">
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-2 gap-[10px]">
                     <div className="bg-gray-100 p-6 rounded-lg">
                       <p className="text-gray-700 mb-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Определяется сроками доставки транспортной компании. Доставка товара на склад транспортной компании осуществляется в течение 1-2 дней с момента заказа, в режиме работы: Понедельник - Пятница
