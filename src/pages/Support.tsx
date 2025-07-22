@@ -471,7 +471,7 @@ const Support: React.FC = () => {
                 <div className="flex-1">
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px] mb-[10px]">
                     {/* Оплата наличными */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[200px] flex flex-col">
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
                       <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата наличными</h5>
                       <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Возможна при оформлении всех способов доставки со всех субъектах РФ, где есть наши филиалы и терминалы наших партнеров, предоставляющих курьерские услуги.
@@ -479,7 +479,7 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* Оплата картой */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[200px] flex flex-col">
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
                       <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата картой</h5>
                       <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Возможна при оформлении всех способов доставки, во время самовывоза, а также курьеру при получении.
@@ -487,7 +487,7 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* Оплата онлайн */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[200px] flex flex-col">
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
                       <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата онлайн</h5>
                       <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Покупателю направляется защищенная ссылка для перехода в платежную систему. Производить оплату можно всеми видами карт, электронными деньгами, а также через терминалы без комиссии.
@@ -497,7 +497,7 @@ const Support: React.FC = () => {
 
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px]">
                     {/* Наложенный платеж */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[200px] flex flex-col">
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
                       <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Наложенный платеж</h5>
                       <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         При отправке в регионы. Рассчитывается по тарифам транспортных компаний и осуществляется с помощью партнеров перевозчиков «ПЭК» и «Деловые линии»
@@ -505,7 +505,7 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* В рассрочку */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[200px] flex flex-col">
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
                       <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>В рассрочку</h5>
                       <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         от банков партнеров ОТП, Халва, Тинькофф, Сбербанк
@@ -513,7 +513,7 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* Безналичная оплата */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[200px] flex flex-col">
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
                       <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Безналичная оплата</h5>
                       <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Выставление счета
