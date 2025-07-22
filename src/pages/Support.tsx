@@ -410,6 +410,7 @@ const Support: React.FC = () => {
                             <div className="text-sm text-gray-600">До пункта выдачи</div>
                             <div className="font-medium">2 000 ₽</div>
                           </div>
+                          <div className="h-px bg-gray-300"></div>
                           <div className="grid grid-cols-3 gap-4 items-center">
                             <div>
                               <div className="font-medium">СДЭК</div>
@@ -418,6 +419,7 @@ const Support: React.FC = () => {
                             <div className="text-sm text-gray-600">До двери</div>
                             <div className="font-medium">2 000 ₽</div>
                           </div>
+                          <div className="h-px bg-gray-300"></div>
                           <div className="grid grid-cols-3 gap-4 items-center">
                             <div>
                               <div className="font-medium">Деловые линии</div>
@@ -426,6 +428,7 @@ const Support: React.FC = () => {
                             <div className="text-sm text-gray-600">До пункта выдачи</div>
                             <div className="font-medium">2 000 ₽</div>
                           </div>
+                          <div className="h-px bg-gray-300"></div>
                           <div className="grid grid-cols-3 gap-4 items-center">
                             <div>
                               <div className="font-medium">Деловые линии</div>
