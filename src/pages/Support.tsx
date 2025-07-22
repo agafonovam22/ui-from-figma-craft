@@ -380,38 +380,38 @@ const Support: React.FC = () => {
                 </div>
                 <div className="flex-1">
                   <div className="bg-gray-100 p-6 rounded-lg">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8">
                       {/* Calculator Form */}
                        <div className="space-y-4">
                          <input
                            type="text"
                            placeholder="Пункт отправления"
-                           className="w-full p-3 border rounded-lg bg-gray-100"
+                           className="w-full p-3 border rounded-lg bg-gray-100 benzin-placeholder"
                            style={{fontFamily: 'Manrope', fontSize: '16px'}}
                          />
                          <input
                            type="text"
                            placeholder="Пункт назначения"
-                           className="w-full p-3 border rounded-lg bg-gray-100"
+                           className="w-full p-3 border rounded-lg bg-gray-100 benzin-placeholder"
                            style={{fontFamily: 'Manrope', fontSize: '16px'}}
                          />
                          <input
                            type="text"
                            placeholder="Габариты груза, м"
-                           className="w-full p-3 border rounded-lg bg-gray-100"
+                           className="w-full p-3 border rounded-lg bg-gray-100 benzin-placeholder"
                            style={{fontFamily: 'Manrope', fontSize: '16px'}}
                          />
                          <div className="grid grid-cols-2 gap-2">
                            <input
                              type="number"
                              placeholder="Вес груза, кг"
-                             className="p-3 border rounded-lg bg-gray-100"
+                             className="p-3 border rounded-lg bg-gray-100 benzin-placeholder"
                              style={{fontFamily: 'Manrope', fontSize: '16px'}}
                            />
                            <input
                              type="number"
                              placeholder="Объем груза, м³"
-                             className="p-3 border rounded-lg bg-gray-100"
+                             className="p-3 border rounded-lg bg-gray-100 benzin-placeholder"
                              style={{fontFamily: 'Manrope', fontSize: '16px'}}
                            />
                          </div>

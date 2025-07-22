@@ -124,3 +124,9 @@
     font-family: 'Benzin-Semibold', sans-serif;
   }
 }
+
+/* Benzin-Regular placeholder styling */
+.benzin-placeholder::placeholder {
+  font-family: 'Benzin-Regular', sans-serif !important;
+  font-size: 16px !important;
+}
