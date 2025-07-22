@@ -537,7 +537,7 @@ const Services: React.FC = () => {
               {/* Filter Sidebar */}
               <div className="w-64 flex-shrink-0 space-y-6">
                 {/* Filter Categories and Buttons in Gray Container */}
-                <div className="bg-gray-100 p-6 rounded space-y-6">
+                <div className="bg-gray-100 p-6 rounded space-y-6 h-[300px]">
                   {/* Filter Categories */}
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Фильтр</h3>
