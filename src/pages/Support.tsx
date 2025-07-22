@@ -177,18 +177,50 @@ const Support: React.FC = () => {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Left Column */}
                     <div className="bg-gray-50 p-6 rounded-lg">
-                      <h4 className="text-lg font-medium mb-4">Заказ от 30 001 ₽</h4>
+                      <h4 className="mb-4" style={{
+                        color: 'var(--Dark-Grey, #262631)',
+                        fontFamily: 'Benzin-Medium, sans-serif',
+                        fontSize: '16px',
+                        fontStyle: 'normal',
+                        fontWeight: '400',
+                        lineHeight: '110%',
+                        letterSpacing: '0.32px'
+                      }}>Заказ от 30 001 ₽</h4>
                       <div className="space-y-4">
                         <div className="flex justify-between items-center py-3 border-b">
-                          <span className="text-gray-700">Автомобильная доставка по г. Москве в пределах МКАД</span>
+                          <span style={{
+                            color: 'var(--Dark-Grey, #262631)',
+                            fontFamily: 'Manrope, sans-serif',
+                            fontSize: '16px',
+                            fontStyle: 'normal',
+                            fontWeight: '400',
+                            lineHeight: '120%',
+                            letterSpacing: '0.32px'
+                          }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
                           <span className="text-[#F53B49] font-semibold">Бесплатно</span>
                         </div>
                         <div className="flex justify-between items-center py-3 border-b">
-                          <span className="text-gray-700">Автомобильная доставка по Московской Области</span>
+                          <span style={{
+                            color: 'var(--Dark-Grey, #262631)',
+                            fontFamily: 'Manrope, sans-serif',
+                            fontSize: '16px',
+                            fontStyle: 'normal',
+                            fontWeight: '400',
+                            lineHeight: '120%',
+                            letterSpacing: '0.32px'
+                          }}>Автомобильная доставка по Московской Области</span>
                           <span className="text-[#F53B49] font-semibold">30₽/км</span>
                         </div>
                         <div className="flex justify-between items-center py-3 border-b">
-                          <span className="text-gray-700">Курьерская доставка (вес до 3 кг)</span>
+                          <span style={{
+                            color: 'var(--Dark-Grey, #262631)',
+                            fontFamily: 'Manrope, sans-serif',
+                            fontSize: '16px',
+                            fontStyle: 'normal',
+                            fontWeight: '400',
+                            lineHeight: '120%',
+                            letterSpacing: '0.32px'
+                          }}>Курьерская доставка (вес до 3 кг)</span>
                           <span className="text-[#F53B49] font-semibold">500₽</span>
                         </div>
                       </div>
@@ -196,10 +228,26 @@ const Support: React.FC = () => {
 
                     {/* Right Column */}
                     <div className="bg-gray-50 p-6 rounded-lg">
-                      <h4 className="text-lg font-medium mb-4">Заказ до 30 000 ₽</h4>
+                      <h4 className="mb-4" style={{
+                        color: 'var(--Dark-Grey, #262631)',
+                        fontFamily: 'Benzin-Medium, sans-serif',
+                        fontSize: '16px',
+                        fontStyle: 'normal',
+                        fontWeight: '400',
+                        lineHeight: '110%',
+                        letterSpacing: '0.32px'
+                      }}>Заказ до 30 000 ₽</h4>
                       <div className="space-y-4">
                         <div className="flex justify-between items-center py-3 border-b">
-                          <span className="text-gray-700">Автомобильная доставка по г. Москве в пределах МКАД</span>
+                          <span style={{
+                            color: 'var(--Dark-Grey, #262631)',
+                            fontFamily: 'Manrope, sans-serif',
+                            fontSize: '16px',
+                            fontStyle: 'normal',
+                            fontWeight: '400',
+                            lineHeight: '120%',
+                            letterSpacing: '0.32px'
+                          }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
                           <span className="text-[#F53B49] font-semibold">1000 ₽</span>
                         </div>
                       </div>
