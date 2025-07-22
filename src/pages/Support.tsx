@@ -664,6 +664,9 @@ const Support: React.FC = () => {
                       </div>
                     </div>
 
+                    {/* Разделительная линия */}
+                    <div className="h-px bg-gray-300 my-6"></div>
+
                     <div>
                       <h4 className="text-lg font-medium mb-4">Возврат товара не надлежащего качества возможен при условии:</h4>
                       <p className="text-gray-700">
