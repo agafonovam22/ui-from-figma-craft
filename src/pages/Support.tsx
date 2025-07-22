@@ -770,6 +770,11 @@ const Support: React.FC = () => {
                               <span className="text-[#F53B49] font-medium">24 месяца</span>
                             </div>
                           </div>
+                          <div className="mt-6">
+                            <button className="bg-[#F53B49] text-white px-8 py-3 rounded hover:bg-[#e63946] transition-colors font-medium">
+                              Скачать файлы по рекомендации тех. обслуживания
+                            </button>
+                          </div>
                         </div>
                       </div>
 
@@ -811,12 +816,6 @@ const Support: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Download Button */}
-                    <div className="mb-12">
-                      <button className="bg-[#F53B49] text-white px-8 py-3 rounded hover:bg-[#e63946] transition-colors font-medium">
-                        Скачать файлы по рекомендации тех. обслуживания
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>
