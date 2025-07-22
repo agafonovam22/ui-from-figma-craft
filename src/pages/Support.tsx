@@ -372,7 +372,7 @@ const Support: React.FC = () => {
                   }}>Калькулятор доставки</h4>
                 </div>
                 <div className="flex-1">
-                  <div className="bg-white p-6 rounded-lg border">
+                  <div className="bg-gray-100 p-6 rounded-lg">"
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                       {/* Calculator Form */}
                       <div className="space-y-4">
