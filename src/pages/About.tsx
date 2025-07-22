@@ -280,7 +280,7 @@ const About: React.FC = () => {
                         <h4 className="text-sm font-semibold text-gray-900 mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
                           {member.position}
                         </h4>
-                        <p className="text-gray-600 text-xs mb-3 leading-relaxed" style={{ fontFamily: 'Benzin-Regular' }}>
+                        <p className="text-[#262631] text-xs mb-3 leading-relaxed" style={{ fontFamily: 'Manrope' }}>
                           {member.description}
                         </p>
                         <div className="flex items-center justify-between text-[10px]">
