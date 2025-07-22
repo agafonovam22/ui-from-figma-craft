@@ -372,42 +372,43 @@ const Support: React.FC = () => {
                   <div className="bg-gray-100 p-6 rounded-lg">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                       {/* Calculator Form */}
-                      <div className="space-y-4">
-                        <input
-                          type="text"
-                          placeholder="Введите индекс откуда"
-                          className="w-full p-3 border rounded-lg"
-                        />
-                        <input
-                          type="text"
-                          placeholder="Введите индекс куда"
-                          className="w-full p-3 border rounded-lg"
-                        />
-                        <div className="grid grid-cols-3 gap-2">
-                          <input
-                            type="number"
-                            placeholder="Вес, кг"
-                            className="p-3 border rounded-lg"
-                          />
-                          <input
-                            type="number"
-                            placeholder="Длина, см"
-                            className="p-3 border rounded-lg"
-                          />
-                          <input
-                            type="number"
-                            placeholder="Ширина, см"
-                            className="p-3 border rounded-lg"
-                          />
-                        </div>
-                        <input
-                          type="number"
-                          placeholder="Высота, см"
-                          className="w-full p-3 border rounded-lg"
-                        />
-                        <button className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90">
-                          Рассчитать доставку
-                        </button>
+                       <div className="space-y-4">
+                         <input
+                           type="text"
+                           placeholder="Пункт отправления"
+                           className="w-full p-3 border rounded-lg bg-gray-100"
+                           style={{fontFamily: 'Manrope', fontSize: '16px'}}
+                         />
+                         <input
+                           type="text"
+                           placeholder="Пункт назначения"
+                           className="w-full p-3 border rounded-lg bg-gray-100"
+                           style={{fontFamily: 'Manrope', fontSize: '16px'}}
+                         />
+                         <input
+                           type="text"
+                           placeholder="Габариты груза, м"
+                           className="w-full p-3 border rounded-lg bg-gray-100"
+                           style={{fontFamily: 'Manrope', fontSize: '16px'}}
+                         />
+                         <div className="grid grid-cols-2 gap-2">
+                           <input
+                             type="number"
+                             placeholder="Вес груза, кг"
+                             className="p-3 border rounded-lg bg-gray-100"
+                             style={{fontFamily: 'Manrope', fontSize: '16px'}}
+                           />
+                           <input
+                             type="number"
+                             placeholder="Объем груза, м³"
+                             className="p-3 border rounded-lg bg-gray-100"
+                             style={{fontFamily: 'Manrope', fontSize: '16px'}}
+                           />
+                         </div>
+                         <button className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90"
+                           style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                           Рассчитать
+                         </button>
                       </div>
 
                       {/* Delivery Options */}
@@ -471,8 +472,8 @@ const Support: React.FC = () => {
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                     {/* Оплата наличными */}
                     <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
-                      <h5 className="text-lg font-medium mb-3">Оплата наличными</h5>
-                      <p className="text-sm mb-4">
+                      <h5 className="text-lg font-medium mb-3" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата наличными</h5>
+                      <p className="text-sm mb-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Возможна при оформлении всех способов доставки со всех субъектах РФ, где есть наши филиалы и терминалы наших партнеров, предоставляющих курьерские услуги.
                       </p>
                     </div>
