@@ -193,10 +193,10 @@ const Services: React.FC = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-6 h-[52px] rounded-lg font-medium transition-colors ${
+                className={`px-6 h-[52px] rounded-lg font-medium transition-colors border ${
                   activeTab === tab.id
-                    ? 'bg-[#F53B49] text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    ? 'bg-[#F53B49] text-white border-[#F53B49]'
+                    : 'bg-white text-gray-600 hover:bg-gray-50 border-gray-300'
                 }`}
               >
                 {tab.label}
