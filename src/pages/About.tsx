@@ -260,32 +260,32 @@ const About: React.FC = () => {
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {teamMembers.map((member, index) => (
-                  <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm">
-                    {/* Image placeholder with background from mockup */}
+                  <div key={index} className="relative rounded-lg overflow-hidden">
+                    {/* Background image with overlay */}
                     <div 
-                      className="h-64 bg-cover bg-center relative"
+                      className="h-80 bg-cover bg-center relative"
                       style={{
-                        backgroundImage: 'url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face")'
+                        backgroundImage: 'url("https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop")'
                       }}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      <div className="absolute bottom-4 left-4 text-white">
-                        <h3 className="font-bold text-lg mb-1">{member.name}</h3>
+                      {/* Name overlay at top */}
+                      <div className="absolute top-4 left-4 text-white">
+                        <h3 className="text-base font-medium" style={{ fontFamily: 'Benzin-Semibold' }}>
+                          {member.name}
+                        </h3>
                       </div>
-                    </div>
-                    
-                    {/* Content card */}
-                    <div className="p-4 bg-white">
-                      <h4 className="font-semibold text-gray-900 mb-2">{member.position}</h4>
-                      <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                        {member.description}
-                      </p>
-                      <div className="space-y-1">
-                        <div className="flex items-center gap-2">
-                          <span className="text-[#F53B49] text-sm font-medium">{member.phone}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className="text-[#F53B49] text-sm">{member.email}</span>
+                      
+                      {/* Bottom white container */}
+                      <div className="absolute bottom-[10px] left-[10px] right-[10px] p-4 bg-white rounded-lg">
+                        <h4 className="text-sm font-semibold text-gray-900 mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
+                          {member.position}
+                        </h4>
+                        <p className="text-gray-600 text-xs mb-3 leading-relaxed" style={{ fontFamily: 'Benzin-Regular' }}>
+                          {member.description}
+                        </p>
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="text-[#F53B49] font-medium">{member.phone}</span>
+                          <span className="text-gray-500">{member.email}</span>
                         </div>
                       </div>
                     </div>
