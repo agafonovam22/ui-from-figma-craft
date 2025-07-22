@@ -559,16 +559,29 @@ const Support: React.FC = () => {
           {activeTab === 'return' && (
             <div className="space-y-8">
               {/* Город доставки */}
-              <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-4">
-                  Город доставки <span className="text-[#F53B49]">Москва</span>
-                </h3>
-                <p className="text-gray-700 mb-4">
-                  Согласно Закону о защите прав потребителей, при дистанционном способе покупки обмен товара происходит через оформление возврата.
-                </p>
-                <p className="text-gray-700">
-                  Вы не вправе отказаться от товара надлежащего качества, имеющего индивидуально-определенные свойства, если указанный товар может быть использован исключительно приобретающим его потребителем.
-                </p>
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
+                  <div className="flex items-center gap-1">
+                    <h3 style={{
+                      fontFamily: 'Benzin-Medium',
+                      fontSize: '20px'
+                    }}>
+                      Город доставки
+                    </h3>
+                    <SupportCitySelector 
+                      selectedCity={selectedCity} 
+                      onCitySelect={setSelectedCity}
+                    />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <p className="text-gray-700 mb-4">
+                    Согласно Закону о защите прав потребителей, при дистанционном способе покупки обмен товара происходит через оформление возврата.
+                  </p>
+                  <p className="text-gray-700">
+                    Вы не вправе отказаться от товара надлежащего качества, имеющего индивидуально-определенные свойства, если указанный товар может быть использован исключительно приобретающим его потребителем.
+                  </p>
+                </div>
               </div>
 
               {/* Возврат товара по качеству */}
