@@ -469,7 +469,7 @@ const Support: React.FC = () => {
                   }}>Оплата для физ. лиц</h4>
                 </div>
                 <div className="flex-1">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px] mb-[10px]">
                     {/* Оплата наличными */}
                     <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
                       <h5 className="text-lg font-medium mb-3" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата наличными</h5>
@@ -495,7 +495,7 @@ const Support: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px]">
                     {/* Наложенный платеж */}
                     <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
                       <h5 className="text-lg font-medium mb-3">Наложенный платеж</h5>
@@ -535,7 +535,7 @@ const Support: React.FC = () => {
                   }}>Оплата для юр. лиц</h4>
                 </div>
                 <div className="flex-1">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px]">
                     {/* Оплата онлайн */}
                     <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
                       <h5 className="text-lg font-medium mb-3">Оплата онлайн</h5>
