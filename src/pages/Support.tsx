@@ -179,7 +179,7 @@ const Support: React.FC = () => {
                     <div className="bg-gray-50 p-6 rounded-lg">
                       <h4 className="mb-4 pb-3 border-b" style={{
                         fontFamily: 'Benzin-Medium',
-                        fontSize: '20px',
+                        fontSize: '16px',
                         fontWeight: '500'
                       }}>Заказ от 30 001 ₽</h4>
                       <div className="space-y-4">
@@ -226,7 +226,7 @@ const Support: React.FC = () => {
                     <div className="bg-gray-50 p-6 rounded-lg h-fit">
                       <h4 className="mb-4 pb-3 border-b" style={{
                         fontFamily: 'Benzin-Medium',
-                        fontSize: '20px',
+                        fontSize: '16px',
                         fontWeight: '500'
                       }}>Заказ до 30 000 ₽</h4>
                       <div>
