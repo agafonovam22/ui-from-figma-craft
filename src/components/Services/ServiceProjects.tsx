@@ -46,28 +46,28 @@ const ServiceProjects: React.FC<ServiceProjectsProps> = ({ projects }) => {
       
       <div className="mb-8">
         {/* First row - 3 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 mb-2.5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-1.5 mb-1.5">
           {projects.slice(0, 3).map(project => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
         
         {/* Second row - 2 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 mb-2.5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5 mb-1.5">
           {projects.slice(3, 5).map(project => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
         
         {/* Third row - 3 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 mb-2.5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-1.5 mb-1.5">
           {projects.slice(5, 8).map(project => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
         
         {/* Fourth row - 2 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5">
           {projects.slice(8, 10).map(project => (
             <ProjectCard key={project.id} project={project} />
           ))}
