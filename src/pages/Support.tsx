@@ -480,16 +480,16 @@ const Support: React.FC = () => {
 
                     {/* Оплата картой */}
                     <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
-                      <h5 className="text-lg font-medium mb-3">Оплата картой</h5>
-                      <p className="text-sm mb-4">
+                      <h5 className="text-lg font-medium mb-3" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата картой</h5>
+                      <p className="text-sm mb-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Возможна при оформлении всех способов доставки, во время самовывоза, а также курьеру при получении.
                       </p>
                     </div>
 
                     {/* Оплата онлайн */}
                     <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
-                      <h5 className="text-lg font-medium mb-3">Оплата онлайн</h5>
-                      <p className="text-sm mb-4">
+                      <h5 className="text-lg font-medium mb-3" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата онлайн</h5>
+                      <p className="text-sm mb-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Покупателю направляется защищенная ссылка для перехода в платежную систему. Производить оплату можно всеми видами карт, электронными деньгами, а также через терминалы без комиссии.
                       </p>
                     </div>
@@ -498,24 +498,24 @@ const Support: React.FC = () => {
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px]">
                     {/* Наложенный платеж */}
                     <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
-                      <h5 className="text-lg font-medium mb-3">Наложенный платеж</h5>
-                      <p className="text-sm">
+                      <h5 className="text-lg font-medium mb-3" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Наложенный платеж</h5>
+                      <p className="text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         При отправке в регионы. Рассчитывается по тарифам транспортных компаний и осуществляется с помощью партнеров перевозчиков «ПЭК» и «Деловые линии»
                       </p>
                     </div>
 
                     {/* В рассрочку */}
                     <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
-                      <h5 className="text-lg font-medium mb-3">В рассрочку</h5>
-                      <p className="text-sm">
+                      <h5 className="text-lg font-medium mb-3" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>В рассрочку</h5>
+                      <p className="text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         от банков партнеров ОТП, Халва, Тинькофф, Сбербанк
                       </p>
                     </div>
 
                     {/* Безналичная оплата */}
                     <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
-                      <h5 className="text-lg font-medium mb-3">Безналичная оплата</h5>
-                      <p className="text-sm">
+                      <h5 className="text-lg font-medium mb-3" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Безналичная оплата</h5>
+                      <p className="text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Выставление счета
                       </p>
                     </div>
@@ -538,16 +538,16 @@ const Support: React.FC = () => {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px]">
                     {/* Оплата онлайн */}
                     <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
-                      <h5 className="text-lg font-medium mb-3">Оплата онлайн</h5>
-                      <p className="text-sm">
+                      <h5 className="text-lg font-medium mb-3" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата онлайн</h5>
+                      <p className="text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Покупателю направляется защищенная ссылка для перехода в платежную систему. Производить оплату можно всеми видами карт, электронными деньгами, а также через терминалы без комиссии.
                       </p>
                     </div>
 
                     {/* Безналичная оплата */}
                     <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
-                      <h5 className="text-lg font-medium mb-3">Безналичная оплата</h5>
-                      <p className="text-sm">
+                      <h5 className="text-lg font-medium mb-3" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Безналичная оплата</h5>
+                      <p className="text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Выставление счета
                       </p>
                     </div>
