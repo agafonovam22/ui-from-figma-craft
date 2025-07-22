@@ -596,7 +596,7 @@ const About: React.FC = () => {
             </section>
 
             {/* В чем причина нашего успеха? */}
-            <section className="bg-white" style={{ paddingTop: 'calc(2rem - 100px)', paddingBottom: '4rem' }}>
+            <section className="py-8 bg-white">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
                 <h2 className="mb-8 leading-tight" style={{ fontSize: '32px', fontFamily: 'Benzin-Semibold', color: 'var(--Dark-Grey, #262631)' }}>
                   В чем причина нашего успеха?
