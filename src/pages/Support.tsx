@@ -11,9 +11,12 @@ const Support: React.FC = () => {
 
   const tabs = [
     { id: 'delivery', label: 'Доставка и оплата' },
-    { id: 'return', label: 'Возврат и обмен' },
+    { id: 'return', label: 'Условия возврата' },
     { id: 'warranty', label: 'Гарантия' },
-    { id: 'installation', label: 'Установка и сборка' },
+    { id: 'questions', label: 'Вопросы и ответы' },
+    { id: 'instructions', label: 'Инструкции' },
+    { id: 'account', label: 'Личный кабинет' },
+    { id: 'b2b', label: 'B2B кабинет' },
   ];
 
   return (
@@ -21,24 +24,23 @@ const Support: React.FC = () => {
       <Header />
       
       <main className="flex-1">
-        {/* Hero Section */}
-        <div className="bg-gradient-to-r from-gray-50 to-gray-100 py-16">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="max-w-3xl">
-              <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                Поддержка клиентов
+        {/* Banner Section */}
+        <div className="relative bg-gray-800 py-16 overflow-hidden">
+          <div className="absolute inset-0">
+            <img 
+              src="/lovable-uploads/fc471d68-6e0a-44bf-8fc3-d15539fc9680.png" 
+              alt="3D warehouse interior" 
+              className="w-full h-full object-cover opacity-80"
+            />
+          </div>
+          <div className="relative max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="max-w-md">
+              <h1 className="text-4xl font-bold text-white mb-6">
+                Рекламный<br />баннер
               </h1>
-              <p className="text-xl text-gray-600 mb-8">
-                Мы готовы помочь вам с любыми вопросами о наших продуктах и услугах
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <button className="bg-[#F53B49] text-white px-6 py-3 rounded-lg hover:bg-[#e63946] transition-colors">
-                  Связаться с нами
-                </button>
-                <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors">
-                  FAQ
-                </button>
-              </div>
+              <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors font-medium">
+                Оставить заявку
+              </button>
             </div>
           </div>
         </div>
