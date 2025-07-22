@@ -157,6 +157,9 @@ const Support: React.FC = () => {
                 </div>
               </div>
 
+              {/* Разделительная линия */}
+              <div className="h-px bg-gray-300"></div>
+
               {/* Стоимость доставки */}
               <div className="flex gap-8">
                 <div className="w-80 flex-shrink-0">
@@ -253,6 +256,9 @@ const Support: React.FC = () => {
                 </div>
               </div>
 
+              {/* Разделительная линия */}
+              <div className="h-px bg-gray-300"></div>
+
                {/* Самовывоз со склада */}
               <div className="flex gap-8">
                 <div className="w-80 flex-shrink-0">
@@ -315,6 +321,9 @@ const Support: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Разделительная линия */}
+              <div className="h-px bg-gray-300"></div>
 
               {/* Доставка по России */}
               <div className="flex gap-8 mb-8">
@@ -451,7 +460,10 @@ const Support: React.FC = () => {
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Оплата для физ. лиц</h4>
-                </div>
+              </div>
+
+              {/* Разделительная линия */}
+              <div className="h-px bg-gray-300"></div>
                 <div className="flex-1">
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                     {/* Оплата наличными */}
@@ -514,7 +526,10 @@ const Support: React.FC = () => {
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Оплата для юр. лиц</h4>
-                </div>
+              </div>
+
+              {/* Разделительная линия */}
+              <div className="h-px bg-gray-300"></div>
                 <div className="flex-1">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Оплата онлайн */}
