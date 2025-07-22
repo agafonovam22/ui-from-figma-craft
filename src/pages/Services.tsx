@@ -8,6 +8,15 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Play, Truck, Wrench, CreditCard, Clock, Home, ChevronRight } from 'lucide-react';
 import EmailSubscription from '@/components/EmailSubscription';
 import PhotoSwiper from '@/components/PhotoSwiper';
+import { Link } from 'react-router-dom';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbPage,
+} from "@/components/ui/breadcrumb";
 
 const Services: React.FC = () => {
   const [activeTab, setActiveTab] = useState('service-request');
@@ -165,19 +174,22 @@ const Services: React.FC = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="py-12">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+      <main className="py-8">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
           {/* Breadcrumb */}
-          <div className="text-sm text-gray-500 mb-8">
-            <span>Сервис</span>
-            <span className="mx-2">{'>'}</span>
-            <span>
-              {activeTab === 'fitness-clubs' ? 'Обслуживание фитнес клубов' : 
-               activeTab === 'video-instructions' ? 'Видео-инструкции' :
-               activeTab === 'services' ? 'Услуги' :
-               'Оставить заявку на сервис'}
-            </span>
-          </div>
+          <Breadcrumb className="mb-6">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/">Главная</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Сервис</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
 
           {/* Page Title */}
           <h1 className="text-4xl font-bold text-gray-900 mb-8">

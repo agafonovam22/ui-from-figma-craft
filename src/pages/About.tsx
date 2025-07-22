@@ -4,6 +4,14 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Banner from '@/components/Banner';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbPage,
+} from "@/components/ui/breadcrumb";
 
 const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState('about');
@@ -135,20 +143,27 @@ const About: React.FC = () => {
       <Header />
       
       <main className="w-full">
-        {/* Breadcrumb and Title */}
-        <section className="py-8">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            {/* Breadcrumb */}
-            <div className="mb-8">
-              <span className="text-gray-400 text-xs">Главная → О компании</span>
-            </div>
-            
-            {/* Main Title - уменьшен в 2 раза */}
-            <h1 className="text-[40px] font-bold text-[#17171E] leading-tight" style={{ marginBottom: '10px' }}>
-              О компании
-            </h1>
-          </div>
-        </section>
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+          {/* Breadcrumb */}
+          <Breadcrumb className="mb-6">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/">Главная</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>О компании</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+          
+          {/* Main Title - уменьшен в 2 раза */}
+          <h1 className="text-[40px] font-bold text-[#17171E] leading-tight" style={{ marginBottom: '10px' }}>
+            О компании
+          </h1>
+        </div>
 
         {/* Banner */}
         <section className="w-full">
