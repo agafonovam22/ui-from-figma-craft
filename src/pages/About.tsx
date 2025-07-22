@@ -258,18 +258,18 @@ const About: React.FC = () => {
         {activeTab === 'team' && (
           <section className="py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[10px]">
                 {teamMembers.map((member, index) => (
-                  <div key={index} className="relative rounded-lg overflow-hidden">
-                    {/* Background image with overlay */}
+                  <div key={index} className="relative rounded-lg overflow-hidden h-[550px]">
+                    {/* Background image */}
                     <div 
-                      className="h-80 bg-cover bg-center relative"
+                      className="h-full bg-cover bg-center relative"
                       style={{
                         backgroundImage: 'url("https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop")'
                       }}
                     >
-                      {/* Name overlay at top */}
-                      <div className="absolute top-4 left-4 text-white">
+                      {/* Name above white container */}
+                      <div className="absolute bottom-[120px] left-4 text-white">
                         <h3 className="text-base font-medium" style={{ fontFamily: 'Benzin-Semibold' }}>
                           {member.name}
                         </h3>
@@ -285,7 +285,7 @@ const About: React.FC = () => {
                         </p>
                         <div className="flex items-center justify-between text-xs">
                           <span className="text-[#F53B49] font-medium">{member.phone}</span>
-                          <span className="text-gray-500">{member.email}</span>
+                          <span className="text-[#F53B49]">{member.email}</span>
                         </div>
                       </div>
                     </div>
