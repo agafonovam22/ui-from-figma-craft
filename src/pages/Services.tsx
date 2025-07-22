@@ -375,21 +375,17 @@ const Services: React.FC = () => {
                 </div>
                 <div className="flex-1">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    Обслуживание фитнес-клубов
                   </h2>
                   <div className="grid grid-cols-2 gap-6 text-gray-600">
                     <div>
                       <p className="mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Для владельцев фитнес-клубов профессиональное обслуживание оборудования – это не просто формальность, а разумная инвестиция в долгосрочную экономию. В отличие от начинающих предпринимателей, крупные сети и опытные клубы хорошо знают: регулярный сервис сокращает затраты на дорогостоящий ремонт и продлевает срок службы тренажеров.
                       </p>
                     </div>
                     <div>
                       <p className="mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Как и в автомобильной индустрии, гарантийные обязательства в фитнес-сфере строго соблюдаются ведущими производителями. Однако ответственность за правильную эксплуатацию и своевременное техническое обслуживание лежит на владельце оборудования.
                       </p>
                     </div>
                   </div>
