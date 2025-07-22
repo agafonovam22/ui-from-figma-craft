@@ -643,7 +643,7 @@ const Support: React.FC = () => {
                   <div className="space-y-6">
                     <div>
                       <h4 className="text-lg font-medium mb-4">Возврат товара надлежащего качества возможен при условии:</h4>
-                      <div className="space-y-4">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div className="flex items-start gap-4">
                           <div className="text-[#F53B49] font-bold text-2xl flex-shrink-0">
                             1
@@ -653,14 +653,14 @@ const Support: React.FC = () => {
                           </p>
                         </div>
                         
-                         <div className="flex items-start gap-4">
-                           <div className="text-[#F53B49] font-bold text-2xl flex-shrink-0">
-                             2
-                           </div>
-                           <p className="text-gray-700">
-                             Наличия документа, подтверждающего факт и условия покупки товара (кассовый чек или товарный чек)*.
-                           </p>
-                         </div>
+                        <div className="flex items-start gap-4">
+                          <div className="text-[#F53B49] font-bold text-2xl flex-shrink-0">
+                            2
+                          </div>
+                          <p className="text-gray-700">
+                            Наличия документа, подтверждающего факт и условия покупки товара (кассовый чек или товарный чек)*.
+                          </p>
+                        </div>
                       </div>
                     </div>
 
