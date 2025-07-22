@@ -375,7 +375,7 @@ const Services: React.FC = () => {
                 </div>
                 <div className="flex-1">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                    Обслуживание фитнес-клубов
+                    <span style={{color: '#778093'}}>Обслуживание</span> фитнес-клубов
                   </h2>
                   <div className="grid grid-cols-2 gap-6 text-gray-600 font-manrope">
                     <div>
