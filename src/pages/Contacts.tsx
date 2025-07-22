@@ -45,9 +45,9 @@ const Contacts: React.FC = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-6">
+      <main className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
         {/* Breadcrumbs */}
-        <Breadcrumb className="mb-8">
+        <Breadcrumb className="mb-6">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/" className="text-gray-500 hover:text-gray-700">

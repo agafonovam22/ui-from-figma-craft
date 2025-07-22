@@ -100,9 +100,9 @@ const Catalog: React.FC = () => {
     <>
       <Header />
       <div className="min-h-screen bg-white">
-        {/* Breadcrumbs */}
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] pt-4">
-          <Breadcrumb>
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+          {/* Breadcrumbs */}
+          <Breadcrumb className="mb-6">
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>

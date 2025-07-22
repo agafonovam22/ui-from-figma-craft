@@ -65,8 +65,8 @@ const Support: React.FC = () => {
       
       <main className="pt-6">
         {/* Breadcrumbs and Title */}
-        <section className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-6">
-          <Breadcrumb className="mb-4">
+        <section className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+          <Breadcrumb className="mb-6">
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>

@@ -16,37 +16,30 @@ const PrivacyPolicy: React.FC = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="w-full">
-        {/* Breadcrumb and Title */}
-        <section className="py-8">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            {/* Breadcrumb */}
-            <Breadcrumb className="mb-8">
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbLink href="/" className="text-gray-500 hover:text-gray-700">
-                    Главная
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbPage className="text-gray-900 font-medium">
-                    Политика конфиденциальности
-                  </BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
-            
-            {/* Main Title */}
-            <h1 className="text-[40px] font-bold text-[#17171E] leading-tight mb-8">
-              Политика в отношении обработки персональных данных
-            </h1>
-          </div>
-        </section>
+      <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+        {/* Breadcrumb */}
+        <Breadcrumb className="mb-6">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/" className="text-gray-500 hover:text-gray-700">
+                Главная
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage className="text-gray-900 font-medium">
+                Политика конфиденциальности
+              </BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        
+        {/* Main Title */}
+        <h1 className="text-[40px] font-bold text-[#17171E] leading-tight mb-8">
+          Политика в отношении обработки персональных данных
+        </h1>
 
         {/* Content */}
-        <section className="pb-16">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="prose prose-gray max-w-none text-sm space-y-6">
               <section>
                 <h2 className="text-xl font-benzin-semibold text-[#17171E] mb-4">1. Общие положения</h2>
@@ -305,9 +298,7 @@ const PrivacyPolicy: React.FC = () => {
                 </div>
               </section>
             </div>
-          </div>
-        </section>
-      </main>
+      </div>
       
       <Footer />
     </div>
