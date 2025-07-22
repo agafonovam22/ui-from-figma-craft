@@ -306,7 +306,7 @@ const Support: React.FC = () => {
                             <div className="text-sm text-gray-600">пн - пт с 10:00-18:00</div>
                           </div>
                         </div>
-                        <div className="text-sm text-gray-600 text-right mr-4">
+                        <div className="text-sm text-gray-600 mr-8">
                           <div>Выдача осуществляется оформленных заказов, при</div>
                           <div>согласовании даты и времени приезда</div>
                         </div>
