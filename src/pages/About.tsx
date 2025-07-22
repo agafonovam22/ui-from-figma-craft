@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Banner from '@/components/Banner';
@@ -331,12 +331,12 @@ const About: React.FC = () => {
                                   className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100"
                                 >
                                   Перейти
-                                  <ChevronRight size={16} />
+                                  <ArrowRight size={16} />
                                 </Link>
                               ) : (
                                 <button className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100">
                                   Перейти
-                                  <ChevronRight size={16} />
+                                  <ArrowRight size={16} />
                                 </button>
                               )}
                             </div>
@@ -372,7 +372,7 @@ const About: React.FC = () => {
                             <div className="flex justify-start">
                               <button className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100">
                                 Перейти
-                                <ChevronRight size={16} />
+                                <ArrowRight size={16} />
                               </button>
                             </div>
                           </div>
@@ -407,7 +407,7 @@ const About: React.FC = () => {
                             <div className="flex justify-start">
                               <button className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100">
                                 Перейти
-                                <ChevronRight size={16} />
+                                <ArrowRight size={16} />
                               </button>
                             </div>
                           </div>
@@ -442,7 +442,7 @@ const About: React.FC = () => {
                             <div className="flex justify-start">
                               <button className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100">
                                 Перейти
-                                <ChevronRight size={16} />
+                                <ArrowRight size={16} />
                               </button>
                             </div>
                           </div>
