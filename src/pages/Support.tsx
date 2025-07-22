@@ -405,23 +405,30 @@ const Support: React.FC = () => {
                           <div className="flex justify-between items-center">
                             <div>
                               <div className="font-medium">СДЭК</div>
-                              <div className="text-sm text-gray-600">3-5 дней</div>
+                              <div className="text-sm text-gray-600">До 2 дней • До пункта выдачи</div>
                             </div>
-                            <div className="font-medium">от 300 ₽</div>
+                            <div className="font-medium">2 000 ₽</div>
                           </div>
                           <div className="flex justify-between items-center">
                             <div>
-                              <div className="font-medium">Почта России</div>
-                              <div className="text-sm text-gray-600">7-14 дней</div>
+                              <div className="font-medium">СДЭК</div>
+                              <div className="text-sm text-gray-600">До 2 дней • До двери</div>
                             </div>
-                            <div className="font-medium">от 200 ₽</div>
+                            <div className="font-medium">2 000 ₽</div>
                           </div>
                           <div className="flex justify-between items-center">
                             <div>
-                              <div className="font-medium">DPD</div>
-                              <div className="text-sm text-gray-600">2-4 дня</div>
+                              <div className="font-medium">Деловые линии</div>
+                              <div className="text-sm text-gray-600">До 2 дней • До пункта выдачи</div>
                             </div>
-                            <div className="font-medium">от 350 ₽</div>
+                            <div className="font-medium">2 000 ₽</div>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <div>
+                              <div className="font-medium">Деловые линии</div>
+                              <div className="text-sm text-gray-600">До 2 дней • До пункта выдачи</div>
+                            </div>
+                            <div className="font-medium">2 000 ₽</div>
                           </div>
                         </div>
                       </div>
