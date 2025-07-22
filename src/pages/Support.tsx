@@ -337,21 +337,25 @@ const Support: React.FC = () => {
 
                     {/* Transport Companies */}
                     <div className="bg-gray-100 p-6 rounded-lg">
-                      <div className="grid grid-cols-3 gap-4">
-                        <div className="text-center">
-                          <div className="p-4">
-                            <span className="font-medium">СДЭК</span>
-                          </div>
+                      <div className="space-y-4">
+                        {/* DPD Row */}
+                        <div className="flex justify-between items-center">
+                          <span className="font-medium">DPD</span>
+                          <span className="font-medium">DPD</span>
                         </div>
-                        <div className="text-center">
-                          <div className="p-4">
-                            <span className="font-medium">DPD</span>
-                          </div>
+                        <div className="h-px bg-gray-300"></div>
+                        
+                        {/* СДЭК Row */}
+                        <div className="flex justify-between items-center">
+                          <span className="font-medium">СДЭК</span>
+                          <span className="font-medium">СДЭК</span>
                         </div>
-                        <div className="text-center">
-                          <div className="p-4">
-                            <span className="font-medium">Байкал Сервис</span>
-                          </div>
+                        <div className="h-px bg-gray-300"></div>
+                        
+                        {/* Байкал Сервис Row */}
+                        <div className="flex justify-between items-center">
+                          <span className="font-medium">Байкал Сервис</span>
+                          <span className="font-medium">Байкал Сервис</span>
                         </div>
                       </div>
                     </div>
