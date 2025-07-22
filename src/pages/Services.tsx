@@ -441,7 +441,7 @@ const Services: React.FC = () => {
               </div>
 
               {/* Contact form section */}
-              <div className="flex gap-8 items-stretch bg-gray-50 rounded-lg p-8">
+              <div className="flex gap-8 items-stretch bg-gray-50 rounded-lg p-8 h-[300px]">
                 <div className="flex-1">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">Оставьте заявку!</h2>
                   <form onSubmit={handleFitnessSubmit} className="space-y-4">
