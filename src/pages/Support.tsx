@@ -86,33 +86,29 @@ const Support: React.FC = () => {
         </div>
 
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-gray-800 to-gray-600 text-white">
-          <div className="absolute inset-0 bg-black/20"></div>
-          <div className="relative max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-16">
-            <div className="flex flex-col lg:flex-row items-center justify-between">
-              <div className="lg:w-1/2 mb-8 lg:mb-0">
-                <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-                  {getActiveTabLabel()}
-                </h1>
-                <div className="lg:w-1/3">
-                  <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-                    Рекламный баннер
-                  </h2>
-                  <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors">
-                    Оставить заявку
-                  </button>
-                </div>
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] mb-12">
+          <div className="bg-gradient-to-r from-gray-800 to-gray-600 rounded-lg p-8 text-white relative overflow-hidden">
+            <div className="flex items-center justify-between">
+              <div className="flex-1">
+                <h2 className="text-5xl font-bold mb-4 leading-tight">
+                  Разрабатаем<br />
+                  3D-проект<br />
+                  бесплатно!
+                </h2>
+                <button className="bg-brand-red hover:bg-brand-red-hover text-white px-8 py-3 text-lg font-semibold rounded-lg">
+                  Оставить заявку
+                </button>
               </div>
-              <div className="lg:w-1/2">
+              <div className="flex-1 flex justify-end">
                 <img 
-                  src="/lovable-uploads/8fee6b4e-43a4-44f5-aa6b-31a85b990f11.png"
-                  alt="3D визуализация фитнес зала"
-                  className="w-full h-auto rounded-lg"
+                  src="/lovable-uploads/1750c483-ca71-4fb0-85b9-fd2efc819a71.png"
+                  alt="3D проект спортзала"
+                  className="max-w-full h-auto"
                 />
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
         {/* Tabs Section */}
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
