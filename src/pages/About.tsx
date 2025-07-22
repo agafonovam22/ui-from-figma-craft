@@ -283,7 +283,7 @@ const About: React.FC = () => {
                         <p className="text-gray-600 text-xs mb-3 leading-relaxed" style={{ fontFamily: 'Benzin-Regular' }}>
                           {member.description}
                         </p>
-                        <div className="flex items-center justify-between text-xs">
+                        <div className="flex items-center justify-between text-[10px]">
                           <span className="text-[#F53B49] font-medium">{member.phone}</span>
                           <span className="text-[#F53B49]">{member.email}</span>
                         </div>
