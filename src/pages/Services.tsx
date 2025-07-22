@@ -570,7 +570,7 @@ const Services: React.FC = () => {
                 </div>
 
                 {/* Advertisement Block - Outside the gray container */}
-                <div className="bg-gray-800 text-white p-6 rounded">
+                <div className="bg-gray-800 text-white p-6 rounded mt-[50px]">
                   <h3 
                     className="mb-4"
                     style={{
