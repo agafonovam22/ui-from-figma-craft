@@ -176,7 +176,7 @@ const Support: React.FC = () => {
                 <div className="flex-1">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Left Column */}
-                    <div>
+                    <div className="bg-gray-50 p-6 rounded-lg">
                       <h4 className="text-lg font-medium mb-4">Заказ от 30 001 ₽</h4>
                       <div className="space-y-4">
                         <div className="flex justify-between items-center py-3 border-b">
@@ -195,7 +195,7 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* Right Column */}
-                    <div>
+                    <div className="bg-gray-50 p-6 rounded-lg">
                       <h4 className="text-lg font-medium mb-4">Заказ до 30 000 ₽</h4>
                       <div className="space-y-4">
                         <div className="flex justify-between items-center py-3 border-b">
