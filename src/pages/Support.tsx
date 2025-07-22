@@ -137,7 +137,14 @@ const Support: React.FC = () => {
               <div className="flex gap-8">
                 <div className="w-80 flex-shrink-0">
                   <div className="flex items-center gap-1">
-                    <h3 className="text-[20px] text-[#262631]" style={{fontFamily: 'Benzin, sans-serif', fontWeight: '500'}}>
+                    <h3 className="text-[20px] leading-[140%]" style={{
+                      color: 'var(--Dark-Grey, #262631)',
+                      fontFamily: 'Benzin-Medium, sans-serif',
+                      fontSize: '20px',
+                      fontStyle: 'normal',
+                      fontWeight: '400',
+                      lineHeight: '140%'
+                    }}>
                       Город доставки
                     </h3>
                     <SupportCitySelector 
