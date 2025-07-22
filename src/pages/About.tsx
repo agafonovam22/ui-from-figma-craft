@@ -534,45 +534,45 @@ const About: React.FC = () => {
                 </h2>
                 
                 {/* Шесть информационных блоков */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                  <div className="bg-white p-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px] mb-16">
+                  <div className="bg-gray-100 p-6 rounded-lg">
                     <div className="w-16 h-16 bg-gray-200 mb-4"></div>
-                    <p className="text-gray-700 text-sm leading-relaxed">
+                    <p className="text-gray-700 text-sm leading-relaxed font-manrope">
                       Слаженная команда людей, любящих спорт и здоровый образ жизни знающих свое дело и ориентирующихся во всех нюансах фитнес оборудования;
                     </p>
                   </div>
 
-                  <div className="bg-white p-6">
+                  <div className="bg-gray-100 p-6 rounded-lg">
                     <div className="w-16 h-16 bg-gray-200 mb-4"></div>
-                    <p className="text-gray-700 text-sm leading-relaxed">
+                    <p className="text-gray-700 text-sm leading-relaxed font-manrope">
                       Склад запчастей для обеспечения качественного сервиса и бесперебойной работы оборудования;
                     </p>
                   </div>
 
-                  <div className="bg-white p-6">
+                  <div className="bg-gray-100 p-6 rounded-lg">
                     <div className="w-16 h-16 bg-gray-200 mb-4"></div>
-                    <p className="text-gray-700 text-sm leading-relaxed">
+                    <p className="text-gray-700 text-sm leading-relaxed font-manrope">
                       Строгое соблюдение всех обязательств перед партнерами;
                     </p>
                   </div>
 
-                  <div className="bg-white p-6">
+                  <div className="bg-gray-100 p-6 rounded-lg">
                     <div className="w-16 h-16 bg-gray-200 mb-4"></div>
-                    <p className="text-gray-700 text-sm leading-relaxed">
+                    <p className="text-gray-700 text-sm leading-relaxed font-manrope">
                       Широкая номенклатура качественной продукции ведущих мировых брендов с огромным выбором товаров в наличии;
                     </p>
                   </div>
 
-                  <div className="bg-white p-6">
+                  <div className="bg-gray-100 p-6 rounded-lg">
                     <div className="w-16 h-16 bg-gray-200 mb-4"></div>
-                    <p className="text-gray-700 text-sm leading-relaxed">
+                    <p className="text-gray-700 text-sm leading-relaxed font-manrope">
                       Полный послепродажный сервис с информационной и технической поддержкой;
                     </p>
                   </div>
 
-                  <div className="bg-white p-6">
+                  <div className="bg-gray-100 p-6 rounded-lg">
                     <div className="w-16 h-16 bg-gray-200 mb-4"></div>
-                    <p className="text-gray-700 text-sm leading-relaxed">
+                    <p className="text-gray-700 text-sm leading-relaxed font-manrope">
                       Отличные цены и эксклюзивные условия для постоянных партнеров.
                     </p>
                   </div>
