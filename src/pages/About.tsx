@@ -269,7 +269,7 @@ const About: React.FC = () => {
                       }}
                     >
                       {/* Name above white container */}
-                      <div className="absolute bottom-[140px] left-4 text-white">
+                      <div className="absolute bottom-[160px] left-4 text-white">
                         <h3 className="text-base font-medium" style={{ fontFamily: 'Benzin-Semibold' }}>
                           {member.name}
                         </h3>
