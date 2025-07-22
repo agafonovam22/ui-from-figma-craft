@@ -339,23 +339,23 @@ const Support: React.FC = () => {
                     <div className="bg-gray-100 p-6 rounded-lg">
                       <div className="space-y-4">
                         {/* DPD Row */}
-                        <div className="flex justify-between items-center">
+                        <div className="flex">
                           <span className="font-medium">DPD</span>
-                          <span className="font-medium">DPD</span>
+                          <span className="font-medium ml-auto pr-[60px]">DPD</span>
                         </div>
                         <div className="h-px bg-gray-300"></div>
                         
                         {/* СДЭК Row */}
-                        <div className="flex justify-between items-center">
+                        <div className="flex">
                           <span className="font-medium">СДЭК</span>
-                          <span className="font-medium">СДЭК</span>
+                          <span className="font-medium ml-auto pr-[60px]">СДЭК</span>
                         </div>
                         <div className="h-px bg-gray-300"></div>
                         
                         {/* Байкал Сервис Row */}
-                        <div className="flex justify-between items-center">
+                        <div className="flex">
                           <span className="font-medium">Байкал Сервис</span>
-                          <span className="font-medium">Байкал Сервис</span>
+                          <span className="font-medium ml-auto pr-[60px]">Байкал Сервис</span>
                         </div>
                       </div>
                     </div>
