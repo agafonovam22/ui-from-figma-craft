@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
-import { Play, Truck, Wrench, CreditCard, Clock, Home } from 'lucide-react';
+import { Play, Truck, Wrench, CreditCard, Clock, Home, ChevronRight } from 'lucide-react';
 import EmailSubscription from '@/components/EmailSubscription';
 import PhotoSwiper from '@/components/PhotoSwiper';
 
@@ -531,12 +531,12 @@ const Services: React.FC = () => {
             </div>
           )}
 
-          {/* Video Instructions Tab Content - keep existing code */}
+          {/* Video Instructions Tab Content */}
           {activeTab === 'video-instructions' && (
             <div className="flex gap-8">
-              {/* Filter Sidebar */}
+              {/* Filter Sidebar in Gray Container */}
               <div className="w-64 flex-shrink-0">
-                <div className="space-y-6">
+                <div className="bg-gray-100 p-6 rounded space-y-6">
                   {/* Filter Categories */}
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Фильтр</h3>
@@ -545,7 +545,7 @@ const Services: React.FC = () => {
                         <button
                           key={category}
                           onClick={() => setSelectedFilter(category)}
-                          className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                          className={`w-full text-left px-4 py-2 rounded transition-colors ${
                             selectedFilter === category
                               ? 'bg-gray-800 text-white'
                               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -568,13 +568,20 @@ const Services: React.FC = () => {
                   </div>
 
                   {/* Advertisement Block */}
-                  <div className="bg-gray-800 text-white p-6 rounded-lg">
-                    <h3 className="text-xl font-bold mb-4">Место для рекламы</h3>
-                    <p className="text-sm text-gray-300 mb-4">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-                    </p>
-                    <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white">
-                      Перейти
+                  <div className="bg-gray-800 text-white p-6 rounded">
+                    <h3 
+                      className="mb-4"
+                      style={{
+                        fontFamily: 'Benzin-Semibold',
+                        fontSize: '32px',
+                        fontStyle: 'normal',
+                        color: '#FFF'
+                      }}
+                    >
+                      Место для рекламы
+                    </h3>
+                    <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white flex items-center gap-2">
+                      Перейти <ChevronRight className="w-4 h-4" />
                     </Button>
                   </div>
                 </div>
@@ -597,17 +604,15 @@ const Services: React.FC = () => {
                             <Play className="w-6 h-6 text-[#F53B49] fill-current" />
                           </div>
                         </div>
-                      </div>
-                      <div className="mt-3">
-                        <h4 className="font-medium text-gray-900">{video.title}</h4>
+                        {/* Title overlay at bottom */}
+                        <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                          <h4 className="font-medium">{video.title}</h4>
+                        </div>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-
-              {/* Email Subscription Banner */}
-              <EmailSubscription />
             </div>
           )}
         </div>
