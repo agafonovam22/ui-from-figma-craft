@@ -603,7 +603,7 @@ const Services: React.FC = () => {
                         <div className="absolute bottom-[5px] left-[5px] right-[5px] bg-white p-4 flex items-center justify-between rounded">
                           <h4 className="font-medium text-gray-900 flex-1">{video.title}</h4>
                           <div className="rounded-full p-3 ml-4" style={{backgroundColor: 'rgba(245, 59, 73, 0.3)'}}>
-                            <Play className="w-5 h-5 text-[#F53B49] fill-current" />
+                            <Play className="w-4 h-4 text-[#F53B49] fill-current" />
                           </div>
                         </div>
                       </div>
