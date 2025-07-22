@@ -185,7 +185,10 @@ const Support: React.FC = () => {
                             lineHeight: '120%',
                             letterSpacing: '0.32px'
                           }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
-                          <span className="text-[#F53B49] font-semibold">Бесплатно</span>
+                          <span className="text-[#F53B49] font-semibold" style={{
+                            fontFamily: 'Manrope',
+                            fontSize: '16px'
+                          }}>Бесплатно</span>
                         </div>
                         <div className="flex justify-between items-center py-3 border-b">
                           <span style={{
@@ -197,7 +200,10 @@ const Support: React.FC = () => {
                             lineHeight: '120%',
                             letterSpacing: '0.32px'
                           }}>Автомобильная доставка по Московской Области</span>
-                          <span className="text-[#F53B49] font-semibold">30₽/км</span>
+                          <span className="text-[#F53B49] font-semibold" style={{
+                            fontFamily: 'Manrope',
+                            fontSize: '16px'
+                          }}>30₽/км</span>
                         </div>
                         <div className="flex justify-between items-center py-3 border-b">
                           <span style={{
@@ -209,7 +215,10 @@ const Support: React.FC = () => {
                             lineHeight: '120%',
                             letterSpacing: '0.32px'
                           }}>Курьерская доставка (вес до 3 кг)</span>
-                          <span className="text-[#F53B49] font-semibold">500₽</span>
+                          <span className="text-[#F53B49] font-semibold" style={{
+                            fontFamily: 'Manrope',
+                            fontSize: '16px'
+                          }}>500₽</span>
                         </div>
                       </div>
                     </div>
@@ -232,7 +241,10 @@ const Support: React.FC = () => {
                             lineHeight: '120%',
                             letterSpacing: '0.32px'
                           }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
-                          <span className="text-[#F53B49] font-semibold">1000 ₽</span>
+                          <span className="text-[#F53B49] font-semibold" style={{
+                            fontFamily: 'Manrope',
+                            fontSize: '16px'
+                          }}>1000 ₽</span>
                         </div>
                         <div className="h-2"></div>
                       </div>
