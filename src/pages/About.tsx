@@ -160,7 +160,7 @@ const About: React.FC = () => {
           </Breadcrumb>
           
           {/* Main Title - уменьшен в 2 раза */}
-          <h1 className="text-[40px] font-bold text-[#17171E] leading-tight" style={{ marginBottom: '10px' }}>
+          <h1 className="text-[40px] font-bold text-[#17171E] leading-tight">
             О компании
           </h1>
         </div>
