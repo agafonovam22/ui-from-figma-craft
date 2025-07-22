@@ -443,45 +443,49 @@ const Services: React.FC = () => {
               {/* Contact form section */}
               <div className="flex gap-8 items-stretch bg-gray-50 rounded-lg p-8 h-[300px]">
                 <div className="flex-1">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Оставьте заявку!</h2>
-                  <form onSubmit={handleFitnessSubmit} className="space-y-4">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <Input
-                        placeholder="ФИО"
-                        value={fitnessFormData.fullName}
-                        onChange={(e) => handleFitnessInputChange('fullName', e.target.value)}
-                      />
-                      <Input
-                        placeholder="Телефон"
-                        value={fitnessFormData.phone}
-                        onChange={(e) => handleFitnessInputChange('phone', e.target.value)}
-                      />
-                      <Input
-                        placeholder="E-mail"
-                        type="email"
-                        value={fitnessFormData.email}
-                        onChange={(e) => handleFitnessInputChange('email', e.target.value)}
-                      />
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <Input
-                        placeholder="Город"
-                        value={fitnessFormData.city}
-                        onChange={(e) => handleFitnessInputChange('city', e.target.value)}
-                      />
-                      <Input
-                        placeholder="Организация"
-                        value={fitnessFormData.organization}
-                        onChange={(e) => handleFitnessInputChange('organization', e.target.value)}
-                      />
-                    </div>
-                    <Button 
-                      type="submit"
-                      className="bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 font-semibold rounded-lg"
-                    >
-                      Заказать звонок
-                    </Button>
-                  </form>
+                  <div className="bg-white rounded-lg p-6">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                      <span style={{color: '#778093'}}>Оставьте</span> заявку!
+                    </h2>
+                    <form onSubmit={handleFitnessSubmit} className="space-y-4">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <Input
+                          placeholder="ФИО"
+                          value={fitnessFormData.fullName}
+                          onChange={(e) => handleFitnessInputChange('fullName', e.target.value)}
+                        />
+                        <Input
+                          placeholder="Телефон"
+                          value={fitnessFormData.phone}
+                          onChange={(e) => handleFitnessInputChange('phone', e.target.value)}
+                        />
+                        <Input
+                          placeholder="E-mail"
+                          type="email"
+                          value={fitnessFormData.email}
+                          onChange={(e) => handleFitnessInputChange('email', e.target.value)}
+                        />
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <Input
+                          placeholder="Город"
+                          value={fitnessFormData.city}
+                          onChange={(e) => handleFitnessInputChange('city', e.target.value)}
+                        />
+                        <Input
+                          placeholder="Организация"
+                          value={fitnessFormData.organization}
+                          onChange={(e) => handleFitnessInputChange('organization', e.target.value)}
+                        />
+                      </div>
+                      <Button 
+                        type="submit"
+                        className="bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 font-semibold rounded-lg"
+                      >
+                        Заказать звонок
+                      </Button>
+                    </form>
+                  </div>
                 </div>
                 <div className="flex-1">
                   <img 
