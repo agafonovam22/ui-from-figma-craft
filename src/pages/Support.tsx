@@ -728,8 +728,8 @@ const Support: React.FC = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-8">
                       {/* Running Equipment */}
                       <div>
-                        <h4 className="text-lg font-medium mb-6">Беговые дорожки</h4>
                         <div className="bg-gray-100 p-6 rounded-lg">
+                          <h4 className="text-lg font-medium mb-6">Беговые дорожки</h4>
                           <div className="space-y-4">
                             <div className="flex justify-between items-center py-2">
                               <span className="text-gray-700">Sole Fitness</span>
