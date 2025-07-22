@@ -372,83 +372,73 @@ const Support: React.FC = () => {
                   }}>Калькулятор доставки</h4>
                 </div>
                 <div className="flex-1">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {/* Calculator Form */}
-                    <div className="space-y-4">
-                      <div>
+                  <div className="bg-white p-6 rounded-lg border">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      {/* Calculator Form */}
+                      <div className="space-y-4">
                         <input
                           type="text"
-                          placeholder="Пункт отправления"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F53B49]"
-                        />
-                      </div>
-                      <div>
-                        <input
-                          type="text"
-                          placeholder="Пункт назначения"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F53B49]"
-                        />
-                      </div>
-                      <div>
-                        <input
-                          type="text"
-                          placeholder="Габариты груза, м"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F53B49]"
-                        />
-                      </div>
-                      <div className="grid grid-cols-2 gap-4">
-                        <input
-                          type="text"
-                          placeholder="Вес груза, кг"
-                          className="px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F53B49]"
+                          placeholder="Введите индекс откуда"
+                          className="w-full p-3 border rounded-lg"
                         />
                         <input
                           type="text"
-                          placeholder="Объем груза, м³"
-                          className="px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F53B49]"
+                          placeholder="Введите индекс куда"
+                          className="w-full p-3 border rounded-lg"
                         />
-                      </div>
-                      <button className="w-full bg-[#F53B49] text-white py-3 rounded-md hover:bg-[#e63946] transition-colors font-medium">
-                        Рассчитать
-                      </button>
-                    </div>
-
-                    {/* Delivery Options */}
-                    <div className="space-y-4">
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="font-medium">СДЭК</span>
-                          <span className="text-[#F53B49] font-semibold">2 000 ₽</span>
+                        <div className="grid grid-cols-3 gap-2">
+                          <input
+                            type="number"
+                            placeholder="Вес, кг"
+                            className="p-3 border rounded-lg"
+                          />
+                          <input
+                            type="number"
+                            placeholder="Длина, см"
+                            className="p-3 border rounded-lg"
+                          />
+                          <input
+                            type="number"
+                            placeholder="Ширина, см"
+                            className="p-3 border rounded-lg"
+                          />
                         </div>
-                        <div className="text-sm text-gray-600 mb-1">До 2 дней</div>
-                        <div className="text-sm text-gray-600">До пункта выдачи</div>
+                        <input
+                          type="number"
+                          placeholder="Высота, см"
+                          className="w-full p-3 border rounded-lg"
+                        />
+                        <button className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90">
+                          Рассчитать доставку
+                        </button>
                       </div>
 
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="font-medium">СДЭК</span>
-                          <span className="text-[#F53B49] font-semibold">2 000 ₽</span>
+                      {/* Delivery Options */}
+                      <div className="space-y-4">
+                        <h5 className="font-medium mb-4">Варианты доставки:</h5>
+                        <div className="space-y-3">
+                          <div className="flex justify-between items-center p-3 border rounded-lg">
+                            <div>
+                              <div className="font-medium">СДЭК</div>
+                              <div className="text-sm text-gray-600">3-5 дней</div>
+                            </div>
+                            <div className="font-medium">от 300 ₽</div>
+                          </div>
+                          <div className="flex justify-between items-center p-3 border rounded-lg">
+                            <div>
+                              <div className="font-medium">Почта России</div>
+                              <div className="text-sm text-gray-600">7-14 дней</div>
+                            </div>
+                            <div className="font-medium">от 200 ₽</div>
+                          </div>
+                          <div className="flex justify-between items-center p-3 border rounded-lg">
+                            <div>
+                              <div className="font-medium">DPD</div>
+                              <div className="text-sm text-gray-600">2-4 дня</div>
+                            </div>
+                            <div className="font-medium">от 350 ₽</div>
+                          </div>
                         </div>
-                        <div className="text-sm text-gray-600 mb-1">До 2 дней</div>
-                        <div className="text-sm text-gray-600">До двери</div>
-                      </div>
-
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="font-medium">Деловые линии</span>
-                          <span className="text-[#F53B49] font-semibold">2 000 ₽</span>
-                        </div>
-                        <div className="text-sm text-gray-600 mb-1">До 2 дней</div>
-                        <div className="text-sm text-gray-600">До пункта выдачи</div>
-                      </div>
-
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="font-medium">Деловые линии</span>
-                          <span className="text-[#F53B49] font-semibold">2 000 ₽</span>
-                        </div>
-                        <div className="text-sm text-gray-600 mb-1">До 2 дней</div>
-                        <div className="text-sm text-gray-600">До пункта выдачи</div>
                       </div>
                     </div>
                   </div>
