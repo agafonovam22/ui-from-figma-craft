@@ -32,6 +32,7 @@ import {
 import { ChevronUp, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SupportCitySelector from '@/components/SupportCitySelector';
+import { Separator } from '@/components/ui/separator';
 
 const Support: React.FC = () => {
   const [activeTab, setActiveTab] = useState('delivery');
@@ -160,6 +161,8 @@ const Support: React.FC = () => {
                   </p>
                 </div>
               </div>
+              
+              <Separator className="my-6 bg-gray-200" />
 
               {/* Стоимость доставки */}
               <div className="flex gap-8">
