@@ -325,43 +325,32 @@ const Support: React.FC = () => {
                   }}>Доставка по России</h4>
                 </div>
                 <div className="flex-1">
-                  <p className="text-gray-700 mb-4">
-                    Определяется сроками доставки транспортной компании. Доставка товара на склад транспортной компании осуществляется в течение 1-2 дней с момента заказа, в режиме работы: Понедельник - Пятница
-                  </p>
-                  <p className="text-gray-700 mb-6">
-                    Стоимость доставки определяется тарифами транспортных компаний, оплата за доставку осуществляется при получении товара
-                  </p>
+                  <div className="bg-gray-100 p-6 rounded-lg mb-6">
+                    <p className="text-gray-700 mb-4">
+                      Определяется сроками доставки транспортной компании. Доставка товара на склад транспортной компании осуществляется в течение 1-2 дней с момента заказа, в режиме работы: Понедельник - Пятница
+                    </p>
+                    <p className="text-gray-700">
+                      Стоимость доставки определяется тарифами транспортных компаний, оплата за доставку осуществляется при получении товара
+                    </p>
+                  </div>
 
                   {/* Transport Companies */}
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                    <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2">
-                        <span className="font-medium">DPD</span>
+                  <div className="bg-gray-100 p-6 rounded-lg">
+                    <div className="grid grid-cols-3 gap-4">
+                      <div className="text-center">
+                        <div className="p-4">
+                          <span className="font-medium">СДЭК</span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2">
-                        <span className="font-medium">DPD</span>
+                      <div className="text-center">
+                        <div className="p-4">
+                          <span className="font-medium">DPD</span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2">
-                        <span className="font-medium">СДЭК</span>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2">
-                        <span className="font-medium">СДЭК</span>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2">
-                        <span className="font-medium">Байкал сервис</span>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2">
-                        <span className="font-medium">Байкал сервис</span>
+                      <div className="text-center">
+                        <div className="p-4">
+                          <span className="font-medium">Байкал Сервис</span>
+                        </div>
                       </div>
                     </div>
                   </div>
