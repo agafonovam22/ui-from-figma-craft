@@ -357,6 +357,9 @@ const Support: React.FC = () => {
                 </div>
               </div>
 
+              {/* Разделительная линия */}
+              <div className="h-px bg-gray-300"></div>
+
               {/* Калькулятор доставки */}
               <div className="flex gap-8">
                 <div className="w-80 flex-shrink-0">
