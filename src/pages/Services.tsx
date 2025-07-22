@@ -79,7 +79,7 @@ const Services: React.FC = () => {
     {
       id: 1,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png'
+      thumbnail: '/lovable-uploads/f4c3da36-0826-43f3-84e8-556a68d7997c.png'
     },
     {
       id: 2,
