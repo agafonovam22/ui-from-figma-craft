@@ -596,13 +596,13 @@ const About: React.FC = () => {
             </section>
 
             {/* В чем причина нашего успеха? */}
-            <section className="pt-8 pb-16 bg-white">
+            <section className="bg-white" style={{ paddingTop: 'calc(2rem - 50px)', paddingBottom: '4rem' }}>
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-                <h2 className="text-[40px] font-bold text-[#17171E] mb-8 leading-tight">
+                <h2 className="mb-8 leading-tight" style={{ fontSize: '32px', fontFamily: 'Benzin-Semibold', color: 'var(--Dark-Grey, #262631)' }}>
                   В чем причина нашего успеха?
                 </h2>
                 
-                <p className="text-gray-700 text-base mb-12 max-w-6xl leading-relaxed font-manrope">
+                <p className="text-gray-700 text-base mb-12 max-w-6xl leading-relaxed font-manrope text-justify">
                   На сегодняшний день в каталоге Well Fitness представлены лучшие мировые бренды спортивного оборудования, среди которых Sole Fitness, Nautilus Fitness, Bowflex, CardioPower, PROSKI Simulator, Eclipse и др. Продукция этих марок отличается безупречным балансом качества и функциональности, возглавляет ведущие мировые рейтинги и пользуется доверием покупателей по всему миру. Если вы ищете надежного поставщика спортивного оборудования - мы будем рады видеть вас в числе наших партнеров и готовы предложить лучшие условия для выгодного дилерского сотрудничества!
                 </p>
 
