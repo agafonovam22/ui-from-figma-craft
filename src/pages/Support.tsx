@@ -183,7 +183,7 @@ const Support: React.FC = () => {
                           <span className="text-gray-700">Автомобильная доставка по Московской Области</span>
                           <span className="text-[#F53B49] font-semibold">30₽/км</span>
                         </div>
-                        <div className="flex justify-between items-center py-3 border-b">
+                        <div className="flex justify-between items-center py-3">
                           <span className="text-gray-700">Курьерская доставка (вес до 3 кг)</span>
                           <span className="text-[#F53B49] font-semibold">500₽</span>
                         </div>
