@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Link } from 'react-router-dom';
 import SupportCitySelector from '@/components/SupportCitySelector';
+import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 
 const Support: React.FC = () => {
   const [activeTab, setActiveTab] = useState('delivery');
@@ -20,39 +22,59 @@ const Support: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="flex-1">
-        {/* Banner Section */}
-        <div className="relative bg-gray-800 py-16 overflow-hidden">
-          <div className="absolute inset-0">
-            <img 
-              src="/lovable-uploads/fc471d68-6e0a-44bf-8fc3-d15539fc9680.png" 
-              alt="3D warehouse interior" 
-              className="w-full h-full object-cover opacity-80"
-            />
-          </div>
-          <div className="relative max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="max-w-md">
-              <h1 className="text-4xl font-bold text-white mb-6">
-                Рекламный<br />баннер
-              </h1>
-              <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors font-medium">
-                Оставить заявку
-              </button>
+      <main>
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+          {/* Breadcrumbs */}
+          <Breadcrumb className="mb-6">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/">Главная</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Доставка и оплата</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+
+          {/* Page Title */}
+          <h1 className="text-4xl font-bold text-gray-900 mb-12">Доставка и оплата</h1>
+
+          {/* Hero Section */}
+          <div className="bg-gradient-to-r from-gray-800 to-gray-600 rounded-lg p-8 mb-12 text-white relative overflow-hidden">
+            <div className="flex items-center justify-between">
+              <div className="flex-1">
+                <h2 className="text-5xl font-bold mb-4 leading-tight">
+                  Разрабатаем<br />
+                  3D-проект<br />
+                  бесплатно!
+                </h2>
+                <Button className="bg-brand-red hover:bg-brand-red-hover text-white px-8 py-3 text-lg font-semibold rounded-lg">
+                  Оставить заявку
+                </Button>
+              </div>
+              <div className="flex-1 flex justify-end">
+                <img 
+                  src="/lovable-uploads/1750c483-ca71-4fb0-85b9-fd2efc819a71.png"
+                  alt="3D проект спортзала"
+                  className="max-w-full h-auto"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Tabs Section */}
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+          {/* Navigation Tabs */}
           <div className="flex flex-wrap gap-2 mb-8">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-4 py-2 rounded transition-colors ${
+                className={`px-4 py-2 rounded-lg transition-colors ${
                   activeTab === tab.id
                     ? 'bg-[#F53B49] text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -63,340 +85,78 @@ const Support: React.FC = () => {
             ))}
           </div>
 
+          {/* Content */}
+          {/* City Selector */}
+          <div className="mb-8">
+            <SupportCitySelector 
+              selectedCity={selectedCity} 
+              onCitySelect={setSelectedCity} 
+            />
+          </div>
+
+          {/* Tab Content */}
           {activeTab === 'delivery' && (
-            <div className="space-y-8">
-              {/* Город доставки */}
-              <div className="flex gap-8">
-                <div className="w-80 flex-shrink-0">
-                  <div className="flex items-center gap-1">
-                    <h3 className="text-[20px] leading-[140%]" style={{
-                      color: 'var(--Dark-Grey, #262631)',
-                      fontFamily: 'Benzin-Medium, sans-serif',
-                      fontSize: '20px',
-                      fontStyle: 'normal',
-                      fontWeight: '400',
-                      lineHeight: '140%'
-                    }}>
-                      Город доставки
-                    </h3>
-                    <SupportCitySelector 
-                      selectedCity={selectedCity} 
-                      onCitySelect={setSelectedCity}
-                    />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <p className="text-[#262631] text-[16px]" style={{fontFamily: 'Manrope, sans-serif'}}>
-                    Доставка по {selectedCity} осуществляется в течение 1-2 дней с момента заказа.<br />
-                    Ежедневно с 9:00 до 21:00
-                  </p>
-                </div>
-              </div>
-              
-              <Separator className="my-6 bg-gray-200" />
-
-              {/* Стоимость доставки */}
-              <div className="flex gap-8">
-                <div className="w-80 flex-shrink-0">
-                  <h3 className="text-2xl font-semibold text-gray-900">Стоимость доставки</h3>
-                </div>
-                <div className="flex-1">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {/* Left Column */}
-                    <div className="rounded-lg p-6 bg-gray-50">
-                      <h4 className="text-lg font-medium mb-4">Заказ от 30 001 ₽</h4>
-                      <div className="space-y-4">
-                        <div className="flex justify-between items-center py-3 border-b">
-                          <span className="text-gray-700">Автомобильная доставка по г. Москве в пределах МКАД</span>
-                          <span className="text-[#F53B49] font-semibold">Бесплатно</span>
-                        </div>
-                        <div className="flex justify-between items-center py-3 border-b">
-                          <span className="text-gray-700">Автомобильная доставка по Московской Области</span>
-                          <span className="text-[#F53B49] font-semibold">30₽/км</span>
-                        </div>
-                        <div className="flex justify-between items-center py-3">
-                          <span className="text-gray-700">Курьерская доставка (вес до 3 кг)</span>
-                          <span className="text-[#F53B49] font-semibold">500₽</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Right Column */}
-                    <div className="rounded-lg p-6 bg-gray-50">
-                      <h4 className="text-lg font-medium mb-4">Заказ до 30 000 ₽</h4>
-                      <div className="space-y-4">
-                        <div className="flex justify-between items-center py-3 border-b">
-                          <span className="text-gray-700">Автомобильная доставка по г. Москве в пределах МКАД</span>
-                          <span className="text-[#F53B49] font-semibold">1000 ₽</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+            <div className="grid md:grid-cols-2 gap-8">
               {/* Самовывоз со склада */}
-              <div className="flex gap-8">
-                <div className="w-80 flex-shrink-0">
-                  <h3 className="text-2xl font-semibold text-gray-900">Самовывоз со склада</h3>
+              <div className="bg-white rounded-lg border p-6">
+                <h3 className="text-xl font-semibold mb-4">Самовывоз со склада</h3>
+                
+                {/* Склад */}
+                <div className="mb-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="font-medium text-gray-900">Склад</h4>
+                    <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">В наличии</span>
+                  </div>
+                  <p className="text-gray-600 text-sm mb-2">г. Москва, ул. Семеновская, д. 15, стр. 1</p>
+                  <p className="text-gray-600 text-sm">Пн-Пт: 9:00-20:00, Сб: 10:00-18:00, Вс: выходной</p>
                 </div>
-                <div className="flex-1">
-                  <div className="space-y-6">
-                    {/* Склад */}
-                    <div>
-                      <div className="flex items-center gap-4 mb-2">
-                        <h4 className="text-lg font-medium text-gray-900">Склад</h4>
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                          <span className="text-sm text-green-600 font-medium">В наличии</span>
-                        </div>
-                        <span className="text-sm text-gray-600">пн - пт с 09:30-18:00</span>
-                      </div>
-                      <p className="text-gray-700">
-                        Московская область, Красногорский р-н, д. Гольево, улица Центральная ул., с44,
-                      </p>
-                    </div>
 
-                    {/* Дополнительные склад */}
+                <Separator className="my-4" />
+
+                {/* Дополнительные склады */}
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-3">Дополнительные склады</h4>
+                  <div className="space-y-3">
                     <div>
-                      <div className="flex items-center gap-4 mb-2">
-                        <h4 className="text-lg font-medium text-gray-900">Дополнительные склад</h4>
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                          <span className="text-sm text-green-600 font-medium">В наличии</span>
-                        </div>
-                        <span className="text-sm text-gray-600">пн - пт с 10:00-18:00</span>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm text-gray-900">г. Санкт-Петербург, ул. Пушкинская, д. 10</span>
+                        <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">В наличии</span>
                       </div>
-                      <p className="text-gray-700 mb-2">
-                        Красногвардейский пер 23 лит Е, территория завода "Ильич", заезд с Вязского переулка.
-                      </p>
-                      <p className="text-sm text-gray-600">
-                        Выдача осуществляется оформленных заказов, при согласовании даты и времени приезда
-                      </p>
+                      <p className="text-xs text-gray-600">Пн-Пт: 10:00-19:00, Сб: 11:00-17:00</p>
+                    </div>
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm text-gray-900">г. Екатеринбург, ул. Ленина, д. 25</span>
+                        <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Под заказ</span>
+                      </div>
+                      <p className="text-xs text-gray-600">Пн-Пт: 9:00-18:00, Сб-Вс: выходной</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Доставка по России */}
-              <div className="flex gap-8">
-                <div className="w-80 flex-shrink-0">
-                  <h3 className="text-2xl font-semibold text-gray-900">Доставка по России</h3>
-                </div>
-                <div className="flex-1">
-                  <p className="text-gray-700 mb-4">
-                    Определяется сроками доставки транспортной компании. Доставка товара на склад транспортной компании осуществляется в течение 1-2 дней с момента заказа, в режиме работы: Понедельник - Пятница
-                  </p>
-                  <p className="text-gray-700 mb-6">
-                    Стоимость доставки определяется тарифами транспортных компаний, оплата за доставку осуществляется при получении товара
-                  </p>
+              <div className="bg-white rounded-lg border p-6">
+                <h3 className="text-xl font-semibold mb-4">Доставка по России</h3>
+                <p className="text-gray-600 text-sm mb-6">
+                  Осуществляем доставку по всей территории России через проверенных партнеров. 
+                  Срок доставки от 3 до 14 рабочих дней в зависимости от региона.
+                </p>
 
-                  {/* Transport Companies */}
-                  <div className="grid grid-cols-3 gap-8">
-                    <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2 h-16 flex items-center justify-center">
-                        <span className="font-medium text-gray-700">DPD</span>
-                      </div>
+                <div className="space-y-4">
+                  <h4 className="font-medium text-gray-900">Партнеры по доставке:</h4>
+                  <div className="flex flex-wrap gap-4">
+                    <div className="flex items-center gap-2 bg-gray-50 px-3 py-2 rounded">
+                      <img src="/lovable-uploads/f4c3da36-0826-43f3-84e8-556a68d7997c.png" alt="DPD" className="h-6" />
+                      <span className="text-sm font-medium">DPD</span>
                     </div>
-                    <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2 h-16 flex items-center justify-center">
-                        <span className="font-medium text-gray-700">DPD</span>
-                      </div>
+                    <div className="flex items-center gap-2 bg-gray-50 px-3 py-2 rounded">
+                      <img src="/lovable-uploads/ef816493-63e0-456b-9a81-a821e2916f6b.png" alt="СДЭК" className="h-6" />
+                      <span className="text-sm font-medium">СДЭК</span>
                     </div>
-                    <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2 h-16 flex items-center justify-center">
-                        <span className="font-medium text-gray-700">СДЭК</span>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2 h-16 flex items-center justify-center">
-                        <span className="font-medium text-gray-700">СДЭК</span>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2 h-16 flex items-center justify-center">
-                        <span className="font-medium text-gray-700">Байкал сервис</span>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="bg-gray-100 p-4 rounded-lg mb-2 h-16 flex items-center justify-center">
-                        <span className="font-medium text-gray-700">Байкал сервис</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Калькулятор доставки */}
-              <div className="flex gap-8">
-                <div className="w-80 flex-shrink-0">
-                  <h3 className="text-2xl font-semibold text-gray-900">Калькулятор доставки</h3>
-                </div>
-                <div className="flex-1">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {/* Calculator Form */}
-                    <div className="space-y-4">
-                      <div>
-                        <input
-                          type="text"
-                          placeholder="Пункт отправления"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F53B49]"
-                        />
-                      </div>
-                      <div>
-                        <input
-                          type="text"
-                          placeholder="Пункт назначения"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F53B49]"
-                        />
-                      </div>
-                      <div>
-                        <input
-                          type="text"
-                          placeholder="Габариты груза, м"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F53B49]"
-                        />
-                      </div>
-                      <div className="grid grid-cols-2 gap-4">
-                        <input
-                          type="text"
-                          placeholder="Вес груза, кг"
-                          className="px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F53B49]"
-                        />
-                        <input
-                          type="text"
-                          placeholder="Объем груза, м³"
-                          className="px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F53B49]"
-                        />
-                      </div>
-                      <button className="w-full bg-[#F53B49] text-white py-3 rounded-md hover:bg-[#e63946] transition-colors font-medium">
-                        Рассчитать
-                      </button>
-                    </div>
-
-                    {/* Delivery Options */}
-                    <div className="space-y-4">
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="font-medium">СДЭК</span>
-                          <span className="text-[#F53B49] font-semibold">2 000 ₽</span>
-                        </div>
-                        <div className="text-sm text-gray-600 mb-1">До 2 дней</div>
-                        <div className="text-sm text-gray-600">До пункта выдачи</div>
-                      </div>
-
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="font-medium">СДЭК</span>
-                          <span className="text-[#F53B49] font-semibold">2 000 ₽</span>
-                        </div>
-                        <div className="text-sm text-gray-600 mb-1">До 2 дней</div>
-                        <div className="text-sm text-gray-600">До двери</div>
-                      </div>
-
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="font-medium">Деловые линии</span>
-                          <span className="text-[#F53B49] font-semibold">2 000 ₽</span>
-                        </div>
-                        <div className="text-sm text-gray-600 mb-1">До 2 дней</div>
-                        <div className="text-sm text-gray-600">До пункта выдачи</div>
-                      </div>
-
-                      <div className="bg-[#F53B49] p-4 rounded-lg text-white">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="font-medium">Деловые линии</span>
-                          <span className="font-semibold">2 000 ₽</span>
-                        </div>
-                        <div className="text-sm opacity-90 mb-1">До 2 дней</div>
-                        <div className="text-sm opacity-90">До пункта выдачи</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Оплата для физ. лиц */}
-              <div className="flex gap-8">
-                <div className="w-80 flex-shrink-0">
-                  <h3 className="text-2xl font-semibold text-gray-900">Оплата для физ. лиц</h3>
-                </div>
-                <div className="flex-1">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-                    {/* Оплата наличными */}
-                    <div className="bg-gray-800 text-white p-6 rounded-lg">
-                      <h5 className="text-lg font-medium mb-3">Оплата наличными</h5>
-                      <p className="text-sm mb-4">
-                        Возможна при оформлении всех способов доставки со всех субъектах РФ, где есть наши филиалы и терминалы наших партнеров, предоставляющих курьерские услуги.
-                      </p>
-                    </div>
-
-                    {/* Оплата картой */}
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h5 className="text-lg font-medium mb-3">Оплата картой</h5>
-                      <p className="text-sm mb-4">
-                        Возможна при оформлении всех способов доставки, во время самовывоза, а также курьеру при получении.
-                      </p>
-                    </div>
-
-                    {/* Оплата онлайн */}
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h5 className="text-lg font-medium mb-3">Оплата онлайн</h5>
-                      <p className="text-sm mb-4">
-                        Покупателю направляется защищенная ссылка для перехода в платежную систему. Производить оплату можно всеми видами карт, электронными деньгами, а также через терминалы без комиссии.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    {/* Наложенный платеж */}
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h5 className="text-lg font-medium mb-3">Наложенный платеж</h5>
-                      <p className="text-sm">
-                        При отправке в регионы. Рассчитывается по тарифам транспортных компаний и осуществляется с помощью партнеров перевозчиков «ПЭК» и «Деловые линии»
-                      </p>
-                    </div>
-
-                    {/* В рассрочку */}
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h5 className="text-lg font-medium mb-3">В рассрочку</h5>
-                      <p className="text-sm">
-                        от банков партнеров ОТП, Халва, Тинькофф, Сбербанк
-                      </p>
-                    </div>
-
-                    {/* Безналичная оплата */}
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h5 className="text-lg font-medium mb-3">Безналичная оплата</h5>
-                      <p className="text-sm">
-                        Выставление счета
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Оплата для юр. лиц */}
-              <div className="flex gap-8">
-                <div className="w-80 flex-shrink-0">
-                  <h3 className="text-2xl font-semibold text-gray-900">Оплата для юр. лиц</h3>
-                </div>
-                <div className="flex-1">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    {/* Оплата онлайн */}
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h5 className="text-lg font-medium mb-3">Оплата онлайн</h5>
-                      <p className="text-sm">
-                        Покупателю направляется защищенная ссылка для перехода в платежную систему. Производить оплату можно всеми видами карт, электронными деньгами, а также через терминалы без комиссии.
-                      </p>
-                    </div>
-
-                    {/* Безналичная оплата */}
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h5 className="text-lg font-medium mb-3">Безналичная оплата</h5>
-                      <p className="text-sm">
-                        Выставление счета
-                      </p>
+                    <div className="flex items-center gap-2 bg-gray-50 px-3 py-2 rounded">
+                      <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Байкал сервис" className="h-6" />
+                      <span className="text-sm font-medium">Байкал сервис</span>
                     </div>
                   </div>
                 </div>
@@ -406,39 +166,49 @@ const Support: React.FC = () => {
 
           {activeTab === 'return' && (
             <div className="space-y-8">
-              <h3 className="text-xl font-semibold mb-4">
-                Возврат и обмен товаров
-              </h3>
-              <p className="text-gray-700">
-                Информация о возврате и обмене товаров...
-              </p>
+              <h3 className="text-xl font-semibold mb-4">Условия возврата</h3>
+              <p className="text-gray-700">Информация об условиях возврата товара...</p>
             </div>
           )}
 
           {activeTab === 'warranty' && (
             <div className="space-y-8">
-              <h3 className="text-xl font-semibold mb-4">
-                Гарантийные обязательства
-              </h3>
-              <p className="text-gray-700">
-                Информация о гарантии...
-              </p>
+              <h3 className="text-xl font-semibold mb-4">Гарантия</h3>
+              <p className="text-gray-700">Информация о гарантийных условиях...</p>
             </div>
           )}
 
-          {activeTab === 'installation' && (
+          {activeTab === 'questions' && (
             <div className="space-y-8">
-              <h3 className="text-xl font-semibold mb-4">
-                Установка и сборка
-              </h3>
-              <p className="text-gray-700">
-                Информация об установке и сборке...
-              </p>
+              <h3 className="text-xl font-semibold mb-4">Вопросы и ответы</h3>
+              <p className="text-gray-700">Часто задаваемые вопросы...</p>
+            </div>
+          )}
+
+          {activeTab === 'instructions' && (
+            <div className="space-y-8">
+              <h3 className="text-xl font-semibold mb-4">Инструкции</h3>
+              <p className="text-gray-700">Инструкции по использованию...</p>
+            </div>
+          )}
+
+          {activeTab === 'account' && (
+            <div className="space-y-8">
+              <h3 className="text-xl font-semibold mb-4">Личный кабинет</h3>
+              <p className="text-gray-700">Информация о личном кабинете...</p>
+            </div>
+          )}
+
+          {activeTab === 'b2b' && (
+            <div className="space-y-8">
+              <h3 className="text-xl font-semibold mb-4">B2B кабинет</h3>
+              <p className="text-gray-700">Информация о B2B кабинете...</p>
             </div>
           )}
         </div>
       </main>
 
+      <div className="h-[70px]"></div>
       <Footer />
     </div>
   );
