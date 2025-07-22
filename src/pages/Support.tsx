@@ -137,13 +137,9 @@ const Support: React.FC = () => {
               <div className="flex gap-8">
                 <div className="w-80 flex-shrink-0">
                   <div className="flex items-center gap-1">
-                    <h3 className="text-[20px] leading-[140%]" style={{
-                      color: 'var(--Dark-Grey, #262631)',
-                      fontFamily: 'Benzin-Medium, sans-serif',
-                      fontSize: '20px',
-                      fontStyle: 'normal',
-                      fontWeight: '400',
-                      lineHeight: '140%'
+                    <h3 style={{
+                      fontFamily: 'Benzin-Medium',
+                      fontSize: '20px'
                     }}>
                       Город доставки
                     </h3>
@@ -164,13 +160,9 @@ const Support: React.FC = () => {
               {/* Стоимость доставки */}
               <div className="flex gap-8">
                 <div className="w-80 flex-shrink-0">
-                  <h3 className="text-[20px] leading-[140%]" style={{
-                    color: 'var(--Dark-Grey, #262631)',
-                    fontFamily: 'Benzin-Medium, sans-serif',
-                    fontSize: '20px',
-                    fontStyle: 'normal',
-                    fontWeight: '400',
-                    lineHeight: '140%'
+                  <h3 style={{
+                    fontFamily: 'Benzin-Medium',
+                    fontSize: '20px'
                   }}>Стоимость доставки</h3>
                 </div>
                 <div className="flex-1">
@@ -251,20 +243,19 @@ const Support: React.FC = () => {
 
               {/* Самовывоз со склада */}
               <div>
-                <h3 className="text-[20px] leading-[140%] mb-6" style={{
-                  color: 'var(--Dark-Grey, #262631)',
-                  fontFamily: 'Benzin-Medium, sans-serif',
-                  fontSize: '20px',
-                  fontStyle: 'normal',
-                  fontWeight: '400',
-                  lineHeight: '140%'
+                <h3 className="mb-6" style={{
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
                 }}>Самовывоз со склада</h3>
                 
                 {/* Warehouse Information */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                   {/* Main Warehouse */}
                   <div className="bg-gray-50 p-6 rounded-lg">
-                    <h4 className="text-lg font-medium mb-4">Склад</h4>
+                    <h4 className="mb-4" style={{
+                      fontFamily: 'Benzin-Medium',
+                      fontSize: '20px'
+                    }}>Склад</h4>
                     <p className="text-gray-700 mb-4">
                       Московская область, Красногорский р-н, д. Гольево, улица Центральная ул., с44,
                     </p>
@@ -277,7 +268,10 @@ const Support: React.FC = () => {
 
                   {/* Additional Warehouse */}
                   <div className="bg-gray-50 p-6 rounded-lg">
-                    <h4 className="text-lg font-medium mb-4">Дополнительные склад</h4>
+                    <h4 className="mb-4" style={{
+                      fontFamily: 'Benzin-Medium',
+                      fontSize: '20px'
+                    }}>Дополнительные склад</h4>
                     <p className="text-gray-700 mb-4">
                       Красногвардейский пер 23 лит Е, территория завода "Ильич", заезд с Вязского переулка.
                     </p>
@@ -294,13 +288,9 @@ const Support: React.FC = () => {
 
                 {/* Доставка по России */}
                 <div className="mb-8">
-                  <h4 className="text-[20px] leading-[140%] mb-4" style={{
-                    color: 'var(--Dark-Grey, #262631)',
-                    fontFamily: 'Benzin-Medium, sans-serif',
-                    fontSize: '20px',
-                    fontStyle: 'normal',
-                    fontWeight: '400',
-                    lineHeight: '140%'
+                  <h4 className="mb-4" style={{
+                    fontFamily: 'Benzin-Medium',
+                    fontSize: '20px'
                   }}>Доставка по России</h4>
                   <p className="text-gray-700 mb-4">
                     Определяется сроками доставки транспортной компании. Доставка товара на склад транспортной компании осуществляется в течение 1-2 дней с момента заказа, в режиме работы: Понедельник - Пятница
@@ -346,13 +336,9 @@ const Support: React.FC = () => {
 
                 {/* Калькулятор доставки */}
                 <div>
-                  <h4 className="text-[20px] leading-[140%] mb-6" style={{
-                    color: 'var(--Dark-Grey, #262631)',
-                    fontFamily: 'Benzin-Medium, sans-serif',
-                    fontSize: '20px',
-                    fontStyle: 'normal',
-                    fontWeight: '400',
-                    lineHeight: '140%'
+                  <h4 className="mb-6" style={{
+                    fontFamily: 'Benzin-Medium',
+                    fontSize: '20px'
                   }}>Калькулятор доставки</h4>
                   
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -439,13 +425,9 @@ const Support: React.FC = () => {
 
                 {/* Оплата для физ. лиц */}
                 <div className="mb-8">
-                  <h4 className="text-[20px] leading-[140%] mb-6" style={{
-                    color: 'var(--Dark-Grey, #262631)',
-                    fontFamily: 'Benzin-Medium, sans-serif',
-                    fontSize: '20px',
-                    fontStyle: 'normal',
-                    fontWeight: '400',
-                    lineHeight: '140%'
+                  <h4 className="mb-6" style={{
+                    fontFamily: 'Benzin-Medium',
+                    fontSize: '20px'
                   }}>Оплата для физ. лиц</h4>
                   
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
@@ -503,13 +485,9 @@ const Support: React.FC = () => {
 
                 {/* Оплата для юр. лиц */}
                 <div>
-                  <h4 className="text-[20px] leading-[140%] mb-6" style={{
-                    color: 'var(--Dark-Grey, #262631)',
-                    fontFamily: 'Benzin-Medium, sans-serif',
-                    fontSize: '20px',
-                    fontStyle: 'normal',
-                    fontWeight: '400',
-                    lineHeight: '140%'
+                  <h4 className="mb-6" style={{
+                    fontFamily: 'Benzin-Medium',
+                    fontSize: '20px'
                   }}>Оплата для юр. лиц</h4>
                   
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -551,7 +529,10 @@ const Support: React.FC = () => {
 
               {/* Возврат товара по качеству */}
               <div className="mb-8">
-                <h3 className="text-2xl font-semibold mb-6">Возврат товара по качеству</h3>
+                <h3 className="mb-6" style={{
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Возврат товара по качеству</h3>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {/* Возврат товара надлежащего качества */}
@@ -586,7 +567,10 @@ const Support: React.FC = () => {
 
               {/* Условия возврата товара */}
               <div className="mb-8">
-                <h3 className="text-2xl font-semibold mb-6">Условия возврата товара</h3>
+                <h3 className="mb-6" style={{
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Условия возврата товара</h3>
                 
                 <div className="mb-6">
                   <h4 className="text-lg font-medium mb-4">Возврат товара надлежащего качества возможен при условии:</h4>
@@ -626,7 +610,10 @@ const Support: React.FC = () => {
 
               {/* Сроки возврата денежных средств */}
               <div className="mb-8">
-                <h3 className="text-2xl font-semibold mb-6">Сроки возврата денежных средств</h3>
+                <h3 className="mb-6" style={{
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Сроки возврата денежных средств</h3>
                 <p className="text-gray-700">
                   Срок возврата денежных средств зависит от способа возврата товара и составляет не более 10 дней с даты поступления возвращенного товара в интернет-магазин вместе с заполненным заявлением на возврат. По итогам проведения экспертизы товара принимается решение о возврате или не возврате денежных средств.
                 </p>
@@ -634,7 +621,10 @@ const Support: React.FC = () => {
 
               {/* Возврат денег при наличной форме оплаты заказа */}
               <div>
-                <h3 className="text-2xl font-semibold mb-6">Возврат денег при наличной форме оплаты заказа осуществляется</h3>
+                <h3 className="mb-6" style={{
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Возврат денег при наличной форме оплаты заказа осуществляется</h3>
                 <p className="text-gray-700">
                   При возврате товара через розничный магазин - наличными в розничном магазине при возврате через партнерскую курьерскую компанию - только на лицевой счет клиента. Реквизиты Вашего банковского счета и банка необходимо указать в заявлении на возврат.
                 </p>
@@ -647,7 +637,10 @@ const Support: React.FC = () => {
               {/* Warranty Period Section */}
               <div>
                 <div className="mb-8">
-                  <h3 className="text-2xl font-semibold mb-2">Гарантийный период</h3>
+                  <h3 className="mb-2" style={{
+                    fontFamily: 'Benzin-Medium',
+                    fontSize: '20px'
+                  }}>Гарантийный период</h3>
                   <p className="text-gray-600 mb-6">на продукцию составляет</p>
                 </div>
 
@@ -741,7 +734,10 @@ const Support: React.FC = () => {
 
               {/* Warranty Loss Section */}
               <div className="mb-12">
-                <h3 className="text-2xl font-semibold mb-6">Гарантия теряет силу</h3>
+                <h3 className="mb-6" style={{
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Гарантия теряет силу</h3>
                 <p className="text-gray-600 mb-8">в случаях</p>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
@@ -785,7 +781,10 @@ const Support: React.FC = () => {
               {/* Recommendations Section */}
               <div>
                 <div className="border-2 border-[#F53B49] rounded-lg p-8">
-                  <h3 className="text-2xl font-semibold mb-6">Рекомендации по тех. обслуживанию тренажера</h3>
+                  <h3 className="mb-6" style={{
+                    fontFamily: 'Benzin-Medium',
+                    fontSize: '20px'
+                  }}>Рекомендации по тех. обслуживанию тренажера</h3>
                   <p className="text-gray-700 mb-6">
                     Производится покупателем самостоятельно (не реже 1 раз в 6 месяцев или чаще в случаях усиленной эксплуатации)
                   </p>
@@ -1014,7 +1013,10 @@ const Support: React.FC = () => {
 
           {activeTab === 'personal' && (
             <div className="space-y-6">
-              <h3 className="text-2xl font-semibold">Личный кабинет</h3>
+              <h3 style={{
+                fontFamily: 'Benzin-Medium',
+                fontSize: '20px'
+              }}>Личный кабинет</h3>
               <div className="prose max-w-none">
                 <p>Информация о личном кабинете.</p>
               </div>
@@ -1023,7 +1025,10 @@ const Support: React.FC = () => {
 
           {activeTab === 'b2b' && (
             <div className="space-y-6">
-              <h3 className="text-2xl font-semibold">B2B кабинет</h3>
+              <h3 style={{
+                fontFamily: 'Benzin-Medium',
+                fontSize: '20px'
+              }}>B2B кабинет</h3>
               <div className="prose max-w-none">
                 <p>Информация о B2B кабинете для корпоративных клиентов.</p>
               </div>
