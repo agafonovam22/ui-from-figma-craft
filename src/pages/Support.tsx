@@ -366,11 +366,12 @@ const Support: React.FC = () => {
               {/* Калькулятор доставки */}
               <div className="flex gap-8">
                 <div className="w-80 flex-shrink-0">
-                  <h4 className="mb-6" style={{
+                  <h4 style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Калькулятор доставки</h4>
-                  
+                </div>
+                <div className="flex-1">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Calculator Form */}
                     <div className="space-y-4">
