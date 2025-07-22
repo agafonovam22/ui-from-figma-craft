@@ -305,7 +305,7 @@ const About: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
                   {projects.slice(0, 3).map((project, index) => (
                     <div key={project.id} className="relative rounded-lg overflow-hidden group cursor-pointer">
-                      <div className="aspect-[4/3] relative">
+                      <div className="h-[300px] relative">
                         <img 
                           src={project.image}
                           alt={project.title}
@@ -352,7 +352,7 @@ const About: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px]">
                   {projects.slice(3, 5).map((project) => (
                     <div key={project.id} className="relative rounded-lg overflow-hidden group cursor-pointer">
-                      <div className="aspect-[4/3] relative">
+                      <div className="h-[300px] relative">
                         <img 
                           src={project.image}
                           alt={project.title}
@@ -387,7 +387,7 @@ const About: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
                   {projects.slice(5, 8).map((project) => (
                     <div key={project.id} className="relative rounded-lg overflow-hidden group cursor-pointer">
-                      <div className="aspect-[4/3] relative">
+                      <div className="h-[300px] relative">
                         <img 
                           src={project.image}
                           alt={project.title}
@@ -422,7 +422,7 @@ const About: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px]">
                   {projects.slice(8, 10).map((project) => (
                     <div key={project.id} className="relative rounded-lg overflow-hidden group cursor-pointer">
-                      <div className="aspect-[4/3] relative">
+                      <div className="h-[300px] relative">
                         <img 
                           src={project.image}
                           alt={project.title}
