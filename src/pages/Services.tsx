@@ -389,12 +389,8 @@ const Services: React.FC = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="text-gray-600 mt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                    ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                    laboris nisi ut aliquip ex ea commodo consequat.
+                  <p className="text-gray-600 mt-4 font-manrope">
+                    Компания WellFitness является представителем на территории Российской Федерации таких брендов как Gym80, True (Paramount), Octane fitness, Smith, Stex и других, а также обеспечивает сервис по высочайшим стандартам. Мы используем оригинальные запчасти и адаптируем стоимость обслуживания под степень износа, тип оборудования и доступность комплектующих.
                   </p>
                 </div>
               </div>
