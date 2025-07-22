@@ -178,7 +178,7 @@ const Support: React.FC = () => {
                     {/* Left Column */}
                     <div className="bg-gray-50 p-6 rounded-lg">
                       <h4 className="mb-4 pb-3 border-b" style={{
-                        fontFamily: 'Benzin-Medium, sans-serif',
+                        fontFamily: 'Benzin-Medium',
                         fontSize: '16px'
                       }}>Заказ от 30 001 ₽</h4>
                       <div className="space-y-4">
@@ -222,12 +222,12 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* Right Column */}
-                    <div className="bg-gray-50 p-6 rounded-lg" style={{ minHeight: 'auto' }}>
+                    <div className="bg-gray-50 p-6 rounded-lg h-fit">
                       <h4 className="mb-4 pb-3 border-b" style={{
-                        fontFamily: 'Benzin-Medium, sans-serif',
+                        fontFamily: 'Benzin-Medium',
                         fontSize: '16px'
                       }}>Заказ до 30 000 ₽</h4>
-                      <div className="space-y-4">
+                      <div>
                         <div className="flex justify-between items-center py-3 border-b">
                           <span style={{
                             color: 'var(--Dark-Grey, #262631)',
@@ -240,7 +240,7 @@ const Support: React.FC = () => {
                           }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
                           <span className="text-[#F53B49] font-semibold">1000 ₽</span>
                         </div>
-                        <div className="pb-8"></div>
+                        <div className="h-8"></div>
                       </div>
                     </div>
                   </div>
