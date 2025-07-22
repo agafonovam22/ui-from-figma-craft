@@ -346,12 +346,21 @@ const Support: React.FC = () => {
 
                     {/* Transport Companies */}
                     <div className="bg-gray-100 p-6 rounded-lg">
-                      <div className="space-y-0">
-                        <div className="font-medium py-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>DPD</div>
-                        <div className="h-px bg-gray-300"></div>
-                        <div className="font-medium py-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>СДЭК</div>
-                        <div className="h-px bg-gray-300"></div>
-                        <div className="font-medium py-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Байкал сервис</div>
+                      <div className="grid grid-cols-2 gap-8">
+                        <div className="space-y-0">
+                          <div className="font-medium py-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>DPD</div>
+                          <div className="h-px bg-gray-300"></div>
+                          <div className="font-medium py-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>СДЭК</div>
+                          <div className="h-px bg-gray-300"></div>
+                          <div className="font-medium py-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Байкал сервис</div>
+                        </div>
+                        <div className="space-y-0">
+                          <div className="font-medium py-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>DPD</div>
+                          <div className="h-px bg-gray-300"></div>
+                          <div className="font-medium py-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>СДЭК</div>
+                          <div className="h-px bg-gray-300"></div>
+                          <div className="font-medium py-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Байкал сервис</div>
+                        </div>
                       </div>
                     </div>
                   </div>
