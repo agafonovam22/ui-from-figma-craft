@@ -611,7 +611,7 @@ const About: React.FC = () => {
                   <div className="relative rounded-lg overflow-hidden">
                     <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=300&fit=crop")'}}></div>
                     <div className="absolute bottom-[10px] left-[10px] right-[10px] p-4 bg-white rounded-lg">
-                      <p className="text-sm leading-relaxed font-manrope text-gray-800">
+                      <p className="text-sm leading-relaxed text-gray-800" style={{ fontFamily: 'Benzin-Semibold' }}>
                         Во-первых, мы особенно дорожим своей безупречной репутацией и регулярно повышаем планку качества сервиса. Знак, находясь другим может оказаться доверие покупателя, специалисты Well Fitness всегда ориентируются на интересы клиентов.
                       </p>
                     </div>
@@ -621,7 +621,7 @@ const About: React.FC = () => {
                   <div className="relative rounded-lg overflow-hidden">
                     <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=300&fit=crop")'}}></div>
                     <div className="absolute bottom-[10px] left-[10px] right-[10px] p-4 bg-white rounded-lg">
-                      <p className="text-sm leading-relaxed font-manrope text-gray-800">
+                      <p className="text-sm leading-relaxed text-gray-800" style={{ fontFamily: 'Benzin-Semibold' }}>
                         Во-вторых, мы поставляем только самую качественную и надежную продукцию. Перед выводом на российский рынок, мы тщательно тестируем каждую модель, поэтому все предлагаемое оборудование высоко ценится покупателями и имеет минимум сервисных проблем.
                       </p>
                     </div>
@@ -632,7 +632,7 @@ const About: React.FC = () => {
                 <div className="relative rounded-lg overflow-hidden">
                   <div className="h-[350px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=350&fit=crop")'}}></div>
                   <div className="absolute bottom-[10px] left-[10px] right-[10px] p-4 bg-white rounded-lg">
-                    <p className="text-sm leading-relaxed font-manrope text-gray-800">
+                    <p className="text-sm leading-relaxed text-gray-800" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Значимость этих проблем настолько очевидна, что рамки и место обучения кадров требуют от нас анализа существенных финансовых и административных условий. С другой стороны начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.
                     </p>
                   </div>
