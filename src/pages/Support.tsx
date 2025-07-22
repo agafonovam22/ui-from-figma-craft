@@ -337,26 +337,11 @@ const Support: React.FC = () => {
 
                     {/* Transport Companies */}
                     <div className="bg-gray-100 p-6 rounded-lg">
-                      <div className="space-y-4">
-                        {/* DPD Row */}
-                        <div className="flex">
-                          <span className="font-medium">DPD</span>
-                          <span className="font-medium ml-[60px] text-left">DPD</span>
-                        </div>
-                        <div className="h-px bg-gray-300"></div>
-                        
-                        {/* СДЭК Row */}
-                        <div className="flex">
-                          <span className="font-medium">СДЭК</span>
-                          <span className="font-medium ml-[60px] text-left">СДЭК</span>
-                        </div>
-                        <div className="h-px bg-gray-300"></div>
-                        
-                        {/* Байкал Сервис Row */}
-                        <div className="flex">
-                          <span className="font-medium">Байкал Сервис</span>
-                          <span className="font-medium ml-[60px] text-left">Байкал Сервис</span>
-                        </div>
+                      <div className="space-y-2">
+                        <div className="font-medium">СДЭК до 2 дней</div>
+                        <div className="font-medium">СДЭК до 2 дней</div>
+                        <div className="font-medium">Деловые линии до 2 дней</div>
+                        <div className="font-medium">Деловые линии до 2 дней</div>
                       </div>
                     </div>
                   </div>
@@ -372,7 +357,7 @@ const Support: React.FC = () => {
                   }}>Калькулятор доставки</h4>
                 </div>
                 <div className="flex-1">
-                  <div className="bg-gray-100 p-6 rounded-lg">"
+                  <div className="bg-gray-100 p-6 rounded-lg">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                       {/* Calculator Form */}
                       <div className="space-y-4">
@@ -417,21 +402,21 @@ const Support: React.FC = () => {
                       <div className="space-y-4">
                         <h5 className="font-medium mb-4">Варианты доставки:</h5>
                         <div className="space-y-3">
-                          <div className="flex justify-between items-center p-3 border rounded-lg">
+                          <div className="flex justify-between items-center">
                             <div>
                               <div className="font-medium">СДЭК</div>
                               <div className="text-sm text-gray-600">3-5 дней</div>
                             </div>
                             <div className="font-medium">от 300 ₽</div>
                           </div>
-                          <div className="flex justify-between items-center p-3 border rounded-lg">
+                          <div className="flex justify-between items-center">
                             <div>
                               <div className="font-medium">Почта России</div>
                               <div className="text-sm text-gray-600">7-14 дней</div>
                             </div>
                             <div className="font-medium">от 200 ₽</div>
                           </div>
-                          <div className="flex justify-between items-center p-3 border rounded-lg">
+                          <div className="flex justify-between items-center">
                             <div>
                               <div className="font-medium">DPD</div>
                               <div className="text-sm text-gray-600">2-4 дня</div>
