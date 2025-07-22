@@ -203,7 +203,7 @@ const Support: React.FC = () => {
                             lineHeight: '120%',
                             letterSpacing: '0.32px'
                           }}>Автомобильная доставка по Московской Области</span>
-                          <span className="text-[#F53B49] font-semibold" style={{
+                          <span className="text-[#F53B49] font-semibold whitespace-nowrap" style={{
                             fontFamily: 'Manrope',
                             fontSize: '16px'
                           }}>30₽/км</span>
