@@ -835,48 +835,54 @@ const Support: React.FC = () => {
               </div>
 
               {/* Warranty Loss Section */}
-              <div className="mb-12">
-                <h3 className="mb-6" style={{
-                  fontFamily: 'Benzin-Medium',
-                  fontSize: '20px'
-                }}>Гарантия теряет силу</h3>
-                <p className="text-gray-600 mb-8">в случаях</p>
-
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <p className="text-gray-700 text-sm">
-                      Истечения гарантийного срока, указанного в гарантийном талоне
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <p className="text-gray-700 text-sm">
-                      Отсутствия или неправильного заполнения гарантийного талона
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <p className="text-gray-700 text-sm">
-                      При неправильной эксплуатации тренажера и не соблюдении рекомендаций по техническому обслуживанию
-                    </p>
-                  </div>
+              <div className="flex gap-8 mb-12">
+                <div className="w-80 flex-shrink-0">
+                  <h3 style={{
+                    fontFamily: 'Benzin-Medium',
+                    fontSize: '20px'
+                  }}>Гарантия теряет силу</h3>
+                  <p className="text-gray-600 mt-2" style={{
+                    fontFamily: 'Benzin-Medium',
+                    fontSize: '20px'
+                  }}>в случаях</p>
                 </div>
+                <div className="flex-1">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                      <p className="text-gray-700 text-sm">
+                        Истечения гарантийного срока, указанного в гарантийном талоне
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                      <p className="text-gray-700 text-sm">
+                        Отсутствия или неправильного заполнения гарантийного талона
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                      <p className="text-gray-700 text-sm">
+                        При неправильной эксплуатации тренажера и не соблюдении рекомендаций по техническому обслуживанию
+                      </p>
+                    </div>
+                  </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                      <p className="text-gray-700 text-sm">
+                        На все части тренажера подверженные естественному износу и относящиеся к расходным материалам
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                      <p className="text-gray-700 text-sm">
+                        Ненадлежащего ремонта, переделки или механических повреждений нанесенных изделию во время транспортировки, хранения и использования изделия покупателем или третьими лицами
+                      </p>
+                    </div>
+                  </div>
+
                   <div className="bg-gray-50 p-6 rounded-lg">
                     <p className="text-gray-700 text-sm">
-                      На все части тренажера подверженные естественному износу и относящиеся к расходным материалам
+                      При появлении дефектов на поверхностях и в их структуре, вызванных внешними воздействиями (таким как: перепады напряжения в сети электропитания, повышенной влажности и сухости воздуха в помещении, нарушения температурного режима и т.д.)
                     </p>
                   </div>
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <p className="text-gray-700 text-sm">
-                      Ненадлежащего ремонта, переделки или механических повреждений нанесенных изделию во время транспортировки, хранения и использования изделия покупателем или третьими лицами
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <p className="text-gray-700 text-sm">
-                    При появлении дефектов на поверхностях и в их структуре, вызванных внешними воздействиями (таким как: перепады напряжения в сети электропитания, повышенной влажности и сухости воздуха в помещении, нарушения температурного режима и т.д.)
-                  </p>
                 </div>
               </div>
 
