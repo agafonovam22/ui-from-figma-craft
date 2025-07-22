@@ -269,12 +269,12 @@ const Support: React.FC = () => {
                         fontFamily: 'Benzin-Medium',
                         fontSize: '20px'
                       }}>Склад</h4>
-                      <div className="grid grid-cols-3 gap-4 items-start">
+                      <div className="grid grid-cols-[1fr_auto_1fr] gap-4 items-start">
                         <div className="text-gray-700">
                           <div>Московская область, Красногорский р-н, д.</div>
                           <div>Гольево, улица Центральная ул., с44,</div>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 ml-8">
                           <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                           <div>
                             <div className="text-sm text-green-600 font-medium">В наличии</div>
@@ -294,12 +294,12 @@ const Support: React.FC = () => {
                         fontFamily: 'Benzin-Medium',
                         fontSize: '20px'
                       }}>Дополнительный склад</h4>
-                      <div className="grid grid-cols-3 gap-4 items-start">
+                      <div className="grid grid-cols-[1fr_auto_1fr] gap-4 items-start">
                         <div className="text-gray-700">
                           <div>Красногвардейский пер 23 лит Е, территория</div>
                           <div>завода "Ильич", заезд с Вязского переулка.</div>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 ml-8">
                           <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                           <div>
                             <div className="text-sm text-green-600 font-medium">В наличии</div>
