@@ -602,8 +602,8 @@ const Services: React.FC = () => {
                         {/* White container overlay at bottom with title and play button */}
                         <div className="absolute bottom-[5px] left-[5px] right-[5px] bg-white p-4 flex items-center justify-between rounded">
                           <h4 className="font-medium text-gray-900 flex-1">{video.title}</h4>
-                          <div className="bg-pink-200 rounded-full p-3 ml-4">
-                            <Play className="w-6 h-6 text-[#F53B49] fill-current" />
+                          <div className="rounded-full p-3 ml-4" style={{backgroundColor: 'rgba(245, 59, 73, 0.3)'}}>
+                            <Play className="w-5 h-5 text-[#F53B49] fill-current" />
                           </div>
                         </div>
                       </div>
