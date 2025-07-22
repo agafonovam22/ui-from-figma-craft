@@ -253,7 +253,7 @@ const Support: React.FC = () => {
                 </div>
               </div>
 
-              {/* Самовывоз со склада */}
+               {/* Самовывоз со склада */}
               <div className="flex gap-8">
                 <div className="w-80 flex-shrink-0">
                   <h3 className="mb-6" style={{
@@ -261,56 +261,48 @@ const Support: React.FC = () => {
                     fontSize: '20px'
                   }}>Самовывоз со склада</h3>
                 </div>
-                 <div className="flex-1">
-                   <div className="space-y-6">
-                     {/* Main Warehouse */}
-                     <div>
-                       <div className="flex justify-between items-start mb-2">
-                         <div>
-                           <h4 className="mb-2" style={{
-                             fontFamily: 'Benzin-Medium',
-                             fontSize: '20px'
-                           }}>Склад</h4>
-                           <p className="text-gray-700">
-                             Московская область, Красногорский р-н, д. Гольево, улица Центральная ул., с44,
-                           </p>
-                         </div>
-                         <div className="flex items-center gap-2 ml-8">
-                           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                           <span className="text-sm text-green-600 font-medium">В наличии</span>
-                         </div>
-                       </div>
-                       <span className="text-sm text-gray-600">пн - пт с 09:30-18:00</span>
-                     </div>
-                     
-                     <div className="h-px bg-gray-300"></div>
-                     
-                     {/* Additional Warehouse */}
-                     <div>
-                       <div className="flex justify-between items-start mb-2">
-                         <div>
-                           <h4 className="mb-2" style={{
-                             fontFamily: 'Benzin-Medium',
-                             fontSize: '20px'
-                           }}>Дополнительные склад</h4>
-                           <p className="text-gray-700">
-                             Красногвардейский пер 23 лит Е, территория завода "Ильич", заезд с Вязского переулка.
-                           </p>
-                         </div>
-                         <div className="flex items-center gap-2 ml-8">
-                           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                           <span className="text-sm text-green-600 font-medium">В наличии</span>
-                         </div>
-                       </div>
-                       <div className="mb-2">
-                         <span className="text-sm text-gray-600">пн - пт с 10:00-18:00</span>
-                       </div>
-                       <p className="text-sm text-gray-600">
-                         Выдача осуществляется оформленных заказов, при согласовании даты и времени приезда
-                       </p>
-                     </div>
-                   </div>
-                 </div>
+                <div className="flex-1">
+                  <div className="space-y-6">
+                    {/* Main Warehouse */}
+                    <div>
+                      <h4 className="mb-2" style={{
+                        fontFamily: 'Benzin-Medium',
+                        fontSize: '20px'
+                      }}>Склад</h4>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700 flex-1">
+                          Московская область, Красногорский р-н, д. Гольево, улица Центральная ул., с44,
+                        </span>
+                        <div className="flex items-center gap-2 ml-4">
+                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                          <span className="text-sm text-green-600 font-medium">В наличии</span>
+                          <span className="text-sm text-gray-600 ml-2">пн - пт с 09:30-18:00</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Additional Warehouse */}
+                    <div>
+                      <h4 className="mb-2" style={{
+                        fontFamily: 'Benzin-Medium',
+                        fontSize: '20px'
+                      }}>Дополнительные склад</h4>
+                      <div className="flex justify-between items-start">
+                        <span className="text-gray-700 flex-1">
+                          Красногвардейский пер 23 лит Е, территория завода "Ильич", заезд с Вязского переулка.
+                        </span>
+                        <div className="flex items-center gap-2 ml-4">
+                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                          <span className="text-sm text-green-600 font-medium">В наличии</span>
+                          <span className="text-sm text-gray-600 ml-2">пн - пт с 10:00-18:00</span>
+                        </div>
+                      </div>
+                      <p className="text-sm text-gray-600 mt-2">
+                        Выдача осуществляется оформленных заказов, при согласовании даты и времени приезда
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Доставка по России */}
