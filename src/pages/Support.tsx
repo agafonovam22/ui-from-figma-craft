@@ -379,10 +379,10 @@ const Support: React.FC = () => {
                   }}>Калькулятор доставки</h4>
                 </div>
                 <div className="flex-1">
-                  <div className="bg-gray-100 p-6 rounded-lg">
-                    <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8">
+                  <div className="bg-gray-100 p-6 rounded-lg h-[364px]">
+                    <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-6 h-full">
                       {/* Calculator Form */}
-                       <div className="space-y-4">
+                       <div className="space-y-3 flex flex-col h-full">
                          <input
                            type="text"
                            placeholder="Пункт отправления"
@@ -401,7 +401,7 @@ const Support: React.FC = () => {
                            className="w-full p-3 border rounded-lg bg-gray-100 benzin-placeholder"
                            style={{fontFamily: 'Manrope', fontSize: '16px'}}
                          />
-                         <div className="grid grid-cols-2 gap-2">
+                         <div className="grid grid-cols-2 gap-2 flex-1">
                            <input
                              type="number"
                              placeholder="Вес груза, кг"
@@ -415,14 +415,14 @@ const Support: React.FC = () => {
                              style={{fontFamily: 'Manrope', fontSize: '16px'}}
                            />
                          </div>
-                         <button className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90"
+                         <button className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90 mt-auto"
                            style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                            Рассчитать
                          </button>
                       </div>
 
                       {/* Delivery Options */}
-                       <div className="space-y-4">
+                       <div className="space-y-3 overflow-y-auto">
                         <div className="space-y-3">
                            <div className="grid grid-cols-3 gap-4 items-center">
                              <div>
