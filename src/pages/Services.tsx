@@ -537,16 +537,16 @@ const Services: React.FC = () => {
               {/* Filter Sidebar */}
               <div className="w-64 flex-shrink-0 space-y-6">
                 {/* Filter Categories and Buttons in Gray Container */}
-                <div className="bg-gray-100 p-6 rounded space-y-6 h-[300px]">
+                <div className="bg-gray-100 p-4 rounded space-y-4 h-[300px]">
                   {/* Filter Categories */}
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Фильтр</h3>
-                    <div className="space-y-2">
+                    <h3 className="text-base font-semibold text-gray-900 mb-3">Фильтр</h3>
+                    <div className="space-y-1">
                       {filterCategories.map((category) => (
                         <button
                           key={category}
                           onClick={() => setSelectedFilter(category)}
-                          className={`w-full text-left px-4 py-2 rounded transition-colors text-sm ${
+                          className={`w-full text-left px-3 py-1.5 rounded transition-colors text-xs ${
                             selectedFilter === category
                               ? 'bg-gray-800 text-white'
                               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -559,11 +559,11 @@ const Services: React.FC = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="space-y-3">
-                    <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white">
+                  <div className="space-y-2">
+                    <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white text-sm py-2">
                       Применить
                     </Button>
-                    <Button variant="outline" className="w-full">
+                    <Button variant="outline" className="w-full text-sm py-2">
                       Сбросить
                     </Button>
                   </div>
