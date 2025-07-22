@@ -470,7 +470,7 @@ const Support: React.FC = () => {
                 <div className="flex-1">
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                     {/* Оплата наличными */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gray-800 hover:text-white transition-colors cursor-pointer">
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
                       <h5 className="text-lg font-medium mb-3">Оплата наличными</h5>
                       <p className="text-sm mb-4">
                         Возможна при оформлении всех способов доставки со всех субъектах РФ, где есть наши филиалы и терминалы наших партнеров, предоставляющих курьерские услуги.
@@ -478,7 +478,7 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* Оплата картой */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gray-800 hover:text-white transition-colors cursor-pointer">
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
                       <h5 className="text-lg font-medium mb-3">Оплата картой</h5>
                       <p className="text-sm mb-4">
                         Возможна при оформлении всех способов доставки, во время самовывоза, а также курьеру при получении.
@@ -486,7 +486,7 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* Оплата онлайн */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gray-800 hover:text-white transition-colors cursor-pointer">
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
                       <h5 className="text-lg font-medium mb-3">Оплата онлайн</h5>
                       <p className="text-sm mb-4">
                         Покупателю направляется защищенная ссылка для перехода в платежную систему. Производить оплату можно всеми видами карт, электронными деньгами, а также через терминалы без комиссии.
@@ -496,7 +496,7 @@ const Support: React.FC = () => {
 
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     {/* Наложенный платеж */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gray-800 hover:text-white transition-colors cursor-pointer">
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
                       <h5 className="text-lg font-medium mb-3">Наложенный платеж</h5>
                       <p className="text-sm">
                         При отправке в регионы. Рассчитывается по тарифам транспортных компаний и осуществляется с помощью партнеров перевозчиков «ПЭК» и «Деловые линии»
@@ -504,7 +504,7 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* В рассрочку */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gray-800 hover:text-white transition-colors cursor-pointer">
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
                       <h5 className="text-lg font-medium mb-3">В рассрочку</h5>
                       <p className="text-sm">
                         от банков партнеров ОТП, Халва, Тинькофф, Сбербанк
@@ -512,7 +512,7 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* Безналичная оплата */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gray-800 hover:text-white transition-colors cursor-pointer">
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
                       <h5 className="text-lg font-medium mb-3">Безналичная оплата</h5>
                       <p className="text-sm">
                         Выставление счета
