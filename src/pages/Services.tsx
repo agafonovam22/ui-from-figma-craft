@@ -441,9 +441,9 @@ const Services: React.FC = () => {
               </div>
 
               {/* Contact form section */}
-              <div className="flex gap-8 items-stretch bg-gray-50 rounded-lg p-8 h-[300px]">
-                <div className="flex-1">
-                  <div className="bg-white rounded-lg p-6">
+              <div className="flex gap-8 items-center bg-gray-50 rounded-lg p-8 h-[300px]">
+                <div className="flex-1 flex items-center">
+                  <div className="bg-white rounded-lg p-6 w-full">
                     <h2 className="text-3xl font-bold text-gray-900 mb-6">
                       <span style={{color: '#778093'}}>Оставьте</span> заявку!
                     </h2>
