@@ -254,56 +254,63 @@ const Support: React.FC = () => {
               </div>
 
               {/* Самовывоз со склада */}
-              <div>
-                <h3 className="mb-6" style={{
-                  fontFamily: 'Benzin-Medium',
-                  fontSize: '20px'
-                }}>Самовывоз со склада</h3>
-                
-                {/* Warehouse Information */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                  {/* Main Warehouse */}
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h4 className="mb-4" style={{
-                      fontFamily: 'Benzin-Medium',
-                      fontSize: '20px'
-                    }}>Склад</h4>
-                    <p className="text-gray-700 mb-4">
-                      Московская область, Красногорский р-н, д. Гольево, улица Центральная ул., с44,
-                    </p>
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                      <span className="text-sm text-green-600 font-medium">В наличии</span>
-                      <span className="text-sm text-gray-600">пн - пт с 09:30-18:00</span>
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
+                  <h3 className="mb-6" style={{
+                    fontFamily: 'Benzin-Medium',
+                    fontSize: '20px'
+                  }}>Самовывоз со склада</h3>
+                </div>
+                <div className="flex-1">
+                  {/* Warehouse Information */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    {/* Main Warehouse */}
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                      <h4 className="mb-4" style={{
+                        fontFamily: 'Benzin-Medium',
+                        fontSize: '20px'
+                      }}>Склад</h4>
+                      <p className="text-gray-700 mb-4">
+                        Московская область, Красногорский р-н, д. Гольево, улица Центральная ул., с44,
+                      </p>
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span className="text-sm text-green-600 font-medium">В наличии</span>
+                        <span className="text-sm text-gray-600">пн - пт с 09:30-18:00</span>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Additional Warehouse */}
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h4 className="mb-4" style={{
-                      fontFamily: 'Benzin-Medium',
-                      fontSize: '20px'
-                    }}>Дополнительные склад</h4>
-                    <p className="text-gray-700 mb-4">
-                      Красногвардейский пер 23 лит Е, территория завода "Ильич", заезд с Вязского переулка.
-                    </p>
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                      <span className="text-sm text-green-600 font-medium">В наличии</span>
-                      <span className="text-sm text-gray-600">пн - пт с 10:00-18:00</span>
+                    {/* Additional Warehouse */}
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                      <h4 className="mb-4" style={{
+                        fontFamily: 'Benzin-Medium',
+                        fontSize: '20px'
+                      }}>Дополнительные склад</h4>
+                      <p className="text-gray-700 mb-4">
+                        Красногвардейский пер 23 лит Е, территория завода "Ильич", заезд с Вязского переулка.
+                      </p>
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span className="text-sm text-green-600 font-medium">В наличии</span>
+                        <span className="text-sm text-gray-600">пн - пт с 10:00-18:00</span>
+                      </div>
+                      <p className="text-sm text-gray-600">
+                        Выдача осуществляется оформленных заказов, при согласовании даты и времени приезда
+                      </p>
                     </div>
-                    <p className="text-sm text-gray-600">
-                      Выдача осуществляется оформленных заказов, при согласовании даты и времени приезда
-                    </p>
                   </div>
                 </div>
+              </div>
 
-                {/* Доставка по России */}
-                <div className="mb-8">
+              {/* Доставка по России */}
+              <div className="flex gap-8 mb-8">
+                <div className="w-80 flex-shrink-0">
                   <h4 className="mb-4" style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Доставка по России</h4>
+                </div>
+                <div className="flex-1">
                   <p className="text-gray-700 mb-4">
                     Определяется сроками доставки транспортной компании. Доставка товара на склад транспортной компании осуществляется в течение 1-2 дней с момента заказа, в режиме работы: Понедельник - Пятница
                   </p>
@@ -345,9 +352,11 @@ const Support: React.FC = () => {
                     </div>
                   </div>
                 </div>
+              </div>
 
-                {/* Калькулятор доставки */}
-                <div>
+              {/* Калькулятор доставки */}
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
                   <h4 className="mb-6" style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
