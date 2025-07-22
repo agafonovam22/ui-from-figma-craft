@@ -718,100 +718,100 @@ const Support: React.FC = () => {
               {/* Warranty Period Section */}
               <div>
                 <div className="flex gap-8 mb-8">
-                  <div className="w-80 flex-shrink-0"></div>
-                  <div className="flex-1">
+                  <div className="w-80 flex-shrink-0">
                     <h3 style={{
                       fontFamily: 'Benzin-Medium',
                       fontSize: '20px'
                     }}>Гарантийный период на продукцию составляет</h3>
                   </div>
-                </div>
+                  <div className="flex-1">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-8">
+                      {/* Running Equipment */}
+                      <div>
+                        <h4 className="text-lg font-medium mb-6">Беговые дорожки</h4>
+                        <div className="space-y-4">
+                          <div className="flex justify-between items-center py-2">
+                            <span className="text-gray-700">Sole Fitness</span>
+                            <span className="text-[#F53B49] font-medium">24 месяца</span>
+                          </div>
+                          <div className="flex justify-between items-center py-2">
+                            <span className="text-gray-700">Nautilus</span>
+                            <span className="text-[#F53B49] font-medium">24 месяца</span>
+                          </div>
+                          <div className="py-2">
+                            <div className="flex justify-between items-center mb-1">
+                              <span className="text-gray-700">на мотор</span>
+                              <span className="text-[#F53B49] font-medium">3 года</span>
+                            </div>
+                            <div className="flex justify-between items-center mb-1">
+                              <span className="text-gray-700">беговое полотно</span>
+                              <span className="text-[#F53B49] font-medium">6 месяцев</span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span className="text-gray-700">рама</span>
+                              <span className="text-[#F53B49] font-medium">10 лет</span>
+                            </div>
+                          </div>
+                          <div className="flex justify-between items-center py-2">
+                            <span className="text-gray-700">Bowflex</span>
+                            <span className="text-[#F53B49] font-medium">24 месяца</span>
+                          </div>
+                          <div className="flex justify-between items-center py-2">
+                            <span className="text-gray-700">CardioPower</span>
+                            <span className="text-[#F53B49] font-medium">24 месяца</span>
+                          </div>
+                          <div className="flex justify-between items-center py-2">
+                            <span className="text-gray-700">Optima Fitness</span>
+                            <span className="text-[#F53B49] font-medium">24 месяца</span>
+                          </div>
+                        </div>
+                      </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-8">
-                  {/* Running Equipment */}
-                  <div>
-                    <h4 className="text-lg font-medium mb-6">Беговые дорожки</h4>
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-center py-2">
-                        <span className="text-gray-700">Sole Fitness</span>
-                        <span className="text-[#F53B49] font-medium">24 месяца</span>
-                      </div>
-                      <div className="flex justify-between items-center py-2">
-                        <span className="text-gray-700">Nautilus</span>
-                        <span className="text-[#F53B49] font-medium">24 месяца</span>
-                      </div>
-                      <div className="py-2">
-                        <div className="flex justify-between items-center mb-1">
-                          <span className="text-gray-700">на мотор</span>
-                          <span className="text-[#F53B49] font-medium">3 года</span>
+                      {/* Elliptical Equipment */}
+                      <div>
+                        <h4 className="text-lg font-medium mb-6">Эллиптические тренажеры</h4>
+                        <div className="space-y-4">
+                          <div className="flex justify-between items-center py-2">
+                            <span className="text-gray-700">Sole Fitness</span>
+                            <span className="text-[#F53B49] font-medium">24 месяца</span>
+                          </div>
+                          <div className="flex justify-between items-center py-2">
+                            <span className="text-gray-700">Nautilus</span>
+                            <span className="text-[#F53B49] font-medium">24 месяца</span>
+                          </div>
+                          <div className="py-2">
+                            <div className="flex justify-between items-center mb-1">
+                              <span className="text-gray-700">на мотор</span>
+                              <span className="text-[#F53B49] font-medium">10 лет</span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span className="text-gray-700">рама</span>
+                              <span className="text-[#F53B49] font-medium">10 лет</span>
+                            </div>
+                          </div>
+                          <div className="flex justify-between items-center py-2">
+                            <span className="text-gray-700">Bowflex</span>
+                            <span className="text-[#F53B49] font-medium">24 месяца</span>
+                          </div>
+                          <div className="flex justify-between items-center py-2">
+                            <span className="text-gray-700">CardioPower</span>
+                            <span className="text-[#F53B49] font-medium">24 месяца</span>
+                          </div>
+                          <div className="flex justify-between items-center py-2">
+                            <span className="text-gray-700">Optima Fitness</span>
+                            <span className="text-[#F53B49] font-medium">24 месяца</span>
+                          </div>
                         </div>
-                        <div className="flex justify-between items-center mb-1">
-                          <span className="text-gray-700">беговое полотно</span>
-                          <span className="text-[#F53B49] font-medium">6 месяцев</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-gray-700">рама</span>
-                          <span className="text-[#F53B49] font-medium">10 лет</span>
-                        </div>
-                      </div>
-                      <div className="flex justify-between items-center py-2">
-                        <span className="text-gray-700">Bowflex</span>
-                        <span className="text-[#F53B49] font-medium">24 месяца</span>
-                      </div>
-                      <div className="flex justify-between items-center py-2">
-                        <span className="text-gray-700">CardioPower</span>
-                        <span className="text-[#F53B49] font-medium">24 месяца</span>
-                      </div>
-                      <div className="flex justify-between items-center py-2">
-                        <span className="text-gray-700">Optima Fitness</span>
-                        <span className="text-[#F53B49] font-medium">24 месяца</span>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Elliptical Equipment */}
-                  <div>
-                    <h4 className="text-lg font-medium mb-6">Эллиптические тренажеры</h4>
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-center py-2">
-                        <span className="text-gray-700">Sole Fitness</span>
-                        <span className="text-[#F53B49] font-medium">24 месяца</span>
-                      </div>
-                      <div className="flex justify-between items-center py-2">
-                        <span className="text-gray-700">Nautilus</span>
-                        <span className="text-[#F53B49] font-medium">24 месяца</span>
-                      </div>
-                      <div className="py-2">
-                        <div className="flex justify-between items-center mb-1">
-                          <span className="text-gray-700">на мотор</span>
-                          <span className="text-[#F53B49] font-medium">10 лет</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-gray-700">рама</span>
-                          <span className="text-[#F53B49] font-medium">10 лет</span>
-                        </div>
-                      </div>
-                      <div className="flex justify-between items-center py-2">
-                        <span className="text-gray-700">Bowflex</span>
-                        <span className="text-[#F53B49] font-medium">24 месяца</span>
-                      </div>
-                      <div className="flex justify-between items-center py-2">
-                        <span className="text-gray-700">CardioPower</span>
-                        <span className="text-[#F53B49] font-medium">24 месяца</span>
-                      </div>
-                      <div className="flex justify-between items-center py-2">
-                        <span className="text-gray-700">Optima Fitness</span>
-                        <span className="text-[#F53B49] font-medium">24 месяца</span>
-                      </div>
+                    {/* Download Button */}
+                    <div className="mb-12">
+                      <button className="bg-[#F53B49] text-white px-8 py-3 rounded hover:bg-[#e63946] transition-colors font-medium">
+                        Скачать файлы по рекомендации тех. обслуживания
+                      </button>
                     </div>
                   </div>
-                </div>
-
-                {/* Download Button */}
-                <div className="mb-12">
-                  <button className="bg-[#F53B49] text-white px-8 py-3 rounded hover:bg-[#e63946] transition-colors font-medium">
-                    Скачать файлы по рекомендации тех. обслуживания
-                  </button>
                 </div>
               </div>
 
