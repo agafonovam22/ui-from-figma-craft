@@ -535,7 +535,7 @@ const Services: React.FC = () => {
           {activeTab === 'video-instructions' && (
             <div className="flex gap-8">
               {/* Filter Sidebar */}
-              <div className="w-64 flex-shrink-0 space-y-6">
+              <div className="w-64 flex-shrink-0 space-y-8">
                 {/* Filter Categories and Buttons in Gray Container */}
                 <div className="bg-gray-100 p-4 rounded space-y-4 h-[300px]">
                   {/* Filter Categories */}
