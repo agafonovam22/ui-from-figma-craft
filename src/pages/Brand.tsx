@@ -194,7 +194,7 @@ const Brand: React.FC = () => {
                     <div className="relative">
                       <div className="w-[350px] h-[350px] bg-[#F53B49] rounded-full flex items-center justify-center">
                          <img 
-                           src={brandSlug === 'cardio-power' ? '/lovable-uploads/be145ea3-c494-46b2-adfa-04b5f147e8ee.png' : brandSlug === 'bowflex' ? '/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png' : '/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png'}
+                           src={brandSlug === 'bowflex' ? '/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png' : '/lovable-uploads/b9c24768-fadd-4ab8-bfbe-e1bd7d513721.png'}
                            alt={`${brandName} оборудование`}
                            className="w-[350px] h-[350px] object-contain"
                            style={{ objectPosition: 'center right', transform: 'translateX(20px)' }}
