@@ -31,9 +31,11 @@ import {
 } from "@/components/ui/table";
 import { ChevronUp, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SupportCitySelector from '@/components/SupportCitySelector';
 
 const Support: React.FC = () => {
   const [activeTab, setActiveTab] = useState('delivery');
+  const [selectedCity, setSelectedCity] = useState('Москва');
 
   const tabs = [
     { id: 'delivery', label: 'Доставка и оплата' },
@@ -134,18 +136,21 @@ const Support: React.FC = () => {
               {/* Город доставки */}
               <div className="flex gap-8">
                 <div className="w-80 flex-shrink-0">
-                  <h3 className="text-2xl font-semibold text-gray-900">Город доставки</h3>
+                  <div className="flex items-center gap-1">
+                    <h3 className="text-[20px] text-[#262631]" style={{fontFamily: 'Benzin, sans-serif', fontWeight: '500'}}>
+                      Город доставки
+                    </h3>
+                    <SupportCitySelector 
+                      selectedCity={selectedCity} 
+                      onCitySelect={setSelectedCity}
+                    />
+                  </div>
                 </div>
                 <div className="flex-1">
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h4 className="text-xl font-semibold mb-4">
-                      Город доставки <span className="text-[#F53B49]">Москва</span>
-                    </h4>
-                    <p className="text-gray-700">
-                      Доставка по Москве осуществляется в течение 1-2 дней с момента заказа.<br />
-                      Ежедневно с 9:00 до 21:00
-                    </p>
-                  </div>
+                  <p className="text-[#262631] text-[16px]" style={{fontFamily: 'Manrope, sans-serif'}}>
+                    Доставка по {selectedCity} осуществляется в течение 1-2 дней с момента заказа.<br />
+                    Ежедневно с 9:00 до 21:00
+                  </p>
                 </div>
               </div>
 
