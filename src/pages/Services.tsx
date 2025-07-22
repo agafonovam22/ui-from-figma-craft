@@ -590,7 +590,7 @@ const Services: React.FC = () => {
 
               {/* Video Grid */}
               <div className="flex-1">
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-3 gap-[10px]">
                   {videoInstructions.map((video) => (
                     <div key={video.id} className="relative group cursor-pointer">
                       <div className="relative overflow-hidden rounded-lg">
