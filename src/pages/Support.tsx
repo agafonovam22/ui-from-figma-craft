@@ -626,45 +626,45 @@ const Support: React.FC = () => {
               </div>
 
               {/* Условия возврата товара */}
-              <div className="mb-8">
-                <h3 className="mb-6" style={{
-                  fontFamily: 'Benzin-Medium',
-                  fontSize: '20px'
-                }}>Условия возврата товара</h3>
-                
-                <div className="mb-6">
-                  <h4 className="text-lg font-medium mb-4">Возврат товара надлежащего качества возможен при условии:</h4>
-                  
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-[#F53B49] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg flex-shrink-0">
-                        1
-                      </div>
-                      <div>
-                        <p className="text-gray-700">
-                          Сохранения его потребительских свойств и товарного вида (отсутствие следов эксплуатации и носки, наличие оригинальной и неповрежденной упаковки и ярлыков).
-                        </p>
+              <div className="flex gap-8 mb-8">
+                <div className="w-80 flex-shrink-0">
+                  <h3 style={{
+                    fontFamily: 'Benzin-Medium',
+                    fontSize: '20px'
+                  }}>Условия возврата товара</h3>
+                </div>
+                <div className="flex-1">
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-lg font-medium mb-4">Возврат товара надлежащего качества возможен при условии:</h4>
+                      <div className="space-y-4">
+                        <div className="flex items-start gap-4">
+                          <div className="bg-[#F53B49] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                            1
+                          </div>
+                          <p className="text-gray-700">
+                            Сохранения его потребительских свойств и товарного вида (отсутствие следов эксплуатации и носки, наличие оригинальной и неповрежденной упаковки и ярлыков).
+                          </p>
+                        </div>
+                        
+                        <div className="flex items-start gap-4">
+                          <div className="bg-[#F53B49] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                            2
+                          </div>
+                          <p className="text-gray-700">
+                            Наличия документа, подтверждающего факт и условия покупки товара (кассовый чек или товарный чек)*.
+                          </p>
+                        </div>
                       </div>
                     </div>
-                    
-                    <div className="flex items-start gap-4">
-                      <div className="bg-[#F53B49] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg flex-shrink-0">
-                        2
-                      </div>
-                      <div>
-                        <p className="text-gray-700">
-                          Наличия документа, подтверждающего факт и условия покупки товара (кассовый чек или товарный чек)*.
-                        </p>
-                      </div>
+
+                    <div>
+                      <h4 className="text-lg font-medium mb-4">Возврат товара не надлежащего качества возможен при условии:</h4>
+                      <p className="text-gray-700">
+                        Возврат товара ненадлежащего качества возможен при условии сохранения документа, подтверждающего факт и условия покупки указанного товара (кассовый чек или товарный чек)*.
+                      </p>
                     </div>
                   </div>
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-medium mb-4">Возврат товара не надлежащего качества возможен при условии:</h4>
-                  <p className="text-gray-700">
-                    Возврат товара ненадлежащего качества возможен при условии сохранения документа, подтверждающего факт и условия покупки указанного товара (кассовый чек или товарный чек)*.
-                  </p>
                 </div>
               </div>
 
