@@ -729,40 +729,42 @@ const Support: React.FC = () => {
                       {/* Running Equipment */}
                       <div>
                         <h4 className="text-lg font-medium mb-6">Беговые дорожки</h4>
-                        <div className="space-y-4">
-                          <div className="flex justify-between items-center py-2">
-                            <span className="text-gray-700">Sole Fitness</span>
-                            <span className="text-[#F53B49] font-medium">24 месяца</span>
-                          </div>
-                          <div className="flex justify-between items-center py-2">
-                            <span className="text-gray-700">Nautilus</span>
-                            <span className="text-[#F53B49] font-medium">24 месяца</span>
-                          </div>
-                          <div className="py-2">
-                            <div className="flex justify-between items-center mb-1">
-                              <span className="text-gray-700">на мотор</span>
-                              <span className="text-[#F53B49] font-medium">3 года</span>
+                        <div className="bg-gray-100 p-6 rounded-lg">
+                          <div className="space-y-4">
+                            <div className="flex justify-between items-center py-2">
+                              <span className="text-gray-700">Sole Fitness</span>
+                              <span className="text-[#F53B49] font-medium">24 месяца</span>
                             </div>
-                            <div className="flex justify-between items-center mb-1">
-                              <span className="text-gray-700">беговое полотно</span>
-                              <span className="text-[#F53B49] font-medium">6 месяцев</span>
+                            <div className="flex justify-between items-center py-2">
+                              <span className="text-gray-700">Nautilus</span>
+                              <span className="text-[#F53B49] font-medium">24 месяца</span>
                             </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-gray-700">рама</span>
-                              <span className="text-[#F53B49] font-medium">10 лет</span>
+                            <div className="py-2">
+                              <div className="flex justify-between items-center mb-1">
+                                <span className="text-gray-700">на мотор</span>
+                                <span className="text-[#F53B49] font-medium">3 года</span>
+                              </div>
+                              <div className="flex justify-between items-center mb-1">
+                                <span className="text-gray-700">беговое полотно</span>
+                                <span className="text-[#F53B49] font-medium">6 месяцев</span>
+                              </div>
+                              <div className="flex justify-between items-center">
+                                <span className="text-gray-700">рама</span>
+                                <span className="text-[#F53B49] font-medium">10 лет</span>
+                              </div>
                             </div>
-                          </div>
-                          <div className="flex justify-between items-center py-2">
-                            <span className="text-gray-700">Bowflex</span>
-                            <span className="text-[#F53B49] font-medium">24 месяца</span>
-                          </div>
-                          <div className="flex justify-between items-center py-2">
-                            <span className="text-gray-700">CardioPower</span>
-                            <span className="text-[#F53B49] font-medium">24 месяца</span>
-                          </div>
-                          <div className="flex justify-between items-center py-2">
-                            <span className="text-gray-700">Optima Fitness</span>
-                            <span className="text-[#F53B49] font-medium">24 месяца</span>
+                            <div className="flex justify-between items-center py-2">
+                              <span className="text-gray-700">Bowflex</span>
+                              <span className="text-[#F53B49] font-medium">24 месяца</span>
+                            </div>
+                            <div className="flex justify-between items-center py-2">
+                              <span className="text-gray-700">CardioPower</span>
+                              <span className="text-[#F53B49] font-medium">24 месяца</span>
+                            </div>
+                            <div className="flex justify-between items-center py-2">
+                              <span className="text-gray-700">Optima Fitness</span>
+                              <span className="text-[#F53B49] font-medium">24 месяца</span>
+                            </div>
                           </div>
                         </div>
                       </div>
