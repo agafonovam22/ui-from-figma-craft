@@ -289,7 +289,7 @@ const Support: React.FC = () => {
                       <h4 className="mb-2" style={{
                         fontFamily: 'Benzin-Medium',
                         fontSize: '20px'
-                      }}>Дополнительные склад</h4>
+                      }}>Дополнительный склад</h4>
                       <div className="flex justify-between items-center">
                         <span className="text-gray-700 flex-1">
                           Красногвардейский пер 23 лит Е, территория завода "Ильич", заезд с Вязского переулка.
