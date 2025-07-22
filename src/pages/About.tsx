@@ -316,10 +316,9 @@ const About: React.FC = () => {
                         
                         {/* Content overlay */}
                         <div className="absolute inset-0 p-6 text-white">
-                          <h3 className="text-2xl font-bold" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
-                          
                           <div className="absolute bottom-6 left-6 right-6">
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-xs mb-4" style={{ fontFamily: 'Benzin-Medium' }}>
+                            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full mb-4" style={{ fontFamily: 'Benzin-Medium', fontSize: '14px' }}>
                               {project.description}
                             </div>
                             
@@ -360,10 +359,9 @@ const About: React.FC = () => {
                         
                         {/* Content overlay */}
                         <div className="absolute inset-0 p-6 text-white">
-                          <h3 className="text-2xl font-bold" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
-                          
                           <div className="absolute bottom-6 left-6 right-6">
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-xs mb-4" style={{ fontFamily: 'Benzin-Medium' }}>
+                            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full mb-4" style={{ fontFamily: 'Benzin-Medium', fontSize: '14px' }}>
                               {project.description}
                             </div>
                             
@@ -394,10 +392,9 @@ const About: React.FC = () => {
                         
                         {/* Content overlay */}
                         <div className="absolute inset-0 p-6 text-white">
-                          <h3 className="text-2xl font-bold" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
-                          
                           <div className="absolute bottom-6 left-6 right-6">
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-xs mb-4" style={{ fontFamily: 'Benzin-Medium' }}>
+                            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full mb-4" style={{ fontFamily: 'Benzin-Medium', fontSize: '14px' }}>
                               {project.description}
                             </div>
                             
@@ -428,10 +425,9 @@ const About: React.FC = () => {
                         
                         {/* Content overlay */}
                         <div className="absolute inset-0 p-6 text-white">
-                          <h3 className="text-2xl font-bold" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
-                          
                           <div className="absolute bottom-6 left-6 right-6">
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-xs mb-4" style={{ fontFamily: 'Benzin-Medium' }}>
+                            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full mb-4" style={{ fontFamily: 'Benzin-Medium', fontSize: '14px' }}>
                               {project.description}
                             </div>
                             
