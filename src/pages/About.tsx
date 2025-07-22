@@ -631,7 +631,7 @@ const About: React.FC = () => {
                 {/* Третий блок - полная ширина */}
                 <div className="relative rounded-lg overflow-hidden">
                   <div className="h-[350px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=350&fit=crop")'}}></div>
-                  <div className="absolute bottom-[10px] left-[10px] right-[10px] p-4 bg-white rounded-lg max-w-4xl">
+                  <div className="absolute bottom-[10px] left-[10px] right-[10px] p-4 bg-white rounded-lg">
                     <p className="text-sm leading-relaxed font-manrope text-gray-800">
                       Значимость этих проблем настолько очевидна, что рамки и место обучения кадров требуют от нас анализа существенных финансовых и административных условий. С другой стороны начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.
                     </p>
