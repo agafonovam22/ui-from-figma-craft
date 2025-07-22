@@ -779,19 +779,19 @@ const Support: React.FC = () => {
                       </div>
 
                       {/* Elliptical Equipment */}
-                      <div className="bg-gray-50 p-6 rounded-lg" style={{marginBottom: '-200px'}}>
-                        <h4 className="text-lg font-medium mb-6">Эллиптические тренажеры</h4>
-                        <div className="space-y-4">
-                          <div className="flex justify-between items-center py-2">
+                      <div className="bg-gray-50 p-4 rounded-lg" style={{marginBottom: '-200px'}}>
+                        <h4 className="text-lg font-medium mb-4">Эллиптические тренажеры</h4>
+                        <div className="space-y-2">
+                          <div className="flex justify-between items-center">
                             <span className="text-gray-700">Sole Fitness</span>
                             <span className="text-[#F53B49] font-medium">24 месяца</span>
                           </div>
-                          <div className="flex justify-between items-center py-2">
+                          <div className="flex justify-between items-center">
                             <span className="text-gray-700">Nautilus</span>
                             <span className="text-[#F53B49] font-medium">24 месяца</span>
                           </div>
-                          <div className="py-2">
-                            <div className="flex justify-between items-center mb-1">
+                          <div>
+                            <div className="flex justify-between items-center">
                               <span className="text-gray-700">на мотор</span>
                               <span className="text-[#F53B49] font-medium">10 лет</span>
                             </div>
@@ -800,15 +800,15 @@ const Support: React.FC = () => {
                               <span className="text-[#F53B49] font-medium">10 лет</span>
                             </div>
                           </div>
-                          <div className="flex justify-between items-center py-2">
+                          <div className="flex justify-between items-center">
                             <span className="text-gray-700">Bowflex</span>
                             <span className="text-[#F53B49] font-medium">24 месяца</span>
                           </div>
-                          <div className="flex justify-between items-center py-2">
+                          <div className="flex justify-between items-center">
                             <span className="text-gray-700">CardioPower</span>
                             <span className="text-[#F53B49] font-medium">24 месяца</span>
                           </div>
-                          <div className="flex justify-between items-center py-2">
+                          <div className="flex justify-between items-center">
                             <span className="text-gray-700">Optima Fitness</span>
                             <span className="text-[#F53B49] font-medium">24 месяца</span>
                           </div>
