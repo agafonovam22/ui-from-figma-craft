@@ -782,11 +782,12 @@ const Support: React.FC = () => {
                       <div className="bg-gray-100 p-6 rounded-lg">
                         <h4 className="text-lg font-medium mb-6 pb-3 border-b border-gray-300">Эллиптические тренажеры</h4>
                         <div className="space-y-0">
-                          <div className="flex justify-between items-center py-3 border-b border-gray-300">
+                          <div className="flex justify-between items-center py-2">
                             <span className="text-gray-700">Sole Fitness</span>
                             <span className="text-[#F53B49] font-medium">24 месяца</span>
                           </div>
-                          <div className="py-3 border-b border-gray-300">
+                          <div className="h-px bg-gray-300"></div>
+                          <div className="py-2">
                             <div className="flex justify-between items-center mb-1">
                               <span className="text-gray-700">Nautilus</span>
                               <span className="text-[#F53B49] font-medium">24 месяца</span>
@@ -800,15 +801,18 @@ const Support: React.FC = () => {
                               <span className="text-[#F53B49] font-medium">10 лет</span>
                             </div>
                           </div>
-                          <div className="flex justify-between items-center py-3 border-b border-gray-300">
+                          <div className="h-px bg-gray-300"></div>
+                          <div className="flex justify-between items-center py-2">
                             <span className="text-gray-700">Bowflex</span>
                             <span className="text-[#F53B49] font-medium">24 месяца</span>
                           </div>
-                          <div className="flex justify-between items-center py-3 border-b border-gray-300">
+                          <div className="h-px bg-gray-300"></div>
+                          <div className="flex justify-between items-center py-2">
                             <span className="text-gray-700">CardioPower</span>
                             <span className="text-[#F53B49] font-medium">24 месяца</span>
                           </div>
-                          <div className="flex justify-between items-center py-3">
+                          <div className="h-px bg-gray-300"></div>
+                          <div className="flex justify-between items-center py-2">
                             <span className="text-gray-700">Optima Fitness</span>
                             <span className="text-[#F53B49] font-medium">24 месяца</span>
                           </div>
