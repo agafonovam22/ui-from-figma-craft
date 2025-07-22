@@ -398,15 +398,11 @@ const Services: React.FC = () => {
               {/* Second section with text and images */}
               <div className="flex gap-8 items-center">
                 <div className="flex-1">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  </h2>
-                  <p className="text-gray-600 mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                    ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                    laboris nisi ut aliquip ex ea commodo consequat.
+                  <p className="text-gray-600 mb-4 font-manrope">
+                    Закажите расчёт стоимости обслуживания и получите индивидуальное предложение с оптимальным балансом цены и качества. Наш подход не только сэкономит ваш бюджет на ремонтах, но и поможет сохранить оборудование в идеальном состоянии годами. Например, при правильном уходе беговые дорожки могут отработать весь срок без замены полотна!
+                  </p>
+                  <p className="text-gray-600 mb-4 font-manrope">
+                    Доверьте технику профессионалам — и сосредоточьтесь на развитии бизнеса!
                   </p>
                 </div>
                 <div className="flex-1">
