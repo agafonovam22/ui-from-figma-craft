@@ -317,27 +317,30 @@ const About: React.FC = () => {
                         {/* Content overlay */}
                         <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
                           <div>
-                            <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-sm">
-                              {project.description}
-                            </div>
+                            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
                           </div>
                           
-                          <div className="flex justify-start">
-                            {index === 0 ? (
-                              <Link 
-                                to="/project"
-                                className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100"
-                              >
-                                Перейти
-                                <ChevronRight size={16} />
-                              </Link>
-                            ) : (
-                              <button className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100">
-                                Перейти
-                                <ChevronRight size={16} />
-                              </button>
-                            )}
+                          <div className="space-y-4">
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-xs mb-[30px]" style={{ fontFamily: 'Benzin-Medium' }}>
+                              {project.description}
+                            </div>
+                            
+                            <div className="flex justify-start">
+                              {index === 0 ? (
+                                <Link 
+                                  to="/project"
+                                  className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100"
+                                >
+                                  Перейти
+                                  <ChevronRight size={16} />
+                                </Link>
+                              ) : (
+                                <button className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100">
+                                  Перейти
+                                  <ChevronRight size={16} />
+                                </button>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -360,17 +363,20 @@ const About: React.FC = () => {
                         {/* Content overlay */}
                         <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
                           <div>
-                            <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-sm">
-                              {project.description}
-                            </div>
+                            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
                           </div>
                           
-                          <div className="flex justify-start">
-                            <button className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100">
-                              Перейти
-                              <ChevronRight size={16} />
-                            </button>
+                          <div className="space-y-4">
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-xs mb-[30px]" style={{ fontFamily: 'Benzin-Medium' }}>
+                              {project.description}
+                            </div>
+                            
+                            <div className="flex justify-start">
+                              <button className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100">
+                                Перейти
+                                <ChevronRight size={16} />
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -393,17 +399,20 @@ const About: React.FC = () => {
                         {/* Content overlay */}
                         <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
                           <div>
-                            <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-sm">
-                              {project.description}
-                            </div>
+                            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
                           </div>
                           
-                          <div className="flex justify-start">
-                            <button className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100">
-                              Перейти
-                              <ChevronRight size={16} />
-                            </button>
+                          <div className="space-y-4">
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-xs mb-[30px]" style={{ fontFamily: 'Benzin-Medium' }}>
+                              {project.description}
+                            </div>
+                            
+                            <div className="flex justify-start">
+                              <button className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100">
+                                Перейти
+                                <ChevronRight size={16} />
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -426,17 +435,20 @@ const About: React.FC = () => {
                         {/* Content overlay */}
                         <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
                           <div>
-                            <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-sm">
-                              {project.description}
-                            </div>
+                            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
                           </div>
                           
-                          <div className="flex justify-start">
-                            <button className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100">
-                              Перейти
-                              <ChevronRight size={16} />
-                            </button>
+                          <div className="space-y-4">
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full text-xs mb-[30px]" style={{ fontFamily: 'Benzin-Medium' }}>
+                              {project.description}
+                            </div>
+                            
+                            <div className="flex justify-start">
+                              <button className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100">
+                                Перейти
+                                <ChevronRight size={16} />
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
