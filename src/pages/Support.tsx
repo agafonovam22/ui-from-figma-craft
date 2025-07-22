@@ -779,7 +779,7 @@ const Support: React.FC = () => {
                       </div>
 
                       {/* Elliptical Equipment */}
-                      <div>
+                      <div className="bg-gray-50 p-6 rounded-lg">
                         <h4 className="text-lg font-medium mb-6">Эллиптические тренажеры</h4>
                         <div className="space-y-4">
                           <div className="flex justify-between items-center py-2">
