@@ -717,12 +717,14 @@ const Support: React.FC = () => {
             <div className="space-y-8">
               {/* Warranty Period Section */}
               <div>
-                <div className="mb-8">
-                  <h3 className="mb-2" style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '20px'
-                  }}>Гарантийный период</h3>
-                  <p className="text-gray-600 mb-6">на продукцию составляет</p>
+                <div className="flex gap-8 mb-8">
+                  <div className="w-80 flex-shrink-0"></div>
+                  <div className="flex-1">
+                    <h3 style={{
+                      fontFamily: 'Benzin-Medium',
+                      fontSize: '20px'
+                    }}>Гарантийный период на продукцию составляет</h3>
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-8">
