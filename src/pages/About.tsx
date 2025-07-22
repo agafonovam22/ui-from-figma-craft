@@ -260,7 +260,7 @@ const About: React.FC = () => {
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[10px]">
                 {teamMembers.map((member, index) => (
-                  <div key={index} className="relative rounded-lg overflow-hidden h-[550px]">
+                  <div key={index} className="relative rounded-lg overflow-hidden h-[450px]">
                     {/* Background image */}
                     <div 
                       className="h-full bg-cover bg-center relative"
