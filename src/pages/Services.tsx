@@ -84,42 +84,42 @@ const Services: React.FC = () => {
     {
       id: 2,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png'
+      thumbnail: '/lovable-uploads/f4c3da36-0826-43f3-84e8-556a68d7997c.png'
     },
     {
       id: 3,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png'
+      thumbnail: '/lovable-uploads/f4c3da36-0826-43f3-84e8-556a68d7997c.png'
     },
     {
       id: 4,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png'
+      thumbnail: '/lovable-uploads/f4c3da36-0826-43f3-84e8-556a68d7997c.png'
     },
     {
       id: 5,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png'
+      thumbnail: '/lovable-uploads/f4c3da36-0826-43f3-84e8-556a68d7997c.png'
     },
     {
       id: 6,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png'
+      thumbnail: '/lovable-uploads/f4c3da36-0826-43f3-84e8-556a68d7997c.png'
     },
     {
       id: 7,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png'
+      thumbnail: '/lovable-uploads/f4c3da36-0826-43f3-84e8-556a68d7997c.png'
     },
     {
       id: 8,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png'
+      thumbnail: '/lovable-uploads/f4c3da36-0826-43f3-84e8-556a68d7997c.png'
     },
     {
       id: 9,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png'
+      thumbnail: '/lovable-uploads/f4c3da36-0826-43f3-84e8-556a68d7997c.png'
     }
   ];
 
@@ -600,10 +600,10 @@ const Services: React.FC = () => {
                           className="w-full object-cover transition-transform group-hover:scale-105" style={{ height: '216px' }}
                         />
                         {/* White container overlay at bottom with title and play button */}
-                        <div className="absolute bottom-0 left-0 right-0 bg-white p-4 flex items-center justify-between">
-                          <h4 className="font-medium text-gray-900 flex-1">{video.title}</h4>
-                          <div className="bg-pink-200 rounded-full p-3 ml-4">
-                            <Play className="w-6 h-6 text-[#F53B49] fill-current" />
+                        <div className="absolute bottom-[5px] left-[5px] right-[5px] bg-white p-3 rounded flex items-center justify-between">
+                          <h4 className="font-medium text-gray-900 flex-1 text-sm">{video.title}</h4>
+                          <div className="bg-pink-200 rounded-full p-2 ml-3">
+                            <Play className="w-5 h-5 text-[#F53B49] fill-current" />
                           </div>
                         </div>
                       </div>
