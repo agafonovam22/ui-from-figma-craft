@@ -79,47 +79,47 @@ const Services: React.FC = () => {
     {
       id: 1,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/f4c3da36-0826-43f3-84e8-556a68d7997c.png'
+      thumbnail: '/lovable-uploads/049bf5bb-7991-4efb-b320-8c8dfb850ff2.png'
     },
     {
       id: 2,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png'
+      thumbnail: '/lovable-uploads/049bf5bb-7991-4efb-b320-8c8dfb850ff2.png'
     },
     {
       id: 3,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png'
+      thumbnail: '/lovable-uploads/049bf5bb-7991-4efb-b320-8c8dfb850ff2.png'
     },
     {
       id: 4,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png'
+      thumbnail: '/lovable-uploads/049bf5bb-7991-4efb-b320-8c8dfb850ff2.png'
     },
     {
       id: 5,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png'
+      thumbnail: '/lovable-uploads/049bf5bb-7991-4efb-b320-8c8dfb850ff2.png'
     },
     {
       id: 6,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png'
+      thumbnail: '/lovable-uploads/049bf5bb-7991-4efb-b320-8c8dfb850ff2.png'
     },
     {
       id: 7,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png'
+      thumbnail: '/lovable-uploads/049bf5bb-7991-4efb-b320-8c8dfb850ff2.png'
     },
     {
       id: 8,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png'
+      thumbnail: '/lovable-uploads/049bf5bb-7991-4efb-b320-8c8dfb850ff2.png'
     },
     {
       id: 9,
       title: 'Видео инструкция тренажеры Nautilus',
-      thumbnail: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png'
+      thumbnail: '/lovable-uploads/049bf5bb-7991-4efb-b320-8c8dfb850ff2.png'
     }
   ];
 
