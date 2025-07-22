@@ -739,45 +739,45 @@ const Support: React.FC = () => {
                       {/* Running Equipment */}
                       <div>
                         <div className="bg-gray-100 p-6 rounded-lg">
-                          <h4 className="text-lg font-medium mb-6">Беговые дорожки</h4>
+                          <h4 className="text-lg font-medium mb-6" style={{fontFamily: 'Benzin-Medium', fontSize: '18px'}}>Беговые дорожки</h4>
                           <div className="space-y-4">
                             <div className="flex justify-between items-center py-2">
-                              <span className="text-gray-700">Sole Fitness</span>
-                              <span className="text-[#F53B49] font-medium">24 месяца</span>
+                              <span className="text-gray-700" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Sole Fitness</span>
+                              <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
                             </div>
                             <div className="h-px bg-gray-300"></div>
                             <div className="flex justify-between items-center py-2">
-                              <span className="text-gray-700">Nautilus</span>
-                              <span className="text-[#F53B49] font-medium">24 месяца</span>
+                              <span className="text-gray-700" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Nautilus</span>
+                              <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
                             </div>
                             <div className="py-2">
                               <div className="flex justify-between items-center mb-1">
-                                <span className="text-gray-700">на мотор</span>
-                                <span className="text-[#F53B49] font-medium">3 года</span>
+                                <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>на мотор</span>
+                                <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>3 года</span>
                               </div>
                               <div className="flex justify-between items-center mb-1">
-                                <span className="text-gray-700">беговое полотно</span>
-                                <span className="text-[#F53B49] font-medium">6 месяцев</span>
+                                <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>беговое полотно</span>
+                                <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>6 месяцев</span>
                               </div>
                               <div className="flex justify-between items-center">
-                                <span className="text-gray-700">рама</span>
-                                <span className="text-[#F53B49] font-medium">10 лет</span>
+                                <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>рама</span>
+                                <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>10 лет</span>
                               </div>
                             </div>
                             <div className="h-px bg-gray-300"></div>
                             <div className="flex justify-between items-center py-2">
-                              <span className="text-gray-700">Bowflex</span>
-                              <span className="text-[#F53B49] font-medium">24 месяца</span>
+                              <span className="text-gray-700" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Bowflex</span>
+                              <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
                             </div>
                             <div className="h-px bg-gray-300"></div>
                             <div className="flex justify-between items-center py-2">
-                              <span className="text-gray-700">CardioPower</span>
-                              <span className="text-[#F53B49] font-medium">24 месяца</span>
+                              <span className="text-gray-700" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>CardioPower</span>
+                              <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
                             </div>
                             <div className="h-px bg-gray-300"></div>
                             <div className="flex justify-between items-center py-2">
-                              <span className="text-gray-700">Optima Fitness</span>
-                              <span className="text-[#F53B49] font-medium">24 месяца</span>
+                              <span className="text-gray-700" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Optima Fitness</span>
+                              <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
                             </div>
                           </div>
                           <div className="mt-6">
@@ -789,42 +789,42 @@ const Support: React.FC = () => {
                       </div>
 
                       {/* Elliptical Equipment */}
-                      <div className="bg-gray-100 p-6 rounded-lg">
-                        <h4 className="text-lg font-medium mb-6 pb-3 border-b border-gray-300">Эллиптические тренажеры</h4>
-                        <div className="space-y-0">
+                      <div className="bg-gray-100 p-6 rounded-lg" style={{height: 'calc(100% - 100px)'}}>
+                        <h4 className="text-lg font-medium mb-6" style={{fontFamily: 'Benzin-Medium', fontSize: '18px'}}>Эллиптические тренажеры</h4>
+                        <div className="space-y-4">
                           <div className="flex justify-between items-center py-2">
-                            <span className="text-gray-700">Sole Fitness</span>
-                            <span className="text-[#F53B49] font-medium">24 месяца</span>
+                            <span className="text-gray-700" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Sole Fitness</span>
+                            <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="py-2">
                             <div className="flex justify-between items-center mb-1">
-                              <span className="text-gray-700">Nautilus</span>
-                              <span className="text-[#F53B49] font-medium">24 месяца</span>
+                              <span className="text-gray-700" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Nautilus</span>
+                              <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
                             </div>
                             <div className="flex justify-between items-center mb-1">
-                              <span className="text-gray-700">на мотор</span>
-                              <span className="text-[#F53B49] font-medium">10 лет</span>
+                              <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>на мотор</span>
+                              <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>10 лет</span>
                             </div>
                             <div className="flex justify-between items-center">
-                              <span className="text-gray-700">рама</span>
-                              <span className="text-[#F53B49] font-medium">10 лет</span>
+                              <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>рама</span>
+                              <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>10 лет</span>
                             </div>
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex justify-between items-center py-2">
-                            <span className="text-gray-700">Bowflex</span>
-                            <span className="text-[#F53B49] font-medium">24 месяца</span>
+                            <span className="text-gray-700" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Bowflex</span>
+                            <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex justify-between items-center py-2">
-                            <span className="text-gray-700">CardioPower</span>
-                            <span className="text-[#F53B49] font-medium">24 месяца</span>
+                            <span className="text-gray-700" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>CardioPower</span>
+                            <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex justify-between items-center py-2">
-                            <span className="text-gray-700">Optima Fitness</span>
-                            <span className="text-[#F53B49] font-medium">24 месяца</span>
+                            <span className="text-gray-700" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Optima Fitness</span>
+                            <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
                           </div>
                         </div>
                       </div>
