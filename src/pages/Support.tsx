@@ -180,7 +180,7 @@ const Support: React.FC = () => {
                       <h4 className="mb-4 pb-3 border-b" style={{
                         fontFamily: 'Benzin-Medium',
                         fontSize: '20px',
-                        fontWeight: '500'
+                        fontWeight: '400'
                       }}>Заказ от 30 001 ₽</h4>
                       <div className="space-y-4">
                         <div className="flex justify-between items-center py-3 border-b">
@@ -227,7 +227,7 @@ const Support: React.FC = () => {
                       <h4 className="mb-4 pb-3 border-b" style={{
                         fontFamily: 'Benzin-Medium',
                         fontSize: '20px',
-                        fontWeight: '500'
+                        fontWeight: '400'
                       }}>Заказ до 30 000 ₽</h4>
                       <div>
                         <div className="flex justify-between items-center py-3 border-b">
