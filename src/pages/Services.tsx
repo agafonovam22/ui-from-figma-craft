@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { Play, Truck, Wrench, CreditCard, Clock, Home } from 'lucide-react';
 import EmailSubscription from '@/components/EmailSubscription';
+import PhotoSwiper from '@/components/PhotoSwiper';
 
 const Services: React.FC = () => {
   const [activeTab, setActiveTab] = useState('service-request');
@@ -437,34 +438,18 @@ const Services: React.FC = () => {
                 </div>
               </div>
 
-              {/* Image carousel section */}
-              <div className="space-y-4">
-                <div className="flex gap-4 overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png"
-                    alt="Спортивное оборудование"
-                    className="w-1/3 h-64 object-cover rounded-lg"
-                  />
-                  <img 
-                    src="/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png"
-                    alt="Женщина тренируется"
-                    className="w-1/3 h-64 object-cover rounded-lg"
-                  />
-                  <img 
-                    src="/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png"
-                    alt="Люди бегают"
-                    className="w-1/3 h-64 object-cover rounded-lg"
-                  />
-                </div>
-                {/* Carousel dots */}
-                <div className="flex justify-center gap-2">
-                  <div className="w-3 h-3 bg-[#F53B49] rounded-full"></div>
-                  <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
-                  <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
-                  <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
-                  <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
-                  <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
-                </div>
+              {/* Photo Swiper Gallery */}
+              <div className="mb-12">
+                <PhotoSwiper 
+                  images={[
+                    '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
+                    '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png',
+                    '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
+                    '/lovable-uploads/94f85ba4-b118-4ce1-b7e5-12a4ce35107c.png'
+                  ]}
+                  autoplay={true}
+                  autoplayInterval={5000}
+                />
               </div>
 
               {/* Contact form section */}
