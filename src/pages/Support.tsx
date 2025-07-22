@@ -584,6 +584,9 @@ const Support: React.FC = () => {
                 </div>
               </div>
 
+              {/* Разделительная линия */}
+              <div className="h-px bg-gray-300"></div>
+
               {/* Возврат товара по качеству */}
               <div className="flex gap-8">
                 <div className="w-80 flex-shrink-0">
@@ -624,6 +627,9 @@ const Support: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Разделительная линия */}
+              <div className="h-px bg-gray-300"></div>
 
               {/* Условия возврата товара */}
               <div className="flex gap-8 mb-8">
