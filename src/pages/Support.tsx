@@ -87,7 +87,7 @@ const Support: React.FC = () => {
 
         {/* Hero Section */}
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] mb-12">
-          <div className="bg-gradient-to-r from-gray-800 to-gray-600 rounded-lg p-8 text-white relative overflow-hidden">
+          <div className="bg-gradient-to-r from-gray-800 to-gray-600 rounded-lg p-8 text-white relative overflow-hidden h-[328px] flex items-center">
             <div className="flex items-center justify-between">
               <div className="flex-1">
                 <h2 className="text-5xl font-bold mb-4 leading-tight">
