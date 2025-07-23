@@ -469,9 +469,9 @@ const About: React.FC = () => {
                     style={{ objectPosition: 'center right' }}
                   />
                   {/* Statistics content overlay */}
-                  <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-6 shadow-lg">
-                    <div className="h-full flex flex-col justify-between">
-                      <div className="mb-6">
+                  <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg py-8 px-6 shadow-lg">
+                    <div className="h-full flex flex-col justify-center">
+                      <div className="text-center mb-8">
                         <p className="text-gray-700 text-sm leading-relaxed">
                           За годы успешного развития нам удалось консолидировать в своем ассортименте продукцию лучших мировых брендов, собрать команду профессионалов, завоевать доверие десятков тысяч лояльных покупателей и стать настоящим лидером рынка.
                         </p>
@@ -496,7 +496,7 @@ const About: React.FC = () => {
                         </div>
                       </div>
                       
-                      <div className="mt-4">
+                      <div className="mt-6 text-center">
                         <div className="text-4xl font-bold text-[#17171E] mb-1">3000+</div>
                         <div className="text-gray-600 text-sm">SKU</div>
                       </div>
