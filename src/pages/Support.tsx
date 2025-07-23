@@ -942,67 +942,57 @@ const Support: React.FC = () => {
 
           {activeTab === 'faq' && (
             <div className="space-y-6">
-              <div className="mb-8">
-                <p className="text-gray-700 mb-8 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua? Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-                
-                <p className="text-gray-700 mb-8 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-              </div>
-
               <Accordion type="single" collapsible className="w-full space-y-4">
-                <AccordionItem value="item-1" className="border border-gray-200 rounded-lg px-4 bg-gray-50">
-                  <AccordionTrigger className="text-left hover:no-underline py-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                <AccordionItem value="item-1" className="border border-gray-200 rounded-lg bg-gray-50">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
                   </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-0" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                  <AccordionContent className="pb-4 pt-0 bg-white border-l-4 border-gray-300 pl-6 pr-4 ml-4 mr-4 mb-4 rounded-r" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua? Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua? Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua? Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-2" className="border border-gray-200 rounded-lg px-4 bg-gray-50">
-                  <AccordionTrigger className="text-left hover:no-underline py-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                <AccordionItem value="item-2" className="border border-gray-200 rounded-lg bg-gray-50">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
                   </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-0" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                  <AccordionContent className="pb-4 pt-0 bg-white border-l-4 border-gray-300 pl-6 pr-4 ml-4 mr-4 mb-4 rounded-r" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua? Ut enim
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-3" className="border border-gray-200 rounded-lg px-4 bg-gray-50">
-                  <AccordionTrigger className="text-left hover:no-underline py-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                <AccordionItem value="item-3" className="border border-gray-200 rounded-lg bg-gray-50">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
                   </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-0" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                  <AccordionContent className="pb-4 pt-0 bg-white border-l-4 border-gray-300 pl-6 pr-4 ml-4 mr-4 mb-4 rounded-r" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-4" className="border border-gray-200 rounded-lg px-4 bg-gray-50">
-                  <AccordionTrigger className="text-left hover:no-underline py-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                <AccordionItem value="item-4" className="border border-gray-200 rounded-lg bg-gray-50">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
                   </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-0" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                  <AccordionContent className="pb-4 pt-0 bg-white border-l-4 border-gray-300 pl-6 pr-4 ml-4 mr-4 mb-4 rounded-r" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-5" className="border border-gray-200 rounded-lg px-4 bg-gray-50">
-                  <AccordionTrigger className="text-left hover:no-underline py-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                <AccordionItem value="item-5" className="border border-gray-200 rounded-lg bg-gray-50">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
                   </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-0" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                  <AccordionContent className="pb-4 pt-0 bg-white border-l-4 border-gray-300 pl-6 pr-4 ml-4 mr-4 mb-4 rounded-r" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-6" className="border border-gray-200 rounded-lg px-4 bg-gray-50">
-                  <AccordionTrigger className="text-left hover:no-underline py-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                <AccordionItem value="item-6" className="border border-gray-200 rounded-lg bg-gray-50">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
                   </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-0" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                  <AccordionContent className="pb-4 pt-0 bg-white border-l-4 border-gray-300 pl-6 pr-4 ml-4 mr-4 mb-4 rounded-r" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua?
                   </AccordionContent>
                 </AccordionItem>
