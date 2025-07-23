@@ -795,7 +795,7 @@ const Support: React.FC = () => {
                        </div>
 
                        {/* Elliptical Equipment */}
-                       <div className="bg-gray-100 p-6 rounded-lg">
+                       <div className="bg-gray-100 p-6 rounded-lg h-fit">
                          <h4 className="text-lg font-medium mb-6" style={{fontFamily: 'Benzin-Medium', fontSize: '18px'}}>Эллиптические тренажеры</h4>
                          <div className="space-y-4">
                            <div className="flex justify-between items-center py-2">
@@ -838,20 +838,25 @@ const Support: React.FC = () => {
 
                    </div>
                 </div>
-              </div>
+               </div>
 
-              {/* Warranty Loss Section */}
+               {/* Разделительная линия */}
+               <div className="h-px bg-gray-300"></div>
+
+               {/* Warranty Loss Section */}
               <div className="flex gap-8 mb-12">
-                <div className="w-80 flex-shrink-0">
-                  <h3 style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '20px'
-                  }}>Гарантия теряет силу</h3>
-                  <p className="text-gray-600 mt-2" style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '20px'
-                  }}>в случаях</p>
-                </div>
+                 <div className="w-80 flex-shrink-0">
+                   <h3 style={{
+                     fontFamily: 'Benzin-Medium',
+                     fontSize: '20px',
+                     color: '#262631'
+                   }}>Гарантия теряет силу</h3>
+                   <p style={{
+                     fontFamily: 'Benzin-Medium',
+                     fontSize: '20px',
+                     color: '#262631'
+                   }} className="mt-2">в случаях</p>
+                 </div>
                  <div className="flex-1">
                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px] mb-[10px]">
                      <div className="bg-gray-50 p-6 rounded-lg">
@@ -890,9 +895,12 @@ const Support: React.FC = () => {
                      </p>
                    </div>
                 </div>
-              </div>
+               </div>
 
-              {/* Recommendations Section */}
+               {/* Разделительная линия */}
+               <div className="h-px bg-gray-300"></div>
+
+               {/* Recommendations Section */}
               <div>
                 <div className="border-2 border-[#F53B49] rounded-lg p-8">
                   <h3 className="mb-6" style={{
