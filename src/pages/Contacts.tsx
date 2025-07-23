@@ -208,15 +208,15 @@ const Contacts: React.FC = () => {
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
                   <p className="text-sm">pro@wellfitness.ru</p>
-                  <p className="text-xs text-gray-500 mt-1">
-                    для консультаций по профессиональному оборудованию<br />
-                    и комплексным решениям
-                  </p>
+                   <p className="text-xs text-gray-500 mt-1">
+                     для консультаций по профессиональному<br />
+                     оборудованию и комплексным решениям
+                   </p>
                   <p className="text-sm mt-2">zakaz@wellfitness.ru</p>
-                  <p className="text-xs text-gray-500 mt-1">
-                    для приема дилерских заказов на оборудование, аксессуары,<br />
-                    запчасти
-                  </p>
+                   <p className="text-xs text-gray-500 mt-1">
+                     для приема дилерских заказов на оборудование,<br />
+                     аксессуары, запчасти
+                   </p>
                 </div>
               </div>
             </div>
