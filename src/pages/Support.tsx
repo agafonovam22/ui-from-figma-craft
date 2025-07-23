@@ -221,6 +221,39 @@ const Support: React.FC = () => {
                     ]
                   },
                   {
+                    name: "Cardio Power",
+                    categories: [
+                      {
+                        name: "Беговые дорожки",
+                        equipment: [
+                          "Беговая дорожка CardioPower T15",
+                          "Беговая дорожка CardioPower T20",
+                          "Беговая дорожка CardioPower T25"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    name: "Life Fitness",
+                    categories: [
+                      {
+                        name: "Беговые дорожки",
+                        equipment: [
+                          "Беговая дорожка Life Fitness T3",
+                          "Беговая дорожка Life Fitness T5",
+                          "Беговая дорожка Life Fitness T7"
+                        ]
+                      },
+                      {
+                        name: "Велотренажеры",
+                        equipment: [
+                          "Велотренажер Life Fitness C1",
+                          "Велотренажер Life Fitness C3"
+                        ]
+                      }
+                    ]
+                  },
+                  {
                     name: "Technogym",
                     categories: [
                       {
