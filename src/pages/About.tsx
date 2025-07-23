@@ -600,11 +600,11 @@ const About: React.FC = () => {
                 <div>
                   <PhotoSwiper 
                     images={[
-                      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
-                      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop",
-                      "https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=400&fit=crop",
-                      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
-                      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop"
+                      "/lovable-uploads/b555a0e9-869b-49af-bed7-c8a64d9d3e99.png",
+                      "/lovable-uploads/09aa5a7a-91f0-4b59-b25a-4adae6c6eabc.png",
+                      "/lovable-uploads/091717a9-ebff-4e40-961c-41fbf3a3ad61.png",
+                      "/lovable-uploads/a1cd1be2-b869-402f-8b30-684846ff602c.png",
+                      "/lovable-uploads/c472fcee-44da-473a-8890-1cdb5dc8890b.png"
                     ]}
                     autoplay={true}
                     autoplayInterval={5000}
