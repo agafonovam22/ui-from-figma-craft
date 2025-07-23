@@ -471,7 +471,7 @@ const About: React.FC = () => {
                   {/* Statistics content overlay */}
                   <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-6 shadow-lg">
                     <div className="h-full flex flex-col justify-between">
-                      <div className="mb-6">
+                      <div className="mb-6 mt-4">
                         <p className="text-gray-700 text-sm leading-relaxed">
                           За годы успешного развития нам удалось консолидировать в своем ассортименте продукцию лучших мировых брендов, собрать команду профессионалов, завоевать доверие десятков тысяч лояльных покупателей и стать настоящим лидером рынка.
                         </p>
