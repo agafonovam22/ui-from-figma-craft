@@ -537,8 +537,11 @@ const About: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px] mb-16">
                   <div className="bg-gray-100 p-6 rounded-lg">
                     <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
+                      Опытная команда
+                    </h3>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
-                      Слаженная команда людей, любящих спорт и здоровый образ жизни знающих свое дело и ориентирующихся во всех нюансах фитнес оборудования;
+                      команда профессионалов, объединенных любовью к спорту и глубоким знанием фитнес-оборудования
                     </p>
                   </div>
 
