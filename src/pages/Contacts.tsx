@@ -209,13 +209,13 @@ const Contacts: React.FC = () => {
                   <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
                   <p className="text-sm">pro@wellfitness.ru</p>
                    <p className="text-xs text-gray-500 mt-1">
-                     для консультаций по профессиональному<br />
-                     оборудованию и комплексным решениям
+                     для консультаций<br />
+                     по профессиональному оборудованию и комплексным решениям
                    </p>
                   <p className="text-sm mt-2">zakaz@wellfitness.ru</p>
                    <p className="text-xs text-gray-500 mt-1">
-                     для приема дилерских заказов на оборудование,<br />
-                     аксессуары, запчасти
+                     для приема дилерских заказов<br />
+                     на оборудование, аксессуары, запчасти
                    </p>
                 </div>
               </div>
