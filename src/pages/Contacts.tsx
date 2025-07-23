@@ -69,8 +69,11 @@ const Contacts: React.FC = () => {
         </h1>
 
         {/* Introductory Text */}
+        <p className="text-gray-700 text-lg leading-relaxed text-left w-full mb-2">
+          Хотите увидеть товары вживую, получить консультацию или оформить заказ?
+        </p>
         <p className="text-gray-700 text-lg leading-relaxed text-left w-full mb-8">
-          Хотите увидеть товары вживую, получить консультацию или оформить заказ? Мы всегда на связи.
+          Мы всегда на связи.
         </p>
 
         {/* City Tabs */}
