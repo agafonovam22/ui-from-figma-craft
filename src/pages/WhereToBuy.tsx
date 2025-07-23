@@ -305,10 +305,18 @@ const WhereToBuy: React.FC = () => {
                     
                      <div className="flex items-center gap-2">
                        <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-4 h-4 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium text-sm">Телефон</p>
-                        <p className="text-sm">{store.phone}</p>
-                      </div>
+                       <div>
+                         <p className="font-medium text-sm">Телефон</p>
+                         <div className="text-sm">
+                           {store.phone.includes(',') ? (
+                             store.phone.split(',').map((phone, idx) => (
+                               <div key={idx}>{phone.trim()}</div>
+                             ))
+                           ) : (
+                             <div>{store.phone}</div>
+                           )}
+                         </div>
+                       </div>
                     </div>
                     
                     <div className="flex items-center gap-2">
@@ -367,10 +375,18 @@ const WhereToBuy: React.FC = () => {
                       
                        <div className="flex items-center gap-2">
                          <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-4 h-4 flex-shrink-0" />
-                        <div>
-                          <p className="font-medium text-sm">Телефон</p>
-                          <p className="text-sm">{store.phone}</p>
-                        </div>
+                         <div>
+                           <p className="font-medium text-sm">Телефон</p>
+                           <div className="text-sm">
+                             {store.phone.includes(',') ? (
+                               store.phone.split(',').map((phone, idx) => (
+                                 <div key={idx}>{phone.trim()}</div>
+                               ))
+                             ) : (
+                               <div>{store.phone}</div>
+                             )}
+                           </div>
+                         </div>
                       </div>
                       
                       <div className="flex items-center gap-2">
