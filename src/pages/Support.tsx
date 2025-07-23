@@ -133,187 +133,25 @@ const Support: React.FC = () => {
           {/* Tab Content */}
           {activeTab === 'instructions' && (
             <div className="space-y-4">
-              <Accordion type="multiple" className="space-y-2">
+              <div className="space-y-2">
                 {[
-                  {
-                    name: "BowFlex",
-                    categories: [
-                      {
-                        name: "Беговые дорожки",
-                        equipment: [
-                          "Беговая дорожка CardioPower T10",
-                          "Беговая дорожка CardioPower T10",
-                          "Беговая дорожка CardioPower T10",
-                          "Беговая дорожка CardioPower T10",
-                          "Беговая дорожка CardioPower T10",
-                          "Беговая дорожка CardioPower T10"
-                        ]
-                      },
-                      {
-                        name: "Велотренажеры",
-                        equipment: [
-                          "Велотренажер BowFlex C6",
-                          "Велотренажер BowFlex VeloCore",
-                          "Велотренажер BowFlex Max Trainer"
-                        ]
-                      },
-                      {
-                        name: "Гребные тренажеры",
-                        equipment: [
-                          "Гребной тренажер BowFlex PR1000",
-                          "Гребной тренажер BowFlex PR3000"
-                        ]
-                      },
-                      {
-                        name: "Эллиптические тренажеры",
-                        equipment: [
-                          "Эллиптический тренажер BowFlex Max Trainer M6",
-                          "Эллиптический тренажер BowFlex Max Trainer M8"
-                        ]
-                      },
-                      {
-                        name: "Велотренажеры",
-                        equipment: [
-                          "Велотренажер BowFlex C6 V2",
-                          "Велотренажер BowFlex VeloCore 16"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    name: "TRUE",
-                    categories: [
-                      {
-                        name: "Беговые дорожки",
-                        equipment: [
-                          "Беговая дорожка TRUE PS100",
-                          "Беговая дорожка TRUE PS300",
-                          "Беговая дорожка TRUE PS800"
-                        ]
-                      },
-                      {
-                        name: "Велотренажеры",
-                        equipment: [
-                          "Велотренажер TRUE CS200",
-                          "Велотренажер TRUE CS400"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    name: "Schwinn",
-                    categories: [
-                      {
-                        name: "Велотренажеры",
-                        equipment: [
-                          "Велотренажер Schwinn IC4",
-                          "Велотренажер Schwinn IC8",
-                          "Велотренажер Schwinn Airdyne AD7"
-                        ]
-                      },
-                      {
-                        name: "Эллиптические тренажеры",
-                        equipment: [
-                          "Эллиптический тренажер Schwinn 470",
-                          "Эллиптический тренажер Schwinn 570E"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    name: "Cardio Power",
-                    categories: [
-                      {
-                        name: "Беговые дорожки",
-                        equipment: [
-                          "Беговая дорожка CardioPower T15",
-                          "Беговая дорожка CardioPower T20",
-                          "Беговая дорожка CardioPower T25"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    name: "Life Fitness",
-                    categories: [
-                      {
-                        name: "Беговые дорожки",
-                        equipment: [
-                          "Беговая дорожка Life Fitness T3",
-                          "Беговая дорожка Life Fitness T5",
-                          "Беговая дорожка Life Fitness T7"
-                        ]
-                      },
-                      {
-                        name: "Велотренажеры",
-                        equipment: [
-                          "Велотренажер Life Fitness C1",
-                          "Велотренажер Life Fitness C3"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    name: "Technogym",
-                    categories: [
-                      {
-                        name: "Беговые дорожки",
-                        equipment: [
-                          "Беговая дорожка Technogym Run Now",
-                          "Беговая дорожка Technogym Artis Run"
-                        ]
-                      },
-                      {
-                        name: "Эллиптические тренажеры",
-                        equipment: [
-                          "Эллиптический тренажер Technogym Cross Personal",
-                          "Эллиптический тренажер Technogym Artis Synchro"
-                        ]
-                      }
-                    ]
-                  }
+                  { name: "BowFlex" },
+                  { name: "TRUE" },
+                  { name: "Schwinn" },
+                  { name: "Cardio Power" },
+                  { name: "Life Fitness" },
+                  { name: "Technogym" }
                 ].map((brand, brandIndex) => (
-                  <AccordionItem key={brandIndex} value={`brand-${brandIndex}`} className="border border-gray-200 rounded-lg overflow-hidden">
-                    <AccordionTrigger 
-                      className="bg-gray-100 hover:bg-gray-200 data-[state=open]:bg-[#262631] data-[state=open]:text-white px-6 py-4 text-left hover:no-underline transition-colors text-[#262631]"
+                  <div key={brandIndex} className="border border-gray-200 rounded-lg overflow-hidden">
+                    <div 
+                      className="bg-gray-100 px-6 py-4 text-left text-[#262631]"
                       style={{ fontFamily: 'Benzin-Regular', fontSize: '16px' }}
                     >
                       {brand.name}
-                    </AccordionTrigger>
-                    <AccordionContent className="p-0">
-                      <Accordion type="multiple" className="divide-y divide-gray-100">
-                        {brand.categories.map((category, categoryIndex) => (
-                          <AccordionItem key={categoryIndex} value={`category-${brandIndex}-${categoryIndex}`} className="border-0">
-                            <AccordionTrigger 
-                              className="bg-gray-100 hover:bg-gray-200 px-6 py-4 text-left hover:no-underline"
-                              style={{ fontFamily: 'Benzin-Regular', fontSize: '16px' }}
-                            >
-                              {category.name}
-                            </AccordionTrigger>
-                            <AccordionContent className="px-6 pb-4 pt-2">
-                              <div className="space-y-0">
-                                {category.equipment.map((equipment, equipmentIndex) => (
-                                  <div key={equipmentIndex} className="flex justify-between items-center py-3 border-b border-gray-200 last:border-b-0">
-                                    <span 
-                                      className="text-gray-700"
-                                      style={{ fontFamily: 'Benzin-Regular', fontSize: '16px' }}
-                                    >
-                                      {equipment}
-                                    </span>
-                                    <button className="bg-[#F53B49] hover:bg-[#E02D3B] text-white px-4 py-2 rounded text-sm font-medium transition-colors">
-                                      Скачать
-                                    </button>
-                                  </div>
-                                ))}
-                              </div>
-                            </AccordionContent>
-                          </AccordionItem>
-                        ))}
-                      </Accordion>
-                    </AccordionContent>
-                  </AccordionItem>
+                    </div>
+                  </div>
                 ))}
-              </Accordion>
+              </div>
             </div>
           )}
 
