@@ -70,8 +70,8 @@ const Services: React.FC = () => {
   const tabs = [
     { id: 'service-request', label: 'Заявка на сервис', active: true },
     { id: 'fitness-clubs', label: 'Обслуживание фитнес клубов', active: false },
-    { id: 'instructions', label: 'Инструкции', active: false },
     { id: 'services', label: 'Услуги', active: false },
+    { id: 'instructions', label: 'Инструкции', active: false },
     { id: 'video-instructions', label: 'Видео-инструкции', active: false }
   ];
 
