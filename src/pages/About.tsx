@@ -577,15 +577,21 @@ const About: React.FC = () => {
 
                   <div className="bg-gray-100 p-6 rounded-lg">
                     <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
+                      Комплексный сервис
+                    </h3>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
-                      Полный послепродажный сервис с информационной и технической поддержкой;
+                      полное сопровождение: от выбора до послепродажного обслуживания
                     </p>
                   </div>
 
                   <div className="bg-gray-100 p-6 rounded-lg">
                     <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
+                      Выгодные условия
+                    </h3>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
-                      Отличные цены и эксклюзивные условия для постоянных партнеров.
+                      конкурентные цены и специальные предложения для постоянных клиентов
                     </p>
                   </div>
                 </div>
