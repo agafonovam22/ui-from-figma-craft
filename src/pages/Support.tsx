@@ -281,7 +281,7 @@ const Support: React.FC = () => {
                       {brand.name}
                     </AccordionTrigger>
                     <AccordionContent className="p-0">
-                      <Accordion type="multiple" className="divide-y divide-gray-100">
+                      <Accordion type="multiple" className="space-y-[6px] divide-y-0 divide-gray-100">
                         {brand.categories.map((category, categoryIndex) => (
                           <AccordionItem key={categoryIndex} value={`category-${brandIndex}-${categoryIndex}`} className="border-0">
                             <AccordionTrigger 
