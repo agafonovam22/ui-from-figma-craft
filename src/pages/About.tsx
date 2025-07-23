@@ -627,7 +627,7 @@ const About: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px] mb-[10px]">
                   {/* Первый блок */}
                   <div className="relative rounded-lg overflow-hidden">
-                    <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=300&fit=crop")'}}></div>
+                    <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("/lovable-uploads/bb7565ca-d171-442c-84b9-219144a2a260.png")'}}></div>
                     <div className="absolute bottom-[10px] left-[10px] right-[10px] p-4 bg-white rounded-lg">
                       <p className="text-sm leading-relaxed text-gray-800" style={{ fontFamily: 'Benzin-Semibold' }}>
                         Во-первых, мы особенно дорожим своей безупречной репутацией и регулярно повышаем планку качества сервиса. Знак, находясь другим может оказаться доверие покупателя, специалисты Well Fitness всегда ориентируются на интересы клиентов.
@@ -637,7 +637,7 @@ const About: React.FC = () => {
 
                   {/* Второй блок */}
                   <div className="relative rounded-lg overflow-hidden">
-                    <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=300&fit=crop")'}}></div>
+                    <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("/lovable-uploads/ae4e96bc-450f-4be5-a4b6-5bcc538d975b.png")'}}></div>
                     <div className="absolute bottom-[10px] left-[10px] right-[10px] p-4 bg-white rounded-lg">
                       <p className="text-sm leading-relaxed text-gray-800" style={{ fontFamily: 'Benzin-Semibold' }}>
                         Во-вторых, мы поставляем только самую качественную и надежную продукцию. Перед выводом на российский рынок, мы тщательно тестируем каждую модель, поэтому все предлагаемое оборудование высоко ценится покупателями и имеет минимум сервисных проблем.
@@ -648,7 +648,7 @@ const About: React.FC = () => {
 
                 {/* Третий блок - полная ширина */}
                 <div className="relative rounded-lg overflow-hidden">
-                  <div className="h-[350px] bg-cover bg-center" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=350&fit=crop")'}}></div>
+                  <div className="h-[350px] bg-cover bg-top" style={{backgroundImage: 'url("/lovable-uploads/3ef6908b-9e83-4744-98f4-f84e3aaea7b6.png")'}}></div>
                   <div className="absolute bottom-[10px] left-[10px] right-[10px] p-4 bg-white rounded-lg">
                     <p className="text-sm leading-relaxed text-gray-800" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Значимость этих проблем настолько очевидна, что рамки и место обучения кадров требуют от нас анализа существенных финансовых и административных условий. С другой стороны начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.
