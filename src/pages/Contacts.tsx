@@ -394,10 +394,10 @@ const Contacts: React.FC = () => {
                     <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
                     <div>
                       <p className="text-[14px] text-layout-grey-text mb-1">Адрес</p>
-                      <p className="text-[14px] text-layout-dark-grey font-medium">
-                        г. Санкт-Петербург, Красногвардейский пер 23 лит Е,<br />
-                        Территория завода "Ильич". Заезд с Вазаского переулка
-                      </p>
+                       <p className="text-[14px] text-layout-dark-grey font-medium">
+                         г. Санкт-Петербург, Красногвардейский пер 23 лит Е,<br />
+                         Территория завода "Ильич". Заезд с Вазаского переулка
+                       </p>
                     </div>
                   </div>
                   
