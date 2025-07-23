@@ -557,8 +557,11 @@ const About: React.FC = () => {
 
                   <div className="bg-gray-100 p-6 rounded-lg">
                     <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
+                      Надежность
+                    </h3>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
-                      Строгое соблюдение всех обязательств перед партнерами;
+                      строгое выполнение обязательств перед клиентами и партнерами
                     </p>
                   </div>
 
