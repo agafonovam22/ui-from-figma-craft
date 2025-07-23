@@ -280,36 +280,40 @@ const Support: React.FC = () => {
                     >
                       {brand.name}
                     </AccordionTrigger>
-                    <AccordionContent className="p-0">
-                      <Accordion type="multiple" className="space-y-[6px] divide-y-0 divide-gray-100">
+                    <AccordionContent className="p-0 border-l-2 border-gray-300 ml-6">
+                      <div className="space-y-[6px] pl-6">
                         {brand.categories.map((category, categoryIndex) => (
-                          <AccordionItem key={categoryIndex} value={`category-${brandIndex}-${categoryIndex}`} className="border-0">
-                            <AccordionTrigger 
-                              className="bg-gray-100 hover:bg-gray-200 px-6 py-4 text-left hover:no-underline"
-                              style={{ fontFamily: 'Benzin-Regular', fontSize: '16px' }}
-                            >
-                              {category.name}
-                            </AccordionTrigger>
-                            <AccordionContent className="px-6 pb-4 pt-2">
-                              <div className="space-y-0">
-                                {category.equipment.map((equipment, equipmentIndex) => (
-                                  <div key={equipmentIndex} className="flex justify-between items-center py-3 border-b border-gray-200 last:border-b-0">
-                                    <span 
-                                      className="text-gray-700"
-                                      style={{ fontFamily: 'Benzin-Regular', fontSize: '16px' }}
-                                    >
-                                      {equipment}
-                                    </span>
-                                    <button className="bg-[#F53B49] hover:bg-[#E02D3B] text-white px-4 py-2 rounded text-sm font-medium transition-colors">
-                                      Скачать
-                                    </button>
+                          <div key={categoryIndex} className="bg-gray-100 rounded-lg overflow-hidden">
+                            <Accordion type="multiple">
+                              <AccordionItem value={`category-${brandIndex}-${categoryIndex}`} className="border-0">
+                                <AccordionTrigger 
+                                  className="bg-gray-100 hover:bg-gray-200 px-6 py-4 text-left hover:no-underline"
+                                  style={{ fontFamily: 'Benzin-Regular', fontSize: '16px' }}
+                                >
+                                  {category.name}
+                                </AccordionTrigger>
+                                <AccordionContent className="px-6 pb-4 pt-2 bg-white">
+                                  <div className="space-y-0">
+                                    {category.equipment.map((equipment, equipmentIndex) => (
+                                      <div key={equipmentIndex} className="flex justify-between items-center py-3 border-b border-gray-200 last:border-b-0">
+                                        <span 
+                                          className="text-gray-700"
+                                          style={{ fontFamily: 'Benzin-Regular', fontSize: '16px' }}
+                                        >
+                                          {equipment}
+                                        </span>
+                                        <button className="bg-[#F53B49] hover:bg-[#E02D3B] text-white px-4 py-2 rounded text-sm font-medium transition-colors">
+                                          Скачать
+                                        </button>
+                                      </div>
+                                    ))}
                                   </div>
-                                ))}
-                              </div>
-                            </AccordionContent>
-                          </AccordionItem>
+                                </AccordionContent>
+                              </AccordionItem>
+                            </Accordion>
+                          </div>
                         ))}
-                      </Accordion>
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                 ))}
