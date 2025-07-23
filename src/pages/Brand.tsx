@@ -856,37 +856,41 @@ const Brand: React.FC = () => {
                       Наше оборудование выбирают, потому что оно:
                     </p>
                     
-                    <div className="space-y-6">
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <div>
-                          <h3 className="font-benzin text-gray-900 mb-2">Работает безотказно</h3>
-                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                            даже при интенсивной эксплуатации
-                          </p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <div>
-                          <h3 className="font-benzin text-gray-900 mb-2">Сохраняет актуальность</h3>
-                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                            регулярные апгрейды и совместимость с новыми технологиями
-                          </p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <div>
-                          <h3 className="font-benzin text-gray-900 mb-2">Обеспечивает максимальный комфорт</h3>
-                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                            продуманная эргономика снижает нагрузку на суставы
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                     <div className="space-y-6">
+                       <div className="flex items-start">
+                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                         <div>
+                           <h3 className="font-benzin text-gray-900 mb-2">Работает безотказно</h3>
+                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                             даже при интенсивной эксплуатации
+                           </p>
+                         </div>
+                       </div>
+                       
+                       <div className="flex items-start">
+                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                         <div>
+                           <h3 className="font-benzin text-gray-900 mb-2">Сохраняет актуальность</h3>
+                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                             регулярные апгрейды и совместимость с новыми технологиями
+                           </p>
+                         </div>
+                       </div>
+                       
+                       <div className="flex items-start">
+                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                         <div>
+                           <h3 className="font-benzin text-gray-900 mb-2">Обеспечивает максимальный комфорт</h3>
+                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                             продуманная эргономика снижает нагрузку на суставы
+                           </p>
+                         </div>
+                       </div>
+                     </div>
+                     
+                     <p className="text-gray-600 text-sm leading-relaxed font-manrope mt-6">
+                       Выбирайте TRUE – оборудование, которое работает на ваш успех.
+                     </p>
                   </>
                 )}
               </div>
