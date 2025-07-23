@@ -788,7 +788,7 @@ const Support: React.FC = () => {
                            </div>
                          </div>
                          <div className="mt-[10px]">
-                           <button className="bg-[#F53B49] text-white px-8 py-3 rounded hover:bg-[#e63946] transition-colors font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                           <button className="w-full bg-[#F53B49] text-white px-8 py-3 rounded hover:bg-[#e63946] transition-colors font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                              Скачать файлы по рекомендации тех. обслуживания
                            </button>
                          </div>
