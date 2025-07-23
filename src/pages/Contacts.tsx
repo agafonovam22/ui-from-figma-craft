@@ -240,10 +240,10 @@ const Contacts: React.FC = () => {
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
                   <p className="text-sm">info@wellfitness.ru</p>
-                  <p className="text-xs text-gray-500 mt-1">
-                    по общим вопросам, вопросам сотрудничества, жалобам и<br />
-                    предложениям
-                  </p>
+                   <p className="text-xs text-gray-500 mt-1">
+                     по общим вопросам, вопросам сотрудничества, жалобам<br />
+                     и предложениям
+                   </p>
                   <p className="text-sm mt-2">agent@wellfitness.ru</p>
                   <p className="text-xs text-gray-500 mt-1">
                     для приема агентских заказов
