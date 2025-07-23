@@ -103,21 +103,25 @@ const WhereToBuy: React.FC = () => {
     }
     
     // Ищем этаж и секцию
-    const floorSectionMatch = remainingAddress.match(/(\d+\s*этаж[^,]*(?:,\s*секция\s*[^,]*)?)/);
+    const floorSectionMatch = remainingAddress.match(/(-?\d+\s*этаж[^,]*(?:,\s*(?:секция|павильон)\s*[^,]*)?)/);
     let floorSection = '';
     if (floorSectionMatch) {
-      floorSection = floorSectionMatch[0].trim();
+      floorSection = floorSectionMatch[0].trim().replace(/^-/, ''); // убираем тире в начале
       remainingAddress = remainingAddress.replace(floorSectionMatch[0], '').replace(/^,\s*/, '').replace(/,\s*$/, '');
     }
     
-    // Оставшаяся часть адреса (улица, дом)
-    const street = remainingAddress.trim();
+    // Оставшаяся часть адреса (улица, дом) - объединяем с км от МКАД
+    let street = remainingAddress.trim().replace(/,$/, '');
     
     const parts = [];
     if (city) parts.push(city);
     if (street) parts.push(street);
-    if (tc) parts.push(tc);
-    if (floorSection) parts.push(floorSection);
+    if (tc && floorSection) {
+      parts.push(`${tc}, ${floorSection}`);
+    } else {
+      if (tc) parts.push(tc);
+      if (floorSection) parts.push(floorSection);
+    }
     
     return parts;
   };
