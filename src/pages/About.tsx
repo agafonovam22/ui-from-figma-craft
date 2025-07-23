@@ -477,29 +477,28 @@ const About: React.FC = () => {
                         </p>
                       </div>
                       
-                      <div className="grid grid-cols-2 gap-6">
-                        <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-1">2005</div>
-                          <div className="text-gray-600 text-sm">Год появления на рынке</div>
-                        </div>
-                        <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-1">10 000+</div>
-                          <div className="text-gray-600 text-sm">Складских помещений</div>
-                        </div>
-                        <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-1">60+</div>
-                          <div className="text-gray-600 text-sm">Квалифицированных сотрудников</div>
-                        </div>
-                        <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-1">20+</div>
-                          <div className="text-gray-600 text-sm">Ведущих мировых брендов</div>
-                        </div>
-                      </div>
-                      
-                      <div className="mt-4">
-                        <div className="text-4xl font-bold text-[#17171E] mb-1">3000+</div>
-                        <div className="text-gray-600 text-sm">SKU</div>
-                      </div>
+                       <div className="grid grid-cols-2 gap-6">
+                         <div>
+                           <div className="text-4xl font-bold text-[#17171E] mb-1">2005</div>
+                           <div className="text-gray-600 text-sm">Год появления на рынке</div>
+                         </div>
+                         <div>
+                           <div className="text-4xl font-bold text-[#17171E] mb-1">10 000+</div>
+                           <div className="text-gray-600 text-sm">Складских помещений</div>
+                         </div>
+                         <div>
+                           <div className="text-4xl font-bold text-[#17171E] mb-1">60+</div>
+                           <div className="text-gray-600 text-sm">Квалифицированных сотрудников</div>
+                         </div>
+                         <div>
+                           <div className="text-4xl font-bold text-[#17171E] mb-1">20+</div>
+                           <div className="text-gray-600 text-sm">Ведущих мировых брендов</div>
+                         </div>
+                         <div>
+                           <div className="text-4xl font-bold text-[#17171E] mb-1">3000+</div>
+                           <div className="text-gray-600 text-sm">SKU</div>
+                         </div>
+                       </div>
                     </div>
                   </div>
                 </div>
