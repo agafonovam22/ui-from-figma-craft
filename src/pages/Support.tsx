@@ -136,6 +136,124 @@ const Support: React.FC = () => {
               <Accordion type="multiple" className="space-y-2">
                 {[
                   {
+                    name: "BowFlex",
+                    categories: [
+                      {
+                        name: "Беговые дорожки",
+                        equipment: [
+                          "Беговая дорожка CardioPower T10",
+                          "Беговая дорожка CardioPower T10",
+                          "Беговая дорожка CardioPower T10",
+                          "Беговая дорожка CardioPower T10",
+                          "Беговая дорожка CardioPower T10",
+                          "Беговая дорожка CardioPower T10"
+                        ]
+                      },
+                      {
+                        name: "Велотренажеры",
+                        equipment: [
+                          "Велотренажер BowFlex C6",
+                          "Велотренажер BowFlex VeloCore",
+                          "Велотренажер BowFlex Max Trainer"
+                        ]
+                      },
+                      {
+                        name: "Гребные тренажеры",
+                        equipment: [
+                          "Гребной тренажер BowFlex PR1000",
+                          "Гребной тренажер BowFlex PR3000"
+                        ]
+                      },
+                      {
+                        name: "Эллиптические тренажеры",
+                        equipment: [
+                          "Эллиптический тренажер BowFlex Max Trainer M6",
+                          "Эллиптический тренажер BowFlex Max Trainer M8"
+                        ]
+                      },
+                      {
+                        name: "Велотренажеры",
+                        equipment: [
+                          "Велотренажер BowFlex C6 V2",
+                          "Велотренажер BowFlex VeloCore 16"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    name: "TRUE",
+                    categories: [
+                      {
+                        name: "Беговые дорожки",
+                        equipment: [
+                          "Беговая дорожка TRUE PS100",
+                          "Беговая дорожка TRUE PS300",
+                          "Беговая дорожка TRUE PS800"
+                        ]
+                      },
+                      {
+                        name: "Велотренажеры",
+                        equipment: [
+                          "Велотренажер TRUE CS200",
+                          "Велотренажер TRUE CS400"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    name: "Schwinn",
+                    categories: [
+                      {
+                        name: "Велотренажеры",
+                        equipment: [
+                          "Велотренажер Schwinn IC4",
+                          "Велотренажер Schwinn IC8",
+                          "Велотренажер Schwinn Airdyne AD7"
+                        ]
+                      },
+                      {
+                        name: "Эллиптические тренажеры",
+                        equipment: [
+                          "Эллиптический тренажер Schwinn 470",
+                          "Эллиптический тренажер Schwinn 570E"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    name: "Cardio Power",
+                    categories: [
+                      {
+                        name: "Беговые дорожки",
+                        equipment: [
+                          "Беговая дорожка CardioPower T15",
+                          "Беговая дорожка CardioPower T20",
+                          "Беговая дорожка CardioPower T25"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    name: "Life Fitness",
+                    categories: [
+                      {
+                        name: "Беговые дорожки",
+                        equipment: [
+                          "Беговая дорожка Life Fitness T3",
+                          "Беговая дорожка Life Fitness T5",
+                          "Беговая дорожка Life Fitness T7"
+                        ]
+                      },
+                      {
+                        name: "Велотренажеры",
+                        equipment: [
+                          "Велотренажер Life Fitness C1",
+                          "Велотренажер Life Fitness C3"
+                        ]
+                      }
+                    ]
+                  },
+                  {
                     name: "Technogym",
                     categories: [
                       {
