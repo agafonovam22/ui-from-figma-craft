@@ -86,6 +86,42 @@ const WhereToBuy: React.FC = () => {
     }
   ];
 
+  // Функция для форматирования адреса с правильными переносами
+  const formatAddress = (address: string) => {
+    // Паттерны для разбора адреса
+    const cityMatch = address.match(/^(г\.\s*)?([^,]+)/);
+    const city = cityMatch ? cityMatch[0].trim() : '';
+    
+    let remainingAddress = address.replace(city, '').replace(/^,\s*/, '');
+    
+    // Ищем торговый центр/комплекс
+    const tcMatch = remainingAddress.match(/(МТЦ|МЦ|ТЦ|ТК|БП)\s*[^,]+/);
+    let tc = '';
+    if (tcMatch) {
+      tc = tcMatch[0].trim();
+      remainingAddress = remainingAddress.replace(tcMatch[0], '').replace(/^,\s*/, '');
+    }
+    
+    // Ищем этаж и секцию
+    const floorSectionMatch = remainingAddress.match(/(\d+\s*этаж[^,]*(?:,\s*секция\s*[^,]*)?)/);
+    let floorSection = '';
+    if (floorSectionMatch) {
+      floorSection = floorSectionMatch[0].trim();
+      remainingAddress = remainingAddress.replace(floorSectionMatch[0], '').replace(/^,\s*/, '').replace(/,\s*$/, '');
+    }
+    
+    // Оставшаяся часть адреса (улица, дом)
+    const street = remainingAddress.trim();
+    
+    const parts = [];
+    if (city) parts.push(city);
+    if (street) parts.push(street);
+    if (tc) parts.push(tc);
+    if (floorSection) parts.push(floorSection);
+    
+    return parts;
+  };
+
   const onlineStores = [
     'buyfit.ru',
     'aquarius-sport.ru',
@@ -294,14 +330,18 @@ const WhereToBuy: React.FC = () => {
                 <div key={index} className="bg-gray-50 rounded-lg p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">{store.name}</h3>
                   
-                  <div className="space-y-3 text-gray-700">
-                     <div className="flex items-start gap-2">
-                       <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-4 h-4 mt-1 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium text-sm">Адрес</p>
-                        <p className="text-sm">{store.address}</p>
-                      </div>
-                    </div>
+                     <div className="space-y-3 text-gray-700">
+                      <div className="flex items-start gap-2">
+                        <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-4 h-4 mt-1 flex-shrink-0" />
+                       <div>
+                         <p className="font-medium text-sm">Адрес</p>
+                         <div className="text-sm">
+                           {formatAddress(store.address).map((line, idx) => (
+                             <div key={idx}>{line}</div>
+                           ))}
+                         </div>
+                       </div>
+                     </div>
                     
                      <div className="flex items-center gap-2">
                        <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-4 h-4 flex-shrink-0" />
@@ -364,14 +404,18 @@ const WhereToBuy: React.FC = () => {
                   <div key={index} className="bg-gray-50 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-4">{store.name}</h3>
                     
-                    <div className="space-y-3 text-gray-700">
-                       <div className="flex items-start gap-2">
-                         <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-4 h-4 mt-1 flex-shrink-0" />
-                        <div>
-                          <p className="font-medium text-sm">Адрес</p>
-                          <p className="text-sm">{store.address}</p>
-                        </div>
-                      </div>
+                     <div className="space-y-3 text-gray-700">
+                        <div className="flex items-start gap-2">
+                          <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-4 h-4 mt-1 flex-shrink-0" />
+                         <div>
+                           <p className="font-medium text-sm">Адрес</p>
+                           <div className="text-sm">
+                             {formatAddress(store.address).map((line, idx) => (
+                               <div key={idx}>{line}</div>
+                             ))}
+                           </div>
+                         </div>
+                       </div>
                       
                        <div className="flex items-center gap-2">
                          <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-4 h-4 flex-shrink-0" />
