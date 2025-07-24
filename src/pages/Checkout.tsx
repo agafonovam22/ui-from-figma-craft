@@ -106,25 +106,21 @@ const Checkout: React.FC = () => {
                     ? 'bg-gray-700' 
                     : 'bg-red-100'
                 }`}>
-                  <Truck className={`w-6 h-6 ${
-                    currentStep === 1 
-                      ? 'text-white' 
-                      : 'text-red-500'
-                  }`} />
+                  <img src="/lovable-uploads/805592b4-5f17-4e65-9c8d-8e383bd65a1f.png" alt="Delivery" className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className={`text-sm font-medium ${
+                  <div className={`text-[12px] font-medium ${
                     currentStep === 1 
                       ? 'text-white' 
                       : 'text-red-500'
-                  }`}>
+                  }`} style={{ fontFamily: 'Manrope' }}>
                     ШАГ 1
                   </div>
-                  <div className={`font-semibold ${
+                  <div className={`text-[14px] font-semibold ${
                     currentStep === 1 
                       ? 'text-white' 
                       : 'text-gray-900'
-                  }`}>
+                  }`} style={{ fontFamily: 'Manrope' }}>
                     Доставка
                   </div>
                 </div>
@@ -141,25 +137,21 @@ const Checkout: React.FC = () => {
                     ? 'bg-gray-700' 
                     : 'bg-red-100'
                 }`}>
-                  <CreditCard className={`w-6 h-6 ${
-                    currentStep === 2 
-                      ? 'text-white' 
-                      : 'text-red-500'
-                  }`} />
+                  <img src="/lovable-uploads/7a82d345-e7f0-4f91-b14d-1e076a5e03d8.png" alt="Payment" className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className={`text-sm font-medium ${
+                  <div className={`text-[12px] font-medium ${
                     currentStep === 2 
                       ? 'text-white' 
                       : 'text-red-500'
-                  }`}>
+                  }`} style={{ fontFamily: 'Manrope' }}>
                     ШАГ 2
                   </div>
-                  <div className={`font-semibold ${
+                  <div className={`text-[14px] font-semibold ${
                     currentStep === 2 
                       ? 'text-white' 
                       : 'text-gray-900'
-                  }`}>
+                  }`} style={{ fontFamily: 'Manrope' }}>
                     Способ оплаты
                   </div>
                 </div>
@@ -176,25 +168,21 @@ const Checkout: React.FC = () => {
                     ? 'bg-gray-700' 
                     : 'bg-red-100'
                 }`}>
-                  <User className={`w-6 h-6 ${
-                    currentStep === 3 
-                      ? 'text-white' 
-                      : 'text-red-500'
-                  }`} />
+                  <img src="/lovable-uploads/6a8f1438-73c8-4cb8-8905-a5328effc807.png" alt="User" className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className={`text-sm font-medium ${
+                  <div className={`text-[12px] font-medium ${
                     currentStep === 3 
                       ? 'text-white' 
                       : 'text-red-500'
-                  }`}>
+                  }`} style={{ fontFamily: 'Manrope' }}>
                     ШАГ 3
                   </div>
-                  <div className={`font-semibold ${
+                  <div className={`text-[14px] font-semibold ${
                     currentStep === 3 
                       ? 'text-white' 
                       : 'text-gray-900'
-                  }`}>
+                  }`} style={{ fontFamily: 'Manrope' }}>
                     Ваши данные
                   </div>
                 </div>
