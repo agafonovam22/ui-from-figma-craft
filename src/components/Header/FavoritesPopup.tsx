@@ -71,10 +71,10 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
       </SheetTrigger>
       <SheetPortal>
         <SheetPrimitive.Content
-          className="fixed z-50 gap-4 bg-white p-0 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 w-[483px] border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right top-[120px] translate-y-0"
+          className="fixed z-50 gap-4 bg-white p-0 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 w-[483px] border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right top-[120px] translate-y-0 rounded-[10px]"
           style={{ position: 'fixed', right: '60px', height: '523.26px', top: '120px', width: '483px' }}
         >
-          <SheetHeader className="p-6 border-b">
+          <SheetHeader className="p-6 border-b pt-[30px]">
             <SheetTitle className="text-2xl font-bold text-gray-900">
               Избранное
             </SheetTitle>
@@ -137,6 +137,7 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
                   </Link>
                 </div>
               </div>
+              <div className="pb-[30px]"></div>
             </ScrollArea>
           </div>
           
