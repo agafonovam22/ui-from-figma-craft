@@ -85,43 +85,45 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
           
           <div className="flex flex-col h-full">
             {/* Cart Items with ScrollArea */}
-            <ScrollArea className="flex-1 px-6">
-              <div className="space-y-4 py-4">
-                {cartItems.map((item) => (
-                  <div key={item.id} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
-                    <img 
-                      src={item.image} 
-                      alt={item.name}
-                      className="w-16 h-16 object-cover rounded"
-                    />
-                    <div className="flex-1">
-                      <h3 className="text-sm font-medium text-gray-900 line-clamp-2">
-                        {item.name}
-                      </h3>
-                      <div className="flex items-center gap-2 mt-1">
-                        {item.discount && (
-                          <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
-                            -{item.discount}%
+            <div className="flex-1 overflow-hidden">
+              <ScrollArea className="h-full px-6">
+                <div className="space-y-4 py-4">
+                  {cartItems.map((item) => (
+                    <div key={item.id} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+                      <img 
+                        src={item.image} 
+                        alt={item.name}
+                        className="w-16 h-16 object-cover rounded"
+                      />
+                      <div className="flex-1">
+                        <h3 className="text-sm font-medium text-gray-900 line-clamp-2">
+                          {item.name}
+                        </h3>
+                        <div className="flex items-center gap-2 mt-1">
+                          {item.discount && (
+                            <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
+                              -{item.discount}%
+                            </span>
+                          )}
+                          <span className="text-lg font-bold text-gray-900">
+                            {item.price.toLocaleString()} ₽
                           </span>
-                        )}
-                        <span className="text-lg font-bold text-gray-900">
-                          {item.price.toLocaleString()} ₽
-                        </span>
+                        </div>
+                        <div className="text-sm text-gray-600 mt-1">
+                          Количество: {item.quantity}
+                        </div>
                       </div>
-                      <div className="text-sm text-gray-600 mt-1">
-                        Количество: {item.quantity}
-                      </div>
+                      <button className="p-2 hover:bg-gray-200 rounded">
+                        <Trash2 className="w-4 h-4 text-gray-400" />
+                      </button>
                     </div>
-                    <button className="p-2 hover:bg-gray-200 rounded">
-                      <Trash2 className="w-4 h-4 text-gray-400" />
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </ScrollArea>
+                  ))}
+                </div>
+              </ScrollArea>
+            </div>
 
-            {/* Footer */}
-            <div className="border-t p-6 space-y-4">
+            {/* Fixed Footer with Buttons */}
+            <div className="flex-shrink-0 border-t bg-white p-6 space-y-4">
               <div className="flex justify-between items-center text-xl font-bold">
                 <span>Итого:</span>
                 <span>{total.toLocaleString()} ₽</span>
