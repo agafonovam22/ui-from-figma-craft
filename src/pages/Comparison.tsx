@@ -174,9 +174,7 @@ const Comparison: React.FC = () => {
           >
             <div className="relative w-4 h-4">
               {showOnlyDifferences ? (
-                <div className="w-4 h-4 bg-gray-600 rounded-sm flex items-center justify-center">
-                  <Check className="w-3 h-3 text-white" />
-                </div>
+                <div className="w-4 h-4 bg-gray-600 rounded-sm"></div>
               ) : (
                 <div className="w-4 h-4 border border-gray-300 rounded-sm bg-white"></div>
               )}
@@ -185,60 +183,72 @@ const Comparison: React.FC = () => {
           </label>
         </div>
 
-        {/* Products Row */}
-        <div className="grid grid-cols-4 gap-6 mb-8">
-          {comparisonItems.map((item) => (
-            <div key={item.id} className="bg-gray-50 rounded-lg p-4 relative">
-              <div className="absolute top-2 left-2">
-                <span className="bg-green-500 text-white text-xs px-2 py-1 rounded">
-                  НОВИНКА
-                </span>
-              </div>
-              <button className="absolute top-2 right-2 p-1 hover:bg-gray-200 rounded">
-                <Trash2 className="w-4 h-4 text-gray-400" />
-              </button>
-              
-              <div className="mt-6 mb-4">
-                <img 
-                  src={item.image} 
-                  alt={item.name}
-                  className="w-full h-32 object-cover rounded"
-                />
-              </div>
-              
-              <div className="text-center mb-2">
-                <div className="text-green-500 text-xs mb-1">В наличии ●●○</div>
-              </div>
-              
-              <h3 className="text-sm font-medium text-gray-900 mb-2 text-center">
-                {item.name}
-              </h3>
-              
-              <div className="flex justify-center items-center gap-1 mb-2">
-                {renderStars(item.rating)}
-                <span className="text-orange-400 text-sm ml-1">{item.rating}</span>
-              </div>
-              
-              <div className="text-center mb-4">
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
-                    -{item.discount}%
+        {/* Products Row with Vertical Dividers */}
+        <div className="relative mb-8">
+          <div className="grid grid-cols-4 gap-6">
+            {comparisonItems.map((item, index) => (
+              <div key={item.id} className="bg-gray-50 rounded-lg p-4 relative">
+                <div className="absolute top-2 left-2">
+                  <span className="bg-green-500 text-white text-xs px-2 py-1 rounded">
+                    НОВИНКА
                   </span>
                 </div>
-                <div className="text-xl font-bold text-gray-900">
-                  {item.price.toLocaleString()} ₽
+                <button className="absolute top-2 right-2 p-1 hover:bg-gray-200 rounded">
+                  <Trash2 className="w-4 h-4 text-gray-400" />
+                </button>
+                
+                <div className="mt-6 mb-4">
+                  <img 
+                    src={item.image} 
+                    alt={item.name}
+                    className="w-full h-32 object-cover rounded"
+                  />
                 </div>
+                
+                <div className="text-center mb-2">
+                  <div className="text-green-500 text-xs mb-1">В наличии ●●○</div>
+                </div>
+                
+                <h3 className="text-sm font-medium text-gray-900 mb-2 text-center">
+                  {item.name}
+                </h3>
+                
+                <div className="flex justify-center items-center gap-1 mb-2">
+                  {renderStars(item.rating)}
+                  <span className="text-orange-400 text-sm ml-1">{item.rating}</span>
+                </div>
+                
+                <div className="text-center mb-4">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
+                      -{item.discount}%
+                    </span>
+                  </div>
+                  <div className="text-xl font-bold text-gray-900">
+                    {item.price.toLocaleString()} ₽
+                  </div>
+                </div>
+                
+                <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white">
+                  Купить
+                </Button>
               </div>
-              
-              <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white">
-                Купить
-              </Button>
-            </div>
-          ))}
+            ))}
+          </div>
+          
+          {/* Vertical Dividers */}
+          <div className="absolute top-0 bottom-0 left-[calc(25%-12px)] w-px bg-gray-300"></div>
+          <div className="absolute top-0 bottom-0 left-[calc(50%-12px)] w-px bg-gray-300"></div>
+          <div className="absolute top-0 bottom-0 left-[calc(75%-12px)] w-px bg-gray-300"></div>
         </div>
 
-        {/* Comparison Table */}
-        <div className="space-y-8">
+        {/* Comparison Tables with Vertical Dividers */}
+        <div className="relative space-y-8">
+          {/* Vertical Dividers for Tables */}
+          <div className="absolute top-0 bottom-0 left-[calc(25%-12px)] w-px bg-gray-300"></div>
+          <div className="absolute top-0 bottom-0 left-[calc(50%-12px)] w-px bg-gray-300"></div>
+          <div className="absolute top-0 bottom-0 left-[calc(75%-12px)] w-px bg-gray-300"></div>
+          
           {/* Оценка и способ получения */}
           <div>
             <h2 className="text-xl font-bold text-gray-900 mb-4">Оценка и способ получения</h2>
@@ -280,73 +290,107 @@ const Comparison: React.FC = () => {
           {/* Основные характеристики */}
           <div>
             <h2 className="text-xl font-bold text-gray-900 mb-4">Основные характеристики</h2>
-            <div className="grid grid-cols-4 gap-6">
-              {comparisonItems.map((item) => (
-                <div key={item.id} className="bg-gray-50 rounded-lg p-4">
-                  <h3 className="font-semibold text-gray-900 mb-4 text-center border-b pb-2">Характеристики</h3>
-                  <div className="space-y-3">
-                    <div className="flex flex-col">
-                      <span className="text-xs text-gray-500 mb-1">Рама</span>
-                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.frame}</span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs text-gray-500 mb-1">Лестница</span>
-                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.ladder}</span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs text-gray-500 mb-1">Серия</span>
-                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.series}</span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs text-gray-500 mb-1">Цвет</span>
-                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.color}</span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs text-gray-500 mb-1">Ширина защитного мата, см</span>
-                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.protectiveMatWidth}</span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs text-gray-500 mb-1">Материал защитного мата</span>
-                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.protectiveMatMaterial}</span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs text-gray-500 mb-1">Диаметр батута, ft</span>
-                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.trampolineDiameterFt}</span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs text-gray-500 mb-1">Диаметр батута, см</span>
-                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.trampolineDiameterCm}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <Table>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="font-medium text-gray-700 w-48">Рама</TableCell>
+                  {comparisonItems.map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
+                      {item.characteristics.frame}
+                    </TableCell>
+                  ))}
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium text-gray-700">Лестница</TableCell>
+                  {comparisonItems.map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
+                      {item.characteristics.ladder}
+                    </TableCell>
+                  ))}
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium text-gray-700">Серия</TableCell>
+                  {comparisonItems.map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
+                      {item.characteristics.series}
+                    </TableCell>
+                  ))}
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium text-gray-700">Цвет</TableCell>
+                  {comparisonItems.map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
+                      {item.characteristics.color}
+                    </TableCell>
+                  ))}
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium text-gray-700">Ширина защитного мата, см</TableCell>
+                  {comparisonItems.map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
+                      {item.characteristics.protectiveMatWidth}
+                    </TableCell>
+                  ))}
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium text-gray-700">Материал защитного мата</TableCell>
+                  {comparisonItems.map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
+                      {item.characteristics.protectiveMatMaterial}
+                    </TableCell>
+                  ))}
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium text-gray-700">Диаметр батута, ft</TableCell>
+                  {comparisonItems.map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
+                      {item.characteristics.trampolineDiameterFt}
+                    </TableCell>
+                  ))}
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium text-gray-700">Диаметр батута, см</TableCell>
+                  {comparisonItems.map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
+                      {item.characteristics.trampolineDiameterCm}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              </TableBody>
+            </Table>
           </div>
 
           {/* Доп. характеристики */}
           <div>
             <h2 className="text-xl font-bold text-gray-900 mb-4">Доп. характеристики</h2>
-            <div className="grid grid-cols-4 gap-6">
-              {comparisonItems.map((item) => (
-                <div key={item.id} className="bg-gray-50 rounded-lg p-4">
-                  <h3 className="font-semibold text-gray-900 mb-4 text-center border-b pb-2">Доп. характеристики</h3>
-                  <div className="space-y-3">
-                    <div className="flex flex-col">
-                      <span className="text-xs text-gray-500 mb-1">Рама</span>
-                      <span className="text-sm text-gray-900 font-medium">{item.additionalCharacteristics.frame}</span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs text-gray-500 mb-1">Лестница</span>
-                      <span className="text-sm text-gray-900 font-medium">{item.additionalCharacteristics.ladder}</span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs text-gray-500 mb-1">Серия</span>
-                      <span className="text-sm text-gray-900 font-medium">{item.additionalCharacteristics.series}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <Table>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="font-medium text-gray-700 w-48">Рама</TableCell>
+                  {comparisonItems.map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
+                      {item.additionalCharacteristics.frame}
+                    </TableCell>
+                  ))}
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium text-gray-700">Лестница</TableCell>
+                  {comparisonItems.map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
+                      {item.additionalCharacteristics.ladder}
+                    </TableCell>
+                  ))}
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium text-gray-700">Серия</TableCell>
+                  {comparisonItems.map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
+                      {item.additionalCharacteristics.series}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              </TableBody>
+            </Table>
           </div>
         </div>
       </div>
