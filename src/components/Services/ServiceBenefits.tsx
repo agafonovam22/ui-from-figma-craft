@@ -27,8 +27,8 @@ const ServiceBenefits: React.FC<ServiceBenefitsProps> = ({ benefits }) => {
                 style={{ height: '216px' }}
               />
               {/* White container overlay at bottom with title */}
-              <div className="absolute bottom-[5px] left-[5px] right-[5px] bg-white p-4 rounded">
-                <h3 className="font-medium text-gray-900">{benefit.title}</h3>
+              <div className="absolute bottom-[5px] left-[5px] right-[5px] bg-white p-4 rounded text-center">
+                <h3 className="text-gray-900" style={{ fontFamily: 'Benzin-Semibold', fontSize: '20px' }}>{benefit.title}</h3>
               </div>
             </div>
           </div>
