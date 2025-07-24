@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
-import { Trash2, ChevronRight } from 'lucide-react';
+import { Trash2, ChevronRight, Check } from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -168,15 +168,17 @@ const Comparison: React.FC = () => {
 
         {/* Filter Option */}
         <div className={`mb-8 p-4 rounded-lg transition-colors ${showOnlyDifferences ? 'bg-gray-100' : ''}`}>
-          <label className="flex items-center gap-3 text-gray-700 cursor-pointer">
-            <div className="relative">
-              <Checkbox 
-                checked={showOnlyDifferences}
-                onCheckedChange={(checked) => setShowOnlyDifferences(checked === true)}
-                className="data-[state=checked]:bg-gray-600 data-[state=checked]:border-gray-600"
-              />
-              {showOnlyDifferences && (
-                <div className="absolute inset-0 bg-gray-600 rounded-sm"></div>
+          <label 
+            className="flex items-center gap-3 text-gray-700 cursor-pointer"
+            onClick={() => setShowOnlyDifferences(!showOnlyDifferences)}
+          >
+            <div className="relative w-4 h-4">
+              {showOnlyDifferences ? (
+                <div className="w-4 h-4 bg-gray-600 rounded-sm flex items-center justify-center">
+                  <Check className="w-3 h-3 text-white" />
+                </div>
+              ) : (
+                <div className="w-4 h-4 border border-gray-300 rounded-sm bg-white"></div>
               )}
             </div>
             Показывать только различия
