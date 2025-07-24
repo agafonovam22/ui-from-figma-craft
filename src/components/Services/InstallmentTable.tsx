@@ -26,7 +26,7 @@ const InstallmentTable: React.FC<InstallmentTableProps> = ({ plans }) => {
         <div className="flex-1">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">В рассрочку</h2>
           
-          <div className="space-y-4 text-gray-600 mb-8">
+          <div className="space-y-4 mb-8" style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#6B7280' }}>
             <p>
               Оформить кредит на сайте — быстро и легко. При оформлении заказа в корзине укажите способ 
               оплаты «Кредит».
