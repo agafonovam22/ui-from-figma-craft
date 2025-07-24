@@ -222,8 +222,8 @@ const UslugiServices: React.FC = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-12">{getCategoryTitle()}</h1>
 
           {/* Hero Section */}
-          <div className="bg-gradient-to-r from-gray-800 to-gray-600 rounded-lg p-8 mb-12 text-white relative overflow-hidden">
-            <div className="flex items-center justify-between">
+          <div className="bg-gradient-to-r from-gray-800 to-gray-600 rounded-lg p-8 mb-12 text-white relative overflow-hidden h-[378px]">
+            <div className="flex items-center justify-between h-full">
               <div className="flex-1">
                 <h2 className="text-5xl font-bold mb-4 leading-tight">
                   Разрабатаем<br />
