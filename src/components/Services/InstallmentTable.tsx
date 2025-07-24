@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 
@@ -19,6 +19,7 @@ interface InstallmentTableProps {
 }
 
 const InstallmentTable: React.FC<InstallmentTableProps> = ({ plans }) => {
+  const [selectedPlan, setSelectedPlan] = useState<number | null>(null);
   return (
     <div className="w-full bg-white">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
@@ -68,11 +69,25 @@ const InstallmentTable: React.FC<InstallmentTableProps> = ({ plans }) => {
             </TableHeader>
             <TableBody>
               {plans.map((plan) => (
-                <TableRow key={plan.id} className="border-b border-gray-100">
+                <TableRow 
+                  key={plan.id} 
+                  className="border-b border-gray-100 cursor-pointer hover:bg-gray-50"
+                  onClick={() => setSelectedPlan(plan.id)}
+                >
                   <TableCell className="py-6">
-                    <div>
-                      <div className="mb-1" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px', color: '#111827' }}>{plan.plan}</div>
-                      <div style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#6B7280' }}>{plan.bank}</div>
+                    <div className="flex items-center gap-3">
+                      <div 
+                        className="w-4 h-4 border-2 bg-white rounded-sm flex items-center justify-center"
+                        style={{ borderColor: selectedPlan === plan.id ? '#F53B49' : '#D1D5DB' }}
+                      >
+                        {selectedPlan === plan.id && (
+                          <div className="w-2 h-2 bg-[#F53B49]"></div>
+                        )}
+                      </div>
+                      <div>
+                        <div className="mb-1" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px', color: '#111827' }}>{plan.plan}</div>
+                        <div style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#6B7280' }}>{plan.bank}</div>
+                      </div>
                     </div>
                   </TableCell>
                   <TableCell className="py-6" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>{plan.monthlyPayment}</TableCell>
