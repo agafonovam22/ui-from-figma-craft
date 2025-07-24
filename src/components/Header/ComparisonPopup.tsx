@@ -65,10 +65,10 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({ children, isOpen, onO
       </SheetTrigger>
       <SheetPortal>
         <SheetPrimitive.Content
-          className="fixed z-50 gap-4 bg-white p-0 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 w-[450px] border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right top-[120px] translate-y-0"
+          className="fixed z-50 gap-4 bg-white p-0 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 w-[450px] border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right top-[120px] translate-y-0 rounded-[10px]"
           style={{ position: 'fixed', right: '60px', height: '595.26px', top: '120px', width: '450px' }}
         >
-          <SheetHeader className="p-6 border-b">
+          <SheetHeader className="p-6 pt-[30px]">
             <SheetTitle className="text-2xl font-bold text-gray-900">
               Сравнение
             </SheetTitle>
@@ -76,8 +76,8 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({ children, isOpen, onO
           
           <div className="flex flex-col h-full">
             {/* Comparison Items with ScrollArea */}
-            <ScrollArea className="flex-1 px-6">
-              <div className="space-y-4 py-4">
+            <ScrollArea className="flex-1 px-5">
+              <div className="space-y-4 pt-5">
                 {comparisonItems.map((item) => (
                   <div key={item.id} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
                     <img 
@@ -107,24 +107,26 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({ children, isOpen, onO
                         )}
                       </div>
                     </div>
-                    <button className="p-2 hover:bg-gray-200 rounded">
+                    <button className="w-10 h-10 border border-gray-400 rounded-lg hover:bg-gray-100 flex items-center justify-center">
                       <Trash2 className="w-4 h-4 text-gray-400" />
                     </button>
                   </div>
                 ))}
+                
+                {/* Кнопка перейти в сравнение внутри списка товаров */}
+                <div className="mt-5">
+                  <Link to="/comparison" onClick={() => onOpenChange(false)}>
+                    <Button 
+                      variant="outline"
+                      className="w-full h-[43px] bg-white border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white text-base font-medium"
+                    >
+                      Перейти в сравнение
+                    </Button>
+                  </Link>
+                </div>
               </div>
+              <div className="pb-[30px]"></div>
             </ScrollArea>
-
-            {/* Footer */}
-            <div className="border-t p-6">
-              <Link to="/comparison" onClick={() => onOpenChange(false)}>
-                <Button 
-                  className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-3 text-base font-medium"
-                >
-                  Перейти в сравнение
-                </Button>
-              </Link>
-            </div>
           </div>
           
           <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
