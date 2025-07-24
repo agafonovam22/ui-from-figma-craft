@@ -123,7 +123,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
         
         <div 
           ref={scrollContainerRef}
-          className="flex gap-6 mb-6 overflow-x-auto scrollbar-hide pb-2"
+          className="flex gap-[10px] mb-6 overflow-x-auto scrollbar-hide pb-2"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {products.map((product, index) => (
