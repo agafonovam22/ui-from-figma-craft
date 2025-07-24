@@ -94,34 +94,109 @@ const Checkout: React.FC = () => {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
             {/* Steps */}
-            <div className="flex items-center gap-6 mb-8">
-              <div className="flex items-center gap-3">
-                <div className={`w-8 h-8 ${currentStep === 1 ? 'bg-gray-900' : 'bg-red-500'} text-white rounded flex items-center justify-center text-sm font-medium`}>
-                  1
+            <div className="flex items-center gap-4 mb-8">
+              {/* Step 1 - Доставка */}
+              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 ${
+                currentStep === 1 
+                  ? 'bg-gray-900 border-gray-900' 
+                  : 'bg-white border-gray-200'
+              }`}>
+                <div className={`p-3 rounded-lg ${
+                  currentStep === 1 
+                    ? 'bg-gray-700' 
+                    : 'bg-red-100'
+                }`}>
+                  <Truck className={`w-6 h-6 ${
+                    currentStep === 1 
+                      ? 'text-white' 
+                      : 'text-red-500'
+                  }`} />
                 </div>
-                <div className="flex items-center gap-2">
-                  <Truck className={`w-5 h-5 ${currentStep === 1 ? 'text-gray-900' : 'text-red-500'}`} />
-                  <span className={`font-medium ${currentStep === 1 ? 'text-gray-900' : 'text-red-500'}`}>Доставка</span>
+                <div>
+                  <div className={`text-sm font-medium ${
+                    currentStep === 1 
+                      ? 'text-white' 
+                      : 'text-red-500'
+                  }`}>
+                    ШАГ 1
+                  </div>
+                  <div className={`font-semibold ${
+                    currentStep === 1 
+                      ? 'text-white' 
+                      : 'text-gray-900'
+                  }`}>
+                    Доставка
+                  </div>
                 </div>
               </div>
               
-              <div className="flex items-center gap-3">
-                <div className={`w-8 h-8 ${currentStep === 2 ? 'bg-gray-900' : 'bg-red-500'} text-white rounded flex items-center justify-center text-sm font-medium`}>
-                  2
+              {/* Step 2 - Способ оплаты */}
+              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 ${
+                currentStep === 2 
+                  ? 'bg-gray-900 border-gray-900' 
+                  : 'bg-white border-gray-200'
+              }`}>
+                <div className={`p-3 rounded-lg ${
+                  currentStep === 2 
+                    ? 'bg-gray-700' 
+                    : 'bg-red-100'
+                }`}>
+                  <CreditCard className={`w-6 h-6 ${
+                    currentStep === 2 
+                      ? 'text-white' 
+                      : 'text-red-500'
+                  }`} />
                 </div>
-                <div className="flex items-center gap-2">
-                  <CreditCard className={`w-5 h-5 ${currentStep === 2 ? 'text-gray-900' : 'text-red-500'}`} />
-                  <span className={`font-medium ${currentStep === 2 ? 'text-gray-900' : 'text-red-500'}`}>Способ оплаты</span>
+                <div>
+                  <div className={`text-sm font-medium ${
+                    currentStep === 2 
+                      ? 'text-white' 
+                      : 'text-red-500'
+                  }`}>
+                    ШАГ 2
+                  </div>
+                  <div className={`font-semibold ${
+                    currentStep === 2 
+                      ? 'text-white' 
+                      : 'text-gray-900'
+                  }`}>
+                    Способ оплаты
+                  </div>
                 </div>
               </div>
               
-              <div className="flex items-center gap-3">
-                <div className={`w-8 h-8 ${currentStep === 3 ? 'bg-gray-900' : 'bg-red-500'} text-white rounded flex items-center justify-center text-sm font-medium`}>
-                  3
+              {/* Step 3 - Ваши данные */}
+              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 ${
+                currentStep === 3 
+                  ? 'bg-gray-900 border-gray-900' 
+                  : 'bg-white border-gray-200'
+              }`}>
+                <div className={`p-3 rounded-lg ${
+                  currentStep === 3 
+                    ? 'bg-gray-700' 
+                    : 'bg-red-100'
+                }`}>
+                  <User className={`w-6 h-6 ${
+                    currentStep === 3 
+                      ? 'text-white' 
+                      : 'text-red-500'
+                  }`} />
                 </div>
-                <div className="flex items-center gap-2">
-                  <User className={`w-5 h-5 ${currentStep === 3 ? 'text-gray-900' : 'text-red-500'}`} />
-                  <span className={`font-medium ${currentStep === 3 ? 'text-gray-900' : 'text-red-500'}`}>Ваши данные</span>
+                <div>
+                  <div className={`text-sm font-medium ${
+                    currentStep === 3 
+                      ? 'text-white' 
+                      : 'text-red-500'
+                  }`}>
+                    ШАГ 3
+                  </div>
+                  <div className={`font-semibold ${
+                    currentStep === 3 
+                      ? 'text-white' 
+                      : 'text-gray-900'
+                  }`}>
+                    Ваши данные
+                  </div>
                 </div>
               </div>
             </div>
