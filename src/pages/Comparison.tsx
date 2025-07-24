@@ -253,10 +253,18 @@ const Comparison: React.FC = () => {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-48 text-left">Оценка покупателей</TableHead>
-                  {comparisonItems.map((item, index) => (
-                    <TableCell key={item.id} className={index === 0 ? "text-right" : "text-center"}>
-                      <div className={`flex ${index === 0 ? 'justify-end' : 'justify-center'} items-center gap-1`}>
+                  <TableHead className="w-48 text-left">
+                    <div className="flex justify-between items-center">
+                      <span>Оценка покупателей</span>
+                      <div className="flex items-center gap-1">
+                        {renderStars(comparisonItems[0].rating)}
+                        <span className="text-orange-400 text-sm ml-1">{comparisonItems[0].rating}/5</span>
+                      </div>
+                    </div>
+                  </TableHead>
+                  {comparisonItems.slice(1).map((item) => (
+                    <TableCell key={item.id} className="text-center">
+                      <div className="flex justify-center items-center gap-1">
                         {renderStars(item.rating)}
                         <span className="text-orange-400 text-sm ml-1">{item.rating}/5</span>
                       </div>
@@ -266,17 +274,27 @@ const Comparison: React.FC = () => {
               </TableHeader>
               <TableBody>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Способ получения</TableCell>
-                  {comparisonItems.map((item, index) => (
-                    <TableCell key={item.id} className={`${index === 0 ? "text-right" : "text-center"} text-gray-600`}>
+                  <TableCell className="font-medium text-gray-700 text-left">
+                    <div className="flex justify-between items-center">
+                      <span>Способ получения</span>
+                      <span className="text-gray-600 font-normal">Доставка, самовывоз</span>
+                    </div>
+                  </TableCell>
+                  {comparisonItems.slice(1).map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       Доставка, самовывоз
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Оплата</TableCell>
-                  {comparisonItems.map((item, index) => (
-                    <TableCell key={item.id} className={`${index === 0 ? "text-right" : "text-center"} text-gray-600`}>
+                  <TableCell className="font-medium text-gray-700 text-left">
+                    <div className="flex justify-between items-center">
+                      <span>Оплата</span>
+                      <span className="text-gray-600 font-normal">Онлайн, рассрочка, карта</span>
+                    </div>
+                  </TableCell>
+                  {comparisonItems.slice(1).map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       Онлайн, рассрочка, карта
                     </TableCell>
                   ))}
@@ -291,65 +309,105 @@ const Comparison: React.FC = () => {
             <Table>
               <TableBody>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 w-48 text-left">Рама</TableCell>
-                  {comparisonItems.map((item, index) => (
-                    <TableCell key={item.id} className={`${index === 0 ? "text-right" : "text-center"} text-gray-600`}>
+                  <TableCell className="font-medium text-gray-700 w-48 text-left">
+                    <div className="flex justify-between items-center">
+                      <span>Рама</span>
+                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.frame}</span>
+                    </div>
+                  </TableCell>
+                  {comparisonItems.slice(1).map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.frame}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Лестница</TableCell>
-                  {comparisonItems.map((item, index) => (
-                    <TableCell key={item.id} className={`${index === 0 ? "text-right" : "text-center"} text-gray-600`}>
+                  <TableCell className="font-medium text-gray-700 text-left">
+                    <div className="flex justify-between items-center">
+                      <span>Лестница</span>
+                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.ladder}</span>
+                    </div>
+                  </TableCell>
+                  {comparisonItems.slice(1).map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.ladder}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Серия</TableCell>
-                  {comparisonItems.map((item, index) => (
-                    <TableCell key={item.id} className={`${index === 0 ? "text-right" : "text-center"} text-gray-600`}>
+                  <TableCell className="font-medium text-gray-700 text-left">
+                    <div className="flex justify-between items-center">
+                      <span>Серия</span>
+                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.series}</span>
+                    </div>
+                  </TableCell>
+                  {comparisonItems.slice(1).map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.series}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Цвет</TableCell>
-                  {comparisonItems.map((item, index) => (
-                    <TableCell key={item.id} className={`${index === 0 ? "text-right" : "text-center"} text-gray-600`}>
+                  <TableCell className="font-medium text-gray-700 text-left">
+                    <div className="flex justify-between items-center">
+                      <span>Цвет</span>
+                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.color}</span>
+                    </div>
+                  </TableCell>
+                  {comparisonItems.slice(1).map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.color}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Ширина защитного мата, см</TableCell>
-                  {comparisonItems.map((item, index) => (
-                    <TableCell key={item.id} className={`${index === 0 ? "text-right" : "text-center"} text-gray-600`}>
+                  <TableCell className="font-medium text-gray-700 text-left">
+                    <div className="flex justify-between items-center">
+                      <span>Ширина защитного мата, см</span>
+                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.protectiveMatWidth}</span>
+                    </div>
+                  </TableCell>
+                  {comparisonItems.slice(1).map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.protectiveMatWidth}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Материал защитного мата</TableCell>
-                  {comparisonItems.map((item, index) => (
-                    <TableCell key={item.id} className={`${index === 0 ? "text-right" : "text-center"} text-gray-600`}>
+                  <TableCell className="font-medium text-gray-700 text-left">
+                    <div className="flex justify-between items-center">
+                      <span>Материал защитного мата</span>
+                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.protectiveMatMaterial}</span>
+                    </div>
+                  </TableCell>
+                  {comparisonItems.slice(1).map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.protectiveMatMaterial}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Диаметр батута, ft</TableCell>
-                  {comparisonItems.map((item, index) => (
-                    <TableCell key={item.id} className={`${index === 0 ? "text-right" : "text-center"} text-gray-600`}>
+                  <TableCell className="font-medium text-gray-700 text-left">
+                    <div className="flex justify-between items-center">
+                      <span>Диаметр батута, ft</span>
+                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.trampolineDiameterFt}</span>
+                    </div>
+                  </TableCell>
+                  {comparisonItems.slice(1).map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.trampolineDiameterFt}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Диаметр батута, см</TableCell>
-                  {comparisonItems.map((item, index) => (
-                    <TableCell key={item.id} className={`${index === 0 ? "text-right" : "text-center"} text-gray-600`}>
+                  <TableCell className="font-medium text-gray-700 text-left">
+                    <div className="flex justify-between items-center">
+                      <span>Диаметр батута, см</span>
+                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.trampolineDiameterCm}</span>
+                    </div>
+                  </TableCell>
+                  {comparisonItems.slice(1).map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.trampolineDiameterCm}
                     </TableCell>
                   ))}
@@ -364,25 +422,40 @@ const Comparison: React.FC = () => {
             <Table>
               <TableBody>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 w-48 text-left">Рама</TableCell>
-                  {comparisonItems.map((item, index) => (
-                    <TableCell key={item.id} className={`${index === 0 ? "text-right" : "text-center"} text-gray-600`}>
+                  <TableCell className="font-medium text-gray-700 w-48 text-left">
+                    <div className="flex justify-between items-center">
+                      <span>Рама</span>
+                      <span className="text-gray-600 font-normal">{comparisonItems[0].additionalCharacteristics.frame}</span>
+                    </div>
+                  </TableCell>
+                  {comparisonItems.slice(1).map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.additionalCharacteristics.frame}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Лестница</TableCell>
-                  {comparisonItems.map((item, index) => (
-                    <TableCell key={item.id} className={`${index === 0 ? "text-right" : "text-center"} text-gray-600`}>
+                  <TableCell className="font-medium text-gray-700 text-left">
+                    <div className="flex justify-between items-center">
+                      <span>Лестница</span>
+                      <span className="text-gray-600 font-normal">{comparisonItems[0].additionalCharacteristics.ladder}</span>
+                    </div>
+                  </TableCell>
+                  {comparisonItems.slice(1).map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.additionalCharacteristics.ladder}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Серия</TableCell>
-                  {comparisonItems.map((item, index) => (
-                    <TableCell key={item.id} className={`${index === 0 ? "text-right" : "text-center"} text-gray-600`}>
+                  <TableCell className="font-medium text-gray-700 text-left">
+                    <div className="flex justify-between items-center">
+                      <span>Серия</span>
+                      <span className="text-gray-600 font-normal">{comparisonItems[0].additionalCharacteristics.series}</span>
+                    </div>
+                  </TableCell>
+                  {comparisonItems.slice(1).map((item) => (
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.additionalCharacteristics.series}
                     </TableCell>
                   ))}
