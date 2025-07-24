@@ -717,7 +717,7 @@ const Checkout: React.FC = () => {
         <EmailSubscription />
       </div>
 
-      <div className="h-[70px]"></div>
+      <div className="h-[100px]"></div>
       <Footer />
     </main>
   );
