@@ -558,7 +558,7 @@ const Checkout: React.FC = () => {
                           value={formData.fullName}
                           onChange={(e) => handleInputChange('fullName', e.target.value)}
                           className="w-full"
-                          placeholder="Введите ваше ФИО"
+                          placeholder="ФИО"
                         />
                       </div>
 
@@ -570,7 +570,7 @@ const Checkout: React.FC = () => {
                           value={formData.phone}
                           onChange={(e) => handleInputChange('phone', e.target.value)}
                           className="w-full"
-                          placeholder="Введите номер телефона"
+                          placeholder="Телефон"
                         />
                       </div>
 
@@ -582,7 +582,7 @@ const Checkout: React.FC = () => {
                           value={formData.email}
                           onChange={(e) => handleInputChange('email', e.target.value)}
                           className="w-full"
-                          placeholder="Введите электронную почту"
+                          placeholder="Email"
                         />
                       </div>
                     </div>
