@@ -636,7 +636,8 @@ const Checkout: React.FC = () => {
                       
                       <Button 
                         variant="outline" 
-                        className="w-full border-red-500 text-red-500 hover:bg-red-50 bg-gray-50"
+                        className="border-red-500 text-red-500 hover:bg-red-50 bg-gray-50"
+                        style={{ width: 'calc(100% - 50px)' }}
                       >
                         Войти в личный кабинет
                       </Button>
