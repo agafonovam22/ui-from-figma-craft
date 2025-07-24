@@ -72,7 +72,7 @@ const Checkout: React.FC = () => {
     <main className="min-h-screen bg-white">
       <Header />
       
-      <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+      <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:pl-[60px] lg:pr-[60px] py-8">
         {/* Breadcrumbs */}
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
