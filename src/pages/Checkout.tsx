@@ -619,7 +619,15 @@ const Checkout: React.FC = () => {
            <div className="lg:col-span-1" style={{ width: '389px', marginLeft: 'auto' }}>
              <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Итого</h2>
              
-             <div className="bg-gray-100 rounded-lg p-6 mb-6">
+             <div className="bg-gray-100 rounded-t-lg p-6 mb-6 relative" style={{ 
+               borderBottom: '2px dashed #ccc',
+               borderBottomLeftRadius: '0',
+               borderBottomRightRadius: '0'
+             }}>
+               {/* Углубления по бокам снизу */}
+               <div className="absolute bottom-0 left-3 w-3 h-3 bg-white rounded-full transform translate-y-1/2"></div>
+               <div className="absolute bottom-0 right-3 w-3 h-3 bg-white rounded-full transform translate-y-1/2"></div>
+               
                <div className="space-y-4 mb-6">
                  <div className="flex justify-between text-base">
                    <span className="text-gray-600">Товары, 3 шт</span>
@@ -645,7 +653,7 @@ const Checkout: React.FC = () => {
                    <span className="text-gray-600">Оплата</span>
                    <span className="font-medium">Картой онлайн</span>
                  </div>
-                 <div className="border-t pt-4 flex justify-between text-2xl font-bold">
+                 <div className="border-t border-dashed border-gray-400 pt-4 flex justify-between text-2xl font-bold">
                    <span>Итого</span>
                    <span>{finalTotal.toLocaleString()} ₽</span>
                  </div>
