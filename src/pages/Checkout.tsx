@@ -708,7 +708,7 @@ const Checkout: React.FC = () => {
       </div>
 
       {/* You Viewed Section */}
-      <div className="py-16 bg-gray-50">
+      <div className="py-16">
         <NewProducts title="Вы смотрели" />
       </div>
 
