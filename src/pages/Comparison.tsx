@@ -253,7 +253,7 @@ const Comparison: React.FC = () => {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-48">Оценка покупателей</TableHead>
+                  <TableHead className="w-48 text-left">Оценка покупателей</TableHead>
                   {comparisonItems.map((item) => (
                     <TableCell key={item.id} className="text-center">
                       <div className="flex justify-center items-center gap-1">
@@ -266,7 +266,7 @@ const Comparison: React.FC = () => {
               </TableHeader>
               <TableBody>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700">Способ получения</TableCell>
+                  <TableCell className="font-medium text-gray-700 text-left">Способ получения</TableCell>
                   {comparisonItems.map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       Доставка, самовывоз
@@ -274,7 +274,7 @@ const Comparison: React.FC = () => {
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700">Оплата</TableCell>
+                  <TableCell className="font-medium text-gray-700 text-left">Оплата</TableCell>
                   {comparisonItems.map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       Онлайн, рассрочка, карта
@@ -291,7 +291,7 @@ const Comparison: React.FC = () => {
             <Table>
               <TableBody>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 w-48">Рама</TableCell>
+                  <TableCell className="font-medium text-gray-700 w-48 text-left">Рама</TableCell>
                   {comparisonItems.map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.frame}
@@ -299,7 +299,7 @@ const Comparison: React.FC = () => {
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700">Лестница</TableCell>
+                  <TableCell className="font-medium text-gray-700 text-left">Лестница</TableCell>
                   {comparisonItems.map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.ladder}
@@ -307,7 +307,7 @@ const Comparison: React.FC = () => {
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700">Серия</TableCell>
+                  <TableCell className="font-medium text-gray-700 text-left">Серия</TableCell>
                   {comparisonItems.map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.series}
@@ -315,7 +315,7 @@ const Comparison: React.FC = () => {
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700">Цвет</TableCell>
+                  <TableCell className="font-medium text-gray-700 text-left">Цвет</TableCell>
                   {comparisonItems.map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.color}
@@ -323,7 +323,7 @@ const Comparison: React.FC = () => {
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700">Ширина защитного мата, см</TableCell>
+                  <TableCell className="font-medium text-gray-700 text-left">Ширина защитного мата, см</TableCell>
                   {comparisonItems.map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.protectiveMatWidth}
@@ -331,7 +331,7 @@ const Comparison: React.FC = () => {
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700">Материал защитного мата</TableCell>
+                  <TableCell className="font-medium text-gray-700 text-left">Материал защитного мата</TableCell>
                   {comparisonItems.map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.protectiveMatMaterial}
@@ -339,7 +339,7 @@ const Comparison: React.FC = () => {
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700">Диаметр батута, ft</TableCell>
+                  <TableCell className="font-medium text-gray-700 text-left">Диаметр батута, ft</TableCell>
                   {comparisonItems.map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.trampolineDiameterFt}
@@ -347,7 +347,7 @@ const Comparison: React.FC = () => {
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700">Диаметр батута, см</TableCell>
+                  <TableCell className="font-medium text-gray-700 text-left">Диаметр батута, см</TableCell>
                   {comparisonItems.map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.trampolineDiameterCm}
@@ -364,7 +364,7 @@ const Comparison: React.FC = () => {
             <Table>
               <TableBody>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 w-48">Рама</TableCell>
+                  <TableCell className="font-medium text-gray-700 w-48 text-left">Рама</TableCell>
                   {comparisonItems.map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.additionalCharacteristics.frame}
@@ -372,7 +372,7 @@ const Comparison: React.FC = () => {
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700">Лестница</TableCell>
+                  <TableCell className="font-medium text-gray-700 text-left">Лестница</TableCell>
                   {comparisonItems.map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.additionalCharacteristics.ladder}
@@ -380,7 +380,7 @@ const Comparison: React.FC = () => {
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700">Серия</TableCell>
+                  <TableCell className="font-medium text-gray-700 text-left">Серия</TableCell>
                   {comparisonItems.map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.additionalCharacteristics.series}
