@@ -131,7 +131,8 @@ const Account: React.FC = () => {
               {/* Login Button */}
               <Button
                 type="submit"
-                className="w-full h-12 bg-[#F53B49] hover:bg-[#e63946] text-white text-base font-medium rounded-md"
+                className="h-12 bg-[#F53B49] hover:bg-[#e63946] text-white text-base font-medium rounded-md"
+                style={{ width: '589px' }}
               >
                 Войти
               </Button>
@@ -177,7 +178,8 @@ const Account: React.FC = () => {
               <button
                 type="button"
                 onClick={() => navigate('/register')}
-                className="w-full h-12 border border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white transition-colors rounded-md text-base font-medium"
+                className="h-12 border border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white transition-colors rounded-md text-base font-medium"
+                style={{ width: '589px' }}
               >
                 Регистрация
               </button>
