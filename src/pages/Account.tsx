@@ -56,14 +56,14 @@ const Account: React.FC = () => {
               </h1>
               
               {/* User Type Toggle */}
-              <div className="flex rounded-lg border border-gray-200 overflow-hidden mb-6">
+              <div className="flex gap-3 mb-6">
                 <button
                   type="button"
                   onClick={() => setUserType('buyer')}
-                  className={`flex-1 py-3 px-6 text-sm font-medium transition-colors ${
+                  className={`py-3 px-6 text-sm font-medium transition-colors rounded-lg text-left ${
                     userType === 'buyer'
                       ? 'bg-[#F53B49] text-white'
-                      : 'bg-white text-[#262631] hover:bg-gray-50'
+                      : 'bg-gray-100 text-[#262631] hover:bg-gray-200'
                   }`}
                 >
                   Покупатель
@@ -71,10 +71,10 @@ const Account: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setUserType('dealer')}
-                  className={`flex-1 py-3 px-6 text-sm font-medium transition-colors ${
+                  className={`py-3 px-6 text-sm font-medium transition-colors rounded-lg text-left ${
                     userType === 'dealer'
                       ? 'bg-[#F53B49] text-white'
-                      : 'bg-white text-[#262631] hover:bg-gray-50'
+                      : 'bg-gray-100 text-[#262631] hover:bg-gray-200'
                   }`}
                 >
                   Дилер
