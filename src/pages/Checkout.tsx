@@ -88,7 +88,7 @@ const Checkout: React.FC = () => {
           </BreadcrumbList>
         </Breadcrumb>
 
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Оформление заказа</h1>
+        <h1 className="text-gray-900 mb-8" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Оформление заказа</h1>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
@@ -205,7 +205,7 @@ const Checkout: React.FC = () => {
             {currentStep === 1 && (
               <>
                 <div className="bg-white">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-6">Способ доставки</h2>
+                  <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Способ доставки</h2>
                   <div className="mb-4">
                     <span className="text-gray-600">Город доставки</span>
                     <span className="text-red-500 ml-2 font-medium">Москва</span>
@@ -258,7 +258,7 @@ const Checkout: React.FC = () => {
 
                 {/* Pickup Points */}
                 <div className="bg-white">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-6">Пункт выдачи</h2>
+                  <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Пункт выдачи</h2>
                   
                   <div className="space-y-4">
                     {/* Warehouse 1 */}
@@ -338,7 +338,7 @@ const Checkout: React.FC = () => {
             {/* Step 2: Payment Method */}
             {currentStep === 2 && (
               <div className="bg-white">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Способ оплаты</h2>
+                <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Способ оплаты</h2>
                 <p className="text-gray-600 mb-6">
                   Разнообразный и богатый опыт начало повседневной работы по формированию позиции в значительной степени обуславливает создание новых предложений.
                 </p>
@@ -453,7 +453,7 @@ const Checkout: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {/* Left Column - Form */}
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Ваши данные</h2>
+                    <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Ваши данные</h2>
                     
                     {/* Customer Type Selection */}
                     <div className="mb-6">
@@ -557,7 +557,7 @@ const Checkout: React.FC = () => {
 
                   {/* Right Column - Account Info */}
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Есть личный кабинет?</h2>
+                    <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Есть личный кабинет?</h2>
                     <p className="text-red-500 text-sm mb-4">Войдите для отслеживания статуса заказа</p>
                     
                     <div className="bg-gray-50 rounded-lg p-6 mb-6">
@@ -604,7 +604,7 @@ const Checkout: React.FC = () => {
           {/* Order Summary */}
           <div className="lg:col-span-1">
             <div className="bg-white border rounded-lg p-6 sticky top-4">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Итого</h2>
+              <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Итого</h2>
               
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between text-base">
