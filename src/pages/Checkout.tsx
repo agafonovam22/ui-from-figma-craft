@@ -313,10 +313,10 @@ const Checkout: React.FC = () => {
                         />
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-2">
-                            <span className="font-medium">Склад №1</span>
+                            <span style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="font-medium">Склад №1</span>
                             <div className="flex items-center gap-1">
                               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                              <span className="text-green-600 text-sm font-medium">В наличии</span>
+                              <span style={{ fontFamily: 'Benzin-Regular', fontSize: '14px' }} className="text-green-600 font-medium">В наличии</span>
                               <div className="flex gap-1 ml-2">
                                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -324,10 +324,10 @@ const Checkout: React.FC = () => {
                               </div>
                             </div>
                           </div>
-                          <p className="text-gray-600 text-sm mb-2">
+                          <p style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="text-gray-600 mb-2">
                             Московская область, Красногорский р-н, д. Гольево, улица Центральная ул., с44.
                           </p>
-                          <p className="text-sm text-gray-600">пн – пт с 09:30-18:00</p>
+                          <p style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="text-gray-600">пн – пт с 09:30-18:00</p>
                         </div>
                       </div>
                     </div>
@@ -347,10 +347,10 @@ const Checkout: React.FC = () => {
                             <div className="w-4 h-4 bg-red-500 rounded flex items-center justify-center">
                               <div className="w-2 h-2 bg-white rounded-full"></div>
                             </div>
-                            <span className="font-medium">Склад №2</span>
+                            <span style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="font-medium">Склад №2</span>
                             <div className="flex items-center gap-1">
                               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                              <span className="text-green-600 text-sm font-medium">В наличии</span>
+                              <span style={{ fontFamily: 'Benzin-Regular', fontSize: '14px' }} className="text-green-600 font-medium">В наличии</span>
                               <div className="flex gap-1 ml-2">
                                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -358,12 +358,12 @@ const Checkout: React.FC = () => {
                               </div>
                             </div>
                           </div>
-                          <p className="text-gray-600 text-sm mb-2">
+                          <p style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="text-gray-600 mb-2">
                             Московская область, Химки, микрорайон Сходня, улица Некрасова д.2.
                           </p>
                           <div className="flex items-center justify-between">
-                            <p className="text-sm text-gray-600">пн – пт с 09:30-18:00</p>
-                            <p className="text-sm text-gray-600">
+                            <p style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="text-gray-600">пн – пт с 09:30-18:00</p>
+                            <p style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="text-gray-600">
                               Выдача осуществляется оформленных заказов, при согласовании даты и времени приезда
                             </p>
                           </div>
