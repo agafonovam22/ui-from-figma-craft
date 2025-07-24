@@ -96,7 +96,7 @@ const Checkout: React.FC = () => {
             {/* Steps */}
             <div className="flex flex-col gap-4 mb-8">
               {/* Step 1 - Доставка */}
-              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 w-full ${
+              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 w-[225px] ${
                 currentStep === 1 
                   ? 'bg-gray-900 border-gray-900' 
                   : 'bg-white border-gray-200'
@@ -127,7 +127,7 @@ const Checkout: React.FC = () => {
               </div>
               
               {/* Step 2 - Способ оплаты */}
-              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 w-full ${
+              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 w-[225px] ${
                 currentStep === 2 
                   ? 'bg-gray-900 border-gray-900' 
                   : 'bg-white border-gray-200'
@@ -158,7 +158,7 @@ const Checkout: React.FC = () => {
               </div>
               
               {/* Step 3 - Ваши данные */}
-              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 w-full ${
+              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 w-[225px] ${
                 currentStep === 3 
                   ? 'bg-gray-900 border-gray-900' 
                   : 'bg-white border-gray-200'
