@@ -25,7 +25,7 @@ const InstallmentTable: React.FC<InstallmentTableProps> = ({ plans }) => {
         <div className="flex flex-col lg:flex-row gap-8 mb-8">
           {/* Left side - Text content */}
           <div className="flex-1">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">В рассрочку</h2>
+            <h2 className="mb-6" style={{ fontFamily: 'Manrope', fontSize: '32px', fontWeight: '700', color: '#111827' }}>В рассрочку</h2>
             
             <div className="space-y-4 mb-8" style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#6B7280' }}>
               <p>
@@ -59,11 +59,11 @@ const InstallmentTable: React.FC<InstallmentTableProps> = ({ plans }) => {
           <Table>
             <TableHeader>
               <TableRow className="border-b">
-                <TableHead className="font-semibold text-gray-900 py-4">Рассрочка</TableHead>
-                <TableHead className="font-semibold text-gray-900 py-4">Ежемесячный платеж</TableHead>
-                <TableHead className="font-semibold text-gray-900 py-4">Переплата</TableHead>
-                <TableHead className="font-semibold text-gray-900 py-4">Срок</TableHead>
-                <TableHead className="font-semibold text-gray-900 py-4"></TableHead>
+                <TableHead className="py-4" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>Рассрочка</TableHead>
+                <TableHead className="py-4" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>Ежемесячный платеж</TableHead>
+                <TableHead className="py-4" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>Переплата</TableHead>
+                <TableHead className="py-4" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>Срок</TableHead>
+                <TableHead className="py-4" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}></TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -71,22 +71,22 @@ const InstallmentTable: React.FC<InstallmentTableProps> = ({ plans }) => {
                 <TableRow key={plan.id} className="border-b border-gray-100">
                   <TableCell className="py-6">
                     <div>
-                      <div className="font-semibold text-gray-900 mb-1">{plan.plan}</div>
-                      <div className="text-sm text-gray-600">{plan.bank}</div>
+                      <div className="mb-1" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>{plan.plan}</div>
+                      <div style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#6B7280' }}>{plan.bank}</div>
                     </div>
                   </TableCell>
-                  <TableCell className="font-semibold text-gray-900 py-6">{plan.monthlyPayment}</TableCell>
-                  <TableCell className="text-gray-900 py-6">{plan.overpayment}</TableCell>
-                  <TableCell className="text-gray-900 py-6">{plan.term}</TableCell>
+                  <TableCell className="py-6" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>{plan.monthlyPayment}</TableCell>
+                  <TableCell className="py-6" style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#111827' }}>{plan.overpayment}</TableCell>
+                  <TableCell className="py-6" style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#111827' }}>{plan.term}</TableCell>
                   <TableCell className="py-6">
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                      <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full" style={{ fontFamily: 'Manrope', fontSize: '12px' }}>
                         {plan.rate}
                       </span>
-                      <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                      <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full" style={{ fontFamily: 'Manrope', fontSize: '12px' }}>
                         {plan.firstPayment}
                       </span>
-                      <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                      <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full" style={{ fontFamily: 'Manrope', fontSize: '12px' }}>
                         {plan.duration}
                       </span>
                     </div>
@@ -99,7 +99,7 @@ const InstallmentTable: React.FC<InstallmentTableProps> = ({ plans }) => {
 
         {/* Submit Button */}
         <div className="flex justify-start">
-          <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 text-lg font-semibold rounded">
+          <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 rounded" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600' }}>
             Оставить заявку
           </Button>
         </div>
