@@ -119,7 +119,8 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
             <div className="border-t p-6">
               <Link to="/favorites" onClick={() => onOpenChange(false)}>
                 <Button 
-                  className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-3 text-base font-medium"
+                  variant="outline"
+                  className="w-full bg-white border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white py-3 text-base font-medium"
                 >
                   Перейти в избранное
                 </Button>
