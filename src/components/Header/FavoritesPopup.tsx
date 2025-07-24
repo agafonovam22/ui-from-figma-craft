@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { X, Trash2 } from 'lucide-react';
 import {
@@ -31,7 +31,7 @@ interface FavoritesPopupProps {
 
 const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpenChange }) => {
   // Mock data for favorite items
-  const favoriteItems: FavoriteItem[] = [
+  const initialFavoriteItems: FavoriteItem[] = [
     {
       id: 1,
       name: "Гребной тренажер CardioPowe PRO CR300",
@@ -57,6 +57,12 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
       discount: 15
     }
   ];
+
+  const [favoriteItems, setFavoriteItems] = useState<FavoriteItem[]>(initialFavoriteItems);
+
+  const removeFavoriteItem = (id: number) => {
+    setFavoriteItems(prev => prev.filter(item => item.id !== id));
+  };
 
   return (
     <Sheet open={isOpen} onOpenChange={onOpenChange}>
@@ -110,25 +116,28 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
                         </span>
                       </div>
                     </div>
-                    <button className="p-2 border border-gray-400 rounded relative z-10 hover:bg-gray-100">
+                    <button 
+                      onClick={() => removeFavoriteItem(item.id)}
+                      className="p-2 border border-gray-400 rounded relative z-10 hover:bg-gray-100"
+                    >
                       <Trash2 className="w-4 h-4 text-gray-400" />
                     </button>
                   </div>
                 ))}
+                
+                {/* Кнопка перейти в избранное внутри списка товаров */}
+                <div className="mt-5 px-6">
+                  <Link to="/favorites" onClick={() => onOpenChange(false)}>
+                    <Button 
+                      variant="outline"
+                      className="w-[443px] h-[43px] bg-white border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white text-base font-medium"
+                    >
+                      Перейти в избранное
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </ScrollArea>
-
-            {/* Footer */}
-            <div className="px-6 bg-white">
-              <Link to="/favorites" onClick={() => onOpenChange(false)}>
-                <Button 
-                  variant="outline"
-                  className="w-[443px] h-[43px] bg-white border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white text-base font-medium"
-                >
-                  Перейти в избранное
-                </Button>
-              </Link>
-            </div>
           </div>
           
           <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
