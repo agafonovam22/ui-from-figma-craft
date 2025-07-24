@@ -311,11 +311,15 @@ const Checkout: React.FC = () => {
                           onChange={() => setSelectedPickupPoint('warehouse1')}
                           className="mt-1"
                         />
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-2">
-                            <span style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="font-medium">Склад №1</span>
-                            <div className="flex items-center gap-1">
-                              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <div className="flex-1 grid grid-cols-2 gap-4">
+                          <div>
+                            <h3 style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="font-medium mb-2">Склад №1</h3>
+                            <p style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="text-gray-600">
+                              Московская область, Красногорский р-н, д. Гольево, улица Центральная ул., с44.
+                            </p>
+                          </div>
+                          <div className="text-right">
+                            <div className="flex items-center justify-end gap-1 mb-2">
                               <span style={{ fontFamily: 'Benzin-Regular', fontSize: '14px' }} className="text-green-600 font-medium">В наличии</span>
                               <div className="flex gap-1 ml-2">
                                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -323,11 +327,8 @@ const Checkout: React.FC = () => {
                                 <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
                               </div>
                             </div>
+                            <p style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="text-gray-600">пн – пт с 09:30-18:00</p>
                           </div>
-                          <p style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="text-gray-600 mb-2">
-                            Московская область, Красногорский р-н, д. Гольево, улица Центральная ул., с44.
-                          </p>
-                          <p style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="text-gray-600">пн – пт с 09:30-18:00</p>
                         </div>
                       </div>
                     </div>
@@ -342,14 +343,20 @@ const Checkout: React.FC = () => {
                           onChange={() => setSelectedPickupPoint('warehouse2')}
                           className="mt-1"
                         />
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-2">
-                            <div className="w-4 h-4 bg-red-500 rounded flex items-center justify-center">
-                              <div className="w-2 h-2 bg-white rounded-full"></div>
+                        <div className="flex-1 grid grid-cols-2 gap-4">
+                          <div>
+                            <div className="flex items-center gap-2 mb-2">
+                              <div className="w-4 h-4 bg-red-500 rounded flex items-center justify-center">
+                                <div className="w-2 h-2 bg-white rounded-full"></div>
+                              </div>
+                              <span style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="font-medium">Склад №2</span>
                             </div>
-                            <span style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="font-medium">Склад №2</span>
-                            <div className="flex items-center gap-1">
-                              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <p style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="text-gray-600">
+                              Московская область, Химки, микрорайон Сходня, улица Некрасова д.2.
+                            </p>
+                          </div>
+                          <div className="text-right">
+                            <div className="flex items-center justify-end gap-1 mb-2">
                               <span style={{ fontFamily: 'Benzin-Regular', fontSize: '14px' }} className="text-green-600 font-medium">В наличии</span>
                               <div className="flex gap-1 ml-2">
                                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -357,13 +364,8 @@ const Checkout: React.FC = () => {
                                 <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
                               </div>
                             </div>
-                          </div>
-                          <p style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="text-gray-600 mb-2">
-                            Московская область, Химки, микрорайон Сходня, улица Некрасова д.2.
-                          </p>
-                          <div className="flex items-center justify-between">
-                            <p style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="text-gray-600">пн – пт с 09:30-18:00</p>
-                            <p style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="text-gray-600">
+                            <p style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="text-gray-600 mb-2">пн – пт с 09:30-18:00</p>
+                            <p style={{ fontFamily: 'Manrope', fontSize: '16px' }} className="text-gray-600 text-sm">
                               Выдача осуществляется оформленных заказов, при согласовании даты и времени приезда
                             </p>
                           </div>
