@@ -621,7 +621,9 @@ const Checkout: React.FC = () => {
                   <div>
                     <div className="bg-gray-50 rounded-lg p-6 mb-6">
                       <h2 className="text-gray-900 mb-2" style={{ fontFamily: 'Benzin-Semibold', fontSize: '24px' }}>Есть личный кабинет?</h2>
-                      <p className="text-red-500 text-sm mb-4" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Войдите для отслеживания статуса заказа</p>
+                      <p className="text-sm mb-4" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                        <span className="text-red-500">Войдите</span> для отслеживания статуса заказа
+                      </p>
                       
                       <p className="text-gray-700 text-sm leading-tight mb-4" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                         Создание учётной записи поможет делать покупки быстрее и удобнее, 
