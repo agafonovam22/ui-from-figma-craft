@@ -524,25 +524,31 @@ const Checkout: React.FC = () => {
                     <div className="mb-6">
                       <div className="flex gap-4">
                         <label className="flex items-center gap-2 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="customerType"
-                            value="individual"
-                            checked={customerType === 'individual'}
-                            onChange={(e) => setCustomerType(e.target.value)}
-                            className="w-4 h-4"
-                          />
+                          <div className="relative">
+                            <input
+                              type="radio"
+                              name="customerType"
+                              value="individual"
+                              checked={customerType === 'individual'}
+                              onChange={(e) => setCustomerType(e.target.value)}
+                              className="sr-only"
+                            />
+                            <div className={`w-4 h-4 border-2 ${customerType === 'individual' ? 'bg-black border-black' : 'border-gray-400'}`}></div>
+                          </div>
                           <span className="text-gray-900" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Физическое лицо</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="customerType"
-                            value="legal"
-                            checked={customerType === 'legal'}
-                            onChange={(e) => setCustomerType(e.target.value)}
-                            className="w-4 h-4"
-                          />
+                          <div className="relative">
+                            <input
+                              type="radio"
+                              name="customerType"
+                              value="legal"
+                              checked={customerType === 'legal'}
+                              onChange={(e) => setCustomerType(e.target.value)}
+                              className="sr-only"
+                            />
+                            <div className={`w-4 h-4 border-2 ${customerType === 'legal' ? 'bg-black border-black' : 'border-gray-400'}`}></div>
+                          </div>
                           <span className="text-gray-900" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Юридическое лицо</span>
                         </label>
                       </div>
