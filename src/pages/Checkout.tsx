@@ -518,7 +518,7 @@ const Checkout: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {/* Left Column - Form */}
                   <div>
-                    <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Ваши данные</h2>
+                    <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '24px' }}>Ваши данные</h2>
                     
                     {/* Customer Type Selection */}
                     <div className="mb-6">
@@ -622,7 +622,7 @@ const Checkout: React.FC = () => {
 
                   {/* Right Column - Account Info */}
                   <div>
-                    <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Есть личный кабинет?</h2>
+                    <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '24px' }}>Есть личный кабинет?</h2>
                     <p className="text-red-500 text-sm mb-4" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Войдите для отслеживания статуса заказа</p>
                     
                     <div className="bg-gray-50 rounded-lg p-6 mb-6">
