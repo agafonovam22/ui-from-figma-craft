@@ -56,7 +56,7 @@ const Account: React.FC = () => {
               </h1>
               
               {/* User Type Toggle - Updated Design */}
-              <div className="flex gap-4 mb-6" key="user-type-toggle-v2">
+              <div className="flex gap-2.5 mb-6" key="user-type-toggle-v2">
                 <button
                   type="button"
                   onClick={() => setUserType('buyer')}
@@ -141,7 +141,7 @@ const Account: React.FC = () => {
                 Или войти с помощью
               </p>
               
-              <div className="flex gap-4">
+              <div className="flex gap-2.5">
                 <button
                   onClick={() => handleSocialLogin('google')}
                   className="h-12 flex items-center justify-center gap-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
