@@ -616,58 +616,58 @@ const Checkout: React.FC = () => {
           </div>
 
           {/* Order Summary */}
-          <div className="lg:col-span-1">
-            <div className="bg-white border rounded-lg p-6 sticky top-4" style={{ width: '389px', marginLeft: 'auto' }}>
-              <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Итого</h2>
-              
-              <div className="space-y-4 mb-6">
-                <div className="flex justify-between text-base">
-                  <span className="text-gray-600">Товары, 3 шт</span>
-                  <span className="font-medium">{total.toLocaleString()} ₽</span>
-                </div>
-                <div className="flex justify-between text-base">
-                  <span className="text-gray-600">Скидка</span>
-                  <span className="text-red-500 font-medium">-{discount.toLocaleString()} ₽</span>
-                </div>
-                <div className="flex justify-between text-base">
-                  <span className="text-gray-600">Бонусы</span>
-                  <span className="text-green-600 font-medium">+{bonuses} Б</span>
-                </div>
-                <div className="flex justify-between text-base">
-                  <span className="text-gray-600">Доставка</span>
-                  <span className="font-medium">Бесплатно</span>
-                </div>
-                <div className="flex justify-between text-base">
-                  <span className="text-gray-600">Сборка</span>
-                  <span className="font-medium">{assembly.toLocaleString()} ₽</span>
-                </div>
-                <div className="flex justify-between text-base">
-                  <span className="text-gray-600">Оплата</span>
-                  <span className="font-medium">Картой онлайн</span>
-                </div>
-                <div className="border-t pt-4 flex justify-between text-2xl font-bold">
-                  <span>Итого</span>
-                  <span>{finalTotal.toLocaleString()} ₽</span>
-                </div>
-              </div>
-              
-              <div className="mb-6">
-                <div className="flex items-start gap-3">
-                  <Checkbox 
-                    id="bonusCheckout" 
-                    checked={useBonuses}
-                    onCheckedChange={(checked) => setUseBonuses(checked as boolean)}
-                  />
-                  <label htmlFor="bonusCheckout" className="text-sm text-gray-700 leading-relaxed">
-                    Использовать бонусные баллы. Требуется{' '}
-                    <Link to="/account" className="text-blue-600 underline">
-                      авторизация
-                    </Link>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
+           <div className="lg:col-span-1" style={{ width: '389px', marginLeft: 'auto' }}>
+             <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Итого</h2>
+             
+             <div className="bg-gray-100 rounded-lg p-6 mb-6">
+               <div className="space-y-4 mb-6">
+                 <div className="flex justify-between text-base">
+                   <span className="text-gray-600">Товары, 3 шт</span>
+                   <span className="font-medium">{total.toLocaleString()} ₽</span>
+                 </div>
+                 <div className="flex justify-between text-base">
+                   <span className="text-gray-600">Скидка</span>
+                   <span className="text-red-500 font-medium">-{discount.toLocaleString()} ₽</span>
+                 </div>
+                 <div className="flex justify-between text-base">
+                   <span className="text-gray-600">Бонусы</span>
+                   <span className="text-green-600 font-medium">+{bonuses} Б</span>
+                 </div>
+                 <div className="flex justify-between text-base">
+                   <span className="text-gray-600">Доставка</span>
+                   <span className="font-medium">Бесплатно</span>
+                 </div>
+                 <div className="flex justify-between text-base">
+                   <span className="text-gray-600">Сборка</span>
+                   <span className="font-medium">{assembly.toLocaleString()} ₽</span>
+                 </div>
+                 <div className="flex justify-between text-base">
+                   <span className="text-gray-600">Оплата</span>
+                   <span className="font-medium">Картой онлайн</span>
+                 </div>
+                 <div className="border-t pt-4 flex justify-between text-2xl font-bold">
+                   <span>Итого</span>
+                   <span>{finalTotal.toLocaleString()} ₽</span>
+                 </div>
+               </div>
+             </div>
+             
+             <div className="mb-6">
+               <div className="flex items-start gap-3">
+                 <Checkbox 
+                   id="bonusCheckout" 
+                   checked={useBonuses}
+                   onCheckedChange={(checked) => setUseBonuses(checked as boolean)}
+                 />
+                 <label htmlFor="bonusCheckout" className="text-sm text-gray-700 leading-relaxed">
+                   Использовать бонусные баллы. Требуется{' '}
+                   <Link to="/account" className="text-blue-600 underline">
+                     авторизация
+                   </Link>
+                 </label>
+               </div>
+             </div>
+           </div>
         </div>
       </div>
 
