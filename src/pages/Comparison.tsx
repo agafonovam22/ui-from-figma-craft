@@ -172,9 +172,11 @@ const Comparison: React.FC = () => {
             className="flex items-center gap-3 text-gray-700 cursor-pointer"
             onClick={() => setShowOnlyDifferences(!showOnlyDifferences)}
           >
-            <div className="relative w-4 h-4 border border-gray-300 rounded-[3px] bg-white flex items-center justify-center">
-              {showOnlyDifferences && (
-                <div className="w-[10px] h-[10px] bg-gray-600 rounded-[2.06px]"></div>
+            <div className="relative w-4 h-4">
+              {showOnlyDifferences ? (
+                <div className="w-4 h-4 bg-gray-600 rounded-sm"></div>
+              ) : (
+                <div className="w-4 h-4 border border-gray-300 rounded-sm bg-white"></div>
               )}
             </div>
             Показывать только различия
@@ -248,15 +250,15 @@ const Comparison: React.FC = () => {
           <div className="absolute top-0 bottom-0 left-[calc(75%-12px)] w-px bg-gray-300"></div>
           
           {/* Оценка и способ получения */}
-          <div className="w-1/4">
+          <div>
             <h2 className="text-xl font-bold text-gray-900 mb-4">Оценка и способ получения</h2>
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-48 text-left">Оценка покупателей</TableHead>
+                  <TableHead className="w-48">Оценка покупателей</TableHead>
                   {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-right">
-                      <div className="flex justify-end items-center gap-1">
+                    <TableCell key={item.id} className="text-center">
+                      <div className="flex justify-center items-center gap-1">
                         {renderStars(item.rating)}
                         <span className="text-orange-400 text-sm ml-1">{item.rating}/5</span>
                       </div>
@@ -266,17 +268,17 @@ const Comparison: React.FC = () => {
               </TableHeader>
               <TableBody>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Способ получения</TableCell>
+                  <TableCell className="font-medium text-gray-700">Способ получения</TableCell>
                   {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-right text-gray-600">
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       Доставка, самовывоз
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Оплата</TableCell>
+                  <TableCell className="font-medium text-gray-700">Оплата</TableCell>
                   {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-right text-gray-600">
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       Онлайн, рассрочка, карта
                     </TableCell>
                   ))}
@@ -286,70 +288,70 @@ const Comparison: React.FC = () => {
           </div>
 
           {/* Основные характеристики */}
-          <div className="w-1/4">
+          <div>
             <h2 className="text-xl font-bold text-gray-900 mb-4">Основные характеристики</h2>
             <Table>
               <TableBody>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 w-48 text-left">Рама</TableCell>
+                  <TableCell className="font-medium text-gray-700 w-48">Рама</TableCell>
                   {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-right text-gray-600">
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.frame}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Лестница</TableCell>
+                  <TableCell className="font-medium text-gray-700">Лестница</TableCell>
                   {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-right text-gray-600">
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.ladder}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Серия</TableCell>
+                  <TableCell className="font-medium text-gray-700">Серия</TableCell>
                   {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-right text-gray-600">
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.series}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Цвет</TableCell>
+                  <TableCell className="font-medium text-gray-700">Цвет</TableCell>
                   {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-right text-gray-600">
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.color}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Ширина защитного мата, см</TableCell>
+                  <TableCell className="font-medium text-gray-700">Ширина защитного мата, см</TableCell>
                   {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-right text-gray-600">
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.protectiveMatWidth}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Материал защитного мата</TableCell>
+                  <TableCell className="font-medium text-gray-700">Материал защитного мата</TableCell>
                   {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-right text-gray-600">
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.protectiveMatMaterial}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Диаметр батута, ft</TableCell>
+                  <TableCell className="font-medium text-gray-700">Диаметр батута, ft</TableCell>
                   {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-right text-gray-600">
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.trampolineDiameterFt}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Диаметр батута, см</TableCell>
+                  <TableCell className="font-medium text-gray-700">Диаметр батута, см</TableCell>
                   {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-right text-gray-600">
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.trampolineDiameterCm}
                     </TableCell>
                   ))}
@@ -359,30 +361,30 @@ const Comparison: React.FC = () => {
           </div>
 
           {/* Доп. характеристики */}
-          <div className="w-1/4">
+          <div>
             <h2 className="text-xl font-bold text-gray-900 mb-4">Доп. характеристики</h2>
             <Table>
               <TableBody>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 w-48 text-left">Рама</TableCell>
+                  <TableCell className="font-medium text-gray-700 w-48">Рама</TableCell>
                   {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-right text-gray-600">
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.additionalCharacteristics.frame}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Лестница</TableCell>
+                  <TableCell className="font-medium text-gray-700">Лестница</TableCell>
                   {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-right text-gray-600">
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.additionalCharacteristics.ladder}
                     </TableCell>
                   ))}
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">Серия</TableCell>
+                  <TableCell className="font-medium text-gray-700">Серия</TableCell>
                   {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-right text-gray-600">
+                    <TableCell key={item.id} className="text-center text-gray-600">
                       {item.additionalCharacteristics.series}
                     </TableCell>
                   ))}
