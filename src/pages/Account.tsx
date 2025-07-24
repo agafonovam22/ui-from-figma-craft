@@ -92,7 +92,8 @@ const Account: React.FC = () => {
                   placeholder="E-mail"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full h-12 px-4 border border-gray-300 rounded-md text-base placeholder:text-gray-400"
+                  className="h-12 px-4 border border-gray-300 rounded-md text-base placeholder:text-gray-400"
+                  style={{ width: '589px' }}
                   required
                 />
               </div>
@@ -104,7 +105,8 @@ const Account: React.FC = () => {
                   placeholder="Пароль"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full h-12 px-4 pr-12 border border-gray-300 rounded-md text-base placeholder:text-gray-400"
+                  className="h-12 px-4 pr-12 border border-gray-300 rounded-md text-base placeholder:text-gray-400"
+                  style={{ width: '589px' }}
                   required
                 />
                 <button
