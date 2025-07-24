@@ -79,7 +79,7 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
             <ScrollArea className="flex-1 px-6">
               <div className="space-y-4 py-4">
                 {favoriteItems.map((item) => (
-                  <div key={item.id} className="relative flex items-center gap-4 p-4 bg-gray-50 rounded-lg overflow-hidden">
+                  <div key={item.id} className="relative flex items-center gap-4 p-4 bg-gray-50 rounded-lg overflow-hidden w-[443px] h-[112.09px]">
                     {/* Серая четвертинка круга в нижнем правом углу как второй слой */}
                     <div className="absolute bottom-2 right-0 w-20 h-20 bg-gray-200 rounded-tl-full"></div>
                     
