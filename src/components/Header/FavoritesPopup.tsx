@@ -83,7 +83,7 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
           <div className="flex flex-col h-full">
             {/* Favorite Items with ScrollArea */}
             <ScrollArea className="flex-1 px-5">
-              <div className="space-y-4 py-4">
+              <div className="space-y-4 pt-5">
                 {favoriteItems.map((item) => (
                   <div key={item.id} className="relative flex items-center gap-4 p-4 bg-gray-50 rounded-lg overflow-hidden w-[443px] h-[112.09px]">
                     {/* Серая четвертинка круга в нижнем правом углу как второй слой */}
@@ -118,7 +118,7 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
                     </div>
                     <button 
                       onClick={() => removeFavoriteItem(item.id)}
-                      className="p-2 border border-gray-400 rounded relative z-10 hover:bg-gray-100"
+                      className="w-10 h-10 border border-gray-400 rounded-lg relative z-10 hover:bg-gray-100 flex items-center justify-center"
                     >
                       <Trash2 className="w-4 h-4 text-gray-400" />
                     </button>
