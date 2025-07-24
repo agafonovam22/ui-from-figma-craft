@@ -396,7 +396,7 @@ const Checkout: React.FC = () => {
                     <div className="flex items-center gap-2 mb-2">
                       {selectedPayment === 'card-online' && (
                         <div className="w-4 h-4 border-2 border-[#F53B49] bg-white rounded-sm flex items-center justify-center">
-                          <div className="w-2 h-2 bg-[#F53B49] rounded-sm"></div>
+                          <div className="w-2 h-2 bg-[#F53B49]"></div>
                         </div>
                       )}
                       <span className="font-medium" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>Оплата картой онлайн</span>
@@ -419,7 +419,7 @@ const Checkout: React.FC = () => {
                     <div className="flex items-center gap-2 mb-2">
                       {selectedPayment === 'card-delivery' && (
                         <div className="w-4 h-4 border-2 border-[#F53B49] bg-white rounded-sm flex items-center justify-center">
-                          <div className="w-2 h-2 bg-[#F53B49] rounded-sm"></div>
+                          <div className="w-2 h-2 bg-[#F53B49]"></div>
                         </div>
                       )}
                       <span className="font-medium" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>Картой при получении</span>
@@ -443,7 +443,7 @@ const Checkout: React.FC = () => {
                     <div className="flex items-center gap-2 mb-2">
                       {selectedPayment === 'cash-delivery' && (
                         <div className="w-4 h-4 border-2 border-[#F53B49] bg-white rounded-sm flex items-center justify-center">
-                          <div className="w-2 h-2 bg-[#F53B49] rounded-sm"></div>
+                          <div className="w-2 h-2 bg-[#F53B49]"></div>
                         </div>
                       )}
                       <span className="font-medium" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>Наличными при получении</span>
@@ -463,7 +463,7 @@ const Checkout: React.FC = () => {
                     <div className="flex items-center gap-2 mb-2">
                       {selectedPayment === 'invoice' && (
                         <div className="w-4 h-4 border-2 border-[#F53B49] bg-white rounded-sm flex items-center justify-center">
-                          <div className="w-2 h-2 bg-[#F53B49] rounded-sm"></div>
+                          <div className="w-2 h-2 bg-[#F53B49]"></div>
                         </div>
                       )}
                       <span className="font-medium" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>Счёт на оплату</span>
@@ -481,7 +481,7 @@ const Checkout: React.FC = () => {
                     <div className="flex items-center gap-2 mb-2">
                       {selectedPayment === 'installment' && (
                         <div className="w-4 h-4 border-2 border-[#F53B49] bg-white rounded-sm flex items-center justify-center">
-                          <div className="w-2 h-2 bg-[#F53B49] rounded-sm"></div>
+                          <div className="w-2 h-2 bg-[#F53B49]"></div>
                         </div>
                       )}
                       <span className="font-medium" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>Наложенный платеж</span>
@@ -499,7 +499,7 @@ const Checkout: React.FC = () => {
                     <div className="flex items-center gap-2 mb-2">
                       {selectedPayment === 'credit' && (
                         <div className="w-4 h-4 border-2 border-[#F53B49] bg-white rounded-sm flex items-center justify-center">
-                          <div className="w-2 h-2 bg-[#F53B49] rounded-sm"></div>
+                          <div className="w-2 h-2 bg-[#F53B49]"></div>
                         </div>
                       )}
                       <span className="font-medium" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>В рассрочку</span>
