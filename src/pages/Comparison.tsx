@@ -22,6 +22,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const Comparison: React.FC = () => {
   const [showOnlyDifferences, setShowOnlyDifferences] = useState(false);
@@ -166,14 +167,18 @@ const Comparison: React.FC = () => {
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Сравнение</h1>
 
         {/* Filter Option */}
-        <div className="mb-8">
-          <label className="flex items-center gap-2 text-gray-700">
-            <input
-              type="checkbox"
-              checked={showOnlyDifferences}
-              onChange={(e) => setShowOnlyDifferences(e.target.checked)}
-              className="w-4 h-4"
-            />
+        <div className={`mb-8 p-4 rounded-lg transition-colors ${showOnlyDifferences ? 'bg-gray-100' : ''}`}>
+          <label className="flex items-center gap-3 text-gray-700 cursor-pointer">
+            <div className="relative">
+              <Checkbox 
+                checked={showOnlyDifferences}
+                onCheckedChange={(checked) => setShowOnlyDifferences(checked === true)}
+                className="data-[state=checked]:bg-gray-600 data-[state=checked]:border-gray-600"
+              />
+              {showOnlyDifferences && (
+                <div className="absolute inset-0 bg-gray-600 rounded-sm"></div>
+              )}
+            </div>
             Показывать только различия
           </label>
         </div>
@@ -273,107 +278,73 @@ const Comparison: React.FC = () => {
           {/* Основные характеристики */}
           <div>
             <h2 className="text-xl font-bold text-gray-900 mb-4">Основные характеристики</h2>
-            <Table>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700 w-48">Рама</TableCell>
-                  {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.frame}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700">Лестница</TableCell>
-                  {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.ladder}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700">Серия</TableCell>
-                  {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.series}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700">Цвет</TableCell>
-                  {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.color}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700">Ширина защитного мата, см</TableCell>
-                  {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.protectiveMatWidth}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700">Материал защитного мата</TableCell>
-                  {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.protectiveMatMaterial}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700">Диаметр батута, ft</TableCell>
-                  {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.trampolineDiameterFt}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700">Диаметр батута, см</TableCell>
-                  {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.trampolineDiameterCm}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              </TableBody>
-            </Table>
+            <div className="grid grid-cols-4 gap-6">
+              {comparisonItems.map((item) => (
+                <div key={item.id} className="bg-gray-50 rounded-lg p-4">
+                  <h3 className="font-semibold text-gray-900 mb-4 text-center border-b pb-2">Характеристики</h3>
+                  <div className="space-y-3">
+                    <div className="flex flex-col">
+                      <span className="text-xs text-gray-500 mb-1">Рама</span>
+                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.frame}</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-xs text-gray-500 mb-1">Лестница</span>
+                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.ladder}</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-xs text-gray-500 mb-1">Серия</span>
+                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.series}</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-xs text-gray-500 mb-1">Цвет</span>
+                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.color}</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-xs text-gray-500 mb-1">Ширина защитного мата, см</span>
+                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.protectiveMatWidth}</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-xs text-gray-500 mb-1">Материал защитного мата</span>
+                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.protectiveMatMaterial}</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-xs text-gray-500 mb-1">Диаметр батута, ft</span>
+                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.trampolineDiameterFt}</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-xs text-gray-500 mb-1">Диаметр батута, см</span>
+                      <span className="text-sm text-gray-900 font-medium">{item.characteristics.trampolineDiameterCm}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Доп. характеристики */}
           <div>
             <h2 className="text-xl font-bold text-gray-900 mb-4">Доп. характеристики</h2>
-            <Table>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700 w-48">Рама</TableCell>
-                  {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.additionalCharacteristics.frame}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700">Лестница</TableCell>
-                  {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.additionalCharacteristics.ladder}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700">Серия</TableCell>
-                  {comparisonItems.map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.additionalCharacteristics.series}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              </TableBody>
-            </Table>
+            <div className="grid grid-cols-4 gap-6">
+              {comparisonItems.map((item) => (
+                <div key={item.id} className="bg-gray-50 rounded-lg p-4">
+                  <h3 className="font-semibold text-gray-900 mb-4 text-center border-b pb-2">Доп. характеристики</h3>
+                  <div className="space-y-3">
+                    <div className="flex flex-col">
+                      <span className="text-xs text-gray-500 mb-1">Рама</span>
+                      <span className="text-sm text-gray-900 font-medium">{item.additionalCharacteristics.frame}</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-xs text-gray-500 mb-1">Лестница</span>
+                      <span className="text-sm text-gray-900 font-medium">{item.additionalCharacteristics.ladder}</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-xs text-gray-500 mb-1">Серия</span>
+                      <span className="text-sm text-gray-900 font-medium">{item.additionalCharacteristics.series}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
