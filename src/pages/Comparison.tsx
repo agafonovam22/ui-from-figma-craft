@@ -172,11 +172,9 @@ const Comparison: React.FC = () => {
             className="flex items-center gap-3 text-gray-700 cursor-pointer"
             onClick={() => setShowOnlyDifferences(!showOnlyDifferences)}
           >
-            <div className="relative w-4 h-4">
-              {showOnlyDifferences ? (
-                <div className="w-4 h-4 bg-gray-600 rounded-sm"></div>
-              ) : (
-                <div className="w-4 h-4 border border-gray-300 rounded-sm bg-white"></div>
+            <div className="relative w-4 h-4 border border-gray-300 rounded-[3px] bg-white flex items-center justify-center">
+              {showOnlyDifferences && (
+                <div className="w-2.5 h-2.5 bg-gray-600 rounded-[2.06px]"></div>
               )}
             </div>
             Показывать только различия
@@ -251,7 +249,7 @@ const Comparison: React.FC = () => {
           
           {/* Оценка и способ получения */}
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Оценка и способ получения</h2>
+            <h2 className="text-xl font-bold text-gray-900 mb-4 w-1/4">Оценка и способ получения</h2>
             <Table>
               <TableHeader>
                 <TableRow>
@@ -289,7 +287,7 @@ const Comparison: React.FC = () => {
 
           {/* Основные характеристики */}
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Основные характеристики</h2>
+            <h2 className="text-xl font-bold text-gray-900 mb-4 w-1/4">Основные характеристики</h2>
             <Table>
               <TableBody>
                 <TableRow>
@@ -362,7 +360,7 @@ const Comparison: React.FC = () => {
 
           {/* Доп. характеристики */}
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Доп. характеристики</h2>
+            <h2 className="text-xl font-bold text-gray-900 mb-4 w-1/4">Доп. характеристики</h2>
             <Table>
               <TableBody>
                 <TableRow>
