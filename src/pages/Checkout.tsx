@@ -404,10 +404,10 @@ const Checkout: React.FC = () => {
                       <span className="font-medium" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>Оплата картой онлайн</span>
                     </div>
                     <div className="flex gap-2 mt-3">
-                      <img src="/lovable-uploads/64e04db0-d8de-4f05-aeb4-ba846428991a.png" alt="MasterCard" className="h-6" />
-                      <img src="/lovable-uploads/d353ace6-d49a-497f-9d37-214687f3fad1.png" alt="Visa" className="h-6" />
-                      <img src="/lovable-uploads/6980b75c-3745-4f41-a47d-dfcca8349bae.png" alt="МИР" className="h-6" />
-                      <img src="/lovable-uploads/de7bb264-d943-4341-99bd-204c3ba894c8.png" alt="Халва" className="h-6" />
+                      <img src="/lovable-uploads/64e04db0-d8de-4f05-aeb4-ba846428991a.png" alt="MasterCard" className="h-5 w-auto object-contain" />
+                      <img src="/lovable-uploads/d353ace6-d49a-497f-9d37-214687f3fad1.png" alt="Visa" className="h-5 w-auto object-contain" />
+                      <img src="/lovable-uploads/6980b75c-3745-4f41-a47d-dfcca8349bae.png" alt="МИР" className="h-5 w-auto object-contain" />
+                      <img src="/lovable-uploads/de7bb264-d943-4341-99bd-204c3ba894c8.png" alt="Халва" className="h-5 w-auto object-contain" />
                     </div>
                   </div>
 
@@ -423,10 +423,10 @@ const Checkout: React.FC = () => {
                     </div>
                     <p className="text-sm text-gray-600 mb-3" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Предоплата не требуется.</p>
                     <div className="flex gap-2">
-                      <img src="/lovable-uploads/64e04db0-d8de-4f05-aeb4-ba846428991a.png" alt="MasterCard" className="h-6" />
-                      <img src="/lovable-uploads/d353ace6-d49a-497f-9d37-214687f3fad1.png" alt="Visa" className="h-6" />
-                      <img src="/lovable-uploads/6980b75c-3745-4f41-a47d-dfcca8349bae.png" alt="МИР" className="h-6" />
-                      <img src="/lovable-uploads/de7bb264-d943-4341-99bd-204c3ba894c8.png" alt="Халва" className="h-6" />
+                      <img src="/lovable-uploads/64e04db0-d8de-4f05-aeb4-ba846428991a.png" alt="MasterCard" className="h-5 w-auto object-contain" />
+                      <img src="/lovable-uploads/d353ace6-d49a-497f-9d37-214687f3fad1.png" alt="Visa" className="h-5 w-auto object-contain" />
+                      <img src="/lovable-uploads/6980b75c-3745-4f41-a47d-dfcca8349bae.png" alt="МИР" className="h-5 w-auto object-contain" />
+                      <img src="/lovable-uploads/de7bb264-d943-4341-99bd-204c3ba894c8.png" alt="Халва" className="h-5 w-auto object-contain" />
                     </div>
                   </div>
 
