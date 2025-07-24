@@ -203,23 +203,26 @@ const Comparison: React.FC = () => {
                   />
                 </div>
                 
-                <div className="text-center mb-2">
+                <div className="text-left mb-2">
                   <div className="text-green-500 text-xs mb-1">В наличии ●●○</div>
                 </div>
                 
-                <h3 className="text-sm font-medium text-gray-900 mb-2 text-center">
+                <h3 className="text-sm font-medium text-gray-900 mb-2 text-left">
                   {item.name}
                 </h3>
                 
-                <div className="flex justify-center items-center gap-1 mb-2">
+                <div className="flex items-center gap-1 mb-2">
                   {renderStars(item.rating)}
                   <span className="text-orange-400 text-sm ml-1">{item.rating}</span>
                 </div>
                 
-                <div className="text-center mb-4">
-                  <div className="flex items-center justify-center gap-2 mb-2">
+                <div className="text-left mb-4">
+                  <div className="flex items-center gap-2 mb-2">
                     <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
                       -{item.discount}%
+                    </span>
+                    <span className="text-gray-400 line-through text-sm">
+                      {item.originalPrice.toLocaleString()} ₽
                     </span>
                   </div>
                   <div className="text-xl font-bold text-gray-900">
