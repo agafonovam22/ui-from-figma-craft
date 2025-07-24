@@ -81,7 +81,7 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
                 {favoriteItems.map((item) => (
                   <div key={item.id} className="relative flex items-center gap-4 p-4 bg-gray-50 rounded-lg overflow-hidden">
                     {/* Серая четвертинка круга в нижнем правом углу как второй слой */}
-                    <div className="absolute bottom-0 right-0 w-30 h-30 bg-gray-200 rounded-tl-full"></div>
+                    <div className="absolute bottom-0 right-0 w-20 h-20 bg-gray-300 rounded-tl-full"></div>
                     
                     <img 
                       src={item.image} 
@@ -119,7 +119,7 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
             </ScrollArea>
 
             {/* Footer */}
-            <div className="border-t p-6">
+            <div className="p-6 bg-white">
               <Link to="/favorites" onClick={() => onOpenChange(false)}>
                 <Button 
                   variant="outline"
