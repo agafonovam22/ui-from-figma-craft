@@ -626,7 +626,7 @@ const Checkout: React.FC = () => {
                     <p className="text-red-500 text-sm mb-4" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Войдите для отслеживания статуса заказа</p>
                     
                     <div className="bg-gray-50 rounded-lg p-6 mb-6">
-                      <p className="text-gray-700 text-sm leading-relaxed mb-4" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                      <p className="text-gray-700 text-sm leading-tight mb-4" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                         Создание учётной записи поможет делать покупки быстрее и удобнее, 
                         не вносить одни и те же данные многократно (адрес доставки, имя, 
                         телефон и т.д.) Вы также, сможете отслеживать статус своего заказа, 
