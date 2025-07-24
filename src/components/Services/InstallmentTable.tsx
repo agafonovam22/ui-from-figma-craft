@@ -59,7 +59,7 @@ const InstallmentTable: React.FC<InstallmentTableProps> = ({ plans }) => {
         <div className="overflow-hidden mb-8">
           <Table>
             <TableHeader>
-              <TableRow className="border-b">
+              <TableRow className="border-b hover:bg-transparent">
                 <TableHead className="py-4" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>Рассрочка</TableHead>
                 <TableHead className="py-4" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>Ежемесячный платеж</TableHead>
                 <TableHead className="py-4" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>Переплата</TableHead>
