@@ -99,12 +99,20 @@ const Favorites: React.FC = () => {
                     className="w-full h-full object-cover"
                   />
                   
-                  {/* Action buttons - visible on hover */}
-                  <div className="absolute top-2 right-2 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  {/* Action buttons - always visible */}
+                  <div className="absolute top-2 right-2 flex flex-col gap-2">
                     <button className="p-1 bg-white rounded shadow hover:bg-gray-50">
                       <Heart className="w-4 h-4 text-red-500 fill-current" />
                     </button>
-                    <button className="p-1 bg-white rounded shadow hover:bg-gray-50">
+                    <button 
+                      className="p-1 bg-white rounded shadow hover:bg-gray-50"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        // Add to comparison logic here
+                        console.log('Added to comparison:', product.id);
+                      }}
+                    >
                       <BarChart3 className="w-4 h-4 text-gray-400" />
                     </button>
                   </div>
