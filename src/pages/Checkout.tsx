@@ -609,7 +609,7 @@ const Checkout: React.FC = () => {
                             {formData.acceptPrivacy && <div className="w-3 h-3 bg-black rounded-sm"></div>}
                           </div>
                         </div>
-                        <label htmlFor="privacy" className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                        <label htmlFor="privacy" className="text-sm text-gray-700 leading-tight" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                           Я принимаю условия{' '}
                           <Link to="/privacy-policy" className="text-blue-600 underline">
                             политики конфиденциальности
