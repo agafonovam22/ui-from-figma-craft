@@ -559,7 +559,7 @@ const Checkout: React.FC = () => {
                     </div>
 
                     {/* Form Fields */}
-                    <div className="space-y-4">
+                    <div className="space-y-3">
                       <div>
                         <Input
                           id="fullName"
