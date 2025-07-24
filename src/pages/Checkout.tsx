@@ -533,7 +533,7 @@ const Checkout: React.FC = () => {
                               onChange={(e) => setCustomerType(e.target.value)}
                               className="sr-only"
                             />
-                            <div className={`w-5 h-5 border-2 border-black rounded-sm flex items-center justify-center ${customerType === 'individual' ? 'bg-white' : 'bg-white'}`}>
+                            <div className={`w-5 h-5 border-2 rounded-sm flex items-center justify-center ${customerType === 'individual' ? 'border-black bg-white' : 'border-[#CECFD7] bg-white'}`}>
                               {customerType === 'individual' && <div className="w-3 h-3 bg-black rounded-sm"></div>}
                             </div>
                           </div>
@@ -549,7 +549,7 @@ const Checkout: React.FC = () => {
                               onChange={(e) => setCustomerType(e.target.value)}
                               className="sr-only"
                             />
-                            <div className={`w-5 h-5 border-2 border-black rounded-sm flex items-center justify-center ${customerType === 'legal' ? 'bg-white' : 'bg-white'}`}>
+                            <div className={`w-5 h-5 border-2 rounded-sm flex items-center justify-center ${customerType === 'legal' ? 'border-black bg-white' : 'border-[#CECFD7] bg-white'}`}>
                               {customerType === 'legal' && <div className="w-3 h-3 bg-black rounded-sm"></div>}
                             </div>
                           </div>
@@ -597,11 +597,18 @@ const Checkout: React.FC = () => {
                     {/* Privacy Policy */}
                     <div className="mt-6 space-y-4">
                       <div className="flex items-start gap-3">
-                        <Checkbox
-                          id="privacy"
-                          checked={formData.acceptPrivacy}
-                          onCheckedChange={(checked) => handleInputChange('acceptPrivacy', checked as boolean)}
-                        />
+                        <div className="relative">
+                          <input
+                            type="checkbox"
+                            id="privacy"
+                            checked={formData.acceptPrivacy}
+                            onChange={(e) => handleInputChange('acceptPrivacy', e.target.checked)}
+                            className="sr-only"
+                          />
+                          <div className={`w-5 h-5 border-2 rounded-sm flex items-center justify-center ${formData.acceptPrivacy ? 'border-black bg-white' : 'border-[#CECFD7] bg-white'}`}>
+                            {formData.acceptPrivacy && <div className="w-3 h-3 bg-black rounded-sm"></div>}
+                          </div>
+                        </div>
                         <label htmlFor="privacy" className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                           Я принимаю условия{' '}
                           <Link to="/privacy-policy" className="text-blue-600 underline">
@@ -615,11 +622,18 @@ const Checkout: React.FC = () => {
                       </div>
 
                       <div className="flex items-start gap-3">
-                        <Checkbox
-                          id="newsletter"
-                          checked={formData.subscribeNews}
-                          onCheckedChange={(checked) => handleInputChange('subscribeNews', checked as boolean)}
-                        />
+                        <div className="relative">
+                          <input
+                            type="checkbox"
+                            id="newsletter"
+                            checked={formData.subscribeNews}
+                            onChange={(e) => handleInputChange('subscribeNews', e.target.checked)}
+                            className="sr-only"
+                          />
+                          <div className={`w-5 h-5 border-2 rounded-sm flex items-center justify-center ${formData.subscribeNews ? 'border-black bg-white' : 'border-[#CECFD7] bg-white'}`}>
+                            {formData.subscribeNews && <div className="w-3 h-3 bg-black rounded-sm"></div>}
+                          </div>
+                        </div>
                         <label htmlFor="newsletter" className="text-sm text-gray-700" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                           Хочу подписаться на рассылку новостей WellFitness.
                         </label>
