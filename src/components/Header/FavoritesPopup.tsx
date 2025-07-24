@@ -65,8 +65,8 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
       </SheetTrigger>
       <SheetPortal>
         <SheetPrimitive.Content
-          className="fixed z-50 gap-4 bg-white p-0 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 w-[450px] border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right top-[120px] translate-y-0"
-          style={{ position: 'fixed', right: '60px', height: '595.26px', top: '120px', width: '450px' }}
+          className="fixed z-50 gap-4 bg-white p-0 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 w-[483px] border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right top-[120px] translate-y-0"
+          style={{ position: 'fixed', right: '60px', height: '523.26px', top: '120px', width: '483px' }}
         >
           <SheetHeader className="p-6 border-b">
             <SheetTitle className="text-2xl font-bold text-gray-900">
@@ -119,11 +119,11 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
             </ScrollArea>
 
             {/* Footer */}
-            <div className="px-6 py-5 bg-white">
+            <div className="px-6 bg-white">
               <Link to="/favorites" onClick={() => onOpenChange(false)}>
                 <Button 
                   variant="outline"
-                  className="w-full bg-white border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white py-3 text-base font-medium"
+                  className="w-[443px] h-[43px] bg-white border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white text-base font-medium"
                 >
                   Перейти в избранное
                 </Button>
