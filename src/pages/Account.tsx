@@ -56,7 +56,7 @@ const Account: React.FC = () => {
               </h1>
               
               {/* User Type Toggle - Updated Design */}
-              <div className="flex gap-2.5 mb-6" key="user-type-toggle-v2">
+              <div className="flex gap-2.5 mb-6" style={{ width: '589px' }} key="user-type-toggle-v2">
                 <button
                   type="button"
                   onClick={() => setUserType('buyer')}
