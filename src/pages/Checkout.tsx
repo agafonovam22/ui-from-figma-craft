@@ -619,39 +619,39 @@ const Checkout: React.FC = () => {
            <div className="lg:col-span-1" style={{ width: '389px', marginLeft: 'auto' }}>
              <h2 className="text-gray-900 mb-6 mt-0" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Итого</h2>
              
-               <div className="p-6 mb-6 relative" style={{ 
-                 backgroundImage: 'url(/lovable-uploads/eb63dcf2-39a6-4510-a12e-bf759d740c85.png)',
-                 backgroundSize: 'cover',
-                 backgroundPosition: 'center',
-                 backgroundRepeat: 'no-repeat',
-                 minHeight: '300px',
-                 borderRadius: '12px'
-               }}>
-                 <div className="space-y-4 mb-6">
-                  <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
-                    <span className="text-gray-600">Товары, 3 шт</span>
-                    <span className="font-medium">{total.toLocaleString()} ₽</span>
-                  </div>
-                  <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
-                    <span className="text-gray-600">Скидка</span>
-                    <span className="text-red-500 font-medium">-{discount.toLocaleString()} ₽</span>
-                  </div>
-                  <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
-                    <span className="text-gray-600">Бонусы</span>
-                    <span className="text-green-600 font-medium">+{bonuses} Б</span>
-                  </div>
-                  <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
-                    <span className="text-gray-600">Доставка</span>
-                    <span className="font-medium">Бесплатно</span>
-                  </div>
-                  <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
-                    <span className="text-gray-600">Сборка</span>
-                    <span className="font-medium">{assembly.toLocaleString()} ₽</span>
-                  </div>
-                  <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
-                    <span className="text-gray-600">Оплата</span>
-                    <span className="font-medium">Картой онлайн</span>
-                  </div>
+             <div className="bg-gray-100 rounded-t-lg p-6 mb-6 relative" style={{ 
+               borderBottom: '2px dashed #ccc',
+               borderBottomLeftRadius: '0',
+               borderBottomRightRadius: '0'
+             }}>
+               {/* Углубления по бокам снизу */}
+               <div className="absolute bottom-0 left-3 w-3 h-3 bg-white rounded-full transform translate-y-1/2"></div>
+               <div className="absolute bottom-0 right-3 w-3 h-3 bg-white rounded-full transform translate-y-1/2"></div>
+               
+               <div className="space-y-4 mb-6">
+                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                   <span className="text-gray-600">Товары, 3 шт</span>
+                   <span className="font-medium">{total.toLocaleString()} ₽</span>
+                 </div>
+                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                   <span className="text-gray-600">Скидка</span>
+                   <span className="text-red-500 font-medium">-{discount.toLocaleString()} ₽</span>
+                 </div>
+                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                   <span className="text-gray-600">Бонусы</span>
+                   <span className="text-green-600 font-medium">+{bonuses} Б</span>
+                 </div>
+                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                   <span className="text-gray-600">Доставка</span>
+                   <span className="font-medium">Бесплатно</span>
+                 </div>
+                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                   <span className="text-gray-600">Сборка</span>
+                   <span className="font-medium">{assembly.toLocaleString()} ₽</span>
+                 </div>
+                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                   <span className="text-gray-600">Оплата</span>
+                   <span className="font-medium">Картой онлайн</span>
                  </div>
                  <div className="border-t border-dashed border-gray-400 pt-4 flex justify-between" style={{ fontFamily: 'Benzin-Semibold', fontSize: '16px' }}>
                    <span>Итого</span>
@@ -673,25 +673,26 @@ const Checkout: React.FC = () => {
                      авторизация
                    </Link>
                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        
-        {/* You Viewed Section */}
-        <div className="py-16 bg-gray-50">
-          <NewProducts title="Вы смотрели" />
+               </div>
+             </div>
+           </div>
         </div>
+      </div>
 
-        {/* Bottom Banner */}
-        <div className="py-16">
-          <EmailSubscription />
-        </div>
+      {/* You Viewed Section */}
+      <div className="py-16 bg-gray-50">
+        <NewProducts title="Вы смотрели" />
+      </div>
 
-        <div className="h-[70px]"></div>
-        <Footer />
-      </main>
-    );
-  };
+      {/* Bottom Banner */}
+      <div className="py-16">
+        <EmailSubscription />
+      </div>
 
-  export default Checkout;
+      <div className="h-[70px]"></div>
+      <Footer />
+    </main>
+  );
+};
+
+export default Checkout;
