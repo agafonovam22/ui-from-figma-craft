@@ -106,7 +106,7 @@ const Checkout: React.FC = () => {
                     ? 'bg-gray-700' 
                     : 'bg-red-100'
                 }`}>
-                  <img src="/src/assets/white-truck-icon.png" alt="Delivery" className="w-6 h-6" />
+                  <img src="/src/assets/delivery-truck-white.png" alt="Delivery" className="w-6 h-6" />
                 </div>
                 <div>
                   <div className={`text-[12px] font-medium ${
