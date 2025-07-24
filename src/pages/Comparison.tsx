@@ -216,23 +216,25 @@ const Comparison: React.FC = () => {
                   <span className="text-orange-400 text-sm ml-1">{item.rating}</span>
                 </div>
                 
-                <div className="text-left mb-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
-                      -{item.discount}%
-                    </span>
-                    <span className="text-gray-400 line-through text-sm">
-                      {item.originalPrice.toLocaleString()} ₽
-                    </span>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-left">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
+                        -{item.discount}%
+                      </span>
+                      <span className="text-gray-400 line-through text-sm">
+                        {item.originalPrice.toLocaleString()} ₽
+                      </span>
+                    </div>
+                    <div className="text-xl font-bold text-gray-900">
+                      {item.price.toLocaleString()} ₽
+                    </div>
                   </div>
-                  <div className="text-xl font-bold text-gray-900">
-                    {item.price.toLocaleString()} ₽
-                  </div>
+                  
+                  <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white px-6">
+                    Купить
+                  </Button>
                 </div>
-                
-                <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white">
-                  Купить
-                </Button>
               </div>
             ))}
           </div>
