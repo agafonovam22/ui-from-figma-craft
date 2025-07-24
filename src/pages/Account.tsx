@@ -144,7 +144,7 @@ const Account: React.FC = () => {
                 Или войти с помощью
               </p>
               
-              <div className="flex gap-2.5">
+              <div className="flex gap-2.5" style={{ width: '589px' }}>
                 <button
                   onClick={() => handleSocialLogin('google')}
                   className="h-12 flex items-center justify-center gap-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
