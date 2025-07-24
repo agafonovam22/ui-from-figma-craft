@@ -7,14 +7,14 @@ import { Button } from '@/components/ui/button';
 const OfficeMap: React.FC = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const [mapboxToken, setMapboxToken] = useState('');
-  const [tokenEntered, setTokenEntered] = useState(false);
+  const mapboxToken = 'pk.eyJ1Ijoid2VsbGZpdG5lc3MiLCJhIjoiY21kaDR0aGw2MDAwZzJqc2R5eGN3ZTRiaCJ9.Q5YCu1Mnrw4S6W1scjYRlg';
+  const tokenEntered = true;
 
   // Coordinates for the office: Москва, ул. Маршала Прошлякова, д. 30, офис 407, БЦ "Зенит Плаза"
   const officeCoordinates: [number, number] = [37.3877, 55.7588];
 
   useEffect(() => {
-    if (!mapContainer.current || !tokenEntered || !mapboxToken) return;
+    if (!mapContainer.current) return;
 
     // Initialize map
     mapboxgl.accessToken = mapboxToken;
@@ -53,39 +53,8 @@ const OfficeMap: React.FC = () => {
     return () => {
       map.current?.remove();
     };
-  }, [tokenEntered, mapboxToken]);
+  }, []);
 
-  if (!tokenEntered) {
-    return (
-      <div className="bg-gray-100 flex flex-col items-center justify-center h-full p-4 rounded-lg">
-        <h4 className="text-md font-semibold text-gray-900 mb-2">
-          Карта офиса
-        </h4>
-        <p className="text-xs text-gray-600 mb-3 text-center">
-          Получите токен на{' '}
-          <a href="https://mapbox.com/" target="_blank" rel="noopener noreferrer" className="text-[#F53B49] hover:underline">
-            mapbox.com
-          </a>
-        </p>
-        <div className="flex gap-1 w-full">
-          <Input
-            type="text"
-            placeholder="Mapbox токен..."
-            value={mapboxToken}
-            onChange={(e) => setMapboxToken(e.target.value)}
-            className="flex-1 text-xs h-8"
-          />
-          <Button
-            onClick={() => setTokenEntered(true)}
-            disabled={!mapboxToken.trim()}
-            className="bg-[#F53B49] hover:bg-[#e63946] text-white text-xs h-8 px-2"
-          >
-            OK
-          </Button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="w-full h-full">

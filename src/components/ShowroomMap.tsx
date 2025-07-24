@@ -7,14 +7,14 @@ import { Button } from '@/components/ui/button';
 const ShowroomMap: React.FC = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const [mapboxToken, setMapboxToken] = useState('');
-  const [tokenEntered, setTokenEntered] = useState(false);
+  const mapboxToken = 'pk.eyJ1Ijoid2VsbGZpdG5lc3MiLCJhIjoiY21kaDR0aGw2MDAwZzJqc2R5eGN3ZTRiaCJ9.Q5YCu1Mnrw4S6W1scjYRlg';
+  const tokenEntered = true;
 
   // Coordinates for the showroom: Москва, ТЦ Капитолий, Правобережная улица, 1Б
   const showroomCoordinates: [number, number] = [37.5304, 55.8647];
 
   useEffect(() => {
-    if (!mapContainer.current || !tokenEntered || !mapboxToken) return;
+    if (!mapContainer.current) return;
 
     // Initialize map
     mapboxgl.accessToken = mapboxToken;
@@ -54,39 +54,8 @@ const ShowroomMap: React.FC = () => {
     return () => {
       map.current?.remove();
     };
-  }, [tokenEntered, mapboxToken]);
+  }, []);
 
-  if (!tokenEntered) {
-    return (
-      <div className="bg-gray-100 flex flex-col items-center justify-center h-full p-4">
-        <h3 className="text-lg font-semibold text-gray-900 mb-2">
-          Карта шоу-рума
-        </h3>
-        <p className="text-xs text-gray-600 mb-3 text-center">
-          Получите токен на{' '}
-          <a href="https://mapbox.com/" target="_blank" rel="noopener noreferrer" className="text-[#F53B49] hover:underline">
-            mapbox.com
-          </a>
-        </p>
-        <div className="flex gap-1 w-full">
-          <Input
-            type="text"
-            placeholder="Mapbox токен..."
-            value={mapboxToken}
-            onChange={(e) => setMapboxToken(e.target.value)}
-            className="flex-1 text-xs h-8"
-          />
-          <Button
-            onClick={() => setTokenEntered(true)}
-            disabled={!mapboxToken.trim()}
-            className="bg-[#F53B49] hover:bg-[#e63946] text-white text-xs h-8 px-2"
-          >
-            OK
-          </Button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="relative w-full h-full">
