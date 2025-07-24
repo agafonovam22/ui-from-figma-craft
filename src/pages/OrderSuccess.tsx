@@ -40,14 +40,16 @@ const OrderSuccess: React.FC = () => {
         </Breadcrumb>
 
         {/* Success Message */}
-        <div className="bg-gray-100 h-[405px] flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12 px-8 lg:px-16">
+        <div className="bg-gray-100 h-[405px] flex flex-col items-center justify-center text-center px-8">
           {/* Success Icon */}
-          <div className="w-32 h-32 border-4 border-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-            <Check className="w-16 h-16 text-red-500" strokeWidth={3} />
-          </div>
+          <img 
+            src="/lovable-uploads/2120adc6-229a-4e1a-bfc7-04a00ff57bcc.png" 
+            alt="Success" 
+            className="w-32 h-32 mb-8"
+          />
 
           {/* Content */}
-          <div className="flex-1">
+          <div>
             {/* Success Text */}
             <div className="mb-6">
               <h1 className="text-gray-900 mb-1" style={{ fontFamily: 'Benzin-Medium', fontSize: '32px' }}>Спасибо!</h1>
@@ -64,7 +66,7 @@ const OrderSuccess: React.FC = () => {
             </div>
 
             {/* Order Details */}
-            <div className="mb-8 text-gray-600 max-w-2xl leading-tight">
+            <div className="mb-8 text-gray-600 leading-tight">
               <p className="mb-1" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                 Ваша заявка №{orderNumber} от {new Date().toLocaleDateString('ru-RU')} оформлена
               </p>
