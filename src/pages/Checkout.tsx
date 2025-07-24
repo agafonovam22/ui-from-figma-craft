@@ -532,7 +532,7 @@ const Checkout: React.FC = () => {
                             onChange={(e) => setCustomerType(e.target.value)}
                             className="w-4 h-4"
                           />
-                          <span className="text-gray-900">Физическое лицо</span>
+                          <span className="text-gray-900" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Физическое лицо</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer">
                           <input
@@ -543,7 +543,7 @@ const Checkout: React.FC = () => {
                             onChange={(e) => setCustomerType(e.target.value)}
                             className="w-4 h-4"
                           />
-                          <span className="text-gray-900">Юридическое лицо</span>
+                          <span className="text-gray-900" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Юридическое лицо</span>
                         </label>
                       </div>
                     </div>
@@ -551,7 +551,7 @@ const Checkout: React.FC = () => {
                     {/* Form Fields */}
                     <div className="space-y-4">
                       <div>
-                        <Label htmlFor="fullName" className="text-gray-700 mb-2 block">ФИО</Label>
+                        <Label htmlFor="fullName" className="text-gray-700 mb-2 block" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>ФИО</Label>
                         <Input
                           id="fullName"
                           type="text"
@@ -563,7 +563,7 @@ const Checkout: React.FC = () => {
                       </div>
 
                       <div>
-                        <Label htmlFor="phone" className="text-gray-700 mb-2 block">Телефон</Label>
+                        <Label htmlFor="phone" className="text-gray-700 mb-2 block" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Телефон</Label>
                         <Input
                           id="phone"
                           type="tel"
@@ -575,7 +575,7 @@ const Checkout: React.FC = () => {
                       </div>
 
                       <div>
-                        <Label htmlFor="email" className="text-gray-700 mb-2 block">E-mail</Label>
+                        <Label htmlFor="email" className="text-gray-700 mb-2 block" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>E-mail</Label>
                         <Input
                           id="email"
                           type="email"
@@ -595,7 +595,7 @@ const Checkout: React.FC = () => {
                           checked={formData.acceptPrivacy}
                           onCheckedChange={(checked) => handleInputChange('acceptPrivacy', checked as boolean)}
                         />
-                        <label htmlFor="privacy" className="text-sm text-gray-700 leading-relaxed">
+                        <label htmlFor="privacy" className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                           Я принимаю условия{' '}
                           <Link to="/privacy-policy" className="text-blue-600 underline">
                             политики конфиденциальности
@@ -613,7 +613,7 @@ const Checkout: React.FC = () => {
                           checked={formData.subscribeNews}
                           onCheckedChange={(checked) => handleInputChange('subscribeNews', checked as boolean)}
                         />
-                        <label htmlFor="newsletter" className="text-sm text-gray-700">
+                        <label htmlFor="newsletter" className="text-sm text-gray-700" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                           Хочу подписаться на рассылку новостей WellFitness.
                         </label>
                       </div>
@@ -623,10 +623,10 @@ const Checkout: React.FC = () => {
                   {/* Right Column - Account Info */}
                   <div>
                     <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Есть личный кабинет?</h2>
-                    <p className="text-red-500 text-sm mb-4">Войдите для отслеживания статуса заказа</p>
+                    <p className="text-red-500 text-sm mb-4" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Войдите для отслеживания статуса заказа</p>
                     
                     <div className="bg-gray-50 rounded-lg p-6 mb-6">
-                      <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                      <p className="text-gray-700 text-sm leading-relaxed mb-4" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                         Создание учётной записи поможет делать покупки быстрее и удобнее, 
                         не вносить одни и те же данные многократно (адрес доставки, имя, 
                         телефон и т.д.) Вы также, сможете отслеживать статус своего заказа, 
