@@ -51,8 +51,8 @@
     --radius: 0.5rem;
 
     /* Custom design tokens */
-    --brand-red: 354 84% 58%;
-    --brand-red-hover: 354 84% 49%;
+    --brand-red: 354 100% 58%;
+    --brand-red-hover: 354 100% 49%;
     --dark-bg: 222 24% 9%;
     --medium-bg: 220 14% 19%;
     --light-bg: 220 14% 30%;
