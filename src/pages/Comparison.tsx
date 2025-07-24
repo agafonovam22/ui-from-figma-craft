@@ -256,7 +256,7 @@ const Comparison: React.FC = () => {
                   <TableHead className="w-48 text-left">
                     <div className="flex justify-between items-center">
                       <span>Оценка покупателей</span>
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center gap-1 text-right">
                         {renderStars(comparisonItems[0].rating)}
                         <span className="text-orange-400 text-sm ml-1">{comparisonItems[0].rating}/5</span>
                       </div>
@@ -277,7 +277,7 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Способ получения</span>
-                      <span className="text-gray-600 font-normal">Доставка, самовывоз</span>
+                      <span className="text-gray-600 font-normal text-right">Доставка, самовывоз</span>
                     </div>
                   </TableCell>
                   {comparisonItems.slice(1).map((item) => (
@@ -290,7 +290,7 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Оплата</span>
-                      <span className="text-gray-600 font-normal">Онлайн, рассрочка, карта</span>
+                      <span className="text-gray-600 font-normal text-right">Онлайн, рассрочка, карта</span>
                     </div>
                   </TableCell>
                   {comparisonItems.slice(1).map((item) => (
@@ -312,7 +312,7 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 w-48 text-left">
                     <div className="flex justify-between items-center">
                       <span>Рама</span>
-                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.frame}</span>
+                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.frame}</span>
                     </div>
                   </TableCell>
                   {comparisonItems.slice(1).map((item) => (
@@ -325,7 +325,7 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Лестница</span>
-                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.ladder}</span>
+                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.ladder}</span>
                     </div>
                   </TableCell>
                   {comparisonItems.slice(1).map((item) => (
@@ -338,7 +338,7 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Серия</span>
-                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.series}</span>
+                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.series}</span>
                     </div>
                   </TableCell>
                   {comparisonItems.slice(1).map((item) => (
@@ -351,7 +351,7 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Цвет</span>
-                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.color}</span>
+                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.color}</span>
                     </div>
                   </TableCell>
                   {comparisonItems.slice(1).map((item) => (
@@ -364,7 +364,7 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Ширина защитного мата, см</span>
-                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.protectiveMatWidth}</span>
+                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.protectiveMatWidth}</span>
                     </div>
                   </TableCell>
                   {comparisonItems.slice(1).map((item) => (
@@ -377,7 +377,7 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Материал защитного мата</span>
-                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.protectiveMatMaterial}</span>
+                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.protectiveMatMaterial}</span>
                     </div>
                   </TableCell>
                   {comparisonItems.slice(1).map((item) => (
@@ -390,7 +390,7 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Диаметр батута, ft</span>
-                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.trampolineDiameterFt}</span>
+                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.trampolineDiameterFt}</span>
                     </div>
                   </TableCell>
                   {comparisonItems.slice(1).map((item) => (
@@ -403,7 +403,7 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Диаметр батута, см</span>
-                      <span className="text-gray-600 font-normal">{comparisonItems[0].characteristics.trampolineDiameterCm}</span>
+                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.trampolineDiameterCm}</span>
                     </div>
                   </TableCell>
                   {comparisonItems.slice(1).map((item) => (
@@ -425,7 +425,7 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 w-48 text-left">
                     <div className="flex justify-between items-center">
                       <span>Рама</span>
-                      <span className="text-gray-600 font-normal">{comparisonItems[0].additionalCharacteristics.frame}</span>
+                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].additionalCharacteristics.frame}</span>
                     </div>
                   </TableCell>
                   {comparisonItems.slice(1).map((item) => (
@@ -438,7 +438,7 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Лестница</span>
-                      <span className="text-gray-600 font-normal">{comparisonItems[0].additionalCharacteristics.ladder}</span>
+                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].additionalCharacteristics.ladder}</span>
                     </div>
                   </TableCell>
                   {comparisonItems.slice(1).map((item) => (
@@ -451,7 +451,7 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Серия</span>
-                      <span className="text-gray-600 font-normal">{comparisonItems[0].additionalCharacteristics.series}</span>
+                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].additionalCharacteristics.series}</span>
                     </div>
                   </TableCell>
                   {comparisonItems.slice(1).map((item) => (
