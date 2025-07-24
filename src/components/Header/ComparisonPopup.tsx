@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { X, Trash2 } from 'lucide-react';
 import {
@@ -31,7 +31,7 @@ interface ComparisonPopupProps {
 
 const ComparisonPopup: React.FC<ComparisonPopupProps> = ({ children, isOpen, onOpenChange }) => {
   // Mock data for comparison items
-  const comparisonItems: ComparisonItem[] = [
+  const initialComparisonItems: ComparisonItem[] = [
     {
       id: 1,
       name: "Гребной тренажер CardioPowe PRO CR300",
@@ -58,6 +58,12 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({ children, isOpen, onO
     }
   ];
 
+  const [comparisonItems, setComparisonItems] = useState<ComparisonItem[]>(initialComparisonItems);
+
+  const removeComparisonItem = (id: number) => {
+    setComparisonItems(prev => prev.filter(item => item.id !== id));
+  };
+
   return (
     <Sheet open={isOpen} onOpenChange={onOpenChange}>
       <SheetTrigger asChild>
@@ -79,13 +85,15 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({ children, isOpen, onO
             <ScrollArea className="flex-1 px-5">
               <div className="space-y-4 pt-5">
                 {comparisonItems.map((item) => (
-                  <div key={item.id} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+                  <div key={item.id} className="relative flex items-center gap-4 p-4 bg-gray-50 rounded-lg overflow-hidden w-[410px] h-[112.09px]">
+                    {/* Серая четвертинка круга в нижнем правом углу как второй слой */}
+                    <div className="absolute bottom-2 right-0 w-20 h-20 bg-gray-200 rounded-tl-full"></div>
                     <img 
                       src={item.image} 
                       alt={item.name}
-                      className="w-16 h-16 object-cover rounded"
+                      className="w-16 h-16 object-cover rounded relative z-10"
                     />
-                    <div className="flex-1">
+                    <div className="flex-1 relative z-10">
                       <h3 className="text-sm font-medium text-gray-900 line-clamp-2 mb-2">
                         {item.name}
                       </h3>
@@ -95,19 +103,22 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({ children, isOpen, onO
                             -{item.discount}%
                           </span>
                         )}
-                      </div>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="text-lg font-bold text-gray-900">
-                          {item.price.toLocaleString()} ₽
-                        </span>
                         {item.originalPrice && (
                           <span className="text-gray-400 line-through text-sm">
                             {item.originalPrice.toLocaleString()} ₽
                           </span>
                         )}
                       </div>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="text-lg font-bold text-gray-900">
+                          {item.price.toLocaleString()} ₽
+                        </span>
+                      </div>
                     </div>
-                    <button className="w-10 h-10 border border-gray-400 rounded-lg hover:bg-gray-100 flex items-center justify-center">
+                    <button 
+                      onClick={() => removeComparisonItem(item.id)}
+                      className="w-10 h-10 border border-gray-400 rounded-lg relative z-10 hover:bg-gray-100 flex items-center justify-center"
+                    >
                       <Trash2 className="w-4 h-4 text-gray-400" />
                     </button>
                   </div>
