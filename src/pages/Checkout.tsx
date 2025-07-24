@@ -551,7 +551,6 @@ const Checkout: React.FC = () => {
                     {/* Form Fields */}
                     <div className="space-y-4">
                       <div>
-                        <Label htmlFor="fullName" className="text-gray-700 mb-2 block" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>ФИО</Label>
                         <Input
                           id="fullName"
                           type="text"
@@ -563,7 +562,6 @@ const Checkout: React.FC = () => {
                       </div>
 
                       <div>
-                        <Label htmlFor="phone" className="text-gray-700 mb-2 block" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Телефон</Label>
                         <Input
                           id="phone"
                           type="tel"
@@ -575,7 +573,6 @@ const Checkout: React.FC = () => {
                       </div>
 
                       <div>
-                        <Label htmlFor="email" className="text-gray-700 mb-2 block" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>E-mail</Label>
                         <Input
                           id="email"
                           type="email"
