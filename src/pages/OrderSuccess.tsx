@@ -40,12 +40,12 @@ const OrderSuccess: React.FC = () => {
         </Breadcrumb>
 
         {/* Success Message */}
-        <div className="bg-gray-100 h-[405px] flex flex-col items-center justify-center text-center px-8">
+        <div className="bg-gray-100 h-[405px] flex flex-row items-center justify-center gap-8 px-8">
           {/* Success Icon */}
           <img 
             src="/lovable-uploads/2120adc6-229a-4e1a-bfc7-04a00ff57bcc.png" 
             alt="Success" 
-            className="w-32 h-32 mb-8"
+            className="w-32 h-32 flex-shrink-0"
           />
 
           {/* Content */}
