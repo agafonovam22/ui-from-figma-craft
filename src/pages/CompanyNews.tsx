@@ -120,7 +120,7 @@ const CompanyNews: React.FC = () => {
       case 'large':
         return 'col-span-2 row-span-2';
       case 'medium':
-        return 'col-span-2 row-span-1';
+        return 'col-span-1 row-span-1';
       case 'small':
       default:
         return 'col-span-1 row-span-1';
@@ -130,12 +130,12 @@ const CompanyNews: React.FC = () => {
   const getImageHeight = (size: string) => {
     switch (size) {
       case 'large':
-        return 'h-64';
+        return 'h-48';
       case 'medium':
         return 'h-32';
       case 'small':
       default:
-        return 'h-24';
+        return 'h-32';
     }
   };
 
@@ -168,12 +168,12 @@ const CompanyNews: React.FC = () => {
           <h1 className="text-3xl font-bold mb-8">Новости и блог</h1>
 
           {/* News Grid */}
-          <div className="grid grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-3 gap-6 mb-12">
             {newsItems.map((item) => (
               <Link
                 key={item.id}
                 to={`/news/${item.slug}`}
-                className={`${getCardClasses(item.size)} group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer`}
+                className={`${getCardClasses(item.size)} group bg-card rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer`}
               >
                 <div className="relative">
                   <img
@@ -183,21 +183,21 @@ const CompanyNews: React.FC = () => {
                   />
                   
                   {/* Category Badge */}
-                  <div className={`absolute top-3 left-3 ${item.categoryColor} text-white px-2 py-1 rounded text-xs font-medium`}>
+                  <div className={`absolute top-4 left-4 ${item.categoryColor} text-white px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide`}>
                     {item.category}
                   </div>
                 </div>
                 
-                <div className="p-4">
-                  <div className="text-xs text-muted-foreground mb-2">
+                <div className="p-6">
+                  <div className="text-sm text-muted-foreground mb-3">
                     {item.date}
                   </div>
                   
-                  <h3 className="font-semibold text-sm mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                  <h3 className="font-semibold text-lg mb-3 group-hover:text-primary transition-colors line-clamp-2 leading-tight">
                     {item.title}
                   </h3>
                   
-                  <p className="text-xs text-muted-foreground line-clamp-3">
+                  <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
