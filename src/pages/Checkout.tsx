@@ -94,19 +94,19 @@ const Checkout: React.FC = () => {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
             {/* Steps */}
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex flex-col gap-4 mb-8">
               {/* Step 1 - Доставка */}
-              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 ${
+              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 w-full ${
                 currentStep === 1 
                   ? 'bg-gray-900 border-gray-900' 
                   : 'bg-white border-gray-200'
-              }`}>
+              }`} style={{ fontFamily: 'Manrope', fontSize: '14px' }}>
                 <div className={`p-3 rounded-lg ${
                   currentStep === 1 
                     ? 'bg-gray-700' 
                     : 'bg-red-100'
                 }`}>
-                  <img src="/lovable-uploads/805592b4-5f17-4e65-9c8d-8e383bd65a1f.png" alt="Delivery" className="w-6 h-6" />
+                  <img src="/lovable-uploads/bf54f166-d7d9-4643-b90c-db8a3354dea7.png" alt="Delivery" className="w-6 h-6" />
                 </div>
                 <div>
                   <div className={`text-[12px] font-medium ${
@@ -127,11 +127,11 @@ const Checkout: React.FC = () => {
               </div>
               
               {/* Step 2 - Способ оплаты */}
-              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 ${
+              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 w-full ${
                 currentStep === 2 
                   ? 'bg-gray-900 border-gray-900' 
                   : 'bg-white border-gray-200'
-              }`}>
+              }`} style={{ fontFamily: 'Manrope', fontSize: '14px' }}>
                 <div className={`p-3 rounded-lg ${
                   currentStep === 2 
                     ? 'bg-gray-700' 
@@ -158,11 +158,11 @@ const Checkout: React.FC = () => {
               </div>
               
               {/* Step 3 - Ваши данные */}
-              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 ${
+              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 w-full ${
                 currentStep === 3 
                   ? 'bg-gray-900 border-gray-900' 
                   : 'bg-white border-gray-200'
-              }`}>
+              }`} style={{ fontFamily: 'Manrope', fontSize: '14px' }}>
                 <div className={`p-3 rounded-lg ${
                   currentStep === 3 
                     ? 'bg-gray-700' 
