@@ -61,7 +61,7 @@ const InstallmentTable: React.FC<InstallmentTableProps> = ({ plans }) => {
             <TableHeader>
               <TableRow className="border-b hover:bg-transparent">
                 <TableHead className="py-4" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>Рассрочка</TableHead>
-                <TableHead className="py-4" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>Ежемесячный платеж</TableHead>
+                <TableHead className="py-4 pl-16" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>Ежемесячный платеж</TableHead>
                 <TableHead className="py-4" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>Переплата</TableHead>
                 <TableHead className="py-4" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>Срок</TableHead>
                 <TableHead className="py-4 text-right" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}></TableHead>
@@ -90,7 +90,7 @@ const InstallmentTable: React.FC<InstallmentTableProps> = ({ plans }) => {
                       </div>
                     </div>
                   </TableCell>
-                  <TableCell className="py-6" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>{plan.monthlyPayment}</TableCell>
+                  <TableCell className="py-6 pl-16" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>{plan.monthlyPayment}</TableCell>
                   <TableCell className="py-6" style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#111827' }}>{plan.overpayment}</TableCell>
                   <TableCell className="py-6" style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#111827' }}>{plan.term}</TableCell>
                   <TableCell className="py-6 text-right">
