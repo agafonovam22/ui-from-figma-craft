@@ -80,15 +80,15 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
               <div className="space-y-4 py-4">
                 {favoriteItems.map((item) => (
                   <div key={item.id} className="relative flex items-center gap-4 p-4 bg-gray-50 rounded-lg overflow-hidden">
-                    {/* Серая четвертинка круга в нижнем правом углу как фон */}
-                    <div className="absolute bottom-0 right-0 w-30 h-30 bg-gray-200 rounded-tl-full -z-10"></div>
+                    {/* Серая четвертинка круга в нижнем правом углу как второй слой */}
+                    <div className="absolute bottom-0 right-0 w-30 h-30 bg-gray-200 rounded-tl-full"></div>
                     
                     <img 
                       src={item.image} 
                       alt={item.name}
-                      className="w-16 h-16 object-cover rounded"
+                      className="w-16 h-16 object-cover rounded relative z-10"
                     />
-                    <div className="flex-1">
+                    <div className="flex-1 relative z-10">
                       <h3 className="text-sm font-medium text-gray-900 line-clamp-2 mb-2">
                         {item.name}
                       </h3>
@@ -98,19 +98,19 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
                             -{item.discount}%
                           </span>
                         )}
-                      </div>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="text-lg font-bold text-gray-900">
-                          {item.price.toLocaleString()} ₽
-                        </span>
                         {item.originalPrice && (
                           <span className="text-gray-400 line-through text-sm">
                             {item.originalPrice.toLocaleString()} ₽
                           </span>
                         )}
                       </div>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="text-lg font-bold text-gray-900">
+                          {item.price.toLocaleString()} ₽
+                        </span>
+                      </div>
                     </div>
-                    <button className="p-2 hover:bg-gray-200 rounded">
+                    <button className="p-2 hover:bg-gray-200 rounded relative z-10">
                       <Trash2 className="w-4 h-4 text-gray-400" />
                     </button>
                   </div>
