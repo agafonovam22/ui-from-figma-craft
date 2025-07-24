@@ -241,16 +241,12 @@ const About: React.FC = () => {
               >
                 Наши проекты
               </button>
-              <button 
-                onClick={() => setActiveTab('news')}
-                className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
-                  activeTab === 'news' 
-                    ? 'bg-[#F53B49] text-white' 
-                    : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
-                }`}
+              <Link 
+                to="/company-news"
+                className="px-6 py-1.5 rounded-xl text-base font-benzin transition-colors border border-gray-300 text-gray-700 hover:bg-gray-50"
               >
                 Новости
-              </button>
+              </Link>
             </div>
           </div>
         </section>
