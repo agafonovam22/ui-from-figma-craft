@@ -96,93 +96,105 @@ const Checkout: React.FC = () => {
             {/* Steps */}
             <div className="flex items-center gap-4 mb-8">
               {/* Step 1 - Доставка */}
-              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 w-[225px] ${
+              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 ${
                 currentStep === 1 
                   ? 'bg-gray-900 border-gray-900' 
                   : 'bg-white border-gray-200'
-              }`} style={{ fontFamily: 'Manrope', fontSize: '14px' }}>
+              }`}>
                 <div className={`p-3 rounded-lg ${
                   currentStep === 1 
                     ? 'bg-gray-700' 
                     : 'bg-red-100'
                 }`}>
-                  <img src="/src/assets/delivery-truck-white.png" alt="Delivery" className="w-6 h-6" />
-                </div>
-                <div>
-                  <div className={`text-[12px] font-medium ${
+                  <Truck className={`w-6 h-6 ${
                     currentStep === 1 
                       ? 'text-white' 
                       : 'text-red-500'
-                  }`} style={{ fontFamily: 'Manrope' }}>
+                  }`} />
+                </div>
+                <div>
+                  <div className={`text-sm font-medium ${
+                    currentStep === 1 
+                      ? 'text-white' 
+                      : 'text-red-500'
+                  }`}>
                     ШАГ 1
                   </div>
-                  <div className={`text-[14px] font-semibold ${
+                  <div className={`font-semibold ${
                     currentStep === 1 
                       ? 'text-white' 
                       : 'text-gray-900'
-                  }`} style={{ fontFamily: 'Manrope' }}>
+                  }`}>
                     Доставка
                   </div>
                 </div>
               </div>
               
               {/* Step 2 - Способ оплаты */}
-              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 w-[225px] ${
+              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 ${
                 currentStep === 2 
                   ? 'bg-gray-900 border-gray-900' 
                   : 'bg-white border-gray-200'
-              }`} style={{ fontFamily: 'Manrope', fontSize: '14px' }}>
+              }`}>
                 <div className={`p-3 rounded-lg ${
                   currentStep === 2 
                     ? 'bg-gray-700' 
                     : 'bg-red-100'
                 }`}>
-                  <img src="/lovable-uploads/7a82d345-e7f0-4f91-b14d-1e076a5e03d8.png" alt="Payment" className="w-6 h-6" />
-                </div>
-                <div>
-                  <div className={`text-[12px] font-medium ${
+                  <CreditCard className={`w-6 h-6 ${
                     currentStep === 2 
                       ? 'text-white' 
                       : 'text-red-500'
-                  }`} style={{ fontFamily: 'Manrope' }}>
+                  }`} />
+                </div>
+                <div>
+                  <div className={`text-sm font-medium ${
+                    currentStep === 2 
+                      ? 'text-white' 
+                      : 'text-red-500'
+                  }`}>
                     ШАГ 2
                   </div>
-                  <div className={`text-[14px] font-semibold ${
+                  <div className={`font-semibold ${
                     currentStep === 2 
                       ? 'text-white' 
                       : 'text-gray-900'
-                  }`} style={{ fontFamily: 'Manrope' }}>
+                  }`}>
                     Способ оплаты
                   </div>
                 </div>
               </div>
               
               {/* Step 3 - Ваши данные */}
-              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 w-[225px] ${
+              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 ${
                 currentStep === 3 
                   ? 'bg-gray-900 border-gray-900' 
                   : 'bg-white border-gray-200'
-              }`} style={{ fontFamily: 'Manrope', fontSize: '14px' }}>
+              }`}>
                 <div className={`p-3 rounded-lg ${
                   currentStep === 3 
                     ? 'bg-gray-700' 
                     : 'bg-red-100'
                 }`}>
-                  <img src="/lovable-uploads/6a8f1438-73c8-4cb8-8905-a5328effc807.png" alt="User" className="w-6 h-6" />
-                </div>
-                <div>
-                  <div className={`text-[12px] font-medium ${
+                  <User className={`w-6 h-6 ${
                     currentStep === 3 
                       ? 'text-white' 
                       : 'text-red-500'
-                  }`} style={{ fontFamily: 'Manrope' }}>
+                  }`} />
+                </div>
+                <div>
+                  <div className={`text-sm font-medium ${
+                    currentStep === 3 
+                      ? 'text-white' 
+                      : 'text-red-500'
+                  }`}>
                     ШАГ 3
                   </div>
-                  <div className={`text-[14px] font-semibold ${
+                  <div className={`font-semibold ${
                     currentStep === 3 
                       ? 'text-white' 
                       : 'text-gray-900'
-                  }`} style={{ fontFamily: 'Manrope' }}>
+                  }`}>
                     Ваши данные
                   </div>
                 </div>
