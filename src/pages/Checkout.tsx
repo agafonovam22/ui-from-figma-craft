@@ -628,14 +628,14 @@ const Checkout: React.FC = () => {
             <div className="flex gap-4">
               <Button 
                 onClick={currentStep === 3 ? handleOrderSubmit : handleNextStep}
-                className="bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 text-lg font-medium"
+                className="bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 text-lg font-medium rounded-lg"
               >
                 {currentStep === 3 ? 'Оформить заказ' : 'Далее'}
               </Button>
               <Button 
                 onClick={handlePrevStep}
                 variant="outline" 
-                className="border-gray-300 text-gray-700 px-8 py-3 text-lg font-medium"
+                className="border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white px-8 py-3 text-lg font-medium rounded-lg bg-white"
                 disabled={currentStep === 1}
               >
                 Назад
