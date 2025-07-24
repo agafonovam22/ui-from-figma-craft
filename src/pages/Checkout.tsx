@@ -206,9 +206,11 @@ const Checkout: React.FC = () => {
               <>
                 <div className="bg-white">
                   <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Способ доставки</h2>
-                  <div className="mb-4">
+                  <div className="mb-4" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                     <span className="text-gray-600">Город доставки</span>
-                    <span className="text-red-500 ml-2 font-medium">Москва</span>
+                    <button className="text-red-500 ml-2 font-medium hover:underline">
+                      Москва
+                    </button>
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
