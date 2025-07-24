@@ -385,7 +385,7 @@ const Checkout: React.FC = () => {
                   Разнообразный и богатый опыт начало повседневной работы по формированию позиции в значительной степени обуславливает создание новых предложений.
                 </p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-[10px] mb-6 p-[10px]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-[10px] mb-6">
                   {/* Card Online */}
                   <div 
                     className={`border-2 rounded-lg p-4 cursor-pointer transition-colors ${
@@ -444,7 +444,7 @@ const Checkout: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-[10px] p-[10px]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-[10px]">
                   {/* Invoice Payment */}
                   <div 
                     className={`border-2 rounded-lg p-4 cursor-pointer transition-colors ${
