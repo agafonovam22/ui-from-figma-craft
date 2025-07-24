@@ -381,7 +381,7 @@ const Checkout: React.FC = () => {
             {currentStep === 2 && (
               <div className="bg-white">
                 <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Способ оплаты</h2>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 mb-6" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                   Разнообразный и богатый опыт начало повседневной работы по формированию позиции в значительной степени обуславливает создание новых предложений.
                 </p>
                 
@@ -401,7 +401,7 @@ const Checkout: React.FC = () => {
                         onChange={() => setSelectedPayment('card-online')}
                         className="w-4 h-4"
                       />
-                      <span className="font-medium">Оплата картой онлайн</span>
+                      <span className="font-medium" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>Оплата картой онлайн</span>
                     </div>
                     <div className="flex gap-2 mt-3">
                       <img src="/lovable-uploads/mastercard-logo.png" alt="MasterCard" className="h-6" />
@@ -419,9 +419,9 @@ const Checkout: React.FC = () => {
                     onClick={() => setSelectedPayment('card-delivery')}
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="font-medium">Картой при получении</span>
+                      <span className="font-medium" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>Картой при получении</span>
                     </div>
-                    <p className="text-sm text-gray-600 mb-3">Предоплата не требуется.</p>
+                    <p className="text-sm text-gray-600 mb-3" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Предоплата не требуется.</p>
                     <div className="flex gap-2">
                       <img src="/lovable-uploads/mastercard-logo.png" alt="MasterCard" className="h-6" />
                       <img src="/lovable-uploads/visa-logo.png" alt="Visa" className="h-6" />
@@ -438,9 +438,9 @@ const Checkout: React.FC = () => {
                     onClick={() => setSelectedPayment('cash-delivery')}
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="font-medium">Наличными при получении</span>
+                      <span className="font-medium" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>Наличными при получении</span>
                     </div>
-                    <p className="text-sm text-gray-600">Предоплата не требуется</p>
+                    <p className="text-sm text-gray-600" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Предоплата не требуется</p>
                   </div>
                 </div>
 
@@ -453,9 +453,9 @@ const Checkout: React.FC = () => {
                     onClick={() => setSelectedPayment('invoice')}
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="font-medium">Счёт на оплату</span>
+                      <span className="font-medium" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>Счёт на оплату</span>
                     </div>
-                    <p className="text-sm text-gray-600">Пришлём счёт вам на почту</p>
+                    <p className="text-sm text-gray-600" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Пришлём счёт вам на почту</p>
                   </div>
 
                   {/* Installment Payment */}
@@ -466,9 +466,9 @@ const Checkout: React.FC = () => {
                     onClick={() => setSelectedPayment('installment')}
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="font-medium">Наложенный платеж</span>
+                      <span className="font-medium" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>Наложенный платеж</span>
                     </div>
-                    <p className="text-sm text-gray-600">Оплата при получении товара на почте</p>
+                    <p className="text-sm text-gray-600" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Оплата при получении товара на почте</p>
                   </div>
 
                   {/* Installment */}
@@ -479,9 +479,9 @@ const Checkout: React.FC = () => {
                     onClick={() => setSelectedPayment('credit')}
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="font-medium">В рассрочку</span>
+                      <span className="font-medium" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>В рассрочку</span>
                     </div>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-600" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                       Список <Link to="#" className="text-blue-600 underline">банков-партнеров</Link>
                     </p>
                   </div>
