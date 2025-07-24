@@ -75,6 +75,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
       <SheetPortal>
         <SheetPrimitive.Content
           className="fixed z-50 gap-4 bg-white p-0 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 w-[450px] border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right"
+          style={{ position: 'fixed', right: '60px', height: '100vh', top: '0', width: '450px' }}
         >
           <SheetHeader className="p-6 border-b">
             <SheetTitle className="text-2xl font-bold text-gray-900">
@@ -128,8 +129,8 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                 <span>{total.toLocaleString()} ₽</span>
               </div>
               
-              <div className="flex gap-3">
-                <Link to="/checkout" onClick={() => onOpenChange(false)} className="flex-1">
+              <div className="space-y-3">
+                <Link to="/checkout" onClick={() => onOpenChange(false)}>
                   <Button 
                     className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-3 text-base font-medium"
                   >
@@ -137,7 +138,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                   </Button>
                 </Link>
                 
-                <Link to="/cart" onClick={() => onOpenChange(false)} className="flex-1">
+                <Link to="/cart" onClick={() => onOpenChange(false)}>
                   <Button 
                     variant="outline" 
                     className="w-full border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white py-3 text-base font-medium"
