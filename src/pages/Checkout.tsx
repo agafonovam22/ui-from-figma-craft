@@ -216,42 +216,48 @@ const Checkout: React.FC = () => {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {/* Pickup from warehouse */}
                     <div 
-                      className={`border-2 rounded-lg p-4 cursor-pointer transition-colors ${
-                        selectedDelivery === 'pickup' ? 'border-gray-900 bg-gray-900 text-white' : 'border-gray-200'
+                      className={`border-2 rounded-lg p-6 cursor-pointer transition-colors bg-white ${
+                        selectedDelivery === 'pickup' ? 'border-red-500' : 'border-gray-200 hover:border-red-500'
                       }`}
                       onClick={() => setSelectedDelivery('pickup')}
                     >
-                      <h3 className="font-bold text-lg mb-2">Самовывоз со склада</h3>
-                      <p className="text-sm mb-3">Забрать завтра 14 июля, после 19:00 или в течение 14 дней</p>
-                      <div className={`text-2xl font-bold ${selectedDelivery === 'pickup' ? 'text-white' : 'text-gray-900'}`}>
+                      <h3 className="text-xl font-semibold mb-2 text-gray-900">Самовывоз со склада</h3>
+                      <p className="text-gray-600 mb-6">Забрать завтра 14 июля, после 19:00<br/>или в течение 14 дней</p>
+                      <div className={`px-4 py-3 rounded text-center font-medium ${
+                        selectedDelivery === 'pickup' ? 'bg-black text-white' : 'bg-gray-100 text-gray-700'
+                      }`}>
                         Бесплатно
                       </div>
                     </div>
 
                     {/* Pickup from store */}
                     <div 
-                      className={`border-2 rounded-lg p-4 cursor-pointer transition-colors ${
-                        selectedDelivery === 'store' ? 'border-gray-900 bg-gray-900 text-white' : 'border-gray-200'
+                      className={`border-2 rounded-lg p-6 cursor-pointer transition-colors bg-white ${
+                        selectedDelivery === 'store' ? 'border-red-500' : 'border-gray-200 hover:border-red-500'
                       }`}
                       onClick={() => setSelectedDelivery('store')}
                     >
-                      <h3 className="font-bold text-lg mb-2">Самовывоз с магазина</h3>
-                      <p className="text-sm mb-3">Забрать 20 июля</p>
-                      <div className={`text-2xl font-bold ${selectedDelivery === 'store' ? 'text-white' : 'text-gray-900'}`}>
+                      <h3 className="text-xl font-semibold mb-2 text-gray-900">Самовывоз с магазина</h3>
+                      <p className="text-gray-600 mb-6">Забрать 20 июля</p>
+                      <div className={`px-4 py-3 rounded text-center font-medium ${
+                        selectedDelivery === 'store' ? 'bg-black text-white' : 'bg-gray-100 text-gray-700'
+                      }`}>
                         Бесплатно
                       </div>
                     </div>
 
                     {/* Courier delivery */}
                     <div 
-                      className={`border-2 rounded-lg p-4 cursor-pointer transition-colors ${
-                        selectedDelivery === 'courier' ? 'border-gray-900 bg-gray-900 text-white' : 'border-gray-200'
+                      className={`border-2 rounded-lg p-6 cursor-pointer transition-colors bg-white ${
+                        selectedDelivery === 'courier' ? 'border-red-500' : 'border-gray-200 hover:border-red-500'
                       }`}
                       onClick={() => setSelectedDelivery('courier')}
                     >
-                      <h3 className="font-bold text-lg mb-2">Курьерская доставка</h3>
-                      <p className="text-sm mb-3">Бесплатно от 30 001 ₽</p>
-                      <div className={`text-2xl font-bold ${selectedDelivery === 'courier' ? 'text-white' : 'text-gray-900'}`}>
+                      <h3 className="text-xl font-semibold mb-2 text-gray-900">Курьерская доставка</h3>
+                      <p className="text-gray-600 mb-6">Забрать 20 июля<br/><strong>Бесплатно от 30 001 ₽</strong></p>
+                      <div className={`px-4 py-3 rounded text-center font-medium ${
+                        selectedDelivery === 'courier' ? 'bg-black text-white' : 'bg-gray-100 text-gray-700'
+                      }`}>
                         1000 ₽
                       </div>
                     </div>
