@@ -141,7 +141,7 @@ const Account: React.FC = () => {
 
             {/* Social Login */}
             <div className="mt-6">
-              <div className="flex justify-center mb-4">
+              <div className="text-center mb-4">
                 <p className="text-sm text-gray-600">
                   Или войти с помощью
                 </p>
@@ -174,7 +174,7 @@ const Account: React.FC = () => {
 
             {/* Registration Link */}
             <div className="mt-6">
-              <div className="flex justify-center mb-4">
+              <div className="text-center mb-4">
                 <p className="text-sm text-gray-600">Нет аккаунта?</p>
               </div>
               <button
