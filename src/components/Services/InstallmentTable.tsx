@@ -114,7 +114,7 @@ const InstallmentTable: React.FC<InstallmentTableProps> = ({ plans }) => {
 
         {/* Submit Button */}
         <div className="flex justify-start">
-          <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 rounded" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600' }}>
+          <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 rounded" style={{ fontFamily: 'Benzin-Regular', fontSize: '16px' }}>
             Оставить заявку
           </Button>
         </div>
