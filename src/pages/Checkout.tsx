@@ -533,7 +533,9 @@ const Checkout: React.FC = () => {
                               onChange={(e) => setCustomerType(e.target.value)}
                               className="sr-only"
                             />
-                            <div className={`w-4 h-4 border-2 ${customerType === 'individual' ? 'bg-black border-black' : 'border-gray-400'}`}></div>
+                            <div className={`w-5 h-5 border-2 border-black rounded-sm flex items-center justify-center ${customerType === 'individual' ? 'bg-white' : 'bg-white'}`}>
+                              {customerType === 'individual' && <div className="w-3 h-3 bg-black rounded-sm"></div>}
+                            </div>
                           </div>
                           <span className="text-gray-900" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Физическое лицо</span>
                         </label>
@@ -547,7 +549,9 @@ const Checkout: React.FC = () => {
                               onChange={(e) => setCustomerType(e.target.value)}
                               className="sr-only"
                             />
-                            <div className={`w-4 h-4 border-2 ${customerType === 'legal' ? 'bg-black border-black' : 'border-gray-400'}`}></div>
+                            <div className={`w-5 h-5 border-2 border-black rounded-sm flex items-center justify-center ${customerType === 'legal' ? 'bg-white' : 'bg-white'}`}>
+                              {customerType === 'legal' && <div className="w-3 h-3 bg-black rounded-sm"></div>}
+                            </div>
                           </div>
                           <span className="text-gray-900" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Юридическое лицо</span>
                         </label>
