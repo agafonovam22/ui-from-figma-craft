@@ -26,7 +26,6 @@ const ActionButton: React.FC<ButtonProps> = ({ children, variant = 'primary', on
 
 const TopMenu: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState('Москва');
-  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
 
   const navigationItems: NavigationItem[] = [
     { label: 'О компании', href: '/about' },
@@ -50,41 +49,7 @@ const TopMenu: React.FC = () => {
         
         <nav className="flex items-start gap-2 lg:gap-[25px] max-md:hidden" role="navigation" aria-label="Основная навигация">
           {navigationItems.map((item, index) => (
-            item.label === 'О компании' ? (
-              <div
-                key={index}
-                className="relative"
-                onMouseEnter={() => setIsAboutDropdownOpen(true)}
-                onMouseLeave={() => setIsAboutDropdownOpen(false)}
-              >
-                <Link
-                  to={item.href}
-                  className="text-layout-grey-nav font-benzin text-[10px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap"
-                  style={{ lineHeight: '100%' }}
-                >
-                  {item.label}
-                </Link>
-                
-                {isAboutDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-[#262631] rounded-md shadow-lg border border-[rgba(255,255,255,0.10)] z-50">
-                    <div className="py-2">
-                      <Link
-                        to="/about"
-                        className="block px-4 py-2 text-[10px] text-layout-grey-nav hover:text-white hover:bg-[rgba(255,255,255,0.05)] transition-colors"
-                      >
-                        О компании
-                      </Link>
-                      <Link
-                        to="/company-news"
-                        className="block px-4 py-2 text-[10px] text-layout-grey-nav hover:text-white hover:bg-[rgba(255,255,255,0.05)] transition-colors"
-                      >
-                        Новости
-                      </Link>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ) : item.href ? (
+            item.href ? (
               <Link
                 key={index}
                 to={item.href}
