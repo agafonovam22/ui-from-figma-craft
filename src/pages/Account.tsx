@@ -153,8 +153,8 @@ const Account: React.FC = () => {
                   className="h-12 flex items-center justify-center gap-3 border border-[#F53B49] rounded-md hover:bg-red-50 transition-colors"
                   style={{ width: '289.5px' }}
                 >
-                  <div className="w-8 h-8 bg-[#F53B49] rounded-full flex items-center justify-center">
-                    <img src="/lovable-uploads/db62b558-c880-4804-9e0c-98c2ede12b2c.png" alt="Google" className="w-4 h-4" />
+                  <div className="w-8 h-8 rounded-full overflow-hidden">
+                    <img src="/lovable-uploads/8f95678a-c44f-49fe-9db4-8f2ecf7e6d0e.png" alt="Google" className="w-full h-full object-cover" />
                   </div>
                   <span className="text-sm text-[#F53B49]">Google</span>
                 </button>
