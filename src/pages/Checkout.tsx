@@ -629,31 +629,31 @@ const Checkout: React.FC = () => {
                <div className="absolute bottom-0 right-3 w-3 h-3 bg-white rounded-full transform translate-y-1/2"></div>
                
                <div className="space-y-4 mb-6">
-                 <div className="flex justify-between text-base">
+                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                    <span className="text-gray-600">Товары, 3 шт</span>
                    <span className="font-medium">{total.toLocaleString()} ₽</span>
                  </div>
-                 <div className="flex justify-between text-base">
+                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                    <span className="text-gray-600">Скидка</span>
                    <span className="text-red-500 font-medium">-{discount.toLocaleString()} ₽</span>
                  </div>
-                 <div className="flex justify-between text-base">
+                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                    <span className="text-gray-600">Бонусы</span>
                    <span className="text-green-600 font-medium">+{bonuses} Б</span>
                  </div>
-                 <div className="flex justify-between text-base">
+                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                    <span className="text-gray-600">Доставка</span>
                    <span className="font-medium">Бесплатно</span>
                  </div>
-                 <div className="flex justify-between text-base">
+                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                    <span className="text-gray-600">Сборка</span>
                    <span className="font-medium">{assembly.toLocaleString()} ₽</span>
                  </div>
-                 <div className="flex justify-between text-base">
+                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                    <span className="text-gray-600">Оплата</span>
                    <span className="font-medium">Картой онлайн</span>
                  </div>
-                 <div className="border-t border-dashed border-gray-400 pt-4 flex justify-between text-2xl font-bold">
+                 <div className="border-t border-dashed border-gray-400 pt-4 flex justify-between" style={{ fontFamily: 'Benzin-Semibold', fontSize: '16px' }}>
                    <span>Итого</span>
                    <span>{finalTotal.toLocaleString()} ₽</span>
                  </div>
@@ -667,7 +667,7 @@ const Checkout: React.FC = () => {
                    checked={useBonuses}
                    onCheckedChange={(checked) => setUseBonuses(checked as boolean)}
                  />
-                 <label htmlFor="bonusCheckout" className="text-sm text-gray-700 leading-relaxed">
+                 <label htmlFor="bonusCheckout" className="text-gray-700 leading-relaxed" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                    Использовать бонусные баллы. Требуется{' '}
                    <Link to="/account" className="text-blue-600 underline">
                      авторизация
