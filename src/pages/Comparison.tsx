@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
-import { Trash2, ChevronRight, Check } from 'lucide-react';
+import { Trash2, ChevronRight, Check, Heart } from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -24,116 +24,130 @@ import {
 } from "@/components/ui/table";
 import { Checkbox } from "@/components/ui/checkbox";
 
+// Mock data for comparison items
+const mockComparisonItems = [
+  {
+    id: 1,
+    name: "Гребной тренажер CardioPower PRO CR300",
+    image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
+    price: 4610,
+    originalPrice: 5000,
+    discount: 15,
+    rating: 4.5,
+    reviewCount: 4,
+    inStock: true,
+    characteristics: {
+      frame: "оцинкованная сталь",
+      ladder: "есть",
+      series: "Space",
+      color: "красный/синий",
+      protectiveMatWidth: "25",
+      protectiveMatMaterial: "вспененный PP",
+      trampolineDiameterFt: "8",
+      trampolineDiameterCm: "244"
+    },
+    additionalCharacteristics: {
+      frame: "оцинкованная сталь",
+      ladder: "есть",
+      series: "Space"
+    }
+  },
+  {
+    id: 2,
+    name: "Гребной тренажер CardioPower PRO CR300",
+    image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
+    price: 4610,
+    originalPrice: 5000,
+    discount: 15,
+    rating: 4.5,
+    reviewCount: 4,
+    inStock: true,
+    characteristics: {
+      frame: "оцинкованная сталь",
+      ladder: "-",
+      series: "Space",
+      color: "красный/синий",
+      protectiveMatWidth: "25",
+      protectiveMatMaterial: "вспененный PP",
+      trampolineDiameterFt: "8",
+      trampolineDiameterCm: "244"
+    },
+    additionalCharacteristics: {
+      frame: "оцинкованная сталь",
+      ladder: "есть",
+      series: "Space"
+    }
+  },
+  {
+    id: 3,
+    name: "Гребной тренажер CardioPower PRO CR300",
+    image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
+    price: 4610,
+    originalPrice: 5000,
+    discount: 15,
+    rating: 4.5,
+    reviewCount: 4,
+    inStock: true,
+    characteristics: {
+      frame: "оцинкованная сталь",
+      ladder: "-",
+      series: "Space",
+      color: "красный/синий",
+      protectiveMatWidth: "-",
+      protectiveMatMaterial: "вспененный PP",
+      trampolineDiameterFt: "8",
+      trampolineDiameterCm: "244"
+    },
+    additionalCharacteristics: {
+      frame: "оцинкованная сталь",
+      ladder: "есть",
+      series: "Space"
+    }
+  },
+  {
+    id: 4,
+    name: "Гребной тренажер CardioPower PRO CR300",
+    image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
+    price: 4610,
+    originalPrice: 5000,
+    discount: 15,
+    rating: 4.5,
+    reviewCount: 4,
+    inStock: true,
+    characteristics: {
+      frame: "оцинкованная сталь",
+      ladder: "-",
+      series: "Space",
+      color: "-",
+      protectiveMatWidth: "25",
+      protectiveMatMaterial: "вспененный PP",
+      trampolineDiameterFt: "8",
+      trampolineDiameterCm: "-"
+    },
+    additionalCharacteristics: {
+      frame: "оцинкованная сталь",
+      ladder: "есть",
+      series: "Space"
+    }
+  }
+];
+
 const Comparison: React.FC = () => {
   const [showOnlyDifferences, setShowOnlyDifferences] = useState(false);
+  const [items, setItems] = useState(mockComparisonItems);
+  const [favorites, setFavorites] = useState<number[]>([]);
 
-  // Mock data for comparison items
-  const comparisonItems = [
-    {
-      id: 1,
-      name: "Гребной тренажер CardioPower PRO CR300",
-      image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
-      price: 4610,
-      originalPrice: 5000,
-      discount: 15,
-      rating: 4.5,
-      reviewCount: 4,
-      inStock: true,
-      characteristics: {
-        frame: "оцинкованная сталь",
-        ladder: "есть",
-        series: "Space",
-        color: "красный/синий",
-        protectiveMatWidth: "25",
-        protectiveMatMaterial: "вспененный PP",
-        trampolineDiameterFt: "8",
-        trampolineDiameterCm: "244"
-      },
-      additionalCharacteristics: {
-        frame: "оцинкованная сталь",
-        ladder: "есть",
-        series: "Space"
-      }
-    },
-    {
-      id: 2,
-      name: "Гребной тренажер CardioPower PRO CR300",
-      image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
-      price: 4610,
-      originalPrice: 5000,
-      discount: 15,
-      rating: 4.5,
-      reviewCount: 4,
-      inStock: true,
-      characteristics: {
-        frame: "оцинкованная сталь",
-        ladder: "-",
-        series: "Space",
-        color: "красный/синий",
-        protectiveMatWidth: "25",
-        protectiveMatMaterial: "вспененный PP",
-        trampolineDiameterFt: "8",
-        trampolineDiameterCm: "244"
-      },
-      additionalCharacteristics: {
-        frame: "оцинкованная сталь",
-        ladder: "есть",
-        series: "Space"
-      }
-    },
-    {
-      id: 3,
-      name: "Гребной тренажер CardioPower PRO CR300",
-      image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
-      price: 4610,
-      originalPrice: 5000,
-      discount: 15,
-      rating: 4.5,
-      reviewCount: 4,
-      inStock: true,
-      characteristics: {
-        frame: "оцинкованная сталь",
-        ladder: "-",
-        series: "Space",
-        color: "красный/синий",
-        protectiveMatWidth: "-",
-        protectiveMatMaterial: "вспененный PP",
-        trampolineDiameterFt: "8",
-        trampolineDiameterCm: "244"
-      },
-      additionalCharacteristics: {
-        frame: "оцинкованная сталь",
-        ladder: "есть",
-        series: "Space"
-      }
-    },
-    {
-      id: 4,
-      name: "Гребной тренажер CardioPower PRO CR300",
-      image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
-      price: 4610,
-      originalPrice: 5000,
-      discount: 15,
-      rating: 4.5,
-      reviewCount: 4,
-      inStock: true,
-      characteristics: {
-        frame: "оцинкованная сталь",
-        ladder: "-",
-        series: "Space",
-        color: "-",
-        protectiveMatWidth: "25",
-        protectiveMatMaterial: "вспененный PP",
-        trampolineDiameterFt: "8",
-        trampolineDiameterCm: "-"
-      },
-      additionalCharacteristics: {
-        frame: "оцинкованная сталь",
-        ladder: "есть",
-        series: "Space"
-      }
-    }
-  ];
+  const handleRemoveItem = (itemId: number) => {
+    setItems(items.filter(item => item.id !== itemId));
+  };
+
+  const handleToggleFavorite = (itemId: number) => {
+    setFavorites(prev => 
+      prev.includes(itemId) 
+        ? prev.filter(id => id !== itemId)
+        : [...prev, itemId]
+    );
+  };
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
@@ -184,16 +198,33 @@ const Comparison: React.FC = () => {
         {/* Products Row with Vertical Dividers */}
         <div className="relative mb-8">
           <div className="grid grid-cols-4 gap-6">
-            {comparisonItems.map((item, index) => (
+            {items.map((item, index) => (
               <div key={item.id} className="bg-gray-50 rounded-lg p-4 relative">
                 <div className="absolute top-2 left-2">
                   <span className="bg-green-500 text-white text-xs px-2 py-1 rounded">
                     НОВИНКА
                   </span>
                 </div>
-                <button className="absolute top-2 right-2 p-1 hover:bg-gray-200 rounded">
-                  <Trash2 className="w-4 h-4 text-gray-400" />
-                </button>
+                <div className="absolute top-2 right-2 flex flex-col gap-1">
+                  <button 
+                    onClick={() => handleRemoveItem(item.id)}
+                    className="p-1 hover:bg-gray-200 rounded"
+                  >
+                    <Trash2 className="w-4 h-4 text-gray-400" />
+                  </button>
+                  <button 
+                    onClick={() => handleToggleFavorite(item.id)}
+                    className="p-1 hover:bg-gray-200 rounded"
+                  >
+                    <Heart 
+                      className={`w-4 h-4 ${
+                        favorites.includes(item.id) 
+                          ? 'text-red-500 fill-red-500' 
+                          : 'text-gray-400'
+                      }`} 
+                    />
+                  </button>
+                </div>
                 
                 <div className="mt-6 mb-4">
                   <img 
@@ -262,12 +293,12 @@ const Comparison: React.FC = () => {
                     <div className="flex justify-between items-center">
                       <span>Оценка покупателей</span>
                       <div className="flex items-center gap-1 text-right">
-                        {renderStars(comparisonItems[0].rating)}
-                        <span className="text-orange-400 text-sm ml-1">{comparisonItems[0].rating}/5</span>
+                        {renderStars(items[0]?.rating || 0)}
+                        <span className="text-orange-400 text-sm ml-1">{items[0]?.rating || 0}/5</span>
                       </div>
                     </div>
                   </TableHead>
-                  {comparisonItems.slice(1).map((item) => (
+                  {items.slice(1).map((item) => (
                     <TableCell key={item.id} className="text-center">
                       <div className="flex justify-center items-center gap-1">
                         {renderStars(item.rating)}
@@ -285,7 +316,7 @@ const Comparison: React.FC = () => {
                       <span className="text-gray-600 font-normal text-right">Доставка, самовывоз</span>
                     </div>
                   </TableCell>
-                  {comparisonItems.slice(1).map((item) => (
+                  {items.slice(1).map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       Доставка, самовывоз
                     </TableCell>
@@ -298,7 +329,7 @@ const Comparison: React.FC = () => {
                       <span className="text-gray-600 font-normal text-right">Онлайн, рассрочка, карта</span>
                     </div>
                   </TableCell>
-                  {comparisonItems.slice(1).map((item) => (
+                  {items.slice(1).map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       Онлайн, рассрочка, карта
                     </TableCell>
@@ -317,10 +348,10 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 w-48 text-left">
                     <div className="flex justify-between items-center">
                       <span>Рама</span>
-                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.frame}</span>
+                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.frame}</span>
                     </div>
                   </TableCell>
-                  {comparisonItems.slice(1).map((item) => (
+                  {items.slice(1).map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.frame}
                     </TableCell>
@@ -330,10 +361,10 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Лестница</span>
-                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.ladder}</span>
+                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.ladder}</span>
                     </div>
                   </TableCell>
-                  {comparisonItems.slice(1).map((item) => (
+                  {items.slice(1).map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.ladder}
                     </TableCell>
@@ -343,10 +374,10 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Серия</span>
-                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.series}</span>
+                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.series}</span>
                     </div>
                   </TableCell>
-                  {comparisonItems.slice(1).map((item) => (
+                  {items.slice(1).map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.series}
                     </TableCell>
@@ -356,10 +387,10 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Цвет</span>
-                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.color}</span>
+                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.color}</span>
                     </div>
                   </TableCell>
-                  {comparisonItems.slice(1).map((item) => (
+                  {items.slice(1).map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.color}
                     </TableCell>
@@ -369,10 +400,10 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Ширина защитного мата, см</span>
-                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.protectiveMatWidth}</span>
+                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.protectiveMatWidth}</span>
                     </div>
                   </TableCell>
-                  {comparisonItems.slice(1).map((item) => (
+                  {items.slice(1).map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.protectiveMatWidth}
                     </TableCell>
@@ -382,10 +413,10 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Материал защитного мата</span>
-                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.protectiveMatMaterial}</span>
+                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.protectiveMatMaterial}</span>
                     </div>
                   </TableCell>
-                  {comparisonItems.slice(1).map((item) => (
+                  {items.slice(1).map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.protectiveMatMaterial}
                     </TableCell>
@@ -395,10 +426,10 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Диаметр батута, ft</span>
-                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.trampolineDiameterFt}</span>
+                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.trampolineDiameterFt}</span>
                     </div>
                   </TableCell>
-                  {comparisonItems.slice(1).map((item) => (
+                  {items.slice(1).map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.trampolineDiameterFt}
                     </TableCell>
@@ -408,10 +439,10 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Диаметр батута, см</span>
-                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].characteristics.trampolineDiameterCm}</span>
+                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.trampolineDiameterCm}</span>
                     </div>
                   </TableCell>
-                  {comparisonItems.slice(1).map((item) => (
+                  {items.slice(1).map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.characteristics.trampolineDiameterCm}
                     </TableCell>
@@ -430,10 +461,10 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 w-48 text-left">
                     <div className="flex justify-between items-center">
                       <span>Рама</span>
-                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].additionalCharacteristics.frame}</span>
+                      <span className="text-gray-600 font-normal text-right">{items[0]?.additionalCharacteristics.frame}</span>
                     </div>
                   </TableCell>
-                  {comparisonItems.slice(1).map((item) => (
+                  {items.slice(1).map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.additionalCharacteristics.frame}
                     </TableCell>
@@ -443,10 +474,10 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Лестница</span>
-                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].additionalCharacteristics.ladder}</span>
+                      <span className="text-gray-600 font-normal text-right">{items[0]?.additionalCharacteristics.ladder}</span>
                     </div>
                   </TableCell>
-                  {comparisonItems.slice(1).map((item) => (
+                  {items.slice(1).map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.additionalCharacteristics.ladder}
                     </TableCell>
@@ -456,10 +487,10 @@ const Comparison: React.FC = () => {
                   <TableCell className="font-medium text-gray-700 text-left">
                     <div className="flex justify-between items-center">
                       <span>Серия</span>
-                      <span className="text-gray-600 font-normal text-right">{comparisonItems[0].additionalCharacteristics.series}</span>
+                      <span className="text-gray-600 font-normal text-right">{items[0]?.additionalCharacteristics.series}</span>
                     </div>
                   </TableCell>
-                  {comparisonItems.slice(1).map((item) => (
+                  {items.slice(1).map((item) => (
                     <TableCell key={item.id} className="text-center text-gray-600">
                       {item.additionalCharacteristics.series}
                     </TableCell>
