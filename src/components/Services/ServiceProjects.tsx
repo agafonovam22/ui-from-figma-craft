@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowRight } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -14,26 +15,32 @@ interface ServiceProjectsProps {
 }
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
-  <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 group hover:shadow-md transition-shadow">
-    <div className="aspect-[4/3] overflow-hidden relative">
+  <div className="relative rounded-lg overflow-hidden group cursor-pointer">
+    <div className="h-[300px] relative">
       <img 
         src={project.image} 
         alt={project.title}
-        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-4">
-        <h3 className="text-white font-bold text-lg mb-1">{project.title}</h3>
-        <p className="text-white/90 text-sm mb-3">{project.subtitle}</p>
+      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+      
+      {/* Content overlay */}
+      <div className="absolute inset-0 p-6 text-white">
+        <div className="absolute bottom-6 left-6 right-6 transition-transform duration-300 group-hover:-translate-y-12">
+          <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
+          <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>
+            {project.subtitle}
+          </div>
+        </div>
         
-        {project.isSpecial ? (
-          <button className="bg-white text-gray-900 px-4 py-2 rounded font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2 w-fit">
-            {project.buttonText}
-          </button>
-        ) : (
-          <button className="bg-brand-red text-white px-4 py-2 rounded font-semibold hover:bg-brand-red-hover transition-colors w-fit">
-            {project.buttonText}
-          </button>
-        )}
+        <div className="absolute bottom-6 left-6 right-6">
+          <div className="flex justify-start">
+            <button className="bg-white text-black px-6 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-all flex items-center gap-2 opacity-0 group-hover:opacity-100">
+              {project.buttonText}
+              <ArrowRight size={16} />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -44,29 +51,29 @@ const ServiceProjects: React.FC<ServiceProjectsProps> = ({ projects }) => {
     <div>
       <h2 className="text-3xl font-bold text-gray-900 mb-8">Наши проекты</h2>
       
-      <div className="mb-8">
-        {/* First row - 3 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[10px] mb-[10px]">
+      <div className="space-y-[10px] mb-8">
+        {/* Первый ряд - 3 карточки */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
           {projects.slice(0, 3).map(project => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
         
-        {/* Second row - 2 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px] mb-[10px]">
+        {/* Второй ряд - 2 карточки */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px]">
           {projects.slice(3, 5).map(project => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
         
-        {/* Third row - 3 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[10px] mb-[10px]">
+        {/* Третий ряд - 3 карточки */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
           {projects.slice(5, 8).map(project => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
         
-        {/* Fourth row - 2 cards */}
+        {/* Четвертый ряд - 2 карточки */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px]">
           {projects.slice(8, 10).map(project => (
             <ProjectCard key={project.id} project={project} />
