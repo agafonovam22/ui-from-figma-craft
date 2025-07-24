@@ -619,14 +619,25 @@ const Checkout: React.FC = () => {
            <div className="lg:col-span-1" style={{ width: '389px', marginLeft: 'auto' }}>
              <h2 className="text-gray-900 mb-6 mt-0" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Итого</h2>
              
-             <div className="bg-gray-100 rounded-t-lg p-6 mb-6 relative" style={{ 
-               borderBottom: '2px dashed #ccc',
-               borderBottomLeftRadius: '0',
-               borderBottomRightRadius: '0'
-             }}>
-               {/* Углубления по бокам снизу */}
-               <div className="absolute bottom-0 left-3 w-3 h-3 bg-white rounded-full transform translate-y-1/2"></div>
-               <div className="absolute bottom-0 right-3 w-3 h-3 bg-white rounded-full transform translate-y-1/2"></div>
+              <div className="bg-white p-6 mb-6 relative shadow-lg" style={{ 
+                borderRadius: '12px 12px 0 0',
+                background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.05)',
+                position: 'relative',
+              }}>
+                {/* Перфорированная линия внизу */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-300" style={{
+                  backgroundImage: 'repeating-linear-gradient(to right, transparent 0, transparent 6px, #d1d5db 6px, #d1d5db 10px)',
+                  borderRadius: '0 0 12px 12px'
+                }}></div>
+                
+                {/* Зубчики по бокам снизу */}
+                <div className="absolute bottom-0 left-0 w-6 h-6 bg-gray-100 transform rotate-45 -translate-x-3 translate-y-3" style={{ borderRadius: '0 0 0 50%' }}></div>
+                <div className="absolute bottom-0 right-0 w-6 h-6 bg-gray-100 transform -rotate-45 translate-x-3 translate-y-3" style={{ borderRadius: '0 0 50% 0' }}></div>
+                
+                {/* Дополнительные зубчики для большей реалистичности */}
+                <div className="absolute bottom-0 left-12 w-4 h-4 bg-gray-100 transform rotate-45 -translate-x-2 translate-y-2 opacity-60"></div>
+                <div className="absolute bottom-0 right-12 w-4 h-4 bg-gray-100 transform -rotate-45 translate-x-2 translate-y-2 opacity-60"></div>
                
                <div className="space-y-4 mb-6">
                  <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
