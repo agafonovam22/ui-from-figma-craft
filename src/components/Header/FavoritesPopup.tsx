@@ -80,8 +80,8 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
               <div className="space-y-4 py-4">
                 {favoriteItems.map((item) => (
                   <div key={item.id} className="relative flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
-                    {/* Серая четвертинка круга в правом верхнем углу */}
-                    <div className="absolute top-0 right-0 w-6 h-6 bg-gray-400 rounded-bl-full"></div>
+                    {/* Серая четвертинка круга в нижнем правом углу */}
+                    <div className="absolute bottom-0 right-0 w-60 h-60 bg-gray-200 rounded-tl-full"></div>
                     
                     <img 
                       src={item.image} 
