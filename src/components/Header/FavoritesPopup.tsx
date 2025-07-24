@@ -110,7 +110,7 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
                         </span>
                       </div>
                     </div>
-                    <button className="p-2 hover:bg-gray-200 rounded relative z-10">
+                    <button className="p-2 border border-gray-400 rounded relative z-10 hover:bg-gray-100">
                       <Trash2 className="w-4 h-4 text-gray-400" />
                     </button>
                   </div>
