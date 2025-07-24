@@ -71,7 +71,7 @@ const InstallmentTable: React.FC<InstallmentTableProps> = ({ plans }) => {
                 <TableRow key={plan.id} className="border-b border-gray-100">
                   <TableCell className="py-6">
                     <div>
-                      <div className="mb-1" style={{ fontFamily: 'Manrope', fontSize: '16px', fontWeight: '600', color: '#111827' }}>{plan.plan}</div>
+                      <div className="mb-1" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px', color: '#111827' }}>{plan.plan}</div>
                       <div style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#6B7280' }}>{plan.bank}</div>
                     </div>
                   </TableCell>
