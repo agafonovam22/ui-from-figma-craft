@@ -96,7 +96,7 @@ const Checkout: React.FC = () => {
             {/* Steps */}
             <div className="flex items-center gap-4 mb-8">
               {/* Step 1 - Доставка */}
-              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 ${
+              <div className={`w-[225px] flex items-center gap-3 px-6 py-4 rounded-lg border-2 ${
                 currentStep === 1 
                   ? 'bg-gray-900 border-gray-900' 
                   : 'bg-white border-gray-200'
@@ -106,32 +106,32 @@ const Checkout: React.FC = () => {
                     ? 'bg-gray-700' 
                     : 'bg-red-100'
                 }`}>
-                  <Truck className={`w-6 h-6 ${
-                    currentStep === 1 
-                      ? 'text-white' 
-                      : 'text-red-500'
-                  }`} />
+                  <img 
+                    src="/lovable-uploads/f3347caf-fa19-465f-adea-28c9fc5eee85.png" 
+                    alt="Delivery" 
+                    className="w-6 h-6"
+                  />
                 </div>
                 <div>
-                  <div className={`text-sm font-medium ${
+                  <div className={`text-[12px] font-medium ${
                     currentStep === 1 
                       ? 'text-white' 
                       : 'text-red-500'
-                  }`}>
+                  }`} style={{ fontFamily: 'Manrope' }}>
                     ШАГ 1
                   </div>
-                  <div className={`font-semibold ${
+                  <div className={`text-[14px] font-semibold ${
                     currentStep === 1 
                       ? 'text-white' 
                       : 'text-gray-900'
-                  }`}>
+                  }`} style={{ fontFamily: 'Manrope' }}>
                     Доставка
                   </div>
                 </div>
               </div>
               
               {/* Step 2 - Способ оплаты */}
-              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 ${
+              <div className={`w-[225px] flex items-center gap-3 px-6 py-4 rounded-lg border-2 ${
                 currentStep === 2 
                   ? 'bg-gray-900 border-gray-900' 
                   : 'bg-white border-gray-200'
@@ -141,32 +141,32 @@ const Checkout: React.FC = () => {
                     ? 'bg-gray-700' 
                     : 'bg-red-100'
                 }`}>
-                  <CreditCard className={`w-6 h-6 ${
-                    currentStep === 2 
-                      ? 'text-white' 
-                      : 'text-red-500'
-                  }`} />
+                  <img 
+                    src="/lovable-uploads/b319343d-94ea-4546-a929-34d9ba2ba5a6.png" 
+                    alt="Payment" 
+                    className="w-6 h-6"
+                  />
                 </div>
                 <div>
-                  <div className={`text-sm font-medium ${
+                  <div className={`text-[12px] font-medium ${
                     currentStep === 2 
                       ? 'text-white' 
                       : 'text-red-500'
-                  }`}>
+                  }`} style={{ fontFamily: 'Manrope' }}>
                     ШАГ 2
                   </div>
-                  <div className={`font-semibold ${
+                  <div className={`text-[14px] font-semibold ${
                     currentStep === 2 
                       ? 'text-white' 
                       : 'text-gray-900'
-                  }`}>
+                  }`} style={{ fontFamily: 'Manrope' }}>
                     Способ оплаты
                   </div>
                 </div>
               </div>
               
               {/* Step 3 - Ваши данные */}
-              <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 ${
+              <div className={`w-[225px] flex items-center gap-3 px-6 py-4 rounded-lg border-2 ${
                 currentStep === 3 
                   ? 'bg-gray-900 border-gray-900' 
                   : 'bg-white border-gray-200'
@@ -176,25 +176,25 @@ const Checkout: React.FC = () => {
                     ? 'bg-gray-700' 
                     : 'bg-red-100'
                 }`}>
-                  <User className={`w-6 h-6 ${
-                    currentStep === 3 
-                      ? 'text-white' 
-                      : 'text-red-500'
-                  }`} />
+                  <img 
+                    src="/lovable-uploads/b319343d-94ea-4546-a929-34d9ba2ba5a6.png" 
+                    alt="User Data" 
+                    className="w-6 h-6"
+                  />
                 </div>
                 <div>
-                  <div className={`text-sm font-medium ${
+                  <div className={`text-[12px] font-medium ${
                     currentStep === 3 
                       ? 'text-white' 
                       : 'text-red-500'
-                  }`}>
+                  }`} style={{ fontFamily: 'Manrope' }}>
                     ШАГ 3
                   </div>
-                  <div className={`font-semibold ${
+                  <div className={`text-[14px] font-semibold ${
                     currentStep === 3 
                       ? 'text-white' 
                       : 'text-gray-900'
-                  }`}>
+                  }`} style={{ fontFamily: 'Manrope' }}>
                     Ваши данные
                   </div>
                 </div>
