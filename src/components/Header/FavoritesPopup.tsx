@@ -82,7 +82,7 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
           
           <div className="flex flex-col h-full">
             {/* Favorite Items with ScrollArea */}
-            <ScrollArea className="flex-1 px-6">
+            <ScrollArea className="flex-1 px-5">
               <div className="space-y-4 py-4">
                 {favoriteItems.map((item) => (
                   <div key={item.id} className="relative flex items-center gap-4 p-4 bg-gray-50 rounded-lg overflow-hidden w-[443px] h-[112.09px]">
@@ -126,7 +126,7 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
                 ))}
                 
                 {/* Кнопка перейти в избранное внутри списка товаров */}
-                <div className="mt-5 px-6">
+                <div className="mt-5">
                   <Link to="/favorites" onClick={() => onOpenChange(false)}>
                     <Button 
                       variant="outline"
