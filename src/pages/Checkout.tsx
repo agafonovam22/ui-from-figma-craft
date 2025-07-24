@@ -635,7 +635,7 @@ const Checkout: React.FC = () => {
               <Button 
                 onClick={handlePrevStep}
                 variant="outline" 
-                className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white px-8 py-3 text-lg font-medium rounded-lg bg-white"
+                className="border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white px-8 py-3 text-lg font-medium rounded-lg bg-white"
                 disabled={currentStep === 1}
               >
                 Назад
