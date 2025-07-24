@@ -120,11 +120,12 @@ const Account: React.FC = () => {
 
               {/* Forgot Password */}
               <div className="text-left">
+                <span className="text-sm text-[#262631]">Забыли пароль? </span>
                 <Link
                   to="/password-reset"
                   className="text-sm text-[#007BFF] hover:underline"
                 >
-                  Забыли пароль? Восстановить
+                  Восстановить
                 </Link>
               </div>
 
@@ -140,9 +141,11 @@ const Account: React.FC = () => {
 
             {/* Social Login */}
             <div className="mt-6">
-              <p className="text-center text-sm text-gray-600 mb-4">
-                Или войти с помощью
-              </p>
+              <div className="flex justify-center mb-4">
+                <p className="text-sm text-gray-600">
+                  Или войти с помощью
+                </p>
+              </div>
               
               <div className="flex gap-2.5" style={{ width: '589px' }}>
                 <button
@@ -173,8 +176,10 @@ const Account: React.FC = () => {
             </div>
 
             {/* Registration Link */}
-            <div className="mt-6 text-center">
-              <p className="text-sm text-gray-600 mb-4">Нет аккаунта?</p>
+            <div className="mt-6">
+              <div className="flex justify-center mb-4">
+                <p className="text-sm text-gray-600">Нет аккаунта?</p>
+              </div>
               <button
                 type="button"
                 onClick={() => navigate('/register')}
