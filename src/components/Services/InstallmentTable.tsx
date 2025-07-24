@@ -24,7 +24,7 @@ const InstallmentTable: React.FC<InstallmentTableProps> = ({ plans }) => {
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Left side - Text content */}
         <div className="flex-1">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">В рассрочку</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">В рассрочку</h2>
           
           <div className="space-y-4 mb-8" style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#6B7280' }}>
             <p>
