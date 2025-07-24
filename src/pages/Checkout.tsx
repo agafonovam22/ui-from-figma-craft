@@ -94,7 +94,7 @@ const Checkout: React.FC = () => {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
             {/* Steps */}
-            <div className="flex flex-col gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-8">
               {/* Step 1 - Доставка */}
               <div className={`flex items-center gap-3 px-6 py-4 rounded-lg border-2 w-[225px] ${
                 currentStep === 1 
@@ -106,7 +106,7 @@ const Checkout: React.FC = () => {
                     ? 'bg-gray-700' 
                     : 'bg-red-100'
                 }`}>
-                  <img src="/lovable-uploads/bf54f166-d7d9-4643-b90c-db8a3354dea7.png" alt="Delivery" className="w-6 h-6" />
+                  <img src="/lovable-uploads/80d7e23e-d9c3-4899-9cc9-6149b453c13c.png" alt="Delivery" className="w-6 h-6" />
                 </div>
                 <div>
                   <div className={`text-[12px] font-medium ${
