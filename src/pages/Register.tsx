@@ -66,14 +66,14 @@ const Register: React.FC = () => {
               </h1>
               
               {/* User Type Toggle */}
-              <div className="flex rounded-lg border border-gray-200 overflow-hidden mb-6">
+              <div className="flex gap-2.5 mb-6 w-full">
                 <button
                   type="button"
                   onClick={() => setUserType('buyer')}
-                  className={`flex-1 py-3 px-6 text-sm font-medium transition-colors ${
+                  className={`flex-1 h-12 px-8 text-base font-medium transition-all duration-200 rounded-xl ${
                     userType === 'buyer'
-                      ? 'bg-[#F53B49] text-white'
-                      : 'bg-white text-[#262631] hover:bg-gray-50'
+                      ? 'bg-[#F53B49] text-white shadow-lg'
+                      : 'border border-gray-300 bg-white text-[#262631] hover:bg-gray-50 hover:border-gray-400'
                   }`}
                 >
                   Покупатель
@@ -81,10 +81,10 @@ const Register: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setUserType('dealer')}
-                  className={`flex-1 py-3 px-6 text-sm font-medium transition-colors ${
+                  className={`flex-1 h-12 px-8 text-base font-medium transition-all duration-200 rounded-xl ${
                     userType === 'dealer'
-                      ? 'bg-[#F53B49] text-white'
-                      : 'bg-white text-[#262631] hover:bg-gray-50'
+                      ? 'bg-[#F53B49] text-white shadow-lg'
+                      : 'border border-gray-300 bg-white text-[#262631] hover:bg-gray-50 hover:border-gray-400'
                   }`}
                 >
                   Дилер
@@ -182,11 +182,10 @@ const Register: React.FC = () => {
                 Или зарегистрируйтесь с помощью
               </p>
               
-              <div className="flex gap-2.5" style={{ width: '589px' }}>
+              <div className="flex gap-2.5 w-full">
                 <button
                   onClick={() => handleSocialRegister('google')}
-                  className="h-12 flex items-center justify-center gap-3 border border-[#F53B49] rounded-md hover:bg-red-50 transition-colors"
-                  style={{ width: '289.5px' }}
+                  className="flex-1 h-12 flex items-center justify-center gap-3 border border-[#F53B49] rounded-md hover:bg-red-50 transition-colors"
                 >
                   <div className="w-8 h-8 rounded-full overflow-hidden">
                     <img src="/lovable-uploads/8f95678a-c44f-49fe-9db4-8f2ecf7e6d0e.png" alt="Google" className="w-full h-full object-cover" />
@@ -196,8 +195,7 @@ const Register: React.FC = () => {
                 
                 <button
                   onClick={() => handleSocialRegister('facebook')}
-                  className="h-12 flex items-center justify-center gap-3 border border-[#1877F2] rounded-md hover:bg-blue-50 transition-colors"
-                  style={{ width: '289.5px' }}
+                  className="flex-1 h-12 flex items-center justify-center gap-3 border border-[#1877F2] rounded-md hover:bg-blue-50 transition-colors"
                 >
                   <div className="w-8 h-8 rounded-full overflow-hidden">
                     <img src="/lovable-uploads/56a9d743-11c6-471d-a2e4-a83c8818b525.png" alt="Facebook" className="w-full h-full object-cover" />
