@@ -60,7 +60,7 @@ const Account: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setUserType('buyer')}
-                  className={`py-4 px-8 text-base font-medium transition-all duration-200 rounded-xl ${
+                  className={`h-12 px-8 text-base font-medium transition-all duration-200 rounded-xl ${
                     userType === 'buyer'
                       ? 'bg-[#F53B49] text-white shadow-lg'
                       : 'border border-gray-300 bg-white text-[#262631] hover:bg-gray-50 hover:border-gray-400'
@@ -72,7 +72,7 @@ const Account: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setUserType('dealer')}
-                  className={`py-4 px-8 text-base font-medium transition-all duration-200 rounded-xl ${
+                  className={`h-12 px-8 text-base font-medium transition-all duration-200 rounded-xl ${
                     userType === 'dealer'
                       ? 'bg-[#F53B49] text-white shadow-lg'
                       : 'border border-gray-300 bg-white text-[#262631] hover:bg-gray-50 hover:border-gray-400'
