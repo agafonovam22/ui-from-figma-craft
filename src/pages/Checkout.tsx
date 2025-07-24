@@ -142,7 +142,7 @@ const Checkout: React.FC = () => {
                     : 'bg-red-100'
                 }`}>
                   <img 
-                    src="/lovable-uploads/b319343d-94ea-4546-a929-34d9ba2ba5a6.png" 
+                    src="/lovable-uploads/16b4c71b-d829-4e52-a253-9ad7cb0e1010.png" 
                     alt="Payment" 
                     className="w-6 h-6"
                   />
