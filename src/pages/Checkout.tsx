@@ -616,8 +616,8 @@ const Checkout: React.FC = () => {
           </div>
 
           {/* Order Summary */}
-          <div className="lg:col-span-1">
-            <div className="bg-white border rounded-lg p-6 sticky top-4">
+          <div className="lg:col-span-1 lg:w-[389px]">
+            <div className="bg-white border rounded-lg p-6 sticky top-4"style={{ width: '389px' }}>
               <h2 className="text-gray-900 mb-6" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Итого</h2>
               
               <div className="space-y-4 mb-6">
