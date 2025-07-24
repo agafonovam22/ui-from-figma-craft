@@ -56,9 +56,11 @@ const OrderSuccess: React.FC = () => {
 
             {/* Order Number */}
             <div className="mb-6">
-              <span style={{ fontFamily: 'Benzin-Regular', fontSize: '14px', color: '#4B7EE8' }}>
-                Номер заказа: {orderNumber}
-              </span>
+              <div className="border-2 bg-blue-50 px-6 py-3 rounded-lg inline-block" style={{ borderColor: '#4B7EE8' }}>
+                <span style={{ fontFamily: 'Benzin-Regular', fontSize: '14px', color: '#4B7EE8' }}>
+                  Номер заказа: {orderNumber}
+                </span>
+              </div>
             </div>
 
             {/* Order Details */}
