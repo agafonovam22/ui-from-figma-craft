@@ -213,58 +213,84 @@ const Checkout: React.FC = () => {
                     </button>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
                     {/* Pickup from warehouse */}
                     <div 
-                      className={`border-2 rounded-lg cursor-pointer transition-colors bg-white flex flex-col ${
+                      className={`border-2 rounded-lg cursor-pointer transition-colors bg-white flex flex-col h-[210px] ${
                         selectedDelivery === 'pickup' ? 'border-red-500' : 'border-gray-200 hover:border-red-500'
                       }`}
                       onClick={() => setSelectedDelivery('pickup')}
                     >
-                      <div className="p-6 flex-grow">
-                        <h3 className="mb-2" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px', color: '#262631' }}>Самовывоз со склада</h3>
-                        <p style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#262631' }}>Забрать завтра 14 июля, после 19:00<br/>или в течение 14 дней</p>
+                      <div className="p-4 flex-grow flex flex-col justify-between">
+                        <div>
+                          <h3 className="mb-2" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px', color: '#262631' }}>Самовывоз со склада</h3>
+                          <p style={{ fontFamily: 'Manrope', fontSize: '14px', color: '#262631', lineHeight: '1.3' }}>Забрать завтра 14 июля, после 19:00<br/>или в течение 14 дней</p>
+                        </div>
                       </div>
                       <div className={`px-4 py-3 text-center rounded-b-lg ${
                         selectedDelivery === 'pickup' ? 'bg-black text-white' : 'bg-gray-100 text-gray-700'
-                      }`} style={{ fontFamily: 'Benzin-Semibold', fontSize: '25.895px' }}>
+                      }`} style={{ fontFamily: 'Benzin-Semibold', fontSize: '20px' }}>
                         Бесплатно
                       </div>
                     </div>
 
                     {/* Pickup from store */}
                     <div 
-                      className={`border-2 rounded-lg cursor-pointer transition-colors bg-white flex flex-col ${
+                      className={`border-2 rounded-lg cursor-pointer transition-colors bg-white flex flex-col h-[210px] ${
                         selectedDelivery === 'store' ? 'border-red-500' : 'border-gray-200 hover:border-red-500'
                       }`}
                       onClick={() => setSelectedDelivery('store')}
                     >
-                      <div className="p-6 flex-grow">
-                        <h3 className="mb-2" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px', color: '#262631' }}>Самовывоз с магазина</h3>
-                        <p style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#262631' }}>Забрать 20 июля</p>
+                      <div className="p-4 flex-grow flex flex-col justify-between">
+                        <div>
+                          <h3 className="mb-2" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px', color: '#262631' }}>Самовывоз с магазина</h3>
+                          <p style={{ fontFamily: 'Manrope', fontSize: '14px', color: '#262631', lineHeight: '1.3' }}>Забрать 20 июля</p>
+                        </div>
                       </div>
                       <div className={`px-4 py-3 text-center rounded-b-lg ${
                         selectedDelivery === 'store' ? 'bg-black text-white' : 'bg-gray-100 text-gray-700'
-                      }`} style={{ fontFamily: 'Benzin-Semibold', fontSize: '25.895px' }}>
+                      }`} style={{ fontFamily: 'Benzin-Semibold', fontSize: '20px' }}>
                         Бесплатно
                       </div>
                     </div>
 
                     {/* Courier delivery */}
                     <div 
-                      className={`border-2 rounded-lg cursor-pointer transition-colors bg-white flex flex-col ${
+                      className={`border-2 rounded-lg cursor-pointer transition-colors bg-white flex flex-col h-[210px] ${
                         selectedDelivery === 'courier' ? 'border-red-500' : 'border-gray-200 hover:border-red-500'
                       }`}
                       onClick={() => setSelectedDelivery('courier')}
                     >
-                      <div className="p-6 flex-grow">
-                        <h3 className="mb-2" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px', color: '#262631' }}>Курьерская доставка</h3>
-                        <p style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#262631' }}>Забрать 20 июля<br/><strong>Бесплатно от 30 001 ₽</strong></p>
+                      <div className="p-4 flex-grow flex flex-col justify-between">
+                        <div>
+                          <h3 className="mb-2" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px', color: '#262631' }}>Курьерская доставка</h3>
+                          <p style={{ fontFamily: 'Manrope', fontSize: '14px', color: '#262631', lineHeight: '1.3' }}>Забрать 20 июля<br/><strong>Бесплатно от 30 001 ₽</strong></p>
+                        </div>
                       </div>
                       <div className={`px-4 py-3 text-center rounded-b-lg ${
                         selectedDelivery === 'courier' ? 'bg-black text-white' : 'bg-gray-100 text-gray-700'
-                      }`} style={{ fontFamily: 'Benzin-Semibold', fontSize: '25.895px' }}>
+                      }`} style={{ fontFamily: 'Benzin-Semibold', fontSize: '20px' }}>
                         1000 ₽
+                      </div>
+                    </div>
+
+                    {/* Express delivery */}
+                    <div 
+                      className={`border-2 rounded-lg cursor-pointer transition-colors bg-white flex flex-col h-[210px] ${
+                        selectedDelivery === 'express' ? 'border-red-500' : 'border-gray-200 hover:border-red-500'
+                      }`}
+                      onClick={() => setSelectedDelivery('express')}
+                    >
+                      <div className="p-4 flex-grow flex flex-col justify-between">
+                        <div>
+                          <h3 className="mb-2" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px', color: '#262631' }}>Экспресс доставка</h3>
+                          <p style={{ fontFamily: 'Manrope', fontSize: '14px', color: '#262631', lineHeight: '1.3' }}>Доставка в течение 2 часов<br/><strong>В пределах МКАД</strong></p>
+                        </div>
+                      </div>
+                      <div className={`px-4 py-3 text-center rounded-b-lg ${
+                        selectedDelivery === 'express' ? 'bg-black text-white' : 'bg-gray-100 text-gray-700'
+                      }`} style={{ fontFamily: 'Benzin-Semibold', fontSize: '20px' }}>
+                        2500 ₽
                       </div>
                     </div>
                   </div>
