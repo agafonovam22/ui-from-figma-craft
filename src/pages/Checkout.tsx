@@ -222,12 +222,12 @@ const Checkout: React.FC = () => {
                       onClick={() => setSelectedDelivery('pickup')}
                     >
                       <div className="p-6 flex-grow">
-                        <h3 className="text-xl font-semibold mb-2 text-gray-900">Самовывоз со склада</h3>
-                        <p className="text-gray-600">Забрать завтра 14 июля, после 19:00<br/>или в течение 14 дней</p>
+                        <h3 className="mb-2" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px', color: '#262631' }}>Самовывоз со склада</h3>
+                        <p style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#262631' }}>Забрать завтра 14 июля, после 19:00<br/>или в течение 14 дней</p>
                       </div>
-                      <div className={`px-4 py-3 text-center font-medium rounded-b-lg ${
+                      <div className={`px-4 py-3 text-center rounded-b-lg ${
                         selectedDelivery === 'pickup' ? 'bg-black text-white' : 'bg-gray-100 text-gray-700'
-                      }`}>
+                      }`} style={{ fontFamily: 'Benzin-Semibold', fontSize: '25.895px' }}>
                         Бесплатно
                       </div>
                     </div>
@@ -240,12 +240,12 @@ const Checkout: React.FC = () => {
                       onClick={() => setSelectedDelivery('store')}
                     >
                       <div className="p-6 flex-grow">
-                        <h3 className="text-xl font-semibold mb-2 text-gray-900">Самовывоз с магазина</h3>
-                        <p className="text-gray-600">Забрать 20 июля</p>
+                        <h3 className="mb-2" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px', color: '#262631' }}>Самовывоз с магазина</h3>
+                        <p style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#262631' }}>Забрать 20 июля</p>
                       </div>
-                      <div className={`px-4 py-3 text-center font-medium rounded-b-lg ${
+                      <div className={`px-4 py-3 text-center rounded-b-lg ${
                         selectedDelivery === 'store' ? 'bg-black text-white' : 'bg-gray-100 text-gray-700'
-                      }`}>
+                      }`} style={{ fontFamily: 'Benzin-Semibold', fontSize: '25.895px' }}>
                         Бесплатно
                       </div>
                     </div>
@@ -258,12 +258,12 @@ const Checkout: React.FC = () => {
                       onClick={() => setSelectedDelivery('courier')}
                     >
                       <div className="p-6 flex-grow">
-                        <h3 className="text-xl font-semibold mb-2 text-gray-900">Курьерская доставка</h3>
-                        <p className="text-gray-600">Забрать 20 июля<br/><strong>Бесплатно от 30 001 ₽</strong></p>
+                        <h3 className="mb-2" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px', color: '#262631' }}>Курьерская доставка</h3>
+                        <p style={{ fontFamily: 'Manrope', fontSize: '16px', color: '#262631' }}>Забрать 20 июля<br/><strong>Бесплатно от 30 001 ₽</strong></p>
                       </div>
-                      <div className={`px-4 py-3 text-center font-medium rounded-b-lg ${
+                      <div className={`px-4 py-3 text-center rounded-b-lg ${
                         selectedDelivery === 'courier' ? 'bg-black text-white' : 'bg-gray-100 text-gray-700'
-                      }`}>
+                      }`} style={{ fontFamily: 'Benzin-Semibold', fontSize: '25.895px' }}>
                         1000 ₽
                       </div>
                     </div>
