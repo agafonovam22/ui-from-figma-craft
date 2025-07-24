@@ -55,27 +55,29 @@ const Account: React.FC = () => {
                 Вход в личный кабинет
               </h1>
               
-              {/* User Type Toggle */}
-              <div className="flex gap-4 mb-6">
+              {/* User Type Toggle - Updated Design */}
+              <div className="flex gap-4 mb-6" key="user-type-toggle-v2">
                 <button
                   type="button"
                   onClick={() => setUserType('buyer')}
-                  className={`flex-1 py-4 px-8 text-base font-medium transition-colors rounded-xl text-left ${
+                  className={`flex-1 py-4 px-8 text-base font-medium transition-all duration-200 rounded-xl ${
                     userType === 'buyer'
-                      ? 'bg-[#F53B49] text-white'
-                      : 'border border-gray-300 bg-white text-[#262631] hover:bg-gray-50'
+                      ? 'bg-[#F53B49] text-white shadow-lg'
+                      : 'border border-gray-300 bg-white text-[#262631] hover:bg-gray-50 hover:border-gray-400'
                   }`}
+                  style={{ textAlign: 'left' }}
                 >
                   Покупатель
                 </button>
                 <button
                   type="button"
                   onClick={() => setUserType('dealer')}
-                  className={`flex-1 py-4 px-8 text-base font-medium transition-colors rounded-xl text-left ${
+                  className={`flex-1 py-4 px-8 text-base font-medium transition-all duration-200 rounded-xl ${
                     userType === 'dealer'
-                      ? 'bg-[#F53B49] text-white'
-                      : 'border border-gray-300 bg-white text-[#262631] hover:bg-gray-50'
+                      ? 'bg-[#F53B49] text-white shadow-lg'
+                      : 'border border-gray-300 bg-white text-[#262631] hover:bg-gray-50 hover:border-gray-400'
                   }`}
+                  style={{ textAlign: 'left' }}
                 >
                   Дилер
                 </button>
