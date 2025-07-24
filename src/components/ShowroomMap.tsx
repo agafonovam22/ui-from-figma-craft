@@ -10,8 +10,8 @@ const ShowroomMap: React.FC = () => {
   const mapboxToken = 'pk.eyJ1Ijoid2VsbGZpdG5lc3MiLCJhIjoiY21kaDR0aGw2MDAwZzJqc2R5eGN3ZTRiaCJ9.Q5YCu1Mnrw4S6W1scjYRlg';
   const tokenEntered = true;
 
-  // Coordinates for the showroom: Правобережная ул., 1Б, Москва, Россия, 125445 (Куркино)
-  const showroomCoordinates: [number, number] = [37.38861, 55.89222];
+  // Coordinates for the showroom: Правобережная ул., 1Б, Москва, Россия, 125445
+  const showroomCoordinates: [number, number] = [37.448739268736084, 55.88084760674918];
 
   useEffect(() => {
     if (!mapContainer.current) return;
