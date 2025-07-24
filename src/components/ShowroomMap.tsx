@@ -10,8 +10,8 @@ const ShowroomMap: React.FC = () => {
   const mapboxToken = 'pk.eyJ1Ijoid2VsbGZpdG5lc3MiLCJhIjoiY21kaDR0aGw2MDAwZzJqc2R5eGN3ZTRiaCJ9.Q5YCu1Mnrw4S6W1scjYRlg';
   const tokenEntered = true;
 
-  // Coordinates for the showroom: Москва, ТЦ Капитолий, Правобережная улица, 1Б
-  const showroomCoordinates: [number, number] = [37.530441, 55.864658];
+  // Coordinates for the showroom: Москва, ТЦ Капитолий, Правобережная улица, 1Б  
+  const showroomCoordinates: [number, number] = [37.446433, 55.900542];
 
   useEffect(() => {
     if (!mapContainer.current) return;
