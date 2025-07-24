@@ -45,7 +45,7 @@ const OrderSuccess: React.FC = () => {
           <img 
             src="/lovable-uploads/2120adc6-229a-4e1a-bfc7-04a00ff57bcc.png" 
             alt="Success" 
-            className="w-32 h-32 flex-shrink-0"
+            className="w-48 h-48 flex-shrink-0"
           />
 
           {/* Content */}
