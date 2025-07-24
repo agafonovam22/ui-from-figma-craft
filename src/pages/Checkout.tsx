@@ -619,50 +619,39 @@ const Checkout: React.FC = () => {
            <div className="lg:col-span-1" style={{ width: '389px', marginLeft: 'auto' }}>
              <h2 className="text-gray-900 mb-6 mt-0" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Итого</h2>
              
-              <div className="bg-white p-6 mb-6 relative shadow-lg" style={{ 
-                borderRadius: '12px 12px 0 0',
-                background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.05)',
-                position: 'relative',
-              }}>
-                {/* Перфорированная линия внизу */}
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-300" style={{
-                  backgroundImage: 'repeating-linear-gradient(to right, transparent 0, transparent 6px, #d1d5db 6px, #d1d5db 10px)',
-                  borderRadius: '0 0 12px 12px'
-                }}></div>
-                
-                {/* Зубчики по бокам снизу */}
-                <div className="absolute bottom-0 left-0 w-6 h-6 bg-gray-100 transform rotate-45 -translate-x-3 translate-y-3" style={{ borderRadius: '0 0 0 50%' }}></div>
-                <div className="absolute bottom-0 right-0 w-6 h-6 bg-gray-100 transform -rotate-45 translate-x-3 translate-y-3" style={{ borderRadius: '0 0 50% 0' }}></div>
-                
-                {/* Дополнительные зубчики для большей реалистичности */}
-                <div className="absolute bottom-0 left-12 w-4 h-4 bg-gray-100 transform rotate-45 -translate-x-2 translate-y-2 opacity-60"></div>
-                <div className="absolute bottom-0 right-12 w-4 h-4 bg-gray-100 transform -rotate-45 translate-x-2 translate-y-2 opacity-60"></div>
-               
-               <div className="space-y-4 mb-6">
-                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
-                   <span className="text-gray-600">Товары, 3 шт</span>
-                   <span className="font-medium">{total.toLocaleString()} ₽</span>
-                 </div>
-                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
-                   <span className="text-gray-600">Скидка</span>
-                   <span className="text-red-500 font-medium">-{discount.toLocaleString()} ₽</span>
-                 </div>
-                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
-                   <span className="text-gray-600">Бонусы</span>
-                   <span className="text-green-600 font-medium">+{bonuses} Б</span>
-                 </div>
-                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
-                   <span className="text-gray-600">Доставка</span>
-                   <span className="font-medium">Бесплатно</span>
-                 </div>
-                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
-                   <span className="text-gray-600">Сборка</span>
-                   <span className="font-medium">{assembly.toLocaleString()} ₽</span>
-                 </div>
-                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
-                   <span className="text-gray-600">Оплата</span>
-                   <span className="font-medium">Картой онлайн</span>
+               <div className="p-6 mb-6 relative" style={{ 
+                 backgroundImage: 'url(/lovable-uploads/eb63dcf2-39a6-4510-a12e-bf759d740c85.png)',
+                 backgroundSize: 'cover',
+                 backgroundPosition: 'center',
+                 backgroundRepeat: 'no-repeat',
+                 minHeight: '300px',
+                 borderRadius: '12px'
+               }}>
+                 <div className="space-y-4 mb-6">
+                  <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                    <span className="text-gray-600">Товары, 3 шт</span>
+                    <span className="font-medium">{total.toLocaleString()} ₽</span>
+                  </div>
+                  <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                    <span className="text-gray-600">Скидка</span>
+                    <span className="text-red-500 font-medium">-{discount.toLocaleString()} ₽</span>
+                  </div>
+                  <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                    <span className="text-gray-600">Бонусы</span>
+                    <span className="text-green-600 font-medium">+{bonuses} Б</span>
+                  </div>
+                  <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                    <span className="text-gray-600">Доставка</span>
+                    <span className="font-medium">Бесплатно</span>
+                  </div>
+                  <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                    <span className="text-gray-600">Сборка</span>
+                    <span className="font-medium">{assembly.toLocaleString()} ₽</span>
+                  </div>
+                  <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                    <span className="text-gray-600">Оплата</span>
+                    <span className="font-medium">Картой онлайн</span>
+                  </div>
                  </div>
                  <div className="border-t border-dashed border-gray-400 pt-4 flex justify-between" style={{ fontFamily: 'Benzin-Semibold', fontSize: '16px' }}>
                    <span>Итого</span>
@@ -684,26 +673,25 @@ const Checkout: React.FC = () => {
                      авторизация
                    </Link>
                  </label>
-               </div>
-             </div>
-           </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        {/* You Viewed Section */}
+        <div className="py-16 bg-gray-50">
+          <NewProducts title="Вы смотрели" />
         </div>
-      </div>
 
-      {/* You Viewed Section */}
-      <div className="py-16 bg-gray-50">
-        <NewProducts title="Вы смотрели" />
-      </div>
+        {/* Bottom Banner */}
+        <div className="py-16">
+          <EmailSubscription />
+        </div>
 
-      {/* Bottom Banner */}
-      <div className="py-16">
-        <EmailSubscription />
-      </div>
+        <div className="h-[70px]"></div>
+        <Footer />
+      </main>
+    );
+  };
 
-      <div className="h-[70px]"></div>
-      <Footer />
-    </main>
-  );
-};
-
-export default Checkout;
+  export default Checkout;
