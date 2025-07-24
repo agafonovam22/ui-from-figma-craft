@@ -106,11 +106,11 @@ const Checkout: React.FC = () => {
                     ? 'bg-gray-700' 
                     : 'bg-red-100'
                 }`}>
-                  <img 
-                    src="/lovable-uploads/f3347caf-fa19-465f-adea-28c9fc5eee85.png" 
-                    alt="Delivery" 
-                    className="w-6 h-6"
-                  />
+                  <Truck className={`w-6 h-6 ${
+                    currentStep === 1 
+                      ? 'text-white' 
+                      : 'text-red-500'
+                  }`} />
                 </div>
                 <div>
                   <div className={`text-[12px] font-medium ${
