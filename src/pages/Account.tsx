@@ -49,7 +49,7 @@ const Account: React.FC = () => {
 
         {/* Login Form */}
         <section className="py-8 bg-white">
-          <div className="container mx-auto px-4 max-w-lg">
+          <div className="container mx-auto px-4" style={{ maxWidth: '650px' }}>
             <div className="text-center mb-6">
               <h1 className="text-2xl font-bold text-[#262631] mb-6">
                 Вход в личный кабинет
@@ -65,7 +65,7 @@ const Account: React.FC = () => {
                       ? 'bg-[#F53B49] text-white shadow-lg'
                       : 'border border-gray-300 bg-white text-[#262631] hover:bg-gray-50 hover:border-gray-400'
                   }`}
-                  style={{ textAlign: 'left', width: '289.5px' }}
+                  style={{ textAlign: 'center', width: '289.5px' }}
                 >
                   Покупатель
                 </button>
@@ -77,7 +77,7 @@ const Account: React.FC = () => {
                       ? 'bg-[#F53B49] text-white shadow-lg'
                       : 'border border-gray-300 bg-white text-[#262631] hover:bg-gray-50 hover:border-gray-400'
                   }`}
-                  style={{ textAlign: 'left', width: '289.5px' }}
+                  style={{ textAlign: 'center', width: '289.5px' }}
                 >
                   Дилер
                 </button>
