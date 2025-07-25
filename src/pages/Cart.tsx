@@ -210,58 +210,66 @@ const Cart: React.FC = () => {
 
           {/* Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white border rounded-lg p-6 sticky top-4">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Оформить</h2>
+            <div className="bg-gray-100 rounded-t-lg p-6 mb-6 relative" style={{ 
+              borderBottom: '2px dashed #ccc',
+              borderBottomLeftRadius: '0',
+              borderBottomRightRadius: '0'
+            }}>
+              {/* Углубления по бокам снизу */}
+              <div className="absolute bottom-0 left-3 w-3 h-3 bg-white rounded-full transform translate-y-1/2"></div>
+              <div className="absolute bottom-0 right-3 w-3 h-3 bg-white rounded-full transform translate-y-1/2"></div>
               
-              <div className="space-y-4 mb-8">
-                <div className="flex justify-between text-lg">
+              <h2 className="text-gray-900 mb-6 mt-0" style={{ fontFamily: 'Benzin-Semibold', fontSize: '32px' }}>Оформить</h2>
+              
+              <div className="space-y-4 mb-6">
+                <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                   <span className="text-gray-600">Товары, {totalItems} шт</span>
                   <span className="font-medium">{total.toLocaleString()} ₽</span>
                 </div>
-                <div className="flex justify-between text-lg">
+                <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                   <span className="text-gray-600">Скидка</span>
                   <span className="text-red-500 font-medium">-{discount.toLocaleString()} ₽</span>
                 </div>
-                <div className="flex justify-between text-lg">
+                <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                   <span className="text-gray-600">Бонусы</span>
                   <span className="text-green-600 font-medium">+{bonus} Б</span>
                 </div>
-                <div className="border-t pt-6 flex justify-between text-2xl font-bold">
+                <div className="border-t border-dashed border-gray-400 pt-4 flex justify-between" style={{ fontFamily: 'Benzin-Semibold', fontSize: '16px' }}>
                   <span>Итого</span>
                   <span>{(total - discount).toLocaleString()} ₽</span>
                 </div>
               </div>
+            </div>
               
-              <div className="mb-8">
-                <div className="flex items-start gap-3">
-                  <input type="checkbox" id="bonus" className="mt-1 rounded" />
-                  <label htmlFor="bonus" className="text-base text-gray-700 leading-relaxed">
-                    Использовать бонусные баллы. Требуется <Link to="/auth" className="text-blue-600 underline">авторизации</Link>
-                  </label>
-                </div>
+            <div className="mb-6">
+              <div className="flex items-start gap-3">
+                <input type="checkbox" id="bonus" className="mt-1 rounded" />
+                <label htmlFor="bonus" className="text-gray-700 leading-relaxed" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                  Использовать бонусные баллы. Требуется <Link to="/auth" className="text-blue-600 underline">авторизации</Link>
+                </label>
               </div>
+            </div>
+            
+            <div className="space-y-4">
+              <Link to="/checkout">
+                <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-4 text-lg font-medium rounded-lg">
+                  Оформить заказ
+                </Button>
+              </Link>
               
-              <div className="space-y-4">
-                <Link to="/checkout">
-                  <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-4 text-lg font-medium rounded-lg">
-                    Оформить заказ
-                  </Button>
-                </Link>
-                
-                <Button 
-                  variant="outline" 
-                  className="w-full border-2 border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white py-4 text-lg font-medium rounded-lg"
-                >
-                  Купить в 1 клик
-                </Button>
-                
-                <Button 
-                  variant="outline" 
-                  className="w-full border-2 border-gray-300 text-[#F53B49] hover:bg-gray-50 py-4 text-lg font-medium rounded-lg"
-                >
-                  Сделать коммерческое предложение
-                </Button>
-              </div>
+              <Button 
+                variant="outline" 
+                className="w-full border-2 border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white py-4 text-lg font-medium rounded-lg"
+              >
+                Купить в 1 клик
+              </Button>
+              
+              <Button 
+                variant="outline" 
+                className="w-full border-2 border-gray-300 text-[#F53B49] hover:bg-gray-50 py-4 text-lg font-medium rounded-lg"
+              >
+                Сделать коммерческое предложение
+              </Button>
             </div>
           </div>
         </div>
