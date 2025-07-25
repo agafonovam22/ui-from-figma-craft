@@ -78,7 +78,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
           style={{ position: 'fixed', right: '60px', height: '595.26085px', top: '138px', width: '483px' }}
         >
           <SheetHeader className="p-6 border-b">
-            <SheetTitle className="font-benzin-semibold text-[32px] text-gray-900 leading-none">
+            <SheetTitle className="font-benzin-semibold text-[28px] text-gray-900 leading-none">
               Корзина ({cartItems.reduce((sum, item) => sum + item.quantity, 0)})
             </SheetTitle>
           </SheetHeader>
