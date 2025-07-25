@@ -130,7 +130,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
 
             {/* Fixed Footer with Buttons */}
             <div className="flex-shrink-0 border-t bg-white p-6 space-y-4">
-              <div className="flex justify-between items-center text-xl font-bold">
+              <div className="flex justify-between items-center font-benzin-semibold text-base">
                 <span>Итого:</span>
                 <span>{total.toLocaleString()} ₽</span>
               </div>
