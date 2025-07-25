@@ -250,7 +250,7 @@ const Cart: React.FC = () => {
               </div>
             </div>
             
-            <div className="space-y-[10px] px-2">
+            <div className="space-y-[10px]">
               <div className="flex gap-[10px]">
                 <Link to="/checkout" className="flex-1">
                   <Button 
