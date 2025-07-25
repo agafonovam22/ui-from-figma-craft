@@ -251,7 +251,7 @@ const Cart: React.FC = () => {
             </div>
             
             <div className="space-y-[10px]">
-              <div className="flex gap-[10px]">
+              <div className="flex gap-[10px]" style={{ paddingLeft: '2.5px', paddingRight: '2.5px' }}>
                 <Link to="/checkout" className="flex-1">
                   <Button 
                     className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-3 rounded-lg"
