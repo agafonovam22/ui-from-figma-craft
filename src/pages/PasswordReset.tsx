@@ -51,7 +51,7 @@ const PasswordReset: React.FC = () => {
                     Восстановление пароля
                   </h1>
                   
-                  <p className="text-[#262631] text-center" style={{ width: '589px', margin: '0 auto 10px auto', fontFamily: 'Manrope', fontSize: '16px' }}>
+                  <p className="text-[#262631] text-left" style={{ width: '589px', margin: '0 auto 10px auto', fontFamily: 'Manrope', fontSize: '16px' }}>
                     Мы отправим письмо со ссылкой для смены пароля на указанный Вами при регистрации адрес. Откройте письмо и перейдите по ссылке из письма.
                   </p>
                 </div>
