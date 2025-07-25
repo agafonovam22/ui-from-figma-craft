@@ -244,14 +244,14 @@ const Cart: React.FC = () => {
             <div className="mb-6">
               <div className="flex items-start gap-3">
                 <input type="checkbox" id="bonus" className="mt-1 rounded" />
-                <label htmlFor="bonus" className="text-gray-700 leading-relaxed" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                <label htmlFor="bonus" className="text-gray-700 leading-relaxed" style={{ fontFamily: 'Manrope', fontSize: '14px' }}>
                   Использовать бонусные баллы. Требуется <Link to="/auth" className="text-blue-600 underline">авторизации</Link>
                 </label>
               </div>
             </div>
             
-            <div className="space-y-4">
-              <div className="flex gap-2">
+            <div className="space-y-[10px]">
+              <div className="flex gap-[10px]">
                 <Link to="/checkout" className="flex-1">
                   <Button 
                     className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-3 rounded-lg"
