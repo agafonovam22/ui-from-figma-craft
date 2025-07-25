@@ -117,7 +117,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                         <img 
                           src="/lovable-uploads/7571a503-3ae4-4b96-8076-4ad2a0d1eec2.png" 
                           alt="Удалить из корзины"
-                          className="w-8 h-8"
+                          className="w-3 h-[14px]"
                         />
                       </button>
                     </div>
