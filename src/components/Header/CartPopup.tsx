@@ -1,9 +1,17 @@
 import React from 'react';
-import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { X, Trash2 } from 'lucide-react';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+  SheetPortal,
+} from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import * as SheetPrimitive from "@radix-ui/react-dialog";
 
 interface CartItem {
   id: number;
@@ -60,27 +68,20 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <>
-      <div onClick={() => onOpenChange(!isOpen)}>
+    <Sheet open={isOpen} onOpenChange={onOpenChange}>
+      <SheetTrigger asChild>
         {children}
-      </div>
-      {isOpen && createPortal(
-        <div
-          className="fixed bg-white shadow-lg rounded-lg transition-transform duration-300 ease-in-out"
-          style={{ 
-            position: 'fixed', 
-            right: '60px', 
-            height: '595.26085px', 
-            top: '138px', 
-            width: '483px', 
-            zIndex: 9999
-          }}
+      </SheetTrigger>
+      <SheetPortal>
+        <SheetPrimitive.Content
+          className="fixed z-[9999] gap-4 bg-white p-0 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right rounded-lg"
+          style={{ position: 'fixed', right: '60px', height: '595.26085px', top: '138px', width: '483px', zIndex: 9999 }}
         >
-          <div className="p-6">
-            <h2 className="font-benzin-semibold text-[28px] text-gray-900 leading-none">
+          <SheetHeader className="p-6 border-b">
+            <SheetTitle className="font-benzin-semibold text-[28px] text-gray-900 leading-none">
               Корзина ({cartItems.reduce((sum, item) => sum + item.quantity, 0)})
-            </h2>
-          </div>
+            </SheetTitle>
+          </SheetHeader>
           
           <div className="flex flex-col h-full">
             {/* Cart Items with ScrollArea */}
@@ -155,17 +156,13 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
             </div>
           </div>
           
-          <button 
-            className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-            onClick={() => onOpenChange(false)}
-          >
+          <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
             <X className="h-4 w-4" />
             <span className="sr-only">Close</span>
-          </button>
-        </div>,
-        document.body
-      )}
-    </>
+          </SheetPrimitive.Close>
+        </SheetPrimitive.Content>
+      </SheetPortal>
+    </Sheet>
   );
 };
 
