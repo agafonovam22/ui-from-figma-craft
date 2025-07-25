@@ -251,22 +251,29 @@ const Cart: React.FC = () => {
             </div>
             
             <div className="space-y-4">
-              <Link to="/checkout">
-                <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-4 text-lg font-medium rounded-lg">
-                  Оформить заказ
+              <div className="flex gap-2">
+                <Link to="/checkout" className="flex-1">
+                  <Button 
+                    className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-3 rounded-lg"
+                    style={{ fontFamily: 'Benzin-Regular', fontSize: '12px' }}
+                  >
+                    Оформить заказ
+                  </Button>
+                </Link>
+                
+                <Button 
+                  variant="outline" 
+                  className="flex-1 border-2 border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white py-3 rounded-lg"
+                  style={{ fontFamily: 'Benzin-Regular', fontSize: '12px' }}
+                >
+                  Купить в 1 клик
                 </Button>
-              </Link>
+              </div>
               
               <Button 
                 variant="outline" 
-                className="w-full border-2 border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white py-4 text-lg font-medium rounded-lg"
-              >
-                Купить в 1 клик
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                className="w-full border-2 border-gray-300 text-[#F53B49] hover:bg-gray-50 py-4 text-lg font-medium rounded-lg"
+                className="w-full border-2 border-gray-300 text-[#F53B49] hover:bg-gray-50 py-3 rounded-lg"
+                style={{ fontFamily: 'Benzin-Regular', fontSize: '12px' }}
               >
                 Сделать коммерческое предложение
               </Button>
