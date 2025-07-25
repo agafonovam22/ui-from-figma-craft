@@ -1,17 +1,9 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { X, Trash2 } from 'lucide-react';
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-  SheetPortal,
-} from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import * as SheetPrimitive from "@radix-ui/react-dialog";
 
 interface CartItem {
   id: number;
@@ -68,12 +60,11 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <Sheet open={isOpen} onOpenChange={onOpenChange}>
-      <SheetTrigger asChild>
+    <>
+      <div onClick={() => onOpenChange(!isOpen)}>
         {children}
-      </SheetTrigger>
-      <SheetPortal>
-        <div className="fixed inset-0 z-[9998] bg-black/20" onClick={() => onOpenChange(false)} />
+      </div>
+      {isOpen && createPortal(
         <div
           className="fixed bg-white shadow-lg rounded-lg transition-transform duration-300 ease-in-out"
           style={{ 
@@ -171,9 +162,10 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
             <X className="h-4 w-4" />
             <span className="sr-only">Close</span>
           </button>
-        </div>
-      </SheetPortal>
-    </Sheet>
+        </div>,
+        document.body
+      )}
+    </>
   );
 };
 
