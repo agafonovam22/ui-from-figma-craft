@@ -250,22 +250,22 @@ const Cart: React.FC = () => {
               </div>
             </div>
             
-            <div className="space-y-[10px]">
-              <div className="flex gap-[10px]" style={{ border: '1px solid red' }}>
-                <div className="flex-1" style={{ border: '1px solid blue' }}>
+            <div className="space-y-[10px] px-2">
+              <div className="flex gap-[10px]">
+                <Link to="/checkout" className="flex-1">
                   <Button 
                     className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-3 rounded-lg"
-                    style={{ fontFamily: 'Benzin-Regular', fontSize: '12px', border: '1px solid green' }}
+                    style={{ fontFamily: 'Benzin-Regular', fontSize: '12px' }}
                   >
                     Оформить заказ
                   </Button>
-                </div>
+                </Link>
                 
-                <div className="flex-1" style={{ border: '1px solid yellow' }}>
+                <div className="flex-1">
                   <Button 
                     variant="outline" 
-                    className="w-full flex border-2 border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white py-3 rounded-lg"
-                    style={{ fontFamily: 'Benzin-Regular', fontSize: '12px', border: '1px solid orange' }}
+                    className="w-full border-2 border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white py-3 rounded-lg"
+                    style={{ fontFamily: 'Benzin-Regular', fontSize: '12px' }}
                   >
                     Купить в 1 клик
                   </Button>
