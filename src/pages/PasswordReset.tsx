@@ -115,22 +115,22 @@ const PasswordReset: React.FC = () => {
                           для восстановления пароля
                         </h1>
                         
-                        <p className="text-[#262631] text-base mb-6">
+                        <p className="text-[#262631] text-base mb-6 leading-none">
                           на указанный e-mail: <span className="text-[#007BFF]">{email}</span>
                         </p>
                         
-                        <p className="text-[#262631] font-medium mb-6" style={{ fontSize: '16px', fontFamily: 'Manrope' }}>
+                        <p className="text-[#262631] font-medium mb-6 leading-none" style={{ fontSize: '16px', fontFamily: 'Manrope' }}>
                           Осталось сделать 3 шага.
                         </p>
                         
                         <div className="space-y-3 mb-8">
-                          <p className="text-[#262631] leading-relaxed" style={{ fontSize: '16px', fontFamily: 'Manrope' }}>
+                          <p className="text-[#262631] leading-none" style={{ fontSize: '16px', fontFamily: 'Manrope' }}>
                             <span className="font-medium">1.</span> Зайдите в свой почтовый ящик и найдите письмо от info@wellfitness.ru. Если вы не нашли письма, проверьте папку «Спам».
                           </p>
-                          <p className="text-[#262631] leading-relaxed" style={{ fontSize: '16px', fontFamily: 'Manrope' }}>
+                          <p className="text-[#262631] leading-none" style={{ fontSize: '16px', fontFamily: 'Manrope' }}>
                             <span className="font-medium">2.</span> Перейдите по ссылке, указанной в письме.
                           </p>
-                          <p className="text-[#262631] leading-relaxed" style={{ fontSize: '16px', fontFamily: 'Manrope' }}>
+                          <p className="text-[#262631] leading-none" style={{ fontSize: '16px', fontFamily: 'Manrope' }}>
                             <span className="font-medium">3.</span> Придумайте и введите новый пароль
                           </p>
                         </div>
