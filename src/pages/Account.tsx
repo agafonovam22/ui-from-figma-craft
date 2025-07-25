@@ -50,13 +50,13 @@ const Account: React.FC = () => {
         {/* Login Form */}
         <section className="py-8 bg-white">
           <div className="container mx-auto px-4" style={{ maxWidth: '650px' }}>
-            <div className="text-center mb-6">
+            <div className="text-center">
               <h1 className="text-2xl font-bold text-[#262631] mb-6">
                 Вход в личный кабинет
               </h1>
               
               {/* User Type Toggle - Updated Design */}
-              <div className="flex gap-2.5" style={{ width: '589px', margin: '0 auto 10px auto' }} key="user-type-toggle-v2">
+              <div className="flex gap-2.5" style={{ width: '589px', margin: '0 auto 0 auto', marginBottom: '10px' }} key="user-type-toggle-v2">
                 <button
                   type="button"
                   onClick={() => setUserType('buyer')}
