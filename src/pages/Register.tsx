@@ -59,40 +59,42 @@ const Register: React.FC = () => {
 
         {/* Registration Form */}
         <section className="py-8 bg-white">
-          <div className="container mx-auto px-4 max-w-lg">
-            <div className="text-center mb-6">
+          <div className="container mx-auto px-4" style={{ maxWidth: '650px' }}>
+            <div className="text-center">
               <h1 className="text-2xl font-bold text-[#262631] mb-6">
                 Регистрация
               </h1>
               
-              {/* User Type Toggle */}
-              <div className="flex gap-2.5 mb-6 w-full">
+              {/* User Type Toggle - Updated Design */}
+              <div className="flex gap-2.5" style={{ width: '589px', margin: '0 auto 0 auto', marginBottom: '10px' }}>
                 <button
                   type="button"
                   onClick={() => setUserType('buyer')}
-                  className={`flex-1 h-12 px-8 text-base font-medium transition-all duration-200 rounded-xl ${
+                  className={`h-12 px-8 text-base font-medium transition-all duration-200 rounded-xl ${
                     userType === 'buyer'
                       ? 'bg-[#F53B49] text-white shadow-lg'
                       : 'border border-gray-300 bg-white text-[#262631] hover:bg-gray-50 hover:border-gray-400'
                   }`}
+                  style={{ textAlign: 'left', width: '289.5px', fontFamily: 'Benzin-Medium', fontSize: '16px', paddingLeft: '32px' }}
                 >
                   Покупатель
                 </button>
                 <button
                   type="button"
                   onClick={() => setUserType('dealer')}
-                  className={`flex-1 h-12 px-8 text-base font-medium transition-all duration-200 rounded-xl ${
+                  className={`h-12 px-8 text-base font-medium transition-all duration-200 rounded-xl ${
                     userType === 'dealer'
                       ? 'bg-[#F53B49] text-white shadow-lg'
                       : 'border border-gray-300 bg-white text-[#262631] hover:bg-gray-50 hover:border-gray-400'
                   }`}
+                  style={{ textAlign: 'left', width: '289.5px', fontFamily: 'Benzin-Medium', fontSize: '16px', paddingLeft: '32px' }}
                 >
                   Дилер
                 </button>
               </div>
             </div>
 
-            <form onSubmit={handleRegister} className="space-y-4">
+            <form onSubmit={handleRegister} className="space-y-[10px]" style={{ width: '589px', margin: '0 auto' }}>
               {/* Full Name Input */}
               <div>
                 <Input
@@ -177,15 +179,18 @@ const Register: React.FC = () => {
             </form>
 
             {/* Social Registration */}
-            <div className="mt-6">
-              <p className="text-center text-sm text-gray-600 mb-4">
-                Или зарегистрируйтесь с помощью
-              </p>
+            <div className="mt-6" style={{ width: '589px', margin: '24px auto 0 auto' }}>
+              <div className="text-center mb-4">
+                <p className="text-gray-600" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
+                  Или зарегистрируйтесь с помощью
+                </p>
+              </div>
               
-              <div className="flex gap-2.5 w-full">
+              <div className="flex gap-2.5">
                 <button
                   onClick={() => handleSocialRegister('google')}
-                  className="flex-1 h-12 flex items-center justify-center gap-3 border border-[#F53B49] rounded-md hover:bg-red-50 transition-colors"
+                  className="h-12 flex items-center justify-center gap-3 border border-[#F53B49] rounded-md hover:bg-red-50 transition-colors"
+                  style={{ width: '289.5px' }}
                 >
                   <div className="w-8 h-8 rounded-full overflow-hidden">
                     <img src="/lovable-uploads/8f95678a-c44f-49fe-9db4-8f2ecf7e6d0e.png" alt="Google" className="w-full h-full object-cover" />
@@ -195,7 +200,8 @@ const Register: React.FC = () => {
                 
                 <button
                   onClick={() => handleSocialRegister('facebook')}
-                  className="flex-1 h-12 flex items-center justify-center gap-3 border border-[#1877F2] rounded-md hover:bg-blue-50 transition-colors"
+                  className="h-12 flex items-center justify-center gap-3 border border-[#1877F2] rounded-md hover:bg-blue-50 transition-colors"
+                  style={{ width: '289.5px' }}
                 >
                   <div className="w-8 h-8 rounded-full overflow-hidden">
                     <img src="/lovable-uploads/56a9d743-11c6-471d-a2e4-a83c8818b525.png" alt="Facebook" className="w-full h-full object-cover" />
@@ -206,14 +212,17 @@ const Register: React.FC = () => {
             </div>
 
             {/* Login Link */}
-            <div className="mt-6 text-center">
-              <p className="text-sm text-gray-600 mb-4">Уже есть аккаунт?</p>
-              <Link
-                to="/account"
-                className="w-full h-12 border border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white transition-colors rounded-md text-base font-medium flex items-center justify-center"
+            <div className="mt-6" style={{ width: '589px', margin: '24px auto 0 auto' }}>
+              <div className="text-center mb-4">
+                <p className="text-gray-600" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Уже есть аккаунт?</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => window.location.href = '/account'}
+                className="w-full h-12 border border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white transition-colors rounded-md text-base font-medium"
               >
                 Войти
-              </Link>
+              </button>
             </div>
           </div>
         </section>
