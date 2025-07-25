@@ -87,7 +87,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
             {/* Cart Items with ScrollArea */}
             <div className="flex-1 overflow-hidden">
               <ScrollArea className="h-full px-6">
-                <div className="space-y-4 py-4">
+                <div className="space-y-2.5 py-4">
                   {cartItems.map((item) => (
                     <div key={item.id} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg h-[112px]">
                       <img 
