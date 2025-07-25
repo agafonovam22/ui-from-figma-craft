@@ -264,7 +264,7 @@ const Cart: React.FC = () => {
                 <div className="flex-1">
                   <Button 
                     variant="outline" 
-                    className="w-full border-2 border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white py-3 rounded-lg"
+                    className="w-full flex border-2 border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white py-3 rounded-lg"
                     style={{ fontFamily: 'Benzin-Regular', fontSize: '12px' }}
                   >
                     Купить в 1 клик
