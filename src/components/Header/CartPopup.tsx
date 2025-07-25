@@ -1,9 +1,17 @@
-import React, { useEffect } from 'react';
-import { createPortal } from 'react-dom';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { X } from 'lucide-react';
+import { X, Trash2 } from 'lucide-react';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+  SheetPortal,
+} from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import * as SheetPrimitive from "@radix-ui/react-dialog";
 
 interface CartItem {
   id: number;
@@ -59,134 +67,102 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
 
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  // Close popup on ESC key
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onOpenChange(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
-      return () => document.removeEventListener('keydown', handleEscape);
-    }
-  }, [isOpen, onOpenChange]);
-
-  const handleTriggerClick = () => {
-    console.log('Cart popup triggered, isOpen:', isOpen);
-    onOpenChange(!isOpen);
-  };
-
-  const cartPopup = isOpen ? (
-    <div 
-      className="fixed bg-white shadow-lg border-l rounded-lg"
-      style={{ 
-        position: 'fixed', 
-        right: '60px', 
-        height: '595px', 
-        top: '142px', 
-        width: '483px', 
-        zIndex: 9999 
-      }}
-    >
-      <div className="p-6 border-b">
-        <h2 className="font-benzin-semibold text-[28px] text-gray-900 leading-none">
-          Корзина ({cartItems.reduce((sum, item) => sum + item.quantity, 0)})
-        </h2>
-      </div>
-      
-      <div className="flex flex-col h-full">
-        {/* Cart Items with ScrollArea */}
-        <div className="flex-1 overflow-hidden">
-          <ScrollArea className="h-full px-6">
-            <div className="space-y-2.5 py-4">
-              {cartItems.map((item) => (
-                <div key={item.id} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg h-[112px]">
-                  <img 
-                    src={item.image} 
-                    alt={item.name}
-                    className="w-16 h-16 object-cover rounded"
-                  />
-                  <div className="flex-1">
-                    <h3 className="text-sm font-medium text-gray-900 line-clamp-2">
-                      {item.name}
-                    </h3>
-                    <div className="flex items-center gap-2 mt-1">
-                      {item.discount && (
-                        <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
-                          -{item.discount}%
-                        </span>
-                      )}
-                      <span className="text-lg font-bold text-gray-900">
-                        {item.price.toLocaleString()} ₽
-                      </span>
-                    </div>
-                    <div className="text-sm text-gray-600 mt-1">
-                      Количество: {item.quantity}
-                    </div>
-                  </div>
-                  <button className="p-2 hover:bg-gray-200 rounded">
-                    <div className="w-8 h-8 border border-gray-300 rounded-lg flex items-center justify-center bg-transparent">
+  return (
+    <Sheet open={isOpen} onOpenChange={onOpenChange}>
+      <SheetTrigger asChild>
+        {children}
+      </SheetTrigger>
+      <SheetPortal>
+        <SheetPrimitive.Content
+          className="fixed z-[9999] gap-4 bg-white p-0 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right rounded-lg"
+          style={{ position: 'fixed', right: '60px', height: '595.26085px', top: '142px', width: '483px', zIndex: 9999, transform: 'none' }}
+        >
+          <SheetHeader className="p-6 border-b">
+            <SheetTitle className="font-benzin-semibold text-[28px] text-gray-900 leading-none">
+              Корзина ({cartItems.reduce((sum, item) => sum + item.quantity, 0)})
+            </SheetTitle>
+          </SheetHeader>
+          
+          <div className="flex flex-col h-full">
+            {/* Cart Items with ScrollArea */}
+            <div className="flex-1 overflow-hidden">
+              <ScrollArea className="h-full px-6">
+                <div className="space-y-2.5 py-4">
+                  {cartItems.map((item) => (
+                    <div key={item.id} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg h-[112px]">
                       <img 
-                        src="/lovable-uploads/7571a503-3ae4-4b96-8076-4ad2a0d1eec2.png" 
-                        alt="Удалить из корзины"
-                        className="w-3 h-[14px]"
+                        src={item.image} 
+                        alt={item.name}
+                        className="w-16 h-16 object-cover rounded"
                       />
+                      <div className="flex-1">
+                        <h3 className="text-sm font-medium text-gray-900 line-clamp-2">
+                          {item.name}
+                        </h3>
+                        <div className="flex items-center gap-2 mt-1">
+                          {item.discount && (
+                            <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
+                              -{item.discount}%
+                            </span>
+                          )}
+                          <span className="text-lg font-bold text-gray-900">
+                            {item.price.toLocaleString()} ₽
+                          </span>
+                        </div>
+                        <div className="text-sm text-gray-600 mt-1">
+                          Количество: {item.quantity}
+                        </div>
+                      </div>
+                      <button className="p-2 hover:bg-gray-200 rounded">
+                        <div className="w-8 h-8 border border-gray-300 rounded-lg flex items-center justify-center bg-transparent">
+                          <img 
+                            src="/lovable-uploads/7571a503-3ae4-4b96-8076-4ad2a0d1eec2.png" 
+                            alt="Удалить из корзины"
+                            className="w-3 h-[14px]"
+                          />
+                        </div>
+                      </button>
                     </div>
-                  </button>
+                  ))}
                 </div>
-              ))}
+              </ScrollArea>
             </div>
-          </ScrollArea>
-        </div>
 
-        {/* Fixed Footer with Buttons */}
-        <div className="flex-shrink-0 border-t bg-white p-6 space-y-4">
-          <div className="flex justify-between items-center font-benzin-semibold text-base">
-            <span>Итого:</span>
-            <span>{total.toLocaleString()} ₽</span>
+            {/* Fixed Footer with Buttons */}
+            <div className="flex-shrink-0 border-t bg-white p-6 space-y-4">
+              <div className="flex justify-between items-center font-benzin-semibold text-base">
+                <span>Итого:</span>
+                <span>{total.toLocaleString()} ₽</span>
+              </div>
+              
+              <div className="space-y-3">
+                <Link to="/checkout" onClick={() => onOpenChange(false)}>
+                  <Button 
+                    className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-3 text-base font-medium"
+                  >
+                    Оформить заказ
+                  </Button>
+                </Link>
+                
+                <Link to="/cart" onClick={() => onOpenChange(false)}>
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white py-3 text-base font-medium"
+                  >
+                    Перейти в корзину
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
           
-          <div className="space-y-3">
-            <Link to="/checkout" onClick={() => onOpenChange(false)}>
-              <Button 
-                className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white py-3 text-base font-medium"
-              >
-                Оформить заказ
-              </Button>
-            </Link>
-            
-            <Link to="/cart" onClick={() => onOpenChange(false)}>
-              <Button 
-                variant="outline" 
-                className="w-full border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white py-3 text-base font-medium"
-              >
-                Перейти в корзину
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-      
-      <button 
-        onClick={() => onOpenChange(false)}
-        className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-      >
-        <X className="h-4 w-4" />
-        <span className="sr-only">Close</span>
-      </button>
-    </div>
-  ) : null;
-
-  return (
-    <>
-      <div onClick={handleTriggerClick}>
-        {children}
-      </div>
-      
-      {cartPopup && createPortal(cartPopup, document.body)}
-    </>
+          <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+            <X className="h-4 w-4" />
+            <span className="sr-only">Close</span>
+          </SheetPrimitive.Close>
+        </SheetPrimitive.Content>
+      </SheetPortal>
+    </Sheet>
   );
 };
 
