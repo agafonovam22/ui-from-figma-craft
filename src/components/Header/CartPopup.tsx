@@ -114,11 +114,13 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                         </div>
                       </div>
                       <button className="p-2 hover:bg-gray-200 rounded">
-                        <img 
-                          src="/lovable-uploads/7571a503-3ae4-4b96-8076-4ad2a0d1eec2.png" 
-                          alt="Удалить из корзины"
-                          className="w-3 h-[14px]"
-                        />
+                        <div className="w-8 h-8 border border-gray-300 rounded-lg flex items-center justify-center bg-transparent">
+                          <img 
+                            src="/lovable-uploads/7571a503-3ae4-4b96-8076-4ad2a0d1eec2.png" 
+                            alt="Удалить из корзины"
+                            className="w-3 h-[14px]"
+                          />
+                        </div>
                       </button>
                     </div>
                   ))}
