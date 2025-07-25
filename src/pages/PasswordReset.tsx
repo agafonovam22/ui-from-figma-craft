@@ -24,41 +24,39 @@ const PasswordReset: React.FC = () => {
       <Header />
       
       <main className="flex-1">
-        {/* Breadcrumbs */}
-        <section className="bg-white py-4">
-          <div className="container mx-auto px-4 lg:px-[60px]">
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <Link to="/">Главная</Link>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Восстановление пароля</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
-          </div>
-        </section>
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+          {/* Breadcrumbs */}
+          <Breadcrumb className="mb-6">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/">Главная</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Восстановление пароля</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
 
         {/* Password Reset Form or Success Message */}
         <section className="py-8 bg-white">
-          <div className={`${!isEmailSent ? 'container mx-auto px-4 max-w-lg' : ''}`}>
+          <div className={`${!isEmailSent ? 'container mx-auto px-4' : ''}`} style={{ maxWidth: !isEmailSent ? '650px' : 'none' }}>
             {!isEmailSent ? (
-              <div className="container mx-auto px-4 max-w-lg">
-                <div className="text-center mb-6">
-                  <h1 className="text-2xl font-bold text-[#262631] mb-4">
+              <div>
+                <div className="text-center">
+                  <h1 className="text-2xl font-bold text-[#262631] mb-6">
                     Восстановление пароля
                   </h1>
                   
-                  <p className="text-[#262631] mb-6 text-center">
+                  <p className="text-[#262631] text-center" style={{ width: '589px', margin: '0 auto 10px auto', fontFamily: 'Manrope', fontSize: '16px' }}>
                     Мы отправим письмо со ссылкой для смены пароля на указанный Вами при регистрации адрес. Откройте письмо и перейдите по ссылке из письма.
                   </p>
                 </div>
 
-                <form onSubmit={handleResetPassword} className="space-y-4">
+                <form onSubmit={handleResetPassword} className="space-y-[10px]" style={{ width: '589px', margin: '0 auto' }}>
                   {/* Email Input */}
                   <div>
                     <Input
@@ -81,8 +79,10 @@ const PasswordReset: React.FC = () => {
                 </form>
 
                 {/* Back to Login */}
-                <div className="mt-6 text-center">
-                  <p className="text-sm text-gray-600 mb-4">Нет аккаунта?</p>
+                <div className="mt-6" style={{ width: '589px', margin: '24px auto 0 auto' }}>
+                  <div className="text-center mb-4">
+                    <p className="text-gray-600" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Нет аккаунта?</p>
+                  </div>
                   <button
                     type="button"
                     onClick={() => navigate('/register')}
