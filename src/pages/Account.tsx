@@ -56,7 +56,7 @@ const Account: React.FC = () => {
               </h1>
               
               {/* User Type Toggle - Updated Design */}
-              <div className="flex gap-2.5 mb-6" style={{ width: '589px' }} key="user-type-toggle-v2">
+              <div className="flex gap-2.5 mb-[10px]" style={{ width: '589px', margin: '0 auto' }} key="user-type-toggle-v2">
                 <button
                   type="button"
                   onClick={() => setUserType('buyer')}
@@ -84,7 +84,7 @@ const Account: React.FC = () => {
               </div>
             </div>
 
-            <form onSubmit={handleLogin} className="space-y-4">
+            <form onSubmit={handleLogin} className="space-y-[10px]" style={{ width: '589px', margin: '0 auto' }}>
               {/* Email Input */}
               <div>
                 <Input
@@ -92,8 +92,7 @@ const Account: React.FC = () => {
                   placeholder="E-mail"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="h-12 px-4 border border-gray-300 rounded-md text-base placeholder:text-gray-400"
-                  style={{ width: '589px' }}
+                  className="w-full h-12 px-4 border border-gray-300 rounded-md text-base placeholder:text-gray-400"
                   required
                 />
               </div>
@@ -105,8 +104,7 @@ const Account: React.FC = () => {
                   placeholder="Пароль"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="h-12 px-4 pr-12 border border-gray-300 rounded-md text-base placeholder:text-gray-400"
-                  style={{ width: '589px' }}
+                  className="w-full h-12 px-4 pr-12 border border-gray-300 rounded-md text-base placeholder:text-gray-400"
                   required
                 />
                 <button
@@ -132,22 +130,21 @@ const Account: React.FC = () => {
               {/* Login Button */}
               <Button
                 type="submit"
-                className="h-12 bg-[#F53B49] hover:bg-[#e63946] text-white text-base font-medium rounded-md"
-                style={{ width: '589px' }}
+                className="w-full h-12 bg-[#F53B49] hover:bg-[#e63946] text-white text-base font-medium rounded-md"
               >
                 Войти
               </Button>
             </form>
 
             {/* Social Login */}
-            <div className="mt-6">
+            <div className="mt-6" style={{ width: '589px', margin: '24px auto 0 auto' }}>
               <div className="text-center mb-4">
                 <p className="text-sm text-gray-600">
                   Или войти с помощью
                 </p>
               </div>
               
-              <div className="flex gap-2.5" style={{ width: '589px' }}>
+              <div className="flex gap-2.5">
                 <button
                   onClick={() => handleSocialLogin('google')}
                   className="h-12 flex items-center justify-center gap-3 border border-[#F53B49] rounded-md hover:bg-red-50 transition-colors"
@@ -173,15 +170,14 @@ const Account: React.FC = () => {
             </div>
 
             {/* Registration Link */}
-            <div className="mt-6">
+            <div className="mt-6" style={{ width: '589px', margin: '24px auto 0 auto' }}>
               <div className="text-center mb-4">
                 <p className="text-sm text-gray-600">Нет аккаунта?</p>
               </div>
               <button
                 type="button"
                 onClick={() => navigate('/register')}
-                className="h-12 border border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white transition-colors rounded-md text-base font-medium"
-                style={{ width: '589px' }}
+                className="w-full h-12 border border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white transition-colors rounded-md text-base font-medium"
               >
                 Регистрация
               </button>
