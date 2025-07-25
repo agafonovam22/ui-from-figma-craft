@@ -75,7 +75,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
       <SheetPortal>
         <SheetPrimitive.Content
           className="fixed z-[9999] gap-4 bg-white p-0 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right rounded-lg"
-          style={{ position: 'fixed', right: '60px', height: '595.26085px', top: '142px', width: '483px', zIndex: 9999, transform: 'none' }}
+          style={{ position: 'fixed', right: '60px', height: '450px', top: '142px', width: '483px', zIndex: 9999, transform: 'none' }}
         >
           <SheetHeader className="p-6 border-b">
             <SheetTitle className="font-benzin-semibold text-[28px] text-gray-900 leading-none">
