@@ -73,6 +73,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
   }, [isOpen, onOpenChange]);
 
   const handleTriggerClick = () => {
+    console.log('Cart popup triggered, isOpen:', isOpen);
     onOpenChange(!isOpen);
   };
 
@@ -93,6 +94,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
             width: '483px', 
             zIndex: 9999 
           }}
+          onLoad={() => console.log('Cart popup rendered at position:', { top: '142px', right: '60px' })}
         >
           <div className="p-6 border-b">
             <h2 className="font-benzin-semibold text-[28px] text-gray-900 leading-none">
