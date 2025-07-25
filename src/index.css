@@ -12,6 +12,13 @@
 }
 
 @font-face {
+  font-family: 'Benzin-Medium';
+  src: url('/fonts/Benzin-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Benzin-Semibold';
   src: url('/fonts/Benzin-Semibold.ttf') format('truetype');
   font-weight: 600;

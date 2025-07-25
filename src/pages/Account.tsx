@@ -65,7 +65,7 @@ const Account: React.FC = () => {
                       ? 'bg-[#F53B49] text-white shadow-lg'
                       : 'border border-gray-300 bg-white text-[#262631] hover:bg-gray-50 hover:border-gray-400'
                   }`}
-                  style={{ textAlign: 'center', width: '289.5px' }}
+                  style={{ textAlign: 'left', width: '289.5px', fontFamily: 'Benzin-Medium', fontSize: '16px', paddingLeft: '32px' }}
                 >
                   Покупатель
                 </button>
@@ -77,7 +77,7 @@ const Account: React.FC = () => {
                       ? 'bg-[#F53B49] text-white shadow-lg'
                       : 'border border-gray-300 bg-white text-[#262631] hover:bg-gray-50 hover:border-gray-400'
                   }`}
-                  style={{ textAlign: 'center', width: '289.5px' }}
+                  style={{ textAlign: 'left', width: '289.5px', fontFamily: 'Benzin-Medium', fontSize: '16px', paddingLeft: '32px' }}
                 >
                   Дилер
                 </button>
@@ -118,10 +118,11 @@ const Account: React.FC = () => {
 
               {/* Forgot Password */}
               <div className="text-left">
-                <span className="text-sm text-[#262631]">Забыли пароль? </span>
+                <span className="text-[#262631]" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Забыли пароль? </span>
                 <Link
                   to="/password-reset"
-                  className="text-sm text-[#007BFF] hover:underline"
+                  className="text-[#007BFF] hover:underline"
+                  style={{ fontFamily: 'Manrope', fontSize: '16px' }}
                 >
                   Восстановить
                 </Link>
@@ -139,7 +140,7 @@ const Account: React.FC = () => {
             {/* Social Login */}
             <div className="mt-6" style={{ width: '589px', margin: '24px auto 0 auto' }}>
               <div className="text-center mb-4">
-                <p className="text-sm text-gray-600">
+                <p className="text-gray-600" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                   Или войти с помощью
                 </p>
               </div>
@@ -172,7 +173,7 @@ const Account: React.FC = () => {
             {/* Registration Link */}
             <div className="mt-6" style={{ width: '589px', margin: '24px auto 0 auto' }}>
               <div className="text-center mb-4">
-                <p className="text-sm text-gray-600">Нет аккаунта?</p>
+                <p className="text-gray-600" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Нет аккаунта?</p>
               </div>
               <button
                 type="button"
