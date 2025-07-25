@@ -110,7 +110,7 @@ const PasswordReset: React.FC = () => {
                       
                       {/* Text content - all aligned to start from same line */}
                       <div className="flex-1">
-                        <h1 className="text-2xl font-bold text-[#262631] mb-2 leading-tight">
+                        <h1 className="text-2xl font-bold text-[#262631] mb-2 leading-none">
                           Мы отправили вам письмо со ссылкой<br />
                           для восстановления пароля
                         </h1>
