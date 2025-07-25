@@ -78,7 +78,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
           style={{ position: 'fixed', right: '60px', height: '595.26085px', top: '138px', width: '483px' }}
         >
           <SheetHeader className="p-6 border-b">
-            <SheetTitle className="text-2xl font-bold text-gray-900">
+            <SheetTitle className="font-benzin-semibold text-[32px] text-gray-900 leading-none">
               Корзина ({cartItems.reduce((sum, item) => sum + item.quantity, 0)})
             </SheetTitle>
           </SheetHeader>
@@ -89,7 +89,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
               <ScrollArea className="h-full px-6">
                 <div className="space-y-4 py-4">
                   {cartItems.map((item) => (
-                    <div key={item.id} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+                    <div key={item.id} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg h-[112px]">
                       <img 
                         src={item.image} 
                         alt={item.name}
@@ -114,7 +114,13 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                         </div>
                       </div>
                       <button className="p-2 hover:bg-gray-200 rounded">
-                        <Trash2 className="w-4 h-4 text-gray-400" />
+                        <div className="w-8 h-8 bg-gray-200 rounded-lg flex items-center justify-center">
+                          <div className="w-5 h-5 bg-gray-600 rounded-sm relative">
+                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-0.5 w-2 h-1 bg-gray-600 rounded-t"></div>
+                            <div className="absolute top-1 left-1 w-0.5 h-2 bg-white"></div>
+                            <div className="absolute top-1 right-1 w-0.5 h-2 bg-white"></div>
+                          </div>
+                        </div>
                       </button>
                     </div>
                   ))}
