@@ -73,23 +73,23 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
         {children}
       </SheetTrigger>
       <SheetPortal>
-        <SheetPrimitive.Content
-          className="fixed gap-4 bg-white p-0 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right rounded-lg"
+        <div className="fixed inset-0 z-[9998] bg-black/20" onClick={() => onOpenChange(false)} />
+        <div
+          className="fixed bg-white shadow-lg rounded-lg transition-transform duration-300 ease-in-out"
           style={{ 
             position: 'fixed', 
             right: '60px', 
             height: '595.26085px', 
             top: '138px', 
             width: '483px', 
-            zIndex: 9999,
-            transform: 'none'
+            zIndex: 9999
           }}
         >
-          <SheetHeader className="p-6">
-            <SheetTitle className="font-benzin-semibold text-[28px] text-gray-900 leading-none">
+          <div className="p-6">
+            <h2 className="font-benzin-semibold text-[28px] text-gray-900 leading-none">
               Корзина ({cartItems.reduce((sum, item) => sum + item.quantity, 0)})
-            </SheetTitle>
-          </SheetHeader>
+            </h2>
+          </div>
           
           <div className="flex flex-col h-full">
             {/* Cart Items with ScrollArea */}
@@ -164,11 +164,14 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
             </div>
           </div>
           
-          <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+          <button 
+            className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+            onClick={() => onOpenChange(false)}
+          >
             <X className="h-4 w-4" />
             <span className="sr-only">Close</span>
-          </SheetPrimitive.Close>
-        </SheetPrimitive.Content>
+          </button>
+        </div>
       </SheetPortal>
     </Sheet>
   );
