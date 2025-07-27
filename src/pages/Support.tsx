@@ -923,7 +923,7 @@ const Support: React.FC = () => {
                    }}>Важно:</h3>
                  </div>
                  <div className="flex-1">
-                   <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg">
+                   <div className="bg-red-50 border-l-4 border-[#F53B49] p-6 rounded-lg">
                      <ul className="space-y-3 text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                        <li>• Требования о возврате не применяются, если недостатки возникли по вашей вине (неправильная эксплуатация, механические повреждения и т.д.).</li>
                        <li>• Для технически сложных товаров действуют особые условия возврата в течение 15 дней.</li>
