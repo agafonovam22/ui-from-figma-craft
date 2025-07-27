@@ -385,7 +385,7 @@ const Services: React.FC = () => {
                   <img 
                     src="/lovable-uploads/fcb1f59e-5de5-4faa-b202-809020318b96.png"
                     alt="Техник обслуживает тренажер"
-                    className="w-full h-[295px] object-cover rounded-lg"
+                    className="w-full h-[290px] object-cover rounded-lg"
                   />
                 </div>
                 <div className="flex-1">
