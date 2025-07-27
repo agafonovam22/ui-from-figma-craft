@@ -26,21 +26,25 @@ const Brands: React.FC = () => {
   ];
 
   const brands = [
-    { name: "BowFlex", logo: "/lovable-uploads/d7460e6e-3133-4958-a3a2-6c933938c62c.png", slug: "bowflex" },
+    { name: "SMITH", logo: "/lovable-uploads/d50cad00-318e-48ea-96f2-b94cab77942b.png", slug: "smith" },
     { name: "TRUE", logo: "/lovable-uploads/771481a7-be16-4a51-999e-fce89022b698.png", slug: "true" },
+    { name: "Bowflex", logo: "/lovable-uploads/d7460e6e-3133-4958-a3a2-6c933938c62c.png", slug: "bowflex" },
     { name: "Schwinn", logo: "/lovable-uploads/452985b7-2b68-4c62-b51e-e43fff73784d.png", slug: "schwinn" },
-    { name: "Cardio Power", logo: "/lovable-uploads/b32017a9-0774-4a12-9fcd-39bd50910a86.png", slug: "cardio-power" },
-    { name: "Benmore", logo: "/lovable-uploads/82b98e94-1117-4bad-875a-d9313a38b737.png", slug: "benmore" },
-    { name: "Nautilus", logo: "/lovable-uploads/e6c7e1c5-85ea-40ca-9d67-c478fe5165d9.png", slug: "nautilus" },
-    { name: "Sole Fitness", logo: "/lovable-uploads/1b02aa63-1000-4235-928d-c0a3dda8b467.png", slug: "sole-fitness" },
-    { name: "PEACH BUILDER", logo: "/lovable-uploads/f60c9b28-0384-4770-97ba-40b6bdcd451e.png", slug: "peach-builder" },
-    { name: "Gym80", logo: "/lovable-uploads/9b48df46-394f-465b-8136-a397de87b82b.png", slug: "gym80" },
-    { name: "октан", logo: "/lovable-uploads/05ba64f8-caa1-4ce9-8069-6889a6182ae3.png", slug: "oktan" },
-    { name: "Visbody", logo: "/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png", slug: "visbody" },
+    { name: "Peach Builder", logo: "/lovable-uploads/f60c9b28-0384-4770-97ba-40b6bdcd451e.png", slug: "peach-builder" },
+    { name: "Sole", logo: "/lovable-uploads/1b02aa63-1000-4235-928d-c0a3dda8b467.png", slug: "sole" },
+    { name: "Variosling", logo: "", slug: "variosling" },
+    { name: "CardioPower", logo: "/lovable-uploads/b32017a9-0774-4a12-9fcd-39bd50910a86.png", slug: "cardiopower" },
+    { name: "Slide&Fit", logo: "", slug: "slide-fit" },
+    { name: "cardiopower-pro", logo: "", slug: "cardiopower-pro" },
     { name: "SCHOLLE", logo: "/lovable-uploads/644a6485-04f6-4064-9ee8-cacae87e8c09.png", slug: "scholle" },
-    { name: "Life Fitness", logo: "/lovable-uploads/ef816493-63e0-456b-9a81-a821e2916f6b.png", slug: "life-fitness" },
-    { name: "Technogym", logo: "/lovable-uploads/c4fbfa9e-af20-4a86-87a4-93a9d834a095.png", slug: "technogym" },
-    { name: "SMITH", logo: "/lovable-uploads/d50cad00-318e-48ea-96f2-b94cab77942b.png", slug: "smith" }
+    { name: "INSPIRE", logo: "", slug: "inspire" },
+    { name: "hyfit", logo: "", slug: "hyfit" },
+    { name: "maxgym", logo: "", slug: "maxgym" },
+    { name: "MAXFIT", logo: "", slug: "maxfit" },
+    { name: "proski", logo: "", slug: "proski" },
+    { name: "Meridien", logo: "", slug: "meridien" },
+    { name: "kernel", logo: "", slug: "kernel" },
+    { name: "CENTR", logo: "", slug: "centr" }
   ];
 
   const toggleFilter = (filter: string) => {
