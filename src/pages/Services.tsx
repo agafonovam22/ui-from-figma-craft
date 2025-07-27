@@ -383,8 +383,8 @@ const Services: React.FC = () => {
               <div className="flex gap-8 items-center">
                 <div className="flex-1">
                   <img 
-                    src="/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png"
-                    alt="Женщина тренируется в спортзале"
+                    src="/lovable-uploads/fcb1f59e-5de5-4faa-b202-809020318b96.png"
+                    alt="Техник обслуживает тренажер"
                     className="w-full h-[300px] object-cover rounded-lg"
                   />
                 </div>
