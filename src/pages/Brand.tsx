@@ -507,11 +507,11 @@ const Brand: React.FC = () => {
               <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-6 shadow-lg">
                 <div className="h-full flex flex-col">
                   <div className="mb-4">
-                    <h2 className="text-3xl font-benzin text-gray-900 mb-4">
+                     <h2 className="text-3xl font-benzin text-gray-900 mb-4">
                       {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : brandSlug === 'peach-builder' ? 'Философия бренда строится на трёх принципах:' : brandSlug === 'gym80' ? 'Более 40 лет в служении фитнесу' : brandSlug === 'oktan' ? 'Преимущества Octane Fitness' : brandSlug === 'visbody' ? 'Почему выбирают Visbody?' : brandSlug === 'bowflex' ? 'BOWFLEX ВДОХНОВЛЯЕТ' : brandSlug === 'scholle' ? 'Широкий ассортимент для активного отдыха' : brandSlug === 'smith' ? 'Комфорт как главный приоритет' : 'Лидер в индустрии'}
                     </h2>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
-                      {brandSlug === 'cardio-power' ? '' : brandSlug === 'schwinn' ? 'Уже более века Schwinn сохраняет безупречную репутацию благодаря строгим тестам на безопасность и долговечность. Тренажёры созданы из качественных материалов и служат годами.' : brandSlug === 'nautilus' ? '' : brandSlug === 'sole-fitness' ? '' : brandSlug === 'peach-builder' ? '' : brandSlug === 'oktan' ? 'Более 25 лет Octane Fitness остается лидером инноваций в области эллиптических тренажеров, устанавливая стандарты качества и технологий.' : brandSlug === 'visbody' ? 'Единственные в отрасли технологии сочетания биоимпедансометрии и 3D-сканирования для максимально точного анализа тела.' : brandSlug === 'bowflex' ? '' : brandSlug === 'scholle' ? 'В ассортименте SCHOLLE каждый найдет оборудование по душе:' : '50+ лет на рынке, собственные инженерные разработки и строгий контроль производства'}
+                      {brandSlug === 'cardio-power' ? '' : brandSlug === 'schwinn' ? 'Уже более века Schwinn сохраняет безупречную репутацию благодаря строгим тестам на безопасность и долговечность. Тренажёры созданы из качественных материалов и служат годами.' : brandSlug === 'nautilus' ? '' : brandSlug === 'sole-fitness' ? '' : brandSlug === 'peach-builder' ? '' : brandSlug === 'oktan' ? 'Более 25 лет Octane Fitness остается лидером инноваций в области эллиптических тренажеров, устанавливая стандарты качества и технологий.' : brandSlug === 'visbody' ? 'Единственные в отрасли технологии сочетания биоимпедансометрии и 3D-сканирования для максимально точного анализа тела.' : brandSlug === 'bowflex' ? '' : brandSlug === 'scholle' ? 'В ассортименте SCHOLLE каждый найдет оборудование по душе:' : '50+ лет на рынке'}
                     </p>
                   </div>
                   
@@ -722,20 +722,29 @@ const Brand: React.FC = () => {
                           SMITH понимает, что успешные тренировки – это не только эффективность, но и удовольствие от процесса. Поэтому каждая деталь тренажеров продумана для максимального комфорта: мягкие сиденья из износостойкой синтетической кожи, нескользящие рукоятки, магнитные селекторы нагрузки, система снижения стартового сопротивления. Даже упаковка оборудования разработана специально для безопасной транспортировки – прочный гофрокартон надежно защищает тренажеры при перевозке.
                         </p>
                       ) : (
-                    <div className="grid grid-cols-2 gap-6">
-                      <div>
-                        <h3 className="font-benzin text-gray-900 mb-3">Технологии и безопасность</h3>
-                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                          передовые системы амортизации, износостойкие компоненты и интеллектуальное управление
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="font-benzin text-gray-900 mb-3">Экономия на обслуживании</h3>
-                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                          минимальные затраты благодаря надежной конструкции и доступности запчастей
-                        </p>
-                      </div>
-                    </div>
+                     <div className="space-y-6">
+                       <div>
+                         <h3 className="font-benzin text-gray-900 mb-3">Собственные инженерные разработки и контроль качества</h3>
+                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                           99.9% надежности
+                         </p>
+                         <p className="text-gray-600 text-xs leading-relaxed font-manrope text-gray-500 mt-1">
+                           Благодаря износостойким компонентам и интеллектуальному управлению
+                         </p>
+                       </div>
+                       <div>
+                         <h3 className="font-benzin text-gray-900 mb-3">3 уровня защиты</h3>
+                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                           Передовые технологии амортизации и безопасности
+                         </p>
+                       </div>
+                       <div>
+                         <h3 className="font-benzin text-gray-900 mb-3">До 40% экономии на обслуживании</h3>
+                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                           Минимальные затраты за счёт прочной конструкции и доступных запчастей
+                         </p>
+                       </div>
+                     </div>
                   )}
                 </div>
               </div>
