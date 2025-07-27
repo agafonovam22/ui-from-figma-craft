@@ -841,167 +841,47 @@ const Brand: React.FC = () => {
                   </p>
                 ) : (
                   <>
-                    <h2 
-                      className="text-4xl mb-6 leading-tight font-benzin"
-                      style={{
-                        color: '#262631',
-                        fontWeight: 400,
-                        lineHeight: '105%'
-                      }}
-                    >
-                      Наше оборудование выбирают:
-                    </h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                      Наше оборудование выбирают, потому что оно:
+                    </p>
                     
-                     <div className="space-y-8">
-                        <div>
-                          <h3 
-                            className="text-2xl font-benzin mb-3"
-                            style={{
-                              color: '#262631',
-                              fontWeight: 400,
-                              lineHeight: '105%'
-                            }}
-                          >
-                            Фитнес-клубы премиум-класса
-                          </h3>
-                          <p 
-                            className="text-sm font-manrope"
-                            style={{
-                              color: '#262631',
-                              lineHeight: '1.1'
-                            }}
-                          >
-                            для коммерческого использования с высокой нагрузкой
-                          </p>
-                        </div>
-                        
-                        <div>
-                          <h3 
-                            className="text-2xl font-benzin mb-3"
-                            style={{
-                              color: '#262631',
-                              fontWeight: 400,
-                              lineHeight: '105%'
-                            }}
-                          >
-                            Тренеры и спортсмены
-                          </h3>
-                          <p 
-                            className="text-sm font-manrope"
-                            style={{
-                              color: '#262631',
-                              lineHeight: '1.1'
-                            }}
-                          >
-                            для профессиональных тренировок
-                          </p>
-                        </div>
-                        
-                        <div>
-                          <h3 
-                            className="text-2xl font-benzin mb-3"
-                            style={{
-                              color: '#262631',
-                              fontWeight: 400,
-                              lineHeight: '105%'
-                            }}
-                          >
-                            Владельцы домашних студий
-                          </h3>
-                          <p 
-                            className="text-sm font-manrope"
-                            style={{
-                              color: '#262631',
-                              lineHeight: '1.1'
-                            }}
-                          >
-                            кто ценит долговечность и премиальный комфорт
-                          </p>
-                        </div>
-                      </div>
-                     
-                 ) : (
-                   <>
-                     <h2 
-                       className="text-4xl mb-6 leading-tight font-benzin"
-                       style={{
-                         color: '#262631',
-                         fontWeight: 400,
-                         lineHeight: '105%'
-                       }}
-                     >
-                       Наше оборудование выбирают:
-                     </h2>
-                     
-                     <div className="space-y-8">
-                       <div>
-                         <h3 
-                           className="text-2xl font-benzin mb-3"
-                           style={{
-                             color: '#262631',
-                             fontWeight: 400,
-                             lineHeight: '105%'
-                           }}
-                         >
-                           Фитнес-клубы премиум-класса
-                         </h3>
-                         <p 
-                           className="text-sm font-manrope"
-                           style={{
-                             color: '#262631',
-                             lineHeight: '1.1'
-                           }}
-                         >
-                           для коммерческого использования с высокой нагрузкой
-                         </p>
+                     <div className="space-y-6">
+                       <div className="flex items-start">
+                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                         <div>
+                           <h3 className="font-benzin text-gray-900 mb-2">Работает безотказно</h3>
+                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                             даже при интенсивной эксплуатации
+                           </p>
+                         </div>
                        </div>
                        
-                       <div>
-                         <h3 
-                           className="text-2xl font-benzin mb-3"
-                           style={{
-                             color: '#262631',
-                             fontWeight: 400,
-                             lineHeight: '105%'
-                           }}
-                         >
-                           Тренеры и спортсмены
-                         </h3>
-                         <p 
-                           className="text-sm font-manrope"
-                           style={{
-                             color: '#262631',
-                             lineHeight: '1.1'
-                           }}
-                         >
-                           для профессиональных тренировок
-                         </p>
+                       <div className="flex items-start">
+                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                         <div>
+                           <h3 className="font-benzin text-gray-900 mb-2">Сохраняет актуальность</h3>
+                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                             регулярные апгрейды и совместимость с новыми технологиями
+                           </p>
+                         </div>
                        </div>
                        
-                       <div>
-                         <h3 
-                           className="text-2xl font-benzin mb-3"
-                           style={{
-                             color: '#262631',
-                             fontWeight: 400,
-                             lineHeight: '105%'
-                           }}
-                         >
-                           Владельцы домашних студий
-                         </h3>
-                         <p 
-                           className="text-sm font-manrope"
-                           style={{
-                             color: '#262631',
-                             lineHeight: '1.1'
-                           }}
-                         >
-                           кто ценит долговечность и премиальный комфорт
-                         </p>
+                       <div className="flex items-start">
+                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                         <div>
+                           <h3 className="font-benzin text-gray-900 mb-2">Обеспечивает максимальный комфорт</h3>
+                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                             продуманная эргономика снижает нагрузку на суставы
+                           </p>
+                         </div>
                        </div>
                      </div>
-                   </>
-                 )}
+                     
+                     <p className="text-gray-600 text-sm leading-relaxed font-manrope mt-6">
+                       Выбирайте TRUE – оборудование, которое работает на ваш успех.
+                     </p>
+                  </>
+                )}
               </div>
               
               {/* Right Image */}
