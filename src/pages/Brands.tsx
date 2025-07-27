@@ -26,7 +26,7 @@ const Brands: React.FC = () => {
   ];
 
   const brands = [
-    { name: "SMITH", logo: "/lovable-uploads/d50cad00-318e-48ea-96f2-b94cab77942b.png", slug: "smith" },
+    { name: "SMITH", logo: "/lovable-uploads/3ab5325a-f04b-445c-a4f4-6f117e9107fd.png", slug: "smith" },
     { name: "TRUE", logo: "/lovable-uploads/771481a7-be16-4a51-999e-fce89022b698.png", slug: "true" },
     { name: "Bowflex", logo: "/lovable-uploads/d7460e6e-3133-4958-a3a2-6c933938c62c.png", slug: "bowflex" },
     { name: "Schwinn", logo: "/lovable-uploads/452985b7-2b68-4c62-b51e-e43fff73784d.png", slug: "schwinn" },
