@@ -110,7 +110,7 @@ const Map: React.FC<MapProps> = ({ stores }) => {
   }
 
   return (
-    <div className="relative w-full h-[400px] rounded-lg overflow-hidden">
+    <div className="relative w-full h-[328px] rounded-lg overflow-hidden">
       <div ref={mapContainer} className="absolute inset-0" />
     </div>
   );
