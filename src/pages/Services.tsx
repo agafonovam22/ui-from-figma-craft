@@ -445,7 +445,7 @@ const Services: React.FC = () => {
               <div className="mb-12">
                 <PhotoSwiper 
                   images={[
-                    '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
+                    '/lovable-uploads/6bdcf469-03ab-4f7b-83a0-9cb9dcd6a4c2.png',
                     '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png',
                     '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
                     '/lovable-uploads/94f85ba4-b118-4ce1-b7e5-12a4ce35107c.png'
