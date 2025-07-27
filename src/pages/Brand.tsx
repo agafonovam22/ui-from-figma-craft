@@ -724,7 +724,7 @@ const Brand: React.FC = () => {
                       ) : (
                      <div className="space-y-6">
                        <div>
-                         <h3 className="text-[26px] font-benzin text-gray-900 mb-3 leading-tight" style={{ fontFamily: 'Benzin-Semibold' }}>50+ лет на рынке</h3>
+                         <h3 className="text-[26px] font-benzin text-gray-900 mb-1 leading-tight" style={{ fontFamily: 'Benzin-Semibold' }}>50+ лет на рынке</h3>
                          <p className="text-sm font-manrope text-gray-600 leading-snug">
                            Собственные инженерные разработки и контроль качества
                          </p>
