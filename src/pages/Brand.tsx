@@ -239,7 +239,7 @@ const Brand: React.FC = () => {
                   src={brandSlug === 'cardio-power' ? '/lovable-uploads/16904733-b1ae-4f10-8b24-795bc1b439f6.png' : brandSlug === 'true' ? '/lovable-uploads/21b038a7-1ec4-44c6-a96c-6a342c3603de.png' : brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : brandSlug === 'schwinn' ? '/lovable-uploads/5a7d56a3-1cee-438a-b65a-a3479013fe70.png' : brandSlug === 'oktan' ? '/lovable-uploads/b7860c53-38e6-490f-a402-9811296c1da3.png' : brandSlug === 'visbody' ? '/lovable-uploads/7f518539-41a1-4a19-8284-3b07384c5521.png' : brandSlug === 'smith' ? '/lovable-uploads/65e88678-9ddb-4054-8aa5-9168061e974c.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
                   alt="Спортивные тренировки"
                   className="w-full object-cover rounded-lg"
-                  style={brandSlug === 'true' ? { height: '150px' } : { height: '500px' }}
+                  style={brandSlug === 'true' ? { height: '300px' } : { height: '500px' }}
                 />
               </div>
               
@@ -902,7 +902,7 @@ const Brand: React.FC = () => {
                   src={brandSlug === 'cardio-power' ? '/lovable-uploads/cb434f00-59df-46fa-8c90-893c647f535e.png' : brandSlug === 'true' ? '/lovable-uploads/f0b8744d-a5e4-418e-9512-534ed70c17e6.png' : brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : brandSlug === 'gym80' ? '/lovable-uploads/08975827-d091-4c00-9cb5-85e93a4b1853.png' : brandSlug === 'schwinn' ? '/lovable-uploads/af9da9ea-dbaa-4e9f-ae2f-831cda031eba.png' : brandSlug === 'oktan' ? '/lovable-uploads/52c07468-4317-41f4-8313-bcc245be5785.png' : brandSlug === 'visbody' ? '/lovable-uploads/5c83f7c6-b329-4314-b2f2-d9c78efdb039.png' : brandSlug === 'smith' ? '/lovable-uploads/3f75976a-d8e7-4175-9622-e96a69902537.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
                   alt="Качество и надежность TRUE"
                   className="w-full object-cover rounded-lg"
-                  style={brandSlug === 'true' ? { height: '200px !important' } : { height: '500px' }}
+                  style={brandSlug === 'true' ? { height: '400px !important' } : { height: '500px' }}
                 />
               </div>
             </div>
