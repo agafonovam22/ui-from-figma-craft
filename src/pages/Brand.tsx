@@ -458,7 +458,7 @@ const Brand: React.FC = () => {
                   <div className="space-y-6">
                     <div>
                       <h3 className="font-benzin text-gray-900 mb-3">Фитнес-клубы премиум-класса</h3>
-                       <p className="text-gray-600 text-sm leading-tight font-manrope">
+                       <p className="text-gray-600 text-sm leading-none font-manrope" style={{ lineHeight: '1.1' }}>
                          для коммерческого использования с высокой нагрузкой
                        </p>
                     </div>
