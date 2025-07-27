@@ -909,7 +909,30 @@ const Support: React.FC = () => {
                      </p>
                   </div>
                 </div>
-              </div>
+               </div>
+
+               {/* Разделительная линия */}
+               <div className="h-px bg-gray-300"></div>
+
+               {/* Важно */}
+               <div className="flex gap-8">
+                 <div className="w-80 flex-shrink-0">
+                   <h3 style={{
+                     fontFamily: 'Benzin-Medium',
+                     fontSize: '20px'
+                   }}>Важно:</h3>
+                 </div>
+                 <div className="flex-1">
+                   <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg">
+                     <ul className="space-y-3 text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                       <li>• Требования о возврате не применяются, если недостатки возникли по вашей вине (неправильная эксплуатация, механические повреждения и т.д.).</li>
+                       <li>• Для технически сложных товаров действуют особые условия возврата в течение 15 дней.</li>
+                       <li>• Мы гарантируем соблюдение всех ваших прав в соответствии с законодательством РФ.</li>
+                       <li>• Сроки и условия могут уточняться в соответствии с действующим законодательством о защите прав потребителей.</li>
+                     </ul>
+                   </div>
+                 </div>
+               </div>
             </div>
           )}
 
