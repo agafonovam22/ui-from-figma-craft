@@ -19,8 +19,12 @@ interface MapProps {
 const Map: React.FC<MapProps> = ({ stores }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const [mapboxToken, setMapboxToken] = useState('');
-  const [tokenEntered, setTokenEntered] = useState(false);
+  const [mapboxToken, setMapboxToken] = useState(() => {
+    return localStorage.getItem('mapboxToken') || '';
+  });
+  const [tokenEntered, setTokenEntered] = useState(() => {
+    return !!localStorage.getItem('mapboxToken');
+  });
 
   useEffect(() => {
     if (!mapContainer.current || !tokenEntered || !mapboxToken) return;
@@ -91,7 +95,10 @@ const Map: React.FC<MapProps> = ({ stores }) => {
             className="flex-1"
           />
           <Button
-            onClick={() => setTokenEntered(true)}
+            onClick={() => {
+              localStorage.setItem('mapboxToken', mapboxToken);
+              setTokenEntered(true);
+            }}
             disabled={!mapboxToken.trim()}
             className="bg-[#F53B49] hover:bg-[#e63946] text-white"
           >
