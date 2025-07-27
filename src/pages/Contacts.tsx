@@ -191,260 +191,234 @@ const Contacts: React.FC = () => {
           />
         </div>
 
-        {/* Office and Sales Departments */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
-          <div className="bg-gray-50 rounded-lg p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Офис WellFitness</h3>
-            
-            <div className="space-y-4 text-gray-700">
-              <div className="flex items-start gap-3">
-                <img src="/lovable-uploads/31c0ee66-1daf-4513-8947-c2990045d4a6.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
-                  <p className="text-sm">
-                    Москва, ул. Маршала Прошлякова,<br />
-                    д. 30, офис 407, БЦ "Зенит Плаза"
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <img src="/lovable-uploads/f90ab0e0-2a09-45ef-a7ac-3f95d97744c7.png" alt="Time" className="w-4 h-4 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1">Режим работы</p>
-                  <p className="text-sm">09:30 – 17:30</p>
-                </div>
-              </div>
-
-              <button className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors">
-                Как проехать
-              </button>
-            </div>
-          </div>
-
-          <div className="bg-gray-50 rounded-lg p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Отдел продаж PRO</h3>
-            
-            <div className="space-y-4 text-gray-700">
-              <div className="flex items-start gap-3">
-                <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                  <p className="text-sm">+7 (499) 677-56-32 доб. 5</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
-                  <p className="text-sm">pro@wellfitness.ru</p>
-                   <p className="text-xs text-gray-500 mt-1">
-                     для консультаций<br />
-                     по профессиональному оборудованию и комплексным решениям
-                   </p>
-                  <p className="text-sm mt-2">zakaz@wellfitness.ru</p>
-                   <p className="text-xs text-gray-500 mt-1">
-                     для приема дилерских заказов<br />
-                     на оборудование, аксессуары, запчасти
-                   </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-gray-50 rounded-lg p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Отдел продаж HOME</h3>
-            
-            <div className="space-y-4 text-gray-700">
-              <div className="flex items-start gap-3">
-                <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                  <p className="text-sm">+7 (499) 677-56-32 доб. 1-1</p>
-                  <p className="text-sm">+7 (499) 677-56-32 доб. 1-2</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
-                  <p className="text-sm">info@wellfitness.ru</p>
-                   <p className="text-xs text-gray-500 mt-1">
-                     по общим вопросам, вопросам сотрудничества, жалобам<br />
-                     и предложениям
-                   </p>
-                  <p className="text-sm mt-2">agent@wellfitness.ru</p>
-                  <p className="text-xs text-gray-500 mt-1">
-                    для приема агентских заказов
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Accounting, Service and Logistics Departments */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-12">
-          <div className="bg-gray-50 rounded-lg p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Отдел бухгалтерии</h3>
-            
-            <div className="space-y-4 text-gray-700">
-              <div className="flex items-start gap-3">
-                <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                  <p className="text-sm">+7 (499) 677-56-32 доб. 4</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
-                  <p className="text-sm">buh@wellfitness.ru</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-gray-50 rounded-lg p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Сервисная служба</h3>
-            
-            <div className="space-y-4 text-gray-700">
-              <div className="flex items-start gap-3">
-                <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                  <p className="text-sm">+7 (499) 677-56-32 доб. 2</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
-                  <p className="text-sm">service@wellfitness.ru</p>
-                  <p className="text-xs text-gray-500 mt-1">
-                    Звонки принимаются с 9 до 18, заявки на почту - круглосуточно.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-gray-50 rounded-lg p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Отдел логистики</h3>
-            
-            <div className="space-y-4 text-gray-700">
-              <div className="flex items-start gap-3">
-                <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                  <p className="text-sm">+7 (499) 677-56-32 доб. 3</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
-                  <p className="text-sm">logist@wellfitness.ru</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Warehouses */}
-        <div className="mb-12">
-          <h2 className="font-heading text-[32px] text-layout-dark-grey mb-6 leading-none">Склады</h2>
-          
-          {activeTab === 'moscow' ? (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-gray-50 rounded-lg p-4">
-                <h3 className="font-heading text-[20px] text-layout-dark-grey mb-3 leading-none">Красногорск (Основной / МО)</h3>
+        {/* Office and Sales Departments - Only for Moscow */}
+        {activeTab === 'moscow' && (
+          <>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Офис WellFitness</h3>
                 
-                <div className="space-y-3 mb-4">
-                  <div className="flex items-start gap-2">
-                    <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
+                <div className="space-y-4 text-gray-700">
+                  <div className="flex items-start gap-3">
+                    <img src="/lovable-uploads/31c0ee66-1daf-4513-8947-c2990045d4a6.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-[14px] text-layout-grey-text mb-1">Адрес</p>
-                      <p className="text-[14px] text-layout-dark-grey font-medium">
-                        Московская область, Красногорский р-н,<br />
-                        пос. Гольево, ул. Центральная
+                      <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
+                      <p className="text-sm">
+                        Москва, ул. Маршала Прошлякова,<br />
+                        д. 30, офис 407, БЦ "Зенит Плаза"
                       </p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start gap-2">
-                    <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
+                  <div className="flex items-start gap-3">
+                    <img src="/lovable-uploads/f90ab0e0-2a09-45ef-a7ac-3f95d97744c7.png" alt="Time" className="w-4 h-4 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-[14px] text-layout-grey-text mb-1">Телефон</p>
-                      <p className="text-[14px] text-layout-dark-grey font-medium">+7 (499) 677-56-32 доб. 1</p>
+                      <p className="text-[16px] text-layout-grey-text mb-1">Режим работы</p>
+                      <p className="text-sm">09:30 – 17:30</p>
                     </div>
                   </div>
-                </div>
 
+                  <button className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors">
+                    Как проехать
+                  </button>
+                </div>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-4">
-                <h3 className="font-heading text-[20px] text-layout-dark-grey mb-3 leading-none">Химки (МО)</h3>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Отдел продаж PRO</h3>
                 
-                <div className="space-y-3 mb-4">
-                  <div className="flex items-start gap-2">
-                    <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
+                <div className="space-y-4 text-gray-700">
+                  <div className="flex items-start gap-3">
+                    <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-[14px] text-layout-grey-text mb-1">Адрес</p>
-                      <p className="text-[14px] text-layout-dark-grey font-medium">
-                        Московская область, г. Химки,<br />
-                        мкр Сходня, ул. Некрасова, д. 2
-                      </p>
+                      <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
+                      <p className="text-sm">+7 (499) 677-56-32 доб. 5</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start gap-2">
-                    <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
+                  <div className="flex items-start gap-3">
+                    <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-[14px] text-layout-grey-text mb-1">Телефон</p>
-                      <p className="text-[14px] text-layout-dark-grey font-medium">+7 (499) 677-56-32 доб. 1</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-gray-50 rounded-lg p-4">
-                <h3 className="font-heading text-[20px] text-layout-dark-grey mb-3 leading-none">Санкт-Петербург (СПБ)</h3>
-                
-                <div className="space-y-3 mb-4">
-                  <div className="flex items-start gap-2">
-                    <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
-                    <div>
-                      <p className="text-[14px] text-layout-grey-text mb-1">Адрес</p>
-                       <p className="text-[14px] text-layout-dark-grey font-medium">
-                         г. Санкт-Петербург, Красногвардейский пер 23 лит Е,<br />
-                         Территория завода "Ильич". Заезд с Вазаского переулка
+                      <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
+                      <p className="text-sm">pro@wellfitness.ru</p>
+                       <p className="text-xs text-gray-500 mt-1">
+                         для консультаций<br />
+                         по профессиональному оборудованию и комплексным решениям
+                       </p>
+                      <p className="text-sm mt-2">zakaz@wellfitness.ru</p>
+                       <p className="text-xs text-gray-500 mt-1">
+                         для приема дилерских заказов<br />
+                         на оборудование, аксессуары, запчасти
                        </p>
                     </div>
                   </div>
-                  
-                  <div className="flex items-start gap-2">
-                    <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
+                </div>
+              </div>
+
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Отдел продаж HOME</h3>
+                
+                <div className="space-y-4 text-gray-700">
+                  <div className="flex items-start gap-3">
+                    <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-[14px] text-layout-grey-text mb-1">Телефон</p>
-                      <p className="text-[14px] text-layout-dark-grey font-medium">+7 (905) 254-28-04</p>
+                      <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
+                      <p className="text-sm">+7 (499) 677-56-32 доб. 1-1</p>
+                      <p className="text-sm">+7 (499) 677-56-32 доб. 1-2</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
+                      <p className="text-sm">info@wellfitness.ru</p>
+                       <p className="text-xs text-gray-500 mt-1">
+                         по общим вопросам, вопросам сотрудничества, жалобам<br />
+                         и предложениям
+                       </p>
+                      <p className="text-sm mt-2">agent@wellfitness.ru</p>
+                      <p className="text-xs text-gray-500 mt-1">
+                        для приема агентских заказов
+                      </p>
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
-          )}
-        </div>
+
+            {/* Accounting, Service and Logistics Departments */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-12">
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Отдел бухгалтерии</h3>
+                
+                <div className="space-y-4 text-gray-700">
+                  <div className="flex items-start gap-3">
+                    <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
+                      <p className="text-sm">+7 (499) 677-56-32 доб. 4</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
+                      <p className="text-sm">buh@wellfitness.ru</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Сервисная служба</h3>
+                
+                <div className="space-y-4 text-gray-700">
+                  <div className="flex items-start gap-3">
+                    <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
+                      <p className="text-sm">+7 (499) 677-56-32 доб. 2</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
+                      <p className="text-sm">service@wellfitness.ru</p>
+                      <p className="text-xs text-gray-500 mt-1">
+                        Звонки принимаются с 9 до 18, заявки на почту - круглосуточно.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Отдел логистики</h3>
+                
+                <div className="space-y-4 text-gray-700">
+                  <div className="flex items-start gap-3">
+                    <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
+                      <p className="text-sm">+7 (499) 677-56-32 доб. 3</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
+                      <p className="text-sm">logist@wellfitness.ru</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Warehouses */}
+            <div className="mb-12">
+              <h2 className="font-heading text-[32px] text-layout-dark-grey mb-6 leading-none">Склады</h2>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <h3 className="font-heading text-[20px] text-layout-dark-grey mb-3 leading-none">Красногорск (Основной / МО)</h3>
+                  
+                  <div className="space-y-3 mb-4">
+                    <div className="flex items-start gap-2">
+                      <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <p className="text-[14px] text-layout-grey-text mb-1">Адрес</p>
+                        <p className="text-[14px] text-layout-dark-grey font-medium">
+                          Московская область, Красногорский р-н,<br />
+                          пос. Гольево, ул. Центральная
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-2">
+                      <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <p className="text-[14px] text-layout-grey-text mb-1">Телефон</p>
+                        <p className="text-[14px] text-layout-dark-grey font-medium">+7 (499) 677-56-32 доб. 1</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <h3 className="font-heading text-[20px] text-layout-dark-grey mb-3 leading-none">Химки (МО)</h3>
+                  
+                  <div className="space-y-3 mb-4">
+                    <div className="flex items-start gap-2">
+                      <img src="/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <p className="text-[14px] text-layout-grey-text mb-1">Адрес</p>
+                        <p className="text-[14px] text-layout-dark-grey font-medium">
+                          Московская область, г. Химки,<br />
+                          мкр Сходня, ул. Некрасова, д. 2
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-2">
+                      <img src="/lovable-uploads/c070b4b5-ffa6-4220-8bfd-ce9454b535c5.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
+                      <div>
+                        <p className="text-[14px] text-layout-grey-text mb-1">Телефон</p>
+                        <p className="text-[14px] text-layout-dark-grey font-medium">+7 (499) 677-56-32 доб. 1</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </>
+        )}
 
         {/* Legal Information */}
         <div className="border border-[#F53B49] rounded-lg bg-white mb-12">
