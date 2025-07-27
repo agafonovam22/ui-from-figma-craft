@@ -724,26 +724,26 @@ const Brand: React.FC = () => {
                       ) : (
                      <div className="space-y-6">
                        <div>
-                         <h3 className="text-[32px] font-benzin text-gray-900 mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>50+ лет на рынке</h3>
-                         <p className="text-base font-manrope text-gray-600 leading-relaxed">
+                         <h3 className="text-[26px] font-benzin text-gray-900 mb-3 leading-tight" style={{ fontFamily: 'Benzin-Semibold' }}>50+ лет на рынке</h3>
+                         <p className="text-sm font-manrope text-gray-600 leading-snug">
                            Собственные инженерные разработки и контроль качества
                          </p>
                        </div>
                        <div>
-                         <h3 className="text-[32px] font-benzin text-gray-900 mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>99.9% надежности</h3>
-                         <p className="text-base font-manrope text-gray-600 leading-relaxed">
+                         <h3 className="text-[26px] font-benzin text-gray-900 mb-3 leading-tight" style={{ fontFamily: 'Benzin-Semibold' }}>99.9% надежности</h3>
+                         <p className="text-sm font-manrope text-gray-600 leading-snug">
                            Благодаря износостойким компонентам и интеллектуальному управлению
                          </p>
                        </div>
                        <div>
-                         <h3 className="text-[32px] font-benzin text-gray-900 mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>3 уровня защиты</h3>
-                         <p className="text-base font-manrope text-gray-600 leading-relaxed">
+                         <h3 className="text-[26px] font-benzin text-gray-900 mb-3 leading-tight" style={{ fontFamily: 'Benzin-Semibold' }}>3 уровня защиты</h3>
+                         <p className="text-sm font-manrope text-gray-600 leading-snug">
                            Передовые технологии амортизации и безопасности
                          </p>
                        </div>
                        <div>
-                         <h3 className="text-[32px] font-benzin text-gray-900 mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>До 40% экономии на обслуживании</h3>
-                         <p className="text-base font-manrope text-gray-600 leading-relaxed">
+                         <h3 className="text-[26px] font-benzin text-gray-900 mb-3 leading-tight" style={{ fontFamily: 'Benzin-Semibold' }}>До 40% экономии на обслуживании</h3>
+                         <p className="text-sm font-manrope text-gray-600 leading-snug">
                            Минимальные затраты за счёт прочной конструкции и доступных запчастей
                          </p>
                        </div>
