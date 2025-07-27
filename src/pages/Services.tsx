@@ -70,7 +70,6 @@ const Services: React.FC = () => {
   const tabs = [
     { id: 'service-request', label: 'Заявка на сервис', active: true },
     { id: 'fitness-clubs', label: 'Обслуживание фитнес клубов', active: false },
-    { id: 'services', label: 'Услуги', active: false },
     { id: 'instructions', label: 'Инструкции', active: false },
     { id: 'video-instructions', label: 'Видео-инструкции', active: false }
   ];
@@ -132,43 +131,6 @@ const Services: React.FC = () => {
     }
   ];
 
-  const services = [
-    {
-      id: 1,
-      title: 'Доставка',
-      description: 'У нас работают высококвалифицированные сотрудники со стажем более 5 лет. Мы оперативно доставляем заказы наших клиентов в любую точку г. Москвы и Санкт-Петербурга, а также других регионов России.',
-      backgroundImage: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png',
-      buttonText: 'Перейти'
-    },
-    {
-      id: 2,
-      title: 'Сборка',
-      description: 'Наша компания оказывает полный спектр услуг по подъему и сборке оборудования. Сотрудники оснащены всем необходимым инструментом и имеют огромный опыт.',
-      backgroundImage: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
-      buttonText: 'Перейти'
-    },
-    {
-      id: 3,
-      title: 'Различные способы оплаты',
-      description: 'У всех экипажей нашей компании присутствуют терминалы для безналичной оплаты, вы можете оплатить свою покупку различными способами: наличными, банковской картой, через QR код или оплатить товар по счету.',
-      backgroundImage: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
-      buttonText: 'Перейти'
-    },
-    {
-      id: 4,
-      title: 'Рассрочка',
-      description: 'Вы можете оформить рассрочку сроком до 12 месяцев, без переплат, без первоначального взноса, оставьте заявку и менеджеры банков-партнеров свяжутся с вами.',
-      backgroundImage: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png',
-      buttonText: 'Перейти'
-    },
-    {
-      id: 5,
-      title: 'Демонтаж и переезд',
-      description: 'Также вы можете заказать услуги по перевозке спортивного оборудования с полным демонтажом и сборкой на новом месте. Хотите перевезти свой тренажер в новую квартиру или загородный дом - это к нам!',
-      backgroundImage: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
-      buttonText: 'Перейти'
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -195,7 +157,6 @@ const Services: React.FC = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-8">
             {activeTab === 'fitness-clubs' ? 'Обслуживание фитнес клубов' : 
              activeTab === 'video-instructions' ? 'Видео-инструкции' :
-             activeTab === 'services' ? 'Услуги' :
              'Оставить заявку на сервис'}
           </h1>
 
@@ -507,36 +468,6 @@ const Services: React.FC = () => {
             </div>
           )}
 
-          {/* Services Tab Content */}
-          {activeTab === 'services' && (
-            <div className="space-y-8">
-              <h2 className="text-3xl font-bold text-gray-900">Услуги</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {services.map((service) => (
-                  <div 
-                    key={service.id} 
-                    className="relative rounded-lg overflow-hidden h-64 group cursor-pointer"
-                  >
-                    <div 
-                      className="absolute inset-0 bg-cover bg-center"
-                      style={{ backgroundImage: `url(${service.backgroundImage})` }}
-                    >
-                      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-                    </div>
-                    <div className="relative h-full p-6 flex flex-col text-white">
-                      <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                      <p className="text-sm leading-relaxed mb-4 flex-grow">
-                        {service.description}
-                      </p>
-                      <button className="bg-white text-black px-4 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-colors self-start">
-                        {service.buttonText} →
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
 
           {/* Video Instructions Tab Content */}
           {activeTab === 'video-instructions' && (
