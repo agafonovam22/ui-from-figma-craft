@@ -177,7 +177,10 @@ const Contacts: React.FC = () => {
             </div>
             
             <div className="w-2/3 h-full">
-              <ShowroomMap />
+              <ShowroomMap 
+                coordinates={activeTab === 'spb' ? [30.324203737087338, 59.98157313429388] : undefined}
+                isSpb={activeTab === 'spb'}
+              />
             </div>
           </div>
         </div>

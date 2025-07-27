@@ -4,14 +4,19 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
-const ShowroomMap: React.FC = () => {
+interface ShowroomMapProps {
+  coordinates?: [number, number];
+  isSpb?: boolean;
+}
+
+const ShowroomMap: React.FC<ShowroomMapProps> = ({ coordinates, isSpb = false }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const mapboxToken = 'pk.eyJ1Ijoid2VsbGZpdG5lc3MiLCJhIjoiY21kaDR0aGw2MDAwZzJqc2R5eGN3ZTRiaCJ9.Q5YCu1Mnrw4S6W1scjYRlg';
   const tokenEntered = true;
 
-  // Coordinates for the showroom: Правобережная ул., 1Б, Москва, Россия, 125445
-  const showroomCoordinates: [number, number] = [37.448739268736084, 55.88084760674918];
+  // Coordinates for Moscow showroom by default, or use provided coordinates
+  const showroomCoordinates: [number, number] = coordinates || [37.448739268736084, 55.88084760674918];
 
   useEffect(() => {
     if (!mapContainer.current) return;
@@ -37,10 +42,10 @@ const ShowroomMap: React.FC = () => {
     // Create popup for showroom
     const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
       <div class="p-3">
-        <h3 class="font-bold text-gray-900 mb-2">Шоу-рум WellFitness</h3>
-        <p class="text-sm text-gray-600 mb-1">Москва, ТЦ Капитолий, Правобережная улица, 1Б</p>
-        <p class="text-sm text-gray-600 mb-1">+7 (499) 677-56-32 доб. 337</p>
-        <p class="text-sm text-gray-600">10:00 - 22:00</p>
+        <h3 class="font-bold text-gray-900 mb-2">${isSpb ? 'Склад' : 'Шоу-рум WellFitness'}</h3>
+        <p class="text-sm text-gray-600 mb-1">${isSpb ? 'г. Санкт-Петербург, Красногвардейский пер 23 лит Е, Территория завода "Ильич". Заезд с Вазаского переулка' : 'Москва, ТЦ Капитолий, Правобережная улица, 1Б'}</p>
+        <p class="text-sm text-gray-600 mb-1">${isSpb ? '+7 (905) 254-28-04' : '+7 (499) 677-56-32 доб. 337'}</p>
+        ${!isSpb ? '<p class="text-sm text-gray-600">10:00 - 22:00</p>' : ''}
       </div>
     `);
 
