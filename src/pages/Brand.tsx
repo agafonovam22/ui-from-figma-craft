@@ -742,7 +742,7 @@ const Brand: React.FC = () => {
                          </p>
                        </div>
                        <div>
-                         <h3 className="text-[26px] font-benzin text-gray-900 mb-3 leading-tight" style={{ fontFamily: 'Benzin-Semibold' }}>До 40% экономии на обслуживании</h3>
+                         <h3 className="text-[26px] font-benzin text-gray-900 mb-1 leading-tight" style={{ fontFamily: 'Benzin-Semibold' }}>До 40% экономии на обслуживании</h3>
                          <p className="text-sm font-manrope text-gray-600 leading-snug">
                            Минимальные затраты за счёт прочной конструкции и доступных запчастей
                          </p>
