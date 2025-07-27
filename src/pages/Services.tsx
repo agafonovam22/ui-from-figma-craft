@@ -380,7 +380,7 @@ const Services: React.FC = () => {
           {activeTab === 'fitness-clubs' && (
             <div className="space-y-12">
               {/* First section with image and text */}
-              <div className="flex gap-8 items-center">
+              <div className="flex gap-8 items-start">
                 <div className="flex-1">
                   <img 
                     src="/lovable-uploads/fcb1f59e-5de5-4faa-b202-809020318b96.png"
