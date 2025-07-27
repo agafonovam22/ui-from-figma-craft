@@ -722,44 +722,25 @@ const Brand: React.FC = () => {
                           SMITH понимает, что успешные тренировки – это не только эффективность, но и удовольствие от процесса. Поэтому каждая деталь тренажеров продумана для максимального комфорта: мягкие сиденья из износостойкой синтетической кожи, нескользящие рукоятки, магнитные селекторы нагрузки, система снижения стартового сопротивления. Даже упаковка оборудования разработана специально для безопасной транспортировки – прочный гофрокартон надежно защищает тренажеры при перевозке.
                         </p>
                       ) : (
-                     <div className="space-y-8">
-                       <div className="bg-gradient-to-r from-gray-50 to-white p-6 rounded-lg border-l-4 border-[#F53B49]">
-                         <div className="flex items-center mb-3">
-                           <div className="w-8 h-8 bg-[#F53B49] rounded-full flex items-center justify-center mr-3">
-                             <span className="text-white font-bold text-sm">50+</span>
-                           </div>
-                           <h3 className="text-lg font-benzin text-gray-900">лет на рынке</h3>
-                         </div>
-                         <h4 className="font-benzin text-gray-900 mb-2 text-base">Собственные инженерные разработки и контроль качества</h4>
-                         <div className="flex items-center">
-                           <span className="text-2xl font-bold text-[#F53B49] mr-2">99.9%</span>
-                           <span className="text-sm font-medium text-gray-700">надежности</span>
-                         </div>
-                         <p className="text-xs text-gray-500 mt-1">
+                     <div className="space-y-6">
+                       <div>
+                         <h3 className="font-benzin text-gray-900 mb-3">Собственные инженерные разработки и контроль качества</h3>
+                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                           99.9% надежности
+                         </p>
+                         <p className="text-gray-600 text-xs leading-relaxed font-manrope text-gray-500 mt-1">
                            Благодаря износостойким компонентам и интеллектуальному управлению
                          </p>
                        </div>
-
-                       <div className="bg-gradient-to-r from-blue-50 to-white p-6 rounded-lg border-l-4 border-blue-500">
-                         <div className="flex items-center mb-3">
-                           <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
-                             <span className="text-white font-bold text-sm">3</span>
-                           </div>
-                           <h3 className="text-lg font-benzin text-gray-900">уровня защиты</h3>
-                         </div>
-                         <p className="text-sm text-gray-600">
+                       <div>
+                         <h3 className="font-benzin text-gray-900 mb-3">3 уровня защиты</h3>
+                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                            Передовые технологии амортизации и безопасности
                          </p>
                        </div>
-
-                       <div className="bg-gradient-to-r from-green-50 to-white p-6 rounded-lg border-l-4 border-green-500">
-                         <div className="flex items-center mb-3">
-                           <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
-                             <span className="text-white font-bold text-xs">40%</span>
-                           </div>
-                           <h3 className="text-lg font-benzin text-gray-900">экономии на обслуживании</h3>
-                         </div>
-                         <p className="text-sm text-gray-600">
+                       <div>
+                         <h3 className="font-benzin text-gray-900 mb-3">До 40% экономии на обслуживании</h3>
+                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                            Минимальные затраты за счёт прочной конструкции и доступных запчастей
                          </p>
                        </div>
