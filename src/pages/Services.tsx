@@ -433,10 +433,13 @@ const Services: React.FC = () => {
               <div className="mb-12">
                 <PhotoSwiper 
                   images={[
-                    '/lovable-uploads/6bdcf469-03ab-4f7b-83a0-9cb9dcd6a4c2.png',
-                    '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png',
-                    '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
-                    '/lovable-uploads/94f85ba4-b118-4ce1-b7e5-12a4ce35107c.png'
+                    '/lovable-uploads/030e34e4-699c-41a5-8ab7-881248ade7e2.png',
+                    '/lovable-uploads/a0e58b41-ce42-4249-ac4f-471f336e695f.png',
+                    '/lovable-uploads/f3ed87e5-3c79-4f1a-81be-5c7ec3121937.png',
+                    '/lovable-uploads/a0a93603-be57-421e-8d8d-8b531c429ce6.png',
+                    '/lovable-uploads/431130ee-d505-4e9e-b95e-17f7123edb99.png',
+                    '/lovable-uploads/0b8e1012-a881-4b78-a68a-a221357703be.png',
+                    '/lovable-uploads/d5dc6367-9936-4cfb-9988-d6ee1ec6f6f5.png'
                   ]}
                   autoplay={true}
                   autoplayInterval={5000}
