@@ -421,23 +421,11 @@ const Services: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex-1">
-                  <div className="grid grid-cols-3 gap-4">
-                    <img 
-                      src="/lovable-uploads/6f3410eb-d6c6-4add-a8a2-131a6bf52736.png"
-                      alt="Техник обслуживает тренажер"
-                      className="w-full h-32 object-cover rounded-lg"
-                    />
-                    <img 
-                      src="/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png"
-                      alt="Спортивное оборудование"
-                      className="w-full h-32 object-cover rounded-lg"
-                    />
-                    <img 
-                      src="/lovable-uploads/949b1384-82af-4a1c-bbc2-e4f225491933.png"
-                      alt="Спортивное оборудование"
-                      className="w-full h-32 object-cover rounded-lg"
-                    />
-                  </div>
+                  <img 
+                    src="/lovable-uploads/6f3410eb-d6c6-4add-a8a2-131a6bf52736.png"
+                    alt="Техник обслуживает тренажер"
+                    className="w-full h-[295px] object-cover rounded-lg"
+                  />
                 </div>
               </div>
 
