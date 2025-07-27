@@ -132,7 +132,7 @@ const Brands: React.FC = () => {
                 <img 
                   src={brand.logo} 
                   alt={brand.name}
-                  className="max-h-16 w-auto object-contain"
+                  className={`w-auto object-contain ${brand.name === 'TRUE' ? 'max-h-20' : 'max-h-16'}`}
                 />
               ) : (
                 <span className="text-gray-400 text-lg font-medium">{brand.name}</span>
