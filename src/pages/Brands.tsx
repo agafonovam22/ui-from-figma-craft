@@ -44,7 +44,7 @@ const Brands: React.FC = () => {
     { name: "proski", logo: "", slug: "proski" },
     { name: "Meridien", logo: "", slug: "meridien" },
     { name: "kernel", logo: "", slug: "kernel" },
-    { name: "CENTR", logo: "", slug: "centr" }
+    { name: "CENTR", logo: "/lovable-uploads/6317917f-5d52-453f-b576-b18e47712812.png", slug: "centr" }
   ];
 
   const toggleFilter = (filter: string) => {
