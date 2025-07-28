@@ -96,7 +96,7 @@ const Cart: React.FC = () => {
           />
         </svg>
       ))}
-      <span className="text-sm text-gray-600 ml-1">{rating}/5</span>
+      <span className="text-sm ml-1" style={{ color: '#F99808', fontFamily: 'Benzin-Regular' }}>{rating}/5</span>
     </div>
   );
 
@@ -126,7 +126,7 @@ const Cart: React.FC = () => {
           {/* Cart Items */}
           <div className="lg:col-span-3 space-y-6">
             {cartItems.map((item) => (
-              <div key={item.id} className="flex items-start gap-4 p-6 bg-white border rounded-lg relative">
+              <div key={item.id} className="flex items-start gap-4 p-6 border rounded-lg relative" style={{ backgroundColor: '#F8F8FD' }}>
                 {/* Product Badge */}
                 {item.isNew && (
                   <div className="absolute top-4 left-4 bg-green-500 text-white text-xs px-2 py-1 rounded uppercase font-medium z-10">
@@ -147,12 +147,13 @@ const Cart: React.FC = () => {
                 <div className="flex-1 min-w-0">
                   <StarRating rating={item.rating} />
                   
-                  <h3 className="text-lg font-bold text-gray-900 mt-2 mb-3 line-clamp-2">
-                    {item.name}
+                  <h3 className="text-lg font-bold text-gray-900 mt-2 mb-3">
+                    <div>Гребной тренажер</div>
+                    <div>CardioPowe PRO CR300</div>
                   </h3>
                   
                   <div className="text-sm text-gray-600 mb-3 space-y-1">
-                    <div>Цвет: <span className="font-medium">{item.color}</span></div>
+                    <div>Цвет: <span className="font-medium" style={{ color: '#262631' }}>{item.color}</span></div>
                     <div>Диаметр, ft: <span className="font-medium">{item.diameter}</span></div>
                   </div>
                   
