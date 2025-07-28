@@ -329,7 +329,8 @@ const Support: React.FC = () => {
                   <div className="flex items-center gap-2">
                     <h3 style={{
                       fontFamily: 'Benzin-Medium',
-                      fontSize: '20px'
+                      fontSize: '20px',
+                      lineHeight: '1.2'
                     }}>
                       Город доставки
                     </h3>
