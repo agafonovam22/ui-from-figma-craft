@@ -220,7 +220,7 @@ const Cart: React.FC = () => {
                     <button className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 text-gray-600">
                       <Minus className="w-4 h-4" />
                     </button>
-                    <span className="text-lg font-medium min-w-[2rem] text-center">{item.quantity}</span>
+                    <span className="text-sm font-medium min-w-[2rem] text-center" style={{ color: '#778093' }}>{item.quantity}</span>
                     <button className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 text-gray-600">
                       <Plus className="w-4 h-4" />
                     </button>
