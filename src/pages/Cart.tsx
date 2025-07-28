@@ -37,7 +37,7 @@ const Cart: React.FC = () => {
     {
       id: 1,
       name: "Гребной тренажер CardioPowe PRO CR300",
-      image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
+      image: "/lovable-uploads/6d5d3486-5263-42ec-9091-5d9522a235e6.png",
       price: 4610,
       originalPrice: 5420,
       discount: 15,
@@ -52,7 +52,7 @@ const Cart: React.FC = () => {
     {
       id: 2,
       name: "Гребной тренажер CardioPowe PRO CR300",
-      image: "/lovable-uploads/f86d41dd-f2f8-4cab-a66e-40c3a81d9cbf.png",
+      image: "/lovable-uploads/6d5d3486-5263-42ec-9091-5d9522a235e6.png",
       price: 4610,
       originalPrice: 5420,
       discount: 15,
@@ -67,7 +67,7 @@ const Cart: React.FC = () => {
     {
       id: 3,
       name: "Гребной тренажер CardioPowe PRO CR300",
-      image: "/lovable-uploads/43ad4887-adce-485a-b310-3d8582e01128.png",
+      image: "/lovable-uploads/6d5d3486-5263-42ec-9091-5d9522a235e6.png",
       price: 4610,
       originalPrice: 5420,
       discount: 15,
