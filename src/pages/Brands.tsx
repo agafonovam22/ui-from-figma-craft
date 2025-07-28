@@ -32,7 +32,7 @@ const Brands: React.FC = () => {
     { name: "Schwinn", logo: "/lovable-uploads/ad78a6d2-d93d-45b2-a7f5-b5b3ebeb339a.png", slug: "schwinn" },
     { name: "Peach Builder", logo: "/lovable-uploads/6b768359-79b4-4e0e-918d-b7483e377f0e.png", slug: "peach-builder" },
     { name: "Sole", logo: "/lovable-uploads/26387732-07b6-4dba-863a-351d34e19d1f.png", slug: "sole" },
-    { name: "Variosling", logo: "/lovable-uploads/7069626b-d115-45ec-b822-e97909ad4c37.png", slug: "variosling" },
+    { name: "Variosling", logo: "/lovable-uploads/c0279280-6434-4917-a15a-a329b4f77188.png", slug: "variosling" },
     { name: "CardioPower", logo: "/lovable-uploads/b32017a9-0774-4a12-9fcd-39bd50910a86.png", slug: "cardiopower" },
     { name: "Slide&Fit", logo: "/lovable-uploads/266afacd-f80f-49ba-a31c-e3e823a82ddd.png", slug: "slide-fit" },
     { name: "cardiopower-pro", logo: "/lovable-uploads/a4f43c68-83aa-4cd0-9c21-b8945a16a90a.png", slug: "cardiopower-pro" },
