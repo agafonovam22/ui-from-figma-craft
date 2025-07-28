@@ -14,21 +14,23 @@ import Footer from '@/components/Footer';
 
 const Index: React.FC = () => {
   return (
-    <main className="min-h-screen bg-white flex flex-col items-center">
+    <main className="min-h-screen bg-white">
       <Header />
-      <div className="flex flex-col gap-6 w-full pt-6">
-        <Banner />
-        <ProductCatalog />
-        <NewProducts />
-        <PromotionsOffers />
-        <IdeasSelections />
-        <PopularBrands />
-        <Showrooms />
-        <NewsAndBlog />
+      <div className="w-full">
+        <div className="max-w-[1800px] mx-auto flex flex-col gap-6 pt-6 px-4 lg:px-8">
+          <Banner />
+          <ProductCatalog />
+          <NewProducts />
+          <PromotionsOffers />
+          <IdeasSelections />
+          <PopularBrands />
+          <Showrooms />
+          <NewsAndBlog />
+        </div>
+        <EmailSubscription />
+        <div className="h-[70px]"></div>
+        <Footer />
       </div>
-      <EmailSubscription />
-      <div className="h-[70px]"></div>
-      <Footer />
     </main>
   );
 };
