@@ -193,34 +193,25 @@ const Cart: React.FC = () => {
                     </button>
                   </div>
                   
-                  {/* Price Section */}
-                  <div className="text-right mb-4">
-                    {item.discount && (
-                      <div className="mb-2">
-                        <span className="bg-red-500 text-white text-xs px-2 py-1 rounded font-medium">
-                          -{item.discount}%
-                        </span>
-                        <span className="text-xs text-gray-500 ml-2">5 000₽</span>
-                      </div>
-                    )}
-                  </div>
-                  
                   {/* Price and Quantity Row */}
                   <div className="flex items-center justify-between">
                     <div className="text-right">
-                      <div className="text-lg font-bold text-gray-900 mb-1">
-                        {item.price.toLocaleString()} ₽
-                      </div>
-                      
-                      {item.originalPrice && (
-                        <div className="text-gray-400 line-through text-xs">
-                          {item.originalPrice.toLocaleString()} ₽
+                      {item.discount && (
+                        <div className="mb-2">
+                          <span className="bg-red-500 text-white text-xs px-2 py-1 rounded font-medium">
+                            -{item.discount}%
+                          </span>
+                          <span className="text-xs text-gray-500 ml-2">5 000₽</span>
                         </div>
                       )}
+                      
+                      <div className="text-lg font-bold text-gray-900">
+                        {item.price.toLocaleString()} ₽
+                      </div>
                     </div>
                     
                     {/* Quantity Control */}
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1" style={{ marginLeft: '50px' }}>
                       <button className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 text-gray-600">
                         <Minus className="w-4 h-4" />
                       </button>
