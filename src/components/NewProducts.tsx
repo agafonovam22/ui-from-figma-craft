@@ -144,12 +144,10 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                 />
               </Link>
               
-              {/* Всплывающая карточка с характеристиками */}
+              {/* Выпадающий блок с характеристиками внизу карточки */}
               {hoveredProduct === product.id && (
                 <div 
-                  className={`absolute z-50 bg-white rounded-lg shadow-2xl border p-4 w-80 animate-fade-in ${
-                    index < 2 ? 'left-full ml-4' : 'right-full mr-4'
-                  } top-0`}
+                  className="absolute z-50 bg-white rounded-lg shadow-2xl border p-4 w-full left-0 top-full mt-2 animate-fade-in"
                 >
                   <h3 className="font-benzin-semibold text-[#262631] mb-3 text-sm">
                     Характеристики товара
