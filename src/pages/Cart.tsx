@@ -126,7 +126,16 @@ const Cart: React.FC = () => {
           {/* Cart Items */}
           <div className="lg:col-span-3 space-y-6">
             {cartItems.map((item) => (
-              <div key={item.id} className="flex items-start gap-4 p-6 border rounded-lg relative" style={{ backgroundColor: '#F8F8FD' }}>
+              <div 
+                key={item.id} 
+                className="flex items-start gap-4 p-6 border rounded-lg relative"
+                style={{ 
+                  backgroundImage: `url('/lovable-uploads/4896027a-18fe-4908-8e78-65d1972fa865.png')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              >
                 {/* Product Badge */}
                 {item.isNew && (
                   <div className="absolute top-4 left-4 bg-green-500 text-white text-xs px-2 py-1 rounded uppercase font-medium z-10">
