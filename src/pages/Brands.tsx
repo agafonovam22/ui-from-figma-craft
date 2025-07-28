@@ -143,19 +143,21 @@ const Brands: React.FC = () => {
                 case 'kernel':
                   return 'max-h-20 max-w-full';
                 case 'Variosling':
+                  return 'max-h-20 max-w-full';
                 case 'hyfit':
                   return 'max-h-16 max-w-full';
                 case 'Meridien':
-                  return 'max-h-18 max-w-full';
+                  return 'max-h-22 max-w-full';
                 case 'SCHOLLE':
                   return 'max-h-14 max-w-full';
                 case 'Slide&Fit':
                   return 'max-h-16 max-w-full';
                 case 'Peach Builder':
-                  return 'max-h-20 max-w-full';
+                  return 'max-h-22 max-w-full';
                 case 'INSPIRE':
                   return 'max-h-18 max-w-full';
                 case 'maxgym':
+                  return 'max-h-20 max-w-full';
                 case 'MAXFIT':
                   return 'max-h-16 max-w-full';
                 case 'proski':
