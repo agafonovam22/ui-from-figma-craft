@@ -45,9 +45,12 @@ const PopularBrands: React.FC = () => {
 
         {/* Show All Button */}
         <div className="flex justify-start">
-          <button className="px-6 py-3 border border-[#F53B49] text-[#F53B49] rounded-lg hover:bg-[#F53B49] hover:text-white transition-colors font-benzin">
+          <Link 
+            to="/brands"
+            className="px-6 py-3 border border-[#F53B49] text-[#F53B49] rounded-lg hover:bg-[#F53B49] hover:text-white transition-colors font-benzin"
+          >
             Показать все
-          </button>
+          </Link>
         </div>
       </div>
     </section>
