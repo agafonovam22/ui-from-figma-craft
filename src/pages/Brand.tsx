@@ -203,6 +203,36 @@ const Brand: React.FC = () => {
                 alt="CARDIO POWER"
                 className="w-full h-auto object-cover"
               />
+            ) : brandSlug === 'inspire' ? (
+              <img 
+                src="/lovable-uploads/081993fe-cd43-4ad8-ad5a-c50e3220df42.png"
+                alt="INSPIRE"
+                className="w-full h-auto object-cover"
+              />
+            ) : brandSlug === 'hyfit' ? (
+              <img 
+                src="/lovable-uploads/2da03814-54a7-4db9-8c63-309d89c1fbbc.png"
+                alt="HYFIT"
+                className="w-full h-auto object-cover"
+              />
+            ) : brandSlug === 'maxgym' ? (
+              <img 
+                src="/lovable-uploads/127d325a-54b9-48cb-9292-271163e02120.png"
+                alt="MAXGYM"
+                className="w-full h-auto object-cover"
+              />
+            ) : brandSlug === 'meridien' ? (
+              <img 
+                src="/lovable-uploads/c72b78ed-7297-4a85-b929-5355941cde3f.png"
+                alt="MERIDIEN"
+                className="w-full h-auto object-cover"
+              />
+            ) : brandSlug === 'centr' ? (
+              <img 
+                src="/lovable-uploads/124c5630-193d-427c-93af-8c42f41f21aa.png"
+                alt="CENTR"
+                className="w-full h-auto object-cover"
+              />
             ) : (
               <div className="bg-white overflow-hidden relative" style={{ height: '300px' }}>
                 <div className="py-12 relative h-full">
