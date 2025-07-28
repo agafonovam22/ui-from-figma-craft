@@ -126,81 +126,91 @@ const Cart: React.FC = () => {
           {/* Cart Items */}
           <div className="lg:col-span-3 space-y-6">
             {cartItems.map((item) => (
-              <div key={item.id} className="flex items-center gap-6 p-4 bg-white border rounded-lg h-[157px] relative">
+              <div key={item.id} className="flex items-start gap-4 p-6 bg-white border rounded-lg relative">
                 {/* Product Badge */}
                 {item.isNew && (
-                  <div className="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded uppercase font-medium z-10">
+                  <div className="absolute top-4 left-4 bg-green-500 text-white text-xs px-2 py-1 rounded uppercase font-medium z-10">
                     НОВИНКА
                   </div>
                 )}
                 
+                {/* Product Image */}
                 <div className="relative flex-shrink-0">
                   <img 
                     src={item.image} 
                     alt={item.name}
-                    className="w-24 h-24 object-cover rounded"
+                    className="w-[120px] h-[120px] object-cover rounded"
                   />
                 </div>
                 
+                {/* Product Info */}
                 <div className="flex-1 min-w-0">
                   <StarRating rating={item.rating} />
                   
-                  <h3 className="text-base font-bold text-gray-900 mt-1 mb-2 line-clamp-2">
+                  <h3 className="text-lg font-bold text-gray-900 mt-2 mb-3 line-clamp-2">
                     {item.name}
                   </h3>
                   
-                  <div className="text-sm text-gray-600 mb-2 space-y-1">
-                    <div>Цвет: {item.color}</div>
-                    <div>Диаметр: {item.diameter}</div>
+                  <div className="text-sm text-gray-600 mb-3 space-y-1">
+                    <div>Цвет: <span className="font-medium">{item.color}</span></div>
+                    <div>Диаметр, ft: <span className="font-medium">{item.diameter}</span></div>
                   </div>
                   
                   <div className="flex items-center gap-2">
-                    <span className="text-green-600 text-sm">● В наличии</span>
-                    <span className="text-green-600 text-sm">●●○</span>
+                    <span className="text-green-600 text-sm font-medium">В наличии</span>
+                    <div className="flex gap-1">
+                      <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                      <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                      <span className="w-2 h-2 bg-gray-300 rounded-full"></span>
+                    </div>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-8">
-                  {/* Quantity Control */}
-                  <div className="flex items-center border rounded">
-                    <button className="p-2 hover:bg-gray-100 text-gray-600">
-                      <Minus className="w-4 h-4" />
-                    </button>
-                    <span className="px-4 py-2 border-x min-w-[3rem] text-center">{item.quantity}</span>
-                    <button className="p-2 hover:bg-gray-100 text-gray-600">
-                      <Plus className="w-4 h-4" />
-                    </button>
-                  </div>
-                  
-                  {/* Price */}
+                {/* Price and Controls */}
+                <div className="flex flex-col items-end gap-4">
+                  {/* Price Section */}
                   <div className="text-right">
-                    <div className="flex items-center gap-2 mb-1">
-                      {item.discount && (
-                        <span className="bg-red-500 text-white text-sm px-2 py-1 rounded">
-                          -{item.discount}% В ОБЗОРЕ
+                    {item.discount && (
+                      <div className="mb-2">
+                        <span className="bg-red-500 text-white text-xs px-2 py-1 rounded font-medium">
+                          -{item.discount}%
                         </span>
-                      )}
-                    </div>
-                    <div className="text-xl font-bold text-gray-900">
+                        <span className="text-xs text-gray-500 ml-2">5 000₽</span>
+                      </div>
+                    )}
+                    
+                    <div className="text-2xl font-bold text-gray-900 mb-1">
                       {item.price.toLocaleString()} ₽
                     </div>
+                    
                     {item.originalPrice && (
                       <div className="text-gray-400 line-through text-sm">
                         {item.originalPrice.toLocaleString()} ₽
                       </div>
                     )}
                   </div>
+                  
+                  {/* Quantity Control */}
+                  <div className="flex items-center border rounded-lg">
+                    <button className="p-2 hover:bg-gray-100 text-gray-600">
+                      <Minus className="w-4 h-4" />
+                    </button>
+                    <span className="px-4 py-2 border-x min-w-[3rem] text-center font-medium">{item.quantity}</span>
+                    <button className="p-2 hover:bg-gray-100 text-gray-600">
+                      <Plus className="w-4 h-4" />
+                    </button>
+                  </div>
                 </div>
                 
                 {/* Action Icons */}
-                <div className="flex flex-col gap-2 flex-shrink-0">
-                  <button className="p-2 hover:bg-gray-100 rounded text-gray-400">
+                <div className="flex flex-col gap-2 ml-4">
+                  <button className="p-2 hover:bg-gray-100 rounded text-gray-400 transition-colors">
                     <BarChart className="w-5 h-5" />
                   </button>
-                  <button className="p-2 hover:bg-gray-100 rounded text-gray-400">
+                  <button className="p-2 hover:bg-gray-100 rounded text-gray-400 transition-colors">
                     <Heart className="w-5 h-5" />
                   </button>
-                  <button className="p-2 hover:bg-gray-100 rounded text-gray-400">
+                  <button className="p-2 hover:bg-gray-100 rounded text-gray-400 transition-colors">
                     <Trash2 className="w-5 h-5" />
                   </button>
                 </div>
