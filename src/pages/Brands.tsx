@@ -32,18 +32,18 @@ const Brands: React.FC = () => {
     { name: "Schwinn", logo: "/lovable-uploads/452985b7-2b68-4c62-b51e-e43fff73784d.png", slug: "schwinn" },
     { name: "Peach Builder", logo: "/lovable-uploads/f60c9b28-0384-4770-97ba-40b6bdcd451e.png", slug: "peach-builder" },
     { name: "Sole", logo: "/lovable-uploads/1b02aa63-1000-4235-928d-c0a3dda8b467.png", slug: "sole" },
-    { name: "Variosling", logo: "", slug: "variosling" },
+    { name: "Variosling", logo: "/lovable-uploads/7069626b-d115-45ec-b822-e97909ad4c37.png", slug: "variosling" },
     { name: "CardioPower", logo: "/lovable-uploads/b32017a9-0774-4a12-9fcd-39bd50910a86.png", slug: "cardiopower" },
     { name: "Slide&Fit", logo: "/lovable-uploads/266afacd-f80f-49ba-a31c-e3e823a82ddd.png", slug: "slide-fit" },
-    { name: "cardiopower-pro", logo: "", slug: "cardiopower-pro" },
+    { name: "cardiopower-pro", logo: "/lovable-uploads/f504480b-b56c-4ad0-8df6-75ce495b436c.png", slug: "cardiopower-pro" },
     { name: "SCHOLLE", logo: "/lovable-uploads/644a6485-04f6-4064-9ee8-cacae87e8c09.png", slug: "scholle" },
     { name: "INSPIRE", logo: "", slug: "inspire" },
-    { name: "hyfit", logo: "", slug: "hyfit" },
+    { name: "hyfit", logo: "/lovable-uploads/75a9af98-9605-4c66-aff6-259dd76d63b5.png", slug: "hyfit" },
     { name: "maxgym", logo: "", slug: "maxgym" },
     { name: "MAXFIT", logo: "", slug: "maxfit" },
     { name: "proski", logo: "", slug: "proski" },
-    { name: "Meridien", logo: "", slug: "meridien" },
-    { name: "kernel", logo: "", slug: "kernel" },
+    { name: "Meridien", logo: "/lovable-uploads/9e5dcf01-8670-4239-b2fa-fc73f6a7b7c4.png", slug: "meridien" },
+    { name: "kernel", logo: "/lovable-uploads/780287df-78a1-4886-ae82-8fad0567d9ca.png", slug: "kernel" },
     { name: "CENTR", logo: "/lovable-uploads/6317917f-5d52-453f-b576-b18e47712812.png", slug: "centr" }
   ];
 
