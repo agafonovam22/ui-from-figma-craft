@@ -27,7 +27,7 @@ const PopularBrands: React.FC = () => {
         </div>
 
         {/* Brands Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-[10px] mb-8">
           {brands.map((brand) => (
             <Link
               key={brand.id}

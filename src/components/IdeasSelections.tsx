@@ -75,7 +75,7 @@ const IdeasSelections: React.FC = () => {
         {/* Ideas Scroll */}
         <div 
           ref={scrollContainerRef}
-          className="flex gap-6 mb-8 overflow-x-auto scrollbar-hide pb-2"
+          className="flex gap-[10px] mb-8 overflow-x-auto scrollbar-hide pb-2"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {ideas.map((idea) => (
