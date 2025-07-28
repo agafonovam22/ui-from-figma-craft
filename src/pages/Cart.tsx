@@ -216,7 +216,7 @@ const Cart: React.FC = () => {
                   </div>
                   
                   {/* Quantity Control */}
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-1">
                     <button className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 text-gray-600">
                       <Minus className="w-4 h-4" />
                     </button>
