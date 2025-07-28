@@ -216,12 +216,12 @@ const Cart: React.FC = () => {
                   </div>
                   
                   {/* Quantity Control */}
-                  <div className="flex items-center border rounded-lg">
-                    <button className="p-2 hover:bg-gray-100 text-gray-600">
+                  <div className="flex items-center gap-3">
+                    <button className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 text-gray-600">
                       <Minus className="w-4 h-4" />
                     </button>
-                    <span className="px-4 py-2 border-x min-w-[3rem] text-center font-medium">{item.quantity}</span>
-                    <button className="p-2 hover:bg-gray-100 text-gray-600">
+                    <span className="text-lg font-medium min-w-[2rem] text-center">{item.quantity}</span>
+                    <button className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 text-gray-600">
                       <Plus className="w-4 h-4" />
                     </button>
                   </div>
