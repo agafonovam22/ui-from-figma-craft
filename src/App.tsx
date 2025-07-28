@@ -32,6 +32,7 @@ import OrderSuccess from "./pages/OrderSuccess";
 import Comparison from "./pages/Comparison";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import PublicOffer from "./pages/PublicOffer";
 import Favorites from "./pages/Favorites";
 import CompanyNews from "./pages/CompanyNews";
 
@@ -72,6 +73,7 @@ const App = () => (
           <Route path="/comparison" element={<Comparison />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/public-offer" element={<PublicOffer />} />
           <Route path="/company-news" element={<CompanyNews />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

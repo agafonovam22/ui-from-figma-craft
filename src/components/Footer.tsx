@@ -163,7 +163,7 @@ const Footer: React.FC = () => {
               <span className="text-[#778093] text-[10px]">© WellFitness, 2005-2024 Все права защищены</span>
               <div className="flex gap-6">
                 <Link to="/privacy-policy" className="text-[#778093] text-[10px] hover:text-white transition-colors">Политика конфиденциальности</Link>
-                <a href="#" className="text-[#778093] text-[10px] hover:text-white transition-colors">Публичная оферта</a>
+                <Link to="/public-offer" className="text-[#778093] text-[10px] hover:text-white transition-colors">Публичная оферта</Link>
               </div>
             </div>
           </div>
