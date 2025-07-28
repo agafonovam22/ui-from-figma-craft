@@ -161,6 +161,48 @@ const Brand: React.FC = () => {
                 alt="SMITH"
                 className="w-full h-auto object-cover"
               />
+            ) : brandSlug === 'true' ? (
+              <img 
+                src="/lovable-uploads/35e36954-8eff-4c7e-b767-25d10bdc4d5f.png"
+                alt="TRUE"
+                className="w-full h-auto object-cover"
+              />
+            ) : brandSlug === 'bowflex' ? (
+              <img 
+                src="/lovable-uploads/dfd89713-01a7-424b-ac65-9930cce15038.png"
+                alt="BOWFLEX"
+                className="w-full h-auto object-cover"
+              />
+            ) : brandSlug === 'schwinn' ? (
+              <img 
+                src="/lovable-uploads/f27b287e-146c-4c3b-8260-101fc643713c.png"
+                alt="SCHWINN"
+                className="w-full h-auto object-cover"
+              />
+            ) : brandSlug === 'peach-builder' ? (
+              <img 
+                src="/lovable-uploads/7204754a-8eef-44aa-9104-a96cbcc4fb22.png"
+                alt="PEACH BUILDER"
+                className="w-full h-auto object-cover"
+              />
+            ) : brandSlug === 'sole' ? (
+              <img 
+                src="/lovable-uploads/bea9a0e2-9f97-48ec-ab5d-a587519fd11b.png"
+                alt="SOLE"
+                className="w-full h-auto object-cover"
+              />
+            ) : brandSlug === 'variosling' ? (
+              <img 
+                src="/lovable-uploads/8fa0a3df-812f-4000-87a8-50dd066f0dee.png"
+                alt="VARIOSLING"
+                className="w-full h-auto object-cover"
+              />
+            ) : brandSlug === 'cardiopower' ? (
+              <img 
+                src="/lovable-uploads/837de395-dc6d-4619-8c00-7b73780fd538.png"
+                alt="CARDIO POWER"
+                className="w-full h-auto object-cover"
+              />
             ) : (
               <div className="bg-white overflow-hidden relative" style={{ height: '300px' }}>
                 <div className="py-12 relative h-full">
