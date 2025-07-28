@@ -59,7 +59,7 @@ const ShowroomMap: React.FC<ShowroomMapProps> = ({ coordinates, isSpb = false })
     return () => {
       map.current?.remove();
     };
-  }, []);
+  }, [showroomCoordinates, isSpb]);
 
 
   return (
