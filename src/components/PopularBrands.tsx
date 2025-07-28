@@ -6,19 +6,19 @@ const PopularBrands: React.FC = () => {
   const brands = [
     { id: 1, name: "BowFlex", logo: "/lovable-uploads/d7460e6e-3133-4958-a3a2-6c933938c62c.png", slug: "bowflex" },
     { id: 2, name: "TRUE", logo: "/lovable-uploads/771481a7-be16-4a51-999e-fce89022b698.png", slug: "true" },
-    { id: 3, name: "Schwinn", logo: "/lovable-uploads/452985b7-2b68-4c62-b51e-e43fff73784d.png", slug: "schwinn" },
-    { id: 4, name: "Cardio Power", logo: "/lovable-uploads/b32017a9-0774-4a12-9fcd-39bd50910a86.png", slug: "cardio-power" },
-    { id: 5, name: "Benmore", logo: "/lovable-uploads/82b98e94-1117-4bad-875a-d9313a38b737.png", slug: "benmore" },
-    { id: 6, name: "Nautilus", logo: "/lovable-uploads/e6c7e1c5-85ea-40ca-9d67-c478fe5165d9.png", slug: "nautilus" },
-    { id: 7, name: "Sole Fitness", logo: "/lovable-uploads/1b02aa63-1000-4235-928d-c0a3dda8b467.png", slug: "sole-fitness" },
-    { id: 8, name: "PEACH BUILDER", logo: "/lovable-uploads/f60c9b28-0384-4770-97ba-40b6bdcd451e.png", slug: "peach-builder" },
-    { id: 9, name: "Gym80", logo: "/lovable-uploads/9b48df46-394f-465b-8136-a397de87b82b.png", slug: "gym80" },
-    { id: 10, name: "октан", logo: "/lovable-uploads/05ba64f8-caa1-4ce9-8069-6889a6182ae3.png", slug: "oktan" },
-    { id: 11, name: "Visbody", logo: "/lovable-uploads/870a2f31-d993-423c-a045-abaa75c5302f.png", slug: "visbody" },
+    { id: 3, name: "Schwinn", logo: "/lovable-uploads/ad78a6d2-d93d-45b2-a7f5-b5b3ebeb339a.png", slug: "schwinn" },
+    { id: 4, name: "Cardio Power", logo: "/lovable-uploads/b32017a9-0774-4a12-9fcd-39bd50910a86.png", slug: "cardiopower" },
+    { id: 5, name: "MAXFIT", logo: "/lovable-uploads/53426d0c-4430-4856-b59b-4260613dc186.png", slug: "maxfit" },
+    { id: 6, name: "Sole", logo: "/lovable-uploads/26387732-07b6-4dba-863a-351d34e19d1f.png", slug: "sole" },
+    { id: 7, name: "PEACH BUILDER", logo: "/lovable-uploads/6b768359-79b4-4e0e-918d-b7483e377f0e.png", slug: "peach-builder" },
+    { id: 8, name: "Variosling", logo: "/lovable-uploads/c0279280-6434-4917-a15a-a329b4f77188.png", slug: "variosling" },
+    { id: 9, name: "proski", logo: "/lovable-uploads/803751de-6e11-42bb-b2a7-ed88abd5f406.png", slug: "proski" },
+    { id: 10, name: "cardiopower-pro", logo: "/lovable-uploads/a4f43c68-83aa-4cd0-9c21-b8945a16a90a.png", slug: "cardiopower-pro" },
+    { id: 11, name: "hyfit", logo: "/lovable-uploads/c424095c-c9e2-40e2-a8c2-63f27746a2ba.png", slug: "hyfit" },
     { id: 12, name: "SCHOLLE", logo: "/lovable-uploads/644a6485-04f6-4064-9ee8-cacae87e8c09.png", slug: "scholle" },
-    { id: 13, name: "Life Fitness", logo: "/lovable-uploads/ef816493-63e0-456b-9a81-a821e2916f6b.png", slug: "life-fitness" },
-    { id: 14, name: "Technogym", logo: "/lovable-uploads/c4fbfa9e-af20-4a86-87a4-93a9d834a095.png", slug: "technogym" },
-    { id: 15, name: "SMITH", logo: "/lovable-uploads/d50cad00-318e-48ea-96f2-b94cab77942b.png", slug: "smith" }
+    { id: 13, name: "INSPIRE", logo: "/lovable-uploads/a7480f3e-94f4-444c-a451-eed7d6b77478.png", slug: "inspire" },
+    { id: 14, name: "maxgym", logo: "/lovable-uploads/cc6e7099-bbfb-406f-ab1d-201cf565962a.png", slug: "maxgym" },
+    { id: 15, name: "SMITH", logo: "/lovable-uploads/3ab5325a-f04b-445c-a4f4-6f117e9107fd.png", slug: "smith" }
   ];
 
   return (
