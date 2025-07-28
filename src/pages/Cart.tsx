@@ -152,16 +152,18 @@ const Cart: React.FC = () => {
                     <div>CardioPowe PRO CR300</div>
                   </h3>
                   
-                  <div className="text-sm text-gray-600 mb-3 space-y-1">
-                    <div>Цвет: <span className="font-medium" style={{ color: '#262631' }}>{item.color}</span></div>
-                    <div>Диаметр, ft: <span className="font-medium">{item.diameter}</span></div>
+                  <div className="text-sm text-gray-600 mb-3">
+                    <div className="flex gap-4">
+                      <span>Цвет: <span className="font-medium" style={{ color: '#262631' }}>{item.color}</span></span>
+                      <span>Диаметр, ft: <span className="font-medium">{item.diameter}</span></span>
+                    </div>
                   </div>
                   
                   <div className="flex items-center gap-2">
-                    <span className="text-green-600 text-sm font-medium">В наличии</span>
+                    <span className="text-sm font-medium" style={{ color: '#31BF00' }}>В наличии</span>
                     <div className="flex gap-1">
-                      <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                      <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                      <span className="w-2 h-2 rounded-full" style={{ backgroundColor: '#31BF00' }}></span>
+                      <span className="w-2 h-2 rounded-full" style={{ backgroundColor: '#31BF00' }}></span>
                       <span className="w-2 h-2 bg-gray-300 rounded-full"></span>
                     </div>
                   </div>
