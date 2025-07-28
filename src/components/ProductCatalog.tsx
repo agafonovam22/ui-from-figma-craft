@@ -155,13 +155,13 @@ const ProductCatalog: React.FC = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6">
           {currentProducts.slice(0, 6).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo="/product-card" />
           ))}
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px]">
           {currentProducts.slice(6, 10).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo="/product-card" />
           ))}
