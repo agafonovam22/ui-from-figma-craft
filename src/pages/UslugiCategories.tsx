@@ -25,7 +25,7 @@ const UslugiCategories: React.FC = () => {
       id: 'service',
       title: 'Сервис',
       description: 'Техническое обслуживание, ремонт и поддержка спортивного оборудования',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
+      image: '/lovable-uploads/8e6a008f-877e-490a-8b4a-9a2075e20414.png',
       href: '/uslugi/service'
     }
   ];
