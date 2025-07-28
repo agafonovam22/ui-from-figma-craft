@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Users, Package, Shield, Grid3x3, Settings, TrendingUp } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Banner from '@/components/Banner';
@@ -662,7 +662,9 @@ const About: React.FC = () => {
                 {/* Шесть информационных блоков */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px] mb-16">
                   <div className="bg-gray-100 p-6 rounded-lg">
-                    <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <div className="w-16 h-16 bg-[#F53B49] rounded-lg flex items-center justify-center mb-4">
+                      <Users size={32} color="white" />
+                    </div>
                     <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Опытная команда
                     </h3>
@@ -672,7 +674,9 @@ const About: React.FC = () => {
                   </div>
 
                   <div className="bg-gray-100 p-6 rounded-lg">
-                    <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <div className="w-16 h-16 bg-[#F53B49] rounded-lg flex items-center justify-center mb-4">
+                      <Package size={32} color="white" />
+                    </div>
                     <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Собственный склад запчастей
                     </h3>
@@ -682,7 +686,9 @@ const About: React.FC = () => {
                   </div>
 
                   <div className="bg-gray-100 p-6 rounded-lg">
-                    <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <div className="w-16 h-16 bg-[#F53B49] rounded-lg flex items-center justify-center mb-4">
+                      <Shield size={32} color="white" />
+                    </div>
                     <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Надежность
                     </h3>
@@ -692,7 +698,9 @@ const About: React.FC = () => {
                   </div>
 
                   <div className="bg-gray-100 p-6 rounded-lg">
-                    <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <div className="w-16 h-16 bg-[#F53B49] rounded-lg flex items-center justify-center mb-4">
+                      <Grid3x3 size={32} color="white" />
+                    </div>
                     <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Широкий ассортимент
                     </h3>
@@ -702,7 +710,9 @@ const About: React.FC = () => {
                   </div>
 
                   <div className="bg-gray-100 p-6 rounded-lg">
-                    <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <div className="w-16 h-16 bg-[#F53B49] rounded-lg flex items-center justify-center mb-4">
+                      <Settings size={32} color="white" />
+                    </div>
                     <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Комплексный сервис
                     </h3>
@@ -712,7 +722,9 @@ const About: React.FC = () => {
                   </div>
 
                   <div className="bg-gray-100 p-6 rounded-lg">
-                    <div className="w-16 h-16 bg-gray-200 mb-4"></div>
+                    <div className="w-16 h-16 bg-[#F53B49] rounded-lg flex items-center justify-center mb-4">
+                      <TrendingUp size={32} color="white" />
+                    </div>
                     <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Выгодные условия
                     </h3>
