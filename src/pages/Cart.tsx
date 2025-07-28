@@ -180,6 +180,19 @@ const Cart: React.FC = () => {
                 
                 {/* Price and Controls */}
                 <div className="flex flex-col items-end gap-4">
+                  {/* Action Icons */}
+                  <div className="flex gap-2">
+                    <button className="p-2 hover:bg-gray-100 rounded text-gray-400 transition-colors">
+                      <BarChart className="w-5 h-5" />
+                    </button>
+                    <button className="p-2 hover:bg-gray-100 rounded text-gray-400 transition-colors">
+                      <Heart className="w-5 h-5" />
+                    </button>
+                    <button className="p-2 hover:bg-gray-100 rounded text-gray-400 transition-colors">
+                      <Trash2 className="w-5 h-5" />
+                    </button>
+                  </div>
+                  
                   {/* Price Section */}
                   <div className="text-right">
                     {item.discount && (
@@ -212,19 +225,6 @@ const Cart: React.FC = () => {
                       <Plus className="w-4 h-4" />
                     </button>
                   </div>
-                </div>
-                
-                {/* Action Icons */}
-                <div className="flex flex-col gap-2 ml-4">
-                  <button className="p-2 hover:bg-gray-100 rounded text-gray-400 transition-colors">
-                    <BarChart className="w-5 h-5" />
-                  </button>
-                  <button className="p-2 hover:bg-gray-100 rounded text-gray-400 transition-colors">
-                    <Heart className="w-5 h-5" />
-                  </button>
-                  <button className="p-2 hover:bg-gray-100 rounded text-gray-400 transition-colors">
-                    <Trash2 className="w-5 h-5" />
-                  </button>
                 </div>
               </div>
             ))}
