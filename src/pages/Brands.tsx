@@ -122,23 +122,67 @@ const Brands: React.FC = () => {
 
         {/* Brands Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
-          {brands.map((brand, index) => (
-            <Link
-              key={index}
-              to={`/brands/${brand.slug}`}
-              className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-32 hover:shadow-md transition-shadow cursor-pointer"
-            >
-              {brand.logo ? (
-                <img 
-                  src={brand.logo} 
-                  alt={brand.name}
-                  className={`w-auto object-contain ${brand.name === 'TRUE' ? 'max-h-20' : 'max-h-16'}`}
-                />
-              ) : (
-                <span className="text-gray-400 text-lg font-medium">{brand.name}</span>
-              )}
-            </Link>
-          ))}
+          {brands.map((brand, index) => {
+            // Определяем индивидуальные размеры для каждого бренда
+            const getBrandImageClass = (brandName: string) => {
+              switch(brandName) {
+                case 'TRUE':
+                  return 'max-h-24 max-w-full';
+                case 'SMITH':
+                  return 'max-h-20 max-w-full';
+                case 'Bowflex':
+                  return 'max-h-18 max-w-full';
+                case 'Schwinn':
+                  return 'max-h-20 max-w-full';
+                case 'Sole':
+                  return 'max-h-16 max-w-full';
+                case 'CardioPower':
+                case 'cardiopower-pro':
+                  return 'max-h-18 max-w-full';
+                case 'CENTR':
+                case 'kernel':
+                  return 'max-h-20 max-w-full';
+                case 'Variosling':
+                case 'hyfit':
+                  return 'max-h-16 max-w-full';
+                case 'Meridien':
+                  return 'max-h-18 max-w-full';
+                case 'SCHOLLE':
+                  return 'max-h-14 max-w-full';
+                case 'Slide&Fit':
+                  return 'max-h-16 max-w-full';
+                case 'Peach Builder':
+                  return 'max-h-20 max-w-full';
+                case 'INSPIRE':
+                  return 'max-h-18 max-w-full';
+                case 'maxgym':
+                case 'MAXFIT':
+                  return 'max-h-16 max-w-full';
+                case 'proski':
+                  return 'max-h-18 max-w-full';
+                default:
+                  return 'max-h-18 max-w-full';
+              }
+            };
+
+            return (
+              <Link
+                key={index}
+                to={`/brands/${brand.slug}`}
+                className="bg-gray-50 rounded-lg p-4 flex items-center justify-center h-32 hover:shadow-md transition-shadow cursor-pointer"
+              >
+                {brand.logo ? (
+                  <img 
+                    src={brand.logo} 
+                    alt={brand.name}
+                    className={`w-auto object-contain ${getBrandImageClass(brand.name)}`}
+                  />
+                ) : (
+                  <span className="text-gray-400 text-lg font-medium text-center">{brand.name}</span>
+                )}
+              </Link>
+            );
+          })}
         </div>
       </div>
 
