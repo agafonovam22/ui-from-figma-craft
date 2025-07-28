@@ -1,8 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
 
 interface Store {
   name: string;
@@ -19,12 +17,8 @@ interface MapProps {
 const Map: React.FC<MapProps> = ({ stores }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const [mapboxToken, setMapboxToken] = useState(() => {
-    return localStorage.getItem('mapboxToken') || '';
-  });
-  const [tokenEntered, setTokenEntered] = useState(() => {
-    return !!localStorage.getItem('mapboxToken');
-  });
+  const mapboxToken = 'pk.eyJ1Ijoid2VsbGZpdG5lc3MiLCJhIjoiY21kaDR0aGw2MDAwZzJqc2R5eGN3ZTRiaCJ9.Q5YCu1Mnrw4S6W1scjYRlg';
+  const tokenEntered = true;
 
   useEffect(() => {
     if (!mapContainer.current || !tokenEntered || !mapboxToken) return;
@@ -72,42 +66,6 @@ const Map: React.FC<MapProps> = ({ stores }) => {
       map.current?.remove();
     };
   }, [stores, tokenEntered, mapboxToken]);
-
-  if (!tokenEntered) {
-    return (
-      <div className="bg-gray-50 rounded-lg p-8 flex flex-col items-center justify-center h-[400px]">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">
-          Для отображения карты требуется Mapbox токен
-        </h3>
-        <p className="text-sm text-gray-600 mb-4 text-center max-w-md">
-          Получите бесплатный публичный токен на{' '}
-          <a href="https://mapbox.com/" target="_blank" rel="noopener noreferrer" className="text-[#F53B49] hover:underline">
-            mapbox.com
-          </a>{' '}
-          и введите его ниже:
-        </p>
-        <div className="flex gap-2 w-full max-w-md">
-          <Input
-            type="text"
-            placeholder="Введите Mapbox токен..."
-            value={mapboxToken}
-            onChange={(e) => setMapboxToken(e.target.value)}
-            className="flex-1"
-          />
-          <Button
-            onClick={() => {
-              localStorage.setItem('mapboxToken', mapboxToken);
-              setTokenEntered(true);
-            }}
-            disabled={!mapboxToken.trim()}
-            className="bg-[#F53B49] hover:bg-[#e63946] text-white"
-          >
-            Показать карту
-          </Button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="relative w-full h-[328px] rounded-lg overflow-hidden">
