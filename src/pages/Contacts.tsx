@@ -221,7 +221,14 @@ const Contacts: React.FC = () => {
                     </div>
                   </div>
 
-                  <button className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors">
+                  <button 
+                    onClick={() => {
+                      const address = "Москва, ул. Маршала Прошлякова, д. 30, офис 407, БЦ Зенит Плаза";
+                      const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
+                      window.open(googleMapsUrl, '_blank');
+                    }}
+                    className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors"
+                  >
                     Как проехать
                   </button>
                 </div>
