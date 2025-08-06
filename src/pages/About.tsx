@@ -333,6 +333,7 @@ const About: React.FC = () => {
               >
                 Наша миссия
               </button>
+              {/* Временно скрыта вкладка "Наша команда"
               <button 
                 onClick={() => setActiveTab('team')}
                 className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
@@ -343,6 +344,7 @@ const About: React.FC = () => {
               >
                 Наша команда
               </button>
+              */}
               <button 
                 onClick={() => setActiveTab('projects')}
                 className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
