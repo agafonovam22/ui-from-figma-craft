@@ -373,8 +373,8 @@ const About: React.FC = () => {
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
               <div className="space-y-16">
                 
-                {/* Блок 1: Текст слева, изображение справа */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Блок 1: Только текст */}
+                <div className="max-w-4xl">
                   <div className="animate-fade-in">
                     <h3 className="text-2xl font-semibold text-[#17171E] mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Идеальная онлайн-платформа
@@ -382,13 +382,6 @@ const About: React.FC = () => {
                     <p className="text-gray-700 text-base leading-relaxed font-manrope">
                       Наша миссия заключается в том, чтобы стать идеальной онлайн-платформой, на которой люди смогут найти все необходимое оборудование и аксессуары для повседневных занятий фитнесом и поддержания здорового образа жизни.
                     </p>
-                  </div>
-                  <div className="animate-scale-in hover-scale rounded-lg overflow-hidden shadow-lg">
-                    <img 
-                      src={missionPlatform} 
-                      alt="Современная фитнес-платформа" 
-                      className="w-full h-80 object-cover"
-                    />
                   </div>
                 </div>
 
