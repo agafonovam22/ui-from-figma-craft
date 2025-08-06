@@ -214,10 +214,10 @@ const ProjectDetail: React.FC = () => {
               </p>
               
               {/* Call Request Form */}
-              <div className="max-w-md mx-auto">
-                <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="w-full bg-gray-50 p-8 rounded-lg">
+                <div className="text-left">
                   <h3 className="text-2xl font-bold text-[#17171E] mb-6">Заказать звонок</h3>
-                  <form className="space-y-4">
+                  <form className="space-y-4 max-w-md">
                     <div>
                       <input
                         type="text"
