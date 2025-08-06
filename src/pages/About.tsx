@@ -85,55 +85,55 @@ const About: React.FC = () => {
       id: 1,
       image: "/lovable-uploads/fdec1cea-908d-43a3-9d77-4f14304597f3.png",
       title: "Атлетика+ (г. Новомосковск)",
-      description: "представляем тренажеры Nautilus 626 серии"
+      description: "С инвесторами мы оснастили зал топовым оборудованием под дизайн — он стал лучшим в регионе."
     },
     {
       id: 2,
       image: "/lovable-uploads/cc85982b-96f7-40ec-ad84-f52b8c506581.png",
       title: "Фитнес Терра (г. Москва)", 
-      description: "представляем тренажеры Nautilus 626 серии"
+      description: "Клуб класса \"бизнес\" на площади старой советской застройки"
     },
     {
       id: 3,
       image: "/lovable-uploads/b1513bca-e46f-4642-85c8-279c68cbbff4.png",
       title: "RockOut (г. Москва)",
-      description: "представляем тренажеры Nautilus 626 серии"
+      description: "Прогрессивный фитнес-клуб с рекуррентными платежами и оборудованием класса \"премиум\"."
     },
     {
       id: 4,
       image: "/lovable-uploads/7532d8ab-c6f7-4106-8d4b-563a3df784aa.png",
       title: "Нептун (г. Балашиха)",
-      description: "представляем тренажеры Nautilus 626 серии"
+      description: "Обновленный тренажерный зал крупнейшего спортивного центра города Балашиха."
     },
     {
       id: 5,
       image: "/lovable-uploads/d37774a2-1a10-4cf2-ab20-b3e19960d0ce.png",
       title: "СопкиSport (Мурманская область)",
-      description: "представляем тренажеры Nautilus 626 серии"
+      description: "Региональная сеть тренажерных залов под патронажем Министерства спорта Мурманской области."
     },
     {
       id: 6,
       image: "/lovable-uploads/a5af320b-9c2e-4f35-9708-452bd07d454f.png",
       title: "ЦентрК (г. Владикавказ)",
-      description: "представляем тренажеры Nautilus 626 серии"
+      description: "Один из крупнейших фитнес-центров города Владикавказ."
     },
     {
       id: 7,
       image: "/lovable-uploads/c015139b-7198-4978-ae43-3c24b91892a0.png",
       title: "Pulse120 (г. Анапа)",
-      description: "представляем тренажеры Nautilus 626 серии"
+      description: "Отличный компактных фитнес-клуб в г.Анапа. Один из самых современных в городе."
     },
     {
       id: 8,
       image: "/lovable-uploads/3d769f2a-ddbb-4534-a9b9-9b2783c1bccf.png",
       title: "PlazaFitness (г. Кострома)",
-      description: "представляем тренажеры Nautilus 626 серии"
+      description: "Один из самых популярных фитнес-клубов г. Кострома."
     },
     {
       id: 9,
       image: "/lovable-uploads/c9c5dc62-b0da-4189-bdfe-bf254ecf15e8.png",
       title: "Открытие нового зала (Сочи Парк Отель)",
-      description: "представляем тренажеры Nautilus 626 серии"
+      description: "С инвесторами мы поставили топовое оборудование в крупный сочинский курорт — зал стал лучшим в регионе."
     },
     {
       id: 10,
@@ -513,7 +513,7 @@ const About: React.FC = () => {
                         <div className="absolute inset-0 p-6 text-white">
                           <div className="absolute bottom-6 left-6 right-6 transition-transform duration-300 group-hover:-translate-y-12">
                             <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '13px' }}>
                               {project.description}
                             </div>
                           </div>
@@ -558,7 +558,7 @@ const About: React.FC = () => {
                         <div className="absolute inset-0 p-6 text-white">
                           <div className="absolute bottom-6 left-6 right-6 transition-transform duration-300 group-hover:-translate-y-12">
                             <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '13px' }}>
                               {project.description}
                             </div>
                           </div>
@@ -593,7 +593,7 @@ const About: React.FC = () => {
                         <div className="absolute inset-0 p-6 text-white">
                           <div className="absolute bottom-6 left-6 right-6 transition-transform duration-300 group-hover:-translate-y-12">
                             <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '13px' }}>
                               {project.description}
                             </div>
                           </div>
@@ -628,7 +628,7 @@ const About: React.FC = () => {
                         <div className="absolute inset-0 p-6 text-white">
                           <div className="absolute bottom-6 left-6 right-6 transition-transform duration-300 group-hover:-translate-y-12">
                             <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>
+                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '13px' }}>
                               {project.description}
                             </div>
                           </div>
