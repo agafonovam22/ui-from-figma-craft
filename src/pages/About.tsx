@@ -658,7 +658,7 @@ const About: React.FC = () => {
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
                 <div className="overflow-hidden relative rounded-lg" style={{ height: '408px' }}>
                   <img 
-                    src="/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"
+                    src="/lovable-uploads/ff32c8e2-a062-45cc-8c1e-6a6d228f6380.png"
                     alt="О компании - статистика"
                     className="w-full h-full object-cover"
                     style={{ objectPosition: 'center right' }}
