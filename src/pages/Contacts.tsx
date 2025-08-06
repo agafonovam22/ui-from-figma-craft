@@ -100,9 +100,10 @@ const Contacts: React.FC = () => {
           </button>
         </div>
 
-        {/* Company Store Section with Map */}
+        {/* Company Store Section with Photo and Map */}
         <div className="mb-12">
           <div className="bg-gray-50 rounded-lg flex h-[328px] overflow-hidden">
+            {/* Text Section - Left Third */}
             <div className="flex-1 w-1/3 p-6">
               {activeTab === 'moscow' ? (
                 <>
@@ -176,7 +177,17 @@ const Contacts: React.FC = () => {
               )}
             </div>
             
-            <div className="w-2/3 h-full">
+            {/* Photo Section - Middle Third */}
+            <div className="flex-1 w-1/3 h-full overflow-hidden">
+              <img 
+                src="/lovable-uploads/a75d40da-835e-454f-a1e4-62cb2a8a6d38.png"
+                alt="Массажные кресла в шоуруме"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            {/* Map Section - Right Third */}
+            <div className="flex-1 w-1/3 h-full">
               <ShowroomMap 
                 coordinates={activeTab === 'spb' ? [30.324203737087338, 59.98157313429388] : undefined}
                 isSpb={activeTab === 'spb'}
