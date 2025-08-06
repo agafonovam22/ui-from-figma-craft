@@ -124,8 +124,8 @@ const ProjectDetail: React.FC = () => {
               <img 
                 src={project.image}
                 alt={project.title}
-                className="w-full h-auto object-cover rounded-lg"
-                style={{ maxHeight: '500px' }}
+                className="w-full object-cover object-bottom rounded-lg"
+                style={{ height: '350px' }}
               />
             </div>
           </div>
