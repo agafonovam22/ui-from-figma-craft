@@ -373,12 +373,9 @@ const About: React.FC = () => {
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
               <div className="space-y-16">
                 
-                {/* Блок 1: Только текст по центру */}
+                {/* Блок 1: Только текст по центру без заголовка */}
                 <div className="flex justify-center">
                   <div className="max-w-4xl text-center animate-fade-in">
-                    <h3 className="text-2xl font-semibold text-[#17171E] mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>
-                      Идеальная онлайн-платформа
-                    </h3>
                     <p className="text-gray-700 text-base leading-relaxed font-manrope">
                       Наша миссия заключается в том, чтобы стать идеальной онлайн-платформой, на которой люди смогут найти все необходимое оборудование и аксессуары для повседневных занятий фитнесом и поддержания здорового образа жизни.
                     </p>
