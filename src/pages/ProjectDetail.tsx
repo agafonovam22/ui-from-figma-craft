@@ -216,37 +216,39 @@ const ProjectDetail: React.FC = () => {
               {/* Call Request Form */}
               <div className="w-full bg-gray-50 p-8 rounded-lg">
                 <div className="text-left">
-                  <h3 className="text-2xl font-bold text-[#17171E] mb-6">Заказать звонок</h3>
-                  <form className="space-y-4 max-w-md">
-                    <div>
-                      <input
-                        type="text"
-                        placeholder="ФИО"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F53B49] focus:border-transparent bg-white"
-                        required
-                      />
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <input
-                        type="tel"
-                        placeholder="Телефон"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F53B49] focus:border-transparent bg-white"
-                        required
-                      />
-                      <input
-                        type="email"
-                        placeholder="E-mail"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F53B49] focus:border-transparent bg-white"
-                        required
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      className="w-full bg-[#F53B49] text-white px-8 py-3 rounded-lg hover:bg-[#e63946] transition-colors font-medium"
-                    >
-                      Заказать звонок
-                    </button>
-                  </form>
+                  <div className="bg-white p-6 rounded-lg max-w-md">
+                    <h3 className="text-2xl font-bold text-[#17171E] mb-6">Заказать звонок</h3>
+                    <form className="space-y-2.5">
+                      <div>
+                        <input
+                          type="text"
+                          placeholder="ФИО"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F53B49] focus:border-transparent bg-white"
+                          required
+                        />
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <input
+                          type="tel"
+                          placeholder="Телефон"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F53B49] focus:border-transparent bg-white"
+                          required
+                        />
+                        <input
+                          type="email"
+                          placeholder="E-mail"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F53B49] focus:border-transparent bg-white"
+                          required
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        className="w-full bg-[#F53B49] text-white px-8 py-3 rounded-lg hover:bg-[#e63946] transition-colors font-medium"
+                      >
+                        Заказать звонок
+                      </button>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
