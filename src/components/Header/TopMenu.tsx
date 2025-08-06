@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { NavigationItem, ButtonProps } from './types';
 import CitySelector from './CitySelector';
@@ -27,6 +27,14 @@ const ActionButton: React.FC<ButtonProps> = ({ children, variant = 'primary', on
 const TopMenu: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState('Москва');
 
+  // Загружаем сохраненный город при инициализации компонента
+  useEffect(() => {
+    const savedCity = localStorage.getItem('selectedCity');
+    if (savedCity) {
+      setSelectedCity(savedCity);
+    }
+  }, []);
+
   const navigationItems: NavigationItem[] = [
     { label: 'О компании', href: '/about' },
     { label: 'Бренды', href: '/brands' },
@@ -39,6 +47,8 @@ const TopMenu: React.FC = () => {
 
   const handleCitySelect = (city: string) => {
     setSelectedCity(city);
+    // Сохраняем выбранный город в localStorage
+    localStorage.setItem('selectedCity', city);
     console.log('Selected city:', city);
   };
 
