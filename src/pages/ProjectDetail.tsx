@@ -215,7 +215,7 @@ const ProjectDetail: React.FC = () => {
               
               {/* Call Request Form */}
               <div 
-                className="w-full p-8 rounded-lg bg-cover bg-center"
+                className="w-full py-2 px-8 rounded-lg bg-cover bg-center"
                 style={{
                   backgroundImage: `url('/lovable-uploads/b069b0fc-5603-4b53-9e1f-8a60fbdc6e50.png')`
                 }}
