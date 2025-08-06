@@ -834,7 +834,7 @@ const About: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px] mb-[10px]">
                   {/* Первый блок */}
                   <div className="relative rounded-lg overflow-hidden">
-                    <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("/lovable-uploads/548c2b8d-46c9-402e-8b79-0bdb88078231.png")'}}></div>
+                    <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("/lovable-uploads/5e70564a-0a0e-401c-b04c-2aa607429f32.png")'}}></div>
                     <div className="absolute bottom-[10px] left-[10px] right-[10px] p-4 bg-white rounded-lg">
                       <p className="text-sm leading-relaxed text-gray-800" style={{ fontFamily: 'Benzin-Semibold' }}>
                         Мы ценим безупречную репутацию и постоянно улучшаем качество сервиса. Для нас доверие клиентов — главный приоритет.
@@ -844,7 +844,7 @@ const About: React.FC = () => {
 
                   {/* Второй блок */}
                   <div className="relative rounded-lg overflow-hidden">
-                    <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("/lovable-uploads/31b6a08c-aa95-40fd-a627-090c5cc9eb2e.png")'}}></div>
+                    <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("/lovable-uploads/4b28dccc-b553-41c9-a318-d227c221eeed.png")'}}></div>
                     <div className="absolute bottom-[10px] left-[10px] right-[10px] p-4 bg-white rounded-lg">
                       <p className="text-sm leading-relaxed text-gray-800" style={{ fontFamily: 'Benzin-Semibold' }}>
                         Качество — наш приоритет. Поставляем только проверенное оборудование, тщательно тестируемое перед выходом на рынок.
