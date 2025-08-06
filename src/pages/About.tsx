@@ -5,6 +5,10 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Banner from '@/components/Banner';
 import PhotoSwiper from '@/components/PhotoSwiper';
+import missionPlatform from '@/assets/mission-platform.jpg';
+import missionHealth from '@/assets/mission-health.jpg';
+import missionEquipment from '@/assets/mission-equipment.jpg';
+import missionService from '@/assets/mission-service.jpg';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -367,26 +371,89 @@ const About: React.FC = () => {
         {activeTab === 'mission' && (
           <section className="py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-              <div className="space-y-6">
-                <p className="text-gray-700 text-base leading-relaxed font-manrope text-justify">
-                  Наша миссия заключается в том, чтобы стать идеальной онлайн-платформой, на которой люди смогут найти все необходимое оборудование и аксессуары для повседневных занятий фитнесом и поддержания здорового образа жизни.
-                </p>
+              <div className="space-y-16">
                 
-                <p className="text-gray-700 text-base leading-relaxed font-manrope text-justify">
-                  Наша цель – это оздоровление населения страны при помощи доступных инструментов для улучшения физической формы, психологического состояния, повышения самооценки и улучшения качества и продолжительности жизни.
-                </p>
-                
-                <p className="text-gray-700 text-base leading-relaxed font-manrope text-justify">
-                  Мы предлагаем самое современное, функциональное и безопасное оборудование, которое обеспечивает эффективность тренировок, а также поддерживает высокую мотивацию в достижении поставленных целей.
-                </p>
-                
-                <p className="text-gray-700 text-base leading-relaxed font-manrope text-justify">
-                  Преимущества компании заключаются в предоставлении качественного контента, индивидуальном подходе к каждому покупателю и обеспечении качественной информационной и технической поддержки.
-                </p>
-                
-                <p className="text-gray-700 text-base leading-relaxed font-manrope text-justify">
-                  Мы стремимся сделать занятия фитнесом более эффективными, мотивирующими и интересными!
-                </p>
+                {/* Блок 1: Текст слева, изображение справа */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className="animate-fade-in">
+                    <h3 className="text-2xl font-semibold text-[#17171E] mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>
+                      Идеальная онлайн-платформа
+                    </h3>
+                    <p className="text-gray-700 text-base leading-relaxed font-manrope">
+                      Наша миссия заключается в том, чтобы стать идеальной онлайн-платформой, на которой люди смогут найти все необходимое оборудование и аксессуары для повседневных занятий фитнесом и поддержания здорового образа жизни.
+                    </p>
+                  </div>
+                  <div className="animate-scale-in hover-scale rounded-lg overflow-hidden shadow-lg">
+                    <img 
+                      src={missionPlatform} 
+                      alt="Современная фитнес-платформа" 
+                      className="w-full h-80 object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Блок 2: Изображение слева, текст справа */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className="animate-scale-in hover-scale rounded-lg overflow-hidden shadow-lg lg:order-1 order-2">
+                    <img 
+                      src={missionHealth} 
+                      alt="Здоровый образ жизни" 
+                      className="w-full h-80 object-cover"
+                    />
+                  </div>
+                  <div className="animate-fade-in lg:order-2 order-1">
+                    <h3 className="text-2xl font-semibold text-[#17171E] mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>
+                      Оздоровление населения
+                    </h3>
+                    <p className="text-gray-700 text-base leading-relaxed font-manrope">
+                      Наша цель – это оздоровление населения страны при помощи доступных инструментов для улучшения физической формы, психологического состояния, повышения самооценки и улучшения качества и продолжительности жизни.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Блок 3: Текст слева, изображение справа */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className="animate-fade-in">
+                    <h3 className="text-2xl font-semibold text-[#17171E] mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>
+                      Современное оборудование
+                    </h3>
+                    <p className="text-gray-700 text-base leading-relaxed font-manrope">
+                      Мы предлагаем самое современное, функциональное и безопасное оборудование, которое обеспечивает эффективность тренировок, а также поддерживает высокую мотивацию в достижении поставленных целей.
+                    </p>
+                  </div>
+                  <div className="animate-scale-in hover-scale rounded-lg overflow-hidden shadow-lg">
+                    <img 
+                      src={missionEquipment} 
+                      alt="Современное фитнес-оборудование" 
+                      className="w-full h-80 object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Блок 4: Изображение слева, текст справа */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className="animate-scale-in hover-scale rounded-lg overflow-hidden shadow-lg lg:order-1 order-2">
+                    <img 
+                      src={missionService} 
+                      alt="Индивидуальный подход и поддержка" 
+                      className="w-full h-80 object-cover"
+                    />
+                  </div>
+                  <div className="animate-fade-in lg:order-2 order-1">
+                    <h3 className="text-2xl font-semibold text-[#17171E] mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>
+                      Качественный сервис
+                    </h3>
+                    <p className="text-gray-700 text-base leading-relaxed font-manrope mb-6">
+                      Преимущества компании заключаются в предоставлении качественного контента, индивидуальном подходе к каждому покупателю и обеспечении качественной информационной и технической поддержки.
+                    </p>
+                    <div className="bg-gradient-to-r from-[#F53B49] to-[#FF6B7A] text-white p-6 rounded-lg">
+                      <p className="text-lg font-medium" style={{ fontFamily: 'Benzin-Semibold' }}>
+                        Мы стремимся сделать занятия фитнесом более эффективными, мотивирующими и интересными!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </section>
