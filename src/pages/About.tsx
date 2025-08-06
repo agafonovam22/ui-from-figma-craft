@@ -768,7 +768,7 @@ const About: React.FC = () => {
 
                 {/* Третий блок - полная ширина */}
                 <div className="relative rounded-lg overflow-hidden">
-                  <div className="h-[350px] bg-cover bg-top" style={{backgroundImage: 'url("/lovable-uploads/250e2e34-9605-47da-a21e-d1ae46d022d1.png")'}}></div>
+                  <div className="h-[350px] bg-cover bg-top" style={{backgroundImage: 'url("/lovable-uploads/ec98ff38-ba70-40b1-9f87-98ab4fb58324.png")'}}></div>
                   <div className="absolute bottom-[10px] left-[10px] right-[10px] p-4 bg-white rounded-lg">
                     <p className="text-sm leading-relaxed text-gray-800" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Значимость этих проблем настолько очевидна, что рамки и место обучения кадров требуют от нас анализа существенных финансовых и административных условий. С другой стороны начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.
