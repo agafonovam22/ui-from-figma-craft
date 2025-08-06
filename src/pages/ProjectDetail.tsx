@@ -141,7 +141,7 @@ const ProjectDetail: React.FC = () => {
                   О проекте
                 </h2>
                 
-                <div className="space-y-6 text-gray-700">
+                <div className="space-y-6 text-gray-700 font-manrope">
                   {projectSlug === 'atletika-plus-novomoskovsk' ? (
                     <>
                       <p className="leading-relaxed text-base">
