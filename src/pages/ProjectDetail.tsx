@@ -124,7 +124,7 @@ const ProjectDetail: React.FC = () => {
               <img 
                 src={project.image}
                 alt={project.title}
-                className="w-full object-cover object-bottom rounded-lg"
+                className="w-full object-cover object-center rounded-lg"
                 style={{ height: '350px' }}
               />
             </div>
