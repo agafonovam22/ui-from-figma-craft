@@ -84,55 +84,55 @@ const About: React.FC = () => {
     {
       id: 1,
       image: "/lovable-uploads/fdec1cea-908d-43a3-9d77-4f14304597f3.png",
-      title: "Lorem Ipsum",
+      title: "Атлетика+ (г. Новомосковск)",
       description: "представляем тренажеры Nautilus 626 серии"
     },
     {
       id: 2,
       image: "/lovable-uploads/cc85982b-96f7-40ec-ad84-f52b8c506581.png",
-      title: "Lorem Ipsum", 
+      title: "Фитнес Терра (г. Москва)", 
       description: "представляем тренажеры Nautilus 626 серии"
     },
     {
       id: 3,
       image: "/lovable-uploads/b1513bca-e46f-4642-85c8-279c68cbbff4.png",
-      title: "Lorem Ipsum",
+      title: "RockOut (г. Москва)",
       description: "представляем тренажеры Nautilus 626 серии"
     },
     {
       id: 4,
       image: "/lovable-uploads/7532d8ab-c6f7-4106-8d4b-563a3df784aa.png",
-      title: "Lorem Ipsum",
+      title: "Нептун (г. Балашиха)",
       description: "представляем тренажеры Nautilus 626 серии"
     },
     {
       id: 5,
       image: "/lovable-uploads/d37774a2-1a10-4cf2-ab20-b3e19960d0ce.png",
-      title: "Lorem Ipsum",
+      title: "СопкиSport (Мурманская область)",
       description: "представляем тренажеры Nautilus 626 серии"
     },
     {
       id: 6,
       image: "/lovable-uploads/a5af320b-9c2e-4f35-9708-452bd07d454f.png",
-      title: "Lorem Ipsum",
+      title: "ЦентрК (г. Владикавказ)",
       description: "представляем тренажеры Nautilus 626 серии"
     },
     {
       id: 7,
       image: "/lovable-uploads/c015139b-7198-4978-ae43-3c24b91892a0.png",
-      title: "Lorem Ipsum",
+      title: "Pulse120 (г. Анапа)",
       description: "представляем тренажеры Nautilus 626 серии"
     },
     {
       id: 8,
       image: "/lovable-uploads/3d769f2a-ddbb-4534-a9b9-9b2783c1bccf.png",
-      title: "Lorem Ipsum",
+      title: "PlazaFitness (г. Кострома)",
       description: "представляем тренажеры Nautilus 626 серии"
     },
     {
       id: 9,
       image: "/lovable-uploads/c9c5dc62-b0da-4189-bdfe-bf254ecf15e8.png",
-      title: "Lorem Ipsum",
+      title: "Открытие нового зала (Сочи Парк Отель)",
       description: "представляем тренажеры Nautilus 626 серии"
     },
     {
