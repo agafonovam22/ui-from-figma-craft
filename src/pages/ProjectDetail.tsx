@@ -213,40 +213,49 @@ const ProjectDetail: React.FC = () => {
                 Наша команда экспертов готова помочь вам создать современный и функциональный фитнес-центр с использованием лучшего оборудования мировых брендов.
               </p>
               
-              {/* Call Request Form */}
-              <div className="max-w-md mx-auto">
-                <form className="space-y-4">
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="ФИО"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
-                      required
-                    />
+              {/* Call Request Form with Background */}
+              <div 
+                className="relative rounded-lg overflow-hidden bg-cover bg-center"
+                style={{
+                  backgroundImage: `url('/lovable-uploads/be9a1588-64e3-461a-9a00-9fca93cf5b93.png')`
+                }}
+              >
+                <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div className="relative z-10 p-8">
+                  <h3 className="text-2xl font-bold text-white mb-6">Заказать звонок</h3>
+                  <div className="max-w-md mx-auto">
+                    <form className="space-y-4">
+                      <div>
+                        <input
+                          type="text"
+                          placeholder="ФИО"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F53B49] focus:border-transparent bg-white"
+                          required
+                        />
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input
+                          type="tel"
+                          placeholder="Телефон"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F53B49] focus:border-transparent bg-white"
+                          required
+                        />
+                        <input
+                          type="email"
+                          placeholder="E-mail"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F53B49] focus:border-transparent bg-white"
+                          required
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        className="w-full bg-[#F53B49] text-white px-8 py-3 rounded-lg hover:bg-[#e63946] transition-colors font-medium"
+                      >
+                        Заказать звонок
+                      </button>
+                    </form>
                   </div>
-                  <div>
-                    <input
-                      type="tel"
-                      placeholder="Телефон"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      placeholder="Email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
-                      required
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-[#F53B49] text-white px-8 py-3 rounded-lg hover:bg-[#e63946] transition-colors font-medium"
-                  >
-                    Заказать звонок
-                  </button>
-                </form>
+                </div>
               </div>
             </div>
           </div>
