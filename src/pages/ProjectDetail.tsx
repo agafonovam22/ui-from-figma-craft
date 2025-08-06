@@ -203,7 +203,7 @@ const ProjectDetail: React.FC = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 bg-white">
+        <section className="py-8 bg-white">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="text-center">
               <h2 className="text-3xl font-bold text-[#17171E] mb-6">
