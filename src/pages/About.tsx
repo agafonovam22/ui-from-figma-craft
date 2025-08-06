@@ -295,30 +295,12 @@ const About: React.FC = () => {
         {/* Banner */}
         <section className="w-full">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="overflow-hidden relative rounded-lg" style={{ height: '236px', backgroundColor: '#EEEFF6' }}>
-              <div className="relative h-full">
-                <div className="flex items-center h-full">
-                  {/* Левая часть с текстом - 55% ширины */}
-                  <div className="w-[55%] z-10 flex flex-col justify-center" style={{ paddingLeft: '94px' }}>
-                    <div>
-                      <h2 className="text-3xl font-benzin-semibold leading-tight">
-                        <span className="text-[#262631]">Well Fitness — </span>
-                        <span className="text-[#F53B49]">надежный<br />партнер с 2005 года<br /></span>
-                        <span className="text-[#262631]">для сотен компаний<br />от Калининграда<br />до Владивостока.</span>
-                      </h2>
-                    </div>
-                  </div>
-                  
-                  {/* Правая часть с изображением - 45% ширины */}
-                  <div className="w-[45%] h-full">
-                    <img 
-                      src="/lovable-uploads/7e51159c-56a9-4851-b1e6-165d114d982b.png"
-                      alt="Спортивное оборудование"
-                      className="w-full h-full object-cover rounded-r-lg"
-                    />
-                  </div>
-                </div>
-              </div>
+            <div className="overflow-hidden relative rounded-lg" style={{ height: '236px' }}>
+              <img 
+                src="/lovable-uploads/9ca63ea8-f3af-4a3b-bbfd-b2e7b3cf78e2.png"
+                alt="WellFitness команда"
+                className="w-full h-full object-cover rounded-lg"
+              />
             </div>
           </div>
         </section>
