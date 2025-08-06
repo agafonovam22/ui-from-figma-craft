@@ -95,7 +95,11 @@ const SupportCitySelector: React.FC<SupportCitySelectorProps> = ({ selectedCity,
           className="flex items-center gap-1 hover:opacity-80 transition-opacity"
           aria-label={`Выбрать город: ${selectedCity}`}
         >
-          <span className="text-[#F53B49] text-[20px]" style={{fontFamily: 'Benzin, sans-serif', fontWeight: '500', lineHeight: '1.2'}}>
+          <span className="text-[#F53B49]" style={{
+            fontFamily: 'Benzin-Medium',
+            fontSize: '20px',
+            lineHeight: '1.2'
+          }}>
             {selectedCity}
           </span>
           <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
