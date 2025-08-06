@@ -295,11 +295,11 @@ const About: React.FC = () => {
         {/* Banner */}
         <section className="w-full">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="overflow-hidden relative rounded-lg" style={{ height: '236px' }}>
+            <div className="overflow-hidden relative rounded-lg">
               <img 
                 src="/lovable-uploads/9ca63ea8-f3af-4a3b-bbfd-b2e7b3cf78e2.png"
                 alt="WellFitness команда"
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-auto object-cover rounded-lg"
               />
             </div>
           </div>
