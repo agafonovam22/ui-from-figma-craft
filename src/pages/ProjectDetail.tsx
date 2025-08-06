@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '@/components/Header';
+import PhotoSwiper from '@/components/PhotoSwiper';
 import Footer from '@/components/Footer';
 import {
   Breadcrumb,
@@ -184,44 +185,20 @@ const ProjectDetail: React.FC = () => {
           </div>
         </section>
 
-        {/* Equipment Section */}
+        {/* Photo Gallery Section */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <h2 className="text-3xl font-bold text-[#17171E] mb-12 text-center">
-              Установленное оборудование
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold text-[#17171E] mb-4">Кардиооборудование</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• Беговые дорожки премиум-класса</li>
-                  <li>• Эллиптические тренажеры</li>
-                  <li>• Велотренажеры</li>
-                  <li>• Степперы</li>
-                </ul>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold text-[#17171E] mb-4">Силовое оборудование</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• Мультистанции</li>
-                  <li>• Свободные веса</li>
-                  <li>• Тренажеры на все группы мышц</li>
-                  <li>• Функциональные рамы</li>
-                </ul>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold text-[#17171E] mb-4">Дополнительное</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• Функциональные тренажеры</li>
-                  <li>• Системы подвесного тренинга</li>
-                  <li>• Специализированные аксессуары</li>
-                  <li>• Напольные покрытия</li>
-                </ul>
-              </div>
-            </div>
+            <PhotoSwiper 
+              images={[
+                "/lovable-uploads/b555a0e9-869b-49af-bed7-c8a64d9d3e99.png",
+                "/lovable-uploads/09aa5a7a-91f0-4b59-b25a-4adae6c6eabc.png",
+                "/lovable-uploads/091717a9-ebff-4e40-961c-41fbf3a3ad61.png",
+                "/lovable-uploads/a1cd1be2-b869-402f-8b30-684846ff602c.png",
+                "/lovable-uploads/c472fcee-44da-473a-8890-1cdb5dc8890b.png"
+              ]}
+              autoplay={true}
+              autoplayInterval={5000}
+            />
           </div>
         </section>
 
