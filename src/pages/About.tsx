@@ -364,6 +364,34 @@ const About: React.FC = () => {
         </section>
 
         {/* Tab Content */}
+        {activeTab === 'mission' && (
+          <section className="py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="space-y-6">
+                <p className="text-gray-700 text-base leading-relaxed font-manrope text-justify">
+                  Наша миссия заключается в том, чтобы стать идеальной онлайн-платформой, на которой люди смогут найти все необходимое оборудование и аксессуары для повседневных занятий фитнесом и поддержания здорового образа жизни.
+                </p>
+                
+                <p className="text-gray-700 text-base leading-relaxed font-manrope text-justify">
+                  Наша цель – это оздоровление населения страны при помощи доступных инструментов для улучшения физической формы, психологического состояния, повышения самооценки и улучшения качества и продолжительности жизни.
+                </p>
+                
+                <p className="text-gray-700 text-base leading-relaxed font-manrope text-justify">
+                  Мы предлагаем самое современное, функциональное и безопасное оборудование, которое обеспечивает эффективность тренировок, а также поддерживает высокую мотивацию в достижении поставленных целей.
+                </p>
+                
+                <p className="text-gray-700 text-base leading-relaxed font-manrope text-justify">
+                  Преимущества компании заключаются в предоставлении качественного контента, индивидуальном подходе к каждому покупателю и обеспечении качественной информационной и технической поддержки.
+                </p>
+                
+                <p className="text-gray-700 text-base leading-relaxed font-manrope text-justify">
+                  Мы стремимся сделать занятия фитнесом более эффективными, мотивирующими и интересными!
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+
         {activeTab === 'team' && (
           <section className="py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
