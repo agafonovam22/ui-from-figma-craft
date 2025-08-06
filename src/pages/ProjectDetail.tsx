@@ -111,7 +111,7 @@ const ProjectDetail: React.FC = () => {
             </Breadcrumb>
             
             {/* Main Title */}
-            <h1 className="text-[40px] font-bold text-[#17171E] mb-8 leading-tight">
+            <h1 className="text-[40px] font-bold text-[#17171E] mb-4 leading-tight">
               {project.title}
             </h1>
           </div>
