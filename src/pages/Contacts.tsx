@@ -196,14 +196,6 @@ const Contacts: React.FC = () => {
           </div>
         </div>
 
-        {/* Photo Swiper Gallery */}
-        <div className="mb-12">
-          <PhotoSwiper 
-            images={images}
-            autoplay={true}
-            autoplayInterval={5000}
-          />
-        </div>
 
         {/* Office and Sales Departments - Only for Moscow */}
         {activeTab === 'moscow' && (
