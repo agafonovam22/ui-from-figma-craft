@@ -11,6 +11,7 @@ import UslugiServices from "./pages/UslugiServices";
 import UslugiCategories from "./pages/UslugiCategories";
 import About from "./pages/About";
 import Project from "./pages/Project";
+import ProjectDetail from "./pages/ProjectDetail";
 import Ideas from "./pages/Ideas";
 import Brands from "./pages/Brands";
 import Brand from "./pages/Brand";
@@ -53,6 +54,7 @@ const App = () => (
           <Route path="/uslugi/:category" element={<UslugiServices />} />
           <Route path="/about" element={<About />} />
           <Route path="/project" element={<Project />} />
+          <Route path="/projects/:projectSlug" element={<ProjectDetail />} />
           <Route path="/ideas" element={<Ideas />} />
           <Route path="/brands" element={<Brands />} />
           <Route path="/brands/:brandSlug" element={<Brand />} />
