@@ -243,7 +243,7 @@ const Contacts: React.FC = () => {
                 <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                  <p className="text-sm">+7 (499) 677-56-32 доб. 5</p>
+                  <p className="text-sm">{activeTab === 'spb' ? '88005553518' : '+7 (499) 677-56-32 доб. 5'}</p>
                 </div>
               </div>
               
@@ -274,8 +274,8 @@ const Contacts: React.FC = () => {
                 <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
-                  <p className="text-sm">+7 (499) 677-56-32 доб. 1-1</p>
-                  <p className="text-sm">+7 (499) 677-56-32 доб. 1-2</p>
+                   <p className="text-sm">{activeTab === 'spb' ? '88003332595' : '+7 (499) 677-56-32 доб. 1-1'}</p>
+                   {activeTab === 'moscow' && <p className="text-sm">+7 (499) 677-56-32 доб. 1-2</p>}
                 </div>
               </div>
               
