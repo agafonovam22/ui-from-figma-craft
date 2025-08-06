@@ -750,7 +750,7 @@ const About: React.FC = () => {
                     <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("/lovable-uploads/548c2b8d-46c9-402e-8b79-0bdb88078231.png")'}}></div>
                     <div className="absolute bottom-[10px] left-[10px] right-[10px] p-4 bg-white rounded-lg">
                       <p className="text-sm leading-relaxed text-gray-800" style={{ fontFamily: 'Benzin-Semibold' }}>
-                        Во-первых, мы особенно дорожим своей безупречной репутацией и регулярно повышаем планку качества сервиса. Знак, находясь другим может оказаться доверие покупателя, специалисты Well Fitness всегда ориентируются на интересы клиентов.
+                        Мы ценим безупречную репутацию и постоянно улучшаем качество сервиса. Для нас доверие клиентов — главный приоритет.
                       </p>
                     </div>
                   </div>
@@ -760,7 +760,7 @@ const About: React.FC = () => {
                     <div className="h-[300px] bg-cover bg-center" style={{backgroundImage: 'url("/lovable-uploads/31b6a08c-aa95-40fd-a627-090c5cc9eb2e.png")'}}></div>
                     <div className="absolute bottom-[10px] left-[10px] right-[10px] p-4 bg-white rounded-lg">
                       <p className="text-sm leading-relaxed text-gray-800" style={{ fontFamily: 'Benzin-Semibold' }}>
-                        Во-вторых, мы поставляем только самую качественную и надежную продукцию. Перед выводом на российский рынок, мы тщательно тестируем каждую модель, поэтому все предлагаемое оборудование высоко ценится покупателями и имеет минимум сервисных проблем.
+                        Качество — наш приоритет. Поставляем только проверенное оборудование, тщательно тестируемое перед выходом на рынок.
                       </p>
                     </div>
                   </div>
@@ -771,7 +771,7 @@ const About: React.FC = () => {
                   <div className="h-[350px] bg-cover bg-top" style={{backgroundImage: 'url("/lovable-uploads/ec98ff38-ba70-40b1-9f87-98ab4fb58324.png")'}}></div>
                   <div className="absolute bottom-[10px] left-[10px] right-[10px] p-4 bg-white rounded-lg">
                     <p className="text-sm leading-relaxed text-gray-800" style={{ fontFamily: 'Benzin-Semibold' }}>
-                      Значимость этих проблем настолько очевидна, что рамки и место обучения кадров требуют от нас анализа существенных финансовых и административных условий. С другой стороны начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.
+                      Обучение сотрудников и инвестиции в их развитие — ключевое условие роста Wellfitness.
                     </p>
                   </div>
                 </div>
