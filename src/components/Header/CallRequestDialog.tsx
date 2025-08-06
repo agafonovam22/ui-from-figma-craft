@@ -1,8 +1,9 @@
 
 import React, { useState } from 'react';
-import { Dialog, DialogContent, DialogTrigger, DialogOverlay, DialogPortal } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTrigger, DialogOverlay, DialogPortal, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 
 interface CallRequestDialogProps {
   children: React.ReactNode;
@@ -12,7 +13,7 @@ const CallRequestDialog: React.FC<CallRequestDialogProps> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
-    phone: '',
+    phone: '+7 ',
     email: ''
   });
 
@@ -20,22 +21,53 @@ const CallRequestDialog: React.FC<CallRequestDialogProps> = ({ children }) => {
     // Убираем все символы кроме цифр
     const phoneNumber = value.replace(/\D/g, '');
     
+    // Если нет цифр, возвращаем базовую маску
+    if (phoneNumber.length === 0) return '+7 ';
+    
     // Если начинается с 8, заменяем на 7
-    const normalizedNumber = phoneNumber.startsWith('8') ? '7' + phoneNumber.slice(1) : phoneNumber;
+    let normalizedNumber = phoneNumber;
+    if (phoneNumber.startsWith('8') && phoneNumber.length > 1) {
+      normalizedNumber = '7' + phoneNumber.slice(1);
+    }
+    
+    // Если не начинается с 7, добавляем 7
+    if (!normalizedNumber.startsWith('7')) {
+      normalizedNumber = '7' + normalizedNumber;
+    }
     
     // Применяем маску +7 (XXX) XXX-XX-XX
-    if (normalizedNumber.length === 0) return '';
-    if (normalizedNumber.length <= 1) return '+7';
-    if (normalizedNumber.length <= 4) return `+7 (${normalizedNumber.slice(1)}`;
-    if (normalizedNumber.length <= 7) return `+7 (${normalizedNumber.slice(1, 4)}) ${normalizedNumber.slice(4)}`;
-    if (normalizedNumber.length <= 9) return `+7 (${normalizedNumber.slice(1, 4)}) ${normalizedNumber.slice(4, 7)}-${normalizedNumber.slice(7)}`;
-    return `+7 (${normalizedNumber.slice(1, 4)}) ${normalizedNumber.slice(4, 7)}-${normalizedNumber.slice(7, 9)}-${normalizedNumber.slice(9, 11)}`;
+    const number = normalizedNumber.slice(1); // убираем первую 7
+    
+    if (number.length === 0) return '+7 ';
+    if (number.length <= 3) return `+7 (${number}`;
+    if (number.length <= 6) return `+7 (${number.slice(0, 3)}) ${number.slice(3)}`;
+    if (number.length <= 8) return `+7 (${number.slice(0, 3)}) ${number.slice(3, 6)}-${number.slice(6)}`;
+    return `+7 (${number.slice(0, 3)}) ${number.slice(3, 6)}-${number.slice(6, 8)}-${number.slice(8, 10)}`;
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const cursorPosition = e.target.selectionStart;
+    const value = e.target.value;
+    
+    // Предотвращаем удаление префикса +7
+    if (value.length < 3) {
+      setFormData(prev => ({ ...prev, phone: '+7 ' }));
+      return;
+    }
+    
+    const formatted = formatPhoneNumber(value);
+    setFormData(prev => ({ ...prev, phone: formatted }));
+    
+    // Восстанавливаем позицию курсора
+    setTimeout(() => {
+      if (e.target.setSelectionRange && cursorPosition) {
+        const newPosition = Math.min(cursorPosition, formatted.length);
+        e.target.setSelectionRange(newPosition, newPosition);
+      }
+    }, 0);
   };
 
   const handleInputChange = (field: string, value: string) => {
-    if (field === 'phone') {
-      value = formatPhoneNumber(value);
-    }
     setFormData(prev => ({
       ...prev,
       [field]: value
@@ -47,7 +79,7 @@ const CallRequestDialog: React.FC<CallRequestDialogProps> = ({ children }) => {
     console.log('Call request submitted:', formData);
     // Здесь будет логика отправки формы
     setIsOpen(false);
-    setFormData({ fullName: '', phone: '', email: '' });
+    setFormData({ fullName: '', phone: '+7 ', email: '' });
   };
 
   return (
@@ -58,6 +90,10 @@ const CallRequestDialog: React.FC<CallRequestDialogProps> = ({ children }) => {
       <DialogPortal>
         <DialogOverlay className="bg-black/50" />
         <DialogContent className="max-w-[900px] w-full p-0 bg-white rounded-lg">
+          <VisuallyHidden>
+            <DialogTitle>Заказать звонок</DialogTitle>
+            <DialogDescription>Форма для заказа обратного звонка</DialogDescription>
+          </VisuallyHidden>
           <div className="flex h-[280px]">
             {/* Left side - Form */}
             <div className="w-1/2 p-6">
@@ -78,9 +114,9 @@ const CallRequestDialog: React.FC<CallRequestDialogProps> = ({ children }) => {
                 <div className="grid grid-cols-2 gap-3">
                   <Input
                     type="tel"
-                    placeholder="Телефон"
+                    placeholder="+7 (999) 999-99-99"
                     value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
+                    onChange={handlePhoneChange}
                     className="h-10 px-3 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#F53B49] focus:border-transparent placeholder:text-gray-400"
                     required
                   />
