@@ -186,7 +186,7 @@ const ProjectDetail: React.FC = () => {
         </section>
 
         {/* Photo Gallery Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <PhotoSwiper 
               images={[
