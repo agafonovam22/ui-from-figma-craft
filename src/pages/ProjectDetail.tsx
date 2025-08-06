@@ -209,22 +209,44 @@ const ProjectDetail: React.FC = () => {
               <h2 className="text-3xl font-bold text-[#17171E] mb-6">
                 Хотите реализовать похожий проект?
               </h2>
-              <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+              <p className="text-gray-600 mb-8 w-full">
                 Наша команда экспертов готова помочь вам создать современный и функциональный фитнес-центр с использованием лучшего оборудования мировых брендов.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link 
-                  to="/contacts"
-                  className="bg-[#F53B49] text-white px-8 py-3 rounded hover:bg-[#e63946] transition-colors font-medium"
-                >
-                  Связаться с нами
-                </Link>
-                <Link 
-                  to="/about"
-                  className="border border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors font-medium"
-                >
-                  Все проекты
-                </Link>
+              
+              {/* Call Request Form */}
+              <div className="max-w-md mx-auto">
+                <form className="space-y-4">
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="ФИО"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="tel"
+                      placeholder="Телефон"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F53B49] focus:border-transparent"
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-[#F53B49] text-white px-8 py-3 rounded-lg hover:bg-[#e63946] transition-colors font-medium"
+                  >
+                    Заказать звонок
+                  </button>
+                </form>
               </div>
             </div>
           </div>
