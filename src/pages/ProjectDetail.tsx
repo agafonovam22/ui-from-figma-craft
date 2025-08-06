@@ -167,27 +167,19 @@ const ProjectDetail: React.FC = () => {
                 </div>
               </div>
 
-              {/* Right side - Statistics or details */}
+              {/* Right side - YouTube Video */}
               <div className="relative">
-                <div className="bg-gray-50 p-8 rounded-lg">
-                  <h3 className="text-2xl font-bold text-[#17171E] mb-6">Детали проекта</h3>
-                  <div className="space-y-4">
-                    <div className="flex justify-between border-b pb-2">
-                      <span className="text-gray-600">Тип объекта:</span>
-                      <span className="text-[#17171E] font-medium">Фитнес-центр</span>
-                    </div>
-                    <div className="flex justify-between border-b pb-2">
-                      <span className="text-gray-600">Статус:</span>
-                      <span className="text-green-600 font-medium">Завершен</span>
-                    </div>
-                    <div className="flex justify-between border-b pb-2">
-                      <span className="text-gray-600">Оборудование:</span>
-                      <span className="text-[#17171E] font-medium">Премиум класс</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Планировка:</span>
-                      <span className="text-[#17171E] font-medium">Индивидуальная</span>
-                    </div>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="text-2xl font-bold text-[#17171E] mb-6 text-center">Видео проекта</h3>
+                  <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
+                    <iframe
+                      className="absolute top-0 left-0 w-full h-full rounded-lg"
+                      src="https://www.youtube.com/embed/4o4uTsF0Q2s"
+                      title="Видео проекта Атлетика+"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
                   </div>
                 </div>
               </div>
