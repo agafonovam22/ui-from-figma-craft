@@ -110,7 +110,7 @@ const SupportCitySelector: React.FC<SupportCitySelectorProps> = ({ selectedCity,
             {/* Left side - Popular cities */}
             <div className="w-1/3 p-6 border-r border-gray-200">
               <h2 className="text-xl font-bold text-black mb-5">Популярные</h2>
-              <div className="space-y-3">
+              <div className="space-y-3 max-h-[180px] overflow-y-auto pr-2">
                 {popularCities.map((city) => (
                   <button
                     key={city}
