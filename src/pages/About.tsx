@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, Package, Shield, Grid3x3, Settings, TrendingUp } from 'lucide-react';
+import { ArrowRight, Users, Warehouse, Shield, Grid3x3, Wrench, TrendingUp } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Banner from '@/components/Banner';
@@ -675,7 +675,7 @@ const About: React.FC = () => {
 
                   <div className="bg-gray-100 p-6 rounded-lg">
                     <div className="w-16 h-16 bg-[#F53B49] rounded-lg flex items-center justify-center mb-4">
-                      <Package size={32} color="white" />
+                      <Warehouse size={32} color="white" />
                     </div>
                     <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Собственный склад запчастей
@@ -711,7 +711,7 @@ const About: React.FC = () => {
 
                   <div className="bg-gray-100 p-6 rounded-lg">
                     <div className="w-16 h-16 bg-[#F53B49] rounded-lg flex items-center justify-center mb-4">
-                      <Settings size={32} color="white" />
+                      <Wrench size={32} color="white" />
                     </div>
                     <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Комплексный сервис
