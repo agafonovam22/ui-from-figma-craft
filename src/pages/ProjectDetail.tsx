@@ -168,7 +168,7 @@ const ProjectDetail: React.FC = () => {
               </div>
 
               {/* Right side - YouTube Video */}
-              <div className="relative">
+              <div className="relative mt-[50px]">
                 <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
                   <iframe
                     className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
