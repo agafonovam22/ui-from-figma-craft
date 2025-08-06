@@ -215,13 +215,12 @@ const ProjectDetail: React.FC = () => {
               
               {/* Call Request Form */}
               <div 
-                className="w-full p-8 rounded-lg bg-cover bg-center relative"
+                className="w-full p-8 rounded-lg bg-cover bg-center"
                 style={{
                   backgroundImage: `url('/lovable-uploads/b069b0fc-5603-4b53-9e1f-8a60fbdc6e50.png')`
                 }}
               >
-                <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
-                <div className="relative z-10 text-left">
+                <div className="text-left">
                   <div className="bg-white p-6 rounded-lg max-w-md">
                     <h3 className="text-2xl font-bold text-[#17171E] mb-6">Заказать звонок</h3>
                     <form className="space-y-2.5">
