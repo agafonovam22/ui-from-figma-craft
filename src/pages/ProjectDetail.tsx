@@ -242,6 +242,13 @@ const ProjectDetail: React.FC = () => {
                   "/lovable-uploads/ec08b952-6e3b-45c0-93c9-542e1e783f25.png",
                   "/lovable-uploads/840914b8-8d31-4850-b075-f815b81d0d4b.png",
                   "/lovable-uploads/260bc39e-033b-4bdb-bbeb-a44d9d8fb306.png"
+                ] : projectSlug === 'plaza-fitness-kostroma' ? [
+                  "/lovable-uploads/e547d17f-1ad4-49a9-83e0-b9c0e0c4171d.png",
+                  "/lovable-uploads/97bdb3f0-3c1f-4b9f-9f81-c9d5274a2cc0.png",
+                  "/lovable-uploads/cc8eae9e-24c6-42c6-b70a-07bb4a825b2a.png",
+                  "/lovable-uploads/c4f3a5ac-720b-46f9-a894-fc46ebf8de65.png",
+                  "/lovable-uploads/f8ea859b-f2a8-43da-ba1f-5638340b324f.png",
+                  "/lovable-uploads/6f858cb4-8dc9-4c37-9ca1-08d0ff893c1c.png"
                 ] : [
                   project.image
                 ]
