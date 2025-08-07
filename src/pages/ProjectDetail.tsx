@@ -214,22 +214,14 @@ const ProjectDetail: React.FC = () => {
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <PhotoSwiper 
               images={[
-                "/lovable-uploads/792458ce-b767-4c2f-89fb-a77213d0a4ae.png",
-                "/lovable-uploads/1f982af1-e00e-4077-8353-1c49c089464d.png",
-                "/lovable-uploads/449fef59-e36f-424a-b4e6-77c63614534a.png",
-                "/lovable-uploads/38962789-4843-46b0-ae70-c2ae3cc60718.png",
-                "/lovable-uploads/e9dd747f-100c-4fd7-bfce-38932ff39d67.png",
-                "/lovable-uploads/d8691974-95b0-4158-adb8-47870179fdbe.png",
-                "/lovable-uploads/d33c142e-9e3c-4a68-a0dc-012f63efdb69.png",
-                "/lovable-uploads/1a054aa0-983b-478e-a27e-30653e6d7f33.png",
-                "/lovable-uploads/097ae6e9-a092-4e42-a633-c6c429f6aabd.png",
-                "/lovable-uploads/adf07d5b-9fd5-4f50-9e3a-32af3513c4fe.png",
-                "/lovable-uploads/2b2346a0-5ab8-4c5c-84c6-9dbd4a20eecd.png",
-                "/lovable-uploads/8da729a7-f226-4d9a-84a7-af58b85c01e1.png",
-                "/lovable-uploads/77e8b724-401e-4b8b-92ad-a8dee9c705c7.png",
-                "/lovable-uploads/11ea098a-4542-446f-96c1-eeacbfbab2f0.png",
-                "/lovable-uploads/bbe4037f-af85-4cf5-891f-bb335b6b62e0.png",
-                "/lovable-uploads/4f9a1e37-90c5-4cf6-a967-9abc44be6307.png"
+                "/lovable-uploads/a3c1035a-6176-4146-8391-a9c66e8ffec8.png",
+                "/lovable-uploads/7c0f49be-dc1b-4d3b-9e73-c03da595bc01.png",
+                "/lovable-uploads/391cc165-bf72-427c-8d65-67ea4ee9bbe7.png",
+                "/lovable-uploads/0fc886d3-6688-47af-bcdb-895c29e12da5.png",
+                "/lovable-uploads/be68b1e6-cb16-4a55-9461-12e8344d8a55.png",
+                "/lovable-uploads/262e6447-0ab9-4e54-9920-20424889866d.png",
+                "/lovable-uploads/9471823c-3dc5-4d13-93d5-51c9427a7d94.png",
+                "/lovable-uploads/628c204f-ddab-4eb2-b972-e927e33dbb72.png"
               ]}
               autoplay={true}
               autoplayInterval={5000}
