@@ -247,7 +247,7 @@ const ProjectDetail: React.FC = () => {
                       </div>
                       <button
                         type="submit"
-                        className="w-full bg-[#F53B49] text-white px-8 py-3 rounded-lg hover:bg-[#e63946] transition-colors font-medium"
+                        className="w-1/2 bg-[#F53B49] text-white px-8 py-3 rounded-lg hover:bg-[#e63946] transition-colors font-medium"
                       >
                         Заказать звонок
                       </button>
