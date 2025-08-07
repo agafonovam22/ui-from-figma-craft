@@ -22,7 +22,7 @@ const projectsData = {
   'fitness-terra-moscow': {
     title: 'Фитнес Терра (г. Москва)',
     description: 'Клуб класса "бизнес" на площади старой советской застройки',
-    image: '/lovable-uploads/cc85982b-96f7-40ec-ad84-f52b8c506581.png'
+    image: '/lovable-uploads/097c8707-039f-42f4-b176-b9b084a1cda9.png'
   },
   'rockout-moscow': {
     title: 'RockOut (г. Москва)',
