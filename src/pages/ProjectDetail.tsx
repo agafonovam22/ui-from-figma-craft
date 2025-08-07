@@ -198,16 +198,16 @@ const ProjectDetail: React.FC = () => {
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <PhotoSwiper 
               images={[
-                "/lovable-uploads/e27d3599-00e6-4900-a407-efb34135cb09.png",
-                "/lovable-uploads/6fbdcc4b-d045-406c-8bf7-54c4b0bf6bec.png",
-                "/lovable-uploads/613d0763-d8d9-49fb-8633-2876409082e6.png",
-                "/lovable-uploads/e006d1a5-3b6a-415e-839b-9ab21fc42d96.png",
-                "/lovable-uploads/d700ddf8-3e8f-489b-beba-877bab6bde7f.png",
-                "/lovable-uploads/9bcae6ec-c71c-4f6e-9b8f-7b967fa60f35.png",
-                "/lovable-uploads/47bf12cc-57b7-47c4-bcef-1110a401d4ae.png",
-                "/lovable-uploads/215b0d6a-48cb-443e-9bcb-b1eda356fe92.png",
-                "/lovable-uploads/d95f8e93-69e8-48a4-b1f2-3c5feed00524.png",
-                "/lovable-uploads/9c0359dd-2496-4bed-a578-9f8e047b7fcb.png"
+                "/lovable-uploads/792458ce-b767-4c2f-89fb-a77213d0a4ae.png",
+                "/lovable-uploads/1f982af1-e00e-4077-8353-1c49c089464d.png",
+                "/lovable-uploads/449fef59-e36f-424a-b4e6-77c63614534a.png",
+                "/lovable-uploads/38962789-4843-46b0-ae70-c2ae3cc60718.png",
+                "/lovable-uploads/e9dd747f-100c-4fd7-bfce-38932ff39d67.png",
+                "/lovable-uploads/d8691974-95b0-4158-adb8-47870179fdbe.png",
+                "/lovable-uploads/d33c142e-9e3c-4a68-a0dc-012f63efdb69.png",
+                "/lovable-uploads/1a054aa0-983b-478e-a27e-30653e6d7f33.png",
+                "/lovable-uploads/097ae6e9-a092-4e42-a633-c6c429f6aabd.png",
+                "/lovable-uploads/adf07d5b-9fd5-4f50-9e3a-32af3513c4fe.png"
               ]}
               autoplay={true}
               autoplayInterval={5000}
