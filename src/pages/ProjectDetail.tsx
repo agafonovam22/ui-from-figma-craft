@@ -170,6 +170,10 @@ const ProjectDetail: React.FC = () => {
                           Вместе с клиентом мы сделали наиболее удачную логистику зала с максимально полным набором отличных тренажеров и аксессуаров.
                         </p>
                       </>
+                    ) : projectSlug === 'centrk-vladikavkaz' ? (
+                      <p className="leading-relaxed text-base">
+                        Один из крупнейших фитнес-центров города Владикавказ. Проект выполнен нашим дилером компанией Profi.Fit
+                      </p>
                     ) : (
                       <>
                         <p className="leading-relaxed text-base">
@@ -187,13 +191,15 @@ const ProjectDetail: React.FC = () => {
                 </div>
 
                 {/* Right side - YouTube Video */}
-                {(projectSlug === 'rockout-moscow' || projectSlug === 'neptun-balashikha') && (
+                {(projectSlug === 'rockout-moscow' || projectSlug === 'neptun-balashikha' || projectSlug === 'centrk-vladikavkaz') && (
                   <div className="relative mt-[50px]">
                     <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
                       <iframe
                         className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
                         src={projectSlug === 'neptun-balashikha' 
                           ? "https://www.youtube.com/embed/XfkjOZABKNo" 
+                          : projectSlug === 'centrk-vladikavkaz'
+                          ? "https://www.youtube.com/embed/uIGJTI0m_Cw"
                           : "https://www.youtube.com/embed/JVLMLVQf3iQ"
                         }
                         title={`Видео проекта ${project.title}`}
