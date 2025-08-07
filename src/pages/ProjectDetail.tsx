@@ -220,7 +220,7 @@ const ProjectDetail: React.FC = () => {
                 }}
               >
                 <div className="text-left">
-                  <div className="bg-white p-6 rounded-lg max-w-md ml-[5px]">
+                  <div className="bg-white p-6 rounded-lg max-w-[548px] ml-[5px]">
                     <h3 className="text-2xl font-bold text-[#17171E] mb-6">Заказать звонок</h3>
                     <form className="space-y-2.5">
                       <div>
