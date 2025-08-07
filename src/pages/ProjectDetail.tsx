@@ -135,8 +135,8 @@ const ProjectDetail: React.FC = () => {
         {/* Main Content */}
         <section className="py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              {/* Left side - Text content */}
+            <div className="grid grid-cols-1 gap-16 items-start">
+              {/* Text content */}
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold text-[#17171E] mb-6">
                   О проекте
@@ -144,25 +144,11 @@ const ProjectDetail: React.FC = () => {
                 
                 <div className="space-y-6 text-gray-700 font-manrope">
                   <p className="leading-relaxed text-base">
-                    Специалисты компании WellFitness провели подбор оборудования класса Премиум для крупнейшего фитнес-проекта в регионе. В бюджете менее 30 млн рублей нам удалось поставить оборудование мирового топ-класса: TRUE, Octane, Gym80. Были проведены дополнительные работы по модификации оборудования для очень щепетильных требований клиента по расстановке, а также подобраны опциональные нестандартные цвета рамы и обивки. Тренажерный зал стал лучшим в своём регионе благодаря самым передовым технологиям, дизайну и уникальным моделям кардио и силовых тренажеров.
+                    Команда WellFitnessPRO взялась за непростой проект по подбору, установке и запуску оборудования для проекта класса Бизнес, но на площади старого здания советского периода.
                   </p>
                   <p className="leading-relaxed text-base">
-                    Фитнес-клуб «Премиум», общая площадь - 2200кв.м., тренажерный зал занимает 650кв.м.. Созданы зоны Кардиотренажеров, Зоны грузоблочных тренажеров TRUE Palladium, зона нагружаемых дисками Gym80 PureKraft, отдельная зона Функционального тренинга, зоны свободных весов.
+                    Внешний вид здания не создаёт впечатления притягательности, однако, попадаю внутрь клиент получает отличный сервис и возможность тренировок на оборудовании класса бизнес: Smith и Octane fitness.
                   </p>
-                </div>
-              </div>
-
-              {/* Right side - YouTube Video */}
-              <div className="relative mt-[50px]">
-                <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
-                    src="https://www.youtube.com/embed/4o4uTsF0Q2s"
-                    title="Видео проекта Атлетика+"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
                 </div>
               </div>
             </div>
