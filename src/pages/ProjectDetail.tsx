@@ -174,6 +174,10 @@ const ProjectDetail: React.FC = () => {
                       <p className="leading-relaxed text-base">
                         Один из крупнейших фитнес-центров города Владикавказ. Проект выполнен нашим дилером компанией Profi.Fit
                       </p>
+                    ) : projectSlug === 'plaza-fitness-kostroma' ? (
+                      <p className="leading-relaxed text-base">
+                        Команда WellFitnessPRO оснастила фитнес-клуб в Костроме оборудованием класса «Бизнес» под брендом Smith с поддержкой HIIT тренажеров Octane. Тренажерный зал почти в 300кв.м. вместил полноценную линию кардиотренажеров, грузоблочные тренажеры серии Diamond, нагружаемые дисками серии Sapphire, а также полноценную зону функционального тренинга на основе комплекса для ФТ + HIIT-тренажеры знаменитого американского бренда Octane.
+                      </p>
                     ) : (
                       <>
                         <p className="leading-relaxed text-base">
@@ -191,7 +195,7 @@ const ProjectDetail: React.FC = () => {
                 </div>
 
                 {/* Right side - YouTube Video */}
-                {(projectSlug === 'rockout-moscow' || projectSlug === 'neptun-balashikha' || projectSlug === 'centrk-vladikavkaz') && (
+                {(projectSlug === 'rockout-moscow' || projectSlug === 'neptun-balashikha' || projectSlug === 'centrk-vladikavkaz' || projectSlug === 'plaza-fitness-kostroma') && (
                   <div className="relative mt-[50px]">
                     <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
                       <iframe
@@ -200,6 +204,8 @@ const ProjectDetail: React.FC = () => {
                           ? "https://www.youtube.com/embed/XfkjOZABKNo" 
                           : projectSlug === 'centrk-vladikavkaz'
                           ? "https://www.youtube.com/embed/uIGJTI0m_Cw"
+                          : projectSlug === 'plaza-fitness-kostroma'
+                          ? "https://www.youtube.com/embed/P-NJNHndqdg"
                           : "https://www.youtube.com/embed/JVLMLVQf3iQ"
                         }
                         title={`Видео проекта ${project.title}`}
