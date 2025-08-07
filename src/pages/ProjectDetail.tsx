@@ -221,7 +221,14 @@ const ProjectDetail: React.FC = () => {
                 "/lovable-uploads/be68b1e6-cb16-4a55-9461-12e8344d8a55.png",
                 "/lovable-uploads/262e6447-0ab9-4e54-9920-20424889866d.png",
                 "/lovable-uploads/9471823c-3dc5-4d13-93d5-51c9427a7d94.png",
-                "/lovable-uploads/628c204f-ddab-4eb2-b972-e927e33dbb72.png"
+                "/lovable-uploads/628c204f-ddab-4eb2-b972-e927e33dbb72.png",
+                "/lovable-uploads/2733947a-1cbf-42f7-8d32-267fa048f3d5.png",
+                "/lovable-uploads/e2bba983-a28d-470b-a08d-49fd58690b23.png",
+                "/lovable-uploads/a7cb00a3-6999-4159-b4a8-76f9ccb9fafc.png",
+                "/lovable-uploads/219b5fb6-a0bb-4af1-aa2e-8e66c17511f1.png",
+                "/lovable-uploads/992de3c4-5d99-42c4-a790-7765cb0c3983.png",
+                "/lovable-uploads/1b8d084d-962a-4036-a0b6-ef9b73ac92e3.png",
+                "/lovable-uploads/0ccc7b10-fa3e-4a1b-a3b6-64dcf7c360fe.png"
               ]}
               autoplay={true}
               autoplayInterval={5000}
