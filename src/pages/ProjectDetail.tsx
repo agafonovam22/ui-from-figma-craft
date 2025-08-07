@@ -52,7 +52,7 @@ const projectsData = {
   'plaza-fitness-kostroma': {
     title: 'PlazaFitness (г. Кострома)',
     description: 'Один из самых популярных фитнес-клубов г. Кострома.',
-    image: '/lovable-uploads/3d769f2a-ddbb-4534-a9b9-9b2783c1bccf.png'
+    image: '/lovable-uploads/ea3ea54f-dd7a-4063-8ac4-788a8a7b6441.png'
   },
   'sochi-park-hotel': {
     title: 'Открытие нового зала (Сочи Парк Отель)',
