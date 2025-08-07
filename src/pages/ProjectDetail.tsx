@@ -190,11 +190,10 @@ const ProjectDetail: React.FC = () => {
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <PhotoSwiper 
               images={[
-                "/lovable-uploads/b555a0e9-869b-49af-bed7-c8a64d9d3e99.png",
-                "/lovable-uploads/09aa5a7a-91f0-4b59-b25a-4adae6c6eabc.png",
-                "/lovable-uploads/091717a9-ebff-4e40-961c-41fbf3a3ad61.png",
-                "/lovable-uploads/a1cd1be2-b869-402f-8b30-684846ff602c.png",
-                "/lovable-uploads/c472fcee-44da-473a-8890-1cdb5dc8890b.png"
+                "/lovable-uploads/b71c9323-098b-41c7-b16d-4b96a860ae64.png",
+                "/lovable-uploads/81e89b26-f6c7-4b7c-a23f-0d5ddc5f9db4.png",
+                "/lovable-uploads/7f9c8920-ad24-46a4-8db1-1467336ebe21.png",
+                "/lovable-uploads/6da1a772-b747-4fc7-b714-25ec14dd2606.png"
               ]}
               autoplay={true}
               autoplayInterval={5000}
