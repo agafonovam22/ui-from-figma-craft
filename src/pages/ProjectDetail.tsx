@@ -160,7 +160,7 @@ const ProjectDetail: React.FC = () => {
                 <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
                   <iframe
                     className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
-                    src="https://www.youtube.com/embed/4o4uTsF0Q2s"
+                    src="https://www.youtube.com/embed/JVLMLVQf3iQ"
                     title="Видео проекта RockOut"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
