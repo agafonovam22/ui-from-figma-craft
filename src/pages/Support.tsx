@@ -620,10 +620,10 @@ const Support: React.FC = () => {
                              style={{fontFamily: 'Manrope', fontSize: '16px'}}
                            />
                          </div>
-                         <button className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90 mt-auto"
-                           style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                           Рассчитать
-                         </button>
+                          <button className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90 mt-auto"
+                            style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                            Расчет от менеджера
+                          </button>
                       </div>
 
                       {/* Delivery Options */}
