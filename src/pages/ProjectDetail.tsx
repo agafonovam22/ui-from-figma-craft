@@ -135,8 +135,8 @@ const ProjectDetail: React.FC = () => {
         {/* Main Content */}
         <section className="py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="grid grid-cols-1 gap-16 items-start">
-              {/* Text content */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              {/* Left side - Text content */}
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold text-[#17171E] mb-6">
                   О проекте
@@ -144,11 +144,28 @@ const ProjectDetail: React.FC = () => {
                 
                 <div className="space-y-6 text-gray-700 font-manrope">
                   <p className="leading-relaxed text-base">
-                    Команда WellFitnessPRO взялась за непростой проект по подбору, установке и запуску оборудования для проекта класса Бизнес, но на площади старого здания советского периода.
+                    Наша компания с готовностью поучаствовала в оснащении одного из самых современных фитнес-клубов Москвы.
                   </p>
                   <p className="leading-relaxed text-base">
-                    Внешний вид здания не создаёт впечатления притягательности, однако, попадаю внутрь клиент получает отличный сервис и возможность тренировок на оборудовании класса бизнес: Smith и Octane fitness.
+                    Нами были предложены несколько элитных единиц оборудования gym80 что помогло создать зону особого притяжения для всего проекта.
                   </p>
+                  <p className="leading-relaxed text-base">
+                    Непростой оказалось задача по установке оборудования из-за очень узких проходов в здание для данной категории тренажёров, но она была решена с успехом.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right side - YouTube Video */}
+              <div className="relative mt-[50px]">
+                <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+                    src="https://www.youtube.com/embed/4o4uTsF0Q2s"
+                    title="Видео проекта RockOut"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
                 </div>
               </div>
             </div>
