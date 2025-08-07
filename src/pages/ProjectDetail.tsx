@@ -213,23 +213,33 @@ const ProjectDetail: React.FC = () => {
         <section className="py-16 bg-white">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <PhotoSwiper 
-              images={[
-                "/lovable-uploads/a3c1035a-6176-4146-8391-a9c66e8ffec8.png",
-                "/lovable-uploads/7c0f49be-dc1b-4d3b-9e73-c03da595bc01.png",
-                "/lovable-uploads/391cc165-bf72-427c-8d65-67ea4ee9bbe7.png",
-                "/lovable-uploads/0fc886d3-6688-47af-bcdb-895c29e12da5.png",
-                "/lovable-uploads/be68b1e6-cb16-4a55-9461-12e8344d8a55.png",
-                "/lovable-uploads/262e6447-0ab9-4e54-9920-20424889866d.png",
-                "/lovable-uploads/9471823c-3dc5-4d13-93d5-51c9427a7d94.png",
-                "/lovable-uploads/628c204f-ddab-4eb2-b972-e927e33dbb72.png",
-                "/lovable-uploads/2733947a-1cbf-42f7-8d32-267fa048f3d5.png",
-                "/lovable-uploads/e2bba983-a28d-470b-a08d-49fd58690b23.png",
-                "/lovable-uploads/a7cb00a3-6999-4159-b4a8-76f9ccb9fafc.png",
-                "/lovable-uploads/219b5fb6-a0bb-4af1-aa2e-8e66c17511f1.png",
-                "/lovable-uploads/992de3c4-5d99-42c4-a790-7765cb0c3983.png",
-                "/lovable-uploads/1b8d084d-962a-4036-a0b6-ef9b73ac92e3.png",
-                "/lovable-uploads/0ccc7b10-fa3e-4a1b-a3b6-64dcf7c360fe.png"
-              ]}
+              images={
+                projectSlug === 'sopki-sport-murmansk' ? [
+                  "/lovable-uploads/a3c1035a-6176-4146-8391-a9c66e8ffec8.png",
+                  "/lovable-uploads/7c0f49be-dc1b-4d3b-9e73-c03da595bc01.png",
+                  "/lovable-uploads/391cc165-bf72-427c-8d65-67ea4ee9bbe7.png",
+                  "/lovable-uploads/0fc886d3-6688-47af-bcdb-895c29e12da5.png",
+                  "/lovable-uploads/be68b1e6-cb16-4a55-9461-12e8344d8a55.png",
+                  "/lovable-uploads/262e6447-0ab9-4e54-9920-20424889866d.png",
+                  "/lovable-uploads/9471823c-3dc5-4d13-93d5-51c9427a7d94.png",
+                  "/lovable-uploads/628c204f-ddab-4eb2-b972-e927e33dbb72.png",
+                  "/lovable-uploads/2733947a-1cbf-42f7-8d32-267fa048f3d5.png",
+                  "/lovable-uploads/e2bba983-a28d-470b-a08d-49fd58690b23.png",
+                  "/lovable-uploads/a7cb00a3-6999-4159-b4a8-76f9ccb9fafc.png",
+                  "/lovable-uploads/219b5fb6-a0bb-4af1-aa2e-8e66c17511f1.png",
+                  "/lovable-uploads/992de3c4-5d99-42c4-a790-7765cb0c3983.png",
+                  "/lovable-uploads/1b8d084d-962a-4036-a0b6-ef9b73ac92e3.png",
+                  "/lovable-uploads/0ccc7b10-fa3e-4a1b-a3b6-64dcf7c360fe.png"
+                ] : projectSlug === 'centrk-vladikavkaz' ? [
+                  "/lovable-uploads/5a93bfd7-8032-4190-8c70-535a376d1ec9.png",
+                  "/lovable-uploads/c61475be-3ceb-4a86-a4dd-dbf0c6fe9147.png",
+                  "/lovable-uploads/ec08b952-6e3b-45c0-93c9-542e1e783f25.png",
+                  "/lovable-uploads/840914b8-8d31-4850-b075-f815b81d0d4b.png",
+                  "/lovable-uploads/260bc39e-033b-4bdb-bbeb-a44d9d8fb306.png"
+                ] : [
+                  project.image
+                ]
+              }
               autoplay={true}
               autoplayInterval={5000}
             />
