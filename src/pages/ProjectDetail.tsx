@@ -160,10 +160,15 @@ const ProjectDetail: React.FC = () => {
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <PhotoSwiper 
               images={[
-                "/lovable-uploads/b71c9323-098b-41c7-b16d-4b96a860ae64.png",
-                "/lovable-uploads/81e89b26-f6c7-4b7c-a23f-0d5ddc5f9db4.png",
-                "/lovable-uploads/7f9c8920-ad24-46a4-8db1-1467336ebe21.png",
-                "/lovable-uploads/6da1a772-b747-4fc7-b714-25ec14dd2606.png"
+                "/lovable-uploads/9aba7506-65f1-4e83-b20c-800cdeda0afa.png",
+                "/lovable-uploads/b33924d7-e3b1-4ec9-923f-c0fd82df4acb.png",
+                "/lovable-uploads/57e1ccae-44c8-4391-95fa-47131d2b0b2b.png",
+                "/lovable-uploads/30f5bba2-6dc2-4cf2-8209-d17967cf0d29.png",
+                "/lovable-uploads/ab6d8e9f-fcb4-42ed-9765-b5515af3656e.png",
+                "/lovable-uploads/2a83151c-78ae-42cd-b698-562b4d4b8156.png",
+                "/lovable-uploads/daffdd85-a4b8-4b12-a14e-9c5654b86aac.png",
+                "/lovable-uploads/8bb716c6-318a-4b61-b26e-336c532e1aca.png",
+                "/lovable-uploads/40719f84-6593-44d0-9695-0c25a6c773cf.png"
               ]}
               autoplay={true}
               autoplayInterval={5000}
