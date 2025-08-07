@@ -143,31 +143,52 @@ const ProjectDetail: React.FC = () => {
                 </h2>
                 
                 <div className="space-y-6 text-gray-700 font-manrope">
-                  <p className="leading-relaxed text-base">
-                    Наша компания с готовностью поучаствовала в оснащении одного из самых современных фитнес-клубов Москвы.
-                  </p>
-                  <p className="leading-relaxed text-base">
-                    Нами были предложены несколько элитных единиц оборудования gym80 что помогло создать зону особого притяжения для всего проекта.
-                  </p>
-                  <p className="leading-relaxed text-base">
-                    Непростой оказалось задача по установке оборудования из-за очень узких проходов в здание для данной категории тренажёров, но она была решена с успехом.
-                  </p>
+                  {projectSlug === 'neptun-balashikha' ? (
+                    <>
+                      <p className="leading-relaxed text-base">
+                        После тщательного отбора клиентом наша команда была приглашена к оснащению расширенного тренажёрного зала фитнес-клуба "Нептун" в городе Балашиха. Мы с готовностью подключились к проекту, так как фитнес-клуб является одним из самых крупных и успешных не только в городе, но и ближайшем Подмосковье.
+                      </p>
+                      <p className="leading-relaxed text-base">
+                        Для проекта были предложены лучшие модели бренда Smith, а также ВИИТ-тренажёры Octane, которые гармонично заняли место рядом с существующим оборудованием класса Премиум, что позволило не потерять заявленный уровень клуба в целом для его клиентов.
+                      </p>
+                      <p className="leading-relaxed text-base">
+                        Вместе с клиентом мы сделали наиболее удачную логистику зала с максимально полным набором отличных тренажеров и аксессуаров.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="leading-relaxed text-base">
+                        Наша компания с готовностью поучаствовала в оснащении одного из самых современных фитнес-клубов Москвы.
+                      </p>
+                      <p className="leading-relaxed text-base">
+                        Нами были предложены несколько элитных единиц оборудования gym80 что помогло создать зону особого притяжения для всего проекта.
+                      </p>
+                      <p className="leading-relaxed text-base">
+                        Непростой оказалось задача по установке оборудования из-за очень узких проходов в здание для данной категории тренажёров, но она была решена с успехом.
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
 
               {/* Right side - YouTube Video */}
-              <div className="relative mt-[50px]">
-                <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
-                    src="https://www.youtube.com/embed/JVLMLVQf3iQ"
-                    title="Видео проекта RockOut"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
+              {(projectSlug === 'rockout-moscow' || projectSlug === 'neptun-balashikha') && (
+                <div className="relative mt-[50px]">
+                  <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
+                    <iframe
+                      className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+                      src={projectSlug === 'neptun-balashikha' 
+                        ? "https://www.youtube.com/embed/XfkjOZABKNo" 
+                        : "https://www.youtube.com/embed/JVLMLVQf3iQ"
+                      }
+                      title={`Видео проекта ${project.title}`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </section>
