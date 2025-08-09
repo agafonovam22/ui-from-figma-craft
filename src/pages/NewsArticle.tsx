@@ -73,16 +73,11 @@ const NewsArticle: React.FC = () => {
                     </div>
                   </div>
                   
-                  {/* Правая часть с изображением */}
+                  {/* Правая часть - убираем изображение */}
                   <div className="absolute" style={{ right: '60px', top: '10px' }}>
                     <div className="relative">
                       <div className="w-[350px] h-[350px] bg-[#F53B49] rounded-full flex items-center justify-center">
-                        <img 
-                          src="/lovable-uploads/74f19997-ebd9-40f6-bfec-557b17c512ab.png"
-                          alt="Wellfitness PRO в Сколково"
-                          className="w-[350px] h-[350px] object-contain"
-                          style={{ objectPosition: 'center right', transform: 'translateX(20px)' }}
-                        />
+                        {/* Убрали изображение */}
                       </div>
                     </div>
                   </div>

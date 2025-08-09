@@ -44,7 +44,7 @@ const NewsAndBlogPage: React.FC = () => {
       date: '30 Декабря 2024',
       title: 'Wellfitness PRO в Сколково 2023',
       description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие фитнес-России: бизнес-форум, фитнес-конвенция, выставка.',
-      image: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
+      image: '/lovable-uploads/09977489-01ac-4f0b-8284-db7c003b425b.png',
       size: 'large',
       slug: 'wellfitness-pro-skolkovo-2023'
     },
