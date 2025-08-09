@@ -125,13 +125,16 @@ const NewsArticle: React.FC = () => {
               {/* Left side - Text content */}
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold text-[#17171E] mb-6">
-                  В минувшие выходные в Сколково прошло крупнейшее мероприятие фитнес-России
+                  {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
+                    'К 8 марта вы можете предлагать скидку 15% на все тренажеры CardioPower, BowFlex и Sole для своих клиентов!' :
+                    'В минувшие выходные в Сколково прошло крупнейшее мероприятие фитнес-России'
+                  }
                 </h2>
                 
                 <div className="space-y-6 text-gray-700">
                   <p className="leading-relaxed text-base">
                     {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
-                      'К 8 марта вы можете предлагать скидку 15% на все тренажеры CardioPower, BowFlex и Sole для своих клиентов! Это отличный шанс порадовать ваших покупательниц (и их мужчин' :
+                      'Это отличный шанс порадовать ваших покупательниц (и их мужчин)!' :
                       'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес.Россия: бизнес-форум, фитнес-конвенция, выставка.'
                     }
                   </p>
