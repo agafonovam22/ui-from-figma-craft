@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
@@ -8,6 +8,19 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const NewsArticle: React.FC = () => {
   const { articleSlug } = useParams();
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -216,25 +229,43 @@ const NewsArticle: React.FC = () => {
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             {/* Carousel container */}
             <div className="relative mb-16">
-              <div className="flex gap-4 overflow-hidden">
-                <div className="flex-shrink-0 w-1/3">
+              <div 
+                ref={carouselRef}
+                className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                <div className="flex-shrink-0 w-80">
+                  <img 
+                    src="/lovable-uploads/74f19997-ebd9-40f6-bfec-557b17c512ab.png"
+                    alt="Wellfitness PRO материалы"
+                    className="w-full h-[250px] object-cover rounded-lg"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-80">
+                  <img 
+                    src="/lovable-uploads/2fad94b1-56ad-4c2d-8f5c-321bacbfbc30.png"
+                    alt="Выставочный зал"
+                    className="w-full h-[250px] object-cover rounded-lg"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-80">
+                  <img 
+                    src="/lovable-uploads/982f79b8-645c-40bf-be50-f00072cecfa3.png"
+                    alt="Стенд TRUE и Octane"
+                    className="w-full h-[250px] object-cover rounded-lg"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-80">
+                  <img 
+                    src="/lovable-uploads/746f9610-97c9-44d7-968c-c1b73580f04a.png"
+                    alt="Стенд Smith"
+                    className="w-full h-[250px] object-cover rounded-lg"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-80">
                   <img 
                     src="/lovable-uploads/13f3a05b-86bd-4ba0-9330-ff803380ac98.png"
-                    alt="Выставка"
-                    className="w-full h-[250px] object-cover rounded-lg"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-1/3">
-                  <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"
-                    alt="Участники"
-                    className="w-full h-[250px] object-cover rounded-lg"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-1/3">
-                  <img 
-                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop"
-                    alt="Оборудование"
+                    alt="Участники выставки"
                     className="w-full h-[250px] object-cover rounded-lg"
                   />
                 </div>
@@ -250,13 +281,19 @@ const NewsArticle: React.FC = () => {
               </div>
 
               {/* Navigation arrows */}
-              <button className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors">
+              <button 
+                onClick={scrollLeft}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors z-10"
+              >
                 <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 9L1 5L5 1" stroke="#262631" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
               
-              <button className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors">
+              <button 
+                onClick={scrollRight}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors z-10"
+              >
                 <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 1L5 5L1 9" stroke="#262631" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
