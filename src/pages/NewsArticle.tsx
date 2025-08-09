@@ -223,12 +223,6 @@ const NewsArticle: React.FC = () => {
               <h2 className="text-3xl font-bold text-[#17171E] mb-8">
                 Следите за нашими новостями и новинками!
               </h2>
-              
-              <div className="text-gray-600 text-sm leading-relaxed">
-                <p>
-                  Следите за нашими новостями и новинками!
-                </p>
-              </div>
             </div>
           </div>
         </section>
