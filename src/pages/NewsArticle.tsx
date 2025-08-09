@@ -23,13 +23,13 @@ const NewsArticle: React.FC = () => {
               <span className="text-gray-400 text-xs">
                 <Link to="/" className="hover:text-gray-600">Главная</Link> → 
                 <Link to="/news" className="hover:text-gray-600"> Новости и блог</Link> → 
-                Wellfitness PRO в Сколково 2023
+                {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 'Новость для дилеров WellFitness' : 'Wellfitness PRO в Сколково 2023'}
               </span>
             </div>
             
             {/* Main Title */}
             <h1 className="text-[40px] font-bold text-[#17171E] mb-8 leading-tight">
-              Wellfitness PRO в Сколково 2023
+              {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 'Новость для дилеров WellFitness' : 'Wellfitness PRO в Сколково 2023'}
             </h1>
           </div>
         </section>
@@ -63,13 +63,23 @@ const NewsArticle: React.FC = () => {
                         lineHeight: '105%'
                       }}
                     >
-                      Wellfitness PRO<br />
-                      в Сколково<br />
-                      2023
+                      {articleSlug === 'novost-dlya-dilerov-wellfitness' ? (
+                        <>
+                          Новость для<br />
+                          дилеров<br />
+                          WellFitness
+                        </>
+                      ) : (
+                        <>
+                          Wellfitness PRO<br />
+                          в Сколково<br />
+                          2023
+                        </>
+                      )}
                     </h1>
                     
                     <div className="text-gray-600 text-sm">
-                      30 Декабря 2024
+                      {articleSlug === 'novost-dlya-dilerov-wellfitness' ? '27.02.2025' : '30 Декабря 2024'}
                     </div>
                   </div>
                   
