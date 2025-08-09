@@ -562,7 +562,7 @@ const Support: React.FC = () => {
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/3807c83a-2401-4466-a3ca-9d11dddb84ba.png" alt="Байкал Сервис" className="h-8 object-contain" />
+                            <img src="/lovable-uploads/3807c83a-2401-4466-a3ca-9d11dddb84ba.png" alt="Байкал Сервис" className="h-12 w-20 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center p-3">
@@ -575,7 +575,7 @@ const Support: React.FC = () => {
                         </div>
                         <div className="space-y-4">
                           <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/97a21e58-c916-4444-b98b-38103f5db560.png" alt="MagicTrans" className="h-8 object-contain" />
+                            <img src="/lovable-uploads/97a21e58-c916-4444-b98b-38103f5db560.png" alt="MagicTrans" className="h-12 w-20 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center p-3">
@@ -583,7 +583,7 @@ const Support: React.FC = () => {
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/97da0d95-2030-46e7-a7c2-9a5f8147faaf.png" alt="Деловые Линии" className="h-8 object-contain" />
+                            <img src="/lovable-uploads/97da0d95-2030-46e7-a7c2-9a5f8147faaf.png" alt="Деловые Линии" className="h-12 w-20 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center p-3">
