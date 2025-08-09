@@ -197,14 +197,14 @@ const NewsAndBlogPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="relative">
+          <div className="flex items-center gap-4 flex-1">
+            <div className="relative flex-1">
               <input
                 type="text"
                 placeholder="Поиск"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-64 px-4 py-2 border border-gray-300 rounded-lg pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             </div>
