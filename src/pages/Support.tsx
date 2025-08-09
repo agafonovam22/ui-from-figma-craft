@@ -550,7 +550,7 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* Transport Companies */}
-                    <div className="bg-gray-100 p-6 rounded-lg w-[615px] h-[197px]">
+                    <div className="bg-gray-100 p-6 rounded-lg">
                       <div className="grid grid-cols-2 gap-6">
                         <div className="space-y-4">
                           <div className="flex items-center justify-center p-3">
