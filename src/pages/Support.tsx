@@ -587,7 +587,7 @@ const Support: React.FC = () => {
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/a84c8391-ac5c-490e-bc55-c6e40799e953.png" alt="Энергия" className="h-8 object-contain" />
+                            <img src="/lovable-uploads/79627d81-cce2-4a1d-9218-e34c6a33ddc0.png" alt="Энергия" className="h-8 object-contain" />
                           </div>
                         </div>
                       </div>
