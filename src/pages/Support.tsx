@@ -554,11 +554,11 @@ const Support: React.FC = () => {
                       <div className="grid grid-cols-2 gap-6">
                         <div className="space-y-4">
                           <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/a7b6a3ba-1c90-405d-8a26-02ea55f0de59.png" alt="СДЭК" className="h-8 object-contain" />
+                            <img src="/lovable-uploads/a7b6a3ba-1c90-405d-8a26-02ea55f0de59.png" alt="СДЭК" className="h-12 w-20 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/35079b73-9796-4789-896a-edf17dfdfea8.png" alt="DPD" className="h-8 object-contain" />
+                            <img src="/lovable-uploads/35079b73-9796-4789-896a-edf17dfdfea8.png" alt="DPD" className="h-12 w-20 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center p-3">
@@ -566,11 +566,11 @@ const Support: React.FC = () => {
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/c124b62c-d31b-4c07-95b5-a36fc92cb431.png" alt="ПЭК" className="h-8 object-contain" />
+                            <img src="/lovable-uploads/c124b62c-d31b-4c07-95b5-a36fc92cb431.png" alt="ПЭК" className="h-12 w-20 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/0370ab41-7348-4546-9182-bd6884e3ec7a.png" alt="Транс" className="h-8 object-contain" />
+                            <img src="/lovable-uploads/0370ab41-7348-4546-9182-bd6884e3ec7a.png" alt="Транс" className="h-12 w-20 object-contain" />
                           </div>
                         </div>
                         <div className="space-y-4">
@@ -587,7 +587,7 @@ const Support: React.FC = () => {
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/79627d81-cce2-4a1d-9218-e34c6a33ddc0.png" alt="Энергия" className="h-8 object-contain" />
+                            <img src="/lovable-uploads/79627d81-cce2-4a1d-9218-e34c6a33ddc0.png" alt="Энергия" className="h-12 w-20 object-contain" />
                           </div>
                         </div>
                       </div>
