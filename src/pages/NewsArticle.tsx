@@ -77,7 +77,7 @@ const NewsArticle: React.FC = () => {
                     <div className="relative">
                       <div className="w-[350px] h-[350px] bg-[#F53B49] rounded-full flex items-center justify-center">
                         <img 
-                          src="/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png"
+                          src="/lovable-uploads/74f19997-ebd9-40f6-bfec-557b17c512ab.png"
                           alt="Wellfitness PRO в Сколково"
                           className="w-[350px] h-[350px] object-contain"
                           style={{ objectPosition: 'center right', transform: 'translateX(20px)' }}
@@ -135,7 +135,7 @@ const NewsArticle: React.FC = () => {
               {/* Right side - Single large image */}
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png"
+                  src="/lovable-uploads/2fad94b1-56ad-4c2d-8f5c-321bacbfbc30.png"
                   alt="Wellfitness PRO в Сколково"
                   className="w-full h-[400px] object-cover rounded-lg"
                 />
@@ -167,7 +167,7 @@ const NewsArticle: React.FC = () => {
               {/* Right side - Image */}
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop"
+                  src="/lovable-uploads/982f79b8-645c-40bf-be50-f00072cecfa3.png"
                   alt="Фитнес оборудование"
                   className="w-full h-[300px] object-cover rounded-lg"
                 />
@@ -183,7 +183,7 @@ const NewsArticle: React.FC = () => {
               {/* Left side - Image */}
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=500&fit=crop"
+                  src="/lovable-uploads/746f9610-97c9-44d7-968c-c1b73580f04a.png"
                   alt="Участники мероприятия"
                   className="w-full h-[500px] object-cover rounded-lg"
                 />
@@ -219,7 +219,7 @@ const NewsArticle: React.FC = () => {
               <div className="flex gap-4 overflow-hidden">
                 <div className="flex-shrink-0 w-1/3">
                   <img 
-                    src="/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png"
+                    src="/lovable-uploads/13f3a05b-86bd-4ba0-9330-ff803380ac98.png"
                     alt="Выставка"
                     className="w-full h-[250px] object-cover rounded-lg"
                   />
