@@ -558,19 +558,19 @@ const Support: React.FC = () => {
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/573d1053-e2f6-44c8-bfff-98ff8f135890.png" alt="DPD" className="h-8 object-contain" />
+                            <img src="/lovable-uploads/35079b73-9796-4789-896a-edf17dfdfea8.png" alt="DPD" className="h-8 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/3e1be634-d239-4684-b6c3-f7dade188e68.png" alt="Байкал Сервис" className="h-8 object-contain" />
+                            <img src="/lovable-uploads/3807c83a-2401-4466-a3ca-9d11dddb84ba.png" alt="Байкал Сервис" className="h-8 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/8255f844-4de1-4e02-9140-dc2a6ee9695f.png" alt="ПЭК" className="h-8 object-contain" />
+                            <img src="/lovable-uploads/c124b62c-d31b-4c07-95b5-a36fc92cb431.png" alt="ПЭК" className="h-8 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/1d292e46-6b6d-4849-af36-23f12b48c092.png" alt="Транс" className="h-8 object-contain" />
+                            <img src="/lovable-uploads/0370ab41-7348-4546-9182-bd6884e3ec7a.png" alt="Транс" className="h-8 object-contain" />
                           </div>
                         </div>
                         <div className="space-y-4">
