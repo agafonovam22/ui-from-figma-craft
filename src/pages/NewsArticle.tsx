@@ -130,7 +130,10 @@ const NewsArticle: React.FC = () => {
                 
                 <div className="space-y-6 text-gray-700">
                   <p className="leading-relaxed text-base">
-                    В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес.Россия: бизнес-форум, фитнес-конвенция, выставка.
+                    {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
+                      'К 8 марта вы можете предлагать скидку 15% на все тренажеры CardioPower, BowFlex и Sole для своих клиентов! Это отличный шанс порадовать ваших покупательниц (и их мужчин' :
+                      'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес.Россия: бизнес-форум, фитнес-конвенция, выставка.'
+                    }
                   </p>
                 </div>
               </div>
@@ -138,8 +141,14 @@ const NewsArticle: React.FC = () => {
               {/* Right side - Single large image */}
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/2fad94b1-56ad-4c2d-8f5c-321bacbfbc30.png"
-                  alt="Wellfitness PRO в Сколково"
+                  src={articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
+                    '/lovable-uploads/654f1adb-2662-491c-b4b3-5c8ad7924198.png' :
+                    '/lovable-uploads/2fad94b1-56ad-4c2d-8f5c-321bacbfbc30.png'
+                  }
+                  alt={articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
+                    'Новость для дилеров WellFitness' :
+                    'Wellfitness PRO в Сколково'
+                  }
                   className="w-full h-[400px] object-cover rounded-lg"
                 />
               </div>
