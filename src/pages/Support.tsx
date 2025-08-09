@@ -551,20 +551,44 @@ const Support: React.FC = () => {
 
                     {/* Transport Companies */}
                     <div className="bg-gray-100 p-6 rounded-lg">
-                      <div className="grid grid-cols-2 gap-8">
-                        <div className="space-y-0">
-                          <div className="font-medium py-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>DPD</div>
+                      <div className="grid grid-cols-2 gap-6">
+                        <div className="space-y-4">
+                          <div className="flex items-center justify-center p-3">
+                            <img src="/lovable-uploads/a7b6a3ba-1c90-405d-8a26-02ea55f0de59.png" alt="СДЭК" className="h-8 object-contain" />
+                          </div>
                           <div className="h-px bg-gray-300"></div>
-                          <div className="font-medium py-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>СДЭК</div>
+                          <div className="flex items-center justify-center p-3">
+                            <img src="/lovable-uploads/573d1053-e2f6-44c8-bfff-98ff8f135890.png" alt="DPD" className="h-8 object-contain" />
+                          </div>
                           <div className="h-px bg-gray-300"></div>
-                          <div className="font-medium py-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Байкал сервис</div>
+                          <div className="flex items-center justify-center p-3">
+                            <img src="/lovable-uploads/3e1be634-d239-4684-b6c3-f7dade188e68.png" alt="Байкал Сервис" className="h-8 object-contain" />
+                          </div>
+                          <div className="h-px bg-gray-300"></div>
+                          <div className="flex items-center justify-center p-3">
+                            <img src="/lovable-uploads/8255f844-4de1-4e02-9140-dc2a6ee9695f.png" alt="ПЭК" className="h-8 object-contain" />
+                          </div>
+                          <div className="h-px bg-gray-300"></div>
+                          <div className="flex items-center justify-center p-3">
+                            <img src="/lovable-uploads/1d292e46-6b6d-4849-af36-23f12b48c092.png" alt="Транс" className="h-8 object-contain" />
+                          </div>
                         </div>
-                        <div className="space-y-0">
-                          <div className="font-medium py-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>DPD</div>
+                        <div className="space-y-4">
+                          <div className="flex items-center justify-center p-3">
+                            <img src="/lovable-uploads/97a21e58-c916-4444-b98b-38103f5db560.png" alt="MagicTrans" className="h-8 object-contain" />
+                          </div>
                           <div className="h-px bg-gray-300"></div>
-                          <div className="font-medium py-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>СДЭК</div>
+                          <div className="flex items-center justify-center p-3">
+                            <img src="/lovable-uploads/c1aed9f7-f49d-4524-abd4-b7b7ddb766c8.png" alt="KIT" className="h-8 object-contain" />
+                          </div>
                           <div className="h-px bg-gray-300"></div>
-                          <div className="font-medium py-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Байкал сервис</div>
+                          <div className="flex items-center justify-center p-3">
+                            <img src="/lovable-uploads/97da0d95-2030-46e7-a7c2-9a5f8147faaf.png" alt="Деловые Линии" className="h-8 object-contain" />
+                          </div>
+                          <div className="h-px bg-gray-300"></div>
+                          <div className="flex items-center justify-center p-3">
+                            <img src="/lovable-uploads/a84c8391-ac5c-490e-bc55-c6e40799e953.png" alt="Энергия" className="h-8 object-contain" />
+                          </div>
                         </div>
                       </div>
                     </div>
