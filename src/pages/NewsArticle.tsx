@@ -242,7 +242,8 @@ const NewsArticle: React.FC = () => {
           </div>
         </section>
 
-        {/* Long Text Section */}
+        {/* Long Text Section - скрыто для страницы дилеров */}
+        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && (
         <section className="py-16 bg-gray-50">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="max-w-[1200px]">
@@ -252,6 +253,7 @@ const NewsArticle: React.FC = () => {
             </div>
           </div>
         </section>
+        )}
 
         {/* FAQ Section */}
         <section className="py-16 bg-white">
