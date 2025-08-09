@@ -41,7 +41,7 @@ const NewsAndBlogPage: React.FC = () => {
     {
       id: 1,
       type: 'Новости',
-      date: '30 Декабря 2024',
+      date: '18.11.2023',
       title: 'Wellfitness PRO в Сколково 2023',
       description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие фитнес-России: бизнес-форум, фитнес-конвенция, выставка.',
       image: '/lovable-uploads/09977489-01ac-4f0b-8284-db7c003b425b.png',
@@ -241,10 +241,10 @@ const NewsAndBlogPage: React.FC = () => {
               </div>
               
               <div className="p-4">
-                <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center justify-between mb-3">
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                     item.type === 'Новости' 
-                      ? 'bg-blue-100 text-blue-700' 
+                      ? 'bg-blue-600 text-white' 
                       : 'bg-orange-100 text-orange-700'
                   }`}>
                     {item.type}
