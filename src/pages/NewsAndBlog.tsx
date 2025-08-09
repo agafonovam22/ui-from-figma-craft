@@ -43,13 +43,23 @@ const NewsAndBlogPage: React.FC = () => {
       type: 'Новости',
       date: '27.02.2025',
       title: 'Новость для дилеров WellFitness',
-      description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие фитнес-России: бизнес-форум, фитнес-конвенция, выставка.',
+      description: 'Специальные условия и предложения для наших партнеров-дилеров. Новые возможности для развития бизнеса.',
       image: '/lovable-uploads/38337e2c-c9ef-4784-a9a1-e0f20df7076d.png',
       size: 'large',
       slug: 'novost-dlya-dilerov-wellfitness'
     },
     {
       id: 2,
+      type: 'Новости',
+      date: '18.11.2023',
+      title: 'Wellfitness PRO в Сколково 2023',
+      description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие фитнес-России: бизнес-форум, фитнес-конвенция, выставка.',
+      image: '/lovable-uploads/09977489-01ac-4f0b-8284-db7c003b425b.png',
+      size: 'large',
+      slug: 'wellfitness-pro-skolkovo-2023'
+    },
+    {
+      id: 3,
       type: 'Новости',
       date: '12 Декабря 2024',
       title: 'Wellfitness PRO в Сколково 2023',
@@ -59,7 +69,7 @@ const NewsAndBlogPage: React.FC = () => {
       slug: 'wellfitness-pro-skolkovo-2023-2'
     },
     {
-      id: 3,
+      id: 4,
       type: 'Блог',
       date: '10 Декабря 2024',
       title: 'Wellfitness PRO в Сколково 2023',
@@ -69,7 +79,7 @@ const NewsAndBlogPage: React.FC = () => {
       slug: 'wellfitness-pro-skolkovo-2023-3'
     },
     {
-      id: 4,
+      id: 5,
       type: 'Новости',
       date: '8 Декабря 2024',
       title: 'Wellfitness PRO в Сколково 2023',
@@ -79,7 +89,7 @@ const NewsAndBlogPage: React.FC = () => {
       slug: 'wellfitness-pro-skolkovo-2023-4'
     },
     {
-      id: 5,
+      id: 6,
       type: 'Блог',
       date: '5 Декабря 2024',
       title: 'Wellfitness PRO в Сколково 2023',
@@ -89,7 +99,7 @@ const NewsAndBlogPage: React.FC = () => {
       slug: 'wellfitness-pro-skolkovo-2023-5'
     },
     {
-      id: 6,
+      id: 7,
       type: 'Новости',
       date: '3 Декабря 2024',
       title: 'Wellfitness PRO в Сколково 2023',
@@ -99,7 +109,7 @@ const NewsAndBlogPage: React.FC = () => {
       slug: 'wellfitness-pro-skolkovo-2023-6'
     },
     {
-      id: 7,
+      id: 8,
       type: 'Блог',
       date: '1 Декабря 2024',
       title: 'Wellfitness PRO в Сколково 2023',
@@ -109,7 +119,7 @@ const NewsAndBlogPage: React.FC = () => {
       slug: 'wellfitness-pro-skolkovo-2023-7'
     },
     {
-      id: 8,
+      id: 9,
       type: 'Новости',
       date: '28 Ноября 2024',
       title: 'Wellfitness PRO в Сколково 2023',
