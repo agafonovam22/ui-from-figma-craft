@@ -159,7 +159,8 @@ const NewsArticle: React.FC = () => {
           </div>
         </section>
 
-        {/* First additional section - Text left, Image right */}
+        {/* First additional section - Text left, Image right - скрыто для страницы дилеров */}
+        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && (
         <section className="py-16 bg-gray-50">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -187,8 +188,10 @@ const NewsArticle: React.FC = () => {
             </div>
           </div>
         </section>
+        )}
 
-        {/* Second additional section - Image left, Extended text right */}
+        {/* Second additional section - Image left, Extended text right - скрыто для страницы дилеров */}
+        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && (
         <section className="py-16">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -219,6 +222,7 @@ const NewsArticle: React.FC = () => {
             </div>
           </div>
         </section>
+        )}
 
         {/* Image Carousel Section */}
         <section className="py-16 bg-white">
