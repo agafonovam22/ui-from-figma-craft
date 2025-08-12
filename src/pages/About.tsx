@@ -829,7 +829,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
-                        
+                        В минувшие выходные в Сколково прошло крупнейшее мероприятие фитнес-России
                       </p>
                     </div>
                   </Link>
@@ -866,7 +866,7 @@ const About: React.FC = () => {
                         </h3>
                         
                         <p className="text-xs text-gray-600 line-clamp-4 leading-relaxed">
-                          
+                          К 8 марта вы можете предлагать скидку 15% на все тренажеры CardioPower
                         </p>
                       </div>
                     </Link>
@@ -903,7 +903,7 @@ const About: React.FC = () => {
                           </h3>
                           
                           <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                            
+                            Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower
                           </p>
                         </div>
                       </Link>
@@ -938,7 +938,7 @@ const About: React.FC = () => {
                           </h3>
                           
                           <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                            
+                            Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower
                           </p>
                         </div>
                       </Link>
@@ -979,7 +979,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        
+                        Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower
                       </p>
                     </div>
                   </Link>
@@ -1014,7 +1014,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        
+                        Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower
                       </p>
                     </div>
                   </Link>
@@ -1049,7 +1049,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        
+                        Беговая дорожка CardioPower S50 имеет стильный дизайн и совершенные технические характеристики
                       </p>
                     </div>
                   </Link>
@@ -1084,7 +1084,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        
+                        Сообщаем о расширении линейки эллиптических тренажеров и поступлении новой модели CardioPower
                       </p>
                     </div>
                   </Link>
@@ -1122,7 +1122,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        
+                        Сообщаем о расширении линейки эллиптических тренажеров и поступлении новой модели CardioPower
                       </p>
                     </div>
                   </Link>
@@ -1157,7 +1157,7 @@ const About: React.FC = () => {
                         </h3>
                         
                         <p className="text-xs text-gray-600 line-clamp-4 leading-relaxed">
-                          
+                          Беговая дорожка CardioPower TT35 по-настоящему уникальна, благодаря инновационной системе сверхкомпактного складывания
                         </p>
                       </div>
                   </Link>
@@ -1192,7 +1192,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        
+                        Сообщаем о расширении линейки гребных тренажеров и поступлении новой модели CardioPower
                       </p>
                     </div>
                   </Link>
