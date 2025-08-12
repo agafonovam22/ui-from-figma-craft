@@ -274,17 +274,6 @@ export const newsItems: NewsItem[] = [
     size: 'small',
     slug: 'specialnoe-predlozhenie-zaly',
     isActive: false
-  },
-  {
-    id: 21,
-    type: 'news',
-    date: '12 августа 2025',
-    title: 'Новинка - Уже в продаже: Беговая дорожка CardioPower ТТ30',
-    description: 'Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower.',
-    image: '/lovable-uploads/48bbc0da-83a0-41fb-bdb1-dbe6065d5e6f.png',
-    size: 'large',
-    slug: 'cardiopower-tt30-new-v-prodazhe',
-    isActive: true
   }
 ];
 

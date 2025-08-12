@@ -26,7 +26,6 @@ const NewsArticle: React.FC = () => {
                 {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 'Новость для дилеров WellFitness' : 
                  articleSlug === 'cardiopower-t40-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW' :
                  articleSlug === 'cardiopower-s20-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S20' :
-                 articleSlug === 'cardiopower-tt30-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower ТТ30' :
                  'Wellfitness PRO в Сколково 2023'}
               </span>
             </div>
@@ -36,7 +35,6 @@ const NewsArticle: React.FC = () => {
               {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 'Новость для дилеров WellFitness' : 
                articleSlug === 'cardiopower-t40-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW' :
                articleSlug === 'cardiopower-s20-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S20' :
-               articleSlug === 'cardiopower-tt30-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower ТТ30' :
                'Wellfitness PRO в Сколково 2023'}
             </h1>
           </div>
@@ -88,12 +86,6 @@ const NewsArticle: React.FC = () => {
                           Новинка - Уже в продаже:<br />
                           Беговая дорожка<br />
                           CardioPower S20
-                        </>
-                      ) : articleSlug === 'cardiopower-tt30-new-v-prodazhe' ? (
-                        <>
-                          Новинка - Уже в продаже:<br />
-                          Беговая дорожка<br />
-                          CardioPower ТТ30
                         </>
                       ) : (
                         <>
@@ -155,8 +147,6 @@ const NewsArticle: React.FC = () => {
                     'Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower' :
                     articleSlug === 'cardiopower-s20-new-v-prodazhe' ?
                     'Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower.' :
-                    articleSlug === 'cardiopower-tt30-new-v-prodazhe' ?
-                    'Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower.' :
                     'В минувшие выходные в Сколково прошло крупнейшее мероприятие фитнес-России'
                   }
                 </h2>
@@ -169,8 +159,6 @@ const NewsArticle: React.FC = () => {
                       'Беговая дорожка CardioPower T40 NEW\n\nОбновленная версия популярной модели CardioPower T40, новый стильный дизайн, продвинутый программный функционал, набор из 5 пульсозависимых программ, а также современный LED Дисплей с интуитивно простым управлением. Модель предлагает революционный подход и инновационную технологию в кардиотренировках, делая их максимально безопасными и эффективными. Контролировать пульсовую зону еще никогда не было так легко и удобно, а значит Ваши тренировки будут гораздо эффективнее, чем раньше. В независимости какая у Вас цель, сбросить вес, подготовиться к марафону или увеличить скоростные показатели.' :
                       articleSlug === 'cardiopower-s20-new-v-prodazhe' ?
                       'Беговая дорожка CardioPower S20\n\nБеговая дорожка CardioPower S20 одна из самых компактных не только среди стационарных но и среди ультра-компактных беговых дорожек для дома. При этом модель имеет потрясающие габариты бегового полотна, при длине дорожки 145 см, беговое полотно составляет 130 см в длину и 47 см в ширину, это позволяет комфортно заниматься людям высокого роста и разной комплекции.' :
-                      articleSlug === 'cardiopower-tt30-new-v-prodazhe' ?
-                      'Беговая дорожка CardioPower ТТ30' :
                       'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес.Россия: бизнес-форум, фитнес-конвенция, выставка.'
                     }
                   </p>
@@ -186,8 +174,6 @@ const NewsArticle: React.FC = () => {
                     '/lovable-uploads/c6b86923-3376-47f4-9a0c-24b01b2d642e.png' :
                     articleSlug === 'cardiopower-s20-new-v-prodazhe' ?
                     '/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png' :
-                    articleSlug === 'cardiopower-tt30-new-v-prodazhe' ?
-                    '/lovable-uploads/48bbc0da-83a0-41fb-bdb1-dbe6065d5e6f.png' :
                     '/lovable-uploads/2fad94b1-56ad-4c2d-8f5c-321bacbfbc30.png'
                   }
                   alt={articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
@@ -196,8 +182,6 @@ const NewsArticle: React.FC = () => {
                     'Беговая дорожка CardioPower T40 NEW' :
                     articleSlug === 'cardiopower-s20-new-v-prodazhe' ?
                     'Беговая дорожка CardioPower S20' :
-                    articleSlug === 'cardiopower-tt30-new-v-prodazhe' ?
-                    'Беговая дорожка CardioPower ТТ30' :
                     'Wellfitness PRO в Сколково'
                   }
                   className="w-full h-[400px] object-cover rounded-lg"
@@ -208,7 +192,7 @@ const NewsArticle: React.FC = () => {
         </section>
 
         {/* First additional section - Text left, Image right - скрыто для страницы дилеров и CardioPower T40 NEW */}
-        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-new-v-prodazhe' && (
+        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && (
         <section className="py-16 bg-gray-50">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -239,7 +223,7 @@ const NewsArticle: React.FC = () => {
         )}
 
         {/* Second additional section - Image left, Extended text right - скрыто для страницы дилеров и CardioPower T40 NEW */}
-        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-new-v-prodazhe' && (
+        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && (
         <section className="py-16">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -291,7 +275,7 @@ const NewsArticle: React.FC = () => {
         </section>
 
         {/* Long Text Section - скрыто для страницы дилеров и CardioPower T40 NEW */}
-        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-new-v-prodazhe' && (
+        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && (
         <section className="py-16 bg-gray-50">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="max-w-[1200px]">
