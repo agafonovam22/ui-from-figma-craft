@@ -796,6 +796,8 @@ const About: React.FC = () => {
         {activeTab === 'news' && (
           <section className="py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <h2 className="text-2xl font-bold mb-8">Новости и блог</h2>
+              
               {/* News Grid - Custom Layout like Screenshot */}
               <div className="grid grid-cols-12 gap-4 mb-12">
                 {/* Первый контейнер - большой квадрат слева */}
@@ -834,9 +836,9 @@ const About: React.FC = () => {
                 </div>
 
                 {/* Правая колонка */}
-                <div className="col-span-12 md:col-span-6 flex flex-col gap-4">
+                <div className="col-span-12 md:col-span-6 flex flex-col">
                   {/* Второй контейнер - горизонтальный прямоугольник */}
-                  <div className="h-[200px]">
+                  <div className="h-[200px] mb-4">
                     <Link
                       to={`/news/${newsItems[1]?.slug}`}
                       className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
@@ -872,13 +874,13 @@ const About: React.FC = () => {
                     </Link>
                   </div>
 
-                  {/* Третий и четвертый контейнеры - квадратные под вторым */}
-                  <div className="flex gap-4 h-[180px]">
+                  {/* Третий и четвертый контейнеры - квадратные, выровнены по нижней границе */}
+                  <div className="flex gap-4 flex-1 items-end">
                     {/* Третий контейнер */}
                     <div className="flex-1">
                       <Link
                         to={`/news/${newsItems[2]?.slug}`}
-                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
+                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
                       >
                         <div className="relative h-[100px]">
                           <img
@@ -913,7 +915,7 @@ const About: React.FC = () => {
                     <div className="flex-1">
                       <Link
                         to={`/news/${newsItems[3]?.slug}`}
-                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
+                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
                       >
                         <div className="relative h-[100px]">
                           <img
