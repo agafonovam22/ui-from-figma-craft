@@ -950,7 +950,8 @@ const About: React.FC = () => {
               </div>
 
               {/* Дополнительные 6 контейнеров новостей */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+              {/* Первый ряд - 4 контейнера */}
+              <div className="grid grid-cols-4 gap-4 mb-4">
                 {/* 5-й контейнер */}
                 <div>
                   <Link
@@ -1090,7 +1091,10 @@ const About: React.FC = () => {
                     </div>
                   </Link>
                 </div>
+              </div>
 
+              {/* Второй ряд - 2 контейнера */}
+              <div className="grid grid-cols-2 gap-4 mb-12">
                 {/* 9-й контейнер */}
                 <div>
                   <Link
