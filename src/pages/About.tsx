@@ -880,9 +880,9 @@ const About: React.FC = () => {
                     <div className="flex-1">
                       <Link
                         to={`/news/${newsItems[2]?.slug}`}
-                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[220px]"
                       >
-                        <div className="relative h-[100px]">
+                        <div className="relative h-[120px]">
                           <img
                             src="/lovable-uploads/ed66472b-775d-46cd-84e0-7dc644a9aaad.png"
                             alt={newsItems[2]?.title}
@@ -895,7 +895,7 @@ const About: React.FC = () => {
                           </div>
                         </div>
                         
-                        <div className="p-3 h-[80px] flex flex-col justify-center">
+                        <div className="p-3 h-[100px] flex flex-col justify-center">
                           <div className="text-xs text-gray-600 mb-1 text-right">
                             16.11.2023
                           </div>
@@ -915,9 +915,9 @@ const About: React.FC = () => {
                     <div className="flex-1">
                       <Link
                         to={`/news/${newsItems[3]?.slug}`}
-                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[220px]"
                       >
-                        <div className="relative h-[100px]">
+                        <div className="relative h-[120px]">
                           <img
                             src="/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png"
                             alt="Беговая дорожка CardioPower S20"
@@ -930,7 +930,7 @@ const About: React.FC = () => {
                           </div>
                         </div>
                         
-                        <div className="p-3 h-[80px] flex flex-col justify-center">
+                        <div className="p-3 h-[100px] flex flex-col justify-center">
                           <div className="text-xs text-gray-600 mb-1 text-right">
                             9.11.2023
                           </div>
