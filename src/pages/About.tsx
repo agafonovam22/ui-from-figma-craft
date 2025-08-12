@@ -1170,13 +1170,13 @@ const About: React.FC = () => {
                 {/* 11-й контейнер - квадратный */}
                 <div className="col-span-3">
                   <Link
-                    to="/news/novinka-cardiopower-new-11"
+                    to="/news/cardiopower-re50-v-prodazhe"
                     className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
                   >
                     <div className="relative h-[100px]">
                       <img
-                        src="/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png"
-                        alt="Новинка CardioPower"
+                        src="/lovable-uploads/fac5ea13-b62c-4a6f-8362-0195de2226a6.png"
+                        alt="Гребной тренажёр CardioPower RE50"
                         className="w-full h-full object-cover"
                       />
                       
@@ -1192,11 +1192,11 @@ const About: React.FC = () => {
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                        Новинка - Уже в продаже: Тренажер CardioPower
+                        Новинка - Уже в продаже: Гребной тренажёр CardioPower RE50
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Новая модель тренажера с улучшенными характеристиками
+                        Профессиональный гребной тренажер для всех групп мышц
                       </p>
                     </div>
                   </Link>

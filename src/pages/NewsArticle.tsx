@@ -32,6 +32,7 @@ const NewsArticle: React.FC = () => {
                    articleSlug === 'cardiopower-x48-v-prodazhe' ? 'Новинка - Уже в продаже: Эллиптический тренажер CardioPower X48' :
                    articleSlug === 'cardiopower-x45-v-prodazhe' ? 'Новинка - Уже в продаже: Эллиптический тренажер CardioPower X45' :
                    articleSlug === 'cardiopower-tt35-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower TT35' :
+                   articleSlug === 'cardiopower-re50-v-prodazhe' ? 'Новинка - Уже в продаже: Гребной тренажёр CardioPower RE50' :
                    'Wellfitness PRO в Сколково 2023'}
               </span>
             </div>
@@ -47,6 +48,7 @@ const NewsArticle: React.FC = () => {
                 articleSlug === 'cardiopower-x48-v-prodazhe' ? 'Новинка - Уже в продаже: Эллиптический тренажер CardioPower X48' :
                 articleSlug === 'cardiopower-x45-v-prodazhe' ? 'Новинка - Уже в продаже: Эллиптический тренажер CardioPower X45' :
                 articleSlug === 'cardiopower-tt35-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower TT35' :
+                articleSlug === 'cardiopower-re50-v-prodazhe' ? 'Новинка - Уже в продаже: Гребной тренажёр CardioPower RE50' :
                 'Wellfitness PRO в Сколково 2023'}
             </h1>
           </div>
@@ -135,6 +137,12 @@ const NewsArticle: React.FC = () => {
                           Беговая дорожка<br />
                           CardioPower TT35
                         </>
+                      ) : articleSlug === 'cardiopower-re50-v-prodazhe' ? (
+                        <>
+                          Новинка - Уже в продаже:<br />
+                          Гребной тренажёр<br />
+                          CardioPower RE50
+                        </>
                       ) : (
                         <>
                           Wellfitness PRO<br />
@@ -207,6 +215,8 @@ const NewsArticle: React.FC = () => {
                      'Сообщаем о расширении линейки эллиптических тренажеров и поступлении новой модели CardioPower.' :
                      articleSlug === 'cardiopower-tt35-v-prodazhe' ?
                      'Сообщаем о расширении линейки гребных тренажеров и поступлении новой модели CardioPower.' :
+                     articleSlug === 'cardiopower-re50-v-prodazhe' ?
+                     'Сообщаем о расширении линейки гребных тренажеров и поступлении новой модели CardioPower.' :
                      'В минувшие выходные в Сколково прошло крупнейшее мероприятие фитнес-России'
                   }
                 </h2>
@@ -231,6 +241,8 @@ const NewsArticle: React.FC = () => {
                        'Эллиптический тренажер CardioPower X45\n\nЭллиптический тренажер CardioPower X45 - переднеприводная модель для полноценных тренировок дома. Регулировка угла наклона рампы, увеличенная длина шага 51 см, удобная эргономика и мультипозиционные поручни делают эту модель одной из самых функциональных и продвинутых в своем классе.' :
                        articleSlug === 'cardiopower-tt35-v-prodazhe' ?
                        'Беговая дорожка CardioPower TT35\n\nБеговая дорожка CardioPower TT35 по-настоящему уникальна, благодаря инновационной системе сверхкомпактного складывания, она обладает характеристиками полноразмерной беговой дорожки при этом имея минимальные размеры, сопоставимые с размерами ультра компактных моделей. Стильный, классический дизайн дорожки впишется в любой домашний интерьер.' :
+                       articleSlug === 'cardiopower-re50-v-prodazhe' ?
+                       'Гребной тренажёр CardioPower RE50' :
                        'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес.Россия: бизнес-форум, фитнес-конвенция, выставка.'
                     }
                   </p>
@@ -258,6 +270,8 @@ const NewsArticle: React.FC = () => {
                      '/lovable-uploads/18cd3093-b7ac-453b-8467-1fec09fb24fc.png' :
                      articleSlug === 'cardiopower-tt35-v-prodazhe' ?
                      '/lovable-uploads/f723c377-cd62-435f-86d4-71f10aca1c8f.png' :
+                     articleSlug === 'cardiopower-re50-v-prodazhe' ?
+                     '/lovable-uploads/fac5ea13-b62c-4a6f-8362-0195de2226a6.png' :
                      '/lovable-uploads/2fad94b1-56ad-4c2d-8f5c-321bacbfbc30.png'
                   }
                   alt={articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
@@ -278,6 +292,8 @@ const NewsArticle: React.FC = () => {
                      'Эллиптический тренажер CardioPower X45' :
                      articleSlug === 'cardiopower-tt35-v-prodazhe' ?
                      'Беговая дорожка CardioPower TT35' :
+                     articleSlug === 'cardiopower-re50-v-prodazhe' ?
+                     'Гребной тренажёр CardioPower RE50' :
                      'Wellfitness PRO в Сколково'
                   }
                   className="w-full h-[400px] object-cover rounded-lg"
@@ -288,7 +304,7 @@ const NewsArticle: React.FC = () => {
         </section>
 
         {/* First additional section - Text left, Image right - скрыто для страницы дилеров и CardioPower T40 NEW */}
-        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-v-prodazhe' && articleSlug !== 'cardiopower-s55-v-prodazhe' && articleSlug !== 'cardiopower-s50-v-prodazhe' && articleSlug !== 'cardiopower-x48-v-prodazhe' && articleSlug !== 'cardiopower-x45-v-prodazhe' && articleSlug !== 'cardiopower-tt35-v-prodazhe' && (
+        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-v-prodazhe' && articleSlug !== 'cardiopower-s55-v-prodazhe' && articleSlug !== 'cardiopower-s50-v-prodazhe' && articleSlug !== 'cardiopower-x48-v-prodazhe' && articleSlug !== 'cardiopower-x45-v-prodazhe' && articleSlug !== 'cardiopower-tt35-v-prodazhe' && articleSlug !== 'cardiopower-re50-v-prodazhe' && (
         <section className="py-16 bg-gray-50">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -319,7 +335,7 @@ const NewsArticle: React.FC = () => {
         )}
 
         {/* Second additional section - Image left, Extended text right - скрыто для страницы дилеров и CardioPower T40 NEW */}
-        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-v-prodazhe' && articleSlug !== 'cardiopower-s55-v-prodazhe' && articleSlug !== 'cardiopower-s50-v-prodazhe' && articleSlug !== 'cardiopower-x48-v-prodazhe' && articleSlug !== 'cardiopower-x45-v-prodazhe' && articleSlug !== 'cardiopower-tt35-v-prodazhe' && (
+        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-v-prodazhe' && articleSlug !== 'cardiopower-s55-v-prodazhe' && articleSlug !== 'cardiopower-s50-v-prodazhe' && articleSlug !== 'cardiopower-x48-v-prodazhe' && articleSlug !== 'cardiopower-x45-v-prodazhe' && articleSlug !== 'cardiopower-tt35-v-prodazhe' && articleSlug !== 'cardiopower-re50-v-prodazhe' && (
         <section className="py-16">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">

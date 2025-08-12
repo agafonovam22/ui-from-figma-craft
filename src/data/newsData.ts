@@ -144,6 +144,19 @@ export const newsItems: NewsItem[] = [
     size: 'large',
     slug: 'cardiopower-tt35-v-prodazhe',
     isActive: false
+  },
+  {
+    id: 27,
+    type: 'Новости',
+    category: 'НОВОСТИ',
+    categoryColor: 'bg-blue-600',
+    date: '6 августа 2025',
+    title: 'Новинка - Уже в продаже: Гребной тренажёр CardioPower RE50',
+    description: 'Гребной тренажёр CardioPower RE50 - профессиональная модель для тренировки всех групп мышц.',
+    image: '/lovable-uploads/fac5ea13-b62c-4a6f-8362-0195de2226a6.png',
+    size: 'large',
+    slug: 'cardiopower-re50-v-prodazhe',
+    isActive: false
   }
 ];
 
