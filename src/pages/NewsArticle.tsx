@@ -23,13 +23,17 @@ const NewsArticle: React.FC = () => {
               <span className="text-gray-400 text-xs">
                 <Link to="/" className="hover:text-gray-600">Главная</Link> → 
                 <Link to="/news" className="hover:text-gray-600"> Новости и блог</Link> → 
-                {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 'Новость для дилеров WellFitness' : 'Wellfitness PRO в Сколково 2023'}
+                {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 'Новость для дилеров WellFitness' : 
+                 articleSlug === 'cardiopower-t40-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW' :
+                 'Wellfitness PRO в Сколково 2023'}
               </span>
             </div>
             
             {/* Main Title */}
             <h1 className="text-[40px] font-bold text-[#17171E] mb-8 leading-tight">
-              {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 'Новость для дилеров WellFitness' : 'Wellfitness PRO в Сколково 2023'}
+              {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 'Новость для дилеров WellFitness' : 
+               articleSlug === 'cardiopower-t40-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW' :
+               'Wellfitness PRO в Сколково 2023'}
             </h1>
           </div>
         </section>
@@ -69,6 +73,12 @@ const NewsArticle: React.FC = () => {
                           дилеров<br />
                           WellFitness
                         </>
+                      ) : articleSlug === 'cardiopower-t40-new-v-prodazhe' ? (
+                        <>
+                          Новинка - Уже в продаже:<br />
+                          Беговая дорожка<br />
+                          CardioPower T40 NEW
+                        </>
                       ) : (
                         <>
                           Wellfitness PRO<br />
@@ -79,7 +89,9 @@ const NewsArticle: React.FC = () => {
                     </h1>
                     
                     <div className="text-gray-600 text-sm">
-                      {articleSlug === 'novost-dlya-dilerov-wellfitness' ? '27.02.2025' : '30 Декабря 2024'}
+                      {articleSlug === 'novost-dlya-dilerov-wellfitness' ? '27.02.2025' : 
+                       articleSlug === 'cardiopower-t40-new-v-prodazhe' ? '16.11.2023' :
+                       '30 Декабря 2024'}
                     </div>
                   </div>
                   
@@ -127,6 +139,8 @@ const NewsArticle: React.FC = () => {
                 <h2 className="text-3xl font-bold text-[#17171E] mb-6">
                   {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
                     'К 8 марта вы можете предлагать скидку 15% на все тренажеры CardioPower, BowFlex и Sole для своих клиентов!' :
+                    articleSlug === 'cardiopower-t40-new-v-prodazhe' ?
+                    'Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower' :
                     'В минувшие выходные в Сколково прошло крупнейшее мероприятие фитнес-России'
                   }
                 </h2>
@@ -135,6 +149,8 @@ const NewsArticle: React.FC = () => {
                   <p className="leading-relaxed text-base">
                     {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
                       'Это отличный шанс порадовать ваших покупательниц (и их мужчин)!' :
+                      articleSlug === 'cardiopower-t40-new-v-prodazhe' ?
+                      'Беговая дорожка CardioPower T40 NEW\n\nОбновленная версия популярной модели CardioPower T40, новый стильный дизайн, продвинутый программный функционал, набор из 5 пульсозависимых программ, а также современный LED Дисплей с интуитивно простым управлением. Модель предлагает революционный подход и инновационную технологию в кардиотренировках, делая их максимально безопасными и эффективными. Контролировать пульсовую зону еще никогда не было так легко и удобно, а значит Ваши тренировки будут гораздо эффективнее, чем раньше. В независимости какая у Вас цель, сбросить вес, подготовиться к марафону или увеличить скоростные показатели.' :
                       'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес.Россия: бизнес-форум, фитнес-конвенция, выставка.'
                     }
                   </p>
@@ -146,10 +162,14 @@ const NewsArticle: React.FC = () => {
                 <img 
                   src={articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
                     '/lovable-uploads/654f1adb-2662-491c-b4b3-5c8ad7924198.png' :
+                    articleSlug === 'cardiopower-t40-new-v-prodazhe' ?
+                    '/lovable-uploads/c6b86923-3376-47f4-9a0c-24b01b2d642e.png' :
                     '/lovable-uploads/2fad94b1-56ad-4c2d-8f5c-321bacbfbc30.png'
                   }
                   alt={articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
                     'Новость для дилеров WellFitness' :
+                    articleSlug === 'cardiopower-t40-new-v-prodazhe' ?
+                    'Беговая дорожка CardioPower T40 NEW' :
                     'Wellfitness PRO в Сколково'
                   }
                   className="w-full h-[400px] object-cover rounded-lg"
