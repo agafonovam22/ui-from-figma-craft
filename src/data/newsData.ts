@@ -29,19 +29,6 @@ export const newsItems: NewsItem[] = [
     isActive: true
   },
   {
-    id: 19,
-    type: 'Новости',
-    category: 'НОВОСТИ',
-    categoryColor: 'bg-blue-600',
-    date: '16.11.2023',
-    title: 'Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW',
-    description: 'Представляем новую модель профессиональной беговой дорожки CardioPower T40 NEW с улучшенными характеристиками и современным дизайном.',
-    image: '/lovable-uploads/cardiopower-t40-new.jpg',
-    size: 'large',
-    slug: 'cardiopower-t40-new-v-prodazhe',
-    isActive: false
-  },
-  {
     id: 2,
     type: 'Новости',
     category: 'НОВОСТИ',
@@ -52,6 +39,19 @@ export const newsItems: NewsItem[] = [
     image: '/lovable-uploads/09977489-01ac-4f0b-8284-db7c003b425b.png',
     size: 'large',
     slug: 'wellfitness-pro-skolkovo-2023',
+    isActive: false
+  },
+  {
+    id: 19,
+    type: 'Новости',
+    category: 'НОВОСТИ',
+    categoryColor: 'bg-blue-600',
+    date: '16.11.2023',
+    title: 'Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW',
+    description: 'Представляем новую модель профессиональной беговой дорожки CardioPower T40 NEW с улучшенными характеристиками и современным дизайном.',
+    image: '/lovable-uploads/cardiopower-t40-new.jpg',
+    size: 'large',
+    slug: 'cardiopower-t40-new-v-prodazhe',
     isActive: false
   },
   {
