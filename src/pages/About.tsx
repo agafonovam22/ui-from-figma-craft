@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Users, Warehouse, Shield, Grid3x3, Wrench, TrendingUp } from 'lucide-react';
+import { getAboutPageNews } from '@/data/newsData';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Banner from '@/components/Banner';
@@ -166,107 +167,7 @@ const About: React.FC = () => {
     }
   ];
 
-  const newsItems = [
-    {
-      id: 1,
-      category: 'НОВОСТИ',
-      categoryColor: 'bg-blue-600',
-      date: '5 ноября 2024',
-      title: 'Участие в выставке FIBO 2024',
-      description: 'Наша компания примет участие в крупнейшей европейской выставке фитнес-индустрии FIBO 2024...',
-      image: '/lovable-uploads/023b26eb-eb56-4cda-a803-a5b956c04928.png',
-      size: 'large',
-      slug: 'uchastie-v-vystavke-fibo-2024'
-    },
-    {
-      id: 2,
-      category: 'АКЦИИ',
-      categoryColor: 'bg-red-600',
-      date: '3 ноября 2024',
-      title: 'Скидки до 30% на кардиотренажеры',
-      description: 'Специальное предложение на беговые дорожки, велотренажеры и эллиптические тренажеры...',
-      image: '/lovable-uploads/03483cd7-94a8-4050-b663-8e2a5d663e53.png',
-      size: 'medium',
-      slug: 'skidki-kardiotrenazher'
-    },
-    {
-      id: 3,
-      category: 'НОВОСТИ',
-      categoryColor: 'bg-blue-600',
-      date: '1 ноября 2024',
-      title: 'Новая линейка силовых тренажеров',
-      description: 'Представляем обновленную серию профессиональных силовых тренажеров для коммерческих залов...',
-      image: '/lovable-uploads/0462b888-2df8-4ad7-bb09-8316f32e5fd1.png',
-      size: 'medium',
-      slug: 'novaya-lineyka-silovyh-trenazherov'
-    },
-    {
-      id: 4,
-      category: 'СОБЫТИЯ',
-      categoryColor: 'bg-green-600',
-      date: '28 октября 2024',
-      title: 'Открытие нового шоу-рума в Санкт-Петербурге',
-      description: 'Мы рады объявить об открытии нового демонстрационного зала в центре Санкт-Петербурга...',
-      image: '/lovable-uploads/049bf5bb-7991-4efb-b320-8c8dfb850ff2.png',
-      size: 'small',
-      slug: 'otkrytie-shou-ruma-spb'
-    },
-    {
-      id: 5,
-      category: 'АКЦИИ',
-      categoryColor: 'bg-red-600',
-      date: '25 октября 2024',
-      title: 'Осенняя распродажа домашних тренажеров',
-      description: 'Успейте приобрести домашние тренажеры со скидкой до 25% до конца месяца...',
-      image: '/lovable-uploads/052844f7-bb47-4b45-ba40-d4123336188f.png',
-      size: 'small',
-      slug: 'osennyaya-rasprodazha'
-    },
-    {
-      id: 6,
-      category: 'НОВОСТИ',
-      categoryColor: 'bg-blue-600',
-      date: '22 октября 2024',
-      title: 'Сертификация ISO 9001:2015',
-      description: 'Наша компания успешно прошла сертификацию по международному стандарту качества...',
-      image: '/lovable-uploads/05ba64f8-caa1-4ce9-8069-6889a6182ae3.png',
-      size: 'small',
-      slug: 'sertifikaciya-iso-9001'
-    },
-    {
-      id: 7,
-      category: 'СОБЫТИЯ',
-      categoryColor: 'bg-green-600',
-      date: '20 октября 2024',
-      title: 'Мастер-класс по функциональному тренингу',
-      description: 'Приглашаем на бесплатный мастер-класс от ведущих тренеров по функциональной подготовке...',
-      image: '/lovable-uploads/0838e433-093a-4bb6-a996-3a7c584ed057.png',
-      size: 'medium',
-      slug: 'master-klass-funkcionalniy-trening'
-    },
-    {
-      id: 8,
-      category: 'НОВОСТИ',
-      categoryColor: 'bg-blue-600',
-      date: '18 октября 2024',
-      title: 'Партнерство с ведущими спортивными клубами',
-      description: 'Заключены договоры о сотрудничестве с крупнейшими фитнес-сетями России...',
-      image: '/lovable-uploads/08975827-d091-4c00-9cb5-85e93a4b1853.png',
-      size: 'small',
-      slug: 'partnerstvo-sportivnye-kluby'
-    },
-    {
-      id: 9,
-      category: 'АКЦИИ',
-      categoryColor: 'bg-red-600',
-      date: '15 октября 2024',
-      title: 'Специальное предложение для залов',
-      description: 'Выгодные условия поставки оборудования для фитнес-центров и спортивных комплексов...',
-      image: '/lovable-uploads/08d1344d-ca43-44d2-b953-28d3cb4c83d2.png',
-      size: 'small',
-      slug: 'specialnoe-predlozhenie-zaly'
-    }
-  ];
+  const newsItems = getAboutPageNews();
 
   const getCardClasses = (size: string) => {
     switch (size) {

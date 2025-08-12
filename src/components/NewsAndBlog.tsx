@@ -2,6 +2,7 @@
 import React, { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { getHomePageNews } from '@/data/newsData';
 
 const NewsAndBlog: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -17,44 +18,7 @@ const NewsAndBlog: React.FC = () => {
       scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
     }
   };
-  const newsItems = [
-    {
-      id: 1,
-      type: 'Блог',
-      date: '12 Января 2024',
-      title: 'Wellfitness PRO в Сколково 2023',
-      description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес-Россия: бизнес-форум, фитнес-конвенция, выставка.',
-      image: '/lovable-uploads/4de8ac86-4117-4c20-8d99-e0583f469b1e.png',
-      isActive: true
-    },
-    {
-      id: 2,
-      type: 'Новости',
-      date: '12 Января 2024',
-      title: 'Wellfitness PRO в Сколково 2023',
-      description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес-Россия: бизнес-форум, фитнес-конвенция, выставка.',
-      image: '/lovable-uploads/43a8ceb6-b7c1-4678-9a74-6ecb281cd53c.png',
-      isActive: false
-    },
-    {
-      id: 3,
-      type: 'Блог',
-      date: '12 Января 2024',
-      title: 'Wellfitness PRO в Сколково 2023',
-      description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес-Россия: бизнес-форум, фитнес-конвенция, выставка.',
-      image: '/lovable-uploads/ef69eacd-d803-450f-abea-e857771f2e59.png',
-      isActive: false
-    },
-    {
-      id: 4,
-      type: 'Новости',
-      date: '12 Января 2024',
-      title: 'Wellfitness PRO в Сколково 2023',
-      description: 'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес-Россия: бизнес-форум, фитнес-конвенция, выставка.',
-      image: '/lovable-uploads/4de8ac86-4117-4c20-8d99-e0583f469b1e.png',
-      isActive: false
-    }
-  ];
+  const newsItems = getHomePageNews();
 
   return (
     <section className="w-full bg-white py-6">
