@@ -841,12 +841,12 @@ const About: React.FC = () => {
                       to={`/news/${newsItems[1]?.slug}`}
                       className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
                     >
-                      <div className="flex h-full">
-                        <div className="relative w-1/2">
+                      <div className="flex flex-col h-full">
+                        <div className="relative">
                           <img
                             src={newsItems[1]?.image}
                             alt={newsItems[1]?.title}
-                            className="w-full h-full object-cover"
+                            className="w-full h-[120px] object-cover"
                           />
                           
                           {/* Category Badge */}
@@ -855,7 +855,7 @@ const About: React.FC = () => {
                           </div>
                         </div>
                         
-                        <div className="w-1/2 p-4 flex flex-col justify-center">
+                        <div className="p-4 flex-1 flex flex-col justify-center">
                           <div className="text-xs text-gray-600 mb-2">
                             {newsItems[1]?.date}
                           </div>
