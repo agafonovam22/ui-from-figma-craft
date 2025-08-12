@@ -88,11 +88,7 @@ const NewsArticle: React.FC = () => {
                       )}
                     </h1>
                     
-                    <div className="text-gray-600 text-sm">
-                      {articleSlug === 'novost-dlya-dilerov-wellfitness' ? '27.02.2025' : 
-                       articleSlug === 'cardiopower-t40-new-v-prodazhe' ? '16.11.2023' :
-                       '30 Декабря 2024'}
-                    </div>
+                    {/* Убираем даты со всех баннеров в разделе новостей */}
                   </div>
                   
                   {/* Правая часть - убираем изображение */}
@@ -179,8 +175,8 @@ const NewsArticle: React.FC = () => {
           </div>
         </section>
 
-        {/* First additional section - Text left, Image right - скрыто для страницы дилеров */}
-        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && (
+        {/* First additional section - Text left, Image right - скрыто для страницы дилеров и CardioPower T40 NEW */}
+        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && (
         <section className="py-16 bg-gray-50">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -210,8 +206,8 @@ const NewsArticle: React.FC = () => {
         </section>
         )}
 
-        {/* Second additional section - Image left, Extended text right - скрыто для страницы дилеров */}
-        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && (
+        {/* Second additional section - Image left, Extended text right - скрыто для страницы дилеров и CardioPower T40 NEW */}
+        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && (
         <section className="py-16">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -262,8 +258,8 @@ const NewsArticle: React.FC = () => {
           </div>
         </section>
 
-        {/* Long Text Section - скрыто для страницы дилеров */}
-        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && (
+        {/* Long Text Section - скрыто для страницы дилеров и CardioPower T40 NEW */}
+        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && (
         <section className="py-16 bg-gray-50">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="max-w-[1200px]">
