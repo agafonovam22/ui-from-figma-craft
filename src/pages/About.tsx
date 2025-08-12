@@ -1060,13 +1060,13 @@ const About: React.FC = () => {
                 {/* 8-й контейнер */}
                 <div>
                   <Link
-                    to="/news/novinka-cardiopower-t40-new-8"
+                    to="/news/cardiopower-x48-v-prodazhe"
                     className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
                   >
                     <div className="relative h-[100px]">
                       <img
-                        src="/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png"
-                        alt="Беговая дорожка CardioPower T40 NEW"
+                        src="/lovable-uploads/8f5c4260-9931-4f3a-9ae2-b0f6122e8f2f.png"
+                        alt="Эллиптический тренажер CardioPower X48"
                         className="w-full h-full object-cover"
                       />
                       
@@ -1082,11 +1082,11 @@ const About: React.FC = () => {
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                        Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW
+                        Новинка - Уже в продаже: Эллиптический тренажер CardioPower X48
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Новая модель беговой дорожки с улучшенными характеристиками
+                        Профессиональный эллиптический тренажер для эффективных тренировок
                       </p>
                     </div>
                   </Link>

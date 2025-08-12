@@ -105,6 +105,19 @@ export const newsItems: NewsItem[] = [
     size: 'large',
     slug: 'cardiopower-s50-v-prodazhe',
     isActive: false
+  },
+  {
+    id: 24,
+    type: 'Новости',
+    category: 'НОВОСТИ',
+    categoryColor: 'bg-blue-600',
+    date: '9 августа 2025',
+    title: 'Новинка - Уже в продаже: Эллиптический тренажер CardioPower X48',
+    description: 'Эллиптический тренажер CardioPower X48 - профессиональная модель для эффективных кардиотренировок.',
+    image: '/lovable-uploads/8f5c4260-9931-4f3a-9ae2-b0f6122e8f2f.png',
+    size: 'large',
+    slug: 'cardiopower-x48-v-prodazhe',
+    isActive: false
   }
 ];
 
