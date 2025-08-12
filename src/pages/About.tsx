@@ -829,7 +829,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
-                        В минувшие выходные в Сколково прошло крупнейшее мероприятие фитнес-России
+                        К 8 марта вы можете предлагать скидку 15% на все тренажеры CardioPower
                       </p>
                     </div>
                   </Link>
@@ -866,7 +866,7 @@ const About: React.FC = () => {
                         </h3>
                         
                         <p className="text-xs text-gray-600 line-clamp-4 leading-relaxed">
-                          К 8 марта вы можете предлагать скидку 15% на все тренажеры CardioPower
+                          В минувшие выходные в Сколково прошло крупнейшее мероприятие фитнес-России
                         </p>
                       </div>
                     </Link>
