@@ -897,7 +897,7 @@ const About: React.FC = () => {
                         
                         <div className="p-3 h-[80px] flex flex-col justify-center">
                           <div className="text-xs text-gray-600 mb-1 text-right">
-                            {newsItems[2]?.date}
+                            16.11.2023
                           </div>
                            
                           <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
@@ -932,7 +932,7 @@ const About: React.FC = () => {
                         
                         <div className="p-3 h-[80px] flex flex-col justify-center">
                           <div className="text-xs text-gray-600 mb-1 text-right">
-                            {newsItems[3]?.date}
+                            9.11.2023
                           </div>
                           
                           <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
@@ -973,7 +973,7 @@ const About: React.FC = () => {
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
                       <div className="text-xs text-gray-600 mb-1 text-right">
-                        12 августа 2025
+                        9.11.2023
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
@@ -1008,7 +1008,7 @@ const About: React.FC = () => {
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
                       <div className="text-xs text-gray-600 mb-1 text-right">
-                        11 августа 2025
+                        9.11.2023
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
@@ -1043,7 +1043,7 @@ const About: React.FC = () => {
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
                       <div className="text-xs text-gray-600 mb-1 text-right">
-                        10 августа 2025
+                        9.11.2023
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
@@ -1078,7 +1078,7 @@ const About: React.FC = () => {
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
                       <div className="text-xs text-gray-600 mb-1 text-right">
-                        9 августа 2025
+                        17.10.2023
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
@@ -1116,7 +1116,7 @@ const About: React.FC = () => {
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
                       <div className="text-xs text-gray-600 mb-1 text-right">
-                        8 августа 2025
+                        17.10.2023
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
@@ -1152,7 +1152,7 @@ const About: React.FC = () => {
                       
                       <div className="w-1/2 p-4 flex flex-col justify-center">
                         <div className="text-xs text-gray-600 mb-2 text-right">
-                          7 августа 2025
+                          26.09.2023
                         </div>
                         
                         <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-3 leading-tight">
@@ -1188,7 +1188,7 @@ const About: React.FC = () => {
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
                       <div className="text-xs text-gray-600 mb-1 text-right">
-                        6 августа 2025
+                        6.09.2023
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
