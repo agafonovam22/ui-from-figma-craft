@@ -872,39 +872,77 @@ const About: React.FC = () => {
                     </Link>
                   </div>
 
-                  {/* Третий контейнер - маленький вертикальный прямоугольник */}
-                  <div className="flex-1">
-                    <Link
-                      to={`/news/${newsItems[2]?.slug}`}
-                      className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
-                    >
-                      <div className="relative">
-                        <img
-                          src={newsItems[2]?.image}
-                          alt={newsItems[2]?.title}
-                          className="w-full h-[180px] object-cover"
-                        />
-                        
-                        {/* Category Badge */}
-                        <div className={`absolute top-2 left-2 ${newsItems[2]?.categoryColor} text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide`}>
-                          {newsItems[2]?.category}
-                        </div>
-                      </div>
-                      
-                      <div className="p-4">
-                        <div className="text-xs text-gray-600 mb-2">
-                          {newsItems[2]?.date}
+                  {/* Третий и четвертый контейнеры - маленькие квадратные */}
+                  <div className="flex-1 flex gap-4">
+                    {/* Третий контейнер */}
+                    <div className="flex-1">
+                      <Link
+                        to={`/news/${newsItems[2]?.slug}`}
+                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
+                      >
+                        <div className="relative">
+                          <img
+                            src={newsItems[2]?.image}
+                            alt={newsItems[2]?.title}
+                            className="w-full h-[120px] object-cover"
+                          />
+                          
+                          {/* Category Badge */}
+                          <div className={`absolute top-2 left-2 ${newsItems[2]?.categoryColor} text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide`}>
+                            {newsItems[2]?.category}
+                          </div>
                         </div>
                         
-                        <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                          {newsItems[2]?.title}
-                        </h3>
+                        <div className="p-3">
+                          <div className="text-xs text-gray-600 mb-1">
+                            {newsItems[2]?.date}
+                          </div>
+                          
+                          <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                            {newsItems[2]?.title}
+                          </h3>
+                          
+                          <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                            {newsItems[2]?.description}
+                          </p>
+                        </div>
+                      </Link>
+                    </div>
+
+                    {/* Четвертый контейнер */}
+                    <div className="flex-1">
+                      <Link
+                        to={`/news/${newsItems[3]?.slug}`}
+                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
+                      >
+                        <div className="relative">
+                          <img
+                            src={newsItems[3]?.image}
+                            alt={newsItems[3]?.title}
+                            className="w-full h-[120px] object-cover"
+                          />
+                          
+                          {/* Category Badge */}
+                          <div className={`absolute top-2 left-2 ${newsItems[3]?.categoryColor} text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide`}>
+                            {newsItems[3]?.category}
+                          </div>
+                        </div>
                         
-                        <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                          {newsItems[2]?.description}
-                        </p>
-                      </div>
-                    </Link>
+                        <div className="p-3">
+                          <div className="text-xs text-gray-600 mb-1">
+                            {newsItems[3]?.date}
+                          </div>
+                          
+                          <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                            {newsItems[3]?.title}
+                          </h3>
+                          
+                          <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                            {newsItems[3]?.description}
+                          </p>
+                        </div>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
