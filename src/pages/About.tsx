@@ -798,7 +798,7 @@ const About: React.FC = () => {
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
               {/* News Grid - Custom Layout like Screenshot */}
               <div className="grid grid-cols-12 gap-4 mb-12">
-                {/* Первый контейнер - большой вертикальный прямоугольник */}
+                {/* Первый контейнер - большой квадрат слева */}
                 <div className="col-span-12 md:col-span-6">
                   <Link
                     to={`/news/${newsItems[0]?.slug}`}
@@ -808,7 +808,7 @@ const About: React.FC = () => {
                       <img
                         src={newsItems[0]?.image}
                         alt={newsItems[0]?.title}
-                        className="w-full h-[400px] object-cover"
+                        className="w-full h-[350px] object-cover"
                       />
                       
                       {/* Category Badge */}
@@ -835,18 +835,18 @@ const About: React.FC = () => {
 
                 {/* Правая колонка */}
                 <div className="col-span-12 md:col-span-6 flex flex-col gap-4">
-                  {/* Второй контейнер - узкий горизонтальный прямоугольник */}
-                  <div className="flex-1">
+                  {/* Второй контейнер - горизонтальный прямоугольник */}
+                  <div className="h-[200px]">
                     <Link
                       to={`/news/${newsItems[1]?.slug}`}
                       className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
                     >
-                      <div className="flex flex-col h-full">
-                        <div className="relative">
+                      <div className="flex h-full">
+                        <div className="relative w-1/2">
                           <img
                             src={newsItems[1]?.image}
                             alt={newsItems[1]?.title}
-                            className="w-full h-[120px] object-cover"
+                            className="w-full h-full object-cover"
                           />
                           
                           {/* Category Badge */}
@@ -855,16 +855,16 @@ const About: React.FC = () => {
                           </div>
                         </div>
                         
-                        <div className="p-4 flex-1 flex flex-col justify-center">
+                        <div className="w-1/2 p-4 flex flex-col justify-center">
                           <div className="text-xs text-gray-600 mb-2">
                             {newsItems[1]?.date}
                           </div>
                           
-                          <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                          <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-3 leading-tight">
                             {newsItems[1]?.title}
                           </h3>
                           
-                          <p className="text-xs text-gray-600 line-clamp-3 leading-relaxed">
+                          <p className="text-xs text-gray-600 line-clamp-4 leading-relaxed">
                             {newsItems[1]?.description}
                           </p>
                         </div>
@@ -872,19 +872,19 @@ const About: React.FC = () => {
                     </Link>
                   </div>
 
-                  {/* Третий и четвертый контейнеры - маленькие квадратные */}
-                  <div className="flex-1 flex gap-4">
+                  {/* Третий и четвертый контейнеры - квадратные под вторым */}
+                  <div className="flex gap-4 h-[180px]">
                     {/* Третий контейнер */}
                     <div className="flex-1">
                       <Link
                         to={`/news/${newsItems[2]?.slug}`}
                         className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
                       >
-                        <div className="relative">
+                        <div className="relative h-[100px]">
                           <img
                             src={newsItems[2]?.image}
                             alt={newsItems[2]?.title}
-                            className="w-full h-[120px] object-cover"
+                            className="w-full h-full object-cover"
                           />
                           
                           {/* Category Badge */}
@@ -893,11 +893,11 @@ const About: React.FC = () => {
                           </div>
                         </div>
                         
-                        <div className="p-3">
+                        <div className="p-3 h-[80px] flex flex-col justify-center">
                           <div className="text-xs text-gray-600 mb-1">
                             {newsItems[2]?.date}
                           </div>
-                          
+                           
                           <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                             {newsItems[2]?.title}
                           </h3>
@@ -915,11 +915,11 @@ const About: React.FC = () => {
                         to={`/news/${newsItems[3]?.slug}`}
                         className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
                       >
-                        <div className="relative">
+                        <div className="relative h-[100px]">
                           <img
                             src={newsItems[3]?.image}
                             alt={newsItems[3]?.title}
-                            className="w-full h-[120px] object-cover"
+                            className="w-full h-full object-cover"
                           />
                           
                           {/* Category Badge */}
@@ -928,7 +928,7 @@ const About: React.FC = () => {
                           </div>
                         </div>
                         
-                        <div className="p-3">
+                        <div className="p-3 h-[80px] flex flex-col justify-center">
                           <div className="text-xs text-gray-600 mb-1">
                             {newsItems[3]?.date}
                           </div>
