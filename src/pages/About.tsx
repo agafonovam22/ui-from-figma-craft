@@ -919,8 +919,8 @@ const About: React.FC = () => {
                       >
                         <div className="relative h-[100px]">
                           <img
-                            src={newsItems[3]?.image}
-                            alt={newsItems[3]?.title}
+                            src="/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png"
+                            alt="Беговая дорожка CardioPower S20"
                             className="w-full h-full object-cover"
                           />
                           
@@ -936,7 +936,7 @@ const About: React.FC = () => {
                           </div>
                           
                           <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                            {newsItems[3]?.title}
+                            Новинка - Уже в продаже: Беговая дорожка CardioPower S20
                           </h3>
                           
                           <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
