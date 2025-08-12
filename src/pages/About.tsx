@@ -838,7 +838,7 @@ const About: React.FC = () => {
                 {/* Правая колонка */}
                 <div className="col-span-12 md:col-span-6 flex flex-col">
                   {/* Второй контейнер - горизонтальный прямоугольник */}
-                  <div className="h-[200px] mb-4">
+                  <div className="h-[250px] mb-4">
                     <Link
                       to={`/news/${newsItems[1]?.slug}`}
                       className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
@@ -847,7 +847,7 @@ const About: React.FC = () => {
                         <img
                           src={newsItems[1]?.image}
                           alt={newsItems[1]?.title}
-                          className="w-full h-[150px] object-cover"
+                          className="w-full h-[120px] object-cover"
                         />
                         
                         {/* Category Badge */}
@@ -856,7 +856,7 @@ const About: React.FC = () => {
                         </div>
                       </div>
                       
-                      <div className="p-4 flex flex-col justify-center">
+                      <div className="p-4 h-[130px] flex flex-col justify-between">
                         <div className="text-xs text-gray-600 mb-2 text-right">
                           {newsItems[1]?.date}
                         </div>
@@ -1147,7 +1147,7 @@ const About: React.FC = () => {
                         </div>
                       </div>
                       
-                      <div className="p-4 flex flex-col justify-center">
+                      <div className="p-4 h-[130px] flex flex-col justify-between">
                         <div className="text-xs text-gray-600 mb-2 text-right">
                           26.09.2023
                         </div>
