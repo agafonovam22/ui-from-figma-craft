@@ -55,6 +55,19 @@ export const newsItems: NewsItem[] = [
     isActive: false
   },
   {
+    id: 20,
+    type: 'Новости',
+    category: 'НОВОСТИ',
+    categoryColor: 'bg-blue-600',
+    date: '15.11.2023',
+    title: 'Новинка - Уже в продаже: Беговая дорожка CardioPower S20',
+    description: 'Беговая дорожка CardioPower S20 одна из самых компактных не только среди стационарных но и среди ультра-компактных беговых дорожек для дома.',
+    image: '/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png',
+    size: 'large',
+    slug: 'cardiopower-s20-new-v-prodazhe',
+    isActive: false
+  },
+  {
     id: 3,
     type: 'Новости',
     category: 'НОВОСТИ',
