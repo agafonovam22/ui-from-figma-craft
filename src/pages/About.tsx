@@ -810,7 +810,7 @@ const About: React.FC = () => {
                       <img
                         src={newsItems[0]?.image}
                         alt={newsItems[0]?.title}
-                        className="w-full h-[350px] object-cover"
+                        className="w-full h-[280px] object-cover"
                       />
                       
                       {/* Category Badge */}
@@ -819,18 +819,20 @@ const About: React.FC = () => {
                       </div>
                     </div>
                     
-                    <div className="p-6">
-                      <div className="text-sm text-gray-600 mb-3">
-                        {newsItems[0]?.date}
+                    <div className="p-8 h-[300px] flex flex-col justify-between">
+                      <div>
+                        <div className="text-sm text-gray-600 mb-4">
+                          {newsItems[0]?.date}
+                        </div>
+                        
+                        <h3 className="font-semibold text-2xl mb-4 group-hover:text-[#F53B49] transition-colors leading-tight">
+                          {newsItems[0]?.title}
+                        </h3>
+                        
+                        <p className="text-base text-gray-600 leading-relaxed">
+                          {newsItems[0]?.description}
+                        </p>
                       </div>
-                      
-                      <h3 className="font-semibold text-xl mb-3 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                        {newsItems[0]?.title}
-                      </h3>
-                      
-                      <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
-                        {newsItems[0]?.description}
-                      </p>
                     </div>
                   </Link>
                 </div>
