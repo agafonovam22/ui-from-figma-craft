@@ -829,7 +829,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
-                        {newsItems[0]?.description}
+                        
                       </p>
                     </div>
                   </Link>
@@ -866,7 +866,7 @@ const About: React.FC = () => {
                         </h3>
                         
                         <p className="text-xs text-gray-600 line-clamp-4 leading-relaxed">
-                          {newsItems[1]?.description}
+                          
                         </p>
                       </div>
                     </Link>
@@ -903,7 +903,7 @@ const About: React.FC = () => {
                           </h3>
                           
                           <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                            {newsItems[2]?.description}
+                            
                           </p>
                         </div>
                       </Link>
@@ -938,7 +938,7 @@ const About: React.FC = () => {
                           </h3>
                           
                           <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                            {newsItems[3]?.description}
+                            
                           </p>
                         </div>
                       </Link>
@@ -979,7 +979,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Новая модель беговой дорожки с улучшенными характеристиками
+                        
                       </p>
                     </div>
                   </Link>
@@ -1014,7 +1014,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Новая модель беговой дорожки с улучшенными характеристиками
+                        
                       </p>
                     </div>
                   </Link>
@@ -1049,7 +1049,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Беговая дорожка с профессиональными характеристиками
+                        
                       </p>
                     </div>
                   </Link>
@@ -1084,7 +1084,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Профессиональный эллиптический тренажер для эффективных тренировок
+                        
                       </p>
                     </div>
                   </Link>
@@ -1122,7 +1122,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Инновационный эллиптический тренажер для домашних тренировок
+                        
                       </p>
                     </div>
                   </Link>
@@ -1157,7 +1157,7 @@ const About: React.FC = () => {
                         </h3>
                         
                         <p className="text-xs text-gray-600 line-clamp-4 leading-relaxed">
-                          Современная беговая дорожка с передовыми технологиями
+                          
                         </p>
                       </div>
                   </Link>
@@ -1192,7 +1192,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Профессиональный гребной тренажер для всех групп мышц
+                        
                       </p>
                     </div>
                   </Link>
