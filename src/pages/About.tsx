@@ -949,6 +949,219 @@ const About: React.FC = () => {
                 </div>
               </div>
 
+              {/* Дополнительные 6 контейнеров новостей */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+                {/* 5-й контейнер */}
+                <div>
+                  <Link
+                    to="/news/novinka-cardiopower-t40-new-5"
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                  >
+                    <div className="relative h-[100px]">
+                      <img
+                        src="/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png"
+                        alt="Беговая дорожка CardioPower T40 NEW"
+                        className="w-full h-full object-cover"
+                      />
+                      
+                      {/* Category Badge */}
+                      <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                        НОВИНКА
+                      </div>
+                    </div>
+                    
+                    <div className="p-3 h-[80px] flex flex-col justify-center">
+                      <div className="text-xs text-gray-600 mb-1">
+                        12 августа 2025
+                      </div>
+                      
+                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                        Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW
+                      </h3>
+                      
+                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                        Новая модель беговой дорожки с улучшенными характеристиками
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+
+                {/* 6-й контейнер */}
+                <div>
+                  <Link
+                    to="/news/novinka-cardiopower-t40-new-6"
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                  >
+                    <div className="relative h-[100px]">
+                      <img
+                        src="/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png"
+                        alt="Беговая дорожка CardioPower T40 NEW"
+                        className="w-full h-full object-cover"
+                      />
+                      
+                      {/* Category Badge */}
+                      <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                        НОВИНКА
+                      </div>
+                    </div>
+                    
+                    <div className="p-3 h-[80px] flex flex-col justify-center">
+                      <div className="text-xs text-gray-600 mb-1">
+                        11 августа 2025
+                      </div>
+                      
+                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                        Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW
+                      </h3>
+                      
+                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                        Новая модель беговой дорожки с улучшенными характеристиками
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+
+                {/* 7-й контейнер */}
+                <div>
+                  <Link
+                    to="/news/novinka-cardiopower-t40-new-7"
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                  >
+                    <div className="relative h-[100px]">
+                      <img
+                        src="/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png"
+                        alt="Беговая дорожка CardioPower T40 NEW"
+                        className="w-full h-full object-cover"
+                      />
+                      
+                      {/* Category Badge */}
+                      <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                        НОВИНКА
+                      </div>
+                    </div>
+                    
+                    <div className="p-3 h-[80px] flex flex-col justify-center">
+                      <div className="text-xs text-gray-600 mb-1">
+                        10 августа 2025
+                      </div>
+                      
+                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                        Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW
+                      </h3>
+                      
+                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                        Новая модель беговой дорожки с улучшенными характеристиками
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+
+                {/* 8-й контейнер */}
+                <div>
+                  <Link
+                    to="/news/novinka-cardiopower-t40-new-8"
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                  >
+                    <div className="relative h-[100px]">
+                      <img
+                        src="/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png"
+                        alt="Беговая дорожка CardioPower T40 NEW"
+                        className="w-full h-full object-cover"
+                      />
+                      
+                      {/* Category Badge */}
+                      <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                        НОВИНКА
+                      </div>
+                    </div>
+                    
+                    <div className="p-3 h-[80px] flex flex-col justify-center">
+                      <div className="text-xs text-gray-600 mb-1">
+                        9 августа 2025
+                      </div>
+                      
+                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                        Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW
+                      </h3>
+                      
+                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                        Новая модель беговой дорожки с улучшенными характеристиками
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+
+                {/* 9-й контейнер */}
+                <div>
+                  <Link
+                    to="/news/novinka-cardiopower-t40-new-9"
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                  >
+                    <div className="relative h-[100px]">
+                      <img
+                        src="/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png"
+                        alt="Беговая дорожка CardioPower T40 NEW"
+                        className="w-full h-full object-cover"
+                      />
+                      
+                      {/* Category Badge */}
+                      <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                        НОВИНКА
+                      </div>
+                    </div>
+                    
+                    <div className="p-3 h-[80px] flex flex-col justify-center">
+                      <div className="text-xs text-gray-600 mb-1">
+                        8 августа 2025
+                      </div>
+                      
+                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                        Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW
+                      </h3>
+                      
+                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                        Новая модель беговой дорожки с улучшенными характеристиками
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+
+                {/* 10-й контейнер */}
+                <div>
+                  <Link
+                    to="/news/novinka-cardiopower-t40-new-10"
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                  >
+                    <div className="relative h-[100px]">
+                      <img
+                        src="/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png"
+                        alt="Беговая дорожка CardioPower T40 NEW"
+                        className="w-full h-full object-cover"
+                      />
+                      
+                      {/* Category Badge */}
+                      <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                        НОВИНКА
+                      </div>
+                    </div>
+                    
+                    <div className="p-3 h-[80px] flex flex-col justify-center">
+                      <div className="text-xs text-gray-600 mb-1">
+                        7 августа 2025
+                      </div>
+                      
+                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                        Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW
+                      </h3>
+                      
+                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                        Новая модель беговой дорожки с улучшенными характеристиками
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+
               {/* Pagination */}
               <div className="flex justify-center mb-12">
                 <div className="flex space-x-2">
