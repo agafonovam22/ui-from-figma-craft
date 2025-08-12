@@ -27,8 +27,9 @@ const NewsArticle: React.FC = () => {
                   articleSlug === 'cardiopower-t40-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW' :
                   articleSlug === 'cardiopower-s20-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S20' :
                   articleSlug === 'cardiopower-tt30-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower ТТ30' :
-                  articleSlug === 'cardiopower-s55-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S55' :
-                  'Wellfitness PRO в Сколково 2023'}
+                   articleSlug === 'cardiopower-s55-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S55' :
+                   articleSlug === 'cardiopower-s50-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S50' :
+                   'Wellfitness PRO в Сколково 2023'}
               </span>
             </div>
             
@@ -38,8 +39,9 @@ const NewsArticle: React.FC = () => {
                articleSlug === 'cardiopower-t40-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW' :
                articleSlug === 'cardiopower-s20-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S20' :
                articleSlug === 'cardiopower-tt30-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower ТТ30' :
-               articleSlug === 'cardiopower-s55-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S55' :
-               'Wellfitness PRO в Сколково 2023'}
+                articleSlug === 'cardiopower-s55-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S55' :
+                articleSlug === 'cardiopower-s50-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S50' :
+                'Wellfitness PRO в Сколково 2023'}
             </h1>
           </div>
         </section>
@@ -103,6 +105,12 @@ const NewsArticle: React.FC = () => {
                           Беговая дорожка<br />
                           CardioPower S55
                         </>
+                      ) : articleSlug === 'cardiopower-s50-v-prodazhe' ? (
+                        <>
+                          Новинка - Уже в продаже:<br />
+                          Беговая дорожка<br />
+                          CardioPower S50
+                        </>
                       ) : (
                         <>
                           Wellfitness PRO<br />
@@ -165,9 +173,11 @@ const NewsArticle: React.FC = () => {
                     'Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower.' :
                     articleSlug === 'cardiopower-tt30-v-prodazhe' ?
                     'Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower.' :
-                    articleSlug === 'cardiopower-s55-v-prodazhe' ?
-                    'Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower.' :
-                    'В минувшие выходные в Сколково прошло крупнейшее мероприятие фитнес-России'
+                     articleSlug === 'cardiopower-s55-v-prodazhe' ?
+                     'Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower.' :
+                     articleSlug === 'cardiopower-s50-v-prodazhe' ?
+                     'Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower.' :
+                     'В минувшие выходные в Сколково прошло крупнейшее мероприятие фитнес-России'
                   }
                 </h2>
                 
@@ -181,9 +191,11 @@ const NewsArticle: React.FC = () => {
                       'Беговая дорожка CardioPower S20\n\nБеговая дорожка CardioPower S20 одна из самых компактных не только среди стационарных но и среди ультра-компактных беговых дорожек для дома. При этом модель имеет потрясающие габариты бегового полотна, при длине дорожки 145 см, беговое полотно составляет 130 см в длину и 47 см в ширину, это позволяет комфортно заниматься людям высокого роста и разной комплекции.' :
                       articleSlug === 'cardiopower-tt30-v-prodazhe' ?
                       'Беговая дорожка CardioPower ТТ30' :
-                      articleSlug === 'cardiopower-s55-v-prodazhe' ?
-                      'Беговая дорожка CardioPower S55' :
-                      'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес.Россия: бизнес-форум, фитнес-конвенция, выставка.'
+                       articleSlug === 'cardiopower-s55-v-prodazhe' ?
+                       'Беговая дорожка CardioPower S55' :
+                       articleSlug === 'cardiopower-s50-v-prodazhe' ?
+                       'Беговая дорожка CardioPower S50' :
+                       'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес.Россия: бизнес-форум, фитнес-конвенция, выставка.'
                     }
                   </p>
                 </div>
@@ -200,9 +212,11 @@ const NewsArticle: React.FC = () => {
                     '/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png' :
                     articleSlug === 'cardiopower-tt30-v-prodazhe' ?
                     '/lovable-uploads/6ca6c3e1-17e7-4d1a-9c84-8018e1af3530.png' :
-                    articleSlug === 'cardiopower-s55-v-prodazhe' ?
-                    '/lovable-uploads/3fe4b3b1-63a2-4ed1-b873-07b7de639ca1.png' :
-                    '/lovable-uploads/2fad94b1-56ad-4c2d-8f5c-321bacbfbc30.png'
+                     articleSlug === 'cardiopower-s55-v-prodazhe' ?
+                     '/lovable-uploads/3fe4b3b1-63a2-4ed1-b873-07b7de639ca1.png' :
+                     articleSlug === 'cardiopower-s50-v-prodazhe' ?
+                     '/lovable-uploads/3b753ca2-42c7-416f-9886-af8374196645.png' :
+                     '/lovable-uploads/2fad94b1-56ad-4c2d-8f5c-321bacbfbc30.png'
                   }
                   alt={articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
                     'Новость для дилеров WellFitness' :
@@ -212,9 +226,11 @@ const NewsArticle: React.FC = () => {
                     'Беговая дорожка CardioPower S20' :
                     articleSlug === 'cardiopower-tt30-v-prodazhe' ?
                     'Беговая дорожка CardioPower ТТ30' :
-                    articleSlug === 'cardiopower-s55-v-prodazhe' ?
-                    'Беговая дорожка CardioPower S55' :
-                    'Wellfitness PRO в Сколково'
+                     articleSlug === 'cardiopower-s55-v-prodazhe' ?
+                     'Беговая дорожка CardioPower S55' :
+                     articleSlug === 'cardiopower-s50-v-prodazhe' ?
+                     'Беговая дорожка CardioPower S50' :
+                     'Wellfitness PRO в Сколково'
                   }
                   className="w-full h-[400px] object-cover rounded-lg"
                 />
@@ -224,7 +240,7 @@ const NewsArticle: React.FC = () => {
         </section>
 
         {/* First additional section - Text left, Image right - скрыто для страницы дилеров и CardioPower T40 NEW */}
-        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-v-prodazhe' && articleSlug !== 'cardiopower-s55-v-prodazhe' && (
+        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-v-prodazhe' && articleSlug !== 'cardiopower-s55-v-prodazhe' && articleSlug !== 'cardiopower-s50-v-prodazhe' && (
         <section className="py-16 bg-gray-50">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -255,7 +271,7 @@ const NewsArticle: React.FC = () => {
         )}
 
         {/* Second additional section - Image left, Extended text right - скрыто для страницы дилеров и CardioPower T40 NEW */}
-        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-v-prodazhe' && articleSlug !== 'cardiopower-s55-v-prodazhe' && (
+        {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-v-prodazhe' && articleSlug !== 'cardiopower-s55-v-prodazhe' && articleSlug !== 'cardiopower-s50-v-prodazhe' && (
         <section className="py-16">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">

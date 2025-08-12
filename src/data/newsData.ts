@@ -92,6 +92,19 @@ export const newsItems: NewsItem[] = [
     size: 'large',
     slug: 'cardiopower-s55-v-prodazhe',
     isActive: false
+  },
+  {
+    id: 23,
+    type: 'Новости',
+    category: 'НОВОСТИ',
+    categoryColor: 'bg-blue-600',
+    date: '10 августа 2025',
+    title: 'Новинка - Уже в продаже: Беговая дорожка CardioPower S50',
+    description: 'Беговая дорожка CardioPower S50 - инновационная модель с профессиональными характеристиками для интенсивных тренировок.',
+    image: '/lovable-uploads/3b753ca2-42c7-416f-9886-af8374196645.png',
+    size: 'large',
+    slug: 'cardiopower-s50-v-prodazhe',
+    isActive: false
   }
 ];
 
