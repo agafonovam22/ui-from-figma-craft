@@ -41,7 +41,7 @@ const NewsArticle: React.FC = () => {
         {/* Banner */}
         <section className="w-full">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="bg-gray-100 overflow-hidden relative" style={{ height: articleSlug === 'cardiopower-t40-new-v-prodazhe' ? '500px' : '300px' }}>
+            <div className="bg-gray-100 overflow-hidden relative" style={{ height: '300px' }}>
               <div className="py-12 relative h-full">
                 <div className="flex items-center justify-between h-full">
                   {/* Левая часть с текстом */}
@@ -91,20 +91,12 @@ const NewsArticle: React.FC = () => {
                     {/* Убираем даты со всех баннеров в разделе новостей */}
                   </div>
                   
-                  {/* Правая часть */}
-                  <div className="absolute" style={{ right: '60px', top: articleSlug === 'cardiopower-t40-new-v-prodazhe' ? '20px' : '10px' }}>
+                  {/* Правая часть - убираем изображение */}
+                  <div className="absolute" style={{ right: '60px', top: '10px' }}>
                     <div className="relative">
-                      {articleSlug === 'cardiopower-t40-new-v-prodazhe' ? (
-                        <img 
-                          src="/src/assets/cardiopower-t40-new-full.jpg"
-                          alt="Беговая дорожка CardioPower T40 NEW"
-                          className="w-[400px] h-[460px] object-contain"
-                        />
-                      ) : (
-                        <div className="w-[350px] h-[350px] bg-[#F53B49] rounded-full flex items-center justify-center">
-                          {/* Убрали изображение */}
-                        </div>
-                      )}
+                      <div className="w-[350px] h-[350px] bg-[#F53B49] rounded-full flex items-center justify-center">
+                        {/* Убрали изображение */}
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -49,7 +49,7 @@ export const newsItems: NewsItem[] = [
     date: '16.11.2023',
     title: 'Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW',
     description: 'Представляем новую модель профессиональной беговой дорожки CardioPower T40 NEW с улучшенными характеристиками и современным дизайном.',
-    image: '/src/assets/cardiopower-t40-new-full.jpg',
+    image: '/lovable-uploads/cardiopower-t40-new.jpg',
     size: 'large',
     slug: 'cardiopower-t40-new-v-prodazhe',
     isActive: false
