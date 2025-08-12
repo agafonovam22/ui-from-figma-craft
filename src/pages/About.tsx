@@ -1025,13 +1025,13 @@ const About: React.FC = () => {
                 {/* 7-й контейнер */}
                 <div>
                   <Link
-                    to="/news/novinka-cardiopower-t40-new-7"
+                    to="/news/cardiopower-s50-v-prodazhe"
                     className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
                   >
                     <div className="relative h-[100px]">
                       <img
-                        src="/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png"
-                        alt="Беговая дорожка CardioPower T40 NEW"
+                        src="/lovable-uploads/3b753ca2-42c7-416f-9886-af8374196645.png"
+                        alt="Беговая дорожка CardioPower S50"
                         className="w-full h-full object-cover"
                       />
                       
@@ -1047,11 +1047,11 @@ const About: React.FC = () => {
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                        Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW
+                        Новинка - Уже в продаже: Беговая дорожка CardioPower S50
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Новая модель беговой дорожки с улучшенными характеристиками
+                        Беговая дорожка с профессиональными характеристиками
                       </p>
                     </div>
                   </Link>
