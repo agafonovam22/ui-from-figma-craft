@@ -796,42 +796,117 @@ const About: React.FC = () => {
         {activeTab === 'news' && (
           <section className="py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-              {/* News Grid */}
-              <div className="grid grid-cols-3 gap-6 mb-12">
-                {newsItems.map((item) => (
+              {/* News Grid - Custom Layout like Screenshot */}
+              <div className="grid grid-cols-12 gap-4 mb-12">
+                {/* Первый контейнер - большой вертикальный прямоугольник */}
+                <div className="col-span-12 md:col-span-6">
                   <Link
-                    key={item.id}
-                    to={`/news/${item.slug}`}
-                    className={`${getCardClasses(item.size)} group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer`}
+                    to={`/news/${newsItems[0]?.slug}`}
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
                   >
                     <div className="relative">
                       <img
-                        src={item.image}
-                        alt={item.title}
-                        className={`w-full ${getImageHeight(item.size)} object-cover`}
+                        src={newsItems[0]?.image}
+                        alt={newsItems[0]?.title}
+                        className="w-full h-[400px] object-cover"
                       />
                       
                       {/* Category Badge */}
-                      <div className={`absolute top-4 left-4 ${item.categoryColor} text-white px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide`}>
-                        {item.category}
+                      <div className={`absolute top-4 left-4 ${newsItems[0]?.categoryColor} text-white px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide`}>
+                        {newsItems[0]?.category}
                       </div>
                     </div>
                     
                     <div className="p-6">
                       <div className="text-sm text-gray-600 mb-3">
-                        {item.date}
+                        {newsItems[0]?.date}
                       </div>
                       
-                      <h3 className="font-semibold text-lg mb-3 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                        {item.title}
+                      <h3 className="font-semibold text-xl mb-3 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                        {newsItems[0]?.title}
                       </h3>
                       
                       <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
-                        {item.description}
+                        {newsItems[0]?.description}
                       </p>
                     </div>
                   </Link>
-                ))}
+                </div>
+
+                {/* Правая колонка */}
+                <div className="col-span-12 md:col-span-6 flex flex-col gap-4">
+                  {/* Второй контейнер - узкий горизонтальный прямоугольник */}
+                  <div className="flex-1">
+                    <Link
+                      to={`/news/${newsItems[1]?.slug}`}
+                      className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
+                    >
+                      <div className="flex h-full">
+                        <div className="relative w-1/2">
+                          <img
+                            src={newsItems[1]?.image}
+                            alt={newsItems[1]?.title}
+                            className="w-full h-full object-cover"
+                          />
+                          
+                          {/* Category Badge */}
+                          <div className={`absolute top-2 left-2 ${newsItems[1]?.categoryColor} text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide`}>
+                            {newsItems[1]?.category}
+                          </div>
+                        </div>
+                        
+                        <div className="w-1/2 p-4 flex flex-col justify-center">
+                          <div className="text-xs text-gray-600 mb-2">
+                            {newsItems[1]?.date}
+                          </div>
+                          
+                          <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                            {newsItems[1]?.title}
+                          </h3>
+                          
+                          <p className="text-xs text-gray-600 line-clamp-3 leading-relaxed">
+                            {newsItems[1]?.description}
+                          </p>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+
+                  {/* Третий контейнер - маленький вертикальный прямоугольник */}
+                  <div className="flex-1">
+                    <Link
+                      to={`/news/${newsItems[2]?.slug}`}
+                      className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
+                    >
+                      <div className="relative">
+                        <img
+                          src={newsItems[2]?.image}
+                          alt={newsItems[2]?.title}
+                          className="w-full h-[180px] object-cover"
+                        />
+                        
+                        {/* Category Badge */}
+                        <div className={`absolute top-2 left-2 ${newsItems[2]?.categoryColor} text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide`}>
+                          {newsItems[2]?.category}
+                        </div>
+                      </div>
+                      
+                      <div className="p-4">
+                        <div className="text-xs text-gray-600 mb-2">
+                          {newsItems[2]?.date}
+                        </div>
+                        
+                        <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                          {newsItems[2]?.title}
+                        </h3>
+                        
+                        <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                          {newsItems[2]?.description}
+                        </p>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
               </div>
 
               {/* Pagination */}
