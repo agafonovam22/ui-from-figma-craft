@@ -1134,14 +1134,14 @@ const About: React.FC = () => {
                 <div className="col-span-6">
                   <Link
                     to="/news/cardiopower-tt35-v-prodazhe"
-                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
                   >
-                    <div className="flex h-full">
-                      <div className="relative w-1/2">
+                    <div className="flex h-[280px]">
+                      <div className="relative w-1/2 h-[280px]">
                         <img
                           src="/lovable-uploads/f723c377-cd62-435f-86d4-71f10aca1c8f.png"
                           alt="Беговая дорожка CardioPower TT35"
-                          className="w-full h-full object-cover"
+                          className="w-full h-[280px] object-cover"
                         />
                         
                         {/* Category Badge */}
