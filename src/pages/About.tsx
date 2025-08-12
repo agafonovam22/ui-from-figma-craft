@@ -836,7 +836,7 @@ const About: React.FC = () => {
                 {/* Правая колонка */}
                 <div className="col-span-12 md:col-span-6 flex flex-col gap-4">
                   {/* Второй контейнер - узкий горизонтальный прямоугольник */}
-                  <div className="flex-1">
+                  <div className="flex-[2]">
                     <Link
                       to={`/news/${newsItems[1]?.slug}`}
                       className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
@@ -873,7 +873,7 @@ const About: React.FC = () => {
                   </div>
 
                   {/* Третий контейнер - маленький вертикальный прямоугольник */}
-                  <div className="flex-1">
+                  <div className="flex-[1]">
                     <Link
                       to={`/news/${newsItems[2]?.slug}`}
                       className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
@@ -882,7 +882,7 @@ const About: React.FC = () => {
                         <img
                           src={newsItems[2]?.image}
                           alt={newsItems[2]?.title}
-                          className="w-full h-[180px] object-cover"
+                          className="w-full h-[90px] object-cover"
                         />
                         
                         {/* Category Badge */}
@@ -891,12 +891,12 @@ const About: React.FC = () => {
                         </div>
                       </div>
                       
-                      <div className="p-4">
-                        <div className="text-xs text-gray-600 mb-2">
+                      <div className="p-3">
+                        <div className="text-xs text-gray-600 mb-1">
                           {newsItems[2]?.date}
                         </div>
                         
-                        <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                        <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                           {newsItems[2]?.title}
                         </h3>
                         
