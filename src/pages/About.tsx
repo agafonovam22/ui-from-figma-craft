@@ -990,13 +990,13 @@ const About: React.FC = () => {
                 {/* 6-й контейнер */}
                 <div>
                   <Link
-                    to="/news/novinka-cardiopower-t40-new-6"
+                    to="/news/cardiopower-s55-v-prodazhe"
                     className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
                   >
                     <div className="relative h-[100px]">
                       <img
-                        src="/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png"
-                        alt="Беговая дорожка CardioPower T40 NEW"
+                        src="/lovable-uploads/3fe4b3b1-63a2-4ed1-b873-07b7de639ca1.png"
+                        alt="Беговая дорожка CardioPower S55"
                         className="w-full h-full object-cover"
                       />
                       
@@ -1012,7 +1012,7 @@ const About: React.FC = () => {
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                        Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW
+                        Новинка - Уже в продаже: Беговая дорожка CardioPower S55
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
