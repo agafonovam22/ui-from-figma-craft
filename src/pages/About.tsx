@@ -812,16 +812,16 @@ const About: React.FC = () => {
                         alt={newsItems[0]?.title}
                         className="w-full h-[350px] object-cover"
                       />
-                      
-                      {/* Category Badge */}
-                      <div className={`absolute top-4 left-4 ${newsItems[0]?.categoryColor} text-white px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide`}>
-                        {newsItems[0]?.category}
-                      </div>
                     </div>
                     
                     <div className="p-6">
-                      <div className="text-sm text-gray-600 mb-3 text-right">
-                        {newsItems[0]?.date}
+                      <div className="flex justify-between items-center mb-3">
+                        <div className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                          НОВОСТИ
+                        </div>
+                        <div className="text-sm text-gray-600">
+                          {newsItems[0]?.date}
+                        </div>
                       </div>
                       
                       <h3 className="font-semibold text-lg mb-3 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
@@ -849,16 +849,16 @@ const About: React.FC = () => {
                           alt={newsItems[1]?.title}
                           className="w-full h-[120px] object-cover"
                         />
-                        
-                        {/* Category Badge */}
-                        <div className={`absolute top-2 left-2 ${newsItems[1]?.categoryColor} text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide`}>
-                          {newsItems[1]?.category}
-                        </div>
                       </div>
                       
                       <div className="p-4 h-[130px] flex flex-col justify-between">
-                        <div className="text-xs text-gray-600 mb-2 text-right">
-                          {newsItems[1]?.date}
+                        <div className="flex justify-between items-center mb-2">
+                          <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                            НОВОСТИ
+                          </div>
+                          <div className="text-xs text-gray-600">
+                            {newsItems[1]?.date}
+                          </div>
                         </div>
                         
                         <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-3 leading-tight">
@@ -886,18 +886,18 @@ const About: React.FC = () => {
                             alt={newsItems[2]?.title}
                             className="w-full h-full object-cover"
                           />
-                          
-                          {/* Category Badge */}
-                          <div className={`absolute top-2 left-2 ${newsItems[2]?.categoryColor} text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide`}>
-                            {newsItems[2]?.category}
-                          </div>
                         </div>
                         
                         <div className="p-3 h-[80px] flex flex-col justify-center">
-                          <div className="text-xs text-gray-600 mb-1 text-right">
-                            16.11.2023
+                          <div className="flex justify-between items-center mb-1">
+                            <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                              НОВОСТИ
+                            </div>
+                            <div className="text-xs text-gray-600">
+                              16.11.2023
+                            </div>
                           </div>
-                           
+                          
                           <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                             {newsItems[2]?.title}
                           </h3>
@@ -921,16 +921,16 @@ const About: React.FC = () => {
                             alt="Беговая дорожка CardioPower S20"
                             className="w-full h-full object-cover"
                           />
-                          
-                          {/* Category Badge */}
-                          <div className={`absolute top-2 left-2 ${newsItems[3]?.categoryColor} text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide`}>
-                            {newsItems[3]?.category}
-                          </div>
                         </div>
                         
                         <div className="p-3 h-[80px] flex flex-col justify-center">
-                          <div className="text-xs text-gray-600 mb-1 text-right">
-                            9.11.2023
+                          <div className="flex justify-between items-center mb-1">
+                            <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                              НОВОСТИ
+                            </div>
+                            <div className="text-xs text-gray-600">
+                              9.11.2023
+                            </div>
                           </div>
                           
                           <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
@@ -962,16 +962,16 @@ const About: React.FC = () => {
                         alt="Беговая дорожка CardioPower ТТ30"
                         className="w-full h-full object-cover"
                       />
-                      
-                      {/* Category Badge */}
-                      <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                        НОВИНКА
-                      </div>
                     </div>
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="text-xs text-gray-600 mb-1 text-right">
-                        9.11.2023
+                      <div className="flex justify-between items-center mb-1">
+                        <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                          НОВОСТИ
+                        </div>
+                        <div className="text-xs text-gray-600">
+                          9.11.2023
+                        </div>
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
@@ -997,16 +997,16 @@ const About: React.FC = () => {
                         alt="Беговая дорожка CardioPower S55"
                         className="w-full h-full object-cover"
                       />
-                      
-                      {/* Category Badge */}
-                      <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                        НОВИНКА
-                      </div>
                     </div>
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="text-xs text-gray-600 mb-1 text-right">
-                        9.11.2023
+                      <div className="flex justify-between items-center mb-1">
+                        <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                          НОВОСТИ
+                        </div>
+                        <div className="text-xs text-gray-600">
+                          9.11.2023
+                        </div>
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
@@ -1032,16 +1032,16 @@ const About: React.FC = () => {
                         alt="Беговая дорожка CardioPower S50"
                         className="w-full h-full object-cover"
                       />
-                      
-                      {/* Category Badge */}
-                      <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                        НОВИНКА
-                      </div>
                     </div>
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="text-xs text-gray-600 mb-1 text-right">
-                        9.11.2023
+                      <div className="flex justify-between items-center mb-1">
+                        <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                          НОВОСТИ
+                        </div>
+                        <div className="text-xs text-gray-600">
+                          9.11.2023
+                        </div>
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
@@ -1067,16 +1067,16 @@ const About: React.FC = () => {
                         alt="Эллиптический тренажер CardioPower X48"
                         className="w-full h-full object-cover"
                       />
-                      
-                      {/* Category Badge */}
-                      <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                        НОВИНКА
-                      </div>
                     </div>
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="text-xs text-gray-600 mb-1 text-right">
-                        17.10.2023
+                      <div className="flex justify-between items-center mb-1">
+                        <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                          НОВОСТИ
+                        </div>
+                        <div className="text-xs text-gray-600">
+                          17.10.2023
+                        </div>
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
@@ -1105,16 +1105,16 @@ const About: React.FC = () => {
                         alt="Эллиптический тренажер CardioPower X45"
                         className="w-full h-full object-cover"
                       />
-                      
-                      {/* Category Badge */}
-                      <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                        НОВИНКА
-                      </div>
                     </div>
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="text-xs text-gray-600 mb-1 text-right">
-                        17.10.2023
+                      <div className="flex justify-between items-center mb-1">
+                        <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                          НОВОСТИ
+                        </div>
+                        <div className="text-xs text-gray-600">
+                          17.10.2023
+                        </div>
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
@@ -1140,16 +1140,16 @@ const About: React.FC = () => {
                           alt="Беговая дорожка CardioPower TT35"
                           className="w-full h-[160px] object-cover"
                         />
-                        
-                        {/* Category Badge */}
-                        <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                          НОВИНКА
-                        </div>
                       </div>
                       
                       <div className="p-4 h-[120px] flex flex-col justify-start">
-                        <div className="text-xs text-gray-600 mb-2 text-right">
-                          26.09.2023
+                        <div className="flex justify-between items-center mb-2">
+                          <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                            НОВОСТИ
+                          </div>
+                          <div className="text-xs text-gray-600">
+                            26.09.2023
+                          </div>
                         </div>
                         
                         <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
@@ -1175,16 +1175,16 @@ const About: React.FC = () => {
                         alt="Гребной тренажёр CardioPower RE50"
                         className="w-full h-full object-cover"
                       />
-                      
-                      {/* Category Badge */}
-                      <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                        НОВИНКА
-                      </div>
                     </div>
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="text-xs text-gray-600 mb-1 text-right">
-                        6.09.2023
+                      <div className="flex justify-between items-center mb-1">
+                        <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                          НОВОСТИ
+                        </div>
+                        <div className="text-xs text-gray-600">
+                          6.09.2023
+                        </div>
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
