@@ -1138,7 +1138,7 @@ const About: React.FC = () => {
                         <img
                           src="/lovable-uploads/f723c377-cd62-435f-86d4-71f10aca1c8f.png"
                           alt="Беговая дорожка CardioPower TT35"
-                          className="w-full h-[200px] object-cover"
+                          className="w-full h-[160px] object-cover"
                         />
                         
                         {/* Category Badge */}
@@ -1147,7 +1147,7 @@ const About: React.FC = () => {
                         </div>
                       </div>
                       
-                      <div className="p-4 h-[130px] flex flex-col justify-between">
+                      <div className="p-4 h-[120px] flex flex-col justify-start">
                         <div className="text-xs text-gray-600 mb-2 text-right">
                           26.09.2023
                         </div>
