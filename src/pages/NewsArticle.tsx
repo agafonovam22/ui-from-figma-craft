@@ -246,6 +246,21 @@ const NewsArticle: React.FC = () => {
                        'В минувшие выходные в Сколково, в БЦ «Альматея» прошло крупнейшее мероприятие Фитнес.Россия: бизнес-форум, фитнес-конвенция, выставка.'
                     }
                   </p>
+                  
+                  {/* Кнопка "Перейти" для страниц с новинками */}
+                  {(articleSlug === 'cardiopower-t40-new-v-prodazhe' ||
+                    articleSlug === 'cardiopower-s20-new-v-prodazhe' ||
+                    articleSlug === 'cardiopower-tt30-v-prodazhe' ||
+                    articleSlug === 'cardiopower-s55-v-prodazhe' ||
+                    articleSlug === 'cardiopower-s50-v-prodazhe' ||
+                    articleSlug === 'cardiopower-x48-v-prodazhe' ||
+                    articleSlug === 'cardiopower-x45-v-prodazhe' ||
+                    articleSlug === 'cardiopower-tt35-v-prodazhe' ||
+                    articleSlug === 'cardiopower-re50-v-prodazhe') && (
+                    <button className="bg-white border-2 border-[#F53B49] text-[#F53B49] px-6 py-3 rounded-lg font-medium hover:bg-[#F53B49] hover:text-white transition-all duration-300">
+                      Перейти
+                    </button>
+                  )}
                 </div>
               </div>
 
