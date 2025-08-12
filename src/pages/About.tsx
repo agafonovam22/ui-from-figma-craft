@@ -875,9 +875,9 @@ const About: React.FC = () => {
                   </div>
 
                   {/* Третий и четвертый контейнеры - квадратные, выровнены по нижней границе */}
-                  <div className="flex gap-4 flex-1 items-end">
-                    {/* Третий контейнер */}
-                    <div className="flex-1">
+                  <div className="flex gap-[2px] flex-1 items-end">
+                    {/* Третий контейнер - сделаем пошире */}
+                    <div className="flex-[1.6]">
                       <Link
                         to={`/news/${newsItems[2]?.slug}`}
                         className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
