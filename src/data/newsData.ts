@@ -131,6 +131,19 @@ export const newsItems: NewsItem[] = [
     size: 'large',
     slug: 'cardiopower-x45-v-prodazhe',
     isActive: false
+  },
+  {
+    id: 26,
+    type: 'Новости',
+    category: 'НОВОСТИ',
+    categoryColor: 'bg-blue-600',
+    date: '7 августа 2025',
+    title: 'Новинка - Уже в продаже: Беговая дорожка CardioPower TT35',
+    description: 'Беговая дорожка CardioPower TT35 - современная модель с передовыми технологиями для эффективных тренировок.',
+    image: '/lovable-uploads/f723c377-cd62-435f-86d4-71f10aca1c8f.png',
+    size: 'large',
+    slug: 'cardiopower-tt35-v-prodazhe',
+    isActive: false
   }
 ];
 
