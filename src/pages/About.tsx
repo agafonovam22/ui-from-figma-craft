@@ -880,9 +880,9 @@ const About: React.FC = () => {
                     <div className="flex-1">
                       <Link
                         to={`/news/${newsItems[2]?.slug}`}
-                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[220px]"
+                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
                       >
-                        <div className="relative h-[120px]">
+                        <div className="relative h-[200px]">
                           <img
                             src="/lovable-uploads/ed66472b-775d-46cd-84e0-7dc644a9aaad.png"
                             alt={newsItems[2]?.title}
@@ -895,7 +895,7 @@ const About: React.FC = () => {
                           </div>
                         </div>
                         
-                        <div className="p-3 h-[100px] flex flex-col justify-center">
+                        <div className="p-3 h-[80px] flex flex-col justify-center">
                           <div className="text-xs text-gray-600 mb-1 text-right">
                             16.11.2023
                           </div>
@@ -915,9 +915,9 @@ const About: React.FC = () => {
                     <div className="flex-1">
                       <Link
                         to={`/news/${newsItems[3]?.slug}`}
-                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[220px]"
+                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
                       >
-                        <div className="relative h-[120px]">
+                        <div className="relative h-[200px]">
                           <img
                             src="/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png"
                             alt="Беговая дорожка CardioPower S20"
@@ -930,7 +930,7 @@ const About: React.FC = () => {
                           </div>
                         </div>
                         
-                        <div className="p-3 h-[100px] flex flex-col justify-center">
+                        <div className="p-3 h-[80px] flex flex-col justify-center">
                           <div className="text-xs text-gray-600 mb-1 text-right">
                             9.11.2023
                           </div>
@@ -956,9 +956,9 @@ const About: React.FC = () => {
                 <div>
                   <Link
                     to="/news/cardiopower-tt30-v-prodazhe"
-                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
                   >
-                    <div className="relative h-[100px]">
+                    <div className="relative h-[200px]">
                       <img
                         src="/lovable-uploads/578522f8-4322-4ee6-b5f6-c136e100a67d.png"
                         alt="Беговая дорожка CardioPower ТТ30"
@@ -991,9 +991,9 @@ const About: React.FC = () => {
                 <div>
                   <Link
                     to="/news/cardiopower-s55-v-prodazhe"
-                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
                   >
-                    <div className="relative h-[100px]">
+                    <div className="relative h-[200px]">
                       <img
                         src="/lovable-uploads/3fe4b3b1-63a2-4ed1-b873-07b7de639ca1.png"
                         alt="Беговая дорожка CardioPower S55"
@@ -1026,9 +1026,9 @@ const About: React.FC = () => {
                 <div>
                   <Link
                     to="/news/cardiopower-s50-v-prodazhe"
-                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
                   >
-                    <div className="relative h-[100px]">
+                    <div className="relative h-[200px]">
                       <img
                         src="/lovable-uploads/3b753ca2-42c7-416f-9886-af8374196645.png"
                         alt="Беговая дорожка CardioPower S50"
@@ -1061,9 +1061,9 @@ const About: React.FC = () => {
                 <div>
                   <Link
                     to="/news/cardiopower-x48-v-prodazhe"
-                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
                   >
-                    <div className="relative h-[100px]">
+                    <div className="relative h-[200px]">
                       <img
                         src="/lovable-uploads/8f5c4260-9931-4f3a-9ae2-b0f6122e8f2f.png"
                         alt="Эллиптический тренажер CardioPower X48"
@@ -1099,9 +1099,9 @@ const About: React.FC = () => {
                 <div className="col-span-3">
                   <Link
                     to="/news/cardiopower-x45-v-prodazhe"
-                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
                   >
-                    <div className="relative h-[100px]">
+                    <div className="relative h-[200px]">
                       <img
                         src="/lovable-uploads/18cd3093-b7ac-453b-8467-1fec09fb24fc.png"
                         alt="Эллиптический тренажер CardioPower X45"
@@ -1171,9 +1171,9 @@ const About: React.FC = () => {
                 <div className="col-span-3">
                   <Link
                     to="/news/cardiopower-re50-v-prodazhe"
-                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
                   >
-                    <div className="relative h-[100px]">
+                    <div className="relative h-[200px]">
                       <img
                         src="/lovable-uploads/fac5ea13-b62c-4a6f-8362-0195de2226a6.png"
                         alt="Гребной тренажёр CardioPower RE50"
