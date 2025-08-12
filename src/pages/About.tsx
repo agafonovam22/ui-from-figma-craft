@@ -1093,10 +1093,10 @@ const About: React.FC = () => {
                 </div>
               </div>
 
-              {/* Второй ряд - 2 контейнера */}
-              <div className="grid grid-cols-2 gap-4 mb-12">
-                {/* 9-й контейнер */}
-                 <div>
+              {/* Второй ряд - 3 контейнера: квадратный - вытянутый - квадратный */}
+              <div className="grid grid-cols-12 gap-4 mb-12">
+                {/* 9-й контейнер - квадратный */}
+                <div className="col-span-3">
                   <Link
                     to="/news/cardiopower-x45-v-prodazhe"
                     className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
@@ -1130,16 +1130,53 @@ const About: React.FC = () => {
                   </Link>
                 </div>
 
-                {/* 10-й контейнер */}
-                <div>
+                {/* 10-й контейнер - вытянутый */}
+                <div className="col-span-6">
                   <Link
                     to="/news/cardiopower-tt35-v-prodazhe"
                     className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
                   >
+                    <div className="flex h-full">
+                      <div className="relative w-1/2">
+                        <img
+                          src="/lovable-uploads/f723c377-cd62-435f-86d4-71f10aca1c8f.png"
+                          alt="Беговая дорожка CardioPower TT35"
+                          className="w-full h-full object-cover"
+                        />
+                        
+                        {/* Category Badge */}
+                        <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                          НОВИНКА
+                        </div>
+                      </div>
+                      
+                      <div className="w-1/2 p-4 flex flex-col justify-center">
+                        <div className="text-xs text-gray-600 mb-2">
+                          7 августа 2025
+                        </div>
+                        
+                        <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-3 leading-tight">
+                          Новинка - Уже в продаже: Беговая дорожка CardioPower TT35
+                        </h3>
+                        
+                        <p className="text-xs text-gray-600 line-clamp-4 leading-relaxed">
+                          Современная беговая дорожка с передовыми технологиями
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+
+                {/* 11-й контейнер - квадратный */}
+                <div className="col-span-3">
+                  <Link
+                    to="/news/novinka-cardiopower-new-11"
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
+                  >
                     <div className="relative h-[100px]">
                       <img
-                        src="/lovable-uploads/f723c377-cd62-435f-86d4-71f10aca1c8f.png"
-                        alt="Беговая дорожка CardioPower TT35"
+                        src="/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png"
+                        alt="Новинка CardioPower"
                         className="w-full h-full object-cover"
                       />
                       
@@ -1151,15 +1188,15 @@ const About: React.FC = () => {
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
                       <div className="text-xs text-gray-600 mb-1">
-                        7 августа 2025
+                        6 августа 2025
                       </div>
                       
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                        Новинка - Уже в продаже: Беговая дорожка CardioPower TT35
+                        Новинка - Уже в продаже: Тренажер CardioPower
                       </h3>
                       
                       <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Современная беговая дорожка с передовыми технологиями
+                        Новая модель тренажера с улучшенными характеристиками
                       </p>
                     </div>
                   </Link>
