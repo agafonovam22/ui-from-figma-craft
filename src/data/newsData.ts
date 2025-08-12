@@ -274,6 +274,32 @@ export const newsItems: NewsItem[] = [
     size: 'small',
     slug: 'specialnoe-predlozhenie-zaly',
     isActive: false
+  },
+  {
+    id: 21,
+    type: 'Новости',
+    category: 'НОВОСТИ',
+    categoryColor: 'bg-blue-600',
+    date: '12 августа 2025',
+    title: 'Новинка - Уже в продаже: Беговая дорожка CardioPower ТТ30',
+    description: 'Беговая дорожка CardioPower ТТ30 - новая модель с улучшенными характеристиками и современным дизайном для домашнего использования.',
+    image: '/lovable-uploads/6ca6c3e1-17e7-4d1a-9c84-8018e1af3530.png',
+    size: 'large',
+    slug: 'cardiopower-tt30-v-prodazhe',
+    isActive: false
+  },
+  {
+    id: 22,
+    type: 'Новости',
+    category: 'НОВОСТИ',
+    categoryColor: 'bg-blue-600',
+    date: '11 августа 2025',
+    title: 'Новинка - Уже в продаже: Беговая дорожка CardioPower S55',
+    description: 'Беговая дорожка CardioPower S55 - профессиональная модель с передовыми технологиями для эффективных тренировок.',
+    image: '/lovable-uploads/3fe4b3b1-63a2-4ed1-b873-07b7de639ca1.png',
+    size: 'large',
+    slug: 'cardiopower-s55-v-prodazhe',
+    isActive: false
   }
 ];
 
