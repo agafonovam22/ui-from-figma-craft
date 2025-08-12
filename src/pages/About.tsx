@@ -955,7 +955,7 @@ const About: React.FC = () => {
                 {/* 5-й контейнер */}
                 <div>
                   <Link
-                    to="/news/novinka-cardiopower-t40-new-5"
+                    to="/news/cardiopower-tt30-v-prodazhe"
                     className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[180px]"
                   >
                     <div className="relative h-[100px]">
