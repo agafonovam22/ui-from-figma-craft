@@ -1152,7 +1152,7 @@ const About: React.FC = () => {
                           26.09.2023
                         </div>
                         
-                        <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-3 leading-tight">
+                        <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                           Новинка - Уже в продаже: Беговая дорожка CardioPower TT35
                         </h3>
                         
