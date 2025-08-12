@@ -820,7 +820,7 @@ const About: React.FC = () => {
                     </div>
                     
                     <div className="p-6">
-                      <div className="text-sm text-gray-600 mb-3">
+                      <div className="text-sm text-gray-600 mb-3 text-right">
                         {newsItems[0]?.date}
                       </div>
                       
@@ -858,7 +858,7 @@ const About: React.FC = () => {
                         </div>
                         
                         <div className="w-1/2 p-4 flex flex-col justify-center">
-                          <div className="text-xs text-gray-600 mb-2">
+                          <div className="text-xs text-gray-600 mb-2 text-right">
                             {newsItems[1]?.date}
                           </div>
                           
@@ -896,7 +896,7 @@ const About: React.FC = () => {
                         </div>
                         
                         <div className="p-3 h-[80px] flex flex-col justify-center">
-                          <div className="text-xs text-gray-600 mb-1">
+                          <div className="text-xs text-gray-600 mb-1 text-right">
                             {newsItems[2]?.date}
                           </div>
                            
@@ -931,7 +931,7 @@ const About: React.FC = () => {
                         </div>
                         
                         <div className="p-3 h-[80px] flex flex-col justify-center">
-                          <div className="text-xs text-gray-600 mb-1">
+                          <div className="text-xs text-gray-600 mb-1 text-right">
                             {newsItems[3]?.date}
                           </div>
                           
@@ -972,7 +972,7 @@ const About: React.FC = () => {
                     </div>
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="text-xs text-gray-600 mb-1">
+                      <div className="text-xs text-gray-600 mb-1 text-right">
                         12 августа 2025
                       </div>
                       
@@ -1007,7 +1007,7 @@ const About: React.FC = () => {
                     </div>
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="text-xs text-gray-600 mb-1">
+                      <div className="text-xs text-gray-600 mb-1 text-right">
                         11 августа 2025
                       </div>
                       
@@ -1042,7 +1042,7 @@ const About: React.FC = () => {
                     </div>
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="text-xs text-gray-600 mb-1">
+                      <div className="text-xs text-gray-600 mb-1 text-right">
                         10 августа 2025
                       </div>
                       
@@ -1077,7 +1077,7 @@ const About: React.FC = () => {
                     </div>
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="text-xs text-gray-600 mb-1">
+                      <div className="text-xs text-gray-600 mb-1 text-right">
                         9 августа 2025
                       </div>
                       
@@ -1115,7 +1115,7 @@ const About: React.FC = () => {
                     </div>
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="text-xs text-gray-600 mb-1">
+                      <div className="text-xs text-gray-600 mb-1 text-right">
                         8 августа 2025
                       </div>
                       
@@ -1151,7 +1151,7 @@ const About: React.FC = () => {
                       </div>
                       
                       <div className="w-1/2 p-4 flex flex-col justify-center">
-                        <div className="text-xs text-gray-600 mb-2">
+                        <div className="text-xs text-gray-600 mb-2 text-right">
                           7 августа 2025
                         </div>
                         
@@ -1187,7 +1187,7 @@ const About: React.FC = () => {
                     </div>
                     
                     <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="text-xs text-gray-600 mb-1">
+                      <div className="text-xs text-gray-600 mb-1 text-right">
                         6 августа 2025
                       </div>
                       
