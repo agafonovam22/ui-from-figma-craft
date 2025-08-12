@@ -843,33 +843,31 @@ const About: React.FC = () => {
                       to={`/news/${newsItems[1]?.slug}`}
                       className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
                     >
-                      <div className="flex h-full">
-                        <div className="relative w-1/2">
-                          <img
-                            src={newsItems[1]?.image}
-                            alt={newsItems[1]?.title}
-                            className="w-full h-full object-cover"
-                          />
-                          
-                          {/* Category Badge */}
-                          <div className={`absolute top-2 left-2 ${newsItems[1]?.categoryColor} text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide`}>
-                            {newsItems[1]?.category}
-                          </div>
+                      <div className="relative">
+                        <img
+                          src={newsItems[1]?.image}
+                          alt={newsItems[1]?.title}
+                          className="w-full h-[150px] object-cover"
+                        />
+                        
+                        {/* Category Badge */}
+                        <div className={`absolute top-2 left-2 ${newsItems[1]?.categoryColor} text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide`}>
+                          {newsItems[1]?.category}
+                        </div>
+                      </div>
+                      
+                      <div className="p-4 flex flex-col justify-center">
+                        <div className="text-xs text-gray-600 mb-2 text-right">
+                          {newsItems[1]?.date}
                         </div>
                         
-                        <div className="w-1/2 p-4 flex flex-col justify-center">
-                          <div className="text-xs text-gray-600 mb-2 text-right">
-                            {newsItems[1]?.date}
-                          </div>
-                          
-                          <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-3 leading-tight">
-                            {newsItems[1]?.title}
-                          </h3>
-                          
-                          <p className="text-xs text-gray-600 line-clamp-4 leading-relaxed">
-                            {newsItems[1]?.description}
-                          </p>
-                        </div>
+                        <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-3 leading-tight">
+                          {newsItems[1]?.title}
+                        </h3>
+                        
+                        <p className="text-xs text-gray-600 line-clamp-4 leading-relaxed">
+                          {newsItems[1]?.description}
+                        </p>
                       </div>
                     </Link>
                   </div>
@@ -1136,12 +1134,11 @@ const About: React.FC = () => {
                     to="/news/cardiopower-tt35-v-prodazhe"
                     className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
                   >
-                    <div className="flex h-[280px]">
-                      <div className="relative w-1/2 h-[280px]">
+                      <div className="relative">
                         <img
                           src="/lovable-uploads/f723c377-cd62-435f-86d4-71f10aca1c8f.png"
                           alt="Беговая дорожка CardioPower TT35"
-                          className="w-full h-[280px] object-cover"
+                          className="w-full h-[200px] object-cover"
                         />
                         
                         {/* Category Badge */}
@@ -1150,7 +1147,7 @@ const About: React.FC = () => {
                         </div>
                       </div>
                       
-                      <div className="w-1/2 p-4 flex flex-col justify-center">
+                      <div className="p-4 flex flex-col justify-center">
                         <div className="text-xs text-gray-600 mb-2 text-right">
                           26.09.2023
                         </div>
@@ -1163,7 +1160,6 @@ const About: React.FC = () => {
                           Современная беговая дорожка с передовыми технологиями
                         </p>
                       </div>
-                    </div>
                   </Link>
                 </div>
 
