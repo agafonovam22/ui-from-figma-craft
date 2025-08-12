@@ -824,7 +824,7 @@ const About: React.FC = () => {
                         {newsItems[0]?.date}
                       </div>
                       
-                      <h3 className="font-semibold text-xl mb-3 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                      <h3 className="font-semibold text-lg mb-3 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                         {newsItems[0]?.title}
                       </h3>
                       
