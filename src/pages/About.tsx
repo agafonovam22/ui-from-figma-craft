@@ -884,7 +884,7 @@ const About: React.FC = () => {
                       >
                         <div className="relative h-[100px]">
                           <img
-                            src={newsItems[2]?.image}
+                            src="/lovable-uploads/ed66472b-775d-46cd-84e0-7dc644a9aaad.png"
                             alt={newsItems[2]?.title}
                             className="w-full h-full object-cover"
                           />
