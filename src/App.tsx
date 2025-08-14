@@ -27,6 +27,7 @@ import HomeFitnessEquipment from "./pages/HomeFitnessEquipment";
 import GymEquipment from "./pages/GymEquipment";
 import Catalog from "./pages/Catalog";
 import ProductCard from "./pages/ProductCard";
+import ProductDetail from "./pages/ProductDetail";
 import Search from "./pages/Search";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
@@ -69,7 +70,8 @@ const App = () => (
           <Route path="/home-fitness-equipment" element={<HomeFitnessEquipment />} />
           <Route path="/gym-equipment" element={<GymEquipment />} />
           <Route path="/catalog" element={<Catalog />} />
-          <Route path="/product/:productId" element={<ProductCard />} />
+          <Route path="/product/:productId" element={<ProductDetail />} />
+          <Route path="/product-card" element={<ProductCard />} />
           <Route path="/search" element={<Search />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
