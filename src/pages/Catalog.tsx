@@ -126,7 +126,10 @@ const Catalog: React.FC = () => {
             <div className="flex-1 mt-[94px]">
               <CatalogBanner />
               <CatalogControls sortBy={sortBy} setSortBy={setSortBy} />
-              <CatalogGrid products={allProducts} />
+              <CatalogGrid 
+                products={allProducts} 
+                bitrixUrl="https://your-site.ru/bitrix-export/catalog-export.php"
+              />
             </div>
           </div>
         </div>

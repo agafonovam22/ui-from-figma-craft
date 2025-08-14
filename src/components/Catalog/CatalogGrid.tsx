@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductCard from '@/components/ProductCard';
 import { Button } from "@/components/ui/button";
-import { useSupabaseProducts } from '@/hooks/useSupabaseProducts';
+import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
 
 interface Product {
   id: number | string;
@@ -21,13 +21,14 @@ interface Product {
 
 interface CatalogGridProps {
   products: Product[];
+  bitrixUrl?: string;
 }
 
-const CatalogGrid: React.FC<CatalogGridProps> = ({ products }) => {
-  const { products: supabaseProducts, loading, error } = useSupabaseProducts();
+const CatalogGrid: React.FC<CatalogGridProps> = ({ products, bitrixUrl }) => {
+  const { products: bitrixProducts, loading, error } = useBitrixCatalog(bitrixUrl);
   
-  // Используем товары из Supabase, если они загружены, иначе fallback на переданные
-  const displayProducts = supabaseProducts.length > 0 ? supabaseProducts.map(product => ({
+  // Используем товары из Битрикс, если они загружены, иначе fallback на переданные
+  const displayProducts = bitrixProducts.length > 0 ? bitrixProducts.map(product => ({
     id: product.id,
     name: product.name,
     price: `${product.price.toLocaleString()} ₽`,
