@@ -38,6 +38,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
           src={product.image} 
           alt={product.name || "Категория товаров"}
           className="w-full h-full object-cover object-center"
+          onError={(e) => {
+            e.currentTarget.src = '/placeholder.svg';
+          }}
         />
         <Link 
           to={linkTo}
@@ -60,6 +63,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
           src={product.image} 
           alt={product.name || "Товар"}
           className="w-full h-48 object-contain"
+          onError={(e) => {
+            e.currentTarget.src = '/placeholder.svg';
+          }}
         />
         
         {/* Badges */}
