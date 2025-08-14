@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 interface ProductCardProps {
   product: {
-    id: number;
+    id: number | string;
     name?: string;
     price?: string | null;
     originalPrice?: string | null;

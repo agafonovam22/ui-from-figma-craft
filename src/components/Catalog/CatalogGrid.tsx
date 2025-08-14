@@ -1,10 +1,10 @@
 import React from 'react';
 import ProductCard from '@/components/ProductCard';
 import { Button } from "@/components/ui/button";
-import { useBitrixProducts } from '@/hooks/useBitrixProducts';
+import { useSupabaseProducts } from '@/hooks/useSupabaseProducts';
 
 interface Product {
-  id: number;
+  id: number | string;
   name: string;
   price: string | null;
   originalPrice: string | null;
@@ -24,31 +24,32 @@ interface CatalogGridProps {
 }
 
 const CatalogGrid: React.FC<CatalogGridProps> = ({ products }) => {
-  const { products: bitrixProducts, loading, error } = useBitrixProducts();
+  const { products: supabaseProducts, loading, error } = useSupabaseProducts();
   
-  // Используем товары из Bitrix, если они загружены, иначе fallback на переданные
-  const displayProducts = bitrixProducts.length > 0 ? bitrixProducts.map(product => ({
-    id: parseInt(product.id),
+  // Используем товары из Supabase, если они загружены, иначе fallback на переданные
+  const displayProducts = supabaseProducts.length > 0 ? supabaseProducts.map(product => ({
+    id: product.id,
     name: product.name,
-    price: product.price + ' ₽',
-    originalPrice: product.originalPrice ? product.originalPrice + ' ₽' : null,
-    discount: product.originalPrice ? 
-      Math.round(((parseInt(product.originalPrice) - parseInt(product.price)) / parseInt(product.originalPrice)) * 100) + '%' 
-      : null,
-    rating: 4.5, // default rating
-    reviews: 12, // default reviews
-    image: product.image,
-    badge: product.available ? 'В наличии' : 'Нет в наличии',
-    badgeColor: product.available ? 'green' : 'red',
-    isAvailable: product.available,
-    hasComparison: true,
-    inStock: product.available
+    price: `${product.price.toLocaleString()} ₽`,
+    originalPrice: product.original_price ? `${product.original_price.toLocaleString()} ₽` : null,
+    discount: product.discount_percentage ? `${product.discount_percentage}%` : null,
+    rating: product.rating,
+    reviews: product.reviews_count,
+    image: product.image_url || '',
+    badge: product.badge || (product.is_available ? 'В наличии' : 'Нет в наличии'),
+    badgeColor: product.badge_color === 'red' ? 'bg-red-500' : 
+                product.badge_color === 'green' ? 'bg-green-500' : 
+                product.badge_color === 'blue' ? 'bg-blue-500' : 
+                (product.is_available ? 'bg-green-500' : 'bg-red-500'),
+    isAvailable: product.is_available,
+    hasComparison: product.has_comparison,
+    inStock: product.in_stock
   })) : products;
 
   if (loading) {
     return (
       <div className="text-center py-8">
-        <p>Загрузка товаров из Bitrix...</p>
+        <p>Загрузка товаров...</p>
       </div>
     );
   }
