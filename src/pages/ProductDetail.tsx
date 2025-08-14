@@ -11,7 +11,11 @@ const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { products, loading, error } = useBitrixCatalog('https://cp44652.tw1.ru/catalog.php');
   
+  console.log('Ищем товар с ID:', id);
+  console.log('Доступные товары:', products.map(p => ({ id: p.id, name: p.name })));
+  
   const product = products.find(p => p.id.toString() === id);
+  console.log('Найденный товар:', product);
 
   if (loading) {
     return (
