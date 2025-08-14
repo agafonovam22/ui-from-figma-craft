@@ -62,7 +62,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <img 
           src={product.image} 
           alt={product.name || "Товар"}
-          className="w-full h-48 object-contain"
+          className="w-full h-48 object-cover rounded-lg"
+          loading="lazy"
           onError={(e) => {
             console.log('Ошибка загрузки изображения:', product.image);
             e.currentTarget.src = '/placeholder.svg';
