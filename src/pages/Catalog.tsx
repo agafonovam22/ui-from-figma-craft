@@ -128,7 +128,7 @@ const Catalog: React.FC = () => {
               <CatalogControls sortBy={sortBy} setSortBy={setSortBy} />
               <CatalogGrid 
                 products={allProducts} 
-                bitrixUrl="https://your-site.ru/bitrix-export/catalog-export.php"
+                bitrixUrl="https://cp44652.tw1.ru/api.php"
               />
             </div>
           </div>
