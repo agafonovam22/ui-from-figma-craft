@@ -31,12 +31,12 @@ const CatalogGrid: React.FC<CatalogGridProps> = ({ products, bitrixUrl }) => {
   const displayProducts = bitrixProducts.length > 0 ? bitrixProducts.map(product => ({
     id: product.id,
     name: product.name,
-    price: `${product.price.toLocaleString()} ₽`,
-    originalPrice: product.original_price ? `${product.original_price.toLocaleString()} ₽` : null,
+    price: product.price > 0 ? `${product.price.toLocaleString()} ₽` : null,
+    originalPrice: product.original_price && product.original_price > 0 ? `${product.original_price.toLocaleString()} ₽` : null,
     discount: product.discount_percentage ? `${product.discount_percentage}%` : null,
     rating: product.rating,
     reviews: product.reviews_count,
-    image: product.image_url || '',
+    image: product.image_url ? `https://cp44652.tw1.ru${product.image_url}` : '',
     badge: product.badge || (product.is_available ? 'В наличии' : 'Нет в наличии'),
     badgeColor: product.badge_color === 'red' ? 'bg-red-500' : 
                 product.badge_color === 'green' ? 'bg-green-500' : 
