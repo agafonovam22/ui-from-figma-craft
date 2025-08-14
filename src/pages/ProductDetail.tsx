@@ -15,26 +15,41 @@ const ProductDetail: React.FC = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
+        setLoading(true);
         console.log('Загружаем товар с ID:', id);
+        
         const response = await fetch('https://cp44652.tw1.ru/catalog.php');
+        console.log('Ответ сервера:', response.status);
+        
         const data = await response.json();
         console.log('Получены данные:', data);
         
         if (data.status === 'ok' && data.products) {
+          console.log('Ищем товар с ID:', id, 'в массиве из', data.products.length, 'товаров');
           const foundProduct = data.products.find((p: any) => p.id.toString() === id);
           console.log('Найден товар:', foundProduct);
           setProduct(foundProduct);
+          
+          if (!foundProduct) {
+            setError(`Товар с ID ${id} не найден среди ${data.products.length} товаров`);
+          }
+        } else {
+          setError('Неверный формат ответа от сервера');
         }
       } catch (err) {
         console.error('Ошибка загрузки товара:', err);
-        setError('Ошибка загрузки');
+        setError(`Ошибка загрузки: ${err}`);
       } finally {
         setLoading(false);
       }
     };
 
+    console.log('useEffect сработал, ID:', id);
     if (id) {
       fetchProduct();
+    } else {
+      setError('ID товара не указан');
+      setLoading(false);
     }
   }, [id]);
 
