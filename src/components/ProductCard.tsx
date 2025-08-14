@@ -57,7 +57,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   // Full catalog version
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow">
+    <Link to={`/product/${product.id}`} className="block">
+      <div className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
       <div className="relative mb-4">
         <img 
           src={product.image} 
@@ -156,8 +157,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </Button>
           )}
         </div>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
