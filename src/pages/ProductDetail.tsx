@@ -12,6 +12,12 @@ const ProductDetail: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Логируем сразу при рендере
+  console.log('ProductDetail рендерится');
+  console.log('useParams результат:', useParams());
+  console.log('ID из useParams:', id);
+  console.log('window.location.pathname:', window.location.pathname);
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
