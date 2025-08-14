@@ -43,16 +43,9 @@ const ProductDetail: React.FC = () => {
       <div className="min-h-screen bg-background">
         <Header />
         <div className="container mx-auto px-4 py-8">
-          <div className="animate-pulse">
-            <div className="h-8 bg-muted rounded w-1/4 mb-4"></div>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="h-96 bg-muted rounded"></div>
-              <div className="space-y-4">
-                <div className="h-8 bg-muted rounded w-3/4"></div>
-                <div className="h-4 bg-muted rounded w-1/2"></div>
-                <div className="h-6 bg-muted rounded w-1/4"></div>
-              </div>
-            </div>
+          <div className="text-center">
+            <h1 className="text-2xl font-bold mb-4">Загружаем товар...</h1>
+            <p>ID товара: {id}</p>
           </div>
         </div>
         <Footer />
@@ -67,6 +60,8 @@ const ProductDetail: React.FC = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="text-center">
             <h1 className="text-2xl font-bold mb-4">Товар не найден</h1>
+            <p>Ищем товар с ID: {id}</p>
+            <p>Ошибка: {error || 'Товар не найден в базе данных'}</p>
             <Link to="/catalog">
               <Button variant="outline">
                 <ArrowLeft className="w-4 h-4 mr-2" />
