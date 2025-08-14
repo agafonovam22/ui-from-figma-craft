@@ -14,7 +14,8 @@ const ProductDetail: React.FC = () => {
   console.log('Ищем товар с ID:', id);
   console.log('Доступные товары:', products.map(p => ({ id: p.id, name: p.name })));
   
-  const product = products.find(p => p.id.toString() === id);
+  // Исправляем поиск - ID может быть строкой или числом
+  const product = products.find(p => p.id.toString() === id || p.id === id);
   console.log('Найденный товар:', product);
 
   if (loading) {
