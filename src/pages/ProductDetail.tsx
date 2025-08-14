@@ -1,22 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Heart, Share2, ShoppingCart } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const { products, loading, error } = useBitrixCatalog('https://cp44652.tw1.ru/catalog.php');
-  
-  console.log('Ищем товар с ID:', id);
-  console.log('Доступные товары:', products.map(p => ({ id: p.id, name: p.name })));
-  
-  // Исправляем поиск - ID может быть строкой или числом
-  const product = products.find(p => p.id.toString() === id || p.id === id);
-  console.log('Найденный товар:', product);
+  const [product, setProduct] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        console.log('Загружаем товар с ID:', id);
+        const response = await fetch('https://cp44652.tw1.ru/catalog.php');
+        const data = await response.json();
+        console.log('Получены данные:', data);
+        
+        if (data.status === 'ok' && data.products) {
+          const foundProduct = data.products.find((p: any) => p.id.toString() === id);
+          console.log('Найден товар:', foundProduct);
+          setProduct(foundProduct);
+        }
+      } catch (err) {
+        console.error('Ошибка загрузки товара:', err);
+        setError('Ошибка загрузки');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (id) {
+      fetchProduct();
+    }
+  }, [id]);
 
   if (loading) {
     return (
