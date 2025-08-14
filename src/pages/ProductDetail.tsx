@@ -9,7 +9,7 @@ import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const { products, loading, error } = useBitrixCatalog();
+  const { products, loading, error } = useBitrixCatalog('https://cp44652.tw1.ru/catalog.php');
   
   const product = products.find(p => p.id.toString() === id);
 
