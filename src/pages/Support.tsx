@@ -1311,12 +1311,19 @@ const Support: React.FC = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-2" className="border-0">
+                <AccordionItem value="item-9-new" className="border-0">
                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
+                    Как выбрать оснащение под размеры зала? Есть ли 3D-проектирование?
                   </AccordionTrigger>
                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua? Ut enim
+                    Правильная планировка фитнес-пространства — залог комфорта клиентов и эффективного использования площади. Мы предлагаем бесплатную разработку 3D-проекта вашего зала, который решит ключевые задачи:<br /><br />
+                    <strong>Что вы получите от 3D-проекта?</strong><br />
+                    ✔ Точный расчет оборудования — подберем тренажеры по количеству и типу, исключив лишние затраты<br />
+                    ✔ Оптимальную расстановку — с учетом зон кардио, силовых тренировок и свободного пространства<br />
+                    ✔ 3D-визуализацию — увидите, как будет выглядеть зал до покупки оборудования<br />
+                    ✔ Экономию бюджета и времени — избежите ошибок в планировке и перестановках<br /><br />
+                    <strong>Хотите увидеть свой зал в 3D?</strong><br />
+                    Отправьте запрос или позвоните нам — спроектируем зал под ваши задачи!
                   </AccordionContent>
                 </AccordionItem>
 
