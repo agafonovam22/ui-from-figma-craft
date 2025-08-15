@@ -1015,7 +1015,7 @@ const Brand: React.FC = () => {
               {/* Right Image */}
               <div className="order-1 lg:order-2">
                 <img 
-                  src={brandSlug === 'cardio-power' ? '/lovable-uploads/cb434f00-59df-46fa-8c90-893c647f535e.png' : brandSlug === 'true' ? '/lovable-uploads/f0b8744d-a5e4-418e-9512-534ed70c17e6.png' : brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : brandSlug === 'gym80' ? '/lovable-uploads/08975827-d091-4c00-9cb5-85e93a4b1853.png' : brandSlug === 'schwinn' ? '/lovable-uploads/af9da9ea-dbaa-4e9f-ae2f-831cda031eba.png' : brandSlug === 'oktan' ? '/lovable-uploads/52c07468-4317-41f4-8313-bcc245be5785.png' : brandSlug === 'visbody' ? '/lovable-uploads/5c83f7c6-b329-4314-b2f2-d9c78efdb039.png' : brandSlug === 'smith' ? '/lovable-uploads/3f75976a-d8e7-4175-9622-e96a69902537.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
+                  src={brandSlug === 'cardio-power' ? '/lovable-uploads/cb434f00-59df-46fa-8c90-893c647f535e.png' : brandSlug === 'true' ? '/lovable-uploads/f0b8744d-a5e4-418e-9512-534ed70c17e6.png' : brandSlug === 'bowflex' ? '/lovable-uploads/5fcc7191-4a4d-4420-9f97-129a5ffd9ffd.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/8c98a766-d4d6-4168-b6d0-bbe7afeae853.png' : brandSlug === 'gym80' ? '/lovable-uploads/08975827-d091-4c00-9cb5-85e93a4b1853.png' : brandSlug === 'schwinn' ? '/lovable-uploads/af9da9ea-dbaa-4e9f-ae2f-831cda031eba.png' : brandSlug === 'oktan' ? '/lovable-uploads/52c07468-4317-41f4-8313-bcc245be5785.png' : brandSlug === 'visbody' ? '/lovable-uploads/5c83f7c6-b329-4314-b2f2-d9c78efdb039.png' : brandSlug === 'smith' ? '/lovable-uploads/3f75976a-d8e7-4175-9622-e96a69902537.png' : brandSlug === 'slide-fit' ? '/lovable-uploads/10b8625a-84e0-498f-8c8a-9833e27f8c21.png' : '/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png'}
                   alt="Качество и надежность TRUE"
                   className="w-full object-cover rounded-lg"
                   style={brandSlug === 'true' ? { height: '450px' } : { height: '500px' }}
@@ -1101,6 +1101,50 @@ const Brand: React.FC = () => {
                     Откройте новый стандарт функционального тренинга с оборудованием, в котором воплотились надежность словенского качества и инновационный подход к фитнесу. Slide&FIT – сила природы в каждом движении!
                   </p>
                 </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Slide&FIT Gallery Section */}
+        {brandSlug === 'slide-fit' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <h2 className="text-3xl font-benzin text-gray-900 mb-8 text-center">
+                Slide&FIT в действии
+              </h2>
+              
+              {/* Gallery Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="relative overflow-hidden rounded-lg">
+                  <img 
+                    src="/lovable-uploads/a8f53f93-471f-4387-aed9-2bfd895f8a3b.png"
+                    alt="Slide&FIT тренажер крупным планом"
+                    className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                
+                <div className="relative overflow-hidden rounded-lg">
+                  <img 
+                    src="/lovable-uploads/10b8625a-84e0-498f-8c8a-9833e27f8c21.png"
+                    alt="Групповые тренировки Slide&FIT"
+                    className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                
+                <div className="relative overflow-hidden rounded-lg">
+                  <img 
+                    src="/lovable-uploads/20c74b65-af59-4385-a213-f539a5f32a01.png"
+                    alt="Фитнес-студия с оборудованием Slide&FIT"
+                    className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </div>
+              
+              <div className="text-center mt-8">
+                <p className="text-gray-600 text-sm font-manrope">
+                  Откройте для себя инновационный подход к функциональным тренировкам с оборудованием Slide&FIT
+                </p>
               </div>
             </div>
           </section>
