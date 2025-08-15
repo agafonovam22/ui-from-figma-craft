@@ -302,7 +302,7 @@ const About: React.FC = () => {
                 {/* Блок 1: Только текст по центру без заголовка */}
                 <div className="flex justify-center">
                   <div className="max-w-4xl text-center animate-fade-in">
-                    <p className="text-gray-700 text-base leading-relaxed font-manrope">
+                    <p className="text-gray-700 text-xl leading-relaxed font-bold">
                       Наша миссия заключается в том, чтобы стать идеальной онлайн-платформой, на которой люди смогут найти все необходимое оборудование и аксессуары для повседневных занятий фитнесом и поддержания здорового образа жизни.
                     </p>
                   </div>
