@@ -1339,12 +1339,35 @@ const Support: React.FC = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-4" className="border-0">
+                <AccordionItem value="item-11-new" className="border-0">
                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
+                    Есть ли доставка?
                   </AccordionTrigger>
                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Lorem ipsum
+                    <strong>Доставка тренажеров по Москве и России</strong><br /><br />
+                    
+                    <strong>По Москве и МО</strong><br />
+                    <strong>Курьерская доставка</strong><br />
+                    Срок: 1-2 дня после заказа<br />
+                    Время: ежедневно 9:00–21:00<br />
+                    Подъем на этаж и сборка: уточняйте у менеджера<br /><br />
+                    
+                    <strong>Самовывоз (бесплатно):</strong><br />
+                    <strong>Красногорск (основной склад)</strong><br />
+                    МО, пос. Гольево, ул. Центральная<br />
+                    <strong>Химки</strong><br />
+                    мкр Сходня, ул. Некрасова, д. 2<br />
+                    <strong>Санкт-Петербург</strong><br />
+                    Красногвардейский пер., 23 лит Е<br /><br />
+                    
+                    <strong>По России</strong><br />
+                    Транспортными компаниями (СДЭК, Деловые Линии и др.):<br />
+                    Отправка со склада: 1-2 рабочих дня<br />
+                    Срок доставки: зависит от ТК и региона<br />
+                    Оплата доставки: при получении (по тарифам ТК)<br /><br />
+                    
+                    <strong>Важно:</strong><br />
+                    Для точного расчета стоимости и сроков оформите заказ или закажите звонок — менеджер подберет оптимальный вариант!
                   </AccordionContent>
                 </AccordionItem>
 
