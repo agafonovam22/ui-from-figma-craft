@@ -38,7 +38,6 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import PublicOffer from "./pages/PublicOffer";
 import Favorites from "./pages/Favorites";
 import CompanyNews from "./pages/CompanyNews";
-import NewsCardioB35 from "./pages/NewsCardioB35";
 
 const queryClient = new QueryClient();
 
@@ -61,7 +60,6 @@ const App = () => (
           <Route path="/brands" element={<Brands />} />
           <Route path="/brands/:brandSlug" element={<Brand />} />
           <Route path="/news" element={<NewsAndBlog />} />
-          <Route path="/news/cardiopower-b35-v-prodazhe" element={<NewsCardioB35 />} />
           <Route path="/news/:articleSlug" element={<NewsArticle />} />
           <Route path="/account" element={<Account />} />
           <Route path="/register" element={<Register />} />
