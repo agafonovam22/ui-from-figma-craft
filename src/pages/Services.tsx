@@ -69,7 +69,7 @@ const Services: React.FC = () => {
 
   const tabs = [
     { id: 'service-request', label: 'Заявка на сервис', active: true },
-    { id: 'fitness-clubs', label: 'Обслуживание фитнес клубов', active: false },
+    { id: 'fitness-clubs', label: 'Обслуживание фитнес-клубов', active: false },
     { id: 'instructions', label: 'Инструкции', active: false },
     { id: 'video-instructions', label: 'Видео-инструкции', active: false }
   ];
@@ -192,7 +192,7 @@ const Services: React.FC = () => {
 
           {/* Page Title */}
           <h1 className="text-4xl font-bold text-gray-900 mb-8">
-            {activeTab === 'fitness-clubs' ? 'Обслуживание фитнес клубов' : 
+            {activeTab === 'fitness-clubs' ? 'Обслуживание фитнес-клубов' : 
              activeTab === 'video-instructions' ? 'Видео-инструкции' :
              activeTab === 'services' ? 'Услуги' :
              'Оставить заявку на сервис'}

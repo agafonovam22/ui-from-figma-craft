@@ -150,7 +150,7 @@ const ProductCatalog: React.FC = () => {
                   : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
               }`}
             >
-              Фитнес клуба
+              Фитнес-клуба
             </button>
           </div>
         </div>
