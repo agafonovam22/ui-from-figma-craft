@@ -120,6 +120,7 @@ const Brand: React.FC = () => {
       case 'visbody': return 'Visbody';
       case 'smith': return 'SMITH';
       case 'slide-fit': return 'Slide&FIT';
+      case 'inspire': return 'INSPIRE';
       default: return 'kernel';
     }
   };
