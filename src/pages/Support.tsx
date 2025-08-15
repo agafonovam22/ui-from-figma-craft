@@ -1371,12 +1371,19 @@ const Support: React.FC = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-5" className="border-0">
+                <AccordionItem value="item-12-new" className="border-0">
                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
+                    Как происходит обслуживание фитнес-клубов?
                   </AccordionTrigger>
                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Lorem ipsum dolor sit amet
+                    Мы обеспечиваем комплексный сервис для поддержания оборудования в идеальном состоянии, что помогает избежать дорогостоящего ремонта и продлевает срок службы тренажеров.<br /><br />
+                    
+                    <strong>Что входит в обслуживание?</strong><br />
+                    Регулярные проверки износа деталей и узлов<br />
+                    Смазка и регулировка механических частей<br />
+                    Диагностика электроники (для кардиотренажеров)<br />
+                    Замена расходников (ремни, ролики, подшипники)<br />
+                    Ремонт любой сложности с оригинальными запчастями
                   </AccordionContent>
                 </AccordionItem>
 
