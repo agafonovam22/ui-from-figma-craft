@@ -236,42 +236,49 @@ const NewsAndBlogPage: React.FC = () => {
 
               {/* Остальные новости (8-11) */}
               {newsItems.slice(8, 11).length > 0 && (
-                <div className={`grid gap-4 mb-8 ${newsItems.slice(8, 11).length === 3 ? 'grid-cols-3' : newsItems.slice(8, 11).length === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
-                  {newsItems.slice(8, 11).map((item) => (
-                    <div key={item.id}>
-                      <Link
-                        to={`/news/${item.slug}`}
-                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
-                      >
-                        <div className="relative h-[200px]">
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        
-                        <div className="p-3 h-[80px] flex flex-col justify-center">
-                          <div className="flex justify-between items-center mb-1">
-                            <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                              НОВОСТИ
-                            </div>
-                            <div className="text-xs text-gray-600">
-                              {item.date}
-                            </div>
+                <div className={`mb-8 ${newsItems.slice(8, 11).length === 3 ? 'grid grid-cols-12 gap-4' : newsItems.slice(8, 11).length === 2 ? 'grid grid-cols-2 gap-4' : 'grid grid-cols-1 gap-4'}`}>
+                  {newsItems.slice(8, 11).map((item, index) => {
+                    // Для случая с 3 контейнерами: первый и третий квадратные (col-span-3), центральный вытянутый (col-span-6)
+                    const colSpanClass = newsItems.slice(8, 11).length === 3 
+                      ? (index === 1 ? 'col-span-6' : 'col-span-3')
+                      : '';
+                    
+                    return (
+                      <div key={item.id} className={colSpanClass}>
+                        <Link
+                          to={`/news/${item.slug}`}
+                          className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
+                        >
+                          <div className="relative h-[200px]">
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="w-full h-full object-cover"
+                            />
                           </div>
                           
-                          <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                            {item.title}
-                          </h3>
-                          
-                          <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                            {item.description}
-                          </p>
-                        </div>
-                      </Link>
-                    </div>
-                  ))}
+                          <div className="p-3 h-[80px] flex flex-col justify-center">
+                            <div className="flex justify-between items-center mb-1">
+                              <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                                НОВОСТИ
+                              </div>
+                              <div className="text-xs text-gray-600">
+                                {item.date}
+                              </div>
+                            </div>
+                            
+                            <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                              {item.title}
+                            </h3>
+                            
+                            <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                              {item.description}
+                            </p>
+                          </div>
+                        </Link>
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </>
