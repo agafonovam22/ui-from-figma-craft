@@ -1240,6 +1240,20 @@ const Support: React.FC = () => {
                   </AccordionContent>
                 </AccordionItem>
 
+                <AccordionItem value="item-4-new" className="border-0">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Где следить за новостями компании и новыми поступлениями?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Мы регулярно публикуем актуальную информацию через официальные каналы:<br /><br />
+                    Наш сайт – главный источник новостей, анонсов и обновлений ассортимента<br />
+                    Email-рассылки – подпишитесь, чтобы получать важные объявления первыми<br />
+                    Социальные сети – оперативные публикации в наших сообществах (ссылки на сайте)<br />
+                    Служба поддержки – менеджеры всегда на связи для консультаций<br /><br />
+                    Хотите первыми узнавать о новинках? Подпишитесь на рассылку или следите за нами в соцсетях!
+                  </AccordionContent>
+                </AccordionItem>
+
                 <AccordionItem value="item-1" className="border-0">
                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
