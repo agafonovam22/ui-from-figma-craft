@@ -483,7 +483,7 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'cardiopower-pro' ? 'Технологии для профессионалов' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : brandSlug === 'sole-fitness' ? 'Что делает Sole Fitness особенным?' : brandSlug === 'peach-builder' ? 'Для кого создан PEACH BUILDER?' : brandSlug === 'gym80' ? 'Философия GYM80' : brandSlug === 'oktan' ? 'Инновации Octane Fitness' : brandSlug === 'visbody' ? 'Технологии Visbody' : brandSlug === 'bowflex' ? 'BOWFLEX ДЕЛАЕТ ТРЕНИРОВКИ ОСОБЕННЫМИ' : brandSlug === 'scholle' ? 'Надежность, проверенная временем' : brandSlug === 'smith' ? 'Инновации, проверенные временем' : brandSlug === 'slide-fit' ? 'Горнолыжный тренажер Slide&FIT Commercial Edition' : brandSlug === 'inspire' ? 'Инженерное превосходство в каждой детали' : brandSlug === 'hyfit' ? 'Главное преимущество – интеллектуальная система регулировки веса' : brandSlug === 'maxgym' ? 'Технологическое превосходство в деталях' : 'Наше оборудование выбирают:'}
+                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'cardiopower-pro' ? 'Технологии для профессионалов' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : brandSlug === 'sole-fitness' ? 'Что делает Sole Fitness особенным?' : brandSlug === 'peach-builder' ? 'Для кого создан PEACH BUILDER?' : brandSlug === 'gym80' ? 'Философия GYM80' : brandSlug === 'oktan' ? 'Инновации Octane Fitness' : brandSlug === 'visbody' ? 'Технологии Visbody' : brandSlug === 'bowflex' ? 'BOWFLEX ДЕЛАЕТ ТРЕНИРОВКИ ОСОБЕННЫМИ' : brandSlug === 'scholle' ? 'Надежность, проверенная временем' : brandSlug === 'smith' ? 'Инновации, проверенные временем' : brandSlug === 'slide-fit' ? 'Горнолыжный тренажер Slide&FIT Commercial Edition' : brandSlug === 'inspire' ? 'Инженерное превосходство в каждой детали' : brandSlug === 'hyfit' ? 'Главное преимущество – интеллектуальная система регулировки веса' : brandSlug === 'maxgym' ? 'Технологическое превосходство в деталях' : brandSlug === 'maxfit' ? 'Почему MAXFIT – это прорыв:' : 'Наше оборудование выбирают:'}
                 </h2>
                 
                 {brandSlug === 'cardio-power' ? (
@@ -623,6 +623,33 @@ const Brand: React.FC = () => {
                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                           Совместимость всех элементов системы
+                        </p>
+                      </div>
+                    </div>
+                  ) : brandSlug === 'maxfit' ? (
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Интуитивная система изменения веса (от 2 до 40 кг)
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Патентованный механизм безопасности
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Совместимость всех элементов системы
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Профессиональное качество по доступной цене
                         </p>
                       </div>
                     </div>
