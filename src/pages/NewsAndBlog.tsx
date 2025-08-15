@@ -1,262 +1,290 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
-import { Search } from 'lucide-react';
 import { getAllNews } from '@/data/newsData';
 import {
   Breadcrumb,
-  BreadcrumbList,
   BreadcrumbItem,
   BreadcrumbLink,
-  BreadcrumbSeparator,
+  BreadcrumbList,
   BreadcrumbPage,
+  BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
-import { Link } from 'react-router-dom';
 
 const NewsAndBlogPage: React.FC = () => {
-  const [selectedFilter, setSelectedFilter] = useState('Новости');
-  const [currentPage, setCurrentPage] = useState(1);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState('популярности');
-
-  const filters = ['Новости', 'Блог'];
-
   const newsItems = getAllNews();
 
-  const filteredItems = selectedFilter === 'Все' 
-    ? newsItems 
-    : newsItems.filter(item => item.type === selectedFilter);
-
-  const getCardClasses = (size: string) => {
-    switch (size) {
-      case 'large':
-        return 'col-span-2 row-span-2';
-      case 'medium':
-        return 'col-span-1 row-span-2';
-      case 'small':
-      default:
-        return 'col-span-1 row-span-1';
-    }
-  };
-
-  const getImageHeight = (size: string) => {
-    switch (size) {
-      case 'large':
-        return 'h-64';
-      case 'medium':
-        return 'h-48';
-      case 'small':
-      default:
-        return 'h-32';
-    }
-  };
-
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <Header />
       
-      <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
-        <Breadcrumb className="mb-6">
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link to="/">Главная</Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
+      <main className="w-full">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+          {/* Breadcrumb */}
+          <Breadcrumb className="mb-6">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/">Главная</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
               <BreadcrumbPage>Новости и блог</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+            </BreadcrumbList>
+          </Breadcrumb>
 
-        <h1 className="text-[48px] font-bold text-gray-900 mb-8">Новости и блог</h1>
-        
-        <div className="flex items-center justify-between mb-8 gap-4">
-          <div className="flex items-center gap-2">
-            {filters.map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setSelectedFilter(filter)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  selectedFilter === filter
-                    ? 'bg-gray-900 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+          {/* Page Title */}
+          <h1 className="text-[40px] font-bold text-[#17171E] leading-tight mb-8">
+            Новости и блог
+          </h1>
+
+          {/* News Grid - Same layout as About page */}
+          <div className="grid grid-cols-12 gap-4 mb-12">
+            {/* Первый контейнер - большой квадрат слева */}
+            <div className="col-span-12 md:col-span-6">
+              <Link
+                to={`/news/${newsItems[0]?.slug}`}
+                className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
               >
-                {filter}
-                {selectedFilter === filter && (
-                  <button 
-                    className="ml-2 text-white hover:text-gray-300"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedFilter('Новости');
-                    }}
+                <div className="relative">
+                  <img
+                    src={newsItems[0]?.image}
+                    alt={newsItems[0]?.title}
+                    className="w-full h-[350px] object-cover"
+                  />
+                </div>
+                
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <div className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                      НОВОСТИ
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      {newsItems[0]?.date}
+                    </div>
+                  </div>
+                  
+                  <h3 className="font-semibold text-lg mb-3 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                    {newsItems[0]?.title}
+                  </h3>
+                  
+                  <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
+                    {newsItems[0]?.description}
+                  </p>
+                </div>
+              </Link>
+            </div>
+
+            {/* Правая колонка */}
+            <div className="col-span-12 md:col-span-6 flex flex-col">
+              {/* Второй контейнер - горизонтальный прямоугольник */}
+              <div className="h-[250px] mb-4">
+                <Link
+                  to={`/news/${newsItems[1]?.slug}`}
+                  className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
+                >
+                  <div className="relative">
+                    <img
+                      src={newsItems[1]?.image}
+                      alt={newsItems[1]?.title}
+                      className="w-full h-[120px] object-cover"
+                    />
+                  </div>
+                  
+                  <div className="p-4 h-[130px] flex flex-col justify-between">
+                    <div className="flex justify-between items-center mb-2">
+                      <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                        НОВОСТИ
+                      </div>
+                      <div className="text-xs text-gray-600">
+                        {newsItems[1]?.date}
+                      </div>
+                    </div>
+                    
+                    <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-3 leading-tight">
+                      {newsItems[1]?.title}
+                    </h3>
+                    
+                    <p className="text-xs text-gray-600 line-clamp-4 leading-relaxed">
+                      {newsItems[1]?.description}
+                    </p>
+                  </div>
+                </Link>
+              </div>
+
+              {/* Третий и четвертый контейнеры - квадратные, выровнены по нижней границе */}
+              <div className="flex gap-4 flex-1 items-end">
+                {/* Третий контейнер */}
+                <div className="flex-1">
+                  <Link
+                    to={`/news/${newsItems[2]?.slug}`}
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
                   >
-                    ×
-                  </button>
-                )}
-              </button>
+                    <div className="relative h-[200px]">
+                      <img
+                        src={newsItems[2]?.image}
+                        alt={newsItems[2]?.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                    <div className="p-3 h-[80px] flex flex-col justify-center">
+                      <div className="flex justify-between items-center mb-1">
+                        <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                          НОВОСТИ
+                        </div>
+                        <div className="text-xs text-gray-600">
+                          {newsItems[2]?.date}
+                        </div>
+                      </div>
+                      
+                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                        {newsItems[2]?.title}
+                      </h3>
+                      
+                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                        {newsItems[2]?.description}
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+
+                {/* Четвертый контейнер */}
+                <div className="flex-1">
+                  <Link
+                    to={`/news/${newsItems[3]?.slug}`}
+                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
+                  >
+                    <div className="relative h-[200px]">
+                      <img
+                        src={newsItems[3]?.image}
+                        alt={newsItems[3]?.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                    <div className="p-3 h-[80px] flex flex-col justify-center">
+                      <div className="flex justify-between items-center mb-1">
+                        <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                          НОВОСТИ
+                        </div>
+                        <div className="text-xs text-gray-600">
+                          {newsItems[3]?.date}
+                        </div>
+                      </div>
+                      
+                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                        {newsItems[3]?.title}
+                      </h3>
+                      
+                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                        {newsItems[3]?.description}
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Дополнительные контейнеры новостей */}
+          {/* Первый ряд - 4 контейнера */}
+          <div className="grid grid-cols-4 gap-4 mb-4">
+            {newsItems.slice(4, 8).map((item, index) => (
+              <div key={item.id}>
+                <Link
+                  to={`/news/${item.slug}`}
+                  className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
+                >
+                  <div className="relative h-[200px]">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  
+                  <div className="p-3 h-[80px] flex flex-col justify-center">
+                    <div className="flex justify-between items-center mb-1">
+                      <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                        НОВОСТИ
+                      </div>
+                      <div className="text-xs text-gray-600">
+                        {item.date}
+                      </div>
+                    </div>
+                    
+                    <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                      {item.title}
+                    </h3>
+                    
+                    <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </Link>
+              </div>
             ))}
           </div>
 
-          <div className="flex items-center gap-4 flex-1">
-            <div className="relative flex-1">
-              <input
-                type="text"
-                placeholder="Поиск"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-            </div>
+          {/* Второй ряд - 2 контейнера */}
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            {newsItems.slice(8, 10).map((item, index) => (
+              <div key={item.id}>
+                <Link
+                  to={`/news/${item.slug}`}
+                  className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
+                >
+                  <div className="relative h-[200px]">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  
+                  <div className="p-3 h-[80px] flex flex-col justify-center">
+                    <div className="flex justify-between items-center mb-1">
+                      <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                        НОВОСТИ
+                      </div>
+                      <div className="text-xs text-gray-600">
+                        {item.date}
+                      </div>
+                    </div>
+                    
+                    <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                      {item.title}
+                    </h3>
+                    
+                    <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
 
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-600 whitespace-nowrap">Сортировать:</span>
-              <Select value={sortBy} onValueChange={setSortBy}>
-                <SelectTrigger className="w-48">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="популярности">По популярности</SelectItem>
-                  <SelectItem value="дате">По дате</SelectItem>
-                  <SelectItem value="названию">По названию</SelectItem>
-                </SelectContent>
-              </Select>
+          {/* Pagination */}
+          <div className="flex justify-center mb-12">
+            <div className="flex space-x-2">
+              <div className="w-2 h-2 rounded-full bg-[#F53B49]"></div>
+              <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+              <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+              <div className="w-2 h-2 rounded-full bg-gray-300"></div>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-max mb-12">
-          {filteredItems.map((item) => (
-            <Link
-              key={item.id}
-              to={`/news/${item.slug}`}
-              className={`bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer ${getCardClasses(item.size)}`}
-            >
-              <div className={`relative overflow-hidden ${getImageHeight(item.size)}`}>
-                <img 
-                  src={item.image} 
-                  alt={item.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              <div className="p-4">
-                <div className="flex items-center justify-between mb-3">
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    item.type === 'Новости' 
-                      ? 'bg-blue-600 text-white' 
-                      : 'bg-orange-100 text-orange-700'
-                  }`}>
-                    {item.type}
-                  </span>
-                  <span className="text-gray-500 text-xs">{item.date}</span>
-                </div>
-                
-                <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">
-                  {item.title}
-                </h3>
-                
-                <p className="text-gray-600 text-sm line-clamp-3">
-                  {item.description}
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        {/* Email Subscription */}
+        <EmailSubscription />
+      </main>
 
-        <div className="text-center mb-8">
-          <button className="border border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors font-benzin font-normal">
-            Показать еще
-          </button>
-        </div>
-
-        <Pagination className="mb-8">
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious 
-                href="#" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (currentPage > 1) setCurrentPage(currentPage - 1);
-                }}
-              />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink 
-                href="#" 
-                isActive={currentPage === 1}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setCurrentPage(1);
-                }}
-              >
-                1
-              </PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink 
-                href="#"
-                isActive={currentPage === 2}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setCurrentPage(2);
-                }}
-              >
-                2
-              </PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink 
-                href="#"
-                isActive={currentPage === 3}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setCurrentPage(3);
-                }}
-              >
-                3
-              </PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationEllipsis />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationNext 
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (currentPage < 10) setCurrentPage(currentPage + 1);
-                }}
-              />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
-      </div>
-
-      <EmailSubscription />
-      <div className="h-[70px]"></div>
       <Footer />
-    </main>
+    </div>
   );
 };
 
