@@ -17,7 +17,7 @@ const UslugiServices: React.FC = () => {
   const servicesByCategory = {
     business: [
       { id: '3d-project', label: '3D-проект' },
-      { id: 'business-planning', label: 'Бизнес планирование' },
+      { id: 'business-planning', label: 'Бизнес-планирование' },
       { id: 'staff-training', label: 'Обучение персонала' },
       { id: 'leasing', label: 'Лизинг' }
     ],
@@ -237,7 +237,7 @@ const UslugiServices: React.FC = () => {
               <div className="flex-1 flex justify-end">
                 <img 
                   src="/lovable-uploads/1750c483-ca71-4fb0-85b9-fd2efc819a71.png"
-                  alt="3D проект спортзала"
+                  alt="3D-проект спортзала"
                   className="max-w-full h-auto"
                 />
               </div>
