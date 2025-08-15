@@ -138,7 +138,7 @@ const Brands: React.FC = () => {
                   return 'max-h-16 max-w-full';
                 case 'CardioPower':
                 case 'cardiopower-pro':
-                  return 'max-h-20 max-w-full';
+                  return 'max-h-24 max-w-full';
                 case 'CENTR':
                 case 'kernel':
                   return 'max-h-24 max-w-full';
