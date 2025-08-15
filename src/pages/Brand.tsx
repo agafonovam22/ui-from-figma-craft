@@ -118,6 +118,7 @@ const Brand: React.FC = () => {
       case 'oktan': return 'Octane';
       case 'visbody': return 'Visbody';
       case 'smith': return 'SMITH';
+      case 'slide-fit': return 'Slide&FIT';
       default: return 'kernel';
     }
   };
@@ -326,7 +327,7 @@ const Brand: React.FC = () => {
               {/* Right Text */}
               <div className="order-2 lg:pl-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьез' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — революция в тренировке ягодичных мышц' : brandSlug === 'gym80' ? 'GYM80 — немецкое качество для профессиональных результатов' : brandSlug === 'oktan' ? 'Octane Fitness — эллиптические тренажеры нового поколения' : brandSlug === 'visbody' ? 'Visbody — инновационные технологии для анализа тела' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'scholle' ? 'SCHOLLE: Немецкое качество для активного образа жизни' : brandSlug === 'smith' ? 'SMITH: профессиональное фитнес-оборудование с безупречной репутацией' : 'МЫ – TRUE'}
+                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьез' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — революция в тренировке ягодичных мышц' : brandSlug === 'gym80' ? 'GYM80 — немецкое качество для профессиональных результатов' : brandSlug === 'oktan' ? 'Octane Fitness — эллиптические тренажеры нового поколения' : brandSlug === 'visbody' ? 'Visbody — инновационные технологии для анализа тела' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'scholle' ? 'SCHOLLE: Немецкое качество для активного образа жизни' : brandSlug === 'smith' ? 'SMITH: профессиональное фитнес-оборудование с безупречной репутацией' : brandSlug === 'slide-fit' ? 'Инновационные тренажеры из Словении для комплексного развития тела' : 'МЫ – TRUE'}
                 </h2>
                 
                 <div className="mb-8">
@@ -411,9 +412,13 @@ const Brand: React.FC = () => {
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       На протяжении десяти лет немецкий бренд SCHOLLE завоевывает доверие потребителей, предлагая исключительно качественное спортивное оборудование для всей семьи. Специализируясь на производстве батутов, инверсионных столов и разнообразного спортинвентаря, компания воплощает в своих продуктах традиционную немецкую педантичность и внимание к деталям.
                     </p>
-                  ) : brandSlug === 'smith' ? (
+                   ) : brandSlug === 'smith' ? (
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       Когда речь заходит о надежном и технологичном фитнес-оборудовании для коммерческого использования, бренд SMITH занимает особое место на рынке. Это не просто производитель тренажеров — это команда инженеров и дизайнеров, которые фанатично относятся к качеству каждой детали. Основа философии SMITH — доверие. Доверие к технологиям, которые они внедряют, доверие к материалам, которые используют, и доверие клиентов, которые выбирают их оборудование год за годом.
+                    </p>
+                  ) : brandSlug === 'slide-fit' ? (
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                      Словенский бренд Slide&FIT создает профессиональные тренажеры, объединяющие в себе спортивные технологии и природную мощь альпийских традиций. Оборудование разработано для тех, кто стремится к гармоничному развитию всех групп мышц, сочетая функциональные тренировки с элементами горных видов спорта. Каждый тренажер – это симбиоз инженерной мысли и глубокого понимания биомеханики человеческого тела.
                     </p>
                   ) : (
                     <>
@@ -438,7 +443,7 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : brandSlug === 'sole-fitness' ? 'Что делает Sole Fitness особенным?' : brandSlug === 'peach-builder' ? 'Для кого создан PEACH BUILDER?' : brandSlug === 'gym80' ? 'Философия GYM80' : brandSlug === 'oktan' ? 'Инновации Octane Fitness' : brandSlug === 'visbody' ? 'Технологии Visbody' : brandSlug === 'bowflex' ? 'BOWFLEX ДЕЛАЕТ ТРЕНИРОВКИ ОСОБЕННЫМИ' : brandSlug === 'scholle' ? 'Надежность, проверенная временем' : brandSlug === 'smith' ? 'Инновации, проверенные временем' : 'Наше оборудование выбирают:'}
+                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : brandSlug === 'sole-fitness' ? 'Что делает Sole Fitness особенным?' : brandSlug === 'peach-builder' ? 'Для кого создан PEACH BUILDER?' : brandSlug === 'gym80' ? 'Философия GYM80' : brandSlug === 'oktan' ? 'Инновации Octane Fitness' : brandSlug === 'visbody' ? 'Технологии Visbody' : brandSlug === 'bowflex' ? 'BOWFLEX ДЕЛАЕТ ТРЕНИРОВКИ ОСОБЕННЫМИ' : brandSlug === 'scholle' ? 'Надежность, проверенная временем' : brandSlug === 'smith' ? 'Инновации, проверенные временем' : brandSlug === 'slide-fit' ? 'Горнолыжный тренажер Slide&FIT Commercial Edition' : 'Наше оборудование выбирают:'}
                 </h2>
                 
                 {brandSlug === 'cardio-power' ? (
@@ -530,11 +535,23 @@ const Brand: React.FC = () => {
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                     Каждое изделие SCHOLLE — это результат тщательного проектирования и строгого контроля качества на всех этапах производства. Бренд придерживается европейских стандартов, гарантируя безопасность и долговечность своей продукции. Особое внимание уделяется прочности материалов: от износостойких тканей прыжковых поверхностей батутов до ударопрочных конструкций теннисных столов.
                   </p>
-                ) : brandSlug === 'smith' ? (
-                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                    Каждый тренажер SMITH начинается с тщательного проектирования в современных 3D-программах. Такой подход позволяет выявить и устранить даже малейшие недочеты еще до начала производства. Бренд не просто следит за трендами – он их задает, внедряя передовые решения в индустрии фитнес-оборудования. От беговых дорожек до многофункциональных силовых станций – все продукты SMITH объединяет одно: безупречная эргономика и продуманность до мелочей.
-                  </p>
-                ) : (
+                 ) : brandSlug === 'smith' ? (
+                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                     Каждый тренажер SMITH начинается с тщательного проектирования в современных 3D-программах. Такой подход позволяет выявить и устранить даже малейшие недочеты еще до начала производства. Бренд не просто следит за трендами – он их задает, внедряя передовые решения в индустрии фитнес-оборудования. От беговых дорожек до многофункциональных силовых станций – все продукты SMITH объединяет одно: безупречная эргономика и продуманность до мелочей.
+                   </p>
+                 ) : brandSlug === 'slide-fit' ? (
+                   <>
+                     <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                       Горнолыжный тренажер Slide&FIT Commercial Edition – это флагманское решение для комплексных тренировок. Этот мощный симулятор не просто имитирует катание на лыжах, а предлагает многофункциональную систему нагрузок:
+                     </p>
+                     <ul className="text-gray-600 text-sm leading-relaxed font-manrope mb-6 ml-4">
+                       <li>- Эффективно прорабатывает мышцы кора, ног и плечевого пояса</li>
+                       <li>- Укрепляет мышечный корсет спины</li>
+                       <li>- Развивает выносливость и координацию</li>
+                       <li>- Сжигает до 700 ккал/час</li>
+                     </ul>
+                   </>
+                 ) : (
                   <div className="space-y-6">
                     <div>
                       <h3 className="font-benzin text-gray-900 mb-3">Фитнес-клубы премиум-класса</h3>
@@ -588,7 +605,7 @@ const Brand: React.FC = () => {
                 <div className="h-full flex flex-col">
                   <div className="mb-4">
                      <h2 className="text-3xl font-benzin text-gray-900 mb-4">
-                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : brandSlug === 'peach-builder' ? 'Философия бренда строится на трёх принципах:' : brandSlug === 'gym80' ? 'Более 40 лет в служении фитнесу' : brandSlug === 'oktan' ? 'Преимущества Octane Fitness' : brandSlug === 'visbody' ? 'Почему выбирают Visbody?' : brandSlug === 'bowflex' ? 'BOWFLEX ВДОХНОВЛЯЕТ' : brandSlug === 'scholle' ? 'Широкий ассортимент для активного отдыха' : brandSlug === 'smith' ? 'Комфорт как главный приоритет' : 'Лидер в индустрии'}
+                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : brandSlug === 'peach-builder' ? 'Философия бренда строится на трёх принципах:' : brandSlug === 'gym80' ? 'Более 40 лет в служении фитнесу' : brandSlug === 'oktan' ? 'Преимущества Octane Fitness' : brandSlug === 'visbody' ? 'Почему выбирают Visbody?' : brandSlug === 'bowflex' ? 'BOWFLEX ВДОХНОВЛЯЕТ' : brandSlug === 'scholle' ? 'Широкий ассортимент для активного отдыха' : brandSlug === 'smith' ? 'Комфорт как главный приоритет' : brandSlug === 'slide-fit' ? 'Технологическое превосходство' : 'Лидер в индустрии'}
                     </h2>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
                       {brandSlug === 'cardio-power' ? '' : brandSlug === 'schwinn' ? 'Уже более века Schwinn сохраняет безупречную репутацию благодаря строгим тестам на безопасность и долговечность. Тренажёры созданы из качественных материалов и служат годами.' : brandSlug === 'nautilus' ? '' : brandSlug === 'sole-fitness' ? '' : brandSlug === 'peach-builder' ? '' : brandSlug === 'oktan' ? 'Более 25 лет Octane Fitness остается лидером инноваций в области эллиптических тренажеров, устанавливая стандарты качества и технологий.' : brandSlug === 'visbody' ? 'Единственные в отрасли технологии сочетания биоимпедансометрии и 3D-сканирования для максимально точного анализа тела.' : brandSlug === 'bowflex' ? '' : brandSlug === 'scholle' ? 'В ассортименте SCHOLLE каждый найдет оборудование по душе:' : ''}
