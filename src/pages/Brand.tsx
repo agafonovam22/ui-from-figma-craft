@@ -221,7 +221,7 @@ const Brand: React.FC = () => {
                />
              ) : brandSlug === 'hyfit' ? (
               <img 
-                src="/lovable-uploads/c7e120a1-88ac-4ae3-a750-325b83bc7739.png"
+                src="/lovable-uploads/2da03814-54a7-4db9-8c63-309d89c1fbbc.png"
                 alt="HYFIT"
                 className="w-full h-auto object-cover"
               />
@@ -1090,6 +1090,32 @@ const Brand: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Fifth Content Block - HYFIT Block 5 */}
+        {brandSlug === 'hyfit' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Image */}
+                <div className="order-1">
+                  <img 
+                    src="/lovable-uploads/1dc9044e-c4e9-4404-ba87-f1582493ad3c.png"
+                    alt="HYFIT персональный тренер"
+                    className="w-full h-full object-cover rounded-lg"
+                    style={{ height: '500px' }}
+                  />
+                </div>
+                
+                {/* Right Text */}
+                <div className="order-2 lg:pl-8">
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    HYFIT – это не просто оборудование, а ваш персональный тренер в компактном форм-факторе. Качество, проверенное в самых интенсивных тренировках!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Fifth Content Block - INSPIRE Global Recognition */}
         {brandSlug === 'inspire' && (
