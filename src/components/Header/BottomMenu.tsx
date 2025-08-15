@@ -51,39 +51,52 @@ const BottomMenu: React.FC = () => {
 
   const categories: CategoryItem[] = [
     {
-      id: 'treadmills',
-      label: 'Беговые дорожки',
+      id: 'cardio',
+      label: 'Кардиотренировки',
       icon: '',
-      iconImage: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png',
-      onClick: () => console.log('Treadmills clicked')
+      onClick: () => console.log('Cardio clicked')
     },
     {
-      id: 'dumbbells',
-      label: 'Гантели и ряды',
+      id: 'strength',
+      label: 'Силовые тренировки',
       icon: '',
-      iconImage: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
-      onClick: () => console.log('Dumbbells clicked')
+      onClick: () => console.log('Strength clicked')
     },
     {
-      id: 'bikes',
-      label: 'Велотренажеры',
+      id: 'free-weights',
+      label: 'Свободные веса',
       icon: '',
-      iconImage: '/lovable-uploads/31e0c62c-257c-4fe3-96b0-d53a4a23f8ca.png',
-      onClick: () => console.log('Bikes clicked')
+      onClick: () => console.log('Free weights clicked')
     },
     {
-      id: 'multistations',
-      label: 'Мультистанции',
+      id: 'active-recreation',
+      label: 'Активный отдых',
       icon: '',
-      iconImage: '/lovable-uploads/94f85ba4-b118-4ce1-b7e5-12a4ce35107c.png',
-      onClick: () => console.log('Multistations clicked')
+      onClick: () => console.log('Active recreation clicked')
     },
     {
-      id: 'trampolines',
-      label: 'Батуты',
+      id: 'massage-rehabilitation',
+      label: 'Массаж и реабилитация',
       icon: '',
-      iconImage: '/lovable-uploads/949b1384-82af-4a1c-bbc2-e4f225491933.png',
-      onClick: () => console.log('Trampolines clicked')
+      onClick: () => console.log('Massage and rehabilitation clicked')
+    },
+    {
+      id: 'novelties',
+      label: 'Новинки',
+      icon: '',
+      onClick: () => console.log('Novelties clicked')
+    },
+    {
+      id: 'promotions',
+      label: 'Акции',
+      icon: '',
+      onClick: () => console.log('Promotions clicked')
+    },
+    {
+      id: 'accessories',
+      label: 'Аксессуары',
+      icon: '',
+      onClick: () => console.log('Accessories clicked')
     }
   ];
 
