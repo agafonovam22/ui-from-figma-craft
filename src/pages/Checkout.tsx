@@ -466,9 +466,9 @@ const Checkout: React.FC = () => {
                           <div className="w-2 h-2 bg-[#F53B49]"></div>
                         </div>
                       )}
-                      <span className="font-medium" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>Счёт на оплату</span>
+                      <span className="font-medium" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px' }}>Счет на оплату</span>
                     </div>
-                    <p className="text-sm text-gray-600" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Пришлём счёт вам на почту</p>
+                    <p className="text-sm text-gray-600" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>Пришлем счет вам на почту</p>
                   </div>
 
                   {/* Installment Payment */}
@@ -650,7 +650,7 @@ const Checkout: React.FC = () => {
                       </p>
                       
                       <p className="text-gray-700 text-sm leading-tight mb-4" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
-                        Создание учётной записи поможет делать покупки быстрее и удобнее, 
+                        Создание учетной записи поможет делать покупки быстрее и удобнее, 
                         не вносить одни и те же данные многократно (адрес доставки, имя, 
                         телефон и т.д.) Вы также, сможете отслеживать статус своего заказа, 
                         пользоваться Закладками, видеть свои предыдущие заказы, 
