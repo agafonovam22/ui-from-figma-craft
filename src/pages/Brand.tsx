@@ -954,6 +954,48 @@ const Brand: React.FC = () => {
                        Тренажеры Slide&FIT оснащены несколькими уровнями нагрузки, позволяющими постепенно увеличивать интенсивность тренировок. Прочные металлические конструкции с точной балансировкой гарантируют безопасность и долговечность. Компактные размеры и мобильность делают тренажеры идеальным решением как для фитнес-клубов, так и для домашнего использования.
                      </p>
                      
+                     <div className="space-y-4 mb-6">
+                       <div className="flex items-start">
+                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                         <div>
+                           <h3 className="font-benzin text-gray-900 mb-1">50+ лет на рынке</h3>
+                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                             Собственные инженерные разработки и контроль качества
+                           </p>
+                         </div>
+                       </div>
+                       
+                       <div className="flex items-start">
+                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                         <div>
+                           <h3 className="font-benzin text-gray-900 mb-1">99.9% надежности</h3>
+                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                             Благодаря износостойким компонентам и интеллектуальному управлению
+                           </p>
+                         </div>
+                       </div>
+                       
+                       <div className="flex items-start">
+                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                         <div>
+                           <h3 className="font-benzin text-gray-900 mb-1">3 уровня защиты</h3>
+                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                             Передовые технологии амортизации и безопасности
+                           </p>
+                         </div>
+                       </div>
+                       
+                       <div className="flex items-start">
+                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                         <div>
+                           <h3 className="font-benzin text-gray-900 mb-1">До 40% экономии на обслуживании</h3>
+                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                             Минимальные затраты за счёт прочной конструкции и доступных запчастей
+                           </p>
+                         </div>
+                       </div>
+                     </div>
+                     
                      <div className="mb-6">
                        <p className="text-gray-600 text-sm leading-relaxed mb-4 font-manrope">
                          С брендом Slide&FIT вы получаете не просто тренажер, а персонального тренера, который:
