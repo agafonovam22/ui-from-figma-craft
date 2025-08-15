@@ -205,13 +205,19 @@ const Brand: React.FC = () => {
                 alt="CARDIO POWER"
                 className="w-full h-auto object-cover"
               />
-            ) : brandSlug === 'inspire' ? (
-              <img 
-                src="/lovable-uploads/081993fe-cd43-4ad8-ad5a-c50e3220df42.png"
-                alt="INSPIRE"
-                className="w-full h-auto object-cover"
-              />
-            ) : brandSlug === 'hyfit' ? (
+             ) : brandSlug === 'inspire' ? (
+               <img 
+                 src="/lovable-uploads/081993fe-cd43-4ad8-ad5a-c50e3220df42.png"
+                 alt="INSPIRE"
+                 className="w-full h-auto object-cover"
+               />
+             ) : brandSlug === 'scholle' ? (
+               <img 
+                 src="/lovable-uploads/c5965882-8568-4b77-906d-1106ba604083.png"
+                 alt="SCHOLLE"
+                 className="w-full h-auto object-cover"
+               />
+             ) : brandSlug === 'hyfit' ? (
               <img 
                 src="/lovable-uploads/2da03814-54a7-4db9-8c63-309d89c1fbbc.png"
                 alt="HYFIT"
