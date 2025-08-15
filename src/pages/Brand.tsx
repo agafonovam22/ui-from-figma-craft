@@ -123,6 +123,7 @@ const Brand: React.FC = () => {
       case 'inspire': return 'INSPIRE';
       case 'hyfit': return 'HYFIT';
       case 'maxgym': return 'MAXGYM';
+      case 'proski': return 'PROSKI';
       default: return 'kernel';
     }
   };
@@ -242,6 +243,12 @@ const Brand: React.FC = () => {
               <img 
                 src="/lovable-uploads/124c5630-193d-427c-93af-8c42f41f21aa.png"
                 alt="CENTR"
+                className="w-full h-auto object-cover"
+              />
+            ) : brandSlug === 'proski' ? (
+              <img 
+                src="/lovable-uploads/b29d37d2-b36a-4d9f-99db-1b1f4ab7ac17.png"
+                alt="PROSKI - Горы у вас дома!"
                 className="w-full h-auto object-cover"
               />
             ) : (
