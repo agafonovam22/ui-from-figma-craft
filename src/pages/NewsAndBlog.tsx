@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
@@ -278,42 +277,34 @@ const NewsAndBlogPage: React.FC = () => {
             </>
           )}
 
-          {/* Pagination */}
-          {totalPages > 1 && (
-            <div className="flex justify-center items-center gap-4 mb-12">
-              <button
-                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-                disabled={currentPage === 1}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
-              >
-                <ChevronLeft size={16} />
-                Предыдущая
-              </button>
-              
-              <div className="flex items-center gap-2">
-                {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
-                  <button
-                    key={page}
-                    onClick={() => setCurrentPage(page)}
-                    className={`w-10 h-10 rounded-full transition-colors ${
-                      currentPage === page
-                        ? 'bg-[#F53B49] text-white'
-                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                    }`}
-                  >
-                    {page}
-                  </button>
-                ))}
-              </div>
-              
+          {/* Show More Button */}
+          {currentPage < totalPages && (
+            <div className="flex justify-center mb-4">
               <button
                 onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-                disabled={currentPage === totalPages}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+                className="px-6 py-2 text-sm text-gray-600 hover:text-gray-800 transition-colors"
               >
-                Следующая
-                <ChevronRight size={16} />
+                еще
               </button>
+            </div>
+          )}
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center gap-2 mb-12">
+              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`w-8 h-8 rounded-full border-2 text-sm font-medium transition-all duration-200 ${
+                    currentPage === page
+                      ? 'border-black bg-black text-white'
+                      : 'border-gray-300 bg-white text-gray-600 hover:border-black hover:bg-black hover:text-white'
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
             </div>
           )}
         </div>
