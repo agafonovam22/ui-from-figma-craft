@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
@@ -14,7 +15,8 @@ import {
 } from "@/components/ui/breadcrumb";
 
 const NewsAndBlogPage: React.FC = () => {
-  const newsItems = getAllNews();
+  const [currentPage, setCurrentPage] = useState(1);
+  const { news: newsItems, totalPages } = getAllNews(currentPage);
 
   return (
     <div className="min-h-screen bg-white">
@@ -189,94 +191,131 @@ const NewsAndBlogPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Дополнительные контейнеры новостей */}
-          {/* Первый ряд - 4 контейнера */}
-          <div className="grid grid-cols-4 gap-4 mb-4">
-            {newsItems.slice(4, 8).map((item, index) => (
-              <div key={item.id}>
-                <Link
-                  to={`/news/${item.slug}`}
-                  className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
-                >
-                  <div className="relative h-[200px]">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  
-                  <div className="p-3 h-[80px] flex flex-col justify-center">
-                    <div className="flex justify-between items-center mb-1">
-                      <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                        НОВОСТИ
-                      </div>
-                      <div className="text-xs text-gray-600">
-                        {item.date}
-                      </div>
+          {/* Дополнительные контейнеры новостей (до 11 на странице) */}
+          {newsItems.length > 4 && (
+            <>
+              {/* Первый ряд - 4 контейнера */}
+              {newsItems.slice(4, 8).length > 0 && (
+                <div className="grid grid-cols-4 gap-4 mb-4">
+                  {newsItems.slice(4, 8).map((item) => (
+                    <div key={item.id}>
+                      <Link
+                        to={`/news/${item.slug}`}
+                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
+                      >
+                        <div className="relative h-[200px]">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        
+                        <div className="p-3 h-[80px] flex flex-col justify-center">
+                          <div className="flex justify-between items-center mb-1">
+                            <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                              НОВОСТИ
+                            </div>
+                            <div className="text-xs text-gray-600">
+                              {item.date}
+                            </div>
+                          </div>
+                          
+                          <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                            {item.title}
+                          </h3>
+                          
+                          <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                            {item.description}
+                          </p>
+                        </div>
+                      </Link>
                     </div>
-                    
-                    <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                      {item.title}
-                    </h3>
-                    
-                    <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
+                  ))}
+                </div>
+              )}
 
-          {/* Второй ряд - 2 контейнера */}
-          <div className="grid grid-cols-2 gap-4 mb-8">
-            {newsItems.slice(8, 10).map((item, index) => (
-              <div key={item.id}>
-                <Link
-                  to={`/news/${item.slug}`}
-                  className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
-                >
-                  <div className="relative h-[200px]">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  
-                  <div className="p-3 h-[80px] flex flex-col justify-center">
-                    <div className="flex justify-between items-center mb-1">
-                      <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                        НОВОСТИ
-                      </div>
-                      <div className="text-xs text-gray-600">
-                        {item.date}
-                      </div>
+              {/* Остальные новости (8-11) */}
+              {newsItems.slice(8, 11).length > 0 && (
+                <div className={`grid gap-4 mb-8 ${newsItems.slice(8, 11).length === 3 ? 'grid-cols-3' : newsItems.slice(8, 11).length === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
+                  {newsItems.slice(8, 11).map((item) => (
+                    <div key={item.id}>
+                      <Link
+                        to={`/news/${item.slug}`}
+                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
+                      >
+                        <div className="relative h-[200px]">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        
+                        <div className="p-3 h-[80px] flex flex-col justify-center">
+                          <div className="flex justify-between items-center mb-1">
+                            <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                              НОВОСТИ
+                            </div>
+                            <div className="text-xs text-gray-600">
+                              {item.date}
+                            </div>
+                          </div>
+                          
+                          <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                            {item.title}
+                          </h3>
+                          
+                          <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                            {item.description}
+                          </p>
+                        </div>
+                      </Link>
                     </div>
-                    
-                    <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                      {item.title}
-                    </h3>
-                    
-                    <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
+                  ))}
+                </div>
+              )}
+            </>
+          )}
 
           {/* Pagination */}
-          <div className="flex justify-center mb-12">
-            <div className="flex space-x-2">
-              <div className="w-2 h-2 rounded-full bg-[#F53B49]"></div>
-              <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-              <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-              <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center gap-4 mb-12">
+              <button
+                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+              >
+                <ChevronLeft size={16} />
+                Предыдущая
+              </button>
+              
+              <div className="flex items-center gap-2">
+                {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+                  <button
+                    key={page}
+                    onClick={() => setCurrentPage(page)}
+                    className={`w-10 h-10 rounded-full transition-colors ${
+                      currentPage === page
+                        ? 'bg-[#F53B49] text-white'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    }`}
+                  >
+                    {page}
+                  </button>
+                ))}
+              </div>
+              
+              <button
+                onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                disabled={currentPage === totalPages}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+              >
+                Следующая
+                <ChevronRight size={16} />
+              </button>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Email Subscription */}

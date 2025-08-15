@@ -165,12 +165,26 @@ export const getHomePageNews = (): NewsItem[] => {
   return newsItems.slice(0, 4);
 };
 
-// Получить все новости для страницы /news
-export const getAllNews = (): NewsItem[] => {
-  return newsItems;
+// Получить новости с пагинацией (11 новостей на страницу)
+export const getNewsWithPagination = (page: number = 1): { news: NewsItem[], totalPages: number } => {
+  const itemsPerPage = 11;
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const paginatedNews = newsItems.slice(startIndex, endIndex);
+  const totalPages = Math.ceil(newsItems.length / itemsPerPage);
+  
+  return {
+    news: paginatedNews,
+    totalPages
+  };
 };
 
-// Получить новости для страницы About
-export const getAboutPageNews = (): NewsItem[] => {
-  return newsItems;
+// Получить все новости для страницы /news (с пагинацией)
+export const getAllNews = (page: number = 1): { news: NewsItem[], totalPages: number } => {
+  return getNewsWithPagination(page);
+};
+
+// Получить новости для страницы About (с пагинацией)
+export const getAboutPageNews = (page: number = 1): { news: NewsItem[], totalPages: number } => {
+  return getNewsWithPagination(page);
 };

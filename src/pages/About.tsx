@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, Warehouse, Shield, Grid3x3, Wrench, TrendingUp } from 'lucide-react';
+import { ArrowRight, Users, Warehouse, Shield, Grid3x3, Wrench, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
 import { getAboutPageNews } from '@/data/newsData';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -21,6 +21,8 @@ import {
 
 const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState('about');
+  const [currentPage, setCurrentPage] = useState(1);
+  const { news: newsItems, totalPages } = getAboutPageNews(currentPage);
 
   const teamMembers = [
     {
@@ -167,7 +169,7 @@ const About: React.FC = () => {
     }
   ];
 
-  const newsItems = getAboutPageNews();
+  // newsItems теперь получается из hook'а выше
 
   const getCardClasses = (size: string) => {
     switch (size) {
@@ -798,7 +800,7 @@ const About: React.FC = () => {
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
               <h2 className="text-2xl font-bold mb-8">Новости и блог</h2>
               
-              {/* News Grid - Custom Layout like Screenshot */}
+              {/* News Grid - Same layout as News page */}
               <div className="grid grid-cols-12 gap-4 mb-12">
                 {/* Первый контейнер - большой квадрат слева */}
                 <div className="col-span-12 md:col-span-6">
@@ -829,7 +831,7 @@ const About: React.FC = () => {
                       </h3>
                       
                       <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
-                        К 8 марта вы можете предлагать скидку 15% на все тренажеры CardioPower
+                        {newsItems[0]?.description}
                       </p>
                     </div>
                   </Link>
@@ -866,7 +868,7 @@ const About: React.FC = () => {
                         </h3>
                         
                         <p className="text-xs text-gray-600 line-clamp-4 leading-relaxed">
-                          В минувшие выходные в Сколково прошло крупнейшее мероприятие фитнес-России
+                          {newsItems[1]?.description}
                         </p>
                       </div>
                     </Link>
@@ -882,7 +884,7 @@ const About: React.FC = () => {
                       >
                         <div className="relative h-[200px]">
                           <img
-                            src="/lovable-uploads/ed66472b-775d-46cd-84e0-7dc644a9aaad.png"
+                            src={newsItems[2]?.image}
                             alt={newsItems[2]?.title}
                             className="w-full h-full object-cover"
                           />
@@ -894,7 +896,7 @@ const About: React.FC = () => {
                               НОВОСТИ
                             </div>
                             <div className="text-xs text-gray-600">
-                              16.11.2023
+                              {newsItems[2]?.date}
                             </div>
                           </div>
                           
@@ -903,7 +905,7 @@ const About: React.FC = () => {
                           </h3>
                           
                           <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                            Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower
+                            {newsItems[2]?.description}
                           </p>
                         </div>
                       </Link>
@@ -917,8 +919,8 @@ const About: React.FC = () => {
                       >
                         <div className="relative h-[200px]">
                           <img
-                            src="/lovable-uploads/8ea9b9be-2293-4e24-a820-f56c2a81923e.png"
-                            alt="Беговая дорожка CardioPower S20"
+                            src={newsItems[3]?.image}
+                            alt={newsItems[3]?.title}
                             className="w-full h-full object-cover"
                           />
                         </div>
@@ -929,16 +931,16 @@ const About: React.FC = () => {
                               НОВОСТИ
                             </div>
                             <div className="text-xs text-gray-600">
-                              9.11.2023
+                              {newsItems[3]?.date}
                             </div>
                           </div>
                           
                           <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                            Новинка - Уже в продаже: Беговая дорожка CardioPower S20
+                            {newsItems[3]?.title}
                           </h3>
                           
                           <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                            Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower
+                            {newsItems[3]?.description}
                           </p>
                         </div>
                       </Link>
@@ -947,267 +949,131 @@ const About: React.FC = () => {
                 </div>
               </div>
 
-              {/* Дополнительные 6 контейнеров новостей */}
-              {/* Первый ряд - 4 контейнера */}
-              <div className="grid grid-cols-4 gap-4 mb-4">
-                {/* 5-й контейнер */}
-                <div>
-                  <Link
-                    to="/news/cardiopower-tt30-v-prodazhe"
-                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
-                  >
-                    <div className="relative h-[200px]">
-                      <img
-                        src="/lovable-uploads/578522f8-4322-4ee6-b5f6-c136e100a67d.png"
-                        alt="Беговая дорожка CardioPower ТТ30"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    
-                    <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="flex justify-between items-center mb-1">
-                        <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                          НОВОСТИ
+              {/* Дополнительные контейнеры новостей (до 11 на странице) */}
+              {newsItems.length > 4 && (
+                <>
+                  {/* Первый ряд - 4 контейнера */}
+                  {newsItems.slice(4, 8).length > 0 && (
+                    <div className="grid grid-cols-4 gap-4 mb-4">
+                      {newsItems.slice(4, 8).map((item) => (
+                        <div key={item.id}>
+                          <Link
+                            to={`/news/${item.slug}`}
+                            className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
+                          >
+                            <div className="relative h-[200px]">
+                              <img
+                                src={item.image}
+                                alt={item.title}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            
+                            <div className="p-3 h-[80px] flex flex-col justify-center">
+                              <div className="flex justify-between items-center mb-1">
+                                <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                                  НОВОСТИ
+                                </div>
+                                <div className="text-xs text-gray-600">
+                                  {item.date}
+                                </div>
+                              </div>
+                              
+                              <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                                {item.title}
+                              </h3>
+                              
+                              <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                                {item.description}
+                              </p>
+                            </div>
+                          </Link>
                         </div>
-                        <div className="text-xs text-gray-600">
-                          9.11.2023
-                        </div>
-                      </div>
-                      
-                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                        Новинка - Уже в продаже: Беговая дорожка CardioPower ТТ30
-                      </h3>
-                      
-                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower
-                      </p>
+                      ))}
                     </div>
-                  </Link>
-                </div>
+                  )}
 
-                {/* 6-й контейнер */}
-                <div>
-                  <Link
-                    to="/news/cardiopower-s55-v-prodazhe"
-                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
-                  >
-                    <div className="relative h-[200px]">
-                      <img
-                        src="/lovable-uploads/3fe4b3b1-63a2-4ed1-b873-07b7de639ca1.png"
-                        alt="Беговая дорожка CardioPower S55"
-                        className="w-full h-full object-cover"
-                      />
+                  {/* Остальные новости (8-11) */}
+                  {newsItems.slice(8, 11).length > 0 && (
+                    <div className={`grid gap-4 mb-8 ${newsItems.slice(8, 11).length === 3 ? 'grid-cols-3' : newsItems.slice(8, 11).length === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
+                      {newsItems.slice(8, 11).map((item) => (
+                        <div key={item.id}>
+                          <Link
+                            to={`/news/${item.slug}`}
+                            className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
+                          >
+                            <div className="relative h-[200px]">
+                              <img
+                                src={item.image}
+                                alt={item.title}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            
+                            <div className="p-3 h-[80px] flex flex-col justify-center">
+                              <div className="flex justify-between items-center mb-1">
+                                <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                                  НОВОСТИ
+                                </div>
+                                <div className="text-xs text-gray-600">
+                                  {item.date}
+                                </div>
+                              </div>
+                              
+                              <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                                {item.title}
+                              </h3>
+                              
+                              <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                                {item.description}
+                              </p>
+                            </div>
+                          </Link>
+                        </div>
+                      ))}
                     </div>
-                    
-                    <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="flex justify-between items-center mb-1">
-                        <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                          НОВОСТИ
-                        </div>
-                        <div className="text-xs text-gray-600">
-                          9.11.2023
-                        </div>
-                      </div>
-                      
-                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                        Новинка - Уже в продаже: Беговая дорожка CardioPower S55
-                      </h3>
-                      
-                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower
-                      </p>
-                    </div>
-                  </Link>
-                </div>
-
-                {/* 7-й контейнер */}
-                <div>
-                  <Link
-                    to="/news/cardiopower-s50-v-prodazhe"
-                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
-                  >
-                    <div className="relative h-[200px]">
-                      <img
-                        src="/lovable-uploads/3b753ca2-42c7-416f-9886-af8374196645.png"
-                        alt="Беговая дорожка CardioPower S50"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    
-                    <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="flex justify-between items-center mb-1">
-                        <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                          НОВОСТИ
-                        </div>
-                        <div className="text-xs text-gray-600">
-                          9.11.2023
-                        </div>
-                      </div>
-                      
-                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                        Новинка - Уже в продаже: Беговая дорожка CardioPower S50
-                      </h3>
-                      
-                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Беговая дорожка CardioPower S50 имеет стильный дизайн и совершенные технические характеристики
-                      </p>
-                    </div>
-                  </Link>
-                </div>
-
-                {/* 8-й контейнер */}
-                <div>
-                  <Link
-                    to="/news/cardiopower-x48-v-prodazhe"
-                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
-                  >
-                    <div className="relative h-[200px]">
-                      <img
-                        src="/lovable-uploads/8f5c4260-9931-4f3a-9ae2-b0f6122e8f2f.png"
-                        alt="Эллиптический тренажер CardioPower X48"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    
-                    <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="flex justify-between items-center mb-1">
-                        <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                          НОВОСТИ
-                        </div>
-                        <div className="text-xs text-gray-600">
-                          17.10.2023
-                        </div>
-                      </div>
-                      
-                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                        Новинка - Уже в продаже: Эллиптический тренажер CardioPower X48
-                      </h3>
-                      
-                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Сообщаем о расширении линейки эллиптических тренажеров и поступлении новой модели CardioPower
-                      </p>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Второй ряд - 3 контейнера: квадратный - вытянутый - квадратный */}
-              <div className="grid grid-cols-12 gap-4 mb-12">
-                {/* 9-й контейнер - квадратный */}
-                <div className="col-span-3">
-                  <Link
-                    to="/news/cardiopower-x45-v-prodazhe"
-                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
-                  >
-                    <div className="relative h-[200px]">
-                      <img
-                        src="/lovable-uploads/18cd3093-b7ac-453b-8467-1fec09fb24fc.png"
-                        alt="Эллиптический тренажер CardioPower X45"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    
-                    <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="flex justify-between items-center mb-1">
-                        <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                          НОВОСТИ
-                        </div>
-                        <div className="text-xs text-gray-600">
-                          17.10.2023
-                        </div>
-                      </div>
-                      
-                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                        Новинка - Уже в продаже: Эллиптический тренажер CardioPower X45
-                      </h3>
-                      
-                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Сообщаем о расширении линейки эллиптических тренажеров и поступлении новой модели CardioPower
-                      </p>
-                    </div>
-                  </Link>
-                </div>
-
-                {/* 10-й контейнер - вытянутый */}
-                <div className="col-span-6">
-                  <Link
-                    to="/news/cardiopower-tt35-v-prodazhe"
-                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
-                  >
-                      <div className="relative">
-                        <img
-                          src="/lovable-uploads/f723c377-cd62-435f-86d4-71f10aca1c8f.png"
-                          alt="Беговая дорожка CardioPower TT35"
-                          className="w-full h-[160px] object-cover"
-                        />
-                      </div>
-                      
-                      <div className="p-4 h-[120px] flex flex-col justify-start">
-                        <div className="flex justify-between items-center mb-2">
-                          <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                            НОВОСТИ
-                          </div>
-                          <div className="text-xs text-gray-600">
-                            26.09.2023
-                          </div>
-                        </div>
-                        
-                        <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                          Новинка - Уже в продаже: Беговая дорожка CardioPower TT35
-                        </h3>
-                        
-                        <p className="text-xs text-gray-600 line-clamp-4 leading-relaxed">
-                          Беговая дорожка CardioPower TT35 по-настоящему уникальна, благодаря инновационной системе сверхкомпактного складывания
-                        </p>
-                      </div>
-                  </Link>
-                </div>
-
-                {/* 11-й контейнер - квадратный */}
-                <div className="col-span-3">
-                  <Link
-                    to="/news/cardiopower-re50-v-prodazhe"
-                    className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
-                  >
-                    <div className="relative h-[200px]">
-                      <img
-                        src="/lovable-uploads/fac5ea13-b62c-4a6f-8362-0195de2226a6.png"
-                        alt="Гребной тренажёр CardioPower RE50"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    
-                    <div className="p-3 h-[80px] flex flex-col justify-center">
-                      <div className="flex justify-between items-center mb-1">
-                        <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
-                          НОВОСТИ
-                        </div>
-                        <div className="text-xs text-gray-600">
-                          6.09.2023
-                        </div>
-                      </div>
-                      
-                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
-                        Новинка - Уже в продаже: Гребной тренажёр CardioPower RE50
-                      </h3>
-                      
-                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        Сообщаем о расширении линейки гребных тренажеров и поступлении новой модели CardioPower
-                      </p>
-                    </div>
-                  </Link>
-                </div>
-              </div>
+                  )}
+                </>
+              )}
 
               {/* Pagination */}
-              <div className="flex justify-center mb-12">
-                <div className="flex space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-[#F53B49]"></div>
-                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-                  <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+              {totalPages > 1 && (
+                <div className="flex justify-center items-center gap-4 mb-12">
+                  <button
+                    onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                    disabled={currentPage === 1}
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+                  >
+                    <ChevronLeft size={16} />
+                    Предыдущая
+                  </button>
+                  
+                  <div className="flex items-center gap-2">
+                    {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+                      <button
+                        key={page}
+                        onClick={() => setCurrentPage(page)}
+                        className={`w-10 h-10 rounded-full transition-colors ${
+                          currentPage === page
+                            ? 'bg-[#F53B49] text-white'
+                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                        }`}
+                      >
+                        {page}
+                      </button>
+                    ))}
+                  </div>
+                  
+                  <button
+                    onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                    disabled={currentPage === totalPages}
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+                  >
+                    Следующая
+                    <ChevronRight size={16} />
+                  </button>
                 </div>
-              </div>
+              )}
             </div>
           </section>
         )}
