@@ -157,6 +157,19 @@ export const newsItems: NewsItem[] = [
     size: 'large',
     slug: 'cardiopower-re50-v-prodazhe',
     isActive: false
+  },
+  {
+    id: 29,
+    type: 'Новости',
+    category: 'НОВОСТИ',
+    categoryColor: 'bg-blue-600',
+    date: '06.09.2023',
+    title: 'Новинка - Уже в продаже: Вертикальный велотренажёр CardioPower B35',
+    description: 'Вертикальный велотренажёр CardioPower B35 - профессиональная модель с современным дизайном для эффективных кардиотренировок.',
+    image: '/lovable-uploads/be6f99e9-3aac-4e59-bffd-6f339330f7a2.png',
+    size: 'large',
+    slug: 'cardiopower-b35-v-prodazhe',
+    isActive: false
   }
 ];
 
