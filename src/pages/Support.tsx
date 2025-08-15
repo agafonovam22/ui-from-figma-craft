@@ -1207,6 +1207,22 @@ const Support: React.FC = () => {
                   </AccordionContent>
                 </AccordionItem>
 
+                <AccordionItem value="item-2-new" className="border-0">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Какие есть способы оплатить покупку?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Вы можете оплатить покупку удобным для вас способом:<br />
+                    • Онлайн-оплата банковской картой (Visa, Mastercard, МИР)<br />
+                    • Наличными курьеру при получении заказа<br />
+                    • Безналичный расчёт по выставленному счёту (для юрлиц и ИП)<br />
+                    • Наложенный платеж (оплата при получении в отделении транспортной компании)<br />
+                    • Рассрочка (доступные программы уточняйте у менеджеров)<br />
+                    • Оплата картой при получении (в пунктах выдачи или курьеру)<br />
+                    Выбирайте удобный вариант и оформляйте заказ!
+                  </AccordionContent>
+                </AccordionItem>
+
                 <AccordionItem value="item-1" className="border-0">
                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
