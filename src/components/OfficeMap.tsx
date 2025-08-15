@@ -10,7 +10,7 @@ const OfficeMap: React.FC = () => {
   const mapboxToken = 'pk.eyJ1Ijoid2VsbGZpdG5lc3MiLCJhIjoiY21kaDR0aGw2MDAwZzJqc2R5eGN3ZTRiaCJ9.Q5YCu1Mnrw4S6W1scjYRlg';
   const tokenEntered = true;
 
-  // Coordinates for the office: Москва, ул. Маршала Прошлякова, д. 30, офис 407, БЦ "Зенит Плаза"
+  // Coordinates for the office: Москва, ул. Маршала Прошлякова, д. 30, офис 407, БЦ «Зенит Плаза»
   const officeCoordinates: [number, number] = [37.3877, 55.7588];
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const OfficeMap: React.FC = () => {
     const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
       <div class="p-3">
         <h3 class="font-bold text-gray-900 mb-2">Офис WellFitness</h3>
-        <p class="text-sm text-gray-600 mb-1">Москва, ул. Маршала Прошлякова, д. 30, офис 407, БЦ "Зенит Плаза"</p>
+        <p class="text-sm text-gray-600 mb-1">Москва, ул. Маршала Прошлякова, д. 30, офис 407, БЦ «Зенит Плаза»</p>
         <p class="text-sm text-gray-600">09:30 – 17:30</p>
       </div>
     `);

@@ -209,7 +209,7 @@ const Contacts: React.FC = () => {
                   <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
                   <p className="text-sm">
                     Москва, ул. Маршала Прошлякова,<br />
-                    д. 30, офис 407, БЦ "Зенит Плаза"
+                    д. 30, офис 407, БЦ «Зенит Плаза»
                   </p>
                 </div>
               </div>
