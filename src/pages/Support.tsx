@@ -1254,6 +1254,20 @@ const Support: React.FC = () => {
                   </AccordionContent>
                 </AccordionItem>
 
+                <AccordionItem value="item-5-new" className="border-0">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Можно ли отменить заказ?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    После подтверждения заказа мы сразу начинаем его комплектацию и подготовку к отправке, поэтому внести изменения или отменить заказ, к сожалению, невозможно.<br /><br />
+                    <strong>Что можно сделать?</strong><br />
+                    Если вам нужны дополнительные товары — оформите новый заказ<br />
+                    Если какие-то позиции стали неактуальны — свяжитесь с менеджером для уточнения условий возврата после получения<br /><br />
+                    Мы всегда готовы помочь! Обращайтесь — найдём удобное решение.<br />
+                    Ваш комфорт — наш приоритет.
+                  </AccordionContent>
+                </AccordionItem>
+
                 <AccordionItem value="item-1" className="border-0">
                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
