@@ -42,7 +42,7 @@ const Brands: React.FC = () => {
     { name: "maxgym", logo: "/lovable-uploads/cc6e7099-bbfb-406f-ab1d-201cf565962a.png", slug: "maxgym" },
     { name: "MAXFIT", logo: "/lovable-uploads/53426d0c-4430-4856-b59b-4260613dc186.png", slug: "maxfit" },
     { name: "proski", logo: "/lovable-uploads/803751de-6e11-42bb-b2a7-ed88abd5f406.png", slug: "proski" },
-    { name: "Meridien", logo: "/lovable-uploads/9e5dcf01-8670-4239-b2fa-fc73f6a7b7c4.png", slug: "meridien" },
+    { name: "Meridien", logo: "/lovable-uploads/aca1d655-a295-4b83-9777-d6a59a6d6c88.png", slug: "meridien" },
     { name: "kernel", logo: "/lovable-uploads/780287df-78a1-4886-ae82-8fad0567d9ca.png", slug: "kernel" },
     { name: "CENTR", logo: "/lovable-uploads/6317917f-5d52-453f-b576-b18e47712812.png", slug: "centr" }
   ];
