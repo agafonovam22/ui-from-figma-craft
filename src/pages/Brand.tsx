@@ -1081,6 +1081,32 @@ const Brand: React.FC = () => {
           </section>
         )}
 
+        {/* Fifth Content Block - Slide&FIT Block 5 */}
+        {brandSlug === 'slide-fit' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Image */}
+                <div className="order-1">
+                  <img 
+                    src="/lovable-uploads/acee311e-f599-4755-b95b-fe6f45aad4d1.png"
+                    alt="Slide&FIT тренажеры в действии"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                
+                {/* Right Text */}
+                <div className="order-2 lg:pl-8">
+                  <p className="text-gray-600 text-lg leading-relaxed font-manrope">
+                    Откройте новый стандарт функционального тренинга с оборудованием, в котором воплотились надежность словенского качества и инновационный подход к фитнесу. Slide&FIT – сила природы в каждом движении!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+
         {/* Seventh Content Block - SMITH Block 7 */}
         {brandSlug === 'smith' && (
           <section className="w-full py-8">
