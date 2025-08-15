@@ -328,7 +328,7 @@ const NewsArticle: React.FC = () => {
                      'Вертикальный велотренажёр CardioPower B35' :
                      'Wellfitness PRO в Сколково'
                   }
-                  className="w-full h-[600px] object-cover rounded-lg"
+                  className="w-full h-[800px] object-contain rounded-lg"
                 />
               </div>
             </div>
