@@ -1110,6 +1110,38 @@ const Brand: React.FC = () => {
           </div>
         </section>
 
+        {/* Fifth Content Block - MÉRIDIEN Block 5 */}
+        {brandSlug === 'meridien' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Image */}
+                <div className="order-1">
+                  <img 
+                    src="/lovable-uploads/d1404684-e22f-4111-980c-3bd4e6503046.png"
+                    alt="MÉRIDIEN инвестиция в себя"
+                    className="w-full h-full object-cover rounded-lg"
+                    style={{ height: '500px' }}
+                  />
+                </div>
+                
+                {/* Right Text */}
+                <div className="order-2 lg:pl-8">
+                  <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                    MÉRIDIEN — это инвестиция в себя
+                  </h2>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                    В ваше здоровье, настроение и качество жизни.
+                  </p>
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Попробуйте — и ваше тело скажет «спасибо» уже после первого сеанса.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Fifth Content Block - HYFIT Block 5 */}
         {brandSlug === 'hyfit' && (
           <section className="w-full py-8">
