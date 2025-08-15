@@ -172,7 +172,7 @@ const ProductCatalog: React.FC = () => {
               className="w-full h-full object-cover object-right"
             />
             <div className="absolute top-4 left-4 text-white font-benzin text-lg font-normal">
-              для фитнес-клуба
+              Для фитнес-клуба
             </div>
             <Link 
               to="/catalog"
