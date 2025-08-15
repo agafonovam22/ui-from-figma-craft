@@ -1028,6 +1028,38 @@ const Brand: React.FC = () => {
           </div>
         </section>
 
+        {/* Fifth Content Block - INSPIRE Global Recognition */}
+        {brandSlug === 'inspire' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Image */}
+                <div className="order-1">
+                  <img 
+                    src="/lovable-uploads/placeholder-inspire-global.png"
+                    alt="INSPIRE глобальное признание"
+                    className="w-full h-full object-cover rounded-lg"
+                    style={{ height: '500px' }}
+                  />
+                </div>
+                
+                {/* Right Text */}
+                <div className="order-2 lg:pl-8">
+                  <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                    Глобальное признание
+                  </h2>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                    С момента основания INSPIRE успешно завоевал рынки Северной Америки, Европы и Азии, став синонимом американского качества в фитнес-индустрии. Постоянные инновации и внимание к потребностям клиентов позволяют бренду оставаться на передовой спортивных технологий, предлагая оборудование, которое не просто соответствует текущим стандартам, а задает новые тенденции в мире фитнеса.
+                  </p>
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Выбирая INSPIRE, вы инвестируете в оборудование, которое будет служить годами, помогая достигать спортивных целей с комфортом и безопасностью. Это выбор тех, кто ценит проверенное качество и стремится к совершенству в каждой тренировке.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Fifth Content Block - SMITH Block 5 */}
         {brandSlug === 'smith' && (
           <section className="w-full py-8">
