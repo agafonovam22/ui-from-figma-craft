@@ -11,12 +11,7 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
     onClick={category.onClick}
     aria-label={`Категория: ${category.label}`}
   >
-    {category.iconImage ? (
-      <img src={category.iconImage} alt={category.label} className="w-5 h-5 flex-shrink-0" />
-    ) : (
-      <div dangerouslySetInnerHTML={{ __html: category.icon }} />
-    )}
-    <span className="text-sm font-normal leading-[14px] text-[#778093] group-hover:text-white transition-colors">
+    <span className="text-sm font-normal leading-[14px] text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
       {category.label}
     </span>
   </button>
@@ -48,6 +43,7 @@ const ScrollButton: React.FC<{ direction: 'left' | 'right'; onClick: () => void;
 
 const BottomMenu: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const categories: CategoryItem[] = [
     {
@@ -100,16 +96,18 @@ const BottomMenu: React.FC = () => {
     }
   ];
 
-  const scroll = (direction: 'left' | 'right') => {
+  const scrollToNext = () => {
     if (scrollContainerRef.current) {
-      const scrollAmount = 300;
-      const currentScroll = scrollContainerRef.current.scrollLeft;
-      const targetScroll = direction === 'left' 
-        ? currentScroll - scrollAmount 
-        : currentScroll + scrollAmount;
+      const container = scrollContainerRef.current;
+      const itemWidth = 200; // примерная ширина одного элемента с отступами
+      const visibleItems = Math.floor(container.offsetWidth / itemWidth);
+      const nextIndex = (currentIndex + visibleItems) % categories.length;
       
-      scrollContainerRef.current.scrollTo({
-        left: targetScroll,
+      setCurrentIndex(nextIndex);
+      const scrollPosition = nextIndex * itemWidth;
+      
+      container.scrollTo({
+        left: scrollPosition,
         behavior: 'smooth'
       });
     }
@@ -139,7 +137,7 @@ const BottomMenu: React.FC = () => {
         </div>
         
         <div className="hidden md:flex absolute right-0 items-center bg-gradient-to-l from-[#262631] via-[#262631] to-transparent pl-8">
-          <ScrollButton direction="right" onClick={() => scroll('right')} />
+          <ScrollButton direction="right" onClick={scrollToNext} />
         </div>
       </div>
     </nav>
