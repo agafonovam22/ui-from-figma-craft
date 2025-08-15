@@ -740,7 +740,7 @@ const Brand: React.FC = () => {
                 <div className="h-full flex flex-col">
                   <div className="mb-3">
                      <h2 className="text-3xl font-benzin text-gray-900 mb-3">
-                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'cardiopower-pro' ? 'Управление без сложностей' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : brandSlug === 'peach-builder' ? 'Философия бренда строится на трёх принципах:' : brandSlug === 'gym80' ? 'Более 40 лет в служении фитнесу' : brandSlug === 'oktan' ? 'Преимущества Octane Fitness' : brandSlug === 'visbody' ? 'Почему выбирают Visbody?' : brandSlug === 'bowflex' ? 'BOWFLEX ВДОХНОВЛЯЕТ' : brandSlug === 'scholle' ? 'Широкий ассортимент для активного отдыха' : brandSlug === 'smith' ? 'Комфорт как главный приоритет' : brandSlug === 'slide-fit' ? 'Технологическое превосходство' : brandSlug === 'inspire' ? 'Уникальные особенности тренажеров INSPIRE' : brandSlug === 'hyfit' ? 'Комплексные решения для любого уровня подготовки' : brandSlug === 'maxgym' ? 'Философия бренда' : 'Лидер в индустрии'}
+                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'cardiopower-pro' ? 'Управление без сложностей' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : brandSlug === 'peach-builder' ? 'Философия бренда строится на трёх принципах:' : brandSlug === 'gym80' ? 'Более 40 лет в служении фитнесу' : brandSlug === 'oktan' ? 'Преимущества Octane Fitness' : brandSlug === 'visbody' ? 'Почему выбирают Visbody?' : brandSlug === 'bowflex' ? 'BOWFLEX ВДОХНОВЛЯЕТ' : brandSlug === 'scholle' ? 'Широкий ассортимент для активного отдыха' : brandSlug === 'smith' ? 'Комфорт как главный приоритет' : brandSlug === 'slide-fit' ? 'Технологическое превосходство' : brandSlug === 'inspire' ? 'Уникальные особенности тренажеров INSPIRE' : brandSlug === 'hyfit' ? 'Комплексные решения для любого уровня подготовки' : brandSlug === 'maxgym' ? 'Философия бренда' : brandSlug === 'maxfit' ? 'Для кого созданы наши тренажеры:' : 'Лидер в индустрии'}
                     </h2>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
                       {brandSlug === 'cardio-power' ? '' : brandSlug === 'schwinn' ? 'Уже более века Schwinn сохраняет безупречную репутацию благодаря строгим тестам на безопасность и долговечность. Тренажёры созданы из качественных материалов и служат годами.' : brandSlug === 'nautilus' ? '' : brandSlug === 'sole-fitness' ? '' : brandSlug === 'peach-builder' ? '' : brandSlug === 'oktan' ? 'Более 25 лет Octane Fitness остается лидером инноваций в области эллиптических тренажеров, устанавливая стандарты качества и технологий.' : brandSlug === 'visbody' ? 'Единственные в отрасли технологии сочетания биоимпедансометрии и 3D-сканирования для максимально точного анализа тела.' : brandSlug === 'bowflex' ? '' : brandSlug === 'scholle' ? 'В ассортименте SCHOLLE каждый найдет оборудование по душе:' : brandSlug === 'inspire' ? 'Главной отличительной чертой оборудования INSPIRE является продуманная многофункциональность. Каждая машина сочетает в себе несколько тренировочных зон, позволяя прорабатывать различные группы мышц без необходимости использования дополнительных устройств.' : brandSlug === 'hyfit' ? 'Регулируемая гантель HYFIT CLASSIC – базовый элемент системы с эргономичным дизайном. Набор HYFIT 3в1 – штанга, гантель и гиря в едином регулируемом решении.' : brandSlug === 'maxgym' ? 'MAXGYM создает оборудование, которое:' : ''}
@@ -949,6 +949,33 @@ const Brand: React.FC = () => {
                         </p>
                       </div>
                     </div>
+                    ) : brandSlug === 'maxfit' ? (
+                      <div className="space-y-3">
+                        <div className="flex items-start">
+                          <div className="text-green-500 mr-3 mt-1">✔</div>
+                          <p className="text-gray-600 text-xs leading-relaxed font-manrope">
+                            Для домашних тренировок
+                          </p>
+                        </div>
+                        <div className="flex items-start">
+                          <div className="text-green-500 mr-3 mt-1">✔</div>
+                          <p className="text-gray-600 text-xs leading-relaxed font-manrope">
+                            Для фитнес-клубов премиум-класса
+                          </p>
+                        </div>
+                        <div className="flex items-start">
+                          <div className="text-green-500 mr-3 mt-1">✔</div>
+                          <p className="text-gray-600 text-xs leading-relaxed font-manrope">
+                            Для профессиональных тренеров
+                          </p>
+                        </div>
+                        <div className="flex items-start">
+                          <div className="text-green-500 mr-3 mt-1">✔</div>
+                          <p className="text-gray-600 text-xs leading-relaxed font-manrope">
+                            Для всех, кто хочет прогрессировать без ограничений
+                          </p>
+                        </div>
+                      </div>
                       ) : brandSlug === 'smith' ? (
                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                           SMITH понимает, что успешные тренировки – это не только эффективность, но и удовольствие от процесса. Поэтому каждая деталь тренажеров продумана для максимального комфорта: мягкие сиденья из износостойкой синтетической кожи, нескользящие рукоятки, магнитные селекторы нагрузки, система снижения стартового сопротивления. Даже упаковка оборудования разработана специально для безопасной транспортировки – прочный гофрокартон надежно защищает тренажеры при перевозке.
