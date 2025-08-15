@@ -1198,6 +1198,15 @@ const Support: React.FC = () => {
                   </AccordionContent>
                 </AccordionItem>
 
+                <AccordionItem value="item-1-new" className="border-0">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Как сделать заказ?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Для оформления заказа выберите понравившийся тренажер в нашем каталоге и добавьте его в корзину, затем перейдите к оформлению и оплатите покупку удобным для вас способом. Если вам требуется оптовый заказ или профессиональная консультация по подбору оборудования, просто нажмите кнопку "Заказать звонок" - наш менеджер свяжется с вами в ближайшее время, чтобы ответить на все вопросы и помочь с оформлением. Мы предлагаем гибкие условия сотрудничества как для розничных покупателей, так и для владельцев фитнес-клубов, обеспечивая индивидуальный подход к каждому клиенту.
+                  </AccordionContent>
+                </AccordionItem>
+
                 <AccordionItem value="item-1" className="border-0">
                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
