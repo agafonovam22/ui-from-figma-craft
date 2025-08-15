@@ -9,7 +9,7 @@ const Banner: React.FC = () => {
           <div className="py-12 relative h-full">
             <div className="flex items-center justify-between h-full">
               {/* Левая часть с текстом */}
-              <div className="flex-1 max-w-lg z-10" style={{ paddingTop: '60px' }}>
+              <div className="flex-1 max-w-lg z-10" style={{ paddingTop: '60px', paddingLeft: '60px' }}>
                 <div className="mb-6">
                   <span 
                     className="text-sm tracking-[3.78px] uppercase"
