@@ -1013,7 +1013,7 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : brandSlug === 'cardiopower-pro' ? 'Выбор премиальных клубов' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : brandSlug === 'nautilus' ? 'Nautilus – когда важен не просто результат, а технологичное превосходство.' : brandSlug === 'sole-fitness' ? 'Выбирайте Sole – инженерное совершенство для ваших результатов.' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — это больше чем оборудование' : brandSlug === 'gym80' ? 'Выбирая GYM80, вы выбираете лучшее' : brandSlug === 'oktan' ? 'Выбирайте Octane Fitness — лидера инноваций' : brandSlug === 'visbody' ? 'Будущее анализа тела уже здесь' : brandSlug === 'bowflex' ? 'BOWFLEX — ДЛЯ ТЕХ, КТО ВЫБИРАЕТ ДВИЖЕНИЕ' : brandSlug === 'scholle' ? 'Немецкие традиции в каждом изделии' : brandSlug === 'smith' ? 'Немецкая надежность в каждой детали' : brandSlug === 'slide-fit' ? 'С брендом Slide&FIT вы получаете не просто тренажер, а персонального тренера' : brandSlug === 'inspire' ? 'Широкий ассортимент для комплексных решений' : brandSlug === 'hyfit' ? 'Для тех, кто ценит' : brandSlug === 'maxgym' ? 'Профессиональные решения' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
+                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : brandSlug === 'cardiopower-pro' ? 'Выбор премиальных клубов' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : brandSlug === 'nautilus' ? 'Nautilus – когда важен не просто результат, а технологичное превосходство.' : brandSlug === 'sole-fitness' ? 'Выбирайте Sole – инженерное совершенство для ваших результатов.' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — это больше чем оборудование' : brandSlug === 'gym80' ? 'Выбирая GYM80, вы выбираете лучшее' : brandSlug === 'oktan' ? 'Выбирайте Octane Fitness — лидера инноваций' : brandSlug === 'visbody' ? 'Будущее анализа тела уже здесь' : brandSlug === 'bowflex' ? 'BOWFLEX — ДЛЯ ТЕХ, КТО ВЫБИРАЕТ ДВИЖЕНИЕ' : brandSlug === 'scholle' ? 'Немецкие традиции в каждом изделии' : brandSlug === 'smith' ? 'Немецкая надежность в каждой детали' : brandSlug === 'slide-fit' ? 'С брендом Slide&FIT вы получаете не просто тренажер, а персонального тренера' : brandSlug === 'inspire' ? 'Широкий ассортимент для комплексных решений' : brandSlug === 'hyfit' ? 'Для тех, кто ценит' : brandSlug === 'maxgym' ? 'Профессиональные решения' : brandSlug === 'maxfit' ? 'Качество, подтвержденное:' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
                 </h2>
                 
                 {brandSlug === 'cardio-power' ? (
@@ -1156,29 +1156,25 @@ const Brand: React.FC = () => {
                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                          MAXGYM - это профессиональные решения для владельцев фитнес-клубов, тренеров и спортсменов, которые ищут оптимальное сочетание цены и качества без ущерба для функциональности.
                        </p>
-                     ) : brandSlug === 'maxfit' ? (
-                        <div className="space-y-8">
-                          {/* Блок 4 */}
-                          <div>
-                            <h3 className="text-lg font-benzin text-gray-900 mb-4">Качество, подтвержденное:</h3>
-                            <div className="space-y-2 mb-4">
-                              <div className="flex items-start">
-                                <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                <p className="text-gray-600 text-sm leading-relaxed font-manrope">450+ успешными инсталляциями</p>
-                              </div>
-                              <div className="flex items-start">
-                                <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                <p className="text-gray-600 text-sm leading-relaxed font-manrope">Сертификатами CE, ROHS, EN957, ISO9001:2015</p>
-                              </div>
-                              <div className="flex items-start">
-                                <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                <p className="text-gray-600 text-sm leading-relaxed font-manrope">Тестированием в престижных клубах и резиденциях</p>
-                              </div>
+                      ) : brandSlug === 'maxfit' ? (
+                        <div>
+                          <div className="space-y-2 mb-4">
+                            <div className="flex items-start">
+                              <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                              <p className="text-gray-600 text-sm leading-relaxed font-manrope">450+ успешными инсталляциями</p>
                             </div>
-                            <p className="text-gray-600 text-sm leading-relaxed font-manrope italic">
-                              MAXFIT – это воплощение инженерного мастерства в мире фитнеса, где инновации встречаются с бескомпромиссным качеством.
-                            </p>
+                            <div className="flex items-start">
+                              <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                              <p className="text-gray-600 text-sm leading-relaxed font-manrope">Сертификатами CE, ROHS, EN957, ISO9001:2015</p>
+                            </div>
+                            <div className="flex items-start">
+                              <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                              <p className="text-gray-600 text-sm leading-relaxed font-manrope">Тестированием в престижных клубах и резиденциях</p>
+                            </div>
                           </div>
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope italic">
+                            MAXFIT – это воплощение инженерного мастерства в мире фитнеса, где инновации встречаются с бескомпромиссным качеством.
+                          </p>
                         </div>
                      ) : (
                   <>
