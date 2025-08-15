@@ -14,8 +14,10 @@ import {
 } from "@/components/ui/breadcrumb";
 
 const NewsAndBlogPage: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const { news: newsItems, totalPages } = getAllNews(currentPage);
+  const [itemsToShow, setItemsToShow] = useState(11);
+  const allNews = getAllNews(1).news;
+  const newsItems = allNews.slice(0, itemsToShow);
+  const hasMoreNews = itemsToShow < allNews.length;
 
   return (
     <div className="min-h-screen bg-white">
@@ -285,33 +287,36 @@ const NewsAndBlogPage: React.FC = () => {
           )}
 
           {/* Show More Button */}
-          {currentPage < totalPages && (
+          {hasMoreNews && (
             <div className="flex justify-center mb-4">
               <button
-                onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                onClick={() => setItemsToShow(prev => Math.min(prev + 11, allNews.length))}
                 className="px-6 py-2 text-sm font-medium border-2 border-red-500 bg-white text-red-500 rounded-[10px] hover:bg-red-500 hover:text-white transition-all duration-200"
               >
-                показать еще
+                Показать еще
               </button>
             </div>
           )}
 
-          {/* Pagination */}
-          {totalPages > 1 && (
+          {/* Pagination - только если показаны не все новости */}
+          {hasMoreNews && (
             <div className="flex justify-center items-center gap-2 mb-12">
-              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
-                <button
-                  key={page}
-                  onClick={() => setCurrentPage(page)}
-                  className={`w-8 h-8 rounded-full border-2 text-sm font-medium transition-all duration-200 ${
-                    currentPage === page
-                      ? 'border-black bg-black text-white'
-                      : 'border-gray-300 bg-white text-gray-600 hover:border-black hover:bg-black hover:text-white'
-                  }`}
-                >
-                  {page}
-                </button>
-              ))}
+              {Array.from({ length: Math.ceil(allNews.length / 11) }, (_, index) => index + 1).map((page) => {
+                const isActive = page <= Math.ceil(itemsToShow / 11);
+                return (
+                  <button
+                    key={page}
+                    onClick={() => setItemsToShow(page * 11)}
+                    className={`w-8 h-8 rounded-full border-2 text-sm font-medium transition-all duration-200 ${
+                      isActive
+                        ? 'border-black bg-black text-white'
+                        : 'border-gray-300 bg-white text-gray-600 hover:border-black hover:bg-black hover:text-white'
+                    }`}
+                  >
+                    {page}
+                  </button>
+                );
+              })}
             </div>
           )}
         </div>
