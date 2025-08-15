@@ -1025,37 +1025,22 @@ const Brand: React.FC = () => {
                         </p>
                       ) : brandSlug === 'meridien' ? (
                         <div className="space-y-4">
-                          <div className="flex items-start">
-                            <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <div>
-                              <h3 className="font-benzin text-gray-900 mb-2">COMPACT</h3>
-                              <p className="text-gray-600 text-sm leading-relaxed font-manrope">умный комфорт для небольших пространств</p>
-                            </div>
+                          <div>
+                            <h3 className="font-benzin text-gray-900 mb-2">COMPACT</h3>
+                            <p className="text-gray-600 text-sm leading-relaxed font-manrope">— умный комфорт для небольших пространств</p>
                           </div>
-                          <div className="flex items-start">
-                            <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <div>
-                              <h3 className="font-benzin text-gray-900 mb-2">COMFORT</h3>
-                              <p className="text-gray-600 text-sm leading-relaxed font-manrope">домашний релакс в любое время</p>
-                            </div>
+                          <div>
+                            <h3 className="font-benzin text-gray-900 mb-2">COMFORT</h3>
+                            <p className="text-gray-600 text-sm leading-relaxed font-manrope">— домашний релакс в любое время</p>
                           </div>
-                          <div className="flex items-start">
-                            <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <div>
-                              <h3 className="font-benzin text-gray-900 mb-2">BUSINESS</h3>
-                              <p className="text-gray-600 text-sm leading-relaxed font-manrope">инвестиция в имидж</p>
-                            </div>
+                          <div>
+                            <h3 className="font-benzin text-gray-900 mb-2">BUSINESS</h3>
+                            <p className="text-gray-600 text-sm leading-relaxed font-manrope">— инвестиция в имидж</p>
                           </div>
-                          <div className="flex items-start">
-                            <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                            <div>
-                              <h3 className="font-benzin text-gray-900 mb-2">PREMIUM</h3>
-                              <p className="text-gray-600 text-sm leading-relaxed font-manrope">если хотите лучшее из возможного</p>
-                            </div>
+                          <div>
+                            <h3 className="font-benzin text-gray-900 mb-2">PREMIUM</h3>
+                            <p className="text-gray-600 text-sm leading-relaxed font-manrope">— если хотите лучшее из возможного</p>
                           </div>
-                          <p className="text-gray-600 text-sm leading-relaxed font-manrope mt-6 italic">
-                            MÉRIDIEN — это инвестиция в себя. В ваше здоровье, настроение и качество жизни. Попробуйте — и ваше тело скажет «спасибо» уже после первого сеанса.
-                          </p>
                         </div>
                       ) : (
                           <div className="text-gray-600 text-sm leading-relaxed font-manrope space-y-2">
