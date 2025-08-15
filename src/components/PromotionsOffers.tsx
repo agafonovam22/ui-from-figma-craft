@@ -1,6 +1,7 @@
 
 import React, { useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const PromotionsOffers: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -66,16 +67,21 @@ const PromotionsOffers: React.FC = () => {
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {promotions.map((promo) => (
-            <div
+            <Link
               key={promo.id}
-              className="flex-shrink-0 w-80 rounded-lg overflow-hidden h-[444px] hover:shadow-lg transition-shadow cursor-pointer"
+              to="/promotions"
+              className="group relative flex-shrink-0 w-80 rounded-lg overflow-hidden h-[444px] hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
               <img 
                 src={promo.image} 
                 alt="Акция"
                 className="w-full h-full object-cover"
               />
-            </div>
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
+              <button className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-all duration-300 flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0">
+                Перейти <ArrowRight className="w-4 h-4" />
+              </button>
+            </Link>
           ))}
         </div>
 
