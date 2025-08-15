@@ -818,33 +818,10 @@ const Brand: React.FC = () => {
                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                           SMITH понимает, что успешные тренировки – это не только эффективность, но и удовольствие от процесса. Поэтому каждая деталь тренажеров продумана для максимального комфорта: мягкие сиденья из износостойкой синтетической кожи, нескользящие рукоятки, магнитные селекторы нагрузки, система снижения стартового сопротивления. Даже упаковка оборудования разработана специально для безопасной транспортировки – прочный гофрокартон надежно защищает тренажеры при перевозке.
                         </p>
-                      ) : (
-                     <div className="space-y-6">
-                       <div>
-                         <h3 className="text-xl font-benzin text-gray-900 mb-1 leading-tight" style={{ fontFamily: 'Benzin-Semibold' }}>50+ лет на рынке</h3>
-                         <p className="text-sm font-manrope text-gray-600 leading-snug">
-                           Собственные инженерные разработки и контроль качества
+                       ) : (
+                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                           Наше оборудование выбирают, потому что оно работает безотказно даже при интенсивной эксплуатации.
                          </p>
-                       </div>
-                       <div>
-                         <h3 className="text-xl font-benzin text-gray-900 mb-1 leading-tight" style={{ fontFamily: 'Benzin-Semibold' }}>99.9% надежности</h3>
-                         <p className="text-sm font-manrope text-gray-600 leading-snug">
-                           Благодаря износостойким компонентам и интеллектуальному управлению
-                         </p>
-                       </div>
-                       <div>
-                         <h3 className="text-xl font-benzin text-gray-900 mb-1 leading-tight" style={{ fontFamily: 'Benzin-Semibold' }}>3 уровня защиты</h3>
-                         <p className="text-sm font-manrope text-gray-600 leading-snug">
-                           Передовые технологии амортизации и безопасности
-                         </p>
-                       </div>
-                       <div>
-                         <h3 className="text-xl font-benzin text-gray-900 mb-1 leading-tight" style={{ fontFamily: 'Benzin-Semibold' }}>До 40% экономии на обслуживании</h3>
-                         <p className="text-sm font-manrope text-gray-600 leading-snug">
-                           Минимальные затраты за счёт прочной конструкции и доступных запчастей
-                         </p>
-                       </div>
-                     </div>
                   )}
                 </div>
               </div>
