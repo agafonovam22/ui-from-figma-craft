@@ -953,25 +953,25 @@ const Brand: React.FC = () => {
                       <div className="space-y-3">
                         <div className="flex items-start">
                           <div className="text-green-500 mr-3 mt-1">✔</div>
-                          <p className="text-gray-600 text-xs leading-relaxed font-manrope">
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                             Для домашних тренировок
                           </p>
                         </div>
                         <div className="flex items-start">
                           <div className="text-green-500 mr-3 mt-1">✔</div>
-                          <p className="text-gray-600 text-xs leading-relaxed font-manrope">
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                             Для фитнес-клубов премиум-класса
                           </p>
                         </div>
                         <div className="flex items-start">
                           <div className="text-green-500 mr-3 mt-1">✔</div>
-                          <p className="text-gray-600 text-xs leading-relaxed font-manrope">
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                             Для профессиональных тренеров
                           </p>
                         </div>
                         <div className="flex items-start">
                           <div className="text-green-500 mr-3 mt-1">✔</div>
-                          <p className="text-gray-600 text-xs leading-relaxed font-manrope">
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                             Для всех, кто хочет прогрессировать без ограничений
                           </p>
                         </div>
