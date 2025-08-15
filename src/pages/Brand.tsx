@@ -1106,50 +1106,6 @@ const Brand: React.FC = () => {
           </section>
         )}
 
-        {/* Slide&FIT Gallery Section */}
-        {brandSlug === 'slide-fit' && (
-          <section className="w-full py-8">
-            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-              <h2 className="text-3xl font-benzin text-gray-900 mb-8 text-center">
-                Slide&FIT в действии
-              </h2>
-              
-              {/* Gallery Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="relative overflow-hidden rounded-lg">
-                  <img 
-                    src="/lovable-uploads/a8f53f93-471f-4387-aed9-2bfd895f8a3b.png"
-                    alt="Slide&FIT тренажер крупным планом"
-                    className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                
-                <div className="relative overflow-hidden rounded-lg">
-                  <img 
-                    src="/lovable-uploads/10b8625a-84e0-498f-8c8a-9833e27f8c21.png"
-                    alt="Групповые тренировки Slide&FIT"
-                    className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                
-                <div className="relative overflow-hidden rounded-lg">
-                  <img 
-                    src="/lovable-uploads/20c74b65-af59-4385-a213-f539a5f32a01.png"
-                    alt="Фитнес-студия с оборудованием Slide&FIT"
-                    className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              </div>
-              
-              <div className="text-center mt-8">
-                <p className="text-gray-600 text-sm font-manrope">
-                  Откройте для себя инновационный подход к функциональным тренировкам с оборудованием Slide&FIT
-                </p>
-              </div>
-            </div>
-          </section>
-        )}
-
 
         {/* Seventh Content Block - SMITH Block 7 */}
         {brandSlug === 'smith' && (
