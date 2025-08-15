@@ -1223,6 +1223,23 @@ const Support: React.FC = () => {
                   </AccordionContent>
                 </AccordionItem>
 
+                <AccordionItem value="item-3-new" className="border-0">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Есть ли Trade-in?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Trade-in доступен только для линейки WellFitness Pro (опт, фитнес-клубы, коммерческое использование).<br /><br />
+                    <strong>Как это работает:</strong><br />
+                    Наши специалисты оценят ваше текущее оборудование<br />
+                    Вычитаем его стоимость из цены нового<br />
+                    Организуем замену «под ключ»<br /><br />
+                    <strong>Преимущества:</strong><br />
+                    • Экономия до 40% на обновлении парка<br />
+                    • Бесплатный демонтаж и вывоз старого оборудования<br />
+                    • Минимальный простой зала
+                  </AccordionContent>
+                </AccordionItem>
+
                 <AccordionItem value="item-1" className="border-0">
                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
