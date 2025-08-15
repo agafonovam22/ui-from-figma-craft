@@ -16,6 +16,19 @@ export interface NewsItem {
 
 export const newsItems: NewsItem[] = [
   {
+    id: 28,
+    type: 'Новости',
+    category: 'НОВОСТИ',
+    categoryColor: 'bg-blue-600',
+    date: '15.08.2025',
+    title: 'Новое поступление: Велотренажеры серии ProFit для коммерческого использования',
+    description: 'Представляем новую линейку профессиональных велотренажеров ProFit, специально разработанных для фитнес-клубов и коммерческого использования с повышенной нагрузкой.',
+    image: '/lovable-uploads/38337e2c-c9ef-4784-a9a1-e0f20df7076d.png',
+    size: 'large',
+    slug: 'velotrenazhery-profit-commercial',
+    isActive: true
+  },
+  {
     id: 1,
     type: 'Новости',
     category: 'НОВОСТИ',
@@ -26,7 +39,7 @@ export const newsItems: NewsItem[] = [
     image: '/lovable-uploads/38337e2c-c9ef-4784-a9a1-e0f20df7076d.png',
     size: 'large',
     slug: 'novost-dlya-dilerov-wellfitness',
-    isActive: true
+    isActive: false
   },
   {
     id: 2,
