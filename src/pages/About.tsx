@@ -1040,7 +1040,7 @@ const About: React.FC = () => {
 
               {/* Show More Button */}
               {hasMoreNews && (
-                <div className="flex justify-center mb-4">
+                <div className="flex justify-center mb-8">
                   <button
                     onClick={() => setItemsToShow(prev => prev + 11)}
                     className="px-6 py-2 text-sm font-medium border-2 border-red-500 bg-white text-red-500 rounded-[10px] hover:bg-red-500 hover:text-white transition-all duration-200"
@@ -1050,19 +1050,20 @@ const About: React.FC = () => {
                 </div>
               )}
 
-              {/* Pagination - показываем всегда если есть больше 11 новостей */}
-              {allNews.length > 11 && (
+              {/* Pagination - показываем только после загрузки дополнительных новостей */}
+              {itemsToShow > 11 && allNews.length > 11 && (
                 <div className="flex justify-center items-center gap-2 mb-12">
                   {Array.from({ length: Math.ceil(allNews.length / 11) }, (_, index) => index + 1).map((page) => {
-                    const isActive = page <= Math.ceil(itemsToShow / 11);
+                    const currentPage = Math.ceil(itemsToShow / 11);
+                    const isActive = page === currentPage;
                     return (
                       <button
                         key={page}
                         onClick={() => setItemsToShow(page * 11)}
-                        className={`w-8 h-8 rounded-full border-2 text-sm font-medium transition-all duration-200 ${
+                        className={`w-10 h-10 rounded-full text-sm font-medium transition-all duration-200 ${
                           isActive
-                            ? 'border-black bg-black text-white'
-                            : 'border-gray-300 bg-white text-gray-600 hover:border-black hover:bg-black hover:text-white'
+                            ? 'bg-black text-white border-2 border-black'
+                            : 'bg-white text-black border-2 border-black hover:bg-gray-100'
                         }`}
                       >
                         {page}
