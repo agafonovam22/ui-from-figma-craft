@@ -949,39 +949,9 @@ const Brand: React.FC = () => {
                      Производственные стандарты SMITH – это отдельная история. Рамы из высокопрочной стали с овальным профилем, двойное порошковое покрытие для защиты от повреждений, тросы, тестируемые трижды в день под нагрузкой 900 кг – такие требования к качеству говорят сами за себя. Бренд не экономит на материалах и контроле, поэтому его оборудование служит годами даже при интенсивной эксплуатации в коммерческих залах.
                    </p>
                  ) : brandSlug === 'slide-fit' ? (
-                   <>
-                     <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
-                       Тренажеры Slide&FIT оснащены несколькими уровнями нагрузки, позволяющими постепенно увеличивать интенсивность тренировок. Прочные металлические конструкции с точной балансировкой гарантируют безопасность и долговечность. Компактные размеры и мобильность делают тренажеры идеальным решением как для фитнес-клубов, так и для домашнего использования.
-                     </p>
-                     
-                     <div className="mb-6">
-                       <p className="text-gray-600 text-sm leading-relaxed mb-4 font-manrope">
-                         С брендом Slide&FIT вы получаете не просто тренажер, а персонального тренера, который:
-                       </p>
-                       <div className="space-y-2">
-                         <div className="flex items-start">
-                           <span className="text-green-600 mr-2">✓</span>
-                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">Развивает все группы мышц одновременно</p>
-                         </div>
-                         <div className="flex items-start">
-                           <span className="text-green-600 mr-2">✓</span>
-                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">Предлагает несколько видов тренировок в одном устройстве</p>
-                         </div>
-                         <div className="flex items-start">
-                           <span className="text-green-600 mr-2">✓</span>
-                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">Сочетает кардионагрузку с силовыми упражнениями</p>
-                         </div>
-                         <div className="flex items-start">
-                           <span className="text-green-600 mr-2">✓</span>
-                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">Подходит для пользователей любого уровня подготовки</p>
-                         </div>
-                       </div>
-                     </div>
-                     
-                     <p className="text-gray-600 text-sm leading-relaxed font-manrope italic">
-                       Откройте новый стандарт функционального тренинга с оборудованием, в котором воплотились надежность словенского качества и инновационный подход к фитнесу. Slide&FIT – сила природы в каждом движении!
-                     </p>
-                   </>
+                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                     Тренажеры Slide&FIT оснащены несколькими уровнями нагрузки, позволяющими постепенно увеличивать интенсивность тренировок. Прочные металлические конструкции с точной балансировкой гарантируют безопасность и долговечность. Компактные размеры и мобильность делают тренажеры идеальным решением как для фитнес-клубов, так и для домашнего использования.
+                   </p>
                  ) : (
                   <>
                     <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
