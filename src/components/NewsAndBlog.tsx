@@ -57,8 +57,8 @@ const NewsAndBlog: React.FC = () => {
               to={`/news/${item.slug}`}
               className="flex-shrink-0 w-80 bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
             >
-              {/* Image - 3/4 of the card */}
-              <div className="w-full h-[240px]">
+              {/* Image - 2/4 of the card */}
+              <div className="w-full h-[160px]">
                 <img 
                   src={item.image} 
                   alt={item.title}
@@ -66,10 +66,10 @@ const NewsAndBlog: React.FC = () => {
                 />
               </div>
               
-              {/* Text Content - 1/4 of the card */}
-              <div className="p-4 h-[80px] relative">
+              {/* Text Content - 2/4 of the card */}
+              <div className="p-4 h-[160px] relative">
                 {/* News badge and date */}
-                <div className="flex justify-between items-start mb-2">
+                <div className="flex justify-between items-start mb-3">
                   <span className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-benzin">
                     Новости
                   </span>
@@ -79,10 +79,10 @@ const NewsAndBlog: React.FC = () => {
                 </div>
                 
                 {/* Title and description */}
-                <h3 className="text-sm font-benzin-semibold text-gray-900 mb-1 line-clamp-1">
+                <h3 className="text-sm font-benzin-semibold text-gray-900 mb-2 line-clamp-2">
                   {item.title}
                 </h3>
-                <p className="text-xs text-gray-600 font-benzin line-clamp-2">
+                <p className="text-xs text-gray-600 font-benzin line-clamp-4">
                   {item.description}
                 </p>
               </div>
