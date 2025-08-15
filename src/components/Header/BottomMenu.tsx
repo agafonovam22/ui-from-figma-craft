@@ -96,20 +96,35 @@ const BottomMenu: React.FC = () => {
     }
   ];
 
+  // Дублируем категории для бесконечной прокрутки
+  const duplicatedCategories = [...categories, ...categories];
+
   const scrollToNext = () => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
-      const itemWidth = 200; // примерная ширина одного элемента с отступами
-      const visibleItems = Math.floor(container.offsetWidth / itemWidth);
-      const nextIndex = (currentIndex + visibleItems) % categories.length;
+      const itemWidth = 200; // примерная ширина одного элемента
+      const nextIndex = currentIndex + 1;
       
-      setCurrentIndex(nextIndex);
+      // Прокручиваем к следующему элементу
       const scrollPosition = nextIndex * itemWidth;
-      
       container.scrollTo({
         left: scrollPosition,
         behavior: 'smooth'
       });
+      
+      // Если дошли до конца первого набора категорий, сбрасываем на начало
+      if (nextIndex >= categories.length) {
+        setTimeout(() => {
+          container.scrollTo({
+            left: 0,
+            behavior: 'auto'
+          });
+          setCurrentIndex(0);
+        }, 300); // Ждем завершения анимации
+        setCurrentIndex(0);
+      } else {
+        setCurrentIndex(nextIndex);
+      }
     }
   };
 
@@ -126,10 +141,10 @@ const BottomMenu: React.FC = () => {
           className="flex items-center gap-[5px] overflow-x-auto scrollbar-hide scroll-smooth"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {categories.map((category, index) => (
-            <div key={category.id} className="flex items-center gap-[5px]">
+          {duplicatedCategories.map((category, index) => (
+            <div key={`${category.id}-${Math.floor(index / categories.length)}`} className="flex items-center gap-[5px]">
               <CategoryButton category={category} />
-              {index < categories.length - 1 && (
+              {index < duplicatedCategories.length - 1 && (
                 <div className="w-px h-9 opacity-20 bg-[#5C6476] flex-shrink-0" />
               )}
             </div>
