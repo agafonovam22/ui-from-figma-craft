@@ -1157,83 +1157,29 @@ const Brand: React.FC = () => {
                          MAXGYM - это профессиональные решения для владельцев фитнес-клубов, тренеров и спортсменов, которые ищут оптимальное сочетание цены и качества без ущерба для функциональности.
                        </p>
                      ) : brandSlug === 'maxfit' ? (
-                       <div className="space-y-8">
-                         {/* Блок 1 */}
-                         <div>
-                           <h3 className="text-xl font-benzin text-gray-900 mb-4">MAXFIT: Инновационные тренажеры с интеллектуальной регулировкой нагрузки</h3>
-                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                             MAXFIT – это новый стандарт в мире фитнес-оборудования, где технология встречается с универсальностью. Наши тренажеры с революционной системой регулировки нагрузки позволяют вам самостоятельно настраивать нагрузку от минимальной до максимальной за секунды.
-                           </p>
-                         </div>
-
-                         {/* Блок 2 */}
-                         <div>
-                           <h3 className="text-lg font-benzin text-gray-900 mb-4">Почему MAXFIT – это прорыв:</h3>
-                           <div className="space-y-2">
-                             <div className="flex items-start">
-                               <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                               <p className="text-gray-600 text-sm leading-relaxed font-manrope">Интуитивная система изменения веса (от 2 до 40 кг)</p>
-                             </div>
-                             <div className="flex items-start">
-                               <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                               <p className="text-gray-600 text-sm leading-relaxed font-manrope">Патентованный механизм безопасности</p>
-                             </div>
-                             <div className="flex items-start">
-                               <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                               <p className="text-gray-600 text-sm leading-relaxed font-manrope">Совместимость всех элементов системы</p>
-                             </div>
-                             <div className="flex items-start">
-                               <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                               <p className="text-gray-600 text-sm leading-relaxed font-manrope">Профессиональное качество по доступной цене</p>
-                             </div>
-                           </div>
-                         </div>
-
-                         {/* Блок 3 */}
-                         <div>
-                           <h3 className="text-lg font-benzin text-gray-900 mb-4">Для кого созданы наши тренажеры:</h3>
-                           <div className="space-y-2">
-                             <div className="flex items-start">
-                               <div className="text-green-500 mr-3 mt-1">✔</div>
-                               <p className="text-gray-600 text-sm leading-relaxed font-manrope">Для домашних тренировок</p>
-                             </div>
-                             <div className="flex items-start">
-                               <div className="text-green-500 mr-3 mt-1">✔</div>
-                               <p className="text-gray-600 text-sm leading-relaxed font-manrope">Для фитнес-клубов премиум-класса</p>
-                             </div>
-                             <div className="flex items-start">
-                               <div className="text-green-500 mr-3 mt-1">✔</div>
-                               <p className="text-gray-600 text-sm leading-relaxed font-manrope">Для профессиональных тренеров</p>
-                             </div>
-                             <div className="flex items-start">
-                               <div className="text-green-500 mr-3 mt-1">✔</div>
-                               <p className="text-gray-600 text-sm leading-relaxed font-manrope">Для всех, кто хочет прогрессировать без ограничений</p>
-                             </div>
-                           </div>
-                         </div>
-
-                         {/* Блок 4 */}
-                         <div>
-                           <h3 className="text-lg font-benzin text-gray-900 mb-4">Качество, подтвержденное:</h3>
-                           <div className="space-y-2 mb-4">
-                             <div className="flex items-start">
-                               <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                               <p className="text-gray-600 text-sm leading-relaxed font-manrope">450+ успешными инсталляциями</p>
-                             </div>
-                             <div className="flex items-start">
-                               <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                               <p className="text-gray-600 text-sm leading-relaxed font-manrope">Сертификатами CE, ROHS, EN957, ISO9001:2015</p>
-                             </div>
-                             <div className="flex items-start">
-                               <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                               <p className="text-gray-600 text-sm leading-relaxed font-manrope">Тестированием в престижных клубах и резиденциях</p>
-                             </div>
-                           </div>
-                           <p className="text-gray-600 text-sm leading-relaxed font-manrope italic">
-                             MAXFIT – это воплощение инженерного мастерства в мире фитнеса, где инновации встречаются с бескомпромиссным качеством.
-                           </p>
-                         </div>
-                       </div>
+                        <div className="space-y-8">
+                          {/* Блок 4 */}
+                          <div>
+                            <h3 className="text-lg font-benzin text-gray-900 mb-4">Качество, подтвержденное:</h3>
+                            <div className="space-y-2 mb-4">
+                              <div className="flex items-start">
+                                <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <p className="text-gray-600 text-sm leading-relaxed font-manrope">450+ успешными инсталляциями</p>
+                              </div>
+                              <div className="flex items-start">
+                                <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <p className="text-gray-600 text-sm leading-relaxed font-manrope">Сертификатами CE, ROHS, EN957, ISO9001:2015</p>
+                              </div>
+                              <div className="flex items-start">
+                                <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <p className="text-gray-600 text-sm leading-relaxed font-manrope">Тестированием в престижных клубах и резиденциях</p>
+                              </div>
+                            </div>
+                            <p className="text-gray-600 text-sm leading-relaxed font-manrope italic">
+                              MAXFIT – это воплощение инженерного мастерства в мире фитнеса, где инновации встречаются с бескомпромиссным качеством.
+                            </p>
+                          </div>
+                        </div>
                      ) : (
                   <>
                     <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
