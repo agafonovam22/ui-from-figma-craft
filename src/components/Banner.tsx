@@ -4,7 +4,7 @@ import React from 'react';
 const Banner: React.FC = () => {
   return (
     <section className="w-full">
-      <div className="max-w-[1800px] mx-auto">
+      <div className="max-w-[1800px] mx-auto px-[10px]">
         <div className="bg-gray-100 overflow-hidden relative rounded-lg" style={{ height: '400px' }}>
           <div className="py-12 relative h-full">
             <div className="flex items-center justify-between h-full">
