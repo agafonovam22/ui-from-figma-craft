@@ -79,16 +79,21 @@ const IdeasSelections: React.FC = () => {
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {ideas.map((idea) => (
-            <div
+            <Link
               key={idea.id}
-              className="flex-shrink-0 w-80 rounded-lg overflow-hidden h-[444px] hover:shadow-lg transition-shadow cursor-pointer"
+              to="/ideas"
+              className="group relative flex-shrink-0 w-80 rounded-lg overflow-hidden h-[444px] hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
               <img 
                 src={idea.image} 
                 alt={idea.title}
                 className="w-full h-full object-cover"
               />
-            </div>
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
+              <button className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-all duration-300 flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0">
+                Перейти <ArrowRight className="w-4 h-4" />
+              </button>
+            </Link>
           ))}
         </div>
       </div>
