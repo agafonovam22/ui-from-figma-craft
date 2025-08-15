@@ -15,7 +15,7 @@ import {
 
 const NewsAndBlogPage: React.FC = () => {
   const [itemsToShow, setItemsToShow] = useState(11);
-  const allNews = getAllNews(1).news;
+  const allNews = getAllNews();
   const newsItems = allNews.slice(0, itemsToShow);
   const hasMoreNews = itemsToShow < allNews.length;
 

@@ -192,12 +192,12 @@ export const getNewsWithPagination = (page: number = 1): { news: NewsItem[], tot
   };
 };
 
-// Получить все новости для страницы /news (с пагинацией)
-export const getAllNews = (page: number = 1): { news: NewsItem[], totalPages: number } => {
-  return getNewsWithPagination(page);
+// Получить все новости для страницы /news
+export const getAllNews = (): NewsItem[] => {
+  return newsItems;
 };
 
-// Получить новости для страницы About (с пагинацией)
-export const getAboutPageNews = (page: number = 1): { news: NewsItem[], totalPages: number } => {
-  return getNewsWithPagination(page);
+// Получить новости для страницы About
+export const getAboutPageNews = (): NewsItem[] => {
+  return newsItems;
 };

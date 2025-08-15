@@ -22,7 +22,7 @@ import {
 const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState('about');
   const [itemsToShow, setItemsToShow] = useState(11);
-  const allNews = getAboutPageNews(1).news;
+  const allNews = getAboutPageNews();
   const newsItems = allNews.slice(0, itemsToShow);
   const hasMoreNews = itemsToShow < allNews.length;
 
