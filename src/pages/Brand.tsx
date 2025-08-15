@@ -1089,7 +1089,7 @@ const Brand: React.FC = () => {
                 {/* Left Image */}
                 <div className="order-1">
                   <img 
-                    src="/lovable-uploads/acee311e-f599-4755-b95b-fe6f45aad4d1.png"
+                    src="/lovable-uploads/a8f53f93-471f-4387-aed9-2bfd895f8a3b.png"
                     alt="Slide&FIT тренажеры в действии"
                     className="w-full h-full object-cover rounded-lg"
                   />
