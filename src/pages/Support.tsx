@@ -1278,6 +1278,18 @@ const Support: React.FC = () => {
                   </AccordionContent>
                 </AccordionItem>
 
+                <AccordionItem value="item-7-new" className="border-0">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Как выбрать тренажер?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Выбор тренажера зависит от нескольких ключевых факторов. В первую очередь определитесь с целью тренировок: для похудения и развития выносливости лучше подойдут кардиотренажеры (беговые дорожки, эллипсоиды, велотренажеры), а для набора мышечной массы - силовые установки (мультистанции, свободные веса, силовые рамы).<br /><br />
+                    Важное значение имеют доступное пространство и бюджет: для небольших домашних помещений стоит рассмотреть компактные или складные модели, тогда как для коммерческих залов можно выбирать профессиональное оборудование с большими габаритами.<br /><br />
+                    Обратите внимание на уровень шума (особенно важно для квартир), максимальный вес пользователя и нагрузку.<br /><br />
+                    Если сомневаетесь в выборе, лучше проконсультироваться со специалистом - наши менеджеры помогут подобрать оптимальное решение под ваши задачи и условия эксплуатации.
+                  </AccordionContent>
+                </AccordionItem>
+
                 <AccordionItem value="item-1" className="border-0">
                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
