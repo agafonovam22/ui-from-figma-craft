@@ -52,18 +52,41 @@ const NewsAndBlog: React.FC = () => {
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {newsItems.map((item) => (
-            <div 
-              key={item.id} 
-              className="flex-shrink-0 w-80 rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+            <Link
+              key={item.id}
+              to={`/news/${item.slug}`}
+              className="flex-shrink-0 w-80 bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
             >
-              <div className="w-full h-[300px]">
+              {/* Image - 3/4 of the card */}
+              <div className="w-full h-[240px]">
                 <img 
                   src={item.image} 
                   alt={item.title}
                   className="w-full h-full object-cover"
                 />
               </div>
-            </div>
+              
+              {/* Text Content - 1/4 of the card */}
+              <div className="p-4 h-[80px] relative">
+                {/* News badge and date */}
+                <div className="flex justify-between items-start mb-2">
+                  <span className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-benzin">
+                    Новости
+                  </span>
+                  <span className="text-gray-500 text-xs font-benzin">
+                    {item.date}
+                  </span>
+                </div>
+                
+                {/* Title and description */}
+                <h3 className="text-sm font-benzin-semibold text-gray-900 mb-1 line-clamp-1">
+                  {item.title}
+                </h3>
+                <p className="text-xs text-gray-600 font-benzin line-clamp-2">
+                  {item.description}
+                </p>
+              </div>
+            </Link>
           ))}
         </div>
 
