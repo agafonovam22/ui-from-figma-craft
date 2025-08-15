@@ -124,6 +124,7 @@ const Brand: React.FC = () => {
       case 'hyfit': return 'HYFIT';
       case 'maxgym': return 'MAXGYM';
       case 'maxfit': return 'MAXFIT';
+      case 'meridien': return 'MÉRIDIEN';
       case 'proski': return 'PROSKI';
       default: return 'kernel';
     }
@@ -341,7 +342,7 @@ const Brand: React.FC = () => {
               {/* Left Image */}
               <div className="order-1">
                 <img 
-                  src={brandSlug === 'cardio-power' ? '/lovable-uploads/16904733-b1ae-4f10-8b24-795bc1b439f6.png' : brandSlug === 'true' ? '/lovable-uploads/21b038a7-1ec4-44c6-a96c-6a342c3603de.png' : brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : brandSlug === 'schwinn' ? '/lovable-uploads/5a7d56a3-1cee-438a-b65a-a3479013fe70.png' : brandSlug === 'oktan' ? '/lovable-uploads/b7860c53-38e6-490f-a402-9811296c1da3.png' : brandSlug === 'visbody' ? '/lovable-uploads/7f518539-41a1-4a19-8284-3b07384c5521.png' : brandSlug === 'smith' ? '/lovable-uploads/65e88678-9ddb-4054-8aa5-9168061e974c.png' : brandSlug === 'slide-fit' ? '/lovable-uploads/dedbea23-0db1-4b59-a6c3-480221fe1bce.png' : brandSlug === 'scholle' ? '/lovable-uploads/2426d4bb-0cd0-41f1-8fc4-e3685ff725c7.png' : brandSlug === 'inspire' ? '/lovable-uploads/02405569-7f43-47f4-997a-7d85e0efdea8.png' : brandSlug === 'hyfit' ? '/lovable-uploads/55597898-53a4-47b5-922e-18b6483925f6.png' : brandSlug === 'maxfit' ? '/lovable-uploads/2894b742-e7cf-47d8-96a8-7d07f315ba2a.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
+                  src={brandSlug === 'cardio-power' ? '/lovable-uploads/16904733-b1ae-4f10-8b24-795bc1b439f6.png' : brandSlug === 'true' ? '/lovable-uploads/21b038a7-1ec4-44c6-a96c-6a342c3603de.png' : brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : brandSlug === 'schwinn' ? '/lovable-uploads/5a7d56a3-1cee-438a-b65a-a3479013fe70.png' : brandSlug === 'oktan' ? '/lovable-uploads/b7860c53-38e6-490f-a402-9811296c1da3.png' : brandSlug === 'visbody' ? '/lovable-uploads/7f518539-41a1-4a19-8284-3b07384c5521.png' : brandSlug === 'smith' ? '/lovable-uploads/65e88678-9ddb-4054-8aa5-9168061e974c.png' : brandSlug === 'slide-fit' ? '/lovable-uploads/dedbea23-0db1-4b59-a6c3-480221fe1bce.png' : brandSlug === 'scholle' ? '/lovable-uploads/2426d4bb-0cd0-41f1-8fc4-e3685ff725c7.png' : brandSlug === 'inspire' ? '/lovable-uploads/02405569-7f43-47f4-997a-7d85e0efdea8.png' : brandSlug === 'hyfit' ? '/lovable-uploads/55597898-53a4-47b5-922e-18b6483925f6.png' : brandSlug === 'maxfit' ? '/lovable-uploads/2894b742-e7cf-47d8-96a8-7d07f315ba2a.png' : brandSlug === 'meridien' ? '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png' : '/lovable-uploads/db8f1471-5f7e-46c9-b5f0-0791269c93b7.png'}
                   alt="Спортивные тренировки"
                   className="w-full object-cover rounded-lg"
                   style={brandSlug === 'true' ? { height: '300px' } : { height: '500px' }}
@@ -351,7 +352,7 @@ const Brand: React.FC = () => {
               {/* Right Text */}
               <div className="order-2 lg:pl-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'cardiopower-pro' ? 'Надежность, проверенная потоком' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьез' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — революция в тренировке ягодичных мышц' : brandSlug === 'gym80' ? 'GYM80 — немецкое качество для профессиональных результатов' : brandSlug === 'oktan' ? 'Octane Fitness — эллиптические тренажеры нового поколения' : brandSlug === 'visbody' ? 'Visbody — инновационные технологии для анализа тела' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'scholle' ? 'SCHOLLE: Немецкое качество для активного образа жизни' : brandSlug === 'smith' ? 'SMITH: профессиональное фитнес-оборудование с безупречной репутацией' : brandSlug === 'slide-fit' ? 'Инновационные тренажеры из Словении для комплексного развития тела' : brandSlug === 'inspire' ? 'INSPIRE: Американское качество для профессионального тренинга' : brandSlug === 'hyfit' ? 'HYFIT: Интеллектуальный фитнес с регулируемыми нагрузками' : brandSlug === 'maxgym' ? 'MAXGYM: Профессиональная сила без компромиссов' : brandSlug === 'maxfit' ? 'MAXFIT: Инновационные тренажеры с интеллектуальной регулировкой нагрузки' : 'МЫ – TRUE'}
+                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'cardiopower-pro' ? 'Надежность, проверенная потоком' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьез' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — революция в тренировке ягодичных мышц' : brandSlug === 'gym80' ? 'GYM80 — немецкое качество для профессиональных результатов' : brandSlug === 'oktan' ? 'Octane Fitness — эллиптические тренажеры нового поколения' : brandSlug === 'visbody' ? 'Visbody — инновационные технологии для анализа тела' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'scholle' ? 'SCHOLLE: Немецкое качество для активного образа жизни' : brandSlug === 'smith' ? 'SMITH: профессиональное фитнес-оборудование с безупречной репутацией' : brandSlug === 'slide-fit' ? 'Инновационные тренажеры из Словении для комплексного развития тела' : brandSlug === 'inspire' ? 'INSPIRE: Американское качество для профессионального тренинга' : brandSlug === 'hyfit' ? 'HYFIT: Интеллектуальный фитнес с регулируемыми нагрузками' : brandSlug === 'maxgym' ? 'MAXGYM: Профессиональная сила без компромиссов' : brandSlug === 'maxfit' ? 'MAXFIT: Инновационные тренажеры с интеллектуальной регулировкой нагрузки' : brandSlug === 'meridien' ? 'MÉRIDIEN: ГДЕ НАЧИНАЕТСЯ ВАШ КОМФОРТ' : 'МЫ – TRUE'}
                 </h2>
                 
                 <div className="mb-8">
@@ -462,6 +463,15 @@ const Brand: React.FC = () => {
                       <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                         MAXFIT – это новый стандарт в мире фитнес-оборудования, где технология встречается с универсальностью. Наши тренажеры с революционной системой регулировки нагрузки позволяют вам самостоятельно настраивать нагрузку от минимальной до максимальной за секунды.
                       </p>
+                    ) : brandSlug === 'meridien' ? (
+                      <div className="space-y-6">
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Закройте глаза на минуту. Представьте, как после долгого дня вы погружаетесь в мягкие объятия кресла MÉRIDIEN. Теплые волны массажа окутывают спину, умные ролики точно находят каждую напряженную точку, а поза Zero Gravity бережно снимает нагрузку с позвоночника.
+                        </p>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Вы чувствуете, как напряжение покидает ваше тело, сменяясь приятной легкостью — будто опытный массажист разминает ваши плечи, а затем мягко прорабатывает поясницу. Встроенный подогрев усиливает ощущения, создавая эффект спа-салона прямо у вас дома.
+                        </p>
+                      </div>
                     ) : brandSlug === 'cardiopower-pro' ? (
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       Наши тренажеры созданы для залов, где оборудование работает на пределе возможностей. Усиленные рамы из алюминия, двигатели переменного тока с защитой от перегрузок и износостойкие компоненты — каждый элемент рассчитан на многочасовую ежедневную эксплуатацию.
@@ -489,7 +499,7 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'cardiopower-pro' ? 'Технологии для профессионалов' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : brandSlug === 'sole-fitness' ? 'Что делает Sole Fitness особенным?' : brandSlug === 'peach-builder' ? 'Для кого создан PEACH BUILDER?' : brandSlug === 'gym80' ? 'Философия GYM80' : brandSlug === 'oktan' ? 'Инновации Octane Fitness' : brandSlug === 'visbody' ? 'Технологии Visbody' : brandSlug === 'bowflex' ? 'BOWFLEX ДЕЛАЕТ ТРЕНИРОВКИ ОСОБЕННЫМИ' : brandSlug === 'scholle' ? 'Надежность, проверенная временем' : brandSlug === 'smith' ? 'Инновации, проверенные временем' : brandSlug === 'slide-fit' ? 'Горнолыжный тренажер Slide&FIT Commercial Edition' : brandSlug === 'inspire' ? 'Инженерное превосходство в каждой детали' : brandSlug === 'hyfit' ? 'Главное преимущество – интеллектуальная система регулировки веса' : brandSlug === 'maxgym' ? 'Технологическое превосходство в деталях' : brandSlug === 'maxfit' ? 'Почему MAXFIT – это прорыв:' : 'Наше оборудование выбирают:'}
+                  {brandSlug === 'cardio-power' ? 'Кому подходит CardioPower?' : brandSlug === 'cardiopower-pro' ? 'Технологии для профессионалов' : brandSlug === 'schwinn' ? 'Кому подходят тренажеры Schwinn?' : brandSlug === 'nautilus' ? 'Кому подходят решения Nautilus?' : brandSlug === 'sole-fitness' ? 'Что делает Sole Fitness особенным?' : brandSlug === 'peach-builder' ? 'Для кого создан PEACH BUILDER?' : brandSlug === 'gym80' ? 'Философия GYM80' : brandSlug === 'oktan' ? 'Инновации Octane Fitness' : brandSlug === 'visbody' ? 'Технологии Visbody' : brandSlug === 'bowflex' ? 'BOWFLEX ДЕЛАЕТ ТРЕНИРОВКИ ОСОБЕННЫМИ' : brandSlug === 'scholle' ? 'Надежность, проверенная временем' : brandSlug === 'smith' ? 'Инновации, проверенные временем' : brandSlug === 'slide-fit' ? 'Горнолыжный тренажер Slide&FIT Commercial Edition' : brandSlug === 'inspire' ? 'Инженерное превосходство в каждой детали' : brandSlug === 'hyfit' ? 'Главное преимущество – интеллектуальная система регулировки веса' : brandSlug === 'maxgym' ? 'Технологическое превосходство в деталях' : brandSlug === 'maxfit' ? 'Почему MAXFIT – это прорыв:' : brandSlug === 'meridien' ? 'Это не просто отдых — это ритуал' : 'Наше оборудование выбирают:'}
                 </h2>
                 
                 {brandSlug === 'cardio-power' ? (
@@ -659,6 +669,10 @@ const Brand: React.FC = () => {
                         </p>
                       </div>
                     </div>
+                  ) : brandSlug === 'meridien' ? (
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                      15 минут, которые перезагружают сознание и возвращают энергию. Вы не засыпаете — вы растворяетесь в моменте, пока кресло делает свою работу: снимает стресс, улучшает кровообращение и дарит мышцам долгожданное расслабление.
+                    </p>
                   ) : brandSlug === 'maxgym' ? (
                     <div className="space-y-4">
                       <div className="flex items-start">
@@ -746,7 +760,7 @@ const Brand: React.FC = () => {
                 <div className="h-full flex flex-col">
                   <div className="mb-3">
                      <h2 className="text-3xl font-benzin text-gray-900 mb-3">
-                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'cardiopower-pro' ? 'Управление без сложностей' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : brandSlug === 'peach-builder' ? 'Философия бренда строится на трёх принципах:' : brandSlug === 'gym80' ? 'Более 40 лет в служении фитнесу' : brandSlug === 'oktan' ? 'Преимущества Octane Fitness' : brandSlug === 'visbody' ? 'Почему выбирают Visbody?' : brandSlug === 'bowflex' ? 'BOWFLEX ВДОХНОВЛЯЕТ' : brandSlug === 'scholle' ? 'Широкий ассортимент для активного отдыха' : brandSlug === 'smith' ? 'Комфорт как главный приоритет' : brandSlug === 'slide-fit' ? 'Технологическое превосходство' : brandSlug === 'inspire' ? 'Уникальные особенности тренажеров INSPIRE' : brandSlug === 'hyfit' ? 'Комплексные решения для любого уровня подготовки' : brandSlug === 'maxgym' ? 'Философия бренда' : brandSlug === 'maxfit' ? 'Для кого созданы наши тренажеры:' : 'Лидер в индустрии'}
+                      {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'cardiopower-pro' ? 'Управление без сложностей' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : brandSlug === 'peach-builder' ? 'Философия бренда строится на трёх принципах:' : brandSlug === 'gym80' ? 'Более 40 лет в служении фитнесу' : brandSlug === 'oktan' ? 'Преимущества Octane Fitness' : brandSlug === 'visbody' ? 'Почему выбирают Visbody?' : brandSlug === 'bowflex' ? 'BOWFLEX ВДОХНОВЛЯЕТ' : brandSlug === 'scholle' ? 'Широкий ассортимент для активного отдыха' : brandSlug === 'smith' ? 'Комфорт как главный приоритет' : brandSlug === 'slide-fit' ? 'Технологическое превосходство' : brandSlug === 'inspire' ? 'Уникальные особенности тренажеров INSPIRE' : brandSlug === 'hyfit' ? 'Комплексные решения для любого уровня подготовки' : brandSlug === 'maxgym' ? 'Философия бренда' : brandSlug === 'maxfit' ? 'Для кого созданы наши тренажеры:' : brandSlug === 'meridien' ? 'Почему тысячи людей выбирают MÉRIDIEN:' : 'Лидер в индустрии'}
                     </h2>
                     <p className="text-gray-700 text-sm leading-relaxed font-manrope">
                       {brandSlug === 'cardio-power' ? '' : brandSlug === 'schwinn' ? 'Уже более века Schwinn сохраняет безупречную репутацию благодаря строгим тестам на безопасность и долговечность. Тренажёры созданы из качественных материалов и служат годами.' : brandSlug === 'nautilus' ? '' : brandSlug === 'sole-fitness' ? '' : brandSlug === 'peach-builder' ? '' : brandSlug === 'oktan' ? 'Более 25 лет Octane Fitness остается лидером инноваций в области эллиптических тренажеров, устанавливая стандарты качества и технологий.' : brandSlug === 'visbody' ? 'Единственные в отрасли технологии сочетания биоимпедансометрии и 3D-сканирования для максимально точного анализа тела.' : brandSlug === 'bowflex' ? '' : brandSlug === 'scholle' ? 'В ассортименте SCHOLLE каждый найдет оборудование по душе:' : brandSlug === 'inspire' ? 'Главной отличительной чертой оборудования INSPIRE является продуманная многофункциональность. Каждая машина сочетает в себе несколько тренировочных зон, позволяя прорабатывать различные группы мышц без необходимости использования дополнительных устройств.' : brandSlug === 'hyfit' ? 'Регулируемая гантель HYFIT CLASSIC – базовый элемент системы с эргономичным дизайном. Набор HYFIT 3в1 – штанга, гантель и гиря в едином регулируемом решении.' : brandSlug === 'maxgym' ? 'MAXGYM создает оборудование, которое:' : ''}
@@ -982,11 +996,68 @@ const Brand: React.FC = () => {
                           </p>
                         </div>
                       </div>
+                    ) : brandSlug === 'meridien' ? (
+                      <div className="space-y-3">
+                        <div className="flex items-start">
+                          <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">15 минут = 60 минут ручного массажа</p>
+                        </div>
+                        <div className="flex items-start">
+                          <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">До 28 программ: от интенсивного восстановления до нежного релакса</p>
+                        </div>
+                        <div className="flex items-start">
+                          <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">2D/3D/4D массаж подстраиваются под ваши предпочтения</p>
+                        </div>
+                        <div className="flex items-start">
+                          <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">Zero Gravity — поза, в которой ваше тело отдыхает по-настоящему</p>
+                        </div>
+                        <div className="flex items-start">
+                          <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">Тихий режим — ваш отдых не побеспокоит окружающих</p>
+                        </div>
+                      </div>
                       ) : brandSlug === 'smith' ? (
                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                           SMITH понимает, что успешные тренировки – это не только эффективность, но и удовольствие от процесса. Поэтому каждая деталь тренажеров продумана для максимального комфорта: мягкие сиденья из износостойкой синтетической кожи, нескользящие рукоятки, магнитные селекторы нагрузки, система снижения стартового сопротивления. Даже упаковка оборудования разработана специально для безопасной транспортировки – прочный гофрокартон надежно защищает тренажеры при перевозке.
                         </p>
-                       ) : (
+                      ) : brandSlug === 'meridien' ? (
+                        <div className="space-y-4">
+                          <div className="flex items-start">
+                            <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <div>
+                              <h3 className="font-benzin text-gray-900 mb-2">COMPACT</h3>
+                              <p className="text-gray-600 text-sm leading-relaxed font-manrope">умный комфорт для небольших пространств</p>
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <div>
+                              <h3 className="font-benzin text-gray-900 mb-2">COMFORT</h3>
+                              <p className="text-gray-600 text-sm leading-relaxed font-manrope">домашний релакс в любое время</p>
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <div>
+                              <h3 className="font-benzin text-gray-900 mb-2">BUSINESS</h3>
+                              <p className="text-gray-600 text-sm leading-relaxed font-manrope">инвестиция в имидж</p>
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <div>
+                              <h3 className="font-benzin text-gray-900 mb-2">PREMIUM</h3>
+                              <p className="text-gray-600 text-sm leading-relaxed font-manrope">если хотите лучшее из возможного</p>
+                            </div>
+                          </div>
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope mt-6 italic">
+                            MÉRIDIEN — это инвестиция в себя. В ваше здоровье, настроение и качество жизни. Попробуйте — и ваше тело скажет «спасибо» уже после первого сеанса.
+                          </p>
+                        </div>
+                      ) : (
                           <div className="text-gray-600 text-sm leading-relaxed font-manrope space-y-2">
                             <div className="flex items-center gap-2">
                               <span className="text-green-600">✓</span>
@@ -1019,7 +1090,7 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : brandSlug === 'cardiopower-pro' ? 'Выбор премиальных клубов' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : brandSlug === 'nautilus' ? 'Nautilus – когда важен не просто результат, а технологичное превосходство.' : brandSlug === 'sole-fitness' ? 'Выбирайте Sole – инженерное совершенство для ваших результатов.' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — это больше чем оборудование' : brandSlug === 'gym80' ? 'Выбирая GYM80, вы выбираете лучшее' : brandSlug === 'oktan' ? 'Выбирайте Octane Fitness — лидера инноваций' : brandSlug === 'visbody' ? 'Будущее анализа тела уже здесь' : brandSlug === 'bowflex' ? 'BOWFLEX — ДЛЯ ТЕХ, КТО ВЫБИРАЕТ ДВИЖЕНИЕ' : brandSlug === 'scholle' ? 'Немецкие традиции в каждом изделии' : brandSlug === 'smith' ? 'Немецкая надежность в каждой детали' : brandSlug === 'slide-fit' ? 'С брендом Slide&FIT вы получаете не просто тренажер, а персонального тренера' : brandSlug === 'inspire' ? 'Широкий ассортимент для комплексных решений' : brandSlug === 'hyfit' ? 'Для тех, кто ценит' : brandSlug === 'maxgym' ? 'Профессиональные решения' : brandSlug === 'maxfit' ? 'Качество, подтвержденное:' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
+                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : brandSlug === 'cardiopower-pro' ? 'Выбор премиальных клубов' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : brandSlug === 'nautilus' ? 'Nautilus – когда важен не просто результат, а технологичное превосходство.' : brandSlug === 'sole-fitness' ? 'Выбирайте Sole – инженерное совершенство для ваших результатов.' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — это больше чем оборудование' : brandSlug === 'gym80' ? 'Выбирая GYM80, вы выбираете лучшее' : brandSlug === 'oktan' ? 'Выбирайте Octane Fitness — лидера инноваций' : brandSlug === 'visbody' ? 'Будущее анализа тела уже здесь' : brandSlug === 'bowflex' ? 'BOWFLEX — ДЛЯ ТЕХ, КТО ВЫБИРАЕТ ДВИЖЕНИЕ' : brandSlug === 'scholle' ? 'Немецкие традиции в каждом изделии' : brandSlug === 'smith' ? 'Немецкая надежность в каждой детали' : brandSlug === 'slide-fit' ? 'С брендом Slide&FIT вы получаете не просто тренажер, а персонального тренера' : brandSlug === 'inspire' ? 'Широкий ассортимент для комплексных решений' : brandSlug === 'hyfit' ? 'Для тех, кто ценит' : brandSlug === 'maxgym' ? 'Профессиональные решения' : brandSlug === 'maxfit' ? 'Качество, подтвержденное:' : brandSlug === 'meridien' ? 'Категории MÉRIDIEN: выберите свой идеальный вариант' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
                 </h2>
                 
                 {brandSlug === 'cardio-power' ? (
