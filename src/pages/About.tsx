@@ -364,7 +364,7 @@ const About: React.FC = () => {
                     </p>
                     <div className="bg-gradient-to-r from-[#F53B49] to-[#FF6B7A] text-white p-6 rounded-lg">
                       <p className="text-lg font-medium" style={{ fontFamily: 'Benzin-Semibold' }}>
-                        Мы стремимся сделать занятия фитнесом более эффективными, мотивирующими и интересными!
+                        Мы стремимся сделать занятия фитнесом более эффективными, мотивирующими&nbsp;и&nbsp;интересными!
                       </p>
                     </div>
                   </div>
