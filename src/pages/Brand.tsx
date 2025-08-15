@@ -859,7 +859,7 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : brandSlug === 'nautilus' ? 'Nautilus – когда важен не просто результат, а технологичное превосходство.' : brandSlug === 'sole-fitness' ? 'Выбирайте Sole – инженерное совершенство для ваших результатов.' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — это больше чем оборудование' : brandSlug === 'gym80' ? 'Выбирая GYM80, вы выбираете лучшее' : brandSlug === 'oktan' ? 'Выбирайте Octane Fitness — лидера инноваций' : brandSlug === 'visbody' ? 'Будущее анализа тела уже здесь' : brandSlug === 'bowflex' ? 'BOWFLEX — ДЛЯ ТЕХ, КТО ВЫБИРАЕТ ДВИЖЕНИЕ' : brandSlug === 'scholle' ? 'Немецкие традиции в каждом изделии' : brandSlug === 'smith' ? 'Немецкая надежность в каждой детали' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
+                  {brandSlug === 'cardio-power' ? 'Ключевые преимущества' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : brandSlug === 'nautilus' ? 'Nautilus – когда важен не просто результат, а технологичное превосходство.' : brandSlug === 'sole-fitness' ? 'Выбирайте Sole – инженерное совершенство для ваших результатов.' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — это больше чем оборудование' : brandSlug === 'gym80' ? 'Выбирая GYM80, вы выбираете лучшее' : brandSlug === 'oktan' ? 'Выбирайте Octane Fitness — лидера инноваций' : brandSlug === 'visbody' ? 'Будущее анализа тела уже здесь' : brandSlug === 'bowflex' ? 'BOWFLEX — ДЛЯ ТЕХ, КТО ВЫБИРАЕТ ДВИЖЕНИЕ' : brandSlug === 'scholle' ? 'Немецкие традиции в каждом изделии' : brandSlug === 'smith' ? 'Немецкая надежность в каждой детали' : brandSlug === 'slide-fit' ? 'С брендом Slide&FIT вы получаете не просто тренажер, а персонального тренера' : 'TRUE – это не просто тренажеры, это инвестиция в долгосрочный результат'}
                 </h2>
                 
                 {brandSlug === 'cardio-power' ? (
@@ -948,10 +948,25 @@ const Brand: React.FC = () => {
                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                      Производственные стандарты SMITH – это отдельная история. Рамы из высокопрочной стали с овальным профилем, двойное порошковое покрытие для защиты от повреждений, тросы, тестируемые трижды в день под нагрузкой 900 кг – такие требования к качеству говорят сами за себя. Бренд не экономит на материалах и контроле, поэтому его оборудование служит годами даже при интенсивной эксплуатации в коммерческих залах.
                    </p>
-                 ) : brandSlug === 'slide-fit' ? (
-                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                     Тренажеры Slide&FIT оснащены несколькими уровнями нагрузки, позволяющими постепенно увеличивать интенсивность тренировок. Прочные металлические конструкции с точной балансировкой гарантируют безопасность и долговечность. Компактные размеры и мобильность делают тренажеры идеальным решением как для фитнес-клубов, так и для домашнего использования.
-                   </p>
+                  ) : brandSlug === 'slide-fit' ? (
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-green-600 mr-2">✓</span>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">Развивает все группы мышц одновременно</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-green-600 mr-2">✓</span>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">Предлагает несколько видов тренировок в одном устройстве</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-green-600 mr-2">✓</span>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">Сочетает кардионагрузку с силовыми упражнениями</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-green-600 mr-2">✓</span>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">Подходит для пользователей любого уровня подготовки</p>
+                      </div>
+                    </div>
                  ) : (
                   <>
                     <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
