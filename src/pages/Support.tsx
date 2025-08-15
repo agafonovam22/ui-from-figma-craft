@@ -1327,12 +1327,15 @@ const Support: React.FC = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-3" className="border-0">
+                <AccordionItem value="item-10-new" className="border-0">
                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
+                    Есть ли рассрочка на покупку оборудования?
                   </AccordionTrigger>
                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Lorem ipsum dolor sit amet
+                    Оформить кредит на сайте — быстро и легко. При оформлении заказа в корзине укажите способ оплаты «Кредит».<br /><br />
+                    Вы будете перенаправлены на сайт банка для заполнения анкеты. После заполнения анкеты с вами свяжется представитель банка. Вашу заявку рассмотрят в течение 20—30 минут.<br /><br />
+                    Также вы можете оформить рассрочку или кредит в любом магазине, сделав заказ на самовывоз.<br /><br />
+                    Пожалуйста, будьте готовы предоставить паспорт при получении кредита. Также банки вправе потребовать иные дополнительные документы и подтверждение доходов заемщика.
                   </AccordionContent>
                 </AccordionItem>
 
