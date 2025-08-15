@@ -616,13 +616,13 @@ const Brand: React.FC = () => {
                 style={{ objectPosition: 'center right' }}
               />
               {/* Statistics content overlay */}
-              <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-6 shadow-lg">
+              <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-4 shadow-lg overflow-y-auto">
                 <div className="h-full flex flex-col">
-                  <div className="mb-4">
-                     <h2 className="text-3xl font-benzin text-gray-900 mb-4">
+                  <div className="mb-3">
+                     <h2 className="text-2xl font-benzin text-gray-900 mb-3">
                       {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'cardiopower-pro' ? 'Управление без сложностей' : brandSlug === 'schwinn' ? 'Наследие качества, которому доверяют' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : brandSlug === 'peach-builder' ? 'Философия бренда строится на трёх принципах:' : brandSlug === 'gym80' ? 'Более 40 лет в служении фитнесу' : brandSlug === 'oktan' ? 'Преимущества Octane Fitness' : brandSlug === 'visbody' ? 'Почему выбирают Visbody?' : brandSlug === 'bowflex' ? 'BOWFLEX ВДОХНОВЛЯЕТ' : brandSlug === 'scholle' ? 'Широкий ассортимент для активного отдыха' : brandSlug === 'smith' ? 'Комфорт как главный приоритет' : brandSlug === 'slide-fit' ? 'Технологическое превосходство' : 'Лидер в индустрии'}
                     </h2>
-                    <p className="text-gray-700 text-sm leading-relaxed font-manrope">
+                    <p className="text-gray-700 text-xs leading-relaxed font-manrope">
                       {brandSlug === 'cardio-power' ? '' : brandSlug === 'schwinn' ? 'Уже более века Schwinn сохраняет безупречную репутацию благодаря строгим тестам на безопасность и долговечность. Тренажёры созданы из качественных материалов и служат годами.' : brandSlug === 'nautilus' ? '' : brandSlug === 'sole-fitness' ? '' : brandSlug === 'peach-builder' ? '' : brandSlug === 'oktan' ? 'Более 25 лет Octane Fitness остается лидером инноваций в области эллиптических тренажеров, устанавливая стандарты качества и технологий.' : brandSlug === 'visbody' ? 'Единственные в отрасли технологии сочетания биоимпедансометрии и 3D-сканирования для максимально точного анализа тела.' : brandSlug === 'bowflex' ? '' : brandSlug === 'scholle' ? 'В ассортименте SCHOLLE каждый найдет оборудование по душе:' : ''}
                     </p>
                   </div>
@@ -631,31 +631,31 @@ const Brand: React.FC = () => {
                     <div className="space-y-3">
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                         <p className="text-gray-600 text-xs leading-relaxed font-manrope">
                           Самая широкая линейка кардиотренажеров в России
                         </p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                         <p className="text-gray-600 text-xs leading-relaxed font-manrope">
                           Безопасность и комфорт благодаря продуманным системам амортизации и защиты от перегрузок
                         </p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                         <p className="text-gray-600 text-xs leading-relaxed font-manrope">
                           Технологии для реальных результатов: от базовых моделей до премиальных решений
                         </p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                         <p className="text-gray-600 text-xs leading-relaxed font-manrope">
                           Доступная цена без ущерба качеству – оптимизированное производство и логистика
                         </p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
+                         <p className="text-gray-600 text-xs leading-relaxed font-manrope">
                           Сервис и поддержка для быстрых поставок запчастей и помощи специалистов
                         </p>
                       </div>
