@@ -1387,12 +1387,23 @@ const Support: React.FC = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-6" className="border-0">
+                <AccordionItem value="item-13-new" className="border-0">
                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
+                    Что делать в случае поломки тренажера?
                   </AccordionTrigger>
                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua?
+                    Мы оперативно решим проблему — просто оформите заявку:<br /><br />
+                    
+                    <strong>Как сообщить о поломке?</strong><br />
+                    Заполните сервисную форму на сайте:<br />
+                    Укажите модель и серийный номер (ускорит обработку)<br />
+                    Опишите неисправность (например: "скрип в педалях эллипсоида")<br />
+                    Прикрепите фото/видео поломки (по возможности)<br /><br />
+                    
+                    <strong>Наш сервисный центр свяжется с вами в течение 1 рабочего дня:</strong><br />
+                    Диагностирует проблему<br />
+                    Предложит решение: ремонт на месте или доставка в СЦ<br />
+                    Сообщит сроки и стоимость (если нет гарантии)
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
