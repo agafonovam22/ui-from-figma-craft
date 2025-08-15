@@ -15,22 +15,22 @@ import {
 // Данные проектов
 const projectsData = {
   'atletika-plus-novomoskovsk': {
-    title: 'Атлетика+ (г. Новомосковск)',
+    title: 'Атлетика+ (г.\u00A0Новомосковск)',
     description: 'С инвесторами мы оснастили зал топовым оборудованием под дизайн — он стал лучшим в регионе.',
     image: '/lovable-uploads/fdec1cea-908d-43a3-9d77-4f14304597f3.png'
   },
   'fitness-terra-moscow': {
-    title: 'Фитнес Терра (г. Москва)',
+    title: 'Фитнес Терра (г.\u00A0Москва)',
     description: 'Клуб класса "бизнес" на площади старой советской застройки',
     image: '/lovable-uploads/097c8707-039f-42f4-b176-b9b084a1cda9.png'
   },
   'rockout-moscow': {
-    title: 'RockOut (г. Москва)',
+    title: 'RockOut (г.\u00A0Москва)',
     description: 'Прогрессивный фитнес-клуб с рекуррентными платежами и оборудованием класса "премиум".',
     image: '/lovable-uploads/b1513bca-e46f-4642-85c8-279c68cbbff4.png'
   },
   'neptun-balashikha': {
-    title: 'Нептун (г. Балашиха)',
+    title: 'Нептун (г.\u00A0Балашиха)',
     description: 'Обновленный тренажерный зал крупнейшего спортивного центра города Балашиха.',
     image: '/lovable-uploads/7532d8ab-c6f7-4106-8d4b-563a3df784aa.png'
   },
@@ -40,18 +40,18 @@ const projectsData = {
     image: '/lovable-uploads/d37774a2-1a10-4cf2-ab20-b3e19960d0ce.png'
   },
   'centrk-vladikavkaz': {
-    title: 'ЦентрК (г. Владикавказ)',
+    title: 'ЦентрК (г.\u00A0Владикавказ)',
     description: 'Один из крупнейших фитнес-центров города Владикавказ.',
     image: '/lovable-uploads/a5af320b-9c2e-4f35-9708-452bd07d454f.png'
   },
   'pulse120-anapa': {
-    title: 'Pulse120 (г. Анапа)',
-    description: 'Отличный компактных фитнес-клуб в г.Анапа. Один из самых современных в городе.',
+    title: 'Pulse120 (г.\u00A0Анапа)',
+    description: 'Отличный компактных фитнес-клуб в г.\u00A0Анапа. Один из самых современных в городе.',
     image: '/lovable-uploads/c015139b-7198-4978-ae43-3c24b91892a0.png'
   },
   'plaza-fitness-kostroma': {
-    title: 'PlazaFitness (г. Кострома)',
-    description: 'Один из самых популярных фитнес-клубов г. Кострома.',
+    title: 'PlazaFitness (г.\u00A0Кострома)',
+    description: 'Один из самых популярных фитнес-клубов г.\u00A0Кострома.',
     image: '/lovable-uploads/ea3ea54f-dd7a-4063-8ac4-788a8a7b6441.png'
   },
   'sochi-park-hotel': {

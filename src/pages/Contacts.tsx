@@ -159,7 +159,7 @@ const Contacts: React.FC = () => {
                       <div>
                         <p className="font-medium">Адрес</p>
                         <p className="text-sm">
-                          г. Санкт-Петербург, Красногвардейский пер 23 лит Е,<br />
+                          г.\u00A0Санкт-Петербург, Красногвардейский пер 23 лит Е,<br />
                           Территория завода "Ильич". Заезд с Вазаского переулка
                         </p>
                       </div>
@@ -411,7 +411,7 @@ const Contacts: React.FC = () => {
                     <div>
                       <p className="text-[14px] text-layout-grey-text mb-1">Адрес</p>
                       <p className="text-[14px] text-layout-dark-grey font-medium">
-                        Московская область, г. Химки,<br />
+                        Московская область, г.\u00A0Химки,<br />
                         мкр Сходня, ул. Некрасова, д. 2
                       </p>
                     </div>
@@ -467,14 +467,14 @@ const Contacts: React.FC = () => {
                     <div>
                       <p className="text-[16px] text-layout-grey-text mb-1">Юридический адрес</p>
                       <p className="text-[16px] text-layout-dark-grey font-medium">
-                        123458, г. Москва, ул. Маршала Прошлякова, д.30, офис 407
+                        123458, г.\u00A0Москва, ул. Маршала Прошлякова, д.30, офис 407
                       </p>
                     </div>
                     
                     <div>
                       <p className="text-[16px] text-layout-grey-text mb-1">Фактический адрес</p>
                       <p className="text-[16px] text-layout-dark-grey font-medium">
-                        123458, г. Москва, ул. Маршала Прошлякова, д.30, офис 407
+                        123458, г.\u00A0Москва, ул. Маршала Прошлякова, д.30, офис 407
                       </p>
                     </div>
 

@@ -103,28 +103,28 @@ const About: React.FC = () => {
     {
       id: 1,
       image: "/lovable-uploads/fdec1cea-908d-43a3-9d77-4f14304597f3.png",
-      title: "Атлетика+ (г. Новомосковск)",
+      title: "Атлетика+ (г.\u00A0Новомосковск)",
       description: "С инвесторами мы оснастили зал топовым оборудованием под дизайн — он стал лучшим в регионе.",
       slug: projectSlugs[0]
     },
     {
       id: 2,
       image: "/lovable-uploads/cc85982b-96f7-40ec-ad84-f52b8c506581.png",
-      title: "Фитнес Терра (г. Москва)", 
+      title: "Фитнес Терра (г.\u00A0Москва)", 
       description: "Клуб класса \"бизнес\" на площади старой советской застройки",
       slug: projectSlugs[1]
     },
     {
       id: 3,
       image: "/lovable-uploads/b1513bca-e46f-4642-85c8-279c68cbbff4.png",
-      title: "RockOut (г. Москва)",
+      title: "RockOut (г.\u00A0Москва)",
       description: "Прогрессивный фитнес-клуб с\u00A0рекуррентными платежами и\u00A0оборудованием класса \"премиум\".",
       slug: projectSlugs[2]
     },
     {
       id: 4,
       image: "/lovable-uploads/7532d8ab-c6f7-4106-8d4b-563a3df784aa.png",
-      title: "Нептун (г. Балашиха)",
+      title: "Нептун (г.\u00A0Балашиха)",
       description: "Обновленный тренажерный зал крупнейшего спортивного центра города Балашиха.",
       slug: projectSlugs[3]
     },
@@ -138,22 +138,22 @@ const About: React.FC = () => {
     {
       id: 6,
       image: "/lovable-uploads/a5af320b-9c2e-4f35-9708-452bd07d454f.png",
-      title: "ЦентрК (г. Владикавказ)",
+      title: "ЦентрК (г.\u00A0Владикавказ)",
       description: "Один из крупнейших фитнес-центров города Владикавказ.",
       slug: projectSlugs[5]
     },
     {
       id: 7,
       image: "/lovable-uploads/c015139b-7198-4978-ae43-3c24b91892a0.png",
-      title: "Pulse120 (г. Анапа)",
-      description: "Отличный компактных фитнес-клуб в г.Анапа. Один из самых современных в городе.",
+      title: "Pulse120 (г.\u00A0Анапа)",
+      description: "Отличный компактных фитнес-клуб в г.\u00A0Анапа. Один из самых современных в городе.",
       slug: projectSlugs[6]
     },
     {
       id: 8,
       image: "/lovable-uploads/3d769f2a-ddbb-4534-a9b9-9b2783c1bccf.png",
-      title: "PlazaFitness (г. Кострома)",
-      description: "Один из самых популярных фитнес-клубов г. Кострома.",
+      title: "PlazaFitness (г.\u00A0Кострома)",
+      description: "Один из самых популярных фитнес-клубов г.\u00A0Кострома.",
       slug: projectSlugs[7]
     },
     {

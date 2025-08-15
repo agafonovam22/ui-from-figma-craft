@@ -43,7 +43,7 @@ const ShowroomMap: React.FC<ShowroomMapProps> = ({ coordinates, isSpb = false })
     const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
       <div class="p-3">
         <h3 class="font-bold text-gray-900 mb-2">${isSpb ? 'Склад' : 'Шоу-рум WellFitness'}</h3>
-        <p class="text-sm text-gray-600 mb-1">${isSpb ? 'г. Санкт-Петербург, Красногвардейский пер 23 лит Е, Территория завода "Ильич". Заезд с Вазаского переулка' : 'Москва, ТЦ Капитолий, Правобережная улица, 1Б'}</p>
+        <p class="text-sm text-gray-600 mb-1">${isSpb ? 'г.\u00A0Санкт-Петербург, Красногвардейский пер 23 лит Е, Территория завода "Ильич". Заезд с Вазаского переулка' : 'Москва, ТЦ Капитолий, Правобережная улица, 1Б'}</p>
         <p class="text-sm text-gray-600 mb-1">${isSpb ? '+7 (905) 254-28-04' : '+7 (499) 677-56-32 доб. 337'}</p>
         ${!isSpb ? '<p class="text-sm text-gray-600">10:00 - 22:00</p>' : ''}
       </div>
