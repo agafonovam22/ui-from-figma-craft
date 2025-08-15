@@ -167,7 +167,7 @@ const About: React.FC = () => {
       id: 10,
       image: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400&h=300&fit=crop",
       title: "Lorem Ipsum",
-      description: "представляем тренажеры Nautilus 626 серии"
+      description: "Представляем тренажеры Nautilus 626 серии"
     }
   ];
 
