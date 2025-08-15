@@ -1291,9 +1291,6 @@ const Brand: React.FC = () => {
                        </div>
                      </div>
                      
-                     <p className="text-gray-600 text-sm leading-relaxed font-manrope mt-6">
-                       Выбирайте TRUE – оборудование, которое работает на ваш успех.
-                     </p>
                   </>
                 )}
               </div>
