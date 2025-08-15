@@ -1268,6 +1268,25 @@ const Support: React.FC = () => {
                   </AccordionContent>
                 </AccordionItem>
 
+                <AccordionItem value="item-6-new" className="border-0">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Возможно ли кастомизировать тренажеры для фитнес-клуба?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    <strong>Кастомизация тренажеров для фитнес-клуба</strong><br />
+                    Да, мы предлагаем услугу индивидуального оформления оборудования для коммерческих залов.<br /><br />
+                    <strong>Что можно кастомизировать:</strong><br />
+                    • Цветовое решение (под ваш фирменный стиль)<br />
+                    • Нанесение логотипа/названия клуба<br />
+                    • Выбор обивки и материалов<br /><br />
+                    <strong>Как заказать:</strong><br />
+                    Оставьте заявку через форму на сайте<br />
+                    Наш менеджер свяжется для обсуждения деталей<br />
+                    Подготовим индивидуальное коммерческое предложение<br /><br />
+                    Сроки и стоимость кастомизации уточняйте у специалистов.
+                  </AccordionContent>
+                </AccordionItem>
+
                 <AccordionItem value="item-1" className="border-0">
                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
