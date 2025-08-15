@@ -1290,12 +1290,24 @@ const Support: React.FC = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-1" className="border-0">
+                <AccordionItem value="item-8-new" className="border-0">
                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidint ut labore et dolore magna aliqua?
+                    В чем разница между домашними и профессиональными моделями?
                   </AccordionTrigger>
                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua? Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua? Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua? Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Главные отличия заключаются в надежности, функционале и сроке службы:<br /><br />
+                    <strong>1. Конструкция и материалы</strong><br />
+                    Профессиональные: усиленная сталь, износостойкие компоненты, выдерживают 10-15 часов ежедневной эксплуатации.<br /><br />
+                    <strong>2. Нагрузка и пользователи</strong><br />
+                    Домашние: максимум 100-150 кг веса пользователя, до 3 человек в семье.<br />
+                    Профессиональные: до 150-200 кг, подходят для потоковых тренировок в залах.<br /><br />
+                    <strong>3. Функционал</strong><br />
+                    Домашние: базовые программы.<br />
+                    Профессиональные: продвинутые настройки, системы охлаждения.<br /><br />
+                    <strong>4. Гарантия и обслуживание</strong><br />
+                    Домашние: гарантия 2 года, ремонт возможен не всегда.<br />
+                    Профессиональные: гарантия до 5 лет, сервисное обслуживание от производителя.<br /><br />
+                    Нужна помощь в подборе? Оставьте заявку — предложим оптимальный вариант под ваш бюджет и задачи!
                   </AccordionContent>
                 </AccordionItem>
 
