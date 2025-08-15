@@ -1041,9 +1041,9 @@ const About: React.FC = () => {
                 <div className="flex justify-center mb-4">
                   <button
                     onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-                    className="px-6 py-2 text-sm text-gray-600 hover:text-gray-800 transition-colors"
+                    className="px-6 py-2 text-sm font-medium border-2 border-red-500 bg-white text-red-500 rounded-[10px] hover:bg-red-500 hover:text-white transition-all duration-200"
                   >
-                    еще
+                    показать еще
                   </button>
                 </div>
               )}
