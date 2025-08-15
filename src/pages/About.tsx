@@ -1042,7 +1042,7 @@ const About: React.FC = () => {
               {hasMoreNews && (
                 <div className="flex justify-center mb-4">
                   <button
-                    onClick={() => setItemsToShow(prev => Math.min(prev + 11, allNews.length))}
+                    onClick={() => setItemsToShow(prev => prev + 11)}
                     className="px-6 py-2 text-sm font-medium border-2 border-red-500 bg-white text-red-500 rounded-[10px] hover:bg-red-500 hover:text-white transition-all duration-200"
                   >
                     Показать еще
@@ -1050,8 +1050,8 @@ const About: React.FC = () => {
                 </div>
               )}
 
-              {/* Pagination - только если показаны не все новости */}
-              {hasMoreNews && (
+              {/* Pagination - показываем всегда если есть больше 11 новостей */}
+              {allNews.length > 11 && (
                 <div className="flex justify-center items-center gap-2 mb-12">
                   {Array.from({ length: Math.ceil(allNews.length / 11) }, (_, index) => index + 1).map((page) => {
                     const isActive = page <= Math.ceil(itemsToShow / 11);
@@ -1069,6 +1069,47 @@ const About: React.FC = () => {
                       </button>
                     );
                   })}
+                </div>
+              )}
+
+              {/* Дополнительные новости (начиная с 12-й) */}
+              {newsItems.length > 11 && (
+                <div className="grid grid-cols-4 gap-4 mb-8">
+                  {newsItems.slice(11).map((item) => (
+                    <div key={item.id}>
+                      <Link
+                        to={`/news/${item.slug}`}
+                        className="group bg-white rounded-lg overflow-hidden border hover:shadow-lg transition-all duration-300 cursor-pointer block h-[280px]"
+                      >
+                        <div className="relative h-[200px]">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        
+                        <div className="p-3 h-[80px] flex flex-col justify-center">
+                          <div className="flex justify-between items-center mb-1">
+                            <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                              НОВОСТИ
+                            </div>
+                            <div className="text-xs text-gray-600">
+                              {item.date}
+                            </div>
+                          </div>
+                          
+                          <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                            {item.title}
+                          </h3>
+                          
+                          <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                            {item.description}
+                          </p>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
                 </div>
               )}
             </div>
