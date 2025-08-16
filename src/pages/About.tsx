@@ -596,34 +596,34 @@ const About: React.FC = () => {
                   {/* Statistics content overlay */}
                   <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-6 shadow-lg">
                     <div className="h-full flex flex-col justify-between">
-                      <div className="mb-6">
-                        <p className="text-gray-700 text-sm leading-relaxed">
+                      <div className="mb-4">
+                        <p className="text-gray-700 text-sm leading-snug">
                           За годы успешного развития нам удалось консолидировать в своем ассортименте продукцию лучших мировых брендов, собрать команду профессионалов, завоевать доверие десятков тысяч лояльных покупателей и стать настоящим лидером рынка.
                         </p>
                       </div>
                       
-                      <div className="grid grid-cols-2 gap-6">
+                      <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-1">2005</div>
-                          <div className="text-gray-600 text-sm">Год появления на рынке</div>
+                          <div className="text-4xl font-bold text-[#17171E] mb-0.5 leading-none">2005</div>
+                          <div className="text-gray-600 text-sm leading-tight">Год появления на рынке</div>
                         </div>
                         <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-1">10 000+</div>
-                          <div className="text-gray-600 text-sm">Складских помещений</div>
+                          <div className="text-4xl font-bold text-[#17171E] mb-0.5 leading-none">10 000+</div>
+                          <div className="text-gray-600 text-sm leading-tight">Складских помещений</div>
                         </div>
                         <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-1">60+</div>
-                          <div className="text-gray-600 text-sm">Квалифицированных сотрудников</div>
+                          <div className="text-4xl font-bold text-[#17171E] mb-0.5 leading-none">60+</div>
+                          <div className="text-gray-600 text-sm leading-tight">Квалифицированных сотрудников</div>
                         </div>
                         <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-1">20+</div>
-                          <div className="text-gray-600 text-sm">Ведущих мировых брендов</div>
+                          <div className="text-4xl font-bold text-[#17171E] mb-0.5 leading-none">20+</div>
+                          <div className="text-gray-600 text-sm leading-tight">Ведущих мировых брендов</div>
                         </div>
                       </div>
                       
-                      <div className="mt-4">
-                        <div className="text-4xl font-bold text-[#17171E] mb-1">3000+</div>
-                        <div className="text-gray-600 text-sm">SKU</div>
+                      <div className="mt-2">
+                        <div className="text-4xl font-bold text-[#17171E] mb-0.5 leading-none">3000+</div>
+                        <div className="text-gray-600 text-sm leading-tight">SKU</div>
                       </div>
                     </div>
                   </div>
