@@ -21,10 +21,11 @@ import {
 
 const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState('about');
-  const [itemsToShow, setItemsToShow] = useState(11);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 11;
   const allNews = getAboutPageNews();
-  const newsItems = allNews.slice(0, itemsToShow);
-  const hasMoreNews = itemsToShow < allNews.length;
+  const totalPages = Math.ceil(allNews.length / itemsPerPage);
+  const newsItems = allNews.slice(0, currentPage * itemsPerPage);
 
   const teamMembers = [
     {
@@ -1039,10 +1040,10 @@ const About: React.FC = () => {
               )}
 
               {/* Show More Button */}
-              {hasMoreNews && (
+              {currentPage < totalPages && (
                 <div className="flex justify-center mb-8">
                   <button
-                    onClick={() => setItemsToShow(prev => prev + 11)}
+                    onClick={() => setCurrentPage(prev => prev + 1)}
                     className="px-6 py-2 text-sm font-medium border-2 border-red-500 bg-white text-red-500 rounded-[10px] hover:bg-red-500 hover:text-white transition-all duration-200"
                   >
                     Показать еще
@@ -1050,32 +1051,54 @@ const About: React.FC = () => {
                 </div>
               )}
 
-              {/* Pagination - показываем только после загрузки дополнительных новостей */}
-              {itemsToShow > 11 && allNews.length > 11 && (
+              {/* Pagination */}
+              {totalPages > 1 && (
                 <div className="flex justify-center items-center gap-2 mb-12">
-                  {Array.from({ length: Math.ceil(allNews.length / 11) }, (_, index) => index + 1).map((page) => {
-                    const currentPage = Math.ceil(itemsToShow / 11);
+                  {/* Previous Button */}
+                  <button
+                    onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    className="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-gray-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
+
+                  {/* Page Numbers */}
+                  {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => {
                     const isActive = page === currentPage;
                     return (
                       <button
                         key={page}
-                        onClick={() => setItemsToShow(page * 11)}
+                        onClick={() => setCurrentPage(page)}
                         className={`w-10 h-10 rounded-full text-sm font-medium transition-all duration-200 ${
                           isActive
-                            ? 'bg-black text-white border-2 border-black'
-                            : 'bg-white text-black border-2 border-black hover:bg-gray-100'
+                            ? 'bg-[#262631] text-white'
+                            : 'bg-white text-gray-400 border border-gray-200 hover:text-gray-600 hover:border-gray-300'
                         }`}
                       >
                         {page}
                       </button>
                     );
                   })}
+
+                  {/* Next Button */}
+                  <button
+                    onClick={() => currentPage < totalPages && setCurrentPage(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                    className="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-gray-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
                 </div>
               )}
 
               {/* Дополнительные новости (начиная с 12-й) */}
               {newsItems.length > 11 && (
-                <div className="grid grid-cols-4 gap-4 mb-8">
+                <div className="grid grid-cols-4 gap-[10px] mb-8">
                   {newsItems.slice(11).map((item) => (
                     <div key={item.id}>
                       <Link
