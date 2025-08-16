@@ -175,8 +175,8 @@ const ProductCatalog: React.FC = () => {
               {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
             </div>
             <Link 
-              to="/catalog"
-              className="absolute top-16 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2"
+              to={activeFilter === 'home' ? '/catalog?type=home' : '/catalog?type=fitness'}
+              className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2"
             >
               Перейти в каталог <ArrowRight className="w-4 h-4" />
             </Link>
