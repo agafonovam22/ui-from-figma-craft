@@ -830,11 +830,11 @@ const About: React.FC = () => {
                         </div>
                       </div>
                       
-                      <h3 className="font-semibold text-lg mb-3 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                      <h3 className="font-benzin-semibold text-lg mb-3 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                         {newsItems[0]?.title}
                       </h3>
                       
-                      <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
+                      <p className="font-manrope text-sm text-gray-600 line-clamp-3 leading-relaxed">
                         {newsItems[0]?.description}
                       </p>
                     </div>
@@ -867,11 +867,11 @@ const About: React.FC = () => {
                           </div>
                         </div>
                         
-                        <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-3 leading-tight">
+                        <h3 className="font-benzin-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-3 leading-tight">
                           {newsItems[1]?.title}
                         </h3>
                         
-                        <p className="text-xs text-gray-600 line-clamp-4 leading-relaxed">
+                        <p className="font-manrope text-xs text-gray-600 line-clamp-4 leading-relaxed">
                           {newsItems[1]?.description}
                         </p>
                       </div>
