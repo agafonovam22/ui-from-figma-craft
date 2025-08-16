@@ -803,7 +803,7 @@ const About: React.FC = () => {
               <h2 className="text-2xl font-bold mb-8">Новости и блог</h2>
               
               {/* News Grid - Same layout as News page */}
-              <div className="grid grid-cols-12 gap-[10px] mb-12">
+              <div className="grid grid-cols-12 gap-[10px] mb-[10px]">
                 {/* Первый контейнер - большой квадрат слева */}
                 <div className="col-span-12 md:col-span-6">
                   <Link
