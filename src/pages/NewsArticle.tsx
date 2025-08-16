@@ -199,7 +199,7 @@ const NewsArticle: React.FC = () => {
         </section>
 
         {/* Main Content - Text left, Large image right */}
-        <section className="pb-8">
+        <section className="-mt-24 pb-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left side - Text content */}
