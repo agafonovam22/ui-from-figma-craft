@@ -904,11 +904,11 @@ const About: React.FC = () => {
                             </div>
                           </div>
                           
-                          <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                          <h3 className="font-benzin-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                             {newsItems[2]?.title}
                           </h3>
                           
-                          <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                          <p className="font-manrope text-xs text-gray-600 line-clamp-2 leading-relaxed">
                             {newsItems[2]?.description}
                           </p>
                         </div>
@@ -939,11 +939,11 @@ const About: React.FC = () => {
                             </div>
                           </div>
                           
-                          <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                          <h3 className="font-benzin-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                             {newsItems[3]?.title}
                           </h3>
                           
-                          <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                          <p className="font-manrope text-xs text-gray-600 line-clamp-2 leading-relaxed">
                             {newsItems[3]?.description}
                           </p>
                         </div>
@@ -983,11 +983,11 @@ const About: React.FC = () => {
                                 </div>
                               </div>
                               
-                              <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                              <h3 className="font-benzin-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                                 {item.title}
                               </h3>
                               
-                              <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                              <p className="font-manrope text-xs text-gray-600 line-clamp-2 leading-relaxed">
                                 {item.description}
                               </p>
                             </div>
@@ -1024,11 +1024,11 @@ const About: React.FC = () => {
                                 </div>
                               </div>
                               
-                              <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                              <h3 className="font-benzin-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                                 {item.title}
                               </h3>
                               
-                              <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                              <p className="font-manrope text-xs text-gray-600 line-clamp-2 leading-relaxed">
                                 {item.description}
                               </p>
                             </div>
@@ -1124,11 +1124,11 @@ const About: React.FC = () => {
                             </div>
                           </div>
                           
-                          <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                          <h3 className="font-benzin-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                             {item.title}
                           </h3>
                           
-                          <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                          <p className="font-manrope text-xs text-gray-600 line-clamp-2 leading-relaxed">
                             {item.description}
                           </p>
                         </div>
