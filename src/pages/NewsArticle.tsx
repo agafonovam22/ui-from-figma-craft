@@ -201,9 +201,9 @@ const NewsArticle: React.FC = () => {
         {/* Main Content - Text left, Large image right */}
         <section className="-mt-[200px] pb-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch min-h-[600px]">
               {/* Left side - Text content */}
-              <div className="space-y-6">
+              <div className="space-y-6 flex flex-col justify-center">
                 <h2 className="text-3xl font-bold text-[#17171E] mb-6">
                   {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
                     'К 8 марта вы можете предлагать скидку 15% на все тренажеры CardioPower, BowFlex и Sole для своих клиентов!' :
