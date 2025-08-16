@@ -4,6 +4,7 @@ import { ArrowRight, Users, Warehouse, Shield, Grid3x3, Wrench, TrendingUp } fro
 import { getAboutPageNews } from '@/data/newsData';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import EmailSubscription from '@/components/EmailSubscription';
 import Banner from '@/components/Banner';
 import PhotoSwiper from '@/components/PhotoSwiper';
 import missionPlatform from '@/assets/mission-platform.jpg';
@@ -1141,6 +1142,7 @@ const About: React.FC = () => {
         )}
       </main>
       
+      <EmailSubscription />
       <div className="h-[70px]"></div>
       <Footer />
     </div>
