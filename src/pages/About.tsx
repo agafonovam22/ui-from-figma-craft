@@ -857,7 +857,7 @@ const About: React.FC = () => {
                         />
                       </div>
                       
-                      <div className="p-4 h-[140px] flex flex-col justify-between bg-gray-50">
+                      <div className="p-4 h-[150px] flex flex-col justify-between bg-gray-50">
                         <div className="flex justify-between items-center mb-2">
                           <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-[10px] font-medium uppercase tracking-wide">
                             НОВОСТИ
@@ -894,7 +894,7 @@ const About: React.FC = () => {
                           />
                         </div>
                         
-                        <div className="p-3 h-[90px] flex flex-col justify-center bg-gray-50">
+                        <div className="p-3 h-[100px] flex flex-col justify-center bg-gray-50">
                           <div className="flex justify-between items-center mb-1">
                             <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-[10px] font-medium uppercase tracking-wide">
                               НОВОСТИ
@@ -929,7 +929,7 @@ const About: React.FC = () => {
                           />
                         </div>
                         
-                        <div className="p-3 h-[90px] flex flex-col justify-center bg-gray-50">
+                        <div className="p-3 h-[100px] flex flex-col justify-center bg-gray-50">
                           <div className="flex justify-between items-center mb-1">
                             <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-[10px] font-medium uppercase tracking-wide">
                               НОВОСТИ
@@ -973,7 +973,7 @@ const About: React.FC = () => {
                               />
                             </div>
                             
-                            <div className="p-3 h-[90px] flex flex-col justify-center bg-gray-50">
+                            <div className="p-3 h-[100px] flex flex-col justify-center bg-gray-50">
                               <div className="flex justify-between items-center mb-1">
                                 <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-[10px] font-medium uppercase tracking-wide">
                                   НОВОСТИ
@@ -1014,7 +1014,7 @@ const About: React.FC = () => {
                               />
                             </div>
                             
-                            <div className="p-3 h-[90px] flex flex-col justify-center bg-gray-50">
+                            <div className="p-3 h-[100px] flex flex-col justify-center bg-gray-50">
                               <div className="flex justify-between items-center mb-1">
                                 <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-[10px] font-medium uppercase tracking-wide">
                                   НОВОСТИ
@@ -1114,7 +1114,7 @@ const About: React.FC = () => {
                           />
                         </div>
                         
-                        <div className="p-3 h-[90px] flex flex-col justify-center bg-gray-50">
+                        <div className="p-3 h-[100px] flex flex-col justify-center bg-gray-50">
                           <div className="flex justify-between items-center mb-1">
                             <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-[10px] font-medium uppercase tracking-wide">
                               НОВОСТИ
