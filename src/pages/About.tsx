@@ -822,10 +822,10 @@ const About: React.FC = () => {
                     
                     <div className="p-6">
                       <div className="flex justify-between items-center mb-3">
-                        <div className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                        <div className="bg-blue-500 text-white px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wide">
                           НОВОСТИ
                         </div>
-                        <div className="text-sm text-gray-600">
+                        <div className="text-[10px] text-gray-600">
                           {newsItems[0]?.date}
                         </div>
                       </div>
@@ -859,10 +859,10 @@ const About: React.FC = () => {
                       
                       <div className="p-4 h-[130px] flex flex-col justify-between">
                         <div className="flex justify-between items-center mb-2">
-                          <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                          <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-[10px] font-medium uppercase tracking-wide">
                             НОВОСТИ
                           </div>
-                          <div className="text-xs text-gray-600">
+                          <div className="text-[10px] text-gray-600">
                             {newsItems[1]?.date}
                           </div>
                         </div>
@@ -896,10 +896,10 @@ const About: React.FC = () => {
                         
                         <div className="p-3 h-[80px] flex flex-col justify-center bg-gray-50">
                           <div className="flex justify-between items-center mb-1">
-                            <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                            <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-[10px] font-medium uppercase tracking-wide">
                               НОВОСТИ
                             </div>
-                            <div className="text-xs text-gray-600">
+                            <div className="text-[10px] text-gray-600">
                               {newsItems[2]?.date}
                             </div>
                           </div>
@@ -931,10 +931,10 @@ const About: React.FC = () => {
                         
                         <div className="p-3 h-[80px] flex flex-col justify-center bg-gray-50">
                           <div className="flex justify-between items-center mb-1">
-                            <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                            <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-[10px] font-medium uppercase tracking-wide">
                               НОВОСТИ
                             </div>
-                            <div className="text-xs text-gray-600">
+                            <div className="text-[10px] text-gray-600">
                               {newsItems[3]?.date}
                             </div>
                           </div>
@@ -975,10 +975,10 @@ const About: React.FC = () => {
                             
                             <div className="p-3 h-[80px] flex flex-col justify-center bg-gray-50">
                               <div className="flex justify-between items-center mb-1">
-                                <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                                <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-[10px] font-medium uppercase tracking-wide">
                                   НОВОСТИ
                                 </div>
-                                <div className="text-xs text-gray-600">
+                                <div className="text-[10px] text-gray-600">
                                   {item.date}
                                 </div>
                               </div>
@@ -1016,10 +1016,10 @@ const About: React.FC = () => {
                             
                             <div className="p-3 h-[80px] flex flex-col justify-center bg-gray-50">
                               <div className="flex justify-between items-center mb-1">
-                                <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                                <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-[10px] font-medium uppercase tracking-wide">
                                   НОВОСТИ
                                 </div>
-                                <div className="text-xs text-gray-600">
+                                <div className="text-[10px] text-gray-600">
                                   {item.date}
                                 </div>
                               </div>
@@ -1116,10 +1116,10 @@ const About: React.FC = () => {
                         
                         <div className="p-3 h-[80px] flex flex-col justify-center bg-gray-50">
                           <div className="flex justify-between items-center mb-1">
-                            <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+                            <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-[10px] font-medium uppercase tracking-wide">
                               НОВОСТИ
                             </div>
-                            <div className="text-xs text-gray-600">
+                            <div className="text-[10px] text-gray-600">
                               {item.date}
                             </div>
                           </div>
