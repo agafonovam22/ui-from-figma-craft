@@ -401,20 +401,22 @@ const NewsArticle: React.FC = () => {
         )}
 
         {/* Image Carousel Section */}
-        <section className="pt-0 pb-16 bg-white">
+        <section className="pt-0 pb-16 bg-white -mt-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             {/* Photo Swiper Gallery */}
-            <PhotoSwiper 
-              images={[
-                "/lovable-uploads/74f19997-ebd9-40f6-bfec-557b17c512ab.png",
-                "/lovable-uploads/2fad94b1-56ad-4c2d-8f5c-321bacbfbc30.png",
-                "/lovable-uploads/982f79b8-645c-40bf-be50-f00072cecfa3.png",
-                "/lovable-uploads/746f9610-97c9-44d7-968c-c1b73580f04a.png",
-                "/lovable-uploads/13f3a05b-86bd-4ba0-9330-ff803380ac98.png"
-              ]}
-              autoplay={true}
-              autoplayInterval={5000}
-            />
+            <div className="-mt-8">
+              <PhotoSwiper
+                images={[
+                  "/lovable-uploads/74f19997-ebd9-40f6-bfec-557b17c512ab.png",
+                  "/lovable-uploads/2fad94b1-56ad-4c2d-8f5c-321bacbfbc30.png",
+                  "/lovable-uploads/982f79b8-645c-40bf-be50-f00072cecfa3.png",
+                  "/lovable-uploads/746f9610-97c9-44d7-968c-c1b73580f04a.png",
+                  "/lovable-uploads/13f3a05b-86bd-4ba0-9330-ff803380ac98.png"
+                ]}
+                autoplay={true}
+                autoplayInterval={5000}
+              />
+            </div>
           </div>
         </section>
 
