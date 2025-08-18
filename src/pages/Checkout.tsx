@@ -264,13 +264,13 @@ const Checkout: React.FC = () => {
                       <div className="p-4 flex-grow flex flex-col justify-between">
                         <div>
                           <h3 className="mb-2" style={{ fontFamily: 'Benzin-Medium', fontSize: '16px', color: '#262631' }}>Курьерская доставка</h3>
-                          <p style={{ fontFamily: 'Manrope', fontSize: '14px', color: '#262631', lineHeight: '1.3' }}>Забрать 20 июля<br/><strong>Бесплатно от 30 001 ₽</strong></p>
+                          <p style={{ fontFamily: 'Manrope', fontSize: '14px', color: '#262631', lineHeight: '1.3' }}>Забрать 20 июля<br/><strong>Бесплатно от 30 001₽</strong></p>
                         </div>
                       </div>
                       <div className={`px-4 py-3 text-center rounded-b-lg ${
                         selectedDelivery === 'courier' ? 'bg-black text-white' : 'bg-gray-100 text-gray-700'
                       }`} style={{ fontFamily: 'Benzin-Semibold', fontSize: '20px' }}>
-                        1000 ₽
+                        1000₽
                       </div>
                     </div>
 
@@ -290,7 +290,7 @@ const Checkout: React.FC = () => {
                       <div className={`px-4 py-3 text-center rounded-b-lg ${
                         selectedDelivery === 'express' ? 'bg-black text-white' : 'bg-gray-100 text-gray-700'
                       }`} style={{ fontFamily: 'Benzin-Semibold', fontSize: '20px' }}>
-                        2500 ₽
+                        2500₽
                       </div>
                     </div>
                   </div>

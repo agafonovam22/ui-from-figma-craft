@@ -381,7 +381,7 @@ const Support: React.FC = () => {
                         fontFamily: 'Benzin-Medium',
                         fontSize: '16px',
                         fontWeight: '500'
-                      }}>Заказ от 30 001 ₽</h4>
+                      }}>Заказ от 30 001₽</h4>
                       <div className="space-y-4">
                         <div className="flex justify-between items-center py-3 border-b">
                           <span style={{
@@ -437,7 +437,7 @@ const Support: React.FC = () => {
                         fontFamily: 'Benzin-Medium',
                         fontSize: '16px',
                         fontWeight: '500'
-                      }}>Заказ до 30 000 ₽</h4>
+                      }}>Заказ до 30 000₽</h4>
                       <div>
                         <div className="flex justify-between items-center py-3 border-b">
                           <span style={{
@@ -452,7 +452,7 @@ const Support: React.FC = () => {
                           <span className="text-[#F53B49] font-semibold" style={{
                             fontFamily: 'Manrope',
                             fontSize: '16px'
-                          }}>1000 ₽</span>
+                          }}>1000₽</span>
                         </div>
                         <div className="h-2"></div>
                       </div>
@@ -659,7 +659,7 @@ const Support: React.FC = () => {
                                <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
                              </div>
                              <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До пункта выдачи</div>
-                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000 ₽</div>
+                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000₽</div>
                            </div>
                           <div className="h-px bg-gray-300"></div>
                            <div className="grid grid-cols-3 gap-4 items-center">
@@ -668,7 +668,7 @@ const Support: React.FC = () => {
                                <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
                              </div>
                              <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До двери</div>
-                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000 ₽</div>
+                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000₽</div>
                            </div>
                           <div className="h-px bg-gray-300"></div>
                            <div className="grid grid-cols-3 gap-4 items-center">
@@ -677,7 +677,7 @@ const Support: React.FC = () => {
                                <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
                              </div>
                              <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До пункта выдачи</div>
-                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000 ₽</div>
+                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000₽</div>
                            </div>
                           <div className="h-px bg-gray-300"></div>
                            <div className="grid grid-cols-3 gap-4 items-center">
@@ -686,7 +686,7 @@ const Support: React.FC = () => {
                                <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
                              </div>
                              <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До пункта выдачи</div>
-                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000 ₽</div>
+                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000₽</div>
                            </div>
                         </div>
                       </div>

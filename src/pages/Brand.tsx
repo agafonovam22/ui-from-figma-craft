@@ -40,7 +40,7 @@ const Brand: React.FC = () => {
     {
       id: 1,
       name: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610 ₽',
+      price: '4 610₽',
       originalPrice: null,
       discount: null,
       rating: 4.8,
@@ -70,7 +70,7 @@ const Brand: React.FC = () => {
     {
       id: 3,
       name: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610 ₽',
+      price: '4 610₽',
       originalPrice: null,
       discount: null,
       rating: 4.7,
@@ -85,7 +85,7 @@ const Brand: React.FC = () => {
     {
       id: 4,
       name: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610 ₽',
+      price: '4 610₽',
       originalPrice: null,
       discount: null,
       rating: 4.9,
@@ -1602,19 +1602,19 @@ const Brand: React.FC = () => {
                         <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
                           <label className="flex items-center">
                             <input type="radio" name="price" className="mr-2" />
-                            до 500 ₽
+                            до 500₽
                           </label>
                           <label className="flex items-center">
                             <input type="radio" name="price" className="mr-2" />
-                            до 20 000 ₽
+                            до 20 000₽
                           </label>
                           <label className="flex items-center">
                             <input type="radio" name="price" className="mr-2" />
-                            до 50 000 ₽
+                            до 50 000₽
                           </label>
                           <label className="flex items-center">
                             <input type="radio" name="price" className="mr-2" />
-                            до 100 000 ₽
+                            до 100 000₽
                           </label>
                           <button className="text-[#F53B49] text-[12px] mt-5 text-center w-full" style={{fontFamily: 'Benzin-Regular'}}>Показать все</button>
                         </div>

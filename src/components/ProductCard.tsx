@@ -46,7 +46,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           to={`/product/${product.id}`}
           className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center justify-center"
         >
-          <span className="group-hover:hidden">{product.price || 'от 29 990 ₽'}</span>
+          <span className="group-hover:hidden">{product.price || 'от 29 990₽'}</span>
           <span className="hidden group-hover:flex items-center gap-2">
             Перейти <ArrowRight className="w-4 h-4" />
           </span>

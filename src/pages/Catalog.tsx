@@ -32,7 +32,7 @@ const Catalog: React.FC = () => {
     {
       id: 1,
       name: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610 ₽',
+      price: '4 610₽',
       originalPrice: null,
       discount: null,
       rating: 4.8,
@@ -62,7 +62,7 @@ const Catalog: React.FC = () => {
     {
       id: 3,
       name: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610 ₽',
+      price: '4 610₽',
       originalPrice: null,
       discount: null,
       rating: 4.7,
@@ -77,7 +77,7 @@ const Catalog: React.FC = () => {
     {
       id: 4,
       name: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610 ₽',
+      price: '4 610₽',
       originalPrice: null,
       discount: null,
       rating: 4.9,
