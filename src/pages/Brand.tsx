@@ -1441,7 +1441,7 @@ const Brand: React.FC = () => {
                     src="/lovable-uploads/1dc9044e-c4e9-4404-ba87-f1582493ad3c.png"
                     alt="HYFIT персональный тренер"
                     className="w-full h-full object-cover rounded-lg"
-                    style={{ height: '500px' }}
+                     style={{ height: '350px' }}
                   />
                 </div>
                 
