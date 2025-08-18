@@ -24,10 +24,10 @@ const NewsArticle: React.FC = () => {
       
       <main className="w-full">
         {/* Breadcrumb and Title */}
-        <section className="py-4">
+        <section className={articleSlug.startsWith('cardiopower-') ? "py-4" : "py-8"}>
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             {/* Breadcrumb */}
-            <Breadcrumb className="mb-4">
+            <Breadcrumb className={articleSlug.startsWith('cardiopower-') ? "mb-4" : "mb-8"}>
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink href="/" className="text-gray-500 hover:text-gray-700">
@@ -61,7 +61,7 @@ const NewsArticle: React.FC = () => {
             </Breadcrumb>
             
             {/* Main Title */}
-            <h1 className="text-[40px] font-bold text-[#17171E] mb-2 leading-tight">
+            <h1 className={`text-[40px] font-bold text-[#17171E] ${articleSlug.startsWith('cardiopower-') ? 'mb-2' : 'mb-8'} leading-tight`}>
                {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 'Новость для дилеров WellFitness' : 
                articleSlug === 'cardiopower-t40-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW' :
                articleSlug === 'cardiopower-s20-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S20' :
@@ -80,7 +80,7 @@ const NewsArticle: React.FC = () => {
 
 
         {/* Main Content - Text left, Large image right */}
-        <section className="py-2">
+        <section className={articleSlug.startsWith('cardiopower-') ? "py-2" : "py-8"}>
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch min-h-[500px]">
               {/* Left side - Text content */}
