@@ -1140,9 +1140,11 @@ const Brand: React.FC = () => {
                     </p>
                   </div>
                   <div className="order-1 lg:order-2">
-                    <div className="w-full h-[300px] bg-gray-100 rounded-lg flex items-center justify-center">
-                      <span className="text-gray-400">Изображение блока 2</span>
-                    </div>
+                    <img 
+                      src="/lovable-uploads/06d5182d-b78d-43ff-8da8-83cc4cd88ded.png"
+                      alt="Sintesi - будущее тренировок уже здесь"
+                      className="w-full h-[300px] object-cover rounded-lg"
+                    />
                   </div>
                 </div>
               </div>
