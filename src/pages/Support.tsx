@@ -1432,6 +1432,45 @@ const Support: React.FC = () => {
                     Сообщит сроки и стоимость (если нет гарантии)
                   </AccordionContent>
                 </AccordionItem>
+
+                <AccordionItem value="item-cities-rf" className="border-0">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    В каких городах РФ можно делать заказ продукции WellFitness?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Во всех городах от Калининграда до Владивостока.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-company-activity" className="border-0">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Чем занимается компания?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    WellFitness — эксклюзивный поставщик тренажеров и спортивного оборудования для фитнес-клубов и домашнего тренинга с 20-летним опытом, лидер рынка спортивного оборудования.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-unique-offers" className="border-0">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Уникальные торговые предложения WellFitness или почему клиенты выбирают WellFitness?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    <strong>1. Эксклюзивное партнерство с лучшими брендами</strong><br />
+                    Мы работаем напрямую с 25+ ведущими мировыми производителями фитнес-оборудования, чтобы предложить вам только проверенные и качественные решения.<br /><br />
+
+                    <strong>2. Постоянное обновление ассортимента</strong><br />
+                    Каждый месяц мы получаем новые партии оборудования, чтобы вы могли выбирать из актуальных моделей и технологий.<br /><br />
+
+                    <strong>3. Гарантия быстрой отгрузки</strong><br />
+                    Наши 10 000+ м² складских помещений позволяют всегда иметь в наличии большой ассортимент и оперативно комплектовать заказы.<br /><br />
+
+                    <strong>4. Готовые решения «под ключ»</strong><br />
+                    В наличии 3-4 полных комплекта оборудования для оснащения фитнес-клубов любой направленности. Это значит — быстрый старт вашего бизнеса без лишних ожиданий!<br /><br />
+
+                    WellFitness — надежность, качество и оперативность в каждом решении!
+                  </AccordionContent>
+                </AccordionItem>
               </Accordion>
 
               <div className="flex gap-4 mt-8">
