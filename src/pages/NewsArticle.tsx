@@ -80,16 +80,16 @@ const NewsArticle: React.FC = () => {
 
 
         {/* Main Content - Text left, Large image right */}
-        <section className="py-16">
+        <section className="py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch min-h-[600px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch min-h-[600px]">
               {/* Left side - Text content */}
-              <div className="space-y-6 flex flex-col justify-center">
-                <h2 className="text-3xl font-bold text-[#17171E] mb-6">
+              <div className="space-y-4 flex flex-col justify-center">
+                <h2 className="text-3xl font-bold text-[#17171E] mb-4 font-manrope">
                   {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
                     'К 8 марта вы можете предлагать скидку 15% на все тренажеры CardioPower, BowFlex и Sole для своих клиентов!' :
                     articleSlug === 'cardiopower-t40-new-v-prodazhe' ?
-                    'Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower' :
+                    'Беговая дорожка CardioPower T40 NEW' :
                     articleSlug === 'cardiopower-s20-new-v-prodazhe' ?
                     'Сообщаем о расширении линейки беговых дорожек и поступлении новой модели CardioPower.' :
                     articleSlug === 'cardiopower-tt30-v-prodazhe' ?
@@ -112,12 +112,12 @@ const NewsArticle: React.FC = () => {
                   }
                 </h2>
                 
-                <div className="space-y-6 text-gray-700">
+                <div className="space-y-4 text-gray-700 font-manrope">
                   <p className="leading-relaxed text-base">
                     {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
                       'Это отличный шанс порадовать ваших покупательниц (и их мужчин)!' :
                       articleSlug === 'cardiopower-t40-new-v-prodazhe' ?
-                      'Беговая дорожка CardioPower T40 NEW\n\nОбновленная версия популярной модели CardioPower T40, новый стильный дизайн, продвинутый программный функционал, набор из 5 пульсозависимых программ, а также современный LED Дисплей с интуитивно простым управлением. Модель предлагает революционный подход и инновационную технологию в кардиотренировках, делая их максимально безопасными и эффективными. Контролировать пульсовую зону еще никогда не было так легко и удобно, а значит Ваши тренировки будут гораздо эффективнее, чем раньше. В независимости какая у Вас цель, сбросить вес, подготовиться к марафону или увеличить скоростные показатели.' :
+                      'Обновленная версия популярной модели CardioPower T40, новый стильный дизайн, продвинутый программный функционал, набор из 5 пульсозависимых программ, а также современный LED Дисплей с интуитивно простым управлением. Модель предлагает революционный подход и инновационную технологию в кардиотренировках, делая их максимально безопасными и эффективными. Контролировать пульсовую зону еще никогда не было так легко и удобно, а значит Ваши тренировки будут гораздо эффективнее, чем раньше. В независимости какая у Вас цель, сбросить вес, подготовиться к марафону или увеличить скоростные показатели.' :
                       articleSlug === 'cardiopower-s20-new-v-prodazhe' ?
                       'Беговая дорожка CardioPower S20\n\nБеговая дорожка CardioPower S20 одна из самых компактных не только среди стационарных но и среди ультра-компактных беговых дорожек для дома. При этом модель имеет потрясающие габариты бегового полотна, при длине дорожки 145 см, беговое полотно составляет 130 см в длину и 47 см в ширину, это позволяет комфортно заниматься людям высокого роста и разной комплекции.' :
                       articleSlug === 'cardiopower-tt30-v-prodazhe' ?
