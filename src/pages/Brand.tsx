@@ -1335,7 +1335,7 @@ const Brand: React.FC = () => {
                     src="/lovable-uploads/56ee8681-a62a-44a4-ac22-78b1f37efde8.png"
                     alt="PEACH BUILDER в шоу-руме"
                     className="w-full h-full object-cover rounded-lg"
-                    style={{ height: '500px' }}
+                    style={{ height: '250px' }}
                   />
                 </div>
                 
