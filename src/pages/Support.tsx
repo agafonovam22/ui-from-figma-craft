@@ -392,7 +392,7 @@ const Support: React.FC = () => {
                             fontWeight: '400',
                             lineHeight: '120%',
                             letterSpacing: '0.32px'
-                          }}>Автомобильная доставка по г.\u00A0Москве в пределах МКАД</span>
+                          }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
                           <span className="text-[#F53B49] font-semibold" style={{
                             fontFamily: 'Manrope',
                             fontSize: '16px'
@@ -448,7 +448,7 @@ const Support: React.FC = () => {
                             fontWeight: '400',
                             lineHeight: '120%',
                             letterSpacing: '0.32px'
-                          }}>Автомобильная доставка по г.\u00A0Москве в пределах МКАД</span>
+                          }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
                           <span className="text-[#F53B49] font-semibold" style={{
                             fontFamily: 'Manrope',
                             fontSize: '16px'
