@@ -5,6 +5,14 @@ import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
 import PhotoSwiper from '@/components/PhotoSwiper';
 import { Link, useParams } from 'react-router-dom';
+import { 
+  Breadcrumb, 
+  BreadcrumbList, 
+  BreadcrumbItem, 
+  BreadcrumbLink, 
+  BreadcrumbSeparator, 
+  BreadcrumbPage 
+} from '@/components/ui/breadcrumb';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const NewsArticle: React.FC = () => {
@@ -19,24 +27,38 @@ const NewsArticle: React.FC = () => {
         <section className="py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             {/* Breadcrumb */}
-            <div className="mb-8">
-              <span className="text-gray-400 text-xs">
-                 <Link to="/" className="hover:text-gray-600">Главная</Link> → 
-                 <Link to="/news" className="hover:text-gray-600"> Новости и блог</Link> → 
-                 {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 'Новость для дилеров WellFitness' : 
-                  articleSlug === 'cardiopower-t40-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW' :
-                  articleSlug === 'cardiopower-s20-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S20' :
-                  articleSlug === 'cardiopower-tt30-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower ТТ30' :
-                   articleSlug === 'cardiopower-s55-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S55' :
-                   articleSlug === 'cardiopower-s50-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S50' :
-                   articleSlug === 'cardiopower-x48-v-prodazhe' ? 'Новинка - Уже в продаже: Эллиптический тренажер CardioPower X48' :
-                   articleSlug === 'cardiopower-x45-v-prodazhe' ? 'Новинка - Уже в продаже: Эллиптический тренажер CardioPower X45' :
-                   articleSlug === 'cardiopower-tt35-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower TT35' :
-                   articleSlug === 'cardiopower-re50-v-prodazhe' ? 'Новинка - Уже в продаже: Гребной тренажер CardioPower RE50' :
-                   articleSlug === 'cardiopower-b35-v-prodazhe' ? 'Новинка - Уже в продаже: Вертикальный велотренажер CardioPower B35' :
-                   'Wellfitness PRO в Сколково 2023'}
-              </span>
-            </div>
+            <Breadcrumb className="mb-8">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink href="/" className="text-gray-500 hover:text-gray-700">
+                    Главная
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink href="/news" className="text-gray-500 hover:text-gray-700">
+                    Новости и блог
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage className="text-gray-900 font-medium">
+                    {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 'Новость для дилеров WellFitness' : 
+                     articleSlug === 'cardiopower-t40-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW' :
+                     articleSlug === 'cardiopower-s20-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S20' :
+                     articleSlug === 'cardiopower-tt30-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower ТТ30' :
+                     articleSlug === 'cardiopower-s55-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S55' :
+                     articleSlug === 'cardiopower-s50-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S50' :
+                     articleSlug === 'cardiopower-x48-v-prodazhe' ? 'Новинка - Уже в продаже: Эллиптический тренажер CardioPower X48' :
+                     articleSlug === 'cardiopower-x45-v-prodazhe' ? 'Новинка - Уже в продаже: Эллиптический тренажер CardioPower X45' :
+                     articleSlug === 'cardiopower-tt35-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower TT35' :
+                     articleSlug === 'cardiopower-re50-v-prodazhe' ? 'Новинка - Уже в продаже: Гребной тренажер CardioPower RE50' :
+                     articleSlug === 'cardiopower-b35-v-prodazhe' ? 'Новинка - Уже в продаже: Вертикальный велотренажер CardioPower B35' :
+                     'Wellfitness PRO в Сколково 2023'}
+                  </BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
             
             {/* Main Title */}
             <h1 className="text-[40px] font-bold text-[#17171E] mb-8 leading-tight">
