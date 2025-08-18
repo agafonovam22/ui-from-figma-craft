@@ -1332,6 +1332,29 @@ const Brand: React.FC = () => {
           </section>
         )}
 
+        {/* Eighth Content Block - SMITH Block 8 */}
+        {brandSlug === 'smith' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Text */}
+                <div className="order-2 lg:order-1 lg:pr-8">
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Выбирая SMITH, вы инвестируете в оборудование, которое будет приносить прибыль годами. Это бренд для тех, кто понимает разницу между дешевым аналогом и по-настоящему качественным продуктом. Оборудование, которое не просто стоит в зале, а помогает создавать историю успеха вашего фитнес-бизнеса.
+                  </p>
+                </div>
+                
+                {/* Right Image */}
+                <div className="order-1 lg:order-2">
+                  <div className="w-full h-60 bg-gray-200 rounded-lg flex items-center justify-center">
+                    <span className="text-gray-500 font-manrope">Место для фотографии</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Fifth Content Block - Slide&FIT Block 5 */}
         {brandSlug === 'slide-fit' && (
           <section className="w-full py-8">
