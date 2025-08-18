@@ -1099,19 +1099,22 @@ const Brand: React.FC = () => {
         {brandSlug === 'true' && (
           <section className="w-full py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-              <div className="w-full">
-                <video 
-                  controls 
-                  poster="/lovable-uploads/e9183ed6-aea1-4539-b0ab-eeaa40a21830.png"
-                  className="w-full rounded-lg"
-                  style={{ maxHeight: '600px' }}
-                  onError={(e) => console.error('Video error:', e)}
-                  onLoadStart={() => console.log('Video loading started')}
-                  onCanPlay={() => console.log('Video can play')}
-                >
-                  <source src="/lovable-uploads/true-brand-video.mp4" type="video/mp4" />
-                  <p>Ваш браузер не поддерживает воспроизведение видео.</p>
-                </video>
+              <div className="w-full bg-gray-100 rounded-lg p-8 text-center">
+                <img 
+                  src="/lovable-uploads/e9183ed6-aea1-4539-b0ab-eeaa40a21830.png"
+                  alt="TRUE тренажер"
+                  className="w-full max-w-2xl mx-auto rounded-lg mb-6"
+                  style={{ maxHeight: '400px', objectFit: 'cover' }}
+                />
+                <h3 className="text-2xl font-benzin text-gray-900 mb-4">
+                  Видео презентация TRUE
+                </h3>
+                <p className="text-gray-600 font-manrope mb-4">
+                  Познакомьтесь с инновационными технологиями и качеством тренажеров TRUE
+                </p>
+                <p className="text-sm text-gray-500 font-manrope">
+                  Видео временно недоступно. Мы работаем над решением проблемы.
+                </p>
               </div>
             </div>
           </section>
