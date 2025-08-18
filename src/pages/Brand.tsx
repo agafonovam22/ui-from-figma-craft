@@ -1105,7 +1105,7 @@ const Brand: React.FC = () => {
                   className="w-full rounded-lg"
                   style={{ maxHeight: '600px' }}
                 >
-                  <source src="/videos/true-brand-video.mp4" type="video/mp4" />
+                  <source src="/lovable-uploads/true-brand-video.mp4" type="video/mp4" />
                   Ваш браузер не поддерживает воспроизведение видео.
                 </video>
               </div>
