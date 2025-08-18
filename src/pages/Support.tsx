@@ -1191,14 +1191,40 @@ const Support: React.FC = () => {
               <Accordion type="single" collapsible className="w-full space-y-4">
                 <AccordionItem value="item-0" className="border-0">
                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Чем занимается компания?
+                    Название компании?
                   </AccordionTrigger>
                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Эксклюзивный поставщик тренажеров и спортивного оборудования для фитнес-клубов и домашнего тренинга с 20-летним опытом, лидер рынка спортивного оборудования.
+                    WellFitness
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-2-new" className="border-0">
+                <AccordionItem value="item-1" className="border-0">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Сколько лет существует WellFitness?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    Компания открылась в 2005 году.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2" className="border-0">
+                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    В каких странах работает WellFitness?
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    WellFitness — международный поставщик фитнес-оборудования.<br />
+                    Мы работаем для клиентов в России и Германии, обеспечивая их качественным оборудованием и профессиональной поддержкой.<br /><br />
+                    
+                    Планируем открытие:<br />
+                    ✔ Австрия<br />
+                    ✔ Дания<br />
+                    ✔ Вьетнам<br /><br />
+                    
+                    Следите за расширением нашей географии — WellFitness стремится стать вашим надежным партнером по всему миру!
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3" className="border-0">
                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                     Какие есть способы оплатить покупку?
                   </AccordionTrigger>
