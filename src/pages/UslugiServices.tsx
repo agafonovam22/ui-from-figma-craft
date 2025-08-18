@@ -19,12 +19,12 @@ const UslugiServices: React.FC = () => {
       { id: '3d-project', label: '3D-проект' },
       { id: 'business-planning', label: 'Бизнес-планирование' },
       { id: 'staff-training', label: 'Обучение персонала' },
+      { id: 'trade-in', label: 'Trade-In' },
       { id: 'leasing', label: 'Лизинг' }
     ],
     individuals: [
       { id: '3d-project', label: '3D-проект' },
-      { id: 'installment', label: 'В рассрочку' },
-      { id: 'trade-in', label: 'Trade-In' }
+      { id: 'installment', label: 'В рассрочку' }
     ],
     service: [
       { id: 'maintenance', label: 'Техобслуживание' },
