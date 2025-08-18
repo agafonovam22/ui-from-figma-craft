@@ -422,7 +422,8 @@ const NewsArticle: React.FC = () => {
         </section>
         )}
 
-        {/* Image Carousel Section */}
+        {/* Image Carousel Section - только для статей с галереей */}
+        {articleSlug === 'wellfitness-pro-skolkovo-2023' && (
         <section className="pt-0 pb-16 bg-white" style={{ marginTop: '-80px' }}>
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             {/* Photo Swiper Gallery */}
@@ -439,6 +440,7 @@ const NewsArticle: React.FC = () => {
             />
           </div>
         </section>
+        )}
 
         {/* Long Text Section - скрыто для страницы дилеров и CardioPower T40 NEW */}
         {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-v-prodazhe' && articleSlug !== 'cardiopower-s55-v-prodazhe' && articleSlug !== 'cardiopower-b35-v-prodazhe' && (
