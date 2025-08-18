@@ -28,19 +28,31 @@ const PopularBrands: React.FC = () => {
 
         {/* Brands Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-[10px] mb-8">
-          {brands.map((brand) => (
-            <Link
-              key={brand.id}
-              to={`/brands/${brand.slug}`}
-              className="bg-white rounded-lg border border-gray-200 p-6 flex items-center justify-center hover:shadow-md transition-shadow cursor-pointer min-h-[100px]"
-            >
-              <img 
-                src={brand.logo} 
-                alt={brand.name}
-                className="max-w-full max-h-12 object-contain hover:opacity-90 transition-opacity"
-              />
-            </Link>
-          ))}
+          {brands.map((brand) => {
+            // Определяем индивидуальные размеры для каждого бренда как на странице /brands
+            const getBrandImageClass = (brandName: string) => {
+              switch(brandName) {
+                case 'SMITH':
+                  return 'max-h-20 max-w-full';
+                default:
+                  return 'max-w-full max-h-12';
+              }
+            };
+
+            return (
+              <Link
+                key={brand.id}
+                to={`/brands/${brand.slug}`}
+                className="bg-white rounded-lg border border-gray-200 p-6 flex items-center justify-center hover:shadow-md transition-shadow cursor-pointer min-h-[100px]"
+              >
+                <img 
+                  src={brand.logo} 
+                  alt={brand.name}
+                  className={`object-contain hover:opacity-90 transition-opacity ${getBrandImageClass(brand.name)}`}
+                />
+              </Link>
+            );
+          })}
         </div>
 
         {/* Show All Button */}
