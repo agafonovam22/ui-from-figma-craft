@@ -1133,7 +1133,7 @@ const Brand: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div className="order-2 lg:order-1 lg:pr-8">
                     <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                      Умные технологии для идеальной формы
+                      Фитнес, который подстраивается под вас
                     </h2>
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       Благодаря электромагнитным двигателям Sintesi точно имитирует любые типы сопротивления: от свободных весов до эластичных лент. Встроенные датчики и мобильное приложение анализируют каждое движение, корректируя нагрузку в реальном времени.
