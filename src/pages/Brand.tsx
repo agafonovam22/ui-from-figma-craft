@@ -286,7 +286,7 @@ const Brand: React.FC = () => {
                            lineHeight: '105%'
                          }}
                         >
-                           {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'SCHWINN' : brandSlug === 'nautilus' ? 'NAUTILUS' : brandSlug === 'sole-fitness' ? 'SOLE FITNESS' : brandSlug === 'peach-builder' ? 'PEACH BUILDER' : brandSlug === 'gym80' ? 'GYM80' : brandSlug === 'oktan' ? 'OCTANE FITNESS' : brandSlug === 'visbody' ? 'VISBODY' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'scholle' ? 'SCHOLLE: Немецкое качество для активного образа жизни' : brandSlug === 'smith' ? 'SMITH: профессиональное фитнес-оборудование с безупречной репутацией' : 'Качественное спортивное оборудование'}
+                           {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'schwinn' ? 'SCHWINN' : brandSlug === 'nautilus' ? 'NAUTILUS' : brandSlug === 'sole-fitness' ? 'SOLE FITNESS' : brandSlug === 'peach-builder' ? 'PEACH BUILDER' : brandSlug === 'gym80' ? 'GYM80' : brandSlug === 'oktan' ? 'OCTANE FITNESS' : brandSlug === 'visbody' ? 'VISBODY' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'scholle' ? 'SCHOLLE: Немецкое качество для активного образа жизни' : brandSlug === 'smith' ? 'SMITH: профессиональное фитнес-оборудование с безупречной репутацией' : brandSlug === 'sintesi' ? 'SINTESI' : 'Качественное спортивное оборудование'}
                         </h1>
                       
                       <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors font-manrope">
@@ -352,7 +352,7 @@ const Brand: React.FC = () => {
               {/* Right Text */}
               <div className="order-2 lg:pl-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'cardiopower-pro' ? 'Надежность, проверенная потоком' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьез' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — революция в тренировке ягодичных мышц' : brandSlug === 'gym80' ? 'GYM80 — немецкое качество для профессиональных результатов' : brandSlug === 'oktan' ? 'Octane Fitness — эллиптические тренажеры нового поколения' : brandSlug === 'visbody' ? 'Visbody — инновационные технологии для анализа тела' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'scholle' ? 'SCHOLLE: Немецкое качество для активного образа жизни' : brandSlug === 'smith' ? 'SMITH: профессиональное фитнес-оборудование с безупречной репутацией' : brandSlug === 'slide-fit' ? 'Инновационные тренажеры из Словении для комплексного развития тела' : brandSlug === 'inspire' ? 'INSPIRE: Американское качество для профессионального тренинга' : brandSlug === 'hyfit' ? 'HYFIT: Интеллектуальный фитнес с регулируемыми нагрузками' : brandSlug === 'maxgym' ? 'MAXGYM: Профессиональная сила без компромиссов' : brandSlug === 'maxfit' ? 'MAXFIT: Инновационные тренажеры с интеллектуальной регулировкой нагрузки' : brandSlug === 'meridien' ? 'MÉRIDIEN: ГДЕ НАЧИНАЕТСЯ ВАШ КОМФОРТ' : 'МЫ – TRUE'}
+                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'cardiopower-pro' ? 'Надежность, проверенная потоком' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьез' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — революция в тренировке ягодичных мышц' : brandSlug === 'gym80' ? 'GYM80 — немецкое качество для профессиональных результатов' : brandSlug === 'oktan' ? 'Octane Fitness — эллиптические тренажеры нового поколения' : brandSlug === 'visbody' ? 'Visbody — инновационные технологии для анализа тела' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'scholle' ? 'SCHOLLE: Немецкое качество для активного образа жизни' : brandSlug === 'smith' ? 'SMITH: профессиональное фитнес-оборудование с безупречной репутацией' : brandSlug === 'slide-fit' ? 'Инновационные тренажеры из Словении для комплексного развития тела' : brandSlug === 'inspire' ? 'INSPIRE: Американское качество для профессионального тренинга' : brandSlug === 'hyfit' ? 'HYFIT: Интеллектуальный фитнес с регулируемыми нагрузками' : brandSlug === 'maxgym' ? 'MAXGYM: Профессиональная сила без компромиссов' : brandSlug === 'maxfit' ? 'MAXFIT: Инновационные тренажеры с интеллектуальной регулировкой нагрузки' : brandSlug === 'meridien' ? 'MÉRIDIEN: ГДЕ НАЧИНАЕТСЯ ВАШ КОМФОРТ' : brandSlug === 'sintesi' ? 'Будущее тренировок уже здесь' : 'МЫ – TRUE'}
                 </h2>
                 
                 <div className="mb-8">
@@ -472,6 +472,10 @@ const Brand: React.FC = () => {
                           Вы чувствуете, как напряжение покидает ваше тело, сменяясь приятной легкостью — будто опытный массажист разминает ваши плечи, а затем мягко прорабатывает поясницу. Встроенный подогрев усиливает ощущения, создавая эффект спа-салона прямо у вас дома.
                         </p>
                       </div>
+                    ) : brandSlug === 'sintesi' ? (
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                        Sintesi переосмысливает фитнес и реабилитацию, объединяя технологии и спорт. Это компактное роботизированное устройство заменяет целый тренажерный зал, предлагая персонализированные нагрузки для любого уровня подготовки: от новичков до профессионалов.
+                      </p>
                     ) : brandSlug === 'cardiopower-pro' ? (
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                       Наши тренажеры созданы для залов, где оборудование работает на пределе возможностей. Усиленные рамы из алюминия, двигатели переменного тока с защитой от перегрузок и износостойкие компоненты — каждый элемент рассчитан на многочасовую ежедневную эксплуатацию.
@@ -1110,6 +1114,95 @@ const Brand: React.FC = () => {
               </div>
             </div>
           </section>
+        )}
+
+        {/* Sintesi Content Blocks */}
+        {brandSlug === 'sintesi' && (
+          <>
+            {/* Block 2 - Умные технологии */}
+            <section className="w-full py-8">
+              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className="order-2 lg:order-1 lg:pr-8">
+                    <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                      Умные технологии для идеальной формы
+                    </h2>
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                      Благодаря электромагнитным двигателям Sintesi точно имитирует любые типы сопротивления: от свободных весов до эластичных лент. Встроенные датчики и мобильное приложение анализируют каждое движение, корректируя нагрузку в реальном времени.
+                    </p>
+                  </div>
+                  <div className="order-1 lg:order-2">
+                    <div className="w-full h-[300px] bg-gray-100 rounded-lg flex items-center justify-center">
+                      <span className="text-gray-400">Изображение блока 2</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Block 3 - Три модели */}
+            <section className="w-full py-8">
+              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className="order-1">
+                    <div className="w-full h-[300px] bg-gray-100 rounded-lg flex items-center justify-center">
+                      <span className="text-gray-400">Изображение блока 3</span>
+                    </div>
+                  </div>
+                  <div className="order-2 lg:pl-8">
+                    <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                      Три модели для любых целей
+                    </h2>
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                      Линейка Sintesi включает три версии: Lite (базовые нагрузки), Evo (расширенные режимы) и Elite (максимальная точность). Выбирайте свою для дома, студий или медицинской реабилитации.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Block 4 - Статистический блок */}
+            <section className="w-full py-8">
+              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+                <div className="overflow-hidden relative rounded-lg" style={{ height: '250px' }}>
+                  <div className="w-full h-full bg-gradient-to-r from-gray-900 to-gray-700 rounded-lg"></div>
+                  <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-4 shadow-lg overflow-y-auto">
+                    <div className="h-full flex flex-col">
+                      <div className="mb-3">
+                        <h2 className="text-3xl font-benzin text-gray-900 mb-3">
+                          Тренируйтесь эффективнее, чем в зале
+                        </h2>
+                        <p className="text-gray-700 text-sm leading-relaxed font-manrope">
+                          Sintesi не просто заменяет тренажеры — она делает тренировки умнее. Автоматическая настройка, детальная статистика и адаптация под ваши цели экономят время и повышают результат.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Block 5 - Фитнес, который подстраивается */}
+            <section className="w-full py-8">
+              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className="order-2 lg:order-1 lg:pr-8">
+                    <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                      Фитнес, который подстраивается под вас
+                    </h2>
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                      Главная ценность Sintesi — свобода выбора. Меняйте нагрузку одним касанием, экспериментируйте с режимами и достигайте целей быстрее. Это не просто тренажер, а ваш персональный тренер будущего.
+                    </p>
+                  </div>
+                  <div className="order-1 lg:order-2">
+                    <div className="w-full h-[230px] bg-gray-100 rounded-lg flex items-center justify-center">
+                      <span className="text-gray-400">Изображение блока 5</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </>
         )}
 
         {/* Fifth Content Block - MÉRIDIEN Block 5 */}
