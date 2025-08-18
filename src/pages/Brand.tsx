@@ -807,7 +807,7 @@ const Brand: React.FC = () => {
                 <div className="h-full flex flex-col">
                   <div className="mb-3">
                      <h2 className="text-3xl font-benzin text-gray-900 mb-3">
-                       {(brandSlug === 'cardio-power' || brandSlug === 'cardiopower') ? 'Почему CardioPower?' : brandSlug === 'cardiopower-pro' ? 'Управление без сложностей' : brandSlug === 'schwinn' ? 'Наследие, которому можно доверять' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole' || brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : brandSlug === 'peach-builder' ? 'Философия бренда строится на трёх принципах:' : brandSlug === 'gym80' ? 'Более 40 лет в служении фитнесу' : brandSlug === 'oktan' ? 'Преимущества Octane Fitness' : brandSlug === 'visbody' ? 'Почему выбирают Visbody?' : brandSlug === 'bowflex' ? 'BOWFLEX ВДОХНОВЛЯЕТ' : brandSlug === 'scholle' ? 'Широкий ассортимент для активного отдыха' : brandSlug === 'smith' ? 'Комфорт как главный приоритет' : brandSlug === 'slide-fit' ? 'Технологическое превосходство' : brandSlug === 'inspire' ? 'Уникальные особенности тренажеров INSPIRE' : brandSlug === 'hyfit' ? 'Комплексные решения для любого уровня подготовки' : brandSlug === 'maxgym' ? 'Философия бренда' : brandSlug === 'maxfit' ? 'Для кого созданы наши тренажеры:' : brandSlug === 'meridien' ? 'Почему тысячи людей выбирают MÉRIDIEN:' : brandSlug === 'proski' ? 'Развитие ключевых навыков' : brandSlug === 'variosling' ? 'Профессиональный инструмент для различных задач' : brandSlug === 'sintesi' ? 'Три модели для любых целей' : 'Лидер в индустрии'}
+                       {(brandSlug === 'cardio-power' || brandSlug === 'cardiopower') ? 'Почему CardioPower?' : brandSlug === 'cardiopower-pro' ? 'Управление без сложностей' : brandSlug === 'schwinn' ? 'Наследие, которому можно доверять' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole' || brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : brandSlug === 'peach-builder' ? 'Философия бренда строится на трёх принципах:' : brandSlug === 'gym80' ? 'Более 40 лет в служении фитнесу' : brandSlug === 'oktan' ? 'Преимущества Octane Fitness' : brandSlug === 'visbody' ? 'Почему выбирают Visbody?' : brandSlug === 'bowflex' ? 'BOWFLEX ВДОХНОВЛЯЕТ' : brandSlug === 'scholle' ? 'Широкий ассортимент для активного отдыха' : brandSlug === 'smith' ? 'Комфорт как главный приоритет' : brandSlug === 'slide-fit' ? 'Технологическое превосходство' : brandSlug === 'inspire' ? 'Уникальные особенности тренажеров INSPIRE' : brandSlug === 'hyfit' ? 'Комплексные решения для любого уровня подготовки' : brandSlug === 'maxgym' ? 'Философия бренда' : brandSlug === 'maxfit' ? 'Для кого созданы наши тренажеры:' : brandSlug === 'meridien' ? 'Почему тысячи людей выбирают MÉRIDIEN:' : brandSlug === 'proski' ? 'Развитие ключевых навыков' : brandSlug === 'variosling' ? 'Профессиональный инструмент для различных задач' : brandSlug === 'sintesi' ? 'Три модели для любых целей' : brandSlug === 'kernel' ? 'Фитнес, который вписывается в жизнь' : 'Лидер в индустрии'}
                      </h2>
                       {brandSlug === 'hyfit' ? (
                         <div className="space-y-3">
@@ -1122,11 +1122,15 @@ const Brand: React.FC = () => {
                          </p>
                        ) : brandSlug === 'variosling' ? (
                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                           Variosling – это оборудование, созданное профессионалами для профессионалов. Оно одинаково востребовано как в фитнес-студиях, так и в реабилитационных центрах. Физиотерапевты ценят его за возможность точной дозировки нагрузки, тренеры – за универсальность и эффективность. Благодаря регулировке высоты, петли можно использовать в помещениях с высокими потолками, на открытом воздухе или даже в лесу.
-                         </p>
-                       ) : (
-                           <div className="text-gray-600 text-sm leading-relaxed font-manrope space-y-4">
-                           </div>
+                            Variosling – это оборудование, созданное профессионалами для профессионалов. Оно одинаково востребовано как в фитнес-студиях, так и в реабилитационных центрах. Физиотерапевты ценят его за возможность точной дозировки нагрузки, тренеры – за универсальность и эффективность. Благодаря регулировке высоты, петли можно использовать в помещениях с высокими потолками, на открытом воздухе или даже в лесу.
+                          </p>
+                        ) : brandSlug === 'kernel' ? (
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                            Больше не нужно подстраиваться под график спортзала. Тренируйтесь утром, днём или вечером — ваш домашний фитнес-уголок всегда готов.
+                          </p>
+                        ) : (
+                            <div className="text-gray-600 text-sm leading-relaxed font-manrope space-y-4">
+                            </div>
                    )}
                  </div>
                </div>
