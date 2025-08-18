@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useBitrixProducts } from '@/hooks/useBitrixProducts';
+import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
 
 interface NewProductsProps {
   title?: string;
@@ -11,7 +11,7 @@ interface NewProductsProps {
 const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) => {
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const { products: bitrixProducts, loading, error } = useBitrixProducts();
+  const { products: bitrixProducts, loading, error } = useBitrixCatalog("https://cp44652.tw1.ru/catalog.php");
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
