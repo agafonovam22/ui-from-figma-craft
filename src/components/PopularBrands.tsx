@@ -43,7 +43,7 @@ const PopularBrands: React.FC = () => {
               <Link
                 key={brand.id}
                 to={`/brands/${brand.slug}`}
-                className="bg-white rounded-lg border border-gray-200 p-6 flex items-center justify-center hover:shadow-md transition-shadow cursor-pointer min-h-[100px]"
+                className="bg-white rounded-lg border border-gray-200 p-6 flex items-center justify-center hover:shadow-md transition-shadow cursor-pointer min-h-[120px]"
               >
                 <img 
                   src={brand.logo} 
