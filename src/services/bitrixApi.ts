@@ -57,29 +57,30 @@ class BitrixAPI {
     return [
       {
         id: '1',
-        name: 'Беговая дорожка профессиональная',
+        name: 'Беговая дорожка CardioPower T20',
         price: '45000',
         originalPrice: '50000',
-        image: '/placeholder.svg',
-        description: 'Профессиональная беговая дорожка для дома',
+        image: '/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png',
+        description: 'Профессиональная беговая дорожка CardioPower T20 для дома',
         available: true,
         categoryId: 'gym'
       },
       {
         id: '2',
-        name: 'Гантели наборные 20кг',
-        price: '3500',
-        image: '/placeholder.svg',
-        description: 'Набор гантелей с возможностью регулировки веса',
+        name: 'Беговая дорожка CardioPower T40',
+        price: '65000',
+        originalPrice: '72000',
+        image: '/lovable-uploads/f86d41dd-f2f8-4cab-a66e-40c3a81d9cbf.png',
+        description: 'Профессиональная беговая дорожка CardioPower T40 с расширенными возможностями',
         available: true,
-        categoryId: 'weights'
+        categoryId: 'gym'
       },
       {
         id: '3',
         name: 'Велотренажер магнитный',
         price: '25000',
         originalPrice: '28000',
-        image: '/placeholder.svg',
+        image: '/lovable-uploads/43ad4887-adce-485a-b310-3d8582e01128.png',
         description: 'Велотренажер с магнитной системой нагрузки',
         available: false,
         categoryId: 'cardio'
