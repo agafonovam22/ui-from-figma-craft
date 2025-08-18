@@ -1100,14 +1100,6 @@ const Brand: React.FC = () => {
           <section className="w-full py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
               <div className="w-full">
-                <div className="mb-6 text-center">
-                  <h3 className="text-2xl font-benzin text-gray-900 mb-4">
-                    Видео презентация TRUE
-                  </h3>
-                  <p className="text-gray-600 font-manrope">
-                    Познакомьтесь с инновационными технологиями и качеством тренажеров TRUE
-                  </p>
-                </div>
                 <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                   <iframe
                     src="https://www.youtube.com/embed/wsuzWhDYU9Y"
