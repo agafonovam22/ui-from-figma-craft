@@ -16,7 +16,7 @@ const UslugiCategories: React.FC = () => {
     },
     {
       id: 'individuals',
-      title: 'Для физ лиц',
+      title: 'Для физлица',
       description: 'Индивидуальные решения для домашних спортзалов и персональных тренировок',
       image: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png',
       href: '/uslugi/individuals'
