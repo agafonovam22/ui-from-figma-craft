@@ -995,12 +995,12 @@ const Support: React.FC = () => {
                            <div className="space-y-2">
                              <div className="flex justify-between items-center py-1">
                                <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Sole Fitness</span>
-                               <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
+                                <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                              </div>
                              <div className="h-px bg-gray-300"></div>
                              <div className="flex justify-between items-center py-1">
                                <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Nautilus</span>
-                               <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
+                                <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                              </div>
                              <div className="py-1">
                                <div className="flex justify-between items-center mb-1">
@@ -1009,7 +1009,7 @@ const Support: React.FC = () => {
                                </div>
                                <div className="flex justify-between items-center mb-1">
                                  <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>беговое полотно</span>
-                                 <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>6 месяцев</span>
+                                  <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>полгода</span>
                                </div>
                                <div className="flex justify-between items-center">
                                  <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>рама</span>
@@ -1019,17 +1019,17 @@ const Support: React.FC = () => {
                              <div className="h-px bg-gray-300"></div>
                              <div className="flex justify-between items-center py-1">
                                <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Bowflex</span>
-                               <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
+                                <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                              </div>
                              <div className="h-px bg-gray-300"></div>
                              <div className="flex justify-between items-center py-1">
                                <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>CardioPower</span>
-                               <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
+                                <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                              </div>
                              <div className="h-px bg-gray-300"></div>
                              <div className="flex justify-between items-center py-1">
                                <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Optima Fitness</span>
-                               <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
+                                <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                              </div>
                            </div>
                          </div>
@@ -1046,13 +1046,13 @@ const Support: React.FC = () => {
                          <div className="space-y-2">
                            <div className="flex justify-between items-center py-1">
                              <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Sole Fitness</span>
-                             <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
+                              <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                            </div>
                            <div className="h-px bg-gray-300"></div>
                            <div className="py-1">
                              <div className="flex justify-between items-center mb-1">
                                <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Nautilus</span>
-                               <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
+                                <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                              </div>
                              <div className="flex justify-between items-center mb-1">
                                <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>на мотор</span>
@@ -1066,17 +1066,17 @@ const Support: React.FC = () => {
                            <div className="h-px bg-gray-300"></div>
                            <div className="flex justify-between items-center py-1">
                              <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Bowflex</span>
-                             <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
+                              <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                            </div>
                            <div className="h-px bg-gray-300"></div>
                            <div className="flex justify-between items-center py-1">
                              <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>CardioPower</span>
-                             <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
+                              <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                            </div>
                            <div className="h-px bg-gray-300"></div>
                            <div className="flex justify-between items-center py-1">
                              <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Optima Fitness</span>
-                             <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>24 месяца</span>
+                             <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                            </div>
                          </div>
                        </div>
@@ -1154,7 +1154,7 @@ const Support: React.FC = () => {
                     fontSize: '20px'
                   }}>Рекомендации по тех. обслуживанию тренажера</h3>
                    <p className="text-gray-700 mb-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                     Производится покупателем самостоятельно (не реже 1 раз в 6 месяцев или чаще в случаях усиленной эксплуатации)
+                     Производится покупателем самостоятельно (не реже 1 раз в полгода или чаще в случаях усиленной эксплуатации)
                    </p>
 
                    <div className="space-y-6">
