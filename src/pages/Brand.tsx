@@ -1476,9 +1476,12 @@ const Brand: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Left Image */}
                 <div className="order-1">
-                  <div className="w-full h-60 bg-gray-200 rounded-lg flex items-center justify-center">
-                    <span className="text-gray-500 font-manrope">Место для фотографии</span>
-                  </div>
+                  <img 
+                    src="/lovable-uploads/5629605a-0237-4319-8213-89dbd348de01.png"
+                    alt="Smith фитнес оборудование"
+                    className="w-full object-cover rounded-lg"
+                    style={{ height: '400px' }}
+                  />
                 </div>
                 
                 {/* Right Text */}
@@ -1509,9 +1512,12 @@ const Brand: React.FC = () => {
                 
                 {/* Right Image */}
                 <div className="order-1 lg:order-2">
-                  <div className="w-full h-60 bg-gray-200 rounded-lg flex items-center justify-center">
-                    <span className="text-gray-500 font-manrope">Место для фотографии</span>
-                  </div>
+                  <img 
+                    src="/lovable-uploads/e516bc76-09a8-47e3-871c-0284859810be.png"
+                    alt="Smith беговые дорожки"
+                    className="w-full object-cover rounded-lg"
+                    style={{ height: '400px' }}
+                  />
                 </div>
               </div>
             </div>
