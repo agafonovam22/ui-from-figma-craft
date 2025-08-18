@@ -1099,22 +1099,25 @@ const Brand: React.FC = () => {
         {brandSlug === 'true' && (
           <section className="w-full py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-              <div className="w-full bg-gray-100 rounded-lg p-8 text-center">
-                <img 
-                  src="/lovable-uploads/e9183ed6-aea1-4539-b0ab-eeaa40a21830.png"
-                  alt="TRUE тренажер"
-                  className="w-full max-w-2xl mx-auto rounded-lg mb-6"
-                  style={{ maxHeight: '400px', objectFit: 'cover' }}
-                />
-                <h3 className="text-2xl font-benzin text-gray-900 mb-4">
-                  Видео презентация TRUE
-                </h3>
-                <p className="text-gray-600 font-manrope mb-4">
-                  Познакомьтесь с инновационными технологиями и качеством тренажеров TRUE
-                </p>
-                <p className="text-sm text-gray-500 font-manrope">
-                  Видео временно недоступно. Мы работаем над решением проблемы.
-                </p>
+              <div className="w-full">
+                <div className="mb-6 text-center">
+                  <h3 className="text-2xl font-benzin text-gray-900 mb-4">
+                    Видео презентация TRUE
+                  </h3>
+                  <p className="text-gray-600 font-manrope">
+                    Познакомьтесь с инновационными технологиями и качеством тренажеров TRUE
+                  </p>
+                </div>
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    src="https://www.youtube.com/embed/wsuzWhDYU9Y"
+                    title="TRUE Video Presentation"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute top-0 left-0 w-full h-full rounded-lg"
+                  ></iframe>
+                </div>
               </div>
             </div>
           </section>
