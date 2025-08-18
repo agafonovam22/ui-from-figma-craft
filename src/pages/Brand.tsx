@@ -1531,7 +1531,7 @@ const Brand: React.FC = () => {
                 {/* Left Image - Using the 3rd image again as it shows treadmill which fits well with movement philosophy */}
                 <div className="order-1">
                   <img 
-                    src="/lovable-uploads/675d848b-f532-4faa-ad38-29de5dcf2740.png"
+                    src="/lovable-uploads/8a1ccf30-6b91-46c5-9b3b-95f26185fe02.png"
                     alt="CENTR - Ваше движение"
                     className="w-full h-full object-cover rounded-lg"
                     style={{ height: '350px' }}
