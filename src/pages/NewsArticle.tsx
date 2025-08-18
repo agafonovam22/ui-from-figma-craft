@@ -82,9 +82,9 @@ const NewsArticle: React.FC = () => {
         {/* Main Content - Text left, Large image right */}
         <section className={articleSlug.startsWith('cardiopower-') ? "py-2" : "py-8"}>
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch min-h-[500px]">
+            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch ${articleSlug.startsWith('cardiopower-') ? 'min-h-[500px]' : ''}`}>
               {/* Left side - Text content */}
-              <div className="space-y-4 flex flex-col justify-center h-full">
+              <div className={`space-y-4 flex flex-col justify-center ${articleSlug.startsWith('cardiopower-') ? 'h-full' : ''}`}>
                 <h2 className="text-3xl font-bold text-[#17171E] mb-4 font-manrope">
                   {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
                     'К 8 марта вы можете предлагать скидку 15% на все тренажеры CardioPower, BowFlex и Sole для своих клиентов!' :
@@ -159,7 +159,7 @@ const NewsArticle: React.FC = () => {
               </div>
 
               {/* Right side - Single large image */}
-              <div className="relative h-full flex items-center justify-center">
+              <div className={`relative ${articleSlug.startsWith('cardiopower-') ? 'h-full' : ''} flex items-center justify-center`}>
                 <img
                   src={articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
                     '/lovable-uploads/654f1adb-2662-491c-b4b3-5c8ad7924198.png' :
@@ -209,7 +209,7 @@ const NewsArticle: React.FC = () => {
                      'Вертикальный велотренажер CardioPower B35' :
                      'Wellfitness PRO в Сколково'
                   }
-                  className="w-full h-full max-h-[420px] object-contain rounded-lg"
+                  className={`w-full h-full object-contain rounded-lg ${articleSlug.startsWith('cardiopower-') ? 'max-h-[420px]' : ''}`}
                 />
               </div>
             </div>
