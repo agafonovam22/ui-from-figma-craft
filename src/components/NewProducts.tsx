@@ -25,8 +25,24 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
     }
   };
 
-  // Show latest products from Bitrix catalog (first 5 products)
-  const displayProducts = bitrixProducts.slice(0, 5);
+  // Prioritize CardioPower T40 and T20 treadmills as first two products
+  const t40Product = bitrixProducts.find(product => 
+    product.name.toLowerCase().includes('cardiopower t40')
+  );
+  const t20Product = bitrixProducts.find(product => 
+    product.name.toLowerCase().includes('cardiopower t20')
+  );
+  
+  const priorityProducts = [t40Product, t20Product].filter(Boolean);
+  const otherProducts = bitrixProducts.filter(product => 
+    !product.name.toLowerCase().includes('cardiopower t40') &&
+    !product.name.toLowerCase().includes('cardiopower t20')
+  );
+  
+  const displayProducts = [
+    ...priorityProducts,
+    ...otherProducts.slice(0, 5 - priorityProducts.length)
+  ].slice(0, 5);
 
   if (loading) {
     return (
