@@ -1073,7 +1073,7 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  Категории MÉRIDIEN: выберите свой идеальный вариант
+                  Немецкая надежность в каждой детали
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-start">
