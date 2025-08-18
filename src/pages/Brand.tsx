@@ -1306,7 +1306,7 @@ const Brand: React.FC = () => {
                     src="/lovable-uploads/e7c77c00-153a-4385-8186-c889c6c4eb28.png"
                     alt="Schwinn - надежный партнер в фитнесе"
                     className="w-full h-full object-cover rounded-lg"
-                    style={{ height: '500px' }}
+                    style={{ height: '250px' }}
                   />
                 </div>
                 
