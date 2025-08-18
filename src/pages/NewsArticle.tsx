@@ -82,7 +82,7 @@ const NewsArticle: React.FC = () => {
         {/* Main Content - Text left, Large image right */}
         <section className="py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch min-h-[600px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
               {/* Left side - Text content */}
               <div className="space-y-4 flex flex-col justify-center">
                 <h2 className="text-3xl font-bold text-[#17171E] mb-4 font-manrope">
@@ -159,8 +159,8 @@ const NewsArticle: React.FC = () => {
               </div>
 
               {/* Right side - Single large image */}
-              <div className="relative">
-                <img 
+              <div className="relative h-full flex items-center">
+                <img
                   src={articleSlug === 'novost-dlya-dilerov-wellfitness' ? 
                     '/lovable-uploads/654f1adb-2662-491c-b4b3-5c8ad7924198.png' :
                     articleSlug === 'cardiopower-t40-new-v-prodazhe' ?
@@ -209,7 +209,7 @@ const NewsArticle: React.FC = () => {
                      'Вертикальный велотренажер CardioPower B35' :
                      'Wellfitness PRO в Сколково'
                   }
-                  className="w-full h-[800px] object-contain rounded-lg"
+                  className="w-full h-auto max-h-full object-contain rounded-lg"
                 />
               </div>
             </div>
