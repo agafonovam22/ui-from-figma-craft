@@ -257,8 +257,14 @@ const Brand: React.FC = () => {
                 alt="MAXFIT - Эволюция фитнеса для прогрессивных тренировок"
                 className="w-full h-auto object-cover"
               />
-            ) : brandSlug === 'proski' ? (
-              <img 
+              ) : brandSlug === 'slide-fit' ? (
+               <img 
+                 src="/lovable-uploads/c978703c-2abb-441f-8703-249e3d0e18fb.png"
+                 alt="Slide&FIT - Лыжный драйв дома"
+                 className="w-full h-auto object-cover"
+               />
+              ) : brandSlug === 'proski' ? (
+               <img
                 src="/lovable-uploads/b29d37d2-b36a-4d9f-99db-1b1f4ab7ac17.png"
                 alt="PROSKI - Горы у вас дома!"
                 className="w-full h-auto object-cover"
