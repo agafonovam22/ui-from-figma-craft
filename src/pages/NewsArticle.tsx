@@ -61,7 +61,7 @@ const NewsArticle: React.FC = () => {
             </Breadcrumb>
             
             {/* Main Title */}
-            <h1 className="text-[40px] font-bold text-[#17171E] mb-8 leading-tight">
+            <h1 className="text-[40px] font-bold text-[#17171E] mb-2 leading-tight">
                {articleSlug === 'novost-dlya-dilerov-wellfitness' ? 'Новость для дилеров WellFitness' : 
                articleSlug === 'cardiopower-t40-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower T40 NEW' :
                articleSlug === 'cardiopower-s20-new-v-prodazhe' ? 'Новинка - Уже в продаже: Беговая дорожка CardioPower S20' :
