@@ -1076,22 +1076,9 @@ const Brand: React.FC = () => {
                   Немецкая надежность в каждой детали
                 </h2>
                 <div className="space-y-4">
-                  <div className="flex items-start">
-                    <div className="font-medium text-gray-900 mr-3 font-manrope">COMPACT</div>
-                    <div className="text-gray-600 text-sm leading-relaxed font-manrope">— умный комфорт для небольших пространств</div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="font-medium text-gray-900 mr-3 font-manrope">COMFORT</div>
-                    <div className="text-gray-600 text-sm leading-relaxed font-manrope">— домашний релакс в любое время</div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="font-medium text-gray-900 mr-3 font-manrope">BUSINESS</div>
-                    <div className="text-gray-600 text-sm leading-relaxed font-manrope">— инвестиция в имидж</div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="font-medium text-gray-900 mr-3 font-manrope">PREMIUM</div>
-                    <div className="text-gray-600 text-sm leading-relaxed font-manrope">— если хотите лучшее из возможного</div>
-                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Производственные стандарты SMITH – это отдельная история. Рамы из высокопрочной стали с овальным профилем, двойное порошковое покрытие для защиты от повреждений, тросы, тестируемые трижды в день под нагрузкой 900 кг – такие требования к качеству говорят сами за себя. Бренд не экономит на материалах и контроле, поэтому его оборудование служит годами даже при интенсивной эксплуатации в коммерческих залах.
+                  </p>
                 </div>
               </div>
               
