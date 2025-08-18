@@ -199,7 +199,7 @@ const NewsArticle: React.FC = () => {
         </section>
 
         {/* Main Content - Text left, Large image right */}
-        <section className="-mt-[200px] pb-2">
+        <section className="-mt-[200px] pb-0">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch min-h-[600px]">
               {/* Left side - Text content */}
@@ -401,7 +401,7 @@ const NewsArticle: React.FC = () => {
         )}
 
         {/* Image Carousel Section */}
-        <section className="pt-4 pb-16 bg-white">
+        <section className="pt-0 pb-16 bg-white">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             {/* Photo Swiper Gallery */}
             <PhotoSwiper 
