@@ -210,8 +210,8 @@ const Brand: React.FC = () => {
               />
             ) : (brandSlug === 'cardiopower' || brandSlug === 'cardio-power') ? (
               <img 
-                src="/lovable-uploads/0351a9aa-2198-4d0c-bb47-b3be6eb6c598.png"
-                alt="CARDIO POWER"
+                src="/lovable-uploads/88b904a9-6846-4ae2-9826-73f93e2b4aaa.png"
+                alt="CardioPower - Сердце ваших тренировок"
                 className="w-full h-auto object-cover"
               />
              ) : brandSlug === 'inspire' ? (
