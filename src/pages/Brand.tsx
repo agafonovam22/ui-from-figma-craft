@@ -626,10 +626,15 @@ const Brand: React.FC = () => {
                     </p>
                  ) : brandSlug === 'slide-fit' ? (
                    <>
-                     <h3 className="text-lg font-benzin text-gray-900 mb-4">Технологическое превосходство</h3>
-                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                       Тренажеры Slide&FIT оснащены несколькими уровнями нагрузки, позволяющими постепенно увеличивать интенсивность тренировок. Прочные металлические конструкции с точной балансировкой гарантируют безопасность и долговечность. Компактные размеры и мобильность делают тренажеры идеальным решением как для фитнес-клубов, так и для домашнего использования.
+                     <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                       Горнолыжный тренажер Slide&FIT Commercial Edition – это флагманское решение для комплексных тренировок. Этот мощный симулятор не просто имитирует катание на лыжах, а предлагает многофункциональную систему нагрузок:
                      </p>
+                     <ul className="text-gray-600 text-sm leading-relaxed font-manrope mb-6 ml-4">
+                       <li>- Эффективно прорабатывает мышцы кора, ног и плечевого пояса</li>
+                       <li>- Укрепляет мышечный корсет спины</li>
+                       <li>- Развивает выносливость и координацию</li>
+                       <li>- Сжигает до 700 ккал/час</li>
+                     </ul>
                    </>
                   ) : brandSlug === 'cardiopower-pro' ? (
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
