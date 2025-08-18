@@ -365,7 +365,13 @@ const Brand: React.FC = () => {
                   {brandSlug === 'true' ? 'МЫ – TRUE' : (brandSlug === 'cardio-power' || brandSlug === 'cardiopower') ? 'CARDIO POWER' : brandSlug === 'cardiopower-pro' ? 'Надежность, проверенная потоком' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole' || brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьез' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — революция в тренировке ягодичных мышц' : brandSlug === 'gym80' ? 'GYM80 — немецкое качество для профессиональных результатов' : brandSlug === 'oktan' ? 'Octane Fitness — эллиптические тренажеры нового поколения' : brandSlug === 'visbody' ? 'Visbody — инновационные технологии для анализа тела' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'scholle' ? 'SCHOLLE: Немецкое качество для активного образа жизни' : brandSlug === 'smith' ? 'SMITH: профессиональное фитнес-оборудование с безупречной репутацией' : brandSlug === 'slide-fit' ? 'Инновационные тренажеры из Словении для комплексного развития тела' : brandSlug === 'inspire' ? 'INSPIRE: Американское качество для профессионального тренинга' : brandSlug === 'hyfit' ? 'HYFIT: Интеллектуальный фитнес с регулируемыми нагрузками' : brandSlug === 'maxgym' ? 'MAXGYM: Профессиональная сила без компромиссов' : brandSlug === 'maxfit' ? 'MAXFIT: Инновационные тренажеры с интеллектуальной регулировкой нагрузки' : brandSlug === 'meridien' ? 'MÉRIDIEN: ГДЕ НАЧИНАЕТСЯ ВАШ КОМФОРТ' : brandSlug === 'proski' ? 'PROSKI-Simulator — инновационный тренажер' : brandSlug === 'variosling' ? 'Variosports: немецкое качество для функционального тренинга' : brandSlug === 'sintesi' ? 'Будущее тренировок уже здесь' : brandSlug === 'kernel' ? 'Домашний фитнес без компромиссов' : 'МЫ – TRUE'}
                 </h2>
                 
-                {brandSlug === 'kernel' ? null : (
+                {brandSlug === 'kernel' ? (
+                  <div className="mb-8">
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                      Наш бренд создаёт профессиональные тренажёры для тех, кто ценит своё время и здоровье. Степ-платформы, балансировочные диски, эспандеры и коврики — всё, что нужно для эффективных тренировок без походов в зал.
+                    </p>
+                  </div>
+                ) : (
                   <div className="mb-8">
                     {brandSlug === 'cardio-power' || brandSlug === 'cardiopower' ? (
                     <>
