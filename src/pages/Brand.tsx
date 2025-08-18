@@ -1528,8 +1528,18 @@ const Brand: React.FC = () => {
           <section className="w-full py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Left Text */}
-                <div className="order-2 lg:order-1 lg:pr-8">
+                {/* Left Image - Using the 3rd image again as it shows treadmill which fits well with movement philosophy */}
+                <div className="order-1">
+                  <img 
+                    src="/lovable-uploads/675d848b-f532-4faa-ad38-29de5dcf2740.png"
+                    alt="CENTR - Ваше движение"
+                    className="w-full h-full object-cover rounded-lg"
+                    style={{ height: '350px' }}
+                  />
+                </div>
+                
+                {/* Right Text */}
+                <div className="order-2 lg:pl-8">
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                     Выбирая CENTR, вы инвестируете не в инвентарь, а в привычки, которые останутся с вами на годы. Это оборудование, которое мотивирует использовать его ежедневно — просто, удобно, эффективно.
                   </p>
@@ -1537,16 +1547,6 @@ const Brand: React.FC = () => {
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope font-bold">
                     Ваше движение — наша философия.
                   </p>
-                </div>
-                
-                {/* Right Image - Using the 3rd image again as it shows treadmill which fits well with movement philosophy */}
-                <div className="order-1 lg:order-2">
-                  <img 
-                    src="/lovable-uploads/675d848b-f532-4faa-ad38-29de5dcf2740.png"
-                    alt="CENTR - Ваше движение"
-                    className="w-full h-full object-cover rounded-lg"
-                    style={{ height: '350px' }}
-                  />
                 </div>
               </div>
             </div>
