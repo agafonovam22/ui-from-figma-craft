@@ -1306,6 +1306,32 @@ const Brand: React.FC = () => {
           </section>
         )}
 
+        {/* Seventh Content Block - SMITH Block 7 */}
+        {brandSlug === 'smith' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Image */}
+                <div className="order-1">
+                  <div className="w-full h-60 bg-gray-200 rounded-lg flex items-center justify-center">
+                    <span className="text-gray-500 font-manrope">Место для фотографии</span>
+                  </div>
+                </div>
+                
+                {/* Right Text */}
+                <div className="order-2 lg:pl-8">
+                  <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                    Домашние тренировки профессионального уровня
+                  </h2>
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Хотя SMITH ориентирован в первую очередь на коммерческий сегмент, его компактные модели для дома – это тот редкий случай, когда профессиональное качество доступно для частного использования. Домашние тренажеры бренда сохраняют все преимущества своих «старших братьев»: надежность, эргономику и продуманный дизайн.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Fifth Content Block - Slide&FIT Block 5 */}
         {brandSlug === 'slide-fit' && (
           <section className="w-full py-8">
