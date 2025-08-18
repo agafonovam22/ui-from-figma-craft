@@ -1085,11 +1085,8 @@ const Brand: React.FC = () => {
               {/* Left Text */}
               <div className="order-2 lg:order-1 lg:pr-8">
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-gray-900 font-manrope mb-4">
-                    Немецкая надежность в каждой детали
-                  </h3>
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                    Производственные стандарты SMITH – это отдельная история. Рамы из высокопрочной стали с овальным профилем, двойное порошковое покрытие для защиты от повреждений, тросы, тестируемые трижды в день под нагрузкой 900 кг – такие требования к качеству говорят сами за себя. Бренд не экономит на материалах и контроле, поэтому его оборудование служит годами даже при интенсивной эксплуатации в коммерческих залах.
+                    Немецкая надежность в каждой детали Производственные стандарты SMITH – это отдельная история. Рамы из высокопрочной стали с овальным профилем, двойное порошковое покрытие для защиты от повреждений, тросы, тестируемые трижды в день под нагрузкой 900 кг – такие требования к качеству говорят сами за себя. Бренд не экономит на материалах и контроле, поэтому его оборудование служит годами даже при интенсивной эксплуатации в коммерческих залах.
                   </p>
                 </div>
               </div>
@@ -1297,61 +1294,6 @@ const Brand: React.FC = () => {
                   <img 
                     src="/lovable-uploads/4fa997be-b357-4344-b945-e3d316ce172f.png"
                     alt="SMITH фитнес-бизнес"
-                    className="w-full object-cover rounded-lg"
-                    style={{ height: '250px' }}
-                  />
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Seventh Content Block - SMITH Block 7 - Домашние тренировки */}
-        {brandSlug === 'smith' && (
-          <section className="w-full py-8">
-            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Left Image */}
-                <div className="order-1">
-                  <img 
-                    src="/placeholder.svg"
-                    alt="SMITH домашние тренажеры"
-                    className="w-full object-cover rounded-lg"
-                    style={{ height: '250px' }}
-                  />
-                </div>
-                
-                {/* Right Text */}
-                <div className="order-2 lg:pl-8">
-                  <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                    Домашние тренировки профессионального уровня
-                  </h2>
-                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                    Хотя SMITH ориентирован в первую очередь на коммерческий сегмент, его компактные модели для дома – это тот редкий случай, когда профессиональное качество доступно для частного использования. Домашние тренажеры бренда сохраняют все преимущества своих «старших братьев»: надежность, эргономику и продуманный дизайн.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Eighth Content Block - SMITH Block 8 - Инвестиция в успех */}
-        {brandSlug === 'smith' && (
-          <section className="w-full py-8">
-            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Left Text */}
-                <div className="order-2 lg:order-1 lg:pr-8">
-                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                    Выбирая SMITH, вы инвестируете в оборудование, которое будет приносить прибыль годами. Это бренд для тех, кто понимает разницу между дешевым аналогом и по-настоящему качественным продуктом. Оборудование, которое не просто стоит в зале, а помогает создавать историю успеха вашего фитнес-бизнеса.
-                  </p>
-                </div>
-                
-                {/* Right Image */}
-                <div className="order-1 lg:order-2">
-                  <img 
-                    src="/placeholder.svg"
-                    alt="SMITH инвестиция в успех"
                     className="w-full object-cover rounded-lg"
                     style={{ height: '250px' }}
                   />
