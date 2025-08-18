@@ -1095,6 +1095,24 @@ const Brand: React.FC = () => {
           </div>
         </section>
 
+        {/* Video Block for TRUE brand */}
+        {brandSlug === 'true' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="w-full">
+                <video 
+                  controls 
+                  className="w-full rounded-lg"
+                  style={{ maxHeight: '600px' }}
+                >
+                  <source src="/videos/true-brand-video.mp4" type="video/mp4" />
+                  Ваш браузер не поддерживает воспроизведение видео.
+                </video>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Fifth Content Block - MÉRIDIEN Block 5 */}
         {brandSlug === 'meridien' && (
           <section className="w-full py-8">
