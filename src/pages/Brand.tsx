@@ -344,7 +344,7 @@ const Brand: React.FC = () => {
               {/* Left Image */}
               <div className="order-1">
                 <img 
-                  src={brandSlug === 'cardio-power' ? '/lovable-uploads/16904733-b1ae-4f10-8b24-795bc1b439f6.png' : brandSlug === 'true' ? '/lovable-uploads/21b038a7-1ec4-44c6-a96c-6a342c3603de.png' : brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : brandSlug === 'schwinn' ? '/lovable-uploads/5a7d56a3-1cee-438a-b65a-a3479013fe70.png' : brandSlug === 'oktan' ? '/lovable-uploads/b7860c53-38e6-490f-a402-9811296c1da3.png' : brandSlug === 'visbody' ? '/lovable-uploads/7f518539-41a1-4a19-8284-3b07384c5521.png' : brandSlug === 'smith' ? '/lovable-uploads/65e88678-9ddb-4054-8aa5-9168061e974c.png' : brandSlug === 'slide-fit' ? '/lovable-uploads/dedbea23-0db1-4b59-a6c3-480221fe1bce.png' : brandSlug === 'scholle' ? '/lovable-uploads/2426d4bb-0cd0-41f1-8fc4-e3685ff725c7.png' : brandSlug === 'inspire' ? '/lovable-uploads/02405569-7f43-47f4-997a-7d85e0efdea8.png' : brandSlug === 'hyfit' ? '/lovable-uploads/55597898-53a4-47b5-922e-18b6483925f6.png' : brandSlug === 'maxfit' ? '/lovable-uploads/2894b742-e7cf-47d8-96a8-7d07f315ba2a.png' : brandSlug === 'meridien' ? '/lovable-uploads/bf4193a1-d807-4319-80dd-08595cce7af3.png' : brandSlug === 'sole' ? '/lovable-uploads/c3d01baa-8c32-42af-889e-7afb421fc547.png' : brandSlug === 'variosling' ? '/lovable-uploads/96bad51b-6767-4b45-b4b0-f376809947b4.png' : '/lovable-uploads/bf4193a1-d807-4319-80dd-08595cce7af3.png'}
+                  src={brandSlug === 'cardio-power' ? '/lovable-uploads/16904733-b1ae-4f10-8b24-795bc1b439f6.png' : brandSlug === 'true' ? '/lovable-uploads/21b038a7-1ec4-44c6-a96c-6a342c3603de.png' : brandSlug === 'bowflex' ? '/lovable-uploads/2047d7ac-2ac8-45b9-a8e0-ca22ab3a5013.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/62839881-d0dc-4f55-81c1-2b042e81d0e3.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : brandSlug === 'schwinn' ? '/lovable-uploads/5a7d56a3-1cee-438a-b65a-a3479013fe70.png' : brandSlug === 'oktan' ? '/lovable-uploads/b7860c53-38e6-490f-a402-9811296c1da3.png' : brandSlug === 'visbody' ? '/lovable-uploads/7f518539-41a1-4a19-8284-3b07384c5521.png' : brandSlug === 'smith' ? '/lovable-uploads/b0b6bcef-5ecb-453f-8069-a06fc41ee174.png' : brandSlug === 'slide-fit' ? '/lovable-uploads/dedbea23-0db1-4b59-a6c3-480221fe1bce.png' : brandSlug === 'scholle' ? '/lovable-uploads/2426d4bb-0cd0-41f1-8fc4-e3685ff725c7.png' : brandSlug === 'inspire' ? '/lovable-uploads/02405569-7f43-47f4-997a-7d85e0efdea8.png' : brandSlug === 'hyfit' ? '/lovable-uploads/55597898-53a4-47b5-922e-18b6483925f6.png' : brandSlug === 'maxfit' ? '/lovable-uploads/2894b742-e7cf-47d8-96a8-7d07f315ba2a.png' : brandSlug === 'meridien' ? '/lovable-uploads/bf4193a1-d807-4319-80dd-08595cce7af3.png' : brandSlug === 'sole' ? '/lovable-uploads/c3d01baa-8c32-42af-889e-7afb421fc547.png' : brandSlug === 'variosling' ? '/lovable-uploads/96bad51b-6767-4b45-b4b0-f376809947b4.png' : '/lovable-uploads/bf4193a1-d807-4319-80dd-08595cce7af3.png'}
                   alt="Спортивные тренировки"
                   className="w-full object-cover rounded-lg"
                   style={brandSlug === 'true' ? { height: '300px' } : brandSlug === 'smith' ? { height: '260px' } : brandSlug === 'bowflex' ? { height: '150px' } : { height: '500px' }}
@@ -1086,12 +1086,22 @@ const Brand: React.FC = () => {
                               <p className="text-xs">минимальные затраты благодаря надежной конструкции и доступности запчастей</p>
                             </div>
                           </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+                   )}
+                 </div>
+               </div>
+               
+               {/* Right Image */}
+               <div className="order-1 lg:order-2">
+                 <img 
+                   src={brandSlug === 'cardio-power' ? '/lovable-uploads/3047ade8-c7db-4593-b9c7-1a5ebbbe8fe8.png' : brandSlug === 'true' ? '/lovable-uploads/f0b8744d-a5e4-418e-9512-534ed70c17e6.png' : brandSlug === 'bowflex' ? '/lovable-uploads/09e34d54-4b84-4bfa-9a0c-9b8f35b65c66.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/17a72cf9-b2e5-4f1e-b2f7-dc2bb1b40508.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : brandSlug === 'schwinn' ? '/lovable-uploads/5a7d56a3-1cee-438a-b65a-a3479013fe70.png' : brandSlug === 'oktan' ? '/lovable-uploads/b7860c53-38e6-490f-a402-9811296c1da3.png' : brandSlug === 'visbody' ? '/lovable-uploads/7f518539-41a1-4a19-8284-3b07384c5521.png' : brandSlug === 'smith' ? '/lovable-uploads/5a827292-b17c-420a-90b7-554acca9a791.png' : brandSlug === 'slide-fit' ? '/lovable-uploads/dedbea23-0db1-4b59-a6c3-480221fe1bce.png' : brandSlug === 'scholle' ? '/lovable-uploads/2426d4bb-0cd0-41f1-8fc4-e3685ff725c7.png' : brandSlug === 'inspire' ? '/lovable-uploads/02405569-7f43-47f4-997a-7d85e0efdea8.png' : brandSlug === 'hyfit' ? '/lovable-uploads/55597898-53a4-47b5-922e-18b6483925f6.png' : brandSlug === 'maxfit' ? '/lovable-uploads/2894b742-e7cf-47d8-96a8-7d07f315ba2a.png' : brandSlug === 'meridien' ? '/lovable-uploads/bf4193a1-d807-4319-80dd-08595cce7af3.png' : brandSlug === 'sole' ? '/lovable-uploads/c3d01baa-8c32-42af-889e-7afb421fc547.png' : brandSlug === 'variosling' ? '/lovable-uploads/4e28c56a-50f5-4a77-b715-aff62a12bf6d.png' : '/lovable-uploads/bf4193a1-d807-4319-80dd-08595cce7af3.png'}
+                   alt="Спортивные тренировки"
+                   className="w-full object-cover rounded-lg"
+                   style={brandSlug === 'true' ? { height: '300px' } : brandSlug === 'smith' ? { height: '260px' } : brandSlug === 'bowflex' ? { height: '150px' } : { height: '500px' }}
+                 />
+               </div>
+             </div>
+           </div>
+         </section>
 
         {/* Fourth Content Block - Text Left, Image Right */}
         <section className="w-full py-8">
