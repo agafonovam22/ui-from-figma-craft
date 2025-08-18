@@ -27,7 +27,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
     {
       id: 1,
       name: 'Беговая дорожка CardioPower T20',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&h=400',
+      image: '/images/cardiopower-t20.png',
       price: '45 000 ₽',
       oldPrice: '50 000 ₽',
       badge: 'НОВИНКА',
@@ -48,7 +48,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
     {
       id: 2,
       name: 'Беговая дорожка CardioPower T40',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&h=400',
+      image: '/images/cardiopower-t40.png',
       price: '65 000 ₽',
       oldPrice: '72 000 ₽',
       badge: 'НОВИНКА',
