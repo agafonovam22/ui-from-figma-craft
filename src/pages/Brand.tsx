@@ -1468,6 +1468,35 @@ const Brand: React.FC = () => {
         {/* Ideas and Selections */}
         <IdeasSelections />
 
+        {/* Fifth Content Block - Variosling Block 5 */}
+        {brandSlug === 'variosling' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Image */}
+                <div className="order-1">
+                  <img 
+                    src="/lovable-uploads/7ab131b8-ceeb-470f-84df-8f93954c21ff.png"
+                    alt="Variosling - гарантия качества"
+                    className="w-full h-full object-cover rounded-lg"
+                    style={{ height: '400px' }}
+                  />
+                </div>
+                
+                {/* Right Text */}
+                <div className="order-2 lg:pl-8">
+                  <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                    Гарантия качества
+                  </h2>
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Как и подобает настоящему немецкому продукту, петли Variosling сопровождаются 2-летней гарантией. Возможность машинной стирки при температуре до 30°С и взаимозаменяемость определенных частей делают это оборудование не только долговечным, но и практичным в использовании.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Catalog Section */}
         <section className="py-8 bg-white">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
