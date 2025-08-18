@@ -1234,7 +1234,8 @@ const Brand: React.FC = () => {
                   <img 
                     src="/lovable-uploads/4fa997be-b357-4344-b945-e3d316ce172f.png"
                     alt="SMITH фитнес-бизнес"
-                    className="w-full h-full object-cover rounded-lg"
+                    className="w-full object-cover rounded-lg"
+                    style={{ height: '250px' }}
                   />
                 </div>
               </div>
