@@ -1299,21 +1299,11 @@ const Brand: React.FC = () => {
         {brandSlug === 'smith' && (
           <section className="w-full py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Left Text */}
-                <div className="order-2 lg:order-1 lg:pr-8">
-                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+              <div className="flex justify-center">
+                <div className="max-w-4xl text-center">
+                  <p className="text-gray-600 text-lg leading-relaxed font-manrope">
                     Выбирая SMITH, вы инвестируете в оборудование, которое будет приносить прибыль годами. Это бренд для тех, кто понимает разницу между дешевым аналогом и по-настоящему качественным продуктом. Оборудование, которое не просто стоит в зале, а помогает создавать историю успеха вашего фитнес-бизнеса.
                   </p>
-                </div>
-                
-                {/* Right Image */}
-                <div className="order-1 lg:order-2">
-                  <img 
-                    src="/lovable-uploads/61aab835-fb0d-4b1e-a7b4-70a5ff2c4cf7.png"
-                    alt="SMITH инвестиция"
-                    className="w-full h-full object-cover rounded-lg"
-                  />
                 </div>
               </div>
             </div>
