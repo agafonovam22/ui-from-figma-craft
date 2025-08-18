@@ -1234,7 +1234,7 @@ const Brand: React.FC = () => {
                 {/* Left Image */}
                 <div className="order-1">
                   <img 
-                    src="/lovable-uploads/af2a35b0-bd80-4f2c-8b4c-1e5d9f7a8c3e.png"
+                    src="/lovable-uploads/56ee8681-a62a-44a4-ac22-78b1f37efde8.png"
                     alt="PEACH BUILDER в шоу-руме"
                     className="w-full h-full object-cover rounded-lg"
                     style={{ height: '500px' }}
