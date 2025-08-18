@@ -1226,6 +1226,35 @@ const Brand: React.FC = () => {
           </section>
         )}
 
+        {/* Fifth Content Block - PEACH BUILDER Block 5 */}
+        {brandSlug === 'peach-builder' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Image */}
+                <div className="order-1">
+                  <img 
+                    src="/lovable-uploads/af2a35b0-bd80-4f2c-8b4c-1e5d9f7a8c3e.png"
+                    alt="PEACH BUILDER в шоу-руме"
+                    className="w-full h-full object-cover rounded-lg"
+                    style={{ height: '500px' }}
+                  />
+                </div>
+                
+                {/* Right Text */}
+                <div className="order-2 lg:pl-8">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
+                    Готовы перевести свои тренировки на новый уровень? PEACH BUILDER ждёт вас в нашем шоу-руме, где вы сможете лично оценить инновационный подход к формированию ягодичных мышц.
+                  </p>
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Создано профессионалами. Проверено чемпионами. Вдохновлено совершенством.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Fifth Content Block - HYFIT Block 5 */}
         {brandSlug === 'hyfit' && (
           <section className="w-full py-8">
