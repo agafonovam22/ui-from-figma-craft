@@ -354,14 +354,28 @@ const Brand: React.FC = () => {
               {/* Right Text */}
               <div className="order-2 lg:pl-8">
                 <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                  {brandSlug === 'true' ? 'МЫ – TRUE' : brandSlug === 'cardio-power' ? 'CARDIO POWER' : brandSlug === 'cardiopower-pro' ? 'Надежность, проверенная потоком' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole' || brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьез' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — революция в тренировке ягодичных мышц' : brandSlug === 'gym80' ? 'GYM80 — немецкое качество для профессиональных результатов' : brandSlug === 'oktan' ? 'Octane Fitness — эллиптические тренажеры нового поколения' : brandSlug === 'visbody' ? 'Visbody — инновационные технологии для анализа тела' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'scholle' ? 'SCHOLLE: Немецкое качество для активного образа жизни' : brandSlug === 'smith' ? 'SMITH: профессиональное фитнес-оборудование с безупречной репутацией' : brandSlug === 'slide-fit' ? 'Инновационные тренажеры из Словении для комплексного развития тела' : brandSlug === 'inspire' ? 'INSPIRE: Американское качество для профессионального тренинга' : brandSlug === 'hyfit' ? 'HYFIT: Интеллектуальный фитнес с регулируемыми нагрузками' : brandSlug === 'maxgym' ? 'MAXGYM: Профессиональная сила без компромиссов' : brandSlug === 'maxfit' ? 'MAXFIT: Инновационные тренажеры с интеллектуальной регулировкой нагрузки' : brandSlug === 'meridien' ? 'MÉRIDIEN: ГДЕ НАЧИНАЕТСЯ ВАШ КОМФОРТ' : brandSlug === 'variosling' ? 'Variosports: немецкое качество для функционального тренинга' : brandSlug === 'sintesi' ? 'Будущее тренировок уже здесь' : 'МЫ – TRUE'}
+                  {brandSlug === 'true' ? 'МЫ – TRUE' : (brandSlug === 'cardio-power' || brandSlug === 'cardiopower') ? 'CARDIO POWER' : brandSlug === 'cardiopower-pro' ? 'Надежность, проверенная потоком' : brandSlug === 'schwinn' ? 'Schwinn — легендарное качество для домашнего фитнеса' : brandSlug === 'nautilus' ? 'Nautilus – инновации, изменившие мир фитнеса' : brandSlug === 'sole' || brandSlug === 'sole-fitness' ? 'Sole Fitness – бескомпромиссное качество для тех, кто тренируется всерьез' : brandSlug === 'peach-builder' ? 'PEACH BUILDER — революция в тренировке ягодичных мышц' : brandSlug === 'gym80' ? 'GYM80 — немецкое качество для профессиональных результатов' : brandSlug === 'oktan' ? 'Octane Fitness — эллиптические тренажеры нового поколения' : brandSlug === 'visbody' ? 'Visbody — инновационные технологии для анализа тела' : brandSlug === 'bowflex' ? 'BOWFLEX' : brandSlug === 'scholle' ? 'SCHOLLE: Немецкое качество для активного образа жизни' : brandSlug === 'smith' ? 'SMITH: профессиональное фитнес-оборудование с безупречной репутацией' : brandSlug === 'slide-fit' ? 'Инновационные тренажеры из Словении для комплексного развития тела' : brandSlug === 'inspire' ? 'INSPIRE: Американское качество для профессионального тренинга' : brandSlug === 'hyfit' ? 'HYFIT: Интеллектуальный фитнес с регулируемыми нагрузками' : brandSlug === 'maxgym' ? 'MAXGYM: Профессиональная сила без компромиссов' : brandSlug === 'maxfit' ? 'MAXFIT: Инновационные тренажеры с интеллектуальной регулировкой нагрузки' : brandSlug === 'meridien' ? 'MÉRIDIEN: ГДЕ НАЧИНАЕТСЯ ВАШ КОМФОРТ' : brandSlug === 'variosling' ? 'Variosports: немецкое качество для функционального тренинга' : brandSlug === 'sintesi' ? 'Будущее тренировок уже здесь' : 'МЫ – TRUE'}
                 </h2>
                 
                 <div className="mb-8">
-                  {brandSlug === 'cardio-power' ? (
+                  {brandSlug === 'cardio-power' || brandSlug === 'cardiopower' ? (
                     <>
-                      <div>
-                        {/* Content removed */}
+                      <div className="space-y-6">
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          CardioPower – это передовые технологии, надежность и доступность в мире кардиотренажеров. С 2010 года мы создаем оборудование, которое помогает добиваться результатов – как дома, так и в профессиональных залах. Наши тренажеры выбирают те, кто ценит качество, безопасность и инновации без переплат.
+                        </p>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Мы делаем только то, в чем действительно сильны:
+                        </p>
+                        <ul className="text-gray-600 text-sm leading-relaxed font-manrope ml-4 space-y-2">
+                          <li>- Беговые дорожки, где каждый шаг – это комфорт и мощность</li>
+                          <li>- Эллипсы с плавностью профессионального уровня</li>
+                          <li>- Сайклы, заряженные энергией групповых тренировок</li>
+                          <li>- Гребные тренажеры для комплексной нагрузки</li>
+                        </ul>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Наша философия проста: «Хороший кардиотренажер – не роскошь, а ваш надежный партнер».
+                        </p>
                       </div>
                     </>
                   ) : brandSlug === 'schwinn' ? (
