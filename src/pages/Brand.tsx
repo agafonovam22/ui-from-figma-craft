@@ -127,6 +127,7 @@ const Brand: React.FC = () => {
       case 'maxfit': return 'MAXFIT';
       case 'meridien': return 'MÉRIDIEN';
       case 'proski': return 'PROSKI';
+      case 'variosling': return 'Variosling';
       default: return 'kernel';
     }
   };
