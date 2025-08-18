@@ -771,15 +771,15 @@ const Brand: React.FC = () => {
         {/* Statistics Banner from About page */}
         <section className="w-full py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className={brandSlug === 'smith' ? "overflow-hidden relative rounded-lg flex" : "overflow-hidden relative rounded-lg"} style={brandSlug === 'smith' ? {} : { height: '250px' }}>
+            <div className="overflow-hidden relative rounded-lg" style={brandSlug === 'smith' ? { minHeight: 'auto' } : { height: '250px' }}>
               <img 
                 src={brandSlug === 'cardio-power' ? "/lovable-uploads/386bc1bb-2e45-41ab-87d8-7effb00bbccb.png" : brandSlug === 'true' ? "/lovable-uploads/de89d231-771d-4288-af42-6ed99213ee24.png" : brandSlug === 'bowflex' ? "/lovable-uploads/fcc40dab-a503-4aae-ae77-a8b93bd0a30d.png" : brandSlug === 'peach-builder' ? "/lovable-uploads/f5a28d98-6ba4-48b2-84c4-45f27a4ad81c.png" : brandSlug === 'gym80' ? "/lovable-uploads/08d1344d-ca43-44d2-b953-28d3cb4c83d2.png" : brandSlug === 'schwinn' ? "/lovable-uploads/df10970b-3001-4bd2-85b9-1a306850b1da.png" : brandSlug === 'oktan' ? "/lovable-uploads/cd54ddcf-333b-4408-ab25-a7e2c382f6d7.png" : brandSlug === 'visbody' ? "/lovable-uploads/53c6106b-ad5a-4c16-ae24-283a957ebd3a.png" : brandSlug === 'smith' ? "/lovable-uploads/21dacae0-6b25-4a75-adcd-e70046ff48ce.png" : brandSlug === 'slide-fit' ? "/lovable-uploads/2df24fd7-d22e-403e-b3b9-d57fa9210a68.png" : brandSlug === 'scholle' ? "/lovable-uploads/43ab3e0e-6584-4129-8e35-28d5587d2af5.png" : brandSlug === 'inspire' ? "/lovable-uploads/0587f7fc-182b-42bb-9efa-a0f7998bcc32.png" : brandSlug === 'hyfit' ? "/lovable-uploads/fdf2f744-537e-4cdc-b8c8-ecf68565fc47.png" : brandSlug === 'maxfit' ? "/lovable-uploads/1c4de0a0-f047-4bcd-ad2c-dea4f9a26ca1.png" : brandSlug === 'meridien' ? "/lovable-uploads/65ea8546-02c6-4913-b251-f0e3ba673bb0.png" : brandSlug === 'sole' ? "/lovable-uploads/3e328102-f1b6-4a30-86e3-fbe776c287aa.png" : brandSlug === 'variosling' ? "/lovable-uploads/1aac53c7-22d7-4c4a-a2ef-e4ea39643a42.png" : "/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"}
                 alt="О компании - статистика"
-                className={brandSlug === 'smith' ? "w-2/3 h-auto object-cover" : "w-full h-full object-cover"}
-                style={brandSlug === 'smith' ? { objectPosition: 'center left' } : { objectPosition: 'center right' }}
+                className="w-full h-full object-cover"
+                style={{ objectPosition: 'center right' }}
               />
               {/* Statistics content overlay */}
-              <div className={brandSlug === 'smith' ? "w-1/3 bg-white rounded-lg p-4 shadow-lg" : "absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-4 shadow-lg overflow-y-auto"}>
+              <div className={brandSlug === 'smith' ? "absolute top-2.5 right-2.5 w-[650px] bg-white rounded-lg p-4 shadow-lg" : "absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-4 shadow-lg overflow-y-auto"}>
                 <div className={brandSlug === 'smith' ? "" : "h-full flex flex-col"}>
                   <div className="mb-3">
                      <h2 className="text-3xl font-benzin text-gray-900 mb-3">
