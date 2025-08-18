@@ -1154,7 +1154,7 @@ const Brand: React.FC = () => {
                     src="/lovable-uploads/7ab131b8-ceeb-470f-84df-8f93954c21ff.png"
                     alt="Variosling - гарантия качества"
                     className="w-full h-full object-cover rounded-lg"
-                    style={{ height: '400px' }}
+                    style={{ height: '250px' }}
                   />
                 </div>
                 
@@ -1204,7 +1204,7 @@ const Brand: React.FC = () => {
                     src="/lovable-uploads/1a7c7c21-1dd6-4749-98ea-32e1a258130b.png"
                     alt="Variosling - для профессионалов"
                     className="w-full object-cover rounded-lg"
-                    style={{ height: '500px' }}
+                    style={{ height: '250px' }}
                   />
                 </div>
               </div>
