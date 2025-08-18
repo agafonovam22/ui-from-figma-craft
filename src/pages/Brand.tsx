@@ -1150,26 +1150,6 @@ const Brand: React.FC = () => {
 
 
 
-            {/* Block 5 - Фитнес, который подстраивается */}
-            <section className="w-full py-8">
-              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div className="order-2 lg:order-1 lg:pr-8">
-                    <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                      Фитнес, который подстраивается под вас
-                    </h2>
-                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                      Главная ценность Sintesi — свобода выбора. Меняйте нагрузку одним касанием, экспериментируйте с режимами и достигайте целей быстрее. Это не просто тренажер, а ваш персональный тренер будущего.
-                    </p>
-                  </div>
-                  <div className="order-1 lg:order-2">
-                    <div className="w-full h-[230px] bg-gray-100 rounded-lg flex items-center justify-center">
-                      <span className="text-gray-400">Изображение блока 5</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
           </>
         )}
 
