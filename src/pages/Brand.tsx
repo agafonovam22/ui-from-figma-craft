@@ -779,8 +779,8 @@ const Brand: React.FC = () => {
                 style={{ objectPosition: 'center right' }}
               />
               {/* Statistics content overlay */}
-              <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-4 shadow-lg overflow-y-auto">
-                <div className="h-full flex flex-col">
+              <div className={brandSlug === 'smith' ? "absolute top-2.5 right-2.5 bg-white rounded-lg p-4 shadow-lg" : "absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-4 shadow-lg overflow-y-auto"}>
+                <div className={brandSlug === 'smith' ? "" : "h-full flex flex-col"}>
                   <div className="mb-3">
                      <h2 className="text-3xl font-benzin text-gray-900 mb-3">
                        {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'cardiopower-pro' ? 'Управление без сложностей' : brandSlug === 'schwinn' ? 'Наследие, которому можно доверять' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole' || brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : brandSlug === 'peach-builder' ? 'Философия бренда строится на трёх принципах:' : brandSlug === 'gym80' ? 'Более 40 лет в служении фитнесу' : brandSlug === 'oktan' ? 'Преимущества Octane Fitness' : brandSlug === 'visbody' ? 'Почему выбирают Visbody?' : brandSlug === 'bowflex' ? 'BOWFLEX ВДОХНОВЛЯЕТ' : brandSlug === 'scholle' ? 'Широкий ассортимент для активного отдыха' : brandSlug === 'smith' ? 'Комфорт как главный приоритет' : brandSlug === 'slide-fit' ? 'Технологическое превосходство' : brandSlug === 'inspire' ? 'Уникальные особенности тренажеров INSPIRE' : brandSlug === 'hyfit' ? 'Комплексные решения для любого уровня подготовки' : brandSlug === 'maxgym' ? 'Философия бренда' : brandSlug === 'maxfit' ? 'Для кого созданы наши тренажеры:' : brandSlug === 'meridien' ? 'Почему тысячи людей выбирают MÉRIDIEN:' : brandSlug === 'variosling' ? 'Профессиональный инструмент для различных задач' : brandSlug === 'sintesi' ? 'Три модели для любых целей' : 'Лидер в индустрии'}
