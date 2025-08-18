@@ -314,7 +314,8 @@ const NewsArticle: React.FC = () => {
         </section>
         )}
 
-        {/* FAQ Section */}
+        {/* FAQ Section - скрыто для страницы CardioPower T40 NEW */}
+        {articleSlug !== 'cardiopower-t40-new-v-prodazhe' && (
         <section className="py-16 bg-white">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <h2 className="text-3xl font-bold text-[#17171E] mb-12">
@@ -357,6 +358,7 @@ const NewsArticle: React.FC = () => {
             </Accordion>
           </div>
         </section>
+        )}
       </main>
       
       <EmailSubscription />
