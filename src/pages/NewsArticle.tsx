@@ -315,7 +315,7 @@ const NewsArticle: React.FC = () => {
         )}
 
         {/* FAQ Section - скрыто для страницы CardioPower T40 NEW */}
-        {articleSlug !== 'cardiopower-t40-new-v-prodazhe' && (
+        {articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-v-prodazhe' && articleSlug !== 'cardiopower-s55-v-prodazhe' && articleSlug !== 'cardiopower-s50-v-prodazhe' && articleSlug !== 'cardiopower-x48-v-prodazhe' && articleSlug !== 'cardiopower-x45-v-prodazhe' && articleSlug !== 'cardiopower-tt35-v-prodazhe' && articleSlug !== 'cardiopower-re50-v-prodazhe' && articleSlug !== 'cardiopower-b35-v-prodazhe' && (
         <section className="py-16 bg-white">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <h2 className="text-3xl font-bold text-[#17171E] mb-12">
