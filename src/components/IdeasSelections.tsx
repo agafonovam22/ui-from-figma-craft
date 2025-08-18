@@ -50,7 +50,7 @@ const IdeasSelections: React.FC = () => {
 
   return (
     <section className="w-full bg-white py-6">
-      <div className="max-w-[1800px] mx-auto px-[30px]">
+      <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
         {/* Header with navigation */}
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold text-gray-900">Лучшие предложения</h2>
