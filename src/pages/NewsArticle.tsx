@@ -24,10 +24,10 @@ const NewsArticle: React.FC = () => {
       
       <main className="w-full">
         {/* Breadcrumb and Title */}
-        <section className="py-8">
+        <section className="py-4">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             {/* Breadcrumb */}
-            <Breadcrumb className="mb-8">
+            <Breadcrumb className="mb-4">
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink href="/" className="text-gray-500 hover:text-gray-700">
