@@ -13,7 +13,7 @@ const PopularBrands: React.FC = () => {
     { id: 7, name: "PEACH BUILDER", logo: "/lovable-uploads/6b768359-79b4-4e0e-918d-b7483e377f0e.png", slug: "peach-builder" },
     { id: 8, name: "Variosling", logo: "/lovable-uploads/c0279280-6434-4917-a15a-a329b4f77188.png", slug: "variosling" },
     { id: 9, name: "proski", logo: "/lovable-uploads/803751de-6e11-42bb-b2a7-ed88abd5f406.png", slug: "proski" },
-    { id: 10, name: "cardiopower-pro", logo: "/lovable-uploads/a4f43c68-83aa-4cd0-9c21-b8945a16a90a.png", slug: "cardiopower-pro" },
+    { id: 10, name: "cardiopower-pro", logo: "/lovable-uploads/ff4161ee-bd1f-408a-b9f6-0d294b8e2e2b.png", slug: "cardiopower-pro" },
     { id: 11, name: "hyfit", logo: "/lovable-uploads/c424095c-c9e2-40e2-a8c2-63f27746a2ba.png", slug: "hyfit" },
     { id: 12, name: "SMITH", logo: "/lovable-uploads/ad6d9901-9551-4a7f-81bd-7a48c3afdb83.png", slug: "smith" },
     { id: 13, name: "Sintesi", logo: "/lovable-uploads/ade27090-5541-4f24-9826-cf4f3d27467d.png", slug: "sintesi" }
