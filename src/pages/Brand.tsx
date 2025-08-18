@@ -771,7 +771,7 @@ const Brand: React.FC = () => {
         {/* Statistics Banner from About page */}
         <section className="w-full py-8">
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-            <div className="overflow-hidden relative rounded-lg" style={brandSlug === 'smith' ? { minHeight: 'auto' } : { height: '250px' }}>
+            <div className="overflow-hidden relative rounded-lg" style={{ height: '250px' }}>
               <img 
                 src={brandSlug === 'cardio-power' ? "/lovable-uploads/386bc1bb-2e45-41ab-87d8-7effb00bbccb.png" : brandSlug === 'true' ? "/lovable-uploads/de89d231-771d-4288-af42-6ed99213ee24.png" : brandSlug === 'bowflex' ? "/lovable-uploads/fcc40dab-a503-4aae-ae77-a8b93bd0a30d.png" : brandSlug === 'peach-builder' ? "/lovable-uploads/f5a28d98-6ba4-48b2-84c4-45f27a4ad81c.png" : brandSlug === 'gym80' ? "/lovable-uploads/08d1344d-ca43-44d2-b953-28d3cb4c83d2.png" : brandSlug === 'schwinn' ? "/lovable-uploads/df10970b-3001-4bd2-85b9-1a306850b1da.png" : brandSlug === 'oktan' ? "/lovable-uploads/cd54ddcf-333b-4408-ab25-a7e2c382f6d7.png" : brandSlug === 'visbody' ? "/lovable-uploads/53c6106b-ad5a-4c16-ae24-283a957ebd3a.png" : brandSlug === 'smith' ? "/lovable-uploads/21dacae0-6b25-4a75-adcd-e70046ff48ce.png" : brandSlug === 'slide-fit' ? "/lovable-uploads/2df24fd7-d22e-403e-b3b9-d57fa9210a68.png" : brandSlug === 'scholle' ? "/lovable-uploads/43ab3e0e-6584-4129-8e35-28d5587d2af5.png" : brandSlug === 'inspire' ? "/lovable-uploads/0587f7fc-182b-42bb-9efa-a0f7998bcc32.png" : brandSlug === 'hyfit' ? "/lovable-uploads/fdf2f744-537e-4cdc-b8c8-ecf68565fc47.png" : brandSlug === 'maxfit' ? "/lovable-uploads/1c4de0a0-f047-4bcd-ad2c-dea4f9a26ca1.png" : brandSlug === 'meridien' ? "/lovable-uploads/65ea8546-02c6-4913-b251-f0e3ba673bb0.png" : brandSlug === 'sole' ? "/lovable-uploads/3e328102-f1b6-4a30-86e3-fbe776c287aa.png" : brandSlug === 'variosling' ? "/lovable-uploads/1aac53c7-22d7-4c4a-a2ef-e4ea39643a42.png" : "/lovable-uploads/b04fa555-f20a-4548-bca0-6ff520c1c93c.png"}
                 alt="О компании - статистика"
@@ -779,8 +779,8 @@ const Brand: React.FC = () => {
                 style={{ objectPosition: 'center right' }}
               />
               {/* Statistics content overlay */}
-              <div className={brandSlug === 'smith' ? "absolute top-2.5 right-2.5 w-[650px] bg-white rounded-lg p-4 shadow-lg" : "absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-4 shadow-lg overflow-y-auto"}>
-                <div className={brandSlug === 'smith' ? "" : "h-full flex flex-col"}>
+              <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-4 shadow-lg overflow-y-auto">
+                <div className="h-full flex flex-col">
                   <div className="mb-3">
                      <h2 className="text-3xl font-benzin text-gray-900 mb-3">
                        {brandSlug === 'cardio-power' ? 'Почему CardioPower?' : brandSlug === 'cardiopower-pro' ? 'Управление без сложностей' : brandSlug === 'schwinn' ? 'Наследие, которому можно доверять' : brandSlug === 'nautilus' ? 'Nautilus:' : brandSlug === 'sole' || brandSlug === 'sole-fitness' ? 'Технологии, которые работают на вас:' : brandSlug === 'peach-builder' ? 'Философия бренда строится на трёх принципах:' : brandSlug === 'gym80' ? 'Более 40 лет в служении фитнесу' : brandSlug === 'oktan' ? 'Преимущества Octane Fitness' : brandSlug === 'visbody' ? 'Почему выбирают Visbody?' : brandSlug === 'bowflex' ? 'BOWFLEX ВДОХНОВЛЯЕТ' : brandSlug === 'scholle' ? 'Широкий ассортимент для активного отдыха' : brandSlug === 'smith' ? 'Комфорт как главный приоритет' : brandSlug === 'slide-fit' ? 'Технологическое превосходство' : brandSlug === 'inspire' ? 'Уникальные особенности тренажеров INSPIRE' : brandSlug === 'hyfit' ? 'Комплексные решения для любого уровня подготовки' : brandSlug === 'maxgym' ? 'Философия бренда' : brandSlug === 'maxfit' ? 'Для кого созданы наши тренажеры:' : brandSlug === 'meridien' ? 'Почему тысячи людей выбирают MÉRIDIEN:' : brandSlug === 'variosling' ? 'Профессиональный инструмент для различных задач' : brandSlug === 'sintesi' ? 'Три модели для любых целей' : 'Лидер в индустрии'}
@@ -1089,18 +1089,16 @@ const Brand: React.FC = () => {
                    )}
                  </div>
                </div>
-                
-                {/* Right Image - Hidden for Smith */}
-                {brandSlug !== 'smith' && (
-                  <div className="order-1 lg:order-2">
-                    <img 
-                      src={brandSlug === 'cardio-power' ? '/lovable-uploads/3047ade8-c7db-4593-b9c7-1a5ebbbe8fe8.png' : brandSlug === 'true' ? '/lovable-uploads/f0b8744d-a5e4-418e-9512-534ed70c17e6.png' : brandSlug === 'bowflex' ? '/lovable-uploads/09e34d54-4b84-4bfa-9a0c-9b8f35b65c66.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/17a72cf9-b2e5-4f1e-b2f7-dc2bb1b40508.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : brandSlug === 'schwinn' ? '/lovable-uploads/5a7d56a3-1cee-438a-b65a-a3479013fe70.png' : brandSlug === 'oktan' ? '/lovable-uploads/b7860c53-38e6-490f-a402-9811296c1da3.png' : brandSlug === 'visbody' ? '/lovable-uploads/7f518539-41a1-4a19-8284-3b07384c5521.png' : brandSlug === 'slide-fit' ? '/lovable-uploads/dedbea23-0db1-4b59-a6c3-480221fe1bce.png' : brandSlug === 'scholle' ? '/lovable-uploads/2426d4bb-0cd0-41f1-8fc4-e3685ff725c7.png' : brandSlug === 'inspire' ? '/lovable-uploads/02405569-7f43-47f4-997a-7d85e0efdea8.png' : brandSlug === 'hyfit' ? '/lovable-uploads/55597898-53a4-47b5-922e-18b6483925f6.png' : brandSlug === 'maxfit' ? '/lovable-uploads/2894b742-e7cf-47d8-96a8-7d07f315ba2a.png' : brandSlug === 'meridien' ? '/lovable-uploads/bf4193a1-d807-4319-80dd-08595cce7af3.png' : brandSlug === 'sole' ? '/lovable-uploads/c3d01baa-8c32-42af-889e-7afb421fc547.png' : brandSlug === 'variosling' ? '/lovable-uploads/4e28c56a-50f5-4a77-b715-aff62a12bf6d.png' : '/lovable-uploads/bf4193a1-d807-4319-80dd-08595cce7af3.png'}
-                      alt="Спортивные тренировки"
-                      className="w-full object-cover rounded-lg"
-                      style={brandSlug === 'true' ? { height: '300px' } : brandSlug === 'bowflex' ? { height: '150px' } : { height: '500px' }}
-                    />
-                  </div>
-                )}
+               
+               {/* Right Image */}
+               <div className="order-1 lg:order-2">
+                 <img 
+                   src={brandSlug === 'cardio-power' ? '/lovable-uploads/3047ade8-c7db-4593-b9c7-1a5ebbbe8fe8.png' : brandSlug === 'true' ? '/lovable-uploads/f0b8744d-a5e4-418e-9512-534ed70c17e6.png' : brandSlug === 'bowflex' ? '/lovable-uploads/09e34d54-4b84-4bfa-9a0c-9b8f35b65c66.png' : brandSlug === 'peach-builder' ? '/lovable-uploads/17a72cf9-b2e5-4f1e-b2f7-dc2bb1b40508.png' : brandSlug === 'gym80' ? '/lovable-uploads/e2418140-1de7-4f5d-b34d-680fa363e740.png' : brandSlug === 'schwinn' ? '/lovable-uploads/5a7d56a3-1cee-438a-b65a-a3479013fe70.png' : brandSlug === 'oktan' ? '/lovable-uploads/b7860c53-38e6-490f-a402-9811296c1da3.png' : brandSlug === 'visbody' ? '/lovable-uploads/7f518539-41a1-4a19-8284-3b07384c5521.png' : brandSlug === 'smith' ? '/lovable-uploads/89e43cee-27a7-4c9a-a2fa-8ec80e691fc1.png' : brandSlug === 'slide-fit' ? '/lovable-uploads/dedbea23-0db1-4b59-a6c3-480221fe1bce.png' : brandSlug === 'scholle' ? '/lovable-uploads/2426d4bb-0cd0-41f1-8fc4-e3685ff725c7.png' : brandSlug === 'inspire' ? '/lovable-uploads/02405569-7f43-47f4-997a-7d85e0efdea8.png' : brandSlug === 'hyfit' ? '/lovable-uploads/55597898-53a4-47b5-922e-18b6483925f6.png' : brandSlug === 'maxfit' ? '/lovable-uploads/2894b742-e7cf-47d8-96a8-7d07f315ba2a.png' : brandSlug === 'meridien' ? '/lovable-uploads/bf4193a1-d807-4319-80dd-08595cce7af3.png' : brandSlug === 'sole' ? '/lovable-uploads/c3d01baa-8c32-42af-889e-7afb421fc547.png' : brandSlug === 'variosling' ? '/lovable-uploads/4e28c56a-50f5-4a77-b715-aff62a12bf6d.png' : '/lovable-uploads/bf4193a1-d807-4319-80dd-08595cce7af3.png'}
+                   alt="Спортивные тренировки"
+                   className="w-full object-cover rounded-lg"
+                   style={brandSlug === 'true' ? { height: '300px' } : brandSlug === 'smith' ? { height: '250px' } : brandSlug === 'bowflex' ? { height: '150px' } : { height: '500px' }}
+                 />
+               </div>
              </div>
            </div>
          </section>
