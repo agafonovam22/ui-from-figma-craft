@@ -1453,10 +1453,10 @@ const Brand: React.FC = () => {
                 {/* Left Image */}
                 <div className="order-1">
                   <img 
-                    src="/lovable-uploads/e1386551-2918-46ed-9540-3ac64cee6e17.png"
+                    src="/lovable-uploads/4eb5d54c-45ae-492b-9839-76a1b75004d8.png"
                     alt="KERNEL семейный фитнес"
                     className="w-full h-full object-cover rounded-lg"
-                    style={{ height: '500px' }}
+                    style={{ height: '350px' }}
                   />
                 </div>
                 
