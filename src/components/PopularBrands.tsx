@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const PopularBrands: React.FC = () => {
   const brands = [
     { id: 1, name: "BowFlex", logo: "/lovable-uploads/d7460e6e-3133-4958-a3a2-6c933938c62c.png", slug: "bowflex" },
-    { id: 2, name: "TRUE", logo: "/lovable-uploads/771481a7-be16-4a51-999e-fce89022b698.png", slug: "true" },
+    { id: 2, name: "TRUE", logo: "/lovable-uploads/2193c3ab-84ea-41d9-8e51-be8bfbc7904a.png", slug: "true" },
     { id: 3, name: "Schwinn", logo: "/lovable-uploads/ad78a6d2-d93d-45b2-a7f5-b5b3ebeb339a.png", slug: "schwinn" },
     { id: 4, name: "Cardio Power", logo: "/lovable-uploads/b32017a9-0774-4a12-9fcd-39bd50910a86.png", slug: "cardiopower" },
     { id: 5, name: "MAXFIT", logo: "/lovable-uploads/53426d0c-4430-4856-b59b-4260613dc186.png", slug: "maxfit" },
