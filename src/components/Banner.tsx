@@ -19,7 +19,7 @@ const Banner: React.FC = () => {
                       lineHeight: '110%'
                     }}
                   >
-                    ZERO RUNNER
+                    СПОРТИВНОЕ ОБОРУДОВАНИЕ
                   </span>
                 </div>
                 
@@ -31,13 +31,13 @@ const Banner: React.FC = () => {
                     lineHeight: '105%'
                   }}
                 >
-                  Бег с нулевой<br />
-                  ударной нагрузкой<br />
-                  на суставы
+                  Профессиональные<br />
+                  тренажеры для<br />
+                  дома и зала
                 </h1>
                 
                 <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors font-benzin">
-                  Узнать больше
+                  Перейти в каталог
                 </button>
               </div>
               
