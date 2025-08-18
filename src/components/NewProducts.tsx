@@ -2,6 +2,7 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useBitrixProducts } from '@/hooks/useBitrixProducts';
 
 interface NewProductsProps {
   title?: string;
@@ -10,6 +11,7 @@ interface NewProductsProps {
 const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) => {
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const { products: bitrixProducts, loading, error } = useBitrixProducts();
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -23,92 +25,48 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
     }
   };
 
-  const products = [
-    {
-      id: 1,
-      name: 'Беговая дорожка CardioPower T20',
-      image: '/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png',
-      price: '45 000 ₽',
-      oldPrice: '50 000 ₽',
-      badge: 'НОВИНКА',
-      badgeColor: 'bg-green-500',
-      rating: 4.5,
-      availability: 'В наличии',
-      specs: [
-        'Модель: CardioPower T20',
-        'Максимальная скорость: 20 км/ч',
-        'Мощность двигателя: 2.5 л.с.',
-        'Размер бегового полотна: 48×140 см',
-        'Угол наклона: 0-12%',
-        'Максимальный вес пользователя: 130 кг',
-        'Складная конструкция',
-        'Цена: 45 000 руб.'
-      ]
-    },
-    {
-      id: 2,
-      name: 'Беговая дорожка CardioPower T40',
-      image: '/lovable-uploads/f86d41dd-f2f8-4cab-a66e-40c3a81d9cbf.png',
-      price: '65 000 ₽',
-      oldPrice: '72 000 ₽',
-      badge: 'НОВИНКА',
-      badgeColor: 'bg-green-500',
-      rating: 4.5,
-      availability: 'В наличии',
-      specs: [
-        'Модель: CardioPower T40',
-        'Максимальная скорость: 22 км/ч',
-        'Мощность двигателя: 3.5 л.с.',
-        'Размер бегового полотна: 55×150 см',
-        'Угол наклона: 0-15%',
-        'Максимальный вес пользователя: 150 кг',
-        'Встроенный пульсометр',
-        'Цена: 65 000 руб.'
-      ]
-    },
-    {
-      id: 3,
-      image: '/lovable-uploads/43ad4887-adce-485a-b310-3d8582e01128.png',
-      specs: [
-        'Максимальный вес пользователя: 100 кг',
-        'Система нагружения: воздушная',
-        'Длина хода: 54 см',
-        'Дисплей LCD 3.5"',
-        'Программы тренировок: 6',
-        'Складная конструкция',
-        'Транспортировочные ролики',
-        'Размеры: 210×56×86 см'
-      ]
-    },
-    {
-      id: 4,
-      image: '/lovable-uploads/4daf7315-525c-4043-a1d0-72dcc05b49bf.png',
-      specs: [
-        'Максимальный вес пользователя: 130 кг',
-        'Длина шага: 40 см',
-        'Система нагружения: магнитная',
-        'Уровни нагрузки: 20',
-        'Дисплей LCD 5"',
-        'Программы тренировок: 15',
-        'Встроенный пульсометр',
-        'Размеры: 170×65×160 см'
-      ]
-    },
-    {
-      id: 5,
-      image: '/lovable-uploads/225fbdeb-52a8-41c5-8d82-91fda1b8d960.png',
-      specs: [
-        'Максимальный вес: 150 кг',
-        'Углы наклона: 7 позиций',
-        'Стойка для штанги в комплекте',
-        'Регулируемые упоры',
-        'Подушки из экокожи',
-        'Стальная рама 50×50 мм',
-        'Нескользящие ножки',
-        'Размеры: 140×110×45 см'
-      ]
-    }
-  ];
+  // Filter products that contain "CardioPower T20" or "CardioPower T40" in the name
+  // or just use the first few products from Bitrix if specific models aren't found
+  const targetProducts = bitrixProducts.filter(product => 
+    product.name.toLowerCase().includes('cardiopower t20') || 
+    product.name.toLowerCase().includes('cardiopower t40') ||
+    product.name.toLowerCase().includes('беговая дорожка')
+  ).slice(0, 2);
+
+  // If we don't have enough target products, supplement with other products
+  const displayProducts = targetProducts.length >= 2 
+    ? targetProducts 
+    : [...targetProducts, ...bitrixProducts.slice(0, 5 - targetProducts.length)].slice(0, 5);
+
+  if (loading) {
+    return (
+      <section className="w-full py-6 bg-white">
+        <div className="max-w-[1800px] mx-auto px-[30px]">
+          <div className="flex items-center justify-center h-64">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#F53B49] mx-auto mb-4"></div>
+              <p className="text-gray-600">Загрузка товаров...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="w-full py-6 bg-white">
+        <div className="max-w-[1800px] mx-auto px-[30px]">
+          <div className="flex items-center justify-center h-64">
+            <div className="text-center">
+              <p className="text-red-600 mb-2">Ошибка загрузки товаров</p>
+              <p className="text-gray-500 text-sm">{error}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="w-full py-6 bg-white">
@@ -140,18 +98,23 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
           className="flex gap-[10px] mb-6 overflow-x-auto scrollbar-hide pb-2"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {products.map((product, index) => (
+          {displayProducts.map((product, index) => (
             <div 
               key={product.id}
               className="relative flex-shrink-0 w-72 bg-white rounded-lg overflow-hidden border"
-              onMouseEnter={() => setHoveredProduct(product.id)}
+              onMouseEnter={() => setHoveredProduct(parseInt(product.id))}
               onMouseLeave={() => setHoveredProduct(null)}
             >
               {/* Бейджи */}
               <div className="absolute top-3 left-3 z-10 flex flex-col gap-1">
                 {product.badge && (
-                  <span className={`${product.badgeColor} text-white text-xs px-2 py-1 rounded font-semibold`}>
+                  <span className={`${product.badge_color || 'bg-green-500'} text-white text-xs px-2 py-1 rounded font-semibold`}>
                     {product.badge}
+                  </span>
+                )}
+                {!product.badge && index < 2 && (
+                  <span className="bg-green-500 text-white text-xs px-2 py-1 rounded font-semibold">
+                    НОВИНКА
                   </span>
                 )}
               </div>
@@ -177,7 +140,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                 {/* Изображение товара */}
                 <div className="h-48 bg-gray-50">
                   <img 
-                    src={product.image} 
+                    src={product.image_url || '/placeholder.svg'} 
                     alt={product.name || "Товар"}
                     className="w-full h-full object-cover"
                   />
@@ -186,22 +149,20 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                 {/* Информация о товаре */}
                 <div className="p-4">
                   {/* Статус наличия */}
-                  {product.availability && (
+                  {product.is_available && product.in_stock && (
                     <div className="flex items-center gap-1 mb-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span className="text-xs text-green-600 font-medium">{product.availability}</span>
+                      <span className="text-xs text-green-600 font-medium">В наличии</span>
                     </div>
                   )}
 
                   {/* Название товара */}
-                  {product.name && (
-                    <h3 className="font-medium text-[#262631] text-sm mb-2 line-clamp-2">
-                      {product.name}
-                    </h3>
-                  )}
+                  <h3 className="font-medium text-[#262631] text-sm mb-2 line-clamp-2">
+                    {product.name}
+                  </h3>
 
                   {/* Рейтинг */}
-                  {product.rating && (
+                  {product.rating > 0 && (
                     <div className="flex items-center gap-1 mb-3">
                       <div className="flex items-center">
                         {[...Array(5)].map((_, i) => (
@@ -220,41 +181,31 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                   )}
 
                   {/* Цена */}
-                  {product.price && (
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        {product.oldPrice && (
-                          <span className="text-xs text-gray-400 line-through">{product.oldPrice}</span>
-                        )}
-                        <span className="font-bold text-[#262631]">{product.price}</span>
-                      </div>
-                      <button className="bg-[#F53B49] text-white px-4 py-2 rounded text-sm font-medium hover:bg-[#E52B38] transition-colors">
-                        Купить
-                      </button>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      {product.original_price && product.original_price > product.price && (
+                        <span className="text-xs text-gray-400 line-through">{product.original_price} ₽</span>
+                      )}
+                      <span className="font-bold text-[#262631]">{product.price} ₽</span>
                     </div>
-                  )}
+                    <button className="bg-[#F53B49] text-white px-4 py-2 rounded text-sm font-medium hover:bg-[#E52B38] transition-colors">
+                      Купить
+                    </button>
+                  </div>
                 </div>
               </Link>
               
               {/* Выпадающий блок с характеристиками внизу карточки */}
-              {hoveredProduct === product.id && product.specs && (
+              {hoveredProduct === parseInt(product.id) && product.description && (
                 <div 
                   className="absolute z-50 bg-white rounded-lg shadow-2xl border p-4 w-full left-0 top-full mt-2 animate-fade-in"
                 >
                   <h3 className="font-benzin-semibold text-[#262631] mb-3 text-sm">
                     Характеристики товара
                   </h3>
-                  <ul className="space-y-2">
-                    {product.specs.map((spec, specIndex) => (
-                      <li 
-                        key={specIndex}
-                        className="text-xs text-[#666] flex items-start"
-                      >
-                        <span className="w-1.5 h-1.5 bg-[#F53B49] rounded-full mt-1.5 mr-2 flex-shrink-0"></span>
-                        {spec}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="text-xs text-[#666]">
+                    {product.description}
+                  </div>
                 </div>
               )}
             </div>
