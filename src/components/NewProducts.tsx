@@ -2,6 +2,8 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import cardioPowerT20 from '@/assets/cardiopower-t20.jpg';
+import cardioPowerT40 from '@/assets/cardiopower-t40.jpg';
 
 interface NewProductsProps {
   title?: string;
@@ -27,7 +29,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
     {
       id: 1,
       name: 'Беговая дорожка CardioPower T20',
-      image: '/images/cardiopower-t20.png',
+      image: cardioPowerT20,
       price: '45 000 ₽',
       oldPrice: '50 000 ₽',
       badge: 'НОВИНКА',
@@ -48,7 +50,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
     {
       id: 2,
       name: 'Беговая дорожка CardioPower T40',
-      image: '/images/cardiopower-t40.png',
+      image: cardioPowerT40,
       price: '65 000 ₽',
       oldPrice: '72 000 ₽',
       badge: 'НОВИНКА',
