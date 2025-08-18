@@ -1053,22 +1053,18 @@ const Brand: React.FC = () => {
                           Линейка Sintesi включает три версии: Lite (базовые нагрузки), Evo (расширенные режимы) и Elite (максимальная точность). Выбирайте свою для дома, студий или медицинской реабилитации.
                         </p>
                       ) : (
-                          <div className="text-gray-600 text-sm leading-relaxed font-manrope space-y-2">
-                            <div className="flex items-center gap-2">
-                              <span className="text-green-600">✓</span>
-                              <span>Выдерживает коммерческие нагрузки</span>
+                          <div className="text-gray-600 text-sm leading-relaxed font-manrope space-y-4">
+                            <div>
+                              <h3 className="font-semibold text-gray-900 mb-2">Лидер в индустрии</h3>
+                              <p className="text-xs">50+ лет на рынке, собственные инженерные разработки и строгий контроль производства</p>
                             </div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-green-600">✓</span>
-                              <span>Предлагает несколько вариантов упражнений</span>
+                            <div>
+                              <h3 className="font-semibold text-gray-900 mb-2">Технологии и безопасность</h3>
+                              <p className="text-xs">передовые системы амортизации, износостойкие компоненты и интеллектуальное управление</p>
                             </div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-green-600">✓</span>
-                              <span>Обеспечивает комфорт при интенсивном использовании</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-green-600">✓</span>
-                              <span>Сохраняет безупречную работу годами</span>
+                            <div>
+                              <h3 className="font-semibold text-gray-900 mb-2">Экономия на обслуживании</h3>
+                              <p className="text-xs">минимальные затраты благодаря надежной конструкции и доступности запчастей</p>
                             </div>
                           </div>
                   )}
