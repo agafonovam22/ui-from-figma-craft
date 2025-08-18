@@ -1148,26 +1148,6 @@ const Brand: React.FC = () => {
               </div>
             </section>
 
-            {/* Block 3 - Три модели */}
-            <section className="w-full py-8">
-              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div className="order-1">
-                    <div className="w-full h-[300px] bg-gray-100 rounded-lg flex items-center justify-center">
-                      <span className="text-gray-400">Изображение блока 3</span>
-                    </div>
-                  </div>
-                  <div className="order-2 lg:pl-8">
-                    <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                      Три модели для любых целей
-                    </h2>
-                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                      Линейка Sintesi включает три версии: Lite (базовые нагрузки), Evo (расширенные режимы) и Elite (максимальная точность). Выбирайте свою для дома, студий или медицинской реабилитации.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
 
             {/* Block 4 - Статистический блок */}
             <section className="w-full py-8">
