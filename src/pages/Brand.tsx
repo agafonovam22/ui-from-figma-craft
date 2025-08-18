@@ -1105,9 +1105,12 @@ const Brand: React.FC = () => {
                   poster="/lovable-uploads/e9183ed6-aea1-4539-b0ab-eeaa40a21830.png"
                   className="w-full rounded-lg"
                   style={{ maxHeight: '600px' }}
+                  onError={(e) => console.error('Video error:', e)}
+                  onLoadStart={() => console.log('Video loading started')}
+                  onCanPlay={() => console.log('Video can play')}
                 >
                   <source src="/lovable-uploads/true-brand-video.mp4" type="video/mp4" />
-                  Ваш браузер не поддерживает воспроизведение видео.
+                  <p>Ваш браузер не поддерживает воспроизведение видео.</p>
                 </video>
               </div>
             </div>
