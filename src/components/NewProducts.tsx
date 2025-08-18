@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useBitrixProducts } from '@/hooks/useBitrixProducts';
+import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
 
 interface NewProductsProps {
   title?: string;
@@ -11,7 +11,7 @@ interface NewProductsProps {
 const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) => {
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const { products: bitrixProducts, loading, error } = useBitrixProducts();
+  const { products: bitrixProducts, loading, error } = useBitrixCatalog("https://cp44652.tw1.ru/catalog.php");
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -25,18 +25,8 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
     }
   };
 
-  // Filter products that contain "CardioPower T20" or "CardioPower T40" in the name
-  // or just use the first few products from Bitrix if specific models aren't found
-  const targetProducts = bitrixProducts.filter(product => 
-    product.name.toLowerCase().includes('cardiopower t20') || 
-    product.name.toLowerCase().includes('cardiopower t40') ||
-    product.name.toLowerCase().includes('беговая дорожка')
-  ).slice(0, 2);
-
-  // If we don't have enough target products, supplement with other products
-  const displayProducts = targetProducts.length >= 2 
-    ? targetProducts 
-    : [...targetProducts, ...bitrixProducts.slice(0, 5 - targetProducts.length)].slice(0, 5);
+  // Show latest products from Bitrix catalog (first 5 products)
+  const displayProducts = bitrixProducts.slice(0, 5);
 
   if (loading) {
     return (
@@ -108,11 +98,11 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
               {/* Бейджи */}
               <div className="absolute top-3 left-3 z-10 flex flex-col gap-1">
                 {product.badge && (
-                  <span className={`${product.badge_color || 'bg-green-500'} text-white text-xs px-2 py-1 rounded font-semibold`}>
+                  <span className={`${product.badge_color === 'green' ? 'bg-green-500' : product.badge_color === 'red' ? 'bg-red-500' : product.badge_color === 'blue' ? 'bg-blue-500' : 'bg-green-500'} text-white text-xs px-2 py-1 rounded font-semibold`}>
                     {product.badge}
                   </span>
                 )}
-                {!product.badge && index < 2 && (
+                {!product.badge && (
                   <span className="bg-green-500 text-white text-xs px-2 py-1 rounded font-semibold">
                     НОВИНКА
                   </span>
@@ -184,9 +174,9 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       {product.original_price && product.original_price > product.price && (
-                        <span className="text-xs text-gray-400 line-through">{product.original_price} ₽</span>
+                        <span className="text-xs text-gray-400 line-through">{product.original_price.toLocaleString()} ₽</span>
                       )}
-                      <span className="font-bold text-[#262631]">{product.price} ₽</span>
+                      <span className="font-bold text-[#262631]">{product.price.toLocaleString()} ₽</span>
                     </div>
                     <button className="bg-[#F53B49] text-white px-4 py-2 rounded text-sm font-medium hover:bg-[#E52B38] transition-colors">
                       Купить
