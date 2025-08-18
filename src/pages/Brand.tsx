@@ -1048,6 +1048,10 @@ const Brand: React.FC = () => {
                             <p className="text-gray-600 text-sm leading-relaxed font-manrope">— если хотите лучшее из возможного</p>
                           </div>
                         </div>
+                      ) : brandSlug === 'sintesi' ? (
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Линейка Sintesi включает три версии: Lite (базовые нагрузки), Evo (расширенные режимы) и Elite (максимальная точность). Выбирайте свою для дома, студий или медицинской реабилитации.
+                        </p>
                       ) : (
                           <div className="text-gray-600 text-sm leading-relaxed font-manrope space-y-2">
                             <div className="flex items-center gap-2">
