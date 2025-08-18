@@ -1125,7 +1125,7 @@ const Support: React.FC = () => {
                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px] mb-[10px]">
                      <div className="bg-gray-50 p-6 rounded-lg">
                        <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                         На все части тренажера подверженные естественному износу и относящиеся к расходным материалам. К расходным материалам относятся: ремни, беговые полотна, беговые деки
+                         На все части тренажера, подверженные естественному износу и относящиеся к расходным материалам. К расходным материалам относятся: ремни, беговые полотна, беговые деки
                        </p>
                      </div>
                      <div className="bg-gray-50 p-6 rounded-lg">
