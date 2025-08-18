@@ -1161,6 +1161,46 @@ const Brand: React.FC = () => {
           </section>
         )}
 
+        {/* Sixth Content Block - Variosling Block 6 */}
+        {brandSlug === 'variosling' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                {/* Left Text */}
+                <div className="order-1 lg:pr-8">
+                  <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                    Для кого созданы петли Variosling
+                  </h2>
+                  <div className="space-y-4">
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                      Это идеальный выбор для:
+                    </p>
+                    <ul className="text-gray-600 text-sm leading-relaxed font-manrope space-y-2">
+                      <li>• профессиональных тренеров, которые ценят надежность и функциональность оборудования;</li>
+                      <li>• физиотерапевтов, работающих с пациентами разного уровня подготовки;</li>
+                      <li>• путешественников и людей, ведущих активный образ жизни, не желающих прерывать тренировочный процесс;</li>
+                      <li>• всех, кто понимает разницу между массовым продуктом и профессиональным инструментом, созданным с любовью к своему делу.</li>
+                    </ul>
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope mt-6">
+                      Выбирая Variosling, вы выбираете не просто спортивный инвентарь, а надежного партнера в достижении ваших фитнес-целей. Это оборудование, которое объединяет в себе лучшие традиции немецкого качества и современные подходы к функциональному тренингу. Доверьтесь опыту профессионалов и откройте для себя новые стандарты тренировочного процесса с петлями Variosling.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Right Image */}
+                <div className="order-2">
+                  <img 
+                    src="/lovable-uploads/7ab131b8-ceeb-470f-84df-8f93954c21ff.png"
+                    alt="Variosling - для профессионалов"
+                    className="w-full object-cover rounded-lg"
+                    style={{ height: '500px' }}
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Video Block for TRUE brand */}
         {brandSlug === 'true' && (
           <section className="w-full py-8">
