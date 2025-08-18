@@ -1149,26 +1149,6 @@ const Brand: React.FC = () => {
             </section>
 
 
-            {/* Block 4 - Статистический блок */}
-            <section className="w-full py-8">
-              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-                <div className="overflow-hidden relative rounded-lg" style={{ height: '250px' }}>
-                  <div className="w-full h-full bg-gradient-to-r from-gray-900 to-gray-700 rounded-lg"></div>
-                  <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-4 shadow-lg overflow-y-auto">
-                    <div className="h-full flex flex-col">
-                      <div className="mb-3">
-                        <h2 className="text-3xl font-benzin text-gray-900 mb-3">
-                          Тренируйтесь эффективнее, чем в зале
-                        </h2>
-                        <p className="text-gray-700 text-sm leading-relaxed font-manrope">
-                          Sintesi не просто заменяет тренажеры — она делает тренировки умнее. Автоматическая настройка, детальная статистика и адаптация под ваши цели экономят время и повышают результат.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
 
             {/* Block 5 - Фитнес, который подстраивается */}
             <section className="w-full py-8">
