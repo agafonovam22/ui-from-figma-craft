@@ -1102,7 +1102,7 @@ const Brand: React.FC = () => {
               <div className="w-full">
                 <video 
                   controls 
-                  poster="/lovable-uploads/f0b8744d-a5e4-418e-9512-534ed70c17e6.png"
+                  poster="/lovable-uploads/e9183ed6-aea1-4539-b0ab-eeaa40a21830.png"
                   className="w-full rounded-lg"
                   style={{ maxHeight: '600px' }}
                 >
