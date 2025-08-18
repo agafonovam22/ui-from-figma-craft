@@ -518,8 +518,8 @@ const Support: React.FC = () => {
                           </div>
                         </div>
                         <div className="text-sm text-gray-600 ml-[60px]" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                          <div>Выдача оформленных заказов осуществляется</div>
-                          <div>при согласовании даты и времени приезда</div>
+                          <div>Выдача оформленных заказов осуществляется при согласовании даты</div>
+                          <div>и времени приезда</div>
                         </div>
                       </div>
                     </div>
