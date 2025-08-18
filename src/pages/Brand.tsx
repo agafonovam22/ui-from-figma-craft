@@ -1092,6 +1092,15 @@ const Brand: React.FC = () => {
                 </div>
               )}
               
+              {/* PEACH BUILDER Text Block */}
+              {brandSlug === 'peach-builder' && (
+                <div className="order-2 lg:order-1 lg:pr-8">
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    PEACH BUILDER — это больше чем оборудование. Это философия тренировок нового поколения, где красота встречается с функциональностью, а мечты о идеальной форме становятся реальностью. Выбирая эти тренажёры, вы выбираете путь к телу, которое будет вдохновлять.
+                  </p>
+                </div>
+              )}
+              
               {/* Right Image */}
               <div className="order-1 lg:order-2">
                 <img 
