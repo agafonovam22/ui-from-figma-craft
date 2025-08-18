@@ -1186,6 +1186,35 @@ const Brand: React.FC = () => {
           </section>
         )}
 
+        {/* Fifth Content Block - Schwinn Block 5 */}
+        {brandSlug === 'schwinn' && (
+          <section className="w-full py-8">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Image */}
+                <div className="order-1">
+                  <img 
+                    src="/lovable-uploads/e7c77c00-153a-4385-8186-c889c6c4eb28.png"
+                    alt="Schwinn - надежный партнер в фитнесе"
+                    className="w-full h-full object-cover rounded-lg"
+                    style={{ height: '500px' }}
+                  />
+                </div>
+                
+                {/* Right Text */}
+                <div className="order-2 lg:pl-8">
+                  <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                    Надежный партнер в достижении целей
+                  </h2>
+                  <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                    Выбирая Schwinn, вы приобретаете не просто тренажер, а надежного партнера в достижении ваших фитнес-целей. Это оборудование, которое вдохновляет на регулярные тренировки, делая их комфортными и эффективными. Доверие миллионов пользователей по всему миру и более чем столетний опыт — лучшая гарантия качества продукции этого легендарного бренда.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Fifth Content Block - HYFIT Block 5 */}
         {brandSlug === 'hyfit' && (
           <section className="w-full py-8">
