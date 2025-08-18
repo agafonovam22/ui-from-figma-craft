@@ -17,9 +17,15 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
+import TrueBrand from './brands/TrueBrand';
 
 const Brand: React.FC = () => {
   const { brandSlug } = useParams();
+  
+  // Route to specific brand component for TRUE
+  if (brandSlug === 'true') {
+    return <TrueBrand />;
+  }
   
   const [priceRange, setPriceRange] = useState([0, 100000]);
   const [expandedFilters, setExpandedFilters] = useState({
