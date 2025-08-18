@@ -171,7 +171,7 @@ const Brands: React.FC = () => {
               <Link
                 key={index}
                 to={`/brands/${brand.slug}`}
-                className="bg-gray-50 rounded-lg p-4 flex items-center justify-center h-32 hover:shadow-md transition-shadow cursor-pointer"
+                className="bg-white border border-gray-200 rounded-lg p-4 flex items-center justify-center h-32 hover:shadow-md transition-shadow cursor-pointer"
               >
                 {brand.logo ? (
                   <img 
