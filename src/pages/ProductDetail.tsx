@@ -43,146 +43,32 @@ const ProductDetail: React.FC = () => {
           </div>
         );
       case 'specifications':
-        // Получаем реальные характеристики для беговой дорожки CardioPower T50
-        const specifications = {
-          // Основные характеристики для беговой дорожки
-          basic: [
-            { label: 'Тип продукции', value: 'Беговые дорожки для дома' },
-            { label: 'Бренд', value: 'CardioPower' },
-            { label: 'Модель', value: 'T50' },
-            { label: 'Назначение', value: 'Домашние тренировки' },
-            { label: 'Тип двигателя', value: 'Постоянного тока DC' },
-            { label: 'Мощность двигателя', value: '1.5 л.с' },
-            { label: 'Пиковая мощность', value: '2.5 л.с' },
-            { label: 'Максимальная скорость', value: '10 км/ч' },
-            { label: 'Угол наклона', value: 'Механический 0-10%' },
-            { label: 'Размер бегового полотна', value: '150 x 51 см' },
-            { label: 'Максимальный вес пользователя', value: '150 кг' },
-            { label: 'Система амортизации', value: 'Да' },
-            { label: 'Складная конструкция', value: 'Да' },
-            { label: 'Дисплей', value: 'LCD' },
-            { label: 'Количество программ', value: '12' }
-          ],
-          dimensions: [
-            { label: 'Размеры в сложенном виде (Д×Ш×В)', value: '135×62×132 см' },
-            { label: 'Размеры в рабочем состоянии (Д×Ш×В)', value: '135×62×105 см' },
-            { label: 'Размер упаковки (Д×Ш×В)', value: '142×67×25 см' }
-          ],
-          additional: [
-            { label: 'Материал рамы', value: 'Сталь' },
-            { label: 'Колеса для транспортировки', value: 'Да' },
-            { label: 'Держатель для планшета/телефона', value: 'Да' },
-            { label: 'Измерение пульса', value: 'Датчики на поручнях' }
-          ],
-          weight: [
-            { label: 'Вес нетто', value: '26 кг' },
-            { label: 'Вес брутто', value: '29 кг' }
-          ],
-          warranty: [
-            { label: 'Гарантия', value: '2 года' },
-            { label: 'Страна бренда', value: 'Россия' },
-            { label: 'Страна изготовления', value: 'Китай' },
-            { label: 'Артикул', value: 'T50' }
-          ]
-        };
+        // Используем реальные характеристики из API
+        const apiCharacteristics = product?.characteristics || [];
+        
+        // Если нет характеристик из API, показываем заглушку
+        if (apiCharacteristics.length === 0) {
+          return (
+            <div className="space-y-6">
+              <h3 className="text-lg font-semibold">Характеристики</h3>
+              <p className="text-muted-foreground">Характеристики товара загружаются...</p>
+            </div>
+          );
+        }
 
         return (
           <div className="space-y-8">
-            {/* Main title */}
             <h2 className="text-2xl font-bold text-foreground">Характеристики</h2>
             
-            {/* Основные характеристики */}
             <div>
               <h3 className="text-lg font-semibold mb-6 text-foreground">Основные характеристики</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0 text-sm font-manrope">
-                {specifications.basic.map((spec, index) => {
-                  const rowIndex = Math.floor(index / 2);
-                  const colIndex = index % 2;
-                  
-                  return (
-                    <div key={index} className="flex justify-between py-2 border-b border-border">
-                      <span className="text-muted-foreground">{spec.label}:</span>
-                      <span className="text-right">{spec.value}</span>
-                    </div>
-                  );
-                })}
-                {/* Fill empty cells to maintain grid */}
-                {specifications.basic.length % 2 !== 0 && 
-                  <div className="flex justify-between py-2 border-b border-border">
-                    <span className="text-muted-foreground"></span>
-                    <span className="text-right"></span>
+                {apiCharacteristics.map((spec, index) => (
+                  <div key={index} className="flex justify-between py-2 border-b border-border">
+                    <span className="text-muted-foreground">{spec.name}:</span>
+                    <span className="text-right">{spec.value}</span>
                   </div>
-                }
-              </div>
-            </div>
-
-            {/* Sections row */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Габариты */}
-              <div>
-                <h3 className="text-lg font-semibold mb-4">Габариты</h3>
-                <div className="space-y-2 text-sm font-manrope">
-                  {specifications.dimensions.map((spec, index) => (
-                    <div key={index} className="flex justify-between py-1">
-                      <span className="text-muted-foreground">{spec.label}</span>
-                      <span>{spec.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Дополнительные характеристики */}
-              <div>
-                <h3 className="text-lg font-semibold mb-4">Дополнительные характеристики</h3>
-                <div className="space-y-2 text-sm font-manrope">
-                  {specifications.additional.map((spec, index) => (
-                    <div key={index} className="flex justify-between py-1">
-                      <span className="text-muted-foreground">{spec.label}</span>
-                      <span>{spec.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Вес */}
-              <div>
-                <h3 className="text-lg font-semibold mb-4">Вес</h3>
-                <div className="space-y-2 text-sm font-manrope">
-                  {specifications.weight.map((spec, index) => (
-                    <div key={index} className="flex justify-between py-1">
-                      <span className="text-muted-foreground">{spec.label}</span>
-                      <span>{spec.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom row with Гарантия */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-lg font-semibold mb-4">Гарантия и Сертификация</h3>
-                <div className="space-y-2 text-sm font-manrope">
-                  {specifications.warranty.map((spec, index) => (
-                    <div key={index} className="flex justify-between py-1">
-                      <span className="text-muted-foreground">{spec.label}</span>
-                      <span>{spec.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                {/* Product diagrams */}
-                <h3 className="text-lg font-semibold mb-4">Схемы и чертежи</h3>
-                <div className="flex gap-4">
-                  <div className="w-24 h-24 bg-muted rounded border flex items-center justify-center">
-                    <span className="text-xs text-muted-foreground text-center font-manrope">Схема сборки</span>
-                  </div>
-                  <div className="w-32 h-24 bg-muted rounded border flex items-center justify-center">
-                    <span className="text-xs text-muted-foreground text-center font-manrope">Размеры</span>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -332,13 +218,13 @@ const ProductDetail: React.FC = () => {
         setLoading(true);
         console.log('Загружаем товар с ID:', id);
         
-        const response = await fetch('https://cp44652.tw1.ru/catalog.php');
+        const response = await fetch('https://cp44652.tw1.ru/catalog-api.php');
         console.log('Ответ сервера:', response.status);
         
         const data = await response.json();
         console.log('Получены данные:', data);
         
-        if (data.status === 'ok' && data.products) {
+        if (data && data.products) {
           console.log('Ищем товар с ID:', id, 'в массиве из', data.products.length, 'товаров');
           const foundProduct = data.products.find((p: any) => p.id.toString() === id);
           console.log('Найден товар:', foundProduct);
