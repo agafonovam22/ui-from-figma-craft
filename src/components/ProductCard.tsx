@@ -58,12 +58,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
   // Full catalog version
   return (
     <Link to={`/product/${product.id}`} className="block">
-      <div className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
-      <div className="relative mb-4">
+      <div className="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-lg transition-shadow cursor-pointer h-fit">
+      <div className="relative mb-3">
         <img 
           src={product.image} 
           alt={product.name || "Товар"}
-          className="w-full h-48 object-cover rounded-lg"
+          className="w-full h-32 object-cover rounded-lg"
           loading="lazy"
           onError={(e) => {
             console.log('Ошибка загрузки изображения:', product.image);
