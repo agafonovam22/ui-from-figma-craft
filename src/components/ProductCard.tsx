@@ -34,14 +34,13 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
     // Simplified version for ProductCatalog
     return (
       <div className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-[300px]">
-        <img 
-          src={product.image} 
-          alt={product.name || "Категория товаров"}
-          className="w-full h-full object-cover object-center"
-          onError={(e) => {
-            e.currentTarget.src = '/placeholder.svg';
-          }}
-        />
+        {product.image && (
+          <img 
+            src={product.image} 
+            alt={product.name || "Категория товаров"}
+            className="w-full h-full object-cover object-center"
+          />
+        )}
         <Link 
           to={`/product/${product.id}`}
           className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center justify-center"
@@ -60,16 +59,14 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
     <Link to={`/product/${product.id}`} className="block">
       <div className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
       <div className="relative mb-4">
-        <img 
-          src={product.image} 
-          alt={product.name || "Товар"}
-          className="w-full h-48 object-cover rounded-lg"
-          loading="lazy"
-          onError={(e) => {
-            console.log('Ошибка загрузки изображения:', product.image);
-            e.currentTarget.src = '/placeholder.svg';
-          }}
-        />
+        {product.image && (
+          <img 
+            src={product.image} 
+            alt={product.name || "Товар"}
+            className="w-full h-48 object-cover rounded-lg"
+            loading="lazy"
+          />
+        )}
         
         {/* Badges */}
         {(product.badge || product.hasComparison) && (

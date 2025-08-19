@@ -128,15 +128,17 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                 className="block"
               >
                 {/* Изображение товара */}
-                <div className="h-48 bg-gray-50">
-                  <img 
-                    src={product.image_url || '/placeholder.svg'} 
-                    alt={product.name || "Товар"}
-                    className="w-full h-full object-cover"
-                    style={{ imageRendering: 'crisp-edges' }}
-                    loading="lazy"
-                  />
-                </div>
+                {product.image_url && (
+                  <div className="h-48 bg-gray-50">
+                    <img 
+                      src={product.image_url} 
+                      alt={product.name || "Товар"}
+                      className="w-full h-full object-cover"
+                      style={{ imageRendering: 'crisp-edges' }}
+                      loading="lazy"
+                    />
+                  </div>
+                )}
 
                 {/* Информация о товаре */}
                 <div className="p-4">
