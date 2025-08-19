@@ -31,18 +31,73 @@ const Catalog: React.FC = () => {
   const [sortBy, setSortBy] = useState('popular');
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
-  const [products, setProducts] = useState<BitrixProduct[]>([]);
+  const [allProducts, setAllProducts] = useState<BitrixProduct[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<BitrixProduct[]>([]);
   const [loading, setLoading] = useState(false);
 
-  // Инициализация поискового запроса из URL
+  // Загружаем ВСЕ товары при инициализации
+  useEffect(() => {
+    const loadAllProducts = async () => {
+      setLoading(true);
+      try {
+        const products = await bitrixApi.getProducts();
+        console.log('Загружено товаров:', products.length);
+        setAllProducts(products);
+        setFilteredProducts(products); // Изначально показываем все товары
+      } catch (error) {
+        console.error('Ошибка загрузки товаров:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    loadAllProducts();
+  }, []);
+
+  // Обрабатываем поисковый запрос из URL при загрузке
   useEffect(() => {
     const query = searchParams.get('q');
-    if (query) {
-      setSearchQuery(query);
+    if (query && allProducts.length > 0) {
+      console.log('Поиск из URL:', query);
+      handleSearch(query);
     }
-  }, [searchParams]);
+  }, [allProducts]);
 
-  // Fallback products for demo
+  // Функция поиска
+  const handleSearch = (query: string) => {
+    console.log('Поиск:', query);
+    setSearchQuery(query);
+    
+    if (!query.trim()) {
+      // Если поиск пустой - показываем все товары
+      setFilteredProducts(allProducts);
+      return;
+    }
+    
+    // Фильтруем товары по названию
+    const filtered = allProducts.filter(product => 
+      product.name.toLowerCase().includes(query.toLowerCase())
+    );
+    
+    console.log(`Найдено товаров: ${filtered.length} из ${allProducts.length}`);
+    setFilteredProducts(filtered);
+    
+    // Обновляем URL
+    const newSearchParams = new URLSearchParams(searchParams);
+    if (query.trim()) {
+      newSearchParams.set('q', query);
+    } else {
+      newSearchParams.delete('q');
+    }
+    setSearchParams(newSearchParams);
+  };
+
+  // Простая проверка состояния для отладки
+  console.log('CATALOG RENDER - FilteredProducts:', filteredProducts.length);
+  console.log('CATALOG RENDER - AllProducts:', allProducts.length);
+  console.log('CATALOG RENDER - SearchQuery:', searchQuery);
+  
+  // Fallback товары для случая когда API не работает
   const fallbackProducts = [
     {
       id: 1,
@@ -58,137 +113,15 @@ const Catalog: React.FC = () => {
       isAvailable: true,
       hasComparison: true,
       inStock: true
-    },
-    {
-      id: 2,
-      name: 'Гребной тренажер CardioPower PRO CR300',
-      price: null,
-      originalPrice: null,
-      discount: null,
-      rating: 4.6,
-      reviews: 89,
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
-      badge: 'Хит продаж',
-      badgeColor: 'bg-orange-500',
-      isAvailable: false,
-      hasComparison: true,
-      inStock: false
-    },
-    {
-      id: 3,
-      name: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610₽',
-      originalPrice: null,
-      discount: null,
-      rating: 4.7,
-      reviews: 67,
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
-      badge: 'Скидка',
-      badgeColor: 'bg-green-500',
-      isAvailable: true,
-      hasComparison: true,
-      inStock: true
-    },
-    {
-      id: 4,
-      name: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610₽',
-      originalPrice: null,
-      discount: null,
-      rating: 4.9,
-      reviews: 156,
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
-      badge: 'Скидка',
-      badgeColor: 'bg-green-500',
-      isAvailable: true,
-      hasComparison: true,
-      inStock: true
     }
   ];
-
-  const allProducts = Array(16).fill(null).map((_, index) => ({
-    ...fallbackProducts[index % 4],
+  
+  const mockProducts = Array(16).fill(null).map((_, index) => ({
+    ...fallbackProducts[0],
     id: index + 1
   }));
-
-  // Функция поиска товаров
-  const handleSearch = async (query: string) => {
-    setSearchQuery(query);
-    setLoading(true);
-    
-    try {
-      if (query.trim()) {
-        console.log('Searching for:', query);
-        const searchResults = await bitrixApi.searchProducts(query);
-        console.log('Search results received:', searchResults);
-        console.log('Number of results:', searchResults.length);
-        if (searchResults.length > 0) {
-          console.log('First result:', searchResults[0]);
-        }
-        setProducts(searchResults);
-        console.log('Products state updated with:', searchResults.length, 'products');
-        console.log('State products after update:', searchResults.map(p => p.name).slice(0, 5));
-        
-        // Обновляем URL с поисковым запросом только если он отличается
-        const currentQuery = searchParams.get('q');
-        if (currentQuery !== query) {
-          const newSearchParams = new URLSearchParams(searchParams);
-          newSearchParams.set('q', query);
-          setSearchParams(newSearchParams);
-        }
-      } else {
-        // Если запрос пустой, загружаем все товары
-        const allBitrixProducts = await bitrixApi.getProducts();
-        setProducts(allBitrixProducts);
-        
-        // Убираем параметр поиска из URL только если он есть
-        if (searchParams.has('q')) {
-          const newSearchParams = new URLSearchParams(searchParams);
-          newSearchParams.delete('q');
-          setSearchParams(newSearchParams);
-        }
-      }
-    } catch (error) {
-      console.error('Search error:', error);
-      // В случае ошибки показываем пустой массив
-      setProducts([]);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // Загружаем товары при первом рендере или изменении URL
-  useEffect(() => {
-    const query = searchParams.get('q');
-    if (query) {
-      setSearchQuery(query);
-      handleSearch(query);
-    } else {
-      // Загружаем все товары если нет поискового запроса
-      const loadProducts = async () => {
-        console.log('useEffect: Loading all products...');
-        setLoading(true);
-        try {
-          const allBitrixProducts = await bitrixApi.getProducts();
-          console.log('useEffect: Loaded products:', allBitrixProducts.length);
-          setProducts(allBitrixProducts);
-          console.log('useEffect: Products state updated');
-        } catch (error) {
-          console.error('useEffect: Error loading products:', error);
-          setProducts([]);
-        } finally {
-          setLoading(false);
-        }
-      };
-      loadProducts();
-    }
-  }, [searchParams]);
-
-  // Простая проверка состояния для отладки
-  console.log('CATALOG RENDER - Products:', products.length);
-  console.log('CATALOG RENDER - SearchQuery:', searchQuery);
   
-  const displayProducts = products.length > 0 ? products.map(product => ({
+  const displayProducts = filteredProducts.length > 0 ? filteredProducts.map(product => ({
     id: product.id,
     name: product.name,
     price: product.price ? `${product.price}₽` : null,
@@ -202,7 +135,7 @@ const Catalog: React.FC = () => {
     isAvailable: product.available,
     hasComparison: true,
     inStock: product.available
-  })) : (!searchQuery ? allProducts : []);
+  })) : mockProducts;
   
   console.log('CATALOG RENDER - DisplayProducts:', displayProducts.length);
 
@@ -245,7 +178,7 @@ const Catalog: React.FC = () => {
                 <div className="text-center py-8">
                   <p>Поиск товаров...</p>
                 </div>
-              ) : searchQuery && products.length === 0 ? (
+              ) : searchQuery && filteredProducts.length === 0 ? (
                 <div className="text-center py-8">
                   <p>По запросу "{searchQuery}" ничего не найдено</p>
                   <p className="text-gray-500 mt-2">Попробуйте изменить поисковый запрос</p>
