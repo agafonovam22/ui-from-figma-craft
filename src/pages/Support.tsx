@@ -1189,188 +1189,188 @@ const Support: React.FC = () => {
           {activeTab === 'faq' && (
             <div className="space-y-6">
               <Accordion type="single" collapsible className="w-full space-y-4">
-                <AccordionItem value="item-0" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Название компании?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    WellFitness
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-0" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Название компании?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     WellFitness
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-1" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Сколько лет существует WellFitness?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Компания открылась в 2005 году.
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-1" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Сколько лет существует WellFitness?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     Компания открылась в 2005 году.
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-2" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    В каких странах работает WellFitness?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    WellFitness — международный поставщик фитнес-оборудования.<br />
-                    Мы работаем для клиентов в России и Германии, обеспечивая их качественным оборудованием и профессиональной поддержкой.<br /><br />
-                    
-                    Планируем открытие:<br />
-                    ✔ Австрия<br />
-                    ✔ Дания<br />
-                    ✔ Вьетнам<br /><br />
-                    
-                    Следите за расширением нашей географии — WellFitness стремится стать вашим надежным партнером по всему миру!
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-2" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     В каких странах работает WellFitness?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     WellFitness — международный поставщик фитнес-оборудования.<br />
+                     Мы работаем для клиентов в России и Германии, обеспечивая их качественным оборудованием и профессиональной поддержкой.<br /><br />
+                     
+                     Планируем открытие:<br />
+                     ✔ Австрия<br />
+                     ✔ Дания<br />
+                     ✔ Вьетнам<br /><br />
+                     
+                     Следите за расширением нашей географии — WellFitness стремится стать вашим надежным партнером по всему миру!
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-4" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    В каких городах РФ можно делать заказ продукции WellFitness?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Во всех городах от Калининграда до Владивостока.
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-4" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     В каких городах РФ можно делать заказ продукции WellFitness?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     Во всех городах от Калининграда до Владивостока.
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-5" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Чем занимается компания?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    WellFitness — эксклюзивный поставщик тренажеров и спортивного оборудования для фитнес-клубов и домашнего тренинга с 20-летним опытом, лидер рынка спортивного оборудования.
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-5" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Чем занимается компания?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     WellFitness — эксклюзивный поставщик тренажеров и спортивного оборудования для фитнес-клубов и домашнего тренинга с 20-летним опытом, лидер рынка спортивного оборудования.
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-6" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Уникальные торговые предложения WellFitness или почему клиенты выбирают WellFitness?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    <strong>1. Эксклюзивное партнерство с лучшими брендами</strong><br />
-                    Мы работаем напрямую с 25+ ведущими мировыми производителями фитнес-оборудования, чтобы предложить вам только проверенные и качественные решения.<br /><br />
+                 <AccordionItem value="item-6" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Уникальные торговые предложения WellFitness или почему клиенты выбирают WellFitness?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     <strong>1. Эксклюзивное партнерство с лучшими брендами</strong><br />
+                     Мы работаем напрямую с 25+ ведущими мировыми производителями фитнес-оборудования, чтобы предложить вам только проверенные и качественные решения.<br /><br />
 
-                    <strong>2. Постоянное обновление ассортимента</strong><br />
-                    Каждый месяц мы получаем новые партии оборудования, чтобы вы могли выбирать из актуальных моделей и технологий.<br /><br />
+                     <strong>2. Постоянное обновление ассортимента</strong><br />
+                     Каждый месяц мы получаем новые партии оборудования, чтобы вы могли выбирать из актуальных моделей и технологий.<br /><br />
 
-                    <strong>3. Гарантия быстрой отгрузки</strong><br />
-                    Наши 10 000+ м² складских помещений позволяют всегда иметь в наличии большой ассортимент и оперативно комплектовать заказы.<br /><br />
+                     <strong>3. Гарантия быстрой отгрузки</strong><br />
+                     Наши 10 000+ м² складских помещений позволяют всегда иметь в наличии большой ассортимент и оперативно комплектовать заказы.<br /><br />
 
-                    <strong>4. Готовые решения «под ключ»</strong><br />
-                    В наличии 3-4 полных комплекта оборудования для оснащения фитнес-клубов любой направленности. Это значит — быстрый старт вашего бизнеса без лишних ожиданий!<br /><br />
+                     <strong>4. Готовые решения «под ключ»</strong><br />
+                     В наличии 3-4 полных комплекта оборудования для оснащения фитнес-клубов любой направленности. Это значит — быстрый старт вашего бизнеса без лишних ожиданий!<br /><br />
 
-                    WellFitness — надежность, качество и оперативность в каждом решении!
-                  </AccordionContent>
-                </AccordionItem>
+                     WellFitness — надежность, качество и оперативность в каждом решении!
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-7" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Какую продукцию и товары предлагает WellFitness?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Тренажеры для фитнес-клубов (B2B-направление)<br /><br />
-                    Тренажеры для домашних тренировок (B2B и B2C-направление)
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-7" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Какую продукцию и товары предлагает WellFitness?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     Тренажеры для фитнес-клубов (B2B-направление)<br /><br />
+                     Тренажеры для домашних тренировок (B2B и B2C-направление)
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-8" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Какие есть способы оплатить покупку?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Вы можете оплатить покупку удобным для вас способом:<br />
-                    • Онлайн-оплата банковской картой (Visa, Mastercard, МИР)<br />
-                    • Наличными курьеру при получении заказа<br />
-                    • Безналичный расчёт по выставленному счёту (для юрлиц и ИП)<br />
-                    • Наложенный платеж (оплата при получении в отделении транспортной компании)<br />
-                    • Рассрочка (доступные программы уточняйте у менеджеров)<br />
-                    • Оплата картой при получении (в пунктах выдачи или курьеру)<br />
-                    Выбирайте удобный вариант и оформляйте заказ!
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-8" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Какие есть способы оплатить покупку?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     Вы можете оплатить покупку удобным для вас способом:<br />
+                     • Онлайн-оплата банковской картой (Visa, Mastercard, МИР)<br />
+                     • Наличными курьеру при получении заказа<br />
+                     • Безналичный расчёт по выставленному счёту (для юрлиц и ИП)<br />
+                     • Наложенный платеж (оплата при получении в отделении транспортной компании)<br />
+                     • Рассрочка (доступные программы уточняйте у менеджеров)<br />
+                     • Оплата картой при получении (в пунктах выдачи или курьеру)<br />
+                     Выбирайте удобный вариант и оформляйте заказ!
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-3-new" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Есть ли Trade-in?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Trade-in доступен только для линейки WellFitness Pro (опт, фитнес-клубы, коммерческое использование).<br /><br />
-                    <strong>Как это работает:</strong><br />
-                    Наши специалисты оценят ваше текущее оборудование<br />
-                    Вычитаем его стоимость из цены нового<br />
-                    Организуем замену «под ключ»<br /><br />
-                    <strong>Преимущества:</strong><br />
-                    • Экономия до 40% на обновлении парка<br />
-                    • Бесплатный демонтаж и вывоз старого оборудования<br />
-                    • Минимальный простой зала
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-3-new" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Есть ли Trade-in?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     Trade-in доступен только для линейки WellFitness Pro (опт, фитнес-клубы, коммерческое использование).<br /><br />
+                     <strong>Как это работает:</strong><br />
+                     Наши специалисты оценят ваше текущее оборудование<br />
+                     Вычитаем его стоимость из цены нового<br />
+                     Организуем замену «под ключ»<br /><br />
+                     <strong>Преимущества:</strong><br />
+                     • Экономия до 40% на обновлении парка<br />
+                     • Бесплатный демонтаж и вывоз старого оборудования<br />
+                     • Минимальный простой зала
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-4-new" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Где следить за новостями компании и новыми поступлениями?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Мы регулярно публикуем актуальную информацию через официальные каналы:<br /><br />
-                    Наш сайт – главный источник новостей, анонсов и обновлений ассортимента<br />
-                    Email-рассылки – подпишитесь, чтобы получать важные объявления первыми<br />
-                    Социальные сети – оперативные публикации в наших сообществах (ссылки на сайте)<br />
-                    Служба поддержки – менеджеры всегда на связи для консультаций<br /><br />
-                    Хотите первыми узнавать о новинках? Подпишитесь на рассылку или следите за нами в соцсетях!
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-4-new" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Где следить за новостями компании и новыми поступлениями?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     Мы регулярно публикуем актуальную информацию через официальные каналы:<br /><br />
+                     Наш сайт – главный источник новостей, анонсов и обновлений ассортимента<br />
+                     Email-рассылки – подпишитесь, чтобы получать важные объявления первыми<br />
+                     Социальные сети – оперативные публикации в наших сообществах (ссылки на сайте)<br />
+                     Служба поддержки – менеджеры всегда на связи для консультаций<br /><br />
+                     Хотите первыми узнавать о новинках? Подпишитесь на рассылку или следите за нами в соцсетях!
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-5-new" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Можно ли отменить заказ?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    После подтверждения заказа мы сразу начинаем его комплектацию и подготовку к отправке, поэтому внести изменения или отменить заказ, к сожалению, невозможно.<br /><br />
-                    <strong>Что можно сделать?</strong><br />
-                    Если вам нужны дополнительные товары — оформите новый заказ<br />
-                    Если какие-то позиции стали неактуальны — свяжитесь с менеджером для уточнения условий возврата после получения<br /><br />
-                    Мы всегда готовы помочь! Обращайтесь — найдём удобное решение.<br />
-                    <em>Ваш комфорт — наш приоритет.</em>
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-5-new" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Можно ли отменить заказ?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     После подтверждения заказа мы сразу начинаем его комплектацию и подготовку к отправке, поэтому внести изменения или отменить заказ, к сожалению, невозможно.<br /><br />
+                     <strong>Что можно сделать?</strong><br />
+                     Если вам нужны дополнительные товары — оформите новый заказ<br />
+                     Если какие-то позиции стали неактуальны — свяжитесь с менеджером для уточнения условий возврата после получения<br /><br />
+                     Мы всегда готовы помочь! Обращайтесь — найдём удобное решение.<br />
+                     <em>Ваш комфорт — наш приоритет.</em>
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-6-new" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Возможно ли кастомизировать тренажеры для фитнес-клуба?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    <strong>Кастомизация тренажеров для фитнес-клуба</strong><br />
-                    Да, мы предлагаем услугу индивидуального оформления оборудования для коммерческих залов.<br /><br />
-                    <strong>Что можно кастомизировать:</strong><br />
-                    • Цветовое решение (под ваш фирменный стиль)<br />
-                    • Нанесение логотипа/названия клуба<br />
-                    • Выбор обивки и материалов<br /><br />
-                    <strong>Как заказать:</strong><br />
-                    Оставьте заявку через форму на сайте<br />
-                    Наш менеджер свяжется для обсуждения деталей<br />
-                    Подготовим индивидуальное коммерческое предложение<br /><br />
-                    <em>Сроки и стоимость кастомизации уточняйте у специалистов.</em>
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-6-new" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Возможно ли кастомизировать тренажеры для фитнес-клуба?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     <strong>Кастомизация тренажеров для фитнес-клуба</strong><br />
+                     Да, мы предлагаем услугу индивидуального оформления оборудования для коммерческих залов.<br /><br />
+                     <strong>Что можно кастомизировать:</strong><br />
+                     • Цветовое решение (под ваш фирменный стиль)<br />
+                     • Нанесение логотипа/названия клуба<br />
+                     • Выбор обивки и материалов<br /><br />
+                     <strong>Как заказать:</strong><br />
+                     Оставьте заявку через форму на сайте<br />
+                     Наш менеджер свяжется для обсуждения деталей<br />
+                     Подготовим индивидуальное коммерческое предложение<br /><br />
+                     <em>Сроки и стоимость кастомизации уточняйте у специалистов.</em>
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-7-new" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Как выбрать тренажер?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Выбор тренажера зависит от нескольких ключевых факторов. В первую очередь определитесь с целью тренировок: для похудения и развития выносливости лучше подойдут кардиотренажеры (беговые дорожки, эллипсоиды, велотренажеры), а для набора мышечной массы - силовые установки (мультистанции, свободные веса, силовые рамы).<br /><br />
-                    Важное значение имеют доступное пространство и бюджет: для небольших домашних помещений стоит рассмотреть компактные или складные модели, тогда как для коммерческих залов можно выбирать профессиональное оборудование с большими габаритами.<br /><br />
-                    Обратите внимание на уровень шума (особенно важно для квартир), максимальный вес пользователя и нагрузку.<br /><br />
-                    Если сомневаетесь в выборе, лучше проконсультироваться со специалистом - наши менеджеры помогут подобрать оптимальное решение под ваши задачи и условия эксплуатации.
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-7-new" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Как выбрать тренажер?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     Выбор тренажера зависит от нескольких ключевых факторов. В первую очередь определитесь с целью тренировок: для похудения и развития выносливости лучше подойдут кардиотренажеры (беговые дорожки, эллипсоиды, велотренажеры), а для набора мышечной массы - силовые установки (мультистанции, свободные веса, силовые рамы).<br /><br />
+                     Важное значение имеют доступное пространство и бюджет: для небольших домашних помещений стоит рассмотреть компактные или складные модели, тогда как для коммерческих залов можно выбирать профессиональное оборудование с большими габаритами.<br /><br />
+                     Обратите внимание на уровень шума (особенно важно для квартир), максимальный вес пользователя и нагрузку.<br /><br />
+                     Если сомневаетесь в выборе, лучше проконсультироваться со специалистом - наши менеджеры помогут подобрать оптимальное решение под ваши задачи и условия эксплуатации.
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-8-new" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    В чем разница между домашними и профессиональными моделями?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Главные отличия заключаются в надежности, функционале и сроке службы:<br /><br />
+                 <AccordionItem value="item-8-new" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     В чем разница между домашними и профессиональными моделями?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     Главные отличия заключаются в надежности, функционале и сроке службы:<br /><br />
                     <strong>1. Конструкция и материалы</strong><br />
                     Профессиональные: усиленная сталь, износостойкие компоненты, выдерживают 10-15 часов ежедневной эксплуатации.<br /><br />
                     <strong>2. Нагрузка и пользователи</strong><br />
@@ -1386,101 +1386,101 @@ const Support: React.FC = () => {
                   </AccordionContent>
                 </AccordionItem>
 
-                <AccordionItem value="item-9-new" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Как выбрать оснащение под размеры зала? Есть ли 3D-проектирование?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Правильная планировка фитнес-пространства — залог комфорта клиентов и эффективного использования площади. Мы предлагаем бесплатную разработку 3D-проекта вашего зала, который решит ключевые задачи:<br /><br />
-                    <strong>Что вы получите от 3D-проекта?</strong><br />
-                    ✔ Точный расчет оборудования — подберем тренажеры по количеству и типу, исключив лишние затраты<br />
-                    ✔ Оптимальную расстановку — с учетом зон кардио, силовых тренировок и свободного пространства<br />
-                    ✔ 3D-визуализацию — увидите, как будет выглядеть зал до покупки оборудования<br />
-                    ✔ Экономию бюджета и времени — избежите ошибок в планировке и перестановках<br /><br />
-                    <strong>Хотите увидеть свой зал в 3D?</strong><br />
-                    Отправьте запрос или позвоните нам — спроектируем зал под ваши задачи!
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-9-new" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Как выбрать оснащение под размеры зала? Есть ли 3D-проектирование?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     Правильная планировка фитнес-пространства — залог комфорта клиентов и эффективного использования площади. Мы предлагаем бесплатную разработку 3D-проекта вашего зала, который решит ключевые задачи:<br /><br />
+                     <strong>Что вы получите от 3D-проекта?</strong><br />
+                     ✔ Точный расчет оборудования — подберем тренажеры по количеству и типу, исключив лишние затраты<br />
+                     ✔ Оптимальную расстановку — с учетом зон кардио, силовых тренировок и свободного пространства<br />
+                     ✔ 3D-визуализацию — увидите, как будет выглядеть зал до покупки оборудования<br />
+                     ✔ Экономию бюджета и времени — избежите ошибок в планировке и перестановках<br /><br />
+                     <strong>Хотите увидеть свой зал в 3D?</strong><br />
+                     Отправьте запрос или позвоните нам — спроектируем зал под ваши задачи!
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-10-new" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Есть ли рассрочка на покупку оборудования?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Оформить кредит на сайте — быстро и легко. При оформлении заказа в корзине укажите способ оплаты «Кредит».<br /><br />
-                    Вы будете перенаправлены на сайт банка для заполнения анкеты. После заполнения анкеты с вами свяжется представитель банка. Вашу заявку рассмотрят в течение 20—30 минут.<br /><br />
-                    Также вы можете оформить рассрочку или кредит в любом магазине, сделав заказ на самовывоз.<br /><br />
-                    Пожалуйста, будьте готовы предоставить паспорт при получении кредита. Также банки вправе потребовать иные дополнительные документы и подтверждение доходов заемщика.
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-10-new" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Есть ли рассрочка на покупку оборудования?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     Оформить кредит на сайте — быстро и легко. При оформлении заказа в корзине укажите способ оплаты «Кредит».<br /><br />
+                     Вы будете перенаправлены на сайт банка для заполнения анкеты. После заполнения анкеты с вами свяжется представитель банка. Вашу заявку рассмотрят в течение 20—30 минут.<br /><br />
+                     Также вы можете оформить рассрочку или кредит в любом магазине, сделав заказ на самовывоз.<br /><br />
+                     Пожалуйста, будьте готовы предоставить паспорт при получении кредита. Также банки вправе потребовать иные дополнительные документы и подтверждение доходов заемщика.
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-11-new" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Есть ли доставка?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    <strong>Доставка тренажеров по Москве и России</strong><br /><br />
-                    
-                    <strong>По Москве и МО</strong><br />
-                    <strong>Курьерская доставка</strong><br />
-                    Срок: 1-2 дня после заказа<br />
-                    Время: ежедневно 9:00–21:00<br />
-                    Подъем на этаж и сборка: уточняйте у менеджера<br /><br />
-                    
-                    <strong>Самовывоз (бесплатно):</strong><br />
-                    <strong>Красногорск (основной склад)</strong><br />
-                    МО, пос. Гольево, ул. Центральная<br />
-                    <strong>Химки</strong><br />
-                    мкр Сходня, ул. Некрасова, д. 2<br />
-                    <strong>Санкт-Петербург</strong><br />
-                    Красногвардейский пер., 23 лит Е<br /><br />
-                    
-                    <strong>По России</strong><br />
-                    Транспортными компаниями (СДЭК, Деловые Линии и др.):<br />
-                    Отправка со склада: 1-2 рабочих дня<br />
-                    Срок доставки: зависит от ТК и региона<br />
-                    Оплата доставки: при получении (по тарифам ТК)<br /><br />
-                    
-                    <strong>Важно:</strong><br />
-                    Для точного расчета стоимости и сроков оформите заказ или закажите звонок — менеджер подберет оптимальный вариант!
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-11-new" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Есть ли доставка?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     <strong>Доставка тренажеров по Москве и России</strong><br /><br />
+                     
+                     <strong>По Москве и МО</strong><br />
+                     <strong>Курьерская доставка</strong><br />
+                     Срок: 1-2 дня после заказа<br />
+                     Время: ежедневно 9:00–21:00<br />
+                     Подъем на этаж и сборка: уточняйте у менеджера<br /><br />
+                     
+                     <strong>Самовывоз (бесплатно):</strong><br />
+                     <strong>Красногорск (основной склад)</strong><br />
+                     МО, пос. Гольево, ул. Центральная<br />
+                     <strong>Химки</strong><br />
+                     мкр Сходня, ул. Некрасова, д. 2<br />
+                     <strong>Санкт-Петербург</strong><br />
+                     Красногвардейский пер., 23 лит Е<br /><br />
+                     
+                     <strong>По России</strong><br />
+                     Транспортными компаниями (СДЭК, Деловые Линии и др.):<br />
+                     Отправка со склада: 1-2 рабочих дня<br />
+                     Срок доставки: зависит от ТК и региона<br />
+                     Оплата доставки: при получении (по тарифам ТК)<br /><br />
+                     
+                     <strong>Важно:</strong><br />
+                     Для точного расчета стоимости и сроков оформите заказ или закажите звонок — менеджер подберет оптимальный вариант!
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-12-new" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Как происходит обслуживание фитнес-клубов?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Мы обеспечиваем комплексный сервис для поддержания оборудования в идеальном состоянии, что помогает избежать дорогостоящего ремонта и продлевает срок службы тренажеров.<br /><br />
-                    
-                    <strong>Что входит в обслуживание?</strong><br />
-                    Регулярные проверки износа деталей и узлов<br />
-                    Смазка и регулировка механических частей<br />
-                    Диагностика электроники (для кардиотренажеров)<br />
-                    Замена расходников (ремни, ролики, подшипники)<br />
-                    Ремонт любой сложности с оригинальными запчастями
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-12-new" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Как происходит обслуживание фитнес-клубов?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     Мы обеспечиваем комплексный сервис для поддержания оборудования в идеальном состоянии, что помогает избежать дорогостоящего ремонта и продлевает срок службы тренажеров.<br /><br />
+                     
+                     <strong>Что входит в обслуживание?</strong><br />
+                     Регулярные проверки износа деталей и узлов<br />
+                     Смазка и регулировка механических частей<br />
+                     Диагностика электроники (для кардиотренажеров)<br />
+                     Замена расходников (ремни, ролики, подшипники)<br />
+                     Ремонт любой сложности с оригинальными запчастями
+                   </AccordionContent>
+                 </AccordionItem>
 
-                <AccordionItem value="item-13-new" className="border-0">
-                  <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Что делать в случае поломки тренажера?
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
-                    Мы оперативно решим проблему — просто оформите заявку:<br /><br />
-                    
-                    <strong>Как сообщить о поломке?</strong><br />
-                    Заполните сервисную форму на сайте:<br />
-                    Укажите модель и серийный номер (ускорит обработку)<br />
-                    Опишите неисправность (например: "скрип в педалях эллипсоида")<br />
-                    Прикрепите фото/видео поломки (по возможности)<br /><br />
-                    
-                    <strong>Наш сервисный центр свяжется с вами в течение 1 рабочего дня:</strong><br />
-                    Диагностирует проблему<br />
-                    Предложит решение: ремонт на месте или доставка в СЦ<br />
-                    Сообщит сроки и стоимость (если нет гарантии)
-                  </AccordionContent>
-                </AccordionItem>
+                 <AccordionItem value="item-13-new" className="border-0">
+                   <AccordionTrigger className="text-left hover:no-underline py-4 px-4 bg-gray-50 border border-gray-200 rounded-lg" style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
+                     Что делать в случае поломки тренажера?
+                   </AccordionTrigger>
+                   <AccordionContent className="pb-4 pt-[10px] border-l-4 border-gray-300 pl-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     Мы оперативно решим проблему — просто оформите заявку:<br /><br />
+                     
+                     <strong>Как сообщить о поломке?</strong><br />
+                     Заполните сервисную форму на сайте:<br />
+                     Укажите модель и серийный номер (ускорит обработку)<br />
+                     Опишите неисправность (например: "скрип в педалях эллипсоида")<br />
+                     Прикрепите фото/видео поломки (по возможности)<br /><br />
+                     
+                     <strong>Наш сервисный центр свяжется с вами в течение 1 рабочего дня:</strong><br />
+                     Диагностирует проблему<br />
+                     Предложит решение: ремонт на месте или доставка в СЦ<br />
+                     Сообщит сроки и стоимость (если нет гарантии)
+                   </AccordionContent>
+                 </AccordionItem>
 
               </Accordion>
 
