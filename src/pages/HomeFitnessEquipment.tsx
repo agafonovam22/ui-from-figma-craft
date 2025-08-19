@@ -52,7 +52,7 @@ const HomeFitnessEquipment: React.FC = () => {
       id: 6,
       image: '/lovable-uploads/85fad5e3-5564-4ec5-97b4-103c8ebf8193.png',
       category: 'accessories',
-      price: '220 ₽'
+      price: 'от 700 ₽'
     },
     {
       id: 7,
@@ -70,7 +70,7 @@ const HomeFitnessEquipment: React.FC = () => {
       id: 9,
       image: '/lovable-uploads/f42d0a8e-c1b3-4aeb-b4b9-2e502db62acc.png',
       category: 'ski',
-      price: 'от 15 900 ₽'
+      price: 'от 9 900 ₽'
     },
     {
       id: 10,
@@ -82,31 +82,31 @@ const HomeFitnessEquipment: React.FC = () => {
       id: 11,
       image: '/lovable-uploads/f3fa6cdb-01b8-4747-a864-52d123b7fe16.png',
       category: 'trampoline',
-      price: 'от 15 900 ₽'
+      price: 'от 14 900 ₽'
     },
     {
       id: 12,
       image: '/lovable-uploads/450ed01b-97fa-4980-98c1-383cf57c8483.png',
       category: 'massage',
-      price: 'от 89 900 ₽'
+      price: 'от 3 900 ₽'
     },
     {
       id: 13,
       image: '/lovable-uploads/ba78addd-dea0-4e0d-abdb-2822664de431.png',
       category: 'accessories',
-      price: 'от 890 ₽'
+      price: 'от 220 ₽'
     },
     {
       id: 14,
       image: '/lovable-uploads/6b75aeda-b3c7-475a-936c-b3c96cb8dc10.png',
       category: 'weights',
-      price: 'от 1 200 ₽'
+      price: 'от 550 ₽'
     },
     {
       id: 15,
       image: '/lovable-uploads/bb958841-4873-45d1-9cdb-02bd83e51eae.png',
       category: 'tennis',
-      price: 'от 29 900 ₽'
+      price: 'от 5 400 ₽'
     }
   ];
 
