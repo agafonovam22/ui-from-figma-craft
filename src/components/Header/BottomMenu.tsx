@@ -47,19 +47,19 @@ const CategoryWithDropdownMenu: React.FC<{ category: CategoryWithDropdown }> = (
     <NavigationMenuTrigger className="flex h-[46px] items-center gap-2 bg-[#262631] px-5 py-3 rounded-[5px] text-sm font-normal leading-[14px] text-[#778093] hover:text-white hover:bg-[#3a3a47] transition-colors group flex-shrink-0 data-[state=open]:bg-[#3a3a47] data-[state=open]:text-white">
       {category.label}
     </NavigationMenuTrigger>
-    <NavigationMenuContent className="bg-white border shadow-lg rounded-lg p-6 w-[800px]">
-      <div className="grid grid-cols-4 gap-8">
+    <NavigationMenuContent className="bg-white border shadow-lg rounded-lg p-6 w-[800px] z-50 absolute left-0 top-full">
+      <div className="grid grid-cols-3 gap-8">
         {category.dropdownContent?.columns.map((column, index) => (
-          <div key={index} className="space-y-3">
-            <h3 className="font-semibold text-gray-900 text-base">
+          <div key={index} className="space-y-4">
+            <h3 className="font-semibold text-gray-900 text-base mb-3">
               {column.title}
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {column.items.map((item, itemIndex) => (
                 <li key={itemIndex}>
                   <button
                     onClick={item.onClick}
-                    className="text-gray-600 hover:text-gray-900 text-sm transition-colors"
+                    className="text-gray-600 hover:text-gray-900 text-sm transition-colors block w-full text-left py-1"
                   >
                     {item.label}
                   </button>
@@ -68,16 +68,6 @@ const CategoryWithDropdownMenu: React.FC<{ category: CategoryWithDropdown }> = (
             </ul>
           </div>
         ))}
-        
-        {category.dropdownContent?.imageUrl && (
-          <div className="col-span-1">
-            <img
-              src={category.dropdownContent.imageUrl}
-              alt={category.dropdownContent.imageAlt || ''}
-              className="w-full h-40 object-cover rounded-lg"
-            />
-          </div>
-        )}
       </div>
     </NavigationMenuContent>
   </NavigationMenuItem>
@@ -282,14 +272,17 @@ const BottomMenu: React.FC = () => {
 
   return (
     <nav 
-      className="flex w-full justify-center items-center gap-[5px] bg-[#262631] px-2 sm:px-4 lg:px-[60px] py-1 max-md:overflow-x-auto"
-      style={{ padding: '4px 60px' }}
+      className="relative w-full bg-[#262631] py-1"
       role="navigation"
       aria-label="Категории товаров"
     >
-      <div className="flex w-full max-w-[1800px] h-[54px] items-center gap-[5px] relative max-md:w-auto max-md:min-w-full flex-shrink-0">
+      <div 
+        ref={scrollContainerRef}
+        className="flex items-center gap-[5px] px-4 lg:px-[60px] h-[54px] overflow-x-auto scrollbar-hide max-w-full"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
         <NavigationMenu>
-          <NavigationMenuList className="flex items-center gap-[5px] bg-transparent">
+          <NavigationMenuList className="flex items-center gap-[5px] bg-transparent whitespace-nowrap">
             {categories.map((category, index) => (
               <React.Fragment key={category.id}>
                 {category.dropdownContent ? (
@@ -306,10 +299,11 @@ const BottomMenu: React.FC = () => {
             ))}
           </NavigationMenuList>
         </NavigationMenu>
-        
-        <div className="hidden md:flex absolute right-0 items-center bg-gradient-to-l from-[#262631] via-[#262631] to-transparent pl-8">
-          <ScrollButton direction="right" onClick={scrollToNext} />
-        </div>
+      </div>
+      
+      {/* Кнопки прокрутки */}
+      <div className="hidden md:flex absolute right-4 top-1/2 transform -translate-y-1/2 bg-gradient-to-l from-[#262631] via-[#262631] to-transparent pl-8">
+        <ScrollButton direction="right" onClick={scrollToNext} />
       </div>
     </nav>
   );
