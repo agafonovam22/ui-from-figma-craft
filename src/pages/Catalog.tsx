@@ -112,7 +112,11 @@ const Catalog: React.FC = () => {
       if (query.trim()) {
         console.log('Searching for:', query);
         const searchResults = await bitrixApi.searchProducts(query);
-        console.log('Search results:', searchResults);
+        console.log('Search results received:', searchResults);
+        console.log('Number of results:', searchResults.length);
+        if (searchResults.length > 0) {
+          console.log('First result:', searchResults[0]);
+        }
         setProducts(searchResults);
         
         // Обновляем URL с поисковым запросом только если он отличается

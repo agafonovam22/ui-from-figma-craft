@@ -69,19 +69,36 @@ class BitrixAPI {
   // Поиск товаров по запросу
   async searchProducts(query: string): Promise<BitrixProduct[]> {
     try {
-      console.log('Searching for products with query:', query);
+      console.log('Starting search for products with query:', query);
       
       // Получаем ВСЕ товары из реального API
       const allProducts = await this.getProducts();
-      console.log('Total products loaded:', allProducts.length);
+      console.log('Total products loaded for search:', allProducts.length);
+      
+      if (allProducts.length > 0) {
+        console.log('Sample product name:', allProducts[0].name);
+        console.log('Sample products:', allProducts.slice(0, 3).map(p => p.name));
+      }
       
       // Делаем поиск на фронтенде по реальным данным
-      const filteredProducts = allProducts.filter(product => 
-        product.name.toLowerCase().includes(query.toLowerCase()) ||
-        (product.description && product.description.toLowerCase().includes(query.toLowerCase()))
-      );
+      const filteredProducts = allProducts.filter(product => {
+        const productName = product.name.toLowerCase();
+        const searchTerm = query.toLowerCase();
+        const matches = productName.includes(searchTerm);
+        
+        if (matches) {
+          console.log(`Match found: "${product.name}" contains "${query}"`);
+        }
+        
+        return matches || (product.description && product.description.toLowerCase().includes(searchTerm));
+      });
 
       console.log(`Found ${filteredProducts.length} products matching "${query}" from real data`);
+      
+      if (filteredProducts.length > 0) {
+        console.log('Found products:', filteredProducts.map(p => p.name));
+      }
+      
       return filteredProducts;
     } catch (error) {
       console.error('Error searching products:', error);
