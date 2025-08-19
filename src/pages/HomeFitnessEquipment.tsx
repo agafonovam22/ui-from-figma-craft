@@ -20,33 +20,33 @@ const HomeFitnessEquipment: React.FC = () => {
   const homeProducts = [
     {
       id: 1,
-      image: '/lovable-uploads/e7893606-f51a-4e53-9c80-ab83d081c16c.png',
+      image: '/lovable-uploads/0072d70d-6cbf-4217-a272-a481d5686b22.png',
       category: 'treadmill',
       price: 'от 33 900 ₽'
     },
     {
       id: 2,
-      image: '/lovable-uploads/41b47400-6434-4309-9474-38fd8527c0f9.png',
+      image: '/lovable-uploads/9c92be7e-2838-4535-843d-4548fe4ab6f1.png',
       category: 'bike',
       price: 'от 35 900 ₽'
     },
     {
       id: 3,
-      image: '/lovable-uploads/7eb18ab6-a47c-4127-a2e4-520345b3a636.png',
+      image: '/lovable-uploads/63592369-954a-4ca3-a294-692bd11c9e8e.png',
       category: 'rowing',
       price: 'от 49 900 ₽'
     },
     {
       id: 4,
-      image: '/lovable-uploads/9deaa8d7-89aa-4671-b709-82d6af4d5f19.png',
-      category: 'strength',
-      price: 'от 9 900 ₽'
+      image: '/lovable-uploads/710c9c14-29dc-4f40-bc16-cf91d627d41a.png',
+      category: 'elliptical',
+      price: 'от 45 900 ₽'
     },
     {
       id: 5,
-      image: '/lovable-uploads/dcac2877-3c35-4f7d-8abf-95aacc72562e.png',
-      category: 'inversion',
-      price: 'от 12 900 ₽'
+      image: '/lovable-uploads/96cf0ecb-f9d3-4eed-8e33-7e4a3f0a4ca6.png',
+      category: 'tennis',
+      price: 'от 24 900 ₽'
     },
     {
       id: 6,
