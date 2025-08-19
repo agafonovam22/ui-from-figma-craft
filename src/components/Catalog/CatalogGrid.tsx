@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 import ProductCard from '@/components/ProductCard';
 import { Button } from "@/components/ui/button";
-import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
 
 interface Product {
   id: number | string;
@@ -21,54 +20,28 @@ interface Product {
 
 interface CatalogGridProps {
   products: Product[];
-  bitrixUrl?: string;
+  totalPages?: number;
+  currentPage?: number;
+  onPageChange?: (page: number) => void;
+  hasNextPage?: boolean;
+  hasPreviousPage?: boolean;
 }
 
-const CatalogGrid: React.FC<CatalogGridProps> = ({ products, bitrixUrl }) => {
-  const { products: bitrixProducts, loading, error } = useBitrixCatalog(bitrixUrl);
-  
-  // Используем товары из Битрикс, если они загружены, иначе fallback на переданные
-  const displayProducts = bitrixProducts.length > 0 ? bitrixProducts.map(product => ({
-    id: product.id,
-    name: product.name,
-    price: product.price > 0 ? `${product.price.toLocaleString()} ₽` : null,
-    originalPrice: product.original_price && product.original_price > 0 ? `${product.original_price.toLocaleString()} ₽` : null,
-    discount: product.discount_percentage ? `${product.discount_percentage}%` : null,
-    rating: product.rating,
-    reviews: product.reviews_count,
-    image: product.image_url || '/placeholder.svg',
-    badge: product.badge || (product.is_available ? 'В наличии' : 'Нет в наличии'),
-    badgeColor: product.badge_color === 'red' ? 'bg-red-500' : 
-                product.badge_color === 'green' ? 'bg-green-500' : 
-                product.badge_color === 'blue' ? 'bg-blue-500' : 
-                (product.is_available ? 'bg-green-500' : 'bg-red-500'),
-    isAvailable: product.is_available,
-    hasComparison: product.has_comparison,
-    inStock: product.in_stock
-  })) : products;
+const CatalogGrid: React.FC<CatalogGridProps> = memo(({ 
+  products, 
+  totalPages = 1, 
+  currentPage = 1, 
+  onPageChange,
+  hasNextPage = false,
+  hasPreviousPage = false
+}) => {
 
-  if (loading) {
-    return (
-      <div className="text-center py-8">
-        <p>Загрузка товаров...</p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="text-center py-8">
-        <p className="text-red-500">Ошибка загрузки: {error}</p>
-        <p className="text-sm text-gray-500 mt-2">Используются демо-данные</p>
-      </div>
-    );
-  }
 
   return (
     <>
       {/* Products Grid */}
       <div className="grid grid-cols-4 gap-6 mb-8">
-        {displayProducts.map((product) => (
+        {products.map((product) => (
           <ProductCard key={product.id} product={product} variant="catalog" />
         ))}
       </div>
@@ -88,35 +61,49 @@ const CatalogGrid: React.FC<CatalogGridProps> = ({ products, bitrixUrl }) => {
         </div>
       </div>
 
-      {/* More Products */}
-      <div className="grid grid-cols-4 gap-6 mb-8">
-        {products.slice(0, 8).map((product) => (
-          <ProductCard key={`second-${product.id}`} product={product} variant="catalog" />
-        ))}
-      </div>
-
-      {/* Load More Button */}
-      <div className="text-center mb-8">
-        <Button variant="outline" className="px-6 py-2 text-sm">
-          Показать еще
-        </Button>
-      </div>
+      {/* More Products - убираем для лучшей производительности */}
+      {/* Load More Button - убираем, используем пагинацию */}
 
       {/* Pagination */}
       <div className="flex items-center justify-center space-x-2">
-        <button className="p-2 border border-gray-300 rounded hover:bg-gray-50">
+        <button 
+          className="p-2 border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+          onClick={() => onPageChange?.(currentPage - 1)}
+          disabled={!hasPreviousPage}
+        >
           ‹
         </button>
-        <button className="px-4 py-2 bg-[#F53B49] text-white rounded">1</button>
-        <button className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50">2</button>
-        <button className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50">3</button>
-        <button className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50">4</button>
-        <button className="p-2 border border-gray-300 rounded hover:bg-gray-50">
+        
+        {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => {
+          const page = i + 1;
+          const isActive = page === currentPage;
+          return (
+            <button
+              key={page}
+              className={`px-4 py-2 rounded ${
+                isActive
+                  ? "bg-[#F53B49] text-white"
+                  : "border border-gray-300 hover:bg-gray-50"
+              }`}
+              onClick={() => onPageChange?.(page)}
+            >
+              {page}
+            </button>
+          );
+        })}
+        
+        <button 
+          className="p-2 border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+          onClick={() => onPageChange?.(currentPage + 1)}
+          disabled={!hasNextPage}
+        >
           ›
         </button>
       </div>
     </>
   );
-};
+});
+
+CatalogGrid.displayName = 'CatalogGrid';
 
 export default CatalogGrid;

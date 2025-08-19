@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { Heart, BarChart3, ArrowRight } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
@@ -25,7 +25,7 @@ interface ProductCardProps {
   linkTo?: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ 
+const ProductCard: React.FC<ProductCardProps> = memo(({ 
   product, 
   variant = 'catalog',
   linkTo = '/product-card'
@@ -161,6 +161,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </div>
     </Link>
   );
-};
+});
+
+ProductCard.displayName = 'ProductCard';
 
 export default ProductCard;

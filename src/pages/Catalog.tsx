@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,6 +9,8 @@ import CatalogBanner from '@/components/Catalog/CatalogBanner';
 import CatalogControls from '@/components/Catalog/CatalogControls';
 import CatalogGrid from '@/components/Catalog/CatalogGrid';
 import { bitrixApi, BitrixProduct } from '@/services/bitrixApi';
+import { useDebounce } from '@/hooks/useDebounce';
+import { usePagination } from '@/hooks/usePagination';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -31,6 +33,7 @@ const Catalog: React.FC = () => {
   const [sortBy, setSortBy] = useState('popular');
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
+  const debouncedSearchQuery = useDebounce(searchQuery, 300);
   const [allProducts, setAllProducts] = useState<BitrixProduct[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<BitrixProduct[]>([]);
   const [loading, setLoading] = useState(false);
@@ -54,31 +57,28 @@ const Catalog: React.FC = () => {
     loadAllProducts();
   }, []);
 
-  // Функция поиска (БЕЗ изменения URL)
-  const performSearch = (query: string) => {
+  // Функция поиска с дебаунсом
+  const performSearch = useCallback((query: string) => {
     console.log('Выполняем поиск:', query);
     setSearchQuery(query);
     
     if (!query.trim()) {
-      // Если поиск пустой - показываем все товары
       setFilteredProducts(allProducts);
       return;
     }
     
-    // Фильтруем товары по названию
     const filtered = allProducts.filter(product => 
       product.name.toLowerCase().includes(query.toLowerCase())
     );
     
     console.log(`Найдено товаров: ${filtered.length} из ${allProducts.length}`);
     setFilteredProducts(filtered);
-  };
+  }, [allProducts]);
 
   // Функция поиска для внешних вызовов (с изменением URL)
-  const handleSearch = (query: string) => {
+  const handleSearch = useCallback((query: string) => {
     performSearch(query);
     
-    // Обновляем URL
     const newSearchParams = new URLSearchParams(searchParams);
     if (query.trim()) {
       newSearchParams.set('q', query);
@@ -86,19 +86,19 @@ const Catalog: React.FC = () => {
       newSearchParams.delete('q');
     }
     setSearchParams(newSearchParams);
-  };
+  }, [performSearch, searchParams, setSearchParams]);
 
   // Обрабатываем поисковый запрос из URL при загрузке
   useEffect(() => {
     const query = searchParams.get('q');
     if (query && allProducts.length > 0) {
       console.log('Поиск из URL:', query);
-      performSearch(query); // Используем performSearch без изменения URL
+      setSearchQuery(query);
+      performSearch(query);
     } else if (!query && allProducts.length > 0) {
-      // Если нет поискового запроса, показываем все товары
       setFilteredProducts(allProducts);
     }
-  }, [allProducts]); // Убираем searchParams из зависимостей
+  }, [allProducts, searchParams, performSearch]);
 
 
   // Простая проверка состояния для отладки
@@ -130,21 +130,36 @@ const Catalog: React.FC = () => {
     id: index + 1
   }));
   
-  const displayProducts = filteredProducts.length > 0 ? filteredProducts.map(product => ({
-    id: product.id,
-    name: product.name,
-    price: product.price ? `${product.price}₽` : null,
-    originalPrice: product.originalPrice ? `${product.originalPrice}₽` : null,
-    discount: null,
-    rating: 4.5 + Math.random(),
-    reviews: Math.floor(Math.random() * 200) + 10,
-    image: product.image,
-    badge: product.available ? 'В наличии' : 'Нет в наличии',
-    badgeColor: product.available ? 'bg-green-500' : 'bg-red-500',
-    isAvailable: product.available,
-    hasComparison: true,
-    inStock: product.available
-  })) : mockProducts;
+  const displayProducts = useMemo(() => {
+    return filteredProducts.length > 0 ? filteredProducts.map(product => ({
+      id: Number(product.id),
+      name: product.name,
+      price: product.price ? `${product.price}₽` : null,
+      originalPrice: product.originalPrice ? `${product.originalPrice}₽` : null,
+      discount: null,
+      rating: 4.5 + Math.random(),
+      reviews: Math.floor(Math.random() * 200) + 10,
+      image: product.image,
+      badge: product.available ? 'В наличии' : 'Нет в наличии',
+      badgeColor: product.available ? 'bg-green-500' : 'bg-red-500',
+      isAvailable: product.available,
+      hasComparison: true,
+      inStock: product.available
+    })) : mockProducts;
+  }, [filteredProducts, mockProducts]);
+
+  // Пагинация для лучшей производительности
+  const { paginatedData, totalPages, hasNextPage, hasPreviousPage } = usePagination({
+    data: displayProducts,
+    itemsPerPage: 16,
+    currentPage
+  });
+
+  const handlePageChange = useCallback((page: number) => {
+    setCurrentPage(page);
+    // Скроллим наверх при смене страницы
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   
   console.log('CATALOG RENDER - DisplayProducts:', displayProducts.length);
 
@@ -194,8 +209,12 @@ const Catalog: React.FC = () => {
                 </div>
               ) : (
                 <CatalogGrid 
-                  products={displayProducts} 
-                  bitrixUrl="https://cp44652.tw1.ru/catalog.php"
+                  products={paginatedData}
+                  totalPages={totalPages}
+                  currentPage={currentPage}
+                  onPageChange={handlePageChange}
+                  hasNextPage={hasNextPage}
+                  hasPreviousPage={hasPreviousPage}
                 />
               )}
             </div>
