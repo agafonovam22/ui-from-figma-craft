@@ -9,7 +9,111 @@ const ProductCatalog: React.FC = () => {
   const [products, setProducts] = useState<BitrixProduct[]>([]);
   const [loading, setLoading] = useState(false);
 
-  // Загружаем реальные товары из Bitrix API
+  // Статичные данные для демонстрации (fallback если API недоступен)
+  const mockProducts: BitrixProduct[] = [
+    {
+      id: '1',
+      name: 'Беговая дорожка ProForm',
+      price: '89 990',
+      originalPrice: '99 990',
+      image: '/lovable-uploads/product1.jpg',
+      available: true,
+      rating: 4.5,
+      reviews_count: 128
+    },
+    {
+      id: '2', 
+      name: 'Эллиптический тренажер Horizon',
+      price: '79 990',
+      originalPrice: '89 990',
+      image: '/lovable-uploads/product2.jpg',
+      available: true,
+      rating: 4.2,
+      reviews_count: 96
+    },
+    {
+      id: '3',
+      name: 'Велотренажер Kettler',
+      price: '59 990',
+      originalPrice: null,
+      image: '/lovable-uploads/product3.jpg',
+      available: true,
+      rating: 4.7,
+      reviews_count: 203
+    },
+    {
+      id: '4',
+      name: 'Силовая станция Body Solid',
+      price: '129 990',
+      originalPrice: '149 990',
+      image: '/lovable-uploads/product4.jpg',
+      available: false,
+      rating: 4.8,
+      reviews_count: 87
+    },
+    {
+      id: '5',
+      name: 'Гребной тренажер Concept2',
+      price: '199 990',
+      originalPrice: null,
+      image: '/lovable-uploads/product5.jpg',
+      available: true,
+      rating: 4.9,
+      reviews_count: 156
+    },
+    {
+      id: '6',
+      name: 'Степпер NordicTrack',
+      price: '39 990',
+      originalPrice: '45 990',
+      image: '/lovable-uploads/product6.jpg',
+      available: true,
+      rating: 4.1,
+      reviews_count: 74
+    },
+    {
+      id: '7',
+      name: 'Скамья для пресса Matrix',
+      price: '29 990',
+      originalPrice: null,
+      image: '/lovable-uploads/product7.jpg',
+      available: true,
+      rating: 4.4,
+      reviews_count: 112
+    },
+    {
+      id: '8',
+      name: 'Тренажер для спины Technogym',
+      price: '159 990',
+      originalPrice: '179 990',
+      image: '/lovable-uploads/product8.jpg',
+      available: true,
+      rating: 4.6,
+      reviews_count: 89
+    },
+    {
+      id: '9',
+      name: 'Кроссовер Life Fitness',
+      price: '299 990',
+      originalPrice: null,
+      image: '/lovable-uploads/product9.jpg',
+      available: false,
+      rating: 4.8,
+      reviews_count: 145
+    },
+    {
+      id: '10',
+      name: 'Штанга олимпийская York',
+      price: '49 990',
+      originalPrice: '55 990',
+      image: '/lovable-uploads/product10.jpg',
+      available: true,
+      rating: 4.3,
+      reviews_count: 267
+    }
+  ];
+
+  // Загружаем реальные товары из Bitrix API с fallback на статичные данные
   useEffect(() => {
     const loadProducts = async () => {
       setLoading(true);
@@ -17,7 +121,9 @@ const ProductCatalog: React.FC = () => {
         const bitrixProducts = await bitrixApi.getProducts();
         setProducts(bitrixProducts);
       } catch (error) {
-        console.error('Error loading products:', error);
+        console.error('Error loading products, using mock data:', error);
+        // Используем статичные данные если API недоступен
+        setProducts(mockProducts);
       } finally {
         setLoading(false);
       }
