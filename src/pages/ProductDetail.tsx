@@ -46,18 +46,73 @@ const ProductDetail: React.FC = () => {
         // Используем реальные характеристики из API
         const characteristics = product?.characteristics || {};
         
-        // Преобразуем объект в массив для отображения
-        const characteristicsArray = Object.entries(characteristics).map(([key, value]) => ({
-          name: key,
-          value: value
-        }));
+        // Функция для группировки характеристик
+        const groupCharacteristics = (characteristics: Record<string, any>) => {
+          const groups: Record<string, Array<{name: string, value: string}>> = {
+            'Основные характеристики': [],
+            'Габариты и вес': [],
+            'Гарантия и производство': [],
+            'Дополнительные характеристики': []
+          };
+
+          // Скрытые характеристики, которые не показываем
+          const hiddenFields = [
+            'Акция',
+            'Бренд (id)',
+            'Реквизиты', 
+            'Базовая единица',
+            'Ставки налогов',
+            'Картинки галереи',
+            'Использование',
+            'Исключить из публикации на веб-витрине mag1c',
+            'Наименование товара на сайте',
+            'Количество мест',
+            'Тег1 (скрытая характеристика, которая не показывается на сайте)',
+            'Тег2 (скрытая характеристика, которая не показывается на сайте)'
+          ];
+
+          Object.entries(characteristics).forEach(([key, value]) => {
+            // Пропускаем скрытые характеристики
+            if (hiddenFields.includes(key)) return;
+            
+            const characteristic = { name: key, value: String(value) };
+            
+            // Основные характеристики
+            if (['Артикул', 'Тип оборудования', 'Тип назначения'].includes(key)) {
+              groups['Основные характеристики'].push(characteristic);
+            }
+            // Габариты и вес
+            else if (key.includes('Габариты') || key.includes('Вес') || key.includes('Высота') || key.includes('Длина') || key.includes('Ширина')) {
+              groups['Габариты и вес'].push(characteristic);
+            }
+            // Гарантия и производство
+            else if (key.includes('Гарантия') || key.includes('Страна') || key.includes('Производ')) {
+              groups['Гарантия и производство'].push(characteristic);
+            }
+            // Остальные в дополнительные
+            else {
+              groups['Дополнительные характеристики'].push(characteristic);
+            }
+          });
+
+          // Удаляем пустые группы
+          Object.keys(groups).forEach(groupName => {
+            if (groups[groupName].length === 0) {
+              delete groups[groupName];
+            }
+          });
+
+          return groups;
+        };
+
+        const groupedCharacteristics = groupCharacteristics(characteristics);
         
         // Если нет характеристик из API, показываем заглушку
-        if (characteristicsArray.length === 0) {
+        if (Object.keys(groupedCharacteristics).length === 0) {
           return (
             <div className="space-y-6">
               <h3 className="text-lg font-semibold">Характеристики</h3>
-              <p className="text-muted-foreground">Характеристики товара загружаются...</p>
+              <p className="text-muted-foreground">Характеристики товара временно недоступны</p>
             </div>
           );
         }
@@ -66,17 +121,19 @@ const ProductDetail: React.FC = () => {
           <div className="space-y-8">
             <h2 className="text-2xl font-bold text-foreground">Характеристики</h2>
             
-            <div>
-              <h3 className="text-lg font-semibold mb-6 text-foreground">Основные характеристики</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0 text-sm font-manrope">
-                {characteristicsArray.map((spec, index) => (
-                  <div key={index} className="flex justify-between py-2 border-b border-border">
-                    <span className="text-muted-foreground">{spec.name}:</span>
-                    <span className="text-right">{String(spec.value)}</span>
-                  </div>
-                ))}
+            {Object.entries(groupedCharacteristics).map(([groupName, specs]) => (
+              <div key={groupName}>
+                <h3 className="text-lg font-semibold mb-6 text-foreground">{groupName}</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0 text-sm font-manrope">
+                  {specs.map((spec, index) => (
+                    <div key={index} className="flex justify-between py-2 border-b border-border">
+                      <span className="text-muted-foreground">{spec.name}:</span>
+                      <span className="text-right">{spec.value}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         );
       case 'reviews':
