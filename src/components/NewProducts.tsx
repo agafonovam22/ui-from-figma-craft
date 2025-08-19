@@ -146,7 +146,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                 {/* Изображение товара */}
                 <div className="h-48 bg-gray-50">
                   <img 
-                    src={product.image_url || '/placeholder.svg'} 
+                    src={product.image_url || 'https://cp44652.tw1.ru/upload/iblock/000/no-image.png'} 
                     alt={product.name || "Товар"}
                     className="w-full h-full object-cover"
                     style={{ imageRendering: 'crisp-edges' }}

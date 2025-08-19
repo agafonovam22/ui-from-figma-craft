@@ -120,11 +120,11 @@ const ProductDetail: React.FC = () => {
           <div className="space-y-4">
             <div className="relative">
               <img 
-                src={product.image_url || '/placeholder.svg'}
+                src={product.image_url || 'https://cp44652.tw1.ru/upload/iblock/000/no-image.png'}
                 alt={product.name}
                 className="w-full h-96 object-cover rounded-lg"
                 onError={(e) => {
-                  e.currentTarget.src = '/placeholder.svg';
+                  e.currentTarget.src = 'https://cp44652.tw1.ru/upload/iblock/000/no-image.png';
                 }}
               />
               {product.badge && (

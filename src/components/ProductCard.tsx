@@ -39,7 +39,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           alt={product.name || "Категория товаров"}
           className="w-full h-full object-cover object-center"
           onError={(e) => {
-            e.currentTarget.src = '/placeholder.svg';
+            e.currentTarget.src = 'https://cp44652.tw1.ru/upload/iblock/000/no-image.png'; // Используем заглушку из вашего Битрикс
           }}
         />
         <Link 
@@ -67,7 +67,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           loading="lazy"
           onError={(e) => {
             console.log('Ошибка загрузки изображения:', product.image);
-            e.currentTarget.src = '/placeholder.svg';
+            e.currentTarget.src = 'https://cp44652.tw1.ru/upload/iblock/000/no-image.png'; // Используем заглушку из вашего Битрикс
           }}
         />
         

@@ -110,29 +110,26 @@ const Catalog: React.FC = () => {
   console.log('CATALOG RENDER - AllProducts:', allProducts.length);
   console.log('CATALOG RENDER - SearchQuery:', searchQuery);
   
-  // Fallback товары для случая когда API не работает
+  // Fallback товары для случая когда API не работает - НЕ ИСПОЛЬЗУЕМ
   const fallbackProducts = [
     {
       id: 1,
-      name: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610₽',
+      name: 'Загрузка товаров...',
+      price: null,
       originalPrice: null,
       discount: null,
-      rating: 4.8,
-      reviews: 124,
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
-      badge: 'Новинка',
-      badgeColor: 'bg-green-500',
-      isAvailable: true,
-      hasComparison: true,
-      inStock: true
+      rating: 0,
+      reviews: 0,
+      image: 'https://cp44652.tw1.ru/upload/iblock/000/no-image.png',
+      badge: 'Загрузка',
+      badgeColor: 'bg-gray-500',
+      isAvailable: false,
+      hasComparison: false,
+      inStock: false
     }
   ];
   
-  const mockProducts = Array(16).fill(null).map((_, index) => ({
-    ...fallbackProducts[0],
-    id: index + 1
-  }));
+  // НЕ ИСПОЛЬЗУЕМ mock товары, только реальные из API
   
   // Мемоизированные товары с пагинацией
   const paginatedProducts = React.useMemo(() => {
@@ -146,7 +143,8 @@ const Catalog: React.FC = () => {
   const totalPages = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE);
   
   const displayProducts = React.useMemo(() => {
-    const result = paginatedProducts.length > 0 ? paginatedProducts.map(product => ({
+    // ТОЛЬКО реальные товары из API, никаких mock данных!
+    return paginatedProducts.map(product => ({
       id: product.id,
       name: product.name,
       price: product.price ? `${product.price}₽` : null,
@@ -154,16 +152,14 @@ const Catalog: React.FC = () => {
       discount: null,
       rating: 4.5 + Math.random(),
       reviews: Math.floor(Math.random() * 200) + 10,
-      image: product.image,
+      image: product.image || 'https://cp44652.tw1.ru/upload/iblock/000/no-image.png', // Используем реальную заглушку из Битрикс
       badge: product.available ? 'В наличии' : 'Нет в наличии',
       badgeColor: product.available ? 'bg-green-500' : 'bg-red-500',
       isAvailable: product.available,
       hasComparison: true,
       inStock: product.available
-    })) : mockProducts;
-    console.log(`DISPLAY DEBUG - PaginatedProducts: ${paginatedProducts.length}, DisplayProducts: ${result.length}`);
-    return result;
-  }, [paginatedProducts, mockProducts]);
+    }));
+  }, [paginatedProducts]);
   
   console.log('CATALOG RENDER - DisplayProducts:', displayProducts.length);
 
@@ -206,9 +202,9 @@ const Catalog: React.FC = () => {
                 <div className="text-center py-8">
                   <p>Поиск товаров...</p>
                 </div>
-              ) : searchQuery && filteredProducts.length === 0 ? (
+              ) : filteredProducts.length === 0 && !loading ? (
                 <div className="text-center py-8">
-                  <p>По запросу "{searchQuery}" ничего не найдено</p>
+                  <p>Товары загружаются или поиск не дал результатов</p>
                   <p className="text-gray-500 mt-2">Попробуйте изменить поисковый запрос</p>
                 </div>
               ) : (
