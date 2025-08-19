@@ -41,11 +41,6 @@ const CatalogButton: React.FC = () => (
   </Link>
 );
 
-interface SearchBarProps {
-  placeholder?: string;
-  onSearch?: (query: string) => void;
-  className?: string;
-}
 
 const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Поиск", onSearch, className = "" }) => {
   const [searchQuery, setSearchQuery] = useState('');
