@@ -105,9 +105,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
         )}
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-1">
         {product.name && (
-        <h3 className="text-xs font-medium text-[#262631] line-clamp-2">
+        <h3 className="text-xs font-medium text-[#262631] line-clamp-2 min-h-[2.5rem]">
           {product.name}
         </h3>
         )}
