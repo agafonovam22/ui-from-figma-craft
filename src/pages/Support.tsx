@@ -1485,7 +1485,10 @@ const Support: React.FC = () => {
               </Accordion>
 
               <div className="flex gap-4 mt-8">
-                <button className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors">
+                <button 
+                  onClick={() => window.location.href = '/services'}
+                  className="bg-[#F53B49] text-white px-6 py-3 rounded hover:bg-[#e63946] transition-colors"
+                >
                   Сервис
                 </button>
                 <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded hover:bg-gray-50 transition-colors">
