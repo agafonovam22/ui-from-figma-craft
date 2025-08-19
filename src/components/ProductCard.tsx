@@ -55,70 +55,70 @@ const ProductCard: React.FC<ProductCardProps> = ({
     );
   }
 
-  // Full catalog version - компактные карточки как раньше
+  // Full catalog version - максимально компактные карточки
   return (
     <Link to={`/product/${product.id}`} className="block">
-      <div className="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-lg transition-shadow cursor-pointer h-fit">
-      <div className="relative mb-3">
+      <div className="bg-white border border-gray-200 rounded-lg p-2 hover:shadow-md transition-shadow cursor-pointer">
+      <div className="relative mb-2">
         <img 
           src={product.image} 
           alt={product.name || "Товар"}
-          className="w-full h-40 object-cover rounded-lg"
+          className="w-full h-32 object-cover rounded-md"
           loading="lazy"
           onError={(e) => {
             console.log('Ошибка загрузки изображения:', product.image);
-            e.currentTarget.src = 'https://cp44652.tw1.ru/upload/iblock/000/no-image.png'; // Используем заглушку из вашего Битрикс
+            e.currentTarget.src = 'https://cp44652.tw1.ru/upload/iblock/000/no-image.png';
           }}
         />
         
-        {/* Badges */}
+        {/* Badges - компактные */}
         {(product.badge || product.hasComparison) && (
-          <div className="absolute top-2 left-2 flex flex-col gap-1">
+          <div className="absolute top-1 left-1 flex flex-col gap-1">
             {product.badge && (
-              <Badge className={`${product.badgeColor || 'bg-gray-500'} text-white text-xs px-2 py-1`}>
+              <Badge className={`${product.badgeColor || 'bg-gray-500'} text-white text-xs px-1 py-0`}>
                 {product.badge}
               </Badge>
             )}
             {product.hasComparison && (
-              <Badge variant="secondary" className="bg-blue-100 text-blue-800 text-xs px-2 py-1">
+              <Badge variant="secondary" className="bg-blue-100 text-blue-800 text-xs px-1 py-0">
                 Выбрать для сравнения
               </Badge>
             )}
           </div>
         )}
 
-        {/* Action buttons */}
-        <div className="absolute top-2 right-2 flex flex-col gap-2">
+        {/* Action buttons - компактные */}
+        <div className="absolute top-1 right-1 flex flex-col gap-1">
           <button className="p-1 bg-white rounded shadow hover:bg-gray-50">
-            <Heart className="w-4 h-4 text-gray-400" />
+            <Heart className="w-3 h-3 text-gray-400" />
           </button>
           <button className="p-1 bg-white rounded shadow hover:bg-gray-50">
-            <BarChart3 className="w-4 h-4 text-gray-400" />
+            <BarChart3 className="w-3 h-3 text-gray-400" />
           </button>
         </div>
 
         {/* Stock indicator */}
         {typeof product.inStock === 'boolean' && (
-          <div className="absolute bottom-2 right-2">
-            <div className={`w-3 h-3 rounded-full ${product.inStock ? 'bg-green-500' : 'bg-red-500'}`}></div>
+          <div className="absolute bottom-1 right-1">
+            <div className={`w-2 h-2 rounded-full ${product.inStock ? 'bg-green-500' : 'bg-red-500'}`}></div>
           </div>
         )}
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-1">
         {product.name && (
-        <h3 className="text-xs font-medium text-[#262631] line-clamp-2">
+        <h3 className="text-xs font-medium text-[#262631] line-clamp-2 h-8">
           {product.name}
         </h3>
         )}
         
         {product.rating && product.reviews && (
           <div className="flex items-center space-x-1">
-            <div className="flex text-yellow-400">
+            <div className="flex text-yellow-400 text-xs">
               {'★'.repeat(Math.floor(product.rating))}
               {'☆'.repeat(5 - Math.floor(product.rating))}
             </div>
-            <span className="text-[10px] text-gray-500">
+            <span className="text-xs text-gray-500">
               {product.rating} ({product.reviews})
             </span>
           </div>
@@ -146,13 +146,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <div className="text-xs text-gray-500">Цена по запросу</div>
         )}
 
-        <div className="flex gap-2">
+        <div className="flex gap-1">
           {product.isAvailable ? (
-            <Button size="sm" className="flex-1 bg-[#F53B49] hover:bg-[#e63946] text-white text-xs py-1">
+            <Button size="sm" className="flex-1 bg-[#F53B49] hover:bg-[#e63946] text-white text-xs py-1 h-7">
               Купить
             </Button>
           ) : (
-            <Button size="sm" variant="outline" className="flex-1 text-xs py-1">
+            <Button size="sm" variant="outline" className="flex-1 text-xs py-1 h-7">
               Запросить цену
             </Button>
           )}
