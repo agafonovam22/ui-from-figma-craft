@@ -77,6 +77,36 @@ const HomeFitnessEquipment: React.FC = () => {
       image: '/lovable-uploads/de5cfc45-c192-4221-a8b8-7b3a5bc64e03.png',
       category: 'street',
       price: 'от 800 ₽'
+    },
+    {
+      id: 11,
+      image: '/lovable-uploads/e7893606-f51a-4e53-9c80-ab83d081c16c.png',
+      category: 'treadmill',
+      price: 'от 33 900 ₽'
+    },
+    {
+      id: 12,
+      image: '/lovable-uploads/41b47400-6434-4309-9474-38fd8527c0f9.png',
+      category: 'bike',
+      price: 'от 35 900 ₽'
+    },
+    {
+      id: 13,
+      image: '/lovable-uploads/7eb18ab6-a47c-4127-a2e4-520345b3a636.png',
+      category: 'rowing',
+      price: 'от 49 900 ₽'
+    },
+    {
+      id: 14,
+      image: '/lovable-uploads/9deaa8d7-89aa-4671-b709-82d6af4d5f19.png',
+      category: 'strength',
+      price: 'от 9 900 ₽'
+    },
+    {
+      id: 15,
+      image: '/lovable-uploads/dcac2877-3c35-4f7d-8abf-95aacc72562e.png',
+      category: 'inversion',
+      price: 'от 12 900 ₽'
     }
   ];
 
@@ -121,8 +151,15 @@ const HomeFitnessEquipment: React.FC = () => {
         </div>
         
         {/* Equipment Grid - Next 5 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-[10px] mb-12 [&>*]:h-auto [&>*]:min-h-0 [&_img]:w-full [&_img]:h-auto [&_img]:object-contain">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-[10px] mb-6 [&>*]:h-auto [&>*]:min-h-0 [&_img]:w-full [&_img]:h-auto [&_img]:object-contain">
           {homeProducts.slice(5, 10).map((product) => (
+            <ProductCard key={product.id} product={product} variant="grid" linkTo="/product-card" />
+          ))}
+        </div>
+
+        {/* Equipment Grid - Third row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-[10px] mb-12 [&>*]:h-auto [&>*]:min-h-0 [&_img]:w-full [&_img]:h-auto [&_img]:object-contain">
+          {homeProducts.slice(10, 15).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo="/product-card" />
           ))}
         </div>
