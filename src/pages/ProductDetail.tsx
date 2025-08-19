@@ -390,20 +390,20 @@ const ProductDetail: React.FC = () => {
     const fetchProduct = async () => {
       try {
         setLoading(true);
-        console.log('🔍 Начинаем загрузку товара через Edge Function, ID:', id);
+        console.log('🔍 Начинаем загрузку товара, ID:', id);
+        console.log('📡 Отправляем запрос к API:', 'https://cp44652.tw1.ru/catalog.php');
         
-        // Используем Edge Function для обхода CORS
-        const response = await fetch('https://phpsaxryacthlvtdzntq.supabase.co/functions/v1/fetch-bitrix-catalog', {
+        const response = await fetch('https://cp44652.tw1.ru/catalog.php', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           }
         });
         
-        console.log('📋 Получен ответ от Edge Function, статус:', response.status, response.statusText);
+        console.log('📋 Получен ответ, статус:', response.status, response.statusText);
         
         if (!response.ok) {
-          throw new Error(`Edge Function error! status: ${response.status} ${response.statusText}`);
+          throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`);
         }
         
         console.log('🔄 Парсим JSON ответ...');

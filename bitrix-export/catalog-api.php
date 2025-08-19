@@ -7,10 +7,22 @@ CModule::IncludeModule("iblock");
 // ID инфоблока каталога (замените на ваш ID)
 $IBLOCK_ID = 4; // Ваш ID из ссылки
 
+// Обрабатываем CORS preflight запрос
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    header('Content-Type: application/json; charset=utf-8');
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
+    header('Access-Control-Max-Age: 86400'); // 24 часа
+    http_response_code(200);
+    exit;
+}
+
 // Проверяем метод запроса
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     http_response_code(405);
     header('Content-Type: application/json; charset=utf-8');
+    header('Access-Control-Allow-Origin: *');
     echo json_encode(['error' => 'Method not allowed']);
     exit;
 }
@@ -18,8 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 // Устанавливаем заголовки для JSON и CORS
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET');
-header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
+header('Access-Control-Allow-Credentials: false');
 
 try {
     $result = [
