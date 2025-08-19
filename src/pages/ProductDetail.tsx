@@ -396,6 +396,48 @@ const ProductDetail: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Product Tabs and Download Section */}
+        <div className="mt-12 border-t border-border pt-8">
+          <div className="flex items-center justify-between mb-8">
+            {/* Tabs */}
+            <div className="flex gap-8 flex-wrap">
+              <button className="pb-3 border-b-2 border-brand-red text-brand-red font-medium">
+                Описание
+              </button>
+              <button className="pb-3 border-b-2 border-transparent text-muted-foreground hover:text-foreground transition-colors">
+                Характеристики
+              </button>
+              <button className="pb-3 border-b-2 border-transparent text-muted-foreground hover:text-foreground transition-colors">
+                Отзывы (10)
+              </button>
+              <button className="pb-3 border-b-2 border-transparent text-muted-foreground hover:text-foreground transition-colors">
+                Доставка и оплата
+              </button>
+              <button className="pb-3 border-b-2 border-transparent text-muted-foreground hover:text-foreground transition-colors">
+                Рассрочка
+              </button>
+              <button className="pb-3 border-b-2 border-transparent text-muted-foreground hover:text-foreground transition-colors">
+                Услуги
+              </button>
+            </div>
+
+            {/* Download Button */}
+            <Button 
+              variant="outline" 
+              className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white transition-colors"
+            >
+              Скачать инструкцию
+            </Button>
+          </div>
+
+          {/* Tab Content */}
+          <div className="prose prose-gray max-w-none">
+            <p className="text-muted-foreground leading-relaxed">
+              Здесь будет содержимое выбранной вкладки. В данном случае - описание товара {product.name}.
+            </p>
+          </div>
+        </div>
       </main>
       <Footer />
     </div>
