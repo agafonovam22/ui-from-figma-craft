@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
 import NewProducts from '@/components/NewProducts';
 import IdeasSelections from '@/components/IdeasSelections';
+import ProductCard from '@/components/ProductCard';
 import { 
   Breadcrumb, 
   BreadcrumbItem, 
@@ -16,81 +17,66 @@ import {
 import { Link } from 'react-router-dom';
 
 const HomeFitnessEquipment: React.FC = () => {
-  const equipmentCategories = [
+  const homeProducts = [
     {
       id: 1,
-      image: '/lovable-uploads/f9b72daf-4aef-4d8d-b310-9c89ab9d2935.png',
-      category: 'treadmill'
+      image: '/lovable-uploads/e7893606-f51a-4e53-9c80-ab83d081c16c.png',
+      category: 'treadmill',
+      price: 'от 33 900 ₽'
     },
     {
       id: 2,
-      image: '/lovable-uploads/69fdc332-0059-4da9-bb96-e2a33ad78690.png',
-      category: 'bike'
+      image: '/lovable-uploads/41b47400-6434-4309-9474-38fd8527c0f9.png',
+      category: 'bike',
+      price: 'от 35 900 ₽'
     },
     {
       id: 3,
-      image: '/lovable-uploads/b434aaab-a2a1-477c-b1b7-dc8498469b1d.png',
-      category: 'rowing'
+      image: '/lovable-uploads/7eb18ab6-a47c-4127-a2e4-520345b3a636.png',
+      category: 'rowing',
+      price: 'от 49 900 ₽'
     },
     {
       id: 4,
-      image: '/lovable-uploads/51a61095-ad58-47e3-8e00-c553a9375652.png',
-      category: 'elliptical'
+      image: '/lovable-uploads/9deaa8d7-89aa-4671-b709-82d6af4d5f19.png',
+      category: 'strength',
+      price: 'от 9 900 ₽'
     },
     {
       id: 5,
-      image: '/lovable-uploads/8017e182-f4c2-4df6-9cf5-4576a253034c.png',
-      category: 'table-tennis'
+      image: '/lovable-uploads/dcac2877-3c35-4f7d-8abf-95aacc72562e.png',
+      category: 'inversion',
+      price: 'от 12 900 ₽'
     },
     {
       id: 6,
-      image: '/lovable-uploads/46f01d9e-1277-4b59-ad56-ed1b519c6e6d.png',
-      category: 'accessories'
+      image: '/lovable-uploads/34f32079-9172-481c-a342-ebee3d47cd47.png',
+      category: 'accessories',
+      price: '220 ₽'
     },
     {
       id: 7,
-      image: '/lovable-uploads/d2eb71f9-548b-4767-959b-ccd95c181201.png',
-      category: 'strength'
+      image: '/lovable-uploads/c05b2484-8dc7-4ac6-bd32-3876e288da9a.png',
+      category: 'street',
+      price: 'от 800 ₽'
     },
     {
       id: 8,
-      image: '/lovable-uploads/c4fbfa9e-af20-4a86-87a4-93a9d834a095.png',
-      category: 'inversion'
+      image: '/lovable-uploads/0c78e89b-223e-41c0-a7c1-3e594b9c0a92.png',
+      category: 'elliptical',
+      price: 'от 45 900 ₽'
     },
     {
       id: 9,
-      image: '/lovable-uploads/273e9dfe-c852-4292-9c95-8d70317bc41c.png',
-      category: 'horizontal'
+      image: '/lovable-uploads/bc820bdc-17a0-4d70-a621-8d5a0ebf37ad.png',
+      category: 'tennis',
+      price: 'от 24 900 ₽'
     },
     {
       id: 10,
-      image: '/lovable-uploads/26b0854f-4f46-4c7c-a27a-1af9ad7b0c62.png',
-      category: 'outdoor'
-    },
-    {
-      id: 11,
-      image: '/lovable-uploads/d29f2e5b-0be1-4064-9d2f-79c41531c16e.png',
-      category: 'trampoline'
-    },
-    {
-      id: 12,
-      image: '/lovable-uploads/71d6d35f-f9b7-478c-87b4-300ee0a39a48.png',
-      category: 'massage'
-    },
-    {
-      id: 13,
-      image: '/lovable-uploads/a419c85d-e258-4217-9706-fc711f1b4523.png',
-      category: 'home-accessories'
-    },
-    {
-      id: 14,
-      image: '/lovable-uploads/f60c9b28-0384-4770-97ba-40b6bdcd451e.png',
-      category: 'free-weights'
-    },
-    {
-      id: 15,
-      image: '/lovable-uploads/78ad7bbd-765e-4fb2-bbbf-62e11f323384.png',
-      category: 'game-tables'
+      image: '/lovable-uploads/7919df46-5d23-4cdc-8384-edd08bf27547.png',
+      category: 'accessories',
+      price: 'от 700 ₽'
     }
   ];
 
@@ -127,54 +113,17 @@ const HomeFitnessEquipment: React.FC = () => {
           </Link>
         </div>
 
-        {/* Equipment Grid - First 5 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
-          {equipmentCategories.slice(0, 5).map((product) => (
-            <Link 
-              key={product.id} 
-              to={`/product/${product.id}`}
-              className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-            >
-              <img 
-                src={product.image} 
-                alt="Категория товаров"
-                className="w-full h-full object-cover"
-              />
-            </Link>
+        {/* Equipment Grid - First 6 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6">
+          {homeProducts.slice(0, 6).map((product) => (
+            <ProductCard key={product.id} product={product} variant="grid" linkTo="/product-card" />
           ))}
         </div>
         
-        {/* Equipment Grid - Next 5 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
-          {equipmentCategories.slice(5, 10).map((product) => (
-            <Link 
-              key={product.id} 
-              to={`/product/${product.id}`}
-              className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-            >
-              <img 
-                src={product.image} 
-                alt="Категория товаров"
-                className="w-full h-full object-cover"
-              />
-            </Link>
-          ))}
-        </div>
-
-        {/* Equipment Grid - Last 5 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
-          {equipmentCategories.slice(10, 15).map((product) => (
-            <Link 
-              key={product.id} 
-              to={`/product/${product.id}`}
-              className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-            >
-              <img 
-                src={product.image} 
-                alt="Категория товаров"
-                className="w-full h-full object-cover"
-              />
-            </Link>
+        {/* Equipment Grid - Next 4 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[10px] mb-12">
+          {homeProducts.slice(6, 10).map((product) => (
+            <ProductCard key={product.id} product={product} variant="grid" linkTo="/product-card" />
           ))}
         </div>
       </div>
