@@ -158,12 +158,15 @@ const Catalog: React.FC = () => {
     } else {
       // Загружаем все товары если нет поискового запроса
       const loadProducts = async () => {
+        console.log('useEffect: Loading all products...');
         setLoading(true);
         try {
           const allBitrixProducts = await bitrixApi.getProducts();
+          console.log('useEffect: Loaded products:', allBitrixProducts.length);
           setProducts(allBitrixProducts);
+          console.log('useEffect: Products state updated');
         } catch (error) {
-          console.error('Error loading products:', error);
+          console.error('useEffect: Error loading products:', error);
           setProducts([]);
         } finally {
           setLoading(false);
