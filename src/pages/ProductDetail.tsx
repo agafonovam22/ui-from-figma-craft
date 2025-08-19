@@ -91,6 +91,13 @@ const ProductDetail: React.FC = () => {
             // Пропускаем скрытые характеристики
             if (hiddenFields.includes(key) || key.startsWith('Тег') || key.includes('RELATED') || key.includes('RALATED') || key === 'Дополнительно') return;
             
+            // Пропускаем поля с только числовыми значениями (это системные коды)
+            if (typeof value === 'string' && /^\d+$/.test(value.trim()) && 
+                !key.includes('кг') && !key.includes('см') && !key.includes('мм') && !key.includes('дюйм') && 
+                !key.includes('км/ч') && !key.includes('л.с') && !key.includes('%') && !key.includes('Вольт') &&
+                !key.includes('год') && !key.includes('програм') && !key.includes('количество') && 
+                !key.includes('Общее') && !key.includes('Макс') && !key.includes('Мин') && !key.includes('Диаметр')) return;
+            
             const characteristic = { name: key, value: String(value) };
             
             // Основные характеристики
