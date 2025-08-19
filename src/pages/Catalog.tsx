@@ -162,7 +162,7 @@ const Catalog: React.FC = () => {
   }, []);
 
   // Конвертируем Bitrix товары в формат компонента
-  const displayProducts = products.length > 0 ? products.map(product => ({
+  const displayProducts = products.map(product => ({
     id: product.id,
     name: product.name,
     price: product.price ? `${product.price}₽` : null,
@@ -176,7 +176,7 @@ const Catalog: React.FC = () => {
     isAvailable: product.available,
     hasComparison: true,
     inStock: product.available
-  })) : allProducts;
+  }));
 
   return (
     <>
