@@ -53,9 +53,8 @@ const ProductDetail: React.FC = () => {
             'Размеры и вес': [],
             'Технические характеристики': [],
             'Функциональность': [],
+            'Дисплей': [],
             'Электропитание': [],
-            'Комплектация и упаковка': [],
-            'Мультимедиа': [],
             'Дополнительные характеристики': []
           };
 
@@ -83,46 +82,53 @@ const ProductDetail: React.FC = () => {
             const characteristic = { name: key, value: String(value) };
             
             // Основные характеристики
-            if (['Тип продукции', 'Бренд', 'Серия', 'Назначение', 'Тип конструкции', 'Складной/стационарный', 'Гарантия', 'Страна производства', 'Тип оборудования', 'Артикул'].includes(key)) {
+            if (['Артикул', 'Тип конструкции', 'Назначение', 'Тип назначения', 'Производитель', 'Бренд', 
+                 'Страна бренда', 'Страна изготовления', 'Страна производства', 'Тип продукции', 'Тип оборудования'].includes(key)) {
               groups['Основные характеристики'].push(characteristic);
             }
             // Размеры и вес
-            else if (key.includes('Размер бегового полотна') || key.includes('Габариты в рабочем состоянии') || 
-                     key.includes('Габариты в сложенном виде') || key.includes('Вес товара') || 
-                     key.includes('Вес в упаковке') || key.includes('Максимальный вес пользователя') ||
-                     key.includes('Габариты') || key.includes('Размер') || key.includes('Вес') || 
-                     key.includes('Высота') || key.includes('Длина') || key.includes('Ширина') ||
-                     ['Диаметр батута, ft', 'Диаметр батута, см', 'Диаметр прыжкового полотна, см'].includes(key)) {
+            else if (key.includes('Вес пользователя') || key.includes('Максимальный вес пользователя') || 
+                     key.includes('Вес нетто') || key.includes('Вес брутто') || key.includes('Вес товара') || key.includes('Вес в упаковке') ||
+                     key.includes('Размер бегового полотна') || key.includes('Размер дисплея') ||
+                     key.includes('Габариты упаковки') || key.includes('Размер в рабочем состоянии') || key.includes('Размер в сложенном состоянии') ||
+                     key.includes('Габариты в рабочем состоянии') || key.includes('Габариты в сложенном виде') ||
+                     key.includes('Длина') || key.includes('Ширина') || key.includes('Высота') || key.includes('Размер') ||
+                     key.includes('Диаметр') || key.includes('Габариты') || key.toLowerCase().includes('вес')) {
               groups['Размеры и вес'].push(characteristic);
             }
             // Технические характеристики
-            else if (key.includes('Мощность двигателя') || key.includes('Скорость') || key.includes('Угол наклона') ||
-                     key.includes('Тип амортизации') || key.includes('Уровней амортизации') || key.includes('Система безопасности') ||
-                     key.includes('Двигатель') || key.includes('Пиковая мощность') || key.includes('Тип беговой дорожки') ||
-                     ['Тип двигателя', 'Минимальная скорость', 'Максимальная скорость'].includes(key)) {
+            else if (key.includes('Тип беговой дорожки') || key.includes('Тип двигателя') || 
+                     key.includes('Мощность двигателя') || key.includes('Пиковая мощность') ||
+                     key.includes('Максимальная скорость') || key.includes('Минимальная скорость') || key.includes('Скорость') ||
+                     key.includes('Угол наклона') || key.includes('Макс. угол наклона') ||
+                     key.includes('Амортизация') || key.includes('Система амортизации') || key.includes('Смазка беговой деки') ||
+                     key.includes('Диаметр передних') || key.includes('Диаметр задних') || key.includes('валов') ||
+                     key.includes('Дека') || key.includes('Рама') || key.includes('Двигатель')) {
               groups['Технические характеристики'].push(characteristic);
             }
             // Функциональность
-            else if (key.includes('программ тренировок') || key.includes('Тип дисплея') || key.includes('пульс') ||
-                     key.includes('Bluetooth') || key.includes('приложени') || key.includes('Аудиосистема') ||
-                     key.includes('подставка') || key.includes('Вентилятор') || key.includes('USB') ||
-                     key.includes('программ') || key.includes('дисплей')) {
+            else if (key.includes('Общее количество программ') || key.includes('программ тренировок') || key.includes('программ') ||
+                     key.includes('Спецификации программ') || key.includes('Пульсозависимые программы') ||
+                     key.includes('Сенсоры пульса') || key.includes('пульс') || key.includes('Поддержка кардиопояса') || key.includes('Кардиопояс') ||
+                     key.includes('Мобильное приложение') || key.includes('приложени') || key.includes('Виртуальный ландшафт') ||
+                     key.includes('Держатель для бутылки') || key.includes('Подставка под планшет') || key.includes('подставка') ||
+                     key.includes('Клавиши быстрой настройки') || key.includes('Клавиши регулировки в поручнях') ||
+                     key.includes('Механизм складывания') || key.includes('Транспортировочные колеса') ||
+                     key.includes('Порты') || key.includes('USB') || key.includes('Язык') || key.includes('интерфейса') ||
+                     key.includes('Показания консоли') || key.includes('Вентилятор')) {
               groups['Функциональность'].push(characteristic);
             }
-            // Мультимедиа (отдельно от Функциональности для товаров без Bluetooth/дисплея)
-            else if (key.includes('Bluetooth') || key.includes('дисплей') || key.includes('Дисплей') ||
-                     key.includes('приложени') || key.includes('мультимедиа')) {
-              groups['Мультимедиа'].push(characteristic);
+            // Дисплей
+            else if (key.includes('Тип дисплея') || key.includes('дисплей') || key.includes('Дисплей') ||
+                     key.includes('Подсветка дисплея') || key.includes('Подсветка') ||
+                     key.includes('скорость') || key.includes('расстояние') || key.includes('время') || key.includes('наклон') ||
+                     (key.includes('показател') && !key.includes('консоли'))) {
+              groups['Дисплей'].push(characteristic);
             }
             // Электропитание
-            else if (key.includes('Питание') || key.includes('Потребляемая мощность') || key.includes('Энергосбережение') ||
-                     key.includes('питан') || key.includes('электр')) {
+            else if (key.includes('Питание') || key.includes('питан') || key.includes('Сертификаты') ||
+                     key.includes('CE') || key.includes('RoHS') || key.includes('электр')) {
               groups['Электропитание'].push(characteristic);
-            }
-            // Комплектация и упаковка
-            else if (key.includes('Комплектация') || key.includes('Тип упаковки') || key.includes('упаковк') ||
-                     key.includes('комплект') || key.includes('кабель') || key.includes('ключи')) {
-              groups['Комплектация и упаковка'].push(characteristic);
             }
             // Остальные в дополнительные
             else {
