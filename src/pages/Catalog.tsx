@@ -118,6 +118,8 @@ const Catalog: React.FC = () => {
           console.log('First result:', searchResults[0]);
         }
         setProducts(searchResults);
+        console.log('Products state updated with:', searchResults.length, 'products');
+        console.log('State products after update:', searchResults.map(p => p.name).slice(0, 5));
         
         // Обновляем URL с поисковым запросом только если он отличается
         const currentQuery = searchParams.get('q');
