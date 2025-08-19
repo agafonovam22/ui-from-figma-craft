@@ -34,6 +34,9 @@ const Catalog: React.FC = () => {
   const [allProducts, setAllProducts] = useState<BitrixProduct[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<BitrixProduct[]>([]);
   const [loading, setLoading] = useState(false);
+  
+  // Константы для пагинации
+  const PRODUCTS_PER_PAGE = 16;
 
   // Загружаем ВСЕ товары при инициализации
   useEffect(() => {
@@ -58,6 +61,7 @@ const Catalog: React.FC = () => {
   const performSearch = (query: string) => {
     console.log('Выполняем поиск:', query);
     setSearchQuery(query);
+    setCurrentPage(1); // Сброс на первую страницу при поиске
     
     if (!query.trim()) {
       // Если поиск пустой - показываем все товары
@@ -130,21 +134,32 @@ const Catalog: React.FC = () => {
     id: index + 1
   }));
   
-  const displayProducts = filteredProducts.length > 0 ? filteredProducts.map(product => ({
-    id: product.id,
-    name: product.name,
-    price: product.price ? `${product.price}₽` : null,
-    originalPrice: product.originalPrice ? `${product.originalPrice}₽` : null,
-    discount: null,
-    rating: 4.5 + Math.random(),
-    reviews: Math.floor(Math.random() * 200) + 10,
-    image: product.image,
-    badge: product.available ? 'В наличии' : 'Нет в наличии',
-    badgeColor: product.available ? 'bg-green-500' : 'bg-red-500',
-    isAvailable: product.available,
-    hasComparison: true,
-    inStock: product.available
-  })) : mockProducts;
+  // Мемоизированные товары с пагинацией
+  const paginatedProducts = React.useMemo(() => {
+    const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
+    const endIndex = startIndex + PRODUCTS_PER_PAGE;
+    return filteredProducts.slice(startIndex, endIndex);
+  }, [filteredProducts, currentPage]);
+  
+  const totalPages = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE);
+  
+  const displayProducts = React.useMemo(() => {
+    return paginatedProducts.length > 0 ? paginatedProducts.map(product => ({
+      id: product.id,
+      name: product.name,
+      price: product.price ? `${product.price}₽` : null,
+      originalPrice: product.originalPrice ? `${product.originalPrice}₽` : null,
+      discount: null,
+      rating: 4.5 + Math.random(),
+      reviews: Math.floor(Math.random() * 200) + 10,
+      image: product.image,
+      badge: product.available ? 'В наличии' : 'Нет в наличии',
+      badgeColor: product.available ? 'bg-green-500' : 'bg-red-500',
+      isAvailable: product.available,
+      hasComparison: true,
+      inStock: product.available
+    })) : mockProducts;
+  }, [paginatedProducts, mockProducts]);
   
   console.log('CATALOG RENDER - DisplayProducts:', displayProducts.length);
 
@@ -195,7 +210,9 @@ const Catalog: React.FC = () => {
               ) : (
                 <CatalogGrid 
                   products={displayProducts} 
-                  bitrixUrl="https://cp44652.tw1.ru/catalog.php"
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={setCurrentPage}
                 />
               )}
             </div>
