@@ -112,25 +112,31 @@ const Catalog: React.FC = () => {
       if (query.trim()) {
         console.log('Searching for:', query);
         const searchResults = await bitrixApi.searchProducts(query);
+        console.log('Search results:', searchResults);
         setProducts(searchResults);
         
-        // Обновляем URL с поисковым запросом
-        const newSearchParams = new URLSearchParams(searchParams);
-        newSearchParams.set('q', query);
-        setSearchParams(newSearchParams);
+        // Обновляем URL с поисковым запросом только если он отличается
+        const currentQuery = searchParams.get('q');
+        if (currentQuery !== query) {
+          const newSearchParams = new URLSearchParams(searchParams);
+          newSearchParams.set('q', query);
+          setSearchParams(newSearchParams);
+        }
       } else {
         // Если запрос пустой, загружаем все товары
         const allBitrixProducts = await bitrixApi.getProducts();
         setProducts(allBitrixProducts);
         
-        // Убираем параметр поиска из URL
-        const newSearchParams = new URLSearchParams(searchParams);
-        newSearchParams.delete('q');
-        setSearchParams(newSearchParams);
+        // Убираем параметр поиска из URL только если он есть
+        if (searchParams.has('q')) {
+          const newSearchParams = new URLSearchParams(searchParams);
+          newSearchParams.delete('q');
+          setSearchParams(newSearchParams);
+        }
       }
     } catch (error) {
       console.error('Search error:', error);
-      // В случае ошибки показываем fallback товары
+      // В случае ошибки показываем пустой массив
       setProducts([]);
     } finally {
       setLoading(false);
