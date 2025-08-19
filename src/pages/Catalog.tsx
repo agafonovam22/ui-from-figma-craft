@@ -138,13 +138,15 @@ const Catalog: React.FC = () => {
   const paginatedProducts = React.useMemo(() => {
     const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
     const endIndex = startIndex + PRODUCTS_PER_PAGE;
-    return filteredProducts.slice(startIndex, endIndex);
+    const result = filteredProducts.slice(startIndex, endIndex);
+    console.log(`PAGINATION DEBUG - Page: ${currentPage}, Start: ${startIndex}, End: ${endIndex}, FilteredProducts: ${filteredProducts.length}, PaginatedProducts: ${result.length}`);
+    return result;
   }, [filteredProducts, currentPage]);
   
   const totalPages = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE);
   
   const displayProducts = React.useMemo(() => {
-    return paginatedProducts.length > 0 ? paginatedProducts.map(product => ({
+    const result = paginatedProducts.length > 0 ? paginatedProducts.map(product => ({
       id: product.id,
       name: product.name,
       price: product.price ? `${product.price}₽` : null,
@@ -159,6 +161,8 @@ const Catalog: React.FC = () => {
       hasComparison: true,
       inStock: product.available
     })) : mockProducts;
+    console.log(`DISPLAY DEBUG - PaginatedProducts: ${paginatedProducts.length}, DisplayProducts: ${result.length}`);
+    return result;
   }, [paginatedProducts, mockProducts]);
   
   console.log('CATALOG RENDER - DisplayProducts:', displayProducts.length);
