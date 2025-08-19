@@ -34,8 +34,8 @@ const CatalogGrid: React.FC<CatalogGridProps> = ({
 
   return (
     <>
-      {/* Products Grid - еще более компактная сетка */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3 mb-8">
+      {/* Products Grid */}
+      <div className="grid grid-cols-4 gap-6 mb-8">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} variant="catalog" />
         ))}
