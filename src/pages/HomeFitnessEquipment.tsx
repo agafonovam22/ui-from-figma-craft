@@ -50,33 +50,33 @@ const HomeFitnessEquipment: React.FC = () => {
     },
     {
       id: 6,
-      image: '/lovable-uploads/34f32079-9172-481c-a342-ebee3d47cd47.png',
+      image: '/lovable-uploads/85fad5e3-5564-4ec5-97b4-103c8ebf8193.png',
       category: 'accessories',
       price: '220 ₽'
     },
     {
       id: 7,
-      image: '/lovable-uploads/c05b2484-8dc7-4ac6-bd32-3876e288da9a.png',
-      category: 'street',
-      price: 'от 800 ₽'
+      image: '/lovable-uploads/0e63d50f-4bb3-4ec1-81e3-3e5bdd720c43.png',
+      category: 'strength',
+      price: 'от 9 900 ₽'
     },
     {
       id: 8,
-      image: '/lovable-uploads/0c78e89b-223e-41c0-a7c1-3e594b9c0a92.png',
-      category: 'elliptical',
-      price: 'от 45 900 ₽'
+      image: '/lovable-uploads/7bec0127-1015-4379-9b43-fbed5bfb8544.png',
+      category: 'inversion',
+      price: 'от 12 900 ₽'
     },
     {
       id: 9,
-      image: '/lovable-uploads/bc820bdc-17a0-4d70-a621-8d5a0ebf37ad.png',
-      category: 'tennis',
-      price: 'от 24 900 ₽'
+      image: '/lovable-uploads/f42d0a8e-c1b3-4aeb-b4b9-2e502db62acc.png',
+      category: 'ski',
+      price: 'от 15 900 ₽'
     },
     {
       id: 10,
-      image: '/lovable-uploads/7919df46-5d23-4cdc-8384-edd08bf27547.png',
-      category: 'accessories',
-      price: 'от 700 ₽'
+      image: '/lovable-uploads/de5cfc45-c192-4221-a8b8-7b3a5bc64e03.png',
+      category: 'street',
+      price: 'от 800 ₽'
     }
   ];
 
