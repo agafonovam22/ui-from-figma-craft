@@ -134,16 +134,19 @@ try {
                     continue;
                 }
                 
-                // Получаем правильное значение в зависимости от типа свойства
+                // Логируем структуру свойства для отладки (только для товара 523)
+                if ($product['ID'] == '523' && count($characteristics) < 3) {
+                    error_log('Debug property structure for product 523: ' . print_r($prop, true));
+                }
+                
+                // Получаем правильное значение
                 $value = $prop['VALUE'];
                 
-                // Если это списочное свойство (тип L), получаем расшифрованное значение
-                if ($prop['PROPERTY_TYPE'] === 'L' && !empty($prop['VALUE_ENUM'])) {
+                // Пробуем получить расшифрованное значение для списочных свойств
+                if (!empty($prop['VALUE_ENUM'])) {
                     $value = $prop['VALUE_ENUM'];
-                }
-                // Если есть VALUE_ENUM, но PROPERTY_TYPE не определен, тоже используем его
-                elseif (!empty($prop['VALUE_ENUM']) && is_numeric($prop['VALUE'])) {
-                    $value = $prop['VALUE_ENUM'];
+                } elseif (!empty($prop['VALUE_XML_ID'])) {
+                    $value = $prop['VALUE_XML_ID'];
                 }
                 
                 $characteristics[] = [

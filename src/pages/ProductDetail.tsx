@@ -390,28 +390,70 @@ const ProductDetail: React.FC = () => {
     const fetchProduct = async () => {
       try {
         setLoading(true);
-        console.log('Загружаем товар с ID:', id);
+        console.log('🔍 Начинаем загрузку товара, ID:', id);
+        console.log('📡 Отправляем запрос к API:', 'https://cp44652.tw1.ru/catalog.php');
         
         const response = await fetch('https://cp44652.tw1.ru/catalog.php');
-        console.log('Ответ сервера:', response.status);
+        console.log('📋 Получен ответ, статус:', response.status, response.statusText);
         
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`);
+        }
+        
+        console.log('🔄 Парсим JSON ответ...');
         const data = await response.json();
-        console.log('Получены данные:', data);
+        console.log('📊 Получены данные каталога. Товаров:', data.products?.length || 0);
+        console.log('🎯 Ищем товар с ID:', id);
         
-        if (data.status === 'ok' && data.products) {
-          console.log('Ищем товар с ID:', id, 'в массиве из', data.products.length, 'товаров');
-          const foundProduct = data.products.find((p: any) => p.id.toString() === id);
-          console.log('Найден товар:', foundProduct);
-          setProduct(foundProduct);
+        if (data.products && Array.isArray(data.products)) {
+          console.log('📋 Список товаров получен, всего:', data.products.length);
           
-          if (!foundProduct) {
+          const foundProduct = data.products.find((p: any) => {
+            const matches = {
+              idString: p.id?.toString() === id,
+              idDirect: p.id === id,
+              bitrixId: p.bitrix_id?.toString() === id,
+              idInt: p.id === parseInt(id)
+            };
+            
+            console.log('🔍 Проверяем товар:', {
+              productId: p.id,
+              bitrixId: p.bitrix_id, 
+              searchId: id,
+              name: p.name,
+              matches
+            });
+            
+            return matches.idString || matches.idDirect || matches.bitrixId || matches.idInt;
+          });
+          
+          if (foundProduct) {
+            console.log('✅ Товар найден:', foundProduct.name);
+            console.log('📝 Характеристики товара:', foundProduct.characteristics?.length || 0);
+            setProduct(foundProduct);
+            setError(null);
+          } else {
+            console.warn('❌ Товар не найден в каталоге');
+            console.log('🔍 Первые 5 доступных товаров:', 
+              data.products.slice(0, 5).map((p: any) => ({ 
+                id: p.id, 
+                bitrix_id: p.bitrix_id, 
+                name: p.name 
+              }))
+            );
             setError(`Товар с ID ${id} не найден среди ${data.products.length} товаров`);
           }
         } else {
+          console.error('🚫 Неверный формат ответа от сервера:', data);
           setError('Неверный формат ответа от сервера');
         }
       } catch (err) {
-        console.error('Ошибка загрузки товара:', err);
+        console.error('💥 Ошибка загрузки товара:', err);
+        console.error('🔧 Детали ошибки:', {
+          name: err instanceof Error ? err.name : 'Unknown',
+          message: err instanceof Error ? err.message : String(err),
+          stack: err instanceof Error ? err.stack : undefined
+        });
         setError(`Ошибка загрузки: ${err}`);
       } finally {
         setLoading(false);
