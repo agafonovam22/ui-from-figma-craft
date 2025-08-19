@@ -174,6 +174,13 @@ const Catalog: React.FC = () => {
   }, [searchParams]);
 
   // Конвертируем Bitrix товары в формат компонента
+  console.log('Rendering with products state:', products.length, 'products');
+  console.log('Search query state:', searchQuery);
+  
+  if (searchQuery && products.length > 0) {
+    console.log('Rendering search results:', products.slice(0, 3).map(p => p.name));
+  }
+  
   const displayProducts = products.length > 0 ? products.map(product => ({
     id: product.id,
     name: product.name,
@@ -189,6 +196,8 @@ const Catalog: React.FC = () => {
     hasComparison: true,
     inStock: product.available
   })) : (!searchQuery ? allProducts : []);
+  
+  console.log('Final displayProducts length:', displayProducts.length);
 
   return (
     <>
