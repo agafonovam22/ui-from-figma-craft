@@ -91,12 +91,21 @@ const ProductDetail: React.FC = () => {
             // Пропускаем скрытые характеристики
             if (hiddenFields.includes(key) || key.startsWith('Тег') || key.includes('RELATED') || key.includes('RALATED') || key === 'Дополнительно') return;
             
-            // Пропускаем поля с только числовыми значениями (это системные коды)
-            if (typeof value === 'string' && /^\d+$/.test(value.trim()) && 
-                !key.includes('кг') && !key.includes('см') && !key.includes('мм') && !key.includes('дюйм') && 
-                !key.includes('км/ч') && !key.includes('л.с') && !key.includes('%') && !key.includes('Вольт') &&
-                !key.includes('год') && !key.includes('програм') && !key.includes('количество') && 
-                !key.includes('Общее') && !key.includes('Макс') && !key.includes('Мин') && !key.includes('Диаметр')) return;
+            // Пропускаем только очевидные системные коды (поля с ID, номерами справочников и т.п.)
+            const isSystemCode = typeof value === 'string' && /^\d+$/.test(value.trim()) && (
+              key.includes('(id)') || key.includes('Акция') || key.includes('Картинки галереи') || 
+              key.includes('Использование') || key.includes('Исключить') || key.includes('Ставки налогов') || 
+              key.includes('Базовая единица') || key.includes('Количество мест') ||
+              // Исключаем поля, которые могут быть системными кодами без единиц измерения
+              (key.includes('Держатель') || key.includes('Механизм') || key.includes('Компенсаторы') || 
+               key.includes('Виртуальный') || key.includes('Акустика') || key.includes('Body Fat') ||
+               key.includes('Амортизация') || key.includes('Назначение') || key.includes('Производитель') ||
+               key.includes('Кардиопояс') || key.includes('Поддержка') || key.includes('Сенсоры') ||
+               key.includes('Подсветка') || key.includes('Подставка') || key.includes('Смазка') ||
+               key.includes('Порты') || key.includes('Клавиши') && !key.includes('настройк'))
+            );
+            
+            if (isSystemCode) return;
             
             const characteristic = { name: key, value: String(value) };
             
