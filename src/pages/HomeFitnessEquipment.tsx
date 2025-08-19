@@ -114,14 +114,14 @@ const HomeFitnessEquipment: React.FC = () => {
         </div>
 
         {/* Equipment Grid - First 6 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6">
+        <div className="flex flex-wrap justify-center gap-[10px] mb-6">
           {homeProducts.slice(0, 6).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo="/product-card" />
           ))}
         </div>
         
         {/* Equipment Grid - Next 4 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[10px] mb-12">
+        <div className="flex flex-wrap justify-center gap-[10px] mb-12">
           {homeProducts.slice(6, 10).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo="/product-card" />
           ))}

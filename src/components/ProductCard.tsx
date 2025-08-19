@@ -33,7 +33,7 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
   if (variant === 'grid') {
     // Simplified version for ProductCatalog
     return (
-      <div className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-[300px]">
+      <div className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer w-[324px] h-[281px]">
         <img 
           src={product.image} 
           alt={product.name || "Категория товаров"}
