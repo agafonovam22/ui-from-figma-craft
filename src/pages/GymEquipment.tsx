@@ -20,61 +20,61 @@ const GymEquipment: React.FC = () => {
   const equipmentCategories = [
     {
       id: 1,
-      image: '/lovable-uploads/8359c4fb-ab19-4e0f-904f-17c62a9694cc.png',
+      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
       category: 'treadmill',
       price: 'от 120 000 ₽'
     },
     {
       id: 2,
-      image: '/lovable-uploads/17488a84-d62c-4ec5-83c9-21552aebadc8.png',
+      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
       category: 'bike',
       price: 'от 80 000 ₽'
     },
     {
       id: 3,
-      image: '/lovable-uploads/03483cd7-94a8-4050-b663-8e2a5d663e53.png',
+      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
       category: 'rowing',
       price: 'от 95 000 ₽'
     },
     {
       id: 4,
-      image: '/lovable-uploads/11f76f2c-1e15-40b4-bac6-6fb49f30b1a1.png',
+      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
       category: 'elliptical',
       price: 'от 150 000 ₽'
     },
     {
       id: 5,
-      image: '/lovable-uploads/13df76f8-a392-4e5d-b2e0-340738c67fcf.png',
+      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
       category: 'multistation',
       price: 'от 300 000 ₽'
     },
     {
       id: 6,
-      image: '/lovable-uploads/a6128dc6-0488-4742-8921-e4eb380e0e9d.png',
+      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
       category: 'bench',
       price: 'от 25 000 ₽'
     },
     {
       id: 7,
-      image: '/lovable-uploads/860d6abe-7f36-40a8-b2d7-bd9d1c212692.png',
+      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
       category: 'game-tables',
       price: 'от 40 000 ₽'
     },
     {
       id: 8,
-      image: '/lovable-uploads/dd7d88b7-d0e8-43c0-b81c-99bafa89bafc.png',
+      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
       category: 'free-weights',
       price: 'от 15 000 ₽'
     },
     {
       id: 9,
-      image: '/lovable-uploads/b2857e06-f776-42f3-ae7f-5f9b648d5573.png',
+      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
       category: 'home-accessories',
       price: 'от 5 000 ₽'
     },
     {
       id: 10,
-      image: '/lovable-uploads/bb62bd6c-3aa5-407c-a8cc-f646a749c002.png',
+      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
       category: 'massage',
       price: 'от 60 000 ₽'
     }
