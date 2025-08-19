@@ -50,9 +50,11 @@ const ProductDetail: React.FC = () => {
         const groupCharacteristics = (characteristics: Record<string, any>) => {
           const groups: Record<string, Array<{name: string, value: string}>> = {
             'Основные характеристики': [],
-            'Габариты и вес': [],
-            'Гарантия и производство': [],
-            'Дополнительные характеристики': []
+            'Габариты в рабочем состоянии': [],
+            'Дополнительные характеристики': [],
+            'Упаковка': [],
+            'Вес': [],
+            'Гарантия и Сертификация': []
           };
 
           // Скрытые характеристики, которые не показываем
@@ -78,16 +80,25 @@ const ProductDetail: React.FC = () => {
             const characteristic = { name: key, value: String(value) };
             
             // Основные характеристики
-            if (['Артикул', 'Тип оборудования', 'Тип назначения'].includes(key)) {
+            if (['Артикул', 'Тип оборудования', 'Тип назначения', 'Тип продукции', 'Бренд', 'Форма батута', 'Защитный мат', 'Цвет', 'Материал защитного мата'].includes(key)) {
               groups['Основные характеристики'].push(characteristic);
             }
-            // Габариты и вес
-            else if (key.includes('Габариты') || key.includes('Вес') || key.includes('Высота') || key.includes('Длина') || key.includes('Ширина')) {
-              groups['Габариты и вес'].push(characteristic);
+            // Габариты в рабочем состоянии
+            else if (key.includes('Габариты в рабочем состоянии') || key.includes('Размер в рабочем состоянии') || 
+                     ['Ширина защитного мата, см', 'Диаметр батута, ft', 'Диаметр батута, см', 'Диаметр прыжкового полотна, см', 'Материал прыжкового полотна', 'Количество пружин, шт', 'Длина пружин, мм', 'Диаметр пружины, см'].includes(key)) {
+              groups['Габариты в рабочем состоянии'].push(characteristic);
             }
-            // Гарантия и производство
-            else if (key.includes('Гарантия') || key.includes('Страна') || key.includes('Производ')) {
-              groups['Гарантия и производство'].push(characteristic);
+            // Упаковка
+            else if (key.includes('Габариты упаковки') || key.includes('упаковк') || key.includes('Упаковк')) {
+              groups['Упаковка'].push(characteristic);
+            }
+            // Вес
+            else if (key.includes('Вес')) {
+              groups['Вес'].push(characteristic);
+            }
+            // Гарантия и Сертификация
+            else if (key.includes('Гарантия') || key.includes('Страна') || key.includes('Сертификация') || key.includes('Артикул')) {
+              groups['Гарантия и Сертификация'].push(characteristic);
             }
             // Остальные в дополнительные
             else {
