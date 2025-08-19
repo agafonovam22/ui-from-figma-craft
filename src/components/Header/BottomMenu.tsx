@@ -1,6 +1,31 @@
 
 import React, { useRef } from 'react';
 import { CategoryItem } from './types';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+
+// Интерфейс для подкатегорий
+interface SubCategory {
+  label: string;
+  href?: string;
+  onClick?: () => void;
+}
+
+interface CategoryWithDropdown extends CategoryItem {
+  dropdownContent?: {
+    columns: {
+      title: string;
+      items: SubCategory[];
+    }[];
+    imageUrl?: string;
+    imageAlt?: string;
+  };
+}
 
 const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> = ({ 
   category, 
@@ -15,6 +40,47 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
       {category.label}
     </span>
   </button>
+);
+
+const CategoryWithDropdownMenu: React.FC<{ category: CategoryWithDropdown }> = ({ category }) => (
+  <NavigationMenuItem>
+    <NavigationMenuTrigger className="flex h-[46px] items-center gap-2 bg-[#262631] px-5 py-3 rounded-[5px] text-sm font-normal leading-[14px] text-[#778093] hover:text-white hover:bg-[#3a3a47] transition-colors group flex-shrink-0 data-[state=open]:bg-[#3a3a47] data-[state=open]:text-white">
+      {category.label}
+    </NavigationMenuTrigger>
+    <NavigationMenuContent className="bg-white border shadow-lg rounded-lg p-6 w-[800px]">
+      <div className="grid grid-cols-4 gap-8">
+        {category.dropdownContent?.columns.map((column, index) => (
+          <div key={index} className="space-y-3">
+            <h3 className="font-semibold text-gray-900 text-base">
+              {column.title}
+            </h3>
+            <ul className="space-y-2">
+              {column.items.map((item, itemIndex) => (
+                <li key={itemIndex}>
+                  <button
+                    onClick={item.onClick}
+                    className="text-gray-600 hover:text-gray-900 text-sm transition-colors"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+        
+        {category.dropdownContent?.imageUrl && (
+          <div className="col-span-1">
+            <img
+              src={category.dropdownContent.imageUrl}
+              alt={category.dropdownContent.imageAlt || ''}
+              className="w-full h-40 object-cover rounded-lg"
+            />
+          </div>
+        )}
+      </div>
+    </NavigationMenuContent>
+  </NavigationMenuItem>
 );
 
 const ScrollButton: React.FC<{ direction: 'left' | 'right'; onClick: () => void; disabled?: boolean }> = ({ 
@@ -45,24 +111,110 @@ const BottomMenu: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
-  const categories: CategoryItem[] = [
+  const categories: CategoryWithDropdown[] = [
     {
       id: 'cardio',
       label: 'Кардиотренировки',
       icon: '',
-      onClick: () => console.log('Cardio clicked')
+      dropdownContent: {
+        columns: [
+          {
+            title: 'Для дома',
+            items: [
+              { label: 'Беговые дорожки', onClick: () => console.log('Treadmills') },
+              { label: 'Велотренажеры', onClick: () => console.log('Exercise bikes') },
+              { label: 'Эллиптические тренажеры', onClick: () => console.log('Elliptical') },
+              { label: 'Степперы', onClick: () => console.log('Steppers') }
+            ]
+          },
+          {
+            title: 'Для зала',
+            items: [
+              { label: 'Профессиональные тренажеры', onClick: () => console.log('Pro equipment') },
+              { label: 'Кардиозона', onClick: () => console.log('Cardio zone') },
+              { label: 'Аксессуары', onClick: () => console.log('Accessories') }
+            ]
+          },
+          {
+            title: 'Бренды',
+            items: [
+              { label: 'TechnoGym', onClick: () => console.log('TechnoGym') },
+              { label: 'Life Fitness', onClick: () => console.log('Life Fitness') },
+              { label: 'Matrix', onClick: () => console.log('Matrix') },
+              { label: 'Precor', onClick: () => console.log('Precor') }
+            ]
+          }
+        ]
+      }
     },
     {
       id: 'strength',
       label: 'Силовые тренировки',
       icon: '',
-      onClick: () => console.log('Strength clicked')
+      dropdownContent: {
+        columns: [
+          {
+            title: 'Для дома',
+            items: [
+              { label: 'Домашние тренажеры', onClick: () => console.log('Home gym') },
+              { label: 'Многофункциональные комплексы', onClick: () => console.log('Multi-gym') },
+              { label: 'Турники и брусья', onClick: () => console.log('Pull-up bars') },
+              { label: 'Скамьи', onClick: () => console.log('Benches') }
+            ]
+          },
+          {
+            title: 'Для зала',
+            items: [
+              { label: 'Силовые станции', onClick: () => console.log('Power stations') },
+              { label: 'Машины Смита', onClick: () => console.log('Smith machines') },
+              { label: 'Стойки для приседаний', onClick: () => console.log('Squat racks') },
+              { label: 'Кроссовер', onClick: () => console.log('Cable crossover') }
+            ]
+          },
+          {
+            title: 'Бренды',
+            items: [
+              { label: 'Hammer Strength', onClick: () => console.log('Hammer Strength') },
+              { label: 'Body Solid', onClick: () => console.log('Body Solid') },
+              { label: 'PowerTec', onClick: () => console.log('PowerTec') },
+              { label: 'Hoist', onClick: () => console.log('Hoist') }
+            ]
+          }
+        ]
+      }
     },
     {
       id: 'free-weights',
       label: 'Свободные веса',
       icon: '',
-      onClick: () => console.log('Free weights clicked')
+      dropdownContent: {
+        columns: [
+          {
+            title: 'Гантели',
+            items: [
+              { label: 'Разборные гантели', onClick: () => console.log('Adjustable dumbbells') },
+              { label: 'Неразборные гантели', onClick: () => console.log('Fixed dumbbells') },
+              { label: 'Гантели с резиновым покрытием', onClick: () => console.log('Rubber dumbbells') }
+            ]
+          },
+          {
+            title: 'Штанги и грифы',
+            items: [
+              { label: 'Олимпийские грифы', onClick: () => console.log('Olympic bars') },
+              { label: 'Диски для штанги', onClick: () => console.log('Weight plates') },
+              { label: 'EZ-грифы', onClick: () => console.log('EZ bars') }
+            ]
+          },
+          {
+            title: 'Бренды',
+            items: [
+              { label: 'York Barbell', onClick: () => console.log('York Barbell') },
+              { label: 'CAP Barbell', onClick: () => console.log('CAP Barbell') },
+              { label: 'Ivanko', onClick: () => console.log('Ivanko') }
+            ]
+          }
+        ]
+      }
     },
     {
       id: 'active-recreation',
@@ -136,23 +288,24 @@ const BottomMenu: React.FC = () => {
       aria-label="Категории товаров"
     >
       <div className="flex w-full max-w-[1800px] h-[54px] items-center gap-[5px] relative max-md:w-auto max-md:min-w-full flex-shrink-0">
-        <div 
-          ref={scrollContainerRef}
-          className="flex items-center gap-[5px] overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden"
-          style={{ 
-            scrollbarWidth: 'none', 
-            msOverflowStyle: 'none'
-          }}
-        >
-          {duplicatedCategories.map((category, index) => (
-            <div key={`${category.id}-${Math.floor(index / categories.length)}`} className="flex items-center gap-[5px]">
-              <CategoryButton category={category} />
-              {index < duplicatedCategories.length - 1 && (
-                <div className="w-px h-9 opacity-20 bg-[#5C6476] flex-shrink-0" />
-              )}
-            </div>
-          ))}
-        </div>
+        <NavigationMenu>
+          <NavigationMenuList className="flex items-center gap-[5px] bg-transparent">
+            {categories.map((category, index) => (
+              <React.Fragment key={category.id}>
+                {category.dropdownContent ? (
+                  <CategoryWithDropdownMenu category={category} />
+                ) : (
+                  <div className="flex items-center">
+                    <CategoryButton category={category} />
+                  </div>
+                )}
+                {index < categories.length - 1 && (
+                  <div className="w-px h-9 opacity-20 bg-[#5C6476] flex-shrink-0" />
+                )}
+              </React.Fragment>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
         
         <div className="hidden md:flex absolute right-0 items-center bg-gradient-to-l from-[#262631] via-[#262631] to-transparent pl-8">
           <ScrollButton direction="right" onClick={scrollToNext} />
