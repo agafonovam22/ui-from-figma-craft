@@ -21,7 +21,7 @@ interface ProductCardProps {
     inStock?: boolean;
     category?: string;
   };
-  variant?: 'catalog' | 'grid' | 'home-equipment';
+  variant?: 'catalog' | 'grid';
   linkTo?: string;
 }
 
@@ -31,34 +31,9 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
   linkTo = '/product-card'
 }) => {
   if (variant === 'grid') {
-    // Simplified version for ProductCatalog (original size)
+    // Simplified version for ProductCatalog
     return (
-      <div className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer w-[324px] h-[281px]">
-        <img 
-          src={product.image} 
-          alt={product.name || "Категория товаров"}
-          className="w-full h-full object-cover object-center"
-          onError={(e) => {
-            e.currentTarget.src = '/placeholder.svg';
-          }}
-        />
-        <Link 
-          to={`/product/${product.id}`}
-          className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center justify-center"
-        >
-          <span className="group-hover:hidden">{product.price || 'от 29 990₽'}</span>
-          <span className="hidden group-hover:flex items-center gap-2">
-            Перейти <ArrowRight className="w-4 h-4" />
-          </span>
-        </Link>
-      </div>
-    );
-  }
-
-  if (variant === 'home-equipment') {
-    // Smaller version for home equipment page
-    return (
-      <div className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer w-[250px] h-[260px]">
+      <div className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-[300px]">
         <img 
           src={product.image} 
           alt={product.name || "Категория товаров"}
