@@ -30,9 +30,17 @@ const Catalog: React.FC = () => {
 
   const [sortBy, setSortBy] = useState('popular');
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
+  const [searchQuery, setSearchQuery] = useState('');
   const [products, setProducts] = useState<BitrixProduct[]>([]);
   const [loading, setLoading] = useState(false);
+
+  // Инициализация поискового запроса из URL
+  useEffect(() => {
+    const query = searchParams.get('q');
+    if (query) {
+      setSearchQuery(query);
+    }
+  }, [searchParams]);
 
   // Fallback products for demo
   const fallbackProducts = [
@@ -176,13 +184,9 @@ const Catalog: React.FC = () => {
     }
   }, [searchParams]);
 
-  // Конвертируем Bitrix товары в формат компонента
-  console.log('Rendering with products state:', products.length, 'products');
-  console.log('Search query state:', searchQuery);
-  
-  if (searchQuery && products.length > 0) {
-    console.log('Rendering search results:', products.slice(0, 3).map(p => p.name));
-  }
+  // Простая проверка состояния для отладки
+  console.log('CATALOG RENDER - Products:', products.length);
+  console.log('CATALOG RENDER - SearchQuery:', searchQuery);
   
   const displayProducts = products.length > 0 ? products.map(product => ({
     id: product.id,
@@ -200,7 +204,7 @@ const Catalog: React.FC = () => {
     inStock: product.available
   })) : (!searchQuery ? allProducts : []);
   
-  console.log('Final displayProducts length:', displayProducts.length);
+  console.log('CATALOG RENDER - DisplayProducts:', displayProducts.length);
 
   return (
     <>
