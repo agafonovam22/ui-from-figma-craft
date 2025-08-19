@@ -52,6 +52,7 @@ const ProductDetail: React.FC = () => {
             <div>
               <h3 className="text-lg font-semibold mb-6 text-foreground">Основные характеристики</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-1 text-sm">
+                {/* Row 1 */}
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Тип продукции:</span>
                   <span className="text-right">батуты</span>
@@ -60,7 +61,12 @@ const ProductDetail: React.FC = () => {
                   <span className="text-muted-foreground">Тип пружин:</span>
                   <span className="text-right">безпожарные</span>
                 </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
+                </div>
                 
+                {/* Row 2 */}
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Бренд:</span>
                   <span className="text-right">Scole</span>
@@ -69,7 +75,12 @@ const ProductDetail: React.FC = () => {
                   <span className="text-muted-foreground">Материал пружины:</span>
                   <span className="text-right">гальванизированная сталь</span>
                 </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
+                </div>
                 
+                {/* Row 3 */}
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Тип защитной сетки:</span>
                   <span className="text-right">внутренняя</span>
@@ -78,7 +89,12 @@ const ProductDetail: React.FC = () => {
                   <span className="text-muted-foreground">Диаметр нити пружины, см:</span>
                   <span className="text-right">0.3</span>
                 </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
+                </div>
                 
+                {/* Row 4 */}
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Форма батута:</span>
                   <span className="text-right">круг</span>
@@ -87,7 +103,12 @@ const ProductDetail: React.FC = () => {
                   <span className="text-muted-foreground">Верхняя защитная сеть:</span>
                   <span className="text-right">есть</span>
                 </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
+                </div>
                 
+                {/* Row 5 */}
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Защитный мат:</span>
                   <span className="text-right">есть</span>
@@ -96,7 +117,12 @@ const ProductDetail: React.FC = () => {
                   <span className="text-muted-foreground">Вход на батут:</span>
                   <span className="text-right">клапан (в нахлест)</span>
                 </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
+                </div>
                 
+                {/* Row 6 */}
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Цвет:</span>
                   <span className="text-right">красный/синий</span>
@@ -105,7 +131,12 @@ const ProductDetail: React.FC = () => {
                   <span className="text-muted-foreground">Высота защитной сетки, см:</span>
                   <span className="text-right">170</span>
                 </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
+                </div>
                 
+                {/* Row 7 */}
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Ширина защитного мата, см:</span>
                   <span className="text-right">25</span>
@@ -114,7 +145,12 @@ const ProductDetail: React.FC = () => {
                   <span className="text-muted-foreground">Материал защитной сетки:</span>
                   <span className="text-right">полипропилен</span>
                 </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
+                </div>
                 
+                {/* Row 8 */}
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Материал защитного мата:</span>
                   <span className="text-right">вспененный PP</span>
@@ -123,7 +159,12 @@ const ProductDetail: React.FC = () => {
                   <span className="text-muted-foreground">Количество верхних строек:</span>
                   <span className="text-right">6</span>
                 </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
+                </div>
                 
+                {/* Row 9 */}
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Диаметр батута, ft:</span>
                   <span className="text-right">8</span>
@@ -132,7 +173,12 @@ const ProductDetail: React.FC = () => {
                   <span className="text-muted-foreground">Высота основания батута, см:</span>
                   <span className="text-right">55</span>
                 </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
+                </div>
                 
+                {/* Row 10 */}
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Диаметр батута, см:</span>
                   <span className="text-right">244</span>
@@ -141,16 +187,26 @@ const ProductDetail: React.FC = () => {
                   <span className="text-muted-foreground">Нижняя защитная сеть:</span>
                   <span className="text-right">есть</span>
                 </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
+                </div>
                 
+                {/* Row 11 */}
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Диаметр прыжкового полотна, см:</span>
                   <span className="text-right">227.3</span>
                 </div>
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Профиль трубы основания батута, см:</span>
-                  <span className="text-right">38 x 1.5</span>
+                  <span className="text-right">38 x 1.3</span>
+                </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
                 </div>
                 
+                {/* Row 12 */}
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Материал прыжкового полотна:</span>
                   <span className="text-right">permatron</span>
@@ -159,7 +215,12 @@ const ProductDetail: React.FC = () => {
                   <span className="text-muted-foreground">Профиль трубы ножек, см:</span>
                   <span className="text-right">38 x 1.2</span>
                 </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
+                </div>
                 
+                {/* Row 13 */}
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Количество пружин, шт:</span>
                   <span className="text-right">48</span>
@@ -168,7 +229,12 @@ const ProductDetail: React.FC = () => {
                   <span className="text-muted-foreground">Профиль трубы верхних строек, см:</span>
                   <span className="text-right">25x1.2</span>
                 </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
+                </div>
                 
+                {/* Row 14 */}
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Длина пружин, мм:</span>
                   <span className="text-right">165</span>
@@ -177,87 +243,103 @@ const ProductDetail: React.FC = () => {
                   <span className="text-muted-foreground">Вес пользователя, кг:</span>
                   <span className="text-right">150</span>
                 </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
+                </div>
                 
+                {/* Row 15 */}
                 <div className="flex justify-between py-2">
                   <span className="text-muted-foreground">Диаметр пружины, см:</span>
                   <span className="text-right">2.4</span>
                 </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
+                </div>
+                <div className="flex justify-between py-2">
+                  <span className="text-muted-foreground"></span>
+                  <span className="text-right"></span>
+                </div>
               </div>
             </div>
 
-            {/* Габариты в рабочем состоянии */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Sections row */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Габариты в рабочем состоянии */}
               <div>
                 <h3 className="text-lg font-semibold mb-4">Габариты в рабочем состоянии</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between py-1">
-                    <span className="text-muted-foreground">Размер в рабочем состоянии Длина, см:</span>
+                    <span className="text-muted-foreground">Размер в рабочем состоянии Длина, см</span>
                     <span>244</span>
                   </div>
                   <div className="flex justify-between py-1">
-                    <span className="text-muted-foreground">Размер в рабочем состоянии Ширина, см:</span>
+                    <span className="text-muted-foreground">Размер в рабочем состоянии Ширина, см</span>
                     <span>244</span>
                   </div>
                   <div className="flex justify-between py-1">
-                    <span className="text-muted-foreground">Размер в рабочем состоянии Высота, см:</span>
+                    <span className="text-muted-foreground">Размер в рабочем состоянии Высота, см</span>
                     <span>255</span>
                   </div>
                 </div>
               </div>
 
+              {/* Дополнительные характеристики */}
               <div>
                 <h3 className="text-lg font-semibold mb-4">Дополнительные характеристики</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between py-1">
-                    <span className="text-muted-foreground">Рама:</span>
+                    <span className="text-muted-foreground">Рама</span>
                     <span>оцинкованная сталь</span>
                   </div>
                   <div className="flex justify-between py-1">
-                    <span className="text-muted-foreground">Лестница:</span>
+                    <span className="text-muted-foreground">Лестница</span>
                     <span>есть</span>
                   </div>
                   <div className="flex justify-between py-1">
-                    <span className="text-muted-foreground">Серия:</span>
+                    <span className="text-muted-foreground">Серия</span>
                     <span>Space</span>
                   </div>
                 </div>
               </div>
 
+              {/* Упаковка */}
               <div>
                 <h3 className="text-lg font-semibold mb-4">Упаковка</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between py-1">
-                    <span className="text-muted-foreground">Габариты упаковки Длина, см:</span>
+                    <span className="text-muted-foreground">Габариты упаковки Длина, см</span>
                     <span>129</span>
                   </div>
                   <div className="flex justify-between py-1">
-                    <span className="text-muted-foreground">Габариты упаковки Ширина, см:</span>
+                    <span className="text-muted-foreground">Габариты упаковки Ширина, см</span>
                     <span>47</span>
                   </div>
                   <div className="flex justify-between py-1">
-                    <span className="text-muted-foreground">Габариты упаковки Высота, см:</span>
+                    <span className="text-muted-foreground">Габариты упаковки Высота, см</span>
                     <span>26</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Вес и Гарантия */}
+            {/* Bottom row with Вес and Гарантия */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-lg font-semibold mb-4">Вес</h3>
                 <div className="space-y-2 text-sm mb-6">
                   <div className="flex justify-between py-1">
-                    <span className="text-muted-foreground">Вес Нетто, кг:</span>
+                    <span className="text-muted-foreground">Вес Нетто, кг</span>
                     <span>39</span>
                   </div>
                   <div className="flex justify-between py-1">
-                    <span className="text-muted-foreground">Вес Брутто, кг:</span>
+                    <span className="text-muted-foreground">Вес Брутто, кг</span>
                     <span>47</span>
                   </div>
                 </div>
                 
-                {/* Product diagrams placeholder */}
+                {/* Product diagrams */}
                 <div className="flex gap-4">
                   <div className="w-24 h-24 bg-muted rounded border flex items-center justify-center">
                     <span className="text-xs text-muted-foreground text-center">Схема сборки</span>
@@ -272,19 +354,19 @@ const ProductDetail: React.FC = () => {
                 <h3 className="text-lg font-semibold mb-4">Гарантия и Сертификация</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between py-1">
-                    <span className="text-muted-foreground">Гарантия на домашнее использование:</span>
+                    <span className="text-muted-foreground">Гарантия на домашнее использование</span>
                     <span>1 год</span>
                   </div>
                   <div className="flex justify-between py-1">
-                    <span className="text-muted-foreground">Страна бренда:</span>
+                    <span className="text-muted-foreground">Страна бренда</span>
                     <span>Германия</span>
                   </div>
                   <div className="flex justify-between py-1">
-                    <span className="text-muted-foreground">Страна изготовления:</span>
+                    <span className="text-muted-foreground">Страна изготовления</span>
                     <span>КНР</span>
                   </div>
                   <div className="flex justify-between py-1">
-                    <span className="text-muted-foreground">Артикул:</span>
+                    <span className="text-muted-foreground">Артикул</span>
                     <span>Space BR8FT</span>
                   </div>
                 </div>
