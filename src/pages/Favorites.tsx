@@ -17,50 +17,8 @@ import {
 import { Button } from "@/components/ui/button";
 
 const Favorites: React.FC = () => {
-  // Products from Search page (duplicated to create 10 items)
-  const favoriteProducts = [
-    {
-      id: 1,
-      image: '/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png'
-    },
-    {
-      id: 2,
-      image: '/lovable-uploads/f86d41dd-f2f8-4cab-a66e-40c3a81d9cbf.png'
-    },
-    {
-      id: 3,
-      image: '/lovable-uploads/43ad4887-adce-485a-b310-3d8582e01128.png'
-    },
-    {
-      id: 4,
-      image: '/lovable-uploads/4daf7315-525c-4043-a1d0-72dcc05b49bf.png'
-    },
-    {
-      id: 5,
-      image: '/lovable-uploads/225fbdeb-52a8-41c5-8d82-91fda1b8d960.png'
-    },
-    // Second row
-    {
-      id: 6,
-      image: '/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png'
-    },
-    {
-      id: 7,
-      image: '/lovable-uploads/f86d41dd-f2f8-4cab-a66e-40c3a81d9cbf.png'
-    },
-    {
-      id: 8,
-      image: '/lovable-uploads/43ad4887-adce-485a-b310-3d8582e01128.png'
-    },
-    {
-      id: 9,
-      image: '/lovable-uploads/4daf7315-525c-4043-a1d0-72dcc05b49bf.png'
-    },
-    {
-      id: 10,
-      image: '/lovable-uploads/225fbdeb-52a8-41c5-8d82-91fda1b8d960.png'
-    }
-  ];
+  // Убираем хардкод товаров - показываем только реальные товары из API
+  const favoriteProducts = [];
 
   return (
     <main className="min-h-screen bg-white">

@@ -36,68 +36,8 @@ const Brand: React.FC = () => {
     }));
   };
   
-  const products = [
-    {
-      id: 1,
-      name: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610₽',
-      originalPrice: null,
-      discount: null,
-      rating: 4.8,
-      reviews: 124,
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
-      badge: 'Новинка',
-      badgeColor: 'bg-green-500',
-      isAvailable: true,
-      hasComparison: true,
-      inStock: true
-    },
-    {
-      id: 2,
-      name: 'Гребной тренажер CardioPower PRO CR300',
-      price: null,
-      originalPrice: null,
-      discount: null,
-      rating: 4.6,
-      reviews: 89,
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
-      badge: 'Хит продаж',
-      badgeColor: 'bg-orange-500',
-      isAvailable: false,
-      hasComparison: true,
-      inStock: false
-    },
-    {
-      id: 3,
-      name: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610₽',
-      originalPrice: null,
-      discount: null,
-      rating: 4.7,
-      reviews: 67,
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
-      badge: 'Скидка',
-      badgeColor: 'bg-green-500',
-      isAvailable: true,
-      hasComparison: true,
-      inStock: true
-    },
-    {
-      id: 4,
-      name: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610₽',
-      originalPrice: null,
-      discount: null,
-      rating: 4.9,
-      reviews: 156,
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
-      badge: 'Скидка',
-      badgeColor: 'bg-green-500',
-      isAvailable: true,
-      hasComparison: true,
-      inStock: true
-    }
-  ];
+  // Убираем хардкод товаров - показываем только реальные товары из API
+  const products = [];
 
   const allProducts = Array(8).fill(null).map((_, index) => ({
     ...products[index % 4],

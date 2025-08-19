@@ -68,54 +68,8 @@ const ProductCard: React.FC = () => {
     paymentOptions: 'Безналичная оплата, оплата онлайн'
   };
 
-  // Similar products data
-  const similarProducts = [
-    {
-      id: 1,
-      title: 'Батут Berg Champion 380 см',
-      price: '49 900₽',
-      originalPrice: '55 000₽',
-      discount: '-10%',
-      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      badge: 'ХИТ'
-    },
-    {
-      id: 2,
-      title: 'Батут Hasttings Classic 305 см',
-      price: '24 900₽',
-      originalPrice: '29 900₽',
-      discount: '-17%',
-      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      badge: 'АКЦИЯ'
-    },
-    {
-      id: 3,
-      title: 'Батут Oxygen Fitness Standard 244 см',
-      price: '15 900₽',
-      originalPrice: '18 900₽',
-      discount: '-16%',
-      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      badge: 'NEW'
-    },
-    {
-      id: 4,
-      title: 'Батут Diamond fitness Internal 183 см',
-      price: '8 900₽',
-      originalPrice: '12 900₽',
-      discount: '-31%',
-      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      badge: 'СКИДКА'
-    },
-    {
-      id: 5,
-      title: 'Батут Oxygen Fitness Standard 366 см',
-      price: '23 900₽',
-      originalPrice: '26 900₽',
-      discount: '-11%',
-      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      badge: 'ТОП'
-    }
-  ];
+  // Убираем хардкод товаров - показываем только реальные товары из API
+  const similarProducts = [];
 
   // Mock reviews data
   const reviews = [
