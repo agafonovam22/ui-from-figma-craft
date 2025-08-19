@@ -94,13 +94,13 @@ const ProductDetail: React.FC = () => {
             {/* Основные характеристики */}
             <div>
               <h3 className="text-lg font-semibold mb-6 text-foreground">Основные характеристики</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1 text-sm">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0 text-sm">
                 {specifications.basic.map((spec, index) => {
                   const rowIndex = Math.floor(index / 2);
                   const colIndex = index % 2;
                   
                   return (
-                    <div key={index} className="flex justify-between py-2">
+                    <div key={index} className="flex justify-between py-2 border-b border-border">
                       <span className="text-muted-foreground">{spec.label}:</span>
                       <span className="text-right">{spec.value}</span>
                     </div>
@@ -108,7 +108,7 @@ const ProductDetail: React.FC = () => {
                 })}
                 {/* Fill empty cells to maintain grid */}
                 {specifications.basic.length % 2 !== 0 && 
-                  <div className="flex justify-between py-2">
+                  <div className="flex justify-between py-2 border-b border-border">
                     <span className="text-muted-foreground"></span>
                     <span className="text-right"></span>
                   </div>
