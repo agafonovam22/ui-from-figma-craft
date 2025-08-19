@@ -1,25 +1,53 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { Search } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
 
 interface CatalogControlsProps {
   sortBy: string;
   setSortBy: (value: string) => void;
+  onSearch: (query: string) => void;
+  searchQuery: string;
 }
 
-const CatalogControls: React.FC<CatalogControlsProps> = ({ sortBy, setSortBy }) => {
+const CatalogControls: React.FC<CatalogControlsProps> = ({ 
+  sortBy, 
+  setSortBy, 
+  onSearch, 
+  searchQuery 
+}) => {
+  const [localSearchQuery, setLocalSearchQuery] = useState(searchQuery);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSearch(localSearchQuery);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setLocalSearchQuery(e.target.value);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      onSearch(localSearchQuery);
+    }
+  };
+
   return (
     <>
       {/* Search and Filters Bar */}
       <div className="flex items-center justify-between mb-6">
-        <div className="relative">
+        <form onSubmit={handleSearch} className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
           <input 
             type="text" 
-            placeholder="Поиск"
+            placeholder="Поиск по товарам"
+            value={localSearchQuery}
+            onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
             className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-[470px] text-sm"
           />
-        </div>
+        </form>
         
         <div className="flex items-center space-x-2">
           <span className="text-xs text-gray-600">Сортировать:</span>
@@ -39,6 +67,19 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({ sortBy, setSortBy }) 
       {/* Horizontal Filter Tags */}
       <div className="bg-[#F8F8FD] rounded-lg p-4 mb-6">
         <div className="flex flex-wrap items-center gap-3">
+          {/* Show search query if active */}
+          {searchQuery && (
+            <div className="flex items-center bg-[#F53B49] text-white px-4 py-2 rounded-full font-benzin" style={{ fontSize: '12px' }}>
+              Поиск: "{searchQuery}"
+              <button 
+                className="ml-2 text-white hover:text-gray-300"
+                onClick={() => onSearch('')}
+              >
+                ×
+              </button>
+            </div>
+          )}
+          
           {/* Removable filter */}
           <div className="flex items-center bg-[#262631] text-white px-4 py-2 rounded-full font-benzin" style={{ fontSize: '12px' }}>
             В наличии

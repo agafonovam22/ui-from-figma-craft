@@ -6,6 +6,10 @@ import CartPopup from './CartPopup';
 import FavoritesPopup from './FavoritesPopup';
 import ComparisonPopup from './ComparisonPopup';
 
+interface MidMenuProps {
+  onSearch?: (query: string) => void;
+}
+
 const Logo: React.FC = () => (
   <Link to="/" className="flex justify-center items-center gap-[5.856px] flex-shrink-0">
     <img 
@@ -37,6 +41,12 @@ const CatalogButton: React.FC = () => (
   </Link>
 );
 
+interface SearchBarProps {
+  placeholder?: string;
+  onSearch?: (query: string) => void;
+  className?: string;
+}
+
 const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Поиск", onSearch, className = "" }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
@@ -44,13 +54,23 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Поиск", onSea
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      if (onSearch) {
+        // Если мы на странице каталога, используем переданную функцию поиска
+        onSearch(searchQuery.trim());
+      } else {
+        // Иначе переходим на страницу каталога с поисковым запросом
+        navigate(`/catalog?q=${encodeURIComponent(searchQuery.trim())}`);
+      }
     }
   };
 
   const handleSearchClick = () => {
     if (searchQuery.trim()) {
-      navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      if (onSearch) {
+        onSearch(searchQuery.trim());
+      } else {
+        navigate(`/catalog?q=${encodeURIComponent(searchQuery.trim())}`);
+      }
     }
   };
 
@@ -125,7 +145,7 @@ const UserActions: React.FC = () => {
   );
 };
 
-const MidMenu: React.FC = () => {
+const MidMenu: React.FC<MidMenuProps> = ({ onSearch }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const handleClick = () => {
@@ -140,7 +160,7 @@ const MidMenu: React.FC = () => {
         <SearchPopup isOpen={isPopupOpen} onOpenChange={setIsPopupOpen}>
           <div className="flex items-center gap-2.5 flex-1 max-w-[750px]" onClick={handleClick}>
             <CatalogButton />
-            <SearchBar />
+            <SearchBar onSearch={onSearch} />
           </div>
         </SearchPopup>
         
