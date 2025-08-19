@@ -71,47 +71,22 @@ class BitrixAPI {
     try {
       console.log('Searching for products with query:', query);
       
-      // Сначала попробуем поиск через API
-      const response = await fetch(`${this.baseUrl}/catalog/search/?q=${encodeURIComponent(query)}`);
+      // Получаем ВСЕ товары из реального API
+      const allProducts = await this.getProducts();
+      console.log('Total products loaded:', allProducts.length);
       
-      if (response.ok) {
-        const data = await response.json();
-        if (data.status === 'ok' && data.products) {
-          // Конвертируем данные из Bitrix в наш формат
-          return data.products.map((product: any) => ({
-            id: product.id,
-            name: product.name,
-            price: product.price.toString(),
-            originalPrice: product.original_price ? product.original_price.toString() : undefined,
-            image: product.image_url,
-            description: product.name,
-            available: product.is_available && product.in_stock,
-            categoryId: undefined
-          }));
-        }
-      }
-      
-      // Если API не работает, ищем по локальным mock данным
-      console.log('API search failed, searching in mock data');
-      const allProducts = this.getMockProducts();
+      // Делаем поиск на фронтенде по реальным данным
       const filteredProducts = allProducts.filter(product => 
         product.name.toLowerCase().includes(query.toLowerCase()) ||
         (product.description && product.description.toLowerCase().includes(query.toLowerCase()))
       );
 
-      console.log(`Found ${filteredProducts.length} products matching "${query}" in mock data`);
+      console.log(`Found ${filteredProducts.length} products matching "${query}" from real data`);
       return filteredProducts;
     } catch (error) {
       console.error('Error searching products:', error);
-      // В случае ошибки ищем только по mock данным
-      const allProducts = this.getMockProducts();
-      const filteredProducts = allProducts.filter(product => 
-        product.name.toLowerCase().includes(query.toLowerCase()) ||
-        (product.description && product.description.toLowerCase().includes(query.toLowerCase()))
-      );
-      
-      console.log(`Search fallback: found ${filteredProducts.length} products matching "${query}"`);
-      return filteredProducts;
+      // В случае ошибки возвращаем пустой массив
+      return [];
     }
   }
 
