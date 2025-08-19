@@ -79,3 +79,6 @@ gcp_jwt_path = "supabase/gcp.json"
 
 [functions.sync-bitrix-catalog]
 verify_jwt = false
+
+[functions.fetch-bitrix-catalog]
+verify_jwt = false
