@@ -122,6 +122,27 @@ try {
             $inStock = $product['PROPERTY_IN_STOCK_VALUE'] === 'Да';
         }
 
+        // Получаем все характеристики товара
+        $characteristics = [];
+        
+        // Получаем детальные свойства элемента
+        $dbProps = CIBlockElement::GetProperty($IBLOCK_ID, $product['ID'], "sort", "asc");
+        while ($prop = $dbProps->Fetch()) {
+            if (!empty($prop['VALUE']) && $prop['CODE']) {
+                // Пропускаем системные свойства
+                if (in_array($prop['CODE'], ['AVAILABLE', 'IN_STOCK'])) {
+                    continue;
+                }
+                
+                $characteristics[] = [
+                    'code' => $prop['CODE'],
+                    'name' => $prop['NAME'],
+                    'value' => $prop['VALUE'],
+                    'description' => $prop['DESCRIPTION'] ?? null
+                ];
+            }
+        }
+
         $result['products'][] = [
             'id' => $product['ID'],
             'name' => $product['NAME'],
@@ -139,7 +160,8 @@ try {
             'badge_color' => $discountPercentage ? 'red' : null,
             'has_comparison' => false,
             'bitrix_id' => $product['ID'],
-            'code' => $product['CODE']
+            'code' => $product['CODE'],
+            'characteristics' => $characteristics
         ];
     }
 
