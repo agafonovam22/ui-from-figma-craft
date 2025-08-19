@@ -78,12 +78,18 @@ const ProductDetail: React.FC = () => {
             'Тег5',
             'Тег7',
             'RALATED:',
-            'Дополнительно:'
+            'Дополнительно:',
+            'Тег3 (скрытая характеристика, которая не показывается на сайте)',
+            'Тег4 (скрытая характеристика, которая не показывается на сайте)', 
+            'Тег5 (скрытая характеристика, которая не показывается на сайте)',
+            'Тег7 (скрытая характеристика, которая не показывается на сайте)',
+            'RELATED:',
+            'Дополнительно'
           ];
 
           Object.entries(characteristics).forEach(([key, value]) => {
             // Пропускаем скрытые характеристики
-            if (hiddenFields.includes(key)) return;
+            if (hiddenFields.includes(key) || key.startsWith('Тег') || key.includes('RELATED') || key.includes('RALATED') || key === 'Дополнительно') return;
             
             const characteristic = { name: key, value: String(value) };
             
