@@ -1,6 +1,7 @@
 
 import React, { useRef } from 'react';
 import { CategoryItem } from './types';
+import { useBitrixCatalog } from '../../hooks/useBitrixCatalog';
 
 const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> = ({ 
   category, 
@@ -44,57 +45,56 @@ const ScrollButton: React.FC<{ direction: 'left' | 'right'; onClick: () => void;
 const BottomMenu: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = React.useState(0);
+  
+  // Получаем категории из Bitrix API
+  const { categories: bitrixCategories, loading } = useBitrixCatalog('https://cp44652.tw1.ru/catalog.php');
 
-  const categories: CategoryItem[] = [
-    {
-      id: 'cardio',
-      label: 'Кардиотренировки',
-      icon: '',
-      onClick: () => console.log('Cardio clicked')
-    },
-    {
-      id: 'strength',
-      label: 'Силовые тренировки',
-      icon: '',
-      onClick: () => console.log('Strength clicked')
-    },
-    {
-      id: 'free-weights',
-      label: 'Свободные веса',
-      icon: '',
-      onClick: () => console.log('Free weights clicked')
-    },
-    {
-      id: 'active-recreation',
-      label: 'Активный отдых',
-      icon: '',
-      onClick: () => console.log('Active recreation clicked')
-    },
-    {
-      id: 'massage-rehabilitation',
-      label: 'Массаж и реабилитация',
-      icon: '',
-      onClick: () => console.log('Massage and rehabilitation clicked')
-    },
-    {
-      id: 'novelties',
-      label: 'Новинки',
-      icon: '',
-      onClick: () => console.log('Novelties clicked')
-    },
-    {
-      id: 'promotions',
-      label: 'Акции',
-      icon: '',
-      onClick: () => console.log('Promotions clicked')
-    },
-    {
-      id: 'accessories',
-      label: 'Аксессуары',
-      icon: '',
-      onClick: () => console.log('Accessories clicked')
-    }
-  ];
+  // Преобразуем категории из Bitrix в формат для отображения
+  const categories: CategoryItem[] = bitrixCategories.length > 0 
+    ? bitrixCategories.map(category => ({
+        id: category.id,
+        label: category.name,
+        icon: '',
+        onClick: () => {
+          // Переход на страницу категории
+          window.location.href = `/catalog?category=${category.id}`;
+        }
+      }))
+    : [
+        // Fallback категории на случай загрузки или ошибки
+        {
+          id: 'cardio',
+          label: 'Кардиотренировки',
+          icon: '',
+          onClick: () => console.log('Cardio clicked')
+        },
+        {
+          id: 'strength',
+          label: 'Силовые тренировки',
+          icon: '',
+          onClick: () => console.log('Strength clicked')
+        },
+        {
+          id: 'free-weights',
+          label: 'Свободные веса',
+          icon: '',
+          onClick: () => console.log('Free weights clicked')
+        }
+      ];
+
+  // Показываем индикатор загрузки пока получаем данные
+  if (loading) {
+    return (
+      <nav 
+        className="flex w-full justify-center items-center gap-[5px] bg-[#262631] px-2 sm:px-4 lg:px-[60px] py-1"
+        style={{ padding: '4px 60px' }}
+      >
+        <div className="flex w-full max-w-[1800px] h-[54px] items-center justify-center">
+          <span className="text-[#778093] text-sm">Загрузка категорий...</span>
+        </div>
+      </nav>
+    );
+  }
 
   // Дублируем категории для бесконечной прокрутки
   const duplicatedCategories = [...categories, ...categories];
