@@ -27,7 +27,7 @@ export interface SearchBarProps {
 export interface CategoryItem {
   id: string;
   label: string;
-  icon: string;
+  icon: React.ReactNode;
   iconImage?: string;
   href?: string;
   onClick?: () => void;

@@ -1,7 +1,23 @@
 
 import React, { useRef } from 'react';
 import { CategoryItem } from './types';
-import { useBitrixCatalog } from '../../hooks/useBitrixCatalog';
+import { 
+  Zap, 
+  RotateCcw, 
+  Bike, 
+  Waves, 
+  Dumbbell, 
+  Hand, 
+  FlipVertical, 
+  Circle, 
+  Weight, 
+  Home, 
+  Target, 
+  Mountain, 
+  TreePine, 
+  Gamepad2, 
+  Settings 
+} from 'lucide-react';
 
 const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> = ({ 
   category, 
@@ -12,6 +28,11 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
     onClick={category.onClick}
     aria-label={`Категория: ${category.label}`}
   >
+    {category.icon && (
+      <span className="text-[#778093] group-hover:text-white transition-colors">
+        {category.icon}
+      </span>
+    )}
     <span className="text-sm font-normal leading-[14px] text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
       {category.label}
     </span>
@@ -46,55 +67,99 @@ const BottomMenu: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = React.useState(0);
   
-  // Получаем категории из Bitrix API
-  const { categories: bitrixCategories, loading } = useBitrixCatalog('https://cp44652.tw1.ru/catalog.php');
-
-  // Преобразуем категории из Bitrix в формат для отображения
-  const categories: CategoryItem[] = bitrixCategories.length > 0 
-    ? bitrixCategories.map(category => ({
-        id: category.id,
-        label: category.name,
-        icon: '',
-        onClick: () => {
-          // Переход на страницу категории
-          window.location.href = `/catalog?category=${category.id}`;
-        }
-      }))
-    : [
-        // Fallback категории на случай загрузки или ошибки
-        {
-          id: 'cardio',
-          label: 'Кардиотренировки',
-          icon: '',
-          onClick: () => console.log('Cardio clicked')
-        },
-        {
-          id: 'strength',
-          label: 'Силовые тренировки',
-          icon: '',
-          onClick: () => console.log('Strength clicked')
-        },
-        {
-          id: 'free-weights',
-          label: 'Свободные веса',
-          icon: '',
-          onClick: () => console.log('Free weights clicked')
-        }
-      ];
-
-  // Показываем индикатор загрузки пока получаем данные
-  if (loading) {
-    return (
-      <nav 
-        className="flex w-full justify-center items-center gap-[5px] bg-[#262631] px-2 sm:px-4 lg:px-[60px] py-1"
-        style={{ padding: '4px 60px' }}
-      >
-        <div className="flex w-full max-w-[1800px] h-[54px] items-center justify-center">
-          <span className="text-[#778093] text-sm">Загрузка категорий...</span>
-        </div>
-      </nav>
-    );
-  }
+  // Статичные категории товаров
+  const categories: CategoryItem[] = [
+    {
+      id: 'treadmills',
+      label: 'Беговые дорожки',
+      icon: <Zap size={16} />,
+      onClick: () => window.location.href = '/catalog?category=treadmills'
+    },
+    {
+      id: 'elliptical',
+      label: 'Эллиптические тренажеры',
+      icon: <RotateCcw size={16} />,
+      onClick: () => window.location.href = '/catalog?category=elliptical'
+    },
+    {
+      id: 'exercise-bikes',
+      label: 'Велотренажеры',
+      icon: <Bike size={16} />,
+      onClick: () => window.location.href = '/catalog?category=exercise-bikes'
+    },
+    {
+      id: 'rowing-machines',
+      label: 'Гребные тренажеры',
+      icon: <Waves size={16} />,
+      onClick: () => window.location.href = '/catalog?category=rowing-machines'
+    },
+    {
+      id: 'strength-equipment',
+      label: 'Силовые тренажеры',
+      icon: <Dumbbell size={16} />,
+      onClick: () => window.location.href = '/catalog?category=strength-equipment'
+    },
+    {
+      id: 'massage-equipment',
+      label: 'Массажное оборудование',
+      icon: <Hand size={16} />,
+      onClick: () => window.location.href = '/catalog?category=massage-equipment'
+    },
+    {
+      id: 'inversion-tables',
+      label: 'Инверсионные столы',
+      icon: <FlipVertical size={16} />,
+      onClick: () => window.location.href = '/catalog?category=inversion-tables'
+    },
+    {
+      id: 'trampolines',
+      label: 'Батуты',
+      icon: <Circle size={16} />,
+      onClick: () => window.location.href = '/catalog?category=trampolines'
+    },
+    {
+      id: 'free-weights',
+      label: 'Свободные веса',
+      icon: <Weight size={16} />,
+      onClick: () => window.location.href = '/catalog?category=free-weights'
+    },
+    {
+      id: 'home-accessories',
+      label: 'Аксессуары для дома',
+      icon: <Home size={16} />,
+      onClick: () => window.location.href = '/catalog?category=home-accessories'
+    },
+    {
+      id: 'table-tennis',
+      label: 'Настольный теннис',
+      icon: <Target size={16} />,
+      onClick: () => window.location.href = '/catalog?category=table-tennis'
+    },
+    {
+      id: 'ski-simulators',
+      label: 'Горнолыжные тренажеры',
+      icon: <Mountain size={16} />,
+      onClick: () => window.location.href = '/catalog?category=ski-simulators'
+    },
+    {
+      id: 'outdoor-sports',
+      label: 'Уличные виды спорта',
+      icon: <TreePine size={16} />,
+      onClick: () => window.location.href = '/catalog?category=outdoor-sports'
+    },
+    {
+      id: 'game-tables',
+      label: 'Игровые столы',
+      icon: <Gamepad2 size={16} />,
+      onClick: () => window.location.href = '/catalog?category=game-tables'
+    },
+    {
+      id: 'equipment-accessories',
+      label: 'Аксессуары к тренажерам',
+      icon: <Settings size={16} />,
+      onClick: () => window.location.href = '/catalog?category=equipment-accessories'
+    }
+  ];
 
   // Дублируем категории для бесконечной прокрутки
   const duplicatedCategories = [...categories, ...categories];
