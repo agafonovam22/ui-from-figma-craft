@@ -1,12 +1,5 @@
 
 // Bitrix API integration service
-interface BitrixCharacteristic {
-  code: string;
-  name: string;
-  value: string;
-  description?: string;
-}
-
 interface BitrixProduct {
   id: string;
   name: string;
@@ -18,7 +11,6 @@ interface BitrixProduct {
   categoryId?: string;
   rating?: number;
   reviews_count?: number;
-  characteristics?: BitrixCharacteristic[];
 }
 
 class BitrixAPI {
@@ -48,8 +40,7 @@ class BitrixAPI {
             available: product.is_available && product.in_stock,
             categoryId: undefined,
             rating: product.rating,
-            reviews_count: product.reviews_count,
-            characteristics: product.characteristics || []
+            reviews_count: product.reviews_count
           }));
         }
       }

@@ -1,31 +1,10 @@
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { bitrixApi, BitrixProduct } from '@/services/bitrixApi';
 
 const IdeasSelections: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [products, setProducts] = useState<BitrixProduct[]>([]);
-  const [loading, setLoading] = useState(false);
-
-  // Загружаем реальные товары из Bitrix API
-  useEffect(() => {
-    const loadProducts = async () => {
-      setLoading(true);
-      try {
-        const bitrixProducts = await bitrixApi.getProducts();
-        // Берём первые 4 товара для отображения
-        setProducts(bitrixProducts.slice(0, 4));
-      } catch (error) {
-        console.error('Error loading products:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadProducts();
-  }, []);
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -38,26 +17,36 @@ const IdeasSelections: React.FC = () => {
       scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
     }
   };
-
-  if (loading) {
-    return (
-      <section className="w-full bg-white py-6">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-          <div className="text-center py-8">Загрузка товаров...</div>
-        </div>
-      </section>
-    );
-  }
-
-  if (products.length === 0) {
-    return (
-      <section className="w-full bg-white py-6">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-          <div className="text-center py-8">Товары не найдены</div>
-        </div>
-      </section>
-    );
-  }
+  const ideas = [
+    {
+      id: 1,
+      title: "Беговая дорожка Nautilus T628",
+      subtitle: "для подготовки к марафону",
+      buttonText: "Перейти",
+      image: "/lovable-uploads/2be1b7b3-024f-49cd-a6ed-c3b6797c3118.png"
+    },
+    {
+      id: 2,
+      title: "Беговая дорожка Nautilus T628",
+      subtitle: "для подготовки к марафону",
+      buttonText: "для подготовки к марафону",
+      image: "/lovable-uploads/a9a3aea2-cbe4-49f2-81a9-cef25eaa7fb4.png"
+    },
+    {
+      id: 3,
+      title: "Беговая дорожка Nautilus T628",
+      subtitle: "для подготовки к марафону",
+      buttonText: "для подготовки к марафону",
+      image: "/lovable-uploads/b5c5bae5-0847-4917-87f3-3015c813643b.png"
+    },
+    {
+      id: 4,
+      title: "Беговая дорожка Nautilus T628",
+      subtitle: "для подготовки к марафону",
+      buttonText: "для подготовки к марафону",
+      image: "/lovable-uploads/e32f0db3-70c9-4381-bb50-39cb86857ad6.png"
+    }
+  ];
 
   return (
     <section className="w-full bg-white py-6">
@@ -89,23 +78,19 @@ const IdeasSelections: React.FC = () => {
           className="flex gap-[10px] mb-8 overflow-x-auto scrollbar-hide pb-2"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {products.map((product) => (
+          {ideas.map((idea) => (
             <Link
-              key={product.id}
-              to={`/product/${product.id}`}
+              key={idea.id}
+              to="/ideas"
               className="group relative flex-shrink-0 w-80 rounded-lg overflow-hidden h-[444px] hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
               <img 
-                src={product.image} 
-                alt={product.name}
+                src={idea.image} 
+                alt={idea.title}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-              <div className="absolute bottom-4 left-4 text-white">
-                <h3 className="font-benzin text-lg font-normal mb-1">{product.name}</h3>
-                <p className="text-sm opacity-90">{product.price} ₽</p>
-              </div>
-              <button className="absolute bottom-4 right-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-all duration-300 flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0">
+              <button className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-all duration-300 flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0">
                 Перейти <ArrowRight className="w-4 h-4" />
               </button>
             </Link>

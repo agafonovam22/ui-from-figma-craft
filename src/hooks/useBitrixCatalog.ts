@@ -1,12 +1,5 @@
 import { useState, useEffect } from 'react';
 
-interface BitrixCharacteristic {
-  code: string;
-  name: string;
-  value: string;
-  description?: string;
-}
-
 interface BitrixProduct {
   id: string;
   name: string;
@@ -23,7 +16,6 @@ interface BitrixProduct {
   badge?: string;
   badge_color?: string;
   has_comparison: boolean;
-  characteristics?: BitrixCharacteristic[];
 }
 
 interface BitrixCategory {

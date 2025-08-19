@@ -25,8 +25,24 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
     }
   };
 
-  // Показываем реальные товары из API без приоритета несуществующих товаров
-  const displayProducts = bitrixProducts.slice(0, 5);
+  // Prioritize CardioPower T40 and T20 treadmills as first two products
+  const t40Product = bitrixProducts.find(product => 
+    product.name.toLowerCase().includes('cardiopower t40')
+  );
+  const t20Product = bitrixProducts.find(product => 
+    product.name.toLowerCase().includes('cardiopower t20')
+  );
+  
+  const priorityProducts = [t40Product, t20Product].filter(Boolean);
+  const otherProducts = bitrixProducts.filter(product => 
+    !product.name.toLowerCase().includes('cardiopower t40') &&
+    !product.name.toLowerCase().includes('cardiopower t20')
+  );
+  
+  const displayProducts = [
+    ...priorityProducts,
+    ...otherProducts.slice(0, 5 - priorityProducts.length)
+  ].slice(0, 5);
 
   if (loading) {
     return (
@@ -128,17 +144,15 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                 className="block"
               >
                 {/* Изображение товара */}
-                {product.image_url && (
-                  <div className="h-48 bg-gray-50">
-                    <img 
-                      src={product.image_url} 
-                      alt={product.name || "Товар"}
-                      className="w-full h-full object-cover"
-                      style={{ imageRendering: 'crisp-edges' }}
-                      loading="lazy"
-                    />
-                  </div>
-                )}
+                <div className="h-48 bg-gray-50">
+                  <img 
+                    src={product.image_url || '/placeholder.svg'} 
+                    alt={product.name || "Товар"}
+                    className="w-full h-full object-cover"
+                    style={{ imageRendering: 'crisp-edges' }}
+                    loading="lazy"
+                  />
+                </div>
 
                 {/* Информация о товаре */}
                 <div className="p-4">
