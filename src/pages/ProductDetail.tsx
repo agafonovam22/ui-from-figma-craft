@@ -14,8 +14,215 @@ const ProductDetail: React.FC = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState('Красный/синий');
   const [selectedSize, setSelectedSize] = useState('14');
+  const [activeTab, setActiveTab] = useState('description');
 
-  // Логируем сразу при рендере
+  const tabs = [
+    { id: 'description', label: 'Описание' },
+    { id: 'specifications', label: 'Характеристики' },
+    { id: 'reviews', label: 'Отзывы (10)' },
+    { id: 'delivery', label: 'Доставка и оплата' },
+    { id: 'installment', label: 'Рассрочка' },
+    { id: 'services', label: 'Услуги' }
+  ];
+
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case 'description':
+        return (
+          <div className="prose prose-gray max-w-none">
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              {product.name} - это современное высококачественное оборудование для домашних тренировок.
+            </p>
+            <h3 className="text-lg font-semibold mb-3">Основные особенности:</h3>
+            <ul className="space-y-2 text-muted-foreground">
+              <li>• Надежная конструкция для длительного использования</li>
+              <li>• Современный дизайн, подходящий для любого интерьера</li>
+              <li>• Простота в использовании и обслуживании</li>
+              <li>• Высокое качество материалов и компонентов</li>
+            </ul>
+          </div>
+        );
+      case 'specifications':
+        return (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Технические характеристики</h3>
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between py-2 border-b border-border">
+                  <span className="text-muted-foreground">Тип продукции:</span>
+                  <span>Беговые дорожки для дома</span>
+                </div>
+                <div className="flex justify-between py-2 border-b border-border">
+                  <span className="text-muted-foreground">Бренд:</span>
+                  <span>CardioPower</span>
+                </div>
+                <div className="flex justify-between py-2 border-b border-border">
+                  <span className="text-muted-foreground">Назначение:</span>
+                  <span>Домашние</span>
+                </div>
+                <div className="flex justify-between py-2 border-b border-border">
+                  <span className="text-muted-foreground">Тип двигателя:</span>
+                  <span>Постоянного тока DC</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Дополнительные параметры</h3>
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between py-2 border-b border-border">
+                  <span className="text-muted-foreground">Мощность двигателя:</span>
+                  <span>1.5 л.с</span>
+                </div>
+                <div className="flex justify-between py-2 border-b border-border">
+                  <span className="text-muted-foreground">Пиковая мощность:</span>
+                  <span>2.5 л.с</span>
+                </div>
+                <div className="flex justify-between py-2 border-b border-border">
+                  <span className="text-muted-foreground">Максимальная скорость:</span>
+                  <span>10 км/ч</span>
+                </div>
+                <div className="flex justify-between py-2 border-b border-border">
+                  <span className="text-muted-foreground">Угол наклона:</span>
+                  <span>Механический</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case 'reviews':
+        return (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-semibold">Отзывы покупателей</h3>
+              <div className="flex items-center gap-2">
+                <div className="flex items-center">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-4 h-4 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <span className="text-sm text-muted-foreground">4.8 из 5 (10 отзывов)</span>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="border border-border rounded-lg p-4">
+                <div className="flex items-start justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="font-medium">Анна К.</span>
+                    <div className="flex items-center">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star key={star} className="w-3 h-3 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                  </div>
+                  <span className="text-xs text-muted-foreground">2 дня назад</span>
+                </div>
+                <p className="text-sm text-muted-foreground">Отличное качество! Очень довольна покупкой.</p>
+              </div>
+            </div>
+          </div>
+        );
+      case 'delivery':
+        return (
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Доставка</h3>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-brand-red rounded-full mt-2"></div>
+                  <div>
+                    <span className="font-medium">По Москве (в пределах МКАД):</span>
+                    <p className="text-muted-foreground">300 руб. Доставка осуществляется в течение 1-2 рабочих дней</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-brand-red rounded-full mt-2"></div>
+                  <div>
+                    <span className="font-medium">По Санкт-Петербургу (в пределах КАД):</span>
+                    <p className="text-muted-foreground">300 руб. Доставка осуществляется в течение 1-2 рабочих дней</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Оплата</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span className="font-medium">Для физических лиц:</span>
+                  <ul className="mt-2 space-y-1 text-muted-foreground">
+                    <li>• Наличными при получении</li>
+                    <li>• Банковской картой</li>
+                    <li>• Безналичная оплата</li>
+                    <li>• Онлайн оплата</li>
+                    <li>• Рассрочка</li>
+                  </ul>
+                </div>
+                <div>
+                  <span className="font-medium">Для юридических лиц:</span>
+                  <ul className="mt-2 space-y-1 text-muted-foreground">
+                    <li>• Безналичная оплата</li>
+                    <li>• Оплата онлайн</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case 'installment':
+        return (
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold">Рассрочка</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="border border-border rounded-lg p-4">
+                <h4 className="font-medium mb-2">Рассрочка 0-0-12</h4>
+                <p className="text-sm text-muted-foreground mb-3">Без первоначального взноса и переплаты</p>
+                <ul className="text-sm space-y-1 text-muted-foreground">
+                  <li>• Срок: до 12 месяцев</li>
+                  <li>• Переплата: 0%</li>
+                  <li>• Первый взнос: 0%</li>
+                </ul>
+              </div>
+              <div className="border border-border rounded-lg p-4">
+                <h4 className="font-medium mb-2">Банковская рассрочка</h4>
+                <p className="text-sm text-muted-foreground mb-3">От наших партнеров</p>
+                <ul className="text-sm space-y-1 text-muted-foreground">
+                  <li>• Срок: до 24 месяцев</li>
+                  <li>• Быстрое оформление</li>
+                  <li>• Минимальный пакет документов</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+      case 'services':
+        return (
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold">Дополнительные услуги</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-medium mb-3">Сборка и установка</h4>
+                <ul className="text-sm space-y-2 text-muted-foreground">
+                  <li>• Профессиональная сборка специалистами</li>
+                  <li>• Настройка оборудования</li>
+                  <li>• Инструктаж по использованию</li>
+                  <li>• Стоимость рассчитывается индивидуально</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-medium mb-3">Гарантийное обслуживание</h4>
+                <ul className="text-sm space-y-2 text-muted-foreground">
+                  <li>• Официальная гарантия производителя</li>
+                  <li>• Сервисное обслуживание</li>
+                  <li>• Ремонт и замена запчастей</li>
+                  <li>• Консультации по эксплуатации</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
   console.log('ProductDetail рендерится');
   console.log('useParams результат:', useParams());
   console.log('ID из useParams:', id);
@@ -402,24 +609,19 @@ const ProductDetail: React.FC = () => {
           <div className="flex items-center justify-between mb-8">
             {/* Tabs */}
             <div className="flex gap-8 flex-wrap">
-              <button className="pb-3 border-b-2 border-brand-red text-brand-red font-medium">
-                Описание
-              </button>
-              <button className="pb-3 border-b-2 border-transparent text-muted-foreground hover:text-foreground transition-colors">
-                Характеристики
-              </button>
-              <button className="pb-3 border-b-2 border-transparent text-muted-foreground hover:text-foreground transition-colors">
-                Отзывы (10)
-              </button>
-              <button className="pb-3 border-b-2 border-transparent text-muted-foreground hover:text-foreground transition-colors">
-                Доставка и оплата
-              </button>
-              <button className="pb-3 border-b-2 border-transparent text-muted-foreground hover:text-foreground transition-colors">
-                Рассрочка
-              </button>
-              <button className="pb-3 border-b-2 border-transparent text-muted-foreground hover:text-foreground transition-colors">
-                Услуги
-              </button>
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`pb-3 border-b-2 font-medium transition-colors ${
+                    activeTab === tab.id
+                      ? 'border-brand-red text-brand-red'
+                      : 'border-transparent text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
             </div>
 
             {/* Download Button */}
@@ -432,11 +634,7 @@ const ProductDetail: React.FC = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="prose prose-gray max-w-none">
-            <p className="text-muted-foreground leading-relaxed">
-              Здесь будет содержимое выбранной вкладки. В данном случае - описание товара {product.name}.
-            </p>
-          </div>
+          {renderTabContent()}
         </div>
       </main>
       <Footer />
