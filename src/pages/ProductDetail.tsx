@@ -94,7 +94,7 @@ const ProductDetail: React.FC = () => {
             {/* Основные характеристики */}
             <div>
               <h3 className="text-lg font-semibold mb-6 text-foreground">Основные характеристики</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0 text-sm">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0 text-sm font-manrope">
                 {specifications.basic.map((spec, index) => {
                   const rowIndex = Math.floor(index / 2);
                   const colIndex = index % 2;
@@ -121,7 +121,7 @@ const ProductDetail: React.FC = () => {
               {/* Габариты */}
               <div>
                 <h3 className="text-lg font-semibold mb-4">Габариты</h3>
-                <div className="space-y-2 text-sm">
+                <div className="space-y-2 text-sm font-manrope">
                   {specifications.dimensions.map((spec, index) => (
                     <div key={index} className="flex justify-between py-1">
                       <span className="text-muted-foreground">{spec.label}</span>
@@ -134,7 +134,7 @@ const ProductDetail: React.FC = () => {
               {/* Дополнительные характеристики */}
               <div>
                 <h3 className="text-lg font-semibold mb-4">Дополнительные характеристики</h3>
-                <div className="space-y-2 text-sm">
+                <div className="space-y-2 text-sm font-manrope">
                   {specifications.additional.map((spec, index) => (
                     <div key={index} className="flex justify-between py-1">
                       <span className="text-muted-foreground">{spec.label}</span>
@@ -147,7 +147,7 @@ const ProductDetail: React.FC = () => {
               {/* Вес */}
               <div>
                 <h3 className="text-lg font-semibold mb-4">Вес</h3>
-                <div className="space-y-2 text-sm">
+                <div className="space-y-2 text-sm font-manrope">
                   {specifications.weight.map((spec, index) => (
                     <div key={index} className="flex justify-between py-1">
                       <span className="text-muted-foreground">{spec.label}</span>
@@ -162,7 +162,7 @@ const ProductDetail: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-lg font-semibold mb-4">Гарантия и Сертификация</h3>
-                <div className="space-y-2 text-sm">
+                <div className="space-y-2 text-sm font-manrope">
                   {specifications.warranty.map((spec, index) => (
                     <div key={index} className="flex justify-between py-1">
                       <span className="text-muted-foreground">{spec.label}</span>
@@ -177,10 +177,10 @@ const ProductDetail: React.FC = () => {
                 <h3 className="text-lg font-semibold mb-4">Схемы и чертежи</h3>
                 <div className="flex gap-4">
                   <div className="w-24 h-24 bg-muted rounded border flex items-center justify-center">
-                    <span className="text-xs text-muted-foreground text-center">Схема сборки</span>
+                    <span className="text-xs text-muted-foreground text-center font-manrope">Схема сборки</span>
                   </div>
                   <div className="w-32 h-24 bg-muted rounded border flex items-center justify-center">
-                    <span className="text-xs text-muted-foreground text-center">Размеры</span>
+                    <span className="text-xs text-muted-foreground text-center font-manrope">Размеры</span>
                   </div>
                 </div>
               </div>
