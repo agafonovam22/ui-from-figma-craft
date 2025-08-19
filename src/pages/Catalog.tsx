@@ -106,47 +106,26 @@ const Catalog: React.FC = () => {
   console.log('CATALOG RENDER - AllProducts:', allProducts.length);
   console.log('CATALOG RENDER - SearchQuery:', searchQuery);
   
-  // Fallback товары для случая когда API не работает
-  const fallbackProducts = [
-    {
-      id: 1,
-      name: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610₽',
-      originalPrice: null,
-      discount: null,
-      rating: 4.8,
-      reviews: 124,
-      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
-      badge: 'Новинка',
-      badgeColor: 'bg-green-500',
-      isAvailable: true,
-      hasComparison: true,
-      inStock: true
-    }
-  ];
-  
-  const mockProducts = Array(16).fill(null).map((_, index) => ({
-    ...fallbackProducts[0],
-    id: index + 1
-  }));
+  // Показываем товары только из реального API, без fallback
+  const mockProducts = [];
   
   const displayProducts = useMemo(() => {
-    return filteredProducts.length > 0 ? filteredProducts.map(product => ({
+    return filteredProducts.map(product => ({
       id: Number(product.id),
       name: product.name,
       price: product.price ? `${product.price}₽` : null,
       originalPrice: product.originalPrice ? `${product.originalPrice}₽` : null,
       discount: null,
-      rating: 4.5 + Math.random(),
-      reviews: Math.floor(Math.random() * 200) + 10,
-      image: product.image,
+      rating: product.rating || (4.5 + Math.random() * 0.5),
+      reviews: product.reviews_count || Math.floor(Math.random() * 200) + 10,
+      image: product.image, // Это реальное изображение из Bitrix API
       badge: product.available ? 'В наличии' : 'Нет в наличии',
       badgeColor: product.available ? 'bg-green-500' : 'bg-red-500',
       isAvailable: product.available,
       hasComparison: true,
       inStock: product.available
-    })) : mockProducts;
-  }, [filteredProducts, mockProducts]);
+    }));
+  }, [filteredProducts]);
 
   // Пагинация для лучшей производительности
   const { paginatedData, totalPages, hasNextPage, hasPreviousPage } = usePagination({

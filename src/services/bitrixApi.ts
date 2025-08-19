@@ -9,6 +9,8 @@ interface BitrixProduct {
   description?: string;
   available: boolean;
   categoryId?: string;
+  rating?: number;
+  reviews_count?: number;
 }
 
 class BitrixAPI {
@@ -36,7 +38,9 @@ class BitrixAPI {
             image: product.image_url,
             description: product.name,
             available: product.is_available && product.in_stock,
-            categoryId: undefined
+            categoryId: undefined,
+            rating: product.rating,
+            reviews_count: product.reviews_count
           }));
         }
       }
