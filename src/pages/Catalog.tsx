@@ -114,23 +114,72 @@ const Catalog: React.FC = () => {
   const fallbackProducts = [
     {
       id: 1,
-      name: 'Гребной тренажер CardioPower PRO CR300',
-      price: '4 610₽',
+      name: 'Беговая дорожка CardioPower TR150',
+      price: '115900',
       originalPrice: null,
       discount: null,
-      rating: 4.8,
-      reviews: 124,
+      rating: 4.53,
+      reviews: 262,
       image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
-      badge: 'Новинка',
+      badge: 'В наличии',
       badgeColor: 'bg-green-500',
       isAvailable: true,
       hasComparison: true,
-      inStock: true
+      inStock: true,
+      available: true
+    },
+    {
+      id: 2,
+      name: 'Беговая дорожка CardioPower T50',
+      price: '76900',
+      originalPrice: null,
+      discount: null,
+      rating: 4.71,
+      reviews: 34,
+      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      badge: 'В наличии',
+      badgeColor: 'bg-green-500',
+      isAvailable: true,
+      hasComparison: true,
+      inStock: true,
+      available: true
+    },
+    {
+      id: 3,
+      name: 'Беговая дорожка Schwinn 510T',
+      price: '89900',
+      originalPrice: null,
+      discount: null,
+      rating: 4.71,
+      reviews: 62,
+      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      badge: 'В наличии',
+      badgeColor: 'bg-green-500',
+      isAvailable: true,
+      hasComparison: true,
+      inStock: true,
+      available: true
+    },
+    {
+      id: 4,
+      name: 'Беговая дорожка TRUE Alpine Runner + консоль C455OR',
+      price: '1075000',
+      originalPrice: null,
+      discount: null,
+      rating: 5.21,
+      reviews: 42,
+      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      badge: 'В наличии',
+      badgeColor: 'bg-green-500',
+      isAvailable: true,
+      hasComparison: true,
+      inStock: true,
+      available: true
     }
   ];
   
   const mockProducts = Array(16).fill(null).map((_, index) => ({
-    ...fallbackProducts[0],
+    ...fallbackProducts[index % fallbackProducts.length],
     id: index + 1
   }));
   
@@ -167,7 +216,7 @@ const Catalog: React.FC = () => {
     return mockProducts.map(product => ({
       id: product.id,
       name: product.name,
-      price: product.price,
+      price: product.price ? `${product.price}₽` : null,
       originalPrice: product.originalPrice,
       discount: product.discount,
       rating: product.rating,
