@@ -54,9 +54,9 @@ const Catalog: React.FC = () => {
     loadAllProducts();
   }, []);
 
-  // Функция поиска (объявляем до useEffect)
-  const handleSearch = (query: string) => {
-    console.log('Поиск:', query);
+  // Функция поиска (БЕЗ изменения URL)
+  const performSearch = (query: string) => {
+    console.log('Выполняем поиск:', query);
     setSearchQuery(query);
     
     if (!query.trim()) {
@@ -72,6 +72,11 @@ const Catalog: React.FC = () => {
     
     console.log(`Найдено товаров: ${filtered.length} из ${allProducts.length}`);
     setFilteredProducts(filtered);
+  };
+
+  // Функция поиска для внешних вызовов (с изменением URL)
+  const handleSearch = (query: string) => {
+    performSearch(query);
     
     // Обновляем URL
     const newSearchParams = new URLSearchParams(searchParams);
@@ -88,9 +93,12 @@ const Catalog: React.FC = () => {
     const query = searchParams.get('q');
     if (query && allProducts.length > 0) {
       console.log('Поиск из URL:', query);
-      handleSearch(query);
+      performSearch(query); // Используем performSearch без изменения URL
+    } else if (!query && allProducts.length > 0) {
+      // Если нет поискового запроса, показываем все товары
+      setFilteredProducts(allProducts);
     }
-  }, [allProducts]);
+  }, [allProducts, searchParams]); // Добавляем searchParams в зависимости
 
 
   // Простая проверка состояния для отладки
