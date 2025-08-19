@@ -72,7 +72,8 @@ const ProductDetail: React.FC = () => {
             'Наименование товара на сайте',
             'Количество мест',
             'Тег1 (скрытая характеристика, которая не показывается на сайте)',
-            'Тег2 (скрытая характеристика, которая не показывается на сайте)'
+            'Тег2 (скрытая характеристика, которая не показывается на сайте)',
+            'Инструкции'
           ];
 
           Object.entries(characteristics).forEach(([key, value]) => {
@@ -120,7 +121,7 @@ const ProductDetail: React.FC = () => {
             }
             // Комплектация и упаковка
             else if (key.includes('Комплектация') || key.includes('Тип упаковки') || key.includes('упаковк') ||
-                     key.includes('комплект') || key.includes('инструкция') || key.includes('кабель') || key.includes('ключи')) {
+                     key.includes('комплект') || key.includes('кабель') || key.includes('ключи')) {
               groups['Комплектация и упаковка'].push(characteristic);
             }
             // Остальные в дополнительные
@@ -706,12 +707,15 @@ const ProductDetail: React.FC = () => {
             </div>
 
             {/* Download Button */}
-            <Button 
-              variant="outline" 
-              className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white transition-colors"
-            >
-              Скачать инструкцию
-            </Button>
+            {product?.characteristics?.['Инструкции'] && (
+              <Button 
+                variant="outline" 
+                className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white transition-colors"
+                onClick={() => window.open(product.characteristics['Инструкции'], '_blank')}
+              >
+                Скачать инструкции
+              </Button>
+            )}
           </div>
 
           {/* Tab Content */}
