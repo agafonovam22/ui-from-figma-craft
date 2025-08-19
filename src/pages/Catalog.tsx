@@ -98,7 +98,7 @@ const Catalog: React.FC = () => {
       // Если нет поискового запроса, показываем все товары
       setFilteredProducts(allProducts);
     }
-  }, [allProducts, searchParams]); // Добавляем searchParams в зависимости
+  }, [allProducts]); // Убираем searchParams из зависимостей
 
 
   // Простая проверка состояния для отладки
