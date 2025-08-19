@@ -144,21 +144,41 @@ const Catalog: React.FC = () => {
   const totalPages = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE);
   
   const displayProducts = React.useMemo(() => {
-    return paginatedProducts.length > 0 ? paginatedProducts.map(product => ({
+    // Если есть реальные товары - используем их
+    if (paginatedProducts.length > 0) {
+      return paginatedProducts.map(product => ({
+        id: product.id,
+        name: product.name,
+        price: product.price ? `${product.price}₽` : null,
+        originalPrice: product.originalPrice ? `${product.originalPrice}₽` : null,
+        discount: null,
+        rating: 4.5 + Math.random(),
+        reviews: Math.floor(Math.random() * 200) + 10,
+        image: product.image,
+        badge: product.available ? 'В наличии' : 'Нет в наличии',
+        badgeColor: product.available ? 'bg-green-500' : 'bg-red-500',
+        isAvailable: product.available,
+        hasComparison: true,
+        inStock: product.available
+      }));
+    }
+    
+    // Fallback - используем моковые данные с правильной структурой
+    return mockProducts.map(product => ({
       id: product.id,
       name: product.name,
-      price: product.price ? `${product.price}₽` : null,
-      originalPrice: product.originalPrice ? `${product.originalPrice}₽` : null,
-      discount: null,
-      rating: 4.5 + Math.random(),
-      reviews: Math.floor(Math.random() * 200) + 10,
+      price: product.price,
+      originalPrice: product.originalPrice,
+      discount: product.discount,
+      rating: product.rating,
+      reviews: product.reviews,
       image: product.image,
-      badge: product.available ? 'В наличии' : 'Нет в наличии',
-      badgeColor: product.available ? 'bg-green-500' : 'bg-red-500',
-      isAvailable: product.available,
-      hasComparison: true,
-      inStock: product.available
-    })) : mockProducts;
+      badge: product.badge,
+      badgeColor: product.badgeColor,
+      isAvailable: product.isAvailable,
+      hasComparison: product.hasComparison,
+      inStock: product.inStock
+    }));
   }, [paginatedProducts, mockProducts]);
   
   console.log('CATALOG RENDER - DisplayProducts:', displayProducts.length);
