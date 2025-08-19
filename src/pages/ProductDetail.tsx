@@ -168,19 +168,61 @@ const ProductDetail: React.FC = () => {
           <div className="space-y-8">
             <h2 className="text-2xl font-bold text-foreground">Характеристики</h2>
             
-            {Object.entries(groupedCharacteristics).map(([groupName, specs]) => (
-              <div key={groupName}>
-                <h3 className="text-lg font-semibold mb-6 text-foreground">{groupName}</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0 text-sm font-manrope">
-                  {specs.map((spec, index) => (
-                    <div key={index} className="flex justify-between py-2 border-b border-border">
-                      <span className="text-muted-foreground">{spec.name}:</span>
-                      <span className="text-right">{spec.value}</span>
+            {Object.entries(groupedCharacteristics).map(([groupName, specs]) => {
+              // Проверяем, является ли это группой "Дисплей" или "Электропитание"
+              const isDisplayOrPower = groupName === 'Дисплей' || groupName === 'Электропитание';
+              
+              // Если это "Электропитание" и есть "Дисплей", объединяем их
+              if (groupName === 'Электропитание' && groupedCharacteristics['Дисплей']) {
+                const displaySpecs = groupedCharacteristics['Дисплей'];
+                return (
+                  <div key="display-power" className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="text-lg font-semibold mb-6 text-foreground">Дисплей</h3>
+                      <div className="grid grid-cols-1 gap-x-8 gap-y-0 text-sm font-manrope">
+                        {displaySpecs.map((spec, index) => (
+                          <div key={index} className="flex justify-between py-2 border-b border-border">
+                            <span className="text-muted-foreground">{spec.name}:</span>
+                            <span className="text-right">{spec.value}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  ))}
+                    
+                    <div>
+                      <h3 className="text-lg font-semibold mb-6 text-foreground">Электропитание</h3>
+                      <div className="grid grid-cols-1 gap-x-8 gap-y-0 text-sm font-manrope">
+                        {specs.map((spec, index) => (
+                          <div key={index} className="flex justify-between py-2 border-b border-border">
+                            <span className="text-muted-foreground">{spec.name}:</span>
+                            <span className="text-right">{spec.value}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+              
+              // Пропускаем "Дисплей", так как он уже отображен с "Электропитание"
+              if (groupName === 'Дисплей') {
+                return null;
+              }
+              
+              return (
+                <div key={groupName}>
+                  <h3 className="text-lg font-semibold mb-6 text-foreground">{groupName}</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0 text-sm font-manrope">
+                    {specs.map((spec, index) => (
+                      <div key={index} className="flex justify-between py-2 border-b border-border">
+                        <span className="text-muted-foreground">{spec.name}:</span>
+                        <span className="text-right">{spec.value}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         );
       case 'reviews':
