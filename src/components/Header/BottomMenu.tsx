@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import { CategoryItem } from './types';
 import { 
@@ -7,7 +6,7 @@ import {
   Bike, 
   Waves, 
   Dumbbell, 
-  Hand, 
+  Heart, 
   FlipVertical, 
   Circle, 
   Weight, 
@@ -67,6 +66,8 @@ const BottomMenu: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = React.useState(0);
   
+  console.log('BottomMenu component loaded successfully');
+  
   // Статичные категории товаров
   const categories: CategoryItem[] = [
     {
@@ -102,7 +103,7 @@ const BottomMenu: React.FC = () => {
     {
       id: 'massage-equipment',
       label: 'Массажное оборудование',
-      icon: <Hand size={16} />,
+      icon: <Heart size={16} />,
       onClick: () => window.location.href = '/catalog?category=massage-equipment'
     },
     {
@@ -160,6 +161,8 @@ const BottomMenu: React.FC = () => {
       onClick: () => window.location.href = '/catalog?category=equipment-accessories'
     }
   ];
+
+  console.log('Categories loaded:', categories.length);
 
   // Дублируем категории для бесконечной прокрутки
   const duplicatedCategories = [...categories, ...categories];
