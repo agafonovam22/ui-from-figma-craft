@@ -217,6 +217,11 @@ const Catalog: React.FC = () => {
                 <div className="text-center py-8">
                   <p>Поиск товаров...</p>
                 </div>
+              ) : searchQuery && products.length === 0 ? (
+                <div className="text-center py-8">
+                  <p>По запросу "{searchQuery}" ничего не найдено</p>
+                  <p className="text-gray-500 mt-2">Попробуйте изменить поисковый запрос</p>
+                </div>
               ) : (
                 <CatalogGrid 
                   products={displayProducts} 

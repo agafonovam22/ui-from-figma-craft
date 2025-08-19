@@ -21,15 +21,28 @@ class BitrixAPI {
   // Метод для получения товаров через публичный каталог
   async getProducts(): Promise<BitrixProduct[]> {
     try {
-      // Попробуем получить данные через стандартные пути Bitrix
-      const response = await fetch(`${this.baseUrl}/catalog/`);
+      // Пробуем получить данные через working API endpoint
+      const response = await fetch(`${this.baseUrl}/catalog.php`);
       
-      if (!response.ok) {
-        throw new Error('Failed to fetch products');
+      if (response.ok) {
+        const data = await response.json();
+        if (data.status === 'ok' && data.products) {
+          // Конвертируем данные из Bitrix в наш формат
+          return data.products.map((product: any) => ({
+            id: product.id,
+            name: product.name,
+            price: product.price.toString(),
+            originalPrice: product.original_price ? product.original_price.toString() : undefined,
+            image: product.image_url,
+            description: product.name,
+            available: product.is_available && product.in_stock,
+            categoryId: undefined
+          }));
+        }
       }
-
-      // Здесь нужно будет парсить HTML или использовать API endpoints
-      // Пока возвращаем mock данные для демонстрации
+      
+      // Fallback к mock данным если API не работает
+      console.log('API failed, using mock data');
       return this.getMockProducts();
     } catch (error) {
       console.error('Error fetching products from Bitrix:', error);
@@ -58,30 +71,47 @@ class BitrixAPI {
     try {
       console.log('Searching for products with query:', query);
       
-      // В реальной интеграции здесь будет запрос к Bitrix API для поиска
-      // Например: GET /catalog/search/?q=${encodeURIComponent(query)}
+      // Сначала попробуем поиск через API
       const response = await fetch(`${this.baseUrl}/catalog/search/?q=${encodeURIComponent(query)}`);
       
-      if (!response.ok) {
-        throw new Error('Failed to search products');
+      if (response.ok) {
+        const data = await response.json();
+        if (data.status === 'ok' && data.products) {
+          // Конвертируем данные из Bitrix в наш формат
+          return data.products.map((product: any) => ({
+            id: product.id,
+            name: product.name,
+            price: product.price.toString(),
+            originalPrice: product.original_price ? product.original_price.toString() : undefined,
+            image: product.image_url,
+            description: product.name,
+            available: product.is_available && product.in_stock,
+            categoryId: undefined
+          }));
+        }
       }
-
-      // Для демонстрации фильтруем mock данные по названию
+      
+      // Если API не работает, ищем по локальным mock данным
+      console.log('API search failed, searching in mock data');
       const allProducts = this.getMockProducts();
       const filteredProducts = allProducts.filter(product => 
         product.name.toLowerCase().includes(query.toLowerCase()) ||
         (product.description && product.description.toLowerCase().includes(query.toLowerCase()))
       );
 
-      console.log(`Found ${filteredProducts.length} products matching "${query}"`);
+      console.log(`Found ${filteredProducts.length} products matching "${query}" in mock data`);
       return filteredProducts;
     } catch (error) {
       console.error('Error searching products:', error);
-      // Fallback: поиск по mock данным
+      // В случае ошибки ищем только по mock данным
       const allProducts = this.getMockProducts();
-      return allProducts.filter(product => 
-        product.name.toLowerCase().includes(query.toLowerCase())
+      const filteredProducts = allProducts.filter(product => 
+        product.name.toLowerCase().includes(query.toLowerCase()) ||
+        (product.description && product.description.toLowerCase().includes(query.toLowerCase()))
       );
+      
+      console.log(`Search fallback: found ${filteredProducts.length} products matching "${query}"`);
+      return filteredProducts;
     }
   }
 
