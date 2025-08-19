@@ -134,10 +134,22 @@ try {
                     continue;
                 }
                 
+                // Получаем правильное значение в зависимости от типа свойства
+                $value = $prop['VALUE'];
+                
+                // Если это списочное свойство (тип L), получаем расшифрованное значение
+                if ($prop['PROPERTY_TYPE'] === 'L' && !empty($prop['VALUE_ENUM'])) {
+                    $value = $prop['VALUE_ENUM'];
+                }
+                // Если есть VALUE_ENUM, но PROPERTY_TYPE не определен, тоже используем его
+                elseif (!empty($prop['VALUE_ENUM']) && is_numeric($prop['VALUE'])) {
+                    $value = $prop['VALUE_ENUM'];
+                }
+                
                 $characteristics[] = [
                     'code' => $prop['CODE'],
                     'name' => $prop['NAME'],
-                    'value' => $prop['VALUE'],
+                    'value' => $value,
                     'description' => $prop['DESCRIPTION'] ?? null
                 ];
             }

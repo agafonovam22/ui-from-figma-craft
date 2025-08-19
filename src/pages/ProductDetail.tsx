@@ -102,8 +102,7 @@ const ProductDetail: React.FC = () => {
                key.includes('Амортизация') || key.includes('Назначение') || key.includes('Производитель') ||
                key.includes('Кардиопояс') || key.includes('Поддержка') || key.includes('Сенсоры') ||
                key.includes('Подсветка') || key.includes('Подставка') || key.includes('Смазка') ||
-               key.includes('Порты') || key.includes('Клавиши') || key.includes('Язык') ||
-               key.includes('интерфейс') && !key.includes('настройк'))
+               key.includes('Порты') || key.includes('Клавиши') && !key.includes('настройк'))
             );
             
             if (isSystemCode) return;
