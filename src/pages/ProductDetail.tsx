@@ -44,10 +44,16 @@ const ProductDetail: React.FC = () => {
         );
       case 'specifications':
         // Используем реальные характеристики из API
-        const apiCharacteristics = product?.characteristics || [];
+        const characteristics = product?.characteristics || {};
+        
+        // Преобразуем объект в массив для отображения
+        const characteristicsArray = Object.entries(characteristics).map(([key, value]) => ({
+          name: key,
+          value: value
+        }));
         
         // Если нет характеристик из API, показываем заглушку
-        if (apiCharacteristics.length === 0) {
+        if (characteristicsArray.length === 0) {
           return (
             <div className="space-y-6">
               <h3 className="text-lg font-semibold">Характеристики</h3>
@@ -63,10 +69,10 @@ const ProductDetail: React.FC = () => {
             <div>
               <h3 className="text-lg font-semibold mb-6 text-foreground">Основные характеристики</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0 text-sm font-manrope">
-                {apiCharacteristics.map((spec, index) => (
+                {characteristicsArray.map((spec, index) => (
                   <div key={index} className="flex justify-between py-2 border-b border-border">
                     <span className="text-muted-foreground">{spec.name}:</span>
-                    <span className="text-right">{spec.value}</span>
+                    <span className="text-right">{String(spec.value)}</span>
                   </div>
                 ))}
               </div>
@@ -218,13 +224,13 @@ const ProductDetail: React.FC = () => {
         setLoading(true);
         console.log('Загружаем товар с ID:', id);
         
-        const response = await fetch('https://cp44652.tw1.ru/catalog-api.php');
+        const response = await fetch('https://cp44652.tw1.ru/catalog.php');
         console.log('Ответ сервера:', response.status);
         
         const data = await response.json();
         console.log('Получены данные:', data);
         
-        if (data && data.products) {
+        if (data.status === 'ok' && data.products) {
           console.log('Ищем товар с ID:', id, 'в массиве из', data.products.length, 'товаров');
           const foundProduct = data.products.find((p: any) => p.id.toString() === id);
           console.log('Найден товар:', foundProduct);
