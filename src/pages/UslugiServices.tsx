@@ -343,7 +343,7 @@ const UslugiServices: React.FC = () => {
           {/* Staff Training Tab Content */}
           {activeTab === 'staff-training' && (
             <div className="space-y-12">
-              <div className="max-w-4xl">
+              <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-8">Обучение</h2>
                 <div className="space-y-6 text-gray-700 text-lg leading-relaxed font-manrope">
                   <p>
