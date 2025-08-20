@@ -68,12 +68,12 @@ const UslugiServices: React.FC = () => {
     {
       id: 1,
       title: '2 варианта цвета защитного мата',
-      image: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png'
+      image: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png'
     },
     {
       id: 2,
       title: 'Совершенное качество прыжка',
-      image: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png'
+      image: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png'
     },
     {
       id: 3,
@@ -83,7 +83,7 @@ const UslugiServices: React.FC = () => {
     {
       id: 4,
       title: 'Качественная защитная сеть',
-      image: '/lovable-uploads/94f85ba4-b118-4ce1-b7e5-12a4ce35107c.png'
+      image: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png'
     }
   ];
 
