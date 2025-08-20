@@ -69,7 +69,7 @@ const NewsAndBlogPage: React.FC = () => {
                     </div>
                   </div>
                   
-                  <h3 className="font-semibold text-lg mb-3 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                  <h3 className="font-semibold text-lg mb-3 group-hover:text-[#F53B49] transition-colors line-clamp-1 leading-tight">
                     {newsItems[0]?.title}
                   </h3>
                 </div>
@@ -102,7 +102,7 @@ const NewsAndBlogPage: React.FC = () => {
                       </div>
                     </div>
                     
-                    <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-3 leading-tight">
+                    <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-1 leading-tight">
                       {newsItems[1]?.title}
                     </h3>
                   </div>
@@ -135,7 +135,7 @@ const NewsAndBlogPage: React.FC = () => {
                         </div>
                       </div>
                       
-                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-1 leading-tight">
                         {newsItems[2]?.title}
                       </h3>
                     </div>
@@ -166,7 +166,7 @@ const NewsAndBlogPage: React.FC = () => {
                         </div>
                       </div>
                       
-                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                      <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-1 leading-tight">
                         {newsItems[3]?.title}
                       </h3>
                     </div>
@@ -206,7 +206,7 @@ const NewsAndBlogPage: React.FC = () => {
                             </div>
                           </div>
                           
-                          <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                          <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-1 leading-tight">
                             {item.title}
                           </h3>
                         </div>
@@ -249,7 +249,7 @@ const NewsAndBlogPage: React.FC = () => {
                               </div>
                             </div>
                             
-                            <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                            <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-1 leading-tight">
                               {item.title}
                             </h3>
                           </div>
@@ -287,7 +287,7 @@ const NewsAndBlogPage: React.FC = () => {
                             </div>
                           </div>
                           
-                          <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                          <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-1 leading-tight">
                             {item.title}
                           </h3>
                         </div>
