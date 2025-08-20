@@ -207,12 +207,6 @@ const UslugiServices: React.FC = () => {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/uslugi">Услуги</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
                 <BreadcrumbPage>{getCategoryTitle()}</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
