@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Heart, Share2, ShoppingCart } from 'lucide-react';
+import { ArrowLeft, Heart, Share2, ShoppingCart, Download } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -230,6 +231,191 @@ const ProductDetail: React.FC = () => {
               </div>
             )}
           </div>
+        </div>
+
+        {/* Product Tabs */}
+        <div className="mt-12">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-bold text-foreground">Информация о товаре</h2>
+            <Button variant="outline" size="lg">
+              <Download className="w-4 h-4 mr-2" />
+              Скачать инструкцию
+            </Button>
+          </div>
+
+          <Tabs defaultValue="description" className="w-full">
+            <TabsList className="grid w-full grid-cols-6">
+              <TabsTrigger value="description">Описание</TabsTrigger>
+              <TabsTrigger value="specifications">Характеристики</TabsTrigger>
+              <TabsTrigger value="reviews">Отзывы (10)</TabsTrigger>
+              <TabsTrigger value="delivery">Доставка и оплата</TabsTrigger>
+              <TabsTrigger value="installment">Рассрочка</TabsTrigger>
+              <TabsTrigger value="services">Услуги</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="description" className="mt-6">
+              <div className="prose max-w-none">
+                <h3 className="text-xl font-semibold mb-4">Подробное описание</h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  {product.description || 'Здесь будет подробное описание товара с техническими характеристиками, особенностями использования и преимуществами.'}
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Дополнительная информация о товаре, его применении и специфических особенностях.
+                </p>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="specifications" className="mt-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Технические характеристики</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-3">
+                    <div className="flex justify-between py-2 border-b border-border">
+                      <span className="font-medium">Производитель:</span>
+                      <span className="text-muted-foreground">Уточняется</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b border-border">
+                      <span className="font-medium">Модель:</span>
+                      <span className="text-muted-foreground">{product.name}</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b border-border">
+                      <span className="font-medium">Гарантия:</span>
+                      <span className="text-muted-foreground">12 месяцев</span>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between py-2 border-b border-border">
+                      <span className="font-medium">Страна производства:</span>
+                      <span className="text-muted-foreground">Уточняется</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b border-border">
+                      <span className="font-medium">Вес:</span>
+                      <span className="text-muted-foreground">Уточняется</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b border-border">
+                      <span className="font-medium">Размеры:</span>
+                      <span className="text-muted-foreground">Уточняется</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="reviews" className="mt-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Отзывы покупателей</h3>
+                <div className="space-y-4">
+                  <div className="p-4 border border-border rounded-lg">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <div className="flex text-yellow-400">★★★★★</div>
+                      <span className="font-medium">Иван П.</span>
+                      <span className="text-sm text-muted-foreground">15.01.2024</span>
+                    </div>
+                    <p className="text-muted-foreground">Отличный товар, полностью соответствует описанию. Рекомендую!</p>
+                  </div>
+                  <div className="p-4 border border-border rounded-lg">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <div className="flex text-yellow-400">★★★★☆</div>
+                      <span className="font-medium">Мария С.</span>
+                      <span className="text-sm text-muted-foreground">12.01.2024</span>
+                    </div>
+                    <p className="text-muted-foreground">Хорошее качество, быстрая доставка. Есть небольшие замечания по упаковке.</p>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="delivery" className="mt-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Доставка и оплата</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold mb-3">Способы доставки:</h4>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Курьерская доставка по Москве - 500 ₽</li>
+                      <li>• Доставка по России (СДЭК) - от 300 ₽</li>
+                      <li>• Самовывоз из магазина - бесплатно</li>
+                      <li>• Почта России - от 200 ₽</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-3">Способы оплаты:</h4>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Банковской картой онлайн</li>
+                      <li>• Наличными при получении</li>
+                      <li>• Банковский перевод</li>
+                      <li>• Электронные кошельки</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="installment" className="mt-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Рассрочка и кредит</h3>
+                <div className="space-y-4">
+                  <div className="p-4 border border-border rounded-lg">
+                    <h4 className="font-semibold mb-2">Рассрочка 0% до 12 месяцев</h4>
+                    <p className="text-muted-foreground mb-3">
+                      Оформите покупку в рассрочку без переплат и процентов на срок до 12 месяцев.
+                    </p>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• Без первоначального взноса</li>
+                      <li>• Одобрение за 5 минут</li>
+                      <li>• Минимум документов</li>
+                    </ul>
+                  </div>
+                  <div className="p-4 border border-border rounded-lg">
+                    <h4 className="font-semibold mb-2">Кредит от банков-партнеров</h4>
+                    <p className="text-muted-foreground">
+                      Получите кредит на выгодных условиях от наших банков-партнеров.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="services" className="mt-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Дополнительные услуги</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="p-4 border border-border rounded-lg">
+                      <h4 className="font-semibold mb-2">Установка и настройка</h4>
+                      <p className="text-muted-foreground text-sm mb-2">
+                        Профессиональная установка и настройка оборудования нашими специалистами.
+                      </p>
+                      <span className="text-primary font-semibold">от 2 000 ₽</span>
+                    </div>
+                    <div className="p-4 border border-border rounded-lg">
+                      <h4 className="font-semibold mb-2">Расширенная гарантия</h4>
+                      <p className="text-muted-foreground text-sm mb-2">
+                        Увеличьте срок гарантии до 3 лет с полным сервисным обслуживанием.
+                      </p>
+                      <span className="text-primary font-semibold">от 1 500 ₽</span>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="p-4 border border-border rounded-lg">
+                      <h4 className="font-semibold mb-2">Техническая поддержка</h4>
+                      <p className="text-muted-foreground text-sm mb-2">
+                        Круглосуточная техническая поддержка и консультации по использованию.
+                      </p>
+                      <span className="text-primary font-semibold">Бесплатно</span>
+                    </div>
+                    <div className="p-4 border border-border rounded-lg">
+                      <h4 className="font-semibold mb-2">Обучение персонала</h4>
+                      <p className="text-muted-foreground text-sm mb-2">
+                        Обучение ваших сотрудников работе с оборудованием.
+                      </p>
+                      <span className="text-primary font-semibold">от 5 000 ₽</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </main>
       <Footer />
