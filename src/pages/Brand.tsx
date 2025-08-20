@@ -1154,7 +1154,34 @@ const Brand: React.FC = () => {
                         </p>
                       </div>
                     </div>
-                    ) : brandSlug === 'maxfit' ? (
+                     ) : brandSlug === 'maxgym' ? (
+                       <div className="space-y-3">
+                         <div className="flex items-start">
+                           <div className="text-green-500 mr-3 mt-1">✓</div>
+                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                             Выдерживает коммерческие нагрузки
+                           </p>
+                         </div>
+                         <div className="flex items-start">
+                           <div className="text-green-500 mr-3 mt-1">✓</div>
+                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                             Предлагает несколько вариантов упражнений
+                           </p>
+                         </div>
+                         <div className="flex items-start">
+                           <div className="text-green-500 mr-3 mt-1">✓</div>
+                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                             Обеспечивает комфорт при интенсивном использовании
+                           </p>
+                         </div>
+                         <div className="flex items-start">
+                           <div className="text-green-500 mr-3 mt-1">✓</div>
+                           <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                             Сохраняет безупречную работу годами
+                           </p>
+                         </div>
+                       </div>
+                     ) : brandSlug === 'maxfit' ? (
                       <div className="space-y-3">
                         <div className="flex items-start">
                           <div className="text-green-500 mr-3 mt-1">✔</div>
