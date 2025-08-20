@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -49,6 +49,10 @@ const UslugiServices: React.FC = () => {
 
   const [activeTab, setActiveTab] = useState(getInitialActiveTab());
 
+  // Update active tab when category changes
+  useEffect(() => {
+    setActiveTab(getInitialActiveTab());
+  }, [category]);
 
   // Get category title
   const getCategoryTitle = () => {
