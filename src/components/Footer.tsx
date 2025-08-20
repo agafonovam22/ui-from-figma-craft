@@ -130,6 +130,11 @@ const Footer: React.FC = () => {
                         alt="PayPal" 
                         className="h-4 w-auto"
                       />
+                      <img 
+                        src="/lovable-uploads/73d8ad89-17b1-4a62-b0ea-272f4db4e1fd.png" 
+                        alt="Способ оплаты" 
+                        className="h-4 w-auto"
+                      />
                     </div>
                   </div>
                 </div>
