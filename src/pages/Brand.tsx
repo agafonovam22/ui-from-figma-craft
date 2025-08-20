@@ -663,15 +663,19 @@ const Brand: React.FC = () => {
                   </>
                 ) : brandSlug === 'visbody' ? (
                   <>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
-                      <strong>Мультичастотная биоимпедансометрия:</strong> Анализ состава тела с точностью медицинского оборудования — мышечная масса, жировая ткань, вода, минералы.
+                    <h4 className="font-benzin text-gray-900 mb-4">3D-Анализатор тела</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope mb-4">
+                      Первый в мире гибридный 3D-сканер, объединяющий IBS-сканирование и BIA+BDA-анализ для комплексной 360°-оценки тела, включая измерение роста.
                     </p>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6 font-manrope">
-                      <strong>3D-сканирование силуэта:</strong> Детальная визуализация изменений фигуры с возможностью отслеживания прогресса в динамике.
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope mb-4">
+                      <strong>Безупречная точность:</strong>
                     </p>
-                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                      <strong>Умная аналитика:</strong> Персонализированные рекомендации по питанию и тренировкам на основе данных о составе тела.
-                    </p>
+                    <ul className="text-gray-600 text-sm leading-relaxed font-manrope ml-4 space-y-2">
+                      <li>• Детализированный анализ состава тела</li>
+                      <li>• Измерение охватов тела</li>
+                      <li>• Оценка гибкости суставов</li>
+                      <li>• Оценка осанки</li>
+                    </ul>
                   </>
                 ) : brandSlug === 'bowflex' ? (
                   <p className="text-gray-600 text-sm leading-relaxed font-manrope">
