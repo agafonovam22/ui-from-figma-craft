@@ -137,6 +137,7 @@ const Brand: React.FC = () => {
       case 'meridien': return 'MÉRIDIEN';
       case 'proski': return 'PROSKI';
       case 'variosling': return 'Variosling';
+      case 'centr': return 'CENTR';
       case 'scholle': return 'SCHOLLE';
       case 'sintesi': return 'SINTESI';
       default: return 'kernel';
