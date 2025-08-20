@@ -102,26 +102,12 @@ const Support: React.FC = () => {
         
         {activeTab !== 'delivery' && (
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] mb-12">
-            <div className="bg-gradient-to-r from-gray-800 to-gray-600 rounded-lg p-8 text-white relative overflow-hidden h-[328px] flex items-center">
-              <div className="flex items-center justify-between">
-                <div className="flex-1">
-                  <h2 className="text-5xl font-bold mb-4 leading-tight">
-                    Разрабатаем<br />
-                    3D-проект<br />
-                    бесплатно!
-                  </h2>
-                  <button className="bg-brand-red hover:bg-brand-red-hover text-white px-8 py-3 text-lg font-semibold rounded-lg">
-                    Оставить заявку
-                  </button>
-                </div>
-                <div className="flex-1 flex justify-end">
-                  <img 
-                    src="/lovable-uploads/1750c483-ca71-4fb0-85b9-fd2efc819a71.png"
-                    alt="3D-проект спортзала"
-                    className="max-w-full h-auto"
-                  />
-                </div>
-              </div>
+            <div className="rounded-lg overflow-hidden">
+              <img 
+                src="/lovable-uploads/abd58070-8439-4f7c-8105-b00eed3b572f.png"
+                alt="Баннер поддержки"
+                className="w-full h-auto"
+              />
             </div>
           </div>
         )}
