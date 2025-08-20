@@ -1087,30 +1087,6 @@ const Brand: React.FC = () => {
                      </p>
                   ) : brandSlug === 'visbody' ? (
                     <div className="space-y-3">
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
-                          Точность измерений до 98% — уровень медицинского оборудования
-                        </p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
-                          Анализ 20+ параметров тела всего за 30 секунд
-                        </p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
-                          Используется в 1000+ фитнес-клубов и медицинских центров мира
-                        </p>
-                      </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p className="text-gray-600 text-base leading-relaxed font-manrope">
-                          Первая в мире система с интеграцией 3D-сканирования и биоимпеданса
-                        </p>
-                      </div>
                     </div>
                   ) : brandSlug === 'bowflex' ? (
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
