@@ -924,8 +924,17 @@ const Brand: React.FC = () => {
                           </div>
                         </div>
                       ) : (
-                         <p className="text-gray-700 text-sm leading-relaxed font-manrope">
-                           {(brandSlug === 'cardio-power' || brandSlug === 'cardiopower') ? '' : brandSlug === 'schwinn' ? 'За более чем вековую историю Schwinn заслужил репутацию бренда, который не идет на компромиссы в вопросах качества. Все тренажеры проходят многократные тестирования на безопасность и долговечность. Использование высококачественных материалов и продуманная конструкция обеспечивают бесперебойную работу оборудования на протяжении многих лет.' : brandSlug === 'nautilus' ? '' : brandSlug === 'sole-fitness' ? '' : brandSlug === 'peach-builder' ? '' : brandSlug === 'oktan' ? 'Более 25 лет Octane Fitness остается лидером инноваций в области эллиптических тренажеров, устанавливая стандарты качества и технологий.' : brandSlug === 'visbody' ? (
+                          <p className="text-gray-700 text-sm leading-relaxed font-manrope">
+                            {(brandSlug === 'cardio-power' || brandSlug === 'cardiopower') ? '' : brandSlug === 'true' ? (
+                              <div className="space-y-4">
+                                <p className="text-gray-700 text-sm leading-relaxed font-manrope mb-3">
+                                  <strong>50+ лет на рынке</strong>, собственные инженерные разработки и строгий контроль производства
+                                </p>
+                                <p className="text-gray-700 text-sm leading-relaxed font-manrope mb-3">
+                                  <strong>Технологии и безопасность:</strong> передовые системы амортизации, износостойкие компоненты и интеллектуальное управление
+                                </p>
+                              </div>
+                            ) : brandSlug === 'schwinn' ? 'За более чем вековую историю Schwinn заслужил репутацию бренда, который не идет на компромиссы в вопросах качества. Все тренажеры проходят многократные тестирования на безопасность и долговечность. Использование высококачественных материалов и продуманная конструкция обеспечивают бесперебойную работу оборудования на протяжении многих лет.' : brandSlug === 'nautilus' ? '' : brandSlug === 'sole-fitness' ? '' : brandSlug === 'peach-builder' ? '' : brandSlug === 'oktan' ? 'Более 25 лет Octane Fitness остается лидером инноваций в области эллиптических тренажеров, устанавливая стандарты качества и технологий.' : brandSlug === 'visbody' ? (
                              <div className="space-y-4">
                                <h4 className="font-benzin text-gray-900 mb-3">Умная беговая дорожка с 3D-анализом тела</h4>
                                <p className="text-gray-700 text-sm leading-relaxed font-manrope mb-3">
