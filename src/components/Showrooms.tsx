@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react';
-import { MapPin, Phone, Clock } from 'lucide-react';
+import { MapPin, Phone, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Showrooms: React.FC = () => {
   const [activeShowroom, setActiveShowroom] = useState(0);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   const showroomsData = [
     {
@@ -87,6 +88,24 @@ const Showrooms: React.FC = () => {
 
   const currentShowroom = showroomsData[activeShowroom];
 
+  // Navigation functions for image slider
+  const nextImage = () => {
+    setActiveImageIndex((prev) => 
+      prev >= currentShowroom.images.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevImage = () => {
+    setActiveImageIndex((prev) => 
+      prev <= 0 ? currentShowroom.images.length - 1 : prev - 1
+    );
+  };
+
+  // Reset image index when showroom changes
+  React.useEffect(() => {
+    setActiveImageIndex(0);
+  }, [activeShowroom]);
+
   return (
     <section className="w-full bg-white py-6">
       <div className="max-w-[1800px] mx-auto px-[30px]">
@@ -161,8 +180,50 @@ const Showrooms: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Part - Empty */}
-          <div className="flex-1 bg-gray-100">
+          {/* Right Part - Photo Slider */}
+          <div className="flex-1 bg-gray-100 relative overflow-hidden">
+            {/* Current Image */}
+            <img 
+              src={currentShowroom.images[activeImageIndex]} 
+              alt={`Шоурум ${currentShowroom.id} - фото ${activeImageIndex + 1}`}
+              className="w-full h-full object-cover"
+            />
+            
+            {/* Navigation Buttons */}
+            {currentShowroom.images.length > 1 && (
+              <>
+                <button
+                  onClick={prevImage}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+                
+                <button
+                  onClick={nextImage}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                >
+                  <ChevronRight size={20} />
+                </button>
+              </>
+            )}
+            
+            {/* Image Indicators */}
+            {currentShowroom.images.length > 1 && (
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                {currentShowroom.images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-colors ${
+                      index === activeImageIndex 
+                        ? 'bg-white' 
+                        : 'bg-white/50'
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
