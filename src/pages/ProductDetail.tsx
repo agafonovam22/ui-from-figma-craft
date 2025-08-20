@@ -267,37 +267,129 @@ const ProductDetail: React.FC = () => {
 
             <TabsContent value="specifications" className="mt-6">
               <div>
-                <h3 className="text-xl font-semibold mb-4">Технические характеристики</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-3">
-                    <div className="flex justify-between py-2 border-b border-border">
-                      <span className="font-medium">Производитель:</span>
-                      <span className="text-muted-foreground">Уточняется</span>
+                <h3 className="text-xl font-semibold mb-6">Характеристики</h3>
+                
+                {product.characteristics ? (
+                  <div className="space-y-8">
+                    {/* Основные характеристики */}
+                    <div>
+                      <h4 className="text-lg font-semibold mb-4">Основные характеристики</h4>
+                      <div className="grid md:grid-cols-2 gap-x-8 gap-y-1">
+                        {Object.entries(product.characteristics).map(([key, value]) => {
+                          // Фильтруем служебные поля и скрытые характеристики
+                          if (key.includes('скрытая характеристика') || 
+                              key.includes('Картинки галереи') ||
+                              key.includes('Реквизиты') ||
+                              key.includes('Базовая единица') ||
+                              key.includes('Ставки налогов') ||
+                              key.includes('Исключить из публикации') ||
+                              key.includes('Использование') ||
+                              key.includes('Количество мест')) {
+                            return null;
+                          }
+                          
+                          // Переводим названия полей на понятный язык
+                          const fieldNames: { [key: string]: string } = {
+                            'Артикул': 'Артикул',
+                            'Бренд (id)': 'Бренд',
+                            'Наименование товара на сайте': 'Наименование',
+                            'Тип оборудования': 'Тип оборудования',
+                            'Тип назначения': 'Назначение',
+                            'Страна бренда': 'Страна бренда',
+                            'Страна изготовления': 'Страна производства',
+                            'Вес Брутто, кг': 'Вес, кг',
+                            'Гарантия на домашнее использование': 'Гарантия',
+                            'Акция': 'Акция'
+                          };
+                          
+                          const displayName = fieldNames[key] || key;
+                          
+                          return (
+                            <div key={key} className="flex justify-between py-2 border-b border-border">
+                              <span className="font-medium text-muted-foreground">{displayName}:</span>
+                              <span className="text-foreground text-right">{String(value)}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
-                    <div className="flex justify-between py-2 border-b border-border">
-                      <span className="font-medium">Модель:</span>
-                      <span className="text-muted-foreground">{product.name}</span>
-                    </div>
-                    <div className="flex justify-between py-2 border-b border-border">
-                      <span className="font-medium">Гарантия:</span>
-                      <span className="text-muted-foreground">12 месяцев</span>
-                    </div>
+
+                    {/* Габариты в рабочем состоянии */}
+                    {(product.characteristics['Габариты упаковки Длина, см'] || 
+                      product.characteristics['Габариты упаковки Ширина, см'] || 
+                      product.characteristics['Габариты упаковки Высота, см']) && (
+                      <div>
+                        <h4 className="text-lg font-semibold mb-4">Габариты в рабочем состоянии</h4>
+                        <div className="grid md:grid-cols-2 gap-x-8 gap-y-1">
+                          {product.characteristics['Габариты упаковки Длина, см'] && (
+                            <div className="flex justify-between py-2 border-b border-border">
+                              <span className="font-medium text-muted-foreground">Размер в рабочем состоянии Длина, см:</span>
+                              <span className="text-foreground">{product.characteristics['Габариты упаковки Длина, см']}</span>
+                            </div>
+                          )}
+                          {product.characteristics['Габариты упаковки Ширина, см'] && (
+                            <div className="flex justify-between py-2 border-b border-border">
+                              <span className="font-medium text-muted-foreground">Размер в рабочем состоянии Ширина, см:</span>
+                              <span className="text-foreground">{product.characteristics['Габариты упаковки Ширина, см']}</span>
+                            </div>
+                          )}
+                          {product.characteristics['Габариты упаковки Высота, см'] && (
+                            <div className="flex justify-between py-2 border-b border-border">
+                              <span className="font-medium text-muted-foreground">Размер в рабочем состоянии Высота, см:</span>
+                              <span className="text-foreground">{product.characteristics['Габариты упаковки Высота, см']}</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Вес */}
+                    {product.characteristics['Вес Брутто, кг'] && (
+                      <div>
+                        <h4 className="text-lg font-semibold mb-4">Вес</h4>
+                        <div className="grid md:grid-cols-2 gap-x-8 gap-y-1">
+                          <div className="flex justify-between py-2 border-b border-border">
+                            <span className="font-medium text-muted-foreground">Вес Брутто, кг:</span>
+                            <span className="text-foreground">{product.characteristics['Вес Брутто, кг']}</span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Гарантия и Сертификация */}
+                    {(product.characteristics['Гарантия на домашнее использование'] || 
+                      product.characteristics['Страна бренда'] || 
+                      product.characteristics['Страна изготовления']) && (
+                      <div>
+                        <h4 className="text-lg font-semibold mb-4">Гарантия и Сертификация</h4>
+                        <div className="grid md:grid-cols-2 gap-x-8 gap-y-1">
+                          {product.characteristics['Гарантия на домашнее использование'] && (
+                            <div className="flex justify-between py-2 border-b border-border">
+                              <span className="font-medium text-muted-foreground">Гарантия на домашнее использование:</span>
+                              <span className="text-foreground">{product.characteristics['Гарантия на домашнее использование']}</span>
+                            </div>
+                          )}
+                          {product.characteristics['Страна бренда'] && (
+                            <div className="flex justify-between py-2 border-b border-border">
+                              <span className="font-medium text-muted-foreground">Страна бренда:</span>
+                              <span className="text-foreground">{product.characteristics['Страна бренда']}</span>
+                            </div>
+                          )}
+                          {product.characteristics['Страна изготовления'] && (
+                            <div className="flex justify-between py-2 border-b border-border">
+                              <span className="font-medium text-muted-foreground">Страна изготовления:</span>
+                              <span className="text-foreground">{product.characteristics['Страна изготовления']}</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between py-2 border-b border-border">
-                      <span className="font-medium">Страна производства:</span>
-                      <span className="text-muted-foreground">Уточняется</span>
-                    </div>
-                    <div className="flex justify-between py-2 border-b border-border">
-                      <span className="font-medium">Вес:</span>
-                      <span className="text-muted-foreground">Уточняется</span>
-                    </div>
-                    <div className="flex justify-between py-2 border-b border-border">
-                      <span className="font-medium">Размеры:</span>
-                      <span className="text-muted-foreground">Уточняется</span>
-                    </div>
+                ) : (
+                  <div className="text-center py-8">
+                    <p className="text-muted-foreground">Характеристики товара не найдены</p>
                   </div>
-                </div>
+                )}
               </div>
             </TabsContent>
 
