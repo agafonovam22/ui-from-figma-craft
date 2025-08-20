@@ -35,10 +35,19 @@ const UslugiServices: React.FC = () => {
     ? servicesByCategory[category as keyof typeof servicesByCategory] 
     : servicesByCategory.business;
 
-  // Set default active tab to first tab in the category  
-  const [activeTab, setActiveTab] = useState(() => {
-    return tabs.length > 0 ? tabs[0].id : '3d-project';
-  });
+  // Set active tab based on specific category requirements
+  const getInitialActiveTab = () => {
+    if (category === 'individuals') {
+      return 'installment'; // For individuals page - always start with installment
+    } else if (category === 'business') {
+      return '3d-project'; // For business page - always start with 3d-project
+    } else if (category === 'service') {
+      return 'maintenance'; // For service page - start with first tab
+    }
+    return '3d-project'; // Default fallback
+  };
+
+  const [activeTab, setActiveTab] = useState(getInitialActiveTab());
 
 
   // Get category title
