@@ -228,8 +228,8 @@ const Services: React.FC = () => {
                 
                 <div className="mt-[145px]">
                   <img 
-                    src="/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png"
-                    alt="Женщина тренируется в спортзале"
+                    src="/lovable-uploads/4d3a1c8c-b3af-493d-8190-86c1db302a56.png"
+                    alt="Сервисная команда WellFitness"
                     className="w-full max-w-[400px] h-auto object-cover rounded-lg"
                   />
                 </div>
