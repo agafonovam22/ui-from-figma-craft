@@ -35,7 +35,7 @@ class BitrixAPI {
             name: product.name,
             price: product.price.toString(),
             originalPrice: product.original_price ? product.original_price.toString() : undefined,
-            image: this.getOptimizedImageUrl(product.image_url),
+            image: product.image_url, // Используем оригинальные URL без параметров
             description: product.name,
             available: product.is_available && product.in_stock,
             categoryId: undefined,

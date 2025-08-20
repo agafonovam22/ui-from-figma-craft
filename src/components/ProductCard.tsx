@@ -63,7 +63,7 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
         <img 
           src={product.image} 
           alt={product.name || "Товар"}
-          className="w-full h-48 object-contain bg-gray-50 rounded-lg"
+          className="w-full h-56 object-contain bg-gray-50 rounded-lg hover:scale-105 transition-transform duration-300"
           loading="lazy"
           onError={(e) => {
             console.log('Ошибка загрузки изображения:', product.image);
