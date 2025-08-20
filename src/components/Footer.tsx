@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
               <ul className="space-y-1 text-[#778093] text-xs">
                 <li><a href="#" className="hover:text-white transition-colors">Для дома</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Для фитнес-клуба</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Наши бренды</a></li>
+                <li><Link to="/brands" className="hover:text-white transition-colors">Наши бренды</Link></li>
               </ul>
             </div>
 
@@ -24,10 +24,10 @@ const Footer: React.FC = () => {
             <div>
               <h3 className="text-white text-xs font-benzin-semibold mb-2">Поддержка</h3>
               <ul className="space-y-1 text-[#778093] text-xs">
-                <li><a href="#" className="hover:text-white transition-colors">Доставка и оплата</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Условия возврата</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Гарантия</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
+                <li><Link to="/support#delivery" className="hover:text-white transition-colors">Доставка и оплата</Link></li>
+                <li><Link to="/support#returns" className="hover:text-white transition-colors">Условия возврата</Link></li>
+                <li><Link to="/support#warranty" className="hover:text-white transition-colors">Гарантия</Link></li>
+                <li><Link to="/support#faq" className="hover:text-white transition-colors">FAQ</Link></li>
               </ul>
             </div>
 
