@@ -287,7 +287,7 @@ const UslugiServices: React.FC = () => {
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">
                     РАЗРАБОТКА МНОГОУРОВНЕГО <span className="text-brand-red">БИЗНЕС-ПЛАНА</span>. ГОТОВЫЕ ЦИФРЫ И ИНСТРУМЕНТЫ.
                   </h2>
-                  <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+                  <div className="space-y-4 text-gray-700 text-lg leading-relaxed font-manrope">
                     <p>
                       Единого для всех жестко заданного формата бизнес-плана не существует. Каждый бизнес-план по-своему уникален, поскольку должен отражать особенности рассматриваемого предприятия, отрасли, а также учитывать интересы основного читателя бизнес-плана.
                     </p>
@@ -304,7 +304,7 @@ const UslugiServices: React.FC = () => {
                   <h3 className="text-2xl font-bold text-gray-900 mb-6">
                     Что включает в себя наш <span className="text-brand-red">бизнес-план</span>
                   </h3>
-                  <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+                  <div className="space-y-4 text-gray-700 text-lg leading-relaxed font-manrope">
                     <p>
                       Детальный финансовый анализ с расчетами доходов, расходов и окупаемости проекта. Исследование целевой аудитории и анализ конкурентов в вашем регионе.
                     </p>
