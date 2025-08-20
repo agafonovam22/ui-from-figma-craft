@@ -454,25 +454,34 @@ const UslugiServices: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
                 <div className="order-1">
                   <img 
-                    src="/lovable-uploads/placeholder-leasing.png" 
+                    src="/lovable-uploads/22163627-405b-4323-9b30-bf573c828589.png" 
                     alt="Лизинг оборудования" 
                     className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
                 <div className="order-2 flex flex-col justify-center">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                    Лизинг <span className="text-brand-red">фитнес-оборудования</span>
+                    Лизинг оборудования
                   </h2>
-                  <div className="space-y-4 text-gray-700 text-lg leading-relaxed font-manrope">
-                    <p>
-                      Лизинг фитнес-оборудования — это выгодное решение для открытия или модернизации фитнес-клуба. Вы получаете современное оборудование с минимальными первоначальными вложениями.
-                    </p>
-                    <p>
-                      Наши партнеры предлагают гибкие условия лизинга с возможностью выкупа оборудования по остаточной стоимости. Это позволяет сохранить оборотные средства для развития бизнеса.
-                    </p>
-                    <p>
-                      Мы поможем подобрать оптимальную лизинговую программу для вашего проекта и возьмем на себя все вопросы по оформлению документов.
-                    </p>
+                  <p className="text-gray-700 text-lg leading-relaxed font-manrope mb-6">
+                    Беспрецедентные условия на приобретение оборудования по лизинговой программе.
+                  </p>
+                  <div className="space-y-3">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">ПРЕИМУЩЕСТВА:</h3>
+                    <div className="space-y-2 text-gray-700 text-lg font-manrope">
+                      <div className="flex items-start">
+                        <span className="text-brand-red mr-2">‣</span>
+                        <span>Оптимизация налогов.</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-brand-red mr-2">‣</span>
+                        <span>Удобный график выплат.</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-brand-red mr-2">‣</span>
+                        <span>Оформление без выезда.</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -481,16 +490,16 @@ const UslugiServices: React.FC = () => {
               <div className="bg-gray-50 rounded-lg p-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center mb-12">
                   <div className="space-y-4">
+                    <div className="text-6xl font-bold text-brand-red">36</div>
+                    <p className="text-gray-700 text-lg font-manrope">До 36 месяцев лизинга</p>
+                  </div>
+                  <div className="space-y-4">
                     <div className="text-6xl font-bold text-brand-red">0%</div>
-                    <p className="text-gray-700 text-lg font-manrope">первоначальный взнос в некоторых программах</p>
+                    <p className="text-gray-700 text-lg font-manrope">Ставка по лизингу 0%</p>
                   </div>
                   <div className="space-y-4">
-                    <div className="text-6xl font-bold text-brand-red">60</div>
-                    <p className="text-gray-700 text-lg font-manrope">месяцев максимальный срок лизинга</p>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="text-6xl font-bold text-brand-red">100%</div>
-                    <p className="text-gray-700 text-lg font-manrope">стоимости оборудования покрывается лизингом</p>
+                    <div className="text-6xl font-bold text-brand-red">20%</div>
+                    <p className="text-gray-700 text-lg font-manrope">Первоначальный взнос от 20%</p>
                   </div>
                 </div>
                 <div className="text-center">
