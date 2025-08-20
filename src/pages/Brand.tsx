@@ -1445,7 +1445,7 @@ const Brand: React.FC = () => {
             <section className="w-full py-8">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div className="order-2 lg:order-1 lg:pr-8">
+                  <div className="order-1 lg:order-2 lg:pl-8">
                     <h2 className="text-3xl font-benzin text-gray-900 mb-6">
                       Тренируйтесь эффективнее, чем в зале
                     </h2>
@@ -1453,7 +1453,7 @@ const Brand: React.FC = () => {
                       Sintesi не просто заменяет тренажеры — она делает тренировки умнее. Автоматическая настройка, детальная статистика и адаптация под ваши цели экономят время и повышают результат.
                     </p>
                   </div>
-                  <div className="order-1 lg:order-2">
+                  <div className="order-2 lg:order-1">
                     <img 
                       src="/lovable-uploads/06d5182d-b78d-43ff-8da8-83cc4cd88ded.png"
                       alt="Sintesi - будущее тренировок уже здесь"
