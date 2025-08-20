@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import PhotoSwiper from './PhotoSwiper';
 
 const Showrooms: React.FC = () => {
   const [activeShowroom, setActiveShowroom] = useState(0);
@@ -99,7 +98,7 @@ const Showrooms: React.FC = () => {
         <div className="w-full h-[400px] bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 flex">
           
           {/* Left Part - Showrooms List */}
-          <div className="w-[245px] bg-gray-800 flex flex-col">
+          <div className="w-[260px] bg-gray-800 flex flex-col">
             {showroomsData.map((showroom, index) => (
               <button
                 key={showroom.id}
@@ -115,61 +114,12 @@ const Showrooms: React.FC = () => {
             ))}
           </div>
 
-          {/* Middle Part - Showroom Info */}
-          <div className="w-[400px] bg-gray-800 text-white p-8 flex flex-col justify-center relative">
-            <div className="mb-6">
-              <div className="flex items-center gap-4 mb-4">
-                <span className="text-4xl font-bold text-white">{currentShowroom.area}</span>
-                <span className="text-4xl font-bold text-white">{currentShowroom.equipment}</span>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-gray-600 flex items-center justify-center mt-0.5">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <div>
-                  <p className="text-gray-400 text-sm mb-1">Адрес</p>
-                  <p className="text-white text-sm leading-relaxed">{currentShowroom.address}</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-gray-600 flex items-center justify-center mt-0.5">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <div>
-                  <p className="text-gray-400 text-sm mb-1">Телефон</p>
-                  <p className="text-white text-sm">{currentShowroom.phone}</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-gray-600 flex items-center justify-center mt-0.5">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <div>
-                  <p className="text-gray-400 text-sm mb-1">Режим работы</p>
-                  <p className="text-white text-sm">{currentShowroom.hours}</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8">
-              <button className="border border-white text-white px-6 py-2 rounded transition-colors hover:bg-white hover:text-gray-800">
-                Как проехать →
-              </button>
-            </div>
+          {/* Middle Part - Empty */}
+          <div className="w-[400px] bg-gray-800">
           </div>
 
-          {/* Right Part - Photo Slider */}
-          <div className="flex-1 bg-gray-100 relative">
-            <PhotoSwiper 
-              images={currentShowroom.images} 
-              autoplay={true}
-              autoplayInterval={4000}
-            />
+          {/* Right Part - Empty */}
+          <div className="flex-1 bg-gray-100">
           </div>
         </div>
       </div>
