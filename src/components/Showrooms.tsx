@@ -116,12 +116,51 @@ const Showrooms: React.FC = () => {
           </div>
 
           {/* Middle Part - Showroom Info */}
-          <div className="w-[400px] bg-gray-800 text-white relative overflow-hidden">
-            <img 
-              src="/lovable-uploads/7c20e2e7-3636-4f4f-b7aa-f2da3bbf0a74.png"
-              alt="Showroom background"
-              className="w-full h-full object-cover"
-            />
+          <div className="w-[400px] bg-gray-800 text-white p-8 flex flex-col justify-center relative">
+            <div className="mb-6">
+              <div className="flex items-center gap-4 mb-4">
+                <span className="text-4xl font-bold text-white">{currentShowroom.area}</span>
+                <span className="text-4xl font-bold text-white">{currentShowroom.equipment}</span>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-gray-600 flex items-center justify-center mt-0.5">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm mb-1">Адрес</p>
+                  <p className="text-white text-sm leading-relaxed">{currentShowroom.address}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-gray-600 flex items-center justify-center mt-0.5">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm mb-1">Телефон</p>
+                  <p className="text-white text-sm">{currentShowroom.phone}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-gray-600 flex items-center justify-center mt-0.5">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm mb-1">Режим работы</p>
+                  <p className="text-white text-sm">{currentShowroom.hours}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <button className="border border-white text-white px-6 py-2 rounded transition-colors hover:bg-white hover:text-gray-800">
+                Как проехать →
+              </button>
+            </div>
           </div>
 
           {/* Right Part - Photo Slider */}
