@@ -77,6 +77,18 @@ const GymEquipment: React.FC = () => {
       image: '/lovable-uploads/b59a1f22-25f9-4876-931d-a5e619108941.png',
       category: 'massage',
       price: 'от 60 000 ₽'
+    },
+    {
+      id: 11,
+      image: '/lovable-uploads/a4162ee7-d859-48e4-8ab3-82de39d39615.png',
+      category: 'weights-plates',
+      price: 'от 8 000 ₽'
+    },
+    {
+      id: 12,
+      image: '/lovable-uploads/378ebaa3-274c-4687-85ca-aa90c0dc3143.png',
+      category: 'group-programs',
+      price: 'от 30 000 ₽'
     }
   ];
 
@@ -120,9 +132,9 @@ const GymEquipment: React.FC = () => {
           ))}
         </div>
         
-        {/* Equipment Grid - Last 4 items */}
+        {/* Equipment Grid - Last 6 items */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-12 [&>*]:h-auto [&>*]:min-h-0 [&_img]:w-full [&_img]:h-auto [&_img]:object-contain">
-          {equipmentCategories.slice(6, 10).map((product) => (
+          {equipmentCategories.slice(6, 12).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo="/product-card" />
           ))}
         </div>
