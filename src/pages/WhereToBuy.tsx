@@ -12,6 +12,7 @@ import {
   BreadcrumbPage 
 } from '@/components/ui/breadcrumb';
 import { Switch } from '@/components/ui/switch';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Globe, Clock, Map as MapIcon } from 'lucide-react';
 
 const WhereToBuy: React.FC = () => {
@@ -19,6 +20,8 @@ const WhereToBuy: React.FC = () => {
   const [activeTab, setActiveTab] = useState('stores');
   const [sortBy, setSortBy] = useState('list');
   const [showMap, setShowMap] = useState(false);
+  const [showPartners, setShowPartners] = useState(true);
+  const [showWellFitness, setShowWellFitness] = useState(true);
 
   const partnerStores = [
     {
@@ -83,6 +86,16 @@ const WhereToBuy: React.FC = () => {
       phone: '+7 (495) 292-52-73',
       hours: 'desire-fitness.store',
       coordinates: [37.3800, 55.7400] as [number, number]
+    }
+  ];
+
+  const wellFitnessStores = [
+    {
+      name: 'Шоу-рум WellFitness',
+      address: 'Москва, ТЦ Капитолий, Правобережная улица, 1Б',
+      phone: '+7 (499) 677-56-32 доб. 337',
+      hours: '10:00 - 22:00',
+      coordinates: [37.5500, 55.7500] as [number, number]
     }
   ];
 
@@ -162,6 +175,18 @@ const WhereToBuy: React.FC = () => {
     'sportvagon.ru',
     'wellgallery.ru'
   ];
+
+  // Логика фильтрации магазинов для карты
+  const getFilteredStores = () => {
+    const stores = [];
+    if (showPartners) {
+      stores.push(...partnerStores);
+    }
+    if (showWellFitness) {
+      stores.push(...wellFitnessStores);
+    }
+    return stores;
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -271,12 +296,42 @@ const WhereToBuy: React.FC = () => {
           </div>
         </div>
 
+        {/* Filter Checkboxes - показываются только когда включена карта */}
+        {showMap && (
+          <div className="flex justify-end mb-6">
+            <div className="flex items-center gap-6">
+              <div className="flex items-center space-x-2">
+                <Checkbox
+                  id="partners"
+                  checked={showPartners}
+                  onCheckedChange={(checked) => setShowPartners(checked === true)}
+                  className="data-[state=checked]:bg-[#F53B49] data-[state=checked]:border-[#F53B49]"
+                />
+                <label htmlFor="partners" className="text-gray-700 font-medium text-[14px] cursor-pointer">
+                  Магазины партнеров
+                </label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Checkbox
+                  id="wellfitness"
+                  checked={showWellFitness}
+                  onCheckedChange={(checked) => setShowWellFitness(checked === true)}
+                  className="data-[state=checked]:bg-[#F53B49] data-[state=checked]:border-[#F53B49]"
+                />
+                <label htmlFor="wellfitness" className="text-gray-700 font-medium text-[14px] cursor-pointer">
+                  Магазины WellFitness
+                </label>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Company Store Section or Map */}
         <div className="mb-12">
           {showMap || sortBy === 'map' ? (
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Магазины на карте</h2>
-              <Map stores={partnerStores} />
+              <Map stores={getFilteredStores()} />
             </div>
           ) : (
             <div className="bg-gray-50 rounded-lg flex h-[328px] overflow-hidden">
