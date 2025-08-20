@@ -24,6 +24,11 @@ const Brand: React.FC = () => {
   // Debug log to check brandSlug value
   console.log('Brand page - brandSlug value:', brandSlug);
   
+  // Check specifically for visbody
+  if (brandSlug === 'visbody') {
+    console.log('VISBODY MATCHED!');
+  }
+  
   const [priceRange, setPriceRange] = useState([0, 100000]);
   const [expandedFilters, setExpandedFilters] = useState({
     price: true,
