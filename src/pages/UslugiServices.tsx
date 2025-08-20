@@ -11,7 +11,10 @@ import InstallmentTable from '@/components/Services/InstallmentTable';
 
 const UslugiServices: React.FC = () => {
   const { category } = useParams<{ category: string }>();
-  const [activeTab, setActiveTab] = useState('3d-project');
+  const [activeTab, setActiveTab] = useState(() => {
+    if (category === 'individuals') return 'installment';
+    return '3d-project';
+  });
 
   // Define services by category
   const servicesByCategory = {
@@ -23,7 +26,6 @@ const UslugiServices: React.FC = () => {
       { id: 'leasing', label: 'Лизинг' }
     ],
     individuals: [
-      { id: '3d-project', label: '3D-проект' },
       { id: 'installment', label: 'В рассрочку' }
     ],
     service: [
