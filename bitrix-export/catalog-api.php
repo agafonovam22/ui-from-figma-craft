@@ -90,13 +90,36 @@ try {
             }
         }
 
-        // Получаем картинку
+        // Получаем картинку в высоком качестве
         $imageUrl = '';
-        $pictureId = $product['PREVIEW_PICTURE'] ?: $product['DETAIL_PICTURE'];
+        $pictureId = $product['DETAIL_PICTURE'] ?: $product['PREVIEW_PICTURE']; // Сначала детальная, потом превью
         if ($pictureId) {
             $imageFile = CFile::GetFileArray($pictureId);
             if ($imageFile) {
-                $imageUrl = 'https://' . $_SERVER['HTTP_HOST'] . $imageFile['SRC'];
+                // Проверяем размер изображения и при необходимости создаем версию в хорошем качестве
+                $originalUrl = 'https://' . $_SERVER['HTTP_HOST'] . $imageFile['SRC'];
+                
+                // Если изображение маленькое, пытаемся получить версию побольше
+                if ($imageFile['WIDTH'] < 400 || $imageFile['HEIGHT'] < 400) {
+                    // Создаем резайз с качественными параметрами
+                    $resizeImage = CFile::ResizeImageGet(
+                        $pictureId,
+                        ['width' => 800, 'height' => 800], // Большой размер
+                        BX_RESIZE_IMAGE_PROPORTIONAL, // Пропорциональное изменение
+                        true, // Обрезать по размеру
+                        false, // Фильтры
+                        false, // Не применять водяные знаки
+                        90 // Качество JPEG 90%
+                    );
+                    
+                    if ($resizeImage && $resizeImage['src']) {
+                        $imageUrl = 'https://' . $_SERVER['HTTP_HOST'] . $resizeImage['src'];
+                    } else {
+                        $imageUrl = $originalUrl;
+                    }
+                } else {
+                    $imageUrl = $originalUrl;
+                }
             }
         }
 
