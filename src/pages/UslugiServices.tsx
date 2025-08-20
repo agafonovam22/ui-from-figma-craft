@@ -275,12 +275,12 @@ const UslugiServices: React.FC = () => {
           {activeTab === 'business-planning' && (
             <div className="space-y-12">
               {/* Block 1 - Image + Text */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
                 <div className="order-1">
                   <img 
                     src="/lovable-uploads/c785d38e-d766-4d8a-9f78-b5f8c9689906.png" 
                     alt="Бизнес-планирование" 
-                    className="w-full h-[400px] object-cover rounded-lg"
+                    className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
                 <div className="order-2">
@@ -299,7 +299,7 @@ const UslugiServices: React.FC = () => {
               </div>
 
               {/* Block 2 - Text + Image */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
                 <div className="order-2 lg:order-1">
                   <div className="space-y-4 text-gray-700 text-lg leading-relaxed font-manrope">
                     <p>
@@ -314,7 +314,7 @@ const UslugiServices: React.FC = () => {
                   <img 
                     src="/lovable-uploads/8d625e48-19c5-443e-83db-7fe0613f9004.png" 
                     alt="Услуги бизнес-планирования" 
-                    className="w-full h-[400px] object-cover rounded-lg"
+                    className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
               </div>
