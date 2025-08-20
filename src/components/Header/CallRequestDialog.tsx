@@ -112,14 +112,21 @@ const CallRequestDialog: React.FC<CallRequestDialogProps> = ({ children }) => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
-                  <Input
-                    type="tel"
-                    placeholder="+7 (999) 999-99-99"
-                    value={formData.phone}
-                    onChange={handlePhoneChange}
-                    className="h-10 px-3 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#F53B49] focus:border-transparent placeholder:text-gray-400"
-                    required
-                  />
+                  <div className="relative">
+                    <Input
+                      type="tel"
+                      placeholder="+7 (___) ___-__-__"
+                      value={formData.phone}
+                      onChange={handlePhoneChange}
+                      className="h-10 px-3 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-[#F53B49] focus:border-transparent placeholder:text-gray-500 placeholder:font-mono"
+                      required
+                    />
+                    {formData.phone === '+7 ' && (
+                      <div className="absolute inset-0 flex items-center px-3 pointer-events-none">
+                        <span className="text-gray-400 text-sm font-mono">+7 (___) ___-__-__</span>
+                      </div>
+                    )}
+                  </div>
                   <Input
                     type="email"
                     placeholder="E-mail"
