@@ -77,7 +77,7 @@ const UslugiServices: React.FC = () => {
     },
     {
       id: 3,
-      title: 'Безопасный защитный мат',
+      title: 'Общий вид фитнес-клуба',
       image: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png'
     },
     {
