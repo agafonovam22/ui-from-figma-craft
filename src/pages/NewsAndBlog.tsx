@@ -72,10 +72,6 @@ const NewsAndBlogPage: React.FC = () => {
                   <h3 className="font-semibold text-lg mb-3 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                     {newsItems[0]?.title}
                   </h3>
-                  
-                  <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
-                    {newsItems[0]?.description}
-                  </p>
                 </div>
               </Link>
             </div>
@@ -109,10 +105,6 @@ const NewsAndBlogPage: React.FC = () => {
                     <h3 className="font-semibold text-sm mb-2 group-hover:text-[#F53B49] transition-colors line-clamp-3 leading-tight">
                       {newsItems[1]?.title}
                     </h3>
-                    
-                    <p className="text-xs text-gray-600 line-clamp-4 leading-relaxed">
-                      {newsItems[1]?.description}
-                    </p>
                   </div>
                 </Link>
               </div>
@@ -146,10 +138,6 @@ const NewsAndBlogPage: React.FC = () => {
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                         {newsItems[2]?.title}
                       </h3>
-                      
-                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        {newsItems[2]?.description}
-                      </p>
                     </div>
                   </Link>
                 </div>
@@ -181,10 +169,6 @@ const NewsAndBlogPage: React.FC = () => {
                       <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                         {newsItems[3]?.title}
                       </h3>
-                      
-                      <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                        {newsItems[3]?.description}
-                      </p>
                     </div>
                   </Link>
                 </div>
@@ -225,10 +209,6 @@ const NewsAndBlogPage: React.FC = () => {
                           <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                             {item.title}
                           </h3>
-                          
-                          <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                            {item.description}
-                          </p>
                         </div>
                       </Link>
                     </div>
@@ -272,10 +252,6 @@ const NewsAndBlogPage: React.FC = () => {
                             <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                               {item.title}
                             </h3>
-                            
-                            <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                              {item.description}
-                            </p>
                           </div>
                         </Link>
                       </div>
@@ -314,10 +290,6 @@ const NewsAndBlogPage: React.FC = () => {
                           <h3 className="font-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                             {item.title}
                           </h3>
-                          
-                          <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                            {item.description}
-                          </p>
                         </div>
                       </Link>
                     </div>
