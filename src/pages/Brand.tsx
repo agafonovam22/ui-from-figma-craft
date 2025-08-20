@@ -1252,7 +1252,7 @@ const Brand: React.FC = () => {
               {brandSlug !== 'peach-builder' && (
                 <div className="order-2 lg:order-1 lg:pr-8">
                   <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                    {(brandSlug === 'cardio-power' || brandSlug === 'cardiopower') ? 'Ключевые преимущества' : brandSlug === 'true' ? 'Инвестиция в долгосрочный результат' : brandSlug === 'bowflex' ? 'Поддержка в каждом движении' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : brandSlug === 'sole' || brandSlug === 'sole-fitness' ? 'Выбирайте Sole – инженерное совершенство для ваших результатов.' : brandSlug === 'slide-fit' ? 'С брендом Slide&FIT вы получаете не просто тренажер, а персонального тренера, который:' : brandSlug === 'inspire' ? 'Широкий ассортимент для комплексных решений' : brandSlug === 'hyfit' ? 'Для тех, кто ценит:' : brandSlug === 'maxgym' ? 'Оптимальное сочетание цены и качества' : brandSlug === 'maxfit' ? 'Качество, подтвержденное:' : brandSlug === 'proski' ? 'PROSKI-Simulator — ваш персональный тренер' : brandSlug === 'variosling' ? 'Мобильность и удобство' : brandSlug === 'scholle' ? 'Немецкие традиции в каждом изделии' : brandSlug === 'meridien' ? 'Категории MÉRIDIEN: выберите свой идеальный вариант' : brandSlug === 'kernel' ? 'Безопасность и качество' : brandSlug === 'centr' ? 'Для кого это?' : brandSlug === 'sintesi' ? 'Тренируйтесь эффективнее, чем в зале' : brandSlug === 'visbody' ? 'Временный заголовок заглушка' : 'Немецкая надежность в каждой детали'}
+                    {(brandSlug === 'cardio-power' || brandSlug === 'cardiopower') ? 'Ключевые преимущества' : brandSlug === 'true' ? 'Инвестиция в долгосрочный результат' : brandSlug === 'bowflex' ? 'Поддержка в каждом движении' : brandSlug === 'schwinn' ? 'Широкая линейка для любых потребностей' : brandSlug === 'sole' || brandSlug === 'sole-fitness' ? 'Выбирайте Sole – инженерное совершенство для ваших результатов.' : brandSlug === 'slide-fit' ? 'С брендом Slide&FIT вы получаете не просто тренажер, а персонального тренера, который:' : brandSlug === 'inspire' ? 'Широкий ассортимент для комплексных решений' : brandSlug === 'hyfit' ? 'Для тех, кто ценит:' : brandSlug === 'maxgym' ? 'Оптимальное сочетание цены и качества' : brandSlug === 'maxfit' ? 'Качество, подтвержденное:' : brandSlug === 'proski' ? 'PROSKI-Simulator — ваш персональный тренер' : brandSlug === 'variosling' ? 'Мобильность и удобство' : brandSlug === 'scholle' ? 'Немецкие традиции в каждом изделии' : brandSlug === 'meridien' ? 'Категории MÉRIDIEN: выберите свой идеальный вариант' : brandSlug === 'kernel' ? 'Безопасность и качество' : brandSlug === 'centr' ? 'Для кого это?' : brandSlug === 'sintesi' ? 'Тренируйтесь эффективнее, чем в зале' : brandSlug === 'visbody' ? 'Visbody-M30' : 'Немецкая надежность в каждой детали'}
                   </h2>
                     <div className="space-y-4">
                       {brandSlug === 'slide-fit' ? (
@@ -1371,6 +1371,40 @@ const Brand: React.FC = () => {
                           <div className="flex items-start">
                             <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                             <p className="text-gray-600 text-sm leading-relaxed font-manrope">Для всех, кто ищет гармонию между телом и сознанием</p>
+                          </div>
+                        </div>
+                      ) : brandSlug === 'visbody' ? (
+                        <div className="space-y-4">
+                          <h3 className="font-benzin text-gray-900 mb-3">3D-Сканер тела</h3>
+                          <p className="text-gray-600 text-sm leading-relaxed font-manrope mb-4">
+                            «Умное зеркало» 3D-сканер использует оптическую технологию и камеру Intel RealSense для точной оценки положения тела и выявления нарушений. Это профессиональный анализатор тела и осанки.
+                          </p>
+                          <h4 className="font-benzin text-gray-900 mb-3">Безупречная точность:</h4>
+                          <div className="space-y-3">
+                            <div className="flex items-start">
+                              <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                              <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                                Измерение охватов тела
+                              </p>
+                            </div>
+                            <div className="flex items-start">
+                              <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                              <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                                Измерение состава тела
+                              </p>
+                            </div>
+                            <div className="flex items-start">
+                              <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                              <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                                Оценка гибкости суставов
+                              </p>
+                            </div>
+                            <div className="flex items-start">
+                              <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                              <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                                Оценка осанки
+                              </p>
+                            </div>
                           </div>
                         </div>
                       ) : (
