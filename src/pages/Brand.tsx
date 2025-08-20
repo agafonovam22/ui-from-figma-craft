@@ -925,7 +925,16 @@ const Brand: React.FC = () => {
                         </div>
                       ) : (
                           <p className="text-gray-700 text-sm leading-relaxed font-manrope">
-                            {(brandSlug === 'cardio-power' || brandSlug === 'cardiopower') ? '' : brandSlug === 'true' ? (
+                             {(brandSlug === 'cardio-power' || brandSlug === 'cardiopower') ? '' : brandSlug === 'cardiopower-pro' ? (
+                               <div className="space-y-4">
+                                 <p className="text-gray-700 text-sm leading-relaxed font-manrope mb-3">
+                                   Яркие сенсорные дисплеи с мультимедийными функциями, быстрые клавиши выбора программ и интуитивный интерфейс — даже новички смогут начать тренировку без помощи инструктора.
+                                 </p>  
+                                 <p className="text-gray-700 text-sm leading-relaxed font-manrope mb-3">
+                                   При этом функционал достаточно глубокий для профессиональных атлетов.
+                                 </p>
+                               </div>
+                             ) : brandSlug === 'true' ? (
                               <div className="space-y-4">
                                 <p className="text-gray-700 text-sm leading-relaxed font-manrope mb-3">
                                   <strong>50+ лет на рынке</strong>, собственные инженерные разработки и строгий контроль производства
