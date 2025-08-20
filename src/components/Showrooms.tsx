@@ -5,6 +5,7 @@ import { MapPin, Phone, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 const Showrooms: React.FC = () => {
   const [activeShowroom, setActiveShowroom] = useState(0);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [selectedCity, setSelectedCity] = useState<string | null>(null);
 
   const showroomsData = [
     {
@@ -93,6 +94,14 @@ const Showrooms: React.FC = () => {
 
   const currentShowroom = showroomsData[activeShowroom];
 
+  // Get unique cities for the filter
+  const cities = ['Москва', 'Санкт-Петербург', 'Ярославль', 'Новосибирск', 'Смоленск', 'Красноярск', 'Волжск', 'Пермь', 'Ростов', 'Волгоград'];
+
+  // Filter showrooms based on selected city
+  const filteredShowrooms = selectedCity 
+    ? showroomsData.filter(showroom => showroom.city === selectedCity)
+    : showroomsData;
+
   // Navigation functions for image slider
   const nextImage = () => {
     setActiveImageIndex((prev) => 
@@ -111,12 +120,46 @@ const Showrooms: React.FC = () => {
     setActiveImageIndex(0);
   }, [activeShowroom]);
 
+  // Handle city selection
+  const handleCityClick = (city: string) => {
+    if (selectedCity === city) {
+      setSelectedCity(null); // Deselect if already selected
+    } else {
+      setSelectedCity(city);
+      // Find first showroom in selected city
+      const firstShowroomIndex = showroomsData.findIndex(showroom => showroom.city === city);
+      if (firstShowroomIndex !== -1) {
+        setActiveShowroom(firstShowroomIndex);
+      }
+    }
+  };
+
   return (
     <section className="w-full bg-white py-6">
       <div className="max-w-[1800px] mx-auto px-[30px]">
         {/* Header */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 font-benzin-semibold">Шоурумы</h2>
+        </div>
+
+        {/* Cities Filter */}
+        <div className="mb-8">
+          <div className="flex flex-wrap gap-6 pb-4">
+            {cities.map((city) => (
+              <button
+                key={city}
+                onClick={() => handleCityClick(city)}
+                className={`text-sm transition-colors hover:text-[#F53B49] ${
+                  selectedCity === city 
+                    ? 'text-[#F53B49] font-medium' 
+                    : 'text-gray-600'
+                }`}
+              >
+                {city}
+              </button>
+            ))}
+          </div>
+          <div className="w-full h-px bg-gray-300"></div>
         </div>
 
         {/* Showroom Banner - Three Parts */}
