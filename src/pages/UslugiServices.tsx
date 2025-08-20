@@ -327,7 +327,6 @@ const UslugiServices: React.FC = () => {
                     alt="Баннер бизнес-планирования" 
                     className="w-full h-[300px] object-cover"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                 </div>
                 <div className="max-w-4xl mx-auto text-center">
                   <p className="text-gray-700 text-lg leading-relaxed mb-8">
