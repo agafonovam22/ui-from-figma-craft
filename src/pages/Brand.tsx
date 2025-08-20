@@ -836,6 +836,8 @@ const Brand: React.FC = () => {
                           </ul>
                         </div>
                       </div>
+                    ) : brandSlug === 'visbody' ? (
+                       <div></div>
                      ) : (
                    <div className="space-y-6">
                      <div>
