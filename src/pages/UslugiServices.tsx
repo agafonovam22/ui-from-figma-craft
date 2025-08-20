@@ -382,16 +382,16 @@ const UslugiServices: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {/* РГУФКСМиТ Container */}
                   <div className="bg-gray-50 rounded-lg p-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">РГУФКСМиТ (ГЦОЛИФК)</h3>
-                    <p className="text-gray-700 text-lg leading-relaxed">
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">РГУФКСМиТ (ГЦОЛИФК)</h3>
+                    <p className="text-gray-700 text-lg leading-relaxed font-manrope">
                       Программа ДПО «Теория, методика и технологии фитнеса» — это первая в России совместная образовательная профильного вуза (РГУФКСМиТ) и Учебно-Образовательного Центра «Академия Фитнес-Технологий»
                     </p>
                   </div>
 
                   {/* РЭУ Container */}
                   <div className="bg-gray-50 rounded-lg p-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">РЭУ им. Г.В.Плеханова</h3>
-                    <p className="text-gray-700 text-lg leading-relaxed">
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">РЭУ им. Г.В.Плеханова</h3>
+                    <p className="text-gray-700 text-lg leading-relaxed font-manrope">
                       Программа ДПО «Эффективное управление в фитнес-индустрии» — это совместная образовательная программа ведущего экономического вуза (Российского Экономического Университета им. Г.В.Плеханова) и Учебно-Образовательного Центра «Академия Фитнес-Технологий».
                     </p>
                   </div>
