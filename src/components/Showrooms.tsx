@@ -131,24 +131,24 @@ const Showrooms: React.FC = () => {
             <div className="space-y-4">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <MapPin size={16} className="text-gray-300" />
-                  <p className="text-gray-300 text-sm font-semibold">Адрес</p>
+                  <MapPin size={16} style={{ color: '#5C6476' }} />
+                  <p className="text-sm font-semibold" style={{ color: '#5C6476' }}>Адрес</p>
                 </div>
                 <p className="text-white text-sm leading-relaxed">Москва, ТЦ Капитолий, Правобережная улица, 1Б</p>
               </div>
 
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <Phone size={16} className="text-gray-300" />
-                  <p className="text-gray-300 text-sm font-semibold">Телефон</p>
+                  <Phone size={16} style={{ color: '#5C6476' }} />
+                  <p className="text-sm font-semibold" style={{ color: '#5C6476' }}>Телефон</p>
                 </div>
                 <p className="text-white text-sm">+7 (499) 677-56-32 доб. 337</p>
               </div>
 
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <Clock size={16} className="text-gray-300" />
-                  <p className="text-gray-300 text-sm font-semibold">Режим работы</p>
+                  <Clock size={16} style={{ color: '#5C6476' }} />
+                  <p className="text-sm font-semibold" style={{ color: '#5C6476' }}>Режим работы</p>
                 </div>
                 <p className="text-white text-sm">10:00 - 22:00</p>
               </div>
