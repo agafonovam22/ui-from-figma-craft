@@ -99,7 +99,7 @@ const Showrooms: React.FC = () => {
         <div className="w-full h-[400px] bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 flex">
           
           {/* Left Part - Showrooms List */}
-          <div className="w-[230px] bg-gray-800 flex flex-col">
+          <div className="w-[245px] bg-gray-800 flex flex-col">
             {showroomsData.map((showroom, index) => (
               <button
                 key={showroom.id}
