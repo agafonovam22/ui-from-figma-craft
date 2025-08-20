@@ -404,7 +404,7 @@ const UslugiServices: React.FC = () => {
                   <img 
                     src="/lovable-uploads/8fce57d3-2f49-4ed4-a463-108f5e0041b0.png" 
                     alt="Обучение в фитнес-клубе" 
-                    className="w-full h-full object-cover rounded-lg"
+                    className="w-full h-[calc(100%-50px)] object-cover rounded-lg"
                   />
                 </div>
                 <div className="order-2">
@@ -429,13 +429,18 @@ const UslugiServices: React.FC = () => {
                     <p>
                       Выяснить все базовые управленческие характеристики и применить к ним самые современные методики в менеджменте и маркетинге - это значит значительно повысить свою компетенцию себя как менеджера и помочь развиться своему бизнесу.
                     </p>
+                    <div className="mt-6">
+                      <Button className="bg-brand-red hover:bg-brand-red-hover text-white px-8 py-3 text-lg font-semibold rounded-lg">
+                        Получить консультацию
+                      </Button>
+                    </div>
                   </div>
                 </div>
                 <div className="order-1 lg:order-2">
                   <img 
                     src="/lovable-uploads/5a3c78ef-58bd-4516-b0e2-dbf5eb337fba.png" 
                     alt="Выпускники программ обучения" 
-                    className="w-full h-full object-cover rounded-lg"
+                    className="w-full h-[calc(100%-50px)] object-cover rounded-lg"
                   />
                 </div>
               </div>
