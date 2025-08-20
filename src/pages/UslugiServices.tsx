@@ -278,7 +278,7 @@ const UslugiServices: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="order-1">
                   <img 
-                    src="/lovable-uploads/219f6237-fb29-40ad-9b23-f60d4be8082c.png" 
+                    src="/lovable-uploads/c785d38e-d766-4d8a-9f78-b5f8c9689906.png" 
                     alt="Бизнес-планирование" 
                     className="w-full h-[400px] object-cover rounded-lg"
                   />
@@ -321,7 +321,7 @@ const UslugiServices: React.FC = () => {
                 </div>
                 <div className="order-1 lg:order-2">
                   <img 
-                    src="/lovable-uploads/219f6237-fb29-40ad-9b23-f60d4be8082c.png" 
+                    src="/lovable-uploads/8d625e48-19c5-443e-83db-7fe0613f9004.png" 
                     alt="Услуги бизнес-планирования" 
                     className="w-full h-[400px] object-cover rounded-lg"
                   />
