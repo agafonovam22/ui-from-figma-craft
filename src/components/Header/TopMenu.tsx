@@ -85,7 +85,7 @@ const TopMenu: React.FC = () => {
 
         <div className="flex items-end gap-2 max-sm:hidden">
           <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')}>
-            Для диллеров
+            Для дилеров
           </ActionButton>
           <ActionButton variant="secondary" onClick={() => console.log('Suppliers clicked')}>
             For suppliers
