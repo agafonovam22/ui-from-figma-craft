@@ -354,6 +354,24 @@ const UslugiServices: React.FC = () => {
                   </p>
                 </div>
               </div>
+
+              {/* Statistics Block */}
+              <div className="py-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto text-center">
+                  <div className="space-y-4">
+                    <div className="text-6xl font-bold text-brand-red">2</div>
+                    <p className="text-gray-700 text-lg">государственных программы Профессиональной Переподготовки</p>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="text-6xl font-bold text-brand-red">20+</div>
+                    <p className="text-gray-700 text-lg">лет опыта в фитнесе каждого преподавателя</p>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="text-6xl font-bold text-brand-red">2000+</div>
+                    <p className="text-gray-700 text-lg">часов программ ППК, ПК, семинаров и мастер-классов</p>
+                  </div>
+                </div>
+              </div>
             </div>
           )}
 
