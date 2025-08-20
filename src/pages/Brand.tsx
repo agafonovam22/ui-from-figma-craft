@@ -1505,31 +1505,54 @@ const Brand: React.FC = () => {
         {/* Visbody Content Blocks */}
         {brandSlug === 'visbody' && (
           <>
-            {/* Block 2 - Временная заглушка */}
+            {/* Block 2 - Visbody-Creator A600 */}
             <section className="w-full py-8">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div className="order-1 lg:order-2 lg:pl-8">
-                    <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                      Заголовок временной заглушки
+                    <h2 className="text-3xl font-benzin text-gray-900 mb-4">
+                      Visbody-Creator A600
                     </h2>
-                    <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                      Это временная заглушка текста. Здесь будет размещена информация о бренде Visbody и его особенностях.
+                    <h3 className="text-xl font-benzin text-gray-900 mb-6">
+                      Умная беговая дорожка с 3D-анализом тела
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope mb-6">
+                      Visbody-Creator A600 объединяет в себе профессиональную беговую дорожку, 3D-сканер движений и цифровую аналитическую платформу.
                     </p>
+                    <p className="text-gray-600 text-sm leading-relaxed font-manrope mb-6">
+                      Visbody-Creator A600 — единственная беговая дорожка с запатентованной технологией AIGYM VIScan, обеспечивающей анализ бега в реальном времени. AI подстраивает тренировку под уровень, цели и физиологию человека.
+                    </p>
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="font-benzin text-gray-900 mb-2">23 параметра бега</h4>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          От постановки стопы до симметрии движений и осанки
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="font-benzin text-gray-900 mb-2">18 зон</h4>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Измерения, 3D-сканирование, визуализация тела до/после
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="font-benzin text-gray-900 mb-2">13 аспектов</h4>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Позы бега в реальном времени с помощью технологии ИИ
+                        </p>
+                      </div>
+                    </div>
                   </div>
                   <div className="order-2 lg:order-1">
                     <img 
-                      src="https://via.placeholder.com/400x300/e5e5e5/666666?text=Visbody+Image"
-                      alt="Visbody - временная заглушка"
-                      className="w-full h-[300px] object-cover rounded-lg"
+                      src="/lovable-uploads/b96e0b1b-882f-4f65-9ee6-2800b2d2b0bb.png"
+                      alt="Visbody-Creator A600 - Умная беговая дорожка с 3D-анализом тела"
+                      className="w-full h-[400px] object-cover rounded-lg"
                     />
                   </div>
                 </div>
               </div>
             </section>
-
-
-
           </>
         )}
 
