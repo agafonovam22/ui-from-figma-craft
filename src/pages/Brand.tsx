@@ -1572,27 +1572,27 @@ const Brand: React.FC = () => {
                     
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-[#F53B49]">+10</div>
+                        <div className="text-lg font-bold text-[#F53B49]">+10</div>
                         <div className="text-sm text-gray-600">отраслей</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-[#F53B49]">+68</div>
+                        <div className="text-lg font-bold text-[#F53B49]">+68</div>
                         <div className="text-sm text-gray-600">стран</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-[#F53B49]">+18.000</div>
+                        <div className="text-lg font-bold text-[#F53B49]">+18.000</div>
                         <div className="text-sm text-gray-600">организаций</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-[#F53B49]">+350</div>
+                        <div className="text-lg font-bold text-[#F53B49]">+350</div>
                         <div className="text-sm text-gray-600">городов</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-[#F53B49]">+170</div>
+                        <div className="text-lg font-bold text-[#F53B49]">+170</div>
                         <div className="text-sm text-gray-600">патентов</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-[#F53B49]">20 млн.</div>
+                        <div className="text-lg font-bold text-[#F53B49]">20 млн.</div>
                         <div className="text-sm text-gray-600">пользователей</div>
                       </div>
                     </div>
