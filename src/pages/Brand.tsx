@@ -1566,38 +1566,123 @@ const Brand: React.FC = () => {
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div className="order-1 lg:order-2 lg:pl-8">
-                    <h2 className="text-3xl font-benzin text-gray-900 mb-4">
-                      Visbody-Creator A600
+                    <h2 className="text-3xl font-benzin text-gray-900 mb-6">
+                      3D/4D-сканирование тела с поддержкой ИИ — новые возможности для бизнеса
                     </h2>
-                    <h3 className="text-xl font-benzin text-gray-900 mb-6">
-                      Умная беговая дорожка с 3D-анализом тела
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed font-manrope mb-6">
-                      Visbody-Creator A600 объединяет в себе профессиональную беговую дорожку, 3D-сканер движений и цифровую аналитическую платформу.
-                    </p>
-                    <p className="text-gray-600 text-sm leading-relaxed font-manrope mb-6">
-                      Visbody-Creator A600 — единственная беговая дорожка с запатентованной технологией AIGYM VIScan, обеспечивающей анализ бега в реальном времени. AI подстраивает тренировку под уровень, цели и физиологию человека.
-                    </p>
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-benzin text-gray-900 mb-2">23 параметра бега</h4>
+                    
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-[#F53B49]">+10</div>
+                        <div className="text-sm text-gray-600">отраслей</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-[#F53B49]">+68</div>
+                        <div className="text-sm text-gray-600">стран</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-[#F53B49]">+18.000</div>
+                        <div className="text-sm text-gray-600">организаций</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-[#F53B49]">+350</div>
+                        <div className="text-sm text-gray-600">городов</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-[#F53B49]">+170</div>
+                        <div className="text-sm text-gray-600">патентов</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-[#F53B49]">20 млн.</div>
+                        <div className="text-sm text-gray-600">пользователей</div>
+                      </div>
+                    </div>
+
+                    <div className="mb-6">
+                      <h3 className="text-xl font-benzin text-gray-900 mb-4">
+                        Visbody — это профессиональное решение для:
+                      </h3>
+                      <div className="space-y-2">
+                        <div className="flex items-center">
+                          <div className="w-2 h-2 bg-[#F53B49] rounded-full mr-3"></div>
+                          <span className="text-gray-600 text-sm font-manrope">Фитнес-центров</span>
+                        </div>
+                        <div className="flex items-center">
+                          <div className="w-2 h-2 bg-[#F53B49] rounded-full mr-3"></div>
+                          <span className="text-gray-600 text-sm font-manrope">Wellness-клубов</span>
+                        </div>
+                        <div className="flex items-center">
+                          <div className="w-2 h-2 bg-[#F53B49] rounded-full mr-3"></div>
+                          <span className="text-gray-600 text-sm font-manrope">Реабилитационных центров</span>
+                        </div>
+                        <div className="flex items-center">
+                          <div className="w-2 h-2 bg-[#F53B49] rounded-full mr-3"></div>
+                          <span className="text-gray-600 text-sm font-manrope">Медицинских клиник</span>
+                        </div>
+                        <div className="flex items-center">
+                          <div className="w-2 h-2 bg-[#F53B49] rounded-full mr-3"></div>
+                          <span className="text-gray-600 text-sm font-manrope">Йога-студий</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-gray-50 p-4 rounded-lg mb-6">
+                      <h4 className="font-benzin text-gray-900 mb-3">Результаты для бизнеса:</h4>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <div className="text-lg font-bold text-[#F53B49]">56%</div>
+                          <div className="text-sm text-gray-600">рост конверсии новых клиентов</div>
+                        </div>
+                        <div>
+                          <div className="text-lg font-bold text-[#F53B49]">49%</div>
+                          <div className="text-sm text-gray-600">рост клубной выручки</div>
+                        </div>
+                        <div>
+                          <div className="text-lg font-bold text-[#F53B49]">73%</div>
+                          <div className="text-sm text-gray-600">рост продлений абонементов</div>
+                        </div>
+                        <div>
+                          <div className="text-lg font-bold text-[#F53B49]">28%</div>
+                          <div className="text-sm text-gray-600">снижение операционных расходов</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-3 mb-4">
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                          От постановки стопы до симметрии движений и осанки
+                          Расширяет возможности диагностики тела
                         </p>
                       </div>
-                      <div>
-                        <h4 className="font-benzin text-gray-900 mb-2">18 зон</h4>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                          Измерения, 3D-сканирование, визуализация тела до/после
+                          Автоматизирует и стандартизирует процессы оценки
                         </p>
                       </div>
-                      <div>
-                        <h4 className="font-benzin text-gray-900 mb-2">13 аспектов</h4>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                          Позы бега в реальном времени с помощью технологии ИИ
+                          Помогает выделиться на фоне конкурентов
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Создает ценность и доверие с первого визита клиента
+                        </p>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-2 h-2 bg-[#F53B49] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <p className="text-gray-600 text-sm leading-relaxed font-manrope">
+                          Рост лояльности постоянных клиентов
                         </p>
                       </div>
                     </div>
+
+                    <p className="text-xs text-gray-500 italic font-manrope">
+                      * данные предоставленные производителем на основе отчетов клиентов
+                    </p>
                   </div>
                   <div className="order-2 lg:order-1">
                     <img 
