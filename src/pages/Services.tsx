@@ -232,13 +232,6 @@ const Services: React.FC = () => {
                     alt="Женщина тренируется в спортзале"
                     className="w-full max-w-[400px] h-auto object-cover rounded-lg"
                   />
-                  
-                  {/* Progress indicators */}
-                  <div className="flex justify-center gap-2 mt-4">
-                    <div className="h-1 w-8 bg-[#F53B49] rounded-full"></div>
-                    <div className="h-1 w-8 bg-gray-300 rounded-full"></div>
-                    <div className="h-1 w-8 bg-gray-300 rounded-full"></div>
-                  </div>
                 </div>
               </div>
 
