@@ -90,74 +90,74 @@ const UslugiServices: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: 'Lorem Ipsum',
-      subtitle: 'представляем тренажеры Nautilus G2G серии',
-      buttonText: 'Перейти →',
-      image: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png',
+      image: "/lovable-uploads/fdec1cea-908d-43a3-9d77-4f14304597f3.png",
+      title: "Атлетика+ (г.\u00A0Новомосковск)",
+      subtitle: "С инвесторами мы оснастили зал топовым оборудованием под дизайн — он стал лучшим в регионе.",
+      buttonText: "Перейти →",
       isSpecial: true
     },
     {
       id: 2,
-      title: 'Lorem Ipsum',
-      subtitle: 'представляем тренажеры Nautilus G2G серии',
-      buttonText: 'представляем тренажеры Nautilus G2G серии',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      image: "/lovable-uploads/cc85982b-96f7-40ec-ad84-f52b8c506581.png",
+      title: "Фитнес Терра (г.\u00A0Москва)",
+      subtitle: "Клуб класса «бизнес» на площади старой советской застройки",
+      buttonText: "Перейти →"
     },
     {
       id: 3,
-      title: 'Lorem Ipsum',
-      subtitle: 'представляем тренажеры Nautilus G2G серии',
-      buttonText: 'представляем тренажеры Nautilus G2G серии',
-      image: '/lovable-uploads/f99f3115-1f00-49f0-af93-08b6318f8cf4.png'
+      image: "/lovable-uploads/b1513bca-e46f-4642-85c8-279c68cbbff4.png",
+      title: "RockOut (г.\u00A0Москва)",
+      subtitle: "Прогрессивный фитнес-клуб с\u00A0рекуррентными платежами и\u00A0оборудованием класса «премиум».",
+      buttonText: "Перейти →"
     },
     {
       id: 4,
-      title: 'Lorem Ipsum',
-      subtitle: 'представляем тренажеры Nautilus G2G серии',
-      buttonText: 'представляем тренажеры Nautilus G2G серии',
-      image: '/lovable-uploads/31e0c62c-257c-4fe3-96b0-d53a4a23f8ca.png'
+      image: "/lovable-uploads/7532d8ab-c6f7-4106-8d4b-563a3df784aa.png",
+      title: "Нептун (г.\u00A0Балашиха)",
+      subtitle: "Обновленный тренажерный зал крупнейшего спортивного центра города Балашиха.",
+      buttonText: "Перейти →"
     },
     {
       id: 5,
-      title: 'Lorem Ipsum',
-      subtitle: 'представляем тренажеры Nautilus G2G серии',
-      buttonText: 'представляем тренажеры Nautilus G2G серии',
-      image: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png'
+      image: "/lovable-uploads/d37774a2-1a10-4cf2-ab20-b3e19960d0ce.png",
+      title: "СопкиSport (Мурманская область)",
+      subtitle: "Региональная сеть тренажерных залов под патронажем Министерства спорта Мурманской области.",
+      buttonText: "Перейти →"
     },
     {
       id: 6,
-      title: 'Lorem Ipsum',
-      subtitle: 'представляем тренажеры Nautilus G2G серии',
-      buttonText: 'представляем тренажеры Nautilus G2G серии',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      image: "/lovable-uploads/a5af320b-9c2e-4f35-9708-452bd07d454f.png",
+      title: "ЦентрК (г.\u00A0Владикавказ)",
+      subtitle: "Один из крупнейших фитнес-центров города Владикавказ.",
+      buttonText: "Перейти →"
     },
     {
       id: 7,
-      title: 'Lorem Ipsum',
-      subtitle: 'представляем тренажеры Nautilus G2G серии',
-      buttonText: 'представляем тренажеры Nautilus G2G серии',
-      image: '/lovable-uploads/f99f3115-1f00-49f0-af93-08b6318f8cf4.png'
+      image: "/lovable-uploads/c015139b-7198-4978-ae43-3c24b91892a0.png",
+      title: "Pulse120 (г.\u00A0Анапа)",
+      subtitle: "Отличный компактных фитнес-клуб в г.\u00A0Анапа. Один из самых современных в городе.",
+      buttonText: "Перейти →"
     },
     {
       id: 8,
-      title: 'Lorem Ipsum',
-      subtitle: 'представляем тренажеры Nautilus G2G серии',
-      buttonText: 'представляем тренажеры Nautilus G2G серии',
-      image: '/lovable-uploads/31e0c62c-257c-4fe3-96b0-d53a4a23f8ca.png'
+      image: "/lovable-uploads/3d769f2a-ddbb-4534-a9b9-9b2783c1bccf.png",
+      title: "PlazaFitness (г.\u00A0Кострома)",
+      subtitle: "Один из самых популярных фитнес-клубов г.\u00A0Кострома.",
+      buttonText: "Перейти →"
     },
     {
       id: 9,
-      title: 'Lorem Ipsum',
-      subtitle: 'представляем тренажеры Nautilus G2G серии',
-      buttonText: 'представляем тренажеры Nautilus G2G серии',
-      image: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png'
+      image: "/lovable-uploads/c9c5dc62-b0da-4189-bdfe-bf254ecf15e8.png",
+      title: "Открытие нового зала (Сочи Парк Отель)",
+      subtitle: "С инвесторами мы поставили топовое оборудование в крупный сочинский курорт — зал стал лучшим в регионе.",
+      buttonText: "Перейти →"
     },
     {
       id: 10,
-      title: 'Lorem Ipsum',
-      subtitle: 'представляем тренажеры Nautilus G2G серии',
-      buttonText: 'представляем тренажеры Nautilus G2G серии',
-      image: '/lovable-uploads/43eec803-7f4a-4f5b-8f0f-7bf6d47a66b3.png'
+      image: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400&h=300&fit=crop",
+      title: "Lorem Ipsum",
+      subtitle: "Представляем тренажеры Nautilus 626 серии",
+      buttonText: "Перейти →"
     }
   ];
 
