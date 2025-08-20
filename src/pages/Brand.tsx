@@ -1686,8 +1686,8 @@ const Brand: React.FC = () => {
                   </div>
                   <div className="order-2 lg:order-1">
                     <img 
-                      src="/lovable-uploads/b96e0b1b-882f-4f65-9ee6-2800b2d2b0bb.png"
-                      alt="Visbody-Creator A600 - Умная беговая дорожка с 3D-анализом тела"
+                      src="/lovable-uploads/6495e273-968a-4ed4-a1e6-2cdbd028bfab.png"
+                      alt="Visbody мобильное приложение с 3D-анализом тела"
                       className="w-full h-[400px] object-cover rounded-lg"
                     />
                   </div>
