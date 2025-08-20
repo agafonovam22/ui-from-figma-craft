@@ -67,7 +67,7 @@ const UslugiServices: React.FC = () => {
   const benefits = [
     {
       id: 1,
-      title: '2 варианта цвета защитного мата',
+      title: 'Расчет необходимого оборудования',
       image: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png'
     },
     {
