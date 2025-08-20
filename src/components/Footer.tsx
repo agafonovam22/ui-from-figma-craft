@@ -125,10 +125,22 @@ const Footer: React.FC = () => {
                   
                   <div>
                     <p className="text-[10px] mb-2 text-[#778093]">Принимаем к оплате</p>
-                    <div className="flex gap-1">
-                      <div className="bg-white rounded px-1.5 py-0.5 text-[8px] text-black font-bold">VISA</div>
-                      <div className="bg-white rounded px-1.5 py-0.5 text-[8px] text-black font-bold">MC</div>
-                      <div className="bg-white rounded px-1.5 py-0.5 text-[8px] text-black font-bold">PP</div>
+                    <div className="flex gap-2">
+                      <img 
+                        src="/lovable-uploads/ef0b4b90-8fc2-40fd-ac2f-5de0b0bbd330.png" 
+                        alt="Visa" 
+                        className="h-4 w-auto"
+                      />
+                      <img 
+                        src="/lovable-uploads/24e0b3d5-be66-472f-8aad-258d2cb1596d.png" 
+                        alt="MasterCard" 
+                        className="h-4 w-auto"
+                      />
+                      <img 
+                        src="/lovable-uploads/5723e7db-417e-49b5-aa92-d89d628bbfcf.png" 
+                        alt="PayPal" 
+                        className="h-4 w-auto"
+                      />
                     </div>
                   </div>
                 </div>
