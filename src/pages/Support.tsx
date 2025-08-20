@@ -536,44 +536,44 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* Transport Companies */}
-                    <div className="bg-gray-100 p-6 rounded-lg">
-                      <div className="grid grid-cols-2 gap-6">
-                        <div className="space-y-4">
-                          <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/a7b6a3ba-1c90-405d-8a26-02ea55f0de59.png" alt="СДЭК" className="h-12 w-20 object-contain" />
+                    <div className="bg-gray-100 p-4 rounded-lg">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <div className="flex items-center justify-center py-2">
+                            <img src="/lovable-uploads/a7b6a3ba-1c90-405d-8a26-02ea55f0de59.png" alt="СДЭК" className="h-10 w-18 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
-                          <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/35079b73-9796-4789-896a-edf17dfdfea8.png" alt="DPD" className="h-12 w-20 object-contain" />
+                          <div className="flex items-center justify-center py-2">
+                            <img src="/lovable-uploads/35079b73-9796-4789-896a-edf17dfdfea8.png" alt="DPD" className="h-10 w-18 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
-                          <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/3807c83a-2401-4466-a3ca-9d11dddb84ba.png" alt="Байкал Сервис" className="h-12 w-20 object-contain" />
+                          <div className="flex items-center justify-center py-2">
+                            <img src="/lovable-uploads/3807c83a-2401-4466-a3ca-9d11dddb84ba.png" alt="Байкал Сервис" className="h-10 w-18 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
-                          <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/c124b62c-d31b-4c07-95b5-a36fc92cb431.png" alt="ПЭК" className="h-12 w-20 object-contain" />
+                          <div className="flex items-center justify-center py-2">
+                            <img src="/lovable-uploads/c124b62c-d31b-4c07-95b5-a36fc92cb431.png" alt="ПЭК" className="h-10 w-18 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
-                          <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/0370ab41-7348-4546-9182-bd6884e3ec7a.png" alt="Транс" className="h-12 w-20 object-contain" />
+                          <div className="flex items-center justify-center py-2">
+                            <img src="/lovable-uploads/0370ab41-7348-4546-9182-bd6884e3ec7a.png" alt="Транс" className="h-10 w-18 object-contain" />
                           </div>
                         </div>
-                        <div className="space-y-4">
-                          <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/97a21e58-c916-4444-b98b-38103f5db560.png" alt="MagicTrans" className="h-12 w-20 object-contain" />
+                        <div className="space-y-2">
+                          <div className="flex items-center justify-center py-2">
+                            <img src="/lovable-uploads/97a21e58-c916-4444-b98b-38103f5db560.png" alt="MagicTrans" className="h-10 w-18 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
-                          <div className="flex items-center justify-center p-3">
+                          <div className="flex items-center justify-center py-2">
                             <img src="/lovable-uploads/c1aed9f7-f49d-4524-abd4-b7b7ddb766c8.png" alt="KIT" className="h-8 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
-                          <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/97da0d95-2030-46e7-a7c2-9a5f8147faaf.png" alt="Деловые Линии" className="h-12 w-20 object-contain" />
+                          <div className="flex items-center justify-center py-2">
+                            <img src="/lovable-uploads/97da0d95-2030-46e7-a7c2-9a5f8147faaf.png" alt="Деловые Линии" className="h-10 w-18 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
-                          <div className="flex items-center justify-center p-3">
-                            <img src="/lovable-uploads/79627d81-cce2-4a1d-9218-e34c6a33ddc0.png" alt="Энергия" className="h-12 w-20 object-contain" />
+                          <div className="flex items-center justify-center py-2">
+                            <img src="/lovable-uploads/79627d81-cce2-4a1d-9218-e34c6a33ddc0.png" alt="Энергия" className="h-10 w-18 object-contain" />
                           </div>
                         </div>
                       </div>
