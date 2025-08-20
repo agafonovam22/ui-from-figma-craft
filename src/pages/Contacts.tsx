@@ -1,48 +1,24 @@
-
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import OfficeMap from '@/components/OfficeMap';
 import PhotoSwiper from '@/components/PhotoSwiper';
 import ShowroomMap from '@/components/ShowroomMap';
-import { 
-  Breadcrumb, 
-  BreadcrumbList, 
-  BreadcrumbItem, 
-  BreadcrumbLink, 
-  BreadcrumbSeparator, 
-  BreadcrumbPage 
-} from '@/components/ui/breadcrumb';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import CallRequestDialog from '@/components/Header/CallRequestDialog';
 import { MapPin, Phone, Clock, Mail, ChevronLeft, ChevronRight } from 'lucide-react';
-
 const Contacts: React.FC = () => {
   const [activeTab, setActiveTab] = useState('moscow');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const images = [
-    '/lovable-uploads/a7a10f7b-32fb-4a8d-940d-364ba0c4a1d0.png',
-    '/lovable-uploads/a9d600d0-b136-4d10-b09c-618bf653fa04.png',
-    '/lovable-uploads/2b609d2f-6fc7-4781-b57a-142e817a9825.png',
-    '/lovable-uploads/bce5f4f3-1a91-454a-b10f-92c2f907b7c1.png'
-  ];
-
+  const images = ['/lovable-uploads/a7a10f7b-32fb-4a8d-940d-364ba0c4a1d0.png', '/lovable-uploads/a9d600d0-b136-4d10-b09c-618bf653fa04.png', '/lovable-uploads/2b609d2f-6fc7-4781-b57a-142e817a9825.png', '/lovable-uploads/bce5f4f3-1a91-454a-b10f-92c2f907b7c1.png'];
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    setCurrentImageIndex(prev => (prev + 1) % images.length);
   };
-
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+    setCurrentImageIndex(prev => (prev - 1 + images.length) % images.length);
   };
-
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       <Header />
       
       <main className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
@@ -78,24 +54,10 @@ const Contacts: React.FC = () => {
 
         {/* City Tabs */}
         <div className="flex gap-2 mb-8">
-          <button
-            onClick={() => setActiveTab('moscow')}
-            className={`px-6 py-2 rounded-md font-medium transition-colors ${
-              activeTab === 'moscow'
-                ? 'bg-[#F53B49] text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
+          <button onClick={() => setActiveTab('moscow')} className={`px-6 py-2 rounded-md font-medium transition-colors ${activeTab === 'moscow' ? 'bg-[#F53B49] text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}>
             Контакты в Москве
           </button>
-          <button
-            onClick={() => setActiveTab('spb')}
-            className={`px-6 py-2 rounded-md font-medium transition-colors ${
-              activeTab === 'spb'
-                ? 'bg-[#F53B49] text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
+          <button onClick={() => setActiveTab('spb')} className={`px-6 py-2 rounded-md font-medium transition-colors ${activeTab === 'spb' ? 'bg-[#F53B49] text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}>
             Контакты в Санкт-Петербурге
           </button>
         </div>
@@ -105,8 +67,7 @@ const Contacts: React.FC = () => {
           <div className="bg-gray-50 rounded-lg flex h-[328px] overflow-hidden">
             {/* Text Section - Left Third */}
             <div className="flex-1 w-1/3 p-6">
-              {activeTab === 'moscow' ? (
-                <>
+              {activeTab === 'moscow' ? <>
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">
                     Шоу-рум WellFitness
                   </h2>
@@ -146,9 +107,7 @@ const Contacts: React.FC = () => {
                       </button>
                     </CallRequestDialog>
                   </div>
-                </>
-              ) : (
-                <>
+                </> : <>
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">
                     Склад
                   </h2>
@@ -169,29 +128,21 @@ const Contacts: React.FC = () => {
                       <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-5 h-5 flex-shrink-0" />
                       <div>
                         <p className="font-medium">Телефон</p>
-                        <p className="text-sm">+7 (905) 254-28-04</p>
+                        <p className="text-sm">8 (800) 775-12-17</p>
                       </div>
                     </div>
                   </div>
-                </>
-              )}
+                </>}
             </div>
             
             {/* Photo Section - Middle Third */}
             <div className="flex-1 w-1/3 h-full overflow-hidden">
-              <img 
-                src="/lovable-uploads/a75d40da-835e-454f-a1e4-62cb2a8a6d38.png"
-                alt="Массажные кресла в шоуруме"
-                className="w-full h-full object-cover"
-              />
+              <img src="/lovable-uploads/a75d40da-835e-454f-a1e4-62cb2a8a6d38.png" alt="Массажные кресла в шоуруме" className="w-full h-full object-cover" />
             </div>
             
             {/* Map Section - Right Third */}
             <div className="flex-1 w-1/3 h-full">
-              <ShowroomMap 
-                coordinates={activeTab === 'spb' ? [30.324203737087338, 59.98157313429388] : undefined}
-                isSpb={activeTab === 'spb'}
-              />
+              <ShowroomMap coordinates={activeTab === 'spb' ? [30.324203737087338, 59.98157313429388] : undefined} isSpb={activeTab === 'spb'} />
             </div>
           </div>
         </div>
@@ -222,14 +173,11 @@ const Contacts: React.FC = () => {
                 </div>
               </div>
 
-              <button 
-                onClick={() => {
-                  const address = "Москва, ул. Маршала Прошлякова, д. 30, офис 407, БЦ Зенит Плаза";
-                  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
-                  window.open(googleMapsUrl, '_blank');
-                }}
-                className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors"
-              >
+              <button onClick={() => {
+              const address = "Москва, ул. Маршала Прошлякова, д. 30, офис 407, БЦ Зенит Плаза";
+              const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
+              window.open(googleMapsUrl, '_blank');
+            }} className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors">
                 Как проехать
               </button>
             </div>
@@ -371,8 +319,7 @@ const Contacts: React.FC = () => {
         </div>
 
         {/* Warehouses - Only for Moscow */}
-        {activeTab === 'moscow' && (
-          <div className="mb-12">
+        {activeTab === 'moscow' && <div className="mb-12">
             <h2 className="font-heading text-[32px] text-layout-dark-grey mb-6 leading-none">Склады</h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -428,8 +375,7 @@ const Contacts: React.FC = () => {
 
               </div>
             </div>
-          </div>
-        )}
+          </div>}
 
         {/* Legal Information */}
         <div className="border border-[#F53B49] rounded-lg bg-white mb-12">
@@ -534,8 +480,6 @@ const Contacts: React.FC = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Contacts;
