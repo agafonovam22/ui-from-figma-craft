@@ -282,6 +282,12 @@ const Brand: React.FC = () => {
                 alt="KERNEL - Фитнес там, где ты"
                 className="w-full h-auto object-cover"
               />
+            ) : brandSlug === 'visbody' ? (
+              <img 
+                src="/lovable-uploads/82bbe7b1-d160-4c79-bc6f-733e3cac1e57.png"
+                alt="VISBODY - ИИ-сканер тела №1 в мире"
+                className="w-full h-auto object-cover"
+              />
             ) : (
               <div className="bg-white overflow-hidden relative" style={{ height: '300px' }}>
                 <div className="py-12 relative h-full">
