@@ -93,15 +93,11 @@ const Footer: React.FC = () => {
                   <div>
                     <p className="text-xs font-benzin-semibold text-white mb-2">Для HOME</p>
                     <div className="flex items-center gap-2">
-                      <a href="https://vk.com/wellfitness_russia" target="_blank" rel="noopener noreferrer" className="w-6 h-6 bg-[#5C6476] rounded-full flex items-center justify-center hover:bg-[#6C7A8A] transition-colors">
-                        <span className="text-[8px] text-white font-bold">VK</span>
-                      </a>
-                      <a href="https://t.me/WellfitnessRussia" target="_blank" rel="noopener noreferrer" className="w-6 h-6 bg-[#5C6476] rounded-full flex items-center justify-center hover:bg-[#6C7A8A] transition-colors">
-                        <span className="text-[8px] text-white font-bold">TG</span>
-                      </a>
-                      <a href="https://www.youtube.com/channel/UCBv18t91ZGM0zMEnWUfKBCA/featured" target="_blank" rel="noopener noreferrer" className="w-6 h-6 bg-[#5C6476] rounded-full flex items-center justify-center hover:bg-[#6C7A8A] transition-colors">
-                        <span className="text-[8px] text-white font-bold">YT</span>
-                      </a>
+                      <img 
+                        src="/lovable-uploads/f77a44b5-d6f1-40dd-a72b-634d60279421.png" 
+                        alt="Социальные сети" 
+                        className="h-6 w-auto"
+                      />
                     </div>
                   </div>
                   
