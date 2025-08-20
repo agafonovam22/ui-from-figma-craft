@@ -16,9 +16,10 @@ const Showrooms: React.FC = () => {
       area: '36 м²',
       equipment: '17 тренажеров',
       images: [
-        '/lovable-uploads/023b26eb-eb56-4cda-a803-a5b956c04928.png',
-        '/lovable-uploads/023b26eb-eb56-4cda-a803-a5b956c04928.png',
-        '/lovable-uploads/023b26eb-eb56-4cda-a803-a5b956c04928.png'
+        '/lovable-uploads/16b42289-8cf0-4324-ac80-162c3805b6d8.png',
+        '/lovable-uploads/8442c89a-5e3f-49f5-bab2-5e083560f081.png',
+        '/lovable-uploads/8937f242-190b-4058-a436-da2d8f7c5989.png',
+        '/lovable-uploads/96b6ebb0-4c27-4da6-a453-c62c59cd8948.png'
       ]
     },
     {
@@ -30,8 +31,9 @@ const Showrooms: React.FC = () => {
       area: '42 м²',
       equipment: '19 тренажеров',
       images: [
-        '/lovable-uploads/023b26eb-eb56-4cda-a803-a5b956c04928.png',
-        '/lovable-uploads/023b26eb-eb56-4cda-a803-a5b956c04928.png'
+        '/lovable-uploads/16b42289-8cf0-4324-ac80-162c3805b6d8.png',
+        '/lovable-uploads/8442c89a-5e3f-49f5-bab2-5e083560f081.png',
+        '/lovable-uploads/8937f242-190b-4058-a436-da2d8f7c5989.png'
       ]
     },
     {
@@ -43,7 +45,8 @@ const Showrooms: React.FC = () => {
       area: '28 м²',
       equipment: '12 тренажеров',
       images: [
-        '/lovable-uploads/023b26eb-eb56-4cda-a803-a5b956c04928.png'
+        '/lovable-uploads/96b6ebb0-4c27-4da6-a453-c62c59cd8948.png',
+        '/lovable-uploads/8937f242-190b-4058-a436-da2d8f7c5989.png'
       ]
     },
     {
@@ -55,8 +58,8 @@ const Showrooms: React.FC = () => {
       area: '35 м²',
       equipment: '15 тренажеров',
       images: [
-        '/lovable-uploads/023b26eb-eb56-4cda-a803-a5b956c04928.png',
-        '/lovable-uploads/023b26eb-eb56-4cda-a803-a5b956c04928.png'
+        '/lovable-uploads/8442c89a-5e3f-49f5-bab2-5e083560f081.png',
+        '/lovable-uploads/16b42289-8cf0-4324-ac80-162c3805b6d8.png'
       ]
     },
     {
@@ -68,7 +71,8 @@ const Showrooms: React.FC = () => {
       area: '40 м²',
       equipment: '18 тренажеров',
       images: [
-        '/lovable-uploads/023b26eb-eb56-4cda-a803-a5b956c04928.png'
+        '/lovable-uploads/8937f242-190b-4058-a436-da2d8f7c5989.png',
+        '/lovable-uploads/96b6ebb0-4c27-4da6-a453-c62c59cd8948.png'
       ]
     },
     {
@@ -80,8 +84,9 @@ const Showrooms: React.FC = () => {
       area: '38 м²',
       equipment: '16 тренажеров',
       images: [
-        '/lovable-uploads/023b26eb-eb56-4cda-a803-a5b956c04928.png',
-        '/lovable-uploads/023b26eb-eb56-4cda-a803-a5b956c04928.png'
+        '/lovable-uploads/16b42289-8cf0-4324-ac80-162c3805b6d8.png',
+        '/lovable-uploads/8442c89a-5e3f-49f5-bab2-5e083560f081.png',
+        '/lovable-uploads/96b6ebb0-4c27-4da6-a453-c62c59cd8948.png'
       ]
     }
   ];
