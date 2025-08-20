@@ -35,15 +35,10 @@ const UslugiServices: React.FC = () => {
     ? servicesByCategory[category as keyof typeof servicesByCategory] 
     : servicesByCategory.business;
 
-  // Set default active tab to first tab in the category
-  const getDefaultActiveTab = () => {
-    if (tabs.length > 0) {
-      return tabs[0].id;
-    }
-    return '3d-project';
-  };
-
-  const [activeTab, setActiveTab] = useState(getDefaultActiveTab());
+  // Set default active tab to first tab in the category  
+  const [activeTab, setActiveTab] = useState(() => {
+    return tabs.length > 0 ? tabs[0].id : '3d-project';
+  });
 
 
   // Get category title
