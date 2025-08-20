@@ -371,7 +371,7 @@ const WhereToBuy: React.FC = () => {
               
               <div className="w-2/3 h-full">
                 <img 
-                  src="/lovable-uploads/e0b32acd-ffda-47fd-8521-94ebe288876d.png"
+                  src="/lovable-uploads/219f6237-fb29-40ad-9b23-f60d4be8082c.png"
                   alt="Фирменный магазин Well Fitness"
                   className="w-full h-full object-cover"
                 />
