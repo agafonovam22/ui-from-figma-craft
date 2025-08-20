@@ -104,18 +104,11 @@ const Footer: React.FC = () => {
                   <div>
                     <p className="text-xs font-benzin-semibold text-white mb-2">Для PRO</p>
                     <div className="flex items-center gap-2">
-                      <a href="https://vk.com/wellfitnesspro" target="_blank" rel="noopener noreferrer" className="w-6 h-6 bg-[#5C6476] rounded-full flex items-center justify-center hover:bg-[#6C7A8A] transition-colors">
-                        <span className="text-[8px] text-white font-bold">VK</span>
-                      </a>
-                      <a href="https://t.me/wellfitnessPRO" target="_blank" rel="noopener noreferrer" className="w-6 h-6 bg-[#5C6476] rounded-full flex items-center justify-center hover:bg-[#6C7A8A] transition-colors">
-                        <span className="text-[8px] text-white font-bold">TG</span>
-                      </a>
-                      <a href="https://www.youtube.com/channel/UCRUEzmESwZuS_VB0dnhvd7w" target="_blank" rel="noopener noreferrer" className="w-6 h-6 bg-[#5C6476] rounded-full flex items-center justify-center hover:bg-[#6C7A8A] transition-colors">
-                        <span className="text-[8px] text-white font-bold">YT</span>
-                      </a>
-                      <a href="https://dzen.ru/id/622e49b2a228967ff233de4d?share_to=link" target="_blank" rel="noopener noreferrer" className="w-6 h-6 bg-[#5C6476] rounded-full flex items-center justify-center hover:bg-[#6C7A8A] transition-colors">
-                        <span className="text-[8px] text-white font-bold">DZ</span>
-                      </a>
+                      <img 
+                        src="/lovable-uploads/86517d29-fc19-48bf-9048-fe2be93d3477.png" 
+                        alt="Социальные сети PRO" 
+                        className="h-6 w-auto"
+                      />
                     </div>
                   </div>
                   
