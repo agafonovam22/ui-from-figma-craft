@@ -397,6 +397,50 @@ const UslugiServices: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Block 1 - Image + Text */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                <div className="order-1">
+                  <img 
+                    src="/placeholder.svg" 
+                    alt="Обучение персонала" 
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <div className="order-2">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Заголовок блока 1</h3>
+                  <div className="space-y-4 text-gray-700 text-lg leading-relaxed font-manrope">
+                    <p>
+                      Текст первого блока будет добавлен здесь. Этот блок содержит изображение слева и текст справа.
+                    </p>
+                    <p>
+                      Дополнительный текст для первого блока.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Block 2 - Text + Image */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                <div className="order-2 lg:order-1">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Заголовок блока 2</h3>
+                  <div className="space-y-4 text-gray-700 text-lg leading-relaxed font-manrope">
+                    <p>
+                      Текст второго блока будет добавлен здесь. Этот блок содержит текст слева и изображение справа.
+                    </p>
+                    <p>
+                      Дополнительный текст для второго блока.
+                    </p>
+                  </div>
+                </div>
+                <div className="order-1 lg:order-2">
+                  <img 
+                    src="/placeholder.svg" 
+                    alt="Обучение персонала" 
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+              </div>
             </div>
           )}
 
