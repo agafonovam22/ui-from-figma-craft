@@ -114,8 +114,41 @@ const Showrooms: React.FC = () => {
             ))}
           </div>
 
-          {/* Middle Part - Empty */}
-          <div className="w-[400px] bg-gray-800">
+          {/* Middle Part - Showroom Info */}
+          <div 
+            className="w-[400px] text-white p-8 flex flex-col justify-center relative"
+            style={{
+              backgroundImage: `url('/lovable-uploads/e05a6eb9-c52e-47db-8538-c7a03271bb36.png')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          >
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-white mb-2 font-benzin-semibold">Шоу-рум WellFitness</h3>
+            </div>
+
+            <div className="space-y-4">
+              <div>
+                <p className="text-gray-300 text-sm mb-1 font-semibold">Адрес</p>
+                <p className="text-white text-sm leading-relaxed">Москва, ТЦ Капитолий, Правобережная улица, 1Б</p>
+              </div>
+
+              <div>
+                <p className="text-gray-300 text-sm mb-1 font-semibold">Телефон</p>
+                <p className="text-white text-sm">+7 (499) 677-56-32 доб. 337</p>
+              </div>
+
+              <div>
+                <p className="text-gray-300 text-sm mb-1 font-semibold">Режим работы</p>
+                <p className="text-white text-sm">10:00 - 22:00</p>
+              </div>
+            </div>
+
+            <div className="mt-6">
+              <button className="border border-white text-white px-6 py-2 rounded transition-colors hover:bg-white hover:text-gray-800">
+                Как проехать
+              </button>
+            </div>
           </div>
 
           {/* Right Part - Empty */}
