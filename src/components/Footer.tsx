@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
             {/* Каталог */}
             <div>
               <h3 className="text-white text-xs font-benzin-semibold mb-2">Каталог</h3>
-              <ul className="space-y-1 text-[#778093] text-[10px]">
+              <ul className="space-y-1 text-[#778093] text-xs">
                 <li><a href="#" className="hover:text-white transition-colors">Для дома</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Для фитнес-клуба</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Наши бренды</a></li>
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
             {/* Поддержка */}
             <div>
               <h3 className="text-white text-xs font-benzin-semibold mb-2">Поддержка</h3>
-              <ul className="space-y-1 text-[#778093] text-[10px]">
+              <ul className="space-y-1 text-[#778093] text-xs">
                 <li><a href="#" className="hover:text-white transition-colors">Доставка и оплата</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Условия возврата</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Гарантия</a></li>
@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
             {/* О компании */}
             <div>
               <h3 className="text-white text-xs font-benzin-semibold mb-2">О компании</h3>
-              <ul className="space-y-1 text-[#778093] text-[10px]">
+              <ul className="space-y-1 text-[#778093] text-xs">
                 <li><a href="#" className="hover:text-white transition-colors">О нас</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Миссия</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Команда</a></li>
@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
             {/* Для Бизнеса */}
             <div>
               <h3 className="text-white text-xs font-benzin-semibold mb-2">Для Бизнеса</h3>
-              <ul className="space-y-1 text-[#778093] text-[10px]">
+              <ul className="space-y-1 text-[#778093] text-xs">
                 <li><a href="#" className="hover:text-white transition-colors">3D-проект</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Бизнес-планирование</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Готовые решения</a></li>
