@@ -595,15 +595,24 @@ const Services: React.FC = () => {
                     <div key={video.id} className="relative group cursor-pointer">
                       <div className="relative overflow-hidden rounded-lg">
                         {video.youtubeId ? (
-                          <iframe
-                            src={`https://www.youtube.com/embed/${video.youtubeId}`}
-                            title={video.title}
-                            className="w-full object-cover"
-                            style={{ height: '216px' }}
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                          />
+                          <>
+                            <iframe
+                              src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                              title={video.title}
+                              className="w-full object-cover"
+                              style={{ height: '216px' }}
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            />
+                            {/* White container overlay at bottom with title and play button */}
+                            <div className="absolute bottom-[5px] left-[5px] right-[5px] bg-white p-4 flex items-center justify-between rounded">
+                              <h4 className="font-medium text-gray-900 flex-1">{video.title}</h4>
+                              <div className="rounded-full p-4 ml-4" style={{backgroundColor: 'rgba(245, 59, 73, 0.3)'}}>
+                                <Play className="w-4 h-4 text-[#F53B49] fill-current" />
+                              </div>
+                            </div>
+                          </>
                         ) : (
                           <>
                             <img
