@@ -340,8 +340,25 @@ const UslugiServices: React.FC = () => {
             </div>
           )}
 
+          {/* Staff Training Tab Content */}
+          {activeTab === 'staff-training' && (
+            <div className="space-y-12">
+              <div className="max-w-4xl">
+                <h2 className="text-3xl font-bold text-gray-900 mb-8">Обучение</h2>
+                <div className="space-y-6 text-gray-700 text-lg leading-relaxed font-manrope">
+                  <p>
+                    Качественное обучение персонала сегодня является основополагающим конкурентным преимуществом на рынке фитнес-услуг. Кроме получения базовых глубинных научных знаний как фитнес-персоналу, так и менеджменту организации, необходимо отточить умения на основе этих знаний, а значит, пройти качественную практику.
+                  </p>
+                  <p>
+                    Тем же, кто уже давно работает в сфере фитнеса, всегда полезно получить повышение своей квалификации, изучив новые инструменты для улучшения качества повседневной работы и карьерного роста.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Other tabs content placeholders */}
-          {activeTab !== '3d-project' && activeTab !== 'installment' && activeTab !== 'business-planning' && (
+          {activeTab !== '3d-project' && activeTab !== 'installment' && activeTab !== 'business-planning' && activeTab !== 'staff-training' && (
             <div className="py-16 text-center">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 {tabs.find(tab => tab.id === activeTab)?.label}
