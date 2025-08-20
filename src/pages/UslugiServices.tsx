@@ -41,7 +41,7 @@ const UslugiServices: React.FC = () => {
   const getCategoryTitle = () => {
     switch (category) {
       case 'business': return 'Услуги для бизнеса';
-      case 'individuals': return 'Услуги для физлиц';
+      case 'individuals': return 'Рассрочка';
       case 'service': return 'Сервис';
       default: return 'Услуги';
     }
