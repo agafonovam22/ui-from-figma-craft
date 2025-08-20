@@ -301,9 +301,6 @@ const UslugiServices: React.FC = () => {
               {/* Block 2 - Text + Image */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="order-2 lg:order-1">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                    Что включает в себя наш <span className="text-brand-red">бизнес-план</span>
-                  </h3>
                   <div className="space-y-4 text-gray-700 text-lg leading-relaxed font-manrope">
                     <p>
                       Детальный финансовый анализ с расчетами доходов, расходов и окупаемости проекта. Исследование целевой аудитории и анализ конкурентов в вашем регионе.
