@@ -330,9 +330,6 @@ const UslugiServices: React.FC = () => {
                   <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                 </div>
                 <div className="max-w-4xl mx-auto text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                    Готовы получить профессиональный бизнес-план?
-                  </h3>
                   <p className="text-gray-700 text-lg leading-relaxed mb-8">
                     Наши эксперты помогут вам создать детальный бизнес-план, который станет надежной основой для запуска и развития вашего фитнес-бизнеса. Получите готовые цифры, инструменты и четкую стратегию действий.
                   </p>
