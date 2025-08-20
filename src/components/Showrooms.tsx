@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { MapPin, Phone, Clock } from 'lucide-react';
 
 const Showrooms: React.FC = () => {
   const [activeShowroom, setActiveShowroom] = useState(0);
@@ -129,17 +130,26 @@ const Showrooms: React.FC = () => {
 
             <div className="space-y-4">
               <div>
-                <p className="text-gray-300 text-sm mb-1 font-semibold">Адрес</p>
+                <div className="flex items-center gap-2 mb-1">
+                  <MapPin size={16} className="text-gray-300" />
+                  <p className="text-gray-300 text-sm font-semibold">Адрес</p>
+                </div>
                 <p className="text-white text-sm leading-relaxed">Москва, ТЦ Капитолий, Правобережная улица, 1Б</p>
               </div>
 
               <div>
-                <p className="text-gray-300 text-sm mb-1 font-semibold">Телефон</p>
+                <div className="flex items-center gap-2 mb-1">
+                  <Phone size={16} className="text-gray-300" />
+                  <p className="text-gray-300 text-sm font-semibold">Телефон</p>
+                </div>
                 <p className="text-white text-sm">+7 (499) 677-56-32 доб. 337</p>
               </div>
 
               <div>
-                <p className="text-gray-300 text-sm mb-1 font-semibold">Режим работы</p>
+                <div className="flex items-center gap-2 mb-1">
+                  <Clock size={16} className="text-gray-300" />
+                  <p className="text-gray-300 text-sm font-semibold">Режим работы</p>
+                </div>
                 <p className="text-white text-sm">10:00 - 22:00</p>
               </div>
             </div>
