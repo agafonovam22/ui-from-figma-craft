@@ -113,16 +113,16 @@ const GymEquipment: React.FC = () => {
           </Link>
         </div>
 
-        {/* Equipment Grid - First 5 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-[10px] mb-[10px] [&>*]:h-auto [&>*]:min-h-0 [&_img]:w-full [&_img]:h-auto [&_img]:object-contain">
-          {equipmentCategories.slice(0, 5).map((product) => (
+        {/* Equipment Grid - First 6 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-[10px] [&>*]:h-auto [&>*]:min-h-0 [&_img]:w-full [&_img]:h-auto [&_img]:object-contain">
+          {equipmentCategories.slice(0, 6).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo="/product-card" />
           ))}
         </div>
         
-        {/* Equipment Grid - Last 5 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-[10px] mb-12 [&>*]:h-auto [&>*]:min-h-0 [&_img]:w-full [&_img]:h-auto [&_img]:object-contain">
-          {equipmentCategories.slice(5, 10).map((product) => (
+        {/* Equipment Grid - Last 4 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-12 [&>*]:h-auto [&>*]:min-h-0 [&_img]:w-full [&_img]:h-auto [&_img]:object-contain">
+          {equipmentCategories.slice(6, 10).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo="/product-card" />
           ))}
         </div>
