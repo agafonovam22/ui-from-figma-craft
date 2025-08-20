@@ -86,17 +86,17 @@ const Services: React.FC = () => {
   const videoInstructions = [
     {
       id: 1,
-      title: 'Видео инструкция тренажеры Nautilus',
+      title: 'Проверка натяжения бегового полотна',
       youtubeId: 'iZ2_sETkk5c'
     },
     {
       id: 2,
-      title: 'Видео инструкция тренажеры Nautilus',
+      title: 'Центровка бегового полотна',
       youtubeId: 'zavv3Px2GK0'
     },
     {
       id: 3,
-      title: 'Видео инструкция тренажеры Nautilus',
+      title: 'Как смазывать беговое полотно на беговой дорожке',
       youtubeId: 'igH67CkSAKA'
     },
     {
