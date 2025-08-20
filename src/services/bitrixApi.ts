@@ -35,7 +35,7 @@ class BitrixAPI {
             name: product.name,
             price: product.price.toString(),
             originalPrice: product.original_price ? product.original_price.toString() : undefined,
-            image: product.image_url,
+            image: this.getOptimizedImageUrl(product.image_url),
             description: product.name,
             available: product.is_available && product.in_stock,
             categoryId: undefined,
@@ -114,6 +114,22 @@ class BitrixAPI {
   // Mock данные больше не используются - показываем только реальные товары из API
   private getMockProducts(): BitrixProduct[] {
     return [];
+  }
+
+  // Метод для оптимизации URL изображений
+  private getOptimizedImageUrl(originalUrl: string): string {
+    if (!originalUrl) return originalUrl;
+    
+    // Добавляем параметры для улучшения качества изображений
+    const url = new URL(originalUrl);
+    
+    // Добавляем параметры ресайза для Bitrix
+    url.searchParams.set('width', '400');
+    url.searchParams.set('height', '400');
+    url.searchParams.set('quality', '90');
+    url.searchParams.set('resize', '1');
+    
+    return url.toString();
   }
 }
 
