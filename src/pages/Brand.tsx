@@ -815,24 +815,7 @@ const Brand: React.FC = () => {
                         </ul>
                       </div>
                     ) : brandSlug === 'visbody' ? (
-                      <div className="space-y-6">
-                        <div>
-                          <h3 className="font-benzin text-gray-900 mb-3">Visbody-S30</h3>
-                          <h4 className="font-benzin text-gray-900 mb-4">3D-Анализатор тела</h4>
-                          <p className="text-gray-600 text-sm leading-relaxed font-manrope mb-4">
-                            Первый в мире гибридный 3D-сканер, объединяющий IBS-сканирование и BIA+BDA-анализ для комплексной 360°-оценки тела, включая измерение роста.
-                          </p>
-                          <p className="text-gray-600 text-sm leading-relaxed font-manrope mb-4">
-                            <strong>Безупречная точность:</strong>
-                          </p>
-                          <ul className="text-gray-600 text-sm leading-relaxed font-manrope ml-4 space-y-2">
-                            <li>• Детализированный анализ состава тела</li>
-                            <li>• Измерение охватов тела</li>
-                            <li>• Оценка гибкости суставов</li>
-                            <li>• Оценка осанки</li>
-                          </ul>
-                        </div>
-                      </div>
+                       <div></div>
                      ) : (
                    <div className="space-y-6">
                      <div>
