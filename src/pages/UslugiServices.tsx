@@ -447,8 +447,63 @@ const UslugiServices: React.FC = () => {
             </div>
           )}
 
+          {/* Leasing Tab Content */}
+          {activeTab === 'leasing' && (
+            <div className="space-y-12">
+              {/* Block 1 - Image + Text */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                <div className="order-1">
+                  <img 
+                    src="/lovable-uploads/placeholder-leasing.png" 
+                    alt="Лизинг оборудования" 
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <div className="order-2 flex flex-col justify-center">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                    Лизинг <span className="text-brand-red">фитнес-оборудования</span>
+                  </h2>
+                  <div className="space-y-4 text-gray-700 text-lg leading-relaxed font-manrope">
+                    <p>
+                      Лизинг фитнес-оборудования — это выгодное решение для открытия или модернизации фитнес-клуба. Вы получаете современное оборудование с минимальными первоначальными вложениями.
+                    </p>
+                    <p>
+                      Наши партнеры предлагают гибкие условия лизинга с возможностью выкупа оборудования по остаточной стоимости. Это позволяет сохранить оборотные средства для развития бизнеса.
+                    </p>
+                    <p>
+                      Мы поможем подобрать оптимальную лизинговую программу для вашего проекта и возьмем на себя все вопросы по оформлению документов.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Block 2 - Statistics + Button */}
+              <div className="bg-gray-50 rounded-lg p-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center mb-12">
+                  <div className="space-y-4">
+                    <div className="text-6xl font-bold text-brand-red">0%</div>
+                    <p className="text-gray-700 text-lg font-manrope">первоначальный взнос в некоторых программах</p>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="text-6xl font-bold text-brand-red">60</div>
+                    <p className="text-gray-700 text-lg font-manrope">месяцев максимальный срок лизинга</p>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="text-6xl font-bold text-brand-red">100%</div>
+                    <p className="text-gray-700 text-lg font-manrope">стоимости оборудования покрывается лизингом</p>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <Button className="bg-brand-red hover:bg-brand-red-hover text-white px-8 py-3 text-lg font-semibold rounded-lg">
+                    Оставить заявку
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Other tabs content placeholders */}
-          {activeTab !== '3d-project' && activeTab !== 'installment' && activeTab !== 'business-planning' && activeTab !== 'staff-training' && (
+          {activeTab !== '3d-project' && activeTab !== 'installment' && activeTab !== 'business-planning' && activeTab !== 'staff-training' && activeTab !== 'leasing' && (
             <div className="py-16 text-center">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 {tabs.find(tab => tab.id === activeTab)?.label}
