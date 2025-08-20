@@ -408,9 +408,6 @@ const Brand: React.FC = () => {
                   </div>
                 ) : brandSlug === 'visbody' ? (
                   <div className="mb-8">
-                    <div className="bg-green-100 p-2 rounded mb-4 text-center">
-                      <small>✅ VISBODY PAGE LOADED - {new Date().toLocaleTimeString()}</small>
-                    </div>
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope mb-4">
                       Ведущий разработчик профессиональных 3D/4D-сканеров для анализа тела, объединяющих технологии компьютерного зрения, биоимпедансных (BIA) измерений и искусственного интеллекта. Создает революционные стандарты диагностики, объединяя в одном решении:
                     </p>
