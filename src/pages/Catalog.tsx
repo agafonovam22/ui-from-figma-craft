@@ -111,7 +111,7 @@ const Catalog: React.FC = () => {
   
   const displayProducts = useMemo(() => {
     return filteredProducts.map(product => ({
-      id: Number(product.id),
+      id: product.id, // Оставляем как строку, избегаем NaN
       name: product.name,
       price: product.price ? `${product.price}₽` : null,
       originalPrice: product.originalPrice ? `${product.originalPrice}₽` : null,
