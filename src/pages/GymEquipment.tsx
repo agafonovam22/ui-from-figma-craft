@@ -26,55 +26,55 @@ const GymEquipment: React.FC = () => {
     },
     {
       id: 2,
-      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
+      image: '/lovable-uploads/ff65a1d9-4adf-482a-b72b-3105f385bbb5.png',
       category: 'bike',
       price: 'от 80 000 ₽'
     },
     {
       id: 3,
-      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
+      image: '/lovable-uploads/0ca74f6f-87b4-4684-a5ad-19cce0b365ca.png',
       category: 'rowing',
       price: 'от 95 000 ₽'
     },
     {
       id: 4,
-      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
+      image: '/lovable-uploads/c5f6c013-e1e9-46e9-af28-302ee3f72d72.png',
       category: 'elliptical',
       price: 'от 150 000 ₽'
     },
     {
       id: 5,
-      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
+      image: '/lovable-uploads/b6b88863-eede-4be6-94dd-0c2869115e0e.png',
       category: 'multistation',
       price: 'от 300 000 ₽'
     },
     {
       id: 6,
-      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
+      image: '/lovable-uploads/549503f6-76ac-4d2f-b234-2961706a3440.png',
       category: 'bench',
       price: 'от 25 000 ₽'
     },
     {
       id: 7,
-      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
+      image: '/lovable-uploads/42507f89-58d4-4a00-a3d3-41f1d568578c.png',
       category: 'game-tables',
       price: 'от 40 000 ₽'
     },
     {
       id: 8,
-      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
+      image: '/lovable-uploads/23a9f372-8f8e-481f-bbca-9caa7c6f9b10.png',
       category: 'free-weights',
       price: 'от 15 000 ₽'
     },
     {
       id: 9,
-      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
+      image: '/lovable-uploads/ee0f0de7-1fe5-4d1d-9d52-8b8ea6033fae.png',
       category: 'home-accessories',
       price: 'от 5 000 ₽'
     },
     {
       id: 10,
-      image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
+      image: '/lovable-uploads/b59a1f22-25f9-4876-931d-a5e619108941.png',
       category: 'massage',
       price: 'от 60 000 ₽'
     }
