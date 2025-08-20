@@ -11,8 +11,7 @@ import InstallmentTable from '@/components/Services/InstallmentTable';
 
 const UslugiServices: React.FC = () => {
   const { category } = useParams<{ category: string }>();
-  const [activeTab, setActiveTab] = useState(category === 'individuals' ? 'installment' : '3d-project');
-
+  
   // Define services by category
   const servicesByCategory = {
     business: [
@@ -35,6 +34,17 @@ const UslugiServices: React.FC = () => {
   const tabs = category && servicesByCategory[category as keyof typeof servicesByCategory] 
     ? servicesByCategory[category as keyof typeof servicesByCategory] 
     : servicesByCategory.business;
+
+  // Set default active tab to first tab in the category
+  const getDefaultActiveTab = () => {
+    if (tabs.length > 0) {
+      return tabs[0].id;
+    }
+    return '3d-project';
+  };
+
+  const [activeTab, setActiveTab] = useState(getDefaultActiveTab());
+
 
   // Get category title
   const getCategoryTitle = () => {
