@@ -284,7 +284,7 @@ const UslugiServices: React.FC = () => {
                   />
                 </div>
                 <div className="order-2">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6">
                     РАЗРАБОТКА МНОГОУРОВНЕГО <span className="text-brand-red">БИЗНЕС-ПЛАНА</span>. ГОТОВЫЕ ЦИФРЫ И ИНСТРУМЕНТЫ.
                   </h2>
                   <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
