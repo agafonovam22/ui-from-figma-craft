@@ -22,25 +22,25 @@ const GymEquipment: React.FC = () => {
       id: 1,
       image: '/lovable-uploads/19eb92b1-7d7f-4643-8133-70aba6f3263f.png',
       category: 'treadmill',
-      price: 'от 120 000 ₽'
+      price: 'от 109 900 ₽'
     },
     {
       id: 2,
       image: '/lovable-uploads/ff65a1d9-4adf-482a-b72b-3105f385bbb5.png',
       category: 'bike',
-      price: 'от 80 000 ₽'
+      price: 'от 75 900 ₽'
     },
     {
       id: 3,
       image: '/lovable-uploads/0ca74f6f-87b4-4684-a5ad-19cce0b365ca.png',
       category: 'rowing',
-      price: 'от 95 000 ₽'
+      price: 'от 189 900 ₽'
     },
     {
       id: 4,
       image: '/lovable-uploads/c5f6c013-e1e9-46e9-af28-302ee3f72d72.png',
       category: 'elliptical',
-      price: 'от 150 000 ₽'
+      price: 'от 149 900 ₽'
     },
     {
       id: 5,
@@ -70,7 +70,7 @@ const GymEquipment: React.FC = () => {
       id: 9,
       image: '/lovable-uploads/ee0f0de7-1fe5-4d1d-9d52-8b8ea6033fae.png',
       category: 'home-accessories',
-      price: 'от 5 000 ₽'
+      price: 'от 650 ₽'
     },
     {
       id: 10,
@@ -88,7 +88,7 @@ const GymEquipment: React.FC = () => {
       id: 12,
       image: '/lovable-uploads/378ebaa3-274c-4687-85ca-aa90c0dc3143.png',
       category: 'group-programs',
-      price: 'от 30 000 ₽'
+      price: 'от 1 030 ₽'
     }
   ];
 
