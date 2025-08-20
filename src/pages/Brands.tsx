@@ -45,7 +45,8 @@ const Brands: React.FC = () => {
     { name: "Meridien", logo: "/lovable-uploads/aca1d655-a295-4b83-9777-d6a59a6d6c88.png", slug: "meridien" },
     { name: "kernel", logo: "/lovable-uploads/780287df-78a1-4886-ae82-8fad0567d9ca.png", slug: "kernel" },
     { name: "CENTR", logo: "/lovable-uploads/6317917f-5d52-453f-b576-b18e47712812.png", slug: "centr" },
-    { name: "Sintesi", logo: "/lovable-uploads/ade27090-5541-4f24-9826-cf4f3d27467d.png", slug: "sintesi" }
+    { name: "Sintesi", logo: "/lovable-uploads/ade27090-5541-4f24-9826-cf4f3d27467d.png", slug: "sintesi" },
+    { name: "VISBODY", logo: "/lovable-uploads/576ba5fd-4977-4c78-a2ec-2c7fc4935c41.png", slug: "visbody" }
   ];
 
   const toggleFilter = (filter: string) => {
