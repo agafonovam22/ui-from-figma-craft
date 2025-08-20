@@ -116,7 +116,7 @@ const Showrooms: React.FC = () => {
           </div>
 
           {/* Middle Part - Showroom Info */}
-          <div className="flex-1 bg-gray-800 text-white p-8 flex flex-col justify-center relative">
+          <div className="w-[400px] bg-gray-800 text-white p-8 flex flex-col justify-center relative">
             <div className="mb-6">
               <div className="flex items-center gap-4 mb-4">
                 <span className="text-4xl font-bold text-white">{currentShowroom.area}</span>
@@ -164,7 +164,7 @@ const Showrooms: React.FC = () => {
           </div>
 
           {/* Right Part - Photo Slider */}
-          <div className="w-[500px] bg-gray-100 relative">
+          <div className="flex-1 bg-gray-100 relative">
             <PhotoSwiper 
               images={currentShowroom.images} 
               autoplay={true}
