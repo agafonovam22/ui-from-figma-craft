@@ -20,13 +20,6 @@ const UslugiCategories: React.FC = () => {
       description: 'Индивидуальные решения для домашних спортзалов и персональных тренировок',
       image: '/lovable-uploads/30734aa0-70ff-4b93-87d8-e2756bff0d80.png',
       href: '/uslugi/individuals'
-    },
-    {
-      id: 'service',
-      title: 'Сервис',
-      description: 'Техническое обслуживание, ремонт и поддержка спортивного оборудования',
-      image: '/lovable-uploads/8e6a008f-877e-490a-8b4a-9a2075e20414.png',
-      href: '/uslugi/service'
     }
   ];
 
