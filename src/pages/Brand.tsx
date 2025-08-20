@@ -1447,10 +1447,10 @@ const Brand: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div className="order-1 lg:order-2 lg:pl-8">
                     <h2 className="text-3xl font-benzin text-gray-900 mb-6">
-                      Тренируйтесь эффективнее, чем в зале
+                      Фитнес, который подстраивается под вас
                     </h2>
                     <p className="text-gray-600 text-sm leading-relaxed font-manrope">
-                      Sintesi не просто заменяет тренажеры — она делает тренировки умнее. Автоматическая настройка, детальная статистика и адаптация под ваши цели экономят время и повышают результат.
+                      Главная ценность Sintesi — свобода выбора. Меняйте нагрузку одним касанием, экспериментируйте с режимами и достигайте целей быстрее. Это не просто тренажер, а ваш персональный тренер будущего.
                     </p>
                   </div>
                   <div className="order-2 lg:order-1">
