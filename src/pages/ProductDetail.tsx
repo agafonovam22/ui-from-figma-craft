@@ -23,6 +23,7 @@ const ProductDetail: React.FC = () => {
   const [selectedSize, setSelectedSize] = useState<string>('core');
   const [activeTab, setActiveTab] = useState<string>('description');
   const [showReviewModal, setShowReviewModal] = useState(false);
+  const [selectedInstallmentPlan, setSelectedInstallmentPlan] = useState<number | null>(null);
   const { addItem } = useCart();
   const { toast } = useToast();
 
@@ -782,8 +783,20 @@ const ProductDetail: React.FC = () => {
                       duration: 'Срок 12 месяцев'
                     }
                   ].map((plan) => (
-                    <div key={plan.id} className="grid grid-cols-5 gap-4 py-6 border-b border-gray-100 hover:bg-gray-50">
+                    <div 
+                      key={plan.id} 
+                      className="grid grid-cols-5 gap-4 py-6 border-b border-gray-100 hover:bg-gray-50 cursor-pointer"
+                      onClick={() => setSelectedInstallmentPlan(plan.id)}
+                    >
                       <div className="flex items-center gap-3">
+                        <div 
+                          className="w-4 h-4 border-2 bg-white rounded-sm flex items-center justify-center"
+                          style={{ borderColor: selectedInstallmentPlan === plan.id ? '#F53B49' : '#D1D5DB' }}
+                        >
+                          {selectedInstallmentPlan === plan.id && (
+                            <div className="w-2 h-2 bg-[#F53B49]"></div>
+                          )}
+                        </div>
                         <div>
                           <div className="mb-1 font-medium text-foreground font-benzin">{plan.plan}</div>
                           <div className="text-muted-foreground font-manrope">{plan.bank}</div>
