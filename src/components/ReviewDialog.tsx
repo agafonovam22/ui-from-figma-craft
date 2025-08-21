@@ -91,20 +91,20 @@ const ReviewDialog: React.FC<ReviewDialogProps> = ({ open, onOpenChange }) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-[1000px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-['Benzin-Semibold'] text-foreground mb-8">
+          <DialogTitle className="text-xl font-['Benzin-Semibold'] text-foreground mb-4">
             Написать отзыв
           </DialogTitle>
         </DialogHeader>
 
-        <div className="space-y-6">
+        <div className="space-y-4">
           {/* Personal Information */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             {/* ФИО - полная ширина */}
             <Input
               value={formData.name}
               onChange={(e) => handleInputChange('name', e.target.value)}
               placeholder="ФИО"
-              className="w-full h-14 text-base font-['Benzin-Regular']"
+              className="w-full h-10 text-sm font-['Benzin-Regular']"
             />
             
             {/* Телефон и E-mail в одну строку */}
@@ -113,14 +113,14 @@ const ReviewDialog: React.FC<ReviewDialogProps> = ({ open, onOpenChange }) => {
                 value={formData.phone}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
                 placeholder="Телефон"
-                className="h-14 text-base font-['Benzin-Regular']"
+                className="h-10 text-sm font-['Benzin-Regular']"
               />
               <Input
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
                 placeholder="E-mail"
-                className="h-14 text-base font-['Benzin-Regular']"
+                className="h-10 text-sm font-['Benzin-Regular']"
               />
             </div>
           </div>
@@ -130,60 +130,59 @@ const ReviewDialog: React.FC<ReviewDialogProps> = ({ open, onOpenChange }) => {
             value={formData.message}
             onChange={(e) => handleInputChange('message', e.target.value)}
             placeholder="Ваше сообщение"
-            className="min-h-[120px] text-base font-['Benzin-Regular']"
+            className="min-h-[80px] text-sm font-['Benzin-Regular']"
           />
 
           {/* Rating Categories in Gray Container */}
-          <div className="bg-muted rounded-lg p-6 space-y-2">
+          <div className="bg-muted rounded-lg p-4 space-y-1">
             {categories.map(({ key, label }) => (
               <RatingBar key={key} category={key} label={label} />
             ))}
           </div>
 
-          {/* Photo Upload Button */}
-          <div className="flex justify-start">
-            <label className="cursor-pointer">
-              <input
-                type="file"
-                multiple
-                accept="image/*"
-                onChange={handlePhotoUpload}
-                className="hidden"
-              />
-              <Button
-                type="button"
-                variant="outline"
-                className="h-12 px-6 font-['Benzin-Regular']"
-                asChild
-              >
-                <span>
-                  <Upload className="mr-2 h-4 w-4" />
-                  Добавить фото
-                </span>
-              </Button>
-            </label>
-          </div>
-
-          {/* Captcha Section */}
-          <div className="grid grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <div className="w-full h-32 bg-muted rounded-lg flex items-center justify-center">
-                <span className="text-muted-foreground font-['Benzin-Regular']">Captcha Image</span>
-              </div>
+          {/* Photo Upload and Captcha */}
+          <div className="grid grid-cols-2 gap-6">
+            {/* Photo Upload Button */}
+            <div className="flex justify-start">
+              <label className="cursor-pointer">
+                <input
+                  type="file"
+                  multiple
+                  accept="image/*"
+                  onChange={handlePhotoUpload}
+                  className="hidden"
+                />
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="h-10 px-4 text-sm font-['Benzin-Regular']"
+                  asChild
+                >
+                  <span>
+                    <Upload className="mr-2 h-4 w-4" />
+                    Добавить фото
+                  </span>
+                </Button>
+              </label>
             </div>
-            <div className="space-y-4">
+            
+            {/* Captcha Section */}
+            <div className="space-y-3">
+              <div className="w-full h-20 bg-muted rounded-lg flex items-center justify-center">
+                <span className="text-muted-foreground text-sm font-['Benzin-Regular']">Captcha Image</span>
+              </div>
               <Input
                 placeholder="Введите слово на картинке"
-                className="h-14 text-base font-['Benzin-Regular']"
+                className="h-10 text-sm font-['Benzin-Regular']"
               />
             </div>
           </div>
 
           {/* Submit Button */}
-          <div className="flex justify-start pt-4">
+          <div className="flex justify-start pt-2">
             <Button 
               onClick={handleSubmit}
-              className="bg-[#F53B49] hover:bg-[#F53B49]/90 text-white px-8 py-3 text-base h-12 rounded-lg font-['Benzin-Regular']"
+              className="bg-[#F53B49] hover:bg-[#F53B49]/90 text-white px-6 py-2 text-sm h-10 rounded-lg font-['Benzin-Regular']"
             >
               Добавить отзыв
             </Button>
