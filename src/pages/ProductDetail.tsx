@@ -1002,9 +1002,8 @@ const ProductDetail: React.FC = () => {
 
             {/* Product Title */}
             <div className="mb-4">
-              <h1 className="text-3xl mb-2">
-                <span className="font-normal">Фитнес набор </span>
-                <span className="font-bold">Centr Core Kit (CAK1)</span>
+              <h1 className="text-3xl mb-2 font-bold">
+                {product.name}
               </h1>
             </div>
 
@@ -1045,12 +1044,25 @@ const ProductDetail: React.FC = () => {
                 <div className="grid gap-1 text-xs">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Тип продукции:</span>
-                    <span className="font-medium">Фитнес наборы</span>
+                    <span className="font-medium">
+                      {product.characteristics['Наименование товара на сайте'] ? 
+                        product.characteristics['Наименование товара на сайте'].includes('набор') ? 'Фитнес наборы' : 
+                        product.characteristics['Наименование товара на сайте'].includes('мат') ? 'Коврики и маты' :
+                        product.characteristics['Наименование товара на сайте'].includes('Коврик') ? 'Коврики и маты' :
+                        product.characteristics['Наименование товара на сайте'].includes('Рукоятка') ? 'Аксессуары' :
+                        product.characteristics['Наименование товара на сайте'].includes('платформа') ? 'Платформы' :
+                        product.characteristics['Наименование товара на сайте'].includes('Утяжелители') ? 'Утяжелители' :
+                        'Фитнес оборудование'
+                        : 'Фитнес оборудование'}
+                    </span>
                   </div>
                   {product.characteristics['Бренд (id)'] && (
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">Бренд:</span>
-                      <span className="font-medium">CENTR</span>
+                      <span className="font-medium">
+                        {product.characteristics['Бренд (id)'] === '49278' ? 'CENTR' : 
+                         product.characteristics['Бренд (id)'] === '38764' ? 'KERNEL' : 'CENTR'}
+                      </span>
                     </div>
                   )}
                   {product.characteristics['Артикул'] && (
@@ -1059,13 +1071,22 @@ const ProductDetail: React.FC = () => {
                       <span className="font-medium">{product.characteristics['Артикул']}</span>
                     </div>
                   )}
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Назначение:</span>
-                    <span className="font-medium">Домашние тренировки</span>
-                  </div>
+                  {product.characteristics['Тип назначения'] && (
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Назначение:</span>
+                      <span className="font-medium">{product.characteristics['Тип назначения']}</span>
+                    </div>
+                  )}
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Тип оборудования:</span>
-                    <span className="font-medium">Функциональный тренинг</span>
+                    <span className="font-medium">
+                      {product.characteristics['Тип оборудования'] === '857' ? 'Функциональный тренинг' :
+                       product.characteristics['Тип оборудования'] === '852' ? 'Коврики и маты' :
+                       product.characteristics['Тип оборудования'] === '865' ? 'Аксессуары' :
+                       product.characteristics['Тип оборудования'] === '862' ? 'Платформы' :
+                       product.characteristics['Тип оборудования'] === '870' ? 'Утяжелители' :
+                       'Функциональный тренинг'}
+                    </span>
                   </div>
                   {product.characteristics['Базовая единица'] && (
                     <div className="flex justify-between">
@@ -1075,7 +1096,9 @@ const ProductDetail: React.FC = () => {
                   )}
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Комплектация:</span>
-                    <span className="font-medium">Полный набор для тренировок</span>
+                    <span className="font-medium">
+                      {product.characteristics['Наименование товара на сайте'] || product.name}
+                    </span>
                   </div>
                 </div>
               )}
@@ -1091,18 +1114,13 @@ const ProductDetail: React.FC = () => {
                 <h4 className="font-medium mb-2 text-sm">Комплектация</h4>
                 <div className="flex flex-wrap gap-2">
                   <button
-                    className={`px-3 py-1 text-xs rounded-full border-2 transition-all ${
-                      selectedSize === 'core' 
-                        ? 'bg-gray-800 text-white border-gray-800' 
-                        : 'bg-white border-gray-300 hover:border-gray-400'
-                    }`}
-                    onClick={() => setSelectedSize('core')}
+                    className="px-3 py-1 text-xs rounded-full border-2 bg-gray-800 text-white border-gray-800"
                   >
-                    Core Kit
+                    {product.characteristics?.['Артикул'] || product.name}
                   </button>
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Базовая комплектация для функционального тренинга
+                  {product.description || product.characteristics?.['Наименование товара на сайте'] || 'Базовая комплектация для тренинга'}
                 </p>
               </div>
             </div>
