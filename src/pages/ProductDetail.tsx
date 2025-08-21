@@ -700,20 +700,122 @@ const ProductDetail: React.FC = () => {
         );
       case 'installment':
         return (
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Рассрочка и кредит</h3>
-            <div className="font-manrope space-y-4">
-              <div className="p-4 border border-border rounded-lg">
-                <h4 className="font-semibold mb-2">Рассрочка 0% до 12 месяцев</h4>
-                <p className="text-muted-foreground mb-3">
-                  Оформите покупку в рассрочку без переплат и процентов на срок до 12 месяцев.
+          <div className="space-y-8">
+            {/* Text content */}
+            <div>
+              <h3 className="text-xl font-semibold mb-6 font-manrope">В рассрочку</h3>
+              
+              <div className="space-y-4 mb-8 font-manrope text-muted-foreground">
+                <p>
+                  Оформить кредит на сайте — быстро и легко. При оформлении заказа в корзине укажите способ 
+                  оплаты «Кредит».
                 </p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Без первоначального взноса</li>
-                  <li>• Одобрение за 5 минут</li>
-                  <li>• Минимум документов</li>
-                </ul>
+                <p>
+                  Вы будете перенаправлены на сайт банка для заполнения анкеты. После заполнения анкеты с вами 
+                  свяжется представитель банка. Вашу заявку рассмотрят в течение 20—30 минут.
+                </p>
+                <p>
+                  Также вы можете оформить рассрочку или кредит в любом магазине, сделав заказ на самовывоз. 
+                  Пожалуйста, будьте готовы предоставить паспорт при получении кредита. Также банки вправе 
+                  потребовать иные дополнительные документы и подтверждение доходов заемщика.
+                </p>
               </div>
+            </div>
+
+            {/* Installment Table */}
+            <div className="overflow-hidden mb-8">
+              <div className="w-full">
+                <div className="border-b">
+                  <div className="grid grid-cols-5 gap-4 py-4">
+                    <div className="font-semibold text-foreground font-manrope">Рассрочка</div>
+                    <div className="text-center font-semibold text-foreground font-manrope">Ежемесячный платеж</div>
+                    <div className="text-center font-semibold text-foreground font-manrope">Переплата</div>
+                    <div className="text-center font-semibold text-foreground font-manrope">Срок</div>
+                    <div></div>
+                  </div>
+                </div>
+                
+                <div className="space-y-0">
+                  {[
+                    {
+                      id: 1,
+                      plan: '0-0-12',
+                      bank: 'Тинькофф',
+                      monthlyPayment: '5 000₽',
+                      overpayment: 'нет',
+                      term: '0 - 6',
+                      rate: 'Ставка от 21,5%',
+                      firstPayment: 'Первый взнос 0%',
+                      duration: 'Срок 12 месяцев'
+                    },
+                    {
+                      id: 2,
+                      plan: '0-0-6',
+                      bank: 'Тинькофф',
+                      monthlyPayment: '5 000₽',
+                      overpayment: 'нет',
+                      term: '0 - 6',
+                      rate: 'Ставка от 21,5%',
+                      firstPayment: 'Первый взнос 0%',
+                      duration: 'Срок 12 месяцев'
+                    },
+                    {
+                      id: 3,
+                      plan: '0-0-6',
+                      bank: 'Сбербанк',
+                      monthlyPayment: '5 000₽',
+                      overpayment: 'нет',
+                      term: '0 - 6',
+                      rate: 'Ставка от 21,5%',
+                      firstPayment: 'Первый взнос 0%',
+                      duration: 'Срок 12 месяцев'
+                    },
+                    {
+                      id: 4,
+                      plan: '0-0-6',
+                      bank: 'Сбербанк',
+                      monthlyPayment: '5 000₽',
+                      overpayment: 'нет',
+                      term: '0 - 6',
+                      rate: 'Ставка от 21,5%',
+                      firstPayment: 'Первый взнос 0%',
+                      duration: 'Срок 12 месяцев'
+                    }
+                  ].map((plan) => (
+                    <div key={plan.id} className="grid grid-cols-5 gap-4 py-6 border-b border-gray-100 hover:bg-gray-50">
+                      <div className="flex items-center gap-3">
+                        <div>
+                          <div className="mb-1 font-medium text-foreground font-benzin">{plan.plan}</div>
+                          <div className="text-muted-foreground font-manrope">{plan.bank}</div>
+                        </div>
+                      </div>
+                      <div className="text-center font-semibold text-foreground font-manrope">{plan.monthlyPayment}</div>
+                      <div className="text-center text-foreground font-manrope">{plan.overpayment}</div>
+                      <div className="text-center text-foreground font-manrope">{plan.term}</div>
+                      <div className="text-right">
+                        <div className="flex flex-wrap gap-2 justify-end">
+                          <span className="px-3 py-1 bg-muted text-muted-foreground text-xs rounded-full font-manrope">
+                            {plan.rate}
+                          </span>
+                          <span className="px-3 py-1 bg-muted text-muted-foreground text-xs rounded-full font-manrope">
+                            {plan.firstPayment}
+                          </span>
+                          <span className="px-3 py-1 bg-muted text-muted-foreground text-xs rounded-full font-manrope">
+                            {plan.duration}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Submit Button */}
+            <div className="flex justify-start">
+              <button className="bg-[#F53B49] hover:bg-[#e63946] text-white px-8 py-3 rounded font-benzin">
+                Оставить заявку
+              </button>
             </div>
           </div>
         );
