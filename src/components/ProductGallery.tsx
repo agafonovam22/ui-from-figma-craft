@@ -7,17 +7,23 @@ interface ProductGalleryProps {
   mainImage: string;
   images?: string[];
   productName: string;
+  characteristics?: any;
   badges?: Array<{
     text: string;
     variant: 'default' | 'destructive' | 'secondary' | 'outline';
   }>;
 }
 
-export default function ProductGallery({ mainImage, images = [], productName, badges = [] }: ProductGalleryProps) {
+export default function ProductGallery({ mainImage, images = [], productName, characteristics, badges = [] }: ProductGalleryProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
+  // Получаем дополнительные изображения из галереи
+  const galleryImages = characteristics?.['Картинки галереи'] 
+    ? characteristics['Картинки галереи'].split(',').map((img: string) => img.trim()).filter((img: string) => img)
+    : [];
+  
   // Создаем массив всех изображений, начиная с главного
-  const allImages = [mainImage, ...images.filter(img => img !== mainImage)];
+  const allImages = [mainImage, ...images.filter(img => img !== mainImage), ...galleryImages].filter(Boolean);
   
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
@@ -83,7 +89,7 @@ export default function ProductGallery({ mainImage, images = [], productName, ba
       {/* Thumbnails */}
       {allImages.length > 1 && (
         <div className="grid grid-cols-4 gap-2">
-          {allImages.slice(0, 4).map((image, index) => (
+          {allImages.map((image, index) => (
             <button
               key={index}
               className={`relative overflow-hidden rounded-lg aspect-square border-2 transition-all ${

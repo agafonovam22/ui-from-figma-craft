@@ -153,6 +153,7 @@ const ProductDetail: React.FC = () => {
               mainImage={product.image_url || '/placeholder.svg'}
               images={product.gallery_images || []}
               productName={product.name}
+              characteristics={product.characteristics}
               badges={[
                 ...(product.badge ? [{ text: product.badge, variant: 'destructive' as const }] : []),
                 ...(product.characteristics?.['Акция'] ? [{ text: 'АКЦИЯ', variant: 'destructive' as const }] : []),
@@ -162,7 +163,7 @@ const ProductDetail: React.FC = () => {
           </div>
 
           {/* Product Info */}
-          <div className="space-y-6">
+          <div className="bg-gray-50 p-6 rounded-lg space-y-6">
             {/* Header with actions */}
             <div className="flex justify-between items-start">
               <div className="flex-1">
