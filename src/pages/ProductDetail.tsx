@@ -367,26 +367,333 @@ const ProductDetail: React.FC = () => {
         );
       case 'delivery':
         return (
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Доставка и оплата</h3>
-            <div className="font-manrope grid md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-semibold mb-3">Способы доставки:</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Курьерская доставка по Москве - 500 ₽</li>
-                  <li>• Доставка по России (СДЭК) - от 300 ₽</li>
-                  <li>• Самовывоз из магазина - бесплатно</li>
-                  <li>• Почта России - от 200 ₽</li>
-                </ul>
+          <div className="space-y-12">
+            {/* Стоимость доставки */}
+            <div className="flex gap-8">
+              <div className="w-80 flex-shrink-0">
+                <h3 style={{
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Стоимость доставки</h3>
               </div>
-              <div>
-                <h4 className="font-semibold mb-3">Способы оплаты:</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Банковской картой онлайн</li>
-                  <li>• Наличными при получении</li>
-                  <li>• Банковский перевод</li>
-                  <li>• Электронные кошельки</li>
-                </ul>
+              <div className="flex-1">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Left Column */}
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <h4 className="mb-4 pb-3 border-b" style={{
+                      fontFamily: 'Benzin-Medium',
+                      fontSize: '16px',
+                      fontWeight: '500'
+                    }}>Заказ от 30 001₽</h4>
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center py-3 border-b">
+                        <span style={{
+                          color: 'var(--Dark-Grey, #262631)',
+                          fontFamily: 'Manrope, sans-serif',
+                          fontSize: '16px',
+                          fontStyle: 'normal',
+                          fontWeight: '400',
+                          lineHeight: '120%',
+                          letterSpacing: '0.32px'
+                        }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
+                        <span className="text-[#F53B49] font-semibold" style={{
+                          fontFamily: 'Manrope',
+                          fontSize: '16px'
+                        }}>Бесплатно</span>
+                      </div>
+                      <div className="flex justify-between items-center py-3 border-b">
+                        <span style={{
+                          color: 'var(--Dark-Grey, #262631)',
+                          fontFamily: 'Manrope, sans-serif',
+                          fontSize: '16px',
+                          fontStyle: 'normal',
+                          fontWeight: '400',
+                          lineHeight: '120%',
+                          letterSpacing: '0.32px'
+                        }}>Автомобильная доставка по Московской Области</span>
+                        <span className="text-[#F53B49] font-semibold whitespace-nowrap" style={{
+                          fontFamily: 'Manrope',
+                          fontSize: '16px'
+                        }}>30₽/км</span>
+                      </div>
+                      <div className="flex justify-between items-center py-3 border-b">
+                        <span style={{
+                          color: 'var(--Dark-Grey, #262631)',
+                          fontFamily: 'Manrope, sans-serif',
+                          fontSize: '16px',
+                          fontStyle: 'normal',
+                          fontWeight: '400',
+                          lineHeight: '120%',
+                          letterSpacing: '0.32px'
+                        }}>Курьерская доставка (вес до 3 кг)</span>
+                        <span className="text-[#F53B49] font-semibold" style={{
+                          fontFamily: 'Manrope',
+                          fontSize: '16px'
+                        }}>500₽</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column */}
+                  <div className="bg-gray-50 p-6 rounded-lg h-fit">
+                    <h4 className="mb-4 pb-3 border-b" style={{
+                      fontFamily: 'Benzin-Medium',
+                      fontSize: '16px',
+                      fontWeight: '500'
+                    }}>Заказ до 30 000₽</h4>
+                    <div>
+                      <div className="flex justify-between items-center py-3 border-b">
+                        <span style={{
+                          color: 'var(--Dark-Grey, #262631)',
+                          fontFamily: 'Manrope, sans-serif',
+                          fontSize: '16px',
+                          fontStyle: 'normal',
+                          fontWeight: '400',
+                          lineHeight: '120%',
+                          letterSpacing: '0.32px'
+                        }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
+                        <span className="text-[#F53B49] font-semibold" style={{
+                          fontFamily: 'Manrope',
+                          fontSize: '16px'
+                        }}>1000₽</span>
+                      </div>
+                      <div className="h-2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Разделительная линия */}
+            <div className="h-px bg-gray-300"></div>
+
+            {/* Самовывоз со склада */}
+            <div className="flex gap-8">
+              <div className="w-80 flex-shrink-0">
+                <h3 className="mb-6" style={{
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Самовывоз со склада</h3>
+              </div>
+              <div className="flex-1">
+                <div className="space-y-4">
+                  {/* Main Warehouse */}
+                  <div>
+                    <h4 className="mb-2" style={{
+                      fontFamily: 'Benzin-Medium',
+                      fontSize: '16px'
+                    }}>Склад</h4>
+                    <div className="grid grid-cols-[1fr_auto_1fr] gap-4 items-start">
+                      <div className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                        <div>Московская область, Красногорский р-н, д.</div>
+                        <div>Гольево, улица Центральная ул., с44,</div>
+                      </div>
+                      <div className="flex items-center gap-2 ml-8">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <div>
+                          <div className="text-sm text-green-600 font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>В наличии</div>
+                          <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>пн - пт с 09:30-18:00</div>
+                        </div>
+                      </div>
+                      <div></div>
+                    </div>
+                  </div>
+                  
+                  {/* Separator */}
+                  <div className="h-px bg-gray-300"></div>
+                  
+                  {/* Additional Warehouse */}
+                  <div>
+                    <h4 className="mb-2" style={{
+                      fontFamily: 'Benzin-Medium',
+                      fontSize: '16px'
+                    }}>Дополнительный склад</h4>
+                    <div className="grid grid-cols-[1fr_auto_1fr] gap-4 items-start">
+                      <div className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                        <div>Красногвардейский пер 23 лит Е, территория</div>
+                        <div>завода "Ильич", заезд с Вязского переулка.</div>
+                      </div>
+                      <div className="flex items-center gap-2 ml-8">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <div>
+                          <div className="text-sm text-green-600 font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>В наличии</div>
+                          <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>пн - пт с 10:00-18:00</div>
+                        </div>
+                      </div>
+                      <div className="text-sm text-gray-600 ml-[60px]" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                        <div>Выдача оформленных заказов осуществляется при согласовании даты</div>
+                        <div>и времени приезда</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Разделительная линия */}
+            <div className="h-px bg-gray-300"></div>
+
+            {/* Доставка по России */}
+            <div className="flex gap-8 mb-8">
+              <div className="w-80 flex-shrink-0">
+                <h4 className="mb-4" style={{
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Доставка по России</h4>
+              </div>
+              <div className="flex-1">
+                <div className="grid grid-cols-2 gap-[10px]">
+                  <div className="bg-gray-100 p-6 rounded-lg">
+                    <p className="text-gray-700 mb-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      Определяется сроками доставки транспортной компании. Доставка товара на склад транспортной компании осуществляется в течение 1-2 дней с момента заказа, в режиме работы: Понедельник - Пятница
+                    </p>
+                    <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      Стоимость доставки определяется тарифами транспортных компаний, оплата за доставку осуществляется при получении товара
+                    </p>
+                  </div>
+
+                  {/* Transport Companies */}
+                  <div className="bg-gray-100 p-4 rounded-lg">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-center py-2 h-12">
+                          <span className="text-sm font-medium">СДЭК</span>
+                        </div>
+                        <div className="h-px bg-gray-300"></div>
+                        <div className="flex items-center justify-center py-2 h-12">
+                          <span className="text-sm font-medium">DPD</span>
+                        </div>
+                        <div className="h-px bg-gray-300"></div>
+                        <div className="flex items-center justify-center py-2 h-12">
+                          <span className="text-sm font-medium">Байкал Сервис</span>
+                        </div>
+                        <div className="h-px bg-gray-300"></div>
+                        <div className="flex items-center justify-center py-2 h-12">
+                          <span className="text-sm font-medium">ПЭК</span>
+                        </div>
+                        <div className="h-px bg-gray-300"></div>
+                        <div className="flex items-center justify-center py-2 h-12">
+                          <span className="text-sm font-medium">Транс</span>
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-center py-2 h-12">
+                          <span className="text-sm font-medium">MagicTrans</span>
+                        </div>
+                        <div className="h-px bg-gray-300"></div>
+                        <div className="flex items-center justify-center py-2 h-12">
+                          <span className="text-sm font-medium">KIT</span>
+                        </div>
+                        <div className="h-px bg-gray-300"></div>
+                        <div className="flex items-center justify-center py-2 h-12">
+                          <span className="text-sm font-medium">Деловые Линии</span>
+                        </div>
+                        <div className="h-px bg-gray-300"></div>
+                        <div className="flex items-center justify-center py-2 h-12">
+                          <span className="text-sm font-medium">Энергия</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Разделительная линия */}
+            <div className="h-px bg-gray-300"></div>
+
+            {/* Оплата для физ. лиц */}
+            <div className="flex gap-8">
+              <div className="w-80 flex-shrink-0">
+                <h4 className="mb-6" style={{
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Оплата для физ. лиц</h4>
+              </div>
+              <div className="flex-1">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px] mb-[10px]">
+                  {/* Оплата наличными */}
+                  <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
+                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата наличными</h5>
+                    <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      Возможна при оформлении всех способов доставки со всех субъектах РФ, где есть наши филиалы и терминалы наших партнеров, предоставляющих курьерские услуги.
+                    </p>
+                  </div>
+
+                  {/* Оплата картой */}
+                  <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
+                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата картой</h5>
+                    <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      Возможна при оформлении всех способов доставки, во время самовывоза, а также курьеру при получении.
+                    </p>
+                  </div>
+
+                  {/* Оплата онлайн */}
+                  <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
+                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата онлайн</h5>
+                    <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      Покупателю направляется защищенная ссылка для перехода в платежную систему. Производить оплату можно всеми видами карт, электронными деньгами, а также через терминалы без комиссии.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px]">
+                  {/* Наложенный платеж */}
+                  <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
+                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Наложенный платеж</h5>
+                    <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      При отправке в регионы. Рассчитывается по тарифам транспортных компаний и осуществляется с помощью партнеров перевозчиков «ПЭК» и «Деловые линии»
+                    </p>
+                  </div>
+
+                  {/* В рассрочку */}
+                  <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
+                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>В рассрочку</h5>
+                    <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      от банков партнеров ОТП, Халва, Тинькофф, Сбербанк
+                    </p>
+                  </div>
+
+                  {/* Безналичная оплата */}
+                  <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
+                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Безналичная оплата</h5>
+                    <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      Выставление счета
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Разделительная линия */}
+            <div className="h-px bg-gray-300"></div>
+
+            {/* Оплата для юр. лиц */}
+            <div className="flex gap-8">
+              <div className="w-80 flex-shrink-0">
+                <h4 className="mb-6" style={{
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Оплата для юр. лиц</h4>
+              </div>
+              <div className="flex-1">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px]">
+                  {/* Оплата онлайн */}
+                  <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
+                    <h5 className="text-lg font-medium mb-3" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата онлайн</h5>
+                    <p className="text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      Покупателю направляется защищенная ссылка для перехода в платежную систему. Производить оплату можно всеми видами карт, электронными деньгами, а также через терминалы без комиссии.
+                    </p>
+                  </div>
+
+                  {/* Безналичная оплата */}
+                  <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
+                    <h5 className="text-lg font-medium mb-3" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Безналичная оплата</h5>
+                    <p className="text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      Выставление счета
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
