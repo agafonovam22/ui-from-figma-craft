@@ -68,14 +68,14 @@ const ReviewDialog: React.FC<ReviewDialogProps> = ({ open, onOpenChange }) => {
     const currentRating = ratings[category as keyof typeof ratings];
     
     return (
-      <div className="flex items-center justify-between py-3">
-        <span className="text-base text-foreground font-['Benzin-Regular'] w-48">{label}</span>
+      <div className="flex items-center justify-between py-1">
+        <span className="text-sm text-foreground font-['Benzin-Regular'] w-40">{label}</span>
         <div className="flex gap-1">
           {[1, 2, 3, 4, 5].map((rating) => (
             <button
               key={rating}
               onClick={() => handleRatingClick(category, rating)}
-              className={`w-12 h-8 rounded-sm border transition-colors ${
+              className={`w-8 h-6 rounded-sm border transition-colors ${
                 rating <= currentRating 
                   ? 'bg-[#F53B49] border-[#F53B49]' 
                   : 'bg-white border-gray-300 hover:bg-gray-50'
@@ -134,7 +134,7 @@ const ReviewDialog: React.FC<ReviewDialogProps> = ({ open, onOpenChange }) => {
           />
 
           {/* Rating Categories in Gray Container */}
-          <div className="bg-muted rounded-lg p-4 space-y-1">
+          <div className="bg-muted rounded-lg p-2 space-y-0">
             {categories.map(({ key, label }) => (
               <RatingBar key={key} category={key} label={label} />
             ))}
