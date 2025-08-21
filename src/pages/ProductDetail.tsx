@@ -423,7 +423,7 @@ const ProductDetail: React.FC = () => {
           {/* Tab Content */}
           <div className="mt-6">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Подробное описание</h3>
+              <h3 className="text-xl font-semibold mb-4">Описание</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 {product.description || 'Здесь будет подробное описание товара с техническими характеристиками, особенностями использования и преимуществами.'}
               </p>
