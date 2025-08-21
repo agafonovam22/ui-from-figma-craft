@@ -44,8 +44,15 @@ export default function ProductGallery({ mainImage, images = [], galleryImages =
             className="w-full h-full max-w-full max-h-full object-contain"
             style={{ 
               imageRendering: 'auto',
-              filter: 'none'
+              filter: 'none',
+              transform: 'translateZ(0)',
+              backfaceVisibility: 'hidden',
+              WebkitBackfaceVisibility: 'hidden',
+              WebkitFontSmoothing: 'antialiased',
+              MozOsxFontSmoothing: 'grayscale'
             }}
+            loading="eager"
+            decoding="sync"
             onError={(e) => {
               e.currentTarget.src = '/placeholder.svg';
             }}
