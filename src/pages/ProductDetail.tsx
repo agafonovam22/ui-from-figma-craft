@@ -284,35 +284,36 @@ const ProductDetail: React.FC = () => {
               </div>
             </div>
 
-            {/* Price */}
-            <div className="space-y-2 py-4 border-b border-gray-300">
-              {product.price ? (
-                <div className="space-y-1">
-                  <div className="flex items-center space-x-2">
-                    {product.discount_percentage && (
-                      <Badge variant="destructive" className="text-xs font-medium">
-                        -{product.discount_percentage}%
-                      </Badge>
-                    )}
-                    {product.original_price && (
-                      <span className="text-sm text-muted-foreground line-through">
-                        {typeof product.original_price === 'number' ? `${product.original_price.toLocaleString()} ₽` : product.original_price}
-                      </span>
-                    )}
-                  </div>
-                  <div className="text-3xl font-bold text-foreground">
-                    {typeof product.price === 'number' ? `${product.price.toLocaleString()} ₽` : product.price}
-                  </div>
+            {/* Price and Add to Cart Section */}
+            <div className="py-4 border-b border-gray-300">
+              {/* Price, Quantity and Add to Cart in one row */}
+              <div className="flex items-center space-x-4">
+                {/* Price Section */}
+                <div className="flex-1">
+                  {product.price ? (
+                    <div className="space-y-1">
+                      <div className="flex items-center space-x-2">
+                        {product.discount_percentage && (
+                          <Badge variant="destructive" className="text-xs font-medium">
+                            -{product.discount_percentage}%
+                          </Badge>
+                        )}
+                        {product.original_price && (
+                          <span className="text-sm text-muted-foreground line-through">
+                            {typeof product.original_price === 'number' ? `${product.original_price.toLocaleString()} ₽` : product.original_price}
+                          </span>
+                        )}
+                      </div>
+                      <div className="text-3xl font-bold text-foreground">
+                        {typeof product.price === 'number' ? `${product.price.toLocaleString()} ₽` : product.price}
+                      </div>
+                    </div>
+                  ) : (
+                    <span className="text-2xl text-muted-foreground">Цена по запросу</span>
+                  )}
                 </div>
-              ) : (
-                <span className="text-2xl text-muted-foreground">Цена по запросу</span>
-              )}
-            </div>
-
-            {/* Add to Cart Section */}
-            <div className="space-y-4 py-4 border-b border-gray-300">
-              {/* Quantity and Add to Cart */}
-              <div className="flex items-center space-x-3">
+                
+                {/* Quantity Selector */}
                 <div className="flex items-center">
                   <Button
                     variant="outline"
@@ -332,19 +333,23 @@ const ProductDetail: React.FC = () => {
                     <Plus className="w-3 h-3" />
                   </Button>
                 </div>
-                {product.is_available ? (
-                  <Button 
-                    size="lg" 
-                    className="flex-1 bg-red-600 hover:bg-red-700 text-white h-10 text-sm font-medium rounded-lg"
-                    onClick={handleBuyClick}
-                  >
-                    Добавить в корзину
-                  </Button>
-                ) : (
-                  <Button size="lg" variant="outline" className="flex-1 h-10">
-                    Запросить цену
-                  </Button>
-                )}
+                
+                {/* Add to Cart Button */}
+                <div className="flex-1">
+                  {product.is_available ? (
+                    <Button 
+                      size="lg" 
+                      className="w-full bg-red-600 hover:bg-red-700 text-white h-12 text-sm font-medium rounded-lg"
+                      onClick={handleBuyClick}
+                    >
+                      Добавить в корзину
+                    </Button>
+                  ) : (
+                    <Button size="lg" variant="outline" className="w-full h-12">
+                      Запросить цену
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
 
