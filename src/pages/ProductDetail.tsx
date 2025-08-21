@@ -866,11 +866,18 @@ const ProductDetail: React.FC = () => {
   console.log('window.location.pathname:', window.location.pathname);
 
   useEffect(() => {
+    // Сбрасываем все состояния при смене ID товара
+    setProduct(null);
+    setError(null);
+    setQuantity(1);
+    setSelectedColor('');
+    setSelectedSize('core');
+    setActiveTab('description');
+    setSelectedInstallmentPlan(null);
+    
     const fetchProduct = async () => {
       try {
         setLoading(true);
-        setError(null);
-        setProduct(null); // Очищаем предыдущие данные при смене товара
         
         const response = await fetch('https://cp44652.tw1.ru/catalog.php');
         
