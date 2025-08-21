@@ -25,6 +25,29 @@ const fetchProducts = async (): Promise<Product[]> => {
     throw new Error('Failed to fetch products');
   }
   const data: ProductsResponse = await response.json();
+  
+  // Логируем все типы оборудования для отладки
+  if (data.products) {
+    const equipmentTypes = new Set();
+    data.products.forEach(product => {
+      if (product.characteristics['Тип оборудования']) {
+        equipmentTypes.add(product.characteristics['Тип оборудования']);
+      }
+    });
+    console.log('Доступные типы оборудования:', Array.from(equipmentTypes).sort());
+    
+    // Группируем товары по типам для анализа
+    const groupedByType: Record<string, string[]> = {};
+    data.products.forEach(product => {
+      const type = product.characteristics['Тип оборудования'];
+      if (type) {
+        if (!groupedByType[type]) groupedByType[type] = [];
+        groupedByType[type].push(product.name);
+      }
+    });
+    console.log('Товары по типам:', groupedByType);
+  }
+  
   return data.products || [];
 };
 
