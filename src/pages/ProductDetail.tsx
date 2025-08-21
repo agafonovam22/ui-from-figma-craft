@@ -349,7 +349,7 @@ const ProductDetail: React.FC = () => {
             </div>
 
             {/* Delivery and Services Info */}
-            <div className="space-y-2 text-xs text-muted-foreground">
+            <div className="space-y-2 text-xs text-muted-foreground font-manrope">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <div className="w-4 h-4 bg-gray-400 rounded flex items-center justify-center">
