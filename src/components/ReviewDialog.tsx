@@ -89,7 +89,7 @@ const ReviewDialog: React.FC<ReviewDialogProps> = ({ open, onOpenChange }) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-[1000px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-['Benzin-Semibold'] text-foreground mb-8">
             Написать отзыв
