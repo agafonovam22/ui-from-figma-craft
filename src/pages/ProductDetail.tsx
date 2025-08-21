@@ -393,279 +393,45 @@ const ProductDetail: React.FC = () => {
 
         {/* Product Tabs */}
         <div className="mt-12">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-foreground">Информация о товаре</h2>
-            <Button variant="outline" size="lg">
-              <Download className="w-4 h-4 mr-2" />
+          {/* Tabs Header with Download Button */}
+          <div className="flex justify-between items-center border-b border-gray-200 mb-6">
+            <div className="flex space-x-8">
+              <button className="text-red-600 border-b-2 border-red-600 pb-2 font-medium">
+                Описание
+              </button>
+              <button className="text-gray-500 hover:text-gray-700 pb-2">
+                Характеристики
+              </button>
+              <button className="text-gray-500 hover:text-gray-700 pb-2">
+                Отзывы (10)
+              </button>
+              <button className="text-gray-500 hover:text-gray-700 pb-2">
+                Доставка и оплата
+              </button>
+              <button className="text-gray-500 hover:text-gray-700 pb-2">
+                Рассрочка
+              </button>
+              <button className="text-gray-500 hover:text-gray-700 pb-2">
+                Услуги
+              </button>
+            </div>
+            <Button variant="outline" size="lg" className="border-red-600 text-red-600 hover:bg-red-50">
               Скачать инструкцию
             </Button>
           </div>
 
-          <Tabs defaultValue="description" className="w-full">
-            <TabsList className="grid w-full grid-cols-6">
-              <TabsTrigger value="description">Описание</TabsTrigger>
-              <TabsTrigger value="specifications">Характеристики</TabsTrigger>
-              <TabsTrigger value="reviews">Отзывы (10)</TabsTrigger>
-              <TabsTrigger value="delivery">Доставка и оплата</TabsTrigger>
-              <TabsTrigger value="installment">Рассрочка</TabsTrigger>
-              <TabsTrigger value="services">Услуги</TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="description" className="mt-6">
-              <div className="prose max-w-none">
-                <h3 className="text-xl font-semibold mb-4">Подробное описание</h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  {product.description || 'Здесь будет подробное описание товара с техническими характеристиками, особенностями использования и преимуществами.'}
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Дополнительная информация о товаре, его применении и специфических особенностях.
-                </p>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="specifications" className="mt-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-6">Характеристики</h3>
-                
-                {product.characteristics ? (
-                  <div className="space-y-8">
-                    {/* Основные характеристики */}
-                    <div>
-                      <h4 className="text-lg font-semibold mb-4">Основные характеристики</h4>
-                      <div className="grid md:grid-cols-2 gap-x-8 gap-y-1">
-                        {Object.entries(product.characteristics).map(([key, value]) => {
-                          // Фильтруем служебные поля и скрытые характеристики
-                          if (key.includes('скрытая характеристика') || 
-                              key.includes('Картинки галереи') ||
-                              key.includes('Реквизиты') ||
-                              key.includes('Базовая единица') ||
-                              key.includes('Ставки налогов') ||
-                              key.includes('Исключить из публикации') ||
-                              key.includes('Использование') ||
-                              key.includes('Количество мест')) {
-                            return null;
-                          }
-                          
-                          // Переводим названия полей на понятный язык
-                          const fieldNames: { [key: string]: string } = {
-                            'Артикул': 'Артикул',
-                            'Бренд (id)': 'Бренд',
-                            'Наименование товара на сайте': 'Наименование',
-                            'Тип оборудования': 'Тип оборудования',
-                            'Тип назначения': 'Назначение',
-                            'Страна бренда': 'Страна бренда',
-                            'Страна изготовления': 'Страна производства',
-                            'Вес Брутто, кг': 'Вес, кг',
-                            'Гарантия на домашнее использование': 'Гарантия',
-                            'Акция': 'Акция'
-                          };
-                          
-                          const displayName = fieldNames[key] || key;
-                          
-                          return (
-                            <div key={key} className="flex justify-between py-2 border-b border-border">
-                              <span className="font-medium text-muted-foreground">{displayName}:</span>
-                              <span className="text-foreground text-right">{String(value)}</span>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-
-                    {/* Габариты в рабочем состоянии */}
-                    {(product.characteristics['Габариты упаковки Длина, см'] || 
-                      product.characteristics['Габариты упаковки Ширина, см'] || 
-                      product.characteristics['Габариты упаковки Высота, см']) && (
-                      <div>
-                        <h4 className="text-lg font-semibold mb-4">Габариты в рабочем состоянии</h4>
-                        <div className="grid md:grid-cols-2 gap-x-8 gap-y-1">
-                          {product.characteristics['Габариты упаковки Длина, см'] && (
-                            <div className="flex justify-between py-2 border-b border-border">
-                              <span className="font-medium text-muted-foreground">Размер в рабочем состоянии Длина, см:</span>
-                              <span className="text-foreground">{product.characteristics['Габариты упаковки Длина, см']}</span>
-                            </div>
-                          )}
-                          {product.characteristics['Габариты упаковки Ширина, см'] && (
-                            <div className="flex justify-between py-2 border-b border-border">
-                              <span className="font-medium text-muted-foreground">Размер в рабочем состоянии Ширина, см:</span>
-                              <span className="text-foreground">{product.characteristics['Габариты упаковки Ширина, см']}</span>
-                            </div>
-                          )}
-                          {product.characteristics['Габариты упаковки Высота, см'] && (
-                            <div className="flex justify-between py-2 border-b border-border">
-                              <span className="font-medium text-muted-foreground">Размер в рабочем состоянии Высота, см:</span>
-                              <span className="text-foreground">{product.characteristics['Габариты упаковки Высота, см']}</span>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Вес */}
-                    {product.characteristics['Вес Брутто, кг'] && (
-                      <div>
-                        <h4 className="text-lg font-semibold mb-4">Вес</h4>
-                        <div className="grid md:grid-cols-2 gap-x-8 gap-y-1">
-                          <div className="flex justify-between py-2 border-b border-border">
-                            <span className="font-medium text-muted-foreground">Вес Брутто, кг:</span>
-                            <span className="text-foreground">{product.characteristics['Вес Брутто, кг']}</span>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Гарантия и Сертификация */}
-                    {(product.characteristics['Гарантия на домашнее использование'] || 
-                      product.characteristics['Страна бренда'] || 
-                      product.characteristics['Страна изготовления']) && (
-                      <div>
-                        <h4 className="text-lg font-semibold mb-4">Гарантия и Сертификация</h4>
-                        <div className="grid md:grid-cols-2 gap-x-8 gap-y-1">
-                          {product.characteristics['Гарантия на домашнее использование'] && (
-                            <div className="flex justify-between py-2 border-b border-border">
-                              <span className="font-medium text-muted-foreground">Гарантия на домашнее использование:</span>
-                              <span className="text-foreground">{product.characteristics['Гарантия на домашнее использование']}</span>
-                            </div>
-                          )}
-                          {product.characteristics['Страна бренда'] && (
-                            <div className="flex justify-between py-2 border-b border-border">
-                              <span className="font-medium text-muted-foreground">Страна бренда:</span>
-                              <span className="text-foreground">{product.characteristics['Страна бренда']}</span>
-                            </div>
-                          )}
-                          {product.characteristics['Страна изготовления'] && (
-                            <div className="flex justify-between py-2 border-b border-border">
-                              <span className="font-medium text-muted-foreground">Страна изготовления:</span>
-                              <span className="text-foreground">{product.characteristics['Страна изготовления']}</span>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <div className="text-center py-8">
-                    <p className="text-muted-foreground">Характеристики товара не найдены</p>
-                  </div>
-                )}
-              </div>
-            </TabsContent>
-
-            <TabsContent value="reviews" className="mt-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Отзывы покупателей</h3>
-                <div className="space-y-4">
-                  <div className="p-4 border border-border rounded-lg">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <div className="flex text-yellow-400">★★★★★</div>
-                      <span className="font-medium">Иван П.</span>
-                      <span className="text-sm text-muted-foreground">15.01.2024</span>
-                    </div>
-                    <p className="text-muted-foreground">Отличный товар, полностью соответствует описанию. Рекомендую!</p>
-                  </div>
-                  <div className="p-4 border border-border rounded-lg">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <div className="flex text-yellow-400">★★★★☆</div>
-                      <span className="font-medium">Мария С.</span>
-                      <span className="text-sm text-muted-foreground">12.01.2024</span>
-                    </div>
-                    <p className="text-muted-foreground">Хорошее качество, быстрая доставка. Есть небольшие замечания по упаковке.</p>
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="delivery" className="mt-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Доставка и оплата</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold mb-3">Способы доставки:</h4>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li>• Курьерская доставка по Москве - 500 ₽</li>
-                      <li>• Доставка по России (СДЭК) - от 300 ₽</li>
-                      <li>• Самовывоз из магазина - бесплатно</li>
-                      <li>• Почта России - от 200 ₽</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-3">Способы оплаты:</h4>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li>• Банковской картой онлайн</li>
-                      <li>• Наличными при получении</li>
-                      <li>• Банковский перевод</li>
-                      <li>• Электронные кошельки</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="installment" className="mt-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Рассрочка и кредит</h3>
-                <div className="space-y-4">
-                  <div className="p-4 border border-border rounded-lg">
-                    <h4 className="font-semibold mb-2">Рассрочка 0% до 12 месяцев</h4>
-                    <p className="text-muted-foreground mb-3">
-                      Оформите покупку в рассрочку без переплат и процентов на срок до 12 месяцев.
-                    </p>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>• Без первоначального взноса</li>
-                      <li>• Одобрение за 5 минут</li>
-                      <li>• Минимум документов</li>
-                    </ul>
-                  </div>
-                  <div className="p-4 border border-border rounded-lg">
-                    <h4 className="font-semibold mb-2">Кредит от банков-партнеров</h4>
-                    <p className="text-muted-foreground">
-                      Получите кредит на выгодных условиях от наших банков-партнеров.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="services" className="mt-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Дополнительные услуги</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    <div className="p-4 border border-border rounded-lg">
-                      <h4 className="font-semibold mb-2">Установка и настройка</h4>
-                      <p className="text-muted-foreground text-sm mb-2">
-                        Профессиональная установка и настройка оборудования нашими специалистами.
-                      </p>
-                      <span className="text-primary font-semibold">от 2 000 ₽</span>
-                    </div>
-                    <div className="p-4 border border-border rounded-lg">
-                      <h4 className="font-semibold mb-2">Расширенная гарантия</h4>
-                      <p className="text-muted-foreground text-sm mb-2">
-                        Увеличьте срок гарантии до 3 лет с полным сервисным обслуживанием.
-                      </p>
-                      <span className="text-primary font-semibold">от 1 500 ₽</span>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="p-4 border border-border rounded-lg">
-                      <h4 className="font-semibold mb-2">Техническая поддержка</h4>
-                      <p className="text-muted-foreground text-sm mb-2">
-                        Круглосуточная техническая поддержка и консультации по использованию.
-                      </p>
-                      <span className="text-primary font-semibold">Бесплатно</span>
-                    </div>
-                    <div className="p-4 border border-border rounded-lg">
-                      <h4 className="font-semibold mb-2">Обучение персонала</h4>
-                      <p className="text-muted-foreground text-sm mb-2">
-                        Обучение ваших сотрудников работе с оборудованием.
-                      </p>
-                      <span className="text-primary font-semibold">от 5 000 ₽</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-          </Tabs>
+          {/* Tab Content */}
+          <div className="mt-6">
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Подробное описание</h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                {product.description || 'Здесь будет подробное описание товара с техническими характеристиками, особенностями использования и преимуществами.'}
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Дополнительная информация о товаре, его применении и специфических особенностях.
+              </p>
+            </div>
+          </div>
         </div>
       </main>
       <Footer />
