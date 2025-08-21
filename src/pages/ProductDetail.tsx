@@ -323,7 +323,7 @@ const ProductDetail: React.FC = () => {
                       { name: 'Легкость в сборке', rating: 8 }
                     ].map((criterion) => (
                       <div key={criterion.name} className="flex items-center justify-between">
-                        <span className="text-sm text-gray-600">{criterion.name}</span>
+                        <span className="text-sm text-gray-600 font-benzin">{criterion.name}</span>
                         <div className="flex space-x-1">
                           {Array.from({ length: 10 }).map((_, index) => (
                             <div
