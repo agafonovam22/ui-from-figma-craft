@@ -424,12 +424,31 @@ const ProductDetail: React.FC = () => {
           <div className="mt-6">
             <div>
               <h3 className="text-xl font-semibold mb-4">Описание</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                {product.description || 'Здесь будет подробное описание товара с техническими характеристиками, особенностями использования и преимуществами.'}
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Дополнительная информация о товаре, его применении и специфических особенностях.
-              </p>
+              <div className="font-manrope text-muted-foreground leading-relaxed space-y-4">
+                <p>
+                  {product.description || `${product.name} - это высококачественный фитнес-набор от бренда CENTR, специально разработанный для домашних тренировок и функционального тренинга.`}
+                </p>
+                {product.characteristics && (
+                  <div>
+                    <p>
+                      Основные преимущества:
+                    </p>
+                    <ul className="list-disc list-inside space-y-1 ml-4">
+                      <li>Профессиональное оборудование для функционального тренинга</li>
+                      <li>Подходит для домашнего использования</li>
+                      <li>Компактный и эргономичный дизайн</li>
+                      <li>Высокое качество материалов и сборки</li>
+                      {product.characteristics['Гарантия на домашнее использование'] && (
+                        <li>Гарантия: {product.characteristics['Гарантия на домашнее использование']}</li>
+                      )}
+                    </ul>
+                  </div>
+                )}
+                <p>
+                  Данный фитнес-набор идеально подходит для создания домашнего спортзала и проведения эффективных тренировок. 
+                  Благодаря продуманной конструкции и качественным материалам, он обеспечивает безопасность и комфорт во время занятий.
+                </p>
+              </div>
             </div>
           </div>
         </div>
