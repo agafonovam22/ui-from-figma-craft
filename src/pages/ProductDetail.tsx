@@ -967,9 +967,8 @@ const ProductDetail: React.FC = () => {
           <div>
             <ProductGallery
               mainImage={product.image_url || '/placeholder.svg'}
-              images={product.gallery_images || []}
+              galleryImages={product.gallery_images || []}
               productName={product.name}
-              characteristics={product.characteristics}
               badges={[
                 ...(product.badge ? [{ text: product.badge, variant: 'destructive' as const }] : []),
                 ...(product.characteristics?.['Акция'] ? [{ text: 'АКЦИЯ', variant: 'destructive' as const }] : []),

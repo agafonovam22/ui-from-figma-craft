@@ -8,6 +8,7 @@ interface BitrixProduct {
   original_price?: number;
   discount_percentage?: number;
   image_url?: string;
+  gallery_images?: string[];
   category_id?: string;
   is_available: boolean;
   in_stock: boolean;
@@ -16,6 +17,7 @@ interface BitrixProduct {
   badge?: string;
   badge_color?: string;
   has_comparison: boolean;
+  characteristics?: { [key: string]: any };
 }
 
 interface BitrixCategory {

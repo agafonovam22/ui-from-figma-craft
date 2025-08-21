@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 interface ProductGalleryProps {
   mainImage: string;
   images?: string[];
+  galleryImages?: string[];
   productName: string;
   characteristics?: any;
   badges?: Array<{
@@ -14,30 +15,8 @@ interface ProductGalleryProps {
   }>;
 }
 
-export default function ProductGallery({ mainImage, images = [], productName, characteristics, badges = [] }: ProductGalleryProps) {
+export default function ProductGallery({ mainImage, images = [], galleryImages = [], productName, characteristics, badges = [] }: ProductGalleryProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
-  // Получаем дополнительные изображения из галереи
-  const galleryImages = characteristics?.['Картинки галереи'] 
-    ? characteristics['Картинки галереи'].split(',').map((img: string) => {
-        const trimmedImg = img.trim();
-        // Если это ID, пробуем построить URL
-        if (trimmedImg && /^\d+$/.test(trimmedImg)) {
-          // Пробуем разные варианты URL структуры Битрикс
-          const possibleUrls = [
-            `https://cp44652.tw1.ru/upload/iblock/gallery/${trimmedImg}.png`,
-            `https://cp44652.tw1.ru/upload/iblock/gallery/${trimmedImg}.jpg`,
-            `https://cp44652.tw1.ru/upload/gallery/${trimmedImg}.png`,
-            `https://cp44652.tw1.ru/upload/gallery/${trimmedImg}.jpg`,
-            `https://cp44652.tw1.ru/files/${trimmedImg}.png`,
-            `https://cp44652.tw1.ru/files/${trimmedImg}.jpg`
-          ];
-          // Возвращаем первый URL для тестирования
-          return possibleUrls[0];
-        }
-        return trimmedImg;
-      }).filter((img: string) => img)
-    : [];
   
   // Создаем массив всех изображений, начиная с главного
   const allImages = [mainImage, ...images.filter(img => img !== mainImage), ...galleryImages].filter(Boolean);
