@@ -180,8 +180,8 @@ const ProductDetail: React.FC = () => {
             {/* Product Title */}
             <div className="mb-4">
               <h1 className="text-3xl mb-2">
-                <span className="font-normal">Батут </span>
-                <span className="font-bold">{product.name.replace(/^батут\s*/i, '')}</span>
+                <span className="font-normal">Фитнес набор </span>
+                <span className="font-bold">Centr Core Kit (CAK1)</span>
               </h1>
             </div>
 
@@ -222,41 +222,37 @@ const ProductDetail: React.FC = () => {
                 <div className="grid gap-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Тип продукции:</span>
-                    <span className="font-medium">Беговые дорожки для дома</span>
+                    <span className="font-medium">Фитнес наборы</span>
                   </div>
                   {product.characteristics['Бренд (id)'] && (
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">Бренд:</span>
-                      <span className="font-medium">{product.characteristics['Бренд (id)']}</span>
+                      <span className="font-medium">CENTR</span>
+                    </div>
+                  )}
+                  {product.characteristics['Артикул'] && (
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Артикул:</span>
+                      <span className="font-medium">{product.characteristics['Артикул']}</span>
                     </div>
                   )}
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Назначение:</span>
-                    <span className="font-medium">Домашние</span>
+                    <span className="font-medium">Домашние тренировки</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Тип двигателя:</span>
-                    <span className="font-medium">Постоянного тока DC</span>
+                    <span className="text-muted-foreground">Тип оборудования:</span>
+                    <span className="font-medium">Функциональный тренинг</span>
                   </div>
+                  {product.characteristics['Базовая единица'] && (
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Единица измерения:</span>
+                      <span className="font-medium">{product.characteristics['Базовая единица']}</span>
+                    </div>
+                  )}
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Мощность двигателя, л.с.:</span>
-                    <span className="font-medium">1.5</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Тип беговой дорожки:</span>
-                    <span className="font-medium">Электрические</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Минимальная скорость, км/ч:</span>
-                    <span className="font-medium">0.8</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Максимальная скорость, км/ч:</span>
-                    <span className="font-medium">10</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Угол наклона:</span>
-                    <span className="font-medium">Механический</span>
+                    <span className="text-muted-foreground">Комплектация:</span>
+                    <span className="font-medium">Полный набор для тренировок</span>
                   </div>
                 </div>
               )}
@@ -271,30 +267,30 @@ const ProductDetail: React.FC = () => {
               <div>
                 <h4 className="font-medium mb-2">Цвет</h4>
                 <div className="flex space-x-2">
-                  <button className="w-8 h-8 rounded-full bg-blue-600 border-2 border-gray-300 focus:border-blue-500 relative">
-                    <span className="sr-only">Красный/синий</span>
+                  <button className="w-8 h-8 rounded-full bg-gray-800 border-2 border-gray-300 focus:border-gray-500 relative">
+                    <span className="sr-only">Черный</span>
                   </button>
-                  <button className="w-8 h-8 rounded-full bg-green-600 border-2 border-gray-300 focus:border-green-500">
-                    <span className="sr-only">Зеленый/желтый</span>
+                  <button className="w-8 h-8 rounded-full bg-blue-600 border-2 border-gray-300 focus:border-blue-500">
+                    <span className="sr-only">Синий</span>
                   </button>
                 </div>
               </div>
 
-              {/* Size Selection */}
+              {/* Kit Selection */}
               <div>
-                <h4 className="font-medium mb-2">Диаметр, ft</h4>
+                <h4 className="font-medium mb-2">Комплектация</h4>
                 <div className="flex flex-wrap gap-2">
-                  {['6 (-15 000₽)', '10 (-10 000₽)', '12 (-5 000₽)', '14', '16 (+10 000₽)'].map((size) => (
+                  {['Core Kit', 'Pro Kit (+2 000₽)', 'Ultimate Kit (+5 000₽)'].map((kit) => (
                     <button
-                      key={size}
+                      key={kit}
                       className={`px-3 py-2 text-sm border rounded ${
-                        size === '14' 
+                        kit === 'Core Kit' 
                           ? 'bg-gray-900 text-white border-gray-900' 
                           : 'border-gray-300 hover:border-gray-400'
                       }`}
-                      onClick={() => setSelectedSize(size)}
+                      onClick={() => setSelectedSize(kit)}
                     >
-                      {size}
+                      {kit}
                     </button>
                   ))}
                 </div>
