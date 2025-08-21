@@ -89,6 +89,13 @@ export const useProducts = (categoryFilter?: string) => {
     select: (data: Product[]) => {
       if (!categoryFilter) return data;
       
+      // Фильтрация по типу назначения (Для дома / Для фитнес-клуба)
+      if (categoryFilter === 'Для дома' || categoryFilter === 'Для фитнес-клуба') {
+        return data.filter(product => 
+          product.characteristics['Тип назначения'] === categoryFilter
+        );
+      }
+      
       const equipmentTypes = categoryMapping[categoryFilter];
       
       // Если есть точные типы оборудования, используем их

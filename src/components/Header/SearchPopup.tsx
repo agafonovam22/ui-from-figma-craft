@@ -96,19 +96,26 @@ const SearchPopup: React.FC<SearchPopupProps> = ({ children, isOpen, onOpenChang
             <div>
               <h3 className="text-xl font-bold text-[#262631] mb-4">Категории</h3>
               <div className="space-y-3">
-                {categories.map((category, index) => (
-                  <button
-                    key={index}
-                    className="flex items-center justify-between w-full text-left text-sm text-gray-600 hover:text-[#F53B49] transition-colors"
-                  >
-                    <span>{category.name}</span>
-                    {category.hasArrow && (
-                      <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L5 5L1 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    )}
-                  </button>
-                ))}
+                 {categories.map((category, index) => (
+                   <button
+                     key={index}
+                     onClick={() => handleCategoryClick(category.name)}
+                     className={`flex items-center justify-between w-full text-left text-sm transition-colors ${
+                       selectedCategory === category.name 
+                         ? 'text-[#F53B49] font-semibold' 
+                         : 'text-gray-600 hover:text-[#F53B49]'
+                     }`}
+                   >
+                     <span>{category.name}</span>
+                     {selectedCategory === category.name ? (
+                       <span className="text-xs">✓</span>
+                     ) : category.hasArrow && (
+                       <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M1 1L5 5L1 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                       </svg>
+                     )}
+                   </button>
+                 ))}
               </div>
             </div>
           </div>
