@@ -94,10 +94,10 @@ const TopMenu: React.FC = () => {
 
         <div className="flex items-end gap-2 max-sm:hidden">
           <a 
-            href={selectedCity === 'Москва' ? "tel:+78007751217" : "tel:88007751217"} 
+            href={selectedCity === 'Москва' ? "tel:+74996775632" : "tel:88003332595"} 
             className="text-[10px] font-normal leading-[10px] gap-2 px-3 py-2.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0"
           >
-            {selectedCity === 'Москва' ? '+7 (800) 775-12-17' : '8 (800) 775-12-17'}
+            {selectedCity === 'Москва' ? '+7 499 677 56 32' : '8 800 333 25 95'}
           </a>
           <CallRequestDialog>
             <ActionButton variant="danger">
