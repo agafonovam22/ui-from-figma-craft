@@ -285,22 +285,24 @@ const ProductDetail: React.FC = () => {
             </div>
 
             {/* Price */}
-            <div className="space-y-2">
+            <div className="space-y-2 py-6 border-b border-gray-300">
               {product.price ? (
-                <div className="flex items-baseline space-x-3">
-                  {product.discount_percentage && (
-                    <Badge variant="destructive" className="text-sm">
-                      -{product.discount_percentage}%
-                    </Badge>
-                  )}
-                  {product.original_price && (
-                    <span className="text-lg text-muted-foreground line-through">
-                      {typeof product.original_price === 'number' ? `${product.original_price.toLocaleString()} ₽` : product.original_price}
-                    </span>
-                  )}
-                  <span className="text-3xl font-bold text-foreground">
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-3">
+                    {product.discount_percentage && (
+                      <Badge variant="destructive" className="text-sm font-medium">
+                        -{product.discount_percentage}%
+                      </Badge>
+                    )}
+                    {product.original_price && (
+                      <span className="text-lg text-muted-foreground line-through">
+                        {typeof product.original_price === 'number' ? `${product.original_price.toLocaleString()} ₽` : product.original_price}
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-4xl font-bold text-foreground">
                     {typeof product.price === 'number' ? `${product.price.toLocaleString()} ₽` : product.price}
-                  </span>
+                  </div>
                 </div>
               ) : (
                 <span className="text-2xl text-muted-foreground">Цена по запросу</span>
@@ -308,24 +310,24 @@ const ProductDetail: React.FC = () => {
             </div>
 
             {/* Add to Cart Section */}
-            <div className="space-y-4">
-              {/* Quantity Selector */}
+            <div className="space-y-6 py-6 border-b border-gray-300">
+              {/* Quantity and Add to Cart */}
               <div className="flex items-center space-x-4">
-                <div className="flex items-center border border-border rounded">
+                <div className="flex items-center">
                   <Button
-                    variant="ghost"
+                    variant="outline"
                     size="sm"
                     onClick={decrementQuantity}
-                    className="h-10 px-3"
+                    className="h-12 w-12 rounded-full p-0 border-2"
                   >
                     <Minus className="w-4 h-4" />
                   </Button>
-                  <span className="w-12 text-center font-medium">{quantity}</span>
+                  <span className="w-16 text-center text-xl font-medium">{quantity}</span>
                   <Button
-                    variant="ghost"
+                    variant="outline"
                     size="sm"
                     onClick={incrementQuantity}
-                    className="h-10 px-3"
+                    className="h-12 w-12 rounded-full p-0 border-2"
                   >
                     <Plus className="w-4 h-4" />
                   </Button>
@@ -333,7 +335,7 @@ const ProductDetail: React.FC = () => {
                 {product.is_available ? (
                   <Button 
                     size="lg" 
-                    className="flex-1 bg-red-600 hover:bg-red-700 text-white h-12"
+                    className="flex-1 bg-red-600 hover:bg-red-700 text-white h-12 text-lg font-medium rounded-lg"
                     onClick={handleBuyClick}
                   >
                     Добавить в корзину
@@ -344,41 +346,61 @@ const ProductDetail: React.FC = () => {
                   </Button>
                 )}
               </div>
+            </div>
 
-              {/* Delivery and Services Info */}
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-blue-100 rounded flex items-center justify-center">
-                    <div className="w-2 h-2 bg-blue-600 rounded"></div>
-                  </div>
-                  <span>Доставка</span>
-                  <span className="ml-auto font-medium text-foreground">300 руб. (в пределах МКАД/КАД)</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-blue-100 rounded flex items-center justify-center">
-                    <div className="w-2 h-2 bg-blue-600 rounded"></div>
-                  </div>
-                  <span>Сборка</span>
-                  <span className="ml-auto">Рассчитывается индивидуально</span>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <div className="w-4 h-4 bg-blue-100 rounded flex items-center justify-center mt-0.5">
-                    <div className="w-2 h-2 bg-blue-600 rounded"></div>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex justify-between">
-                      <span>Оплата для физ.лиц</span>
-                      <span>Наличными, картой, безналичная, онлайн, в рассрочку</span>
+            {/* Delivery and Services Info */}
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="w-6 h-6 bg-gray-400 rounded flex items-center justify-center">
+                    <div className="w-3 h-3">
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3">
+                        <path d="M3 17h2l.4-2H18l2-4H7.4l-.4-2H21V7H5.4L4 3H1v2h2l4 12z"/>
+                      </svg>
                     </div>
                   </div>
+                  <span>Доставка</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-blue-100 rounded flex items-center justify-center">
-                    <div className="w-2 h-2 bg-blue-600 rounded"></div>
+                <span className="font-medium text-foreground">300 руб. (в пределах МКАД/КАД)</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="w-6 h-6 bg-gray-400 rounded flex items-center justify-center">
+                    <div className="w-3 h-3">
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <span>Сборка</span>
+                </div>
+                <span>Рассчитывается индивидуально</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="w-6 h-6 bg-gray-400 rounded flex items-center justify-center">
+                    <div className="w-3 h-3">
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3">
+                        <path d="M2 17h20v2H2zm1.15-4.05L4 11l.85 1.95.66-.3-.85-1.95.85-1.95-.66-.3L4 9.4 3.15 7.45l-.66.3.85 1.95-.85 1.95.66.3zM12 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <span>Оплата для физ.лиц</span>
+                </div>
+                <span>Наличными, картой, безналичная, онлайн, в рассрочку</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="w-6 h-6 bg-gray-400 rounded flex items-center justify-center">
+                    <div className="w-3 h-3">
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      </svg>
+                    </div>
                   </div>
                   <span>Оплата для юр.лиц</span>
-                  <span className="ml-auto">Безналичная оплата, оплата онлайн</span>
                 </div>
+                <span>Безналичная оплата, оплата онлайн</span>
               </div>
             </div>
           </div>
