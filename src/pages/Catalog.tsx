@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,7 +7,7 @@ import CatalogFilters from '@/components/Catalog/CatalogFilters';
 import CatalogBanner from '@/components/Catalog/CatalogBanner';
 import CatalogControls from '@/components/Catalog/CatalogControls';
 import CatalogGrid from '@/components/Catalog/CatalogGrid';
-import { useProductSearch, Product } from '@/hooks/useProducts';
+import { useProductSearch } from '@/hooks/useProducts';
 import { usePagination } from '@/hooks/usePagination';
 import {
   Breadcrumb,
@@ -20,97 +20,80 @@ import {
 
 const Catalog: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [selectedFilters, setSelectedFilters] = useState({
-    price: '',
-    brand: '',
-    type: '',
-    power: '',
-    features: []
-  });
-
   const [sortBy, setSortBy] = useState('popular');
-  const [currentPage, setCurrentPage] = useState(1);
+  const [pageNumber, setPageNumber] = useState(1);
   
   // Получаем поисковый запрос из URL
-  const searchQuery = searchParams.get('q') || '';
+  const queryParam = searchParams.get('q') || '';
   
-  // Используем новый хук для поиска
-  const { data: products = [], isLoading, error } = useProductSearch(searchQuery);
+  // Используем хук для поиска товаров
+  const { data: allProducts = [], isLoading, error } = useProductSearch(queryParam);
 
-  // Функция поиска для внешних вызовов (с изменением URL)
-  const handleSearch = (query: string) => {
-    const newSearchParams = new URLSearchParams(searchParams);
-    if (query.trim()) {
-      newSearchParams.set('q', query);
+  // Функция поиска с обновлением URL
+  const handleSearchQuery = (searchTerm: string) => {
+    const newParams = new URLSearchParams(searchParams);
+    if (searchTerm.trim()) {
+      newParams.set('q', searchTerm);
     } else {
-      newSearchParams.delete('q');
+      newParams.delete('q');
     }
-    setSearchParams(newSearchParams);
-    setCurrentPage(1); // Сбрасываем на первую страницу при поиске
+    setSearchParams(newParams);
+    setPageNumber(1); // Сброс на первую страницу
   };
 
   // Сортировка товаров
-  const sortedProducts = useMemo(() => {
-    const sorted = [...products];
+  const sortedItems = useMemo(() => {
+    const items = [...allProducts];
     
     switch (sortBy) {
-      case 'price-asc':
-        return sorted.sort((a, b) => a.price - b.price);
-      case 'price-desc':
-        return sorted.sort((a, b) => b.price - a.price);
+      case 'price-low':
+        return items.sort((a, b) => a.price - b.price);
+      case 'price-high':
+        return items.sort((a, b) => b.price - a.price);
       case 'name':
-        return sorted.sort((a, b) => a.name.localeCompare(b.name));
+        return items.sort((a, b) => a.name.localeCompare(b.name));
       case 'rating':
-        return sorted.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+        return items.sort((a, b) => (b.rating || 0) - (a.rating || 0));
       default:
-        return sorted;
+        return items;
     }
-  }, [products, sortBy]);
+  }, [allProducts, sortBy]);
 
-  // Преобразование Product в формат для CatalogGrid
-  const displayProducts = useMemo(() => {
-    return sortedProducts.map(product => ({
-      id: product.id,
-      name: product.name,
-      price: `${product.price}₽`,
-      originalPrice: product.original_price ? `${product.original_price}₽` : null,
-      discount: product.discount_percentage > 0 ? `${product.discount_percentage}%` : null,
-      rating: product.rating || 4.5,
-      reviews: product.reviews_count || 0,
-      image: product.image_url,
-      badge: product.is_available ? 'В наличии' : 'Нет в наличии',
-      badgeColor: product.is_available ? 'bg-green-500' : 'bg-red-500',
-      isAvailable: product.is_available,
+  // Преобразование в формат для отображения
+  const catalogItems = useMemo(() => {
+    return sortedItems.map(item => ({
+      id: item.id,
+      name: item.name,
+      price: `${item.price}₽`,
+      originalPrice: item.original_price ? `${item.original_price}₽` : null,
+      discount: item.discount_percentage > 0 ? `${item.discount_percentage}%` : null,
+      rating: item.rating || 4.5,
+      reviews: item.reviews_count || 0,
+      image: item.image_url,
+      badge: item.is_available ? 'В наличии' : 'Нет в наличии',
+      badgeColor: item.is_available ? 'bg-green-500' : 'bg-red-500',
+      isAvailable: item.is_available,
       hasComparison: true,
-      inStock: product.in_stock
+      inStock: item.in_stock
     }));
-  }, [sortedProducts]);
+  }, [sortedItems]);
 
   // Пагинация
   const itemsPerPage = 12;
-  const {
-    paginatedData,
-    totalPages,
-    hasNextPage,
-    hasPreviousPage
-  } = usePagination({ 
-    data: displayProducts, 
+  const paginationResult = usePagination({ 
+    data: catalogItems, 
     itemsPerPage, 
-    currentPage 
+    currentPage: pageNumber 
   });
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-    // Скроллим наверх при смене страницы
+  const handlePageNavigation = (newPage: number) => {
+    setPageNumber(newPage);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  console.log('CATALOG RENDER - Products:', products.length);
-  console.log('CATALOG RENDER - SearchQuery:', searchQuery);
-
   return (
     <>
-      <Header onSearch={handleSearch} />
+      <Header onSearch={handleSearchQuery} />
       <div className="min-h-screen bg-white">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
           {/* Breadcrumbs */}
@@ -124,7 +107,7 @@ const Catalog: React.FC = () => {
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbPage>
-                  {searchQuery ? `Поиск: ${searchQuery}` : 'Каталог'}
+                  {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
                 </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
@@ -142,27 +125,27 @@ const Catalog: React.FC = () => {
               <CatalogControls 
                 sortBy={sortBy} 
                 setSortBy={setSortBy}
-                onSearch={handleSearch}
-                searchQuery={searchQuery}
+                onSearch={handleSearchQuery}
+                searchQuery={queryParam}
               />
               
               {isLoading ? (
                 <div className="text-center py-8">
                   <p>Поиск товаров...</p>
                 </div>
-              ) : searchQuery && displayProducts.length === 0 ? (
+              ) : queryParam && catalogItems.length === 0 ? (
                 <div className="text-center py-8">
-                  <p>По запросу "{searchQuery}" ничего не найдено</p>
+                  <p>По запросу "{queryParam}" ничего не найдено</p>
                   <p className="text-gray-500 mt-2">Попробуйте изменить поисковый запрос</p>
                 </div>
               ) : (
                 <CatalogGrid 
-                  products={paginatedData}
-                  totalPages={totalPages}
-                  currentPage={currentPage}
-                  onPageChange={handlePageChange}
-                  hasNextPage={hasNextPage}
-                  hasPreviousPage={hasPreviousPage}
+                  products={paginationResult.paginatedData}
+                  totalPages={paginationResult.totalPages}
+                  currentPage={pageNumber}
+                  onPageChange={handlePageNavigation}
+                  hasNextPage={paginationResult.hasNextPage}
+                  hasPreviousPage={paginationResult.hasPreviousPage}
                 />
               )}
             </div>
