@@ -7,7 +7,7 @@ import CatalogFilters from '@/components/Catalog/CatalogFilters';
 import CatalogBanner from '@/components/Catalog/CatalogBanner';
 import CatalogControls from '@/components/Catalog/CatalogControls';
 import CatalogGrid from '@/components/Catalog/CatalogGrid';
-import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
+import { useProductSearch, Product } from '@/hooks/useProducts';
 import { usePagination } from '@/hooks/usePagination';
 import { FilterState } from '@/types/filters';
 import {
@@ -40,8 +40,8 @@ const Catalog: React.FC = () => {
   // Получаем поисковый запрос из URL
   const queryParam = searchParams.get('q') || '';
   
-  // Используем хук для получения реальных товаров из Bitrix
-  const { products: allProducts = [], loading: isLoading, error } = useBitrixCatalog('https://cp44652.tw1.ru/bitrix-export/catalog-api.php');
+  // Используем хук для поиска товаров
+  const { data: allProducts = [], isLoading, error } = useProductSearch(queryParam);
 
   // Функция поиска с обновлением URL
   const handleSearchQuery = (searchTerm: string) => {
@@ -91,19 +91,9 @@ const Catalog: React.FC = () => {
     setPageNumber(1);
   };
 
-  // Применение поискового запроса и фильтров к товарам
+  // Применение фильтров к товарам
   const filteredProducts = useMemo(() => {
     let filtered = allProducts;
-
-    // Поисковый фильтр
-    if (queryParam.trim()) {
-      const query = queryParam.toLowerCase();
-      filtered = filtered.filter(product => {
-        const name = product.name.toLowerCase();
-        const description = (product.description || '').toLowerCase();
-        return name.includes(query) || description.includes(query);
-      });
-    }
 
     // Фильтр по цене
     if (filters.price.ranges.length > 0) {
@@ -165,7 +155,7 @@ const Catalog: React.FC = () => {
     }
 
     return filtered;
-  }, [allProducts, filters, queryParam]);
+  }, [allProducts, filters]);
 
   // Получение уникальных значений для фильтров из данных
   const filterOptions = useMemo(() => {
@@ -173,14 +163,14 @@ const Catalog: React.FC = () => {
     const equipmentTypes = new Set<string>();
     
     allProducts.forEach(product => {
-      // Собираем бренды - из Bitrix используем просто название
-      const brand = product.name.split(' ')[0]; // Первое слово как бренд
+      // Собираем бренды
+      const brand = product.characteristics?.['Бренд (id)'] || 
+                   product.characteristics?.['Бренд'] || '';
       if (brand) brands.add(brand);
       
-      // Собираем типы оборудования - пока используем статические значения
-      equipmentTypes.add('Силовые тренажеры');
-      equipmentTypes.add('Кардиотренажеры');
-      equipmentTypes.add('Функциональные тренажеры');
+      // Собираем типы оборудования
+      const equipmentType = product.characteristics?.['Тип оборудования'] || '';
+      if (equipmentType) equipmentTypes.add(equipmentType);
     });
 
     return {
