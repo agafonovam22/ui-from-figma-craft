@@ -94,7 +94,8 @@ const ProductDetail: React.FC = () => {
                         { key: 'Артикул', label: 'Артикул' },
                         { key: 'Тип назначения', label: 'Тип назначения' },
                         { key: 'Наименование товара на сайте', label: 'Наименование товара на сайте' },
-                        { key: 'Базовая единица', label: 'Единица измерения' }
+                        { key: 'Базовая единица', label: 'Единица измерения' },
+                        { key: 'Акция', label: 'Акция' }
                       ].map(({ key, label }) => {
                         const value = product.characteristics[key];
                         if (!value) return null;
