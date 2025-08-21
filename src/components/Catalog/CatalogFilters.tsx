@@ -1,11 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Separator } from "@/components/ui/separator";
+import { FilterState } from '@/types/filters';
 
-const CatalogFilters: React.FC = () => {
-  const [priceRange, setPriceRange] = useState([0, 100000]);
+interface CatalogFiltersProps {
+  filters: FilterState;
+  filterOptions: {
+    brands: string[];
+    equipmentTypes: string[];
+  };
+  onPriceChange: (priceFilter: FilterState['price']) => void;
+  onBrandsChange: (brands: string[]) => void;
+  onPurposeTypesChange: (types: string[]) => void;
+  onPowerRangeChange: (range: FilterState['powerRange']) => void;
+  onEquipmentTypesChange: (types: string[]) => void;
+  onApplyFilters: () => void;
+  onResetFilters: () => void;
+}
+
+const CatalogFilters: React.FC<CatalogFiltersProps> = ({
+  filters,
+  filterOptions,
+  onPriceChange,
+  onBrandsChange,
+  onPurposeTypesChange,
+  onPowerRangeChange,
+  onEquipmentTypesChange,
+  onApplyFilters,
+  onResetFilters
+}) => {
   const [expandedFilters, setExpandedFilters] = useState({
     price: true,
     brand: true,
@@ -14,11 +39,67 @@ const CatalogFilters: React.FC = () => {
     trainer: true
   });
 
+  const [priceRange, setPriceRange] = useState([filters.price.min, filters.price.max]);
+  const [powerMin, setPowerMin] = useState('');
+  const [powerMax, setPowerMax] = useState('');
+
+  useEffect(() => {
+    setPriceRange([filters.price.min, filters.price.max]);
+  }, [filters.price.min, filters.price.max]);
+
   const toggleFilter = (filterName: keyof typeof expandedFilters) => {
     setExpandedFilters(prev => ({
       ...prev,
       [filterName]: !prev[filterName]
     }));
+  };
+
+  const handlePriceRangeChange = (value: number[]) => {
+    setPriceRange(value);
+    onPriceChange({
+      min: value[0],
+      max: value[1],
+      ranges: []
+    });
+  };
+
+  const handlePriceRangeSelect = (range: string) => {
+    const isSelected = filters.price.ranges.includes(range);
+    const newRanges = isSelected 
+      ? filters.price.ranges.filter(r => r !== range)
+      : [...filters.price.ranges, range];
+    
+    onPriceChange({
+      ...filters.price,
+      ranges: newRanges
+    });
+  };
+
+  const handleBrandChange = (brand: string, checked: boolean) => {
+    const newBrands = checked 
+      ? [...filters.brands, brand]
+      : filters.brands.filter(b => b !== brand);
+    onBrandsChange(newBrands);
+  };
+
+  const handlePurposeTypeChange = (type: string, checked: boolean) => {
+    const newTypes = checked 
+      ? [...filters.purposeTypes, type]
+      : filters.purposeTypes.filter(t => t !== type);
+    onPurposeTypesChange(newTypes);
+  };
+
+  const handleEquipmentTypeChange = (type: string, selected: boolean) => {
+    const newTypes = selected 
+      ? [...filters.equipmentTypes, type]
+      : filters.equipmentTypes.filter(t => t !== type);
+    onEquipmentTypesChange(newTypes);
+  };
+
+  const handlePowerRangeInput = () => {
+    const min = powerMin ? parseFloat(powerMin) : undefined;
+    const max = powerMax ? parseFloat(powerMax) : undefined;
+    onPowerRangeChange({ min, max });
   };
 
   return (
@@ -50,8 +131,8 @@ const CatalogFilters: React.FC = () => {
                 </div>
                 <Slider
                   value={priceRange}
-                  onValueChange={setPriceRange}
-                  max={150000}
+                  onValueChange={handlePriceRangeChange}
+                  max={200000}
                   min={0}
                   step={1000}
                   className="w-full"
@@ -59,23 +140,17 @@ const CatalogFilters: React.FC = () => {
               </div>
               
               <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
-                <label className="flex items-center">
-                  <input type="radio" name="price" className="mr-2" />
-                  до 500₽
-                </label>
-                <label className="flex items-center">
-                  <input type="radio" name="price" className="mr-2" />
-                  до 20 000₽
-                </label>
-                <label className="flex items-center">
-                  <input type="radio" name="price" className="mr-2" />
-                  до 50 000₽
-                </label>
-                <label className="flex items-center">
-                  <input type="radio" name="price" className="mr-2" />
-                  до 100 000₽
-                </label>
-                <button className="text-[#F53B49] text-[12px] mt-5 text-center w-full" style={{fontFamily: 'Benzin-Regular'}}>Показать все</button>
+                {['до 500', 'до 20000', 'до 50000', 'до 100000'].map(range => (
+                  <label key={range} className="flex items-center">
+                    <input 
+                      type="checkbox" 
+                      className="mr-2"
+                      checked={filters.price.ranges.includes(range)}
+                      onChange={(e) => handlePriceRangeSelect(range)}
+                    />
+                    {range}₽
+                  </label>
+                ))}
               </div>
             </>
           )}
@@ -95,30 +170,29 @@ const CatalogFilters: React.FC = () => {
           </h3>
           {expandedFilters.brand && (
             <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
-              <label className="flex items-center">
-                <input type="checkbox" className="mr-2" />
-                True
-              </label>
-              <label className="flex items-center">
-                <input type="checkbox" className="mr-2" />
-                CardioPower
-              </label>
-              <label className="flex items-center">
-                <input type="checkbox" className="mr-2" />
-                Spirit
-              </label>
-              <label className="flex items-center">
-                <input type="checkbox" className="mr-2" />
-                DKN
-              </label>
-              <button className="text-[#F53B49] text-[12px] mt-5 text-center w-full" style={{fontFamily: 'Benzin-Regular'}}>Показать все</button>
+              {filterOptions.brands.slice(0, 6).map(brand => (
+                <label key={brand} className="flex items-center">
+                  <input 
+                    type="checkbox" 
+                    className="mr-2"
+                    checked={filters.brands.includes(brand)}
+                    onChange={(e) => handleBrandChange(brand, e.target.checked)}
+                  />
+                  {brand}
+                </label>
+              ))}
+              {filterOptions.brands.length > 6 && (
+                <button className="text-[#F53B49] text-[12px] mt-5 text-center w-full" style={{fontFamily: 'Benzin-Regular'}}>
+                  Показать все ({filterOptions.brands.length})
+                </button>
+              )}
             </div>
           )}
         </div>
 
         <Separator className="mt-5 mb-5" />
 
-        {/* Type Filter */}
+        {/* Purpose Type Filter */}
         <div className="mb-6">
           <h3 
             className="text-[14px] text-[#262631] mb-[14px] flex items-center justify-between cursor-pointer" 
@@ -130,22 +204,17 @@ const CatalogFilters: React.FC = () => {
           </h3>
           {expandedFilters.type && (
             <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
-              <label className="flex items-center">
-                <input type="checkbox" className="mr-2" />
-                Домашние
-              </label>
-              <label className="flex items-center">
-                <input type="checkbox" className="mr-2" />
-                Полупрофессиональные
-              </label>
-              <label className="flex items-center">
-                <input type="checkbox" className="mr-2" />
-                Профессиональные
-              </label>
-              <label className="flex items-center">
-                <input type="checkbox" className="mr-2" />
-                Реабилитация
-              </label>
+              {['Домашние', 'Профессиональные', 'Полупрофессиональные', 'Реабилитация'].map(type => (
+                <label key={type} className="flex items-center">
+                  <input 
+                    type="checkbox" 
+                    className="mr-2"
+                    checked={filters.purposeTypes.includes(type)}
+                    onChange={(e) => handlePurposeTypeChange(type, e.target.checked)}
+                  />
+                  {type}
+                </label>
+              ))}
             </div>
           )}
         </div>
@@ -169,7 +238,10 @@ const CatalogFilters: React.FC = () => {
                 <div className="flex-1">
                   <input 
                     type="text" 
-                    placeholder="от 1.2500"
+                    placeholder="от 1.25"
+                    value={powerMin}
+                    onChange={(e) => setPowerMin(e.target.value)}
+                    onBlur={handlePowerRangeInput}
                     className="w-full px-3 py-2 border border-gray-300 rounded text-gray-600 text-[14px]"
                     style={{fontFamily: 'Manrope'}}
                   />
@@ -177,7 +249,10 @@ const CatalogFilters: React.FC = () => {
                 <div className="flex-1">
                   <input 
                     type="text" 
-                    placeholder="до 24 560"
+                    placeholder="до 24.56"
+                    value={powerMax}
+                    onChange={(e) => setPowerMax(e.target.value)}
+                    onBlur={handlePowerRangeInput}
                     className="w-full px-3 py-2 border border-gray-300 rounded text-gray-600 text-[14px]"
                     style={{fontFamily: 'Manrope'}}
                   />
@@ -199,7 +274,7 @@ const CatalogFilters: React.FC = () => {
 
         <Separator className="mt-5 mb-5" />
 
-        {/* Trainer Type Filter */}
+        {/* Equipment Type Filter */}
         <div className="mb-6">
           <h3 
             className="text-[14px] text-[#262631] mb-[14px] flex items-center justify-between cursor-pointer" 
@@ -211,14 +286,18 @@ const CatalogFilters: React.FC = () => {
           </h3>
           {expandedFilters.trainer && (
             <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
-              <label className="flex items-center">
-                <input type="radio" name="trainer-type" className="mr-2" />
-                Магнитный
-              </label>
-              <label className="flex items-center">
-                <input type="radio" name="trainer-type" className="mr-2" />
-                Полупрофессиональный
-              </label>
+              {filterOptions.equipmentTypes.slice(0, 8).map(type => (
+                <label key={type} className="flex items-center">
+                  <input 
+                    type="radio" 
+                    name="equipment-type" 
+                    className="mr-2"
+                    checked={filters.equipmentTypes.includes(type)}
+                    onChange={(e) => handleEquipmentTypeChange(type, e.target.checked)}
+                  />
+                  {type}
+                </label>
+              ))}
             </div>
           )}
         </div>
@@ -227,6 +306,7 @@ const CatalogFilters: React.FC = () => {
 
         {/* Apply Filters Button */}
         <Button 
+          onClick={onApplyFilters}
           className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white mb-3 h-12 rounded-lg text-[12px]" 
           style={{fontFamily: 'Benzin-Regular'}}
         >
@@ -234,6 +314,7 @@ const CatalogFilters: React.FC = () => {
         </Button>
         
         <Button 
+          onClick={onResetFilters}
           variant="outline" 
           className="w-full border-[#262631] text-[#262631] hover:bg-gray-50 h-12 rounded-lg text-[12px]" 
           style={{fontFamily: 'Benzin-Regular'}}
