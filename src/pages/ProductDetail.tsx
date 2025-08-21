@@ -18,8 +18,8 @@ const ProductDetail: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [quantity, setQuantity] = useState(1);
-  const [selectedColor, setSelectedColor] = useState<string>('');
-  const [selectedSize, setSelectedSize] = useState<string>('');
+  const [selectedColor, setSelectedColor] = useState<string>('blue-red');
+  const [selectedSize, setSelectedSize] = useState<string>('14');
   const { addItem } = useCart();
   const { toast } = useToast();
 
@@ -265,32 +265,60 @@ const ProductDetail: React.FC = () => {
             <div className="space-y-4 py-6 border-b border-gray-300">
               {/* Color Selection */}
               <div>
-                <h4 className="font-medium mb-2">Цвет</h4>
-                <div className="flex space-x-2">
-                  <button className="w-8 h-8 rounded-full bg-gray-800 border-2 border-gray-300 focus:border-gray-500 relative">
-                    <span className="sr-only">Черный</span>
+                <h4 className="font-medium mb-3">Цвет</h4>
+                <div className="flex space-x-3">
+                  <button 
+                    className={`flex items-center space-x-2 px-4 py-2 rounded-full border-2 transition-all ${
+                      selectedColor === 'blue-red' 
+                        ? 'bg-gray-800 text-white border-gray-800' 
+                        : 'bg-white border-gray-300 hover:border-gray-400'
+                    }`}
+                    onClick={() => setSelectedColor('blue-red')}
+                  >
+                    <div className="flex">
+                      <div className="w-4 h-4 bg-blue-600 rounded-full"></div>
+                      <div className="w-4 h-4 bg-red-600 rounded-full -ml-1"></div>
+                    </div>
+                    <span className="text-sm">Красный/синий</span>
                   </button>
-                  <button className="w-8 h-8 rounded-full bg-blue-600 border-2 border-gray-300 focus:border-blue-500">
-                    <span className="sr-only">Синий</span>
+                  <button 
+                    className={`flex items-center space-x-2 px-4 py-2 rounded-full border-2 transition-all ${
+                      selectedColor === 'green-yellow' 
+                        ? 'bg-gray-800 text-white border-gray-800' 
+                        : 'bg-white border-gray-300 hover:border-gray-400'
+                    }`}
+                    onClick={() => setSelectedColor('green-yellow')}
+                  >
+                    <div className="flex">
+                      <div className="w-4 h-4 bg-green-600 rounded-full"></div>
+                      <div className="w-4 h-4 bg-yellow-500 rounded-full -ml-1"></div>
+                    </div>
+                    <span className="text-sm">Зеленый/желтый</span>
                   </button>
                 </div>
               </div>
 
-              {/* Kit Selection */}
+              {/* Size Selection */}
               <div>
-                <h4 className="font-medium mb-2">Комплектация</h4>
+                <h4 className="font-medium mb-3">Диаметр, ft</h4>
                 <div className="flex flex-wrap gap-2">
-                  {['Core Kit', 'Pro Kit (+2 000₽)', 'Ultimate Kit (+5 000₽)'].map((kit) => (
+                  {[
+                    { size: '8', price: '(-15 000₽)' },
+                    { size: '10', price: '(-10 000₽)' },
+                    { size: '12', price: '(-5 000₽)' },
+                    { size: '14', price: '' },
+                    { size: '16', price: '(+10 000₽)' }
+                  ].map((item) => (
                     <button
-                      key={kit}
-                      className={`px-3 py-2 text-sm border rounded ${
-                        kit === 'Core Kit' 
-                          ? 'bg-gray-900 text-white border-gray-900' 
-                          : 'border-gray-300 hover:border-gray-400'
+                      key={item.size}
+                      className={`px-4 py-2 text-sm rounded-full border-2 transition-all ${
+                        selectedSize === item.size 
+                          ? 'bg-gray-800 text-white border-gray-800' 
+                          : 'bg-white border-gray-300 hover:border-gray-400'
                       }`}
-                      onClick={() => setSelectedSize(kit)}
+                      onClick={() => setSelectedSize(item.size)}
                     >
-                      {kit}
+                      {item.size} {item.price}
                     </button>
                   ))}
                 </div>
