@@ -292,18 +292,17 @@ const ProductDetail: React.FC = () => {
                 <div className="flex-1">
                   {product.price ? (
                     <div className="space-y-1">
-                      <div className="flex items-center space-x-2">
-                        {product.discount_percentage && (
+                      {/* Show discount info only if there's a real discount */}
+                      {product.discount_percentage && product.discount_percentage > 0 && product.original_price && product.original_price > product.price && (
+                        <div className="flex items-center space-x-2">
                           <Badge variant="destructive" className="text-xs font-medium">
                             -{product.discount_percentage}%
                           </Badge>
-                        )}
-                        {product.original_price && (
                           <span className="text-sm text-muted-foreground line-through">
                             {typeof product.original_price === 'number' ? `${product.original_price.toLocaleString()} ₽` : product.original_price}
                           </span>
-                        )}
-                      </div>
+                        </div>
+                      )}
                       <div className="text-3xl font-bold text-foreground">
                         {typeof product.price === 'number' ? `${product.price.toLocaleString()} ₽` : product.price}
                       </div>
