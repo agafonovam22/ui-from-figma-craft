@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
 import NewProducts from '@/components/NewProducts';
+import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -17,50 +18,16 @@ import {
 import { Button } from "@/components/ui/button";
 
 const Favorites: React.FC = () => {
-  // Products from Search page (duplicated to create 10 items)
-  const favoriteProducts = [
-    {
-      id: 1,
-      image: '/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png'
-    },
-    {
-      id: 2,
-      image: '/lovable-uploads/f86d41dd-f2f8-4cab-a66e-40c3a81d9cbf.png'
-    },
-    {
-      id: 3,
-      image: '/lovable-uploads/43ad4887-adce-485a-b310-3d8582e01128.png'
-    },
-    {
-      id: 4,
-      image: '/lovable-uploads/4daf7315-525c-4043-a1d0-72dcc05b49bf.png'
-    },
-    {
-      id: 5,
-      image: '/lovable-uploads/225fbdeb-52a8-41c5-8d82-91fda1b8d960.png'
-    },
-    // Second row
-    {
-      id: 6,
-      image: '/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png'
-    },
-    {
-      id: 7,
-      image: '/lovable-uploads/f86d41dd-f2f8-4cab-a66e-40c3a81d9cbf.png'
-    },
-    {
-      id: 8,
-      image: '/lovable-uploads/43ad4887-adce-485a-b310-3d8582e01128.png'
-    },
-    {
-      id: 9,
-      image: '/lovable-uploads/4daf7315-525c-4043-a1d0-72dcc05b49bf.png'
-    },
-    {
-      id: 10,
-      image: '/lovable-uploads/225fbdeb-52a8-41c5-8d82-91fda1b8d960.png'
-    }
-  ];
+  // Используем реальные данные из Bitrix API
+  const { products: bitrixProducts, loading, error } = useBitrixCatalog("https://cp44652.tw1.ru/catalog.php");
+  
+  // Берем первые 10 товаров из реального каталога
+  const favoriteProducts = bitrixProducts.slice(0, 10).map(product => ({
+    id: product.id,
+    name: product.name,
+    image: product.image_url,
+    price: product.price
+  }));
 
   return (
     <main className="min-h-screen bg-white">
@@ -84,43 +51,61 @@ const Favorites: React.FC = () => {
 
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Избранное</h1>
         
-        {/* Product Grid - 5 columns, 2 rows */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
-          {favoriteProducts.map((product) => (
-            <div key={product.id} className="relative group">
-              <Link 
-                to={`/product/${product.id}`}
-                className="block bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-              >
-                <div className="relative">
-                  <img 
-                    src={product.image} 
-                    alt="Товар"
-                    className="w-full h-full object-cover"
-                  />
-                  
-                  {/* Action buttons - always visible */}
-                  <div className="absolute top-2 right-2 flex flex-col gap-2">
-                    <button className="p-1 bg-white rounded shadow hover:bg-gray-50">
-                      <Heart className="w-4 h-4 text-red-500 fill-current" />
-                    </button>
-                    <button 
-                      className="p-1 bg-white rounded shadow hover:bg-gray-50"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        // Add to comparison logic here
-                        console.log('Added to comparison:', product.id);
-                      }}
-                    >
-                      <BarChart3 className="w-4 h-4 text-gray-400" />
-                    </button>
-                  </div>
-                </div>
-              </Link>
+        {loading ? (
+          <div className="flex items-center justify-center h-64">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#F53B49] mx-auto mb-4"></div>
+              <p className="text-gray-600">Загрузка товаров...</p>
             </div>
-          ))}
-        </div>
+          </div>
+        ) : error ? (
+          <div className="text-center py-8">
+            <p className="text-red-600 mb-2">Ошибка загрузки товаров</p>
+            <p className="text-gray-500 text-sm">{error}</p>
+          </div>
+        ) : (
+          <>
+            {/* Product Grid - 5 columns, 2 rows */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
+              {favoriteProducts.map((product) => (
+                <div key={product.id} className="relative group">
+                  <Link 
+                    to={`/product/${product.id}`}
+                    className="block bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+                  >
+                    <div className="relative">
+                      <img 
+                        src={product.image || '/placeholder.svg'} 
+                        alt={product.name || "Товар"}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.currentTarget.src = '/placeholder.svg';
+                        }}
+                      />
+                      
+                      {/* Action buttons - always visible */}
+                      <div className="absolute top-2 right-2 flex flex-col gap-2">
+                        <button className="p-1 bg-white rounded shadow hover:bg-gray-50">
+                          <Heart className="w-4 h-4 text-red-500 fill-current" />
+                        </button>
+                        <button 
+                          className="p-1 bg-white rounded shadow hover:bg-gray-50"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            console.log('Added to comparison:', product.id);
+                          }}
+                        >
+                          <BarChart3 className="w-4 h-4 text-gray-400" />
+                        </button>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
         
         <div className="flex justify-start mb-12">
           <Button 

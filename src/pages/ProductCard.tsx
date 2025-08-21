@@ -7,7 +7,7 @@ import EmailSubscription from '@/components/EmailSubscription';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ChevronLeft, ChevronRight, Heart, Star, Play } from 'lucide-react';
+import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
 
 const ProductCard: React.FC = () => {
   const { productId } = useParams();
@@ -68,17 +68,19 @@ const ProductCard: React.FC = () => {
     paymentOptions: 'Безналичная оплата, оплата онлайн'
   };
 
-  // Similar products data
-  const similarProducts = [
-    {
-      id: 1,
-      title: 'Батут Berg Champion 380 см',
-      price: '49 900₽',
-      originalPrice: '55 000₽',
-      discount: '-10%',
-      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      badge: 'ХИТ'
-    },
+  // Используем реальные данные из Bitrix API
+  const { products: bitrixProducts, loading, error } = useBitrixCatalog("https://cp44652.tw1.ru/catalog.php");
+  
+  // Берем первые 5 товаров из реального каталога  
+  const similarProducts = bitrixProducts.slice(0, 5).map(product => ({
+    id: product.id,
+    title: product.name,
+    price: `${product.price.toLocaleString()}₽`,
+    originalPrice: product.original_price && product.original_price > product.price ? `${product.original_price.toLocaleString()}₽` : null,
+    discount: product.discount_percentage > 0 ? `-${product.discount_percentage}%` : null,
+    image: product.image_url,
+    badge: product.is_available ? 'В наличии' : 'Нет в наличии'
+  }));
     {
       id: 2,
       title: 'Батут Hasttings Classic 305 см',
