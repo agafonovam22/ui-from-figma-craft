@@ -55,6 +55,15 @@ const fetchProducts = async (): Promise<Product[]> => {
       name: p.name,
       type: p.characteristics['Тип оборудования']
     })));
+    
+    // Проверяем все возможные значения "Тип назначения"
+    const purposeTypes = new Set();
+    data.products.forEach(product => {
+      if (product.characteristics['Тип назначения']) {
+        purposeTypes.add(product.characteristics['Тип назначения']);
+      }
+    });
+    console.log('Доступные типы назначения:', Array.from(purposeTypes).sort());
   }
   
   return data.products || [];
