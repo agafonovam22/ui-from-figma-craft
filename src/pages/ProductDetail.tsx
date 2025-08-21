@@ -293,7 +293,11 @@ const ProductDetail: React.FC = () => {
                   {product.price ? (
                     <div className="space-y-1">
                       {/* Show discount info only if there's a real discount */}
-                      {product.discount_percentage && product.discount_percentage > 0 && product.original_price && product.original_price > product.price && (
+                      {product.discount_percentage && 
+                       product.discount_percentage > 0 && 
+                       product.original_price && 
+                       product.original_price > product.price &&
+                       product.discount_percentage !== 0 && (
                         <div className="flex items-center space-x-2">
                           <Badge variant="destructive" className="text-xs font-medium">
                             -{product.discount_percentage}%
