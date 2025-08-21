@@ -27,7 +27,11 @@ try {
         'products' => [],
         'timestamp' => date('c'),
         'total_products' => 0,
-        'total_categories' => 0
+        'total_categories' => 0,
+        'debug_info' => [
+            'iblock_id' => $IBLOCK_ID,
+            'server_name' => $_SERVER['HTTP_HOST']
+        ]
     ];
 
     // Получаем разделы (категории)
@@ -58,12 +62,17 @@ try {
     }
 
     // Получаем товары
+    $filter = [
+        "IBLOCK_ID" => $IBLOCK_ID,
+        "ACTIVE" => "Y"
+    ];
+    
+    // Добавляем отладочную информацию о фильтре
+    $result['debug_info']['filter'] = $filter;
+    
     $rsProducts = CIBlockElement::GetList(
         ["SORT" => "ASC", "NAME" => "ASC"],
-        [
-            "IBLOCK_ID" => $IBLOCK_ID,
-            "ACTIVE" => "Y"
-        ],
+        $filter,
         false,
         false,
         [
@@ -72,6 +81,24 @@ try {
             "PROPERTY_*"
         ]
     );
+    
+    // Считаем общее количество товаров в инфоблоке (включая неактивные)
+    $totalCount = CIBlockElement::GetList(
+        [],
+        ["IBLOCK_ID" => $IBLOCK_ID],
+        [],
+        false
+    );
+    
+    $activeCount = CIBlockElement::GetList(
+        [],
+        $filter,
+        [],
+        false
+    );
+    
+    $result['debug_info']['total_in_iblock'] = $totalCount;
+    $result['debug_info']['active_in_iblock'] = $activeCount;
 
     while ($product = $rsProducts->Fetch()) {
         // Получаем цены
@@ -168,6 +195,23 @@ try {
 
     $result['total_categories'] = count($result['categories']);
     $result['total_products'] = count($result['products']);
+    
+    // Добавим информацию о других инфоблоках
+    $result['debug_info']['other_iblocks'] = [];
+    $rsIBlocks = CIBlock::GetList([], ['TYPE' => 'catalog']);
+    while ($iblock = $rsIBlocks->Fetch()) {
+        $count = CIBlockElement::GetList(
+            [],
+            ["IBLOCK_ID" => $iblock['ID'], "ACTIVE" => "Y"],
+            [],
+            false
+        );
+        $result['debug_info']['other_iblocks'][] = [
+            'id' => $iblock['ID'],
+            'name' => $iblock['NAME'],
+            'active_elements' => $count
+        ];
+    }
 
     echo json_encode($result, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 
