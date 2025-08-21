@@ -341,16 +341,16 @@ const ProductDetail: React.FC = () => {
 
                 {/* Общий рейтинг - серый контейнер */}
                 <div className="bg-gray-100 rounded-lg p-4">
-                  <div className="text-center">
-                    <div className="text-right mb-2">
-                      <span className="text-sm text-gray-500">Общий рейтинг</span>
-                    </div>
-                    <div className="text-5xl font-bold mb-2">4.5</div>
-                    <div className="flex justify-center text-yellow-400 text-xl mb-2">
-                      <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-                    </div>
-                    <p className="text-gray-500 text-sm">10 оценок</p>
+                  <div className="mb-4">
+                    <span className="text-sm text-gray-500">Общий рейтинг</span>
                   </div>
+                  <div className="flex items-center space-x-4 mb-2">
+                    <div className="text-5xl font-bold text-gray-800">4.5</div>
+                    <div className="flex text-yellow-400 text-2xl">
+                      <span>★</span><span>★</span><span>★</span><span>★</span><span className="text-gray-300">★</span>
+                    </div>
+                  </div>
+                  <p className="text-gray-500 text-sm">10 оценок</p>
                 </div>
 
                 {/* Кнопка написать отзыв */}
