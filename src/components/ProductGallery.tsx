@@ -37,11 +37,11 @@ export default function ProductGallery({ mainImage, images = [], galleryImages =
     <div className="space-y-4">
       {/* Main Image */}
       <div className="relative group">
-        <div className="relative overflow-hidden rounded-lg bg-gray-100 min-h-[400px] max-h-[600px] flex items-center justify-center">
+        <div className="relative overflow-hidden rounded-lg bg-gray-100 min-h-[500px] max-h-[700px] w-full flex items-center justify-center">
           <img
             src={allImages[currentImageIndex] || '/placeholder.svg'}
             alt={productName}
-            className="max-w-full max-h-full object-contain"
+            className="w-full h-full max-w-full max-h-full object-contain"
             style={{ imageRendering: 'crisp-edges' }}
             onError={(e) => {
               e.currentTarget.src = '/placeholder.svg';
