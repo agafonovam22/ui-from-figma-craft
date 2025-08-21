@@ -11,6 +11,7 @@ import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbS
 import { useCart } from '@/contexts/CartContext';
 import ProductGallery from '@/components/ProductGallery';
 import { useToast } from '@/hooks/use-toast';
+import ReviewDialog from '@/components/ReviewDialog';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -863,114 +864,11 @@ const ProductDetail: React.FC = () => {
       </main>
       <Footer />
 
-      {/* Review Modal */}
-      {showReviewModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg p-6 max-w-md w-full max-h-[90vh] overflow-y-auto">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-xl font-semibold">Написать отзыв</h3>
-              <button 
-                onClick={() => setShowReviewModal(false)}
-                className="text-gray-400 hover:text-gray-600"
-              >
-                ✕
-              </button>
-            </div>
-            
-            <form className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium mb-2">Имя *</label>
-                <input 
-                  type="text" 
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
-                  placeholder="Введите ваше имя"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium mb-2">Email *</label>
-                <input 
-                  type="email" 
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
-                  placeholder="example@email.com"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium mb-2">Общая оценка *</label>
-                <div className="flex space-x-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <button
-                      key={star}
-                      type="button"
-                      className="text-2xl text-gray-300 hover:text-yellow-400"
-                    >
-                      ☆
-                    </button>
-                  ))}
-                </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium mb-2">Критерии оценки</label>
-                <div className="space-y-2">
-                  {['Качество', 'Цена', 'Функциональность', 'Скорость', 'Легкость в сборке'].map((criterion) => (
-                    <div key={criterion} className="flex items-center justify-between">
-                      <span className="text-sm">{criterion}</span>
-                      <div className="flex space-x-1">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <button
-                            key={star}
-                            type="button"
-                            className="text-lg text-gray-300 hover:text-yellow-400"
-                          >
-                            ☆
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium mb-2">Отзыв *</label>
-                <textarea 
-                  rows={4}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
-                  placeholder="Поделитесь своими впечатлениями о товаре..."
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium mb-2">Фото (необязательно)</label>
-                <input 
-                  type="file" 
-                  multiple 
-                  accept="image/*"
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
-                />
-              </div>
-              
-              <div className="flex space-x-3 pt-4">
-                <button
-                  type="button"
-                  onClick={() => setShowReviewModal(false)}
-                  className="flex-1 py-2 px-4 border border-gray-300 rounded-lg text-sm hover:bg-gray-50"
-                >
-                  Отмена
-                </button>
-                <button
-                  type="submit"
-                  className="flex-1 py-2 px-4 bg-red-600 text-white rounded-lg text-sm hover:bg-red-700"
-                >
-                  Отправить отзыв
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+      {/* Review Dialog */}
+      <ReviewDialog 
+        open={showReviewModal} 
+        onOpenChange={setShowReviewModal} 
+      />
     </div>
   );
 };
