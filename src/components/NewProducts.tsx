@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
+import { useCart } from '@/contexts/CartContext';
 
 interface NewProductsProps {
   title?: string;
@@ -12,6 +13,19 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const { products: bitrixProducts, loading, error } = useBitrixCatalog("https://cp44652.tw1.ru/catalog.php");
+  const { addItem } = useCart();
+
+  const handleBuyClick = (e: React.MouseEvent, product: any) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image_url: product.image_url,
+      is_available: product.is_available || true
+    });
+  };
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -196,7 +210,10 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                       )}
                       <span className="font-bold text-[#262631]">{product.price.toLocaleString()} ₽</span>
                     </div>
-                    <button className="bg-[#F53B49] text-white px-4 py-2 rounded text-sm font-medium hover:bg-[#E52B38] transition-colors">
+                    <button 
+                      className="bg-[#F53B49] text-white px-4 py-2 rounded text-sm font-medium hover:bg-[#E52B38] transition-colors"
+                      onClick={(e) => handleBuyClick(e, product)}
+                    >
                       Купить
                     </button>
                   </div>

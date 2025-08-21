@@ -1,19 +1,15 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowLeft, X, Heart, Trash2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
-import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbSeparator,
-  BreadcrumbPage,
-} from "@/components/ui/breadcrumb";
-import { Button } from "@/components/ui/button";
-import { Link } from 'react-router-dom';
-import { Trash2, ChevronRight, Check, Heart } from 'lucide-react';
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb";
+import NewProducts from '@/components/NewProducts';
+import { Product, useProducts } from '@/hooks/useProducts';
+import { useCart } from '@/contexts/CartContext';
 import {
   Table,
   TableBody,
@@ -136,6 +132,17 @@ const Comparison: React.FC = () => {
   const [showOnlyDifferences, setShowOnlyDifferences] = useState(false);
   const [items, setItems] = useState(mockComparisonItems);
   const [favorites, setFavorites] = useState<number[]>([]);
+  const { addItem } = useCart();
+
+  const handleBuyClick = (item: any) => {
+    addItem({
+      id: item.id.toString(),
+      name: item.name,
+      price: item.price,
+      image_url: item.image,
+      is_available: true
+    });
+  };
 
   const handleRemoveItem = (itemId: number) => {
     setItems(items.filter(item => item.id !== itemId));
@@ -262,7 +269,10 @@ const Comparison: React.FC = () => {
                     </div>
                   </div>
                   
-                  <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white px-6">
+                  <Button 
+                    className="bg-[#F53B49] hover:bg-[#e63946] text-white px-6"
+                    onClick={() => handleBuyClick(item)}
+                  >
                     Купить
                   </Button>
                 </div>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Heart, BarChart3, ArrowRight } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { useCart } from '@/contexts/CartContext';
 
 interface ProductCardProps {
   product: {
@@ -30,6 +31,19 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
   variant = 'catalog',
   linkTo = '/product-card'
 }) => {
+  const { addItem } = useCart();
+
+  const handleBuyClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addItem({
+      id: product.id.toString(),
+      name: product.name || 'Товар',
+      price: typeof product.price === 'string' ? parseFloat(product.price.replace(/[^\d.-]/g, '')) : 0,
+      image_url: product.image,
+      is_available: product.isAvailable || false
+    });
+  };
   if (variant === 'grid') {
     // Simplified version for ProductCatalog
     return (
@@ -148,7 +162,11 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
 
         <div className="flex gap-2">
           {product.isAvailable ? (
-            <Button size="sm" className="flex-1 bg-[#F53B49] hover:bg-[#e63946] text-white text-xs py-1">
+            <Button 
+              size="sm" 
+              className="flex-1 bg-[#F53B49] hover:bg-[#e63946] text-white text-xs py-1"
+              onClick={handleBuyClick}
+            >
               Купить
             </Button>
           ) : (

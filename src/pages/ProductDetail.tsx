@@ -1,17 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Heart, Share2, ShoppingCart, Download } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import EmailSubscription from '@/components/EmailSubscription';
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb";
+import { useCart } from '@/contexts/CartContext';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { addItem } = useCart();
+
+  const handleBuyClick = () => {
+    if (product) {
+      addItem({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image_url: product.image_url,
+        is_available: product.is_available
+      });
+    }
+  };
 
   // Логируем сразу при рендере
   console.log('ProductDetail рендерится');
@@ -201,7 +217,11 @@ const ProductDetail: React.FC = () => {
             <div className="space-y-4">
               <div className="flex space-x-4">
                 {product.is_available ? (
-                  <Button size="lg" className="flex-1 bg-primary hover:bg-primary/90">
+                  <Button 
+                    size="lg" 
+                    className="flex-1 bg-primary hover:bg-primary/90"
+                    onClick={handleBuyClick}
+                  >
                     <ShoppingCart className="w-5 h-5 mr-2" />
                     Купить
                   </Button>
