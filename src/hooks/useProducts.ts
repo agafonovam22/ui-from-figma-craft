@@ -28,11 +28,31 @@ const fetchProducts = async (): Promise<Product[]> => {
   return data.products || [];
 };
 
-export const useProducts = () => {
+// Маппинг категорий к типам оборудования из Битрикс
+export const categoryMapping: Record<string, string[]> = {
+  'Беговые дорожки': ['854'], // Предполагаемый ID для беговых дорожек
+  'Эллиптические тренажеры': ['855'], // Предполагаемый ID
+  'Велотренажеры': ['856'], // Предполагаемый ID
+  'Гребные тренажеры': ['857'], // Фитнес-наборы, возможно гребные тренажеры
+  'Силовые тренажеры': ['860', '865', '870'], // Включаем утяжелители, рукоятки
+  'Инверсионные столы': ['862'], // Балансировочные платформы близко к этому
+};
+
+export const useProducts = (categoryFilter?: string) => {
   return useQuery({
-    queryKey: ['products'],
+    queryKey: ['products', categoryFilter],
     queryFn: fetchProducts,
     staleTime: 5 * 60 * 1000, // 5 minutes
-    gcTime: 10 * 60 * 1000, // 10 minutes (было cacheTime в старых версиях)
+    gcTime: 10 * 60 * 1000, // 10 minutes
+    select: (data: Product[]) => {
+      if (!categoryFilter) return data;
+      
+      const equipmentTypes = categoryMapping[categoryFilter];
+      if (!equipmentTypes) return data;
+      
+      return data.filter(product => 
+        equipmentTypes.includes(product.characteristics['Тип оборудования'])
+      );
+    }
   });
 };

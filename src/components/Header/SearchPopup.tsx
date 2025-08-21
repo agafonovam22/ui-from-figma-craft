@@ -17,7 +17,8 @@ interface SearchPopupProps {
 }
 
 const SearchPopup: React.FC<SearchPopupProps> = ({ children, isOpen, onOpenChange }) => {
-  const { data: products = [], isLoading, error } = useProducts();
+  const [selectedCategory, setSelectedCategory] = React.useState<string | undefined>();
+  const { data: products = [], isLoading, error } = useProducts(selectedCategory);
   
   const popularSearches = [
     "Беговые дорожки",
@@ -36,6 +37,14 @@ const SearchPopup: React.FC<SearchPopupProps> = ({ children, isOpen, onOpenChang
   // Берем первые 9 товаров для отображения в попапе
   const displayProducts = products.slice(0, 9);
 
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(selectedCategory === category ? undefined : category);
+  };
+
+  const resetCategory = () => {
+    setSelectedCategory(undefined);
+  };
+
   return (
     <Popover open={isOpen} onOpenChange={onOpenChange}>
       <PopoverTrigger asChild>
@@ -52,14 +61,32 @@ const SearchPopup: React.FC<SearchPopupProps> = ({ children, isOpen, onOpenChang
           <div className="w-[300px] border-r border-gray-200 p-6">
             {/* Часто ищут секция */}
             <div className="mb-8">
-              <h3 className="text-xl font-bold text-[#262631] mb-4">Часто ищут</h3>
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-[#262631]">Часто ищут</h3>
+                {selectedCategory && (
+                  <button
+                    onClick={resetCategory}
+                    className="text-xs text-[#F53B49] hover:underline"
+                  >
+                    Сбросить
+                  </button>
+                )}
+              </div>
               <div className="space-y-3">
                 {popularSearches.map((search, index) => (
                   <button
                     key={index}
-                    className="block text-sm text-gray-600 hover:text-[#F53B49] transition-colors text-left"
+                    onClick={() => handleCategoryClick(search)}
+                    className={`block text-sm transition-colors text-left w-full ${
+                      selectedCategory === search 
+                        ? 'text-[#F53B49] font-semibold' 
+                        : 'text-gray-600 hover:text-[#F53B49]'
+                    }`}
                   >
                     {search}
+                    {selectedCategory === search && (
+                      <span className="ml-2 text-xs">✓</span>
+                    )}
                   </button>
                 ))}
               </div>
@@ -96,6 +123,20 @@ const SearchPopup: React.FC<SearchPopupProps> = ({ children, isOpen, onOpenChang
               ) : error ? (
                 <div className="flex items-center justify-center h-full">
                   <div className="text-red-500">Ошибка загрузки товаров</div>
+                </div>
+              ) : displayProducts.length === 0 ? (
+                <div className="flex flex-col items-center justify-center h-full">
+                  <div className="text-gray-500 mb-2">
+                    {selectedCategory ? `Товары категории "${selectedCategory}" не найдены` : 'Товары не найдены'}
+                  </div>
+                  {selectedCategory && (
+                    <button
+                      onClick={resetCategory}
+                      className="text-sm text-[#F53B49] hover:underline"
+                    >
+                      Показать все товары
+                    </button>
+                  )}
                 </div>
               ) : (
                 <div className="grid grid-cols-3 gap-4 pr-4">
