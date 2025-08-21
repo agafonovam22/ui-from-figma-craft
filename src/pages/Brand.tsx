@@ -5,7 +5,6 @@ import EmailSubscription from '@/components/EmailSubscription';
 import IdeasSelections from '@/components/IdeasSelections';
 import ProductCard from '@/components/ProductCard';
 import { Link, useParams } from 'react-router-dom';
-import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Slider } from "@/components/ui/slider";
@@ -45,24 +44,72 @@ const Brand: React.FC = () => {
     }));
   };
   
-  // Используем реальные данные из Bitrix API
-  const { products: bitrixProducts, loading, error } = useBitrixCatalog("https://cp44652.tw1.ru/catalog.php");
-  
-  // Преобразуем реальные товары в формат для отображения
-  const allProducts = bitrixProducts.slice(0, 8).map(product => ({
-    id: product.id,
-    name: product.name,
-    price: `${product.price.toLocaleString()}₽`,
-    originalPrice: product.original_price && product.original_price > product.price ? `${product.original_price.toLocaleString()}₽` : null,
-    discount: product.discount_percentage > 0 ? `-${product.discount_percentage}%` : null,
-    rating: product.rating || 4.5,
-    reviews: product.reviews_count || 0,
-    image: product.image_url,
-    badge: product.is_available ? 'В наличии' : 'Нет в наличии',
-    badgeColor: product.is_available ? 'bg-green-500' : 'bg-red-500',
-    isAvailable: product.is_available,
-    hasComparison: true,
-    inStock: product.in_stock
+  const products = [
+    {
+      id: 1,
+      name: 'Гребной тренажер CardioPower PRO CR300',
+      price: '4 610₽',
+      originalPrice: null,
+      discount: null,
+      rating: 4.8,
+      reviews: 124,
+      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      badge: 'Новинка',
+      badgeColor: 'bg-green-500',
+      isAvailable: true,
+      hasComparison: true,
+      inStock: true
+    },
+    {
+      id: 2,
+      name: 'Гребной тренажер CardioPower PRO CR300',
+      price: null,
+      originalPrice: null,
+      discount: null,
+      rating: 4.6,
+      reviews: 89,
+      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      badge: 'Хит продаж',
+      badgeColor: 'bg-orange-500',
+      isAvailable: false,
+      hasComparison: true,
+      inStock: false
+    },
+    {
+      id: 3,
+      name: 'Гребной тренажер CardioPower PRO CR300',
+      price: '4 610₽',
+      originalPrice: null,
+      discount: null,
+      rating: 4.7,
+      reviews: 67,
+      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      badge: 'Скидка',
+      badgeColor: 'bg-green-500',
+      isAvailable: true,
+      hasComparison: true,
+      inStock: true
+    },
+    {
+      id: 4,
+      name: 'Гребной тренажер CardioPower PRO CR300',
+      price: '4 610₽',
+      originalPrice: null,
+      discount: null,
+      rating: 4.9,
+      reviews: 156,
+      image: '/lovable-uploads/82291ada-a8f2-4776-8a6a-2257bf8ea4c1.png',
+      badge: 'Скидка',
+      badgeColor: 'bg-green-500',
+      isAvailable: true,
+      hasComparison: true,
+      inStock: true
+    }
+  ];
+
+  const allProducts = Array(8).fill(null).map((_, index) => ({
+    ...products[index % 4],
+    id: index + 1
   }));
   
   // В реальном приложении здесь бы был запрос к API для получения данных бренда

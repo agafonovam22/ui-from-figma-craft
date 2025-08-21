@@ -1,28 +1,136 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
+import ProductCard from '@/components/ProductCard';
 
 const ProductCatalog: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<'home' | 'fitness'>('home');
-  
-  // Используем реальные данные из Bitrix API
-  const { products: bitrixProducts, loading, error } = useBitrixCatalog("https://cp44652.tw1.ru/catalog.php");
-  
-  // Используем реальные товары для обоих фильтров
-  const homeProducts = bitrixProducts.map(product => ({
-    id: product.id,
-    name: product.name,
-    image: product.image_url,
-    price: `${product.price.toLocaleString()} ₽`
-  }));
 
-  const fitnessProducts = bitrixProducts.map(product => ({
-    id: product.id,
-    name: product.name,
-    image: product.image_url,
-    price: `${product.price.toLocaleString()} ₽`
-  }));
+  const homeProducts = [
+    {
+      id: 1,
+      image: '/lovable-uploads/e7893606-f51a-4e53-9c80-ab83d081c16c.png',
+      category: 'treadmill',
+      price: 'от 33 900 ₽'
+    },
+    {
+      id: 2,
+      image: '/lovable-uploads/41b47400-6434-4309-9474-38fd8527c0f9.png',
+      category: 'bike',
+      price: 'от 35 900 ₽'
+    },
+    {
+      id: 3,
+      image: '/lovable-uploads/7eb18ab6-a47c-4127-a2e4-520345b3a636.png',
+      category: 'rowing',
+      price: 'от 49 900 ₽'
+    },
+    {
+      id: 4,
+      image: '/lovable-uploads/9deaa8d7-89aa-4671-b709-82d6af4d5f19.png',
+      category: 'strength',
+      price: 'от 9 900 ₽'
+    },
+    {
+      id: 5,
+      image: '/lovable-uploads/dcac2877-3c35-4f7d-8abf-95aacc72562e.png',
+      category: 'inversion',
+      price: 'от 12 900 ₽'
+    },
+    {
+      id: 6,
+      image: '/lovable-uploads/34f32079-9172-481c-a342-ebee3d47cd47.png',
+      category: 'accessories',
+      price: '220 ₽'
+    },
+    {
+      id: 7,
+      image: '/lovable-uploads/c05b2484-8dc7-4ac6-bd32-3876e288da9a.png',
+      category: 'street',
+      price: 'от 800 ₽'
+    },
+    {
+      id: 8,
+      image: '/lovable-uploads/0c78e89b-223e-41c0-a7c1-3e594b9c0a92.png',
+      category: 'elliptical',
+      price: 'от 45 900 ₽'
+    },
+    {
+      id: 9,
+      image: '/lovable-uploads/bc820bdc-17a0-4d70-a621-8d5a0ebf37ad.png',
+      category: 'tennis',
+      price: 'от 24 900 ₽'
+    },
+    {
+      id: 10,
+      image: '/lovable-uploads/7919df46-5d23-4cdc-8384-edd08bf27547.png',
+      category: 'accessories',
+      price: 'от 700 ₽'
+    },
+    {
+      id: 11,
+      image: '/lovable-uploads/2384c4ae-190f-4278-aaf8-daaa6e67e846.png',
+      category: 'skiing'
+    }
+  ];
+
+  const fitnessProducts = [
+    {
+      id: 13,
+      image: '/lovable-uploads/e7893606-f51a-4e53-9c80-ab83d081c16c.png',
+      category: 'treadmill'
+    },
+    {
+      id: 14,
+      image: '/lovable-uploads/41b47400-6434-4309-9474-38fd8527c0f9.png',
+      category: 'bike'
+    },
+    {
+      id: 15,
+      image: '/lovable-uploads/7eb18ab6-a47c-4127-a2e4-520345b3a636.png',
+      category: 'rowing'
+    },
+    {
+      id: 16,
+      image: '/lovable-uploads/9deaa8d7-89aa-4671-b709-82d6af4d5f19.png',
+      category: 'strength'
+    },
+    {
+      id: 17,
+      image: '/lovable-uploads/dcac2877-3c35-4f7d-8abf-95aacc72562e.png',
+      category: 'inversion'
+    },
+    {
+      id: 18,
+      image: '/lovable-uploads/34f32079-9172-481c-a342-ebee3d47cd47.png',
+      category: 'accessories'
+    },
+    {
+      id: 19,
+      image: '/lovable-uploads/c05b2484-8dc7-4ac6-bd32-3876e288da9a.png',
+      category: 'street'
+    },
+    {
+      id: 20,
+      image: '/lovable-uploads/0c78e89b-223e-41c0-a7c1-3e594b9c0a92.png',
+      category: 'elliptical'
+    },
+    {
+      id: 21,
+      image: '/lovable-uploads/bc820bdc-17a0-4d70-a621-8d5a0ebf37ad.png',
+      category: 'tennis'
+    },
+    {
+      id: 22,
+      image: '/lovable-uploads/7919df46-5d23-4cdc-8384-edd08bf27547.png',
+      category: 'accessories'
+    },
+    {
+      id: 23,
+      image: '/lovable-uploads/2384c4ae-190f-4278-aaf8-daaa6e67e846.png',
+      category: 'skiing'
+    }
+  ];
 
   const currentProducts = activeFilter === 'home' ? homeProducts : fitnessProducts;
 
@@ -57,79 +165,33 @@ const ProductCatalog: React.FC = () => {
           </div>
         </div>
         
-        {loading ? (
-          <div className="flex items-center justify-center h-64">
-            <div className="text-center">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#F53B49] mx-auto mb-4"></div>
-              <p className="text-gray-600">Загрузка товаров...</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6">
+          {currentProducts.slice(0, 6).map((product) => (
+            <ProductCard key={product.id} product={product} variant="grid" linkTo="/product-card" />
+          ))}
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px]">
+          {currentProducts.slice(6, 10).map((product) => (
+            <ProductCard key={product.id} product={product} variant="grid" linkTo="/product-card" />
+          ))}
+          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px]">
+            <img 
+              src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
+              alt="Перейти в каталог"
+              className="w-full h-full object-cover object-right"
+            />
+            <div className="absolute top-4 left-4 text-white font-benzin text-lg font-normal">
+              {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
             </div>
+            <Link 
+              to={activeFilter === 'home' ? '/catalog?type=home' : '/catalog?type=fitness'}
+              className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2"
+            >
+              Перейти в каталог <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
-        ) : error ? (
-          <div className="text-center py-8">
-            <p className="text-red-600 mb-2">Ошибка загрузки товаров</p>
-            <p className="text-gray-500 text-sm">{error}</p>
-          </div>
-        ) : (
-          <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6">
-              {currentProducts.slice(0, 6).map((product) => (
-                <Link key={product.id} to={`/product/${product.id}`} className="block">
-                  <div className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
-                    <img 
-                      src={product.image || '/placeholder.svg'} 
-                      alt={product.name || "Товар"}
-                      className="w-full h-auto object-contain"
-                      onError={(e) => {
-                        e.currentTarget.src = '/placeholder.svg';
-                      }}
-                    />
-                    <div className="p-4">
-                      <h3 className="font-medium text-sm mb-2 line-clamp-2">{product.name}</h3>
-                      <p className="text-[#F53B49] font-bold">{product.price}</p>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px]">
-              {currentProducts.slice(6, 10).map((product) => (
-                <Link key={product.id} to={`/product/${product.id}`} className="block">
-                  <div className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
-                    <img 
-                      src={product.image || '/placeholder.svg'} 
-                      alt={product.name || "Товар"}
-                      className="w-full h-auto object-contain"
-                      onError={(e) => {
-                        e.currentTarget.src = '/placeholder.svg';
-                      }}
-                    />
-                    <div className="p-4">
-                      <h3 className="font-medium text-sm mb-2 line-clamp-2">{product.name}</h3>
-                      <p className="text-[#F53B49] font-bold">{product.price}</p>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-              <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px]">
-                <img 
-                  src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
-                  alt="Перейти в каталог"
-                  className="w-full h-full object-cover object-right"
-                />
-                <div className="absolute top-4 left-4 text-white font-benzin text-lg font-normal">
-                  {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
-                </div>
-                <Link 
-                  to={activeFilter === 'home' ? '/catalog?type=home' : '/catalog?type=fitness'}
-                  className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2"
-                >
-                  Перейти в каталог <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-          </>
-        )}
+        </div>
         
         <div className="mt-8 flex justify-start">
           <Link 
