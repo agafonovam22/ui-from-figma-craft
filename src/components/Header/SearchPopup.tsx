@@ -7,6 +7,8 @@ import {
 } from "@/components/ui/popover";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useProducts } from "@/hooks/useProducts";
+import { Link } from "react-router-dom";
 
 interface SearchPopupProps {
   children: React.ReactNode;
@@ -15,6 +17,8 @@ interface SearchPopupProps {
 }
 
 const SearchPopup: React.FC<SearchPopupProps> = ({ children, isOpen, onOpenChange }) => {
+  const { data: products = [], isLoading, error } = useProducts();
+  
   const popularSearches = [
     "Беговые дорожки",
     "Эллиптические тренажеры", 
@@ -29,12 +33,8 @@ const SearchPopup: React.FC<SearchPopupProps> = ({ children, isOpen, onOpenChang
     { name: "Для фитнес-клуба", hasArrow: true }
   ];
 
-  const products = Array(9).fill(null).map((_, index) => ({
-    id: index + 1,
-    name: "Гребной тренажер CardioPowe PRO CR300",
-    image: "/lovable-uploads/be85c55b-4881-41b1-beb7-89b0cea7d083.png",
-    badge: "НОВИНКА"
-  }));
+  // Берем первые 9 товаров для отображения в попапе
+  const displayProducts = products.slice(0, 9);
 
   return (
     <Popover open={isOpen} onOpenChange={onOpenChange}>
@@ -89,27 +89,48 @@ const SearchPopup: React.FC<SearchPopupProps> = ({ children, isOpen, onOpenChang
           {/* Правая панель с товарами */}
           <div className="flex-1 p-6">
             <ScrollArea className="h-[400px] w-full">
-              <div className="grid grid-cols-3 gap-4 pr-4">
-                {products.map((product) => (
-                  <div key={product.id} className="group cursor-pointer">
-                    <div className="relative bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
-                      <div className="relative mb-3">
-                        <img 
-                          src={product.image} 
-                          alt={product.name}
-                          className="w-full h-20 object-contain"
-                        />
-                        <Badge className="absolute top-0 right-0 bg-green-500 text-white text-xs px-2 py-1 rounded">
-                          {product.badge}
-                        </Badge>
+              {isLoading ? (
+                <div className="flex items-center justify-center h-full">
+                  <div className="text-gray-500">Загрузка товаров...</div>
+                </div>
+              ) : error ? (
+                <div className="flex items-center justify-center h-full">
+                  <div className="text-red-500">Ошибка загрузки товаров</div>
+                </div>
+              ) : (
+                <div className="grid grid-cols-3 gap-4 pr-4">
+                  {displayProducts.map((product) => (
+                    <Link 
+                      key={product.id} 
+                      to={`/product/${product.id}`}
+                      className="group cursor-pointer"
+                      onClick={() => onOpenChange(false)}
+                    >
+                      <div className="relative bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
+                        <div className="relative mb-3">
+                          <img 
+                            src={product.image_url} 
+                            alt={product.name}
+                            className="w-full h-20 object-contain"
+                            onError={(e) => {
+                              e.currentTarget.src = "/lovable-uploads/be85c55b-4881-41b1-beb7-89b0cea7d083.png";
+                            }}
+                          />
+                          <Badge className="absolute top-0 right-0 bg-green-500 text-white text-xs px-2 py-1 rounded">
+                            НОВИНКА
+                          </Badge>
+                        </div>
+                        <h4 className="text-xs font-medium text-[#262631] line-clamp-2 leading-tight">
+                          {product.name}
+                        </h4>
+                        <div className="mt-2 text-xs font-semibold text-[#F53B49]">
+                          {product.price.toLocaleString('ru-RU')} ₽
+                        </div>
                       </div>
-                      <h4 className="text-xs font-medium text-[#262631] line-clamp-2 leading-tight">
-                        {product.name}
-                      </h4>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </ScrollArea>
           </div>
         </div>
