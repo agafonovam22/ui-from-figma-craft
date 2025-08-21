@@ -99,9 +99,17 @@ export const useProducts = (categoryFilter?: string) => {
       if (!categoryFilter) return data;
       
       // Фильтрация по типу назначения (Для дома / Для фитнес-клуба)
-      if (categoryFilter === 'Для дома' || categoryFilter === 'Для фитнес-клуба') {
+      if (categoryFilter === 'Для дома') {
         return data.filter(product => 
-          product.characteristics['Тип назначения'] === categoryFilter
+          product.characteristics['Тип назначения'] === 'Для дома' ||
+          product.characteristics['Тип назначения'] === 'Для дома;Для фитнес-клубов'
+        );
+      }
+      
+      if (categoryFilter === 'Для фитнес-клуба') {
+        return data.filter(product => 
+          product.characteristics['Тип назначения'] === 'Для фитнес-клубов' ||
+          product.characteristics['Тип назначения'] === 'Для дома;Для фитнес-клубов'
         );
       }
       
