@@ -353,11 +353,11 @@ const ProductDetail: React.FC = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <div className="w-4 h-4 bg-gray-400 rounded flex items-center justify-center">
-                    <div className="w-2 h-2">
-                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-2 h-2">
-                        <path d="M3 17h2l.4-2H18l2-4H7.4l-.4-2H21V7H5.4L4 3H1v2h2l4 12z"/>
-                      </svg>
-                    </div>
+                    <img 
+                      src="/lovable-uploads/f35fe135-ca23-48f8-8490-aa26a337a8f5.png" 
+                      alt="Доставка" 
+                      className="w-3 h-3 object-contain"
+                    />
                   </div>
                   <span>Доставка</span>
                 </div>
@@ -366,11 +366,11 @@ const ProductDetail: React.FC = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <div className="w-4 h-4 bg-gray-400 rounded flex items-center justify-center">
-                    <div className="w-2 h-2">
-                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-2 h-2">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                      </svg>
-                    </div>
+                    <img 
+                      src="/lovable-uploads/a6b610bf-00ff-40b0-a771-be9d69ec0a79.png" 
+                      alt="Сборка" 
+                      className="w-3 h-3 object-contain"
+                    />
                   </div>
                   <span>Сборка</span>
                 </div>
@@ -379,11 +379,11 @@ const ProductDetail: React.FC = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <div className="w-4 h-4 bg-gray-400 rounded flex items-center justify-center">
-                    <div className="w-2 h-2">
-                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-2 h-2">
-                        <path d="M2 17h20v2H2zm1.15-4.05L4 11l.85 1.95.66-.3-.85-1.95.85-1.95-.66-.3L4 9.4 3.15 7.45l-.66.3.85 1.95-.85 1.95.66.3zM12 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/>
-                      </svg>
-                    </div>
+                    <img 
+                      src="/lovable-uploads/f9620881-afa2-4fc3-81cb-d1956b8a6691.png" 
+                      alt="Оплата для физ.лиц" 
+                      className="w-3 h-3 object-contain"
+                    />
                   </div>
                   <span>Оплата для физ.лиц</span>
                 </div>
@@ -392,11 +392,11 @@ const ProductDetail: React.FC = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <div className="w-4 h-4 bg-gray-400 rounded flex items-center justify-center">
-                    <div className="w-2 h-2">
-                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-2 h-2">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                      </svg>
-                    </div>
+                    <img 
+                      src="/lovable-uploads/9cf11e84-5092-4583-9ee9-6f319e803b5a.png" 
+                      alt="Оплата для юр.лиц" 
+                      className="w-3 h-3 object-contain"
+                    />
                   </div>
                   <span>Оплата для юр.лиц</span>
                 </div>
