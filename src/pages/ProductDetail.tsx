@@ -18,8 +18,8 @@ const ProductDetail: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [quantity, setQuantity] = useState(1);
-  const [selectedColor, setSelectedColor] = useState<string>('blue-red');
-  const [selectedSize, setSelectedSize] = useState<string>('14');
+  const [selectedColor, setSelectedColor] = useState<string>('');
+  const [selectedSize, setSelectedSize] = useState<string>('core');
   const { addItem } = useCart();
   const { toast } = useToast();
 
@@ -261,67 +261,26 @@ const ProductDetail: React.FC = () => {
               </Button>
             </div>
 
-            {/* Color and Size Selection */}
+            {/* Product Options */}
             <div className="space-y-4 py-6 border-b border-gray-300">
-              {/* Color Selection */}
+              {/* Kit Variation */}
               <div>
-                <h4 className="font-medium mb-3">Цвет</h4>
-                <div className="flex space-x-3">
-                  <button 
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-full border-2 transition-all ${
-                      selectedColor === 'blue-red' 
-                        ? 'bg-gray-800 text-white border-gray-800' 
-                        : 'bg-white border-gray-300 hover:border-gray-400'
-                    }`}
-                    onClick={() => setSelectedColor('blue-red')}
-                  >
-                    <div className="flex">
-                      <div className="w-4 h-4 bg-blue-600 rounded-full"></div>
-                      <div className="w-4 h-4 bg-red-600 rounded-full -ml-1"></div>
-                    </div>
-                    <span className="text-sm">Красный/синий</span>
-                  </button>
-                  <button 
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-full border-2 transition-all ${
-                      selectedColor === 'green-yellow' 
-                        ? 'bg-gray-800 text-white border-gray-800' 
-                        : 'bg-white border-gray-300 hover:border-gray-400'
-                    }`}
-                    onClick={() => setSelectedColor('green-yellow')}
-                  >
-                    <div className="flex">
-                      <div className="w-4 h-4 bg-green-600 rounded-full"></div>
-                      <div className="w-4 h-4 bg-yellow-500 rounded-full -ml-1"></div>
-                    </div>
-                    <span className="text-sm">Зеленый/желтый</span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Size Selection */}
-              <div>
-                <h4 className="font-medium mb-3">Диаметр, ft</h4>
+                <h4 className="font-medium mb-3">Комплектация</h4>
                 <div className="flex flex-wrap gap-2">
-                  {[
-                    { size: '8', price: '(-15 000₽)' },
-                    { size: '10', price: '(-10 000₽)' },
-                    { size: '12', price: '(-5 000₽)' },
-                    { size: '14', price: '' },
-                    { size: '16', price: '(+10 000₽)' }
-                  ].map((item) => (
-                    <button
-                      key={item.size}
-                      className={`px-4 py-2 text-sm rounded-full border-2 transition-all ${
-                        selectedSize === item.size 
-                          ? 'bg-gray-800 text-white border-gray-800' 
-                          : 'bg-white border-gray-300 hover:border-gray-400'
-                      }`}
-                      onClick={() => setSelectedSize(item.size)}
-                    >
-                      {item.size} {item.price}
-                    </button>
-                  ))}
+                  <button
+                    className={`px-4 py-2 text-sm rounded-full border-2 transition-all ${
+                      selectedSize === 'core' 
+                        ? 'bg-gray-800 text-white border-gray-800' 
+                        : 'bg-white border-gray-300 hover:border-gray-400'
+                    }`}
+                    onClick={() => setSelectedSize('core')}
+                  >
+                    Core Kit
+                  </button>
                 </div>
+                <p className="text-xs text-muted-foreground mt-2">
+                  Базовая комплектация для функционального тренинга
+                </p>
               </div>
             </div>
 
