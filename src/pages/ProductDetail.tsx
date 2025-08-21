@@ -21,6 +21,7 @@ const ProductDetail: React.FC = () => {
   const [selectedColor, setSelectedColor] = useState<string>('');
   const [selectedSize, setSelectedSize] = useState<string>('core');
   const [activeTab, setActiveTab] = useState<string>('description');
+  const [showReviewModal, setShowReviewModal] = useState(false);
   const { addItem } = useCart();
   const { toast } = useToast();
 
@@ -242,23 +243,114 @@ const ProductDetail: React.FC = () => {
       case 'reviews':
         return (
           <div>
-            <h3 className="text-xl font-semibold mb-4">Отзывы покупателей</h3>
-            <div className="font-manrope space-y-4">
-              <div className="p-4 border border-border rounded-lg">
-                <div className="flex items-center space-x-2 mb-2">
-                  <div className="flex text-yellow-400">★★★★★</div>
-                  <span className="font-medium">Иван П.</span>
-                  <span className="text-sm text-muted-foreground">15.01.2024</span>
+            <h3 className="text-xl font-semibold mb-6 font-manrope">Отзывы (10)</h3>
+            <div className="font-manrope grid lg:grid-cols-3 gap-8">
+              {/* Список отзывов */}
+              <div className="lg:col-span-2 space-y-6">
+                {/* Отзыв 1 */}
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-12 h-12 bg-gray-400 rounded-full flex-shrink-0"></div>
+                    <div className="flex-grow">
+                      <div className="flex items-center space-x-2 mb-1">
+                        <span className="font-medium text-foreground">Имя Фамилия</span>
+                        <div className="flex text-yellow-400">
+                          <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                        </div>
+                      </div>
+                      <p className="text-sm text-gray-500 mb-2">Вчера, 22:01</p>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Изображения в отзыве */}
+                  <div className="flex space-x-3 ml-15">
+                    <div className="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/f35fe135-ca23-48f8-8490-aa26a337a8f5.png" 
+                        alt="Отзыв фото 1" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/f9620881-afa2-4fc3-81cb-d1956b8a6691.png" 
+                        alt="Отзыв фото 2" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
                 </div>
-                <p className="text-muted-foreground">Отличный товар, полностью соответствует описанию. Рекомендую!</p>
+
+                {/* Отзыв 2 */}
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-12 h-12 bg-gray-400 rounded-full flex-shrink-0"></div>
+                    <div className="flex-grow">
+                      <div className="flex items-center space-x-2 mb-1">
+                        <span className="font-medium text-foreground">Имя Фамилия</span>
+                        <div className="flex text-yellow-400">
+                          <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                        </div>
+                      </div>
+                      <p className="text-sm text-gray-500 mb-2">Вчера, 22:01</p>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="p-4 border border-border rounded-lg">
-                <div className="flex items-center space-x-2 mb-2">
-                  <div className="flex text-yellow-400">★★★★☆</div>
-                  <span className="font-medium">Мария С.</span>
-                  <span className="text-sm text-muted-foreground">12.01.2024</span>
+
+              {/* Блок рейтинга и критериев */}
+              <div className="space-y-6">
+                {/* Общий рейтинг */}
+                <div className="text-center">
+                  <div className="text-4xl font-bold mb-1">4.5</div>
+                  <div className="flex justify-center text-yellow-400 text-xl mb-2">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                  </div>
+                  <p className="text-gray-500 text-sm">10 оценок</p>
                 </div>
-                <p className="text-muted-foreground">Хорошее качество, быстрая доставка. Есть небольшие замечания по упаковке.</p>
+
+                {/* Критерии оценки */}
+                <div className="space-y-3">
+                  {[
+                    { name: 'Качество', rating: 6 },
+                    { name: 'Цена', rating: 10 },
+                    { name: 'Функциональность', rating: 4 },
+                    { name: 'Скорость', rating: 8 },
+                    { name: 'Легкость в сборке', rating: 8 }
+                  ].map((criterion) => (
+                    <div key={criterion.name} className="flex items-center justify-between">
+                      <span className="text-sm text-gray-600">{criterion.name}</span>
+                      <div className="flex space-x-1">
+                        {Array.from({ length: 10 }).map((_, index) => (
+                          <div
+                            key={index}
+                            className={`w-2 h-3 ${
+                              index < criterion.rating ? 'bg-red-500' : 'bg-gray-200'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Кнопка написать отзыв */}
+                <button 
+                  onClick={() => setShowReviewModal(true)}
+                  className="w-full py-3 border border-red-500 text-red-500 rounded-lg hover:bg-red-50 transition-colors"
+                >
+                  Написать отзыв
+                </button>
               </div>
             </div>
           </div>
@@ -761,6 +853,115 @@ const ProductDetail: React.FC = () => {
         </div>
       </main>
       <Footer />
+
+      {/* Review Modal */}
+      {showReviewModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg p-6 max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-xl font-semibold">Написать отзыв</h3>
+              <button 
+                onClick={() => setShowReviewModal(false)}
+                className="text-gray-400 hover:text-gray-600"
+              >
+                ✕
+              </button>
+            </div>
+            
+            <form className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium mb-2">Имя *</label>
+                <input 
+                  type="text" 
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
+                  placeholder="Введите ваше имя"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium mb-2">Email *</label>
+                <input 
+                  type="email" 
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
+                  placeholder="example@email.com"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium mb-2">Общая оценка *</label>
+                <div className="flex space-x-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <button
+                      key={star}
+                      type="button"
+                      className="text-2xl text-gray-300 hover:text-yellow-400"
+                    >
+                      ☆
+                    </button>
+                  ))}
+                </div>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium mb-2">Критерии оценки</label>
+                <div className="space-y-2">
+                  {['Качество', 'Цена', 'Функциональность', 'Скорость', 'Легкость в сборке'].map((criterion) => (
+                    <div key={criterion} className="flex items-center justify-between">
+                      <span className="text-sm">{criterion}</span>
+                      <div className="flex space-x-1">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <button
+                            key={star}
+                            type="button"
+                            className="text-lg text-gray-300 hover:text-yellow-400"
+                          >
+                            ☆
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium mb-2">Отзыв *</label>
+                <textarea 
+                  rows={4}
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
+                  placeholder="Поделитесь своими впечатлениями о товаре..."
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium mb-2">Фото (необязательно)</label>
+                <input 
+                  type="file" 
+                  multiple 
+                  accept="image/*"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
+                />
+              </div>
+              
+              <div className="flex space-x-3 pt-4">
+                <button
+                  type="button"
+                  onClick={() => setShowReviewModal(false)}
+                  className="flex-1 py-2 px-4 border border-gray-300 rounded-lg text-sm hover:bg-gray-50"
+                >
+                  Отмена
+                </button>
+                <button
+                  type="submit"
+                  className="flex-1 py-2 px-4 bg-red-600 text-white rounded-lg text-sm hover:bg-red-700"
+                >
+                  Отправить отзыв
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
