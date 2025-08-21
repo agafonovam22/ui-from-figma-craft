@@ -75,10 +75,10 @@ const ReviewDialog: React.FC<ReviewDialogProps> = ({ open, onOpenChange }) => {
             <button
               key={rating}
               onClick={() => handleRatingClick(category, rating)}
-              className={`w-12 h-8 rounded-sm transition-colors ${
+              className={`w-12 h-8 rounded-sm border transition-colors ${
                 rating <= currentRating 
-                  ? 'bg-[#F53B49]' 
-                  : 'bg-muted hover:bg-muted/80'
+                  ? 'bg-[#F53B49] border-[#F53B49]' 
+                  : 'bg-white border-gray-300 hover:bg-gray-50'
               }`}
             />
           ))}
