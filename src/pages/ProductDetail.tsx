@@ -252,7 +252,7 @@ const ProductDetail: React.FC = () => {
                   <div className="flex items-start space-x-3">
                     <div className="w-12 h-12 bg-gray-400 rounded-full flex-shrink-0"></div>
                     <div className="flex-grow">
-                      <div className="flex items-center space-x-2 mb-1">
+                      <div className="flex items-center justify-between mb-1">
                         <span className="font-medium text-foreground">Имя Фамилия</span>
                         <div className="flex text-yellow-400">
                           <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
@@ -262,7 +262,8 @@ const ProductDetail: React.FC = () => {
                       <p className="text-gray-600 text-sm leading-relaxed">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+                        sunt in culpa qui officia deserunt mollit anim id est laborum.
                       </p>
                     </div>
                   </div>
@@ -291,7 +292,7 @@ const ProductDetail: React.FC = () => {
                   <div className="flex items-start space-x-3">
                     <div className="w-12 h-12 bg-gray-400 rounded-full flex-shrink-0"></div>
                     <div className="flex-grow">
-                      <div className="flex items-center space-x-2 mb-1">
+                      <div className="flex items-center justify-between mb-1">
                         <span className="font-medium text-foreground">Имя Фамилия</span>
                         <div className="flex text-yellow-400">
                           <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
@@ -301,7 +302,8 @@ const ProductDetail: React.FC = () => {
                       <p className="text-gray-600 text-sm leading-relaxed">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+                        sunt in culpa qui officia deserunt mollit anim id est laborum.
                       </p>
                     </div>
                   </div>
@@ -309,39 +311,46 @@ const ProductDetail: React.FC = () => {
               </div>
 
               {/* Блок рейтинга и критериев */}
-              <div className="space-y-6">
-                {/* Общий рейтинг */}
-                <div className="text-center">
-                  <div className="text-4xl font-bold mb-1">4.5</div>
-                  <div className="flex justify-center text-yellow-400 text-xl mb-2">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+              <div className="space-y-4">
+                {/* Критерии оценки - первый контейнер */}
+                <div className="bg-white border border-gray-200 rounded-lg p-4">
+                  <div className="space-y-3">
+                    {[
+                      { name: 'Качество', rating: 6 },
+                      { name: 'Цена', rating: 10 },
+                      { name: 'Функциональность', rating: 4 },
+                      { name: 'Скорость', rating: 8 },
+                      { name: 'Легкость в сборке', rating: 8 }
+                    ].map((criterion) => (
+                      <div key={criterion.name} className="flex items-center justify-between">
+                        <span className="text-sm text-gray-600">{criterion.name}</span>
+                        <div className="flex space-x-1">
+                          {Array.from({ length: 10 }).map((_, index) => (
+                            <div
+                              key={index}
+                              className={`w-2 h-3 ${
+                                index < criterion.rating ? 'bg-red-500' : 'bg-gray-200'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  <p className="text-gray-500 text-sm">10 оценок</p>
                 </div>
 
-                {/* Критерии оценки */}
-                <div className="space-y-3">
-                  {[
-                    { name: 'Качество', rating: 6 },
-                    { name: 'Цена', rating: 10 },
-                    { name: 'Функциональность', rating: 4 },
-                    { name: 'Скорость', rating: 8 },
-                    { name: 'Легкость в сборке', rating: 8 }
-                  ].map((criterion) => (
-                    <div key={criterion.name} className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">{criterion.name}</span>
-                      <div className="flex space-x-1">
-                        {Array.from({ length: 10 }).map((_, index) => (
-                          <div
-                            key={index}
-                            className={`w-2 h-3 ${
-                              index < criterion.rating ? 'bg-red-500' : 'bg-gray-200'
-                            }`}
-                          />
-                        ))}
-                      </div>
+                {/* Общий рейтинг - серый контейнер */}
+                <div className="bg-gray-100 rounded-lg p-4">
+                  <div className="text-center">
+                    <div className="text-right mb-2">
+                      <span className="text-sm text-gray-500">Общий рейтинг</span>
                     </div>
-                  ))}
+                    <div className="text-5xl font-bold mb-2">4.5</div>
+                    <div className="flex justify-center text-yellow-400 text-xl mb-2">
+                      <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                    </div>
+                    <p className="text-gray-500 text-sm">10 оценок</p>
+                  </div>
                 </div>
 
                 {/* Кнопка написать отзыв */}
