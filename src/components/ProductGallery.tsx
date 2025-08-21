@@ -42,7 +42,10 @@ export default function ProductGallery({ mainImage, images = [], galleryImages =
             src={allImages[currentImageIndex] || '/placeholder.svg'}
             alt={productName}
             className="w-full h-full max-w-full max-h-full object-contain"
-            style={{ imageRendering: 'crisp-edges' }}
+            style={{ 
+              imageRendering: 'auto',
+              filter: 'none'
+            }}
             onError={(e) => {
               e.currentTarget.src = '/placeholder.svg';
             }}
