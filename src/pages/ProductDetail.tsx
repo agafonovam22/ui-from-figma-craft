@@ -164,35 +164,60 @@ const ProductDetail: React.FC = () => {
 
           {/* Product Info */}
           <div className="bg-gray-50 p-6 rounded-lg space-y-6">
-            {/* Header with actions */}
-            <div className="flex justify-between items-start">
-              <div className="flex-1">
-                <h1 className="text-3xl font-bold text-foreground mb-3">{product.name}</h1>
-                {product.rating && product.reviews_count && (
-                  <div className="flex items-center space-x-2 mb-4">
-                    <div className="flex text-orange-400">
-                      {'★'.repeat(Math.floor(product.rating))}
-                      {'☆'.repeat(5 - Math.floor(product.rating))}
-                    </div>
-                    <span className="text-sm text-orange-400 font-medium">
-                      {product.rating}/5
-                    </span>
-                  </div>
-                )}
-              </div>
+            {/* Header with badges */}
+            <div className="flex justify-end mb-4">
               <div className="flex space-x-2">
-                <Button variant="outline" size="sm">
-                  <Heart className="w-4 h-4 mr-1" />
-                  В избранное
-                </Button>
-                <Button variant="outline" size="sm">
-                  В сравнение
-                </Button>
+                <div className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium flex items-center">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                  В наличии
+                </div>
+                <div className="bg-blue-500 text-white px-6 py-2 rounded-full text-sm font-medium">
+                  Есть в шоуруме
+                </div>
               </div>
             </div>
 
+            {/* Product Title */}
+            <div className="mb-4">
+              <h1 className="text-3xl mb-2">
+                <span className="font-normal">Батут </span>
+                <span className="font-bold">{product.name.replace(/^батут\s*/i, '')}</span>
+              </h1>
+            </div>
+
+            {/* Action buttons and rating */}
+            <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-300">
+              <div className="flex space-x-4">
+                <Button variant="outline" size="sm" className="text-gray-600">
+                  <div className="w-4 h-4 mr-2 flex items-center justify-center">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                      <rect x="2" y="4" width="2" height="8"/>
+                      <rect x="6" y="2" width="2" height="10"/>
+                      <rect x="10" y="6" width="2" height="6"/>
+                    </svg>
+                  </div>
+                  В сравнение
+                </Button>
+                <Button variant="outline" size="sm" className="text-gray-600">
+                  <Heart className="w-4 h-4 mr-2" />
+                  В избранное
+                </Button>
+              </div>
+              {product.rating && (
+                <div className="flex items-center space-x-2">
+                  <div className="flex text-orange-400">
+                    {'★'.repeat(Math.floor(product.rating))}
+                    {'☆'.repeat(5 - Math.floor(product.rating))}
+                  </div>
+                  <span className="text-orange-400 font-medium border border-orange-400 rounded-full px-3 py-1 text-sm">
+                    {product.rating}/5
+                  </span>
+                </div>
+              )}
+            </div>
+
             {/* Product characteristics list */}
-            <div className="space-y-3">
+            <div className="space-y-3 pb-6 border-b border-gray-300">
               {product.characteristics && (
                 <div className="grid gap-2 text-sm">
                   <div className="flex justify-between">
@@ -205,7 +230,7 @@ const ProductDetail: React.FC = () => {
                       <span className="font-medium">{product.characteristics['Бренд (id)']}</span>
                     </div>
                   )}
-                  <div className="flex justify-balance">
+                  <div className="flex justify-between">
                     <span className="text-muted-foreground">Назначение:</span>
                     <span className="font-medium">Домашние</span>
                   </div>
@@ -241,7 +266,7 @@ const ProductDetail: React.FC = () => {
             </div>
 
             {/* Color and Size Selection */}
-            <div className="space-y-4">
+            <div className="space-y-4 py-6 border-b border-gray-300">
               {/* Color Selection */}
               <div>
                 <h4 className="font-medium mb-2">Цвет</h4>
