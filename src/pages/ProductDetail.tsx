@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Heart, Share2, ShoppingCart, Download } from 'lucide-react';
+import { ArrowLeft, Heart, Share2, ShoppingCart, Download, Minus, Plus } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -9,13 +9,19 @@ import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb";
 import { useCart } from '@/contexts/CartContext';
+import ProductGallery from '@/components/ProductGallery';
+import { useToast } from '@/hooks/use-toast';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [quantity, setQuantity] = useState(1);
+  const [selectedColor, setSelectedColor] = useState<string>('');
+  const [selectedSize, setSelectedSize] = useState<string>('');
   const { addItem } = useCart();
+  const { toast } = useToast();
 
   const handleBuyClick = () => {
     if (product) {
@@ -26,8 +32,16 @@ const ProductDetail: React.FC = () => {
         image_url: product.image_url,
         is_available: product.is_available
       });
+      
+      toast({
+        title: "Товар добавлен в корзину",
+        description: `${product.name} (${quantity} шт.)`,
+      });
     }
   };
+
+  const incrementQuantity = () => setQuantity(prev => prev + 1);
+  const decrementQuantity = () => setQuantity(prev => Math.max(1, prev - 1));
 
   // Логируем сразу при рендере
   console.log('ProductDetail рендерится');
@@ -132,124 +146,232 @@ const ProductDetail: React.FC = () => {
           Вернуться в каталог
         </Link>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Product Image */}
-          <div className="space-y-4">
-            <div className="relative">
-              <img 
-                src={product.image_url || '/placeholder.svg'}
-                alt={product.name}
-                className="w-full h-96 object-cover rounded-lg"
-                onError={(e) => {
-                  e.currentTarget.src = '/placeholder.svg';
-                }}
-              />
-              {product.badge && (
-                <Badge className={`absolute top-4 left-4 ${product.badge_color || 'bg-primary'} text-white`}>
-                  {product.badge}
-                </Badge>
-              )}
-            </div>
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Product Gallery */}
+          <div>
+            <ProductGallery
+              mainImage={product.image_url || '/placeholder.svg'}
+              images={product.gallery_images || []}
+              productName={product.name}
+              badges={[
+                ...(product.badge ? [{ text: product.badge, variant: 'destructive' as const }] : []),
+                ...(product.characteristics?.['Акция'] ? [{ text: 'АКЦИЯ', variant: 'destructive' as const }] : []),
+                ...(product.is_hit ? [{ text: 'ХИТ ПРОДАЖ', variant: 'secondary' as const }] : [])
+              ]}
+            />
           </div>
 
           {/* Product Info */}
           <div className="space-y-6">
-            <div>
-              <h1 className="text-3xl font-bold text-foreground mb-2">{product.name}</h1>
-              {product.rating && product.reviews_count && (
-                <div className="flex items-center space-x-2 mb-4">
-                  <div className="flex text-yellow-400">
-                    {'★'.repeat(Math.floor(product.rating))}
-                    {'☆'.repeat(5 - Math.floor(product.rating))}
+            {/* Header with actions */}
+            <div className="flex justify-between items-start">
+              <div className="flex-1">
+                <h1 className="text-3xl font-bold text-foreground mb-3">{product.name}</h1>
+                {product.rating && product.reviews_count && (
+                  <div className="flex items-center space-x-2 mb-4">
+                    <div className="flex text-orange-400">
+                      {'★'.repeat(Math.floor(product.rating))}
+                      {'☆'.repeat(5 - Math.floor(product.rating))}
+                    </div>
+                    <span className="text-sm text-orange-400 font-medium">
+                      {product.rating}/5
+                    </span>
                   </div>
-                  <span className="text-sm text-muted-foreground">
-                    {product.rating} ({product.reviews_count} отзывов)
-                  </span>
+                )}
+              </div>
+              <div className="flex space-x-2">
+                <Button variant="outline" size="sm">
+                  <Heart className="w-4 h-4 mr-1" />
+                  В избранное
+                </Button>
+                <Button variant="outline" size="sm">
+                  В сравнение
+                </Button>
+              </div>
+            </div>
+
+            {/* Product characteristics list */}
+            <div className="space-y-3">
+              {product.characteristics && (
+                <div className="grid gap-2 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Тип продукции:</span>
+                    <span className="font-medium">Беговые дорожки для дома</span>
+                  </div>
+                  {product.characteristics['Бренд (id)'] && (
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Бренд:</span>
+                      <span className="font-medium">{product.characteristics['Бренд (id)']}</span>
+                    </div>
+                  )}
+                  <div className="flex justify-balance">
+                    <span className="text-muted-foreground">Назначение:</span>
+                    <span className="font-medium">Домашние</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Тип двигателя:</span>
+                    <span className="font-medium">Постоянного тока DC</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Мощность двигателя, л.с.:</span>
+                    <span className="font-medium">1.5</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Тип беговой дорожки:</span>
+                    <span className="font-medium">Электрические</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Минимальная скорость, км/ч:</span>
+                    <span className="font-medium">0.8</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Максимальная скорость, км/ч:</span>
+                    <span className="font-medium">10</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Угол наклона:</span>
+                    <span className="font-medium">Механический</span>
+                  </div>
                 </div>
               )}
+              <Button variant="link" className="p-0 h-auto text-red-500 text-sm">
+                Все характеристики →
+              </Button>
+            </div>
+
+            {/* Color and Size Selection */}
+            <div className="space-y-4">
+              {/* Color Selection */}
+              <div>
+                <h4 className="font-medium mb-2">Цвет</h4>
+                <div className="flex space-x-2">
+                  <button className="w-8 h-8 rounded-full bg-blue-600 border-2 border-gray-300 focus:border-blue-500 relative">
+                    <span className="sr-only">Красный/синий</span>
+                  </button>
+                  <button className="w-8 h-8 rounded-full bg-green-600 border-2 border-gray-300 focus:border-green-500">
+                    <span className="sr-only">Зеленый/желтый</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Size Selection */}
+              <div>
+                <h4 className="font-medium mb-2">Диаметр, ft</h4>
+                <div className="flex flex-wrap gap-2">
+                  {['6 (-15 000₽)', '10 (-10 000₽)', '12 (-5 000₽)', '14', '16 (+10 000₽)'].map((size) => (
+                    <button
+                      key={size}
+                      className={`px-3 py-2 text-sm border rounded ${
+                        size === '14' 
+                          ? 'bg-gray-900 text-white border-gray-900' 
+                          : 'border-gray-300 hover:border-gray-400'
+                      }`}
+                      onClick={() => setSelectedSize(size)}
+                    >
+                      {size}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Price */}
             <div className="space-y-2">
               {product.price ? (
-                <div className="flex items-center space-x-4">
-                  <span className="text-3xl font-bold text-foreground">
-                    {typeof product.price === 'number' ? `${product.price.toLocaleString()} ₽` : product.price}
-                  </span>
+                <div className="flex items-baseline space-x-3">
+                  {product.discount_percentage && (
+                    <Badge variant="destructive" className="text-sm">
+                      -{product.discount_percentage}%
+                    </Badge>
+                  )}
                   {product.original_price && (
                     <span className="text-lg text-muted-foreground line-through">
                       {typeof product.original_price === 'number' ? `${product.original_price.toLocaleString()} ₽` : product.original_price}
                     </span>
                   )}
-                  {product.discount_percentage && (
-                    <Badge variant="destructive">
-                      -{product.discount_percentage}%
-                    </Badge>
-                  )}
+                  <span className="text-3xl font-bold text-foreground">
+                    {typeof product.price === 'number' ? `${product.price.toLocaleString()} ₽` : product.price}
+                  </span>
                 </div>
               ) : (
                 <span className="text-2xl text-muted-foreground">Цена по запросу</span>
               )}
             </div>
 
-            {/* Availability */}
-            <div className="flex items-center space-x-4">
-              <div className={`flex items-center space-x-2 ${product.in_stock ? 'text-green-600' : 'text-red-600'}`}>
-                <div className={`w-3 h-3 rounded-full ${product.in_stock ? 'bg-green-500' : 'bg-red-500'}`}></div>
-                <span className="font-medium">
-                  {product.in_stock ? 'В наличии' : 'Нет в наличии'}
-                </span>
-              </div>
-              {product.is_available && (
-                <span className="text-sm text-blue-600">Есть в интернете</span>
-              )}
-            </div>
-
-            {/* Description */}
-            {product.description && (
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Описание</h3>
-                <p className="text-muted-foreground leading-relaxed">{product.description}</p>
-              </div>
-            )}
-
-            {/* Actions */}
+            {/* Add to Cart Section */}
             <div className="space-y-4">
-              <div className="flex space-x-4">
+              {/* Quantity Selector */}
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center border border-border rounded">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={decrementQuantity}
+                    className="h-10 px-3"
+                  >
+                    <Minus className="w-4 h-4" />
+                  </Button>
+                  <span className="w-12 text-center font-medium">{quantity}</span>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={incrementQuantity}
+                    className="h-10 px-3"
+                  >
+                    <Plus className="w-4 h-4" />
+                  </Button>
+                </div>
                 {product.is_available ? (
                   <Button 
                     size="lg" 
-                    className="flex-1 bg-primary hover:bg-primary/90"
+                    className="flex-1 bg-red-600 hover:bg-red-700 text-white h-12"
                     onClick={handleBuyClick}
                   >
-                    <ShoppingCart className="w-5 h-5 mr-2" />
-                    Купить
+                    Добавить в корзину
                   </Button>
                 ) : (
-                  <Button size="lg" variant="outline" className="flex-1">
+                  <Button size="lg" variant="outline" className="flex-1 h-12">
                     Запросить цену
                   </Button>
                 )}
-                <Button size="lg" variant="outline">
-                  <Heart className="w-5 h-5" />
-                </Button>
-                <Button size="lg" variant="outline">
-                  <Share2 className="w-5 h-5" />
-                </Button>
+              </div>
+
+              {/* Delivery and Services Info */}
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 bg-blue-100 rounded flex items-center justify-center">
+                    <div className="w-2 h-2 bg-blue-600 rounded"></div>
+                  </div>
+                  <span>Доставка</span>
+                  <span className="ml-auto font-medium text-foreground">300 руб. (в пределах МКАД/КАД)</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 bg-blue-100 rounded flex items-center justify-center">
+                    <div className="w-2 h-2 bg-blue-600 rounded"></div>
+                  </div>
+                  <span>Сборка</span>
+                  <span className="ml-auto">Рассчитывается индивидуально</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <div className="w-4 h-4 bg-blue-100 rounded flex items-center justify-center mt-0.5">
+                    <div className="w-2 h-2 bg-blue-600 rounded"></div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex justify-between">
+                      <span>Оплата для физ.лиц</span>
+                      <span>Наличными, картой, безналичная, онлайн, в рассрочку</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 bg-blue-100 rounded flex items-center justify-center">
+                    <div className="w-2 h-2 bg-blue-600 rounded"></div>
+                  </div>
+                  <span>Оплата для юр.лиц</span>
+                  <span className="ml-auto">Безналичная оплата, оплата онлайн</span>
+                </div>
               </div>
             </div>
-
-            {/* Additional Info */}
-            {product.has_comparison && (
-              <div className="p-4 border border-border rounded-lg">
-                <p className="text-sm text-muted-foreground">
-                  Этот товар можно добавить к сравнению с другими товарами
-                </p>
-                <Button variant="link" className="p-0 h-auto">
-                  Выбрать для сравнения
-                </Button>
-              </div>
-            )}
           </div>
         </div>
 
