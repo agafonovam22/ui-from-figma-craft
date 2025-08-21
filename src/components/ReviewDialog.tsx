@@ -141,7 +141,7 @@ const ReviewDialog: React.FC<ReviewDialogProps> = ({ open, onOpenChange }) => {
           </div>
 
           {/* Photo Upload and Captcha */}
-          <div className="grid grid-cols-2 gap-6">
+          <div className="space-y-3">
             {/* Photo Upload Button */}
             <div className="flex justify-start">
               <label className="cursor-pointer">
@@ -167,9 +167,9 @@ const ReviewDialog: React.FC<ReviewDialogProps> = ({ open, onOpenChange }) => {
             </div>
             
             {/* Captcha Section */}
-            <div className="space-y-3">
-              <div className="w-full h-20 bg-muted rounded-lg flex items-center justify-center">
-                <span className="text-muted-foreground text-sm font-['Benzin-Regular']">Captcha Image</span>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="w-full h-16 bg-muted rounded-lg flex items-center justify-center">
+                <span className="text-muted-foreground text-xs font-['Benzin-Regular']">Captcha Image</span>
               </div>
               <Input
                 placeholder="Введите слово на картинке"
