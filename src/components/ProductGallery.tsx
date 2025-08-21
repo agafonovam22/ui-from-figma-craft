@@ -19,7 +19,24 @@ export default function ProductGallery({ mainImage, images = [], productName, ch
   
   // Получаем дополнительные изображения из галереи
   const galleryImages = characteristics?.['Картинки галереи'] 
-    ? characteristics['Картинки галереи'].split(',').map((img: string) => img.trim()).filter((img: string) => img)
+    ? characteristics['Картинки галереи'].split(',').map((img: string) => {
+        const trimmedImg = img.trim();
+        // Если это ID, пробуем построить URL
+        if (trimmedImg && /^\d+$/.test(trimmedImg)) {
+          // Пробуем разные варианты URL структуры Битрикс
+          const possibleUrls = [
+            `https://cp44652.tw1.ru/upload/iblock/gallery/${trimmedImg}.png`,
+            `https://cp44652.tw1.ru/upload/iblock/gallery/${trimmedImg}.jpg`,
+            `https://cp44652.tw1.ru/upload/gallery/${trimmedImg}.png`,
+            `https://cp44652.tw1.ru/upload/gallery/${trimmedImg}.jpg`,
+            `https://cp44652.tw1.ru/files/${trimmedImg}.png`,
+            `https://cp44652.tw1.ru/files/${trimmedImg}.jpg`
+          ];
+          // Возвращаем первый URL для тестирования
+          return possibleUrls[0];
+        }
+        return trimmedImg;
+      }).filter((img: string) => img)
     : [];
   
   // Создаем массив всех изображений, начиная с главного
@@ -46,6 +63,7 @@ export default function ProductGallery({ mainImage, images = [], productName, ch
             src={allImages[currentImageIndex] || '/placeholder.svg'}
             alt={productName}
             className="max-w-full max-h-full object-contain"
+            style={{ imageRendering: 'crisp-edges' }}
             onError={(e) => {
               e.currentTarget.src = '/placeholder.svg';
             }}
