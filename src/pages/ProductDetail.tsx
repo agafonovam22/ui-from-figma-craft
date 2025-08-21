@@ -340,7 +340,7 @@ const ProductDetail: React.FC = () => {
                 </div>
 
                 {/* Общий рейтинг - серый контейнер */}
-                <div className="bg-gray-100 rounded-lg p-4">
+                <div className="bg-gray-100 rounded-lg p-4 font-benzin">
                   <div className="mb-4">
                     <span className="text-sm text-gray-500">Общий рейтинг</span>
                   </div>
