@@ -20,6 +20,7 @@ const ProductDetail: React.FC = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState<string>('');
   const [selectedSize, setSelectedSize] = useState<string>('core');
+  const [activeTab, setActiveTab] = useState<string>('description');
   const { addItem } = useCart();
   const { toast } = useToast();
 
@@ -42,6 +43,184 @@ const ProductDetail: React.FC = () => {
 
   const incrementQuantity = () => setQuantity(prev => prev + 1);
   const decrementQuantity = () => setQuantity(prev => Math.max(1, prev - 1));
+
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case 'description':
+        return (
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Описание</h3>
+            <div className="font-manrope text-muted-foreground leading-relaxed space-y-4">
+              <p>
+                {product.description || `${product.name} - это высококачественный фитнес-набор от бренда CENTR, специально разработанный для домашних тренировок и функционального тренинга.`}
+              </p>
+              {product.characteristics && (
+                <div>
+                  <p>
+                    Основные преимущества:
+                  </p>
+                  <ul className="list-disc list-inside space-y-1 ml-4">
+                    <li>Профессиональное оборудование для функционального тренинга</li>
+                    <li>Подходит для домашнего использования</li>
+                    <li>Компактный и эргономичный дизайн</li>
+                    <li>Высокое качество материалов и сборки</li>
+                    {product.characteristics['Гарантия на домашнее использование'] && (
+                      <li>Гарантия: {product.characteristics['Гарантия на домашнее использование']}</li>
+                    )}
+                  </ul>
+                </div>
+              )}
+              <p>
+                Данный фитнес-набор идеально подходит для создания домашнего спортзала и проведения эффективных тренировок. 
+                Благодаря продуманной конструкции и качественным материалам, он обеспечивает безопасность и комфорт во время занятий.
+              </p>
+            </div>
+          </div>
+        );
+      case 'specifications':
+        return (
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Характеристики</h3>
+            <div className="font-manrope space-y-6">
+              {product.characteristics ? (
+                <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                  {Object.entries(product.characteristics).map(([key, value]) => {
+                    // Фильтруем служебные поля
+                    if (key.includes('скрытая характеристика') || 
+                        key.includes('Картинки галереи') ||
+                        key.includes('Реквизиты') ||
+                        key.includes('Ставки налогов') ||
+                        key.includes('Исключить из публикации') ||
+                        key.includes('Использование') ||
+                        key.includes('Количество мест')) {
+                      return null;
+                    }
+                    
+                    const fieldNames: { [key: string]: string } = {
+                      'Артикул': 'Артикул',
+                      'Бренд (id)': 'Бренд',
+                      'Наименование товара на сайте': 'Наименование',
+                      'Тип оборудования': 'Тип оборудования',
+                      'Тип назначения': 'Назначение',
+                      'Страна бренда': 'Страна бренда',
+                      'Страна изготовления': 'Страна производства',
+                      'Вес Брутто, кг': 'Вес, кг',
+                      'Гарантия на домашнее использование': 'Гарантия',
+                      'Акция': 'Акция',
+                      'Базовая единица': 'Единица измерения'
+                    };
+                    
+                    const displayName = fieldNames[key] || key;
+                    
+                    return (
+                      <div key={key} className="flex justify-between py-2 border-b border-border">
+                        <span className="font-medium text-muted-foreground">{displayName}:</span>
+                        <span className="text-foreground text-right">{String(value)}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <p className="text-muted-foreground">Характеристики товара не найдены</p>
+              )}
+            </div>
+          </div>
+        );
+      case 'reviews':
+        return (
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Отзывы покупателей</h3>
+            <div className="font-manrope space-y-4">
+              <div className="p-4 border border-border rounded-lg">
+                <div className="flex items-center space-x-2 mb-2">
+                  <div className="flex text-yellow-400">★★★★★</div>
+                  <span className="font-medium">Иван П.</span>
+                  <span className="text-sm text-muted-foreground">15.01.2024</span>
+                </div>
+                <p className="text-muted-foreground">Отличный товар, полностью соответствует описанию. Рекомендую!</p>
+              </div>
+              <div className="p-4 border border-border rounded-lg">
+                <div className="flex items-center space-x-2 mb-2">
+                  <div className="flex text-yellow-400">★★★★☆</div>
+                  <span className="font-medium">Мария С.</span>
+                  <span className="text-sm text-muted-foreground">12.01.2024</span>
+                </div>
+                <p className="text-muted-foreground">Хорошее качество, быстрая доставка. Есть небольшие замечания по упаковке.</p>
+              </div>
+            </div>
+          </div>
+        );
+      case 'delivery':
+        return (
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Доставка и оплата</h3>
+            <div className="font-manrope grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold mb-3">Способы доставки:</h4>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li>• Курьерская доставка по Москве - 500 ₽</li>
+                  <li>• Доставка по России (СДЭК) - от 300 ₽</li>
+                  <li>• Самовывоз из магазина - бесплатно</li>
+                  <li>• Почта России - от 200 ₽</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-3">Способы оплаты:</h4>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li>• Банковской картой онлайн</li>
+                  <li>• Наличными при получении</li>
+                  <li>• Банковский перевод</li>
+                  <li>• Электронные кошельки</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+      case 'installment':
+        return (
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Рассрочка и кредит</h3>
+            <div className="font-manrope space-y-4">
+              <div className="p-4 border border-border rounded-lg">
+                <h4 className="font-semibold mb-2">Рассрочка 0% до 12 месяцев</h4>
+                <p className="text-muted-foreground mb-3">
+                  Оформите покупку в рассрочку без переплат и процентов на срок до 12 месяцев.
+                </p>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  <li>• Без первоначального взноса</li>
+                  <li>• Одобрение за 5 минут</li>
+                  <li>• Минимум документов</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+      case 'services':
+        return (
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Дополнительные услуги</h3>
+            <div className="font-manrope grid md:grid-cols-2 gap-6">
+              <div className="p-4 border border-border rounded-lg">
+                <h4 className="font-semibold mb-2">Установка и настройка</h4>
+                <p className="text-muted-foreground text-sm mb-2">
+                  Профессиональная установка и настройка оборудования нашими специалистами.
+                </p>
+                <span className="text-primary font-semibold">от 2 000 ₽</span>
+              </div>
+              <div className="p-4 border border-border rounded-lg">
+                <h4 className="font-semibold mb-2">Расширенная гарантия</h4>
+                <p className="text-muted-foreground text-sm mb-2">
+                  Увеличьте срок гарантии до 3 лет с полным сервисным обслуживанием.
+                </p>
+                <span className="text-primary font-semibold">от 1 500 ₽</span>
+              </div>
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
 
   // Логируем сразу при рендере
   console.log('ProductDetail рендерится');
@@ -396,22 +575,64 @@ const ProductDetail: React.FC = () => {
           {/* Tabs Header with Download Button */}
           <div className="flex justify-between items-center border-b border-gray-200 mb-6">
             <div className="flex space-x-8">
-              <button className="text-red-600 border-b-2 border-red-600 pb-2 font-medium">
+              <button 
+                className={`pb-2 font-medium transition-colors ${
+                  activeTab === 'description' 
+                    ? 'text-red-600 border-b-2 border-red-600' 
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+                onClick={() => setActiveTab('description')}
+              >
                 Описание
               </button>
-              <button className="text-gray-500 hover:text-gray-700 pb-2">
+              <button 
+                className={`pb-2 font-medium transition-colors ${
+                  activeTab === 'specifications' 
+                    ? 'text-red-600 border-b-2 border-red-600' 
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+                onClick={() => setActiveTab('specifications')}
+              >
                 Характеристики
               </button>
-              <button className="text-gray-500 hover:text-gray-700 pb-2">
+              <button 
+                className={`pb-2 font-medium transition-colors ${
+                  activeTab === 'reviews' 
+                    ? 'text-red-600 border-b-2 border-red-600' 
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+                onClick={() => setActiveTab('reviews')}
+              >
                 Отзывы (10)
               </button>
-              <button className="text-gray-500 hover:text-gray-700 pb-2">
+              <button 
+                className={`pb-2 font-medium transition-colors ${
+                  activeTab === 'delivery' 
+                    ? 'text-red-600 border-b-2 border-red-600' 
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+                onClick={() => setActiveTab('delivery')}
+              >
                 Доставка и оплата
               </button>
-              <button className="text-gray-500 hover:text-gray-700 pb-2">
+              <button 
+                className={`pb-2 font-medium transition-colors ${
+                  activeTab === 'installment' 
+                    ? 'text-red-600 border-b-2 border-red-600' 
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+                onClick={() => setActiveTab('installment')}
+              >
                 Рассрочка
               </button>
-              <button className="text-gray-500 hover:text-gray-700 pb-2">
+              <button 
+                className={`pb-2 font-medium transition-colors ${
+                  activeTab === 'services' 
+                    ? 'text-red-600 border-b-2 border-red-600' 
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+                onClick={() => setActiveTab('services')}
+              >
                 Услуги
               </button>
             </div>
@@ -422,34 +643,7 @@ const ProductDetail: React.FC = () => {
 
           {/* Tab Content */}
           <div className="mt-6">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Описание</h3>
-              <div className="font-manrope text-muted-foreground leading-relaxed space-y-4">
-                <p>
-                  {product.description || `${product.name} - это высококачественный фитнес-набор от бренда CENTR, специально разработанный для домашних тренировок и функционального тренинга.`}
-                </p>
-                {product.characteristics && (
-                  <div>
-                    <p>
-                      Основные преимущества:
-                    </p>
-                    <ul className="list-disc list-inside space-y-1 ml-4">
-                      <li>Профессиональное оборудование для функционального тренинга</li>
-                      <li>Подходит для домашнего использования</li>
-                      <li>Компактный и эргономичный дизайн</li>
-                      <li>Высокое качество материалов и сборки</li>
-                      {product.characteristics['Гарантия на домашнее использование'] && (
-                        <li>Гарантия: {product.characteristics['Гарантия на домашнее использование']}</li>
-                      )}
-                    </ul>
-                  </div>
-                )}
-                <p>
-                  Данный фитнес-набор идеально подходит для создания домашнего спортзала и проведения эффективных тренировок. 
-                  Благодаря продуманной конструкции и качественным материалам, он обеспечивает безопасность и комфорт во время занятий.
-                </p>
-              </div>
-            </div>
+            {renderTabContent()}
           </div>
         </div>
       </main>
