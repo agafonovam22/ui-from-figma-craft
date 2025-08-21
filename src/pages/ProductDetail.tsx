@@ -869,7 +869,8 @@ const ProductDetail: React.FC = () => {
     const fetchProduct = async () => {
       try {
         setLoading(true);
-        console.log('Загружаем товар с ID:', id);
+        setError(null);
+        setProduct(null); // Очищаем предыдущие данные при смене товара
         
         const response = await fetch('https://cp44652.tw1.ru/catalog.php');
         
@@ -898,7 +899,6 @@ const ProductDetail: React.FC = () => {
       }
     };
 
-    console.log('useEffect сработал, ID:', id);
     if (id) {
       fetchProduct();
     } else {
