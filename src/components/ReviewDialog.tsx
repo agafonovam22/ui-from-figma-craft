@@ -4,8 +4,6 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { X, Upload, Image } from "lucide-react";
 
 interface ReviewDialogProps {
   open: boolean;
@@ -27,8 +25,6 @@ const ReviewDialog: React.FC<ReviewDialogProps> = ({ open, onOpenChange }) => {
     speed: 0,
     assembly: 0
   });
-
-  const [uploadedImages, setUploadedImages] = useState<File[]>([]);
 
   const categories = [
     { key: 'quality', label: 'Качество' },
@@ -52,20 +48,8 @@ const ReviewDialog: React.FC<ReviewDialogProps> = ({ open, onOpenChange }) => {
     }));
   };
 
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files;
-    if (files) {
-      const newImages = Array.from(files);
-      setUploadedImages(prev => [...prev, ...newImages]);
-    }
-  };
-
-  const removeImage = (index: number) => {
-    setUploadedImages(prev => prev.filter((_, i) => i !== index));
-  };
-
   const handleSubmit = () => {
-    console.log('Review submitted:', { formData, ratings, uploadedImages });
+    console.log('Review submitted:', { formData, ratings });
     // Here you would typically send the data to your backend
     onOpenChange(false);
   };
@@ -74,15 +58,15 @@ const ReviewDialog: React.FC<ReviewDialogProps> = ({ open, onOpenChange }) => {
     const currentRating = ratings[category as keyof typeof ratings];
     
     return (
-      <div className="flex items-center justify-between mb-4">
-        <span className="text-sm text-gray-700 w-32">{label}</span>
+      <div className="flex items-center justify-between py-2">
+        <span className="text-base text-gray-700 w-48">{label}</span>
         <div className="flex gap-1">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((rating) => (
             <button
               key={rating}
               onClick={() => handleRatingClick(category, rating)}
-              className={`w-4 h-3 ${
-                rating <= currentRating ? 'bg-red-500' : 'bg-gray-200'
+              className={`w-6 h-4 rounded-sm ${
+                rating <= currentRating ? 'bg-red-500' : 'bg-gray-300'
               } hover:bg-red-400 transition-colors`}
             />
           ))}
@@ -93,119 +77,89 @@ const ReviewDialog: React.FC<ReviewDialogProps> = ({ open, onOpenChange }) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-xl font-bold text-[#262631] mb-6">
+          <DialogTitle className="text-2xl font-bold text-black mb-8">
             Написать отзыв
           </DialogTitle>
         </DialogHeader>
 
-        <div className="space-y-6">
+        <div className="space-y-8">
           {/* Personal Information */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="space-y-4">
+            {/* ФИО - полная ширина */}
             <div>
-              <Label htmlFor="name" className="text-sm text-gray-600">ФИО</Label>
               <Input
                 id="name"
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
-                className="mt-1"
+                placeholder="ФИО"
+                className="w-full h-12 text-base"
               />
             </div>
-            <div>
-              <Label htmlFor="phone" className="text-sm text-gray-600">Телефон</Label>
+            
+            {/* Телефон и E-mail в одну строку */}
+            <div className="grid grid-cols-2 gap-4">
               <Input
                 id="phone"
                 value={formData.phone}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
-                className="mt-1"
+                placeholder="Телефон"
+                className="h-12 text-base"
               />
-            </div>
-            <div>
-              <Label htmlFor="email" className="text-sm text-gray-600">E-mail</Label>
               <Input
                 id="email"
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
-                className="mt-1"
+                placeholder="E-mail"
+                className="h-12 text-base"
               />
             </div>
           </div>
 
           {/* Message */}
           <div>
-            <Label htmlFor="message" className="text-sm text-gray-600">Ваше сообщение</Label>
             <Textarea
               id="message"
               value={formData.message}
               onChange={(e) => handleInputChange('message', e.target.value)}
-              placeholder="Напишите ваш отзыв здесь..."
-              className="mt-1 min-h-[100px]"
+              placeholder="Ваше сообщение"
+              className="min-h-[120px] text-base"
             />
           </div>
 
           {/* Rating Categories */}
-          <div>
-            <h3 className="text-sm font-medium text-gray-900 mb-4">Оцените товар</h3>
-            <div className="space-y-2">
-              {categories.map(({ key, label }) => (
-                <RatingBar key={key} category={key} label={label} />
-              ))}
-            </div>
+          <div className="space-y-4">
+            {categories.map(({ key, label }) => (
+              <RatingBar key={key} category={key} label={label} />
+            ))}
           </div>
 
-          {/* Photo Upload */}
-          <div>
-            <Label className="text-sm text-gray-600 mb-2 block">Загрузить фото</Label>
-            <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
-              <input
-                type="file"
-                multiple
-                accept="image/*"
-                onChange={handleImageUpload}
-                className="hidden"
-                id="photo-upload"
-              />
-              <label htmlFor="photo-upload" className="cursor-pointer">
-                <div className="flex flex-col items-center">
-                  <Upload className="w-8 h-8 text-gray-400 mb-2" />
-                  <span className="text-sm text-gray-600">Выберите файлы для загрузки</span>
-                  <span className="text-xs text-gray-400 mt-1">или перетащите их сюда</span>
-                </div>
-              </label>
-            </div>
-
-            {/* Preview uploaded images */}
-            {uploadedImages.length > 0 && (
-              <div className="mt-4">
-                <div className="flex flex-wrap gap-2">
-                  {uploadedImages.map((file, index) => (
-                    <div key={index} className="relative">
-                      <div className="w-20 h-20 bg-gray-100 rounded-lg border flex items-center justify-center">
-                        <Image className="w-8 h-8 text-gray-400" />
-                      </div>
-                      <button
-                        onClick={() => removeImage(index)}
-                        className="absolute -top-2 -right-2 w-5 h-5 bg-red-500 text-white rounded-full flex items-center justify-center text-xs hover:bg-red-600"
-                      >
-                        <X className="w-3 h-3" />
-                      </button>
-                      <p className="text-xs text-gray-500 mt-1 text-center truncate w-20">
-                        {file.name}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+          {/* Photo Upload and Captcha */}
+          <div className="grid grid-cols-2 gap-8">
+            {/* Captcha Section */}
+            <div className="space-y-4">
+              <div className="w-full h-32 bg-gray-200 rounded-lg flex items-center justify-center">
+                <span className="text-gray-500">Captcha Image</span>
               </div>
-            )}
+              <Input
+                placeholder="Введите слово на картинке"
+                className="h-12 text-base"
+              />
+            </div>
+            
+            {/* Upload section placeholder */}
+            <div>
+              {/* This space can be used for additional content if needed */}
+            </div>
           </div>
 
           {/* Submit Button */}
-          <div className="flex justify-end pt-4">
+          <div className="pt-4">
             <Button 
               onClick={handleSubmit}
-              className="bg-[#F53B49] hover:bg-red-600 text-white px-8"
+              className="bg-[#F53B49] hover:bg-red-600 text-white px-12 py-3 text-base h-12 rounded-lg"
             >
               Добавить отзыв
             </Button>
