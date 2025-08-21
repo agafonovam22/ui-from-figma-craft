@@ -53,12 +53,22 @@ const fetchProducts = async (): Promise<Product[]> => {
 
 // Маппинг категорий к типам оборудования из Битрикс (на основе анализа реальных данных API)
 export const categoryMapping: Record<string, string[]> = {
-  'Беговые дорожки': [], // Пока нет в данных
-  'Эллиптические тренажеры': [], // Пока нет в данных  
-  'Велотренажеры': [], // Пока нет в данных
-  'Гребные тренажеры': [], // Пока нет в данных
+  'Беговые дорожки': [], // Нет в текущих данных API
+  'Эллиптические тренажеры': [], // Нет в текущих данных API  
+  'Велотренажеры': [], // Нет в текущих данных API
+  'Гребные тренажеры': [], // Нет в текущих данных API
   'Силовые тренажеры': ['870'], // Утяжелители и силовое оборудование
   'Инверсионные столы': ['862'], // Балансировочные платформы
+};
+
+// Ключевые слова для поиска по названию товара (fallback когда нет точного типа)
+export const categoryKeywords: Record<string, string[]> = {
+  'Беговые дорожки': ['беговая', 'дорожка', 'treadmill'],
+  'Эллиптические тренажеры': ['эллиптический', 'эллипс', 'elliptical'],
+  'Велотренажеры': ['велотренажер', 'велосипед', 'bike', 'cycling'],
+  'Гребные тренажеры': ['гребной', 'rowing'],
+  'Силовые тренажеры': ['утяжелители', 'гантели', 'штанга', 'силовой'],
+  'Инверсионные столы': ['инверсионный', 'балансировочная', 'платформа'],
 };
 
 export const useProducts = (categoryFilter?: string) => {
@@ -71,11 +81,27 @@ export const useProducts = (categoryFilter?: string) => {
       if (!categoryFilter) return data;
       
       const equipmentTypes = categoryMapping[categoryFilter];
-      if (!equipmentTypes) return data;
       
-      return data.filter(product => 
-        equipmentTypes.includes(product.characteristics['Тип оборудования'])
-      );
+      // Если есть точные типы оборудования, используем их
+      if (equipmentTypes && equipmentTypes.length > 0) {
+        return data.filter(product => 
+          equipmentTypes.includes(product.characteristics['Тип оборудования'])
+        );
+      }
+      
+      // Если нет точных типов, ищем по ключевым словам в названии
+      const keywords = categoryKeywords[categoryFilter];
+      if (keywords && keywords.length > 0) {
+        return data.filter(product => {
+          const productName = product.name.toLowerCase();
+          return keywords.some(keyword => 
+            productName.includes(keyword.toLowerCase())
+          );
+        });
+      }
+      
+      // Если ни то ни другое не найдено, показываем все товары
+      return data;
     }
   });
 };
