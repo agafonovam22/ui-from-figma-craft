@@ -352,52 +352,44 @@ const ProductDetail: React.FC = () => {
             <div className="space-y-2 text-xs text-muted-foreground font-manrope">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-gray-400 rounded flex items-center justify-center">
-                    <img 
-                      src="/lovable-uploads/f35fe135-ca23-48f8-8490-aa26a337a8f5.png" 
-                      alt="Доставка" 
-                      className="w-3 h-3 object-contain"
-                    />
-                  </div>
+                  <img 
+                    src="/lovable-uploads/f35fe135-ca23-48f8-8490-aa26a337a8f5.png" 
+                    alt="Доставка" 
+                    className="w-4 h-4 object-contain"
+                  />
                   <span>Доставка</span>
                 </div>
                 <span className="font-medium text-foreground">300 руб. (в пределах МКАД/КАД)</span>
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-gray-400 rounded flex items-center justify-center">
-                    <img 
-                      src="/lovable-uploads/a6b610bf-00ff-40b0-a771-be9d69ec0a79.png" 
-                      alt="Сборка" 
-                      className="w-3 h-3 object-contain"
-                    />
-                  </div>
+                  <img 
+                    src="/lovable-uploads/a6b610bf-00ff-40b0-a771-be9d69ec0a79.png" 
+                    alt="Сборка" 
+                    className="w-4 h-4 object-contain"
+                  />
                   <span>Сборка</span>
                 </div>
                 <span>Рассчитывается индивидуально</span>
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-gray-400 rounded flex items-center justify-center">
-                    <img 
-                      src="/lovable-uploads/f9620881-afa2-4fc3-81cb-d1956b8a6691.png" 
-                      alt="Оплата для физ.лиц" 
-                      className="w-3 h-3 object-contain"
-                    />
-                  </div>
+                  <img 
+                    src="/lovable-uploads/f9620881-afa2-4fc3-81cb-d1956b8a6691.png" 
+                    alt="Оплата для физ.лиц" 
+                    className="w-4 h-4 object-contain"
+                  />
                   <span>Оплата для физ.лиц</span>
                 </div>
                 <span>Наличными, картой, безналичная, онлайн, в рассрочку</span>
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                  <div className="w-4 h-4 bg-gray-400 rounded flex items-center justify-center">
-                    <img 
-                      src="/lovable-uploads/9cf11e84-5092-4583-9ee9-6f319e803b5a.png" 
-                      alt="Оплата для юр.лиц" 
-                      className="w-3 h-3 object-contain"
-                    />
-                  </div>
+                  <img 
+                    src="/lovable-uploads/9cf11e84-5092-4583-9ee9-6f319e803b5a.png" 
+                    alt="Оплата для юр.лиц" 
+                    className="w-4 h-4 object-contain"
+                  />
                   <span>Оплата для юр.лиц</span>
                 </div>
                 <span>Безналичная оплата, оплата онлайн</span>
