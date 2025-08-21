@@ -872,22 +872,23 @@ const ProductDetail: React.FC = () => {
         console.log('Загружаем товар с ID:', id);
         
         const response = await fetch('https://cp44652.tw1.ru/catalog.php');
-        console.log('Ответ сервера:', response.status);
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
         
         const data = await response.json();
-        console.log('Получены данные:', data);
         
         if (data.status === 'ok' && data.products) {
-          console.log('Ищем товар с ID:', id, 'в массиве из', data.products.length, 'товаров');
           const foundProduct = data.products.find((p: any) => p.id.toString() === id);
-          console.log('Найден товар:', foundProduct);
-          setProduct(foundProduct);
           
-          if (!foundProduct) {
-            setError(`Товар с ID ${id} не найден среди ${data.products.length} товаров`);
+          if (foundProduct) {
+            setProduct(foundProduct);
+          } else {
+            setError(`Товар с ID ${id} не найден`);
           }
         } else {
-          setError('Неверный формат ответа от сервера');
+          setError('Ошибка получения данных с сервера');
         }
       } catch (err) {
         console.error('Ошибка загрузки товара:', err);
