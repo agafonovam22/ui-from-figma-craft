@@ -1,11 +1,21 @@
 <?php
+// Добавляем отображение ошибок для отладки
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 // Подключаем модуль инфоблоков
-CModule::IncludeModule("iblock");
+if (!CModule::IncludeModule("iblock")) {
+    http_response_code(500);
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(['error' => 'Cannot include iblock module']);
+    exit;
+}
 
-// ID инфоблока каталога (замените на ваш ID)
-$IBLOCK_ID = 4; // Ваш ID из ссылки
+// ID инфоблока каталога - попробуем разные ID
+$POSSIBLE_IBLOCK_IDS = [4, 1, 2, 3, 5, 6, 7, 8]; // Список возможных ID для проверки
 
 // Проверяем метод запроса
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
@@ -29,10 +39,45 @@ try {
         'total_products' => 0,
         'total_categories' => 0,
         'debug_info' => [
-            'iblock_id' => $IBLOCK_ID,
-            'server_name' => $_SERVER['HTTP_HOST']
+            'server_name' => $_SERVER['HTTP_HOST'],
+            'iblocks_found' => []
         ]
     ];
+
+    // Сначала найдем все инфоблоки каталогов
+    $rsIBlocks = CIBlock::GetList([], ['TYPE' => 'catalog']);
+    while ($iblock = $rsIBlocks->Fetch()) {
+        $count = CIBlockElement::GetList(
+            [],
+            ["IBLOCK_ID" => $iblock['ID'], "ACTIVE" => "Y"],
+            [],
+            false
+        );
+        $result['debug_info']['iblocks_found'][] = [
+            'id' => $iblock['ID'],
+            'name' => $iblock['NAME'],
+            'code' => $iblock['CODE'],
+            'active_elements' => $count
+        ];
+    }
+
+    // Найдем инфоблок с наибольшим количеством товаров
+    $best_iblock = null;
+    $max_count = 0;
+    foreach ($result['debug_info']['iblocks_found'] as $iblock_info) {
+        if ($iblock_info['active_elements'] > $max_count) {
+            $max_count = $iblock_info['active_elements'];
+            $best_iblock = $iblock_info['id'];
+        }
+    }
+
+    if (!$best_iblock) {
+        throw new Exception('No catalog iblocks found with products');
+    }
+
+    $IBLOCK_ID = $best_iblock;
+    $result['debug_info']['selected_iblock'] = $IBLOCK_ID;
+    $result['debug_info']['selected_iblock_count'] = $max_count;
 
     // Получаем разделы (категории)
     $rsCategories = CIBlockSection::GetList(
@@ -61,20 +106,18 @@ try {
         ];
     }
 
-    // Получаем товары
+    // Получаем товары из выбранного инфоблока
     $filter = [
         "IBLOCK_ID" => $IBLOCK_ID,
         "ACTIVE" => "Y"
     ];
     
-    // Добавляем отладочную информацию о фильтре
-    $result['debug_info']['filter'] = $filter;
-    
+    // Убираем лимит чтобы получить все товары
     $rsProducts = CIBlockElement::GetList(
         ["SORT" => "ASC", "NAME" => "ASC"],
         $filter,
         false,
-        false,
+        false, // Убираем лимит
         [
             "ID", "NAME", "CODE", "PREVIEW_TEXT", "DETAIL_TEXT", 
             "PREVIEW_PICTURE", "DETAIL_PICTURE", "IBLOCK_SECTION_ID",
@@ -220,6 +263,7 @@ try {
     echo json_encode([
         'error' => 'Server error',
         'message' => $e->getMessage(),
+        'trace' => $e->getTraceAsString(),
         'timestamp' => date('c')
     ], JSON_UNESCAPED_UNICODE);
 }

@@ -7,7 +7,7 @@ import CatalogFilters from '@/components/Catalog/CatalogFilters';
 import CatalogBanner from '@/components/Catalog/CatalogBanner';
 import CatalogControls from '@/components/Catalog/CatalogControls';
 import CatalogGrid from '@/components/Catalog/CatalogGrid';
-import { useProductSearch, Product } from '@/hooks/useProducts';
+import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
 import { usePagination } from '@/hooks/usePagination';
 import { FilterState } from '@/types/filters';
 import {
@@ -40,8 +40,8 @@ const Catalog: React.FC = () => {
   // Получаем поисковый запрос из URL
   const queryParam = searchParams.get('q') || '';
   
-  // Используем хук для поиска товаров
-  const { data: allProducts = [], isLoading, error } = useProductSearch(queryParam);
+  // Используем исправленный Bitrix API для получения всех товаров
+  const { products: allProducts = [], loading: isLoading, error } = useBitrixCatalog('https://cp44652.tw1.ru/bitrix-export/catalog-api.php');
 
   // Функция поиска с обновлением URL
   const handleSearchQuery = (searchTerm: string) => {
