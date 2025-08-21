@@ -7,6 +7,7 @@ import EmailSubscription from '@/components/EmailSubscription';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ChevronLeft, ChevronRight, Heart, Star, Play } from 'lucide-react';
 import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
 
 const ProductCard: React.FC = () => {
@@ -81,43 +82,6 @@ const ProductCard: React.FC = () => {
     image: product.image_url,
     badge: product.is_available ? 'В наличии' : 'Нет в наличии'
   }));
-    {
-      id: 2,
-      title: 'Батут Hasttings Classic 305 см',
-      price: '24 900₽',
-      originalPrice: '29 900₽',
-      discount: '-17%',
-      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      badge: 'АКЦИЯ'
-    },
-    {
-      id: 3,
-      title: 'Батут Oxygen Fitness Standard 244 см',
-      price: '15 900₽',
-      originalPrice: '18 900₽',
-      discount: '-16%',
-      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      badge: 'NEW'
-    },
-    {
-      id: 4,
-      title: 'Батут Diamond fitness Internal 183 см',
-      price: '8 900₽',
-      originalPrice: '12 900₽',
-      discount: '-31%',
-      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      badge: 'СКИДКА'
-    },
-    {
-      id: 5,
-      title: 'Батут Oxygen Fitness Standard 366 см',
-      price: '23 900₽',
-      originalPrice: '26 900₽',
-      discount: '-11%',
-      image: '/lovable-uploads/2408b069-a750-4a3f-bbf7-f362671a36fd.png',
-      badge: 'ТОП'
-    }
-  ];
 
   // Mock reviews data
   const reviews = [

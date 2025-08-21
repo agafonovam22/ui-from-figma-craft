@@ -5,6 +5,7 @@ import EmailSubscription from '@/components/EmailSubscription';
 import IdeasSelections from '@/components/IdeasSelections';
 import ProductCard from '@/components/ProductCard';
 import { Link, useParams } from 'react-router-dom';
+import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Slider } from "@/components/ui/slider";
