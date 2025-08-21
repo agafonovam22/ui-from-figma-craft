@@ -89,6 +89,19 @@ export const categoryKeywords: Record<string, string[]> = {
   'Инверсионные столы': ['инверсионный'],
 };
 
+// Функция поиска по товарам
+export const searchProducts = (products: Product[], searchQuery: string): Product[] => {
+  if (!searchQuery.trim()) return products;
+  
+  const query = searchQuery.toLowerCase();
+  return products.filter(product => {
+    const productName = product.name.toLowerCase();
+    const productCharacteristics = Object.values(product.characteristics || {}).join(' ').toLowerCase();
+    
+    return productName.includes(query) || productCharacteristics.includes(query);
+  });
+};
+
 export const useProducts = (categoryFilter?: string) => {
   return useQuery({
     queryKey: ['products', categoryFilter],
@@ -135,6 +148,20 @@ export const useProducts = (categoryFilter?: string) => {
       
       // Если ни то ни другое не найдено, показываем все товары
       return data;
+    }
+  });
+};
+
+// Хук для поиска товаров с поддержкой query параметра
+export const useProductSearch = (searchQuery?: string) => {
+  return useQuery({
+    queryKey: ['products', 'search', searchQuery],
+    queryFn: fetchProducts,
+    staleTime: 5 * 60 * 1000,
+    gcTime: 10 * 60 * 1000,
+    select: (data: Product[]) => {
+      if (!searchQuery) return data;
+      return searchProducts(data, searchQuery);
     }
   });
 };
