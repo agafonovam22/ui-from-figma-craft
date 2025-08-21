@@ -46,6 +46,15 @@ const fetchProducts = async (): Promise<Product[]> => {
       }
     });
     console.log('Товары по типам:', groupedByType);
+    
+    // Ищем товары со словом "инверсионный" в названии
+    const inversionProducts = data.products.filter(product => 
+      product.name.toLowerCase().includes('инверсионный')
+    );
+    console.log('Товары с "инверсионный" в названии:', inversionProducts.map(p => ({
+      name: p.name,
+      type: p.characteristics['Тип оборудования']
+    })));
   }
   
   return data.products || [];
