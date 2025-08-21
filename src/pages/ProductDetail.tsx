@@ -217,7 +217,7 @@ const ProductDetail: React.FC = () => {
             </div>
 
             {/* Product characteristics list */}
-            <div className="space-y-3 pb-6 border-b border-gray-300">
+            <div className="space-y-3 pb-6 border-b border-gray-300 font-manrope">
               {product.characteristics && (
                 <div className="grid gap-2 text-sm">
                   <div className="flex justify-between">
@@ -256,7 +256,7 @@ const ProductDetail: React.FC = () => {
                   </div>
                 </div>
               )}
-              <Button variant="link" className="p-0 h-auto text-red-500 text-sm">
+              <Button variant="link" className="p-0 h-auto text-red-500 text-sm font-manrope">
                 Все характеристики →
               </Button>
             </div>
