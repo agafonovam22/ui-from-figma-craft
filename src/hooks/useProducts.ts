@@ -157,7 +157,11 @@ export const useProducts = (categoryFilter?: string) => {
 export const useProductSearch = (searchQuery?: string) => {
   return useQuery({
     queryKey: ['products', 'search', searchQuery],
-    queryFn: fetchProducts,
+    queryFn: async () => {
+      const data = await fetchProducts();
+      console.log('Общее количество товаров в каталоге (через useProductSearch):', data.length);
+      return data;
+    },
     staleTime: 5 * 60 * 1000,
     gcTime: 10 * 60 * 1000,
     select: (data: Product[]) => {
