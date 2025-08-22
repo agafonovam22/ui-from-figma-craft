@@ -80,8 +80,12 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
           className="w-full h-56 object-contain bg-gray-50 rounded-lg hover:scale-105 transition-transform duration-300"
           loading="lazy"
           onError={(e) => {
-            console.log('Ошибка загрузки изображения:', product.image);
-            console.log('Товар:', product.name, 'ID:', product.id);
+            console.error('❌ Ошибка загрузки изображения товара:', {
+              productName: product.name,
+              productId: product.id,
+              imageUrl: product.image,
+              errorMessage: 'Image failed to load'
+            });
             e.currentTarget.src = '/placeholder.svg';
           }}
         />
