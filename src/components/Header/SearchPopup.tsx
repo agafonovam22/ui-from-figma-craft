@@ -156,9 +156,9 @@ const SearchPopup: React.FC<SearchPopupProps> = ({ children, isOpen, onOpenChang
                     >
                       <div className="relative bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
                         <div className="relative mb-3">
-                          <img 
-                            src={product.image_url} 
-                            alt={product.name}
+                           <img 
+                             src={(product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg'} 
+                             alt={product.name}
                             className="w-full h-20 object-contain"
                             onError={(e) => {
                               e.currentTarget.src = "/lovable-uploads/be85c55b-4881-41b1-beb7-89b0cea7d083.png";

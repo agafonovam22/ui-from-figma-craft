@@ -33,7 +33,7 @@ const ProductDetail: React.FC = () => {
         id: product.id,
         name: product.name,
         price: product.price,
-        image_url: product.image_url,
+        image_url: (product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg',
         is_available: product.is_available
       });
       

@@ -207,7 +207,7 @@ const Catalog: React.FC = () => {
       discount: item.discount_percentage > 0 ? `${item.discount_percentage}%` : null,
       rating: item.rating || 4.5,
       reviews: item.reviews_count || 0,
-      image: item.image_url,
+      image: (item.gallery_images && item.gallery_images.length > 0) ? item.gallery_images[0] : '/placeholder.svg',
       badge: item.is_available ? 'В наличии' : 'Нет в наличии',
       badgeColor: item.is_available ? 'bg-green-500' : 'bg-red-500',
       isAvailable: item.is_available,

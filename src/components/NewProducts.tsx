@@ -22,7 +22,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
       id: product.id,
       name: product.name,
       price: product.price,
-      image_url: product.image_url,
+      image_url: (product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg',
       is_available: product.is_available || true
     });
   };
@@ -159,9 +159,9 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
               >
                 {/* Изображение товара */}
                 <div className="h-48 bg-gray-50">
-                  <img 
-                    src={product.image_url || '/placeholder.svg'} 
-                    alt={product.name || "Товар"}
+                   <img 
+                     src={(product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg'} 
+                     alt={product.name || "Товар"}
                     className="w-full h-full object-cover"
                     style={{ imageRendering: 'crisp-edges' }}
                     loading="lazy"

@@ -7,6 +7,7 @@ export interface Product {
   original_price: number;
   discount_percentage: number;
   image_url: string;
+  gallery_images?: string[];
   is_available: boolean;
   in_stock: boolean;
   rating: number;
