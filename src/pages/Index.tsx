@@ -11,8 +11,23 @@ import Showrooms from '@/components/Showrooms';
 import NewsAndBlog from '@/components/NewsAndBlog';
 import EmailSubscription from '@/components/EmailSubscription';
 import Footer from '@/components/Footer';
+import { useQuery } from '@tanstack/react-query';
 
 const Index: React.FC = () => {
+  // Предзагружаем данные товаров сразу при загрузке главной страницы
+  useQuery({
+    queryKey: ['all-products'],
+    queryFn: async () => {
+      console.log('🚀 Предзагрузка товаров на главной странице...');
+      const response = await fetch('https://cp44652.tw1.ru/catalog.php');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    },
+    staleTime: 5 * 60 * 1000, // 5 минут
+    gcTime: 30 * 60 * 1000, // 30 минут
+  });
   return (
     <main className="min-h-screen bg-white">
       <Header />

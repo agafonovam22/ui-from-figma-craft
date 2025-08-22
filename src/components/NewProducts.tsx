@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { useCart } from '@/contexts/CartContext';
-import LoadingSpinner from '@/components/LoadingSpinner';
+import NewProductsSkeleton from '@/components/NewProductsSkeleton';
 
 interface NewProductsProps {
   title?: string;
@@ -78,18 +78,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
   ].slice(0, 5);
 
   if (isLoading) {
-    return (
-      <section className="w-full py-6 bg-white">
-        <div className="max-w-[1800px] mx-auto px-[30px]">
-          <div className="flex items-center justify-center h-64">
-            <div className="text-center">
-              <LoadingSpinner size="lg" />
-              <p className="text-gray-600 mt-4">Загружаем новинки...</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
+    return <NewProductsSkeleton title={title} />;
   }
 
   if (error) {
