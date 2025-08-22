@@ -95,12 +95,34 @@ export const searchProducts = (products: Product[], searchQuery: string): Produc
   if (!searchQuery.trim()) return products;
   
   const query = searchQuery.toLowerCase();
-  return products.filter(product => {
+  console.log('🔍 Поиск товаров по запросу:', query);
+  
+  const filteredProducts = products.filter(product => {
     const productName = product.name.toLowerCase();
     const productCharacteristics = Object.values(product.characteristics || {}).join(' ').toLowerCase();
     
-    return productName.includes(query) || productCharacteristics.includes(query);
+    const nameMatch = productName.includes(query);
+    const characteristicsMatch = productCharacteristics.includes(query);
+    const isMatch = nameMatch || characteristicsMatch;
+    
+    if (isMatch) {
+      console.log('✅ Найден товар:', {
+        name: product.name,
+        nameMatch,
+        characteristicsMatch,
+        characteristics: product.characteristics
+      });
+    }
+    
+    return isMatch;
   });
+  
+  console.log(`📊 Результаты поиска "${query}":`, {
+    total: filteredProducts.length,
+    products: filteredProducts.map(p => p.name)
+  });
+  
+  return filteredProducts;
 };
 
 export const useProducts = (categoryFilter?: string) => {
