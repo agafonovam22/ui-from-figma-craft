@@ -981,7 +981,7 @@ const ProductDetail: React.FC = () => {
           {/* Product Gallery */}
           <div>
             <ProductGallery
-              mainImage={product.image_url || '/placeholder.svg'}
+              mainImage={(product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg'}
               galleryImages={product.gallery_images || []}
               productName={product.name}
               badges={[
