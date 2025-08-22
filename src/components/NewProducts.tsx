@@ -1,5 +1,6 @@
 
 import React, { useState, useRef } from 'react';
+import { optimizeImageUrl } from '@/utils/imageOptimization';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
@@ -160,7 +161,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                 {/* Изображение товара */}
                 <div className="h-48 bg-gray-50">
                    <img 
-                     src={(product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg'} 
+                     src={optimizeImageUrl((product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg', 400, 300)} 
                      alt={product.name || "Товар"}
                     className="w-full h-full object-cover"
                     style={{ imageRendering: 'crisp-edges' }}

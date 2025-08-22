@@ -8,7 +8,8 @@ import CatalogBanner from '@/components/Catalog/CatalogBanner';
 import CatalogControls from '@/components/Catalog/CatalogControls';
 import CatalogGrid from '@/components/Catalog/CatalogGrid';
 import { useProductSearch, Product } from '@/hooks/useProducts';
-import { usePagination } from '@/hooks/usePagination';
+import { usePaginatedProducts } from '@/hooks/usePaginatedProducts';
+import { useDebounce } from '@/hooks/useDebounce';
 import { FilterState } from '@/types/filters';
 import {
   Breadcrumb,
@@ -40,8 +41,24 @@ const Catalog: React.FC = () => {
   // Получаем поисковый запрос из URL
   const queryParam = searchParams.get('q') || '';
   
-  // Используем хук для поиска товаров
-  const { data: allProducts = [], isLoading, error } = useProductSearch(queryParam);
+  // Добавляем debounce для поиска (задержка 300мс)
+  const debouncedSearchQuery = useDebounce(queryParam, 300);
+  
+  // Используем оптимизированный хук с пагинацией
+  const { 
+    products: catalogProducts, 
+    isLoading, 
+    error, 
+    total,
+    totalPages,
+    currentPage,
+    hasNextPage,
+    hasPrevPage
+  } = usePaginatedProducts(
+    pageNumber, 
+    12, // items per page
+    debouncedSearchQuery
+  );
 
   // Функция поиска с обновлением URL
   const handleSearchQuery = (searchTerm: string) => {
@@ -93,7 +110,7 @@ const Catalog: React.FC = () => {
 
   // Применение фильтров к товарам
   const filteredProducts = useMemo(() => {
-    let filtered = allProducts;
+    let filtered = catalogProducts;
 
     // Фильтр по цене
     if (filters.price.ranges.length > 0) {
@@ -155,14 +172,14 @@ const Catalog: React.FC = () => {
     }
 
     return filtered;
-  }, [allProducts, filters]);
+  }, [catalogProducts, filters]);
 
   // Получение уникальных значений для фильтров из данных
   const filterOptions = useMemo(() => {
     const brands = new Set<string>();
     const equipmentTypes = new Set<string>();
     
-    allProducts.forEach(product => {
+    catalogProducts.forEach(product => {
       // Собираем бренды
       const brand = product.characteristics?.['Бренд (id)'] || 
                    product.characteristics?.['Бренд'] || '';
@@ -177,7 +194,7 @@ const Catalog: React.FC = () => {
       brands: Array.from(brands),
       equipmentTypes: Array.from(equipmentTypes)
     };
-  }, [allProducts]);
+  }, [catalogProducts]);
 
   // Сортировка товаров
   const sortedItems = useMemo(() => {
@@ -216,14 +233,7 @@ const Catalog: React.FC = () => {
     }));
   }, [sortedItems]);
 
-  // Пагинация
-  const itemsPerPage = 12;
-  const paginationResult = usePagination({ 
-    data: catalogItems, 
-    itemsPerPage, 
-    currentPage: pageNumber 
-  });
-
+  // Используем пагинацию из хука
   const handlePageNavigation = (newPage: number) => {
     setPageNumber(newPage);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -293,12 +303,12 @@ const Catalog: React.FC = () => {
                 </div>
               ) : (
                 <CatalogGrid 
-                  products={paginationResult.paginatedData}
-                  totalPages={paginationResult.totalPages}
-                  currentPage={pageNumber}
+                  products={catalogItems}
+                  totalPages={totalPages}
+                  currentPage={currentPage}
                   onPageChange={handlePageNavigation}
-                  hasNextPage={paginationResult.hasNextPage}
-                  hasPreviousPage={paginationResult.hasPreviousPage}
+                  hasNextPage={hasNextPage}
+                  hasPreviousPage={hasPrevPage}
                 />
               )}
             </div>

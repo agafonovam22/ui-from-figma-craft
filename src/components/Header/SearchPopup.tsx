@@ -1,5 +1,6 @@
 
-import React from 'react';
+import React, { useState, useMemo } from 'react';
+import { optimizeImageUrl } from '@/utils/imageOptimization';
 import {
   Popover,
   PopoverContent,
@@ -157,7 +158,7 @@ const SearchPopup: React.FC<SearchPopupProps> = ({ children, isOpen, onOpenChang
                       <div className="relative bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
                         <div className="relative mb-3">
                            <img 
-                             src={(product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg'} 
+                             src={optimizeImageUrl((product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg', 120, 80)} 
                              alt={product.name}
                             className="w-full h-20 object-contain"
                             onError={(e) => {

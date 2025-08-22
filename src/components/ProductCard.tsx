@@ -4,6 +4,7 @@ import { Heart, BarChart3, ArrowRight } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useCart } from '@/contexts/CartContext';
+import { optimizeImageUrl, useLazyImage } from '@/utils/imageOptimization';
 
 interface ProductCardProps {
   product: {
@@ -49,9 +50,11 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
     return (
       <div className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-[300px]">
         <img 
-          src={product.image} 
+          src={optimizeImageUrl(product.image, 320, 240)} 
           alt={product.name || "Категория товаров"}
           className="w-full h-full object-cover object-center"
+          loading="lazy"
+          decoding="async"
           onError={(e) => {
             e.currentTarget.src = '/placeholder.svg';
           }}
@@ -75,10 +78,11 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
       <div className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
       <div className="relative mb-4">
         <img 
-          src={product.image} 
+          src={optimizeImageUrl(product.image, 280, 224)} 
           alt={product.name || "Товар"}
           className="w-full h-56 object-contain bg-gray-50 rounded-lg hover:scale-105 transition-transform duration-300"
           loading="lazy"
+          decoding="async"
           onError={(e) => {
             console.error('❌ Ошибка загрузки изображения товара:', {
               productName: product.name,
