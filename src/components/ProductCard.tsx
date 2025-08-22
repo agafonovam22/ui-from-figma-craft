@@ -81,6 +81,7 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
           loading="lazy"
           onError={(e) => {
             console.log('Ошибка загрузки изображения:', product.image);
+            console.log('Товар:', product.name, 'ID:', product.id);
             e.currentTarget.src = '/placeholder.svg';
           }}
         />
