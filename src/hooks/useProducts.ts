@@ -28,6 +28,7 @@ const fetchProducts = async (): Promise<Product[]> => {
   
   // Логируем все типы оборудования для отладки
   if (data.products) {
+    console.log('Общее количество товаров в каталоге:', data.products.length);
     const equipmentTypes = new Set();
     data.products.forEach(product => {
       if (product.characteristics['Тип оборудования']) {
