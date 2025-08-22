@@ -3,8 +3,9 @@ import React, { useState, useRef } from 'react';
 import { optimizeImageUrl } from '@/utils/imageOptimization';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useBitrixCatalog } from '@/hooks/useBitrixCatalog';
+import { useQuery } from '@tanstack/react-query';
 import { useCart } from '@/contexts/CartContext';
+import LoadingSpinner from '@/components/LoadingSpinner';
 
 interface NewProductsProps {
   title?: string;
@@ -13,8 +14,24 @@ interface NewProductsProps {
 const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) => {
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const { products: bitrixProducts, loading, error } = useBitrixCatalog("https://cp44652.tw1.ru/catalog.php");
   const { addItem } = useCart();
+
+  // Используем тот же кэшированный запрос, что и в каталоге
+  const { data: allProductsData, isLoading, error } = useQuery({
+    queryKey: ['all-products'],
+    queryFn: async () => {
+      console.log('🔄 Загружаем товары для новинок...');
+      const response = await fetch('https://cp44652.tw1.ru/catalog.php');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    },
+    staleTime: 5 * 60 * 1000, // 5 минут
+    gcTime: 30 * 60 * 1000, // 30 минут
+  });
+
+  const bitrixProducts = allProductsData?.products || [];
 
   const handleBuyClick = (e: React.MouseEvent, product: any) => {
     e.preventDefault();
@@ -23,7 +40,8 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
       id: product.id,
       name: product.name,
       price: product.price,
-      image_url: (product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg',
+      image_url: (product.gallery_images && product.gallery_images.length > 0) ? 
+        optimizeImageUrl(product.gallery_images[0], 200, 200) : '/placeholder.svg',
       is_available: product.is_available || true
     });
   };
@@ -59,14 +77,14 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
     ...otherProducts.slice(0, 5 - priorityProducts.length)
   ].slice(0, 5);
 
-  if (loading) {
+  if (isLoading) {
     return (
       <section className="w-full py-6 bg-white">
         <div className="max-w-[1800px] mx-auto px-[30px]">
           <div className="flex items-center justify-center h-64">
             <div className="text-center">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#F53B49] mx-auto mb-4"></div>
-              <p className="text-gray-600">Загрузка товаров...</p>
+              <LoadingSpinner size="lg" />
+              <p className="text-gray-600 mt-4">Загружаем новинки...</p>
             </div>
           </div>
         </div>
@@ -81,7 +99,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
           <div className="flex items-center justify-center h-64">
             <div className="text-center">
               <p className="text-red-600 mb-2">Ошибка загрузки товаров</p>
-              <p className="text-gray-500 text-sm">{error}</p>
+              <p className="text-gray-500 text-sm">{error?.message || 'Неизвестная ошибка'}</p>
             </div>
           </div>
         </div>
