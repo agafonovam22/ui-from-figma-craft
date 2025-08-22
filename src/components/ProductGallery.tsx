@@ -18,6 +18,13 @@ interface ProductGalleryProps {
 export default function ProductGallery({ mainImage, images = [], galleryImages = [], productName, characteristics, badges = [] }: ProductGalleryProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
+  console.log('🖼️ ProductGallery получил изображения:', {
+    mainImage,
+    galleryImages,
+    productName,
+    allImagesSources: [mainImage, ...galleryImages]
+  });
+  
   // Создаем массив всех изображений, начиная с главного
   const allImages = [mainImage, ...images.filter(img => img !== mainImage), ...galleryImages].filter(Boolean);
   

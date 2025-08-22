@@ -891,6 +891,13 @@ const ProductDetail: React.FC = () => {
           const foundProduct = data.products.find((p: any) => p.id.toString() === id);
           
           if (foundProduct) {
+            console.log('🔍 Найден товар из API:', {
+              id: foundProduct.id,
+              name: foundProduct.name,
+              image_url: foundProduct.image_url,
+              gallery_images: foundProduct.gallery_images,
+              fullProduct: foundProduct
+            });
             setProduct(foundProduct);
           } else {
             setError(`Товар с ID ${id} не найден`);
