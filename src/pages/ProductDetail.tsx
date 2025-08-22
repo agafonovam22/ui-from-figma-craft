@@ -12,12 +12,12 @@ import { useCart } from '@/contexts/CartContext';
 import ProductGallery from '@/components/ProductGallery';
 import { useToast } from '@/hooks/use-toast';
 import ReviewDialog from '@/components/ReviewDialog';
+import { useQuery } from '@tanstack/react-query';
+import { optimizeImageUrl, preloadImage } from '@/utils/imageOptimization';  
+import LoadingSpinner from '@/components/LoadingSpinner';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [product, setProduct] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
   const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState<string>('');
   const [selectedSize, setSelectedSize] = useState<string>('core');
@@ -27,13 +27,40 @@ const ProductDetail: React.FC = () => {
   const { addItem } = useCart();
   const { toast } = useToast();
 
+  // Используем React Query для кэширования данных товаров
+  const { data: allProductsData, isLoading, error } = useQuery({
+    queryKey: ['all-products'],
+    queryFn: async () => {
+      console.log('🔄 Загружаем товары для страницы товара...');
+      const response = await fetch('https://cp44652.tw1.ru/catalog.php');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    },
+    staleTime: 5 * 60 * 1000, // 5 минут
+    gcTime: 30 * 60 * 1000, // 30 минут
+  });
+
+  // Находим товар в кэшированных данных
+  const product = allProductsData?.products?.find((p: any) => p.id.toString() === id);
+
+  // Предзагружаем изображения товара
+  useEffect(() => {
+    if (product?.gallery_images?.length > 0) {
+      const mainImage = product.gallery_images[0];
+      preloadImage(optimizeImageUrl(mainImage, 700, 700)).catch(console.warn);
+    }
+  }, [product]);
+
   const handleBuyClick = () => {
     if (product) {
       addItem({
         id: product.id,
         name: product.name,
         price: product.price,
-        image_url: (product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg',
+        image_url: (product.gallery_images && product.gallery_images.length > 0) ? 
+          optimizeImageUrl(product.gallery_images[0], 200, 200) : '/placeholder.svg',
         is_available: product.is_available
       });
       
@@ -859,76 +886,37 @@ const ProductDetail: React.FC = () => {
     }
   };
 
-  // Логируем сразу при рендере
-  console.log('ProductDetail рендерится');
-  console.log('useParams результат:', useParams());
-  console.log('ID из useParams:', id);
-  console.log('window.location.pathname:', window.location.pathname);
-
+  // Сбрасываем состояния при смене товара
   useEffect(() => {
-    // Сбрасываем все состояния при смене ID товара
-    setProduct(null);
-    setError(null);
     setQuantity(1);
     setSelectedColor('');
     setSelectedSize('core');
     setActiveTab('description');
     setSelectedInstallmentPlan(null);
-    
-    const fetchProduct = async () => {
-      try {
-        setLoading(true);
-        
-        const response = await fetch('https://cp44652.tw1.ru/catalog.php');
-        
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        
-        if (data.status === 'ok' && data.products) {
-          const foundProduct = data.products.find((p: any) => p.id.toString() === id);
-          
-          if (foundProduct) {
-            console.log('🔍 Найден товар из API:', {
-              id: foundProduct.id,
-              name: foundProduct.name,
-              image_url: foundProduct.image_url,
-              gallery_images: foundProduct.gallery_images,
-              fullProduct: foundProduct
-            });
-            setProduct(foundProduct);
-          } else {
-            setError(`Товар с ID ${id} не найден`);
-          }
-        } else {
-          setError('Ошибка получения данных с сервера');
-        }
-      } catch (err) {
-        console.error('Ошибка загрузки товара:', err);
-        setError(`Ошибка загрузки: ${err}`);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (id) {
-      fetchProduct();
-    } else {
-      setError('ID товара не указан');
-      setLoading(false);
-    }
   }, [id]);
 
-  if (loading) {
+  // Логируем информацию о товаре
+  useEffect(() => {
+    if (product) {
+      console.log('🔍 Найден товар из кэша:', {
+        id: product.id,
+        name: product.name,
+        image_url: product.image_url,
+        gallery_images: product.gallery_images,
+        fullProduct: product
+      });
+    }
+  }, [product]);
+
+  if (isLoading) {
     return (
       <div className="min-h-screen bg-background">
         <Header />
         <div className="container mx-auto px-4 py-8">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold mb-4">Загружаем товар...</h1>
-            <p>ID товара: {id}</p>
+          <div className="flex flex-col items-center justify-center min-h-[400px]">
+            <LoadingSpinner size="lg" />
+            <h1 className="text-2xl font-bold mb-2 mt-4">Загружаем товар...</h1>
+            <p className="text-muted-foreground">ID товара: {id}</p>
           </div>
         </div>
         <Footer />
@@ -944,7 +932,9 @@ const ProductDetail: React.FC = () => {
           <div className="text-center">
             <h1 className="text-2xl font-bold mb-4">Товар не найден</h1>
             <p>Ищем товар с ID: {id}</p>
-            <p>Ошибка: {error || 'Товар не найден в базе данных'}</p>
+            <p className="text-muted-foreground mb-6">
+              {error?.message || 'Товар не найден в базе данных'}
+            </p>
             <Link to="/catalog">
               <Button variant="outline">
                 <ArrowLeft className="w-4 h-4 mr-2" />
@@ -981,8 +971,10 @@ const ProductDetail: React.FC = () => {
           {/* Product Gallery */}
           <div>
             <ProductGallery
-              mainImage={(product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg'}
-              galleryImages={product.gallery_images || []}
+              mainImage={(product.gallery_images && product.gallery_images.length > 0) ? 
+                optimizeImageUrl(product.gallery_images[0], 700, 700) : '/placeholder.svg'}
+              galleryImages={product.gallery_images?.map((img: string) => 
+                optimizeImageUrl(img, 700, 700)) || []}
               productName={product.name}
               badges={[
                 ...(product.badge ? [{ text: product.badge, variant: 'destructive' as const }] : []),
