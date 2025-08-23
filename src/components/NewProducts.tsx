@@ -215,22 +215,6 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                     </CarouselContent>
                     <CarouselPrevious className="left-2 w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <CarouselNext className="right-2 w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    
-                    {/* Красный индикатор слайдера */}
-                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex gap-1">
-                      {product.gallery_images.map((_: string, dotIndex: number) => {
-                        const currentIndex = carouselIndexes[product.id] || 0;
-                        const isActive = dotIndex === currentIndex;
-                        return (
-                          <div 
-                            key={dotIndex} 
-                            className={`h-1 rounded-full transition-all duration-300 ${
-                              isActive ? 'w-6 bg-destructive' : 'w-2 bg-gray-300'
-                            }`}
-                          />
-                        );
-                      })}
-                    </div>
                   </Carousel>
                 ) : (
                   <div className="h-full flex items-center justify-center p-4">
@@ -244,6 +228,24 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                   </div>
                 )}
               </div>
+
+              {/* Красный индикатор слайдера */}
+              {product.gallery_images && product.gallery_images.length > 1 && (
+                <div className="flex justify-center gap-1 mt-2">
+                  {product.gallery_images.map((_: string, dotIndex: number) => {
+                    const currentIndex = carouselIndexes[product.id] || 0;
+                    const isActive = dotIndex === currentIndex;
+                    return (
+                      <div 
+                        key={dotIndex} 
+                        className={`h-1 rounded-full transition-all duration-300 ${
+                          isActive ? 'w-6 bg-destructive' : 'w-2 bg-gray-300'
+                        }`}
+                      />
+                    );
+                  })}
+                </div>
+              )}
 
               {/* Серая разделительная полоса */}
               <div className="mx-4 h-px bg-gray-200 mt-7"></div>
