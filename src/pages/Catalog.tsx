@@ -11,7 +11,7 @@ import { useProductSearch, Product } from '@/hooks/useProducts';
 import { usePaginatedProducts } from '@/hooks/usePaginatedProducts';
 import { useDebounce } from '@/hooks/useDebounce';
 import { FilterState } from '@/types/filters';
-import { getAllBrandsFromAPI, BrandInfo } from '@/utils/getBrands';
+// Не используем API для брендов - используем фиксированный список
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -25,8 +25,37 @@ const Catalog: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [sortBy, setSortBy] = useState('popular');
   const [pageNumber, setPageNumber] = useState(1);
-  const [allBrands, setAllBrands] = useState<string[]>([]);
-  const [brandsInfo, setBrandsInfo] = useState<BrandInfo[]>([]);
+  // Фиксированный список брендов с маппингом к ID
+  const BRAND_NAME_TO_ID: Record<string, string[]> = {
+    'SMITH': ['38771', '38777'],
+    'TRUE': ['38761'],
+    'Bowflex': ['38753'],
+    'Schwinn': ['38770'],
+    'Peach Builder': ['50252'],
+    'Sole': ['38767'],
+    'Variosling': ['38766'],
+    'CardioPower': ['38752'],
+    'Slide&Fit': ['38815'],
+    'cardiopower-pro': ['38769'],
+    'SCHOLLE': ['38762'],
+    'INSPIRE': ['49255'],
+    'hyfit': ['49256'],
+    'maxgym': ['49654'],
+    'MAXFIT': [],
+    'Proski': ['38782'],
+    'Meridien': ['38765'],
+    'kernel': ['38764'],
+    'CENTR': ['49278'],
+    'Sintesi': [],
+    'VISBODY': [],
+    'Nautilus': ['38768'],
+    'Octane': ['38772'],
+    'Gym80': ['38773'],
+    'Eclipse': ['38775'],
+    'LiveUp': ['38781']
+  };
+  
+  const ALL_BRAND_NAMES = Object.keys(BRAND_NAME_TO_ID);
   
   // Состояние фильтров
   const [filters, setFilters] = useState<FilterState>({
@@ -47,16 +76,7 @@ const Catalog: React.FC = () => {
   // Добавляем debounce для поиска (задержка 300мс)
   const debouncedSearchQuery = useDebounce(queryParam, 300);
   
-  // Загружаем все бренды при монтировании компонента
-  React.useEffect(() => {
-    const fetchAllBrands = async () => {
-      const result = await getAllBrandsFromAPI();
-      setAllBrands(result.brands);
-      setBrandsInfo(result.brandsInfo);
-    };
-    
-    fetchAllBrands();
-  }, []);
+  // Убираем useEffect - используем фиксированный список
   
   // Используем оптимизированный хук с пагинацией
   const { 
@@ -150,28 +170,15 @@ const Catalog: React.FC = () => {
       );
     }
 
-    // Фильтр по брендам
+    // Фильтр по брендам - используем маппинг названий к ID
     if (filters.brands.length > 0) {
       filtered = filtered.filter(product => {
-        const brandName = product.characteristics?.['Бренд'] || '';
-        const brandId = product.characteristics?.['Бренд (id)'] || '';
+        const productBrandId = product.characteristics?.['Бренд (id)'] || '';
         
-        // Приоритет у названия бренда
-        const productBrand = brandName.trim() || brandId.trim();
-        
-        return filters.brands.some(selectedBrand => {
-          const selectedBrandLower = selectedBrand.toLowerCase().trim();
-          const productBrandLower = productBrand.toLowerCase();
-          const brandNameLower = brandName.toLowerCase().trim();
-          const brandIdLower = brandId.toLowerCase().trim();
-          
-          // Точное совпадение с названием или ID
-          return productBrandLower === selectedBrandLower ||
-                 brandNameLower === selectedBrandLower ||
-                 brandIdLower === selectedBrandLower ||
-                 // Частичное совпадение
-                 productBrandLower.includes(selectedBrandLower) ||
-                 selectedBrandLower.includes(productBrandLower);
+        // Проверяем, соответствует ли ID продукта одному из выбранных брендов
+        return filters.brands.some(brandName => {
+          const brandIds = BRAND_NAME_TO_ID[brandName] || [];
+          return brandIds.includes(productBrandId);
         });
       });
     }
@@ -213,14 +220,13 @@ const Catalog: React.FC = () => {
       if (equipmentType) equipmentTypes.add(equipmentType);
     });
 
-    // Используем загруженные бренды из API вместо извлечения из продуктов
-    console.log('Бренды для фильтров из API:', allBrands);
+    console.log('Бренды для фильтров:', ALL_BRAND_NAMES);
 
     return {
-      brands: allBrands, // Используем полный список брендов из API
+      brands: ALL_BRAND_NAMES, // Используем фиксированный список названий брендов
       equipmentTypes: Array.from(equipmentTypes)
     };
-  }, [catalogProducts, allBrands]);
+  }, [catalogProducts]);
 
   // Сортировка товаров
   const sortedItems = useMemo(() => {
