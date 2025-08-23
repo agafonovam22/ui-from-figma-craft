@@ -344,20 +344,31 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                   </div>
 
                   {/* Цена и кнопка */}
-                  <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-2">
-                      {product.original_price && product.original_price > product.price && (
-                        <span className="text-sm text-gray-400 line-through">{product.original_price.toLocaleString()} ₽</span>
-                      )}
-                      <span className="font-bold text-gray-900 text-lg">{product.price.toLocaleString()} ₽</span>
+                  {product.in_stock ? (
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2">
+                        {product.original_price && product.original_price > product.price && (
+                          <span className="text-sm text-gray-400 line-through">{product.original_price.toLocaleString()} ₽</span>
+                        )}
+                        <span className="font-bold text-gray-900 text-lg">{product.price.toLocaleString()} ₽</span>
+                      </div>
+                      <button 
+                        className="bg-destructive hover:bg-destructive/90 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors flex-shrink-0"
+                        onClick={(e) => handleBuyClick(e, product)}
+                      >
+                        Купить
+                      </button>
                     </div>
-                    <button 
-                      className="bg-destructive hover:bg-destructive/90 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors flex-shrink-0"
-                      onClick={(e) => handleBuyClick(e, product)}
-                    >
-                      Купить
-                    </button>
-                  </div>
+                  ) : (
+                    <div className="flex justify-center">
+                      <button 
+                        className="border text-sm font-medium py-2.5 px-4 rounded-lg transition-colors"
+                        style={{ borderColor: '#F53B49', color: '#F53B49' }}
+                      >
+                        Запросить цену
+                      </button>
+                    </div>
+                  )}
                 </div>
               </Link>
             </div>
