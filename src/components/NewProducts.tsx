@@ -176,6 +176,14 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
 
               {/* Слайдер изображений */}
               <div className="relative h-60 overflow-hidden" style={{ backgroundColor: '#F8F8FD' }}>
+                {/* Декоративный элемент в правом верхнем углу */}
+                <div className="absolute top-0 right-0 w-24 h-24 opacity-30 z-0">
+                  <img 
+                    src="/lovable-uploads/edb2234f-2688-4fff-bb32-0716d8e6463f.png" 
+                    alt="" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 {product.gallery_images && product.gallery_images.length > 1 ? (
                   <Carousel 
                     className="h-full group/carousel"
