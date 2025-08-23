@@ -256,7 +256,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                 className="block"
               >
                 {/* Информация о товаре */}
-                <div className="p-4 flex flex-col justify-between" style={{ height: '180px', backgroundColor: '#F8F8FD' }}>
+                <div className="p-4 pb-2.5 flex flex-col justify-between" style={{ height: '160px', backgroundColor: '#F8F8FD' }}>
                   <div>
                     {/* Статус наличия */}
                     {(() => {
