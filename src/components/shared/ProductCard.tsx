@@ -346,14 +346,15 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
           <div className="flex items-center justify-between">
             <span className="text-xl font-bold text-gray-900 group-hover:text-white transition-colors duration-300">
-              {product.price.toLocaleString()} ₽
+              {product.price === 0 ? "Цена по запросу" : `${product.price.toLocaleString()} ₽`}
             </span>
             
             <Button 
               className="bg-[#F53B49] hover:bg-[#e63946] text-white px-4 py-2"
               onClick={handleBuyClick}
+              disabled={product.price === 0}
             >
-              Купить
+              {product.price === 0 ? "Запросить" : "Купить"}
             </Button>
           </div>
         </div>

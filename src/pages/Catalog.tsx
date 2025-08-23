@@ -138,9 +138,15 @@ const Catalog: React.FC = () => {
     setPageNumber(1);
   };
 
-  // Применение фильтров к товарам (оптимизированная версия)
+  // Применение фильтров к товарам (с отладкой цен)
   const filteredProducts = useMemo(() => {
     let filtered = allCatalogProducts;
+
+    // Проверяем товары с нулевой ценой
+    const zeroPrice = filtered.filter(p => p.price === 0);
+    if (zeroPrice.length > 0) {
+      console.log('🔴 ТОВАРЫ С НУЛЕВОЙ ЦЕНОЙ:', zeroPrice.map(p => ({ id: p.id, name: p.name, price: p.price })));
+    }
 
     // Фильтр по цене
     if (filters.price.ranges.length > 0) {
