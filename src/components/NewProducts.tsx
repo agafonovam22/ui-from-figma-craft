@@ -217,7 +217,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                     <CarouselNext className="right-2 w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
                     
                     {/* Красный индикатор слайдера */}
-                    <div className="absolute bottom-6 right-0 flex gap-1">
+                    <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-1">
                       {product.gallery_images.map((_: string, dotIndex: number) => {
                         const currentIndex = carouselIndexes[product.id] || 0;
                         const isActive = dotIndex === currentIndex;
@@ -257,14 +257,14 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                   <div>
                     {/* Статус наличия */}
                     {product.in_stock ? (
-                      <div className="flex items-center gap-1 mb-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <div className="flex items-center justify-end gap-1 mb-2">
                         <span className="text-xs text-green-600 font-medium">В наличии</span>
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                       </div>
                     ) : (
-                      <div className="flex items-center gap-1 mb-2">
-                        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                      <div className="flex items-center justify-end gap-1 mb-2">
                         <span className="text-xs text-red-600 font-medium">Нет в наличии</span>
+                        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
                       </div>
                     )}
 
