@@ -131,7 +131,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
             <div 
               key={product.id}
               className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
-              style={{ height: '440px', backgroundColor: '#F8F8FD' }}
+              style={{ height: '460px', backgroundColor: '#F8F8FD' }}
             >
               {/* Овальные бейджи в верхнем левом углу */}
               <div className="absolute top-3 left-3 z-10 flex flex-row gap-2">
@@ -217,7 +217,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                     <CarouselNext className="right-2 w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
                     
                     {/* Красный индикатор слайдера */}
-                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex gap-1">
+                    <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 flex gap-1">
                       {product.gallery_images.map((_: string, dotIndex: number) => {
                         const currentIndex = carouselIndexes[product.id] || 0;
                         const isActive = dotIndex === currentIndex;
@@ -246,7 +246,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
               </div>
 
               {/* Серая разделительная полоса */}
-              <div className="mx-4 h-px bg-gray-200 mt-2.5"></div>
+              <div className="mx-4 h-px bg-gray-200 mt-7"></div>
 
               <Link 
                 to={`/product/${product.id}`}
