@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { getAllBrandsFromAPI } from '@/utils/getBrands';
+import { getAllBrandsFromAPI, BrandInfo } from '@/utils/getBrands';
 
 const BrandsDebug: React.FC = () => {
   const [brands, setBrands] = useState<string[]>([]);
-  const [mapping, setMapping] = useState<Record<string, string[]>>({});
+  const [brandsInfo, setBrandsInfo] = useState<BrandInfo[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const BrandsDebug: React.FC = () => {
       setLoading(true);
       const result = await getAllBrandsFromAPI();
       setBrands(result.brands);
-      setMapping(result.mapping);
+      setBrandsInfo(result.brandsInfo);
       setLoading(false);
     };
 
@@ -42,17 +42,18 @@ const BrandsDebug: React.FC = () => {
 
       <div>
         <h3 className="text-lg font-semibold mb-2">
-          Соответствие ID брендов:
+          Детальная информация о брендах:
         </h3>
         <div className="space-y-2">
-          {Object.entries(mapping).map(([id, names]) => (
-            <div key={id} className="p-3 bg-gray-50 rounded">
-              <strong>ID: {id}</strong>
-              {names.length > 0 && (
-                <div className="text-sm text-gray-600 mt-1">
-                  Дополнительная информация: {names.join(', ')}
-                </div>
-              )}
+          {brandsInfo.map((brand) => (
+            <div key={brand.id} className="p-3 bg-gray-50 rounded">
+              <strong>Название: {brand.name}</strong>
+              <div className="text-sm text-gray-600 mt-1">
+                ID: {brand.id}
+                {brand.country && (
+                  <span className="ml-4">Страна: {brand.country}</span>
+                )}
+              </div>
             </div>
           ))}
         </div>

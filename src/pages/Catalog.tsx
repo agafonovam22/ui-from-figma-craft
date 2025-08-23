@@ -139,15 +139,26 @@ const Catalog: React.FC = () => {
     // Фильтр по брендам
     if (filters.brands.length > 0) {
       filtered = filtered.filter(product => {
-        const brandId = product.characteristics?.['Бренд (id)'] || '';
         const brandName = product.characteristics?.['Бренд'] || '';
-        const brand = brandName || brandId;
+        const brandId = product.characteristics?.['Бренд (id)'] || '';
         
-        return filters.brands.some(selectedBrand => 
-          brand.toLowerCase().trim() === selectedBrand.toLowerCase().trim() ||
-          brand.toLowerCase().includes(selectedBrand.toLowerCase()) ||
-          selectedBrand.toLowerCase().includes(brand.toLowerCase())
-        );
+        // Приоритет у названия бренда
+        const productBrand = brandName.trim() || brandId.trim();
+        
+        return filters.brands.some(selectedBrand => {
+          const selectedBrandLower = selectedBrand.toLowerCase().trim();
+          const productBrandLower = productBrand.toLowerCase();
+          const brandNameLower = brandName.toLowerCase().trim();
+          const brandIdLower = brandId.toLowerCase().trim();
+          
+          // Точное совпадение с названием или ID
+          return productBrandLower === selectedBrandLower ||
+                 brandNameLower === selectedBrandLower ||
+                 brandIdLower === selectedBrandLower ||
+                 // Частичное совпадение
+                 productBrandLower.includes(selectedBrandLower) ||
+                 selectedBrandLower.includes(productBrandLower);
+        });
       });
     }
 
@@ -184,15 +195,20 @@ const Catalog: React.FC = () => {
     const equipmentTypes = new Set<string>();
     
     catalogProducts.forEach(product => {
-      // Собираем бренды - пробуем разные поля
-      const brandId = product.characteristics?.['Бренд (id)'] || '';
+      // Приоритет у названия бренда, а не ID
       const brandName = product.characteristics?.['Бренд'] || '';
-      const brand = brandName || brandId;
+      const brandId = product.characteristics?.['Бренд (id)'] || '';
       
-      console.log('Product:', product.name, 'Brand ID:', brandId, 'Brand Name:', brandName);
+      // Используем название бренда, если есть, иначе ID
+      let brandToUse = '';
+      if (brandName && brandName.trim()) {
+        brandToUse = brandName.trim();
+      } else if (brandId && brandId.trim()) {
+        brandToUse = brandId.trim();
+      }
       
-      if (brand && brand.trim()) {
-        brands.add(brand.trim());
+      if (brandToUse) {
+        brands.add(brandToUse);
       }
       
       // Собираем типы оборудования
@@ -200,8 +216,8 @@ const Catalog: React.FC = () => {
       if (equipmentType) equipmentTypes.add(equipmentType);
     });
 
-    const uniqueBrands = Array.from(brands);
-    console.log('Уникальные бренды для фильтров:', uniqueBrands);
+    const uniqueBrands = Array.from(brands).sort();
+    console.log('Уникальные бренды для фильтров (приоритет названиям):', uniqueBrands);
 
     return {
       brands: uniqueBrands,
