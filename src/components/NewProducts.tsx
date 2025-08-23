@@ -177,11 +177,11 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
               {/* Слайдер изображений */}
               <div className="relative h-60 overflow-hidden" style={{ backgroundColor: '#F8F8FD' }}>
                 {/* Декоративный элемент в правом верхнем углу */}
-                <div className="absolute top-0 right-0 w-24 h-24 z-0">
+                <div className="absolute top-0 right-0 w-32 h-32 z-0">
                   <img 
-                    src="/lovable-uploads/edb2234f-2688-4fff-bb32-0716d8e6463f.png" 
+                    src="/lovable-uploads/5e75cf63-44ac-40f1-932d-ab5786810641.png" 
                     alt="" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 {product.gallery_images && product.gallery_images.length > 1 ? (
