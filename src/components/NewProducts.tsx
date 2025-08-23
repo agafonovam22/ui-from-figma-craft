@@ -14,6 +14,7 @@ interface NewProductsProps {
 
 const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) => {
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
+  const [carouselIndexes, setCarouselIndexes] = useState<{[key: string]: number}>({});
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const { addItem } = useCart();
 
@@ -176,7 +177,19 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
               {/* Слайдер изображений */}
               <div className="relative h-60 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
                 {product.gallery_images && product.gallery_images.length > 1 ? (
-                  <Carousel className="h-full group/carousel">
+                  <Carousel 
+                    className="h-full group/carousel"
+                    setApi={(api) => {
+                      if (api) {
+                        api.on('select', () => {
+                          setCarouselIndexes(prev => ({
+                            ...prev,
+                            [product.id]: api.selectedScrollSnap()
+                          }));
+                        });
+                      }
+                    }}
+                  >
                     <CarouselContent className="h-full">
                       {product.gallery_images.map((image: string, imageIndex: number) => (
                         <CarouselItem key={imageIndex} className="h-full">
@@ -197,13 +210,18 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                     
                     {/* Красный индикатор слайдера */}
                     <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
-                      {product.gallery_images.map((_: string, dotIndex: number) => (
-                        <div 
-                          key={dotIndex} 
-                          className="w-2 h-2 rounded-full bg-gray-300"
-                        />
-                      ))}
-                      <div className="absolute w-2 h-2 rounded-full bg-destructive transition-transform duration-300" />
+                      {product.gallery_images.map((_: string, dotIndex: number) => {
+                        const currentIndex = carouselIndexes[product.id] || 0;
+                        const isActive = dotIndex === currentIndex;
+                        return (
+                          <div 
+                            key={dotIndex} 
+                            className={`w-6 h-1 rounded-full transition-all duration-300 ${
+                              isActive ? 'bg-destructive' : 'bg-gray-300'
+                            }`}
+                          />
+                        );
+                      })}
                     </div>
                   </Carousel>
                 ) : (
