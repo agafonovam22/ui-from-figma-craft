@@ -78,19 +78,15 @@ const Catalog: React.FC = () => {
   
   // Убираем useEffect - используем фиксированный список
   
-  // Используем оптимизированный хук с пагинацией
+  // Используем оптимизированный хук БЕЗ пагинации - получаем ВСЕ товары
   const { 
-    products: catalogProducts, 
+    products: allCatalogProducts, 
     isLoading, 
     error, 
-    total,
-    totalPages,
-    currentPage,
-    hasNextPage,
-    hasPrevPage
+    total
   } = usePaginatedProducts(
-    pageNumber, 
-    12, // items per page
+    1, 
+    1000, // Загружаем много товаров чтобы получить ВСЕ
     debouncedSearchQuery
   );
 
@@ -146,9 +142,9 @@ const Catalog: React.FC = () => {
   const filteredProducts = useMemo(() => {
     console.log('=== Начало фильтрации ===');
     console.log('Выбранные бренды:', filters.brands);
-    console.log('Всего товаров до фильтрации:', catalogProducts.length);
+    console.log('Всего товаров до фильтрации:', allCatalogProducts.length);
     
-    let filtered = catalogProducts;
+    let filtered = allCatalogProducts;
 
     // Фильтр по цене
     if (filters.price.ranges.length > 0) {
@@ -228,14 +224,14 @@ const Catalog: React.FC = () => {
     }
 
     return filtered;
-  }, [catalogProducts, filters]);
+  }, [allCatalogProducts, filters]);
 
   // Получение уникальных значений для фильтров из данных
   const filterOptions = useMemo(() => {
     const equipmentTypes = new Set<string>();
     const actualBrandIds = new Set<string>();
     
-    catalogProducts.forEach(product => {
+    allCatalogProducts.forEach(product => {
       // Собираем типы оборудования
       const equipmentType = product.characteristics?.['Тип оборудования'] || '';
       if (equipmentType) equipmentTypes.add(equipmentType);
@@ -246,17 +242,19 @@ const Catalog: React.FC = () => {
       if (brandId) {
         actualBrandIds.add(brandId);
         // Показываем все товары для отладки
-        console.log(`ТОВАР: "${product.name}" | Бренд: "${brandName}" | Brand ID: "${brandId}"`);
+        if (brandName.toLowerCase().includes('true') || product.name.toLowerCase().includes('true')) {
+          console.log(`ТОВАР TRUE: "${product.name}" | Бренд: "${brandName}" | Brand ID: "${brandId}"`);
+        }
       }
     });
 
     console.log('=== ОТЛАДКА БРЕНДОВ ===');
-    console.log(`Всего товаров на странице: ${catalogProducts.length}`);
+    console.log(`Всего товаров в системе: ${allCatalogProducts.length}`);
     console.log('Все реальные ID брендов:', Array.from(actualBrandIds).sort());
     console.log('Ожидаемый ID для TRUE:', BRAND_NAME_TO_ID['TRUE']);
     
     // Проверим, есть ли товары TRUE среди всех загруженных товаров
-    const trueProducts = catalogProducts.filter(p => {
+    const trueProducts = allCatalogProducts.filter(p => {
       const brandId = p.characteristics?.['Бренд (id)'];
       const brandName = (p.characteristics?.['Бренд'] || '').toLowerCase();
       const productName = p.name.toLowerCase();
@@ -268,7 +266,7 @@ const Catalog: React.FC = () => {
       brands: ALL_BRAND_NAMES, // Используем фиксированный список названий брендов
       equipmentTypes: Array.from(equipmentTypes)
     };
-  }, [catalogProducts]);
+  }, [allCatalogProducts]);
 
   // Сортировка товаров
   const sortedItems = useMemo(() => {
@@ -288,9 +286,21 @@ const Catalog: React.FC = () => {
     }
   }, [filteredProducts, sortBy]);
 
-  // Преобразование в формат для отображения
+  // Пагинация уже отфильтрованных товаров
+  const paginatedProducts = useMemo(() => {
+    const itemsPerPage = 12;
+    const startIndex = (pageNumber - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return sortedItems.slice(startIndex, endIndex);
+  }, [sortedItems, pageNumber]);
+  
+  const totalPages = Math.ceil(sortedItems.length / 12);
+  const hasNextPage = pageNumber < totalPages;
+  const hasPrevPage = pageNumber > 1;
+
+  // Преобразование в формат для отображения (используем пагинированные товары)
   const catalogItems = useMemo(() => {
-    return sortedItems.map(item => ({
+    return paginatedProducts.map(item => ({
       id: item.id,
       name: item.name,
       price: item.price,
@@ -305,7 +315,7 @@ const Catalog: React.FC = () => {
       badge: item.is_available ? 'В наличии' : 'Нет в наличии',
       badge_color: item.is_available ? 'green' : 'red'
     }));
-  }, [sortedItems]);
+  }, [paginatedProducts]);
 
   // Используем пагинацию из хука
   const handlePageNavigation = (newPage: number) => {
@@ -379,7 +389,7 @@ const Catalog: React.FC = () => {
                 <CatalogGrid 
                   products={catalogItems}
                   totalPages={totalPages}
-                  currentPage={currentPage}
+                  currentPage={pageNumber}
                   onPageChange={handlePageNavigation}
                   hasNextPage={hasNextPage}
                   hasPreviousPage={hasPrevPage}
