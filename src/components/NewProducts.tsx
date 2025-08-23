@@ -217,7 +217,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                     <CarouselNext className="right-2 w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
                     
                     {/* Красный индикатор слайдера */}
-                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-2.5 flex gap-1">
+                    <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-1">
                       {product.gallery_images.map((_: string, dotIndex: number) => {
                         const currentIndex = carouselIndexes[product.id] || 0;
                         const isActive = dotIndex === currentIndex;
