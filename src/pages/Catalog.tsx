@@ -201,18 +201,35 @@ const Catalog: React.FC = () => {
 
     // Фильтр по типу назначения
     if (filters.purposeTypes.length > 0) {
+      console.log('=== Фильтр по типу назначения ===');
+      console.log('Выбранные типы:', filters.purposeTypes);
+      
       filtered = filtered.filter(product => {
         const purposeType = product.characteristics?.['Тип назначения'] || '';
-        return filters.purposeTypes.some(type => {
+        const matches = filters.purposeTypes.some(type => {
           if (type === 'Домашние') {
             return purposeType.includes('Для дома');
           }
           if (type === 'Профессиональные') {
             return purposeType.includes('Для фитнес-клубов');
           }
+          if (type === 'Полупрофессиональные') {
+            return purposeType.includes('Полупрофессиональное');
+          }
+          if (type === 'Реабилитация') {
+            return purposeType.includes('Реабилитация');
+          }
           return purposeType.includes(type);
         });
+        
+        if (matches) {
+          console.log(`✅ Продукт "${product.name}" прошел фильтр. Тип назначения: "${purposeType}"`);
+        }
+        
+        return matches;
       });
+      
+      console.log('Товаров после фильтрации по типу назначения:', filtered.length);
     }
 
     // Фильтр по типу оборудования
@@ -229,41 +246,23 @@ const Catalog: React.FC = () => {
   // Получение уникальных значений для фильтров из данных
   const filterOptions = useMemo(() => {
     const equipmentTypes = new Set<string>();
-    const actualBrandIds = new Set<string>();
+    const purposeTypes = new Set<string>();
     
     allCatalogProducts.forEach(product => {
       // Собираем типы оборудования
       const equipmentType = product.characteristics?.['Тип оборудования'] || '';
       if (equipmentType) equipmentTypes.add(equipmentType);
       
-      // ОТЛАДКА: собираем все реальные ID брендов из продуктов
-      const brandId = product.characteristics?.['Бренд (id)'] || '';
-      const brandName = product.characteristics?.['Бренд'] || '';
-      if (brandId) {
-        actualBrandIds.add(brandId);
-        // Показываем все товары для отладки
-        if (brandName.toLowerCase().includes('true') || product.name.toLowerCase().includes('true')) {
-          console.log(`ТОВАР TRUE: "${product.name}" | Бренд: "${brandName}" | Brand ID: "${brandId}"`);
-        }
-      }
+      // Собираем типы назначения для отладки
+      const purposeType = product.characteristics?.['Тип назначения'] || '';
+      if (purposeType) purposeTypes.add(purposeType);
     });
 
-    console.log('=== ОТЛАДКА БРЕНДОВ ===');
-    console.log(`Всего товаров в системе: ${allCatalogProducts.length}`);
-    console.log('Все реальные ID брендов:', Array.from(actualBrandIds).sort());
-    console.log('Ожидаемый ID для TRUE:', BRAND_NAME_TO_ID['TRUE']);
-    
-    // Проверим, есть ли товары TRUE среди всех загруженных товаров
-    const trueProducts = allCatalogProducts.filter(p => {
-      const brandId = p.characteristics?.['Бренд (id)'];
-      const brandName = (p.characteristics?.['Бренд'] || '').toLowerCase();
-      const productName = p.name.toLowerCase();
-      return brandId === '38761' || brandName.includes('true') || productName.includes('true');
-    });
-    console.log('Найденные товары TRUE:', trueProducts.map(p => ({ name: p.name, brandId: p.characteristics?.['Бренд (id)'], brandName: p.characteristics?.['Бренд'] })));
+    console.log('=== ОТЛАДКА ТИПОВ НАЗНАЧЕНИЯ ===');
+    console.log('Все найденные типы назначения:', Array.from(purposeTypes).sort());
 
     return {
-      brands: ALL_BRAND_NAMES, // Используем фиксированный список названий брендов
+      brands: ALL_BRAND_NAMES,
       equipmentTypes: Array.from(equipmentTypes)
     };
   }, [allCatalogProducts]);
