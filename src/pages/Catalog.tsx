@@ -144,6 +144,10 @@ const Catalog: React.FC = () => {
 
   // Применение фильтров к товарам
   const filteredProducts = useMemo(() => {
+    console.log('=== Начало фильтрации ===');
+    console.log('Выбранные бренды:', filters.brands);
+    console.log('Всего товаров до фильтрации:', catalogProducts.length);
+    
     let filtered = catalogProducts;
 
     // Фильтр по цене
@@ -172,15 +176,31 @@ const Catalog: React.FC = () => {
 
     // Фильтр по брендам - используем маппинг названий к ID
     if (filters.brands.length > 0) {
+      console.log('=== Фильтр по брендам ===');
+      console.log('BRAND_NAME_TO_ID:', BRAND_NAME_TO_ID);
+      
       filtered = filtered.filter(product => {
         const productBrandId = product.characteristics?.['Бренд (id)'] || '';
+        console.log(`Продукт: ${product.name}, Brand ID в продукте: "${productBrandId}"`);
         
         // Проверяем, соответствует ли ID продукта одному из выбранных брендов
-        return filters.brands.some(brandName => {
+        const matchesBrand = filters.brands.some(brandName => {
           const brandIds = BRAND_NAME_TO_ID[brandName] || [];
-          return brandIds.includes(productBrandId);
+          const matches = brandIds.includes(productBrandId);
+          console.log(`  Проверяем бренд: ${brandName}, ожидаемые ID: [${brandIds.join(', ')}], совпадение: ${matches}`);
+          return matches;
         });
+        
+        if (!matchesBrand) {
+          console.log(`  ❌ Продукт ${product.name} не прошел фильтр по бренду`);
+        } else {
+          console.log(`  ✅ Продукт ${product.name} прошел фильтр по бренду`);
+        }
+        
+        return matchesBrand;
       });
+      
+      console.log('Товаров после фильтрации по брендам:', filtered.length);
     }
 
     // Фильтр по типу назначения

@@ -39,6 +39,8 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
     trainer: true
   });
 
+  const [showAllBrands, setShowAllBrands] = useState(false);
+
   const [priceRange, setPriceRange] = useState([filters.price.min, filters.price.max]);
   const [powerMin, setPowerMin] = useState('');
   const [powerMax, setPowerMax] = useState('');
@@ -170,7 +172,7 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
           </h3>
           {expandedFilters.brand && (
             <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
-              {filterOptions.brands.slice(0, 6).map(brand => (
+              {(showAllBrands ? filterOptions.brands : filterOptions.brands.slice(0, 6)).map(brand => (
                 <label key={brand} className="flex items-center">
                   <input 
                     type="checkbox" 
@@ -181,9 +183,22 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
                   {brand}
                 </label>
               ))}
-              {filterOptions.brands.length > 6 && (
-                <button className="text-[#F53B49] text-[12px] mt-5 text-center w-full" style={{fontFamily: 'Benzin-Regular'}}>
+              {filterOptions.brands.length > 6 && !showAllBrands && (
+                <button 
+                  className="text-[#F53B49] text-[12px] mt-5 text-center w-full" 
+                  style={{fontFamily: 'Benzin-Regular'}}
+                  onClick={() => setShowAllBrands(true)}
+                >
                   Показать все ({filterOptions.brands.length})
+                </button>
+              )}
+              {showAllBrands && (
+                <button 
+                  className="text-[#F53B49] text-[12px] mt-5 text-center w-full" 
+                  style={{fontFamily: 'Benzin-Regular'}}
+                  onClick={() => setShowAllBrands(false)}
+                >
+                  Скрыть
                 </button>
               )}
             </div>
