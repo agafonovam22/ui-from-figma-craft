@@ -242,19 +242,27 @@ const Catalog: React.FC = () => {
       
       // ОТЛАДКА: собираем все реальные ID брендов из продуктов
       const brandId = product.characteristics?.['Бренд (id)'] || '';
+      const brandName = product.characteristics?.['Бренд'] || '';
       if (brandId) {
         actualBrandIds.add(brandId);
-        // Для бренда TRUE покажем детали
-        if (product.name.toLowerCase().includes('true')) {
-          console.log(`ТОВАР TRUE: ${product.name}, Brand ID: "${brandId}"`);
-        }
+        // Показываем все товары для отладки
+        console.log(`ТОВАР: "${product.name}" | Бренд: "${brandName}" | Brand ID: "${brandId}"`);
       }
     });
 
     console.log('=== ОТЛАДКА БРЕНДОВ ===');
-    console.log('Все реальные ID брендов в продуктах:', Array.from(actualBrandIds).sort());
-    console.log('Мой маппинг для TRUE:', BRAND_NAME_TO_ID['TRUE']);
-    console.log('Бренды для фильтров:', ALL_BRAND_NAMES);
+    console.log(`Всего товаров на странице: ${catalogProducts.length}`);
+    console.log('Все реальные ID брендов:', Array.from(actualBrandIds).sort());
+    console.log('Ожидаемый ID для TRUE:', BRAND_NAME_TO_ID['TRUE']);
+    
+    // Проверим, есть ли товары TRUE среди всех загруженных товаров
+    const trueProducts = catalogProducts.filter(p => {
+      const brandId = p.characteristics?.['Бренд (id)'];
+      const brandName = (p.characteristics?.['Бренд'] || '').toLowerCase();
+      const productName = p.name.toLowerCase();
+      return brandId === '38761' || brandName.includes('true') || productName.includes('true');
+    });
+    console.log('Найденные товары TRUE:', trueProducts.map(p => ({ name: p.name, brandId: p.characteristics?.['Бренд (id)'], brandName: p.characteristics?.['Бренд'] })));
 
     return {
       brands: ALL_BRAND_NAMES, // Используем фиксированный список названий брендов
