@@ -308,7 +308,8 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                           {[...Array(5)].map((_, i) => (
                             <svg 
                               key={i} 
-                              className={`w-3.5 h-3.5 ${i < Math.floor(product.rating) ? 'text-yellow-400' : 'text-gray-300'}`} 
+                              className={`w-3.5 h-3.5 ${i < Math.floor(product.rating) ? '' : 'text-gray-300'}`}
+                              style={i < Math.floor(product.rating) ? { color: '#F99808' } : {}}
                               fill="currentColor" 
                               viewBox="0 0 20 20"
                             >
@@ -316,7 +317,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                             </svg>
                           ))}
                         </div>
-                        <span className="text-xs text-gray-500">{product.rating}/5</span>
+                        <span className="text-xs font-benzin" style={{ color: '#F99808' }}>{product.rating}/5</span>
                       </div>
                     )}
                   </div>
