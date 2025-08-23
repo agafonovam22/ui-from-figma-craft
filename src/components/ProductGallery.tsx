@@ -25,8 +25,9 @@ export default function ProductGallery({ mainImage, images = [], galleryImages =
     allImagesSources: [mainImage, ...galleryImages]
   });
   
-  // Создаем массив всех изображений, начиная с главного
-  const allImages = [mainImage, ...images.filter(img => img !== mainImage), ...galleryImages].filter(Boolean);
+  // Создаем массив всех изображений без дубликатов
+  const allImagesWithDuplicates = [mainImage, ...images, ...galleryImages].filter(Boolean);
+  const allImages = Array.from(new Set(allImagesWithDuplicates));
   
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
