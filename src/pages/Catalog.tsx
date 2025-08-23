@@ -233,13 +233,27 @@ const Catalog: React.FC = () => {
   // Получение уникальных значений для фильтров из данных
   const filterOptions = useMemo(() => {
     const equipmentTypes = new Set<string>();
+    const actualBrandIds = new Set<string>();
     
     catalogProducts.forEach(product => {
       // Собираем типы оборудования
       const equipmentType = product.characteristics?.['Тип оборудования'] || '';
       if (equipmentType) equipmentTypes.add(equipmentType);
+      
+      // ОТЛАДКА: собираем все реальные ID брендов из продуктов
+      const brandId = product.characteristics?.['Бренд (id)'] || '';
+      if (brandId) {
+        actualBrandIds.add(brandId);
+        // Для бренда TRUE покажем детали
+        if (product.name.toLowerCase().includes('true')) {
+          console.log(`ТОВАР TRUE: ${product.name}, Brand ID: "${brandId}"`);
+        }
+      }
     });
 
+    console.log('=== ОТЛАДКА БРЕНДОВ ===');
+    console.log('Все реальные ID брендов в продуктах:', Array.from(actualBrandIds).sort());
+    console.log('Мой маппинг для TRUE:', BRAND_NAME_TO_ID['TRUE']);
     console.log('Бренды для фильтров:', ALL_BRAND_NAMES);
 
     return {
