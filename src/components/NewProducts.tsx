@@ -259,12 +259,12 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                   <div>
                     {/* Статус наличия */}
                     {product.in_stock ? (
-                      <div className="flex items-center justify-end gap-1 mb-2">
+                      <div className="flex items-center justify-start gap-1 mb-2">
                         <span className="text-xs text-green-600 font-medium">В наличии</span>
                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                       </div>
                     ) : (
-                      <div className="flex items-center justify-end gap-1 mb-2">
+                      <div className="flex items-center justify-start gap-1 mb-2">
                         <span className="text-xs text-red-600 font-medium">Нет в наличии</span>
                         <div className="w-2 h-2 bg-red-500 rounded-full"></div>
                       </div>
