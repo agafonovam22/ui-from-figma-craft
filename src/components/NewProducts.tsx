@@ -231,7 +231,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
 
               {/* Красный индикатор слайдера */}
               {product.gallery_images && product.gallery_images.length > 1 && (
-                <div className="flex justify-center gap-1 mt-2">
+                <div className="flex justify-center gap-1 mt-1">
                   {product.gallery_images.map((_: string, dotIndex: number) => {
                     const currentIndex = carouselIndexes[product.id] || 0;
                     const isActive = dotIndex === currentIndex;
