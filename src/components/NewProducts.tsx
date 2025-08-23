@@ -238,7 +238,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
               </div>
 
               {/* Серая разделительная полоса */}
-              <div className="h-px bg-gray-200"></div>
+              <div className="mx-4 h-px bg-gray-200"></div>
 
               <Link 
                 to={`/product/${product.id}`}
