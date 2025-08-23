@@ -239,8 +239,9 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                       <div 
                         key={dotIndex} 
                         className={`h-1 rounded-full transition-all duration-300 ${
-                          isActive ? 'w-6 bg-destructive' : 'w-2 bg-gray-300'
+                          isActive ? 'w-6 bg-destructive' : 'w-2'
                         }`}
+                        style={!isActive ? { backgroundColor: '#5C6476' } : {}}
                       />
                     );
                   })}
