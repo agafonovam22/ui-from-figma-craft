@@ -78,7 +78,7 @@ const Catalog: React.FC = () => {
   
   // Убираем useEffect - используем фиксированный список
   
-  // Используем оптимизированный хук БЕЗ пагинации - получаем ВСЕ товары
+  // Используем оптимизированную загрузку с разумной пагинацией
   const { 
     products: allCatalogProducts, 
     isLoading, 
@@ -86,7 +86,7 @@ const Catalog: React.FC = () => {
     total
   } = usePaginatedProducts(
     1, 
-    1000, // Загружаем много товаров чтобы получить ВСЕ
+    500, // Оптимальное количество для фильтрации
     debouncedSearchQuery
   );
 
@@ -138,12 +138,8 @@ const Catalog: React.FC = () => {
     setPageNumber(1);
   };
 
-  // Применение фильтров к товарам
+  // Применение фильтров к товарам (оптимизированная версия)
   const filteredProducts = useMemo(() => {
-    console.log('=== Начало фильтрации ===');
-    console.log('Выбранные бренды:', filters.brands);
-    console.log('Всего товаров до фильтрации:', allCatalogProducts.length);
-    
     let filtered = allCatalogProducts;
 
     // Фильтр по цене
@@ -151,16 +147,11 @@ const Catalog: React.FC = () => {
       filtered = filtered.filter(product => {
         return filters.price.ranges.some(range => {
           switch(range) {
-            case 'до 500':
-              return product.price <= 500;
-            case 'до 20000':
-              return product.price <= 20000;
-            case 'до 50000':
-              return product.price <= 50000;
-            case 'до 100000':
-              return product.price <= 100000;
-            default:
-              return true;
+            case 'до 500': return product.price <= 500;
+            case 'до 20000': return product.price <= 20000;
+            case 'до 50000': return product.price <= 50000;
+            case 'до 100000': return product.price <= 100000;
+            default: return true;
           }
         });
       });
@@ -170,66 +161,29 @@ const Catalog: React.FC = () => {
       );
     }
 
-    // Фильтр по брендам - используем маппинг названий к ID
+    // Фильтр по брендам
     if (filters.brands.length > 0) {
-      console.log('=== Фильтр по брендам ===');
-      console.log('BRAND_NAME_TO_ID:', BRAND_NAME_TO_ID);
-      
       filtered = filtered.filter(product => {
         const productBrandId = product.characteristics?.['Бренд (id)'] || '';
-        console.log(`Продукт: ${product.name}, Brand ID в продукте: "${productBrandId}"`);
-        
-        // Проверяем, соответствует ли ID продукта одному из выбранных брендов
-        const matchesBrand = filters.brands.some(brandName => {
+        return filters.brands.some(brandName => {
           const brandIds = BRAND_NAME_TO_ID[brandName] || [];
-          const matches = brandIds.includes(productBrandId);
-          console.log(`  Проверяем бренд: ${brandName}, ожидаемые ID: [${brandIds.join(', ')}], совпадение: ${matches}`);
-          return matches;
+          return brandIds.includes(productBrandId);
         });
-        
-        if (!matchesBrand) {
-          console.log(`  ❌ Продукт ${product.name} не прошел фильтр по бренду`);
-        } else {
-          console.log(`  ✅ Продукт ${product.name} прошел фильтр по бренду`);
-        }
-        
-        return matchesBrand;
       });
-      
-      console.log('Товаров после фильтрации по брендам:', filtered.length);
     }
 
     // Фильтр по типу назначения
     if (filters.purposeTypes.length > 0) {
-      console.log('=== Фильтр по типу назначения ===');
-      console.log('Выбранные типы:', filters.purposeTypes);
-      
       filtered = filtered.filter(product => {
         const purposeType = product.characteristics?.['Тип назначения'] || '';
-        const matches = filters.purposeTypes.some(type => {
-          if (type === 'Домашние') {
-            return purposeType.includes('Для дома');
-          }
-          if (type === 'Профессиональные') {
-            return purposeType.includes('Для фитнес-клубов');
-          }
-          if (type === 'Полупрофессиональные') {
-            return purposeType.includes('Полупрофессиональное');
-          }
-          if (type === 'Реабилитация') {
-            return purposeType.includes('Реабилитация');
-          }
+        return filters.purposeTypes.some(type => {
+          if (type === 'Домашние') return purposeType.includes('Для дома');
+          if (type === 'Профессиональные') return purposeType.includes('Для фитнес-клубов');
+          if (type === 'Полупрофессиональные') return purposeType.includes('Полупрофессиональное');
+          if (type === 'Реабилитация') return purposeType.includes('Реабилитация');
           return purposeType.includes(type);
         });
-        
-        if (matches) {
-          console.log(`✅ Продукт "${product.name}" прошел фильтр. Тип назначения: "${purposeType}"`);
-        }
-        
-        return matches;
       });
-      
-      console.log('Товаров после фильтрации по типу назначения:', filtered.length);
     }
 
     // Фильтр по типу оборудования
@@ -246,20 +200,11 @@ const Catalog: React.FC = () => {
   // Получение уникальных значений для фильтров из данных
   const filterOptions = useMemo(() => {
     const equipmentTypes = new Set<string>();
-    const purposeTypes = new Set<string>();
     
     allCatalogProducts.forEach(product => {
-      // Собираем типы оборудования
       const equipmentType = product.characteristics?.['Тип оборудования'] || '';
       if (equipmentType) equipmentTypes.add(equipmentType);
-      
-      // Собираем типы назначения для отладки
-      const purposeType = product.characteristics?.['Тип назначения'] || '';
-      if (purposeType) purposeTypes.add(purposeType);
     });
-
-    console.log('=== ОТЛАДКА ТИПОВ НАЗНАЧЕНИЯ ===');
-    console.log('Все найденные типы назначения:', Array.from(purposeTypes).sort());
 
     return {
       brands: ALL_BRAND_NAMES,
@@ -285,15 +230,15 @@ const Catalog: React.FC = () => {
     }
   }, [filteredProducts, sortBy]);
 
-  // Пагинация уже отфильтрованных товаров
+  // Пагинация отфильтрованных товаров (увеличили до 24 для лучшей производительности)
   const paginatedProducts = useMemo(() => {
-    const itemsPerPage = 12;
+    const itemsPerPage = 24;
     const startIndex = (pageNumber - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     return sortedItems.slice(startIndex, endIndex);
   }, [sortedItems, pageNumber]);
   
-  const totalPages = Math.ceil(sortedItems.length / 12);
+  const totalPages = Math.ceil(sortedItems.length / 24);
   const hasNextPage = pageNumber < totalPages;
   const hasPrevPage = pageNumber > 1;
 
