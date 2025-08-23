@@ -345,7 +345,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-base font-bold text-gray-900 group-hover:text-white transition-colors duration-300">
+            <span className="text-sm font-bold text-gray-900 group-hover:text-white transition-colors duration-300">
               {product.price.toLocaleString()} ₽
             </span>
             
