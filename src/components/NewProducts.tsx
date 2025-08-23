@@ -2,10 +2,11 @@
 import React, { useState, useRef } from 'react';
 import { optimizeImageUrl } from '@/utils/imageOptimization';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, BarChart3, Heart } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { useCart } from '@/contexts/CartContext';
 import NewProductsSkeleton from '@/components/NewProductsSkeleton';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 interface NewProductsProps {
   title?: string;
@@ -128,62 +129,102 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
           {displayProducts.map((product, index) => (
             <div 
               key={product.id}
-              className="relative group bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover-scale"
+              className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
               style={{ height: '440px' }}
-              onMouseEnter={() => setHoveredProduct(parseInt(product.id))}
-              onMouseLeave={() => setHoveredProduct(null)}
             >
-              {/* Бейджи */}
-              <div className="absolute top-3 left-3 z-10 flex flex-col gap-1">
+              {/* Овальные бейджи в верхнем левом углу */}
+              <div className="absolute top-3 left-3 z-10 flex flex-row gap-2">
                 {product.badge && (
-                  <span className={`${product.badge_color === 'green' ? 'bg-green-500' : product.badge_color === 'red' ? 'bg-red-500' : product.badge_color === 'blue' ? 'bg-blue-500' : 'bg-green-500'} text-white text-xs px-2 py-1 rounded font-semibold`}>
+                  <span className={`${
+                    product.badge_color === 'green' ? 'bg-green-500' : 
+                    product.badge_color === 'red' ? 'bg-destructive' : 
+                    product.badge_color === 'blue' ? 'bg-blue-500' : 
+                    'bg-destructive'
+                  } text-white text-xs px-3 py-1 rounded-full font-medium`}>
                     {product.badge}
                   </span>
                 )}
                 {!product.badge && (
-                  <span className="bg-green-500 text-white text-xs px-2 py-1 rounded font-semibold">
+                  <span className="bg-destructive text-white text-xs px-3 py-1 rounded-full font-medium">
                     НОВИНКА
+                  </span>
+                )}
+                {/* Показываем дополнительные бейджи если есть акция */}
+                {product.original_price && product.original_price > product.price && (
+                  <span className="bg-blue-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+                    АКЦИЯ
+                  </span>
+                )}
+                {/* Остались мало */}
+                {product.in_stock && product.quantity && product.quantity <= 3 && (
+                  <span className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+                    Осталось мало
                   </span>
                 )}
               </div>
 
-              {/* Сердечко и сравнение */}
-              <div className="absolute top-3 right-3 z-10 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <button className="w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-md hover:bg-white transition-colors">
-                  <svg className="w-4 h-4 text-gray-600 hover:text-red-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
+              {/* Статичные иконки в правом верхнем углу */}
+              <div className="absolute top-3 right-3 z-10 flex flex-col gap-2">
+                <button className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-sm hover:bg-white transition-colors">
+                  <BarChart3 className="w-4 h-4 text-gray-600" />
                 </button>
-                <button className="w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-md hover:bg-white transition-colors">
-                  <svg className="w-4 h-4 text-gray-600 hover:text-blue-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
+                <button className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-sm hover:bg-white transition-colors">
+                  <Heart className="w-4 h-4 text-gray-600 hover:text-red-500 transition-colors" />
                 </button>
+              </div>
+
+              {/* Слайдер изображений */}
+              <div className="relative h-60 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
+                {product.gallery_images && product.gallery_images.length > 1 ? (
+                  <Carousel className="h-full">
+                    <CarouselContent className="h-full">
+                      {product.gallery_images.map((image: string, imageIndex: number) => (
+                        <CarouselItem key={imageIndex} className="h-full">
+                          <div className="h-full flex items-center justify-center p-4">
+                            <img 
+                              src={optimizeImageUrl(image, 400, 320)} 
+                              alt={`${product.name} - фото ${imageIndex + 1}`}
+                              className="w-full h-full object-contain"
+                              style={{ imageRendering: 'crisp-edges' }}
+                              loading="lazy"
+                            />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-2 w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <CarouselNext className="right-2 w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Carousel>
+                ) : (
+                  <div className="h-full flex items-center justify-center p-4">
+                    <img 
+                      src={optimizeImageUrl((product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg', 400, 320)} 
+                      alt={product.name || "Товар"}
+                      className="w-full h-full object-contain"
+                      style={{ imageRendering: 'crisp-edges' }}
+                      loading="lazy"
+                    />
+                  </div>
+                )}
               </div>
 
               <Link 
                 to={`/product/${product.id}`}
-                className="block h-full flex flex-col"
+                className="block"
               >
-                {/* Изображение товара */}
-                <div className="h-60 bg-gradient-to-br from-gray-50 to-gray-100 p-4 flex items-center justify-center">
-                   <img 
-                     src={optimizeImageUrl((product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg', 400, 320)} 
-                     alt={product.name || "Товар"}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                    style={{ imageRendering: 'crisp-edges' }}
-                    loading="lazy"
-                  />
-                </div>
-
                 {/* Информация о товаре */}
-                <div className="p-4 flex-1 flex flex-col justify-between">
+                <div className="p-4 flex flex-col justify-between" style={{ height: '180px' }}>
                   <div>
                     {/* Статус наличия */}
-                    {product.is_available && product.in_stock && (
+                    {product.in_stock ? (
                       <div className="flex items-center gap-1 mb-2">
                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                         <span className="text-xs text-green-600 font-medium">В наличии</span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-1 mb-2">
+                        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                        <span className="text-xs text-red-600 font-medium">Нет в наличии</span>
                       </div>
                     )}
 
@@ -221,7 +262,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                       <span className="font-bold text-gray-900 text-lg">{product.price.toLocaleString()} ₽</span>
                     </div>
                     <button 
-                      className="w-full bg-red-500 hover:bg-red-600 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors hover-scale"
+                      className="w-full bg-destructive hover:bg-destructive/90 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors"
                       onClick={(e) => handleBuyClick(e, product)}
                     >
                       Купить
