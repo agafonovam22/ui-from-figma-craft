@@ -11,6 +11,7 @@ import Showrooms from '@/components/Showrooms';
 import NewsAndBlog from '@/components/NewsAndBlog';
 import EmailSubscription from '@/components/EmailSubscription';
 import Footer from '@/components/Footer';
+import BrandsDebug from '@/components/Debug/BrandsDebug';
 import { useQuery } from '@tanstack/react-query';
 
 const Index: React.FC = () => {
@@ -42,6 +43,7 @@ const Index: React.FC = () => {
           <Showrooms />
           <NewsAndBlog />
         </div>
+        <BrandsDebug />
         <EmailSubscription />
         <div className="h-[70px]"></div>
         <Footer />
