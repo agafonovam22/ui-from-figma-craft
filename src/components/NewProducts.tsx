@@ -131,7 +131,17 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
             <div 
               key={product.id}
               className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
-              style={{ height: '460px', backgroundColor: '#F8F8FD' }}
+              style={{ 
+                height: '460px', 
+                backgroundColor: '#F8F8FD',
+                background: 'var(--card-bg, #F8F8FD)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.setProperty('--card-bg', 'linear-gradient(179deg, #3C3C50 38.62%, #262631 99.45%)');
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.setProperty('--card-bg', '#F8F8FD');
+              }}
             >
               {/* Овальные бейджи в верхнем левом углу */}
               <div className="absolute top-3 left-3 z-10 flex flex-row gap-2">
@@ -175,7 +185,10 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
               </div>
 
               {/* Слайдер изображений */}
-              <div className="relative h-60 overflow-hidden" style={{ backgroundColor: '#F8F8FD' }}>
+              <div 
+                className="relative h-60 overflow-hidden transition-colors duration-300"
+                style={{ backgroundColor: 'transparent' }}
+              >
                 {/* Декоративный элемент в правом верхнем углу */}
                 <div className="absolute top-0 -right-8 w-60 h-60 z-0">
                   <img 
@@ -256,14 +269,14 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                 className="block"
               >
                 {/* Информация о товаре */}
-                <div className="p-4 pb-2.5 mt-4 flex flex-col justify-between" style={{ height: '160px', backgroundColor: '#F8F8FD' }}>
+                <div className="p-4 pb-2.5 mt-4 flex flex-col justify-between transition-colors duration-300" style={{ height: '160px', backgroundColor: 'transparent' }}>
                   <div>
                     {/* Статус наличия */}
                     {(() => {
                       if (!product.in_stock) {
                         return (
                           <div className="flex items-center justify-start gap-1 mb-2">
-                            <span className="text-xs font-medium" style={{ color: '#F53B49' }}>Нет в наличии</span>
+                            <span className="text-xs font-medium group-hover:text-white" style={{ color: '#F53B49' }}>Нет в наличии</span>
                             <div className="flex gap-0.5">
                               <div className="w-2 h-2 rounded-full" style={{ border: '1px solid #F53B49' }}></div>
                               <div className="w-2 h-2 rounded-full" style={{ border: '1px solid #F53B49' }}></div>
@@ -274,7 +287,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                       } else if (product.quantity && product.quantity <= 3) {
                         return (
                           <div className="flex items-center justify-start gap-1 mb-2">
-                            <span className="text-xs font-medium" style={{ color: '#F99808' }}>Осталось мало</span>
+                            <span className="text-xs font-medium group-hover:text-white" style={{ color: '#F99808' }}>Осталось мало</span>
                             <div className="flex gap-0.5">
                               <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#F99808' }}></div>
                               <div className="w-2 h-2 rounded-full" style={{ border: '1px solid #F99808' }}></div>
@@ -285,7 +298,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                       } else {
                         return (
                           <div className="flex items-center justify-start gap-1 mb-2">
-                            <span className="text-xs text-green-600 font-medium">В наличии</span>
+                            <span className="text-xs text-green-600 group-hover:text-white font-medium">В наличии</span>
                             <div className="flex gap-0.5">
                               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -297,7 +310,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                     })()}
 
                     {/* Название товара */}
-                    <h3 className="text-gray-900 text-sm mb-3 line-clamp-2 leading-relaxed">
+                    <h3 className="text-gray-900 group-hover:text-white text-sm mb-3 line-clamp-2 leading-relaxed transition-colors duration-300">
                       {(() => {
                         const name = product.name;
                         // Ищем бренды в названии
@@ -329,7 +342,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                           {[...Array(5)].map((_, i) => (
                             <svg 
                               key={i} 
-                              className={`w-3.5 h-3.5 ${i < Math.floor(product.rating) ? '' : 'text-gray-300'}`}
+                              className={`w-3.5 h-3.5 ${i < Math.floor(product.rating) ? '' : 'text-gray-300 group-hover:text-gray-400'}`}
                               style={i < Math.floor(product.rating) ? { color: '#F99808' } : {}}
                               fill="currentColor" 
                               viewBox="0 0 20 20"
@@ -348,9 +361,9 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                     <div className="flex items-center gap-3">
                       <div className="flex items-center gap-2">
                         {product.original_price && product.original_price > product.price && (
-                          <span className="text-sm text-gray-400 line-through">{product.original_price.toLocaleString()} ₽</span>
+                          <span className="text-sm text-gray-400 group-hover:text-gray-300 line-through transition-colors duration-300">{product.original_price.toLocaleString()} ₽</span>
                         )}
-                        <span className="font-bold text-gray-900 text-lg">{product.price.toLocaleString()} ₽</span>
+                        <span className="font-bold text-gray-900 group-hover:text-white text-lg transition-colors duration-300">{product.price.toLocaleString()} ₽</span>
                       </div>
                       <button 
                         className="bg-destructive hover:bg-destructive/90 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors flex-shrink-0"
