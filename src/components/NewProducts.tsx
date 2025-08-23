@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import { optimizeImageUrl } from '@/utils/imageOptimization';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, BarChart3, Heart } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { useCart } from '@/contexts/CartContext';
 import NewProductsSkeleton from '@/components/NewProductsSkeleton';
@@ -166,17 +166,17 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
               {/* Статичные иконки в правом верхнем углу */}
               <div className="absolute top-3 right-3 z-10 flex flex-col gap-2">
                 <button className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-sm hover:bg-white transition-colors">
-                  <BarChart3 className="w-4 h-4 text-gray-600" />
+                  <img src="/lovable-uploads/f351cc32-0fbf-4fcd-86b4-c021d9c7a83e.png" alt="Статистика" className="w-4 h-4" />
                 </button>
                 <button className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-sm hover:bg-white transition-colors">
-                  <Heart className="w-4 h-4 text-gray-600 hover:text-red-500 transition-colors" />
+                  <img src="/lovable-uploads/a35e0596-2d48-4f67-8241-6448cdcf5d64.png" alt="Избранное" className="w-4 h-4" />
                 </button>
               </div>
 
               {/* Слайдер изображений */}
               <div className="relative h-60 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
                 {product.gallery_images && product.gallery_images.length > 1 ? (
-                  <Carousel className="h-full">
+                  <Carousel className="h-full group/carousel">
                     <CarouselContent className="h-full">
                       {product.gallery_images.map((image: string, imageIndex: number) => (
                         <CarouselItem key={imageIndex} className="h-full">
@@ -194,6 +194,17 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                     </CarouselContent>
                     <CarouselPrevious className="left-2 w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <CarouselNext className="right-2 w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    
+                    {/* Красный индикатор слайдера */}
+                    <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
+                      {product.gallery_images.map((_: string, dotIndex: number) => (
+                        <div 
+                          key={dotIndex} 
+                          className="w-2 h-2 rounded-full bg-gray-300"
+                        />
+                      ))}
+                      <div className="absolute w-2 h-2 rounded-full bg-destructive transition-transform duration-300" />
+                    </div>
                   </Carousel>
                 ) : (
                   <div className="h-full flex items-center justify-center p-4">
