@@ -175,7 +175,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
               </div>
 
               {/* Слайдер изображений */}
-              <div className="relative h-60 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
+              <div className="relative h-60 overflow-hidden" style={{ backgroundColor: '#F8F8FD' }}>
                 {product.gallery_images && product.gallery_images.length > 1 ? (
                   <Carousel 
                     className="h-full group/carousel"
