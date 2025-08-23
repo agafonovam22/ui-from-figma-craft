@@ -243,7 +243,7 @@ const Catalog: React.FC = () => {
     <>
       <Header onSearch={handleSearchQuery} />
       <div className="min-h-screen bg-white">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-4">
           {/* Breadcrumbs */}
           <Breadcrumb className="mb-6">
             <BreadcrumbList>
@@ -262,7 +262,7 @@ const Catalog: React.FC = () => {
           </Breadcrumb>
         </div>
 
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-4">
           <div className="flex gap-8">
             {/* Left Sidebar - Filters */}
             <CatalogFilters
