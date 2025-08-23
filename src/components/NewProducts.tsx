@@ -213,8 +213,8 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                         </CarouselItem>
                       ))}
                     </CarouselContent>
-                    <CarouselPrevious className="left-2 w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <CarouselNext className="right-2 w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <CarouselPrevious className="left-2 w-8 h-8 bg-white/90 hover:bg-white border-0 shadow-md opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <CarouselNext className="right-2 w-8 h-8 bg-white/90 hover:bg-white border-0 shadow-md opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Carousel>
                 ) : (
                   <div className="h-full flex items-center justify-center p-4">
