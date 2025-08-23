@@ -11,6 +11,7 @@ import { useProductSearch, Product } from '@/hooks/useProducts';
 import { usePaginatedProducts } from '@/hooks/usePaginatedProducts';
 import { useDebounce } from '@/hooks/useDebounce';
 import { FilterState } from '@/types/filters';
+import { getAllBrandsFromAPI, BrandInfo } from '@/utils/getBrands';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -24,6 +25,8 @@ const Catalog: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [sortBy, setSortBy] = useState('popular');
   const [pageNumber, setPageNumber] = useState(1);
+  const [allBrands, setAllBrands] = useState<string[]>([]);
+  const [brandsInfo, setBrandsInfo] = useState<BrandInfo[]>([]);
   
   // Состояние фильтров
   const [filters, setFilters] = useState<FilterState>({
@@ -43,6 +46,17 @@ const Catalog: React.FC = () => {
   
   // Добавляем debounce для поиска (задержка 300мс)
   const debouncedSearchQuery = useDebounce(queryParam, 300);
+  
+  // Загружаем все бренды при монтировании компонента
+  React.useEffect(() => {
+    const fetchAllBrands = async () => {
+      const result = await getAllBrandsFromAPI();
+      setAllBrands(result.brands);
+      setBrandsInfo(result.brandsInfo);
+    };
+    
+    fetchAllBrands();
+  }, []);
   
   // Используем оптимизированный хук с пагинацией
   const { 
@@ -191,39 +205,22 @@ const Catalog: React.FC = () => {
 
   // Получение уникальных значений для фильтров из данных
   const filterOptions = useMemo(() => {
-    const brands = new Set<string>();
     const equipmentTypes = new Set<string>();
     
     catalogProducts.forEach(product => {
-      // Приоритет у названия бренда, а не ID
-      const brandName = product.characteristics?.['Бренд'] || '';
-      const brandId = product.characteristics?.['Бренд (id)'] || '';
-      
-      // Используем название бренда, если есть, иначе ID
-      let brandToUse = '';
-      if (brandName && brandName.trim()) {
-        brandToUse = brandName.trim();
-      } else if (brandId && brandId.trim()) {
-        brandToUse = brandId.trim();
-      }
-      
-      if (brandToUse) {
-        brands.add(brandToUse);
-      }
-      
       // Собираем типы оборудования
       const equipmentType = product.characteristics?.['Тип оборудования'] || '';
       if (equipmentType) equipmentTypes.add(equipmentType);
     });
 
-    const uniqueBrands = Array.from(brands).sort();
-    console.log('Уникальные бренды для фильтров (приоритет названиям):', uniqueBrands);
+    // Используем загруженные бренды из API вместо извлечения из продуктов
+    console.log('Бренды для фильтров из API:', allBrands);
 
     return {
-      brands: uniqueBrands,
+      brands: allBrands, // Используем полный список брендов из API
       equipmentTypes: Array.from(equipmentTypes)
     };
-  }, [catalogProducts]);
+  }, [catalogProducts, allBrands]);
 
   // Сортировка товаров
   const sortedItems = useMemo(() => {
