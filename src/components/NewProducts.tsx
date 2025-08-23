@@ -125,7 +125,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
         
         <div 
           ref={scrollContainerRef}
-          className="grid grid-cols-5 gap-5 mb-6"
+          className="grid grid-cols-5 gap-2.5 mb-6"
         >
           {displayProducts.map((product, index) => (
             <div 
