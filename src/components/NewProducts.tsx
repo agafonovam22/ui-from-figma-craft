@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { useCart } from '@/contexts/CartContext';
+import { useFavorites } from '@/contexts/FavoritesContext';
 import NewProductsSkeleton from '@/components/NewProductsSkeleton';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
@@ -17,6 +18,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
   const [carouselIndexes, setCarouselIndexes] = useState<{[key: string]: number}>({});
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const { addItem } = useCart();
+  const { toggleFavorite, isFavorite } = useFavorites();
 
   // Используем тот же кэшированный запрос, что и в каталоге
   const { data: allProductsData, isLoading, error } = useQuery({
@@ -46,6 +48,25 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
         optimizeImageUrl(product.gallery_images[0], 200, 200) : '/placeholder.svg',
       is_available: product.is_available || true
     });
+  };
+
+  const handleFavoriteClick = (e: React.MouseEvent, product: any) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleFavorite({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image_url: (product.gallery_images && product.gallery_images.length > 0) ? 
+        optimizeImageUrl(product.gallery_images[0], 200, 200) : '/placeholder.svg'
+    });
+  };
+
+  const handleStatsClick = (e: React.MouseEvent, product: any) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // Здесь можно добавить функционал статистики
+    console.log('Stats clicked for product:', product.name);
   };
 
   const scrollLeft = () => {
@@ -176,11 +197,21 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
 
               {/* Статичные иконки в правом верхнем углу */}
               <div className="absolute top-3 right-3 z-10 flex flex-col gap-2">
-                <button className="hover:scale-110 transition-transform">
+                <button 
+                  className="hover:scale-110 transition-transform"
+                  onClick={(e) => handleStatsClick(e, product)}
+                >
                   <img src="/lovable-uploads/f351cc32-0fbf-4fcd-86b4-c021d9c7a83e.png" alt="Статистика" className="w-5 h-5" />
                 </button>
-                <button className="hover:scale-110 transition-transform">
-                  <img src="/lovable-uploads/a35e0596-2d48-4f67-8241-6448cdcf5d64.png" alt="Избранное" className="w-5 h-5" />
+                <button 
+                  className="hover:scale-110 transition-transform"
+                  onClick={(e) => handleFavoriteClick(e, product)}
+                >
+                  {isFavorite(product.id) ? (
+                    <img src="/lovable-uploads/aa033c83-aa02-4002-a479-038f0197d56c.png" alt="Убрать из избранного" className="w-5 h-5" />
+                  ) : (
+                    <img src="/lovable-uploads/a35e0596-2d48-4f67-8241-6448cdcf5d64.png" alt="Добавить в избранное" className="w-5 h-5" />
+                  )}
                 </button>
               </div>
 
