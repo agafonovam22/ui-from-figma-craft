@@ -237,6 +237,9 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                 )}
               </div>
 
+              {/* Серая разделительная полоса */}
+              <div className="h-px bg-gray-200"></div>
+
               <Link 
                 to={`/product/${product.id}`}
                 className="block"
@@ -304,7 +307,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                   </div>
 
                   {/* Цена и кнопка */}
-                  <div className="space-y-3">
+                  <div className="flex items-center gap-3">
                     <div className="flex items-center gap-2">
                       {product.original_price && product.original_price > product.price && (
                         <span className="text-sm text-gray-400 line-through">{product.original_price.toLocaleString()} ₽</span>
@@ -312,7 +315,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                       <span className="font-bold text-gray-900 text-lg">{product.price.toLocaleString()} ₽</span>
                     </div>
                     <button 
-                      className="w-full bg-destructive hover:bg-destructive/90 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors"
+                      className="bg-destructive hover:bg-destructive/90 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors flex-shrink-0"
                       onClick={(e) => handleBuyClick(e, product)}
                     >
                       Купить
