@@ -146,7 +146,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                   </span>
                 )}
                 {!product.badge && (
-                  <span className="bg-destructive text-white text-xs px-3 py-1 rounded-full font-medium">
+                  <span className="text-white text-xs px-3 py-1 rounded-full font-medium" style={{ backgroundColor: '#31BF00' }}>
                     НОВИНКА
                   </span>
                 )}
