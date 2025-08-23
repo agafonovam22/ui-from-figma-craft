@@ -177,7 +177,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
               {/* Слайдер изображений */}
               <div className="relative h-60 overflow-hidden" style={{ backgroundColor: '#F8F8FD' }}>
                 {/* Декоративный элемент в правом верхнем углу */}
-                <div className="absolute top-0 -right-4 w-52 h-52 z-0">
+                <div className="absolute top-0 -right-8 w-52 h-52 z-0">
                   <img 
                     src="/lovable-uploads/5e75cf63-44ac-40f1-932d-ab5786810641.png" 
                     alt="" 
