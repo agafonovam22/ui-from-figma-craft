@@ -10,6 +10,8 @@ import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbS
 import NewProducts from '@/components/NewProducts';
 import { Product, useProducts } from '@/hooks/useProducts';
 import { useCart } from '@/contexts/CartContext';
+import { useComparison } from '@/contexts/ComparisonContext';
+import { useFavorites } from '@/contexts/FavoritesContext';
 import {
   Table,
   TableBody,
@@ -20,140 +22,33 @@ import {
 } from "@/components/ui/table";
 import { Checkbox } from "@/components/ui/checkbox";
 
-// Mock data for comparison items
-const mockComparisonItems = [
-  {
-    id: 1,
-    name: "Гребной тренажер CardioPower PRO CR300",
-    image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
-    price: 4610,
-    originalPrice: 5000,
-    discount: 15,
-    rating: 4.5,
-    reviewCount: 4,
-    inStock: true,
-    characteristics: {
-      frame: "оцинкованная сталь",
-      ladder: "есть",
-      series: "Space",
-      color: "красный/синий",
-      protectiveMatWidth: "25",
-      protectiveMatMaterial: "вспененный PP",
-      trampolineDiameterFt: "8",
-      trampolineDiameterCm: "244"
-    },
-    additionalCharacteristics: {
-      frame: "оцинкованная сталь",
-      ladder: "есть",
-      series: "Space"
-    }
-  },
-  {
-    id: 2,
-    name: "Гребной тренажер CardioPower PRO CR300",
-    image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
-    price: 4610,
-    originalPrice: 5000,
-    discount: 15,
-    rating: 4.5,
-    reviewCount: 4,
-    inStock: true,
-    characteristics: {
-      frame: "оцинкованная сталь",
-      ladder: "-",
-      series: "Space",
-      color: "красный/синий",
-      protectiveMatWidth: "25",
-      protectiveMatMaterial: "вспененный PP",
-      trampolineDiameterFt: "8",
-      trampolineDiameterCm: "244"
-    },
-    additionalCharacteristics: {
-      frame: "оцинкованная сталь",
-      ladder: "есть",
-      series: "Space"
-    }
-  },
-  {
-    id: 3,
-    name: "Гребной тренажер CardioPower PRO CR300",
-    image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
-    price: 4610,
-    originalPrice: 5000,
-    discount: 15,
-    rating: 4.5,
-    reviewCount: 4,
-    inStock: true,
-    characteristics: {
-      frame: "оцинкованная сталь",
-      ladder: "-",
-      series: "Space",
-      color: "красный/синий",
-      protectiveMatWidth: "-",
-      protectiveMatMaterial: "вспененный PP",
-      trampolineDiameterFt: "8",
-      trampolineDiameterCm: "244"
-    },
-    additionalCharacteristics: {
-      frame: "оцинкованная сталь",
-      ladder: "есть",
-      series: "Space"
-    }
-  },
-  {
-    id: 4,
-    name: "Гребной тренажер CardioPower PRO CR300",
-    image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
-    price: 4610,
-    originalPrice: 5000,
-    discount: 15,
-    rating: 4.5,
-    reviewCount: 4,
-    inStock: true,
-    characteristics: {
-      frame: "оцинкованная сталь",
-      ladder: "-",
-      series: "Space",
-      color: "-",
-      protectiveMatWidth: "25",
-      protectiveMatMaterial: "вспененный PP",
-      trampolineDiameterFt: "8",
-      trampolineDiameterCm: "-"
-    },
-    additionalCharacteristics: {
-      frame: "оцинкованная сталь",
-      ladder: "есть",
-      series: "Space"
-    }
-  }
-];
-
 const Comparison: React.FC = () => {
   const [showOnlyDifferences, setShowOnlyDifferences] = useState(false);
-  const [items, setItems] = useState(mockComparisonItems);
-  const [favorites, setFavorites] = useState<number[]>([]);
+  const { comparison, removeFromComparison } = useComparison();
+  const { toggleFavorite, isFavorite } = useFavorites();
   const { addItem } = useCart();
 
   const handleBuyClick = (item: any) => {
     addItem({
-      id: item.id.toString(),
+      id: item.id,
       name: item.name,
       price: item.price,
-      image_url: item.image,
+      image_url: item.image_url,
       is_available: true
     });
   };
 
-  const handleRemoveItem = (itemId: number) => {
-    setItems(items.filter(item => item.id !== itemId));
+  const handleRemoveItem = (itemId: string) => {
+    removeFromComparison(itemId);
   };
 
-  const handleToggleFavorite = (itemId: number) => {
-    setFavorites(prev => 
-      prev.includes(itemId) 
-        ? prev.filter(id => id !== itemId)
-        : [...prev, itemId]
-    );
+  const handleToggleFavorite = (item: any) => {
+    toggleFavorite({
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      image_url: item.image_url
+    });
   };
 
   const renderStars = (rating: number) => {
@@ -203,313 +98,113 @@ const Comparison: React.FC = () => {
         </div>
 
         {/* Products Row with Vertical Dividers */}
-        <div className="relative mb-8">
-          <div className="grid grid-cols-4 gap-6">
-            {items.map((item, index) => (
-              <div key={item.id} className="bg-gray-50 rounded-lg p-4 relative">
-                <div className="absolute top-2 left-2">
-                  <span className="bg-green-500 text-white text-xs px-2 py-1 rounded">
-                    НОВИНКА
-                  </span>
-                </div>
-                <div className="absolute top-2 right-2 flex flex-col gap-1">
-                  <button 
-                    onClick={() => handleRemoveItem(item.id)}
-                    className="p-1 hover:bg-gray-200 rounded"
-                  >
-                    <Trash2 className="w-4 h-4 text-gray-400" />
-                  </button>
-                  <button 
-                    onClick={() => handleToggleFavorite(item.id)}
-                    className="p-1 hover:bg-gray-200 rounded"
-                  >
-                    <Heart 
-                      className={`w-4 h-4 ${
-                        favorites.includes(item.id) 
-                          ? 'text-red-500 fill-red-500' 
-                          : 'text-gray-400'
-                      }`} 
-                    />
-                  </button>
-                </div>
-                
-                <div className="mt-6 mb-4">
-                  <img 
-                    src={item.image} 
-                    alt={item.name}
-                    className="w-full h-32 object-cover rounded"
-                  />
-                </div>
-                
-                <div className="text-left mb-2">
-                  <div className="text-green-500 text-xs mb-1">В наличии ●●○</div>
-                </div>
-                
-                <h3 className="text-sm font-medium text-gray-900 mb-2 text-left">
-                  {item.name}
-                </h3>
-                
-                <div className="flex items-center gap-1 mb-2">
-                  {renderStars(item.rating)}
-                  <span className="text-orange-400 text-sm ml-1">{item.rating}</span>
-                </div>
-                
-                <div className="flex items-center justify-between mb-4">
-                  <div className="text-left">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
-                        -{item.discount}%
-                      </span>
-                      <span className="text-gray-400 line-through text-sm">
-                        {item.originalPrice.toLocaleString()} ₽
+        {comparison.length === 0 ? (
+          <div className="text-center py-16">
+            <h2 className="text-xl text-gray-500 mb-4">В сравнении пока нет товаров</h2>
+            <Link to="/catalog">
+              <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white">
+                Перейти в каталог
+              </Button>
+            </Link>
+          </div>
+        ) : (
+          <>
+            <div className="relative mb-8">
+              <div className={`grid gap-6 ${comparison.length === 1 ? 'grid-cols-1' : comparison.length === 2 ? 'grid-cols-2' : comparison.length === 3 ? 'grid-cols-3' : 'grid-cols-4'}`}>
+                {comparison.map((item, index) => (
+                  <div key={item.id} className="bg-gray-50 rounded-lg p-4 relative">
+                    <div className="absolute top-2 left-2">
+                      <span className="bg-green-500 text-white text-xs px-2 py-1 rounded">
+                        НОВИНКА
                       </span>
                     </div>
-                    <div className="text-xl font-bold text-gray-900">
-                      {item.price.toLocaleString()} ₽
+                    <div className="absolute top-2 right-2 flex flex-col gap-1">
+                      <button 
+                        onClick={() => handleRemoveItem(item.id)}
+                        className="p-1 hover:bg-gray-200 rounded"
+                      >
+                        <Trash2 className="w-4 h-4 text-gray-400" />
+                      </button>
+                      <button 
+                        onClick={() => handleToggleFavorite(item)}
+                        className="p-1 hover:bg-gray-200 rounded"
+                      >
+                        <Heart 
+                          className={`w-4 h-4 ${
+                            isFavorite(item.id) 
+                              ? 'text-red-500 fill-red-500' 
+                              : 'text-gray-400'
+                          }`} 
+                        />
+                      </button>
+                    </div>
+                    
+                    <div className="mt-6 mb-4">
+                      <img 
+                        src={item.image_url} 
+                        alt={item.name}
+                        className="w-full h-32 object-cover rounded"
+                      />
+                    </div>
+                    
+                    <div className="text-left mb-2">
+                      <div className="text-green-500 text-xs mb-1">В наличии ●●○</div>
+                    </div>
+                    
+                    <h3 className="text-sm font-medium text-gray-900 mb-2 text-left">
+                      {item.name}
+                    </h3>
+                    
+                    <div className="flex items-center gap-1 mb-2">
+                      {renderStars(4.5)}
+                      <span className="text-orange-400 text-sm ml-1">4.5</span>
+                    </div>
+                    
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="text-left">
+                        {item.discount && (
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
+                              -{item.discount}%
+                            </span>
+                            {item.originalPrice && (
+                              <span className="text-gray-400 line-through text-sm">
+                                {item.originalPrice.toLocaleString()} ₽
+                              </span>
+                            )}
+                          </div>
+                        )}
+                        <div className="text-xl font-bold text-gray-900">
+                          {item.price.toLocaleString()} ₽
+                        </div>
+                      </div>
+                      
+                      <Button 
+                        className="bg-[#F53B49] hover:bg-[#e63946] text-white px-6"
+                        onClick={() => handleBuyClick(item)}
+                      >
+                        Купить
+                      </Button>
                     </div>
                   </div>
-                  
-                  <Button 
-                    className="bg-[#F53B49] hover:bg-[#e63946] text-white px-6"
-                    onClick={() => handleBuyClick(item)}
-                  >
-                    Купить
-                  </Button>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-          
-          {/* Vertical Dividers */}
-          <div className="absolute top-0 bottom-0 left-[calc(25%-12px)] w-px bg-gray-300"></div>
-          <div className="absolute top-0 bottom-0 left-[calc(50%-12px)] w-px bg-gray-300"></div>
-          <div className="absolute top-0 bottom-0 left-[calc(75%-12px)] w-px bg-gray-300"></div>
-        </div>
+            </div>
+          </>
+        )}
 
-        {/* Comparison Tables with Vertical Dividers */}
-        <div className="relative space-y-8">
-          {/* Vertical Dividers for Tables */}
-          <div className="absolute top-0 bottom-0 left-[calc(25%-12px)] w-px bg-gray-300"></div>
-          <div className="absolute top-0 bottom-0 left-[calc(50%-12px)] w-px bg-gray-300"></div>
-          <div className="absolute top-0 bottom-0 left-[calc(75%-12px)] w-px bg-gray-300"></div>
-          
-          {/* Оценка и способ получения */}
-          <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-4 w-1/4">Оценка и способ получения</h2>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="w-48 text-left">
-                    <div className="flex justify-between items-center">
-                      <span>Оценка покупателей</span>
-                      <div className="flex items-center gap-1 text-right">
-                        {renderStars(items[0]?.rating || 0)}
-                        <span className="text-orange-400 text-sm ml-1">{items[0]?.rating || 0}/5</span>
-                      </div>
-                    </div>
-                  </TableHead>
-                  {items.slice(1).map((item) => (
-                    <TableCell key={item.id} className="text-center">
-                      <div className="flex justify-center items-center gap-1">
-                        {renderStars(item.rating)}
-                        <span className="text-orange-400 text-sm ml-1">{item.rating}/5</span>
-                      </div>
-                    </TableCell>
-                  ))}
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">
-                    <div className="flex justify-between items-center">
-                      <span>Способ получения</span>
-                      <span className="text-gray-600 font-normal text-right">Доставка, самовывоз</span>
-                    </div>
-                  </TableCell>
-                  {items.slice(1).map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      Доставка, самовывоз
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">
-                    <div className="flex justify-between items-center">
-                      <span>Оплата</span>
-                      <span className="text-gray-600 font-normal text-right">Онлайн, рассрочка, карта</span>
-                    </div>
-                  </TableCell>
-                  {items.slice(1).map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      Онлайн, рассрочка, карта
-                    </TableCell>
-                  ))}
-                </TableRow>
-              </TableBody>
-            </Table>
+        {/* Comparison Tables - Hide if no comparison data */}
+        {comparison.length > 0 && (
+          <div className="relative space-y-8">
+            {/* Simple comparison info without detailed characteristics */}
+            <div>
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Информация о товарах</h2>
+              <div className="bg-gray-50 p-4 rounded-lg text-center text-gray-600">
+                Детальное сравнение характеристик будет доступно в ближайшее время
+              </div>
+            </div>
           </div>
-
-          {/* Основные характеристики */}
-          <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-4 w-1/4">Основные характеристики</h2>
-            <Table>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700 w-48 text-left">
-                    <div className="flex justify-between items-center">
-                      <span>Рама</span>
-                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.frame}</span>
-                    </div>
-                  </TableCell>
-                  {items.slice(1).map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.frame}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">
-                    <div className="flex justify-between items-center">
-                      <span>Лестница</span>
-                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.ladder}</span>
-                    </div>
-                  </TableCell>
-                  {items.slice(1).map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.ladder}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">
-                    <div className="flex justify-between items-center">
-                      <span>Серия</span>
-                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.series}</span>
-                    </div>
-                  </TableCell>
-                  {items.slice(1).map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.series}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">
-                    <div className="flex justify-between items-center">
-                      <span>Цвет</span>
-                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.color}</span>
-                    </div>
-                  </TableCell>
-                  {items.slice(1).map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.color}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">
-                    <div className="flex justify-between items-center">
-                      <span>Ширина защитного мата, см</span>
-                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.protectiveMatWidth}</span>
-                    </div>
-                  </TableCell>
-                  {items.slice(1).map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.protectiveMatWidth}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">
-                    <div className="flex justify-between items-center">
-                      <span>Материал защитного мата</span>
-                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.protectiveMatMaterial}</span>
-                    </div>
-                  </TableCell>
-                  {items.slice(1).map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.protectiveMatMaterial}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">
-                    <div className="flex justify-between items-center">
-                      <span>Диаметр батута, ft</span>
-                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.trampolineDiameterFt}</span>
-                    </div>
-                  </TableCell>
-                  {items.slice(1).map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.trampolineDiameterFt}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">
-                    <div className="flex justify-between items-center">
-                      <span>Диаметр батута, см</span>
-                      <span className="text-gray-600 font-normal text-right">{items[0]?.characteristics.trampolineDiameterCm}</span>
-                    </div>
-                  </TableCell>
-                  {items.slice(1).map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.characteristics.trampolineDiameterCm}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              </TableBody>
-            </Table>
-          </div>
-
-          {/* Доп. характеристики */}
-          <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-4 w-1/4">Доп. характеристики</h2>
-            <Table>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700 w-48 text-left">
-                    <div className="flex justify-between items-center">
-                      <span>Рама</span>
-                      <span className="text-gray-600 font-normal text-right">{items[0]?.additionalCharacteristics.frame}</span>
-                    </div>
-                  </TableCell>
-                  {items.slice(1).map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.additionalCharacteristics.frame}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">
-                    <div className="flex justify-between items-center">
-                      <span>Лестница</span>
-                      <span className="text-gray-600 font-normal text-right">{items[0]?.additionalCharacteristics.ladder}</span>
-                    </div>
-                  </TableCell>
-                  {items.slice(1).map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.additionalCharacteristics.ladder}
-                    </TableCell>
-                  ))}
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium text-gray-700 text-left">
-                    <div className="flex justify-between items-center">
-                      <span>Серия</span>
-                      <span className="text-gray-600 font-normal text-right">{items[0]?.additionalCharacteristics.series}</span>
-                    </div>
-                  </TableCell>
-                  {items.slice(1).map((item) => (
-                    <TableCell key={item.id} className="text-center text-gray-600">
-                      {item.additionalCharacteristics.series}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              </TableBody>
-            </Table>
-          </div>
-        </div>
+        )}
       </div>
 
       {/* Bottom Banner */}

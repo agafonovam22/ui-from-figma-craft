@@ -208,10 +208,14 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
               {/* Статичные иконки в правом верхнем углу */}
               <div className="absolute top-3 right-3 z-10 flex flex-col gap-2">
                 <button 
-                  className="hover:scale-110 transition-transform"
+                  className={`hover:scale-110 transition-transform ${isInComparison(product.id) ? 'opacity-100' : 'opacity-70'}`}
                   onClick={(e) => handleStatsClick(e, product)}
                 >
-                  <img src="/lovable-uploads/f351cc32-0fbf-4fcd-86b4-c021d9c7a83e.png" alt="Статистика" className="w-5 h-5" />
+                  <img 
+                    src="/lovable-uploads/f351cc32-0fbf-4fcd-86b4-c021d9c7a83e.png" 
+                    alt={isInComparison(product.id) ? "Убрать из сравнения" : "Добавить в сравнение"} 
+                    className={`w-5 h-5 ${isInComparison(product.id) ? 'brightness-110' : ''}`} 
+                  />
                 </button>
                 <button 
                   className="hover:scale-110 transition-transform"
