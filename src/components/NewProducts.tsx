@@ -258,8 +258,29 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                     )}
 
                     {/* Название товара */}
-                    <h3 className="font-semibold text-gray-900 text-sm mb-3 line-clamp-2 leading-relaxed">
-                      {product.name}
+                    <h3 className="text-gray-900 text-sm mb-3 line-clamp-2 leading-relaxed">
+                      {(() => {
+                        const name = product.name;
+                        // Ищем бренды в названии
+                        const brands = ['Centr', 'CardioMaster', 'CardioPower', 'FitnessPro', 'SportMax', 'GymLine', 'ProFit', 'ActiveZone'];
+                        const foundBrand = brands.find(brand => name.includes(brand));
+                        
+                        if (foundBrand) {
+                          const brandIndex = name.indexOf(foundBrand);
+                          if (brandIndex > 0) {
+                            const beforeBrand = name.substring(0, brandIndex).trim();
+                            const fromBrand = name.substring(brandIndex).trim();
+                            return (
+                              <>
+                                <span className="font-benzin">{beforeBrand} </span>
+                                <span className="font-benzin-semibold">{fromBrand}</span>
+                              </>
+                            );
+                          }
+                        }
+                        
+                        return <span className="font-benzin">{name}</span>;
+                      })()}
                     </h3>
 
                     {/* Рейтинг */}
