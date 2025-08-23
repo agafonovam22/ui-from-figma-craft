@@ -166,11 +166,11 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
 
               {/* Статичные иконки в правом верхнем углу */}
               <div className="absolute top-3 right-3 z-10 flex flex-col gap-2">
-                <button className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-sm hover:bg-white transition-colors">
-                  <img src="/lovable-uploads/f351cc32-0fbf-4fcd-86b4-c021d9c7a83e.png" alt="Статистика" className="w-4 h-4" />
+                <button className="hover:scale-110 transition-transform">
+                  <img src="/lovable-uploads/f351cc32-0fbf-4fcd-86b4-c021d9c7a83e.png" alt="Статистика" className="w-5 h-5" />
                 </button>
-                <button className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-sm hover:bg-white transition-colors">
-                  <img src="/lovable-uploads/a35e0596-2d48-4f67-8241-6448cdcf5d64.png" alt="Избранное" className="w-4 h-4" />
+                <button className="hover:scale-110 transition-transform">
+                  <img src="/lovable-uploads/a35e0596-2d48-4f67-8241-6448cdcf5d64.png" alt="Избранное" className="w-5 h-5" />
                 </button>
               </div>
 
