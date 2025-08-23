@@ -259,21 +259,42 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
                 <div className="p-4 flex flex-col justify-between" style={{ height: '180px', backgroundColor: '#F8F8FD' }}>
                   <div>
                     {/* Статус наличия */}
-                    {product.in_stock ? (
-                      <div className="flex items-center justify-start gap-1 mb-2">
-                        <span className="text-xs text-green-600 font-medium">В наличии</span>
-                        <div className="flex gap-0.5">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <div className="w-2 h-2 border border-green-500 rounded-full"></div>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="flex items-center justify-start gap-1 mb-2">
-                        <span className="text-xs text-red-600 font-medium">Нет в наличии</span>
-                        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      </div>
-                    )}
+                    {(() => {
+                      if (!product.in_stock) {
+                        return (
+                          <div className="flex items-center justify-start gap-1 mb-2">
+                            <span className="text-xs font-medium" style={{ color: '#F53B49' }}>Нет в наличии</span>
+                            <div className="flex gap-0.5">
+                              <div className="w-2 h-2 rounded-full" style={{ border: '1px solid #F53B49' }}></div>
+                              <div className="w-2 h-2 rounded-full" style={{ border: '1px solid #F53B49' }}></div>
+                              <div className="w-2 h-2 rounded-full" style={{ border: '1px solid #F53B49' }}></div>
+                            </div>
+                          </div>
+                        );
+                      } else if (product.quantity && product.quantity <= 3) {
+                        return (
+                          <div className="flex items-center justify-start gap-1 mb-2">
+                            <span className="text-xs font-medium" style={{ color: '#F99808' }}>Осталось мало</span>
+                            <div className="flex gap-0.5">
+                              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#F99808' }}></div>
+                              <div className="w-2 h-2 rounded-full" style={{ border: '1px solid #F99808' }}></div>
+                              <div className="w-2 h-2 rounded-full" style={{ border: '1px solid #F99808' }}></div>
+                            </div>
+                          </div>
+                        );
+                      } else {
+                        return (
+                          <div className="flex items-center justify-start gap-1 mb-2">
+                            <span className="text-xs text-green-600 font-medium">В наличии</span>
+                            <div className="flex gap-0.5">
+                              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                              <div className="w-2 h-2 border border-green-500 rounded-full"></div>
+                            </div>
+                          </div>
+                        );
+                      }
+                    })()}
 
                     {/* Название товара */}
                     <h3 className="text-gray-900 text-sm mb-3 line-clamp-2 leading-relaxed">
