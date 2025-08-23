@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import ProductCard from '@/components/ProductCard';
+import ProductCard from '@/components/ProductCard.legacy';
 
 const ProductCatalog: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<'home' | 'fitness'>('home');

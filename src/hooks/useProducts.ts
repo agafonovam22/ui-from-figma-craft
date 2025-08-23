@@ -10,6 +10,7 @@ export interface Product {
   gallery_images?: string[];
   is_available: boolean;
   in_stock: boolean;
+  quantity?: number;
   rating: number;
   reviews_count: number;
   characteristics: Record<string, string>;

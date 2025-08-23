@@ -219,17 +219,17 @@ const Catalog: React.FC = () => {
     return sortedItems.map(item => ({
       id: item.id,
       name: item.name,
-      price: `${item.price}₽`,
-      originalPrice: item.original_price ? `${item.original_price}₽` : null,
-      discount: item.discount_percentage > 0 ? `${item.discount_percentage}%` : null,
-      rating: item.rating || 4.5,
-      reviews: item.reviews_count || 0,
-      image: (item.gallery_images && item.gallery_images.length > 0) ? item.gallery_images[0] : '/placeholder.svg',
+      price: item.price,
+      original_price: item.original_price,
+      discount_percentage: item.discount_percentage,
+      gallery_images: item.gallery_images,
+      rating: item.rating,
+      reviews_count: item.reviews_count,
+      in_stock: item.in_stock,
+      is_available: item.is_available,
+      quantity: item.quantity,
       badge: item.is_available ? 'В наличии' : 'Нет в наличии',
-      badgeColor: item.is_available ? 'bg-green-500' : 'bg-red-500',
-      isAvailable: item.is_available,
-      hasComparison: true,
-      inStock: item.in_stock
+      badge_color: item.is_available ? 'green' : 'red'
     }));
   }, [sortedItems]);
 

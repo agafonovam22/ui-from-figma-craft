@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
 import NewProducts from '@/components/NewProducts';
 import IdeasSelections from '@/components/IdeasSelections';
-import ProductCard from '@/components/ProductCard';
+import ProductCard from '@/components/ProductCard.legacy';
 import { 
   Breadcrumb, 
   BreadcrumbItem, 

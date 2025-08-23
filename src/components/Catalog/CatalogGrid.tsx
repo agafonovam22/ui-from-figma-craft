@@ -1,21 +1,21 @@
 import React, { memo } from 'react';
-import ProductCard from '@/components/ProductCard';
+import ProductCard from '@/components/shared/ProductCard';
 import { Button } from "@/components/ui/button";
 
 interface Product {
   id: number | string;
   name: string;
-  price: string | null;
-  originalPrice: string | null;
-  discount: string | null;
-  rating: number;
-  reviews: number;
-  image: string;
-  badge: string;
-  badgeColor: string;
-  isAvailable: boolean;
-  hasComparison: boolean;
-  inStock: boolean;
+  price: number;
+  original_price?: number;
+  discount_percentage?: number;
+  gallery_images?: string[];
+  rating?: number;
+  reviews_count?: number;
+  in_stock?: boolean;
+  is_available?: boolean;
+  quantity?: number;
+  badge?: string;
+  badge_color?: string;
 }
 
 interface CatalogGridProps {
@@ -42,7 +42,21 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
       {/* Products Grid */}
       <div className="grid grid-cols-4 gap-6 mb-8">
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} variant="catalog" />
+          <ProductCard key={product.id} product={{ 
+            id: product.id.toString(),
+            name: product.name,
+            price: product.price,
+            original_price: product.original_price,
+            discount_percentage: product.discount_percentage,
+            gallery_images: product.gallery_images,
+            rating: product.rating,
+            reviews_count: product.reviews_count,
+            in_stock: product.in_stock,
+            is_available: product.is_available,
+            quantity: product.quantity,
+            badge: product.badge,
+            badge_color: product.badge_color
+          }} />
         ))}
       </div>
 
