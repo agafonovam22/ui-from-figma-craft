@@ -130,8 +130,8 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
           {displayProducts.map((product, index) => (
             <div 
               key={product.id}
-              className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
-              style={{ height: '440px' }}
+              className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
+              style={{ height: '440px', backgroundColor: '#F8F8FD' }}
             >
               {/* Овальные бейджи в верхнем левом углу */}
               <div className="absolute top-3 left-3 z-10 flex flex-row gap-2">
