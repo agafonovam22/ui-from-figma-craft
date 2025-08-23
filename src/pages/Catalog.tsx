@@ -230,15 +230,15 @@ const Catalog: React.FC = () => {
     }
   }, [filteredProducts, sortBy]);
 
-  // Пагинация отфильтрованных товаров (увеличили до 24 для лучшей производительности)
+  // Пагинация отфильтрованных товаров (16 карточек на странице)
   const paginatedProducts = useMemo(() => {
-    const itemsPerPage = 24;
+    const itemsPerPage = 16;
     const startIndex = (pageNumber - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     return sortedItems.slice(startIndex, endIndex);
   }, [sortedItems, pageNumber]);
   
-  const totalPages = Math.ceil(sortedItems.length / 24);
+  const totalPages = Math.ceil(sortedItems.length / 16);
   const hasNextPage = pageNumber < totalPages;
   const hasPrevPage = pageNumber > 1;
 
