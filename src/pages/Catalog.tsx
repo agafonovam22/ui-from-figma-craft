@@ -139,10 +139,14 @@ const Catalog: React.FC = () => {
     // Фильтр по брендам
     if (filters.brands.length > 0) {
       filtered = filtered.filter(product => {
-        const brandName = product.characteristics?.['Бренд (id)'] || 
-                         product.characteristics?.['Бренд'] || '';
-        return filters.brands.some(brand => 
-          brandName.toLowerCase().includes(brand.toLowerCase())
+        const brandId = product.characteristics?.['Бренд (id)'] || '';
+        const brandName = product.characteristics?.['Бренд'] || '';
+        const brand = brandName || brandId;
+        
+        return filters.brands.some(selectedBrand => 
+          brand.toLowerCase().trim() === selectedBrand.toLowerCase().trim() ||
+          brand.toLowerCase().includes(selectedBrand.toLowerCase()) ||
+          selectedBrand.toLowerCase().includes(brand.toLowerCase())
         );
       });
     }
@@ -180,18 +184,27 @@ const Catalog: React.FC = () => {
     const equipmentTypes = new Set<string>();
     
     catalogProducts.forEach(product => {
-      // Собираем бренды
-      const brand = product.characteristics?.['Бренд (id)'] || 
-                   product.characteristics?.['Бренд'] || '';
-      if (brand) brands.add(brand);
+      // Собираем бренды - пробуем разные поля
+      const brandId = product.characteristics?.['Бренд (id)'] || '';
+      const brandName = product.characteristics?.['Бренд'] || '';
+      const brand = brandName || brandId;
+      
+      console.log('Product:', product.name, 'Brand ID:', brandId, 'Brand Name:', brandName);
+      
+      if (brand && brand.trim()) {
+        brands.add(brand.trim());
+      }
       
       // Собираем типы оборудования
       const equipmentType = product.characteristics?.['Тип оборудования'] || '';
       if (equipmentType) equipmentTypes.add(equipmentType);
     });
 
+    const uniqueBrands = Array.from(brands);
+    console.log('Уникальные бренды для фильтров:', uniqueBrands);
+
     return {
-      brands: Array.from(brands),
+      brands: uniqueBrands,
       equipmentTypes: Array.from(equipmentTypes)
     };
   }, [catalogProducts]);
