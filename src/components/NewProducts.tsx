@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { useCart } from '@/contexts/CartContext';
 import { useFavorites } from '@/contexts/FavoritesContext';
+import { useComparison } from '@/contexts/ComparisonContext';
 import NewProductsSkeleton from '@/components/NewProductsSkeleton';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
@@ -19,6 +20,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const { addItem } = useCart();
   const { toggleFavorite, isFavorite } = useFavorites();
+  const { toggleComparison, isInComparison } = useComparison();
 
   // Используем тот же кэшированный запрос, что и в каталоге
   const { data: allProductsData, isLoading, error } = useQuery({
@@ -65,8 +67,16 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
   const handleStatsClick = (e: React.MouseEvent, product: any) => {
     e.preventDefault();
     e.stopPropagation();
-    // Здесь можно добавить функционал статистики
-    console.log('Stats clicked for product:', product.name);
+    toggleComparison({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image_url: (product.gallery_images && product.gallery_images.length > 0) ? 
+        optimizeImageUrl(product.gallery_images[0], 200, 200) : '/placeholder.svg',
+      originalPrice: product.original_price,
+      discount: product.original_price && product.original_price > product.price ? 
+        Math.round(((product.original_price - product.price) / product.original_price) * 100) : undefined
+    });
   };
 
   const scrollLeft = () => {

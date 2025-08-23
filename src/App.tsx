@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "@/contexts/CartContext";
 import { FavoritesProvider } from "@/contexts/FavoritesContext";
+import { ComparisonProvider } from "@/contexts/ComparisonContext";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
@@ -47,6 +48,7 @@ const App = () => (
     <TooltipProvider>
       <CartProvider>
         <FavoritesProvider>
+          <ComparisonProvider>
         <BrowserRouter>
           <ScrollToTop />
           <Routes>
@@ -88,6 +90,7 @@ const App = () => (
         </BrowserRouter>
         <Toaster />
         <Sonner />
+          </ComparisonProvider>
         </FavoritesProvider>
       </CartProvider>
     </TooltipProvider>
