@@ -1,7 +1,8 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { X, Trash2 } from 'lucide-react';
+import { useFavorites } from '@/contexts/FavoritesContext';
 import {
   Sheet,
   SheetContent,
@@ -14,15 +15,6 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 
-interface FavoriteItem {
-  id: number;
-  name: string;
-  image: string;
-  price: number;
-  originalPrice?: number;
-  discount?: number;
-}
-
 interface FavoritesPopupProps {
   children: React.ReactNode;
   isOpen: boolean;
@@ -30,38 +22,10 @@ interface FavoritesPopupProps {
 }
 
 const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpenChange }) => {
-  // Mock data for favorite items
-  const initialFavoriteItems: FavoriteItem[] = [
-    {
-      id: 1,
-      name: "Гребной тренажер CardioPowe PRO CR300",
-      image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
-      price: 4610,
-      originalPrice: 5000,
-      discount: 15
-    },
-    {
-      id: 2,
-      name: "Гребной тренажер CardioPowe PRO CR300",
-      image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
-      price: 4610,
-      originalPrice: 5000,
-      discount: 15
-    },
-    {
-      id: 3,
-      name: "Гребной тренажер CardioPowe PRO CR300",
-      image: "/lovable-uploads/17550498-ab60-43c0-9b84-f49dd8ddc1fc.png",
-      price: 4610,
-      originalPrice: 5000,
-      discount: 15
-    }
-  ];
+  const { favorites, removeFromFavorites } = useFavorites();
 
-  const [favoriteItems, setFavoriteItems] = useState<FavoriteItem[]>(initialFavoriteItems);
-
-  const removeFavoriteItem = (id: number) => {
-    setFavoriteItems(prev => prev.filter(item => item.id !== id));
+  const handleRemoveFavorite = (id: string) => {
+    removeFromFavorites(id);
   };
 
   return (
@@ -84,46 +48,40 @@ const FavoritesPopup: React.FC<FavoritesPopupProps> = ({ children, isOpen, onOpe
             {/* Favorite Items with ScrollArea */}
             <ScrollArea className="flex-1 px-5">
               <div className="space-y-4 pt-5">
-                {favoriteItems.map((item) => (
-                  <div key={item.id} className="relative flex items-center gap-4 p-4 bg-gray-50 rounded-lg overflow-hidden w-[443px] h-[112.09px]">
-                    {/* Серая четвертинка круга в нижнем правом углу как второй слой */}
-                    <div className="absolute bottom-2 right-0 w-20 h-20 bg-gray-200 rounded-tl-full"></div>
-                    
-                    <img 
-                      src={item.image} 
-                      alt={item.name}
-                      className="w-16 h-16 object-cover rounded relative z-10"
-                    />
-                    <div className="flex-1 relative z-10">
-                      <h3 className="text-sm font-medium text-gray-900 line-clamp-2 mb-2">
-                        {item.name}
-                      </h3>
-                      <div className="flex items-center gap-2">
-                        {item.discount && (
-                          <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
-                            -{item.discount}%
-                          </span>
-                        )}
-                        {item.originalPrice && (
-                          <span className="text-gray-400 line-through text-sm">
-                            {item.originalPrice.toLocaleString()} ₽
-                          </span>
-                        )}
-                      </div>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="text-lg font-bold text-gray-900">
-                          {item.price.toLocaleString()} ₽
-                        </span>
-                      </div>
-                    </div>
-                    <button 
-                      onClick={() => removeFavoriteItem(item.id)}
-                      className="w-10 h-10 border border-gray-400 rounded-lg relative z-10 hover:bg-gray-100 flex items-center justify-center"
-                    >
-                      <Trash2 className="w-4 h-4 text-gray-400" />
-                    </button>
+                {favorites.length === 0 ? (
+                  <div className="text-center py-8">
+                    <p className="text-gray-500">В избранном пока нет товаров</p>
                   </div>
-                ))}
+                ) : (
+                  favorites.map((item) => (
+                    <div key={item.id} className="relative flex items-center gap-4 p-4 bg-gray-50 rounded-lg overflow-hidden w-[443px] h-[112.09px]">
+                      {/* Серая четвертинка круга в нижнем правом углу как второй слой */}
+                      <div className="absolute bottom-2 right-0 w-20 h-20 bg-gray-200 rounded-tl-full"></div>
+                      
+                      <img 
+                        src={item.image_url} 
+                        alt={item.name}
+                        className="w-16 h-16 object-cover rounded relative z-10"
+                      />
+                      <div className="flex-1 relative z-10">
+                        <h3 className="text-sm font-medium text-gray-900 line-clamp-2 mb-2">
+                          {item.name}
+                        </h3>
+                        <div className="flex items-center gap-2 mt-1">
+                          <span className="text-lg font-bold text-gray-900">
+                            {item.price.toLocaleString()} ₽
+                          </span>
+                        </div>
+                      </div>
+                      <button 
+                        onClick={() => handleRemoveFavorite(item.id)}
+                        className="w-10 h-10 border border-gray-400 rounded-lg relative z-10 hover:bg-gray-100 flex items-center justify-center"
+                      >
+                        <Trash2 className="w-4 h-4 text-gray-400" />
+                      </button>
+                    </div>
+                  ))
+                )}
                 
                 {/* Кнопка перейти в избранное внутри списка товаров */}
                 <div className="mt-5">
