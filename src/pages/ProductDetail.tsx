@@ -951,9 +951,12 @@ const ProductDetail: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="container mx-auto px-6 lg:px-12 xl:px-16 py-8">
+      <main className="container mx-auto px-6 lg:px-12 xl:px-16 py-8 relative">
+        {/* Gray background for right side */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-50 -z-10"></div>
+        
         {/* Breadcrumbs */}
-        <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
+        <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6 relative z-10">
           <Link to="/" className="hover:text-foreground">Главная</Link>
           <span>/</span>
           <Link to="/catalog" className="hover:text-foreground">Каталог</Link>
@@ -980,7 +983,7 @@ const ProductDetail: React.FC = () => {
           </div>
 
           {/* Product Info */}
-          <div className="bg-gray-50 -mt-8 -mx-6 lg:-mx-12 xl:-mx-16 px-6 lg:px-12 xl:px-16 pt-8 pb-4 space-y-4">
+          <div className="bg-gray-50 p-4 rounded-lg space-y-4">
             {/* Header with badges */}
             <div className="flex justify-end mb-4">
               <div className="flex space-x-2">
