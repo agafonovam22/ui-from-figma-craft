@@ -84,18 +84,18 @@ export default function ProductGallery({ mainImage, images = [], galleryImages =
               <Button
                 variant="secondary"
                 size="icon"
-                className="absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 hover:bg-white/90"
+                className="!absolute !left-4 !top-1/2 !-translate-y-1/2 !opacity-0 group-hover:!opacity-100 !transition-opacity !w-12 !h-12 !rounded-full !bg-gray-200 hover:!bg-gray-800 !border-none !text-gray-600 hover:!text-white !shadow-sm !duration-200"
                 onClick={prevImage}
               >
-                <ChevronLeft className="w-4 h-4" />
+                <ChevronLeft className="w-5 h-5" />
               </Button>
               <Button
                 variant="secondary"
                 size="icon"
-                className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 hover:bg-white/90"
+                className="!absolute !right-4 !top-1/2 !-translate-y-1/2 !opacity-0 group-hover:!opacity-100 !transition-opacity !w-12 !h-12 !rounded-full !bg-gray-200 hover:!bg-gray-800 !border-none !text-gray-600 hover:!text-white !shadow-sm !duration-200"
                 onClick={nextImage}
               >
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className="w-5 h-5" />
               </Button>
             </>
           )}
