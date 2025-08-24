@@ -961,11 +961,6 @@ const ProductDetail: React.FC = () => {
           <span className="text-foreground">{product.name}</span>
         </nav>
 
-        {/* Back button */}
-        <Link to="/catalog" className="inline-flex items-center mb-6 text-muted-foreground hover:text-foreground">
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Вернуться в каталог
-        </Link>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Product Gallery */}
