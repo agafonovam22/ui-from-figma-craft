@@ -949,20 +949,21 @@ const ProductDetail: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background relative">
-      {/* Gray background for right side extending to header */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-50 -z-10"></div>
+    <div className="min-h-screen bg-background">
+      {/* Gray background for right side extending from very top */}
+      <div className="fixed top-0 right-0 w-1/2 h-screen bg-gray-50 z-0"></div>
       
-      <Header />
-      <main className="container mx-auto px-6 lg:px-12 xl:px-16 py-8">
-        {/* Breadcrumbs */}
-        <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
-          <Link to="/" className="hover:text-foreground">Главная</Link>
-          <span>/</span>
-          <Link to="/catalog" className="hover:text-foreground">Каталог</Link>
-          <span>/</span>
-          <span className="text-foreground">{product.name}</span>
-        </nav>
+      <div className="relative z-10">
+        <Header />
+        <main className="container mx-auto px-6 lg:px-12 xl:px-16 py-8">
+          {/* Breadcrumbs */}
+          <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
+            <Link to="/" className="hover:text-foreground">Главная</Link>
+            <span>/</span>
+            <Link to="/catalog" className="hover:text-foreground">Каталог</Link>
+            <span>/</span>
+            <span className="text-foreground">{product.name}</span>
+          </nav>
 
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -1315,6 +1316,7 @@ const ProductDetail: React.FC = () => {
         open={showReviewModal} 
         onOpenChange={setShowReviewModal} 
       />
+      </div>
     </div>
   );
 };
