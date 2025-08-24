@@ -951,25 +951,26 @@ const ProductDetail: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="container mx-auto px-4 py-8">
-        {/* Breadcrumbs */}
-        <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
-          <Link to="/" className="hover:text-foreground">Главная</Link>
-          <span>/</span>
-          <Link to="/catalog" className="hover:text-foreground">Каталог</Link>
-          <span>/</span>
-          <span className="text-foreground">{product.name}</span>
-        </nav>
+      
+      <div className="flex">
+        {/* Left side - Product Gallery */}
+        <div className="flex-1">
+          <div className="container mx-auto px-4 py-8">
+            {/* Breadcrumbs */}
+            <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
+              <Link to="/" className="hover:text-foreground">Главная</Link>
+              <span>/</span>
+              <Link to="/catalog" className="hover:text-foreground">Каталог</Link>
+              <span>/</span>
+              <span className="text-foreground">{product.name}</span>
+            </nav>
 
-        {/* Back button */}
-        <Link to="/catalog" className="inline-flex items-center mb-6 text-muted-foreground hover:text-foreground">
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Вернуться в каталог
-        </Link>
+            {/* Back button */}
+            <Link to="/catalog" className="inline-flex items-center mb-6 text-muted-foreground hover:text-foreground">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Вернуться в каталог
+            </Link>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Product Gallery */}
-          <div>
             <ProductGallery
               mainImage={(product.gallery_images && product.gallery_images.length > 0) ? 
                 optimizeImageUrl(product.gallery_images[0], 700, 700) : '/placeholder.svg'}
@@ -983,9 +984,11 @@ const ProductDetail: React.FC = () => {
               ]}
             />
           </div>
+        </div>
 
-          {/* Product Info */}
-          <div className="bg-gray-50 p-4 rounded-lg space-y-4">
+        {/* Right side - Product Info */}
+        <div className="flex-1 bg-gray-50">
+          <div className="p-8 space-y-4">
             {/* Header with badges */}
             <div className="flex justify-end mb-4">
               <div className="flex space-x-2">
@@ -1230,7 +1233,9 @@ const ProductDetail: React.FC = () => {
             </div>
           </div>
         </div>
-
+      </div>
+      
+      <main className="container mx-auto px-4">
         {/* Product Tabs */}
         <div className="mt-12">
           {/* Tabs Header with Download Button */}
