@@ -949,7 +949,10 @@ const ProductDetail: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Gray background for right side extending to header */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-50 -z-10"></div>
+      
       <Header />
       <main className="container mx-auto px-6 lg:px-12 xl:px-16 py-8">
         {/* Breadcrumbs */}
