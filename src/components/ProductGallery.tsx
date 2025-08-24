@@ -138,8 +138,8 @@ export default function ProductGallery({ mainImage, images = [], galleryImages =
             </CarouselContent>
             {allImages.length > 4 && (
               <>
-                <CarouselPrevious className="left-0" />
-                <CarouselNext className="right-0" />
+                <CarouselPrevious className="left-0 w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-800 border-none text-gray-600 hover:text-white transition-colors duration-200" />
+                <CarouselNext className="right-0 w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-800 border-none text-gray-600 hover:text-white transition-colors duration-200" />
               </>
             )}
           </Carousel>
