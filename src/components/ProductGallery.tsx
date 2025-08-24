@@ -138,8 +138,12 @@ export default function ProductGallery({ mainImage, images = [], galleryImages =
             </CarouselContent>
             {allImages.length > 4 && (
               <>
-                <CarouselPrevious className="!left-0 !w-12 !h-12 !rounded-full !bg-gray-200 hover:!bg-gray-800 active:!bg-[#262631] !border-none !text-gray-600 hover:!text-white !transition-colors !duration-200 !shadow-sm" />
-                <CarouselNext className="!right-0 !w-12 !h-12 !rounded-full !bg-gray-200 hover:!bg-gray-800 active:!bg-[#262631] !border-none !text-gray-600 hover:!text-white !transition-colors !duration-200 !shadow-sm" />
+                <CarouselPrevious className="!left-0 !w-12 !h-12 !rounded-full !bg-gray-200 hover:!bg-gray-800 active:!bg-[#262631] !border-none !text-gray-600 hover:!text-white !transition-colors !duration-200 !shadow-sm">
+                  <ChevronLeft className="w-5 h-5" />
+                </CarouselPrevious>
+                <CarouselNext className="!right-0 !w-12 !h-12 !rounded-full !bg-gray-200 hover:!bg-gray-800 active:!bg-[#262631] !border-none !text-gray-600 hover:!text-white !transition-colors !duration-200 !shadow-sm">
+                  <ChevronRight className="w-5 h-5" />
+                </CarouselNext>
               </>
             )}
           </Carousel>
