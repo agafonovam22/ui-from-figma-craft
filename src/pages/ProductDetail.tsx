@@ -951,9 +951,9 @@ const ProductDetail: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="container mx-auto pl-6 lg:pl-12 xl:pl-16 py-8">
+      <main className="container mx-auto px-6 lg:px-12 xl:px-16 py-8">
         {/* Breadcrumbs */}
-        <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6 pr-6 lg:pr-12 xl:pr-16">
+        <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
           <Link to="/" className="hover:text-foreground">Главная</Link>
           <span>/</span>
           <Link to="/catalog" className="hover:text-foreground">Каталог</Link>
@@ -964,7 +964,7 @@ const ProductDetail: React.FC = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Product Gallery */}
-          <div className="pr-6 lg:pr-12 xl:pr-16">
+          <div>
             <ProductGallery
               mainImage={(product.gallery_images && product.gallery_images.length > 0) ? 
                 optimizeImageUrl(product.gallery_images[0], 700, 700) : '/placeholder.svg'}
@@ -974,13 +974,13 @@ const ProductDetail: React.FC = () => {
               badges={[
                 ...(product.badge ? [{ text: product.badge, variant: 'destructive' as const }] : []),
                 ...(product.characteristics?.['Акция'] ? [{ text: 'АКЦИЯ', variant: 'destructive' as const }] : []),
-                ...(product.is_hit ? [{ text: 'ХИТ продаж', variant: 'secondary' as const }] : [])
+                ...(product.is_hit ? [{ text: 'ХИТ ПРОДАЖ', variant: 'secondary' as const }] : [])
               ]}
             />
           </div>
 
           {/* Product Info */}
-          <div className="bg-gray-50 p-4 space-y-4 -mt-8 -mb-8 -mr-[50vw] pr-[50vw]">
+          <div className="bg-gray-50 p-4 rounded-lg space-y-4">
             {/* Header with badges */}
             <div className="flex justify-end mb-4">
               <div className="flex space-x-2">
