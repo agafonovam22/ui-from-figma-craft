@@ -6,6 +6,7 @@ import { useFavorites } from '@/contexts/FavoritesContext';
 import { useComparison } from '@/contexts/ComparisonContext';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import LazyImage from '@/components/shared/LazyImage';
 
 interface ProductCardProps {
   product: {
@@ -197,12 +198,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
               {product.gallery_images.map((image: string, imageIndex: number) => (
                 <CarouselItem key={imageIndex} className="h-full">
                   <div className="h-full flex items-center justify-center p-4">
-                    <img 
+                    <LazyImage 
                       src={optimizeImageUrl(image, 400, 320)} 
                       alt={`${product.name} - фото ${imageIndex + 1}`}
                       className="w-full h-full object-contain"
-                      style={{ imageRendering: 'crisp-edges' }}
-                      loading="lazy"
                     />
                   </div>
                 </CarouselItem>
@@ -213,12 +212,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </Carousel>
         ) : (
           <div className="h-full flex items-center justify-center p-4">
-            <img 
+            <LazyImage 
               src={optimizeImageUrl((product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg', 400, 320)} 
               alt={product.name || "Товар"}
               className="w-full h-full object-contain"
-              style={{ imageRendering: 'crisp-edges' }}
-              loading="lazy"
             />
           </div>
         )}

@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useQuery } from '@tanstack/react-query';
 import NewProductsSkeleton from '@/components/NewProductsSkeleton';
 import ProductCard from '@/components/shared/ProductCard';
+import { useNewProducts } from '@/hooks/useSharedProducts';
 
 interface NewProductsProps {
   title?: string;
@@ -11,22 +11,8 @@ interface NewProductsProps {
 const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // Используем тот же кэшированный запрос, что и в каталоге
-  const { data: allProductsData, isLoading, error } = useQuery({
-    queryKey: ['all-products'],
-    queryFn: async () => {
-      console.log('🔄 Загружаем товары для новинок...');
-      const response = await fetch('https://cp44652.tw1.ru/catalog.php');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    },
-    staleTime: 5 * 60 * 1000, // 5 минут
-    gcTime: 30 * 60 * 1000, // 30 минут
-  });
-
-  const bitrixProducts = allProductsData?.products || [];
+  // Используем оптимизированный хук
+  const { products: displayProducts, isLoading, error } = useNewProducts(5);
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -39,25 +25,6 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
       scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
     }
   };
-
-  // Prioritize CardioPower T40 and T20 treadmills as first two products
-  const t40Product = bitrixProducts.find(product => 
-    product.name.toLowerCase().includes('cardiopower t40')
-  );
-  const t20Product = bitrixProducts.find(product => 
-    product.name.toLowerCase().includes('cardiopower t20')
-  );
-  
-  const priorityProducts = [t40Product, t20Product].filter(Boolean);
-  const otherProducts = bitrixProducts.filter(product => 
-    !product.name.toLowerCase().includes('cardiopower t40') &&
-    !product.name.toLowerCase().includes('cardiopower t20')
-  );
-  
-  const displayProducts = [
-    ...priorityProducts,
-    ...otherProducts.slice(0, 5 - priorityProducts.length)
-  ].slice(0, 5);
 
   if (isLoading) {
     return <NewProductsSkeleton title={title} />;

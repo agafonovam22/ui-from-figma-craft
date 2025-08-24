@@ -1,10 +1,9 @@
-import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
-import { Product } from './useProducts';
+import { useSharedProducts, SharedProduct } from './useSharedProducts';
 
 interface PaginatedProductsResponse {
   status: string;
-  products: Product[];
+  products: SharedProduct[];
   total: number;
   page: number;
   limit: number;
@@ -17,26 +16,16 @@ export const usePaginatedProducts = (
   searchQuery?: string,
   categoryFilter?: string
 ) => {
-  // Получаем все товары один раз и кешируем
-  const { data: allProductsData, isLoading: allProductsLoading, error } = useQuery({
-    queryKey: ['all-products'],
-    queryFn: async (): Promise<{ products: Product[] }> => {
-      console.log('🔄 Загружаем все товары...');
-      const response = await fetch('https://cp44652.tw1.ru/catalog.php');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    },
-    staleTime: 5 * 60 * 1000, // 5 минут
-    gcTime: 30 * 60 * 1000, // 30 минут (заменено cacheTime)
-  });
+  // Используем централизованный хук
+  const { data, isLoading, error } = useSharedProducts();
+  
+  const allProducts = data?.products || [];
 
   // Фильтрация и пагинация на клиенте (оптимизированная)
   const paginatedData = useMemo((): PaginatedProductsResponse | null => {
-    if (!allProductsData?.products) return null;
+    if (!allProducts.length) return null;
 
-    let filteredProducts = allProductsData.products;
+    let filteredProducts = allProducts;
 
     // Фильтрация по поиску
     if (searchQuery && searchQuery.trim()) {
@@ -71,11 +60,11 @@ export const usePaginatedProducts = (
       limit,
       totalPages: Math.ceil(filteredProducts.length / limit)
     };
-  }, [allProductsData, searchQuery, categoryFilter, page, limit]);
+  }, [allProducts, searchQuery, categoryFilter, page, limit]);
 
   return {
     data: paginatedData,
-    isLoading: allProductsLoading,
+    isLoading,
     error,
     products: paginatedData?.products || [],
     total: paginatedData?.total || 0,

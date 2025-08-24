@@ -7,7 +7,7 @@ import CatalogFilters from '@/components/Catalog/CatalogFilters';
 import CatalogBanner from '@/components/Catalog/CatalogBanner';
 import CatalogControls from '@/components/Catalog/CatalogControls';
 import CatalogGrid from '@/components/Catalog/CatalogGrid';
-import { useProductSearch, Product } from '@/hooks/useProducts';
+import { useSharedProducts } from '@/hooks/useSharedProducts';
 import { usePaginatedProducts } from '@/hooks/usePaginatedProducts';
 import { useDebounce } from '@/hooks/useDebounce';
 import { FilterState } from '@/types/filters';
@@ -78,7 +78,7 @@ const Catalog: React.FC = () => {
   
   // Убираем useEffect - используем фиксированный список
   
-  // Используем оптимизированную загрузку с разумной пагинацией
+  // Используем оптимизированную загрузку
   const { 
     products: allCatalogProducts, 
     isLoading, 
@@ -86,7 +86,7 @@ const Catalog: React.FC = () => {
     total
   } = usePaginatedProducts(
     1, 
-    500, // Оптимальное количество для фильтрации
+    500, // Загружаем больше для фильтрации
     debouncedSearchQuery
   );
 
