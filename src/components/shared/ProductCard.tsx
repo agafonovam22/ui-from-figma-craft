@@ -96,20 +96,24 @@ const ProductCard: React.FC<ProductCardProps> = ({
     Math.round(((product.original_price - product.price) / product.original_price) * 100) : 0;
 
   return (
-    <div 
-      className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
-      style={{ 
-        height: '460px', 
-        backgroundColor: '#F8F8FD',
-        background: 'var(--card-bg, #F8F8FD)'
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.setProperty('--card-bg', 'linear-gradient(179deg, #3C3C50 38.62%, #262631 99.45%)');
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.setProperty('--card-bg', '#F8F8FD');
-      }}
+    <Link 
+      to={`/product/${product.id}`}
+      className="block"
     >
+      <div 
+        className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
+        style={{ 
+          height: '460px', 
+          backgroundColor: '#F8F8FD',
+          background: 'var(--card-bg, #F8F8FD)'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.setProperty('--card-bg', 'linear-gradient(179deg, #3C3C50 38.62%, #262631 99.45%)');
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.setProperty('--card-bg', '#F8F8FD');
+        }}
+      >
       {/* Овальные бейджи в верхнем левом углу */}
       <div className="absolute top-3 left-3 z-10 flex flex-row gap-2">
         {product.badge && (
@@ -241,10 +245,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
       {/* Серая разделительная полоса */}
       <div className="mx-4 h-px bg-gray-200 mt-7"></div>
 
-      <Link 
-        to={`/product/${product.id}`}
-        className="block"
-      >
         {/* Информация о товаре */}
         <div className="p-4 pb-2.5 mt-4 flex flex-col justify-between transition-colors duration-300" style={{ height: '160px', backgroundColor: 'transparent' }}>
           <div>
@@ -357,8 +357,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </Button>
           </div>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 
