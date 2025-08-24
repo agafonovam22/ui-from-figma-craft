@@ -113,9 +113,9 @@ export default function ProductGallery({ mainImage, images = [], galleryImages =
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-2">
               {allImages.map((image, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/3 md:basis-1/5 lg:basis-1/6">
+                <CarouselItem key={index} className="pl-2 basis-1/4">
                   <button
                     className={`relative overflow-hidden rounded-lg aspect-square border-2 transition-all w-full ${
                       currentImageIndex === index 
@@ -136,7 +136,7 @@ export default function ProductGallery({ mainImage, images = [], galleryImages =
                 </CarouselItem>
               ))}
             </CarouselContent>
-            {allImages.length > 6 && (
+            {allImages.length > 4 && (
               <>
                 <CarouselPrevious className="left-0" />
                 <CarouselNext className="right-0" />
