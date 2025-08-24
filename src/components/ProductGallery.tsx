@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 interface ProductGalleryProps {
   mainImage: string;
@@ -101,29 +102,47 @@ export default function ProductGallery({ mainImage, images = [], galleryImages =
         </div>
       </div>
 
-      {/* Thumbnails */}
+      {/* Thumbnails Slider */}
       {allImages.length > 1 && (
-        <div className="grid grid-cols-4 gap-2">
-          {allImages.map((image, index) => (
-            <button
-              key={index}
-              className={`relative overflow-hidden rounded-lg aspect-square border-2 transition-all ${
-                currentImageIndex === index 
-                  ? 'border-primary ring-2 ring-primary/20' 
-                  : 'border-border hover:border-primary/50'
-              }`}
-              onClick={() => selectImage(index)}
-            >
-              <img
-                src={image || '/placeholder.svg'}
-                alt={`${productName} ${index + 1}`}
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src = '/placeholder.svg';
-                }}
-              />
-            </button>
-          ))}
+        <div className="w-full">
+          <Carousel
+            opts={{
+              align: "start",
+              slidesToScroll: 1,
+              containScroll: "trimSnaps"
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {allImages.map((image, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/3 md:basis-1/5 lg:basis-1/6">
+                  <button
+                    className={`relative overflow-hidden rounded-lg aspect-square border-2 transition-all w-full ${
+                      currentImageIndex === index 
+                        ? 'border-primary ring-2 ring-primary/20' 
+                        : 'border-border hover:border-primary/50'
+                    }`}
+                    onClick={() => selectImage(index)}
+                  >
+                    <img
+                      src={image || '/placeholder.svg'}
+                      alt={`${productName} ${index + 1}`}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.src = '/placeholder.svg';
+                      }}
+                    />
+                  </button>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            {allImages.length > 6 && (
+              <>
+                <CarouselPrevious className="left-0" />
+                <CarouselNext className="right-0" />
+              </>
+            )}
+          </Carousel>
         </div>
       )}
     </div>
