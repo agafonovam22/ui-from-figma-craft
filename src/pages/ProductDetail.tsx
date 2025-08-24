@@ -987,8 +987,8 @@ const ProductDetail: React.FC = () => {
         </div>
 
         {/* Right side - Product Info */}
-        <div className="flex-1 bg-gray-50">
-          <div className="p-8 space-y-4">
+        <div className="bg-gray-50 min-h-screen">
+          <div className="pl-8 pr-8 pt-8 space-y-4">
             {/* Header with badges */}
             <div className="flex justify-end mb-4">
               <div className="flex space-x-2">
