@@ -1,9 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import type { CarouselApi } from '@/components/ui/carousel';
 
 interface ProductGalleryProps {
   mainImage: string;
@@ -19,7 +18,6 @@ interface ProductGalleryProps {
 
 export default function ProductGallery({ mainImage, images = [], galleryImages = [], productName, characteristics, badges = [] }: ProductGalleryProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [api, setApi] = useState<CarouselApi>();
   
   console.log('🖼️ ProductGallery получил изображения:', {
     mainImage,
@@ -108,7 +106,6 @@ export default function ProductGallery({ mainImage, images = [], galleryImages =
       {allImages.length > 1 && (
         <div className="w-full">
           <Carousel
-            setApi={setApi}
             opts={{
               align: "start",
               slidesToScroll: 1,
@@ -141,22 +138,12 @@ export default function ProductGallery({ mainImage, images = [], galleryImages =
             </CarouselContent>
             {allImages.length > 4 && (
               <>
-                <Button
-                  variant="secondary"
-                  size="icon"
-                  className="!absolute !left-0 !w-12 !h-12 !rounded-full !bg-gray-200 hover:!bg-gray-800 active:!bg-[#262631] !border-none !text-gray-600 hover:!text-white !transition-colors !duration-200 !shadow-sm !text-lg !font-medium !z-10"
-                  onClick={() => api?.scrollPrev()}
-                >
+                <CarouselPrevious className="!left-0 !w-12 !h-12 !rounded-full !bg-gray-200 hover:!bg-gray-800 active:!bg-[#262631] !border-none !text-gray-600 hover:!text-white !transition-colors !duration-200 !shadow-sm !text-lg !font-medium">
                   &lt;
-                </Button>
-                <Button
-                  variant="secondary"  
-                  size="icon"
-                  className="!absolute !right-0 !w-12 !h-12 !rounded-full !bg-gray-200 hover:!bg-gray-800 active:!bg-[#262631] !border-none !text-gray-600 hover:!text-white !transition-colors !duration-200 !shadow-sm !text-lg !font-medium !z-10"
-                  onClick={() => api?.scrollNext()}
-                >
+                </CarouselPrevious>
+                <CarouselNext className="!right-0 !w-12 !h-12 !rounded-full !bg-gray-200 hover:!bg-gray-800 active:!bg-[#262631] !border-none !text-gray-600 hover:!text-white !transition-colors !duration-200 !shadow-sm !text-lg !font-medium">
                   &gt;
-                </Button>
+                </CarouselNext>
               </>
             )}
           </Carousel>
