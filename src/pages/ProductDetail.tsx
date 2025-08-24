@@ -955,7 +955,7 @@ const ProductDetail: React.FC = () => {
       <div className="flex">
         {/* Left side - Product Gallery */}
         <div className="flex-1">
-          <div className="container mx-auto px-4 py-8">
+          <div className="pl-4 py-8">
             {/* Breadcrumbs */}
             <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
               <Link to="/" className="hover:text-foreground">Главная</Link>
@@ -987,7 +987,7 @@ const ProductDetail: React.FC = () => {
         </div>
 
         {/* Right side - Product Info */}
-        <div className="flex-1 bg-gray-50">
+        <div className="w-1/2 bg-gray-50">
           <div className="p-8 space-y-4">
             {/* Header with badges */}
             <div className="flex justify-end mb-4">
