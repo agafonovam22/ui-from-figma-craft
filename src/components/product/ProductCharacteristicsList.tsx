@@ -24,6 +24,7 @@ const ProductCharacteristicsList: React.FC<ProductCharacteristicsListProps> = ({
       {characteristics ? (
         <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-xs">
           <div className="space-y-1">
+            <div className="border-t border-border"></div>
             <div className="flex justify-between py-1">
               <span className="text-muted-foreground">Тип продукции:</span>
               <span className="font-medium">{productType}</span>
@@ -54,9 +55,11 @@ const ProductCharacteristicsList: React.FC<ProductCharacteristicsListProps> = ({
                 {characteristics['Макс. угол наклона, %'] ? `${characteristics['Макс. угол наклона, %']}%` : '15%'}
               </span>
             </div>
+            <div className="border-b border-border"></div>
           </div>
           
           <div className="space-y-1">
+            <div className="border-t border-border"></div>
             <div className="flex justify-between py-1">
               <span className="text-muted-foreground">Бренд:</span>
               <span className="font-medium">{brand}</span>
@@ -80,6 +83,7 @@ const ProductCharacteristicsList: React.FC<ProductCharacteristicsListProps> = ({
                 {characteristics['Максимальная скорость, км/ч'] || '19'}
               </span>
             </div>
+            <div className="border-b border-border"></div>
           </div>
         </div>
       ) : (

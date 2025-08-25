@@ -248,17 +248,29 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
                   {/* First characteristic */}
                   <div className="flex-1">
-                    {pair.first && renderCharacteristicContent(pair.first)}
-                    {index < characteristicPairs.length - 1 && (
-                      <div className="mt-2 border-b border-border"></div>
+                    {pair.first && (
+                      <>
+                        {index === 0 && <div className="border-t border-border mb-2"></div>}
+                        {renderCharacteristicContent(pair.first)}
+                        {index < characteristicPairs.length - 1 && (
+                          <div className="mt-2 border-b border-border"></div>
+                        )}
+                        {index === characteristicPairs.length - 1 && (
+                          <div className="mt-2 border-b border-border"></div>
+                        )}
+                      </>
                     )}
                   </div>
                   
                   {/* Second characteristic */}
                   {pair.second ? (
                     <div className="flex-1">
+                      {index === 0 && <div className="border-t border-border mb-2"></div>}
                       {renderCharacteristicContent(pair.second)}
                       {index < characteristicPairs.length - 1 && (
+                        <div className="mt-2 border-b border-border"></div>
+                      )}
+                      {index === characteristicPairs.length - 1 && (
                         <div className="mt-2 border-b border-border"></div>
                       )}
                     </div>
