@@ -241,7 +241,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
         <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
           {category.title}
         </h4>
-        <div className="border border-border rounded-lg overflow-hidden">
+        <div className="overflow-hidden">
           <div className="divide-y divide-border">
             {characteristicPairs.map((pair, index) => (
               <div key={`${pair.firstKey}-${pair.secondKey || 'single'}-${index}`} className="p-4">
