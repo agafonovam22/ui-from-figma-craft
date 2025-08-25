@@ -1024,7 +1024,7 @@ const ProductDetail: React.FC = () => {
             {/* Action buttons and rating */}
             <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-300">
               <div className="flex space-x-3">
-                <Button key="compare-btn" variant="outline" size="sm" className="text-gray-600 text-xs px-3 py-1 flex items-center">
+                <Button key="compare-btn" variant="outline" size="sm" className="text-gray-600 text-xs px-3 py-1 flex items-center rounded-full">
                   <img 
                     src="/lovable-uploads/65f07052-2894-46c4-bba1-dd6a77258cbe.png" 
                     alt="В сравнение" 
@@ -1032,7 +1032,7 @@ const ProductDetail: React.FC = () => {
                   />
                   В сравнение
                 </Button>
-                <Button key="favorite-btn" variant="outline" size="sm" className="text-gray-600 text-xs px-3 py-1 flex items-center">
+                <Button key="favorite-btn" variant="outline" size="sm" className="text-gray-600 text-xs px-3 py-1 flex items-center rounded-full">
                   <img 
                     src="/lovable-uploads/60d3aa34-0091-405e-b944-d45c2bee0a8f.png" 
                     alt="В избранное" 
