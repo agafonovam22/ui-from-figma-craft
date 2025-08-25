@@ -17,7 +17,7 @@ import { optimizeImageUrl, preloadImage } from '@/utils/imageOptimization';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { extractBrandFromProductName } from '@/utils/extractBrand';
 import ProductCharacteristicsTable from '@/components/product/ProductCharacteristicsTable';
-import CitySelector from '@/components/Header/CitySelector';
+import SupportCitySelector from '@/components/SupportCitySelector';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -309,9 +309,9 @@ const ProductDetail: React.FC = () => {
                     <div className="text-2xl font-bold text-gray-900">0₽</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-4 mt-4">
-                  <span className="text-lg font-semibold text-gray-900">Город доставки:</span>
-                  <CitySelector 
+                <div className="flex items-center gap-2 mt-4">
+                  <span className="text-lg font-semibold text-gray-900">Город доставки</span>
+                  <SupportCitySelector 
                     selectedCity={selectedCity}
                     onCitySelect={setSelectedCity}
                   />

@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChevronLeft, ChevronRight, Heart, Star, Play } from 'lucide-react';
-import CitySelector from '@/components/Header/CitySelector';
+import SupportCitySelector from '@/components/SupportCitySelector';
 
 const ProductCard: React.FC = () => {
   const { productId } = useParams();
@@ -1218,9 +1218,9 @@ const ProductCard: React.FC = () => {
               <div className="space-y-10">
                 {/* Delivery city */}
                 <div>
-                  <div className="flex items-center gap-4 mb-6">
-                    <h2 className="text-lg font-semibold text-gray-900">Город доставки:</h2>
-                    <CitySelector 
+                  <div className="flex items-center gap-2 mb-6">
+                    <h2 className="text-lg font-semibold text-gray-900">Город доставки</h2>
+                    <SupportCitySelector 
                       selectedCity={selectedCity}
                       onCitySelect={setSelectedCity}
                     />
