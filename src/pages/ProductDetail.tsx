@@ -1083,16 +1083,16 @@ const ProductDetail: React.FC = () => {
                     <span className="font-medium">1.5</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Пиковая мощность, л.с.:</span>
-                    <span className="font-medium">2.5</span>
+                    <span className="text-muted-foreground">Вес пользователя, кг:</span>
+                    <span className="font-medium">
+                      {product.characteristics['Вес пользователя, кг'] || 'Не указан'}
+                    </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Тип беговой дорожки:</span>
-                    <span className="font-medium">Электрические</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Минимальная скорость, км/ч:</span>
-                    <span className="font-medium">0.8</span>
+                    <span className="text-muted-foreground">Беговое полотно, см:</span>
+                    <span className="font-medium">
+                      {product.characteristics['Беговое полотно, см'] || 'Не указано'}
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Максимальная скорость, км/ч:</span>
