@@ -170,6 +170,11 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
         displayValue = extractBrandFromProductName(productName) || value;
       }
       
+      // Rename "Преимущество 6:" to "Преимущества"
+      if (key === 'Преимущество 6' || key === 'Преимущество 6:') {
+        displayKey = 'Преимущества';
+      }
+      
       return {
         displayKey,
         displayValue
@@ -300,7 +305,15 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     };
 
     // Group characteristics into pairs
-    const characteristics = Object.entries(category.items);
+    let characteristics = Object.entries(category.items);
+    
+    // Move "Преимущество 6" (renamed to "Преимущества") to the end
+    characteristics = characteristics.sort(([keyA], [keyB]) => {
+      if (keyA === 'Преимущество 6' || keyA === 'Преимущество 6:') return 1;
+      if (keyB === 'Преимущество 6' || keyB === 'Преимущество 6:') return -1;
+      return 0;
+    });
+    
     const characteristicPairs = [];
     
     for (let i = 0; i < characteristics.length; i += 2) {
