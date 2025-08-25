@@ -145,15 +145,14 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     const renderCharacteristicContent = (processedChar: any) => {
       const { displayKey, displayValue } = processedChar;
       
+      const valueStr = String(displayValue);
+      
       // Check if value is a URL starting with http
-      const isHttpUrl = typeof displayValue === 'string' && displayValue.startsWith('http');
+      const isHttpUrl = valueStr.startsWith('http');
       
       if (isHttpUrl) {
         // Check for image URLs
-        const isImageFile = displayValue.match(/\.(jpg|jpeg|png|webp)$/i);
-        
-        // Check for document URLs
-        const isDocumentFile = displayValue.match(/\.(pdf|doc|docx|txt)$/i);
+        const isImageFile = valueStr.match(/\.(jpg|jpeg|png|webp)$/i);
         
         if (isImageFile) {
           return (
@@ -161,7 +160,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
               <span className="text-sm font-medium text-foreground">{displayKey}:</span>
               <div className="flex flex-col items-start gap-1">
                 <img 
-                  src={String(displayValue)} 
+                  src={valueStr} 
                   alt={displayKey}
                   style={{ maxWidth: '200px', height: 'auto' }}
                   className="rounded border"
@@ -170,12 +169,15 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                   }}
                 />
                 <span className="text-xs text-muted-foreground break-all">
-                  {String(displayValue)}
+                  {valueStr}
                 </span>
               </div>
             </div>
           );
         }
+        
+        // Check for document URLs
+        const isDocumentFile = valueStr.match(/\.(pdf|doc|docx|txt)$/i);
         
         if (isDocumentFile) {
           return (
@@ -183,7 +185,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
               <span className="text-sm font-medium text-foreground">{displayKey}:</span>
               <div className="flex flex-col gap-1">
                 <a 
-                  href={String(displayValue)} 
+                  href={valueStr} 
                   download
                   target="_blank"
                   rel="noopener noreferrer"
@@ -192,7 +194,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                   Скачать файл
                 </a>
                 <span className="text-xs text-muted-foreground break-all">
-                  {String(displayValue)}
+                  {valueStr}
                 </span>
               </div>
             </div>
@@ -200,11 +202,26 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
         }
       }
       
+      // Check if value contains HTML tags
+      const hasHtmlTags = valueStr.includes('<') && valueStr.includes('>');
+      
+      if (hasHtmlTags) {
+        return (
+          <div className="flex flex-col gap-1">
+            <span className="text-sm font-medium text-foreground">{displayKey}:</span>
+            <div 
+              className="text-sm text-muted-foreground"
+              dangerouslySetInnerHTML={{ __html: valueStr }}
+            />
+          </div>
+        );
+      }
+      
       // Default: show as text
       return (
         <div className="flex flex-col gap-1">
           <span className="text-sm font-medium text-foreground">{displayKey}:</span>
-          <span className="text-sm text-muted-foreground">{String(displayValue)}</span>
+          <span className="text-sm text-muted-foreground">{valueStr}</span>
         </div>
       );
     };
