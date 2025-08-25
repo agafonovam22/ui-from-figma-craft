@@ -34,6 +34,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       'RALATED',
       'Ставки налогов',
       'Исключить из публикации на веб-витрине mag1c',
+      'Преимущество 1',
       'Преимущество 2',
       'Преимущество 3',
       'Преимущество 4',
@@ -141,20 +142,8 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       };
     };
 
-    const renderValue = (value: any, key?: string) => {
+    const renderValue = (value: any) => {
       const valueStr = String(value);
-      
-      // Special case for "Преимущество 1 фото" - use local image
-      if (key && key.toLowerCase() === 'преимущество 1 фото') {
-        return (
-          <img 
-            src="/lovable-uploads/4f03dfd0-c7b9-4190-a403-86c6945a91b6.png" 
-            alt="Преимущество 1"
-            style={{ maxWidth: "200px", height: "auto" }}
-            className="rounded border"
-          />
-        );
-      }
       
       // Check for image files (both local paths and URLs)
       const isImageFile = valueStr.match(/\.(jpg|jpeg|png|webp)$/i);
@@ -225,7 +214,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
         <div className="flex justify-between items-start gap-4">
           <span className="text-sm font-medium text-foreground flex-shrink-0">{displayKey}:</span>
           <div className="text-sm text-muted-foreground text-right">
-            {renderValue(displayValue, displayKey)}
+            {renderValue(displayValue)}
           </div>
         </div>
       );
@@ -255,18 +244,19 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
         <div className="overflow-hidden">
           <div className="">
             {characteristicPairs.map((pair, index) => (
-              <div key={`${pair.firstKey}-${pair.secondKey || 'single'}-${index}`}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative px-2 py-2">
+              <div key={`${pair.firstKey}-${pair.secondKey || 'single'}-${index}`} className="p-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
                   {/* First characteristic */}
                   <div className="flex-1">
                     {pair.first && (
                       <>
+                        {index === 0 && <div className="border-t border-border mb-2"></div>}
                         {renderCharacteristicContent(pair.first)}
                         {index < characteristicPairs.length - 1 && (
-                          <div className="mt-1 border-b border-border"></div>
+                          <div className="mt-2 border-b border-border"></div>
                         )}
                         {index === characteristicPairs.length - 1 && (
-                          <div className="mt-1 border-b border-border"></div>
+                          <div className="mt-2 border-b border-border"></div>
                         )}
                       </>
                     )}
@@ -275,12 +265,13 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                   {/* Second characteristic */}
                   {pair.second ? (
                     <div className="flex-1">
+                      {index === 0 && <div className="border-t border-border mb-2"></div>}
                       {renderCharacteristicContent(pair.second)}
                       {index < characteristicPairs.length - 1 && (
-                        <div className="mt-1 border-b border-border"></div>
+                        <div className="mt-2 border-b border-border"></div>
                       )}
                       {index === characteristicPairs.length - 1 && (
-                        <div className="mt-1 border-b border-border"></div>
+                        <div className="mt-2 border-b border-border"></div>
                       )}
                     </div>
                   ) : (
