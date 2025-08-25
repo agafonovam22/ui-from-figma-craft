@@ -231,12 +231,27 @@ const ProductDetail: React.FC = () => {
                       <div key={categoryKey}>
                         <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
                         <div className="space-y-3">
-                          {Object.entries(category.items).map(([key, value]) => (
-                            <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
-                              <span className="text-gray-600 text-sm">{key}</span>
-                              <span className="text-foreground text-sm font-medium text-right">{value}</span>
-                            </div>
-                          ))}
+                          {Object.entries(category.items).map(([key, value]) => {
+                            // Transform the display key and value
+                            let displayKey = key;
+                            let displayValue = value;
+                            
+                            // Handle brand display
+                            if (key === 'Бренд (id)') {
+                              displayKey = 'Бренд';
+                              // If it's a brand ID, try to get the brand name
+                              // For now, we'll display the value as is, but this could be enhanced
+                              // to fetch brand names from an API or mapping
+                              displayValue = value;
+                            }
+                            
+                            return (
+                              <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
+                                <span className="text-gray-600 text-sm">{displayKey}</span>
+                                <span className="text-foreground text-sm font-medium text-right">{displayValue}</span>
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
                     );
