@@ -287,8 +287,8 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       
       return (
         <div className="flex justify-between items-start gap-4">
-          <span className="text-sm font-medium text-foreground flex-shrink-0">{displayKey}:</span>
-          <div className="text-sm text-muted-foreground text-right">
+          <span className="text-sm font-medium text-muted-foreground flex-shrink-0">{displayKey}:</span>
+          <div className="text-sm text-foreground text-right">
             {renderValue(displayValue, displayKey)}
           </div>
         </div>
@@ -384,18 +384,17 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                 <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
                   Страна производства
                 </h4>
-                <div className="space-y-2">
-                  {Object.entries(locationItems).map(([key, value]) => (
-                    <div key={key} className="flex flex-col gap-2">
-                      <div className="border-t border-border pt-2">
-                        <div className="flex justify-between items-start gap-4">
-                          <span className="text-sm font-medium text-foreground flex-shrink-0">{key}:</span>
-                          <div className="text-sm text-muted-foreground text-right">
-                            <span>{String(value).replace(/<[^>]*>/g, '').trim()}</span>
-                          </div>
+                <div className="space-y-0">
+                  {Object.entries(locationItems).map(([key, value], index) => (
+                    <div key={key} className="py-2">
+                      {index === 0 && <div className="border-t border-border mb-2"></div>}
+                      <div className="flex justify-between items-start gap-4">
+                        <span className="text-sm font-medium text-muted-foreground flex-shrink-0">{key}:</span>
+                        <div className="text-sm text-foreground text-right">
+                          <span>{String(value).replace(/<[^>]*>/g, '').trim()}</span>
                         </div>
                       </div>
-                      <div className="border-b border-border"></div>
+                      <div className="mt-2 border-b border-border"></div>
                     </div>
                   ))}
                 </div>
@@ -410,18 +409,17 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                 <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
                   Дополнительные характеристики
                 </h4>
-                <div className="space-y-2">
-                  {firstHalf.map(([key, value]) => (
-                    <div key={key} className="flex flex-col gap-2">
-                      <div className="border-t border-border pt-2">
-                        <div className="flex justify-between items-start gap-4">
-                          <span className="text-sm font-medium text-foreground flex-shrink-0">{key}:</span>
-                           <div className="text-sm text-muted-foreground text-right">
-                             <span>{String(value).replace(/<[^>]*>/g, '').trim()}</span>
-                           </div>
+                <div className="space-y-0">
+                  {firstHalf.map(([key, value], index) => (
+                    <div key={key} className="py-2">
+                      {index === 0 && <div className="border-t border-border mb-2"></div>}
+                      <div className="flex justify-between items-start gap-4">
+                        <span className="text-sm font-medium text-muted-foreground flex-shrink-0">{key}:</span>
+                        <div className="text-sm text-foreground text-right">
+                          <span>{String(value).replace(/<[^>]*>/g, '').trim()}</span>
                         </div>
                       </div>
-                      <div className="border-b border-border"></div>
+                      <div className="mt-2 border-b border-border"></div>
                     </div>
                   ))}
                 </div>
@@ -436,18 +434,17 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                 <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope opacity-0">
                   &nbsp;
                 </h4>
-                <div className="space-y-2">
-                  {secondHalf.map(([key, value]) => (
-                    <div key={key} className="flex flex-col gap-2">
-                      <div className="border-t border-border pt-2">
-                        <div className="flex justify-between items-start gap-4">
-                          <span className="text-sm font-medium text-foreground flex-shrink-0">{key}:</span>
-                           <div className="text-sm text-muted-foreground text-right">
-                             <span>{String(value).replace(/<[^>]*>/g, '').trim()}</span>
-                           </div>
+                <div className="space-y-0">
+                  {secondHalf.map(([key, value], index) => (
+                    <div key={key} className="py-2">
+                      {index === 0 && <div className="border-t border-border mb-2"></div>}
+                      <div className="flex justify-between items-start gap-4">
+                        <span className="text-sm font-medium text-muted-foreground flex-shrink-0">{key}:</span>
+                        <div className="text-sm text-foreground text-right">
+                          <span>{String(value).replace(/<[^>]*>/g, '').trim()}</span>
                         </div>
                       </div>
-                      <div className="border-b border-border"></div>
+                      <div className="mt-2 border-b border-border"></div>
                     </div>
                   ))}
                 </div>
