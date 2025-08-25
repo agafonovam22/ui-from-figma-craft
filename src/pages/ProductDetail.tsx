@@ -1158,7 +1158,7 @@ const ProductDetail: React.FC = () => {
                     variant="outline"
                     size="sm"
                     onClick={decrementQuantity}
-                    className="h-10 w-10 rounded-full p-0 border-2"
+                    className="h-10 w-10 rounded-full p-0 border-2 bg-transparent"
                   >
                     <Minus className="w-3 h-3" />
                   </Button>
@@ -1167,7 +1167,7 @@ const ProductDetail: React.FC = () => {
                     variant="outline"
                     size="sm"
                     onClick={incrementQuantity}
-                    className="h-10 w-10 rounded-full p-0 border-2"
+                    className="h-10 w-10 rounded-full p-0 border-2 bg-transparent"
                   >
                     <Plus className="w-3 h-3" />
                   </Button>
