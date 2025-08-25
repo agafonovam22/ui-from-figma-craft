@@ -100,7 +100,7 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
       <div className="flex justify-center">
         <nav className="flex items-center space-x-1">
           <button 
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex h-10 w-10 items-center justify-center hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={() => onPageChange?.(currentPage - 1)}
             disabled={!hasPreviousPage}
           >
@@ -126,7 +126,7 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
           })}
           
           <button 
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex h-10 w-10 items-center justify-center hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={() => onPageChange?.(currentPage + 1)}
             disabled={!hasNextPage}
           >
