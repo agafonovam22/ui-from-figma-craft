@@ -196,9 +196,9 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       const { displayKey, displayValue } = processedChar;
       
       return (
-        <div className="flex flex-col gap-1">
-          <span className="text-sm font-medium text-foreground">{displayKey}:</span>
-          <div className="text-sm text-muted-foreground">
+        <div className="flex justify-between items-start gap-4">
+          <span className="text-sm font-medium text-foreground flex-shrink-0">{displayKey}:</span>
+          <div className="text-sm text-muted-foreground text-right">
             {renderValue(displayValue)}
           </div>
         </div>
