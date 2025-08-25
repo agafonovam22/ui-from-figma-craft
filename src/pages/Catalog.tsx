@@ -357,7 +357,7 @@ const Catalog: React.FC = () => {
       </div>
 
       {/* SEO Section */}
-      <div className="w-full">
+      <div className="w-full mb-[60px]">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
           <div className="mt-[100px]">
             <div className="w-full h-px bg-gray-300 mb-[60px]"></div>
