@@ -951,9 +951,8 @@ const ProductDetail: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Gray background for right side extending from very top */}
-      <div className="absolute top-0 bg-gray-50 z-0" style={{ 
-        left: '50%', 
-        right: 'max(0px, (100vw - 1280px) / 2)', 
+      <div className="absolute top-0 right-0 bg-gray-50 z-0" style={{ 
+        left: 'max(50%, (100vw + 1280px) / 2 - 1280px)', 
         height: 'calc(100vh - 200px)' 
       }}></div>
       
