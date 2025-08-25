@@ -146,7 +146,7 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
                   <label key={range} className="flex items-center">
                     <input 
                       type="checkbox" 
-                      className="mr-2"
+                      className="mr-2 w-4 h-4 appearance-none border border-gray-300 rounded checked:bg-black checked:border-black"
                       checked={filters.price.ranges.includes(range)}
                       onChange={(e) => handlePriceRangeSelect(range)}
                     />
@@ -176,7 +176,7 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
                 <label key={brand} className="flex items-center">
                   <input 
                     type="checkbox" 
-                    className="mr-2"
+                    className="mr-2 w-4 h-4 appearance-none border border-gray-300 rounded checked:bg-black checked:border-black"
                     checked={filters.brands.includes(brand)}
                     onChange={(e) => handleBrandChange(brand, e.target.checked)}
                   />
@@ -223,7 +223,7 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
                 <label key={type} className="flex items-center">
                   <input 
                     type="checkbox" 
-                    className="mr-2"
+                    className="mr-2 w-4 h-4 appearance-none border border-gray-300 rounded checked:bg-black checked:border-black"
                     checked={filters.purposeTypes.includes(type)}
                     onChange={(e) => handlePurposeTypeChange(type, e.target.checked)}
                   />
@@ -276,11 +276,17 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
               
               {/* Checkbox options */}
               <label className="flex items-center">
-                <input type="checkbox" className="mr-2" />
+                <input 
+                  type="checkbox" 
+                  className="mr-2 w-4 h-4 appearance-none border border-gray-300 rounded checked:bg-black checked:border-black" 
+                />
                 до 3 л.с.
               </label>
               <label className="flex items-center">
-                <input type="checkbox" className="mr-2" />
+                <input 
+                  type="checkbox" 
+                  className="mr-2 w-4 h-4 appearance-none border border-gray-300 rounded checked:bg-black checked:border-black" 
+                />
                 3-4 л.с.
               </label>
             </div>
@@ -306,7 +312,7 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
                   <input 
                     type="radio" 
                     name="equipment-type" 
-                    className="mr-2"
+                    className="mr-2 w-4 h-4 appearance-none border border-gray-300 rounded-full checked:bg-black checked:border-black"
                     checked={filters.equipmentTypes.includes(type)}
                     onChange={(e) => handleEquipmentTypeChange(type, e.target.checked)}
                   />
