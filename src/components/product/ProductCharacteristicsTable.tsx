@@ -324,8 +324,15 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       {/* Габариты в рабочем состоянии */}
       {renderTable(categorizedCharacteristics.dimensions, 'dimensions')}
       
-      {/* Консоль */} 
-      {renderTable(categorizedCharacteristics.console, 'console')}
+      {/* Консоль и Страна производства - рядом */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          {renderTable(categorizedCharacteristics.console, 'console')}
+        </div>
+        <div>
+          {renderTable(categorizedCharacteristics.location, 'location')}
+        </div>
+      </div>
       
       {/* Упаковка */}
       {renderTable(categorizedCharacteristics.packaging, 'packaging')}
@@ -335,9 +342,6 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       
       {/* Гарантия и сертификация */}
       {renderTable(categorizedCharacteristics.warranty, 'warranty')}
-      
-      {/* Страна производства */}
-      {renderTable(categorizedCharacteristics.location, 'location')}
       
       {/* Дополнительные характеристики */}
       {renderTable(categorizedCharacteristics.other, 'other')}
