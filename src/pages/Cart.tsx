@@ -13,7 +13,7 @@ import {
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
-import { Trash2, Plus, Minus, Heart, BarChart } from 'lucide-react';
+import { Trash2, Plus, Minus, Heart, BarChart3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface CartItem {
@@ -183,7 +183,7 @@ const Cart: React.FC = () => {
                   {/* Action Icons */}
                   <div className="flex gap-2">
                     <button className="p-2 hover:bg-gray-100 rounded text-gray-400 transition-colors">
-                      <BarChart className="w-5 h-5" />
+                      <BarChart3 className="w-5 h-5" />
                     </button>
                     <button className="p-2 hover:bg-gray-100 rounded text-gray-400 transition-colors">
                       <Heart className="w-5 h-5" />

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Heart, Share2, ShoppingCart, Download, Minus, Plus } from 'lucide-react';
+import { ArrowLeft, Heart, Share2, ShoppingCart, Download, Minus, Plus, BarChart3 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -1025,13 +1025,7 @@ const ProductDetail: React.FC = () => {
             <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-300">
               <div className="flex space-x-3">
                 <Button variant="outline" size="sm" className="text-gray-600 text-xs px-3 py-1">
-                  <div className="w-3 h-3 mr-1 flex items-center justify-center">
-                    <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
-                      <rect x="2" y="4" width="2" height="8"/>
-                      <rect x="6" y="2" width="2" height="10"/>
-                      <rect x="10" y="6" width="2" height="6"/>
-                    </svg>
-                  </div>
+                  <BarChart3 className="w-3 h-3 mr-1" />
                   В сравнение
                 </Button>
                 <Button variant="outline" size="sm" className="text-gray-600 text-xs px-3 py-1">
