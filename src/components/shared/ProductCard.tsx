@@ -5,9 +5,9 @@ import { useCart } from '@/contexts/CartContext';
 import { useFavorites } from '@/contexts/FavoritesContext';
 import { useComparison } from '@/contexts/ComparisonContext';
 import { Button } from '@/components/ui/button';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, useCarousel } from '@/components/ui/carousel';
 import LazyImage from '@/components/shared/LazyImage';
-import { Heart, BarChart3 } from 'lucide-react';
+import { Heart, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ProductCardProps {
   product: {
@@ -38,6 +38,46 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const { addItem } = useCart();
   const { toggleFavorite, isFavorite } = useFavorites();
   const { toggleComparison, isInComparison } = useComparison();
+
+  // Компонент кастомных кнопок карусели
+  const CustomCarouselButtons: React.FC = () => {
+    const { scrollPrev, scrollNext, canScrollPrev, canScrollNext } = useCarousel();
+    
+    const handlePrevClick = (e: React.MouseEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      scrollPrev();
+    };
+    
+    const handleNextClick = (e: React.MouseEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      scrollNext();
+    };
+    
+    return (
+      <>
+        <Button
+          variant="outline"
+          size="icon"
+          className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-gray-300 hover:bg-[#262631] hover:text-white hover:border-[#262631] transition-colors opacity-0 group-hover:opacity-100 z-10"
+          disabled={!canScrollPrev}
+          onClick={handlePrevClick}
+        >
+          <ChevronLeft className="h-4 w-4" />
+        </Button>
+        <Button
+          variant="outline"
+          size="icon"
+          className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-gray-300 hover:bg-[#262631] hover:text-white hover:border-[#262631] transition-colors opacity-0 group-hover:opacity-100 z-10"
+          disabled={!canScrollNext}
+          onClick={handleNextClick}
+        >
+          <ChevronRight className="h-4 w-4" />
+        </Button>
+      </>
+    );
+  };
 
   const handleBuyClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -204,20 +244,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious 
-              className="left-2 w-10 h-10 rounded-full border border-gray-300 hover:bg-[#262631] hover:text-white hover:border-[#262631] transition-colors opacity-0 group-hover:opacity-100" 
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-              }}
-            />
-            <CarouselNext 
-              className="right-2 w-10 h-10 rounded-full border border-gray-300 hover:bg-[#262631] hover:text-white hover:border-[#262631] transition-colors opacity-0 group-hover:opacity-100" 
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-              }}
-            />
+            <CustomCarouselButtons />
           </Carousel>
         ) : (
           <div className="h-full flex items-center justify-center p-4">
