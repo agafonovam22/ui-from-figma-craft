@@ -124,161 +124,104 @@ const ProductDetail: React.FC = () => {
           </div>
         );
       case 'specifications':
+        // Function to categorize characteristics dynamically
+        const categorizeCharacteristics = (characteristics: any) => {
+          const categories = {
+            basic: {
+              title: 'Основные характеристики',
+              items: {} as Record<string, string>,
+              keywords: ['Бренд', 'Артикул', 'Тип оборудования', 'Тип назначения', 'Наименование товара на сайте', 'Базовая единица', 'Акция', 'Реквизиты', 'Использование', 'Количество мест', 'Торговое предложение']
+            },
+            dimensions: {
+              title: 'Габариты и размеры',
+              items: {} as Record<string, string>,
+              keywords: ['Размер', 'Длина', 'Ширина', 'Высота', 'Габариты', 'см']
+            },
+            weight: {
+              title: 'Вес',
+              items: {} as Record<string, string>,
+              keywords: ['Вес', 'кг']
+            },
+            packaging: {
+              title: 'Упаковка',
+              items: {} as Record<string, string>,
+              keywords: ['Габариты упаковки']
+            },
+            warranty: {
+              title: 'Гарантия и сертификация',
+              items: {} as Record<string, string>,
+              keywords: ['Гарантия', 'Сертификат', 'Сертификация']
+            },
+            location: {
+              title: 'Страна производства',
+              items: {} as Record<string, string>,
+              keywords: ['Страна']
+            },
+            other: {
+              title: 'Дополнительные характеристики',
+              items: {} as Record<string, string>,
+              keywords: []
+            }
+          };
+
+          // Sort characteristics into categories
+          Object.entries(characteristics).forEach(([key, value]) => {
+            if (!value || key.includes('скрытая характеристика') || key.includes('Тег')) {
+              return; // Skip empty values and hidden characteristics
+            }
+
+            let categorized = false;
+            
+            // Check each category except 'other'
+            Object.entries(categories).forEach(([categoryKey, category]) => {
+              if (categoryKey === 'other' || categorized) return;
+              
+              const matchesKeyword = category.keywords.some(keyword => 
+                key.toLowerCase().includes(keyword.toLowerCase())
+              );
+              
+              if (matchesKeyword) {
+                category.items[key] = String(value);
+                categorized = true;
+              }
+            });
+            
+            // If not categorized, add to 'other'
+            if (!categorized) {
+              categories.other.items[key] = String(value);
+            }
+          });
+
+          return categories;
+        };
+
         return (
           <div>
             <h3 className="text-xl font-semibold mb-6 font-manrope">Характеристики</h3>
             <div className="font-manrope space-y-8">
               {product.characteristics ? (
-                <>
-                  {/* Основные характеристики */}
-                  <div>
-                    <h4 className="text-lg font-semibold mb-4 text-foreground">Основные характеристики</h4>
-                    <div className="space-y-3">
-                      {[
-                        { key: 'Тип оборудования', label: 'Тип продукции' },
-                        { key: 'Бренд (id)', label: 'Бренд' },
-                        { key: 'Артикул', label: 'Артикул' },
-                        { key: 'Тип назначения', label: 'Тип назначения' },
-                        { key: 'Наименование товара на сайте', label: 'Наименование товара на сайте' },
-                        { key: 'Базовая единица', label: 'Единица измерения' },
-                        { key: 'Акция', label: 'Акция' }
-                      ].map(({ key, label }) => {
-                        const value = product.characteristics[key];
-                        if (!value) return null;
-                        return (
-                          <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
-                            <span className="text-gray-600 text-sm">{label}</span>
-                            <span className="text-foreground text-sm font-medium text-right">{String(value)}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Габариты в рабочем состоянии */}
-                  {(product.characteristics['Размер в рабочем состоянии Длина, см'] || 
-                    product.characteristics['Размер в рабочем состоянии Ширина, см'] || 
-                    product.characteristics['Размер в рабочем состоянии Высота, см'] ||
-                    product.characteristics['Длина, см'] ||
-                    product.characteristics['Размер, см']) && (
-                    <div>
-                      <h4 className="text-lg font-semibold mb-4 text-foreground">Габариты в рабочем состоянии</h4>
-                      <div className="space-y-3">
-                        {[
-                          { key: 'Размер в рабочем состоянии Длина, см', label: 'Размер в рабочем состоянии Длина, см' },
-                          { key: 'Размер в рабочем состоянии Ширина, см', label: 'Размер в рабочем состоянии Ширина, см' },
-                          { key: 'Размер в рабочем состоянии Высота, см', label: 'Размер в рабочем состоянии Высота, см' },
-                          { key: 'Длина, см', label: 'Длина, см' },
-                          { key: 'Размер, см', label: 'Размер, см' }
-                        ].map(({ key, label }) => {
-                          const value = product.characteristics[key];
-                          if (!value) return null;
-                          return (
+                (() => {
+                  const categorizedCharacteristics = categorizeCharacteristics(product.characteristics);
+                  
+                  return Object.entries(categorizedCharacteristics).map(([categoryKey, category]) => {
+                    const hasItems = Object.keys(category.items).length > 0;
+                    if (!hasItems) return null;
+                    
+                    return (
+                      <div key={categoryKey}>
+                        <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
+                        <div className="space-y-3">
+                          {Object.entries(category.items).map(([key, value]) => (
                             <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
-                              <span className="text-gray-600 text-sm">{label}</span>
-                              <span className="text-foreground text-sm font-medium text-right">{String(value)}</span>
+                              <span className="text-gray-600 text-sm">{key}</span>
+                              <span className="text-foreground text-sm font-medium text-right">{value}</span>
                             </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Дополнительные характеристики */}
-                  <div>
-                    <h4 className="text-lg font-semibold mb-4 text-foreground">Дополнительные характеристики</h4>
-                    <div className="space-y-3">
-                      {[
-                        { key: 'Страна бренда', label: 'Страна бренда' },
-                        { key: 'Страна изготовления', label: 'Страна изготовления' },
-                        { key: 'Торговое предложение', label: 'Серия' }
-                      ].map(({ key, label }) => {
-                        const value = product.characteristics[key];
-                        if (!value) return null;
-                        return (
-                          <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
-                            <span className="text-gray-600 text-sm">{label}</span>
-                            <span className="text-foreground text-sm font-medium text-right">{String(value)}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Упаковка */}
-                  {(product.characteristics['Габариты упаковки Длина, см'] || 
-                    product.characteristics['Габариты упаковки Ширина, см'] || 
-                    product.characteristics['Габариты упаковки Высота, см']) && (
-                    <div>
-                      <h4 className="text-lg font-semibold mb-4 text-foreground">Упаковка</h4>
-                      <div className="space-y-3">
-                        {[
-                          { key: 'Габариты упаковки Длина, см', label: 'Габариты упаковки Длина, см' },
-                          { key: 'Габариты упаковки Ширина, см', label: 'Габариты упаковки Ширина, см' },
-                          { key: 'Габариты упаковки Высота, см', label: 'Габариты упаковки Высота, см' }
-                        ].map(({ key, label }) => {
-                          const value = product.characteristics[key];
-                          if (!value) return null;
-                          return (
-                            <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
-                              <span className="text-gray-600 text-sm">{label}</span>
-                              <span className="text-foreground text-sm font-medium text-right">{String(value)}</span>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Вес */}
-                  {(product.characteristics['Вес Брутто, кг'] || product.characteristics['Вес, кг']) && (
-                    <div>
-                      <h4 className="text-lg font-semibold mb-4 text-foreground">Вес</h4>
-                      <div className="space-y-3">
-                        {[
-                          { key: 'Вес Брутто, кг', label: 'Вес Брутто, кг' },
-                          { key: 'Вес, кг', label: 'Вес Нетто, кг' }
-                        ].map(({ key, label }) => {
-                          const value = product.characteristics[key];
-                          if (!value) return null;
-                          return (
-                            <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
-                              <span className="text-gray-600 text-sm">{label}</span>
-                              <span className="text-foreground text-sm font-medium text-right">{String(value)}</span>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Гарантия и Сертификация */}
-                  <div>
-                    <h4 className="text-lg font-semibold mb-4 text-foreground">Гарантия и Сертификация</h4>
-                    <div className="space-y-3">
-                      {[
-                        { key: 'Гарантия на домашнее использование', label: 'Гарантия на домашнее использование' },
-                        { key: 'Артикул', label: 'Артикул' }
-                      ].map(({ key, label }) => {
-                        const value = product.characteristics[key];
-                        if (!value || key === 'Артикул') return null; // Артикул уже показан выше
-                        return (
-                          <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
-                            <span className="text-gray-600 text-sm">{label}</span>
-                            <span className="text-foreground text-sm font-medium text-right">{String(value)}</span>
-                          </div>
-                        );
-                      })}
-                      {/* Показываем артикул в конце */}
-                      {product.characteristics['Артикул'] && (
-                        <div className="grid grid-cols-2 py-2 border-b border-gray-200">
-                          <span className="text-gray-600 text-sm">Артикул</span>
-                          <span className="text-foreground text-sm font-medium text-right">{String(product.characteristics['Артикул'])}</span>
+                          ))}
                         </div>
-                      )}
-                    </div>
-                  </div>
-                </>
+                      </div>
+                    );
+                  });
+                })()
               ) : (
                 <p className="text-muted-foreground">Характеристики товара не найдены</p>
               )}
