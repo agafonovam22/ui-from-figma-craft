@@ -994,12 +994,12 @@ const ProductDetail: React.FC = () => {
             <div className="flex justify-start mb-4">
               <div className="flex space-x-2">
                 <Badge variant="outline" className="text-xs font-medium border-green-500 text-green-600 bg-transparent flex items-center hover:bg-transparent">
-                  <div className="flex items-center mr-2 gap-1">
+                  В наличии
+                  <div className="flex items-center ml-2 gap-1">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                     <div className="w-2 h-2 border border-green-500 rounded-full"></div>
                   </div>
-                  В наличии
                 </Badge>
                 <Badge variant="secondary" className="text-xs font-medium bg-blue-500 text-white hover:bg-blue-500">
                   Есть в шоуруме
