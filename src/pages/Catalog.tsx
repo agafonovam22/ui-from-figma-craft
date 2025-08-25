@@ -76,6 +76,9 @@ const Catalog: React.FC = () => {
   // Получаем категорию из URL
   const categoryParam = searchParams.get('category') || '';
   
+  // Получаем тип назначения из URL
+  const purposeParam = searchParams.get('purpose') || '';
+  
   // Добавляем debounce для поиска (задержка 300мс)
   const debouncedSearchQuery = useDebounce(queryParam, 300);
   
@@ -133,6 +136,31 @@ const Catalog: React.FC = () => {
       }));
     }
   }, [categoryParam]);
+
+  // Автоматическая установка фильтра по назначению из URL
+  React.useEffect(() => {
+    if (purposeParam) {
+      let purposeType = '';
+      if (purposeParam === 'home') {
+        purposeType = 'Домашние';
+      } else if (purposeParam === 'fitness') {
+        purposeType = 'Профессиональные';
+      }
+      
+      if (purposeType) {
+        setFilters(prev => ({
+          ...prev,
+          purposeTypes: [purposeType]
+        }));
+      }
+    } else {
+      // Если тип назначения убран из URL, сбрасываем фильтр
+      setFilters(prev => ({
+        ...prev,
+        purposeTypes: []
+      }));
+    }
+  }, [purposeParam]);
   
   // Убираем useEffect - используем фиксированный список
   

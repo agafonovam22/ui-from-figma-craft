@@ -26,70 +26,70 @@ const ProductCatalog: React.FC = () => {
       image: '/lovable-uploads/e7893606-f51a-4e53-9c80-ab83d081c16c.png',
       category: 'treadmill',
       price: 'от 33 900 ₽',
-      linkTo: '/catalog?q=беговая дорожка'
+      linkTo: '/catalog?category=treadmills&purpose=home'
     },
     {
       id: 2,
       image: '/lovable-uploads/41b47400-6434-4309-9474-38fd8527c0f9.png',
       category: 'bike',
       price: 'от 35 900 ₽',
-      linkTo: '/catalog?q=велотренажер'
+      linkTo: '/catalog?category=exercise-bikes&purpose=home'
     },
     {
       id: 3,
       image: '/lovable-uploads/7eb18ab6-a47c-4127-a2e4-520345b3a636.png',
       category: 'rowing',
       price: 'от 49 900 ₽',
-      linkTo: '/catalog?q=гребной'
+      linkTo: '/catalog?category=rowing-machines&purpose=home'
     },
     {
       id: 4,
       image: '/lovable-uploads/9deaa8d7-89aa-4671-b709-82d6af4d5f19.png',
       category: 'strength',
       price: 'от 9 900 ₽',
-      linkTo: '/catalog?q=силовая станция'
+      linkTo: '/catalog?category=strength-equipment&purpose=home'
     },
     {
       id: 5,
       image: '/lovable-uploads/dcac2877-3c35-4f7d-8abf-95aacc72562e.png',
       category: 'inversion',
       price: 'от 12 900 ₽',
-      linkTo: '/catalog?q=инверсионный'
+      linkTo: '/catalog?category=inversion-tables&purpose=home'
     },
     {
       id: 6,
       image: '/lovable-uploads/34f32079-9172-481c-a342-ebee3d47cd47.png',
       category: 'accessories',
       price: '220 ₽',
-      linkTo: '/catalog?q=аксессуары'
+      linkTo: '/catalog?category=home-accessories&purpose=home'
     },
     {
       id: 7,
       image: '/lovable-uploads/c05b2484-8dc7-4ac6-bd32-3876e288da9a.png',
       category: 'street',
       price: 'от 800 ₽',
-      linkTo: '/catalog?q=уличные'
+      linkTo: '/catalog?category=outdoor-sports&purpose=home'
     },
     {
       id: 8,
       image: '/lovable-uploads/0c78e89b-223e-41c0-a7c1-3e594b9c0a92.png',
       category: 'elliptical',
       price: 'от 45 900 ₽',
-      linkTo: '/catalog?q=эллиптический'
+      linkTo: '/catalog?category=elliptical&purpose=home'
     },
     {
       id: 9,
       image: '/lovable-uploads/bc820bdc-17a0-4d70-a621-8d5a0ebf37ad.png',
       category: 'tennis',
       price: 'от 24 900 ₽',
-      linkTo: '/catalog?q=теннис'
+      linkTo: '/catalog?category=table-tennis&purpose=home'
     },
     {
       id: 10,
       image: '/lovable-uploads/7919df46-5d23-4cdc-8384-edd08bf27547.png',
       category: 'accessories',
       price: 'от 700 ₽',
-      linkTo: '/catalog?q=аксессуары'
+      linkTo: '/catalog?category=home-accessories&purpose=home'
     },
     {
       id: 11,
@@ -221,7 +221,7 @@ const ProductCatalog: React.FC = () => {
               {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
             </div>
             <Link 
-              to={activeFilter === 'home' ? '/catalog?type=home' : '/catalog?type=fitness'}
+              to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
               className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2"
             >
               Перейти в каталог <ArrowRight className="w-4 h-4" />
