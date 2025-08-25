@@ -367,169 +367,6 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     );
   };
 
-  const renderCombinedBottomSection = (locationCategory: any, otherCategory: any) => {
-    const hasLocationItems = Object.keys(locationCategory.items).length > 0;
-    const hasOtherItems = Object.keys(otherCategory.items).length > 0;
-    
-    if (!hasLocationItems && !hasOtherItems) return null;
-
-    // Split other characteristics into two columns
-    const otherEntries = Object.entries(otherCategory.items);
-    const midPoint = Math.ceil(otherEntries.length / 2);
-    const firstHalfOther = otherEntries.slice(0, midPoint);
-    const secondHalfOther = otherEntries.slice(midPoint);
-
-    const processCharacteristic = (key: string, value: any) => {
-      let displayKey = key;
-      let displayValue = value;
-      
-      // Extract brand from product name
-      if (key === 'Бренд (id)') {
-        displayKey = 'Бренд';
-        displayValue = extractBrandFromProductName(productName) || value;
-      }
-      
-      return {
-        displayKey,
-        displayValue
-      };
-    };
-
-    const renderValue = (value: any, key?: string) => {
-      const valueStr = String(value);
-      
-      // Check for image files (both local paths and URLs)
-      const isImageFile = valueStr.match(/\.(jpg|jpeg|png|webp)$/i);
-      if (isImageFile) {
-        // If it's an external URL, show message to download locally
-        if (valueStr.startsWith('http')) {
-          return (
-            <div className="flex flex-col gap-2">
-              <span className="text-xs text-muted-foreground">
-                Внешняя ссылка на изображение: {valueStr}
-              </span>
-              <span className="text-xs text-amber-600">
-                Скачайте изображение локально для отображения
-              </span>
-            </div>
-          );
-        }
-        
-        // For local images, display normally
-        return (
-          <img 
-            src={valueStr} 
-            alt="Фото"
-            style={{ maxWidth: "200px", height: "auto" }}
-            className="rounded border"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-            }}
-          />
-        );
-      }
-      
-      // Check for document files
-      const isDocumentFile = valueStr.match(/\.(pdf|doc|docx|txt)$/i);
-      if (isDocumentFile) {
-        return (
-          <a 
-            href={valueStr} 
-            download
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 underline"
-          >
-            Скачать файл
-          </a>
-        );
-      }
-      
-      // Check if value contains HTML tags
-      const hasHtmlTags = valueStr.includes('<') && valueStr.includes('>');
-      if (hasHtmlTags) {
-        return (
-          <div 
-            className="text-sm text-muted-foreground"
-            dangerouslySetInnerHTML={{ __html: valueStr }}
-          />
-        );
-      }
-      
-      // Default: show as text
-      return <span>{valueStr}</span>;
-    };
-
-    const renderCharacteristicsList = (items: [string, any][]) => {
-      return items.map(([key, value], index) => {
-        const processed = processCharacteristic(key, value);
-        return (
-          <div key={key} className="py-2">
-            {index === 0 && <div className="border-t border-border mb-2"></div>}
-            <div className="flex justify-between items-start gap-4">
-              <span className="text-sm font-medium text-foreground flex-shrink-0">{processed.displayKey}:</span>
-              <div className="text-sm text-muted-foreground text-right">
-                {renderValue(processed.displayValue, processed.displayKey)}
-              </div>
-            </div>
-            <div className="mt-2 border-b border-border"></div>
-          </div>
-        );
-      });
-    };
-
-    return (
-      <div className="mb-8">
-        <div style={{border: '2px solid red', padding: '10px'}}>
-          <p style={{color: 'red', fontWeight: 'bold'}}>DEBUG: Combined section is working!</p>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Country column */}
-          <div className="flex-1">
-            {hasLocationItems && (
-              <>
-                <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
-                  {locationCategory.title}
-                </h4>
-                <div className="overflow-hidden">
-                  {renderCharacteristicsList(Object.entries(locationCategory.items))}
-                </div>
-              </>
-            )}
-          </div>
-
-          {/* First half of other characteristics */}
-          <div className="flex-1">
-            {hasOtherItems && firstHalfOther.length > 0 && (
-              <>
-                <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
-                  {otherCategory.title}
-                </h4>
-                <div className="overflow-hidden">
-                  {renderCharacteristicsList(firstHalfOther)}
-                </div>
-              </>
-            )}
-          </div>
-
-          {/* Second half of other characteristics */}
-          <div className="flex-1">
-            {hasOtherItems && secondHalfOther.length > 0 && (
-              <>
-                <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
-                  &nbsp;
-                </h4>
-                <div className="overflow-hidden">
-                  {renderCharacteristicsList(secondHalfOther)}
-                </div>
-              </>
-            )}
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <div className={`space-y-8 font-manrope ${className}`}>
       {/* Основные характеристики */}
@@ -550,8 +387,11 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       {/* Гарантия и сертификация */}
       {renderTable(categorizedCharacteristics.warranty, 'warranty')}
       
-      {/* Combined section: Country, Other characteristics in 3 columns */}
-      {renderCombinedBottomSection(categorizedCharacteristics.location, categorizedCharacteristics.other)}
+      {/* Страна производства */}
+      {renderTable(categorizedCharacteristics.location, 'location')}
+      
+      {/* Дополнительные характеристики */}
+      {renderTable(categorizedCharacteristics.other, 'other')}
     </div>
   );
 };
