@@ -308,7 +308,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                       )}
                     </div>
                   ) : (
-                    <div className="hidden md:block"></div>
+                    <div></div>
                   )}
                 </div>
               </div>
