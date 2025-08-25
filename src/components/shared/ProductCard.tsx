@@ -204,8 +204,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-2 w-10 h-10 rounded-full border border-gray-300 hover:bg-[#262631] hover:text-white hover:border-[#262631] transition-colors opacity-0 group-hover:opacity-100" />
-            <CarouselNext className="right-2 w-10 h-10 rounded-full border border-gray-300 hover:bg-[#262631] hover:text-white hover:border-[#262631] transition-colors opacity-0 group-hover:opacity-100" />
+            <CarouselPrevious 
+              className="left-2 w-10 h-10 rounded-full border border-gray-300 hover:bg-[#262631] hover:text-white hover:border-[#262631] transition-colors opacity-0 group-hover:opacity-100" 
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+              }}
+            />
+            <CarouselNext 
+              className="right-2 w-10 h-10 rounded-full border border-gray-300 hover:bg-[#262631] hover:text-white hover:border-[#262631] transition-colors opacity-0 group-hover:opacity-100" 
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+              }}
+            />
           </Carousel>
         ) : (
           <div className="h-full flex items-center justify-center p-4">
