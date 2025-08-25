@@ -1059,7 +1059,7 @@ const ProductDetail: React.FC = () => {
             {/* Product characteristics list */}
             <div className="space-y-2 pb-4 border-b border-gray-300 font-manrope">
               {product.characteristics && (
-                <div className="grid gap-1 text-xs">
+                <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Тип продукции:</span>
                     <span className="font-medium">Беговые дорожки для дома</span>
