@@ -1112,7 +1112,7 @@ const ProductDetail: React.FC = () => {
                   Характеристики товара недоступны
                 </div>
               )}
-              <Button variant="link" className="p-0 h-auto text-red-500 text-xs font-manrope mt-2">
+              <Button variant="link" className="p-0 h-auto text-red-500 text-xs font-benzin mt-2">
                 Все характеристики →
               </Button>
             </div>
