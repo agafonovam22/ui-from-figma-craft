@@ -142,8 +142,23 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       };
     };
 
-    const renderValue = (value: any) => {
+    const renderValue = (value: any, key?: string) => {
       const valueStr = String(value);
+      
+      // Special case for "Преимущество 1 фото:" - show the downloaded image
+      if (key === 'Преимущество 1 фото') {
+        return (
+          <img 
+            src="/product-images/preimushchestvo-1.png" 
+            alt="Преимущество 1"
+            style={{ maxWidth: "200px", height: "auto" }}
+            className="rounded border"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        );
+      }
       
       // Check for image files (both local paths and URLs)
       const isImageFile = valueStr.match(/\.(jpg|jpeg|png|webp)$/i);
@@ -214,7 +229,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
         <div className="flex justify-between items-start gap-4">
           <span className="text-sm font-medium text-foreground flex-shrink-0">{displayKey}:</span>
           <div className="text-sm text-muted-foreground text-right">
-            {renderValue(displayValue)}
+            {renderValue(displayValue, displayKey)}
           </div>
         </div>
       );
