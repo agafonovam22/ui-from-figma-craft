@@ -136,97 +136,71 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
         displayValue = extractBrandFromProductName(productName) || value;
       }
       
-      // Check if this is a photo characteristic or image URL
-      const isPhotoCharacteristic = key.toLowerCase().includes('фото') || key.toLowerCase().includes('photo');
-      const isImageUrl = typeof displayValue === 'string' && (
-        displayValue.match(/\.(jpg|jpeg|png|gif|webp|bmp|svg)$/i) ||
-        displayValue.startsWith('http') && displayValue.match(/\.(jpg|jpeg|png|gif|webp|bmp|svg)/i)
-      );
-      
       return {
         displayKey,
-        displayValue,
-        isPhotoCharacteristic,
-        isImageUrl
+        displayValue
       };
     };
 
     const renderCharacteristicContent = (processedChar: any) => {
-      const { displayKey, displayValue, isPhotoCharacteristic, isImageUrl } = processedChar;
+      const { displayKey, displayValue } = processedChar;
       
-      // Check if value is a URL
-      const isUrl = typeof displayValue === 'string' && (displayValue.startsWith('http://') || displayValue.startsWith('https://'));
+      // Check if value is a URL starting with http
+      const isHttpUrl = typeof displayValue === 'string' && displayValue.startsWith('http');
       
-      // Check for image URLs
-      const isImageFile = typeof displayValue === 'string' && displayValue.match(/\.(jpg|jpeg|png|webp|gif|bmp|svg)$/i);
-      
-      // Check for document URLs
-      const isDocumentFile = typeof displayValue === 'string' && displayValue.match(/\.(pdf|doc|docx)$/i);
-      
-      if (isUrl && isImageFile) {
-        return (
-          <div className="flex flex-col gap-2">
-            <span className="text-sm font-medium text-foreground">{displayKey}:</span>
-            <div className="flex flex-col items-start gap-1">
-              <img 
-                src={String(displayValue)} 
-                alt={displayKey}
-                style={{ maxWidth: '200px', height: 'auto' }}
-                className="rounded border"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
-              <span className="text-xs text-muted-foreground break-all">
-                {String(displayValue)}
-              </span>
+      if (isHttpUrl) {
+        // Check for image URLs
+        const isImageFile = displayValue.match(/\.(jpg|jpeg|png|webp)$/i);
+        
+        // Check for document URLs
+        const isDocumentFile = displayValue.match(/\.(pdf|doc|docx|txt)$/i);
+        
+        if (isImageFile) {
+          return (
+            <div className="flex flex-col gap-2">
+              <span className="text-sm font-medium text-foreground">{displayKey}:</span>
+              <div className="flex flex-col items-start gap-1">
+                <img 
+                  src={String(displayValue)} 
+                  alt={displayKey}
+                  style={{ maxWidth: '200px', height: 'auto' }}
+                  className="rounded border"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+                <span className="text-xs text-muted-foreground break-all">
+                  {String(displayValue)}
+                </span>
+              </div>
             </div>
-          </div>
-        );
-      }
-      
-      if (isUrl && isDocumentFile) {
-        return (
-          <div className="flex flex-col gap-1">
-            <span className="text-sm font-medium text-foreground">{displayKey}:</span>
+          );
+        }
+        
+        if (isDocumentFile) {
+          return (
             <div className="flex flex-col gap-1">
-              <a 
-                href={String(displayValue)} 
-                download
-                className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 underline"
-              >
-                Скачать инструкцию
-              </a>
-              <span className="text-xs text-muted-foreground break-all">
-                {String(displayValue)}
-              </span>
+              <span className="text-sm font-medium text-foreground">{displayKey}:</span>
+              <div className="flex flex-col gap-1">
+                <a 
+                  href={String(displayValue)} 
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 underline"
+                >
+                  Скачать файл
+                </a>
+                <span className="text-xs text-muted-foreground break-all">
+                  {String(displayValue)}
+                </span>
+              </div>
             </div>
-          </div>
-        );
+          );
+        }
       }
       
-      // Legacy photo characteristic handling (for existing logic)
-      if ((isPhotoCharacteristic || isImageUrl) && displayValue) {
-        return (
-          <div className="flex flex-col gap-2">
-            <span className="text-sm font-medium text-foreground">{displayKey}:</span>
-            <div className="flex flex-col items-start gap-1">
-              <img 
-                src={String(displayValue)} 
-                alt={displayKey}
-                className="max-w-24 max-h-24 object-contain rounded border"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
-              <span className="text-xs text-muted-foreground break-all">
-                {String(displayValue)}
-              </span>
-            </div>
-          </div>
-        );
-      }
-      
+      // Default: show as text
       return (
         <div className="flex flex-col gap-1">
           <span className="text-sm font-medium text-foreground">{displayKey}:</span>
