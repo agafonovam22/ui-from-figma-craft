@@ -229,9 +229,15 @@ const ProductDetail: React.FC = () => {
                                   let displayKey = key;
                                   let displayValue = value;
                                   
+                                  // Brand ID to name mapping
+                                  const brandMapping: { [key: string]: string } = {
+                                    '38761': 'Название бренда для 38761', // Замените на правильное название
+                                    // Добавьте другие ID брендов и их названия здесь
+                                  };
+                                  
                                   if (key === 'Бренд (id)') {
                                     displayKey = 'Бренд';
-                                    displayValue = value;
+                                    displayValue = brandMapping[value] || value;
                                   }
                                   
                                   return (
@@ -247,9 +253,15 @@ const ProductDetail: React.FC = () => {
                                   let displayKey = key;
                                   let displayValue = value;
                                   
+                                  // Brand ID to name mapping
+                                  const brandMapping: { [key: string]: string } = {
+                                    '38761': 'Название бренда для 38761', // Замените на правильное название
+                                    // Добавьте другие ID брендов и их названия здесь
+                                  };
+                                  
                                   if (key === 'Бренд (id)') {
                                     displayKey = 'Бренд';
-                                    displayValue = value;
+                                    displayValue = brandMapping[value] || value;
                                   }
                                   
                                   return (
