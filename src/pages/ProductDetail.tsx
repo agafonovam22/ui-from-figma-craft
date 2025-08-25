@@ -146,6 +146,7 @@ const ProductDetail: React.FC = () => {
             <ProductCharacteristicsTable 
               characteristics={product.characteristics}
               productName={product.name}
+              productId={id}
             />
           </div>
         );

@@ -5,12 +5,14 @@ import { extractBrandFromProductName } from '@/utils/extractBrand';
 interface ProductCharacteristicsTableProps {
   characteristics: any;
   productName: string;
+  productId?: string;
   className?: string;
 }
 
 const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = ({ 
   characteristics,
   productName,
+  productId,
   className = ""
 }) => {
   if (!characteristics) {
@@ -374,7 +376,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       {renderTable(categorizedCharacteristics.dimensions, 'dimensions')}
       
       {/* Консоль */} 
-      {renderTable(categorizedCharacteristics.console, 'console')}
+      {productId !== '532' && renderTable(categorizedCharacteristics.console, 'console')}
       
       {/* Упаковка */}
       {renderTable(categorizedCharacteristics.packaging, 'packaging')}
