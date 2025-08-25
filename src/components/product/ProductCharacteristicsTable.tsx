@@ -340,7 +340,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
           {renderTable(categorizedCharacteristics.warranty, 'warranty')}
           
           {/* Страна производства и Дополнительные характеристики - рядом */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               {renderTable(categorizedCharacteristics.location, 'location')}
             </div>
