@@ -250,7 +250,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                   <div className="flex-1">
                     {pair.first && renderCharacteristicContent(pair.first)}
                     {index < characteristicPairs.length - 1 && (
-                      <div className="mt-4 border-b border-border"></div>
+                      <div className="mt-2 border-b border-border"></div>
                     )}
                   </div>
                   
@@ -259,7 +259,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                     <div className="flex-1">
                       {renderCharacteristicContent(pair.second)}
                       {index < characteristicPairs.length - 1 && (
-                        <div className="mt-4 border-b border-border"></div>
+                        <div className="mt-2 border-b border-border"></div>
                       )}
                     </div>
                   ) : (
