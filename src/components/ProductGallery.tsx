@@ -46,7 +46,7 @@ export default function ProductGallery({ mainImage, images = [], galleryImages =
     <div className="space-y-4">
       {/* Main Image */}
       <div className="relative group">
-        <div className="relative overflow-hidden rounded-lg bg-gray-100 min-h-[500px] max-h-[700px] w-full flex items-center justify-center">
+        <div className="relative overflow-hidden rounded-lg bg-white border border-gray-200 min-h-[500px] max-h-[700px] w-full flex items-center justify-center">
           <img
             src={allImages[currentImageIndex] || '/placeholder.svg'}
             alt={productName}
