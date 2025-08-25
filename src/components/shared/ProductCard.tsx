@@ -196,7 +196,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <img 
             src="/lovable-uploads/06622e86-a434-4453-a055-986979797099.png"
             alt="Сравнить товары"
-            className={`w-5 h-5 ${isInComparison(product.id) ? 'filter-dark-gray' : ''}`}
+            className={`w-5 h-5 ${isInComparison(product.id) ? 'filter-blue' : ''}`}
           />
         </button>
         <button 
