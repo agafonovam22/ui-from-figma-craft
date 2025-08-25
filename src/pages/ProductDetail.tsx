@@ -126,11 +126,28 @@ const ProductDetail: React.FC = () => {
       case 'specifications':
         // Function to categorize characteristics dynamically
         const categorizeCharacteristics = (characteristics: any) => {
+          // List of characteristics to exclude from display
+          const excludedCharacteristics = [
+            'Акция',
+            'Реквизиты',
+            'Наименование товара на сайте',
+            'Базовая единица',
+            'Количество мест',
+            'Торговое предложение',
+            'RALATED',
+            'Ставки налогов',
+            'Исключить из публикации на веб-витрине mag1c',
+            'Преимущество 1',
+            'Преимущество 2',
+            'Преимущество 3',
+            'Преимущество 4'
+          ];
+
           const categories = {
             basic: {
               title: 'Основные характеристики',
               items: {} as Record<string, string>,
-              keywords: ['Бренд', 'Артикул', 'Тип оборудования', 'Тип назначения', 'Наименование товара на сайте', 'Базовая единица', 'Акция', 'Реквизиты', 'Использование', 'Количество мест', 'Торговое предложение']
+              keywords: ['Бренд', 'Артикул', 'Тип оборудования', 'Тип назначения', 'Использование']
             },
             dimensions: {
               title: 'Габариты и размеры',
@@ -166,8 +183,11 @@ const ProductDetail: React.FC = () => {
 
           // Sort characteristics into categories
           Object.entries(characteristics).forEach(([key, value]) => {
-            if (!value || key.includes('скрытая характеристика') || key.includes('Тег')) {
-              return; // Skip empty values and hidden characteristics
+            if (!value || 
+                key.includes('скрытая характеристика') || 
+                key.includes('Тег') ||
+                excludedCharacteristics.includes(key)) {
+              return; // Skip empty values, hidden characteristics, and excluded fields
             }
 
             let categorized = false;
