@@ -40,7 +40,8 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       'Преимущество 4',
       'Каталог-2',
       'Каталог-1',
-      'Каталог 1'
+      'Каталог 1',
+      'Инструкция'
     ];
 
     const categories = {
