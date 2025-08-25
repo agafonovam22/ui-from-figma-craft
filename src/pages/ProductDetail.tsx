@@ -1415,7 +1415,7 @@ const ProductDetail: React.FC = () => {
               variant="outline" 
               size="lg" 
               className="border-red-600 text-red-600 hover:bg-red-50"
-              onClick={() => window.open('http://193.164.201.197:8081/ftp_images/.../Katalogi/2.pdf', '_blank', 'noopener,noreferrer')}
+              onClick={() => window.open('http://193.164.201.197:8081/ftp_images/.../Katalogi/1.pdf', '_blank', 'noopener,noreferrer')}
             >
               Скачать инструкцию
             </Button>
