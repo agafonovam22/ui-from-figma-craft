@@ -954,7 +954,7 @@ const ProductDetail: React.FC = () => {
       <div className="absolute top-0 bg-gray-50 z-0" style={{ 
         left: 'calc(50% + 25px)', 
         right: '0',
-        height: 'calc(100vh + 330px)' 
+        height: 'calc(100vh + 335px)' 
       }}></div>
       
       <div className="relative z-10">
