@@ -1043,11 +1043,11 @@ const ProductDetail: React.FC = () => {
               </div>
               {product.rating && (
                 <div className="flex items-center space-x-2">
-                  <div className="flex text-orange-400">
+                  <div className="flex text-yellow-400">
                     {'★'.repeat(Math.floor(product.rating))}
                     {'☆'.repeat(5 - Math.floor(product.rating))}
                   </div>
-                  <span className="text-orange-400 font-medium border border-orange-400 rounded-full px-2 py-1 text-xs">
+                  <span className="bg-yellow-400 text-white font-medium rounded-full px-2 py-1 text-xs">
                     {product.rating}/5
                   </span>
                 </div>
