@@ -339,7 +339,10 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
       </div>
 
       {/* Ad Banner */}
-      <div className="bg-gray-800 text-white p-6 rounded-lg">
+      <div 
+        className="text-white p-6 rounded-lg"
+        style={{ background: 'linear-gradient(97deg, #262631 1.32%, #6F6F90 108.06%)' }}
+      >
         <h3 className="text-sm font-bold mb-2">Место для рекламы</h3>
         <p className="text-xs text-gray-300 mb-3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
