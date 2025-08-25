@@ -1033,7 +1033,11 @@ const ProductDetail: React.FC = () => {
                   В сравнение
                 </Button>
                 <Button key="favorite-btn" variant="outline" size="sm" className="text-gray-600 text-xs px-3 py-1 flex items-center">
-                  <Heart className="w-3 h-3 mr-1" />
+                  <img 
+                    src="/lovable-uploads/60d3aa34-0091-405e-b944-d45c2bee0a8f.png" 
+                    alt="В избранное" 
+                    className="w-3 h-3 mr-1"
+                  />
                   В избранное
                 </Button>
               </div>
