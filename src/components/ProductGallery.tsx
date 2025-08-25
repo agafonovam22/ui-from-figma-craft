@@ -116,8 +116,8 @@ export default function ProductGallery({ mainImage, images = [], galleryImages =
             <CarouselContent className="-ml-2">
               {allImages.map((image, index) => (
                 <CarouselItem key={index} className="pl-2 basis-1/4">
-                  <button
-                    className={`relative overflow-hidden rounded-lg aspect-square border-2 transition-all w-full ${
+                    <button
+                    className={`relative overflow-hidden rounded-lg aspect-square border-2 transition-all w-full bg-gray-100 ${
                       currentImageIndex === index 
                         ? 'border-primary ring-2 ring-primary/20' 
                         : 'border-border hover:border-primary/50'
