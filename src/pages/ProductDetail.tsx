@@ -17,6 +17,7 @@ import { optimizeImageUrl, preloadImage } from '@/utils/imageOptimization';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { extractBrandFromProductName } from '@/utils/extractBrand';
 import ProductCharacteristicsTable from '@/components/product/ProductCharacteristicsTable';
+import CitySelector from '@/components/Header/CitySelector';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -26,6 +27,7 @@ const ProductDetail: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('description');
   const [showReviewModal, setShowReviewModal] = useState(false);
   const [selectedInstallmentPlan, setSelectedInstallmentPlan] = useState<number | null>(null);
+  const [selectedCity, setSelectedCity] = useState('Москва');
   const { addItem } = useCart();
   const { toast } = useToast();
 
@@ -277,6 +279,49 @@ const ProductDetail: React.FC = () => {
       case 'delivery':
         return (
           <div className="space-y-12">
+            {/* Город доставки */}
+            <div className="flex gap-8">
+              <div className="w-80 flex-shrink-0">
+                <h3 style={{
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Город доставки</h3>
+              </div>
+              <div className="flex-1">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-gray-100 p-6 rounded-lg">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-lg font-semibold text-gray-900">Самовывоз</span>
+                    </div>
+                    <p className="text-sm text-gray-600 mb-4">
+                      Вы можете самостоятельно забрать заказ из нашего магазина
+                    </p>
+                    <div className="text-2xl font-bold text-gray-900">0₽</div>
+                  </div>
+                  
+                  <div className="bg-gray-100 p-6 rounded-lg">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-lg font-semibold text-gray-900">Курьерская Доставка</span>
+                    </div>
+                    <p className="text-sm text-gray-600 mb-4">
+                      Собственная служба Доставки
+                    </p>
+                    <div className="text-2xl font-bold text-gray-900">0₽</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 mt-4">
+                  <span className="text-lg font-semibold text-gray-900">Город доставки:</span>
+                  <CitySelector 
+                    selectedCity={selectedCity}
+                    onCitySelect={setSelectedCity}
+                  />
+                </div>
+              </div>
+            </div>
+            
+            {/* Разделительная линия */}
+            <div className="h-px bg-gray-300"></div>
+            
             {/* Стоимость доставки */}
             <div className="flex gap-8">
               <div className="w-80 flex-shrink-0">

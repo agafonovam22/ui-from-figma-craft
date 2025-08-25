@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChevronLeft, ChevronRight, Heart, Star, Play } from 'lucide-react';
+import CitySelector from '@/components/Header/CitySelector';
 
 const ProductCard: React.FC = () => {
   const { productId } = useParams();
@@ -16,6 +17,7 @@ const ProductCard: React.FC = () => {
   const [quantity, setQuantity] = useState(1);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [reviewDialogOpen, setReviewDialogOpen] = useState(false);
+  const [selectedCity, setSelectedCity] = useState('Москва');
 
   // Mock product data - в реальном приложении это будет загружаться по productId
   const product = {
@@ -1216,9 +1218,12 @@ const ProductCard: React.FC = () => {
               <div className="space-y-10">
                 {/* Delivery city */}
                 <div>
-                  <div className="flex items-center gap-2 mb-6">
-                    <h2 className="text-lg font-semibold text-gray-900">Город доставки</h2>
-                    <span className="text-[#F53B49] font-medium">Москва</span>
+                  <div className="flex items-center gap-4 mb-6">
+                    <h2 className="text-lg font-semibold text-gray-900">Город доставки:</h2>
+                    <CitySelector 
+                      selectedCity={selectedCity}
+                      onCitySelect={setSelectedCity}
+                    />
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
