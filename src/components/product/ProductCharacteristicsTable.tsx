@@ -324,30 +324,22 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                   {/* First characteristic */}
                   <div className="flex-1">
                     {pair.first && (
-                      <>
+                      <div className="py-2">
                         {index === 0 && <div className="border-t border-border mb-2"></div>}
                         {renderCharacteristicContent(pair.first)}
-                        {index < characteristicPairs.length - 1 && (
-                          <div className="mt-2 border-b border-border"></div>
-                        )}
-                        {index === characteristicPairs.length - 1 && (
-                          <div className="mt-2 border-b border-border"></div>
-                        )}
-                      </>
+                        <div className="mt-2 border-b border-border"></div>
+                      </div>
                     )}
                   </div>
                   
                   {/* Second characteristic */}
                   {pair.second ? (
                     <div className="flex-1">
-                      {index === 0 && <div className="border-t border-border mb-2"></div>}
-                      {renderCharacteristicContent(pair.second)}
-                      {index < characteristicPairs.length - 1 && (
+                      <div className="py-2">
+                        {index === 0 && <div className="border-t border-border mb-2"></div>}
+                        {renderCharacteristicContent(pair.second)}
                         <div className="mt-2 border-b border-border"></div>
-                      )}
-                      {index === characteristicPairs.length - 1 && (
-                        <div className="mt-2 border-b border-border"></div>
-                      )}
+                      </div>
                     </div>
                   ) : (
                     <div className="hidden md:block"></div>
