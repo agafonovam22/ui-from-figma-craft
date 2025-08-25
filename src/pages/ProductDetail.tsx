@@ -152,6 +152,11 @@ const ProductDetail: React.FC = () => {
               items: {} as Record<string, string>,
               keywords: ['Бренд', 'Артикул', 'Тип оборудования', 'Тип назначения', 'Использование', 'Размер', 'Длина', 'Ширина', 'Высота', 'Габариты', 'см', 'Вес', 'кг']
             },
+            console: {
+              title: 'Консоль',
+              items: {} as Record<string, string>,
+              keywords: ['Консоль', 'Console', 'Дисплей', 'Экран', 'Панель управления', 'Управление', 'Интерфейс', 'ЖК', 'LCD', 'LED', 'Монитор', 'Сенсорный']
+            },
             catalog: {
               title: 'Каталог',
               items: {} as Record<string, string>,
@@ -285,22 +290,22 @@ const ProductDetail: React.FC = () => {
                          );
                        })}
 
-                       {/* Три категории в одном ряду */}
-                       {(() => {
-                         const threeColumnCategories = ['catalog', 'warranty', 'location'];
-                         const categoriesInRow = Object.entries(categorizedCharacteristics)
-                           .filter(([key]) => threeColumnCategories.includes(key))
-                           .filter(([, category]) => Object.keys(category.items).length > 0);
-                         
-                         if (categoriesInRow.length === 0) return null;
-                         
-                         return (
-                           <div className="grid md:grid-cols-3 gap-6">
-                             {categoriesInRow.map(([categoryKey, category]) => (
-                               <div key={categoryKey}>
-                                 <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
-                                 <div className="space-y-3">
-                                   {categoryKey === 'catalog' ? (
+                        {/* Четыре категории в одном ряду */}
+                        {(() => {
+                          const fourColumnCategories = ['console', 'catalog', 'warranty', 'location'];
+                          const categoriesInRow = Object.entries(categorizedCharacteristics)
+                            .filter(([key]) => fourColumnCategories.includes(key))
+                            .filter(([, category]) => Object.keys(category.items).length > 0);
+                          
+                          if (categoriesInRow.length === 0) return null;
+                          
+                          return (
+                            <div className="grid md:grid-cols-4 gap-6">
+                              {categoriesInRow.map(([categoryKey, category]) => (
+                                <div key={categoryKey}>
+                                  <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
+                                  <div className="space-y-3">
+                                    {categoryKey === 'catalog' ? (
                                      Object.entries(category.items).map(([key, value]) => {
                                        let displayKey = key;
                                        
@@ -343,10 +348,10 @@ const ProductDetail: React.FC = () => {
                          );
                        })()}
 
-                       {/* Остальные категории */}
-                       {Object.entries(categorizedCharacteristics)
-                         .filter(([key]) => !['basic', 'catalog', 'warranty', 'location'].includes(key))
-                         .map(([categoryKey, category]) => {
+                        {/* Остальные категории */}
+                        {Object.entries(categorizedCharacteristics)
+                          .filter(([key]) => !['basic', 'console', 'catalog', 'warranty', 'location'].includes(key))
+                          .map(([categoryKey, category]) => {
                            const hasItems = Object.keys(category.items).length > 0;
                            if (!hasItems) return null;
                            
