@@ -1025,11 +1025,11 @@ const ProductDetail: React.FC = () => {
             <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-300">
               <div className="flex space-x-3">
                 <Button key="compare-btn" variant="outline" size="sm" className="text-gray-600 text-xs px-3 py-1 flex items-center">
-                  <svg className="w-3 h-3 mr-1" viewBox="0 0 16 16" fill="currentColor">
-                    <rect x="1" y="8" width="3" height="7" rx="0.5"/>
-                    <rect x="6.5" y="3" width="3" height="12" rx="0.5"/>
-                    <rect x="12" y="10" width="3" height="5" rx="0.5"/>
-                  </svg>
+                  <img 
+                    src="/lovable-uploads/65f07052-2894-46c4-bba1-dd6a77258cbe.png" 
+                    alt="В сравнение" 
+                    className="w-3 h-3 mr-1"
+                  />
                   В сравнение
                 </Button>
                 <Button key="favorite-btn" variant="outline" size="sm" className="text-gray-600 text-xs px-3 py-1 flex items-center">
