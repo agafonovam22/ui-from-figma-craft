@@ -93,6 +93,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
         {/* Product characteristics list */}
         <ProductCharacteristicsList 
           characteristics={product.characteristics}
+          productName={product.name}
           onShowAllClick={onShowAllCharacteristics}
         />
 

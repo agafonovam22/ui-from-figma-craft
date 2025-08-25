@@ -1,26 +1,35 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { extractBrandFromProductName } from '@/utils/extractBrand';
 
 interface ProductCharacteristicsListProps {
   characteristics: any;
+  productName: string;
   onShowAllClick?: () => void;
 }
 
 const ProductCharacteristicsList: React.FC<ProductCharacteristicsListProps> = ({ 
-  characteristics, 
+  characteristics,
+  productName,
   onShowAllClick 
 }) => {
+  // Извлекаем бренд из названия товара
+  const brand = extractBrandFromProductName(productName);
+  
+  // Извлекаем тип продукции (первые два слова из названия)
+  const productType = productName.split(' ').slice(0, 2).join(' ');
+
   return (
     <div className="space-y-2 pb-4 border-b border-gray-300 font-manrope">
       {characteristics ? (
         <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
           <div className="flex justify-between">
             <span className="text-muted-foreground">Тип продукции:</span>
-            <span className="font-medium">Беговая дорожка</span>
+            <span className="font-medium">{productType}</span>
           </div>
           <div className="flex justify-between">
             <span className="text-muted-foreground">Бренд:</span>
-            <span className="font-medium">TRUE</span>
+            <span className="font-medium">{brand}</span>
           </div>
           <div className="flex justify-between">
             <span className="text-muted-foreground">Назначение:</span>
