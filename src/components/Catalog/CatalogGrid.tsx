@@ -116,7 +116,7 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
                 className={`flex h-10 w-10 items-center justify-center rounded-full ${
                   isActive
                     ? "bg-black text-white"
-                    : "text-[#778093] hover:bg-gray-50"
+                    : "border border-gray-300 text-[#778093] hover:bg-gray-50"
                 }`}
                 onClick={() => onPageChange?.(page)}
               >
