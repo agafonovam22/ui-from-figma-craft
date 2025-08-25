@@ -145,9 +145,24 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     const renderValue = (value: any) => {
       const valueStr = String(value);
       
-      // Check for image files
+      // Check for image files (both local paths and URLs)
       const isImageFile = valueStr.match(/\.(jpg|jpeg|png|webp)$/i);
       if (isImageFile) {
+        // If it's an external URL, show message to download locally
+        if (valueStr.startsWith('http')) {
+          return (
+            <div className="flex flex-col gap-2">
+              <span className="text-xs text-muted-foreground">
+                Внешняя ссылка на изображение: {valueStr}
+              </span>
+              <span className="text-xs text-amber-600">
+                Скачайте изображение локально для отображения
+              </span>
+            </div>
+          );
+        }
+        
+        // For local images, display normally
         return (
           <img 
             src={valueStr} 
