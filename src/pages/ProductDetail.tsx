@@ -305,7 +305,7 @@ const ProductDetail: React.FC = () => {
                         Вы можете самостоятельно забрать заказ из нашего магазина
                       </p>
                     </div>
-                    <div className="bg-gray-600 p-6 flex items-center justify-center" style={{ flexBasis: '33.33%' }}>
+                    <div className="bg-gray-400 p-6 flex items-center justify-center" style={{ flexBasis: '33.33%' }}>
                       <div className="text-2xl font-bold text-white">0₽</div>
                     </div>
                   </div>
@@ -319,7 +319,7 @@ const ProductDetail: React.FC = () => {
                         Собственная служба Доставки
                       </p>
                     </div>
-                    <div className="bg-gray-600 p-6 flex items-center justify-center" style={{ flexBasis: '33.33%' }}>
+                    <div className="bg-gray-400 p-6 flex items-center justify-center" style={{ flexBasis: '33.33%' }}>
                       <div className="text-2xl font-bold text-white">0₽</div>
                     </div>
                   </div>
