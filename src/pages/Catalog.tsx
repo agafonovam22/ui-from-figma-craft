@@ -347,6 +347,8 @@ const Catalog: React.FC = () => {
                   onPageChange={handlePageNavigation}
                   hasNextPage={hasNextPage}
                   hasPreviousPage={hasPrevPage}
+                  onLoadMore={() => handlePageNavigation(pageNumber + 1)}
+                  showLoadMore={hasNextPage}
                 />
               )}
             </div>
