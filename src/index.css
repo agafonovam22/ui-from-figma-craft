@@ -146,3 +146,7 @@
 .filter-red {
   filter: brightness(0) saturate(100%) invert(28%) sepia(87%) saturate(3789%) hue-rotate(347deg) brightness(99%) contrast(94%);
 }
+
+.filter-dark-gray {
+  filter: brightness(0) saturate(100%) invert(25%) sepia(8%) saturate(834%) hue-rotate(200deg) brightness(95%) contrast(94%);
+}
