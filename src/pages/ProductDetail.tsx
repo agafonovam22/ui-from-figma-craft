@@ -296,24 +296,32 @@ const ProductDetail: React.FC = () => {
               </div>
               <div className="flex-1">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-gray-100 p-6 rounded-lg">
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="text-lg font-semibold text-gray-900">Самовывоз</span>
+                  <div className="bg-gray-100 rounded-lg flex overflow-hidden">
+                    <div className="flex-grow p-6" style={{ flexBasis: '66.67%' }}>
+                      <div className="flex items-center gap-2 mb-4">
+                        <span className="text-lg font-semibold text-gray-900">Самовывоз</span>
+                      </div>
+                      <p className="text-sm text-gray-600">
+                        Вы можете самостоятельно забрать заказ из нашего магазина
+                      </p>
                     </div>
-                    <p className="text-sm text-gray-600 mb-4">
-                      Вы можете самостоятельно забрать заказ из нашего магазина
-                    </p>
-                    <div className="text-2xl font-bold text-gray-900">0₽</div>
+                    <div className="bg-gray-800 p-6 flex items-center justify-center" style={{ flexBasis: '33.33%' }}>
+                      <div className="text-2xl font-bold text-white">0₽</div>
+                    </div>
                   </div>
                   
-                  <div className="bg-gray-100 p-6 rounded-lg">
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="text-lg font-semibold text-gray-900">Курьерская Доставка</span>
+                  <div className="bg-gray-100 rounded-lg flex overflow-hidden">
+                    <div className="flex-grow p-6" style={{ flexBasis: '66.67%' }}>
+                      <div className="flex items-center gap-2 mb-4">
+                        <span className="text-lg font-semibold text-gray-900">Курьерская Доставка</span>
+                      </div>
+                      <p className="text-sm text-gray-600">
+                        Собственная служба Доставки
+                      </p>
                     </div>
-                    <p className="text-sm text-gray-600 mb-4">
-                      Собственная служба Доставки
-                    </p>
-                    <div className="text-2xl font-bold text-gray-900">0₽</div>
+                    <div className="bg-gray-800 p-6 flex items-center justify-center" style={{ flexBasis: '33.33%' }}>
+                      <div className="text-2xl font-bold text-white">0₽</div>
+                    </div>
                   </div>
                 </div>
               </div>
