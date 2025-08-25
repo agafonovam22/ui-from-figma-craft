@@ -65,7 +65,10 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
             
             {/* Ad Banner after 8th product (between 2nd and 3rd row) */}
             {index === 7 && (
-              <div className="col-span-4 bg-gray-800 text-white p-8 rounded-lg my-2.5">
+              <div 
+                className="col-span-4 text-white p-8 rounded-lg my-2.5"
+                style={{ background: 'linear-gradient(97deg, #262631 1.32%, #6F6F90 108.06%)' }}
+              >
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-lg font-bold mb-2">Место для рекламы</h3>
