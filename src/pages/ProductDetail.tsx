@@ -80,30 +80,46 @@ const ProductDetail: React.FC = () => {
         return (
           <div>
             <h3 className="text-xl font-semibold mb-4">Описание</h3>
-            <div className="font-manrope text-muted-foreground leading-relaxed space-y-4">
-              <p>
-                {product.description || `${product.name} - это высококачественный фитнес-набор от бренда CENTR, специально разработанный для домашних тренировок и функционального тренинга.`}
-              </p>
-              {product.characteristics && (
-                <div>
-                  <p>
-                    Основные преимущества:
-                  </p>
-                  <ul className="list-disc list-inside space-y-1 ml-4">
-                    <li>Профессиональное оборудование для функционального тренинга</li>
-                    <li>Подходит для домашнего использования</li>
-                    <li>Компактный и эргономичный дизайн</li>
-                    <li>Высокое качество материалов и сборки</li>
-                    {product.characteristics['Гарантия на домашнее использование'] && (
-                      <li>Гарантия: {product.characteristics['Гарантия на домашнее использование']}</li>
+            <div className="font-manrope text-muted-foreground leading-relaxed">
+              {product.description ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <p>{product.description}</p>
+                  </div>
+                  <div className="space-y-4">
+                    {product.characteristics && (
+                      <div>
+                        <p className="font-semibold text-foreground mb-2">
+                          Основные преимущества:
+                        </p>
+                        <ul className="list-disc list-inside space-y-1 ml-4">
+                          <li>Профессиональное оборудование для функционального тренинга</li>
+                          <li>Подходит для домашнего использования</li>
+                          <li>Компактный и эргономичный дизайн</li>
+                          <li>Высокое качество материалов и сборки</li>
+                          {product.characteristics['Гарантия на домашнее использование'] && (
+                            <li>Гарантия: {product.characteristics['Гарантия на домашнее использование']}</li>
+                          )}
+                        </ul>
+                      </div>
                     )}
-                  </ul>
+                  </div>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <p>
+                      {`${product?.name || 'Данный товар'} - это высококачественное оборудование, специально разработанное для эффективных тренировок и функционального тренинга.`}
+                    </p>
+                  </div>
+                  <div className="space-y-4">
+                    <p>
+                      Идеально подходит для создания домашнего спортзала и проведения эффективных тренировок. 
+                      Благодаря продуманной конструкции и качественным материалам, обеспечивает безопасность и комфорт во время занятий.
+                    </p>
+                  </div>
                 </div>
               )}
-              <p>
-                Данный фитнес-набор идеально подходит для создания домашнего спортзала и проведения эффективных тренировок. 
-                Благодаря продуманной конструкции и качественным материалам, он обеспечивает безопасность и комфорт во время занятий.
-              </p>
             </div>
           </div>
         );
