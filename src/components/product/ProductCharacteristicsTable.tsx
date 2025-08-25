@@ -176,10 +176,10 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       }
       
       // Special case for "Преимущество 6 фото:" - show the downloaded image
-      if (key === 'Преимущество 6 фото' || key === 'Преимущество 6 фото:') {
+      if (key === 'Преимущество 6 фото' || key === 'Преимущество 6 фото:' || key === 'Преимущество 6 Фото:') {
         return (
           <img 
-            src="/product-images/preimushchestvo-6.png" 
+            src="/product-images/preimushchestvo-6-new.png" 
             alt="Преимущество 6"
             style={{ maxWidth: "200px", height: "auto" }}
             className="rounded border"
