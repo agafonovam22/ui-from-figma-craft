@@ -117,11 +117,7 @@ export default function ProductGallery({ mainImage, images = [], galleryImages =
               {allImages.map((image, index) => (
                 <CarouselItem key={index} className="pl-2 basis-1/4">
                     <button
-                    className={`relative overflow-hidden rounded-lg aspect-square transition-all w-full bg-gray-100 ${
-                      currentImageIndex === index 
-                        ? 'ring-2 ring-primary/20' 
-                        : 'hover:ring-2 hover:ring-primary/20'
-                    }`}
+                    className="relative overflow-hidden rounded-lg aspect-square transition-all w-full bg-gray-100 hover:ring-2 hover:ring-primary/20"
                     onClick={() => selectImage(index)}
                   >
                     <img
