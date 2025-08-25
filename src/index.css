@@ -139,8 +139,8 @@
 }
 
 /* Color filters for icons */
-.filter-blue {
-  filter: brightness(0) saturate(100%) invert(46%) sepia(88%) saturate(4013%) hue-rotate(204deg) brightness(98%) contrast(93%);
+.filter-dark-grey {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(11%) saturate(1058%) hue-rotate(207deg) brightness(94%) contrast(86%);
 }
 
 .filter-red {
