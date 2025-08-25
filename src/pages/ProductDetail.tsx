@@ -1096,11 +1096,15 @@ const ProductDetail: React.FC = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Максимальная скорость, км/ч:</span>
-                    <span className="font-medium">10</span>
+                    <span className="font-medium">
+                      {product.characteristics['Максимальная скорость, км/ч'] || '19'}
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Угол наклона:</span>
-                    <span className="font-medium">Механический</span>
+                    <span className="font-medium">
+                      {product.characteristics['Макс. угол наклона, %'] ? `${product.characteristics['Макс. угол наклона, %']}%` : '15%'}
+                    </span>
                   </div>
                 </div>
               ) : (
