@@ -126,60 +126,109 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     const hasItems = Object.keys(category.items).length > 0;
     if (!hasItems) return null;
 
+    const processCharacteristic = (key: string, value: any) => {
+      let displayKey = key;
+      let displayValue = value;
+      
+      // Extract brand from product name
+      if (key === 'Бренд (id)') {
+        displayKey = 'Бренд';
+        displayValue = extractBrandFromProductName(productName) || value;
+      }
+      
+      // Check if this is a photo characteristic or image URL
+      const isPhotoCharacteristic = key.toLowerCase().includes('фото') || key.toLowerCase().includes('photo');
+      const isImageUrl = typeof displayValue === 'string' && (
+        displayValue.match(/\.(jpg|jpeg|png|gif|webp|bmp|svg)$/i) ||
+        displayValue.startsWith('http') && displayValue.match(/\.(jpg|jpeg|png|gif|webp|bmp|svg)/i)
+      );
+      
+      return {
+        displayKey,
+        displayValue,
+        isPhotoCharacteristic,
+        isImageUrl
+      };
+    };
+
+    const renderCharacteristicContent = (processedChar: any) => {
+      const { displayKey, displayValue, isPhotoCharacteristic, isImageUrl } = processedChar;
+      
+      if ((isPhotoCharacteristic || isImageUrl) && displayValue) {
+        return (
+          <div className="flex flex-col gap-2">
+            <span className="text-sm font-medium text-foreground">{displayKey}:</span>
+            <div className="flex flex-col items-start gap-1">
+              <img 
+                src={String(displayValue)} 
+                alt={displayKey}
+                className="max-w-24 max-h-24 object-contain rounded border"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+              <span className="text-xs text-muted-foreground break-all">
+                {String(displayValue)}
+              </span>
+            </div>
+          </div>
+        );
+      }
+      
+      return (
+        <div className="flex flex-col gap-1">
+          <span className="text-sm font-medium text-foreground">{displayKey}:</span>
+          <span className="text-sm text-muted-foreground">{String(displayValue)}</span>
+        </div>
+      );
+    };
+
+    // Group characteristics into pairs
+    const characteristics = Object.entries(category.items);
+    const characteristicPairs = [];
+    
+    for (let i = 0; i < characteristics.length; i += 2) {
+      const firstChar = characteristics[i];
+      const secondChar = characteristics[i + 1];
+      
+      characteristicPairs.push({
+        first: firstChar ? processCharacteristic(firstChar[0], firstChar[1]) : null,
+        second: secondChar ? processCharacteristic(secondChar[0], secondChar[1]) : null,
+        firstKey: firstChar?.[0],
+        secondKey: secondChar?.[0]
+      });
+    }
+
     return (
       <div key={categoryKey} className="mb-8">
         <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
           {category.title}
         </h4>
         <div className="border border-border rounded-lg overflow-hidden">
-          <Table>
-            <TableBody>
-              {Object.entries(category.items).map(([key, value]) => {
-                let displayKey = key;
-                let displayValue = value;
-                
-                // Extract brand from product name
-                if (key === 'Бренд (id)') {
-                  displayKey = 'Бренд';
-                  displayValue = extractBrandFromProductName(productName) || value;
-                }
-                
-                // Check if this is a photo characteristic or image URL
-                const isPhotoCharacteristic = key.toLowerCase().includes('фото') || key.toLowerCase().includes('photo');
-                const isImageUrl = typeof displayValue === 'string' && (
-                  displayValue.match(/\.(jpg|jpeg|png|gif|webp|bmp|svg)$/i) ||
-                  displayValue.startsWith('http') && displayValue.match(/\.(jpg|jpeg|png|gif|webp|bmp|svg)/i)
-                );
-                
-                return (
-                  <TableRow key={key} className="border-b border-border">
-                    <TableCell className="font-medium text-muted-foreground py-3 px-4 w-1/2">
-                      {displayKey}
-                    </TableCell>
-                    <TableCell className="py-3 px-4 text-right">
-                      {(isPhotoCharacteristic || isImageUrl) && displayValue ? (
-                        <div className="flex flex-col items-end gap-2">
-                          <img 
-                            src={String(displayValue)} 
-                            alt={displayKey}
-                            className="max-w-32 max-h-32 object-contain rounded border"
-                            onError={(e) => {
-                              e.currentTarget.style.display = 'none';
-                            }}
-                          />
-                          <span className="text-xs text-muted-foreground break-all">
-                            {String(displayValue)}
-                          </span>
-                        </div>
-                      ) : (
-                        String(displayValue)
-                      )}
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
+          <div className="divide-y divide-border">
+            {characteristicPairs.map((pair, index) => (
+              <div key={`${pair.firstKey}-${pair.secondKey || 'single'}-${index}`} className="p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+                  {/* First characteristic */}
+                  <div className="flex-1">
+                    {pair.first && renderCharacteristicContent(pair.first)}
+                  </div>
+                  
+                  {/* Separator and second characteristic */}
+                  {pair.second ? (
+                    <>
+                      <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border transform -translate-x-px"></div>
+                      <div className="flex-1 md:pl-2">
+                        {renderCharacteristicContent(pair.second)}
+                      </div>
+                    </>
+                  ) : (
+                    <div className="hidden md:block"></div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );
