@@ -73,8 +73,47 @@ const Catalog: React.FC = () => {
   // Получаем поисковый запрос из URL
   const queryParam = searchParams.get('q') || '';
   
+  // Получаем категорию из URL
+  const categoryParam = searchParams.get('category') || '';
+  
   // Добавляем debounce для поиска (задержка 300мс)
   const debouncedSearchQuery = useDebounce(queryParam, 300);
+  
+  // Маппинг категорий из URL к типам оборудования в API
+  const CATEGORY_TO_EQUIPMENT_TYPE: Record<string, string[]> = {
+    'treadmills': ['Беговая дорожка'],
+    'elliptical': ['Эллиптический тренажер'],
+    'exercise-bikes': ['Велотренажер'],
+    'rowing-machines': ['Гребной тренажер'],
+    'strength-equipment': ['Силовой тренажер', 'Мультистанция'],
+    'massage-equipment': ['Массажное кресло', 'Массажер'],
+    'inversion-tables': ['Инверсионный стол'],
+    'trampolines': ['Батут'],
+    'free-weights': ['Гантели', 'Штанга', 'Диски'],
+    'home-accessories': ['Аксессуары'],
+    'table-tennis': ['Теннисный стол'],
+    'ski-simulators': ['Горнолыжный тренажер'],
+    'outdoor-sports': ['Уличный тренажер'],
+    'game-tables': ['Игровой стол'],
+    'equipment-accessories': ['Аксессуары к тренажерам']
+  };
+  
+  // Автоматическая установка фильтра по категории из URL
+  React.useEffect(() => {
+    if (categoryParam && CATEGORY_TO_EQUIPMENT_TYPE[categoryParam]) {
+      const equipmentTypes = CATEGORY_TO_EQUIPMENT_TYPE[categoryParam];
+      setFilters(prev => ({
+        ...prev,
+        equipmentTypes: equipmentTypes
+      }));
+    } else if (!categoryParam) {
+      // Если категория убрана из URL, сбрасываем фильтр по типу оборудования
+      setFilters(prev => ({
+        ...prev,
+        equipmentTypes: []
+      }));
+    }
+  }, [categoryParam]);
   
   // Убираем useEffect - используем фиксированный список
   

@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { CategoryItem } from './types';
 import { 
   Zap, 
@@ -22,9 +23,9 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
   category, 
   isActive = false 
 }) => (
-  <button
+  <Link
+    to={`/catalog?category=${category.id}`}
     className={`flex h-[46px] items-center gap-2 bg-[#262631] px-5 py-3 rounded-[5px] max-sm:whitespace-nowrap max-sm:px-4 max-sm:py-3 hover:bg-[#3a3a47] transition-colors group flex-shrink-0`}
-    onClick={category.onClick}
     aria-label={`Категория: ${category.label}`}
   >
     {category.icon && (
@@ -35,7 +36,7 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
     <span className="text-sm font-normal leading-[14px] text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
       {category.label}
     </span>
-  </button>
+  </Link>
 );
 
 const ScrollButton: React.FC<{ direction: 'left' | 'right'; onClick: () => void; disabled?: boolean }> = ({ 
@@ -73,92 +74,77 @@ const BottomMenu: React.FC = () => {
     {
       id: 'treadmills',
       label: 'Беговые дорожки',
-      icon: <Zap size={16} />,
-      onClick: () => window.location.href = '/catalog?category=treadmills'
+      icon: <Zap size={16} />
     },
     {
       id: 'elliptical',
       label: 'Эллиптические тренажеры',
-      icon: <RotateCcw size={16} />,
-      onClick: () => window.location.href = '/catalog?category=elliptical'
+      icon: <RotateCcw size={16} />
     },
     {
       id: 'exercise-bikes',
       label: 'Велотренажеры',
-      icon: <Bike size={16} />,
-      onClick: () => window.location.href = '/catalog?category=exercise-bikes'
+      icon: <Bike size={16} />
     },
     {
       id: 'rowing-machines',
       label: 'Гребные тренажеры',
-      icon: <Waves size={16} />,
-      onClick: () => window.location.href = '/catalog?category=rowing-machines'
+      icon: <Waves size={16} />
     },
     {
       id: 'strength-equipment',
       label: 'Силовые тренажеры',
-      icon: <Dumbbell size={16} />,
-      onClick: () => window.location.href = '/catalog?category=strength-equipment'
+      icon: <Dumbbell size={16} />
     },
     {
       id: 'massage-equipment',
       label: 'Массажное оборудование',
-      icon: <Heart size={16} />,
-      onClick: () => window.location.href = '/catalog?category=massage-equipment'
+      icon: <Heart size={16} />
     },
     {
       id: 'inversion-tables',
       label: 'Инверсионные столы',
-      icon: <FlipVertical size={16} />,
-      onClick: () => window.location.href = '/catalog?category=inversion-tables'
+      icon: <FlipVertical size={16} />
     },
     {
       id: 'trampolines',
       label: 'Батуты',
-      icon: <Circle size={16} />,
-      onClick: () => window.location.href = '/catalog?category=trampolines'
+      icon: <Circle size={16} />
     },
     {
       id: 'free-weights',
       label: 'Свободные веса',
-      icon: <Weight size={16} />,
-      onClick: () => window.location.href = '/catalog?category=free-weights'
+      icon: <Weight size={16} />
     },
     {
       id: 'home-accessories',
       label: 'Аксессуары для дома',
-      icon: <Home size={16} />,
-      onClick: () => window.location.href = '/catalog?category=home-accessories'
+      icon: <Home size={16} />
     },
     {
       id: 'table-tennis',
       label: 'Настольный теннис',
-      icon: <Target size={16} />,
-      onClick: () => window.location.href = '/catalog?category=table-tennis'
+      icon: <Target size={16} />
     },
     {
       id: 'ski-simulators',
       label: 'Горнолыжные тренажеры',
-      icon: <Mountain size={16} />,
-      onClick: () => window.location.href = '/catalog?category=ski-simulators'
+      icon: <Mountain size={16} />
     },
     {
       id: 'outdoor-sports',
       label: 'Уличные виды спорта',
-      icon: <TreePine size={16} />,
-      onClick: () => window.location.href = '/catalog?category=outdoor-sports'
+      icon: <TreePine size={16} />
     },
     {
       id: 'game-tables',
       label: 'Игровые столы',
-      icon: <Gamepad2 size={16} />,
-      onClick: () => window.location.href = '/catalog?category=game-tables'
+      icon: <Gamepad2 size={16} />
     },
     {
       id: 'equipment-accessories',
       label: 'Аксессуары к тренажерам',
-      icon: <Settings size={16} />,
-      onClick: () => window.location.href = '/catalog?category=equipment-accessories'
+      icon: <Settings size={16} />
     }
   ];
 
