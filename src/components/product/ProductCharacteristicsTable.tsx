@@ -145,7 +145,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       const valueStr = String(value);
       
       // Special case for "Преимущество 1 фото" - use local image
-      if (key && key.toLowerCase().includes('преимущество 1')) {
+      if (key && key.toLowerCase() === 'преимущество 1 фото') {
         return (
           <img 
             src="/lovable-uploads/4f03dfd0-c7b9-4190-a403-86c6945a91b6.png" 
