@@ -953,7 +953,7 @@ const ProductDetail: React.FC = () => {
       {/* Gray background for right side extending from very top */}
       <div className="absolute top-0 bg-gray-50 z-0" style={{ 
         left: 'calc(50% + 25px)', 
-        width: 'calc(50% - 25px)',
+        right: '0',
         height: 'calc(100vh - 200px)' 
       }}></div>
       
