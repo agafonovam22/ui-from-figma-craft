@@ -34,7 +34,6 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       'RALATED',
       'Ставки налогов',
       'Исключить из публикации на веб-витрине mag1c',
-      'Преимущество 1',
       'Преимущество 2',
       'Преимущество 3',
       'Преимущество 4',
@@ -142,8 +141,20 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       };
     };
 
-    const renderValue = (value: any) => {
+    const renderValue = (value: any, key?: string) => {
       const valueStr = String(value);
+      
+      // Special case for "Преимущество 1 фото" - use local image
+      if (key && key.toLowerCase().includes('преимущество 1')) {
+        return (
+          <img 
+            src="/lovable-uploads/4f03dfd0-c7b9-4190-a403-86c6945a91b6.png" 
+            alt="Преимущество 1"
+            style={{ maxWidth: "200px", height: "auto" }}
+            className="rounded border"
+          />
+        );
+      }
       
       // Check for image files (both local paths and URLs)
       const isImageFile = valueStr.match(/\.(jpg|jpeg|png|webp)$/i);
@@ -214,7 +225,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
         <div className="flex justify-between items-start gap-4">
           <span className="text-sm font-medium text-foreground flex-shrink-0">{displayKey}:</span>
           <div className="text-sm text-muted-foreground text-right">
-            {renderValue(displayValue)}
+            {renderValue(displayValue, displayKey)}
           </div>
         </div>
       );
