@@ -1143,7 +1143,7 @@ const ProductDetail: React.FC = () => {
                 <div className="flex-1">
                   {product.price ? (
                     <div>
-                      <div className="text-2xl font-bold text-foreground">
+                      <div className="text-xl font-bold text-foreground">
                         {typeof product.price === 'number' ? `${product.price.toLocaleString()} ₽` : product.price}
                       </div>
                     </div>
