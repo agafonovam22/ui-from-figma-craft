@@ -86,7 +86,7 @@ const Catalog: React.FC = () => {
     total
   } = usePaginatedProducts(
     1, 
-    50, // Загружаем меньше для быстрой загрузки
+    1000, // Загружаем все товары
     debouncedSearchQuery
   );
 
