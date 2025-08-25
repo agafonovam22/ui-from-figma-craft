@@ -241,29 +241,26 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
         <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
           {category.title}
         </h4>
-        <div className="border border-border rounded-lg overflow-hidden">
-          <div className="divide-y divide-border">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* First table */}
+          <div className="space-y-0">
             {characteristicPairs.map((pair, index) => (
-              <div key={`${pair.firstKey}-${pair.secondKey || 'single'}-${index}`} className="p-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
-                  {/* First characteristic */}
-                  <div className="flex-1">
-                    {pair.first && renderCharacteristicContent(pair.first)}
-                  </div>
-                  
-                  {/* Separator and second characteristic */}
-                  {pair.second ? (
-                    <>
-                      <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border transform -translate-x-px"></div>
-                      <div className="flex-1 md:pl-2">
-                        {renderCharacteristicContent(pair.second)}
-                      </div>
-                    </>
-                  ) : (
-                    <div className="hidden md:block"></div>
-                  )}
+              pair.first && (
+                <div key={`first-${pair.firstKey}-${index}`} className="py-3 border-b border-border last:border-b-0">
+                  {renderCharacteristicContent(pair.first)}
                 </div>
-              </div>
+              )
+            ))}
+          </div>
+          
+          {/* Second table */}
+          <div className="space-y-0">
+            {characteristicPairs.map((pair, index) => (
+              pair.second && (
+                <div key={`second-${pair.secondKey}-${index}`} className="py-3 border-b border-border last:border-b-0">
+                  {renderCharacteristicContent(pair.second)}
+                </div>
+              )
             ))}
           </div>
         </div>
