@@ -1062,25 +1062,11 @@ const ProductDetail: React.FC = () => {
                 <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Тип продукции:</span>
-                    <span className="font-medium">
-                      {product.characteristics['Наименование товара на сайте'] ? 
-                        product.characteristics['Наименование товара на сайте'].includes('набор') ? 'Фитнес наборы' : 
-                        product.characteristics['Наименование товара на сайте'].includes('мат') ? 'Коврики и маты' :
-                        product.characteristics['Наименование товара на сайте'].includes('Коврик') ? 'Коврики и маты' :
-                        product.characteristics['Наименование товара на сайте'].includes('Рукоятка') ? 'Аксессуары' :
-                        product.characteristics['Наименование товара на сайте'].includes('платформа') ? 'Платформы' :
-                        product.characteristics['Наименование товара на сайте'].includes('Утяжелители') ? 'Утяжелители' :
-                        'Фитнес оборудование'
-                        : 'Фитнес оборудование'}
-                    </span>
+                    <span className="font-medium">Беговая дорожка</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Бренд:</span>
-                    <span className="font-medium">
-                      {product.characteristics['Бренд (id)'] === '49278' ? 'CENTR' : 
-                       product.characteristics['Бренд (id)'] === '38764' ? 'KERNEL' : 
-                       'CardioPower'}
-                    </span>
+                    <span className="font-medium">TRUE</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Назначение:</span>
