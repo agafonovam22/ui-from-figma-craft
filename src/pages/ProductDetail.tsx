@@ -1025,7 +1025,11 @@ const ProductDetail: React.FC = () => {
             <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-300">
               <div className="flex space-x-3">
                 <Button key="compare-btn" variant="outline" size="sm" className="text-gray-600 text-xs px-3 py-1 flex items-center">
-                  <BarChart3 className="w-3 h-3 mr-1" />
+                  <div className="w-3 h-3 mr-1 flex items-end gap-0.5">
+                    <div className="w-1 h-2 bg-current rounded-sm"></div>
+                    <div className="w-1 h-3 bg-current rounded-sm"></div>
+                    <div className="w-1 h-1.5 bg-current rounded-sm"></div>
+                  </div>
                   В сравнение
                 </Button>
                 <Button key="favorite-btn" variant="outline" size="sm" className="text-gray-600 text-xs px-3 py-1 flex items-center">
