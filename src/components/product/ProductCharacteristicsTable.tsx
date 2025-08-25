@@ -367,6 +367,104 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     );
   };
 
+  const renderCombinedBottomSection = () => {
+    const locationItems = categorizedCharacteristics.location.items;
+    const otherItems = categorizedCharacteristics.other.items;
+    
+    const hasLocationItems = Object.keys(locationItems).length > 0;
+    const hasOtherItems = Object.keys(otherItems).length > 0;
+    
+    if (!hasLocationItems && !hasOtherItems) return null;
+
+    const otherItemsArray = Object.entries(otherItems);
+    const firstHalf = otherItemsArray.slice(0, Math.ceil(otherItemsArray.length / 2));
+    const secondHalf = otherItemsArray.slice(Math.ceil(otherItemsArray.length / 2));
+
+    return (
+      <div className="mb-8">
+        <div className="grid grid-cols-3 gap-6">
+          {/* Column 1: Страна производства */}
+          <div>
+            {hasLocationItems && (
+              <>
+                <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
+                  Страна производства
+                </h4>
+                <div className="space-y-2">
+                  {Object.entries(locationItems).map(([key, value]) => (
+                    <div key={key} className="flex flex-col gap-2">
+                      <div className="border-t border-border pt-2">
+                        <div className="flex justify-between items-start gap-4">
+                          <span className="text-sm font-medium text-foreground flex-shrink-0">{key}:</span>
+                          <div className="text-sm text-muted-foreground text-right">
+                            <span>{String(value)}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="border-b border-border"></div>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+          
+          {/* Column 2: First half of Дополнительные характеристики */}
+          <div>
+            {hasOtherItems && (
+              <>
+                <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
+                  Дополнительные характеристики
+                </h4>
+                <div className="space-y-2">
+                  {firstHalf.map(([key, value]) => (
+                    <div key={key} className="flex flex-col gap-2">
+                      <div className="border-t border-border pt-2">
+                        <div className="flex justify-between items-start gap-4">
+                          <span className="text-sm font-medium text-foreground flex-shrink-0">{key}:</span>
+                          <div className="text-sm text-muted-foreground text-right">
+                            <span>{String(value)}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="border-b border-border"></div>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+          
+          {/* Column 3: Second half of Дополнительные характеристики */}
+          <div>
+            {hasOtherItems && secondHalf.length > 0 && (
+              <>
+                <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope opacity-0">
+                  &nbsp;
+                </h4>
+                <div className="space-y-2">
+                  {secondHalf.map(([key, value]) => (
+                    <div key={key} className="flex flex-col gap-2">
+                      <div className="border-t border-border pt-2">
+                        <div className="flex justify-between items-start gap-4">
+                          <span className="text-sm font-medium text-foreground flex-shrink-0">{key}:</span>
+                          <div className="text-sm text-muted-foreground text-right">
+                            <span>{String(value)}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="border-b border-border"></div>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className={`space-y-8 font-manrope ${className}`}>
       {/* Основные характеристики */}
@@ -387,11 +485,16 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       {/* Гарантия и сертификация */}
       {renderTable(categorizedCharacteristics.warranty, 'warranty')}
       
-      {/* Страна производства */}
-      {renderTable(categorizedCharacteristics.location, 'location')}
-      
-      {/* Дополнительные характеристики */}
-      {renderTable(categorizedCharacteristics.other, 'other')}
+      {/* Combined bottom section for product 532: Страна производства + Дополнительные характеристики */}
+      {productId === '532' ? renderCombinedBottomSection() : (
+        <>
+          {/* Страна производства */}
+          {renderTable(categorizedCharacteristics.location, 'location')}
+          
+          {/* Дополнительные характеристики */}
+          {renderTable(categorizedCharacteristics.other, 'other')}
+        </>
+      )}
     </div>
   );
 };
