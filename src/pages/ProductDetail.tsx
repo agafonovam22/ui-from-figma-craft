@@ -993,8 +993,12 @@ const ProductDetail: React.FC = () => {
             {/* Header with badges */}
             <div className="flex justify-start mb-4">
               <div className="flex space-x-2">
-                <Badge variant="secondary" className="text-xs font-medium bg-green-100 text-green-800 flex items-center hover:bg-green-100">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                <Badge variant="outline" className="text-xs font-medium border-green-500 text-green-600 bg-transparent flex items-center hover:bg-transparent">
+                  <div className="flex items-center mr-2 gap-1">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <div className="w-2 h-2 border border-green-500 rounded-full"></div>
+                  </div>
                   В наличии
                 </Badge>
                 <Badge variant="secondary" className="text-xs font-medium bg-blue-500 text-white hover:bg-blue-500">
