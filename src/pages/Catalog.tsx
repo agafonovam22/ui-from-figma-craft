@@ -78,7 +78,7 @@ const Catalog: React.FC = () => {
   
   // Убираем useEffect - используем фиксированный список
   
-  // Используем оптимизированную загрузку
+  // Используем оптимизированную загрузку - загружаем меньше товаров для быстрого старта
   const { 
     products: allCatalogProducts, 
     isLoading, 
@@ -86,7 +86,7 @@ const Catalog: React.FC = () => {
     total
   } = usePaginatedProducts(
     1, 
-    500, // Загружаем больше для фильтрации
+    100, // Уменьшили количество для быстрой первоначальной загрузки
     debouncedSearchQuery
   );
 
@@ -316,8 +316,17 @@ const Catalog: React.FC = () => {
               />
               
               {isLoading ? (
-                <div className="text-center py-8">
-                  <p>Поиск товаров...</p>
+                <div className="grid grid-cols-4 gap-6 mb-8">
+                  {Array.from({ length: 16 }).map((_, i) => (
+                    <div key={i} className="bg-gray-100 animate-pulse rounded-lg" style={{ height: '460px' }}>
+                      <div className="h-60 bg-gray-200 rounded-t-lg"></div>
+                      <div className="p-4 space-y-3">
+                        <div className="h-3 bg-gray-200 rounded w-3/4"></div>
+                        <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+                        <div className="h-6 bg-gray-200 rounded w-1/3"></div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               ) : queryParam && catalogItems.length === 0 ? (
                 <div className="text-center py-8">

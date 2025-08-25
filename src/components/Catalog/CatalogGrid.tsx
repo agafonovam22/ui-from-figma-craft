@@ -35,28 +35,33 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
   hasNextPage = false,
   hasPreviousPage = false
 }) => {
-
+  // Оптимизация: отключаем карусель в каталоге для производительности
+  const showCarousel = false;
 
   return (
     <>
       {/* Products Grid */}
       <div className="grid grid-cols-4 gap-6 mb-8">
         {products.map((product) => (
-          <ProductCard key={product.id} product={{ 
-            id: product.id.toString(),
-            name: product.name,
-            price: product.price,
-            original_price: product.original_price,
-            discount_percentage: product.discount_percentage,
-            gallery_images: product.gallery_images,
-            rating: product.rating,
-            reviews_count: product.reviews_count,
-            in_stock: product.in_stock,
-            is_available: product.is_available,
-            quantity: product.quantity,
-            badge: product.badge,
-            badge_color: product.badge_color
-          }} />
+          <ProductCard 
+            key={product.id} 
+            showCarousel={showCarousel}
+            product={{ 
+              id: product.id.toString(),
+              name: product.name,
+              price: product.price,
+              original_price: product.original_price,
+              discount_percentage: product.discount_percentage,
+              gallery_images: product.gallery_images,
+              rating: product.rating,
+              reviews_count: product.reviews_count,
+              in_stock: product.in_stock,
+              is_available: product.is_available,
+              quantity: product.quantity,
+              badge: product.badge,
+              badge_color: product.badge_color
+            }} 
+          />
         ))}
       </div>
 
