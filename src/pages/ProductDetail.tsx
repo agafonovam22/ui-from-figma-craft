@@ -94,12 +94,26 @@ const ProductDetail: React.FC = () => {
                           Основные преимущества:
                         </p>
                         <ul className="list-disc list-inside space-y-1 ml-4">
-                          <li>Профессиональное оборудование для функционального тренинга</li>
-                          <li>Подходит для домашнего использования</li>
-                          <li>Компактный и эргономичный дизайн</li>
-                          <li>Высокое качество материалов и сборки</li>
+                          {product.characteristics['Тип назначения'] && (
+                            <li>Тип назначения: {product.characteristics['Тип назначения']}</li>
+                          )}
+                          {product.characteristics['Вес пользователя, кг'] && (
+                            <li>Максимальный вес пользователя: {product.characteristics['Вес пользователя, кг']} кг</li>
+                          )}
+                          {product.characteristics['Беговое полотно, см'] && (
+                            <li>Размер бегового полотна: {product.characteristics['Беговое полотно, см']} см</li>
+                          )}
+                          {product.characteristics['Максимальная скорость, км/ч'] && (
+                            <li>Максимальная скорость: {product.characteristics['Максимальная скорость, км/ч']} км/ч</li>
+                          )}
+                          {product.characteristics['Макс. угол наклона, %'] && (
+                            <li>Максимальный угол наклона: {product.characteristics['Макс. угол наклона, %']}%</li>
+                          )}
                           {product.characteristics['Гарантия на домашнее использование'] && (
                             <li>Гарантия: {product.characteristics['Гарантия на домашнее использование']}</li>
+                          )}
+                          {product.characteristics['Артикул'] && (
+                            <li>Артикул: {product.characteristics['Артикул']}</li>
                           )}
                         </ul>
                       </div>
