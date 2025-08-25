@@ -7,7 +7,7 @@ import { useComparison } from '@/contexts/ComparisonContext';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, useCarousel } from '@/components/ui/carousel';
 import LazyImage from '@/components/shared/LazyImage';
-import { Heart, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ProductCardProps {
   product: {
@@ -193,16 +193,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
           className={`hover:scale-110 transition-transform ${isInComparison(product.id) ? 'opacity-100' : 'opacity-70'}`}
           onClick={handleStatsClick}
         >
-          <BarChart3 
-            className={`w-5 h-5 text-gray-600 ${isInComparison(product.id) ? 'text-blue-600' : ''}`} 
+          <img 
+            src="/lovable-uploads/06622e86-a434-4453-a055-986979797099.png"
+            alt="Сравнить товары"
+            className={`w-5 h-5 ${isInComparison(product.id) ? 'filter-blue' : ''}`}
           />
         </button>
         <button 
           className="hover:scale-110 transition-transform"
           onClick={handleFavoriteClick}
         >
-          <Heart 
-            className={`w-5 h-5 ${isFavorite(product.id) ? 'text-red-500 fill-current' : 'text-gray-600'}`} 
+          <img 
+            src="/lovable-uploads/06db6132-5d2f-4ab0-92cc-d86afa8f1d07.png"
+            alt="Добавить в избранное"
+            className={`w-5 h-5 ${isFavorite(product.id) ? 'filter-red' : ''}`}
           />
         </button>
       </div>
