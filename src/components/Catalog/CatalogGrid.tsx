@@ -25,6 +25,8 @@ interface CatalogGridProps {
   onPageChange?: (page: number) => void;
   hasNextPage?: boolean;
   hasPreviousPage?: boolean;
+  onLoadMore?: () => void;
+  showLoadMore?: boolean;
 }
 
 const CatalogGrid: React.FC<CatalogGridProps> = memo(({ 
@@ -33,7 +35,9 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
   currentPage = 1, 
   onPageChange,
   hasNextPage = false,
-  hasPreviousPage = false
+  hasPreviousPage = false,
+  onLoadMore,
+  showLoadMore = false
 }) => {
 
 
@@ -79,8 +83,18 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
         ))}
       </div>
 
-      {/* More Products - убираем для лучшей производительности */}
-      {/* Load More Button - убираем, используем пагинацию */}
+      {/* Load More Button */}
+      {showLoadMore && (
+        <div className="flex justify-center mb-8">
+          <Button 
+            variant="outline" 
+            onClick={onLoadMore}
+            className="border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white px-8 py-2"
+          >
+            Показать еще
+          </Button>
+        </div>
+      )}
 
       {/* Pagination */}
       <div className="flex items-center justify-center space-x-2">
