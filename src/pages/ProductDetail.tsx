@@ -282,10 +282,11 @@ const ProductDetail: React.FC = () => {
             {/* Город доставки */}
             <div className="flex gap-8">
               <div className="w-80 flex-shrink-0">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-nowrap">
                   <h3 style={{
                     fontFamily: 'Benzin-Medium',
-                    fontSize: '20px'
+                    fontSize: '20px',
+                    whiteSpace: 'nowrap'
                   }}>Город доставки</h3>
                   <SupportCitySelector 
                     selectedCity={selectedCity}
