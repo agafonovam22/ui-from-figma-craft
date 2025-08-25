@@ -134,7 +134,7 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
                 <Slider
                   value={priceRange}
                   onValueChange={handlePriceRangeChange}
-                  max={200000}
+                  max={1500000}
                   min={0}
                   step={1000}
                   className="w-full"

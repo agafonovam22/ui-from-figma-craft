@@ -61,7 +61,7 @@ const Catalog: React.FC = () => {
   const [filters, setFilters] = useState<FilterState>({
     price: {
       min: 0,
-      max: 200000,
+      max: 1500000,
       ranges: []
     },
     brands: [],
@@ -129,7 +129,7 @@ const Catalog: React.FC = () => {
 
   const handleResetFilters = () => {
     setFilters({
-      price: { min: 0, max: 200000, ranges: [] },
+      price: { min: 0, max: 1500000, ranges: [] },
       brands: [],
       purposeTypes: [],
       powerRange: {},
@@ -155,7 +155,7 @@ const Catalog: React.FC = () => {
           }
         });
       });
-    } else if (filters.price.min > 0 || filters.price.max < 200000) {
+    } else if (filters.price.min > 0 || filters.price.max < 1500000) {
       filtered = filtered.filter(product => 
         product.price >= filters.price.min && product.price <= filters.price.max
       );
