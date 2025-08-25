@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { extractBrandFromProductName } from '@/utils/extractBrand';
+import { useLocation } from 'react-router-dom';
 
 interface ProductCharacteristicsTableProps {
   characteristics: any;
@@ -13,6 +14,8 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
   productName,
   className = ""
 }) => {
+  const location = useLocation();
+  const isProduct532 = location.pathname === '/product/532';
   if (!characteristics) {
     return (
       <div className="text-center text-muted-foreground py-8">
@@ -324,27 +327,53 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       {/* Габариты в рабочем состоянии */}
       {renderTable(categorizedCharacteristics.dimensions, 'dimensions')}
       
-      {/* Консоль и Страна производства - рядом */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          {renderTable(categorizedCharacteristics.console, 'console')}
-        </div>
-        <div>
-          {renderTable(categorizedCharacteristics.location, 'location')}
-        </div>
-      </div>
-      
-      {/* Упаковка */}
-      {renderTable(categorizedCharacteristics.packaging, 'packaging')}
-      
-      {/* Вес */}
-      {renderTable(categorizedCharacteristics.weight, 'weight')}
-      
-      {/* Гарантия и сертификация */}
-      {renderTable(categorizedCharacteristics.warranty, 'warranty')}
-      
-      {/* Дополнительные характеристики */}
-      {renderTable(categorizedCharacteristics.other, 'other')}
+      {/* Условная логика для страницы /product/532 */}
+      {isProduct532 ? (
+        <>
+          {/* Упаковка */}
+          {renderTable(categorizedCharacteristics.packaging, 'packaging')}
+          
+          {/* Вес */}
+          {renderTable(categorizedCharacteristics.weight, 'weight')}
+          
+          {/* Гарантия и сертификация */}
+          {renderTable(categorizedCharacteristics.warranty, 'warranty')}
+          
+          {/* Страна производства и Дополнительные характеристики - рядом */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              {renderTable(categorizedCharacteristics.location, 'location')}
+            </div>
+            <div className="md:col-span-2">
+              {renderTable(categorizedCharacteristics.other, 'other')}
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          {/* Консоль и Страна производства - рядом */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              {renderTable(categorizedCharacteristics.console, 'console')}
+            </div>
+            <div>
+              {renderTable(categorizedCharacteristics.location, 'location')}
+            </div>
+          </div>
+          
+          {/* Упаковка */}
+          {renderTable(categorizedCharacteristics.packaging, 'packaging')}
+          
+          {/* Вес */}
+          {renderTable(categorizedCharacteristics.weight, 'weight')}
+          
+          {/* Гарантия и сертификация */}
+          {renderTable(categorizedCharacteristics.warranty, 'warranty')}
+          
+          {/* Дополнительные характеристики */}
+          {renderTable(categorizedCharacteristics.other, 'other')}
+        </>
+      )}
     </div>
   );
 };
