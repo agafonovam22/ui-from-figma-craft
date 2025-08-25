@@ -142,86 +142,65 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       };
     };
 
-    const renderCharacteristicContent = (processedChar: any) => {
-      const { displayKey, displayValue } = processedChar;
+    const renderValue = (value: any) => {
+      const valueStr = String(value);
       
-      const valueStr = String(displayValue);
+      // Check for image files
+      const isImageFile = valueStr.match(/\.(jpg|jpeg|png|webp)$/i);
+      if (isImageFile) {
+        return (
+          <img 
+            src={valueStr} 
+            alt="Фото"
+            style={{ maxWidth: "200px", height: "auto" }}
+            className="rounded border"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        );
+      }
       
-      // Check if value is a URL starting with http
-      const isHttpUrl = valueStr.startsWith('http');
-      
-      if (isHttpUrl) {
-        // Check for image URLs
-        const isImageFile = valueStr.match(/\.(jpg|jpeg|png|webp)$/i);
-        
-        if (isImageFile) {
-          return (
-            <div className="flex flex-col gap-2">
-              <span className="text-sm font-medium text-foreground">{displayKey}:</span>
-              <div className="flex flex-col items-start gap-1">
-                <img 
-                  src={valueStr} 
-                  alt={displayKey}
-                  style={{ maxWidth: '200px', height: 'auto' }}
-                  className="rounded border"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-                <span className="text-xs text-muted-foreground break-all">
-                  {valueStr}
-                </span>
-              </div>
-            </div>
-          );
-        }
-        
-        // Check for document URLs
-        const isDocumentFile = valueStr.match(/\.(pdf|doc|docx|txt)$/i);
-        
-        if (isDocumentFile) {
-          return (
-            <div className="flex flex-col gap-1">
-              <span className="text-sm font-medium text-foreground">{displayKey}:</span>
-              <div className="flex flex-col gap-1">
-                <a 
-                  href={valueStr} 
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 underline"
-                >
-                  Скачать файл
-                </a>
-                <span className="text-xs text-muted-foreground break-all">
-                  {valueStr}
-                </span>
-              </div>
-            </div>
-          );
-        }
+      // Check for document files
+      const isDocumentFile = valueStr.match(/\.(pdf|doc|docx|txt)$/i);
+      if (isDocumentFile) {
+        return (
+          <a 
+            href={valueStr} 
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 underline"
+          >
+            Скачать файл
+          </a>
+        );
       }
       
       // Check if value contains HTML tags
       const hasHtmlTags = valueStr.includes('<') && valueStr.includes('>');
-      
       if (hasHtmlTags) {
         return (
-          <div className="flex flex-col gap-1">
-            <span className="text-sm font-medium text-foreground">{displayKey}:</span>
-            <div 
-              className="text-sm text-muted-foreground"
-              dangerouslySetInnerHTML={{ __html: valueStr }}
-            />
-          </div>
+          <div 
+            className="text-sm text-muted-foreground"
+            dangerouslySetInnerHTML={{ __html: valueStr }}
+          />
         );
       }
       
       // Default: show as text
+      return <span>{valueStr}</span>;
+    };
+
+    const renderCharacteristicContent = (processedChar: any) => {
+      const { displayKey, displayValue } = processedChar;
+      
       return (
         <div className="flex flex-col gap-1">
           <span className="text-sm font-medium text-foreground">{displayKey}:</span>
-          <span className="text-sm text-muted-foreground">{valueStr}</span>
+          <div className="text-sm text-muted-foreground">
+            {renderValue(displayValue)}
+          </div>
         </div>
       );
     };
