@@ -144,13 +144,36 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                   displayValue = extractBrandFromProductName(productName) || value;
                 }
                 
+                // Check if this is a photo characteristic or image URL
+                const isPhotoCharacteristic = key.toLowerCase().includes('фото') || key.toLowerCase().includes('photo');
+                const isImageUrl = typeof displayValue === 'string' && (
+                  displayValue.match(/\.(jpg|jpeg|png|gif|webp|bmp|svg)$/i) ||
+                  displayValue.startsWith('http') && displayValue.match(/\.(jpg|jpeg|png|gif|webp|bmp|svg)/i)
+                );
+                
                 return (
                   <TableRow key={key} className="border-b border-border">
                     <TableCell className="font-medium text-muted-foreground py-3 px-4 w-1/2">
                       {displayKey}
                     </TableCell>
                     <TableCell className="py-3 px-4 text-right">
-                      {String(displayValue)}
+                      {(isPhotoCharacteristic || isImageUrl) && displayValue ? (
+                        <div className="flex flex-col items-end gap-2">
+                          <img 
+                            src={String(displayValue)} 
+                            alt={displayKey}
+                            className="max-w-32 max-h-32 object-contain rounded border"
+                            onError={(e) => {
+                              e.currentTarget.style.display = 'none';
+                            }}
+                          />
+                          <span className="text-xs text-muted-foreground break-all">
+                            {String(displayValue)}
+                          </span>
+                        </div>
+                      ) : (
+                        String(displayValue)
+                      )}
                     </TableCell>
                   </TableRow>
                 );
