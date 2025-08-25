@@ -288,10 +288,7 @@ const ProductDetail: React.FC = () => {
                     fontSize: '20px',
                     whiteSpace: 'nowrap'
                   }}>Город доставки</h3>
-                  <SupportCitySelector 
-                    selectedCity={selectedCity}
-                    onCitySelect={setSelectedCity}
-                  />
+                  <span className="text-red-500 font-medium">Москва</span>
                 </div>
               </div>
               <div className="flex-1">
