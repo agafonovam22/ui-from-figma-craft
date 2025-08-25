@@ -1009,13 +1009,8 @@ const ProductDetail: React.FC = () => {
 
             {/* Product Title */}
             <div className="mb-4">
-              <h1 className="text-2xl mb-2 font-bold">
-                <span style={{ fontFamily: 'Benzin-Regular' }}>
-                  {product.name.split(' ').slice(0, 2).join(' ')}
-                </span>{' '}
-                <span style={{ fontFamily: 'Benzin-Semibold' }}>
-                  {product.name.split(' ').slice(2).join(' ')}
-                </span>
+              <h1 className="text-2xl mb-2 font-bold font-benzin">
+                Беговая дорожка
               </h1>
               {/* Separator after title */}
               <div className="h-px bg-gray-300 mb-4"></div>
