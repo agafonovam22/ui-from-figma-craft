@@ -314,7 +314,7 @@ const ProductDetail: React.FC = () => {
                                            <div>
                                              {key === 'Каталог 1' ? (
                                                <button
-                                                 onClick={() => window.open('http://193.164.201.197:8081/ftp_images/.../Katalogi/1.pdf', '_blank', 'noopener,noreferrer')}
+                                                 onClick={() => window.open('http://193.164.201.197:8081/ftp_images/Begovyye%20dorozhki/TRUE/a2772f29-619a-11ec-96c0-c68d8390cdfa/Katalogi/1.pdf', '_blank', 'noopener,noreferrer')}
                                                  className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-xs transition-colors"
                                                >
                                                  Открыть каталог
