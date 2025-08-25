@@ -312,7 +312,7 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
                   <input 
                     type="radio" 
                     name="equipment-type" 
-                    className="mr-2 w-4 h-4 appearance-none border border-gray-300 rounded-full checked:border-black checked:bg-black checked:shadow-[inset_0_0_0_2px_white,inset_0_0_0_3px_black]"
+                    className="mr-2 w-4 h-4 appearance-none border border-gray-300 rounded checked:border-black checked:bg-black checked:shadow-[inset_0_0_0_2px_white,inset_0_0_0_3px_black]"
                     checked={filters.equipmentTypes.includes(type)}
                     onChange={(e) => handleEquipmentTypeChange(type, e.target.checked)}
                   />
