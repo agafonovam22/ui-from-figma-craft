@@ -251,14 +251,11 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                     {pair.first && renderCharacteristicContent(pair.first)}
                   </div>
                   
-                  {/* Separator and second characteristic */}
+                  {/* Second characteristic */}
                   {pair.second ? (
-                    <>
-                      <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border transform -translate-x-px"></div>
-                      <div className="flex-1 md:pl-2">
-                        {renderCharacteristicContent(pair.second)}
-                      </div>
-                    </>
+                    <div className="flex-1">
+                      {renderCharacteristicContent(pair.second)}
+                    </div>
                   ) : (
                     <div className="hidden md:block"></div>
                   )}
