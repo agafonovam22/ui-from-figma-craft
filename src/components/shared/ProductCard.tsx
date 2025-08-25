@@ -204,7 +204,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           onClick={handleFavoriteClick}
         >
           <img 
-            src={isFavorite(product.id) ? "/lovable-uploads/heart-selected.png" : "/lovable-uploads/06db6132-5d2f-4ab0-92cc-d86afa8f1d07.png"}
+            src={isFavorite(product.id) ? "/lovable-uploads/53bfdac6-4eb7-4d8f-b0db-2e8adc93fff7.png" : "/lovable-uploads/06db6132-5d2f-4ab0-92cc-d86afa8f1d07.png"}
             alt="Добавить в избранное"
             className="w-5 h-5"
           />
