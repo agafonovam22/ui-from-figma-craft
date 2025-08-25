@@ -149,6 +149,11 @@ const ProductDetail: React.FC = () => {
               items: {} as Record<string, string>,
               keywords: ['Бренд', 'Артикул', 'Тип оборудования', 'Тип назначения', 'Использование', 'Размер', 'Длина', 'Ширина', 'Высота', 'Габариты', 'см', 'Вес', 'кг']
             },
+            catalog: {
+              title: 'Каталог',
+              items: {} as Record<string, string>,
+              keywords: ['Каталог']
+            },
             packaging: {
               title: 'Упаковка',
               items: {} as Record<string, string>,
@@ -274,6 +279,36 @@ const ProductDetail: React.FC = () => {
                               </div>
                             </>
                           ) : (
+                            // Special handling for catalog category
+                            categoryKey === 'catalog' ? (
+                              Object.entries(category.items).map(([key, value]) => {
+                                let displayKey = key;
+                                
+                                if (key === 'Каталог 1') {
+                                  displayKey = 'Каталог';
+                                }
+                                
+                                const isUrl = typeof value === 'string' && (value.startsWith('http') || value.startsWith('https'));
+                                
+                                return (
+                                  <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
+                                    <span className="text-gray-600 text-sm">{displayKey}</span>
+                                    <div className="text-right">
+                                      {isUrl ? (
+                                        <button
+                                          onClick={() => window.open(value, '_blank', 'noopener,noreferrer')}
+                                          className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-xs transition-colors"
+                                        >
+                                          Открыть каталог
+                                        </button>
+                                      ) : (
+                                        <span className="text-foreground text-sm font-medium">{value}</span>
+                                      )}
+                                    </div>
+                                  </div>
+                                );
+                              })
+                            ) : (
                             // Single column layout for other categories
                             Object.entries(category.items).map(([key, value]) => {
                               let displayKey = key;
@@ -291,6 +326,7 @@ const ProductDetail: React.FC = () => {
                                 </div>
                               );
                             })
+                            )
                           )}
                         </div>
                       </div>
