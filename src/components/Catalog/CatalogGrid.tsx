@@ -39,40 +39,44 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
 
   return (
     <>
-      {/* Products Grid */}
+      {/* Products Grid with Ad Banner */}
       <div className="grid grid-cols-4 gap-6 mb-8">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={{ 
-            id: product.id.toString(),
-            name: product.name,
-            price: product.price,
-            original_price: product.original_price,
-            discount_percentage: product.discount_percentage,
-            gallery_images: product.gallery_images,
-            rating: product.rating,
-            reviews_count: product.reviews_count,
-            in_stock: product.in_stock,
-            is_available: product.is_available,
-            quantity: product.quantity,
-            badge: product.badge,
-            badge_color: product.badge_color
-          }} />
+        {products.map((product, index) => (
+          <React.Fragment key={product.id}>
+            <ProductCard product={{ 
+              id: product.id.toString(),
+              name: product.name,
+              price: product.price,
+              original_price: product.original_price,
+              discount_percentage: product.discount_percentage,
+              gallery_images: product.gallery_images,
+              rating: product.rating,
+              reviews_count: product.reviews_count,
+              in_stock: product.in_stock,
+              is_available: product.is_available,
+              quantity: product.quantity,
+              badge: product.badge,
+              badge_color: product.badge_color
+            }} />
+            
+            {/* Ad Banner after 8th product (between 2nd and 3rd row) */}
+            {index === 7 && (
+              <div className="col-span-4 bg-gray-800 text-white p-8 rounded-lg my-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-lg font-bold mb-2">Место для рекламы</h3>
+                    <p className="text-sm text-gray-300">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    </p>
+                  </div>
+                  <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white">
+                    Перейти →
+                  </Button>
+                </div>
+              </div>
+            )}
+          </React.Fragment>
         ))}
-      </div>
-
-      {/* Ad Banner */}
-      <div className="bg-gray-800 text-white p-8 rounded-lg mb-8">
-        <div className="flex items-center justify-between">
-          <div>
-            <h3 className="text-lg font-bold mb-2">Место для рекламы</h3>
-            <p className="text-sm text-gray-300">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-            </p>
-          </div>
-          <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white">
-            Перейти →
-          </Button>
-        </div>
       </div>
 
       {/* More Products - убираем для лучшей производительности */}
