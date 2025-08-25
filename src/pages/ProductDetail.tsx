@@ -991,15 +991,15 @@ const ProductDetail: React.FC = () => {
           <div className="bg-gray-50 -my-8 -mr-6 lg:-mr-12 xl:-mr-16 pr-6 lg:pr-12 xl:pr-16 py-8">
             <div className="p-4 space-y-4">
             {/* Header with badges */}
-            <div className="flex justify-end mb-4">
+            <div className="flex justify-start mb-4">
               <div className="flex space-x-2">
-                <div className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium flex items-center">
+                <Badge variant="secondary" className="text-xs font-medium bg-green-100 text-green-800 flex items-center hover:bg-green-100">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
                   В наличии
-                </div>
-                <div className="bg-blue-500 text-white px-6 py-2 rounded-full text-sm font-medium">
+                </Badge>
+                <Badge variant="secondary" className="text-xs font-medium bg-blue-500 text-white hover:bg-blue-500">
                   Есть в шоуруме
-                </div>
+                </Badge>
               </div>
             </div>
 
