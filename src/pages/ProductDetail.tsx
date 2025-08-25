@@ -15,6 +15,7 @@ import ReviewDialog from '@/components/ReviewDialog';
 import { useQuery } from '@tanstack/react-query';
 import { optimizeImageUrl, preloadImage } from '@/utils/imageOptimization';  
 import LoadingSpinner from '@/components/LoadingSpinner';
+import { extractBrandFromProductName } from '@/utils/extractBrand';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -242,16 +243,11 @@ const ProductDetail: React.FC = () => {
                                    let displayKey = key;
                                    let displayValue = value;
                                    
-                                   // Brand ID to name mapping
-                                   const brandMapping: { [key: string]: string } = {
-                                     '38761': 'True',
-                                     // Добавьте другие ID брендов и их названия здесь
-                                   };
-                                   
-                                   if (key === 'Бренд (id)') {
-                                     displayKey = 'Бренд';
-                                     displayValue = brandMapping[value] || value;
-                                   }
+                                    // Extract brand from product name
+                                    if (key === 'Бренд (id)') {
+                                      displayKey = 'Бренд';
+                                      displayValue = extractBrandFromProductName(product.name) || value;
+                                    }
                                    
                                    return (
                                      <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
@@ -266,16 +262,11 @@ const ProductDetail: React.FC = () => {
                                    let displayKey = key;
                                    let displayValue = value;
                                    
-                                   // Brand ID to name mapping
-                                   const brandMapping: { [key: string]: string } = {
-                                     '38761': 'True',
-                                     // Добавьте другие ID брендов и их названия здесь
-                                   };
-                                   
-                                   if (key === 'Бренд (id)') {
-                                     displayKey = 'Бренд';
-                                     displayValue = brandMapping[value] || value;
-                                   }
+                                    // Extract brand from product name
+                                    if (key === 'Бренд (id)') {
+                                      displayKey = 'Бренд';
+                                      displayValue = extractBrandFromProductName(product.name) || value;
+                                    }
                                    
                                    return (
                                      <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
