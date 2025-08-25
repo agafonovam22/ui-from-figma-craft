@@ -125,7 +125,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
 
   const categorizedCharacteristics = categorizeCharacteristics(characteristics);
 
-  const renderTable = (category: any, categoryKey: string) => {
+  const renderTable = (category: any, categoryKey: string, splitColumn?: boolean, columnPart?: 'first' | 'second') => {
     const hasItems = Object.keys(category.items).length > 0;
     if (!hasItems) return null;
 
@@ -255,11 +255,21 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
 
     // Group characteristics into pairs
     const characteristics = Object.entries(category.items);
+    
+    // If splitting column, divide characteristics
+    let filteredCharacteristics = characteristics;
+    if (splitColumn && columnPart) {
+      const midpoint = Math.ceil(characteristics.length / 2);
+      filteredCharacteristics = columnPart === 'first' 
+        ? characteristics.slice(0, midpoint)
+        : characteristics.slice(midpoint);
+    }
+    
     const characteristicPairs = [];
     
-    for (let i = 0; i < characteristics.length; i += 2) {
-      const firstChar = characteristics[i];
-      const secondChar = characteristics[i + 1];
+    for (let i = 0; i < filteredCharacteristics.length; i += 2) {
+      const firstChar = filteredCharacteristics[i];
+      const secondChar = filteredCharacteristics[i + 1];
       
       characteristicPairs.push({
         first: firstChar ? processCharacteristic(firstChar[0], firstChar[1]) : null,
@@ -273,6 +283,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       <div key={categoryKey} className="mb-8">
         <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
           {category.title}
+          {splitColumn && columnPart === 'second' && ' (продолжение)'}
         </h4>
         <div className="overflow-hidden">
           <div className="">
@@ -339,13 +350,16 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
           {/* Гарантия и сертификация */}
           {renderTable(categorizedCharacteristics.warranty, 'warranty')}
           
-          {/* Страна производства и Дополнительные характеристики - рядом */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Страна производства и Дополнительные характеристики - три равных столбца */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
               {renderTable(categorizedCharacteristics.location, 'location')}
             </div>
             <div>
-              {renderTable(categorizedCharacteristics.other, 'other')}
+              {renderTable(categorizedCharacteristics.other, 'other', true, 'first')}
+            </div>
+            <div>
+              {renderTable(categorizedCharacteristics.other, 'other', true, 'second')}
             </div>
           </div>
         </>
