@@ -391,7 +391,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                         <div className="flex justify-between items-start gap-4">
                           <span className="text-sm font-medium text-foreground flex-shrink-0">{key}:</span>
                           <div className="text-sm text-muted-foreground text-right">
-                            <span>{String(value)}</span>
+                            <span>{String(value).replace(/<[^>]*>/g, '').trim()}</span>
                           </div>
                         </div>
                       </div>
@@ -416,9 +416,9 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                       <div className="border-t border-border pt-2">
                         <div className="flex justify-between items-start gap-4">
                           <span className="text-sm font-medium text-foreground flex-shrink-0">{key}:</span>
-                          <div className="text-sm text-muted-foreground text-right">
-                            <span>{String(value)}</span>
-                          </div>
+                           <div className="text-sm text-muted-foreground text-right">
+                             <span>{String(value).replace(/<[^>]*>/g, '').trim()}</span>
+                           </div>
                         </div>
                       </div>
                       <div className="border-b border-border"></div>
@@ -442,9 +442,9 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
                       <div className="border-t border-border pt-2">
                         <div className="flex justify-between items-start gap-4">
                           <span className="text-sm font-medium text-foreground flex-shrink-0">{key}:</span>
-                          <div className="text-sm text-muted-foreground text-right">
-                            <span>{String(value)}</span>
-                          </div>
+                           <div className="text-sm text-muted-foreground text-right">
+                             <span>{String(value).replace(/<[^>]*>/g, '').trim()}</span>
+                           </div>
                         </div>
                       </div>
                       <div className="border-b border-border"></div>
