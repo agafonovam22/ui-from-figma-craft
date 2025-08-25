@@ -246,7 +246,7 @@ const ProductDetail: React.FC = () => {
 
         return (
           <div>
-            <h3 className="text-xl font-semibold mb-6 font-manrope">Характеристики</h3>
+            <h3 className="text-4xl font-semibold mb-6 font-manrope text-center">Характеристики</h3>
             <div className="font-manrope space-y-8">
               {product.characteristics ? (
                 (() => {
@@ -375,29 +375,73 @@ const ProductDetail: React.FC = () => {
                          );
                        })}
 
-                       {/* Гарантия и Сертификация */}
-                       {Object.entries(categorizedCharacteristics).filter(([key]) => key === 'warranty').map(([categoryKey, category]) => {
-                         const hasItems = Object.keys(category.items).length > 0;
-                         if (!hasItems) return null;
-                         
-                         return (
-                           <div key={categoryKey}>
-                             <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
-                             <Table>
-                               <TableBody>
-                                 {Object.entries(category.items).map(([key, value]) => (
-                                   <TableRow key={key}>
-                                     <TableCell className="text-muted-foreground w-1/2">{key}</TableCell>
-                                     <TableCell className="font-medium">{value}</TableCell>
-                                   </TableRow>
-                                 ))}
-                               </TableBody>
-                             </Table>
-                           </div>
-                         );
-                       })}
-                     </>
-                   );
+                        {/* Гарантия и Сертификация */}
+                        {Object.entries(categorizedCharacteristics).filter(([key]) => key === 'warranty').map(([categoryKey, category]) => {
+                          const hasItems = Object.keys(category.items).length > 0;
+                          if (!hasItems) return null;
+                          
+                          return (
+                            <div key={categoryKey}>
+                              <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
+                              <Table>
+                                <TableBody>
+                                  {Object.entries(category.items).map(([key, value]) => (
+                                    <TableRow key={key}>
+                                      <TableCell className="text-muted-foreground w-1/2">{key}</TableCell>
+                                      <TableCell className="font-medium">{value}</TableCell>
+                                    </TableRow>
+                                  ))}
+                                </TableBody>
+                              </Table>
+                            </div>
+                          );
+                        })}
+
+                        {/* Страна производства */}
+                        {Object.entries(categorizedCharacteristics).filter(([key]) => key === 'location').map(([categoryKey, category]) => {
+                          const hasItems = Object.keys(category.items).length > 0;
+                          if (!hasItems) return null;
+                          
+                          return (
+                            <div key={categoryKey}>
+                              <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
+                              <Table>
+                                <TableBody>
+                                  {Object.entries(category.items).map(([key, value]) => (
+                                    <TableRow key={key}>
+                                      <TableCell className="text-muted-foreground w-1/2">{key}</TableCell>
+                                      <TableCell className="font-medium">{value}</TableCell>
+                                    </TableRow>
+                                  ))}
+                                </TableBody>
+                              </Table>
+                            </div>
+                          );
+                        })}
+
+                        {/* Дополнительные характеристики */}
+                        {Object.entries(categorizedCharacteristics).filter(([key]) => key === 'other').map(([categoryKey, category]) => {
+                          const hasItems = Object.keys(category.items).length > 0;
+                          if (!hasItems) return null;
+                          
+                          return (
+                            <div key={categoryKey}>
+                              <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
+                              <Table>
+                                <TableBody>
+                                  {Object.entries(category.items).map(([key, value]) => (
+                                    <TableRow key={key}>
+                                      <TableCell className="text-muted-foreground w-1/2">{key}</TableCell>
+                                      <TableCell className="font-medium">{value}</TableCell>
+                                    </TableRow>
+                                  ))}
+                                </TableBody>
+                              </Table>
+                            </div>
+                          );
+                        })}
+                      </>
+                    );
                 })()
               ) : (
                 <p className="text-muted-foreground">Характеристики товара не найдены</p>
