@@ -468,16 +468,8 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       {/* Гарантия и сертификация */}
       {renderTable(categorizedCharacteristics.warranty, 'warranty')}
       
-      {/* Combined bottom section for product 532: Страна производства + Дополнительные характеристики */}
-      {productId === '532' ? renderCombinedBottomSection() : (
-        <>
-          {/* Страна производства */}
-          {renderTable(categorizedCharacteristics.location, 'location')}
-          
-          {/* Дополнительные характеристики */}
-          {renderTable(categorizedCharacteristics.other, 'other')}
-        </>
-      )}
+      {/* Combined bottom section: Страна производства + Дополнительные характеристики */}
+      {renderCombinedBottomSection()}
     </div>
   );
 };
