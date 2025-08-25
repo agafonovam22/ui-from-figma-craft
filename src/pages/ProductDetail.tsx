@@ -1062,61 +1062,43 @@ const ProductDetail: React.FC = () => {
                 <div className="grid gap-1 text-xs">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Тип продукции:</span>
-                    <span className="font-medium">
-                      {product.characteristics['Наименование товара на сайте'] ? 
-                        product.characteristics['Наименование товара на сайте'].includes('набор') ? 'Фитнес наборы' : 
-                        product.characteristics['Наименование товара на сайте'].includes('мат') ? 'Коврики и маты' :
-                        product.characteristics['Наименование товара на сайте'].includes('Коврик') ? 'Коврики и маты' :
-                        product.characteristics['Наименование товара на сайте'].includes('Рукоятка') ? 'Аксессуары' :
-                        product.characteristics['Наименование товара на сайте'].includes('платформа') ? 'Платформы' :
-                        product.characteristics['Наименование товара на сайте'].includes('Утяжелители') ? 'Утяжелители' :
-                        'Фитнес оборудование'
-                        : 'Фитнес оборудование'}
-                    </span>
+                    <span className="font-medium">Беговые дорожки для дома</span>
                   </div>
-                  {product.characteristics['Бренд (id)'] && (
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Бренд:</span>
-                      <span className="font-medium">
-                        {product.characteristics['Бренд (id)'] === '49278' ? 'CENTR' : 
-                         product.characteristics['Бренд (id)'] === '38764' ? 'KERNEL' : 'CENTR'}
-                      </span>
-                    </div>
-                  )}
-                  {product.characteristics['Артикул'] && (
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Артикул:</span>
-                      <span className="font-medium">{product.characteristics['Артикул']}</span>
-                    </div>
-                  )}
-                  {product.characteristics['Тип назначения'] && (
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Назначение:</span>
-                      <span className="font-medium">{product.characteristics['Тип назначения']}</span>
-                    </div>
-                  )}
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Тип оборудования:</span>
-                    <span className="font-medium">
-                      {product.characteristics['Тип оборудования'] === '857' ? 'Функциональный тренинг' :
-                       product.characteristics['Тип оборудования'] === '852' ? 'Коврики и маты' :
-                       product.characteristics['Тип оборудования'] === '865' ? 'Аксессуары' :
-                       product.characteristics['Тип оборудования'] === '862' ? 'Платформы' :
-                       product.characteristics['Тип оборудования'] === '870' ? 'Утяжелители' :
-                       'Функциональный тренинг'}
-                    </span>
+                    <span className="text-muted-foreground">Бренд:</span>
+                    <span className="font-medium">CardioPower</span>
                   </div>
-                  {product.characteristics['Базовая единица'] && (
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Единица измерения:</span>
-                      <span className="font-medium">{product.characteristics['Базовая единица']}</span>
-                    </div>
-                  )}
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Комплектация:</span>
-                    <span className="font-medium">
-                      {product.characteristics['Наименование товара на сайте'] || product.name}
-                    </span>
+                    <span className="text-muted-foreground">Назначение:</span>
+                    <span className="font-medium">Домашние</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Тип двигателя:</span>
+                    <span className="font-medium">Постоянного тока DC</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Мощность двигателя, л.с.:</span>
+                    <span className="font-medium">1.5</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Пиковая мощность, л.с.:</span>
+                    <span className="font-medium">2.5</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Тип беговой дорожки:</span>
+                    <span className="font-medium">Электрические</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Минимальная скорость, км/ч:</span>
+                    <span className="font-medium">0.8</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Максимальная скорость, км/ч:</span>
+                    <span className="font-medium">10</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Угол наклона:</span>
+                    <span className="font-medium">Механический</span>
                   </div>
                 </div>
               )}
