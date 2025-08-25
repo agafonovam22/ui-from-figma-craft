@@ -137,8 +137,8 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
 
       {/* SEO Section */}
       <div className="mt-[100px]">
-        <div className="w-full h-px bg-gray-300"></div>
-        <div className="mt-[60px]">
+        <div className="w-full h-px bg-gray-300 mb-[60px]"></div>
+        <div>
           <h2 className="text-2xl font-bold mb-6">Блок под сео текст</h2>
           <div className="grid grid-cols-2 gap-8 text-sm text-gray-600 leading-relaxed">
             <div>
