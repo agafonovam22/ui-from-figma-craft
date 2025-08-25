@@ -4,7 +4,6 @@ import { ArrowLeft, Heart, Share2, ShoppingCart, Download, Minus, Plus, BarChart
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@/components/ui/table';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
@@ -168,11 +167,6 @@ const ProductDetail: React.FC = () => {
               items: {} as Record<string, string>,
               keywords: ['Бренд', 'Артикул', 'Тип оборудования', 'Тип назначения', 'Использование', 'Размер', 'Длина', 'Ширина', 'Высота', 'Габариты', 'см', 'Вес', 'кг']
             },
-            dimensions: {
-              title: 'Габариты в рабочем состоянии',
-              items: {} as Record<string, string>,
-              keywords: ['Длина в рабочем', 'Ширина в рабочем', 'Высота в рабочем', 'Габариты в рабочем']
-            },
             console: {
               title: 'Консоль',
               items: {} as Record<string, string>,
@@ -186,15 +180,10 @@ const ProductDetail: React.FC = () => {
             packaging: {
               title: 'Упаковка',
               items: {} as Record<string, string>,
-              keywords: ['Габариты упаковки', 'Вес брутто', 'Упаковка']
-            },
-            weight: {
-              title: 'Вес',
-              items: {} as Record<string, string>,
-              keywords: ['Вес нетто', 'Собственный вес']
+              keywords: ['Габариты упаковки']
             },
             warranty: {
-              title: 'Гарантия и Сертификация',
+              title: 'Гарантия и сертификация',
               items: {} as Record<string, string>,
               keywords: ['Гарантия', 'Сертификат', 'Сертификация']
             },
@@ -246,7 +235,7 @@ const ProductDetail: React.FC = () => {
 
         return (
           <div>
-            <h3 className="text-4xl font-semibold mb-6 font-manrope text-center">Характеристики</h3>
+            <h3 className="text-xl font-semibold mb-6 font-manrope">Характеристики</h3>
             <div className="font-manrope space-y-8">
               {product.characteristics ? (
                 (() => {
@@ -254,7 +243,7 @@ const ProductDetail: React.FC = () => {
                   
                    return (
                      <>
-                       {/* Основные характеристики */}
+                       {/* Основные характеристики - отдельно в 2 колонки */}
                        {Object.entries(categorizedCharacteristics).filter(([key]) => key === 'basic').map(([categoryKey, category]) => {
                          const hasItems = Object.keys(category.items).length > 0;
                          if (!hasItems) return null;
@@ -262,186 +251,131 @@ const ProductDetail: React.FC = () => {
                          return (
                            <div key={categoryKey}>
                              <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
-                             <Table>
-                               <TableBody>
-                                 {Object.entries(category.items).map(([key, value]) => {
+                             <div className="grid md:grid-cols-2 gap-x-8 space-y-3 md:space-y-0">
+                               <div className="space-y-3">
+                                 {Object.entries(category.items).slice(0, Math.ceil(Object.entries(category.items).length / 2)).map(([key, value]) => {
                                    let displayKey = key;
                                    let displayValue = value;
                                    
-                                   // Extract brand from product name
-                                   if (key === 'Бренд (id)') {
-                                     displayKey = 'Бренд';
-                                     displayValue = extractBrandFromProductName(product.name) || value;
-                                   }
-                                  
+                                    // Extract brand from product name
+                                    if (key === 'Бренд (id)') {
+                                      displayKey = 'Бренд';
+                                      displayValue = extractBrandFromProductName(product.name) || value;
+                                    }
+                                   
                                    return (
-                                     <TableRow key={key}>
-                                       <TableCell className="text-muted-foreground w-1/2">{displayKey}</TableCell>
-                                       <TableCell className="font-medium">{displayValue}</TableCell>
-                                     </TableRow>
+                                     <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
+                                       <span className="text-gray-600 text-sm">{displayKey}</span>
+                                       <span className="text-foreground text-sm font-medium text-right">{displayValue}</span>
+                                     </div>
                                    );
                                  })}
-                               </TableBody>
-                             </Table>
+                               </div>
+                               <div className="space-y-3">
+                                 {Object.entries(category.items).slice(Math.ceil(Object.entries(category.items).length / 2)).map(([key, value]) => {
+                                   let displayKey = key;
+                                   let displayValue = value;
+                                   
+                                    // Extract brand from product name
+                                    if (key === 'Бренд (id)') {
+                                      displayKey = 'Бренд';
+                                      displayValue = extractBrandFromProductName(product.name) || value;
+                                    }
+                                   
+                                   return (
+                                     <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
+                                       <span className="text-gray-600 text-sm">{displayKey}</span>
+                                       <span className="text-foreground text-sm font-medium text-right">{displayValue}</span>
+                                     </div>
+                                   );
+                                 })}
+                               </div>
+                             </div>
                            </div>
                          );
                        })}
 
-                       {/* Габариты в рабочем состоянии */}
-                       {Object.entries(categorizedCharacteristics).filter(([key]) => key === 'dimensions').map(([categoryKey, category]) => {
-                         const hasItems = Object.keys(category.items).length > 0;
-                         if (!hasItems) return null;
-                         
-                         return (
-                           <div key={categoryKey}>
-                             <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
-                             <Table>
-                               <TableBody>
-                                 {Object.entries(category.items).map(([key, value]) => (
-                                   <TableRow key={key}>
-                                     <TableCell className="text-muted-foreground w-1/2">{key}</TableCell>
-                                     <TableCell className="font-medium">{value}</TableCell>
-                                   </TableRow>
-                                 ))}
-                               </TableBody>
-                             </Table>
-                           </div>
-                         );
-                       })}
-
-                       {/* Дополнительные характеристики */}
-                       {Object.entries(categorizedCharacteristics).filter(([key]) => key === 'other').map(([categoryKey, category]) => {
-                         const hasItems = Object.keys(category.items).length > 0;
-                         if (!hasItems) return null;
-                         
-                         return (
-                           <div key={categoryKey}>
-                             <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
-                             <Table>
-                               <TableBody>
-                                 {Object.entries(category.items).map(([key, value]) => (
-                                   <TableRow key={key}>
-                                     <TableCell className="text-muted-foreground w-1/2">{key}</TableCell>
-                                     <TableCell className="font-medium">{value}</TableCell>
-                                   </TableRow>
-                                 ))}
-                               </TableBody>
-                             </Table>
-                           </div>
-                         );
-                       })}
-
-                       {/* Упаковка */}
-                       {Object.entries(categorizedCharacteristics).filter(([key]) => key === 'packaging').map(([categoryKey, category]) => {
-                         const hasItems = Object.keys(category.items).length > 0;
-                         if (!hasItems) return null;
-                         
-                         return (
-                           <div key={categoryKey}>
-                             <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
-                             <Table>
-                               <TableBody>
-                                 {Object.entries(category.items).map(([key, value]) => (
-                                   <TableRow key={key}>
-                                     <TableCell className="text-muted-foreground w-1/2">{key}</TableCell>
-                                     <TableCell className="font-medium">{value}</TableCell>
-                                   </TableRow>
-                                 ))}
-                               </TableBody>
-                             </Table>
-                           </div>
-                         );
-                       })}
-
-                       {/* Вес */}
-                       {Object.entries(categorizedCharacteristics).filter(([key]) => key === 'weight').map(([categoryKey, category]) => {
-                         const hasItems = Object.keys(category.items).length > 0;
-                         if (!hasItems) return null;
-                         
-                         return (
-                           <div key={categoryKey}>
-                             <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
-                             <Table>
-                               <TableBody>
-                                 {Object.entries(category.items).map(([key, value]) => (
-                                   <TableRow key={key}>
-                                     <TableCell className="text-muted-foreground w-1/2">{key}</TableCell>
-                                     <TableCell className="font-medium">{value}</TableCell>
-                                   </TableRow>
-                                 ))}
-                               </TableBody>
-                             </Table>
-                           </div>
-                         );
-                       })}
-
-                        {/* Гарантия и Сертификация */}
-                        {Object.entries(categorizedCharacteristics).filter(([key]) => key === 'warranty').map(([categoryKey, category]) => {
-                          const hasItems = Object.keys(category.items).length > 0;
-                          if (!hasItems) return null;
+                        {/* Четыре категории в одном ряду */}
+                        {(() => {
+                          const fourColumnCategories = ['console', 'catalog', 'warranty', 'location'];
+                          const categoriesInRow = Object.entries(categorizedCharacteristics)
+                            .filter(([key]) => fourColumnCategories.includes(key))
+                            .filter(([, category]) => Object.keys(category.items).length > 0);
+                          
+                          if (categoriesInRow.length === 0) return null;
                           
                           return (
-                            <div key={categoryKey}>
-                              <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
-                              <Table>
-                                <TableBody>
-                                  {Object.entries(category.items).map(([key, value]) => (
-                                    <TableRow key={key}>
-                                      <TableCell className="text-muted-foreground w-1/2">{key}</TableCell>
-                                      <TableCell className="font-medium">{value}</TableCell>
-                                    </TableRow>
-                                  ))}
-                                </TableBody>
-                              </Table>
-                            </div>
-                          );
-                        })}
+                            <div className="grid md:grid-cols-4 gap-6">
+                              {categoriesInRow.map(([categoryKey, category]) => (
+                                <div key={categoryKey}>
+                                  <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
+                                  <div className="space-y-3">
+                                    {categoryKey === 'catalog' ? (
+                                     Object.entries(category.items).map(([key, value]) => {
+                                       let displayKey = key;
+                                       
+                                       if (key === 'Каталог 1') {
+                                         displayKey = 'Каталог';
+                                       }
+                                       
+                                       const isUrl = typeof value === 'string' && (value.startsWith('http') || value.startsWith('https'));
+                                       
+                                       return (
+                                         <div key={key} className="grid grid-cols-1 py-2 border-b border-gray-200">
+                                           <span className="text-gray-600 text-sm mb-2">{displayKey}</span>
+                                           <div>
+                                             {key === 'Каталог 1' ? (
+                                               <button
+                                                 onClick={() => window.open('http://193.164.201.197:8081/ftp_images/Begovyye%20dorozhki/TRUE/a2772f29-619a-11ec-96c0-c68d8390cdfa/Katalogi/1.pdf', '_blank', 'noopener,noreferrer')}
+                                                 className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-xs transition-colors"
+                                               >
+                                                 Открыть каталог
+                                               </button>
+                                             ) : (
+                                               <span className="text-foreground text-sm font-medium">{value}</span>
+                                             )}
+                                           </div>
+                                         </div>
+                                       );
+                                     })
+                                   ) : (
+                                     Object.entries(category.items).map(([key, value]) => (
+                                       <div key={key} className="grid grid-cols-1 py-2 border-b border-gray-200">
+                                         <span className="text-gray-600 text-sm">{key}</span>
+                                         <span className="text-foreground text-sm font-medium">{value}</span>
+                                       </div>
+                                     ))
+                                   )}
+                                 </div>
+                               </div>
+                             ))}
+                           </div>
+                         );
+                       })()}
 
-                        {/* Страна производства */}
-                        {Object.entries(categorizedCharacteristics).filter(([key]) => key === 'location').map(([categoryKey, category]) => {
-                          const hasItems = Object.keys(category.items).length > 0;
-                          if (!hasItems) return null;
-                          
-                          return (
-                            <div key={categoryKey}>
-                              <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
-                              <Table>
-                                <TableBody>
-                                  {Object.entries(category.items).map(([key, value]) => (
-                                    <TableRow key={key}>
-                                      <TableCell className="text-muted-foreground w-1/2">{key}</TableCell>
-                                      <TableCell className="font-medium">{value}</TableCell>
-                                    </TableRow>
-                                  ))}
-                                </TableBody>
-                              </Table>
-                            </div>
-                          );
-                        })}
-
-                        {/* Дополнительные характеристики */}
-                        {Object.entries(categorizedCharacteristics).filter(([key]) => key === 'other').map(([categoryKey, category]) => {
-                          const hasItems = Object.keys(category.items).length > 0;
-                          if (!hasItems) return null;
-                          
-                          return (
-                            <div key={categoryKey}>
-                              <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
-                              <Table>
-                                <TableBody>
-                                  {Object.entries(category.items).map(([key, value]) => (
-                                    <TableRow key={key}>
-                                      <TableCell className="text-muted-foreground w-1/2">{key}</TableCell>
-                                      <TableCell className="font-medium">{value}</TableCell>
-                                    </TableRow>
-                                  ))}
-                                </TableBody>
-                              </Table>
-                            </div>
-                          );
-                        })}
-                      </>
-                    );
+                        {/* Остальные категории */}
+                        {Object.entries(categorizedCharacteristics)
+                          .filter(([key]) => !['basic', 'console', 'catalog', 'warranty', 'location'].includes(key))
+                          .map(([categoryKey, category]) => {
+                           const hasItems = Object.keys(category.items).length > 0;
+                           if (!hasItems) return null;
+                           
+                           return (
+                             <div key={categoryKey}>
+                               <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
+                               <div className="space-y-3">
+                                 {Object.entries(category.items).map(([key, value]) => (
+                                   <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
+                                     <span className="text-gray-600 text-sm">{key}</span>
+                                     <span className="text-foreground text-sm font-medium text-right">{value}</span>
+                                   </div>
+                                 ))}
+                               </div>
+                             </div>
+                           );
+                         })}
+                     </>
+                   );
                 })()
               ) : (
                 <p className="text-muted-foreground">Характеристики товара не найдены</p>
