@@ -480,6 +480,9 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
 
     return (
       <div className="mb-8">
+        <div style={{border: '2px solid red', padding: '10px'}}>
+          <p style={{color: 'red', fontWeight: 'bold'}}>DEBUG: Combined section is working!</p>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Country column */}
           <div className="flex-1">
