@@ -218,120 +218,151 @@ const ProductDetail: React.FC = () => {
                 (() => {
                   const categorizedCharacteristics = categorizeCharacteristics(product.characteristics);
                   
-                  return Object.entries(categorizedCharacteristics).map(([categoryKey, category]) => {
-                    const hasItems = Object.keys(category.items).length > 0;
-                    if (!hasItems) return null;
-                    
-                    return (
-                      <div key={categoryKey}>
-                        <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
-                        <div className={categoryKey === 'basic' ? 'grid md:grid-cols-2 gap-x-8 space-y-3 md:space-y-0' : 'space-y-3'}>
-                          {categoryKey === 'basic' ? (
-                            // Two column layout for basic characteristics
-                            <>
-                              <div className="space-y-3">
-                                {Object.entries(category.items).slice(0, Math.ceil(Object.entries(category.items).length / 2)).map(([key, value]) => {
-                                  let displayKey = key;
-                                  let displayValue = value;
-                                  
-                                  // Brand ID to name mapping
-                                  const brandMapping: { [key: string]: string } = {
-                                    '38761': 'True',
-                                    // Добавьте другие ID брендов и их названия здесь
-                                  };
-                                  
-                                  if (key === 'Бренд (id)') {
-                                    displayKey = 'Бренд';
-                                    displayValue = brandMapping[value] || value;
-                                  }
-                                  
-                                  return (
-                                    <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
-                                      <span className="text-gray-600 text-sm">{displayKey}</span>
-                                      <span className="text-foreground text-sm font-medium text-right">{displayValue}</span>
-                                    </div>
-                                  );
-                                })}
-                              </div>
-                              <div className="space-y-3">
-                                {Object.entries(category.items).slice(Math.ceil(Object.entries(category.items).length / 2)).map(([key, value]) => {
-                                  let displayKey = key;
-                                  let displayValue = value;
-                                  
-                                  // Brand ID to name mapping
-                                  const brandMapping: { [key: string]: string } = {
-                                    '38761': 'True',
-                                    // Добавьте другие ID брендов и их названия здесь
-                                  };
-                                  
-                                  if (key === 'Бренд (id)') {
-                                    displayKey = 'Бренд';
-                                    displayValue = brandMapping[value] || value;
-                                  }
-                                  
-                                  return (
-                                    <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
-                                      <span className="text-gray-600 text-sm">{displayKey}</span>
-                                      <span className="text-foreground text-sm font-medium text-right">{displayValue}</span>
-                                    </div>
-                                  );
-                                })}
-                              </div>
-                            </>
-                          ) : (
-                            // Special handling for catalog category
-                            categoryKey === 'catalog' ? (
-                              Object.entries(category.items).map(([key, value]) => {
-                                let displayKey = key;
-                                
-                                if (key === 'Каталог 1') {
-                                  displayKey = 'Каталог';
-                                }
-                                
-                                const isUrl = typeof value === 'string' && (value.startsWith('http') || value.startsWith('https'));
-                                
-                                return (
-                                  <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
-                                    <span className="text-gray-600 text-sm">{displayKey}</span>
-                                    <div className="text-right">
-                                      {isUrl ? (
-                                        <button
-                                          onClick={() => window.open(value, '_blank', 'noopener,noreferrer')}
-                                          className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-xs transition-colors"
-                                        >
-                                          Открыть каталог
-                                        </button>
-                                      ) : (
-                                        <span className="text-foreground text-sm font-medium">{value}</span>
-                                      )}
-                                    </div>
-                                  </div>
-                                );
-                              })
-                            ) : (
-                            // Single column layout for other categories
-                            Object.entries(category.items).map(([key, value]) => {
-                              let displayKey = key;
-                              let displayValue = value;
-                              
-                              if (key === 'Бренд (id)') {
-                                displayKey = 'Бренд';
-                                displayValue = value;
-                              }
-                              
-                              return (
-                                <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
-                                  <span className="text-gray-600 text-sm">{displayKey}</span>
-                                  <span className="text-foreground text-sm font-medium text-right">{displayValue}</span>
-                                </div>
-                              );
-                            })
-                            )
-                          )}
-                        </div>
-                      </div>
-                    );
-                  });
+                   return (
+                     <>
+                       {/* Основные характеристики - отдельно в 2 колонки */}
+                       {Object.entries(categorizedCharacteristics).filter(([key]) => key === 'basic').map(([categoryKey, category]) => {
+                         const hasItems = Object.keys(category.items).length > 0;
+                         if (!hasItems) return null;
+                         
+                         return (
+                           <div key={categoryKey}>
+                             <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
+                             <div className="grid md:grid-cols-2 gap-x-8 space-y-3 md:space-y-0">
+                               <div className="space-y-3">
+                                 {Object.entries(category.items).slice(0, Math.ceil(Object.entries(category.items).length / 2)).map(([key, value]) => {
+                                   let displayKey = key;
+                                   let displayValue = value;
+                                   
+                                   // Brand ID to name mapping
+                                   const brandMapping: { [key: string]: string } = {
+                                     '38761': 'True',
+                                     // Добавьте другие ID брендов и их названия здесь
+                                   };
+                                   
+                                   if (key === 'Бренд (id)') {
+                                     displayKey = 'Бренд';
+                                     displayValue = brandMapping[value] || value;
+                                   }
+                                   
+                                   return (
+                                     <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
+                                       <span className="text-gray-600 text-sm">{displayKey}</span>
+                                       <span className="text-foreground text-sm font-medium text-right">{displayValue}</span>
+                                     </div>
+                                   );
+                                 })}
+                               </div>
+                               <div className="space-y-3">
+                                 {Object.entries(category.items).slice(Math.ceil(Object.entries(category.items).length / 2)).map(([key, value]) => {
+                                   let displayKey = key;
+                                   let displayValue = value;
+                                   
+                                   // Brand ID to name mapping
+                                   const brandMapping: { [key: string]: string } = {
+                                     '38761': 'True',
+                                     // Добавьте другие ID брендов и их названия здесь
+                                   };
+                                   
+                                   if (key === 'Бренд (id)') {
+                                     displayKey = 'Бренд';
+                                     displayValue = brandMapping[value] || value;
+                                   }
+                                   
+                                   return (
+                                     <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
+                                       <span className="text-gray-600 text-sm">{displayKey}</span>
+                                       <span className="text-foreground text-sm font-medium text-right">{displayValue}</span>
+                                     </div>
+                                   );
+                                 })}
+                               </div>
+                             </div>
+                           </div>
+                         );
+                       })}
+
+                       {/* Три категории в одном ряду */}
+                       {(() => {
+                         const threeColumnCategories = ['catalog', 'warranty', 'location'];
+                         const categoriesInRow = Object.entries(categorizedCharacteristics)
+                           .filter(([key]) => threeColumnCategories.includes(key))
+                           .filter(([, category]) => Object.keys(category.items).length > 0);
+                         
+                         if (categoriesInRow.length === 0) return null;
+                         
+                         return (
+                           <div className="grid md:grid-cols-3 gap-6">
+                             {categoriesInRow.map(([categoryKey, category]) => (
+                               <div key={categoryKey}>
+                                 <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
+                                 <div className="space-y-3">
+                                   {categoryKey === 'catalog' ? (
+                                     Object.entries(category.items).map(([key, value]) => {
+                                       let displayKey = key;
+                                       
+                                       if (key === 'Каталог 1') {
+                                         displayKey = 'Каталог';
+                                       }
+                                       
+                                       const isUrl = typeof value === 'string' && (value.startsWith('http') || value.startsWith('https'));
+                                       
+                                       return (
+                                         <div key={key} className="grid grid-cols-1 py-2 border-b border-gray-200">
+                                           <span className="text-gray-600 text-sm mb-2">{displayKey}</span>
+                                           <div>
+                                             {isUrl ? (
+                                               <button
+                                                 onClick={() => window.open(value, '_blank', 'noopener,noreferrer')}
+                                                 className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-xs transition-colors"
+                                               >
+                                                 Открыть каталог
+                                               </button>
+                                             ) : (
+                                               <span className="text-foreground text-sm font-medium">{value}</span>
+                                             )}
+                                           </div>
+                                         </div>
+                                       );
+                                     })
+                                   ) : (
+                                     Object.entries(category.items).map(([key, value]) => (
+                                       <div key={key} className="grid grid-cols-1 py-2 border-b border-gray-200">
+                                         <span className="text-gray-600 text-sm">{key}</span>
+                                         <span className="text-foreground text-sm font-medium">{value}</span>
+                                       </div>
+                                     ))
+                                   )}
+                                 </div>
+                               </div>
+                             ))}
+                           </div>
+                         );
+                       })()}
+
+                       {/* Остальные категории */}
+                       {Object.entries(categorizedCharacteristics)
+                         .filter(([key]) => !['basic', 'catalog', 'warranty', 'location'].includes(key))
+                         .map(([categoryKey, category]) => {
+                           const hasItems = Object.keys(category.items).length > 0;
+                           if (!hasItems) return null;
+                           
+                           return (
+                             <div key={categoryKey}>
+                               <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
+                               <div className="space-y-3">
+                                 {Object.entries(category.items).map(([key, value]) => (
+                                   <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
+                                     <span className="text-gray-600 text-sm">{key}</span>
+                                     <span className="text-foreground text-sm font-medium text-right">{value}</span>
+                                   </div>
+                                 ))}
+                               </div>
+                             </div>
+                           );
+                         })}
+                     </>
+                   );
                 })()
               ) : (
                 <p className="text-muted-foreground">Характеристики товара не найдены</p>
