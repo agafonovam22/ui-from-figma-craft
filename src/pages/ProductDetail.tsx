@@ -220,28 +220,66 @@ const ProductDetail: React.FC = () => {
                     return (
                       <div key={categoryKey}>
                         <h4 className="text-lg font-semibold mb-4 text-foreground">{category.title}</h4>
-                        <div className="space-y-3">
-                          {Object.entries(category.items).map(([key, value]) => {
-                            // Transform the display key and value
-                            let displayKey = key;
-                            let displayValue = value;
-                            
-                            // Handle brand display
-                            if (key === 'Бренд (id)') {
-                              displayKey = 'Бренд';
-                              // If it's a brand ID, try to get the brand name
-                              // For now, we'll display the value as is, but this could be enhanced
-                              // to fetch brand names from an API or mapping
-                              displayValue = value;
-                            }
-                            
-                            return (
-                              <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
-                                <span className="text-gray-600 text-sm">{displayKey}</span>
-                                <span className="text-foreground text-sm font-medium text-right">{displayValue}</span>
+                        <div className={categoryKey === 'basic' ? 'grid md:grid-cols-2 gap-x-8 space-y-3 md:space-y-0' : 'space-y-3'}>
+                          {categoryKey === 'basic' ? (
+                            // Two column layout for basic characteristics
+                            <>
+                              <div className="space-y-3">
+                                {Object.entries(category.items).slice(0, Math.ceil(Object.entries(category.items).length / 2)).map(([key, value]) => {
+                                  let displayKey = key;
+                                  let displayValue = value;
+                                  
+                                  if (key === 'Бренд (id)') {
+                                    displayKey = 'Бренд';
+                                    displayValue = value;
+                                  }
+                                  
+                                  return (
+                                    <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
+                                      <span className="text-gray-600 text-sm">{displayKey}</span>
+                                      <span className="text-foreground text-sm font-medium text-right">{displayValue}</span>
+                                    </div>
+                                  );
+                                })}
                               </div>
-                            );
-                          })}
+                              <div className="space-y-3">
+                                {Object.entries(category.items).slice(Math.ceil(Object.entries(category.items).length / 2)).map(([key, value]) => {
+                                  let displayKey = key;
+                                  let displayValue = value;
+                                  
+                                  if (key === 'Бренд (id)') {
+                                    displayKey = 'Бренд';
+                                    displayValue = value;
+                                  }
+                                  
+                                  return (
+                                    <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
+                                      <span className="text-gray-600 text-sm">{displayKey}</span>
+                                      <span className="text-foreground text-sm font-medium text-right">{displayValue}</span>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </>
+                          ) : (
+                            // Single column layout for other categories
+                            Object.entries(category.items).map(([key, value]) => {
+                              let displayKey = key;
+                              let displayValue = value;
+                              
+                              if (key === 'Бренд (id)') {
+                                displayKey = 'Бренд';
+                                displayValue = value;
+                              }
+                              
+                              return (
+                                <div key={key} className="grid grid-cols-2 py-2 border-b border-gray-200">
+                                  <span className="text-gray-600 text-sm">{displayKey}</span>
+                                  <span className="text-foreground text-sm font-medium text-right">{displayValue}</span>
+                                </div>
+                              );
+                            })
+                          )}
                         </div>
                       </div>
                     );
