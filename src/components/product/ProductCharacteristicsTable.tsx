@@ -160,6 +160,21 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
         );
       }
       
+      // Special case for "Преимущество 6 фото:" - show the downloaded image
+      if (key === 'Преимущество 6 фото') {
+        return (
+          <img 
+            src="/product-images/preimushchestvo-6.png" 
+            alt="Преимущество 6"
+            style={{ maxWidth: "200px", height: "auto" }}
+            className="rounded border"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        );
+      }
+      
       // Check for image files (both local paths and URLs)
       const isImageFile = valueStr.match(/\.(jpg|jpeg|png|webp)$/i);
       if (isImageFile) {
