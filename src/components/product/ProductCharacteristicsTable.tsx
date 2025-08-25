@@ -154,6 +154,58 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     const renderCharacteristicContent = (processedChar: any) => {
       const { displayKey, displayValue, isPhotoCharacteristic, isImageUrl } = processedChar;
       
+      // Check if value is a URL
+      const isUrl = typeof displayValue === 'string' && (displayValue.startsWith('http://') || displayValue.startsWith('https://'));
+      
+      // Check for image URLs
+      const isImageFile = typeof displayValue === 'string' && displayValue.match(/\.(jpg|jpeg|png|webp|gif|bmp|svg)$/i);
+      
+      // Check for document URLs
+      const isDocumentFile = typeof displayValue === 'string' && displayValue.match(/\.(pdf|doc|docx)$/i);
+      
+      if (isUrl && isImageFile) {
+        return (
+          <div className="flex flex-col gap-2">
+            <span className="text-sm font-medium text-foreground">{displayKey}:</span>
+            <div className="flex flex-col items-start gap-1">
+              <img 
+                src={String(displayValue)} 
+                alt={displayKey}
+                style={{ maxWidth: '200px', height: 'auto' }}
+                className="rounded border"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+              <span className="text-xs text-muted-foreground break-all">
+                {String(displayValue)}
+              </span>
+            </div>
+          </div>
+        );
+      }
+      
+      if (isUrl && isDocumentFile) {
+        return (
+          <div className="flex flex-col gap-1">
+            <span className="text-sm font-medium text-foreground">{displayKey}:</span>
+            <div className="flex flex-col gap-1">
+              <a 
+                href={String(displayValue)} 
+                download
+                className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 underline"
+              >
+                Скачать инструкцию
+              </a>
+              <span className="text-xs text-muted-foreground break-all">
+                {String(displayValue)}
+              </span>
+            </div>
+          </div>
+        );
+      }
+      
+      // Legacy photo characteristic handling (for existing logic)
       if ((isPhotoCharacteristic || isImageUrl) && displayValue) {
         return (
           <div className="flex flex-col gap-2">
