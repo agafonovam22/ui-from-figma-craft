@@ -147,17 +147,7 @@ const ProductDetail: React.FC = () => {
             basic: {
               title: 'Основные характеристики',
               items: {} as Record<string, string>,
-              keywords: ['Бренд', 'Артикул', 'Тип оборудования', 'Тип назначения', 'Использование']
-            },
-            dimensions: {
-              title: 'Габариты и размеры',
-              items: {} as Record<string, string>,
-              keywords: ['Размер', 'Длина', 'Ширина', 'Высота', 'Габариты', 'см']
-            },
-            weight: {
-              title: 'Вес',
-              items: {} as Record<string, string>,
-              keywords: ['Вес', 'кг']
+              keywords: ['Бренд', 'Артикул', 'Тип оборудования', 'Тип назначения', 'Использование', 'Размер', 'Длина', 'Ширина', 'Высота', 'Габариты', 'см', 'Вес', 'кг']
             },
             packaging: {
               title: 'Упаковка',
