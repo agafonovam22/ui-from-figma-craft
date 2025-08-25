@@ -1017,6 +1017,8 @@ const ProductDetail: React.FC = () => {
                   {product.name.split(' ').slice(2).join(' ')}
                 </span>
               </h1>
+              {/* Separator after title */}
+              <div className="h-px bg-gray-300 mb-4"></div>
             </div>
 
             {/* Action buttons and rating */}
