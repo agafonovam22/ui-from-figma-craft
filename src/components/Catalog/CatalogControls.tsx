@@ -36,7 +36,7 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({
   return (
     <>
       {/* Search and Filters Bar */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-2.5">
         <form onSubmit={handleSearch} className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
           <input 
@@ -65,7 +65,7 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({
       </div>
 
       {/* Horizontal Filter Tags */}
-      <div className="bg-[#F8F8FD] rounded-lg p-4 mb-6">
+      <div className="bg-[#F8F8FD] rounded-lg p-4 mb-2.5">
         <div className="flex flex-wrap items-center gap-3">
           {/* Show search query if active */}
           {searchQuery && (

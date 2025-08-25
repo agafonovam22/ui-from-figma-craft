@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const CatalogBanner: React.FC = () => {
   return (
-    <div className="bg-gray-100 overflow-hidden relative rounded-lg h-[319px] mb-8">
+    <div className="bg-gray-100 overflow-hidden relative rounded-lg h-[319px] mb-2.5">
       <div className="py-8 relative h-full">
         <div className="flex items-center justify-between h-full">
           {/* Левая часть с текстом */}
