@@ -1024,11 +1024,11 @@ const ProductDetail: React.FC = () => {
             {/* Action buttons and rating */}
             <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-300">
               <div className="flex space-x-3">
-                <Button variant="outline" size="sm" className="text-gray-600 text-xs px-3 py-1 flex items-center">
+                <Button key="compare-btn" variant="outline" size="sm" className="text-gray-600 text-xs px-3 py-1 flex items-center">
                   <BarChart3 className="w-3 h-3 mr-1" />
                   В сравнение
                 </Button>
-                <Button variant="outline" size="sm" className="text-gray-600 text-xs px-3 py-1 flex items-center">
+                <Button key="favorite-btn" variant="outline" size="sm" className="text-gray-600 text-xs px-3 py-1 flex items-center">
                   <Heart className="w-3 h-3 mr-1" />
                   В избранное
                 </Button>
