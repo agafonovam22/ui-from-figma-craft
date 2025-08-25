@@ -97,40 +97,42 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
       )}
 
       {/* Pagination */}
-      <div className="flex items-center justify-center space-x-2">
-        <button 
-          className="p-2 border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-          onClick={() => onPageChange?.(currentPage - 1)}
-          disabled={!hasPreviousPage}
-        >
-          ‹
-        </button>
-        
-        {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => {
-          const page = i + 1;
-          const isActive = page === currentPage;
-          return (
-            <button
-              key={page}
-              className={`px-4 py-2 rounded ${
-                isActive
-                  ? "bg-[#F53B49] text-white"
-                  : "border border-gray-300 hover:bg-gray-50"
-              }`}
-              onClick={() => onPageChange?.(page)}
-            >
-              {page}
-            </button>
-          );
-        })}
-        
-        <button 
-          className="p-2 border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-          onClick={() => onPageChange?.(currentPage + 1)}
-          disabled={!hasNextPage}
-        >
-          ›
-        </button>
+      <div className="flex justify-center">
+        <nav className="flex items-center space-x-1">
+          <button 
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            onClick={() => onPageChange?.(currentPage - 1)}
+            disabled={!hasPreviousPage}
+          >
+            ‹
+          </button>
+          
+          {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => {
+            const page = i + 1;
+            const isActive = page === currentPage;
+            return (
+              <button
+                key={page}
+                className={`flex h-10 w-10 items-center justify-center rounded-full ${
+                  isActive
+                    ? "bg-black text-white"
+                    : "border border-gray-300 hover:bg-gray-50"
+                }`}
+                onClick={() => onPageChange?.(page)}
+              >
+                {page}
+              </button>
+            );
+          })}
+          
+          <button 
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            onClick={() => onPageChange?.(currentPage + 1)}
+            disabled={!hasNextPage}
+          >
+            ›
+          </button>
+        </nav>
       </div>
     </>
   );
