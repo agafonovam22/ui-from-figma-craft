@@ -371,8 +371,8 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     if (!hasLocationItems && !hasOtherItems) return null;
 
     const otherItemsArray = Object.entries(otherItems);
-    const firstHalf = otherItemsArray.slice(0, Math.ceil(otherItemsArray.length / 2));
-    const secondHalf = otherItemsArray.slice(Math.ceil(otherItemsArray.length / 2));
+    const firstHalf = otherItemsArray.slice(0, Math.floor(otherItemsArray.length / 2));
+    const secondHalf = otherItemsArray.slice(Math.floor(otherItemsArray.length / 2));
 
     return (
       <div className="mb-8">
