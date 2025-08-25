@@ -140,7 +140,8 @@ const ProductDetail: React.FC = () => {
             'Преимущество 1',
             'Преимущество 2',
             'Преимущество 3',
-            'Преимущество 4'
+            'Преимущество 4',
+            'Каталог-2'
           ];
 
           const categories = {
@@ -311,9 +312,9 @@ const ProductDetail: React.FC = () => {
                                          <div key={key} className="grid grid-cols-1 py-2 border-b border-gray-200">
                                            <span className="text-gray-600 text-sm mb-2">{displayKey}</span>
                                            <div>
-                                             {isUrl ? (
+                                             {key === 'Каталог 1' ? (
                                                <button
-                                                 onClick={() => window.open(value, '_blank', 'noopener,noreferrer')}
+                                                 onClick={() => window.open('http://193.164.201.197:8081/ftp_images/.../Katalogi/1.pdf', '_blank', 'noopener,noreferrer')}
                                                  className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-xs transition-colors"
                                                >
                                                  Открыть каталог
