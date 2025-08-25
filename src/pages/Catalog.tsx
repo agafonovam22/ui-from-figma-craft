@@ -194,6 +194,29 @@ const Catalog: React.FC = () => {
       });
     }
 
+    // Фильтр по мощности двигателя
+    if (filters.powerRange.min !== undefined || filters.powerRange.max !== undefined) {
+      filtered = filtered.filter(product => {
+        const powerStr = product.characteristics?.['Мощность двигателя'] || '';
+        if (!powerStr) return false;
+        
+        // Извлекаем числовое значение из строки (например, "2.5 л.с." или "1.8 кВт")
+        const powerMatch = powerStr.match(/[\d.,]+/);
+        if (!powerMatch) return false;
+        
+        const power = parseFloat(powerMatch[0].replace(',', '.'));
+        
+        if (filters.powerRange.min !== undefined && power < filters.powerRange.min) {
+          return false;
+        }
+        if (filters.powerRange.max !== undefined && power > filters.powerRange.max) {
+          return false;
+        }
+        
+        return true;
+      });
+    }
+
     return filtered;
   }, [allCatalogProducts, filters]);
 
