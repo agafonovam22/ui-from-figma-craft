@@ -98,6 +98,25 @@ const Catalog: React.FC = () => {
     'equipment-accessories': ['Аксессуары к тренажерам']
   };
   
+  // Ключевые слова для поиска (fallback когда нет точного типа оборудования)
+  const CATEGORY_KEYWORDS: Record<string, string[]> = {
+    'treadmills': ['беговая', 'дорожка', 'treadmill'],
+    'elliptical': ['эллиптический', 'эллипс', 'elliptical'],
+    'exercise-bikes': ['велотренажер', 'велосипед', 'bike', 'cycling'],
+    'rowing-machines': ['гребной', 'rowing'],
+    'strength-equipment': ['силовой', 'тренажер', 'strength'],
+    'massage-equipment': ['массажное', 'массажер', 'massage'],
+    'inversion-tables': ['инверсионный', 'inversion'],
+    'trampolines': ['батут', 'trampoline'],
+    'free-weights': ['гантели', 'штанга', 'диски', 'weights'],
+    'home-accessories': ['аксессуары'],
+    'table-tennis': ['теннис', 'tennis'],
+    'ski-simulators': ['горнолыжный', 'ski'],
+    'outdoor-sports': ['уличный', 'outdoor'],
+    'game-tables': ['игровой стол', 'game'],
+    'equipment-accessories': ['аксессуары']
+  };
+  
   // Автоматическая установка фильтра по категории из URL
   React.useEffect(() => {
     if (categoryParam && CATEGORY_TO_EQUIPMENT_TYPE[categoryParam]) {
@@ -225,12 +244,29 @@ const Catalog: React.FC = () => {
       });
     }
 
-    // Фильтр по типу оборудования
+    // Фильтр по типу оборудования или категории
     if (filters.equipmentTypes.length > 0) {
-      filtered = filtered.filter(product => {
-        const equipmentType = product.characteristics?.['Тип оборудования'] || '';
-        return filters.equipmentTypes.includes(equipmentType);
-      });
+      // Проверяем если это категория из URL
+      if (categoryParam && CATEGORY_KEYWORDS[categoryParam]) {
+        const keywords = CATEGORY_KEYWORDS[categoryParam];
+        filtered = filtered.filter(product => {
+          // Сначала проверяем по точному типу оборудования
+          const equipmentType = product.characteristics?.['Тип оборудования'] || '';
+          if (filters.equipmentTypes.includes(equipmentType)) {
+            return true;
+          }
+          
+          // Если точного типа нет, ищем по ключевым словам в названии
+          const productNameLower = product.name.toLowerCase();
+          return keywords.some(keyword => productNameLower.includes(keyword.toLowerCase()));
+        });
+      } else {
+        // Обычная фильтрация по типу оборудования
+        filtered = filtered.filter(product => {
+          const equipmentType = product.characteristics?.['Тип оборудования'] || '';
+          return filters.equipmentTypes.includes(equipmentType);
+        });
+      }
     }
 
     // Фильтр по мощности двигателя
