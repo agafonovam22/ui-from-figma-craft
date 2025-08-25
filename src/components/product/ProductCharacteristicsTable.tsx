@@ -242,19 +242,25 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
           {category.title}
         </h4>
         <div className="overflow-hidden">
-          <div className="divide-y divide-border">
+          <div className="">
             {characteristicPairs.map((pair, index) => (
               <div key={`${pair.firstKey}-${pair.secondKey || 'single'}-${index}`} className="p-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
                   {/* First characteristic */}
                   <div className="flex-1">
                     {pair.first && renderCharacteristicContent(pair.first)}
+                    {index < characteristicPairs.length - 1 && (
+                      <div className="mt-4 border-b border-border"></div>
+                    )}
                   </div>
                   
                   {/* Second characteristic */}
                   {pair.second ? (
                     <div className="flex-1">
                       {renderCharacteristicContent(pair.second)}
+                      {index < characteristicPairs.length - 1 && (
+                        <div className="mt-4 border-b border-border"></div>
+                      )}
                     </div>
                   ) : (
                     <div className="hidden md:block"></div>
