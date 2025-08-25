@@ -244,7 +244,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
         <div className="overflow-hidden">
           <div className="">
             {characteristicPairs.map((pair, index) => (
-              <div key={`${pair.firstKey}-${pair.secondKey || 'single'}-${index}`} className="p-4">
+              <div key={`${pair.firstKey}-${pair.secondKey || 'single'}-${index}`} className="p-2">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
                   {/* First characteristic */}
                   <div className="flex-1">
