@@ -273,19 +273,13 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
         );
       }
       
-      // Check if value contains HTML tags
-      const hasHtmlTags = valueStr.includes('<') && valueStr.includes('>');
-      if (hasHtmlTags) {
-        return (
-          <div 
-            className="text-sm text-muted-foreground"
-            dangerouslySetInnerHTML={{ __html: valueStr }}
-          />
-        );
-      }
+      // Strip HTML tags from text
+      const cleanText = valueStr.replace(/<[^>]*>/g, '').trim();
       
-      // Default: show as text
-      return <span>{valueStr}</span>;
+      // Default: show as text (use cleaned text if HTML was stripped)
+      const displayText = valueStr.includes('<') && valueStr.includes('>') ? 
+        valueStr.replace(/<[^>]*>/g, '').trim() : valueStr;
+      return <span>{displayText}</span>;
     };
 
     const renderCharacteristicContent = (processedChar: any) => {
