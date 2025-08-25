@@ -282,10 +282,16 @@ const ProductDetail: React.FC = () => {
             {/* Город доставки */}
             <div className="flex gap-8">
               <div className="w-80 flex-shrink-0">
-                <h3 style={{
-                  fontFamily: 'Benzin-Medium',
-                  fontSize: '20px'
-                }}>Город доставки</h3>
+                <div className="flex items-center gap-2">
+                  <h3 style={{
+                    fontFamily: 'Benzin-Medium',
+                    fontSize: '20px'
+                  }}>Город доставки</h3>
+                  <SupportCitySelector 
+                    selectedCity={selectedCity}
+                    onCitySelect={setSelectedCity}
+                  />
+                </div>
               </div>
               <div className="flex-1">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -308,13 +314,6 @@ const ProductDetail: React.FC = () => {
                     </p>
                     <div className="text-2xl font-bold text-gray-900">0₽</div>
                   </div>
-                </div>
-                <div className="flex items-center gap-2 mt-4">
-                  <span className="text-lg font-semibold text-gray-900">Город доставки</span>
-                  <SupportCitySelector 
-                    selectedCity={selectedCity}
-                    onCitySelect={setSelectedCity}
-                  />
                 </div>
               </div>
             </div>
