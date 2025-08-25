@@ -20,54 +20,66 @@ const ProductCharacteristicsList: React.FC<ProductCharacteristicsListProps> = ({
   const productType = productName.split(' ').slice(0, 2).join(' ');
 
   return (
-    <div className="space-y-2 pb-4 border-b border-gray-300 font-manrope">
+    <div className="space-y-2 pb-4 font-manrope">
       {characteristics ? (
-        <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
-          <div className="flex justify-between">
-            <span className="text-muted-foreground">Тип продукции:</span>
-            <span className="font-medium">{productType}</span>
+        <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-xs">
+          <div className="space-y-1">
+            <div className="flex justify-between py-1">
+              <span className="text-muted-foreground">Тип продукции:</span>
+              <span className="font-medium">{productType}</span>
+            </div>
+            <div className="border-b border-border"></div>
+            <div className="flex justify-between py-1">
+              <span className="text-muted-foreground">Назначение:</span>
+              <span className="font-medium">
+                {characteristics['Тип назначения'] || 'Домашние'}
+              </span>
+            </div>
+            <div className="border-b border-border"></div>
+            <div className="flex justify-between py-1">
+              <span className="text-muted-foreground">Мощность двигателя, л.с.:</span>
+              <span className="font-medium">1.5</span>
+            </div>
+            <div className="border-b border-border"></div>
+            <div className="flex justify-between py-1">
+              <span className="text-muted-foreground">Беговое полотно, см:</span>
+              <span className="font-medium">
+                {characteristics['Беговое полотно, см'] || 'Не указано'}
+              </span>
+            </div>
+            <div className="border-b border-border"></div>
+            <div className="flex justify-between py-1">
+              <span className="text-muted-foreground">Угол наклона:</span>
+              <span className="font-medium">
+                {characteristics['Макс. угол наклона, %'] ? `${characteristics['Макс. угол наклона, %']}%` : '15%'}
+              </span>
+            </div>
           </div>
-          <div className="flex justify-between">
-            <span className="text-muted-foreground">Бренд:</span>
-            <span className="font-medium">{brand}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-muted-foreground">Назначение:</span>
-            <span className="font-medium">
-              {characteristics['Тип назначения'] || 'Домашние'}
-            </span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-muted-foreground">Тип двигателя:</span>
-            <span className="font-medium">Постоянного тока DC</span>
-          </div>  
-          <div className="flex justify-between">
-            <span className="text-muted-foreground">Мощность двигателя, л.с.:</span>
-            <span className="font-medium">1.5</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-muted-foreground">Вес пользователя, кг:</span>
-            <span className="font-medium">
-              {characteristics['Вес пользователя, кг'] || 'Не указан'}
-            </span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-muted-foreground">Беговое полотно, см:</span>
-            <span className="font-medium">
-              {characteristics['Беговое полотно, см'] || 'Не указано'}
-            </span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-muted-foreground">Максимальная скорость, км/ч:</span>
-            <span className="font-medium">
-              {characteristics['Максимальная скорость, км/ч'] || '19'}
-            </span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-muted-foreground">Угол наклона:</span>
-            <span className="font-medium">
-              {characteristics['Макс. угол наклона, %'] ? `${characteristics['Макс. угол наклона, %']}%` : '15%'}
-            </span>
+          
+          <div className="space-y-1">
+            <div className="flex justify-between py-1">
+              <span className="text-muted-foreground">Бренд:</span>
+              <span className="font-medium">{brand}</span>
+            </div>
+            <div className="border-b border-border"></div>
+            <div className="flex justify-between py-1">
+              <span className="text-muted-foreground">Тип двигателя:</span>
+              <span className="font-medium">Постоянного тока DC</span>
+            </div>
+            <div className="border-b border-border"></div>
+            <div className="flex justify-between py-1">
+              <span className="text-muted-foreground">Вес пользователя, кг:</span>
+              <span className="font-medium">
+                {characteristics['Вес пользователя, кг'] || 'Не указан'}
+              </span>
+            </div>
+            <div className="border-b border-border"></div>
+            <div className="flex justify-between py-1">
+              <span className="text-muted-foreground">Максимальная скорость, км/ч:</span>
+              <span className="font-medium">
+                {characteristics['Максимальная скорость, км/ч'] || '19'}
+              </span>
+            </div>
           </div>
         </div>
       ) : (
