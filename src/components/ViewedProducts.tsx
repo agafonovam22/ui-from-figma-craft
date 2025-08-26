@@ -1,9 +1,6 @@
 import React from 'react';
 import ProductCard from '@/components/shared/ProductCard';
 import { useNewProducts } from '@/hooks/useSharedProducts';
-import { useViewedProducts } from '@/hooks/useViewedProducts';
-import { useCategoryProducts } from '@/hooks/useCategoryProducts';
-import { useQuery } from '@tanstack/react-query';
 
 interface ViewedProductsProps {
   currentProductId?: string;
@@ -11,75 +8,13 @@ interface ViewedProductsProps {
 }
 
 const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, currentProductCategoryId }) => {
-  const { getViewedProductIds } = useViewedProducts();
+  // Пока что просто показываем новые товары, исключая текущий
+  const { products: allProducts, isLoading, error } = useNewProducts(6);
   
-  // Получаем ID просмотренных товаров (исключая текущий)
-  const viewedProductIds = getViewedProductIds(currentProductId);
-  
-  console.log('🔍 ViewedProducts Debug:', {
-    currentProductId,
-    currentProductCategoryId,
-    viewedProductIds
-  });
-  
-  // Получаем все товары для фильтрации просмотренных
-  const { data: allProductsData } = useQuery({
-    queryKey: ['all-products'],
-    queryFn: async () => {
-      const response = await fetch('https://cp44652.tw1.ru/catalog.php');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    },
-    staleTime: 5 * 60 * 1000,
-    gcTime: 30 * 60 * 1000,
-  });
-
-  // Получаем товары из той же категории как fallback
-  const { data: categoryProductsData, isLoading: isCategoryLoading } = useCategoryProducts(
-    currentProductCategoryId, 
-    6
-  );
-  
-  // Фильтруем просмотренные товары из всех товаров
-  const viewedProducts = React.useMemo(() => {
-    if (!allProductsData?.products || viewedProductIds.length === 0) {
-      return [];
-    }
-    
-    return viewedProductIds
-      .map(id => allProductsData.products.find((p: any) => p.id.toString() === id))
-      .filter(Boolean)
-      .slice(0, 5);
-  }, [allProductsData?.products, viewedProductIds]);
-
-  // Определяем, какие товары показывать
-  const displayProducts = React.useMemo(() => {
-    console.log('🔍 Calculating displayProducts:', {
-      viewedProductsLength: viewedProducts.length,
-      categoryProductsLength: categoryProductsData?.products?.length || 0,
-      viewedProducts,
-      categoryProducts: categoryProductsData?.products
-    });
-    
-    if (viewedProducts.length > 0) {
-      return viewedProducts;
-    }
-    
-    // Если нет просмотренных товаров, показываем товары из той же категории
-    if (categoryProductsData?.products) {
-      return categoryProductsData.products
-        .filter((product: any) => product.id.toString() !== currentProductId)
-        .slice(0, 5);
-    }
-    
-    return [];
-  }, [viewedProducts, categoryProductsData?.products, currentProductId]);
-
-  console.log('🔍 Final displayProducts:', displayProducts);
-
-  const isLoading = !allProductsData?.products || (viewedProductIds.length === 0 && isCategoryLoading);
+  // Фильтруем текущий товар из списка и берем ровно 5 товаров
+  const displayProducts = allProducts.filter(product => 
+    product.id.toString() !== currentProductId
+  ).slice(0, 5);
 
   if (isLoading) {
     return (
@@ -102,17 +37,15 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
     );
   }
 
-  if (displayProducts.length === 0) {
-    return null; // Не показываем блок если нет товаров
+  if (error || displayProducts.length === 0) {
+    return null; // Не показываем блок если нет товаров или ошибка
   }
 
   return (
     <section className="w-full py-6 bg-white">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-0">
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-[#262631] font-benzin-semibold">
-            {viewedProducts.length > 0 ? 'Вы смотрели' : 'Похожие товары'}
-          </h2>
+          <h2 className="text-2xl font-bold text-[#262631] font-benzin-semibold">Вы смотрели</h2>
         </div>
         
         <div className="grid grid-cols-5 gap-[10px]">
