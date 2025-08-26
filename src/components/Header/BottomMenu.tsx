@@ -25,7 +25,7 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
 }) => (
   <Link
     to={`/catalog?category=${category.id}`}
-    className={`flex h-[46px] items-center gap-2 bg-[#262631] px-5 py-3 rounded-[5px] max-sm:whitespace-nowrap max-sm:px-4 max-sm:py-3 hover:bg-[#3a3a47] transition-colors group flex-shrink-0`}
+    className={`flex h-[38px] items-center gap-1.5 bg-[#262631] px-3 py-2 rounded-[5px] max-sm:whitespace-nowrap max-sm:px-4 max-sm:py-3 hover:bg-[#3a3a47] transition-colors group flex-shrink-0`}
     aria-label={`Категория: ${category.label}`}
   >
     {category.icon && (
@@ -33,7 +33,7 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
         {category.icon}
       </span>
     )}
-    <span className="text-sm font-normal leading-[14px] text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
+    <span className="text-xs font-normal leading-[12px] text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
       {category.label}
     </span>
   </Link>
@@ -184,24 +184,24 @@ const BottomMenu: React.FC = () => {
 
   return (
     <nav 
-      className="flex w-full justify-center items-center gap-[5px] bg-[#262631] px-4 lg:px-16 py-1 max-md:overflow-x-auto"
+      className="flex w-full justify-center items-center gap-1 bg-[#262631] px-4 lg:px-8 py-1 max-md:overflow-x-auto"
       role="navigation"
       aria-label="Категории товаров"
     >
-      <div className="flex w-full max-w-[1920px] h-[54px] items-center gap-[5px] relative max-md:w-auto max-md:min-w-full flex-shrink-0">
+      <div className="flex w-full max-w-[1920px] h-[46px] items-center gap-1 relative max-md:w-auto max-md:min-w-full flex-shrink-0">
         <div 
           ref={scrollContainerRef}
-          className="flex items-center gap-[5px] overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden"
+          className="flex items-center gap-1 overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden"
           style={{ 
             scrollbarWidth: 'none', 
             msOverflowStyle: 'none'
           }}
         >
           {duplicatedCategories.map((category, index) => (
-            <div key={`${category.id}-${Math.floor(index / categories.length)}`} className="flex items-center gap-[5px]">
+            <div key={`${category.id}-${Math.floor(index / categories.length)}`} className="flex items-center gap-1">
               <CategoryButton category={category} />
               {index < duplicatedCategories.length - 1 && (
-                <div className="w-px h-9 opacity-20 bg-[#5C6476] flex-shrink-0" />
+                <div className="w-px h-7 opacity-20 bg-[#5C6476] flex-shrink-0" />
               )}
             </div>
           ))}
