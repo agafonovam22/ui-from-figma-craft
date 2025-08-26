@@ -10,7 +10,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onSearch }) => {
   return (
-    <header className="w-full bg-[#17171E] max-w-[1920px] mx-auto">
+    <header className="w-full bg-[#17171E]">
       <TopMenu />
       <MidMenu onSearch={onSearch} />
       <BottomMenu />
