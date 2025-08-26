@@ -30,12 +30,13 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ChevronUp, ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import SupportCitySelector from '@/components/SupportCitySelector';
 
 const Support: React.FC = () => {
   const [activeTab, setActiveTab] = useState('delivery');
   const [selectedCity, setSelectedCity] = useState('Москва');
+  const location = useLocation();
 
   const tabs = [
     { id: 'delivery', label: 'Доставка и оплата' },
@@ -58,28 +59,18 @@ const Support: React.FC = () => {
     'b2b': 'b2b'
   };
 
+  // Отслеживаем изменения в location (включая хеш)
   useEffect(() => {
-    // Проверяем хеш при загрузке страницы
-    const hash = window.location.hash.replace('#', '');
+    const hash = location.hash.replace('#', '');
+    console.log('Hash changed to:', hash);
     if (hash && hashToTabMap[hash]) {
+      console.log('Setting active tab to:', hashToTabMap[hash]);
       setActiveTab(hashToTabMap[hash]);
+    } else if (!hash) {
+      // Если хеша нет, показываем дефолтную вкладку
+      setActiveTab('delivery');
     }
-    
-    // Добавляем слушатель изменений хеша
-    const handleHashChange = () => {
-      const newHash = window.location.hash.replace('#', '');
-      if (newHash && hashToTabMap[newHash]) {
-        setActiveTab(hashToTabMap[newHash]);
-      }
-    };
-    
-    window.addEventListener('hashchange', handleHashChange);
-    
-    // Очищаем слушатель при размонтировании компонента
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    };
-  }, []);
+  }, [location.hash]);
 
   const handleTabChange = (tabId: string) => {
     setActiveTab(tabId);
