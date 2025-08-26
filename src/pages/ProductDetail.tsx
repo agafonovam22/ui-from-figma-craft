@@ -64,12 +64,6 @@ const ProductDetail: React.FC = () => {
   useEffect(() => {
     if (product?.id && id) {
       addViewedProduct(id);
-      console.log('🔍 Товар добавлен в просмотренные:', {
-        productId: product.id,
-        productName: product.name,
-        categoryId: product.category_id,
-        characteristics: product.characteristics
-      });
     }
   }, [product?.id, id, addViewedProduct]);
 
@@ -186,7 +180,10 @@ const ProductDetail: React.FC = () => {
                 </div>
               )}
             </div>
-            <ViewedProducts currentProductId={id} currentProductCategoryId={product?.category_id} />
+            <ViewedProducts 
+              currentProductId={id} 
+              currentProductCategoryId={product?.characteristics?.["Тип оборудования"]} 
+            />
             <EmailSubscription />
           </div>
         );
@@ -199,7 +196,10 @@ const ProductDetail: React.FC = () => {
               productName={product.name}
               productId={id}
              />
-             <ViewedProducts currentProductId={id} currentProductCategoryId={product?.category_id} />
+             <ViewedProducts 
+               currentProductId={id} 
+               currentProductCategoryId={product?.characteristics?.["Тип оборудования"]} 
+             />
              <EmailSubscription />
            </div>
         );
@@ -325,7 +325,10 @@ const ProductDetail: React.FC = () => {
                 </button>
               </div>
             </div>
-          <ViewedProducts currentProductId={id} currentProductCategoryId={product?.category_id} />
+          <ViewedProducts 
+            currentProductId={id} 
+            currentProductCategoryId={product?.characteristics?.["Тип оборудования"]} 
+          />
             <EmailSubscription />
           </div>
         );
