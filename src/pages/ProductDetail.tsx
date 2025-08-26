@@ -63,6 +63,13 @@ const ProductDetail: React.FC = () => {
   // Добавляем товар в просмотренные при загрузке
   useEffect(() => {
     if (product?.id && id) {
+      console.log('🔍 Пытаемся добавить товар в просмотренные:', {
+        productId: product.id,
+        productName: product.name,
+        categoryId: product.category_id,
+        typeEquipment: product.characteristics?.["Тип оборудования"],
+        allCharacteristics: product.characteristics
+      });
       addViewedProduct(id);
     }
   }, [product?.id, id, addViewedProduct]);

@@ -14,9 +14,11 @@ export const useViewedProducts = () => {
   // Загружаем просмотренные товары из localStorage при инициализации
   useEffect(() => {
     const stored = localStorage.getItem(VIEWED_PRODUCTS_KEY);
+    console.log('🔍 Загружаем просмотренные товары из localStorage:', stored);
     if (stored) {
       try {
         const parsed = JSON.parse(stored);
+        console.log('🔍 Распарсили товары:', parsed);
         setViewedProducts(parsed);
       } catch (error) {
         console.warn('Ошибка при загрузке просмотренных товаров:', error);
@@ -27,6 +29,7 @@ export const useViewedProducts = () => {
 
   // Добавить товар в просмотренные
   const addViewedProduct = useCallback((productId: string) => {
+    console.log('🔍 addViewedProduct вызван для товара:', productId);
     setViewedProducts(prev => {
       // Удаляем товар из списка, если он уже есть
       const filtered = prev.filter(item => item.id !== productId);
@@ -37,6 +40,8 @@ export const useViewedProducts = () => {
         ...filtered
       ].slice(0, MAX_VIEWED_PRODUCTS); // Ограничиваем количество
 
+      console.log('🔍 Обновленный список просмотренных товаров:', updated);
+
       // Сохраняем в localStorage
       localStorage.setItem(VIEWED_PRODUCTS_KEY, JSON.stringify(updated));
       
@@ -46,9 +51,17 @@ export const useViewedProducts = () => {
 
   // Получить ID просмотренных товаров (исключая текущий)
   const getViewedProductIds = useCallback((excludeId?: string): string[] => {
-    return viewedProducts
+    const result = viewedProducts
       .filter(item => item.id !== excludeId)
       .map(item => item.id);
+    
+    console.log('🔍 getViewedProductIds вызван:', { 
+      excludeId, 
+      viewedProducts, 
+      result 
+    });
+    
+    return result;
   }, [viewedProducts]);
 
   // Очистить просмотренные товары

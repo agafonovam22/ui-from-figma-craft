@@ -34,14 +34,27 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
   const displayProducts = useMemo(() => {
     if (!allProductsData?.products) return [];
     
+    console.log('🔍 ViewedProducts Debug - Входные данные:', {
+      currentProductId,
+      currentProductCategoryId,
+      viewedProductIds,
+      totalProducts: allProductsData.products.length,
+      firstProduct: allProductsData.products[0]
+    });
+    
     // Сначала пытаемся найти просмотренные товары
     if (viewedProductIds.length > 0) {
       const viewedProducts = viewedProductIds
-        .map(id => allProductsData.products.find((p: any) => p.id.toString() === id))
+        .map(id => {
+          const foundProduct = allProductsData.products.find((p: any) => p.id.toString() === id);
+          console.log(`🔍 Поиск товара с ID ${id}:`, foundProduct ? 'найден' : 'не найден');
+          return foundProduct;
+        })
         .filter(Boolean)
         .slice(0, 5);
       
       if (viewedProducts.length > 0) {
+        console.log('🔍 Показываем просмотренные товары:', viewedProducts.length);
         return viewedProducts;
       }
     }
@@ -55,15 +68,19 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
         )
         .slice(0, 5);
       
+      console.log('🔍 Найдено товаров из категории:', categoryProducts.length);
       if (categoryProducts.length > 0) {
         return categoryProducts;
       }
     }
     
     // Если нет категории, показываем случайные товары (исключая текущий)
-    return allProductsData.products
+    const randomProducts = allProductsData.products
       .filter((product: any) => product.id.toString() !== currentProductId)
       .slice(0, 5);
+    
+    console.log('🔍 Показываем случайных товаров:', randomProducts.length);
+    return randomProducts;
   }, [allProductsData?.products, viewedProductIds, currentProductCategoryId, currentProductId]);
 
   const isLoading = isAllProductsLoading;
