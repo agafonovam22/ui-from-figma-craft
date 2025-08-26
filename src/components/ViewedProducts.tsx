@@ -18,7 +18,7 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId }) => 
   if (isLoading) {
     return (
       <section className="w-full py-6 bg-white">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-0">
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-[#262631] font-benzin-semibold">Вы смотрели</h2>
           </div>
@@ -42,7 +42,7 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId }) => 
 
   return (
     <section className="w-full py-6 bg-white">
-      <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+      <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-0">
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-[#262631] font-benzin-semibold">Вы смотрели</h2>
         </div>
