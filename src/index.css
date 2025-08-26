@@ -314,6 +314,54 @@
   }
 }
 
+/* Фиксация размеров хедера для всех экранов больше 1920px */
+@media screen and (min-width: 1921px) {
+  /* Фиксируем размеры хедера */
+  header {
+    font-size: 10px !important;
+  }
+  
+  /* Фиксируем высоту хедера */
+  header div[class*="h-[53px]"] {
+    height: 53px !important;
+  }
+  
+  /* Фиксируем размеры текста в хедере */
+  header [class*="text-[10px]"] {
+    font-size: 10px !important;
+  }
+  
+  /* Фиксируем отступы в хедере */
+  header [class*="gap-4"] {
+    gap: 1rem !important;
+  }
+  
+  header [class*="gap-5"] {
+    gap: 1.25rem !important;
+  }
+  
+  /* Фиксируем padding кнопок в хедере */
+  header [class*="px-3"] {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  
+  header [class*="py-2.5"] {
+    padding-top: 0.625rem !important;
+    padding-bottom: 0.625rem !important;
+  }
+  
+  /* Фиксируем размеры элементов навигации */
+  header nav {
+    gap: 1.25rem !important;
+  }
+  
+  header nav a {
+    font-size: 10px !important;
+    padding: 0.25rem !important;
+  }
+}
+
 /* FullHD (1680px-1919px) */
 @media screen and (min-width: 1680px) and (max-width: 1919px) {
   .responsive-container {
