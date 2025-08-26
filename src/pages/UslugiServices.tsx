@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -11,6 +11,7 @@ import InstallmentTable from '@/components/Services/InstallmentTable';
 
 const UslugiServices: React.FC = () => {
   const { category } = useParams<{ category: string }>();
+  const location = useLocation();
   
   // Define services by category
   const servicesByCategory = {
@@ -35,6 +36,19 @@ const UslugiServices: React.FC = () => {
     ? servicesByCategory[category as keyof typeof servicesByCategory] 
     : servicesByCategory.business;
 
+  // Маппинг хешей URL к ID вкладок
+  const hashToTabMap: { [key: string]: string } = {
+    '3d-project': '3d-project',
+    'business-planning': 'business-planning',
+    'staff-training': 'staff-training',
+    'trade-in': 'trade-in',
+    'leasing': 'leasing',
+    'installment': 'installment',
+    'maintenance': 'maintenance',
+    'repair': 'repair',
+    'warranty': 'warranty'
+  };
+
   // Set active tab based on specific category requirements
   const getInitialActiveTab = () => {
     if (category === 'individuals') {
@@ -53,6 +67,28 @@ const UslugiServices: React.FC = () => {
   useEffect(() => {
     setActiveTab(getInitialActiveTab());
   }, [category]);
+
+  // Отслеживаем изменения в location (включая хеш)
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    console.log('UslugiServices hash changed to:', hash);
+    if (hash && hashToTabMap[hash]) {
+      console.log('Setting active tab to:', hashToTabMap[hash]);
+      setActiveTab(hashToTabMap[hash]);
+    } else if (!hash) {
+      // Если хеша нет, показываем дефолтную вкладку для категории
+      setActiveTab(getInitialActiveTab());
+    }
+  }, [location.hash, category]);
+
+  const handleTabChange = (tabId: string) => {
+    setActiveTab(tabId);
+    // Обновляем URL хеш при смене вкладки
+    const hashKey = Object.keys(hashToTabMap).find(key => hashToTabMap[key] === tabId);
+    if (hashKey) {
+      window.history.replaceState(null, '', `#${hashKey}`);
+    }
+  };
 
   // Get category title
   const getCategoryTitle = () => {
@@ -256,7 +292,7 @@ const UslugiServices: React.FC = () => {
           </div>
 
           {/* Tabs */}
-          <ServiceTabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+          <ServiceTabs tabs={tabs} activeTab={activeTab} onTabChange={handleTabChange} />
 
           {/* 3D Project Tab Content */}
           {activeTab === '3d-project' && (
