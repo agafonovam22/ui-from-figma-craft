@@ -1009,7 +1009,6 @@ const ProductDetail: React.FC = () => {
                 className="border-red-600 text-red-600 hover:bg-red-50"
                 onClick={handleDownloadInstruction}
               >
-                <Download className="w-4 h-4 mr-2" />
                 Скачать инструкцию
               </Button>
             )}
