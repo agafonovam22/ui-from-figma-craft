@@ -60,13 +60,13 @@ const TopMenu: React.FC = () => {
           <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
         </div>
         
-        <nav className="hidden md:flex items-center justify-center flex-1 max-w-[800px] mx-auto gap-3" role="navigation" aria-label="Основная навигация">
+        <nav className="hidden md:flex items-center justify-center flex-1 max-w-[700px] mx-auto gap-1" role="navigation" aria-label="Основная навигация">
           {navigationItems.map((item, index) => (
             item.href ? (
               <Link
                 key={index}
                 to={item.href}
-                className="text-layout-grey-nav font-benzin text-[10px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap inline-block px-1"
+                className="text-layout-grey-nav font-benzin text-[9px] font-normal leading-[9px] hover:text-white transition-colors whitespace-nowrap inline-block px-0.5"
                 style={{ lineHeight: '100%', display: 'inline-block' }}
               >
                 {item.label}
@@ -75,7 +75,7 @@ const TopMenu: React.FC = () => {
               <a
                 key={index}
                 href={item.href || '#'}
-                className="text-layout-grey-nav font-benzin text-[10px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap inline-block px-1"
+                className="text-layout-grey-nav font-benzin text-[9px] font-normal leading-[9px] hover:text-white transition-colors whitespace-nowrap inline-block px-0.5"
                 style={{ lineHeight: '100%', display: 'inline-block' }}
                 onClick={item.onClick}
               >
