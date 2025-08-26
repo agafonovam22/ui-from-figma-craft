@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
                 <li><Link to="/services#ready-solutions" className="hover:text-white transition-colors">Готовые решения</Link></li>
                 <li><Link to="/uslugi/business#staff-training" className="hover:text-white transition-colors">Обучение персонала</Link></li>
                 <li><Link to="/uslugi/business#leasing" className="hover:text-white transition-colors">Лизинг</Link></li>
-                <li><Link to="/services#trade-in" className="hover:text-white transition-colors">Trade-In</Link></li>
+                <li><Link to="/uslugi/business#trade-in" className="hover:text-white transition-colors">Trade-In</Link></li>
                 <li><Link to="/services#installment" className="hover:text-white transition-colors">В рассрочку</Link></li>
               </ul>
             </div>
