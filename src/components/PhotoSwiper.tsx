@@ -80,7 +80,7 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
   const getNextIndex = (index: number) => (index + 1) % images.length;
 
   return (
-    <div className="w-full">
+    <div className="w-full relative">
       <div 
         className="relative w-screen h-[480px] overflow-hidden group -mx-2 sm:-mx-4 lg:-mx-[60px]"
         onMouseEnter={() => setIsHovered(true)}
@@ -149,25 +149,25 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
             </button>
           </>
         )}
-      </div>
 
-      {/* Progress indicator under the slider */}
-      {images.length > 1 && (
-        <div className="flex gap-2 justify-center mt-6">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`h-1 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? 'bg-[#F53B49] w-16' 
-                  : 'bg-gray-300 w-8 hover:bg-gray-400'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-      )}
+        {/* Progress indicator positioned absolutely at bottom of banner */}
+        {images.length > 1 && (
+          <div className="absolute bottom-[5%] left-1/2 transform -translate-x-1/2 flex gap-2 justify-center z-20">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`h-1 rounded-full transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'bg-[#F53B49] w-16' 
+                    : 'bg-gray-300 w-8 hover:bg-gray-400'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
