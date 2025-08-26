@@ -60,14 +60,14 @@ const TopMenu: React.FC = () => {
           <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
         </div>
         
-        <nav className="flex items-start gap-[clamp(8px, 1.5vw, 24px)] max-md:hidden flex-1 justify-center max-w-[800px] min-w-0" role="navigation" aria-label="Основная навигация">
+        <nav className="hidden md:flex items-start justify-center flex-1 max-w-[800px] min-w-0" style={{ gap: '20px' }} role="navigation" aria-label="Основная навигация">
           {navigationItems.map((item, index) => (
             item.href ? (
               <Link
                 key={index}
                 to={item.href}
-                className="text-layout-grey-nav font-benzin text-[10px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap"
-                style={{ lineHeight: '100%' }}
+                className="text-layout-grey-nav font-benzin text-[10px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap inline-block px-1"
+                style={{ lineHeight: '100%', display: 'inline-block' }}
               >
                 {item.label}
               </Link>
@@ -75,8 +75,8 @@ const TopMenu: React.FC = () => {
               <a
                 key={index}
                 href={item.href || '#'}
-                className="text-layout-grey-nav font-benzin text-[10px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap"
-                style={{ lineHeight: '100%' }}
+                className="text-layout-grey-nav font-benzin text-[10px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap inline-block px-1"
+                style={{ lineHeight: '100%', display: 'inline-block' }}
                 onClick={item.onClick}
               >
                 {item.label}
