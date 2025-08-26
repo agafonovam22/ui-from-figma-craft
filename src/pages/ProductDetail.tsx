@@ -170,7 +170,7 @@ const ProductDetail: React.FC = () => {
                 </div>
               )}
             </div>
-            <div className="mr-[-75px]">
+            <div>
               <EmailSubscription />
             </div>
           </div>
