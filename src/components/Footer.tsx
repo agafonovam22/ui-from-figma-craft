@@ -7,9 +7,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="w-full text-white">
       {/* Main content section with #262631 background */}
-      <div className="bg-[#262631] py-8">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+      <div className="bg-[#262631] section-spacing">
+        <div className="responsive-container">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 responsive-table">
             {/* Каталог */}
             <div>
               <h3 className="text-white text-xs font-benzin-semibold mb-2">Каталог</h3>
@@ -145,20 +145,20 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom section with #17171E background */}
-      <div className="bg-[#17171E] py-6">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+      <div className="bg-[#17171E] section-spacing">
+        <div className="responsive-container">
           <div className="flex flex-col gap-6">
             {/* Top row - Logo and buttons */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
               <img 
                 src="/lovable-uploads/989588d0-dab0-48b9-9268-db2cc02cf4da.png" 
                 alt="WELL.FITNESS"
-                className="h-[32px] w-auto"
+                className="responsive-image h-[clamp(28px, 5vw, 32px)] w-auto"
               />
               
               <div className="flex gap-6 items-center">
-                <a href="#" className="text-white text-[10px] hover:opacity-80 transition-opacity font-benzin">Для дилеров</a>
-                <button className="bg-white text-[#262631] px-3 py-2 rounded-[5px] text-[10px] hover:bg-gray-100 transition-colors font-benzin">
+                <a href="#" className="text-white responsive-text hover:opacity-80 transition-opacity font-benzin">Для дилеров</a>
+                <button className="bg-white text-[#262631] px-3 py-2 rounded-[5px] responsive-text hover:bg-gray-100 transition-colors font-benzin">
                   For suppliers
                 </button>
               </div>
@@ -166,10 +166,10 @@ const Footer: React.FC = () => {
             
             {/* Bottom row - copyright and links aligned on same line */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3">
-              <span className="text-[#778093] text-[10px]">© WellFitness, 2005-2024 Все права защищены</span>
+              <span className="text-[#778093] responsive-text">© WellFitness, 2005-2024 Все права защищены</span>
               <div className="flex gap-6">
-                <Link to="/privacy-policy" className="text-[#778093] text-[10px] hover:text-white transition-colors">Политика конфиденциальности</Link>
-                <Link to="/public-offer" className="text-[#778093] text-[10px] hover:text-white transition-colors">Публичная оферта</Link>
+                <Link to="/privacy-policy" className="text-[#778093] responsive-text hover:text-white transition-colors">Политика конфиденциальности</Link>
+                <Link to="/public-offer" className="text-[#778093] responsive-text hover:text-white transition-colors">Публичная оферта</Link>
               </div>
             </div>
           </div>

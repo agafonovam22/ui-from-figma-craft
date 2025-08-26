@@ -148,8 +148,8 @@ const MidMenu: React.FC<MidMenuProps> = ({ onSearch }) => {
   };
 
   return (
-    <section className="flex w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 lg:px-[60px] py-3 max-md:px-5 max-sm:px-4">
-      <div className="flex w-full max-w-[1800px] h-[65px] justify-between items-center gap-4 flex-shrink-0">
+    <section className="flex w-full justify-center items-center bg-[#17171E] responsive-padding py-3 max-md:px-5 max-sm:px-4">
+      <div className="flex w-full max-content-width h-[clamp(60px, 10vh, 65px)] justify-between items-center gap-4 flex-shrink-0">
         <Logo />
         
         <SearchPopup isOpen={isPopupOpen} onOpenChange={setIsPopupOpen}>

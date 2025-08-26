@@ -23,14 +23,15 @@ const Banner: React.FC = () => {
 
   return (
     <section className="w-full">
-      <div className="max-w-[1800px] mx-auto px-[30px]">
-        <div className="overflow-hidden relative rounded-lg" style={{ height: '400px' }}>
+      <div className="responsive-container">
+        <div className="overflow-hidden relative rounded-lg" style={{ height: 'clamp(250px, 25vh, 400px)' }}>
           {/* Изображение на всю ширину */}
           <div className="relative h-full">
             <img 
               src={images[currentIndex]}
               alt={`Banner slide ${currentIndex + 1}`}
-              className="w-full h-full object-cover"
+              className="responsive-image w-full h-full"
+              style={{ objectFit: 'cover' }}
             />
           </div>
           

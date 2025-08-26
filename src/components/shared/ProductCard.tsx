@@ -238,11 +238,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
               {product.gallery_images.map((image: string, imageIndex: number) => (
                 <CarouselItem key={imageIndex} className="h-full">
                   <div className="h-full flex items-center justify-center p-4">
-                    <LazyImage 
-                      src={optimizeImageUrl(image, 400, 320)} 
-                      alt={`${product.name} - фото ${imageIndex + 1}`}
-                      className="w-full h-full object-contain"
-                    />
+                     <LazyImage 
+                       src={optimizeImageUrl(image, 400, 320)} 
+                       alt={`${product.name} - фото ${imageIndex + 1}`}
+                       className="responsive-image w-full h-full"
+                     />
                   </div>
                 </CarouselItem>
               ))}
@@ -254,7 +254,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <LazyImage 
               src={optimizeImageUrl((product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg', 400, 320)} 
               alt={product.name || "Товар"}
-              className="w-full h-full object-contain"
+              className="responsive-image w-full h-full"
             />
           </div>
         )}
@@ -323,7 +323,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             })()}
 
             {/* Название товара */}
-            <h3 className="text-gray-900 group-hover:text-white text-sm mb-3 line-clamp-2 leading-relaxed transition-colors duration-300">
+            <h3 className="text-gray-900 group-hover:text-white responsive-text mb-3 line-clamp-2 leading-relaxed transition-colors duration-300">
               {(() => {
                 const name = product.name;
                 // Ищем бренды в названии

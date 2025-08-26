@@ -171,10 +171,10 @@ const ProductCatalog: React.FC = () => {
   const currentProducts = activeFilter === 'home' ? homeProducts : fitnessProducts;
 
   return (
-    <section className="w-full py-6 bg-white">
-      <div className="max-w-[1800px] mx-auto px-[30px]">
+    <section className="w-full section-spacing bg-white">
+      <div className="responsive-container">
         <div className="flex items-center justify-between mb-12">
-          <h2 className="text-2xl font-bold text-[#262631]">
+          <h2 className="responsive-title font-bold text-[#262631]">
             Каталог продукции
           </h2>
           <div className="flex items-center gap-4">
@@ -201,28 +201,29 @@ const ProductCatalog: React.FC = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6">
+        <div className="products-grid mb-6">
           {currentProducts.slice(0, 6).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
           ))}
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px]">
+        <div className="products-grid">
           {currentProducts.slice(6, 10).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
           ))}
-          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px]">
+          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 product-card-responsive">
             <img 
               src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
               alt="Перейти в каталог"
-              className="w-full h-full object-cover object-right"
+              className="responsive-image w-full h-full"
+              style={{ objectFit: 'cover', objectPosition: 'right' }}
             />
-            <div className="absolute top-4 left-4 text-white font-benzin text-lg font-normal">
+            <div className="absolute top-4 left-4 text-white font-benzin responsive-text font-normal">
               {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
             </div>
             <Link 
               to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
-              className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2"
+              className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin responsive-text font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2"
             >
               Перейти в каталог <ArrowRight className="w-4 h-4" />
             </Link>
