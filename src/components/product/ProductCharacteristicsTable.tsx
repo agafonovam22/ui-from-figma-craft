@@ -128,6 +128,33 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
         } as Record<string, string>,
         keywords: ['Консоль', 'Console', 'Дисплей', 'Экран', 'Панель управления', 'Управление', 'Интерфейс', 'ЖК', 'LCD', 'LED', 'Монитор', 'Сенсорный', 'Язык', 'интерфейса', 'Клавиши быстрой настройки скорости', 'Показания консоли', 'Подсветка дисплея', 'Спецификации программ', 'Программное обеспечение', 'Фото консоли', 'Тип дисплея']
       },
+      pulseControl: {
+        title: 'Контроль пульса',
+        items: {
+          'Сенсоры пульса': 'есть',
+          'Поддержка кардиопояса': 'есть',
+          'Кардиопояс': 'опция'
+        } as Record<string, string>,
+        keywords: ['Контроль пульса', 'Сенсоры пульса', 'Кардиопояс']
+      },
+      workingDimensions: {
+        title: 'Габариты в рабочем состоянии',
+        items: {
+          'Размер в рабочем состоянии Длина, см': '190',
+          'Размер в рабочем состоянии Ширина, см': '85',
+          'Размер в рабочем состоянии Высота, см': '143'
+        } as Record<string, string>,
+        keywords: ['Габариты в рабочем состоянии', 'Размер в рабочем состоянии']
+      },
+      packageDimensions: {
+        title: 'Упаковка',
+        items: {
+          'Габариты упаковки Длина, см': '202',
+          'Габариты упаковки Ширина, см': '91',
+          'Габариты упаковки Высота, см': '38'
+        } as Record<string, string>,
+        keywords: ['Габариты упаковки', 'Упаковка', 'Размеры упаковки']
+      },
       packaging: {
         title: 'Упаковка',
         items: {} as Record<string, string>,
@@ -166,9 +193,9 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
 
       let categorized = false;
       
-      // Check each category except 'other', 'basic', and 'console' (we use static data for these)
+      // Check each category except 'other', 'basic', 'console', 'pulseControl', 'workingDimensions', 'packageDimensions' (we use static data for these)
       Object.entries(categories).forEach(([categoryKey, category]) => {
-        if (categoryKey === 'other' || categoryKey === 'basic' || categoryKey === 'console' || categorized) return;
+        if (categoryKey === 'other' || categoryKey === 'basic' || categoryKey === 'console' || categoryKey === 'pulseControl' || categoryKey === 'workingDimensions' || categoryKey === 'packageDimensions' || categorized) return;
         
         const matchesKeyword = category.keywords.some(keyword => 
           key.toLowerCase().includes(keyword.toLowerCase())
@@ -386,6 +413,60 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     );
   };
 
+  const renderThreeColumnSection = () => {
+    const pulseControl = categorizedCharacteristics.pulseControl;
+    const workingDimensions = categorizedCharacteristics.workingDimensions;
+    const packageDimensions = categorizedCharacteristics.packageDimensions;
+    
+    const hasPulseItems = Object.keys(pulseControl.items).length > 0;
+    const hasWorkingItems = Object.keys(workingDimensions.items).length > 0;
+    const hasPackageItems = Object.keys(packageDimensions.items).length > 0;
+    
+    if (!hasPulseItems && !hasWorkingItems && !hasPackageItems) return null;
+
+    const renderMiniTable = (category: any, title: string) => {
+      const hasItems = Object.keys(category.items).length > 0;
+      if (!hasItems) return null;
+
+      return (
+        <div>
+          <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
+            {title}
+          </h4>
+          <div className="space-y-0">
+            {Object.entries(category.items).map(([key, value], index) => (
+              <div key={key} className="py-2">
+                {index === 0 && <div className="border-t border-border mb-2"></div>}
+                <div className="flex justify-between items-start gap-4">
+                  <span className="text-sm font-medium text-muted-foreground flex-shrink-0">{key}:</span>
+                  <div className="text-sm text-foreground text-right">
+                    <span>{String(value).replace(/<[^>]*>/g, '').trim()}</span>
+                  </div>
+                </div>
+                <div className="mt-2 border-b border-border"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    };
+
+    return (
+      <div className="mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Column 1: Контроль пульса */}
+          {renderMiniTable(pulseControl, 'Контроль пульса')}
+          
+          {/* Column 2: Габариты в рабочем состоянии */}
+          {renderMiniTable(workingDimensions, 'Габариты в рабочем состоянии')}
+          
+          {/* Column 3: Упаковка */}
+          {renderMiniTable(packageDimensions, 'Упаковка')}
+        </div>
+      </div>
+    );
+  };
+
   const renderCombinedBottomSection = () => {
     const locationItems = categorizedCharacteristics.location.items;
     const otherItems = categorizedCharacteristics.other.items;
@@ -492,7 +573,10 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       {/* Консоль */} 
       {productId !== '532' && renderTable(categorizedCharacteristics.console, 'console')}
       
-      {/* Упаковка */}
+      {/* Three column section: Контроль пульса, Габариты в рабочем состоянии, Упаковка */}
+      {renderThreeColumnSection()}
+      
+      {/* Упаковка (старая версия - оставляем для обратной совместимости) */}
       {renderTable(categorizedCharacteristics.packaging, 'packaging')}
       
       {/* Вес */}
