@@ -173,30 +173,30 @@ const ProductCatalog: React.FC = () => {
   return (
     <section className="w-full section-spacing bg-white">
       <div className="responsive-container">
-        <div className="flex items-center justify-between mb-12">
+        <div className="flex items-center justify-between mb-8">
           <h2 className="responsive-title font-bold text-[#262631]">
             Каталог продукции
           </h2>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             <button
               onClick={() => setActiveFilter('home')}
-              className={`px-6 py-3 rounded-lg font-medium transition-colors ${
+              className={`px-4 py-2 rounded-lg font-medium transition-colors text-sm ${
                 activeFilter === 'home'
                   ? 'bg-[#F53B49] text-white'
                   : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
               }`}
             >
-              Тренажеры для дома
+              Для дома
             </button>
             <button
               onClick={() => setActiveFilter('fitness')}
-              className={`px-6 py-3 rounded-lg font-medium transition-colors ${
+              className={`px-4 py-2 rounded-lg font-medium transition-colors text-sm ${
                 activeFilter === 'fitness'
                   ? 'bg-[#F53B49] text-white'
                   : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
               }`}
             >
-              Фитнес-клуба
+              Фитнес-клуб
             </button>
           </div>
         </div>
@@ -219,18 +219,18 @@ const ProductCatalog: React.FC = () => {
                 {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
               </div>
               <div className="absolute bottom-4 left-4 z-10">
-                <button className="bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin font-normal hover:bg-gray-100 transition-colors flex items-center gap-2">
-                  Перейти <ArrowRight className="w-4 h-4" />
+                <button className="bg-white text-[#262631] px-3 py-1.5 rounded-lg font-benzin font-normal hover:bg-gray-100 transition-colors flex items-center gap-2 text-sm">
+                  Перейти <ArrowRight className="w-3 h-3" />
                 </button>
               </div>
             </div>
           </Link>
         </div>
         
-        <div className="mt-8 flex justify-start">
+        <div className="mt-6 flex justify-start">
           <Link 
             to={activeFilter === 'home' ? '/home-fitness-equipment' : '/gym-equipment'}
-            className="border-2 border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors font-benzin font-normal"
+            className="border-2 border-[#F53B49] text-[#F53B49] px-6 py-2 rounded hover:bg-[#F53B49] hover:text-white transition-colors font-benzin font-normal text-sm"
           >
             Показать все
           </Link>
