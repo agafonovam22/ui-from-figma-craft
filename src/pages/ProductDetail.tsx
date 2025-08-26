@@ -19,6 +19,7 @@ import LoadingSpinner from '@/components/LoadingSpinner';
 import { extractBrandFromProductName } from '@/utils/extractBrand';
 import ProductCharacteristicsTable from '@/components/product/ProductCharacteristicsTable';
 import SupportCitySelector from '@/components/SupportCitySelector';
+import { useViewedProducts } from '@/hooks/useViewedProducts';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -31,6 +32,7 @@ const ProductDetail: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState('Москва');
   const { addItem } = useCart();
   const { toast } = useToast();
+  const { addViewedProduct } = useViewedProducts();
 
   // Используем React Query для кэширования данных товаров
   const { data: allProductsData, isLoading, error } = useQuery({
@@ -57,6 +59,13 @@ const ProductDetail: React.FC = () => {
       preloadImage(optimizeImageUrl(mainImage, 700, 700)).catch(console.warn);
     }
   }, [product]);
+
+  // Добавляем товар в просмотренные при загрузке
+  useEffect(() => {
+    if (product?.id && id) {
+      addViewedProduct(id);
+    }
+  }, [product?.id, id, addViewedProduct]);
 
   const handleBuyClick = () => {
     if (product) {
@@ -171,7 +180,7 @@ const ProductDetail: React.FC = () => {
                 </div>
               )}
             </div>
-            <ViewedProducts currentProductId={id} />
+            <ViewedProducts currentProductId={id} currentProductCategoryId={product?.category_id} />
             <EmailSubscription />
           </div>
         );
@@ -184,7 +193,7 @@ const ProductDetail: React.FC = () => {
               productName={product.name}
               productId={id}
              />
-             <ViewedProducts currentProductId={id} />
+             <ViewedProducts currentProductId={id} currentProductCategoryId={product?.category_id} />
              <EmailSubscription />
            </div>
         );
@@ -310,7 +319,7 @@ const ProductDetail: React.FC = () => {
                 </button>
               </div>
             </div>
-            <ViewedProducts currentProductId={id} />
+          <ViewedProducts currentProductId={id} currentProductCategoryId={product?.category_id} />
             <EmailSubscription />
           </div>
         );
