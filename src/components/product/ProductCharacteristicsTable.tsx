@@ -393,46 +393,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       });
     }
 
-    return (
-      <div key={categoryKey} className="mb-8">
-        <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
-          {category.title}
-        </h4>
-        <div className="overflow-hidden">
-          <div className="">
-            {characteristicPairs.map((pair, index) => (
-              <div key={`${pair.firstKey}-${pair.secondKey || 'single'}-${index}`} className="p-2">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
-                  {/* First characteristic */}
-                  <div className="flex-1">
-                    {pair.first && (
-                      <div className="py-2">
-                        {index === 0 && <div className="border-t border-border mb-2"></div>}
-                        {renderCharacteristicContent(pair.first)}
-                        <div className="mt-2 border-b border-border"></div>
-                      </div>
-                    )}
-                  </div>
-                  
-                  {/* Second characteristic */}
-                  {pair.second ? (
-                    <div className="flex-1">
-                      <div className="py-2">
-                        {index === 0 && <div className="border-t border-border mb-2"></div>}
-                        {renderCharacteristicContent(pair.second)}
-                        <div className="mt-2 border-b border-border"></div>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="hidden md:block"></div>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
+    return null;
   };
 
   const renderThreeColumnSection = () => {
