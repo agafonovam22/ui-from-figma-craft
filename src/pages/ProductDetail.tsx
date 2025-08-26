@@ -13,17 +13,14 @@ import ProductHeader from '@/components/product/ProductHeader';
 import { useToast } from '@/hooks/use-toast';
 import ReviewDialog from '@/components/ReviewDialog';
 import { useQuery } from '@tanstack/react-query';
-import { optimizeImageUrl, preloadImage } from '@/utils/imageOptimization';
+import { optimizeImageUrl, preloadImage } from '@/utils/imageOptimization';  
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { extractBrandFromProductName } from '@/utils/extractBrand';
 import ProductCharacteristicsTable from '@/components/product/ProductCharacteristicsTable';
 import SupportCitySelector from '@/components/SupportCitySelector';
+
 const ProductDetail: React.FC = () => {
-  const {
-    id
-  } = useParams<{
-    id: string;
-  }>();
+  const { id } = useParams<{ id: string }>();
   const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState<string>('');
   const [selectedSize, setSelectedSize] = useState<string>('core');
@@ -31,19 +28,11 @@ const ProductDetail: React.FC = () => {
   const [showReviewModal, setShowReviewModal] = useState(false);
   const [selectedInstallmentPlan, setSelectedInstallmentPlan] = useState<number | null>(null);
   const [selectedCity, setSelectedCity] = useState('Москва');
-  const {
-    addItem
-  } = useCart();
-  const {
-    toast
-  } = useToast();
+  const { addItem } = useCart();
+  const { toast } = useToast();
 
   // Используем React Query для кэширования данных товаров
-  const {
-    data: allProductsData,
-    isLoading,
-    error
-  } = useQuery({
+  const { data: allProductsData, isLoading, error } = useQuery({
     queryKey: ['all-products'],
     queryFn: async () => {
       console.log('🔄 Загружаем товары для страницы товара...');
@@ -53,9 +42,8 @@ const ProductDetail: React.FC = () => {
       }
       return response.json();
     },
-    staleTime: 5 * 60 * 1000,
-    // 5 минут
-    gcTime: 30 * 60 * 1000 // 30 минут
+    staleTime: 5 * 60 * 1000, // 5 минут
+    gcTime: 30 * 60 * 1000, // 30 минут
   });
 
   // Находим товар в кэшированных данных
@@ -68,28 +56,32 @@ const ProductDetail: React.FC = () => {
       preloadImage(optimizeImageUrl(mainImage, 700, 700)).catch(console.warn);
     }
   }, [product]);
+
   const handleBuyClick = () => {
     if (product) {
       addItem({
         id: product.id,
         name: product.name,
         price: product.price,
-        image_url: product.gallery_images && product.gallery_images.length > 0 ? optimizeImageUrl(product.gallery_images[0], 200, 200) : '/placeholder.svg',
+        image_url: (product.gallery_images && product.gallery_images.length > 0) ? 
+          optimizeImageUrl(product.gallery_images[0], 200, 200) : '/placeholder.svg',
         is_available: product.is_available
       });
+      
       toast({
         title: "Товар добавлен в корзину",
-        description: `${product.name} (${quantity} шт.)`
+        description: `${product.name} (${quantity} шт.)`,
       });
     }
   };
+
   const incrementQuantity = () => setQuantity(prev => prev + 1);
   const decrementQuantity = () => setQuantity(prev => Math.max(1, prev - 1));
 
   // Функция для извлечения ссылки на PDF инструкцию из характеристик
   const getInstructionPdfUrl = () => {
     if (!product?.characteristics) return null;
-
+    
     // Ищем характеристику, содержащую PDF инструкцию
     for (const [key, value] of Object.entries(product.characteristics)) {
       if (typeof value === 'string' && value.includes('.pdf') && value.includes('Instruktsii')) {
@@ -98,6 +90,7 @@ const ProductDetail: React.FC = () => {
     }
     return null;
   };
+
   const handleDownloadInstruction = () => {
     const pdfUrl = getInstructionPdfUrl();
     if (pdfUrl) {
@@ -106,60 +99,100 @@ const ProductDetail: React.FC = () => {
       toast({
         title: "Инструкция недоступна",
         description: "Инструкция для данного товара не найдена",
-        variant: "destructive"
+        variant: "destructive",
       });
     }
   };
+
   const renderTabContent = () => {
     switch (activeTab) {
       case 'description':
-        return <div>
-            <h3 className="text-2xl font-semibold mb-6" style={{
-            fontFamily: 'Benzin-Semibold'
-          }}>Описание</h3>
+        return (
+          <div>
+            <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Описание</h3>
             <div className="font-manrope text-muted-foreground leading-relaxed">
-              {product.description ? <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {product.description ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <p>{product.description}</p>
                   </div>
                   <div className="space-y-4">
-                    {product.characteristics && <div>
+                    {product.characteristics && (
+                      <div>
                         <p className="font-semibold text-foreground mb-2">
                           Основные преимущества:
                         </p>
                         <ul className="list-disc list-inside space-y-1 ml-4">
-                          {product.characteristics['Тип назначения'] && <li>Тип назначения: {product.characteristics['Тип назначения']}</li>}
-                          {product.characteristics['Вес пользователя, кг'] && <li>Максимальный вес пользователя: {product.characteristics['Вес пользователя, кг']} кг</li>}
-                          {product.characteristics['Беговое полотно, см'] && <li>Размер бегового полотна: {product.characteristics['Беговое полотно, см']} см</li>}
-                          {product.characteristics['Максимальная скорость, км/ч'] && <li>Максимальная скорость: {product.characteristics['Максимальная скорость, км/ч']} км/ч</li>}
-                          {product.characteristics['Макс. угол наклона, %'] && <li>Максимальный угол наклона: {product.characteristics['Макс. угол наклона, %']}%</li>}
-                          {product.characteristics['Гарантия на домашнее использование'] && <li>Гарантия: {product.characteristics['Гарантия на домашнее использование']}</li>}
-                          {product.characteristics['Артикул'] && <li>Артикул: {product.characteristics['Артикул']}</li>}
+                          {product.characteristics['Тип назначения'] && (
+                            <li>Тип назначения: {product.characteristics['Тип назначения']}</li>
+                          )}
+                          {product.characteristics['Вес пользователя, кг'] && (
+                            <li>Максимальный вес пользователя: {product.characteristics['Вес пользователя, кг']} кг</li>
+                          )}
+                          {product.characteristics['Беговое полотно, см'] && (
+                            <li>Размер бегового полотна: {product.characteristics['Беговое полотно, см']} см</li>
+                          )}
+                          {product.characteristics['Максимальная скорость, км/ч'] && (
+                            <li>Максимальная скорость: {product.characteristics['Максимальная скорость, км/ч']} км/ч</li>
+                          )}
+                          {product.characteristics['Макс. угол наклона, %'] && (
+                            <li>Максимальный угол наклона: {product.characteristics['Макс. угол наклона, %']}%</li>
+                          )}
+                          {product.characteristics['Гарантия на домашнее использование'] && (
+                            <li>Гарантия: {product.characteristics['Гарантия на домашнее использование']}</li>
+                          )}
+                          {product.characteristics['Артикул'] && (
+                            <li>Артикул: {product.characteristics['Артикул']}</li>
+                          )}
                         </ul>
-                      </div>}
+                      </div>
+                    )}
                   </div>
-                </div> : <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <p>
-                      {`${product?.name || 'Данный товар'} - это высококачественное оборудование, специально разработанное для эффективных тренировок и функционального тренинга.`}
+                      Беговая дорожка CardioPower TR150 разработана для тренировки пожилых людей и реабилитации пациентов с ограниченными возможностями. Модель имеет удлиненные двойные поручни с регулировкой по высоте и ширине и широкое беговое полотно 50 х 145 см. для обеспечения полной безопасности и комфорта тренировки.
+                    </p>
+                    <div>
+                      <p className="font-semibold text-foreground mb-2">Технические характеристики:</p>
+                      <ul className="list-disc list-inside space-y-1 ml-4">
+                        <li>Минимальная высота 620 мм</li>
+                        <li>Максимальная высота 920 мм</li>
+                        <li>Длина шага 50 мм</li>
+                        <li>Количество уровней 7 шт.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <p>
+                      Мотор переменного тока AC обеспечивает регулировку скорости в диапазоне от 0,2 км/ч до 14 км/ч с шагом изменения 0,1 км/ч. Информативный LED дисплей отображает все данные тренировки.
+                    </p>
+                    <p>
+                      Контроль пульса осуществляется с помощью контактных сенсоров и беспроводного считывания пульса с кардиопояса.
                     </p>
                   </div>
-                  
-                </div>}
+                </div>
+              )}
             </div>
-          </div>;
+          </div>
+        );
       case 'specifications':
-        return <div>
-            <h3 className="text-2xl font-semibold mb-6" style={{
-            fontFamily: 'Benzin-Semibold'
-          }}>Характеристики</h3>
-            <ProductCharacteristicsTable characteristics={product.characteristics} productName={product.name} productId={id} />
-          </div>;
+        return (
+          <div>
+            <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Характеристики</h3>
+            <ProductCharacteristicsTable 
+              characteristics={product.characteristics}
+              productName={product.name}
+              productId={id}
+            />
+          </div>
+        );
       case 'reviews':
-        return <div>
-            <h3 className="text-2xl font-semibold mb-6" style={{
-            fontFamily: 'Benzin-Semibold'
-          }}>Отзывы (10)</h3>
+        return (
+          <div>
+            <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Отзывы (10)</h3>
             <div className="font-manrope grid lg:grid-cols-3 gap-8">
               {/* Список отзывов */}
               <div className="lg:col-span-2 space-y-6">
@@ -187,10 +220,18 @@ const ProductDetail: React.FC = () => {
                   {/* Изображения в отзыве */}
                   <div className="flex space-x-3 ml-15">
                     <div className="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden">
-                      <img src="/lovable-uploads/f35fe135-ca23-48f8-8490-aa26a337a8f5.png" alt="Отзыв фото 1" className="w-full h-full object-cover" />
+                      <img 
+                        src="/lovable-uploads/f35fe135-ca23-48f8-8490-aa26a337a8f5.png" 
+                        alt="Отзыв фото 1" 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div className="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden">
-                      <img src="/lovable-uploads/f9620881-afa2-4fc3-81cb-d1956b8a6691.png" alt="Отзыв фото 2" className="w-full h-full object-cover" />
+                      <img 
+                        src="/lovable-uploads/f9620881-afa2-4fc3-81cb-d1956b8a6691.png" 
+                        alt="Отзыв фото 2" 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </div>
                 </div>
@@ -223,29 +264,27 @@ const ProductDetail: React.FC = () => {
                 {/* Критерии оценки - первый контейнер */}
                 <div className="bg-white border border-gray-200 rounded-lg p-4">
                   <div className="space-y-3">
-                    {[{
-                    name: 'Качество',
-                    rating: 6
-                  }, {
-                    name: 'Цена',
-                    rating: 10
-                  }, {
-                    name: 'Функциональность',
-                    rating: 4
-                  }, {
-                    name: 'Скорость',
-                    rating: 8
-                  }, {
-                    name: 'Легкость в сборке',
-                    rating: 8
-                  }].map(criterion => <div key={criterion.name} className="flex items-center justify-between">
+                    {[
+                      { name: 'Качество', rating: 6 },
+                      { name: 'Цена', rating: 10 },
+                      { name: 'Функциональность', rating: 4 },
+                      { name: 'Скорость', rating: 8 },
+                      { name: 'Легкость в сборке', rating: 8 }
+                    ].map((criterion) => (
+                      <div key={criterion.name} className="flex items-center justify-between">
                         <span className="text-sm text-gray-600 font-benzin">{criterion.name}</span>
                         <div className="flex space-x-1">
-                          {Array.from({
-                        length: 10
-                      }).map((_, index) => <div key={index} className={`w-2 h-3 ${index < criterion.rating ? 'bg-red-500' : 'bg-gray-200'}`} />)}
+                          {Array.from({ length: 10 }).map((_, index) => (
+                            <div
+                              key={index}
+                              className={`w-2 h-3 ${
+                                index < criterion.rating ? 'bg-red-500' : 'bg-gray-200'
+                              }`}
+                            />
+                          ))}
                         </div>
-                      </div>)}
+                      </div>
+                    ))}
                   </div>
                 </div>
 
@@ -264,35 +303,36 @@ const ProductDetail: React.FC = () => {
                 </div>
 
                 {/* Кнопка написать отзыв */}
-                <button onClick={() => setShowReviewModal(true)} className="w-full py-3 border border-red-500 text-red-500 rounded-lg hover:bg-red-50 transition-colors">
+                <button 
+                  onClick={() => setShowReviewModal(true)}
+                  className="w-full py-3 border border-red-500 text-red-500 rounded-lg hover:bg-red-50 transition-colors"
+                >
                   Написать отзыв
                 </button>
               </div>
             </div>
-          </div>;
+          </div>
+        );
       case 'delivery':
-        return <div className="space-y-12">
-            <h3 className="text-2xl font-semibold mb-6" style={{
-            fontFamily: 'Benzin-Semibold'
-          }}>Доставка и оплата</h3>
+        return (
+          <div className="space-y-12">
+            <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Доставка и оплата</h3>
             {/* Город доставки */}
             <div className="flex gap-8">
               <div className="w-80 flex-shrink-0">
                 <div className="flex items-center gap-2 flex-nowrap">
                   <h3 style={{
-                  fontFamily: 'Benzin-Medium',
-                  fontSize: '20px',
-                  whiteSpace: 'nowrap'
-                }}>Город доставки</h3>
+                    fontFamily: 'Benzin-Medium',
+                    fontSize: '20px',
+                    whiteSpace: 'nowrap'
+                  }}>Город доставки</h3>
                   <span className="text-red-500 font-medium">Москва</span>
                 </div>
               </div>
               <div className="flex-1">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-gray-100 rounded-lg flex overflow-hidden">
-                    <div className="flex-grow p-6" style={{
-                    flexBasis: '66.67%'
-                  }}>
+                    <div className="flex-grow p-6" style={{ flexBasis: '66.67%' }}>
                       <div className="flex items-center gap-2 mb-4">
                         <span className="text-lg font-semibold text-gray-900">Самовывоз</span>
                       </div>
@@ -300,17 +340,13 @@ const ProductDetail: React.FC = () => {
                         Вы можете самостоятельно забрать заказ из нашего магазина
                       </p>
                     </div>
-                    <div className="bg-gray-400 p-6 flex items-center justify-center" style={{
-                    flexBasis: '33.33%'
-                  }}>
+                    <div className="bg-gray-400 p-6 flex items-center justify-center" style={{ flexBasis: '33.33%' }}>
                       <div className="text-2xl font-bold text-white">0₽</div>
                     </div>
                   </div>
                   
                   <div className="bg-gray-100 rounded-lg flex overflow-hidden">
-                    <div className="flex-grow p-6" style={{
-                    flexBasis: '66.67%'
-                  }}>
+                    <div className="flex-grow p-6" style={{ flexBasis: '66.67%' }}>
                       <div className="flex items-center gap-2 mb-4">
                         <span className="text-lg font-semibold text-gray-900">Курьерская Доставка</span>
                       </div>
@@ -318,9 +354,7 @@ const ProductDetail: React.FC = () => {
                         Собственная служба Доставки
                       </p>
                     </div>
-                    <div className="bg-gray-400 p-6 flex items-center justify-center" style={{
-                    flexBasis: '33.33%'
-                  }}>
+                    <div className="bg-gray-400 p-6 flex items-center justify-center" style={{ flexBasis: '33.33%' }}>
                       <div className="text-2xl font-bold text-white">0₽</div>
                     </div>
                   </div>
@@ -335,64 +369,64 @@ const ProductDetail: React.FC = () => {
             <div className="flex gap-8">
               <div className="w-80 flex-shrink-0">
                 <h3 style={{
-                fontFamily: 'Benzin-Medium',
-                fontSize: '20px'
-              }}>Стоимость доставки</h3>
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Стоимость доставки</h3>
               </div>
               <div className="flex-1">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {/* Left Column */}
                   <div className="bg-gray-50 p-6 rounded-lg">
                     <h4 className="mb-4 pb-3 border-b" style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '16px',
-                    fontWeight: '500'
-                  }}>Заказ от 30 001₽</h4>
+                      fontFamily: 'Benzin-Medium',
+                      fontSize: '16px',
+                      fontWeight: '500'
+                    }}>Заказ от 30 001₽</h4>
                     <div className="space-y-4">
                       <div className="flex justify-between items-center py-3 border-b">
                         <span style={{
-                        color: 'var(--Dark-Grey, #262631)',
-                        fontFamily: 'Manrope, sans-serif',
-                        fontSize: '16px',
-                        fontStyle: 'normal',
-                        fontWeight: '400',
-                        lineHeight: '120%',
-                        letterSpacing: '0.32px'
-                      }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
+                          color: 'var(--Dark-Grey, #262631)',
+                          fontFamily: 'Manrope, sans-serif',
+                          fontSize: '16px',
+                          fontStyle: 'normal',
+                          fontWeight: '400',
+                          lineHeight: '120%',
+                          letterSpacing: '0.32px'
+                        }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
                         <span className="text-[#F53B49] font-semibold" style={{
-                        fontFamily: 'Manrope',
-                        fontSize: '16px'
-                      }}>Бесплатно</span>
+                          fontFamily: 'Manrope',
+                          fontSize: '16px'
+                        }}>Бесплатно</span>
                       </div>
                       <div className="flex justify-between items-center py-3 border-b">
                         <span style={{
-                        color: 'var(--Dark-Grey, #262631)',
-                        fontFamily: 'Manrope, sans-serif',
-                        fontSize: '16px',
-                        fontStyle: 'normal',
-                        fontWeight: '400',
-                        lineHeight: '120%',
-                        letterSpacing: '0.32px'
-                      }}>Автомобильная доставка по Московской Области</span>
+                          color: 'var(--Dark-Grey, #262631)',
+                          fontFamily: 'Manrope, sans-serif',
+                          fontSize: '16px',
+                          fontStyle: 'normal',
+                          fontWeight: '400',
+                          lineHeight: '120%',
+                          letterSpacing: '0.32px'
+                        }}>Автомобильная доставка по Московской Области</span>
                         <span className="text-[#F53B49] font-semibold whitespace-nowrap" style={{
-                        fontFamily: 'Manrope',
-                        fontSize: '16px'
-                      }}>30₽/км</span>
+                          fontFamily: 'Manrope',
+                          fontSize: '16px'
+                        }}>30₽/км</span>
                       </div>
                       <div className="flex justify-between items-center py-3 border-b">
                         <span style={{
-                        color: 'var(--Dark-Grey, #262631)',
-                        fontFamily: 'Manrope, sans-serif',
-                        fontSize: '16px',
-                        fontStyle: 'normal',
-                        fontWeight: '400',
-                        lineHeight: '120%',
-                        letterSpacing: '0.32px'
-                      }}>Курьерская доставка (вес до 3 кг)</span>
+                          color: 'var(--Dark-Grey, #262631)',
+                          fontFamily: 'Manrope, sans-serif',
+                          fontSize: '16px',
+                          fontStyle: 'normal',
+                          fontWeight: '400',
+                          lineHeight: '120%',
+                          letterSpacing: '0.32px'
+                        }}>Курьерская доставка (вес до 3 кг)</span>
                         <span className="text-[#F53B49] font-semibold" style={{
-                        fontFamily: 'Manrope',
-                        fontSize: '16px'
-                      }}>500₽</span>
+                          fontFamily: 'Manrope',
+                          fontSize: '16px'
+                        }}>500₽</span>
                       </div>
                     </div>
                   </div>
@@ -400,25 +434,25 @@ const ProductDetail: React.FC = () => {
                   {/* Right Column */}
                   <div className="bg-gray-50 p-6 rounded-lg h-fit">
                     <h4 className="mb-4 pb-3 border-b" style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '16px',
-                    fontWeight: '500'
-                  }}>Заказ до 30 000₽</h4>
+                      fontFamily: 'Benzin-Medium',
+                      fontSize: '16px',
+                      fontWeight: '500'
+                    }}>Заказ до 30 000₽</h4>
                     <div>
                       <div className="flex justify-between items-center py-3 border-b">
                         <span style={{
-                        color: 'var(--Dark-Grey, #262631)',
-                        fontFamily: 'Manrope, sans-serif',
-                        fontSize: '16px',
-                        fontStyle: 'normal',
-                        fontWeight: '400',
-                        lineHeight: '120%',
-                        letterSpacing: '0.32px'
-                      }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
+                          color: 'var(--Dark-Grey, #262631)',
+                          fontFamily: 'Manrope, sans-serif',
+                          fontSize: '16px',
+                          fontStyle: 'normal',
+                          fontWeight: '400',
+                          lineHeight: '120%',
+                          letterSpacing: '0.32px'
+                        }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
                         <span className="text-[#F53B49] font-semibold" style={{
-                        fontFamily: 'Manrope',
-                        fontSize: '16px'
-                      }}>1000₽</span>
+                          fontFamily: 'Manrope',
+                          fontSize: '16px'
+                        }}>1000₽</span>
                       </div>
                       <div className="h-2"></div>
                     </div>
@@ -434,37 +468,28 @@ const ProductDetail: React.FC = () => {
             <div className="flex gap-8">
               <div className="w-80 flex-shrink-0">
                 <h3 className="mb-6" style={{
-                fontFamily: 'Benzin-Medium',
-                fontSize: '20px'
-              }}>Самовывоз со склада</h3>
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Самовывоз со склада</h3>
               </div>
               <div className="flex-1">
                 <div className="space-y-4">
                   {/* Main Warehouse */}
                   <div>
                     <h4 className="mb-2" style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '16px'
-                  }}>Склад</h4>
-                    <div className="grid grid-cols-[1fr_auto_1fr] gap-4 items-start">
-                      <div className="text-gray-700" style={{
-                      fontFamily: 'Manrope',
+                      fontFamily: 'Benzin-Medium',
                       fontSize: '16px'
-                    }}>
+                    }}>Склад</h4>
+                    <div className="grid grid-cols-[1fr_auto_1fr] gap-4 items-start">
+                      <div className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         <div>Московская область, Красногорский р-н, д.</div>
                         <div>Гольево, улица Центральная ул., с44,</div>
                       </div>
                       <div className="flex items-center gap-2 ml-8">
                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                         <div>
-                          <div className="text-sm text-green-600 font-medium" style={{
-                          fontFamily: 'Manrope',
-                          fontSize: '16px'
-                        }}>В наличии</div>
-                          <div className="text-sm text-gray-600" style={{
-                          fontFamily: 'Manrope',
-                          fontSize: '16px'
-                        }}>пн - пт с 09:30-18:00</div>
+                          <div className="text-sm text-green-600 font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>В наличии</div>
+                          <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>пн - пт с 09:30-18:00</div>
                         </div>
                       </div>
                       <div></div>
@@ -477,34 +502,22 @@ const ProductDetail: React.FC = () => {
                   {/* Additional Warehouse */}
                   <div>
                     <h4 className="mb-2" style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '16px'
-                  }}>Дополнительный склад</h4>
-                    <div className="grid grid-cols-[1fr_auto_1fr] gap-4 items-start">
-                      <div className="text-gray-700" style={{
-                      fontFamily: 'Manrope',
+                      fontFamily: 'Benzin-Medium',
                       fontSize: '16px'
-                    }}>
+                    }}>Дополнительный склад</h4>
+                    <div className="grid grid-cols-[1fr_auto_1fr] gap-4 items-start">
+                      <div className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         <div>Красногвардейский пер 23 лит Е, территория</div>
                         <div>завода "Ильич", заезд с Вязского переулка.</div>
                       </div>
                       <div className="flex items-center gap-2 ml-8">
                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                         <div>
-                          <div className="text-sm text-green-600 font-medium" style={{
-                          fontFamily: 'Manrope',
-                          fontSize: '16px'
-                        }}>В наличии</div>
-                          <div className="text-sm text-gray-600" style={{
-                          fontFamily: 'Manrope',
-                          fontSize: '16px'
-                        }}>пн - пт с 10:00-18:00</div>
+                          <div className="text-sm text-green-600 font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>В наличии</div>
+                          <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>пн - пт с 10:00-18:00</div>
                         </div>
                       </div>
-                      <div className="text-sm text-gray-600 ml-[60px]" style={{
-                      fontFamily: 'Manrope',
-                      fontSize: '16px'
-                    }}>
+                      <div className="text-sm text-gray-600 ml-[60px]" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         <div>Выдача оформленных заказов осуществляется при согласовании даты</div>
                         <div>и времени приезда</div>
                       </div>
@@ -521,23 +534,17 @@ const ProductDetail: React.FC = () => {
             <div className="flex gap-8 mb-8">
               <div className="w-80 flex-shrink-0">
                 <h4 className="mb-4" style={{
-                fontFamily: 'Benzin-Medium',
-                fontSize: '20px'
-              }}>Доставка по России</h4>
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Доставка по России</h4>
               </div>
               <div className="flex-1">
                 <div className="grid grid-cols-2 gap-[10px]">
                   <div className="bg-gray-100 p-6 rounded-lg">
-                    <p className="text-gray-700 mb-4" style={{
-                    fontFamily: 'Manrope',
-                    fontSize: '16px'
-                  }}>
+                    <p className="text-gray-700 mb-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                       Определяется сроками доставки транспортной компании. Доставка товара на склад транспортной компании осуществляется в течение 1-2 дней с момента заказа, в режиме работы: Понедельник - Пятница
                     </p>
-                    <p className="text-gray-700" style={{
-                    fontFamily: 'Manrope',
-                    fontSize: '16px'
-                  }}>
+                    <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                       Стоимость доставки определяется тарифами транспортных компаний, оплата за доставку осуществляется при получении товара
                     </p>
                   </div>
@@ -596,50 +603,32 @@ const ProductDetail: React.FC = () => {
             <div className="flex gap-8">
               <div className="w-80 flex-shrink-0">
                 <h4 className="mb-6" style={{
-                fontFamily: 'Benzin-Medium',
-                fontSize: '20px'
-              }}>Оплата для физ. лиц</h4>
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Оплата для физ. лиц</h4>
               </div>
               <div className="flex-1">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px] mb-[10px]">
                   {/* Оплата наличными */}
                   <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
-                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '16px'
-                  }}>Оплата наличными</h5>
-                    <p className="text-sm flex-1 overflow-hidden" style={{
-                    fontFamily: 'Manrope',
-                    fontSize: '16px'
-                  }}>
+                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата наличными</h5>
+                    <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                       Возможна при оформлении всех способов доставки со всех субъектах РФ, где есть наши филиалы и терминалы наших партнеров, предоставляющих курьерские услуги.
                     </p>
                   </div>
 
                   {/* Оплата картой */}
                   <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
-                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '16px'
-                  }}>Оплата картой</h5>
-                    <p className="text-sm flex-1 overflow-hidden" style={{
-                    fontFamily: 'Manrope',
-                    fontSize: '16px'
-                  }}>
+                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата картой</h5>
+                    <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                       Возможна при оформлении всех способов доставки, во время самовывоза, а также курьеру при получении.
                     </p>
                   </div>
 
                   {/* Оплата онлайн */}
                   <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
-                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '16px'
-                  }}>Оплата онлайн</h5>
-                    <p className="text-sm flex-1 overflow-hidden" style={{
-                    fontFamily: 'Manrope',
-                    fontSize: '16px'
-                  }}>
+                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата онлайн</h5>
+                    <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                       Покупателю направляется защищенная ссылка для перехода в платежную систему. Производить оплату можно всеми видами карт, электронными деньгами, а также через терминалы без комиссии.
                     </p>
                   </div>
@@ -648,42 +637,24 @@ const ProductDetail: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px]">
                   {/* Наложенный платеж */}
                   <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
-                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '16px'
-                  }}>Наложенный платеж</h5>
-                    <p className="text-sm flex-1 overflow-hidden" style={{
-                    fontFamily: 'Manrope',
-                    fontSize: '16px'
-                  }}>
+                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Наложенный платеж</h5>
+                    <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                       При отправке в регионы. Рассчитывается по тарифам транспортных компаний и осуществляется с помощью партнеров перевозчиков «ПЭК» и «Деловые линии»
                     </p>
                   </div>
 
                   {/* В рассрочку */}
                   <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
-                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '16px'
-                  }}>В рассрочку</h5>
-                    <p className="text-sm flex-1 overflow-hidden" style={{
-                    fontFamily: 'Manrope',
-                    fontSize: '16px'
-                  }}>
+                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>В рассрочку</h5>
+                    <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                       от банков партнеров ОТП, Халва, Тинькофф, Сбербанк
                     </p>
                   </div>
 
                   {/* Безналичная оплата */}
                   <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
-                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '16px'
-                  }}>Безналичная оплата</h5>
-                    <p className="text-sm flex-1 overflow-hidden" style={{
-                    fontFamily: 'Manrope',
-                    fontSize: '16px'
-                  }}>
+                    <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Безналичная оплата</h5>
+                    <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                       Выставление счета
                     </p>
                   </div>
@@ -698,50 +669,38 @@ const ProductDetail: React.FC = () => {
             <div className="flex gap-8">
               <div className="w-80 flex-shrink-0">
                 <h4 className="mb-6" style={{
-                fontFamily: 'Benzin-Medium',
-                fontSize: '20px'
-              }}>Оплата для юр. лиц</h4>
+                  fontFamily: 'Benzin-Medium',
+                  fontSize: '20px'
+                }}>Оплата для юр. лиц</h4>
               </div>
               <div className="flex-1">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px]">
                   {/* Оплата онлайн */}
                   <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
-                    <h5 className="text-lg font-medium mb-3" style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '16px'
-                  }}>Оплата онлайн</h5>
-                    <p className="text-sm" style={{
-                    fontFamily: 'Manrope',
-                    fontSize: '16px'
-                  }}>
+                    <h5 className="text-lg font-medium mb-3" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата онлайн</h5>
+                    <p className="text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                       Покупателю направляется защищенная ссылка для перехода в платежную систему. Производить оплату можно всеми видами карт, электронными деньгами, а также через терминалы без комиссии.
                     </p>
                   </div>
 
                   {/* Безналичная оплата */}
                   <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
-                    <h5 className="text-lg font-medium mb-3" style={{
-                    fontFamily: 'Benzin-Medium',
-                    fontSize: '16px'
-                  }}>Безналичная оплата</h5>
-                    <p className="text-sm" style={{
-                    fontFamily: 'Manrope',
-                    fontSize: '16px'
-                  }}>
+                    <h5 className="text-lg font-medium mb-3" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Безналичная оплата</h5>
+                    <p className="text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                       Выставление счета
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>;
+          </div>
+        );
       case 'installment':
-        return <div className="space-y-8">
+        return (
+          <div className="space-y-8">
             {/* Text content */}
             <div>
-              <h3 className="text-2xl font-semibold mb-6" style={{
-              fontFamily: 'Benzin-Semibold'
-            }}>Рассрочка</h3>
+              <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Рассрочка</h3>
               
               <div className="space-y-4 mb-8 font-manrope text-muted-foreground">
                 <p>
@@ -774,52 +733,65 @@ const ProductDetail: React.FC = () => {
                 </div>
                 
                 <div className="space-y-0">
-                  {[{
-                  id: 1,
-                  plan: '0-0-12',
-                  bank: 'Тинькофф',
-                  monthlyPayment: '5 000₽',
-                  overpayment: 'нет',
-                  term: '0 - 6',
-                  rate: 'Ставка от 21,5%',
-                  firstPayment: 'Первый взнос 0%',
-                  duration: 'Срок 12 месяцев'
-                }, {
-                  id: 2,
-                  plan: '0-0-6',
-                  bank: 'Тинькофф',
-                  monthlyPayment: '5 000₽',
-                  overpayment: 'нет',
-                  term: '0 - 6',
-                  rate: 'Ставка от 21,5%',
-                  firstPayment: 'Первый взнос 0%',
-                  duration: 'Срок 12 месяцев'
-                }, {
-                  id: 3,
-                  plan: '0-0-6',
-                  bank: 'Сбербанк',
-                  monthlyPayment: '5 000₽',
-                  overpayment: 'нет',
-                  term: '0 - 6',
-                  rate: 'Ставка от 21,5%',
-                  firstPayment: 'Первый взнос 0%',
-                  duration: 'Срок 12 месяцев'
-                }, {
-                  id: 4,
-                  plan: '0-0-6',
-                  bank: 'Сбербанк',
-                  monthlyPayment: '5 000₽',
-                  overpayment: 'нет',
-                  term: '0 - 6',
-                  rate: 'Ставка от 21,5%',
-                  firstPayment: 'Первый взнос 0%',
-                  duration: 'Срок 12 месяцев'
-                }].map(plan => <div key={plan.id} className="grid grid-cols-5 gap-4 py-6 border-b border-gray-100 hover:bg-gray-50 cursor-pointer" onClick={() => setSelectedInstallmentPlan(plan.id)}>
+                  {[
+                    {
+                      id: 1,
+                      plan: '0-0-12',
+                      bank: 'Тинькофф',
+                      monthlyPayment: '5 000₽',
+                      overpayment: 'нет',
+                      term: '0 - 6',
+                      rate: 'Ставка от 21,5%',
+                      firstPayment: 'Первый взнос 0%',
+                      duration: 'Срок 12 месяцев'
+                    },
+                    {
+                      id: 2,
+                      plan: '0-0-6',
+                      bank: 'Тинькофф',
+                      monthlyPayment: '5 000₽',
+                      overpayment: 'нет',
+                      term: '0 - 6',
+                      rate: 'Ставка от 21,5%',
+                      firstPayment: 'Первый взнос 0%',
+                      duration: 'Срок 12 месяцев'
+                    },
+                    {
+                      id: 3,
+                      plan: '0-0-6',
+                      bank: 'Сбербанк',
+                      monthlyPayment: '5 000₽',
+                      overpayment: 'нет',
+                      term: '0 - 6',
+                      rate: 'Ставка от 21,5%',
+                      firstPayment: 'Первый взнос 0%',
+                      duration: 'Срок 12 месяцев'
+                    },
+                    {
+                      id: 4,
+                      plan: '0-0-6',
+                      bank: 'Сбербанк',
+                      monthlyPayment: '5 000₽',
+                      overpayment: 'нет',
+                      term: '0 - 6',
+                      rate: 'Ставка от 21,5%',
+                      firstPayment: 'Первый взнос 0%',
+                      duration: 'Срок 12 месяцев'
+                    }
+                  ].map((plan) => (
+                    <div 
+                      key={plan.id} 
+                      className="grid grid-cols-5 gap-4 py-6 border-b border-gray-100 hover:bg-gray-50 cursor-pointer"
+                      onClick={() => setSelectedInstallmentPlan(plan.id)}
+                    >
                       <div className="flex items-center gap-3">
-                        <div className="w-4 h-4 border-2 bg-white rounded-sm flex items-center justify-center" style={{
-                      borderColor: selectedInstallmentPlan === plan.id ? '#F53B49' : '#D1D5DB'
-                    }}>
-                          {selectedInstallmentPlan === plan.id && <div className="w-2 h-2 bg-[#F53B49]"></div>}
+                        <div 
+                          className="w-4 h-4 border-2 bg-white rounded-sm flex items-center justify-center"
+                          style={{ borderColor: selectedInstallmentPlan === plan.id ? '#F53B49' : '#D1D5DB' }}
+                        >
+                          {selectedInstallmentPlan === plan.id && (
+                            <div className="w-2 h-2 bg-[#F53B49]"></div>
+                          )}
                         </div>
                         <div>
                           <div className="mb-1 font-medium text-foreground font-benzin">{plan.plan}</div>
@@ -842,7 +814,8 @@ const ProductDetail: React.FC = () => {
                           </span>
                         </div>
                       </div>
-                    </div>)}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -853,12 +826,12 @@ const ProductDetail: React.FC = () => {
                 Оставить заявку
               </button>
             </div>
-          </div>;
+          </div>
+        );
       case 'services':
-        return <div>
-            <h3 className="text-2xl font-semibold mb-6" style={{
-            fontFamily: 'Benzin-Semibold'
-          }}>Услуги</h3>
+        return (
+          <div>
+            <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Услуги</h3>
             <div className="font-manrope grid md:grid-cols-2 gap-6">
               <div className="p-4 border border-border rounded-lg">
                 <h4 className="font-semibold mb-2">Установка и настройка</h4>
@@ -875,7 +848,8 @@ const ProductDetail: React.FC = () => {
                 <span className="text-primary font-semibold">от 1 500 ₽</span>
               </div>
             </div>
-          </div>;
+          </div>
+        );
       default:
         return null;
     }
@@ -902,8 +876,10 @@ const ProductDetail: React.FC = () => {
       });
     }
   }, [product]);
+
   if (isLoading) {
-    return <div className="min-h-screen bg-background">
+    return (
+      <div className="min-h-screen bg-background">
         <Header />
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col items-center justify-center min-h-[400px]">
@@ -913,10 +889,13 @@ const ProductDetail: React.FC = () => {
           </div>
         </div>
         <Footer />
-      </div>;
+      </div>
+    );
   }
+
   if (error || !product) {
-    return <div className="min-h-screen bg-background">
+    return (
+      <div className="min-h-screen bg-background">
         <Header />
         <div className="container mx-auto px-4 py-8">
           <div className="text-center">
@@ -934,15 +913,18 @@ const ProductDetail: React.FC = () => {
           </div>
         </div>
         <Footer />
-      </div>;
+      </div>
+    );
   }
-  return <div className="min-h-screen bg-background">
+
+  return (
+    <div className="min-h-screen bg-background">
       {/* Gray background for right side extending from very top */}
-      <div className="absolute top-0 bg-gray-50 z-0" style={{
-      left: 'calc(50% + 25px)',
-      right: '0',
-      height: 'calc(100vh + 335px)'
-    }}></div>
+      <div className="absolute top-0 bg-gray-50 z-0" style={{ 
+        left: 'calc(50% + 25px)', 
+        right: '0',
+        height: 'calc(100vh + 335px)' 
+      }}></div>
       
       <div className="relative z-10">
         <Header />
@@ -957,35 +939,91 @@ const ProductDetail: React.FC = () => {
           </nav>
 
 
-        <ProductHeader product={product} quantity={quantity} onIncrementQuantity={incrementQuantity} onDecrementQuantity={decrementQuantity} onBuyClick={handleBuyClick} onShowAllCharacteristics={() => setActiveTab('specifications')} />
+        <ProductHeader
+          product={product}
+          quantity={quantity}
+          onIncrementQuantity={incrementQuantity}
+          onDecrementQuantity={decrementQuantity}
+          onBuyClick={handleBuyClick}
+          onShowAllCharacteristics={() => setActiveTab('specifications')}
+        />
 
         {/* Product Tabs */}
         <div className="mt-12">
           {/* Tabs Header with Download Button */}
           <div className="flex justify-between items-center border-b border-gray-200 mb-6">
             <div className="flex space-x-8">
-              <button className={`pb-2 font-medium transition-colors ${activeTab === 'description' ? 'text-red-600 border-b-2 border-red-600' : 'text-gray-500 hover:text-gray-700'}`} onClick={() => setActiveTab('description')}>
+              <button 
+                className={`pb-2 font-medium transition-colors ${
+                  activeTab === 'description' 
+                    ? 'text-red-600 border-b-2 border-red-600' 
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+                onClick={() => setActiveTab('description')}
+              >
                 Описание
               </button>
-              <button className={`pb-2 font-medium transition-colors ${activeTab === 'specifications' ? 'text-red-600 border-b-2 border-red-600' : 'text-gray-500 hover:text-gray-700'}`} onClick={() => setActiveTab('specifications')}>
+              <button 
+                className={`pb-2 font-medium transition-colors ${
+                  activeTab === 'specifications' 
+                    ? 'text-red-600 border-b-2 border-red-600' 
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+                onClick={() => setActiveTab('specifications')}
+              >
                 Характеристики
               </button>
-              <button className={`pb-2 font-medium transition-colors ${activeTab === 'reviews' ? 'text-red-600 border-b-2 border-red-600' : 'text-gray-500 hover:text-gray-700'}`} onClick={() => setActiveTab('reviews')}>
+              <button 
+                className={`pb-2 font-medium transition-colors ${
+                  activeTab === 'reviews' 
+                    ? 'text-red-600 border-b-2 border-red-600' 
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+                onClick={() => setActiveTab('reviews')}
+              >
                 Отзывы (10)
               </button>
-              <button className={`pb-2 font-medium transition-colors ${activeTab === 'delivery' ? 'text-red-600 border-b-2 border-red-600' : 'text-gray-500 hover:text-gray-700'}`} onClick={() => setActiveTab('delivery')}>
+              <button 
+                className={`pb-2 font-medium transition-colors ${
+                  activeTab === 'delivery' 
+                    ? 'text-red-600 border-b-2 border-red-600' 
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+                onClick={() => setActiveTab('delivery')}
+              >
                 Доставка и оплата
               </button>
-              <button className={`pb-2 font-medium transition-colors ${activeTab === 'installment' ? 'text-red-600 border-b-2 border-red-600' : 'text-gray-500 hover:text-gray-700'}`} onClick={() => setActiveTab('installment')}>
+              <button 
+                className={`pb-2 font-medium transition-colors ${
+                  activeTab === 'installment' 
+                    ? 'text-red-600 border-b-2 border-red-600' 
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+                onClick={() => setActiveTab('installment')}
+              >
                 Рассрочка
               </button>
-              <button className={`pb-2 font-medium transition-colors ${activeTab === 'services' ? 'text-red-600 border-b-2 border-red-600' : 'text-gray-500 hover:text-gray-700'}`} onClick={() => setActiveTab('services')}>
+              <button 
+                className={`pb-2 font-medium transition-colors ${
+                  activeTab === 'services' 
+                    ? 'text-red-600 border-b-2 border-red-600' 
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+                onClick={() => setActiveTab('services')}
+              >
                 Услуги
               </button>
             </div>
-            {getInstructionPdfUrl() && <Button variant="outline" size="lg" className="border-red-600 text-red-600 hover:bg-red-50" onClick={handleDownloadInstruction}>
+            {getInstructionPdfUrl() && (
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-red-600 text-red-600 hover:bg-red-50"
+                onClick={handleDownloadInstruction}
+              >
                 Скачать инструкцию
-              </Button>}
+              </Button>
+            )}
           </div>
 
           {/* Tab Content */}
@@ -997,8 +1035,13 @@ const ProductDetail: React.FC = () => {
       <Footer />
 
       {/* Review Dialog */}
-      <ReviewDialog open={showReviewModal} onOpenChange={setShowReviewModal} />
+      <ReviewDialog 
+        open={showReviewModal} 
+        onOpenChange={setShowReviewModal} 
+      />
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default ProductDetail;
