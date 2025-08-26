@@ -16,6 +16,12 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
   // Получаем ID просмотренных товаров (исключая текущий)
   const viewedProductIds = getViewedProductIds(currentProductId);
   
+  console.log('🔍 ViewedProducts Debug:', {
+    currentProductId,
+    currentProductCategoryId,
+    viewedProductIds
+  });
+  
   // Получаем все товары для фильтрации просмотренных
   const { data: allProductsData } = useQuery({
     queryKey: ['all-products'],
@@ -50,6 +56,13 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
 
   // Определяем, какие товары показывать
   const displayProducts = React.useMemo(() => {
+    console.log('🔍 Calculating displayProducts:', {
+      viewedProductsLength: viewedProducts.length,
+      categoryProductsLength: categoryProductsData?.products?.length || 0,
+      viewedProducts,
+      categoryProducts: categoryProductsData?.products
+    });
+    
     if (viewedProducts.length > 0) {
       return viewedProducts;
     }
@@ -63,6 +76,8 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
     
     return [];
   }, [viewedProducts, categoryProductsData?.products, currentProductId]);
+
+  console.log('🔍 Final displayProducts:', displayProducts);
 
   const isLoading = !allProductsData?.products || (viewedProductIds.length === 0 && isCategoryLoading);
 
