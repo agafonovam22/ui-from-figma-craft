@@ -166,9 +166,9 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
 
       let categorized = false;
       
-      // Check each category except 'other'
+      // Check each category except 'other', 'basic', and 'console' (we use static data for these)
       Object.entries(categories).forEach(([categoryKey, category]) => {
-        if (categoryKey === 'other' || categorized) return;
+        if (categoryKey === 'other' || categoryKey === 'basic' || categoryKey === 'console' || categorized) return;
         
         const matchesKeyword = category.keywords.some(keyword => 
           key.toLowerCase().includes(keyword.toLowerCase())
