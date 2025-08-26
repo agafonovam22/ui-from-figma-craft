@@ -36,7 +36,7 @@ const Banner: React.FC = () => {
           </div>
           
           {/* Навигационные точки */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
             {images.map((_, index) => (
               <div
                 key={index}
