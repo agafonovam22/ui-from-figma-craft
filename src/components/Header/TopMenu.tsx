@@ -90,7 +90,7 @@ const TopMenu: React.FC = () => {
             Дилеры
           </ActionButton>
           <ActionButton variant="secondary" onClick={() => console.log('Suppliers clicked')} className="text-[7px] 2xl:text-[8px] 3xl:text-[9px] 4xl:text-[10px] px-1.5 2xl:px-2 3xl:px-2.5 4xl:px-3 py-1.5 2xl:py-2 3xl:py-2.5 4xl:py-3">
-            Suppliers
+            For suppliers
           </ActionButton>
           
           <a 
