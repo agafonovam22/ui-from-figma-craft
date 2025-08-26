@@ -207,17 +207,18 @@ const ProductCatalog: React.FC = () => {
           ))}
           <Link 
             to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
-            className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-full flex flex-col"
+            className="relative rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-full flex flex-col"
           >
             <img 
               src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
               alt="Перейти в каталог"
               className="responsive-image w-full h-full object-cover object-right"
             />
-            <div className="absolute top-4 left-4 text-white font-benzin responsive-text font-normal">
+            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute top-4 left-4 text-white font-benzin responsive-text font-normal z-10">
               {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
             </div>
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center z-10">
               <button className="bg-white text-[#262631] px-6 py-3 rounded-lg font-benzin font-medium hover:bg-gray-100 transition-colors">
                 Перейти
               </button>
