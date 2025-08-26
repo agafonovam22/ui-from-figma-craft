@@ -85,22 +85,21 @@ const TopMenu: React.FC = () => {
           ))}
         </nav>
 
-        <div className="flex items-end gap-4 max-sm:hidden flex-shrink-0">
+        <div className="flex items-center gap-3 max-sm:hidden flex-shrink-0">
           <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')}>
             Для дилеров
           </ActionButton>
           <ActionButton variant="secondary" onClick={() => console.log('Suppliers clicked')}>
             For suppliers
           </ActionButton>
-        </div>
-
-        <div className="flex items-end gap-4 max-sm:hidden flex-shrink-0">
+          
           <a 
             href={selectedCity === 'Москва' ? "tel:+74996775632" : "tel:88003332595"} 
             className="text-[10px] font-normal leading-[10px] gap-2 px-3 py-2.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0 whitespace-nowrap"
           >
             {selectedCity === 'Москва' ? '+7 499 677 56 32' : '8 800 333 25 95'}
           </a>
+          
           <CallRequestDialog>
             <ActionButton variant="danger">
               Заказать звонок

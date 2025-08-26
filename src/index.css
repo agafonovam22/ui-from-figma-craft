@@ -320,9 +320,16 @@
 
 /* Фиксация размеров хедера для всех экранов больше 1920px */
 @media screen and (min-width: 1921px) {
-  /* Фиксируем размеры хедера */
+  /* Строго ограничиваем ширину всего хедера */
   header {
     font-size: 10px !important;
+  }
+  
+  /* Фиксируем контейнер хедера */
+  header > div {
+    max-width: 1920px !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
   }
   
   /* Фиксируем высоту хедера */
@@ -340,6 +347,10 @@
   }
   
   /* Фиксируем отступы в хедере */
+  header [class*="gap-3"] {
+    gap: 0.75rem !important;
+  }
+  
   header [class*="gap-4"] {
     gap: 1rem !important;
   }
@@ -361,12 +372,18 @@
   
   /* Фиксируем размеры элементов навигации */
   header nav {
-    gap: 1.25rem !important;
+    gap: 1rem !important;
+    max-width: 900px !important;
   }
   
   header nav a {
     font-size: 10px !important;
     padding: 0.25rem !important;
+  }
+  
+  /* Строго ограничиваем правую часть хедера */
+  header .flex-shrink-0:last-child {
+    gap: 0.5rem !important;
   }
   
   /* Фиксируем размеры диалога выбора города */
