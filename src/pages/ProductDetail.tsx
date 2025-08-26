@@ -144,7 +144,7 @@ const ProductDetail: React.FC = () => {
       case 'specifications':
         return (
           <div>
-            <h3 className="text-2xl font-semibold mb-6 font-manrope text-center">Характеристики</h3>
+            <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Характеристики</h3>
             <ProductCharacteristicsTable 
               characteristics={product.characteristics}
               productName={product.name}
