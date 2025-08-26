@@ -184,8 +184,7 @@ const BottomMenu: React.FC = () => {
 
   return (
     <nav 
-      className="flex w-full justify-center items-center gap-[5px] bg-[#262631] px-2 sm:px-4 lg:px-[60px] py-1 max-md:overflow-x-auto"
-      style={{ padding: '4px 60px' }}
+      className="flex w-full justify-center items-center gap-[5px] bg-[#262631] px-4 lg:px-16 py-1 max-md:overflow-x-auto"
       role="navigation"
       aria-label="Категории товаров"
     >

@@ -55,7 +55,7 @@ const TopMenu: React.FC = () => {
 
   return (
     <header className="flex w-full justify-center items-center bg-[#17171E] py-0 border-b border-solid border-[rgba(255,255,255,0.10)]">
-      <div className="flex w-full max-w-[1920px] mx-auto px-4 lg:px-8 h-[clamp(48px, 8vh, 53px)] justify-between items-center gap-4 min-w-0">
+      <div className="flex w-full max-w-[1920px] mx-auto px-4 lg:px-8 h-[53px] justify-between items-center gap-4 min-w-0">
         <div className="flex-shrink-0">
           <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
         </div>
@@ -85,7 +85,7 @@ const TopMenu: React.FC = () => {
           ))}
         </nav>
 
-        <div className="flex items-end gap-[clamp(8px, 1vw, 16px)] max-sm:hidden flex-shrink-0">
+        <div className="flex items-end gap-4 max-sm:hidden flex-shrink-0">
           <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')}>
             Для дилеров
           </ActionButton>
@@ -94,7 +94,7 @@ const TopMenu: React.FC = () => {
           </ActionButton>
         </div>
 
-        <div className="flex items-end gap-[clamp(8px, 1vw, 16px)] max-sm:hidden flex-shrink-0">
+        <div className="flex items-end gap-4 max-sm:hidden flex-shrink-0">
           <a 
             href={selectedCity === 'Москва' ? "tel:+74996775632" : "tel:88003332595"} 
             className="text-[10px] font-normal leading-[10px] gap-2 px-3 py-2.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0 whitespace-nowrap"
