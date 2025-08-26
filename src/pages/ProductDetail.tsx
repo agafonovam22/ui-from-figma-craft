@@ -819,7 +819,7 @@ const ProductDetail: React.FC = () => {
       case 'services':
         return (
           <div>
-            <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Дополнительные услуги</h3>
+            <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Услуги</h3>
             <div className="font-manrope grid md:grid-cols-2 gap-6">
               <div className="p-4 border border-border rounded-lg">
                 <h4 className="font-semibold mb-2">Установка и настройка</h4>
