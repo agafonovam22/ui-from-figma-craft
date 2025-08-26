@@ -64,6 +64,12 @@ const ProductDetail: React.FC = () => {
   useEffect(() => {
     if (product?.id && id) {
       addViewedProduct(id);
+      console.log('🔍 Товар добавлен в просмотренные:', {
+        productId: product.id,
+        productName: product.name,
+        categoryId: product.category_id,
+        characteristics: product.characteristics
+      });
     }
   }, [product?.id, id, addViewedProduct]);
 

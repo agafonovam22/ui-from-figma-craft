@@ -32,7 +32,17 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
 
   // Фильтруем просмотренные товары и товары из категории
   const displayProducts = useMemo(() => {
-    if (!allProductsData?.products) return [];
+    if (!allProductsData?.products) {
+      console.log('🔍 allProductsData.products отсутствует');
+      return [];
+    }
+    
+    console.log('🔍 ViewedProducts Debug:', {
+      currentProductId,
+      currentProductCategoryId,
+      viewedProductIds,
+      totalProducts: allProductsData.products.length
+    });
     
     // Сначала пытаемся найти просмотренные товары
     if (viewedProductIds.length > 0) {
@@ -41,6 +51,7 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
         .filter(Boolean)
         .slice(0, 5);
       
+      console.log('🔍 Найдено просмотренных товаров:', viewedProducts.length);
       if (viewedProducts.length > 0) {
         return viewedProducts;
       }
@@ -48,18 +59,26 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
     
     // Если нет просмотренных товаров, показываем товары из той же категории
     if (currentProductCategoryId) {
-      return allProductsData.products
+      const categoryProducts = allProductsData.products
         .filter((product: any) => 
           product.category_id === currentProductCategoryId && 
           product.id.toString() !== currentProductId
         )
         .slice(0, 5);
+      
+      console.log('🔍 Найдено товаров из категории:', categoryProducts.length);
+      if (categoryProducts.length > 0) {
+        return categoryProducts;
+      }
     }
     
     // Если нет категории, показываем случайные товары (исключая текущий)
-    return allProductsData.products
+    const randomProducts = allProductsData.products
       .filter((product: any) => product.id.toString() !== currentProductId)
       .slice(0, 5);
+    
+    console.log('🔍 Показываем случайных товаров:', randomProducts.length);
+    return randomProducts;
   }, [allProductsData?.products, viewedProductIds, currentProductCategoryId, currentProductId]);
 
   const isLoading = isAllProductsLoading;
