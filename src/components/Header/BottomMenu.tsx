@@ -25,7 +25,7 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
 }) => (
   <Link
     to={`/catalog?category=${category.id}`}
-    className={`flex h-[38px] items-center gap-1.5 bg-[#262631] px-3 py-2 rounded-[5px] max-sm:whitespace-nowrap max-sm:px-4 max-sm:py-3 hover:bg-[#3a3a47] transition-colors group flex-shrink-0`}
+    className={`flex h-[38px] 2xl:h-[40px] 3xl:h-[42px] 4xl:h-[44px] items-center gap-1.5 2xl:gap-2 3xl:gap-2.5 4xl:gap-3 bg-[#262631] px-3 2xl:px-3.5 3xl:px-4 4xl:px-4.5 py-2 2xl:py-2.5 3xl:py-3 4xl:py-3.5 rounded-[5px] max-sm:whitespace-nowrap max-sm:px-4 max-sm:py-3 hover:bg-[#3a3a47] transition-colors group flex-shrink-0`}
     aria-label={`Категория: ${category.label}`}
   >
     {category.icon && (
@@ -33,7 +33,7 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
         {category.icon}
       </span>
     )}
-    <span className="text-xs font-normal leading-[12px] text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
+    <span className="text-xs 2xl:text-sm 3xl:text-base 4xl:text-lg font-normal leading-[12px] 2xl:leading-[14px] 3xl:leading-4 4xl:leading-5 text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
       {category.label}
     </span>
   </Link>
@@ -184,11 +184,11 @@ const BottomMenu: React.FC = () => {
 
   return (
     <nav 
-      className="flex w-full justify-center items-center gap-1 bg-[#262631] px-4 lg:px-8 py-1 max-md:overflow-x-auto"
+      className="flex w-full justify-center items-center gap-1 2xl:gap-1.5 3xl:gap-2 4xl:gap-2.5 bg-[#262631] px-4 2xl:px-6 3xl:px-7 4xl:px-8 py-1 2xl:py-1.5 3xl:py-2 4xl:py-2.5 max-md:overflow-x-auto"
       role="navigation"
       aria-label="Категории товаров"
     >
-      <div className="flex w-full max-w-[1920px] h-[46px] items-center gap-1 relative max-md:w-auto max-md:min-w-full flex-shrink-0">
+      <div className="flex w-full max-w-[1200px] 2xl:max-w-[1400px] 3xl:max-w-[1600px] 4xl:max-w-[1920px] h-[46px] 2xl:h-[48px] 3xl:h-[50px] 4xl:h-[52px] items-center gap-1 2xl:gap-1.5 3xl:gap-2 4xl:gap-2.5 relative max-md:w-auto max-md:min-w-full flex-shrink-0">
         <div 
           ref={scrollContainerRef}
           className="flex items-center gap-1 overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden"
