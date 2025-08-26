@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import {
@@ -46,6 +46,34 @@ const Support: React.FC = () => {
     { id: 'personal', label: 'Личный кабинет' },
     { id: 'b2b', label: 'B2B кабинет' }
   ];
+
+  // Маппинг хешей URL к ID вкладок
+  const hashToTabMap: { [key: string]: string } = {
+    'delivery': 'delivery',
+    'returns': 'return',
+    'warranty': 'warranty', 
+    'faq': 'faq',
+    'instructions': 'instructions',
+    'personal': 'personal',
+    'b2b': 'b2b'
+  };
+
+  useEffect(() => {
+    // Проверяем хеш при загрузке страницы
+    const hash = window.location.hash.replace('#', '');
+    if (hash && hashToTabMap[hash]) {
+      setActiveTab(hashToTabMap[hash]);
+    }
+  }, []);
+
+  const handleTabChange = (tabId: string) => {
+    setActiveTab(tabId);
+    // Обновляем URL хеш при смене вкладки
+    const hashKey = Object.keys(hashToTabMap).find(key => hashToTabMap[key] === tabId);
+    if (hashKey) {
+      window.history.replaceState(null, '', `#${hashKey}`);
+    }
+  };
 
   const getActiveTabLabel = () => {
     const activeTabObject = tabs.find(tab => tab.id === activeTab);
@@ -118,7 +146,7 @@ const Support: React.FC = () => {
             {tabs.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => handleTabChange(tab.id)}
                 className={`px-4 py-2 rounded transition-colors ${
                   activeTab === tab.id
                     ? 'bg-[#F53B49] text-white'
