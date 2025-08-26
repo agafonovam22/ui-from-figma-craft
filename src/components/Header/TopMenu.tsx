@@ -60,7 +60,7 @@ const TopMenu: React.FC = () => {
           <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
         </div>
         
-        <nav className="flex items-start gap-[clamp(8px, 1vw, 15px)] max-md:hidden flex-1 justify-center max-w-[600px] min-w-0" role="navigation" aria-label="Основная навигация">
+        <nav className="flex items-start gap-[clamp(8px, 1.5vw, 24px)] max-md:hidden flex-1 justify-center max-w-[800px] min-w-0" role="navigation" aria-label="Основная навигация">
           {navigationItems.map((item, index) => (
             item.href ? (
               <Link
