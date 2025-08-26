@@ -305,6 +305,7 @@ const ProductDetail: React.FC = () => {
       case 'delivery':
         return (
           <div className="space-y-12">
+            <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Доставка и оплата</h3>
             {/* Город доставки */}
             <div className="flex gap-8">
               <div className="w-80 flex-shrink-0">
