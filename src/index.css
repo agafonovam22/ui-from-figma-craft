@@ -204,19 +204,30 @@
     max-width: 1920px;
     margin: 0 auto;
   }
+  
+  /* На больших экранах фиксируем размеры для правильного отображения */
+  @media screen and (min-width: 1920px) {
+    .max-content-width {
+      max-width: 1920px;
+    }
+  }
 }
 
 /* 4K экраны и выше (3840px+) */
 @media screen and (min-width: 3840px) {
   .responsive-container {
-    max-width: 3200px;
+    max-width: 1920px;
     padding-left: 2rem;
     padding-right: 2rem;
   }
   
+  .max-content-width {
+    max-width: 1920px;
+  }
+  
   .products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
   }
 
   .product-card-responsive {
@@ -229,25 +240,29 @@
   }
 
   .responsive-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   
   .responsive-text {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
 }
 
 /* 2K экраны (2560px-3839px) */
 @media screen and (min-width: 2560px) and (max-width: 3839px) {
   .responsive-container {
-    max-width: 2400px;
+    max-width: 1920px;
     padding-left: 2rem;
     padding-right: 2rem;
   }
   
+  .max-content-width {
+    max-width: 1920px;
+  }
+  
   .products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.3rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
   }
 
   .product-card-responsive {
@@ -260,11 +275,11 @@
   }
   
   .responsive-title {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
   
   .responsive-text {
-    font-size: 1.05rem;
+    font-size: 1.125rem;
   }
 }
 
