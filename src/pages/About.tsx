@@ -32,7 +32,8 @@ const About: React.FC = () => {
   // Маппинг хешей URL к ID вкладок
   const hashToTabMap: { [key: string]: string } = {
     'mission': 'mission',
-    'team': 'team'
+    'team': 'team',
+    'projects': 'projects'
   };
 
   // Отслеживаем изменения в location (включая хеш)
