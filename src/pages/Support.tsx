@@ -64,6 +64,21 @@ const Support: React.FC = () => {
     if (hash && hashToTabMap[hash]) {
       setActiveTab(hashToTabMap[hash]);
     }
+    
+    // Добавляем слушатель изменений хеша
+    const handleHashChange = () => {
+      const newHash = window.location.hash.replace('#', '');
+      if (newHash && hashToTabMap[newHash]) {
+        setActiveTab(hashToTabMap[newHash]);
+      }
+    };
+    
+    window.addEventListener('hashchange', handleHashChange);
+    
+    // Очищаем слушатель при размонтировании компонента
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, []);
 
   const handleTabChange = (tabId: string) => {
