@@ -139,7 +139,7 @@ const Showrooms: React.FC = () => {
       <div className="max-w-[1800px] mx-auto px-[30px]">
         {/* Header */}
         <div className="mb-6 2xl:mb-8 4xl:mb-8">
-          <h2 className="text-xl 2xl:text-2xl 4xl:text-2xl font-bold text-gray-900 font-benzin-semibold">Шоурумы</h2>
+          <h2 className="text-2xl 2xl:text-2xl 4xl:text-2xl font-bold text-gray-900 font-benzin-semibold">Шоурумы</h2>
         </div>
 
         {/* Cities Filter */}
@@ -149,7 +149,7 @@ const Showrooms: React.FC = () => {
               <button
                 key={city}
                 onClick={() => handleCityClick(city)}
-                className={`text-xs 2xl:text-sm 4xl:text-sm transition-colors hover:text-[#F53B49] ${
+                className={`text-sm 2xl:text-sm 4xl:text-sm transition-colors hover:text-[#F53B49] ${
                   selectedCity === city 
                     ? 'text-[#F53B49] font-medium' 
                     : 'text-gray-600'
@@ -177,7 +177,7 @@ const Showrooms: React.FC = () => {
                     : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                 }`}
               >
-                <span className="font-benzin text-sm 2xl:text-base 4xl:text-lg">Шоурум {showroom.id}</span>
+                <span className="font-benzin text-base 2xl:text-base 4xl:text-lg">Шоурум {showroom.id}</span>
               </button>
             ))}
           </div>
@@ -192,37 +192,37 @@ const Showrooms: React.FC = () => {
             }}
           >
             <div className="mb-4 2xl:mb-5 4xl:mb-6">
-              <h3 className="text-lg 2xl:text-xl 4xl:text-2xl font-bold text-white mb-2 font-benzin-semibold">Шоу-рум WellFitness</h3>
+              <h3 className="text-xl 2xl:text-xl 4xl:text-2xl font-bold text-white mb-2 font-benzin-semibold">Шоу-рум WellFitness</h3>
             </div>
 
             <div className="space-y-3 2xl:space-y-3 4xl:space-y-4">
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <MapPin size={14} className="2xl:w-4 2xl:h-4 4xl:w-4 4xl:h-4" style={{ color: '#5C6476' }} />
-                  <p className="text-xs 2xl:text-sm 4xl:text-sm font-semibold" style={{ color: '#5C6476' }}>Адрес</p>
+                  <p className="text-sm 2xl:text-sm 4xl:text-sm font-semibold" style={{ color: '#5C6476' }}>Адрес</p>
                 </div>
-                <p className="text-white text-xs 2xl:text-sm 4xl:text-sm leading-relaxed">Москва, ТЦ Капитолий, Правобережная улица, 1Б</p>
+                <p className="text-white text-sm 2xl:text-sm 4xl:text-sm leading-relaxed">Москва, ТЦ Капитолий, Правобережная улица, 1Б</p>
               </div>
 
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <Phone size={14} className="2xl:w-4 2xl:h-4 4xl:w-4 4xl:h-4" style={{ color: '#5C6476' }} />
-                  <p className="text-xs 2xl:text-sm 4xl:text-sm font-semibold" style={{ color: '#5C6476' }}>Телефон</p>
+                  <p className="text-sm 2xl:text-sm 4xl:text-sm font-semibold" style={{ color: '#5C6476' }}>Телефон</p>
                 </div>
-                <p className="text-white text-xs 2xl:text-sm 4xl:text-sm">+7 (499) 677-56-32 доб. 337</p>
+                <p className="text-white text-sm 2xl:text-sm 4xl:text-sm">+7 (499) 677-56-32 доб. 337</p>
               </div>
 
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <Clock size={14} className="2xl:w-4 2xl:h-4 4xl:w-4 4xl:h-4" style={{ color: '#5C6476' }} />
-                  <p className="text-xs 2xl:text-sm 4xl:text-sm font-semibold" style={{ color: '#5C6476' }}>Режим работы</p>
+                  <p className="text-sm 2xl:text-sm 4xl:text-sm font-semibold" style={{ color: '#5C6476' }}>Режим работы</p>
                 </div>
-                <p className="text-white text-xs 2xl:text-sm 4xl:text-sm">10:00 - 22:00</p>
+                <p className="text-white text-sm 2xl:text-sm 4xl:text-sm">10:00 - 22:00</p>
               </div>
             </div>
 
             <div className="mt-4 2xl:mt-5 4xl:mt-6">
-              <button className="border border-white text-white px-4 2xl:px-5 4xl:px-6 py-1.5 2xl:py-2 4xl:py-2 rounded transition-colors hover:bg-white hover:text-gray-800 text-xs 2xl:text-sm 4xl:text-sm">
+              <button className="border border-white text-white px-4 2xl:px-5 4xl:px-6 py-1.5 2xl:py-2 4xl:py-2 rounded transition-colors hover:bg-white hover:text-gray-800 text-sm 2xl:text-sm 4xl:text-sm">
                 Как проехать
               </button>
             </div>
