@@ -214,13 +214,12 @@ const ProductCatalog: React.FC = () => {
               alt="Перейти в каталог"
               className="responsive-image w-full h-full object-cover object-right"
             />
-            <div className="absolute inset-0 bg-black/40"></div>
             <div className="absolute top-4 left-4 text-white font-benzin responsive-text font-normal z-10">
               {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
             </div>
-            <div className="absolute inset-0 flex items-center justify-center z-10">
-              <button className="bg-white text-[#262631] px-6 py-3 rounded-lg font-benzin font-medium hover:bg-gray-100 transition-colors">
-                Перейти
+            <div className="absolute bottom-4 left-4 z-10">
+              <button className="bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin font-normal hover:bg-gray-100 transition-colors flex items-center gap-2">
+                Перейти <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </Link>
