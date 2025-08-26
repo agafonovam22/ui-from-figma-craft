@@ -1,6 +1,5 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect, useState } from 'react';
 import ProductCard from '@/components/shared/ProductCard';
-import { useViewedProducts } from '@/hooks/useViewedProducts';
 import { useQuery } from '@tanstack/react-query';
 
 interface ViewedProductsProps {
@@ -9,15 +8,46 @@ interface ViewedProductsProps {
 }
 
 const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, currentProductCategoryId }) => {
-  const { getViewedProductIds } = useViewedProducts();
-  
-  // Получаем ID просмотренных товаров (исключая текущий)
-  const viewedProductIds = useMemo(() => {
-    return getViewedProductIds(currentProductId);
-  }, [getViewedProductIds, currentProductId]);
-  
-  // Получаем все товары для фильтрации просмотренных
-  const { data: allProductsData, isLoading: isAllProductsLoading } = useQuery({
+  const [viewedIds, setViewedIds] = useState<string[]>([]);
+
+  // Загружаем просмотренные товары из localStorage при инициализации
+  useEffect(() => {
+    const stored = localStorage.getItem('viewedProducts');
+    if (stored) {
+      try {
+        const parsed = JSON.parse(stored);
+        const ids = parsed.map((item: any) => item.id);
+        setViewedIds(ids);
+        console.log('🔍 Загружены просмотренные товары:', ids);
+      } catch (error) {
+        console.warn('Ошибка загрузки просмотренных товаров:', error);
+      }
+    }
+  }, []);
+
+  // Добавляем текущий товар в просмотренные
+  useEffect(() => {
+    if (currentProductId) {
+      const stored = localStorage.getItem('viewedProducts') || '[]';
+      try {
+        const parsed = JSON.parse(stored);
+        // Удаляем если уже есть
+        const filtered = parsed.filter((item: any) => item.id !== currentProductId);
+        // Добавляем в начало
+        const updated = [{ id: currentProductId, timestamp: Date.now() }, ...filtered].slice(0, 10);
+        localStorage.setItem('viewedProducts', JSON.stringify(updated));
+        
+        const ids = updated.map((item: any) => item.id);
+        setViewedIds(ids);
+        console.log('🔍 Товар добавлен в просмотренные:', currentProductId, 'Всего:', ids);
+      } catch (error) {
+        console.warn('Ошибка сохранения товара:', error);
+      }
+    }
+  }, [currentProductId]);
+
+  // Получаем все товары
+  const { data: allProductsData, isLoading } = useQuery({
     queryKey: ['all-products'],
     queryFn: async () => {
       const response = await fetch('https://cp44652.tw1.ru/catalog.php');
@@ -30,26 +60,27 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
     gcTime: 30 * 60 * 1000,
   });
 
-  // Фильтруем просмотренные товары и товары из категории  
+  // Отфильтровываем товары для отображения
   const displayProducts = useMemo(() => {
-    if (!allProductsData?.products) return [];
+    if (!allProductsData?.products) {
+      console.log('🔍 Нет данных товаров');
+      return [];
+    }
+
+    // Исключаем текущий товар из просмотренных
+    const viewedToShow = viewedIds.filter(id => id !== currentProductId);
     
-    console.log('🔍 ViewedProducts Debug - Входные данные:', {
+    console.log('🔍 Фильтрация товаров:', {
       currentProductId,
-      currentProductCategoryId,
-      viewedProductIds,
-      totalProducts: allProductsData.products.length,
-      firstProduct: allProductsData.products[0]
+      viewedIds,
+      viewedToShow,
+      totalProducts: allProductsData.products.length
     });
-    
-    // Сначала пытаемся найти просмотренные товары
-    if (viewedProductIds.length > 0) {
-      const viewedProducts = viewedProductIds
-        .map(id => {
-          const foundProduct = allProductsData.products.find((p: any) => p.id.toString() === id);
-          console.log(`🔍 Поиск товара с ID ${id}:`, foundProduct ? 'найден' : 'не найден');
-          return foundProduct;
-        })
+
+    if (viewedToShow.length > 0) {
+      // Показываем просмотренные товары
+      const viewedProducts = viewedToShow
+        .map(id => allProductsData.products.find((p: any) => p.id.toString() === id))
         .filter(Boolean)
         .slice(0, 5);
       
@@ -58,34 +89,19 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
         return viewedProducts;
       }
     }
-    
-    // Если нет просмотренных товаров, показываем товары из той же категории
-    if (currentProductCategoryId) {
-      const categoryProducts = allProductsData.products
-        .filter((product: any) => 
-          product.characteristics?.["Тип оборудования"] === currentProductCategoryId && 
-          product.id.toString() !== currentProductId
-        )
-        .slice(0, 5);
-      
-      console.log('🔍 Найдено товаров из категории:', categoryProducts.length);
-      if (categoryProducts.length > 0) {
-        return categoryProducts;
-      }
-    }
-    
-    // Если нет категории, показываем случайные товары (исключая текущий)
+
+    // Если нет просмотренных, показываем случайные товары (исключая текущий)
     const randomProducts = allProductsData.products
       .filter((product: any) => product.id.toString() !== currentProductId)
       .slice(0, 5);
     
-    console.log('🔍 Показываем случайных товаров:', randomProducts.length);
+    console.log('🔍 Показываем случайные товары:', randomProducts.length);
     return randomProducts;
-  }, [allProductsData?.products, viewedProductIds, currentProductCategoryId, currentProductId]);
+  }, [allProductsData?.products, viewedIds, currentProductId]);
 
-  const isLoading = isAllProductsLoading;
-  const showViewedTitle = viewedProductIds.length > 0 && displayProducts.some(p => 
-    viewedProductIds.includes(p.id.toString())
+  // Определяем заголовок
+  const showViewedTitle = viewedIds.length > 1 && displayProducts.some(p => 
+    viewedIds.includes(p.id.toString()) && p.id.toString() !== currentProductId
   );
 
   if (isLoading) {
@@ -93,7 +109,7 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
       <section className="w-full py-6 bg-white">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-0">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-[#262631] font-benzin-semibold">Вы смотрели</h2>
+            <h2 className="text-2xl font-bold text-[#262631] font-benzin-semibold">Загрузка...</h2>
           </div>
           <div className="grid grid-cols-5 gap-[10px]">
             {Array.from({ length: 5 }).map((_, index) => (
@@ -110,7 +126,8 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
   }
 
   if (displayProducts.length === 0) {
-    return null; // Не показываем блок если нет товаров
+    console.log('🔍 Нет товаров для отображения');
+    return null;
   }
 
   return (
