@@ -29,7 +29,7 @@ const Index: React.FC = () => {
     gcTime: 30 * 60 * 1000, // 30 минут
   });
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white max-w-[1920px] mx-auto">
       <Header />
       <div className="w-full">
         <div className="responsive-container flex flex-col gap-6 section-spacing">

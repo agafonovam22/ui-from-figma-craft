@@ -137,6 +137,7 @@
   /* Базовые адаптивные контейнеры */
   .responsive-container {
     width: 100%;
+    max-width: 1920px;
     margin: 0 auto;
     padding-left: clamp(0.5rem, 2vw, 4rem);
     padding-right: clamp(0.5rem, 2vw, 4rem);
@@ -200,7 +201,7 @@
 
   /* Максимальная ширина контента для больших экранов */
   .max-content-width {
-    max-width: min(1800px, 90vw);
+    max-width: 1920px;
     margin: 0 auto;
   }
 }
@@ -208,14 +209,14 @@
 /* 4K экраны и выше (3840px+) */
 @media screen and (min-width: 3840px) {
   .responsive-container {
-    max-width: 2400px;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    max-width: 1920px;
+    padding-left: clamp(1rem, 2vw, 3rem);
+    padding-right: clamp(1rem, 2vw, 3rem);
   }
   
   .products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
   }
 
   .product-card-responsive {
@@ -223,26 +224,26 @@
   }
   
   .section-spacing {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: clamp(1rem, 3vh, 4rem);
+    padding-bottom: clamp(1rem, 3vh, 4rem);
   }
 
   .responsive-title {
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: clamp(1.25rem, 3vw, 2.5rem);
   }
 }
 
 /* 2K экраны (2560px-3839px) */
 @media screen and (min-width: 2560px) and (max-width: 3839px) {
   .responsive-container {
-    max-width: 2200px;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    max-width: 1920px;
+    padding-left: clamp(1rem, 2vw, 3rem);
+    padding-right: clamp(1rem, 2vw, 3rem);
   }
   
   .products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 1.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
   }
 
   .product-card-responsive {
@@ -250,17 +251,17 @@
   }
   
   .section-spacing {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: clamp(1rem, 3vh, 4rem);
+    padding-bottom: clamp(1rem, 3vh, 4rem);
   }
 }
 
 /* Большие экраны (1920px-2559px) */
 @media screen and (min-width: 1920px) and (max-width: 2559px) {
   .responsive-container {
-    max-width: 1800px;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    max-width: 1920px;
+    padding-left: clamp(1rem, 2vw, 3rem);
+    padding-right: clamp(1rem, 2vw, 3rem);
   }
   
   .products-grid {
