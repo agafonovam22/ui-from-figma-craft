@@ -855,6 +855,7 @@ const ProductCard: React.FC = () => {
                     </div>
                   </div>
                 </div>
+                <EmailSubscription />
               </div>
             </TabsContent>
 
@@ -1211,6 +1212,7 @@ const ProductCard: React.FC = () => {
                     Написать отзыв
                   </Button>
                 </div>
+                <EmailSubscription />
               </div>
             </TabsContent>
 
@@ -1465,15 +1467,18 @@ const ProductCard: React.FC = () => {
                     </div>
                   </div>
                 </div>
+                <EmailSubscription />
               </div>
             </TabsContent>
 
             <TabsContent value="installment" className="mt-8">
               <div className="text-gray-600">Информация о рассрочке будет добавлена позже</div>
+              <EmailSubscription />
             </TabsContent>
 
             <TabsContent value="services" className="mt-8">
               <div className="text-gray-600">Информация об услугах будет добавлена позже</div>
+              <EmailSubscription />
             </TabsContent>
           </Tabs>
         </section>
