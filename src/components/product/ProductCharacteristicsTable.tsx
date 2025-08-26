@@ -477,6 +477,11 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     const hasItems = Object.keys(multimediaCategory.items).length > 0;
     if (!hasItems) return null;
 
+    const characteristics = Object.entries(multimediaCategory.items);
+    const midpoint = Math.ceil(characteristics.length / 2);
+    const leftColumn = characteristics.slice(0, midpoint);
+    const rightColumn = characteristics.slice(midpoint);
+
     const renderCharacteristicContent = (key: string, value: string) => {
       return (
         <div className="flex justify-between items-start gap-4 py-1.5">
@@ -488,19 +493,29 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       );
     };
 
+    const renderColumn = (columnItems: [string, any][]) => (
+      <div className="space-y-0">
+        <div className="border-t border-border"></div>
+        {columnItems.map(([key, value]) => (
+          <div key={key}>
+            {renderCharacteristicContent(key, value)}
+            <div className="border-b border-border"></div>
+          </div>
+        ))}
+      </div>
+    );
+
     return (
       <div className="mb-8">
         <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
           {multimediaCategory.title}
         </h4>
-        <div className="space-y-0">
-          <div className="border-t border-border"></div>
-          {Object.entries(multimediaCategory.items).map(([key, value], index) => (
-            <div key={key}>
-              {renderCharacteristicContent(key, value)}
-              <div className="border-b border-border"></div>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Left column */}
+          <div>{renderColumn(leftColumn)}</div>
+          
+          {/* Right column */}
+          <div>{renderColumn(rightColumn)}</div>
         </div>
       </div>
     );
