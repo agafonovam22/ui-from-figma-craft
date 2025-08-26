@@ -66,7 +66,7 @@ const TopMenu: React.FC = () => {
               <Link
                 key={index}
                 to={item.href}
-                className="text-layout-grey-nav font-benzin text-[9px] 2xl:text-[10px] 3xl:text-xs 4xl:text-sm font-normal leading-[9px] 2xl:leading-[10px] 3xl:leading-3 4xl:leading-4 hover:text-white transition-colors whitespace-nowrap inline-block px-0.5 2xl:px-1 3xl:px-1.5 4xl:px-2"
+                className="text-layout-grey-nav font-benzin text-[10px] 2xl:text-xs 3xl:text-xs 4xl:text-sm font-normal leading-[10px] 2xl:leading-3 3xl:leading-3 4xl:leading-4 hover:text-white transition-colors whitespace-nowrap inline-block px-1 2xl:px-1 3xl:px-1.5 4xl:px-2"
                 style={{ lineHeight: '100%', display: 'inline-block' }}
               >
                 {item.label}
@@ -75,7 +75,7 @@ const TopMenu: React.FC = () => {
               <a
                 key={index}
                 href={item.href || '#'}
-                className="text-layout-grey-nav font-benzin text-[9px] 2xl:text-[10px] 3xl:text-xs 4xl:text-sm font-normal leading-[9px] 2xl:leading-[10px] 3xl:leading-3 4xl:leading-4 hover:text-white transition-colors whitespace-nowrap inline-block px-0.5 2xl:px-1 3xl:px-1.5 4xl:px-2"
+                className="text-layout-grey-nav font-benzin text-[10px] 2xl:text-xs 3xl:text-xs 4xl:text-sm font-normal leading-[10px] 2xl:leading-3 3xl:leading-3 4xl:leading-4 hover:text-white transition-colors whitespace-nowrap inline-block px-1 2xl:px-1 3xl:px-1.5 4xl:px-2"
                 style={{ lineHeight: '100%', display: 'inline-block' }}
                 onClick={item.onClick}
               >
@@ -86,22 +86,22 @@ const TopMenu: React.FC = () => {
         </nav>
 
         <div className="flex items-center gap-0.5 2xl:gap-1 3xl:gap-1.5 4xl:gap-2 max-sm:hidden flex-shrink-0 w-auto max-w-[650px] 2xl:max-w-[700px] 3xl:max-w-[750px] 4xl:max-w-[800px]">
-          <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')} className="text-[7px] 2xl:text-[8px] 3xl:text-[9px] 4xl:text-[10px] px-1.5 2xl:px-2 3xl:px-2.5 4xl:px-3 py-1.5 2xl:py-2 3xl:py-2.5 4xl:py-3">
+          <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')} className="text-[8px] 2xl:text-[9px] 3xl:text-[9px] 4xl:text-[10px] px-2 2xl:px-2 3xl:px-2.5 4xl:px-3 py-2 2xl:py-2 3xl:py-2.5 4xl:py-3">
             Дилеры
           </ActionButton>
-          <ActionButton variant="secondary" onClick={() => console.log('Suppliers clicked')} className="text-[7px] 2xl:text-[8px] 3xl:text-[9px] 4xl:text-[10px] px-1.5 2xl:px-2 3xl:px-2.5 4xl:px-3 py-1.5 2xl:py-2 3xl:py-2.5 4xl:py-3">
+          <ActionButton variant="secondary" onClick={() => console.log('Suppliers clicked')} className="text-[8px] 2xl:text-[9px] 3xl:text-[9px] 4xl:text-[10px] px-2 2xl:px-2 3xl:px-2.5 4xl:px-3 py-2 2xl:py-2 3xl:py-2.5 4xl:py-3">
             For suppliers
           </ActionButton>
           
           <a 
             href={selectedCity === 'Москва' ? "tel:+74996775632" : "tel:88003332595"} 
-            className="text-[7px] 2xl:text-[8px] 3xl:text-[9px] 4xl:text-[10px] font-normal leading-[7px] 2xl:leading-[8px] 3xl:leading-[9px] 4xl:leading-[10px] px-1.5 2xl:px-2 3xl:px-2.5 4xl:px-3 py-1.5 2xl:py-2 3xl:py-2.5 4xl:py-3 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0 whitespace-nowrap"
+            className="text-[8px] 2xl:text-[9px] 3xl:text-[9px] 4xl:text-[10px] font-normal leading-[8px] 2xl:leading-[9px] 3xl:leading-[9px] 4xl:leading-[10px] px-2 2xl:px-2 3xl:px-2.5 4xl:px-3 py-2 2xl:py-2 3xl:py-2.5 4xl:py-3 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0 whitespace-nowrap"
           >
             {selectedCity === 'Москва' ? '+7 499 677 56 32' : '8 800 333 25 95'}
           </a>
           
           <CallRequestDialog>
-            <ActionButton variant="danger" className="text-[7px] 2xl:text-[8px] 3xl:text-[9px] 4xl:text-[10px] px-1.5 2xl:px-2 3xl:px-2.5 4xl:px-3 py-1.5 2xl:py-2 3xl:py-2.5 4xl:py-3">
+            <ActionButton variant="danger" className="text-[8px] 2xl:text-[9px] 3xl:text-[9px] 4xl:text-[10px] px-2 2xl:px-2 3xl:px-2.5 4xl:px-3 py-2 2xl:py-2 3xl:py-2.5 4xl:py-3">
               Заказать звонок
             </ActionButton>
           </CallRequestDialog>

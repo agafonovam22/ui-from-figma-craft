@@ -33,7 +33,7 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
         {category.icon}
       </span>
     )}
-    <span className="text-xs 2xl:text-sm 3xl:text-base 4xl:text-lg font-normal leading-[12px] 2xl:leading-[14px] 3xl:leading-4 4xl:leading-5 text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
+    <span className="text-sm 2xl:text-sm 3xl:text-base 4xl:text-lg font-normal leading-[14px] 2xl:leading-[14px] 3xl:leading-4 4xl:leading-5 text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
       {category.label}
     </span>
   </Link>

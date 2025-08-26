@@ -37,7 +37,7 @@ const CatalogButton: React.FC = () => (
       <path d="M5 10H8V13H5V10Z" fill="white" />
       <path d="M10 10H13V13H10V10Z" fill="white" />
     </svg>
-    <span className="text-white text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-normal leading-[14px] 2xl:leading-4 3xl:leading-5 4xl:leading-6">Каталог</span>
+    <span className="text-white text-base 2xl:text-base 3xl:text-lg 4xl:text-xl font-normal leading-4 2xl:leading-4 3xl:leading-5 4xl:leading-6">Каталог</span>
   </Link>
 );
 
@@ -79,7 +79,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Поиск", onSea
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder={placeholder}
-          className="flex-1 bg-transparent text-white text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-normal leading-[14px] 2xl:leading-4 3xl:leading-5 4xl:leading-6 outline-none placeholder:text-[#5C6476]"
+          className="flex-1 bg-transparent text-white text-base 2xl:text-base 3xl:text-lg 4xl:text-xl font-normal leading-4 2xl:leading-4 3xl:leading-5 4xl:leading-6 outline-none placeholder:text-[#5C6476]"
         />
         <button
           type="button"
