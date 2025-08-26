@@ -132,6 +132,125 @@
   }
 }
 
+/* Адаптивные стили для разных разрешений ноутбуков */
+@layer utilities {
+  /* Контейнеры с адаптивными размерами */
+  .responsive-container {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  /* Адаптивные отступы для контейнеров */
+  .responsive-padding {
+    padding-left: clamp(1rem, 4vw, 4rem);
+    padding-right: clamp(1rem, 4vw, 4rem);
+  }
+
+  /* Адаптивные grid колонки для товаров */
+  .products-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  /* Адаптивные размеры карточек */
+  .product-card-responsive {
+    height: clamp(400px, 50vh, 460px);
+    max-width: 100%;
+  }
+
+  /* Адаптивные отступы для разных секций */
+  .section-spacing {
+    padding-top: clamp(1.5rem, 4vh, 3rem);
+    padding-bottom: clamp(1.5rem, 4vh, 3rem);
+  }
+}
+
+/* Media queries для конкретных разрешений */
+@media screen and (max-width: 1920px) {
+  .responsive-container {
+    max-width: min(1800px, 95vw);
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .responsive-container {
+    max-width: min(1360px, 95vw);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .responsive-padding {
+    padding-left: clamp(1rem, 3vw, 2.5rem);
+    padding-right: clamp(1rem, 3vw, 2.5rem);
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .responsive-container {
+    max-width: min(1280px, 95vw);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .responsive-padding {
+    padding-left: clamp(0.75rem, 2.5vw, 2rem);
+    padding-right: clamp(0.75rem, 2.5vw, 2rem);
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.625rem;
+  }
+
+  .product-card-responsive {
+    height: clamp(380px, 45vh, 440px);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .responsive-container {
+    max-width: min(1200px, 95vw);
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .product-card-responsive {
+    height: clamp(360px, 42vh, 420px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .responsive-container {
+    max-width: min(960px, 95vw);
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .responsive-padding {
+    padding-left: clamp(0.5rem, 2vw, 1.5rem);
+    padding-right: clamp(0.5rem, 2vw, 1.5rem);
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .product-card-responsive {
+    height: clamp(340px, 40vh, 400px);
+  }
+}
+
 /* Benzin-Regular placeholder styling */
 .benzin-placeholder::placeholder {
   font-family: 'Benzin-Regular', sans-serif !important;

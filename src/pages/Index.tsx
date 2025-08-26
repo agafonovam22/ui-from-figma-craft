@@ -32,7 +32,7 @@ const Index: React.FC = () => {
     <main className="min-h-screen bg-white">
       <Header />
       <div className="w-full">
-        <div className="max-w-[1800px] mx-auto flex flex-col gap-6 pt-6 px-[30px]">
+        <div className="responsive-container flex flex-col gap-6 section-spacing">
           <Banner />
           <ProductCatalog />
           <NewProducts />
@@ -43,7 +43,7 @@ const Index: React.FC = () => {
           <NewsAndBlog />
         </div>
         <EmailSubscription />
-        <div className="h-[70px]"></div>
+        <div className="h-[clamp(3rem,8vh,5rem)]"></div>
         <Footer />
       </div>
     </main>

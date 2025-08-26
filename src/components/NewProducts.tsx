@@ -46,8 +46,8 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
   }
 
   return (
-    <section className="w-full py-6 bg-white">
-      <div className="max-w-[1800px] mx-auto px-[30px]">
+    <section className="w-full section-spacing bg-white">
+      <div className="responsive-container">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold text-[#262631] font-benzin-semibold">{title}</h2>
           
@@ -72,7 +72,7 @@ const NewProducts: React.FC<NewProductsProps> = ({ title = "Новинки" }) =
         
         <div 
           ref={scrollContainerRef}
-          className="grid grid-cols-5 gap-2.5 mb-6"
+          className="products-grid mb-6"
         >
           {displayProducts.map((product) => (
             <ProductCard 

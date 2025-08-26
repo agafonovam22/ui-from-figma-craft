@@ -143,9 +143,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
       className="block"
     >
       <div 
-        className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
+        className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 product-card-responsive"
         style={{ 
-          height: '460px', 
           backgroundColor: '#F8F8FD',
           background: 'var(--card-bg, #F8F8FD)'
         }}
@@ -283,7 +282,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="mx-4 h-px bg-gray-200 mt-7"></div>
 
         {/* Информация о товаре */}
-        <div className="p-4 pb-2.5 mt-4 flex flex-col justify-between transition-colors duration-300" style={{ height: '160px', backgroundColor: 'transparent' }}>
+        <div className="p-4 pb-2.5 mt-4 flex flex-col justify-between transition-colors duration-300" style={{ height: 'clamp(140px, 35%, 160px)', backgroundColor: 'transparent' }}>
           <div>
             {/* Статус наличия */}
             {(() => {

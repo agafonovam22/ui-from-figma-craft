@@ -44,7 +44,7 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
   return (
     <>
       {/* Products Grid with Ad Banner */}
-      <div className="grid grid-cols-4 gap-2.5 mb-8">
+      <div className="products-grid mb-8">
         {products.map((product, index) => (
           <React.Fragment key={product.id}>
             <ProductCard product={{ 
