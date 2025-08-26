@@ -477,30 +477,12 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     const hasItems = Object.keys(multimediaCategory.items).length > 0;
     if (!hasItems) return null;
 
-    // Group characteristics into pairs for two columns
-    const characteristics = Object.entries(multimediaCategory.items);
-    const characteristicPairs = [];
-    
-    for (let i = 0; i < characteristics.length; i += 2) {
-      const firstChar = characteristics[i];
-      const secondChar = characteristics[i + 1];
-      
-      characteristicPairs.push({
-        first: firstChar ? { displayKey: firstChar[0], displayValue: firstChar[1] } : null,
-        second: secondChar ? { displayKey: secondChar[0], displayValue: secondChar[1] } : null,
-        firstKey: firstChar?.[0],
-        secondKey: secondChar?.[0]
-      });
-    }
-
-    const renderCharacteristicContent = (char: any) => {
-      const { displayKey, displayValue } = char;
-      
+    const renderCharacteristicContent = (key: string, value: string) => {
       return (
-        <div className="flex justify-between items-start gap-4">
-          <span className="text-sm font-medium text-muted-foreground flex-shrink-0">{displayKey}:</span>
+        <div className="flex justify-between items-start gap-4 py-1.5">
+          <span className="text-sm font-medium text-muted-foreground flex-shrink-0">{key}:</span>
           <div className="text-sm text-foreground text-right">
-            <span>{String(displayValue).replace(/<[^>]*>/g, '').trim()}</span>
+            <span>{String(value).replace(/<[^>]*>/g, '').trim()}</span>
           </div>
         </div>
       );
@@ -511,36 +493,14 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
         <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
           {multimediaCategory.title}
         </h4>
-        <div className="overflow-hidden">
-          <div className="">
-            {characteristicPairs.map((pair, index) => (
-              <div key={`${pair.firstKey}-${pair.secondKey || 'single'}-${index}`}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {/* First characteristic */}
-                  <div className="flex-1">
-                    {pair.first && (
-                      <div className="py-1.5">
-                        {index === 0 && <div className="border-t border-border mb-1.5"></div>}
-                        {renderCharacteristicContent(pair.first)}
-                        <div className="mt-1.5 border-b border-border"></div>
-                      </div>
-                    )}
-                  </div>
-                  
-                  {/* Second characteristic */}
-                  <div className="flex-1">
-                    {pair.second && (
-                      <div className="py-1.5">
-                        {index === 0 && <div className="border-t border-border mb-1.5"></div>}
-                        {renderCharacteristicContent(pair.second)}
-                        <div className="mt-1.5 border-b border-border"></div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="space-y-0">
+          <div className="border-t border-border"></div>
+          {Object.entries(multimediaCategory.items).map(([key, value], index) => (
+            <div key={key}>
+              {renderCharacteristicContent(key, value)}
+              <div className="border-b border-border"></div>
+            </div>
+          ))}
         </div>
       </div>
     );
