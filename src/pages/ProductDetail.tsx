@@ -170,9 +170,7 @@ const ProductDetail: React.FC = () => {
                 </div>
               )}
             </div>
-            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-              <EmailSubscription />
-            </div>
+            <EmailSubscription />
           </div>
         );
       case 'specifications':
