@@ -109,7 +109,7 @@ const ProductDetail: React.FC = () => {
       case 'description':
         return (
           <div>
-            <h3 className="text-xl font-semibold mb-4">Описание</h3>
+            <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Описание</h3>
             <div className="font-manrope text-muted-foreground leading-relaxed">
               {product.description ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -181,7 +181,7 @@ const ProductDetail: React.FC = () => {
       case 'reviews':
         return (
           <div>
-            <h3 className="text-xl font-semibold mb-6 font-manrope">Отзывы (10)</h3>
+            <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Отзывы (10)</h3>
             <div className="font-manrope grid lg:grid-cols-3 gap-8">
               {/* Список отзывов */}
               <div className="lg:col-span-2 space-y-6">
@@ -688,7 +688,7 @@ const ProductDetail: React.FC = () => {
           <div className="space-y-8">
             {/* Text content */}
             <div>
-              <h3 className="text-xl font-semibold mb-6 font-manrope">В рассрочку</h3>
+              <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>В рассрочку</h3>
               
               <div className="space-y-4 mb-8 font-manrope text-muted-foreground">
                 <p>
@@ -819,7 +819,7 @@ const ProductDetail: React.FC = () => {
       case 'services':
         return (
           <div>
-            <h3 className="text-xl font-semibold mb-4">Дополнительные услуги</h3>
+            <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Дополнительные услуги</h3>
             <div className="font-manrope grid md:grid-cols-2 gap-6">
               <div className="p-4 border border-border rounded-lg">
                 <h4 className="font-semibold mb-2">Установка и настройка</h4>
