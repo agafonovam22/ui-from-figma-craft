@@ -432,7 +432,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
 
     return (
       <div className="mb-8">
-        <h4 className="text-lg font-semibold mb-4 text-foreground" style={{ fontFamily: 'Benzin-Medium' }}>
+        <h4 className="text-lg mb-4 text-foreground" style={{ fontFamily: 'Benzin-Medium' }}>
           {basicCategory.title}
         </h4>
         <div className="overflow-hidden">
@@ -507,7 +507,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
 
     return (
       <div className="mb-8">
-        <h4 className="text-lg font-semibold mb-4 text-foreground" style={{ fontFamily: 'Benzin-Medium' }}>
+        <h4 className="text-lg mb-4 text-foreground" style={{ fontFamily: 'Benzin-Medium' }}>
           {multimediaCategory.title}
         </h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -538,7 +538,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
 
       return (
         <div>
-          <h4 className="text-lg font-semibold mb-4 text-foreground" style={{ fontFamily: 'Benzin-Medium' }}>
+          <h4 className="text-lg mb-4 text-foreground" style={{ fontFamily: 'Benzin-Medium' }}>
             {title}
           </h4>
           <div className="space-y-0">
@@ -592,7 +592,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
 
       return (
         <div>
-          <h4 className="text-lg font-semibold mb-4 text-foreground" style={{ fontFamily: 'Benzin-Medium' }}>
+          <h4 className="text-lg mb-4 text-foreground" style={{ fontFamily: 'Benzin-Medium' }}>
             {title}
           </h4>
           <div className="space-y-0">
