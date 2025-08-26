@@ -152,7 +152,7 @@ const PhotoSwiper: React.FC<PhotoSwiperProps> = ({
 
         {/* Progress indicator positioned absolutely at bottom of banner */}
         {images.length > 1 && (
-          <div className="absolute bottom-[5%] left-1/2 transform -translate-x-1/2 flex gap-2 justify-center z-20">
+          <div className="absolute bottom-[2%] left-1/2 transform -translate-x-1/2 flex gap-2 justify-center z-20">
             {images.map((_, index) => (
               <button
                 key={index}
