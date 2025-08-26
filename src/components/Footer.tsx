@@ -7,8 +7,8 @@ const Footer: React.FC = () => {
   return (
     <footer className="w-full text-white">
       {/* Main content section with #262631 background */}
-      <div className="bg-[#262631] section-spacing">
-        <div className="responsive-container">
+        <div className="bg-[#262631] section-spacing">
+          <div className="w-full max-w-[1920px] mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 responsive-table">
             {/* Каталог */}
             <div>
@@ -65,13 +65,13 @@ const Footer: React.FC = () => {
                 <div className="text-[#778093] space-y-3">
                   <div>
                     <p className="text-xs mb-1">Для Москвы</p>
-                    <a href="tel:+74996775632" className="text-xs font-benzin-semibold text-white hover:text-gray-300 transition-colors">
+                    <a href="tel:+74996775632" className="text-xs font-benzin-semibold text-white hover:text-gray-300 transition-colors whitespace-nowrap">
                       +7 (499) 677-56-32
                     </a>
                   </div>
                   <div>
                     <p className="text-xs mb-1">Для России</p>
-                    <a href="tel:+78007751217" className="text-xs font-benzin-semibold text-white hover:text-gray-300 transition-colors">
+                    <a href="tel:+78007751217" className="text-xs font-benzin-semibold text-white hover:text-gray-300 transition-colors whitespace-nowrap">
                       +7 (800) 775-12-17
                     </a>
                   </div>
@@ -145,8 +145,8 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom section with #17171E background */}
-      <div className="bg-[#17171E] section-spacing">
-        <div className="responsive-container">
+        <div className="bg-[#17171E] section-spacing">
+          <div className="w-full max-w-[1920px] mx-auto px-4 lg:px-8">
           <div className="flex flex-col gap-6">
             {/* Top row - Logo and buttons */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
