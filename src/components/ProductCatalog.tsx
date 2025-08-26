@@ -207,20 +207,22 @@ const ProductCatalog: React.FC = () => {
           ))}
           <Link 
             to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
-            className="relative rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-full flex flex-col"
+            className="relative rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 flex flex-col min-h-0"
           >
-            <img 
-              src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
-              alt="Перейти в каталог"
-              className="responsive-image w-full h-full object-cover object-right"
-            />
-            <div className="absolute top-4 left-4 text-white font-benzin responsive-text font-normal z-10">
-              {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
-            </div>
-            <div className="absolute bottom-4 left-4 z-10">
-              <button className="bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin font-normal hover:bg-gray-100 transition-colors flex items-center gap-2">
-                Перейти <ArrowRight className="w-4 h-4" />
-              </button>
+            <div className="relative w-full h-full min-h-[200px]">
+              <img 
+                src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
+                alt="Перейти в каталог"
+                className="absolute inset-0 w-full h-full object-cover object-right"
+              />
+              <div className="absolute top-4 left-4 text-white font-benzin responsive-text font-normal z-10">
+                {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
+              </div>
+              <div className="absolute bottom-4 left-4 z-10">
+                <button className="bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin font-normal hover:bg-gray-100 transition-colors flex items-center gap-2">
+                  Перейти <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
             </div>
           </Link>
         </div>
