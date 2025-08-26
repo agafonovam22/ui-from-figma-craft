@@ -55,10 +55,12 @@ const TopMenu: React.FC = () => {
 
   return (
     <header className="flex w-full justify-center items-center bg-[#17171E] responsive-padding py-0 border-b border-solid border-[rgba(255,255,255,0.10)]">
-      <div className="flex w-full max-content-width h-[clamp(48px, 8vh, 53px)] justify-between items-center gap-2 lg:gap-[clamp(15px, 3vw, 30px)] flex-shrink-0">
-        <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
+      <div className="flex w-full max-content-width h-[clamp(48px, 8vh, 53px)] justify-between items-center gap-[clamp(8px, 1.5vw, 24px)] min-w-0">
+        <div className="flex-shrink-0">
+          <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
+        </div>
         
-        <nav className="flex items-start gap-2 lg:gap-[15px] max-md:hidden" role="navigation" aria-label="Основная навигация">
+        <nav className="flex items-start gap-[clamp(8px, 1vw, 15px)] max-md:hidden flex-1 justify-center max-w-[600px] min-w-0" role="navigation" aria-label="Основная навигация">
           {navigationItems.map((item, index) => (
             item.href ? (
               <Link
@@ -83,7 +85,7 @@ const TopMenu: React.FC = () => {
           ))}
         </nav>
 
-        <div className="flex items-end gap-2 max-sm:hidden">
+        <div className="flex items-end gap-[clamp(8px, 1vw, 16px)] max-sm:hidden flex-shrink-0">
           <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')}>
             Для дилеров
           </ActionButton>
@@ -92,10 +94,10 @@ const TopMenu: React.FC = () => {
           </ActionButton>
         </div>
 
-        <div className="flex items-end gap-2 max-sm:hidden">
+        <div className="flex items-end gap-[clamp(8px, 1vw, 16px)] max-sm:hidden flex-shrink-0">
           <a 
             href={selectedCity === 'Москва' ? "tel:+74996775632" : "tel:88003332595"} 
-            className="text-[10px] font-normal leading-[10px] gap-2 px-3 py-2.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0"
+            className="text-[10px] font-normal leading-[10px] gap-2 px-3 py-2.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0 whitespace-nowrap"
           >
             {selectedCity === 'Москва' ? '+7 499 677 56 32' : '8 800 333 25 95'}
           </a>
