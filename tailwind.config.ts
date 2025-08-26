@@ -18,6 +18,15 @@ export default {
 				'2xl': '1400px'
 			}
 		},
+		screens: {
+			'sm': '640px',
+			'md': '768px',
+			'lg': '1024px',
+			'xl': '1280px',
+			'2xl': '1536px',
+			'3xl': '2560px', // 2K экраны
+			'4xl': '3840px', // 4K экраны
+		},
 		extend: {
 			fontFamily: {
 				'benzin': ['Benzin-Regular', 'sans-serif'],
