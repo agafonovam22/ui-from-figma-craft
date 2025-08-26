@@ -25,15 +25,15 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
 }) => (
   <Link
     to={`/catalog?category=${category.id}`}
-    className={`flex h-[46px] items-center gap-2 bg-[#262631] px-3 py-3 rounded-[5px] hover:bg-[#3a3a47] transition-colors group w-full min-w-0 justify-center`}
+    className={`flex h-[46px] items-center gap-2 bg-[#262631] px-5 py-3 rounded-[5px] max-sm:whitespace-nowrap max-sm:px-4 max-sm:py-3 hover:bg-[#3a3a47] transition-colors group flex-shrink-0`}
     aria-label={`Категория: ${category.label}`}
   >
     {category.icon && (
-      <span className="text-[#778093] group-hover:text-white transition-colors flex-shrink-0">
+      <span className="text-[#778093] group-hover:text-white transition-colors">
         {category.icon}
       </span>
     )}
-    <span className="text-sm font-normal leading-[14px] text-[#778093] group-hover:text-white transition-colors text-center truncate">
+    <span className="text-sm font-normal leading-[14px] text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
       {category.label}
     </span>
   </Link>
@@ -184,23 +184,26 @@ const BottomMenu: React.FC = () => {
 
   return (
     <nav 
-      className="flex w-full justify-center items-center bg-[#262631] px-2 sm:px-4 lg:px-[60px] py-1"
+      className="flex w-full justify-center items-center gap-[5px] bg-[#262631] px-2 sm:px-4 lg:px-[60px] py-1 max-md:overflow-x-auto"
       style={{ padding: '4px 60px' }}
       role="navigation"
       aria-label="Категории товаров"
     >
-      <div className="flex w-full max-w-[1200px] h-[54px] items-center relative mx-auto">
+      <div className="flex w-full max-w-[1800px] h-[54px] items-center gap-[5px] relative max-md:w-auto max-md:min-w-full flex-shrink-0">
         <div 
           ref={scrollContainerRef}
-          className="flex items-center justify-between gap-[20px] w-full flex-nowrap overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden md:overflow-x-visible"
+          className="flex items-center gap-[5px] overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden"
           style={{ 
             scrollbarWidth: 'none', 
             msOverflowStyle: 'none'
           }}
         >
-          {duplicatedCategories.slice(0, categories.length).map((category, index) => (
-            <div key={category.id} className="flex items-center flex-1 flex-shrink-0 min-w-0">
+          {duplicatedCategories.map((category, index) => (
+            <div key={`${category.id}-${Math.floor(index / categories.length)}`} className="flex items-center gap-[5px]">
               <CategoryButton category={category} />
+              {index < duplicatedCategories.length - 1 && (
+                <div className="w-px h-9 opacity-20 bg-[#5C6476] flex-shrink-0" />
+              )}
             </div>
           ))}
         </div>
