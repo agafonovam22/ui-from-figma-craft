@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Users, Warehouse, Shield, Grid3x3, Wrench, TrendingUp } from 'lucide-react';
 import { getAboutPageNews } from '@/data/newsData';
 import Header from '@/components/Header';
@@ -23,10 +23,42 @@ import {
 const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState('about');
   const [currentPage, setCurrentPage] = useState(1);
+  const location = useLocation();
   const itemsPerPage = 11;
   const allNews = getAboutPageNews();
   const totalPages = Math.ceil(allNews.length / itemsPerPage);
   const newsItems = allNews.slice(0, currentPage * itemsPerPage);
+
+  // Маппинг хешей URL к ID вкладок
+  const hashToTabMap: { [key: string]: string } = {
+    'mission': 'mission',
+    'team': 'team'
+  };
+
+  // Отслеживаем изменения в location (включая хеш)
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    console.log('About page hash changed to:', hash);
+    if (hash && hashToTabMap[hash]) {
+      console.log('Setting active tab to:', hashToTabMap[hash]);
+      setActiveTab(hashToTabMap[hash]);
+    } else if (!hash) {
+      // Если хеша нет, показываем дефолтную вкладку
+      setActiveTab('about');
+    }
+  }, [location.hash]);
+
+  const handleTabChange = (tabId: string) => {
+    setActiveTab(tabId);
+    // Обновляем URL хеш при смене вкладки
+    const hashKey = Object.keys(hashToTabMap).find(key => hashToTabMap[key] === tabId);
+    if (hashKey) {
+      window.history.replaceState(null, '', `#${hashKey}`);
+    } else if (tabId === 'about') {
+      // Для вкладки "О нас" убираем хеш
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+  };
 
   const teamMembers = [
     {
@@ -244,7 +276,7 @@ const About: React.FC = () => {
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
             <div className="flex gap-2.5">
               <button 
-                onClick={() => setActiveTab('about')}
+                onClick={() => handleTabChange('about')}
                 className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
                   activeTab === 'about' 
                     ? 'bg-[#F53B49] text-white' 
@@ -254,7 +286,7 @@ const About: React.FC = () => {
                 О нас
               </button>
               <button 
-                onClick={() => setActiveTab('mission')}
+                onClick={() => handleTabChange('mission')}
                 className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
                   activeTab === 'mission' 
                     ? 'bg-[#F53B49] text-white' 
@@ -265,7 +297,7 @@ const About: React.FC = () => {
               </button>
               {/* Временно скрыта вкладка "Наша команда"
               <button 
-                onClick={() => setActiveTab('team')}
+                onClick={() => handleTabChange('team')}
                 className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
                   activeTab === 'team' 
                     ? 'bg-[#F53B49] text-white' 
@@ -276,7 +308,7 @@ const About: React.FC = () => {
               </button>
               */}
               <button 
-                onClick={() => setActiveTab('projects')}
+                onClick={() => handleTabChange('projects')}
                 className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
                   activeTab === 'projects' 
                     ? 'bg-[#F53B49] text-white' 
@@ -286,7 +318,7 @@ const About: React.FC = () => {
                 Наши проекты
               </button>
               <button 
-                onClick={() => setActiveTab('news')}
+                onClick={() => handleTabChange('news')}
                 className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
                   activeTab === 'news' 
                     ? 'bg-[#F53B49] text-white' 
