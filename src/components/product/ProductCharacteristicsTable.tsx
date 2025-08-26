@@ -472,6 +472,82 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     );
   };
 
+  const renderMultimediaCharacteristics = () => {
+    const multimediaCategory = categorizedCharacteristics.console;
+    const hasItems = Object.keys(multimediaCategory.items).length > 0;
+    if (!hasItems) return null;
+
+    // Group characteristics into pairs for two columns
+    const characteristics = Object.entries(multimediaCategory.items);
+    const characteristicPairs = [];
+    
+    for (let i = 0; i < characteristics.length; i += 2) {
+      const firstChar = characteristics[i];
+      const secondChar = characteristics[i + 1];
+      
+      characteristicPairs.push({
+        first: firstChar ? { displayKey: firstChar[0], displayValue: firstChar[1] } : null,
+        second: secondChar ? { displayKey: secondChar[0], displayValue: secondChar[1] } : null,
+        firstKey: firstChar?.[0],
+        secondKey: secondChar?.[0]
+      });
+    }
+
+    const renderCharacteristicContent = (char: any) => {
+      const { displayKey, displayValue } = char;
+      
+      return (
+        <div className="flex justify-between items-start gap-4">
+          <span className="text-sm font-medium text-muted-foreground flex-shrink-0">{displayKey}:</span>
+          <div className="text-sm text-foreground text-right">
+            <span>{String(displayValue).replace(/<[^>]*>/g, '').trim()}</span>
+          </div>
+        </div>
+      );
+    };
+
+    return (
+      <div className="mb-8">
+        <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
+          {multimediaCategory.title}
+        </h4>
+        <div className="overflow-hidden">
+          <div className="">
+            {characteristicPairs.map((pair, index) => (
+              <div key={`${pair.firstKey}-${pair.secondKey || 'single'}-${index}`} className="p-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+                  {/* First characteristic */}
+                  <div className="flex-1">
+                    {pair.first && (
+                      <div className="py-2">
+                        {index === 0 && <div className="border-t border-border mb-2"></div>}
+                        {renderCharacteristicContent(pair.first)}
+                        <div className="mt-2 border-b border-border"></div>
+                      </div>
+                    )}
+                  </div>
+                  
+                  {/* Second characteristic */}
+                  {pair.second ? (
+                    <div className="flex-1">
+                      <div className="py-2">
+                        {index === 0 && <div className="border-t border-border mb-2"></div>}
+                        {renderCharacteristicContent(pair.second)}
+                        <div className="mt-2 border-b border-border"></div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="hidden md:block"></div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const renderThreeColumnSection = () => {
     const pulseControl = categorizedCharacteristics.pulseControl;
     const workingDimensions = categorizedCharacteristics.workingDimensions;
@@ -600,6 +676,9 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     <div className={`space-y-8 font-manrope ${className}`}>
       {/* Основные характеристики */}
       {renderBasicCharacteristics()}
+      
+      {/* Мультимедиа */}
+      {renderMultimediaCharacteristics()}
       
       {/* Габариты в рабочем состоянии */}
       {renderTable(categorizedCharacteristics.dimensions, 'dimensions')}
