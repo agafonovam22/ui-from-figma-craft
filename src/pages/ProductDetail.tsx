@@ -150,13 +150,12 @@ const ProductDetail: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ color: '#262631', fontFamily: 'Manrope' }}>
                   <div className="space-y-4">
                     <p>
                       Беговая дорожка CardioPower TR150 разработана для тренировки пожилых людей и реабилитации пациентов с ограниченными возможностями. Модель имеет удлиненные двойные поручни с регулировкой по высоте и ширине и широкое беговое полотно 50 х 145 см. для обеспечения полной безопасности и комфорта тренировки.
                     </p>
                     <div>
-                      <p className="font-semibold text-foreground mb-2">Технические характеристики:</p>
                       <ul className="list-disc list-inside space-y-1 ml-4">
                         <li>Минимальная высота 620 мм</li>
                         <li>Максимальная высота 920 мм</li>
