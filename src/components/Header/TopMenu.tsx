@@ -85,24 +85,24 @@ const TopMenu: React.FC = () => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-1 max-sm:hidden flex-shrink-0 w-auto max-w-[600px]">
-          <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')} className="text-[8px] px-2 py-2">
+        <div className="flex items-center gap-0.5 max-sm:hidden flex-shrink-0 w-auto max-w-[650px]">
+          <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')} className="text-[7px] px-1.5 py-1.5">
             Дилеры
           </ActionButton>
-          <ActionButton variant="secondary" onClick={() => console.log('Suppliers clicked')} className="text-[8px] px-2 py-2">
+          <ActionButton variant="secondary" onClick={() => console.log('Suppliers clicked')} className="text-[7px] px-1.5 py-1.5">
             Suppliers
           </ActionButton>
           
           <a 
             href={selectedCity === 'Москва' ? "tel:+74996775632" : "tel:88003332595"} 
-            className="text-[8px] font-normal leading-[8px] px-2 py-2 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0 whitespace-nowrap"
+            className="text-[7px] font-normal leading-[7px] px-1.5 py-1.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0 whitespace-nowrap"
           >
             {selectedCity === 'Москва' ? '+7 499 677 56 32' : '8 800 333 25 95'}
           </a>
           
           <CallRequestDialog>
-            <ActionButton variant="danger" className="text-[8px] px-2 py-2">
-              Звонок
+            <ActionButton variant="danger" className="text-[7px] px-1.5 py-1.5">
+              Заказать звонок
             </ActionButton>
           </CallRequestDialog>
         </div>
