@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import ProductCard from '@/components/shared/ProductCard';
-import { useNewProducts } from '@/hooks/useSharedProducts';
+import { useViewedProducts } from '@/hooks/useViewedProducts';
+import { useQuery } from '@tanstack/react-query';
 
 interface ViewedProductsProps {
   currentProductId?: string;
@@ -8,13 +9,63 @@ interface ViewedProductsProps {
 }
 
 const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, currentProductCategoryId }) => {
-  // Пока что просто показываем новые товары, исключая текущий
-  const { products: allProducts, isLoading, error } = useNewProducts(6);
+  const { getViewedProductIds } = useViewedProducts();
   
-  // Фильтруем текущий товар из списка и берем ровно 5 товаров
-  const displayProducts = allProducts.filter(product => 
-    product.id.toString() !== currentProductId
-  ).slice(0, 5);
+  // Получаем ID просмотренных товаров (исключая текущий)
+  const viewedProductIds = useMemo(() => {
+    return getViewedProductIds(currentProductId);
+  }, [getViewedProductIds, currentProductId]);
+  
+  // Получаем все товары для фильтрации просмотренных
+  const { data: allProductsData, isLoading: isAllProductsLoading } = useQuery({
+    queryKey: ['all-products'],
+    queryFn: async () => {
+      const response = await fetch('https://cp44652.tw1.ru/catalog.php');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    },
+    staleTime: 5 * 60 * 1000,
+    gcTime: 30 * 60 * 1000,
+  });
+
+  // Фильтруем просмотренные товары и товары из категории
+  const displayProducts = useMemo(() => {
+    if (!allProductsData?.products) return [];
+    
+    // Сначала пытаемся найти просмотренные товары
+    if (viewedProductIds.length > 0) {
+      const viewedProducts = viewedProductIds
+        .map(id => allProductsData.products.find((p: any) => p.id.toString() === id))
+        .filter(Boolean)
+        .slice(0, 5);
+      
+      if (viewedProducts.length > 0) {
+        return viewedProducts;
+      }
+    }
+    
+    // Если нет просмотренных товаров, показываем товары из той же категории
+    if (currentProductCategoryId) {
+      return allProductsData.products
+        .filter((product: any) => 
+          product.category_id === currentProductCategoryId && 
+          product.id.toString() !== currentProductId
+        )
+        .slice(0, 5);
+    }
+    
+    // Если нет категории, показываем случайные товары (исключая текущий)
+    return allProductsData.products
+      .filter((product: any) => product.id.toString() !== currentProductId)
+      .slice(0, 5);
+  }, [allProductsData?.products, viewedProductIds, currentProductCategoryId, currentProductId]);
+
+  const isLoading = isAllProductsLoading;
+  const showViewedTitle = viewedProductIds.length > 0 && displayProducts.some(p => 
+    viewedProductIds.includes(p.id.toString())
+  );
 
   if (isLoading) {
     return (
@@ -37,15 +88,17 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
     );
   }
 
-  if (error || displayProducts.length === 0) {
-    return null; // Не показываем блок если нет товаров или ошибка
+  if (displayProducts.length === 0) {
+    return null; // Не показываем блок если нет товаров
   }
 
   return (
     <section className="w-full py-6 bg-white">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-0">
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-[#262631] font-benzin-semibold">Вы смотрели</h2>
+          <h2 className="text-2xl font-bold text-[#262631] font-benzin-semibold">
+            {showViewedTitle ? 'Вы смотрели' : 'Похожие товары'}
+          </h2>
         </div>
         
         <div className="grid grid-cols-5 gap-[10px]">

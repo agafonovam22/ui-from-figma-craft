@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 interface ViewedProduct {
   id: string;
@@ -26,7 +26,7 @@ export const useViewedProducts = () => {
   }, []);
 
   // Добавить товар в просмотренные
-  const addViewedProduct = (productId: string) => {
+  const addViewedProduct = useCallback((productId: string) => {
     setViewedProducts(prev => {
       // Удаляем товар из списка, если он уже есть
       const filtered = prev.filter(item => item.id !== productId);
@@ -42,20 +42,20 @@ export const useViewedProducts = () => {
       
       return updated;
     });
-  };
+  }, []);
 
   // Получить ID просмотренных товаров (исключая текущий)
-  const getViewedProductIds = (excludeId?: string): string[] => {
+  const getViewedProductIds = useCallback((excludeId?: string): string[] => {
     return viewedProducts
       .filter(item => item.id !== excludeId)
       .map(item => item.id);
-  };
+  }, [viewedProducts]);
 
   // Очистить просмотренные товары
-  const clearViewedProducts = () => {
+  const clearViewedProducts = useCallback(() => {
     setViewedProducts([]);
     localStorage.removeItem(VIEWED_PRODUCTS_KEY);
-  };
+  }, []);
 
   return {
     viewedProducts,
