@@ -139,21 +139,21 @@
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
-    padding-left: clamp(0.5rem, 2vw, 4rem);
-    padding-right: clamp(0.5rem, 2vw, 4rem);
+    padding-left: clamp(0.5rem, 2vw, 2rem);
+    padding-right: clamp(0.5rem, 2vw, 2rem);
   }
 
   /* Адаптивные отступы */
   .responsive-padding {
-    padding-left: clamp(0.5rem, 2.5vw, 4rem);
-    padding-right: clamp(0.5rem, 2.5vw, 4rem);
+    padding-left: clamp(0.5rem, 2vw, 2rem);
+    padding-right: clamp(0.5rem, 2vw, 2rem);
   }
 
   /* Адаптивная сетка товаров */
   .products-grid {
     display: grid;
     gap: clamp(0.5rem, 1.5vw, 1.5rem);
-    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 
   /* Адаптивные размеры карточек */
@@ -210,12 +210,12 @@
 @media screen and (min-width: 3840px) {
   .responsive-container {
     max-width: 1920px;
-    padding-left: clamp(1rem, 2vw, 3rem);
-    padding-right: clamp(1rem, 2vw, 3rem);
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   
   .products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
   }
 
@@ -224,12 +224,16 @@
   }
   
   .section-spacing {
-    padding-top: clamp(1rem, 3vh, 4rem);
-    padding-bottom: clamp(1rem, 3vh, 4rem);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .responsive-title {
-    font-size: clamp(1.25rem, 3vw, 2.5rem);
+    font-size: 2.5rem;
+  }
+  
+  .responsive-text {
+    font-size: 1.125rem;
   }
 }
 
@@ -237,12 +241,12 @@
 @media screen and (min-width: 2560px) and (max-width: 3839px) {
   .responsive-container {
     max-width: 1920px;
-    padding-left: clamp(1rem, 2vw, 3rem);
-    padding-right: clamp(1rem, 2vw, 3rem);
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   
   .products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
   }
 
@@ -251,8 +255,16 @@
   }
   
   .section-spacing {
-    padding-top: clamp(1rem, 3vh, 4rem);
-    padding-bottom: clamp(1rem, 3vh, 4rem);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .responsive-title {
+    font-size: 2.5rem;
+  }
+  
+  .responsive-text {
+    font-size: 1.125rem;
   }
 }
 
@@ -260,17 +272,30 @@
 @media screen and (min-width: 1920px) and (max-width: 2559px) {
   .responsive-container {
     max-width: 1920px;
-    padding-left: clamp(1rem, 2vw, 3rem);
-    padding-right: clamp(1rem, 2vw, 3rem);
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   
   .products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
   }
 
   .product-card-responsive {
     height: auto;
+  }
+  
+  .section-spacing {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .responsive-title {
+    font-size: 2.5rem;
+  }
+  
+  .responsive-text {
+    font-size: 1.125rem;
   }
 }
 
