@@ -688,7 +688,7 @@ const ProductDetail: React.FC = () => {
           <div className="space-y-8">
             {/* Text content */}
             <div>
-              <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>В рассрочку</h3>
+              <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Рассрочка</h3>
               
               <div className="space-y-4 mb-8 font-manrope text-muted-foreground">
                 <p>
