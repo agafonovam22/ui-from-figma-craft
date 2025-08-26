@@ -201,22 +201,15 @@ const ProductCatalog: React.FC = () => {
           </div>
         </div>
         
-        <div className="products-grid mb-6">
-          {currentProducts.slice(0, 6).map((product) => (
-            <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
-          ))}
-        </div>
-        
         <div className="products-grid">
-          {currentProducts.slice(6, 10).map((product) => (
+          {currentProducts.slice(0, 10).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
           ))}
-          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 product-card-responsive">
+          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 min-h-[200px] flex flex-col">
             <img 
               src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
               alt="Перейти в каталог"
-              className="responsive-image w-full h-full"
-              style={{ objectFit: 'cover', objectPosition: 'right' }}
+              className="responsive-image w-full flex-1 object-cover object-right"
             />
             <div className="absolute top-4 left-4 text-white font-benzin responsive-text font-normal">
               {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
