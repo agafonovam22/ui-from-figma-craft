@@ -22,7 +22,7 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId }) => 
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-[#262631] font-benzin-semibold">Вы смотрели</h2>
           </div>
-          <div className="grid grid-cols-5 gap-6">
+          <div className="grid grid-cols-5 gap-[10px]">
             {Array.from({ length: 5 }).map((_, index) => (
               <div key={index} className="animate-pulse">
                 <div className="bg-gray-200 h-48 rounded-lg mb-4"></div>
@@ -47,7 +47,7 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId }) => 
           <h2 className="text-2xl font-bold text-[#262631] font-benzin-semibold">Вы смотрели</h2>
         </div>
         
-        <div className="grid grid-cols-5 gap-6">
+        <div className="grid grid-cols-5 gap-[10px]">
           {displayProducts.map((product) => (
             <ProductCard
               key={product.id}
