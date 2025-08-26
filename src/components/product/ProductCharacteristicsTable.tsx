@@ -162,13 +162,35 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       },
       weight: {
         title: 'Вес',
-        items: {} as Record<string, string>,
+        items: {
+          'Вес Нетто, кг': '120',
+          'Вес Брутто, кг': '130'
+        } as Record<string, string>,
         keywords: ['Вес товара', 'Вес изделия', 'Вес нетто', 'Вес брутто']
       },
       warranty: {
         title: 'Гарантия и Сертификация',
-        items: {} as Record<string, string>,
+        items: {
+          'Гарантия на домашнее использование': '2 года',
+          'Страна бренда': 'Германия',
+          'Страна изготовления': 'КНР',
+          'Артикул': 'TR150',
+          'Сертификаты': 'CE, RoHS, EN957'
+        } as Record<string, string>,
         keywords: ['Гарантия', 'Сертификат', 'Сертификация']
+      },
+      additionalSpecs: {
+        title: 'Дополнительные характеристики',
+        items: {
+          'Диаметр передних валов, мм': '60',
+          'Диаметр задних валов, мм': '50',
+          'Держатель для бутылки': 'есть',
+          'Подставка под планшет': 'есть',
+          'Транспортировочные колеса': 'есть',
+          'Компенсаторы неровностей пола': 'есть',
+          'Рама': 'усиленная сталь'
+        } as Record<string, string>,
+        keywords: ['Дополнительные характеристики']
       },
       location: {
         title: 'Страна производства',
@@ -193,9 +215,9 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
 
       let categorized = false;
       
-      // Check each category except 'other', 'basic', 'console', 'pulseControl', 'workingDimensions', 'packageDimensions' (we use static data for these)
+      // Check each category except 'other', 'basic', 'console', 'pulseControl', 'workingDimensions', 'packageDimensions', 'weight', 'warranty', 'additionalSpecs' (we use static data for these)
       Object.entries(categories).forEach(([categoryKey, category]) => {
-        if (categoryKey === 'other' || categoryKey === 'basic' || categoryKey === 'console' || categoryKey === 'pulseControl' || categoryKey === 'workingDimensions' || categoryKey === 'packageDimensions' || categorized) return;
+        if (categoryKey === 'other' || categoryKey === 'basic' || categoryKey === 'console' || categoryKey === 'pulseControl' || categoryKey === 'workingDimensions' || categoryKey === 'packageDimensions' || categoryKey === 'weight' || categoryKey === 'warranty' || categoryKey === 'additionalSpecs' || categorized) return;
         
         const matchesKeyword = category.keywords.some(keyword => 
           key.toLowerCase().includes(keyword.toLowerCase())
@@ -467,6 +489,60 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     );
   };
 
+  const renderSecondThreeColumnSection = () => {
+    const weight = categorizedCharacteristics.weight;
+    const warranty = categorizedCharacteristics.warranty;
+    const additionalSpecs = categorizedCharacteristics.additionalSpecs;
+    
+    const hasWeightItems = Object.keys(weight.items).length > 0;
+    const hasWarrantyItems = Object.keys(warranty.items).length > 0;
+    const hasAdditionalItems = Object.keys(additionalSpecs.items).length > 0;
+    
+    if (!hasWeightItems && !hasWarrantyItems && !hasAdditionalItems) return null;
+
+    const renderMiniTable = (category: any, title: string) => {
+      const hasItems = Object.keys(category.items).length > 0;
+      if (!hasItems) return null;
+
+      return (
+        <div>
+          <h4 className="text-lg font-semibold mb-4 text-foreground font-manrope">
+            {title}
+          </h4>
+          <div className="space-y-0">
+            {Object.entries(category.items).map(([key, value], index) => (
+              <div key={key} className="py-2">
+                {index === 0 && <div className="border-t border-border mb-2"></div>}
+                <div className="flex justify-between items-start gap-4">
+                  <span className="text-sm font-medium text-muted-foreground flex-shrink-0">{key}:</span>
+                  <div className="text-sm text-foreground text-right">
+                    <span>{String(value).replace(/<[^>]*>/g, '').trim()}</span>
+                  </div>
+                </div>
+                <div className="mt-2 border-b border-border"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    };
+
+    return (
+      <div className="mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Column 1: Вес */}
+          {renderMiniTable(weight, 'Вес')}
+          
+          {/* Column 2: Гарантия и Сертификация */}
+          {renderMiniTable(warranty, 'Гарантия и Сертификация')}
+          
+          {/* Column 3: Дополнительные характеристики */}
+          {renderMiniTable(additionalSpecs, 'Дополнительные характеристики')}
+        </div>
+      </div>
+    );
+  };
+
   const renderCombinedBottomSection = () => {
     const locationItems = categorizedCharacteristics.location.items;
     const otherItems = categorizedCharacteristics.other.items;
@@ -576,13 +652,16 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       {/* Three column section: Контроль пульса, Габариты в рабочем состоянии, Упаковка */}
       {renderThreeColumnSection()}
       
+      {/* Second three column section: Вес, Гарантия и Сертификация, Дополнительные характеристики */}
+      {renderSecondThreeColumnSection()}
+      
       {/* Упаковка (старая версия - оставляем для обратной совместимости) */}
       {renderTable(categorizedCharacteristics.packaging, 'packaging')}
       
-      {/* Вес */}
+      {/* Вес (старая версия - оставляем для обратной совместимости) */}
       {renderTable(categorizedCharacteristics.weight, 'weight')}
       
-      {/* Гарантия и сертификация */}
+      {/* Гарантия и сертификация (старая версия - оставляем для обратной совместимости) */}
       {renderTable(categorizedCharacteristics.warranty, 'warranty')}
       
       {/* Combined bottom section: Страна производства + Дополнительные характеристики */}
