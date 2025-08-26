@@ -15,7 +15,7 @@ const EmailSubscription: React.FC = () => {
   };
 
   return (
-    <section className="w-full -mx-2 sm:-mx-4 lg:-mx-[60px]">
+    <section className="w-full -mx-4 sm:-mx-8 lg:-mx-16 xl:-mx-[60px]">
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
         <div className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 overflow-hidden relative rounded-lg" style={{ height: '300px' }}>
           <div className="py-12 relative h-full">
