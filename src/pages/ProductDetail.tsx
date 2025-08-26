@@ -78,6 +78,32 @@ const ProductDetail: React.FC = () => {
   const incrementQuantity = () => setQuantity(prev => prev + 1);
   const decrementQuantity = () => setQuantity(prev => Math.max(1, prev - 1));
 
+  // Функция для извлечения ссылки на PDF инструкцию из характеристик
+  const getInstructionPdfUrl = () => {
+    if (!product?.characteristics) return null;
+    
+    // Ищем характеристику, содержащую PDF инструкцию
+    for (const [key, value] of Object.entries(product.characteristics)) {
+      if (typeof value === 'string' && value.includes('.pdf') && value.includes('Instruktsii')) {
+        return value;
+      }
+    }
+    return null;
+  };
+
+  const handleDownloadInstruction = () => {
+    const pdfUrl = getInstructionPdfUrl();
+    if (pdfUrl) {
+      window.open(pdfUrl, '_blank', 'noopener,noreferrer');
+    } else {
+      toast({
+        title: "Инструкция недоступна",
+        description: "Инструкция для данного товара не найдена",
+        variant: "destructive",
+      });
+    }
+  };
+
   const renderTabContent = () => {
     switch (activeTab) {
       case 'description':
@@ -976,14 +1002,17 @@ const ProductDetail: React.FC = () => {
                 Услуги
               </button>
             </div>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-red-600 text-red-600 hover:bg-red-50"
-              onClick={() => window.open('http://193.164.201.197:8081/ftp_images/.../Katalogi/1.pdf', '_blank', 'noopener,noreferrer')}
-            >
-              Скачать инструкцию
-            </Button>
+            {getInstructionPdfUrl() && (
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-red-600 text-red-600 hover:bg-red-50"
+                onClick={handleDownloadInstruction}
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Скачать инструкцию
+              </Button>
+            )}
           </div>
 
           {/* Tab Content */}
