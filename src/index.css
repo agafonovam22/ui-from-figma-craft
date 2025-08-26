@@ -157,7 +157,7 @@
 
   /* Адаптивные размеры карточек */
   .product-card-responsive {
-    height: clamp(360px, 45vh, 500px);
+    height: auto;
     max-width: 100%;
     width: 100%;
   }
@@ -219,7 +219,7 @@
   }
 
   .product-card-responsive {
-    height: clamp(500px, 30vh, 600px);
+    height: auto;
   }
   
   .section-spacing {
@@ -246,7 +246,7 @@
   }
 
   .product-card-responsive {
-    height: clamp(480px, 35vh, 550px);
+    height: auto;
   }
   
   .section-spacing {
@@ -269,7 +269,7 @@
   }
 
   .product-card-responsive {
-    height: clamp(460px, 40vh, 500px);
+    height: auto;
   }
 }
 
@@ -287,7 +287,7 @@
   }
 
   .product-card-responsive {
-    height: clamp(440px, 40vh, 480px);
+    height: auto;
   }
 }
 
@@ -305,7 +305,7 @@
   }
 
   .product-card-responsive {
-    height: clamp(420px, 42vh, 460px);
+    height: auto;
   }
 }
 
@@ -323,7 +323,7 @@
   }
 
   .product-card-responsive {
-    height: clamp(400px, 45vh, 440px);
+    height: auto;
   }
 }
 
@@ -341,7 +341,7 @@
   }
 
   .product-card-responsive {
-    height: clamp(380px, 48vh, 420px);
+    height: auto;
   }
 }
 
@@ -359,7 +359,7 @@
   }
 
   .product-card-responsive {
-    height: clamp(360px, 50vh, 400px);
+    height: auto;
   }
 }
 
