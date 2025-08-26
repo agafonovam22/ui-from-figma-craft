@@ -55,12 +55,12 @@ const TopMenu: React.FC = () => {
 
   return (
     <header className="flex w-full justify-center items-center bg-[#17171E] py-0 border-b border-solid border-[rgba(255,255,255,0.10)]">
-      <div className="flex w-full max-w-[1920px] mx-auto px-4 lg:px-8 h-[53px] justify-between items-center gap-4 min-w-0">
-        <div className="flex-shrink-0">
+      <div className="flex w-full max-w-[1920px] mx-auto px-4 lg:px-8 h-[53px] justify-between items-center min-w-0">
+        <div className="flex-shrink-0 w-auto">
           <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
         </div>
         
-        <nav className="hidden md:flex items-center justify-center flex-1 max-w-[1200px] mx-auto gap-5" role="navigation" aria-label="Основная навигация">
+        <nav className="hidden md:flex items-center justify-center flex-1 max-w-[800px] mx-auto gap-3" role="navigation" aria-label="Основная навигация">
           {navigationItems.map((item, index) => (
             item.href ? (
               <Link
@@ -85,24 +85,24 @@ const TopMenu: React.FC = () => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3 max-sm:hidden flex-shrink-0">
-          <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')}>
-            Для дилеров
+        <div className="flex items-center gap-1 max-sm:hidden flex-shrink-0 w-auto max-w-[600px]">
+          <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')} className="text-[8px] px-2 py-2">
+            Дилеры
           </ActionButton>
-          <ActionButton variant="secondary" onClick={() => console.log('Suppliers clicked')}>
-            For suppliers
+          <ActionButton variant="secondary" onClick={() => console.log('Suppliers clicked')} className="text-[8px] px-2 py-2">
+            Suppliers
           </ActionButton>
           
           <a 
             href={selectedCity === 'Москва' ? "tel:+74996775632" : "tel:88003332595"} 
-            className="text-[10px] font-normal leading-[10px] gap-2 px-3 py-2.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0 whitespace-nowrap"
+            className="text-[8px] font-normal leading-[8px] px-2 py-2 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0 whitespace-nowrap"
           >
             {selectedCity === 'Москва' ? '+7 499 677 56 32' : '8 800 333 25 95'}
           </a>
           
           <CallRequestDialog>
-            <ActionButton variant="danger">
-              Заказать звонок
+            <ActionButton variant="danger" className="text-[8px] px-2 py-2">
+              Звонок
             </ActionButton>
           </CallRequestDialog>
         </div>
