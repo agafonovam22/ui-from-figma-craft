@@ -186,7 +186,7 @@ const ProductDetail: React.FC = () => {
       case 'reviews':
         return (
           <div>
-            <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Отзывы (10)</h3>
+            <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Отзывы</h3>
             <div className="font-manrope grid lg:grid-cols-3 gap-8">
               {/* Список отзывов */}
               <div className="lg:col-span-2 space-y-6">
@@ -975,7 +975,7 @@ const ProductDetail: React.FC = () => {
                 }`}
                 onClick={() => setActiveTab('reviews')}
               >
-                Отзывы (10)
+                Отзывы
               </button>
               <button 
                 className={`pb-2 font-medium transition-colors ${

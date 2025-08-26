@@ -467,7 +467,7 @@ const ProductCard: React.FC = () => {
                 value="reviews" 
                 className="border-b-2 border-transparent data-[state=active]:border-[#F53B49] data-[state=active]:text-[#F53B49] bg-transparent rounded-none px-4 py-3"
               >
-                Отзывы (10)
+                Отзывы
               </TabsTrigger>
               <TabsTrigger 
                 value="delivery" 
@@ -1124,7 +1124,7 @@ const ProductCard: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Left column - Reviews */}
                 <div className="lg:col-span-2 space-y-6">
-                  <h2 className="text-2xl font-bold text-[#262631]">Отзывы (10)</h2>
+                  <h2 className="text-2xl font-bold text-[#262631]">Отзывы</h2>
                   
                   {/* Reviews list */}
                   <div className="space-y-8">
