@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
+import ViewedProducts from '@/components/ViewedProducts';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb";
 import { useCart } from '@/contexts/CartContext';
 import ProductHeader from '@/components/product/ProductHeader';
@@ -170,6 +171,7 @@ const ProductDetail: React.FC = () => {
                 </div>
               )}
             </div>
+            <ViewedProducts currentProductId={id} />
             <EmailSubscription />
           </div>
         );
@@ -181,7 +183,8 @@ const ProductDetail: React.FC = () => {
               characteristics={product.characteristics}
               productName={product.name}
               productId={id}
-            />
+             />
+             <ViewedProducts currentProductId={id} />
              <EmailSubscription />
            </div>
         );
@@ -307,6 +310,7 @@ const ProductDetail: React.FC = () => {
                 </button>
               </div>
             </div>
+            <ViewedProducts currentProductId={id} />
             <EmailSubscription />
           </div>
         );
