@@ -170,7 +170,9 @@ const ProductDetail: React.FC = () => {
                 </div>
               )}
             </div>
-            <EmailSubscription />
+            <div className="mr-[-150px]">
+              <EmailSubscription />
+            </div>
           </div>
         );
       case 'specifications':
