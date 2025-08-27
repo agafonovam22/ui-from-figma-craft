@@ -158,14 +158,14 @@ const Services: React.FC = () => {
       id: 4,
       title: 'Рассрочка',
       description: 'Вы можете оформить рассрочку сроком до 12 месяцев, без переплат, без первоначального взноса, оставьте заявку и менеджеры банков-партнеров свяжутся с вами.',
-      backgroundImage: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png',
+      backgroundImage: '/lovable-uploads/78546568-d220-4d08-b15c-1004af3af240.png',
       buttonText: 'Перейти'
     },
     {
       id: 5,
       title: 'Демонтаж и переезд',
       description: 'Также вы можете заказать услуги по перевозке спортивного оборудования с полным демонтажом и сборкой на новом месте. Хотите перевезти свой тренажер в новую квартиру или загородный дом - это к нам!',
-      backgroundImage: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
+      backgroundImage: '/lovable-uploads/8e53f68c-72c5-4c11-9294-e9fc0a82c327.png',
       buttonText: 'Перейти'
     }
   ];
