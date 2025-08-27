@@ -7,6 +7,7 @@ import { CartProvider } from "@/contexts/CartContext";
 import { FavoritesProvider } from "@/contexts/FavoritesContext";
 import { ComparisonProvider } from "@/contexts/ComparisonContext";
 import ScrollToTop from "./components/ScrollToTop";
+import DevPreviewShell, { DevPreviewToggle } from "./components/DevPreviewShell";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import UslugiServices from "./pages/UslugiServices";
@@ -43,16 +44,13 @@ import CompanyNews from "./pages/CompanyNews";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <CartProvider>
-        <FavoritesProvider>
-          <ComparisonProvider>
-            <div className="w-full max-w-[1920px] mx-auto">
-              <BrowserRouter>
-                <ScrollToTop />
-                <Routes>
+const isDevelopment = import.meta.env.DEV;
+
+const AppContent = () => (
+  <div className="w-full max-w-[1920px] mx-auto">
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/services" element={<Services />} />
                   
@@ -85,13 +83,31 @@ const App = () => (
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/public-offer" element={<PublicOffer />} />
                   <Route path="/company-news" element={<CompanyNews />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </BrowserRouter>
-              <Toaster />
-              <Sonner />
-            </div>
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+      <Toaster />
+      <Sonner />
+    </div>
+);
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <CartProvider>
+        <FavoritesProvider>
+          <ComparisonProvider>
+            {isDevelopment ? (
+              <>
+                <DevPreviewShell>
+                  <AppContent />
+                </DevPreviewShell>
+                <DevPreviewToggle />
+              </>
+            ) : (
+              <AppContent />
+            )}
           </ComparisonProvider>
         </FavoritesProvider>
       </CartProvider>
