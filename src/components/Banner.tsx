@@ -15,7 +15,7 @@ const Banner: React.FC = () => {
     const checkResolution = () => {
       const width = window.innerWidth;
       console.log('Current window width:', width); // debug
-      setIsFullHD(width >= 1800); // понизил порог
+      setIsFullHD(width >= 1400); // еще больше понизил порог
     };
     
     checkResolution();
