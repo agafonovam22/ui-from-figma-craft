@@ -374,20 +374,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 </span>
               )}
               {product.original_price && product.original_price > product.price && (
-                <span className="text-gray-400 group-hover:text-white line-through text-sm transition-colors duration-300">
-                  {product.original_price.toLocaleString()} ₽
+                <span className="text-gray-400 group-hover:text-white line-through text-sm md:text-xs transition-colors duration-300">
+                  {product.original_price.toLocaleString()}&nbsp;₽
                 </span>
               )}
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
-            <span className="text-sm tablet-product-price font-bold text-gray-900 group-hover:text-white transition-colors duration-300">
-              {product.price.toLocaleString()} ₽
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-sm md:text-xs tablet-product-price font-bold text-gray-900 group-hover:text-white transition-colors duration-300 flex-shrink-0">
+              {product.price.toLocaleString()}&nbsp;₽
             </span>
             
             <Button 
-              className="bg-[#F53B49] hover:bg-[#e63946] text-white px-4 py-2 tablet-buy-button text-sm"
+              className="bg-[#F53B49] hover:bg-[#e63946] text-white px-3 py-1.5 md:px-2 md:py-1 tablet-buy-button text-sm md:text-xs flex-shrink-0"
               onClick={handleBuyClick}
             >
               Купить
