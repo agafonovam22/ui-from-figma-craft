@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { extractBrandFromProductName } from '@/utils/extractBrand';
+import { getBrandName } from '@/utils/brandMapping';
 
 interface ProductCharacteristicsTableProps {
   characteristics: any;
@@ -79,12 +79,16 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       'Преимущество 8 Фото:'
     ];
 
+    // Get brand name from characteristics or fallback to static
+    const brandId = characteristics['Бренд (id)'];
+    const brandName = getBrandName(brandId) || 'CardioPower';
+
     const categories = {
       basic: {
         title: 'Основные характеристики',
         items: {
           'Тип продукции': 'Беговые дорожки для дома',
-          'Бренд': 'CardioPower',
+          'Бренд': brandName,
           'Назначение': 'реабилитационная',
           'Тип двигателя': 'переменного тока AC',
           'Мощность двигателя, л.с.': '3.3',
@@ -248,10 +252,10 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
       let displayKey = key;
       let displayValue = value;
       
-      // Extract brand from product name
+      // Extract brand from product name or use brand mapping
       if (key === 'Бренд (id)') {
         displayKey = 'Бренд';
-        displayValue = extractBrandFromProductName(productName) || value;
+        displayValue = getBrandName(value) || value;
       }
       
       return {

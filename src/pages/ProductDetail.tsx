@@ -17,6 +17,7 @@ import { useQuery } from '@tanstack/react-query';
 import { optimizeImageUrl, preloadImage } from '@/utils/imageOptimization';  
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { extractBrandFromProductName } from '@/utils/extractBrand';
+import { getBrandName, isTreadmill } from '@/utils/brandMapping';
 import ProductCharacteristicsTable from '@/components/product/ProductCharacteristicsTable';
 import SupportCitySelector from '@/components/SupportCitySelector';
 import { useViewedProducts } from '@/hooks/useViewedProducts';
