@@ -1,13 +1,26 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Banner: React.FC = () => {
+  const [isFullHD, setIsFullHD] = useState(false);
+  
   const images = [
     '/lovable-uploads/e1a82eb1-a6f1-4c96-bbe5-5d7207e98494.png',
     '/lovable-uploads/a24ad4fc-e1b3-4a45-8910-5901ff3df18a.png'
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const checkResolution = () => {
+      setIsFullHD(window.innerWidth >= 1920);
+    };
+    
+    checkResolution();
+    window.addEventListener('resize', checkResolution);
+    
+    return () => window.removeEventListener('resize', checkResolution);
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -22,10 +35,23 @@ const Banner: React.FC = () => {
   };
 
   return (
-    <section className="w-full banner-fullhd-section">
+    <section 
+      className="w-full" 
+      style={{
+        paddingTop: isFullHD ? '50px' : '0',
+        paddingBottom: isFullHD ? '100px' : '0'
+      }}
+    >
       <div className="max-w-[1800px] mx-auto px-[30px]">
         <div 
-          className="overflow-hidden relative rounded-lg banner-fullhd"
+          className="overflow-hidden relative rounded-lg"
+          style={{
+            width: isFullHD ? '1660px' : 'auto',
+            height: isFullHD ? '537px' : '400px',
+            margin: isFullHD ? '0 auto' : 'auto',
+            backgroundColor: isFullHD ? 'green' : 'yellow', // debug
+            border: isFullHD ? '5px solid blue' : '5px solid red' // debug
+          }}
         >
           {/* Изображение на всю ширину */}
           <div className="relative h-full">
