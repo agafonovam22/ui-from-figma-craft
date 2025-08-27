@@ -363,12 +363,12 @@ const Support: React.FC = () => {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-4">
                     {/* Left Column */}
                     <div className="bg-gray-50 p-6 rounded-lg md:p-4">
-                      <h4 className="mb-4 pb-3 border-b md:mb-3" style={{
+                      <h4 className="mb-4 pb-3 border-b md:mb-2 md:pb-2" style={{
                         fontFamily: 'Benzin-Medium',
                         fontSize: '16px',
                         fontWeight: '500'
                       }}>Заказ от 30 001₽</h4>
-                      <div className="space-y-4 md:space-y-3">
+                      <div className="space-y-4 md:space-y-2">
                         <div className="flex justify-between items-center py-3 border-b md:py-2 md:flex-col md:items-start md:gap-2">
                           <span style={{
                             color: 'var(--Dark-Grey, #262631)',
@@ -419,7 +419,7 @@ const Support: React.FC = () => {
 
                     {/* Right Column */}
                     <div className="bg-gray-50 p-6 rounded-lg h-fit md:p-4">
-                      <h4 className="mb-4 pb-3 border-b md:mb-3" style={{
+                      <h4 className="mb-4 pb-3 border-b md:mb-2 md:pb-2" style={{
                         fontFamily: 'Benzin-Medium',
                         fontSize: '16px',
                         fontWeight: '500'
@@ -453,7 +453,7 @@ const Support: React.FC = () => {
                {/* Самовывоз со склада */}
               <div className="flex gap-8 md:flex-col md:gap-4">
                 <div className="w-80 flex-shrink-0 md:w-full">
-                  <h3 className="mb-6 md:mb-4" style={{
+                  <h3 className="mb-6 md:mb-2" style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Самовывоз со склада</h3>
@@ -519,7 +519,7 @@ const Support: React.FC = () => {
               {/* Доставка по России */}
               <div className="flex gap-8 mb-8 md:flex-col md:gap-4">
                 <div className="w-80 flex-shrink-0 md:w-full">
-                  <h4 className="mb-4" style={{
+                  <h4 className="mb-4 md:mb-2" style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Доставка по России</h4>
@@ -527,7 +527,7 @@ const Support: React.FC = () => {
                 <div className="flex-1 md:w-full">
                   <div className="grid grid-cols-2 gap-[10px] md:grid-cols-1 md:gap-4">
                     <div className="bg-gray-100 p-6 rounded-lg md:p-4">
-                      <p className="text-gray-700 mb-4 md:text-sm md:mb-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      <p className="text-gray-700 mb-4 md:text-sm md:mb-2" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Определяется сроками доставки транспортной компании. Доставка товара на склад транспортной компании осуществляется в течение 1-2 дней с момента заказа, в режиме работы: Понедельник - Пятница
                       </p>
                       <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
