@@ -397,27 +397,28 @@ const Catalog: React.FC = () => {
     <>
       <Header onSearch={handleSearchQuery} />
       <div className="min-h-screen bg-white">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-container py-2">
-          {/* Breadcrumbs */}
-          <Breadcrumb className="mb-6">
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/">Главная</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>
-                  {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
-                </BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div>
+        {/* Unified container that matches header alignment */}
+        <div className="w-full justify-center flex bg-white">
+          <div className="w-full max-w-[1800px] px-2 sm:px-4 lg:px-[60px] tablet-header">
+            {/* Breadcrumbs */}
+            <Breadcrumb className="mb-6 py-2">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/">Главная</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>
+                    {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
+                  </BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
 
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] catalog-container py-2">
-          <div className="flex catalog-layout gap-4 lg:gap-8">
+            {/* Catalog Layout */}
+            <div className="flex catalog-layout gap-4 lg:gap-6 tablet-catalog-layout">
             {/* Left Sidebar - Filters */}
             <div className="catalog-filters">
               <CatalogFilters
@@ -512,10 +513,7 @@ const Catalog: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="tablet-section">
-        <EmailSubscription />
-      </div>
-      <div className="h-[70px]"></div>
+      <EmailSubscription />
       <Footer />
     </>
   );

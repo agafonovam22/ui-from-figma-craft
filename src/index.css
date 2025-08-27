@@ -163,13 +163,32 @@
     padding-right: 24px;
   }
   
-  .catalog-layout {
-    gap: 16px;
+  .catalog-layout,
+  .tablet-catalog-layout {
+    gap: 12px;
   }
   
-  .catalog-filters {
+  .catalog-filters,
+  .tablet-catalog-filters-container {
     width: 200px;
     flex-shrink: 0;
+  }
+  
+  /* Reduce filter title size on tablet */
+  .tablet-filter-title {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+  
+  /* Compact filters wrapper on tablet */
+  .tablet-filters-wrapper {
+    padding: 16px;
+  }
+  
+  /* Reduce filter section title size */
+  .tablet-filter-section-title {
+    font-size: 18px;
+    margin-bottom: 16px;
   }
 }
 

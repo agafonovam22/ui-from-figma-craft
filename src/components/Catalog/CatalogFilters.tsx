@@ -105,7 +105,7 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
   };
 
   return (
-    <div className="w-64 flex-shrink-0 tablet-catalog-filters-container">
+    <div className="w-64 lg:w-64 md:w-52 flex-shrink-0 tablet-catalog-filters-container">
       <h1 className="text-[48px] font-semibold text-[#262631] mb-6 tablet-filter-title" style={{fontFamily: 'Benzin-Semibold'}}>Каталог</h1>
       
       {/* Filters Container */}
