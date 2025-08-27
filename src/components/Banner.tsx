@@ -22,7 +22,7 @@ const Banner: React.FC = () => {
   };
 
   return (
-    <section className="w-full">
+    <section className="w-full pt-[50px] pb-[100px]">
       <div className="max-w-[1800px] mx-auto px-[30px]">
         <div 
           className="overflow-hidden relative rounded-lg h-[400px] banner-fullhd"
