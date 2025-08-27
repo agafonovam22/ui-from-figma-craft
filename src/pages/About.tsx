@@ -759,7 +759,7 @@ const About: React.FC = () => {
                   В чем причина нашего успеха?
                 </h2>
                 
-                <p className="text-gray-700 text-base mb-6 leading-relaxed font-manrope text-justify">
+                <p className="text-gray-700 text-base mb-6 leading-relaxed font-manrope text-justify md:text-sm md:leading-normal md:px-4">
                   На сегодняшний день в каталоге Wellfitness представлены лучшие мировые бренды спортивного оборудования, среди которых Sole Fitness, Nautilus Fitness, Bowflex, CardioPower, PROSKI Simulator, Eclipse и др. Продукция этих марок отличается безупречным балансом качества и функциональности, возглавляет ведущие мировые рейтинги и пользуется доверием покупателей по всему миру. Если вы ищете надежного поставщика спортивного оборудования – мы будем рады видеть вас в числе наших партнеров и готовы предложить лучшие условия для выгодного дилерского сотрудничества!
                 </p>
 
