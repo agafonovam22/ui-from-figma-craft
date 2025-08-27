@@ -373,28 +373,28 @@ const Services: React.FC = () => {
           {activeTab === 'fitness-clubs' && (
             <div className="space-y-12">
               {/* First section with image and text */}
-              <div className="flex gap-8 items-start">
-                <div className="flex-1">
+              <div className="flex gap-8 items-start md:flex-col lg:flex-row">
+                <div className="flex-1 md:flex-none md:w-full lg:flex-1">
                   <img 
                     src="/lovable-uploads/fcb1f59e-5de5-4faa-b202-809020318b96.png"
                     alt="Техник обслуживает тренажер"
-                    className="w-full h-[295px] object-cover rounded-lg"
+                    className="w-full h-[295px] object-cover rounded-lg md:h-[200px]"
                   />
                 </div>
-                <div className="flex-1">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <div className="flex-1 md:flex-none md:w-full lg:flex-1">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6 md:text-2xl md:mb-4">
                     <span style={{color: '#778093'}}>Обслуживание</span> фитнес-клубов
                   </h2>
                   {/* First text container */}
-                  <div className="bg-gray-50 p-6 rounded-lg mb-6">
-                    <p className="text-gray-600 font-manrope">
+                  <div className="bg-gray-50 p-6 rounded-lg mb-6 md:p-4 md:mb-4">
+                    <p className="text-gray-600 font-manrope md:text-sm">
                       Для владельцев фитнес-клубов профессиональное обслуживание оборудования – это не просто формальность, а разумная инвестиция в долгосрочную экономию. В отличие от начинающих предпринимателей, крупные сети и опытные клубы хорошо знают: регулярный сервис сокращает затраты на дорогостоящий ремонт и продлевает срок службы тренажеров.
                     </p>
                   </div>
                   
                   {/* Second text container */}
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <p className="text-gray-600 font-manrope">
+                  <div className="bg-gray-50 p-6 rounded-lg md:p-4">
+                    <p className="text-gray-600 font-manrope md:text-sm">
                       Как и в автомобильной индустрии, гарантийные обязательства в фитнес-сфере строго соблюдаются ведущими производителями. Однако ответственность за правильную эксплуатацию и своевременное техническое обслуживание лежит на владельце оборудования.
                     </p>
                   </div>
