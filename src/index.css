@@ -146,3 +146,12 @@
 .filter-red {
   filter: brightness(0) saturate(100%) invert(28%) sepia(87%) saturate(3789%) hue-rotate(347deg) brightness(99%) contrast(94%);
 }
+
+/* Full HD Banner Styles */
+@media (min-width: 1920px) {
+  .banner-fullhd {
+    width: 1660px !important;
+    height: 537px !important;
+    margin: 0 auto !important;
+  }
+}
