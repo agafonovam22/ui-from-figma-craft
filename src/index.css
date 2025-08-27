@@ -495,14 +495,13 @@
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  /* Promotions and offers adjustments for tablet */
+  /* Promotions and offers + Best ideas adjustments for tablet - maintain rectangular proportions */
   .w-80 {
-    width: 400px !important;
-    height: 160px !important;
+    width: 280px !important;
   }
 
   .h-\\[444px\\] {
-    height: 160px !important;
+    height: 380px !important;
   }
 
   .flex.gap-\\[10px\\] {
