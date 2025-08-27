@@ -241,24 +241,6 @@ const ProductDetail: React.FC = () => {
                       </p>
                     </div>
                   </div>
-                  
-                  {/* Изображения в отзыве */}
-                  <div className="flex space-x-3 ml-15">
-                    <div className="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden">
-                      <img 
-                        src="/lovable-uploads/f35fe135-ca23-48f8-8490-aa26a337a8f5.png" 
-                        alt="Отзыв фото 1" 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden">
-                      <img 
-                        src="/lovable-uploads/f9620881-afa2-4fc3-81cb-d1956b8a6691.png" 
-                        alt="Отзыв фото 2" 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
                 </div>
 
                 {/* Отзыв 2 */}
