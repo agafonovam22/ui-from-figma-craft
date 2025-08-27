@@ -498,6 +498,13 @@
   /* Promotions and offers adjustments for tablet */
   .w-80 {
     width: 400px !important;
+  }
+
+  /* PhotoSwiper navigation arrows - always visible on tablet */
+  .group button.absolute.left-1\\/2,
+  .group button.absolute.right-1\\/2 {
+    opacity: 1 !important;
+  }
     height: 160px !important;
   }
 
