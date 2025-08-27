@@ -25,7 +25,7 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
 }) => (
   <Link
     to={`/catalog?category=${category.id}`}
-    className={`flex h-[46px] items-center gap-2 bg-[#262631] px-5 py-3 rounded-[5px] max-sm:whitespace-nowrap max-sm:px-4 max-sm:py-3 hover:bg-[#3a3a47] transition-colors group flex-shrink-0`}
+    className={`flex h-[46px] items-center gap-2 bg-[#262631] px-5 py-3 tablet-category-button rounded-[5px] max-sm:whitespace-nowrap max-sm:px-4 max-sm:py-3 hover:bg-[#3a3a47] transition-colors group flex-shrink-0`}
     aria-label={`Категория: ${category.label}`}
   >
     {category.icon && (
@@ -33,7 +33,7 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
         {category.icon}
       </span>
     )}
-    <span className="text-sm font-normal leading-[14px] text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
+    <span className="text-sm tablet-text-sm font-normal leading-[14px] text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
       {category.label}
     </span>
   </Link>
@@ -184,7 +184,7 @@ const BottomMenu: React.FC = () => {
 
   return (
     <nav 
-      className="flex w-full justify-center items-center gap-[5px] bg-[#262631] px-2 sm:px-4 lg:px-[60px] py-1 max-md:overflow-x-auto"
+      className="flex w-full justify-center items-center gap-[5px] bg-[#262631] px-2 sm:px-4 lg:px-[60px] tablet-bottom-menu-scroll py-1 max-md:overflow-x-auto"
       style={{ padding: '4px 60px' }}
       role="navigation"
       aria-label="Категории товаров"

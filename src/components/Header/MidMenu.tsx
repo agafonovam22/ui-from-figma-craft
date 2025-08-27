@@ -23,7 +23,7 @@ const Logo: React.FC = () => (
 const CatalogButton: React.FC = () => (
   <Link
     to="/catalog"
-    className="flex justify-center items-center gap-2 bg-[#F53B49] px-5 py-3 rounded-[5px] hover:bg-[#e63946] transition-colors whitespace-nowrap h-[41px] flex-shrink-0"
+    className="flex justify-center items-center gap-2 bg-[#F53B49] px-5 py-3 tablet-catalog-button rounded-[5px] hover:bg-[#e63946] transition-colors whitespace-nowrap h-[41px] flex-shrink-0"
     aria-label="Открыть каталог товаров"
   >
     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +37,7 @@ const CatalogButton: React.FC = () => (
       <path d="M5 10H8V13H5V10Z" fill="white" />
       <path d="M10 10H13V13H10V10Z" fill="white" />
     </svg>
-    <span className="text-white text-sm font-normal leading-[14px]">Каталог</span>
+    <span className="text-white text-sm tablet-text-sm font-normal leading-[14px]">Каталог</span>
   </Link>
 );
 
@@ -148,12 +148,12 @@ const MidMenu: React.FC<MidMenuProps> = ({ onSearch }) => {
   };
 
   return (
-    <section className="flex w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 lg:px-[60px] py-3 max-md:px-5 max-sm:px-4">
-      <div className="flex w-full max-w-[1800px] h-[65px] justify-between items-center gap-4 flex-shrink-0">
+    <section className="flex w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 lg:px-[60px] tablet-header-spacing py-3 max-md:px-5 max-sm:px-4">
+      <div className="flex w-full max-w-[1800px] h-[65px] justify-between items-center gap-4 tablet-mid-menu-gap flex-shrink-0">
         <Logo />
         
         <SearchPopup isOpen={isPopupOpen} onOpenChange={setIsPopupOpen}>
-          <div className="flex items-center gap-2.5 flex-1 max-w-[750px]" onClick={handleClick}>
+          <div className="flex items-center gap-2.5 tablet-mid-menu-gap flex-1 max-w-[750px] tablet-search-bar" onClick={handleClick}>
             <CatalogButton />
             <SearchBar onSearch={onSearch} />
           </div>

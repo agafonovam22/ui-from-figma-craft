@@ -143,7 +143,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       className="block"
     >
       <div 
-        className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
+        className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 tablet-product-card"
         style={{ 
           height: '460px', 
           backgroundColor: '#F8F8FD',
@@ -213,7 +213,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
       {/* Слайдер изображений */}
       <div 
-        className="relative h-60 overflow-hidden transition-colors duration-300"
+        className="relative h-60 tablet-product-card-image overflow-hidden transition-colors duration-300"
         style={{ backgroundColor: 'transparent' }}
       >
         {/* Декоративный элемент в правом верхнем углу */}
@@ -283,7 +283,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="mx-4 h-px bg-gray-200 mt-7"></div>
 
         {/* Информация о товаре */}
-        <div className="p-4 pb-2.5 mt-4 flex flex-col justify-between transition-colors duration-300" style={{ height: '160px', backgroundColor: 'transparent' }}>
+        <div className="p-4 pb-2.5 mt-4 flex flex-col justify-between transition-colors duration-300 tablet-product-card-info" style={{ height: '160px', backgroundColor: 'transparent' }}>
           <div>
             {/* Статус наличия */}
             {(() => {
@@ -324,7 +324,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             })()}
 
             {/* Название товара */}
-            <h3 className="text-gray-900 group-hover:text-white text-sm mb-3 line-clamp-2 leading-relaxed transition-colors duration-300">
+            <h3 className="text-gray-900 group-hover:text-white text-sm tablet-product-title mb-3 line-clamp-2 leading-relaxed transition-colors duration-300">
               {(() => {
                 const name = product.name;
                 // Ищем бренды в названии
@@ -382,12 +382,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-sm font-bold text-gray-900 group-hover:text-white transition-colors duration-300">
+            <span className="text-sm tablet-product-price font-bold text-gray-900 group-hover:text-white transition-colors duration-300">
               {product.price.toLocaleString()} ₽
             </span>
             
             <Button 
-              className="bg-[#F53B49] hover:bg-[#e63946] text-white px-4 py-2"
+              className="bg-[#F53B49] hover:bg-[#e63946] text-white px-4 py-2 tablet-buy-button"
               onClick={handleBuyClick}
             >
               Купить
