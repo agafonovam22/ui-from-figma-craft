@@ -329,6 +329,17 @@
     padding-right: 24px;
   }
   
+  /* Banner tablet adaptations */
+  .tablet-banner-container {
+    padding-left: 24px;
+    padding-right: 24px;
+    max-width: 100% !important;
+  }
+  
+  .tablet-banner-carousel {
+    height: 300px;
+  }
+
   /* Product cards tablet adaptations */
   .tablet-product-grid {
     grid-template-columns: repeat(3, 1fr);

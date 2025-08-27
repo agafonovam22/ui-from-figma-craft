@@ -23,8 +23,8 @@ const Banner: React.FC = () => {
 
   return (
     <section className="w-full">
-      <div className="max-w-[1800px] mx-auto px-[30px]">
-        <div className="overflow-hidden relative rounded-lg" style={{ height: '400px' }}>
+      <div className="max-w-[1800px] mx-auto px-[30px] tablet-banner-container">
+        <div className="overflow-hidden relative rounded-lg tablet-banner-carousel" style={{ height: '400px' }}>
           {/* Изображение на всю ширину */}
           <div className="relative h-full">
             <img 
