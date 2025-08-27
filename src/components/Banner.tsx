@@ -14,7 +14,7 @@ const Banner: React.FC = () => {
   useEffect(() => {
     const checkResolution = () => {
       const width = window.innerWidth;
-      setIsFullHD(width >= 1800); // вернул нормальный порог для Full HD
+      setIsFullHD(width >= 1400); // вернул рабочий порог
     };
     
     checkResolution();
