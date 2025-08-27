@@ -47,9 +47,9 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
     <>
       {/* Products Grid with Filter Component for tablets */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 mb-8 tablet-catalog-grid">
-        {/* Filter Component - only visible on tablets */}
+        {/* Filter Component - only visible on tablets, spans full height */}
         {FilterComponent && (
-          <div className="hidden md:block md:col-span-1 md:row-span-4">
+          <div className="hidden md:block md:col-span-1" style={{gridRow: `1 / ${Math.ceil((products.length + 1) / 3) + 1}`}}>
             {FilterComponent}
           </div>
         )}
