@@ -498,12 +498,20 @@
   /* Promotions and offers adjustments for tablet */
   .w-80 {
     width: 400px !important;
+    height: 160px !important;
   }
 
-  /* PhotoSwiper navigation arrows - always visible on tablet */
-  .group button.absolute.left-1\\/2,
-  .group button.absolute.right-1\\/2 {
-    opacity: 1 !important;
+  .h-\\[444px\\] {
+    height: 160px !important;
+  }
+
+  .flex.gap-\\[10px\\] {
+    gap: 12px !important;
+  }
+
+  .px-\\[30px\\] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
   /* General responsive adjustments */
@@ -543,100 +551,6 @@
   .py-8 {
     padding-top: 16px !important;
     padding-bottom: 16px !important;
-  }
-
-  /* About page adaptations for tablet */
-  .tablet-about-grid {
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
-  }
-
-  .tablet-about-image {
-    height: 250px !important;
-  }
-
-  .tablet-about-stats {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px !important;
-  }
-
-  .tablet-about-stat-card {
-    padding: 20px !important;
-  }
-
-  .tablet-about-advantages {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px !important;
-  }
-
-  .tablet-about-text {
-    font-size: 14px !important;
-    line-height: 1.5 !important;
-  }
-
-  .tablet-about-title {
-    font-size: 24px !important;
-    margin-bottom: 16px !important;
-  }
-
-  /* Statistics banner for tablet */
-  .tablet-about-stats-banner {
-    height: auto !important;
-    flex-direction: column !important;
-  }
-
-  .tablet-about-banner-image {
-    height: 200px !important;
-  }
-
-  .tablet-about-overlay {
-    position: static !important;
-    width: 100% !important;
-    margin-top: 0 !important;
-    padding: 20px !important;
-  }
-
-  .tablet-stats-content.absolute {
-    position: static !important;
-    width: 100% !important;
-  }
-
-  .tablet-about-stats-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
-  }
-
-  .tablet-about-stat-number {
-    font-size: 24px !important;
-  }
-
-  .tablet-about-stat-label {
-    font-size: 12px !important;
-  }
-
-  /* Geography section for tablet */
-  .tablet-about-geography {
-    padding-top: 24px !important;
-    padding-bottom: 24px !important;
-  }
-
-  .tablet-about-map {
-    margin-top: 16px !important;
-  }
-
-  /* Today section for tablet */
-  .tablet-about-today {
-    padding-top: 32px !important;
-    padding-bottom: 32px !important;
-  }
-
-  .tablet-about-advantage-card {
-    padding: 16px !important;
-  }
-
-  .tablet-about-advantage-title {
-    font-size: 16px !important;
-    margin-bottom: 12px !important;
   }
 }
 
