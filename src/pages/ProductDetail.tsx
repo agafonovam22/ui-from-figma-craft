@@ -894,16 +894,18 @@ const ProductDetail: React.FC = () => {
                       backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
                     }}
                   ></div>
-                  <div className="relative z-10 px-6 pt-6 pb-[10px] h-full flex flex-col justify-end text-white">
-                    <div className="group-hover:mb-3 transition-all duration-300">
+                  <div className="relative z-10 h-full flex flex-col justify-end text-white">
+                    <div className="px-6 pb-[10px] group-hover:mb-3 transition-all duration-300">
                       <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Доставка</h4>
                       <p className="text-sm opacity-90 font-manrope">
                         У нас работают высококвалифицированные сотрудники со стажем более 5 лет. Мы оперативно доставляем заказы наших клиентов в любую точку г. Москвы и Санкт-Петербурга, а также других регионов России.
                       </p>
                     </div>
-                    <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0" style={{ fontFamily: 'Benzin-Regular' }}>
-                      Перейти →
-                    </button>
+                    <div className="px-6 pb-[10px]">
+                      <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-all duration-300" style={{ fontFamily: 'Benzin-Regular' }}>
+                        Перейти →
+                      </button>
+                    </div>
                   </div>
                 </div>
 
@@ -915,16 +917,18 @@ const ProductDetail: React.FC = () => {
                       backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
                     }}
                   ></div>
-                  <div className="relative z-10 px-6 pt-6 pb-[10px] h-full flex flex-col justify-end text-white">
-                    <div className="group-hover:mb-3 transition-all duration-300">
+                  <div className="relative z-10 h-full flex flex-col justify-end text-white">
+                    <div className="px-6 pb-[10px] group-hover:mb-3 transition-all duration-300">
                       <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Сборка</h4>
                       <p className="text-sm opacity-90 font-manrope">
                         Наша компания оказывает полный спектр услуг по подъему и сборке оборудования. Сотрудники оснащены всем необходимым инструментом и имеют огромный опыт.
                       </p>
                     </div>
-                    <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0" style={{ fontFamily: 'Benzin-Regular' }}>
-                      Перейти →
-                    </button>
+                    <div className="px-6 pb-[10px]">
+                      <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-all duration-300" style={{ fontFamily: 'Benzin-Regular' }}>
+                        Перейти →
+                      </button>
+                    </div>
                   </div>
                 </div>
 
@@ -936,16 +940,18 @@ const ProductDetail: React.FC = () => {
                       backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
                     }}
                   ></div>
-                  <div className="relative z-10 px-6 pt-6 pb-[10px] h-full flex flex-col justify-end text-white">
-                    <div className="group-hover:mb-3 transition-all duration-300">
+                  <div className="relative z-10 h-full flex flex-col justify-end text-white">
+                    <div className="px-6 pb-[10px] group-hover:mb-3 transition-all duration-300">
                       <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Различные способы оплаты</h4>
                       <p className="text-sm opacity-90 font-manrope">
                         У всех филиалах нашей компании присутствуют терминалы для безналичной оплаты, вы можете оплатить свою покупку различными способами: наличными, банковской картой, через QR код или оплатить товар по счету.
                       </p>
                     </div>
-                    <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0" style={{ fontFamily: 'Benzin-Regular' }}>
-                      Перейти →
-                    </button>
+                    <div className="px-6 pb-[10px]">
+                      <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-all duration-300" style={{ fontFamily: 'Benzin-Regular' }}>
+                        Перейти →
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -960,16 +966,18 @@ const ProductDetail: React.FC = () => {
                       backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
                     }}
                   ></div>
-                  <div className="relative z-10 px-6 pt-6 pb-[10px] h-full flex flex-col justify-end text-white">
-                    <div className="group-hover:mb-3 transition-all duration-300">
+                  <div className="relative z-10 h-full flex flex-col justify-end text-white">
+                    <div className="px-6 pb-[10px] group-hover:mb-3 transition-all duration-300">
                       <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Рассрочка</h4>
                       <p className="text-sm opacity-90 font-manrope">
                         Вы можете оформить рассрочку сроком до 12 месяцев, без переплат, без первоначального взноса, оставьте заявку и менеджеры банков-партнеров свяжутся с Вами.
                       </p>
                     </div>
-                    <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0" style={{ fontFamily: 'Benzin-Regular' }}>
-                      Перейти →
-                    </button>
+                    <div className="px-6 pb-[10px]">
+                      <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-all duration-300" style={{ fontFamily: 'Benzin-Regular' }}>
+                        Перейти →
+                      </button>
+                    </div>
                   </div>
                 </div>
 
@@ -981,16 +989,18 @@ const ProductDetail: React.FC = () => {
                       backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
                     }}
                   ></div>
-                  <div className="relative z-10 px-6 pt-6 pb-[10px] h-full flex flex-col justify-end text-white">
-                    <div className="group-hover:mb-3 transition-all duration-300">
+                  <div className="relative z-10 h-full flex flex-col justify-end text-white">
+                    <div className="px-6 pb-[10px] group-hover:mb-3 transition-all duration-300">
                       <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Демонтаж и переезд</h4>
                       <p className="text-sm opacity-90 font-manrope">
                         Так же вы можете заказать услуги по перевозке спортивного оборудования с полным демонтажом и сборкой на новом месте. Хотите перевезти свой тренажер в новую квартиру или загородный дом - это к нам!
                       </p>
                     </div>
-                    <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0" style={{ fontFamily: 'Benzin-Regular' }}>
-                      Перейти →
-                    </button>
+                    <div className="px-6 pb-[10px]">
+                      <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-all duration-300" style={{ fontFamily: 'Benzin-Regular' }}>
+                        Перейти →
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
