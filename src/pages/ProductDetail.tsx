@@ -859,20 +859,104 @@ const ProductDetail: React.FC = () => {
         return (
           <div>
             <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Услуги</h3>
-            <div className="font-manrope grid md:grid-cols-2 gap-6">
-              <div className="p-4 border border-border rounded-lg">
-                <h4 className="font-semibold mb-2">Установка и настройка</h4>
-                <p className="text-muted-foreground text-sm mb-2">
-                  Профессиональная установка и настройка оборудования нашими специалистами.
-                </p>
-                <span className="text-primary font-semibold">от 2 000 ₽</span>
+            <div className="space-y-4">
+              {/* Первый ряд - 3 карточки */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {/* Доставка */}
+                <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800">
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center bg-gray-600"
+                    style={{
+                      backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
+                    }}
+                  ></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col justify-between text-white">
+                    <div>
+                      <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Доставка</h4>
+                      <p className="text-sm opacity-90 font-manrope">
+                        У нас работают высококвалифицированные сотрудники со стажем более 5 лет. Мы оперативно доставляем заказы наших клиентов в любую точку г. Москвы и Санкт-Петербурга, а также других регионов России.
+                      </p>
+                    </div>
+                    <button className="bg-white text-gray-800 px-4 py-2 rounded font-manrope text-sm w-fit">
+                      Перейти →
+                    </button>
+                  </div>
+                </div>
+
+                {/* Сборка */}
+                <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800">
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center bg-gray-600"
+                    style={{
+                      backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
+                    }}
+                  ></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col justify-between text-white">
+                    <div>
+                      <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Сборка</h4>
+                      <p className="text-sm opacity-90 font-manrope">
+                        Наша компания оказывает полный спектр услуг по подъему и сборке оборудования. Сотрудники оснащены всем необходимым инструментом и имеют огромный опыт.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Различные способы оплаты */}
+                <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800">
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center bg-gray-600"
+                    style={{
+                      backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
+                    }}
+                  ></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col justify-between text-white">
+                    <div>
+                      <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Различные способы оплаты</h4>
+                      <p className="text-sm opacity-90 font-manrope">
+                        У всех филиалах нашей компании присутствуют терминалы для безналичной оплаты, вы можете оплатить свою покупку различными способами: наличными, банковской картой, через QR код или оплатить товар по счету.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="p-4 border border-border rounded-lg">
-                <h4 className="font-semibold mb-2">Расширенная гарантия</h4>
-                <p className="text-muted-foreground text-sm mb-2">
-                  Увеличьте срок гарантии до 3 лет с полным сервисным обслуживанием.
-                </p>
-                <span className="text-primary font-semibold">от 1 500 ₽</span>
+
+              {/* Второй ряд - 2 карточки */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Рассрочка */}
+                <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800">
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center bg-gray-600"
+                    style={{
+                      backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
+                    }}
+                  ></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col justify-between text-white">
+                    <div>
+                      <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Рассрочка</h4>
+                      <p className="text-sm opacity-90 font-manrope">
+                        Вы можете оформить рассрочку сроком до 12 месяцев, без переплат, без первоначального взноса, оставьте заявку и менеджеры банков-партнеров свяжутся с Вами.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Демонтаж и переезд */}
+                <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800">
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center bg-gray-600"
+                    style={{
+                      backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
+                    }}
+                  ></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col justify-between text-white">
+                    <div>
+                      <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Демонтаж и переезд</h4>
+                      <p className="text-sm opacity-90 font-manrope">
+                        Так же вы можете заказать услуги по перевозке спортивного оборудования с полным демонтажом и сборкой на новом месте. Хотите перевезти свой тренажер в новую квартиру или загородный дом - это к нам!
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <EmailSubscription />
