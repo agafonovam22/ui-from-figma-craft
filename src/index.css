@@ -534,7 +534,7 @@
     height: 340px !important;
   }
   
-  .tablet-product-card-image {
+  .tablet-product-card .h-60 {
     height: 180px !important;
   }
   

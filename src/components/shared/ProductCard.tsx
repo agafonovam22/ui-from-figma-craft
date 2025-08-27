@@ -145,7 +145,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div 
         className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 tablet-product-card"
         style={{ 
-          height: '460px', 
           backgroundColor: '#F8F8FD',
           background: 'var(--card-bg, #F8F8FD)'
         }}
@@ -283,7 +282,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="mx-4 h-px bg-gray-200 mt-7"></div>
 
         {/* Информация о товаре */}
-        <div className="p-4 pb-2.5 mt-4 flex flex-col justify-between transition-colors duration-300 tablet-product-card-info" style={{ height: '160px', backgroundColor: 'transparent' }}>
+        <div className="p-4 pb-2.5 mt-4 flex flex-col justify-between transition-colors duration-300 tablet-product-card-info" style={{ backgroundColor: 'transparent' }}>
           <div>
             {/* Статус наличия */}
             {(() => {
