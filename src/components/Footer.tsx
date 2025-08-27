@@ -9,15 +9,6 @@ const Footer: React.FC = () => {
       {/* Main content section with #262631 background */}
       <div className="bg-[#262631] py-8">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-footer-main">
-          {/* Кнопка заказать звонок для планшета */}
-          <div className="tablet-call-button hidden">
-            <CallRequestDialog>
-              <button className="bg-[#F53B49] text-white px-4 py-2 rounded-[5px] hover:bg-[#e63946] transition-colors text-xs font-benzin">
-                Заказать звонок
-              </button>
-            </CallRequestDialog>
-          </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 tablet-footer-grid gap-8">
             {/* Каталог */}
             <div>
@@ -53,47 +44,25 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Для Бизнеса и Контакты */}
-            <div className="tablet-business-contacts">
-              <div className="tablet-business-section">
-                <h3 className="text-white text-xs font-benzin-semibold mb-2">Для Бизнеса</h3>
-                <ul className="space-y-1 text-[#778093] text-xs">
-                  <li><a href="#" className="hover:text-white transition-colors">3D-проект</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Бизнес-планирование</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Готовые решения</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Обучение персонала</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Лизинг</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Trade-In</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">В рассрочку</a></li>
-                </ul>
-              </div>
-              
-              {/* Контакты для планшета */}
-              <div className="tablet-contacts-section text-[#778093] space-y-3">
-                <div>
-                  <p className="text-xs mb-1">Для Москвы</p>
-                  <a href="tel:+74996775632" className="text-xs font-benzin-semibold text-white hover:text-gray-300 transition-colors">
-                    +7 (499) 677-56-32
-                  </a>
-                </div>
-                <div>
-                  <p className="text-xs mb-1">Для России</p>
-                  <a href="tel:+78007751217" className="text-xs font-benzin-semibold text-white hover:text-gray-300 transition-colors">
-                    +7 (800) 775-12-17
-                  </a>
-                </div>
-                <div>
-                  <p className="text-xs mb-1">E-mail</p>
-                  <p className="text-white text-xs">info@wellfitness.ru</p>
-                </div>
-              </div>
+            {/* Для Бизнеса */}
+            <div>
+              <h3 className="text-white text-xs font-benzin-semibold mb-2">Для Бизнеса</h3>
+              <ul className="space-y-1 text-[#778093] text-xs">
+                <li><a href="#" className="hover:text-white transition-colors">3D-проект</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Бизнес-планирование</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Готовые решения</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Обучение персонала</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Лизинг</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Trade-In</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">В рассрочку</a></li>
+              </ul>
             </div>
 
-            {/* Социальные сети и оплата */}
-            <div className="lg:col-span-2 tablet-social-payment">
+            {/* Контакты */}
+            <div className="lg:col-span-2 tablet-footer-contacts">
               <div className="grid grid-cols-1 lg:grid-cols-2 tablet-footer-contacts-inner gap-8">
-                {/* Левая часть - контакты (скрыты для планшета) */}
-                <div className="text-[#778093] space-y-3 tablet-original-contacts">
+                {/* Левая часть - контакты */}
+                <div className="text-[#778093] space-y-3">
                   <div>
                     <p className="text-xs mb-1">Для Москвы</p>
                     <a href="tel:+74996775632" className="text-xs font-benzin-semibold text-white hover:text-gray-300 transition-colors">
@@ -110,7 +79,7 @@ const Footer: React.FC = () => {
                     <p className="text-xs mb-1">E-mail</p>
                     <p className="text-white text-xs">info@wellfitness.ru</p>
                   </div>
-                  <div className="mt-4 tablet-original-call-button">
+                  <div className="mt-4">
                     <CallRequestDialog>
                       <button className="bg-[#F53B49] text-white px-4 py-2 rounded-[5px] hover:bg-[#e63946] transition-colors text-xs font-benzin">
                         Заказать звонок
@@ -120,8 +89,8 @@ const Footer: React.FC = () => {
                 </div>
                 
                 {/* Правая часть */}
-                <div className="text-[#778093] space-y-4 tablet-social-section">
-                  <div className="tablet-home-section">
+                <div className="text-[#778093] space-y-4">
+                  <div>
                     <p className="text-xs font-benzin-semibold text-white mb-2">Для HOME</p>
                     <div className="flex items-center gap-2">
                       <img 
@@ -132,7 +101,7 @@ const Footer: React.FC = () => {
                     </div>
                   </div>
                   
-                  <div className="tablet-pro-section">
+                  <div>
                     <p className="text-xs font-benzin-semibold text-white mb-2">Для PRO</p>
                     <div className="flex items-center gap-2">
                       <img 
@@ -143,7 +112,7 @@ const Footer: React.FC = () => {
                     </div>
                   </div>
                   
-                  <div className="tablet-payment-section">
+                  <div>
                     <p className="text-[10px] mb-2 text-[#778093]">Принимаем к оплате</p>
                     <div className="flex gap-2">
                       <img 

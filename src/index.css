@@ -250,50 +250,6 @@
     height: 42px !important;
   }
   
-  /* Tablet Footer Styles */
-  /* Показать кнопку заказать звонок в левом углу */
-  .tablet-call-button {
-    display: block !important;
-    margin-bottom: 2rem;
-  }
-  
-  /* Скрыть оригинальную кнопку */
-  .tablet-original-call-button {
-    display: none;
-  }
-  
-  /* Скрыть оригинальные контакты */
-  .tablet-original-contacts {
-    display: none;
-  }
-  
-  /* Настройка для блока Бизнес + Контакты */
-  .tablet-business-contacts {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-  
-  /* Растянуть социальные сети и оплату в строку от кнопки */
-  .tablet-social-section {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 2rem !important;
-    align-items: flex-start !important;
-    space-y: 0 !important;
-  }
-  
-  .tablet-social-section > div {
-    margin: 0 !important;
-  }
-  
-  .tablet-home-section,
-  .tablet-pro-section,
-  .tablet-payment-section {
-    flex: 1;
-  }
-  }
-  
   .tablet-category-button span {
     font-size: 12px !important;
   }
