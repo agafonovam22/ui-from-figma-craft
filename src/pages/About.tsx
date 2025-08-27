@@ -428,7 +428,7 @@ const About: React.FC = () => {
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
               <div className="space-y-[10px]">
                 {/* Первый ряд - 3 карточки */}
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-[10px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
                   {projects.slice(0, 3).map((project, index) => (
                     <div key={project.id} className="relative rounded-lg overflow-hidden group cursor-pointer">
                       <div className="h-[300px] relative">
@@ -466,7 +466,7 @@ const About: React.FC = () => {
                 </div>
 
                 {/* Второй ряд - 2 карточки */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-[10px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px]">
                   {projects.slice(3, 5).map((project) => (
                     <div key={project.id} className="relative rounded-lg overflow-hidden group cursor-pointer">
                       <div className="h-[300px] relative">
@@ -504,7 +504,7 @@ const About: React.FC = () => {
                 </div>
 
                 {/* Третий ряд - 3 карточки */}
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-[10px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
                   {projects.slice(5, 8).map((project) => (
                     <div key={project.id} className="relative rounded-lg overflow-hidden group cursor-pointer">
                       <div className="h-[300px] relative">
@@ -542,7 +542,7 @@ const About: React.FC = () => {
                 </div>
 
                 {/* Четвертый ряд - 2 карточки */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-[10px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px]">
                   {projects.slice(8, 10).map((project) => (
                     <div key={project.id} className="relative rounded-lg overflow-hidden group cursor-pointer">
                       <div className="h-[300px] relative">
