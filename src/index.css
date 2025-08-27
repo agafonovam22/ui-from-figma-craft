@@ -155,13 +155,40 @@
     padding-right: 24px;
   }
   
+  .tablet-top-menu-container {
+    gap: 8px !important;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
   .tablet-top-menu-nav {
-    gap: 6px;
+    gap: 4px;
+    flex-wrap: nowrap;
+    overflow: hidden;
   }
   
   .tablet-top-menu-nav a {
-    font-size: 9px;
+    font-size: 8px;
+    padding: 2px 4px;
+    white-space: nowrap;
+  }
+  
+  .tablet-top-menu-buttons {
+    gap: 4px;
+  }
+  
+  .tablet-top-menu-buttons button {
     padding: 4px 8px;
+    font-size: 8px;
+  }
+  
+  .tablet-top-menu-contact {
+    gap: 4px;
+  }
+  
+  .tablet-top-menu-contact a {
+    font-size: 8px;
+    padding: 4px 6px;
   }
   
   .tablet-mid-menu {
