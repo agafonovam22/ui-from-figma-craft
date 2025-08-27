@@ -334,15 +334,15 @@
   }
 
   .tablet-product-tabs {
-    overflow-x: auto !important;
-    white-space: nowrap !important;
+    flex-wrap: wrap !important;
+    gap: 8px 16px !important;
   }
   
   .tablet-product-tab {
     font-size: 13px !important;
     white-space: nowrap !important;
     padding-bottom: 8px !important;
-    margin-right: 16px !important;
+    margin-right: 0 !important;
   }
 
   .tablet-section {
