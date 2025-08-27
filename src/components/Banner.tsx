@@ -14,8 +14,7 @@ const Banner: React.FC = () => {
   useEffect(() => {
     const checkResolution = () => {
       const width = window.innerWidth;
-      console.log('Current window width:', width); // debug
-      setIsFullHD(width >= 1400); // еще больше понизил порог
+      setIsFullHD(width >= 1800); // вернул нормальный порог для Full HD
     };
     
     checkResolution();
@@ -50,9 +49,7 @@ const Banner: React.FC = () => {
           style={{
             width: isFullHD ? '1660px' : 'auto',
             height: isFullHD ? '537px' : '400px',
-            margin: isFullHD ? '0 auto' : 'auto',
-            backgroundColor: isFullHD ? 'green' : 'yellow', // debug
-            border: isFullHD ? '5px solid blue' : '5px solid red' // debug
+            margin: isFullHD ? '0 auto' : 'auto'
           }}
         >
           {/* Изображение на всю ширину */}
