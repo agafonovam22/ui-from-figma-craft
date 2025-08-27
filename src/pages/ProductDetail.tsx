@@ -268,18 +268,27 @@ const ProductDetail: React.FC = () => {
 
               {/* Блок рейтинга и критериев */}
               <div className="space-y-4">
-                {/* Критерии оценки - первый контейнер */}
-                <div className="bg-white border border-gray-200 rounded-lg p-4">
-                  <div className="space-y-3">
-                    {[
-                      { name: 'Качество', rating: 6 },
-                      { name: 'Цена', rating: 10 },
-                      { name: 'Функциональность', rating: 4 },
-                      { name: 'Скорость', rating: 8 },
-                      { name: 'Легкость в сборке', rating: 8 }
-                    ].map((criterion) => (
-                      <div key={criterion.name} className="flex items-center justify-between">
-                        <span className="text-sm text-gray-600 font-benzin">{criterion.name}</span>
+              {/* Критерии оценки - первый контейнер */}
+              <div className="bg-gray-100 border border-gray-200 rounded-lg p-4">
+                <div className="space-y-0">
+                  {[
+                    { name: 'Качество', rating: 6 },
+                    { name: 'Цена', rating: 10 },
+                    { name: 'Функциональность', rating: 4 },
+                    { name: 'Скорость', rating: 8 },
+                    { name: 'Легкость в сборке', rating: 8 }
+                  ].map((criterion, index) => (
+                    <div key={criterion.name}>
+                      <div className="flex items-center justify-between py-3">
+                        <span 
+                          className="text-sm" 
+                          style={{ 
+                            color: '#778093',
+                            fontFamily: 'Benzin-Regular'
+                          }}
+                        >
+                          {criterion.name}
+                        </span>
                         <div className="flex space-x-1">
                           {Array.from({ length: 10 }).map((_, index) => (
                             <div
@@ -291,9 +300,13 @@ const ProductDetail: React.FC = () => {
                           ))}
                         </div>
                       </div>
-                    ))}
-                  </div>
+                      {index < 4 && (
+                        <div className="border-b border-gray-300"></div>
+                      )}
+                    </div>
+                  ))}
                 </div>
+              </div>
 
                 {/* Общий рейтинг - серый контейнер */}
                 <div className="bg-gray-100 rounded-lg p-4 font-benzin">
