@@ -33,7 +33,7 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
         {category.icon}
       </span>
     )}
-    <span className="text-sm tablet-text-sm font-normal leading-[14px] text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
+    <span className="text-sm font-normal leading-[14px] text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
       {category.label}
     </span>
   </Link>
@@ -184,7 +184,7 @@ const BottomMenu: React.FC = () => {
 
   return (
     <nav 
-      className="flex w-full justify-center items-center gap-[5px] bg-[#262631] px-2 sm:px-4 lg:px-[60px] tablet-bottom-menu-scroll py-1 max-md:overflow-x-auto"
+      className="flex w-full justify-center items-center gap-[5px] bg-[#262631] px-2 sm:px-4 lg:px-[60px] tablet-bottom-menu py-1 max-md:overflow-x-auto"
       style={{ padding: '4px 60px' }}
       role="navigation"
       aria-label="Категории товаров"

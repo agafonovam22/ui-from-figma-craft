@@ -150,54 +150,85 @@
 /* Tablet-specific adaptations (768px - 1024px) */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   /* Header tablet adaptations */
-  .tablet-header-spacing {
-    padding-left: 20px;
-    padding-right: 20px;
+  header.tablet-header {
+    padding-left: 24px;
+    padding-right: 24px;
   }
   
   .tablet-top-menu-nav {
-    gap: 8px;
+    gap: 6px;
   }
   
   .tablet-top-menu-nav a {
     font-size: 9px;
+    padding: 4px 8px;
   }
   
-  .tablet-mid-menu-gap {
-    gap: 12px;
+  .tablet-mid-menu {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
+  .tablet-mid-menu-container {
+    gap: 16px;
   }
   
   .tablet-catalog-button {
-    padding: 10px 16px;
+    padding: 8px 12px;
+    height: 36px;
+  }
+  
+  .tablet-catalog-button span {
+    font-size: 12px;
+  }
+  
+  .tablet-search-container {
+    max-width: 360px;
   }
   
   .tablet-search-bar {
-    max-width: 400px;
+    height: 36px;
+    padding: 8px 16px;
   }
   
-  .tablet-bottom-menu-scroll {
-    padding-left: 20px;
-    padding-right: 20px;
+  .tablet-bottom-menu {
+    padding-left: 24px;
+    padding-right: 24px;
   }
   
   .tablet-category-button {
-    padding: 8px 12px;
-    white-space: nowrap;
+    padding: 6px 10px;
+    height: 40px;
+  }
+  
+  .tablet-category-button span {
+    font-size: 12px;
   }
   
   /* Footer tablet adaptations */
+  .tablet-footer-main {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
   .tablet-footer-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
   
   .tablet-footer-contacts {
-    grid-column: span 3;
+    grid-column: span 2;
+    margin-top: 16px;
   }
   
   .tablet-footer-contacts-inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .tablet-footer-bottom {
+    padding-left: 24px;
+    padding-right: 24px;
   }
   
   /* Product cards tablet adaptations */
