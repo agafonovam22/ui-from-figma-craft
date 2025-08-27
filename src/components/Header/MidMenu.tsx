@@ -161,7 +161,9 @@ const MidMenu: React.FC<MidMenuProps> = ({ onSearch }) => {
           </div>
         </SearchPopup>
         
-        <UserActions />
+        <div className="tablet-user-actions">
+          <UserActions />
+        </div>
       </div>
     </section>
   );

@@ -216,17 +216,20 @@
   
   .tablet-mid-menu-container {
     gap: 8px;
-    height: auto !important;
+    height: 50px !important;
+    align-items: center;
+    flex-wrap: nowrap;
   }
   
   .tablet-catalog-button {
-    padding: 6px 10px;
+    padding: 6px 8px;
     height: 32px;
     flex-shrink: 0;
+    min-width: auto;
   }
   
   .tablet-catalog-button span {
-    font-size: 11px;
+    font-size: 10px;
   }
   
   .tablet-catalog-button svg {
@@ -235,18 +238,23 @@
   }
   
   .tablet-search-container {
-    max-width: 280px;
-    min-width: 200px;
+    max-width: 240px;
+    min-width: 180px;
     flex: 1;
+    flex-shrink: 1;
   }
   
   .tablet-search-bar {
     height: 32px;
-    padding: 6px 12px;
+  }
+  
+  .tablet-search-bar > form > div {
+    height: 32px;
+    padding: 6px 10px;
   }
   
   .tablet-search-bar input {
-    font-size: 12px;
+    font-size: 11px;
   }
   
   .tablet-search-bar button {
@@ -254,28 +262,31 @@
   }
   
   .tablet-search-bar svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .tablet-user-actions {
+    flex-shrink: 0;
+  }
+  
+  .tablet-user-actions .flex.items-center {
+    gap: 6px;
+  }
+  
+  .tablet-user-actions .w-6.h-6 {
     width: 18px;
     height: 18px;
   }
   
-  /* Tablet user actions adaptations */
-  .tablet-mid-menu .flex.items-center.gap-4 {
-    gap: 8px;
+  .tablet-user-actions .w-6.h-6 svg {
+    width: 12px;
+    height: 12px;
   }
   
-  .tablet-mid-menu .w-6.h-6 {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .tablet-mid-menu .w-6.h-6 svg {
-    width: 14px;
-    height: 14px;
-  }
-  
-  .tablet-mid-menu button svg {
-    width: 18px;
-    height: 18px;
+  .tablet-user-actions button svg {
+    width: 16px;
+    height: 16px;
   }
   
   .tablet-bottom-menu {
