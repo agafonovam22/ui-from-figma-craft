@@ -329,6 +329,32 @@
     padding-right: 24px;
   }
   
+  /* ProductCard tablet adaptations */
+  .tablet-product-card {
+    height: 220px;
+  }
+  
+  .tablet-product-card img {
+    object-fit: cover;
+  }
+  
+  .tablet-product-card-button {
+    padding: 6px 12px;
+    font-size: 11px;
+    border-radius: 5px;
+    bottom: 12px;
+    left: 12px;
+  }
+  
+  .tablet-product-card-button span {
+    font-size: 11px;
+  }
+  
+  .tablet-product-card-button svg {
+    width: 12px;
+    height: 12px;
+  }
+
   /* ProductCatalog tablet adaptations */
   .tablet-product-catalog-container {
     padding-left: 24px;
@@ -412,10 +438,6 @@
   .tablet-product-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-  }
-  
-  .tablet-product-card {
-    height: 420px;
   }
   
   .tablet-product-card-image {
