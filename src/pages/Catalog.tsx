@@ -417,7 +417,7 @@ const Catalog: React.FC = () => {
         </div>
 
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-container py-2">
-          <div className="flex gap-8 tablet-catalog-layout">
+          <div className="flex tablet-catalog-layout" style={{ gap: '32px' }}>
             {/* Left Sidebar - Filters */}
             <div className="tablet-catalog-filters">
               <CatalogFilters
@@ -434,7 +434,7 @@ const Catalog: React.FC = () => {
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 mt-[94px] tablet-catalog-main">
+            <div className="flex-1 tablet-catalog-main" style={{ marginTop: '94px' }}>
               <CatalogBanner />
               <div className="tablet-catalog-controls">
                 <CatalogControls 

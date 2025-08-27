@@ -147,14 +147,36 @@
   filter: brightness(0) saturate(100%) invert(28%) sepia(87%) saturate(3789%) hue-rotate(347deg) brightness(99%) contrast(94%);
 }
 
-/* Tablet-specific adaptations (768px - 1024px) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  /* Global tablet adaptations */
-  .tablet-container {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-    max-width: 100% !important;
-  }
+  /* Tablet-specific adaptations (768px - 1024px) */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Global tablet adaptations */
+    .tablet-container {
+      padding-left: 24px !important;
+      padding-right: 24px !important;
+      max-width: 100% !important;
+    }
+    
+    /* Catalog page specific tablet adaptations */
+    .tablet-catalog-layout {
+      gap: 12px !important;
+    }
+    
+    .tablet-catalog-filters {
+      width: 180px !important;
+      flex-shrink: 0 !important;
+      margin-bottom: 0 !important;
+      margin-top: 0 !important;
+    }
+    
+    .tablet-catalog-main {
+      width: auto !important;
+      flex: 1 !important;
+      margin-top: 0 !important;
+    }
+    
+    .tablet-catalog-controls {
+      margin-bottom: 16px !important;
+    }
   
   .tablet-section {
     padding: 20px 24px !important;
@@ -469,50 +491,6 @@
     width: 180px !important;
     flex-shrink: 0 !important;
     margin-bottom: 0;
-  }
-  
-  .tablet-filters-wrapper {
-    padding: 8px !important;
-    margin-bottom: 8px !important;
-  }
-  
-  .tablet-filter-title {
-    font-size: 24px !important;
-    line-height: 1.2 !important;
-    margin-bottom: 12px !important;
-  }
-  
-  .tablet-filter-section-title {
-    font-size: 12px !important;
-    margin-bottom: 8px !important;
-  }
-  
-  .tablet-filter-item {
-    font-size: 10px !important;
-    padding: 3px 0 !important;
-  }
-  
-  .tablet-filter-button {
-    padding: 4px 8px !important;
-    font-size: 9px !important;
-  }
-
-  /* Catalog page tablet adaptations */
-  .tablet-catalog-layout {
-    gap: 12px !important;
-  }
-  
-  .tablet-catalog-filters {
-    width: 180px !important;
-    flex-shrink: 0 !important;
-    margin-bottom: 0 !important;
-    margin-top: 0 !important;
-  }
-  
-  .tablet-catalog-main {
-    width: auto !important;
-    flex: 1 !important;
-    margin-top: 0 !important;
   }
   
   .tablet-catalog-controls {
