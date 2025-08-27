@@ -398,28 +398,35 @@ const Catalog: React.FC = () => {
       <Header onSearch={handleSearchQuery} />
       <div className="min-h-screen bg-white">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-container mobile-container py-2">
-          {/* Breadcrumbs */}
-          <Breadcrumb className="mb-6">
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/">Главная</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>
-                  {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
-                </BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
+          {/* Breadcrumbs and Catalog Title */}
+          <div className="flex items-center justify-between mb-6">
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/">Главная</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>
+                    {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
+                  </BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+            
+            {/* Catalog title for tablet */}
+            <h1 className="hidden md:block lg:hidden text-2xl font-semibold text-[#262631]" style={{fontFamily: 'Benzin-Semibold'}}>
+              Каталог
+            </h1>
+          </div>
         </div>
 
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-container mobile-container py-2">
           <div className="flex gap-8 tablet-catalog-layout">
             {/* Left Sidebar - Filters */}
-            <div className="tablet-catalog-filters">
+            <div className="hidden md:block lg:block tablet-catalog-filters">
               <CatalogFilters
                 filters={filters}
                 filterOptions={filterOptions}
@@ -434,7 +441,7 @@ const Catalog: React.FC = () => {
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 mt-[94px] tablet-catalog-main">
+            <div className="flex-1 md:mt-0 lg:mt-[94px] tablet-catalog-main">
               <CatalogBanner />
               <div className="tablet-catalog-controls">
                 <CatalogControls 
