@@ -889,9 +889,9 @@ const ProductDetail: React.FC = () => {
                 {/* Доставка */}
                 <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800 group">
                   <div 
-                    className="absolute inset-0 bg-cover bg-center bg-gray-600"
+                    className="absolute inset-0 bg-cover bg-center"
                     style={{
-                      backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
+                      backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/lovable-uploads/426cf266-842c-4183-9977-37d5ac991720.png')`
                     }}
                   ></div>
                   <div className="absolute bottom-[10px] left-0 right-0 px-6 text-white">
@@ -910,9 +910,9 @@ const ProductDetail: React.FC = () => {
                 {/* Сборка */}
                 <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800 group">
                   <div 
-                    className="absolute inset-0 bg-cover bg-center bg-gray-600"
+                    className="absolute inset-0 bg-cover bg-center"
                     style={{
-                      backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
+                      backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/lovable-uploads/3826d247-ba0f-4433-8e76-a9c2be78ed10.png')`
                     }}
                   ></div>
                   <div className="absolute bottom-[10px] left-0 right-0 px-6 text-white">
@@ -931,9 +931,9 @@ const ProductDetail: React.FC = () => {
                 {/* Различные способы оплаты */}
                 <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800 group">
                   <div 
-                    className="absolute inset-0 bg-cover bg-center bg-gray-600"
+                    className="absolute inset-0 bg-cover bg-center"
                     style={{
-                      backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
+                      backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/lovable-uploads/d631679c-6c82-4c48-acb2-a97d2dfb4d2a.png')`
                     }}
                   ></div>
                   <div className="absolute bottom-[10px] left-0 right-0 px-6 text-white">
