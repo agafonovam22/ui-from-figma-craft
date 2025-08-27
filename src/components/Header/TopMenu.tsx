@@ -54,11 +54,12 @@ const TopMenu: React.FC = () => {
   };
 
   return (
-    <header className="flex w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 lg:px-[60px] tablet-header py-0 border-b border-solid border-[rgba(255,255,255,0.10)]">
-      <div className="flex w-full max-w-[1800px] h-[53px] justify-between items-center gap-2 lg:gap-[30px] tablet-top-menu-container flex-shrink-0">
+    <header className="flex flex-col w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 lg:px-[60px] tablet-header py-0 border-b border-solid border-[rgba(255,255,255,0.10)]">
+      {/* Desktop: single row layout */}
+      <div className="hidden lg:flex w-full max-w-[1800px] h-[53px] justify-between items-center gap-[30px] flex-shrink-0">
         <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
         
-        <nav className="flex items-start gap-2 lg:gap-[15px] tablet-top-menu-nav max-md:hidden" role="navigation" aria-label="Основная навигация">
+        <nav className="flex items-start gap-[15px]" role="navigation" aria-label="Основная навигация">
           {navigationItems.map((item, index) => (
             item.href ? (
               <Link
@@ -83,7 +84,7 @@ const TopMenu: React.FC = () => {
           ))}
         </nav>
 
-        <div className="flex items-end gap-2 tablet-top-menu-buttons max-sm:hidden">
+        <div className="flex items-end gap-2">
           <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')}>
             Для дилеров
           </ActionButton>
@@ -92,10 +93,85 @@ const TopMenu: React.FC = () => {
           </ActionButton>
         </div>
 
-        <div className="flex items-end gap-2 tablet-top-menu-contact max-sm:hidden">
+        <div className="flex items-end gap-2">
           <a 
             href={selectedCity === 'Москва' ? "tel:+74996775632" : "tel:88003332595"} 
             className="text-[10px] font-normal leading-[10px] gap-2 px-3 py-2.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0"
+          >
+            {selectedCity === 'Москва' ? '+7 499 677 56 32' : '8 800 333 25 95'}
+          </a>
+          <CallRequestDialog>
+            <ActionButton variant="danger">
+              Заказать звонок
+            </ActionButton>
+          </CallRequestDialog>
+        </div>
+      </div>
+
+      {/* Tablet: two-row layout */}
+      <div className="hidden md:flex lg:hidden flex-col w-full max-w-[1800px] py-2">
+        {/* First row: buttons, contact, city */}
+        <div className="flex justify-between items-center h-[36px] mb-2">
+          <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
+          
+          <div className="flex items-center gap-2">
+            <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')}>
+              Для дилеров
+            </ActionButton>
+            <ActionButton variant="secondary" onClick={() => console.log('Suppliers clicked')}>
+              For suppliers
+            </ActionButton>
+            <a 
+              href={selectedCity === 'Москва' ? "tel:+74996775632" : "tel:88003332595"} 
+              className="text-[9px] font-normal leading-[10px] gap-2 px-2 py-1.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0"
+            >
+              {selectedCity === 'Москва' ? '+7 499 677 56 32' : '8 800 333 25 95'}
+            </a>
+            <CallRequestDialog>
+              <ActionButton variant="danger">
+                Заказать звонок
+              </ActionButton>
+            </CallRequestDialog>
+          </div>
+        </div>
+
+        {/* Second row: navigation */}
+        <div className="flex justify-center">
+          <nav className="flex items-center gap-4" role="navigation" aria-label="Основная навигация">
+            {navigationItems.map((item, index) => (
+              item.href ? (
+                <Link
+                  key={index}
+                  to={item.href}
+                  className="text-layout-grey-nav font-benzin text-[9px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap"
+                  style={{ lineHeight: '100%' }}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={index}
+                  href={item.href || '#'}
+                  className="text-layout-grey-nav font-benzin text-[9px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap"
+                  style={{ lineHeight: '100%' }}
+                  onClick={item.onClick}
+                >
+                  {item.label}
+                </a>
+              )
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      {/* Mobile: compact layout */}
+      <div className="flex md:hidden w-full max-w-[1800px] h-[53px] justify-between items-center gap-2 flex-shrink-0">
+        <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
+        
+        <div className="flex items-end gap-2">
+          <a 
+            href={selectedCity === 'Москва' ? "tel:+74996775632" : "tel:88003332595"} 
+            className="text-[8px] font-normal leading-[10px] gap-2 px-2 py-1.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0"
           >
             {selectedCity === 'Москва' ? '+7 499 677 56 32' : '8 800 333 25 95'}
           </a>
