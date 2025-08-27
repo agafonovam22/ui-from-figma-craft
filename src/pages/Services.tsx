@@ -404,10 +404,19 @@ const Services: React.FC = () => {
                       Как и в автомобильной индустрии, гарантийные обязательства в фитнес-сфере строго соблюдаются ведущими производителями. Однако ответственность за правильную эксплуатацию и своевременное техническое обслуживание лежит на владельце оборудования.
                     </p>
                   </div>
+                  
+                  {/* Moved image here */}
+                  <div className="mt-6">
+                    <img 
+                      src="/lovable-uploads/6f3410eb-d6c6-4add-a8a2-131a6bf52736.png"
+                      alt="Техник обслуживает тренажер"
+                      className="w-full h-[295px] object-cover rounded-lg"
+                    />
+                  </div>
                 </div>
               </div>
 
-              {/* Second section with text and images */}
+              {/* Second section with text */}
               <div className="flex gap-8 items-center">
                 <div className="flex-1">
                   <p className="text-gray-600 mb-4 font-manrope">
@@ -419,13 +428,6 @@ const Services: React.FC = () => {
                   <p className="text-gray-600 mb-4 font-manrope">
                     Доверьте технику профессионалам — и сосредоточьтесь на развитии бизнеса!
                   </p>
-                </div>
-                <div className="flex-1">
-                  <img 
-                    src="/lovable-uploads/6f3410eb-d6c6-4add-a8a2-131a6bf52736.png"
-                    alt="Техник обслуживает тренажер"
-                    className="w-full h-[295px] object-cover rounded-lg"
-                  />
                 </div>
               </div>
 
