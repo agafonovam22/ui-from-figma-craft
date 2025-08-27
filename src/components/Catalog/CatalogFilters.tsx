@@ -105,12 +105,12 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
   };
 
   return (
-    <div className="w-64 flex-shrink-0">
-      <h1 className="text-[48px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Каталог</h1>
+    <div className="w-64 flex-shrink-0 tablet-catalog-filters-container">
+      <h1 className="text-[48px] font-semibold text-[#262631] mb-6 tablet-heading-lg" style={{fontFamily: 'Benzin-Semibold'}}>Каталог</h1>
       
       {/* Filters Container */}
-      <div className="bg-[#F8F8FD] rounded-lg p-6 mb-2.5">
-        <h2 className="text-[20px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h2>
+      <div className="bg-[#F8F8FD] rounded-lg p-6 mb-2.5 tablet-filters-wrapper">
+        <h2 className="text-[20px] font-semibold text-[#262631] mb-6 tablet-heading-md" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h2>
         
         {/* Price Filter */}
         <div className="mb-6">

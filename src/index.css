@@ -464,18 +464,37 @@
     font-size: 14px !important;
   }
 
+  /* Catalog filters tablet adaptations */
+  .tablet-catalog-filters-container {
+    width: 100% !important;
+    flex-shrink: initial !important;
+    margin-bottom: 20px;
+  }
+  
+  .tablet-filters-wrapper {
+    padding: 16px !important;
+    margin-bottom: 16px !important;
+  }
+
   /* Catalog page tablet adaptations */
+  .tablet-catalog-layout {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  
   .tablet-catalog-filters {
     width: 100% !important;
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
+    margin-top: 0 !important;
   }
   
   .tablet-catalog-main {
     width: 100% !important;
+    margin-top: 0 !important;
   }
   
   .tablet-catalog-controls {
-    margin-bottom: 16px;
+    margin-bottom: 16px !important;
   }
   
   .tablet-catalog-seo {
@@ -539,6 +558,8 @@
     font-size: 13px;
     border-radius: 6px;
     white-space: nowrap;
+  }
+  
   /* All pages tablet adaptations */
   .tablet-page-container {
     padding: 16px 24px !important;
@@ -668,146 +689,5 @@
   .px-8 {
     padding-left: 16px !important;
     padding-right: 16px !important;
-  }
-}
-  
-  .tablet-product-catalog-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .tablet-product-catalog-bottom-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-  }
-  
-  .tablet-product-catalog-promo {
-    grid-column: span 2;
-    height: 220px;
-  }
-  
-  .tablet-product-catalog-promo-content {
-    padding: 16px;
-  }
-  
-  .tablet-product-catalog-promo-title {
-    font-size: 16px;
-    margin-bottom: 12px;
-  }
-  
-  .tablet-product-catalog-promo-btn {
-    padding: 8px 12px;
-    font-size: 12px;
-    border-radius: 6px;
-  }
-  
-  .tablet-product-catalog-show-all {
-    margin-top: 24px;
-  }
-  
-  .tablet-product-catalog-show-all-btn {
-    padding: 10px 20px;
-    font-size: 14px;
-    border-radius: 6px;
-  }
-
-  /* Banner tablet adaptations */
-  .tablet-banner-container {
-    padding-left: 24px;
-    padding-right: 24px;
-    max-width: 100% !important;
-  }
-  
-  .tablet-banner-carousel {
-    height: 300px;
-  }
-
-  /* Product cards tablet adaptations */
-  .tablet-product-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  
-  .tablet-product-card-image {
-    height: 220px;
-  }
-  
-  .tablet-product-card-info {
-    height: 140px;
-    padding: 16px;
-  }
-  
-  .tablet-product-title {
-    font-size: 13px;
-    margin-bottom: 8px;
-  }
-  
-  .tablet-product-price {
-    font-size: 16px;
-  }
-  
-  .tablet-buy-button {
-    padding: 8px 16px;
-    font-size: 13px;
-  }
-  
-  /* Catalog grid tablet adaptations */
-  .tablet-catalog-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  
-  .tablet-ad-banner {
-    grid-column: span 3;
-    padding: 24px;
-  }
-  
-  /* Services tablet adaptations */
-  .tablet-service-tabs {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  
-  .tablet-service-tab {
-    padding: 8px 16px;
-    font-size: 13px;
-  }
-  
-  .tablet-service-benefits {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-  
-  /* General tablet text adaptations */
-  .tablet-heading-xl {
-    font-size: 28px;
-  }
-  
-  .tablet-heading-lg {
-    font-size: 24px;
-  }
-  
-  .tablet-heading-md {
-    font-size: 20px;
-  }
-  
-  .tablet-text-base {
-    font-size: 14px;
-  }
-  
-  .tablet-text-sm {
-    font-size: 12px;
-  }
-  
-  /* Tablet button adaptations */
-  .tablet-button-sm {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-  
-  .tablet-button-md {
-    padding: 8px 16px;
-    font-size: 14px;
   }
 }
