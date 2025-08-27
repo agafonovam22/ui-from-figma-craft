@@ -861,7 +861,7 @@ const ProductDetail: React.FC = () => {
             <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Услуги</h3>
             <div className="space-y-4">
               {/* Первый ряд - 3 карточки */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-[10px]">
                 {/* Доставка */}
                 <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800">
                   <div 
@@ -921,7 +921,7 @@ const ProductDetail: React.FC = () => {
               </div>
 
               {/* Второй ряд - 2 карточки */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px]">
                 {/* Рассрочка */}
                 <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800">
                   <div 
