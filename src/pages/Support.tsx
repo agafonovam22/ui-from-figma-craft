@@ -794,11 +794,11 @@ const Support: React.FC = () => {
             </div>
           )}
 
-          {activeTab === 'return' && (
-            <div className="space-y-8">
+           {activeTab === 'return' && (
+            <div className="space-y-8 md:space-y-6">
               {/* Город доставки */}
-              <div className="flex gap-8">
-                <div className="w-80 flex-shrink-0">
+              <div className="flex gap-8 md:flex-col md:gap-4">
+                <div className="w-80 flex-shrink-0 md:w-full">
                   <div className="flex items-center gap-1">
                     <h3 style={{
                       fontFamily: 'Benzin-Medium',
@@ -812,11 +812,11 @@ const Support: React.FC = () => {
                     />
                   </div>
                 </div>
-                 <div className="flex-1">
-                   <p className="text-gray-700 mb-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                 <div className="flex-1 md:w-full">
+                   <p className="text-gray-700 mb-4 md:text-sm md:mb-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                      Согласно Закону о защите прав потребителей, при дистанционном способе покупки обмен товара происходит через оформление возврата.
                    </p>
-                   <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                   <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                      Вы не вправе отказаться от товара надлежащего качества, имеющего индивидуально-определенные свойства, если указанный товар может быть использован исключительно приобретающим его потребителем.
                    </p>
                  </div>
@@ -826,33 +826,33 @@ const Support: React.FC = () => {
               <div className="h-px bg-gray-300"></div>
 
               {/* Возврат товара по качеству */}
-              <div className="flex gap-8">
-                <div className="w-80 flex-shrink-0">
+              <div className="flex gap-8 md:flex-col md:gap-4">
+                <div className="w-80 flex-shrink-0 md:w-full">
                   <h3 style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Возврат товара по качеству</h3>
                 </div>
-                <div className="flex-1">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="flex-1 md:w-full">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-4">
                      {/* Возврат товара надлежащего качества */}
-                     <div className="bg-gray-50 p-6 rounded-lg">
-                       <h4 className="text-lg font-medium mb-4">Возврат товара надлежащего качества</h4>
-                       <p className="text-gray-700 mb-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     <div className="bg-gray-50 p-6 rounded-lg md:p-4">
+                       <h4 className="text-lg font-medium mb-4 md:text-base md:mb-3">Возврат товара надлежащего качества</h4>
+                       <p className="text-gray-700 mb-4 md:text-sm md:mb-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          Возврат товара надлежащего качества, если он не подходит по размеру, цвету, фасону или любой другой причине, производится на основании заявления на возврат, которое необходимо подать в течение 14 дней с момента покупки товара, не считая дня покупки.
                        </p>
-                       <p className="text-gray-700 mb-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                       <p className="text-gray-700 mb-4 md:text-sm md:mb-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          При возврате товара надлежащего качества возвращается только стоимость товара. Стоимость доставки, а также стоимость обратной пересылки (если она производилась за Ваш счет) не компенсируются.
                        </p>
-                       <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                       <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          Вы не вправе отказаться от товара надлежащего качества, имеющего индивидуально-определенные свойства, если указанный товар может быть использован исключительно приобретающим его потребителем.
                        </p>
                      </div>
 
                       {/* Возврат товара ненадлежащего качества */}
-                      <div className="bg-gray-50 p-6 rounded-lg">
-                        <h4 className="text-lg font-medium mb-4">Возврат товара ненадлежащего качества (бракованного товара)</h4>
-                        <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      <div className="bg-gray-50 p-6 rounded-lg md:p-4">
+                        <h4 className="text-lg font-medium mb-4 md:text-base md:mb-3">Возврат товара ненадлежащего качества (бракованного товара)</h4>
+                        <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                           Согласно Закону о защите прав потребителей, вы вправе вернуть товар ненадлежащего качества (с браком, дефектами или несоответствием заявленным характеристикам) при дистанционном способе покупки.
                         </p>
                       </div>
@@ -864,32 +864,32 @@ const Support: React.FC = () => {
               <div className="h-px bg-gray-300"></div>
 
               {/* Условия возврата товара */}
-              <div className="flex gap-8 mb-8">
-                <div className="w-80 flex-shrink-0">
+              <div className="flex gap-8 mb-8 md:flex-col md:gap-4 md:mb-6">
+                <div className="w-80 flex-shrink-0 md:w-full">
                   <h3 style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Условия возврата товара</h3>
                 </div>
-                <div className="flex-1">
-                  <div className="space-y-6">
+                <div className="flex-1 md:w-full">
+                  <div className="space-y-6 md:space-y-4">
                     <div>
-                      <h4 className="text-lg font-medium mb-4">Возврат товара надлежащего качества возможен при условии:</h4>
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      <h4 className="text-lg font-medium mb-4 md:text-base md:mb-3">Возврат товара надлежащего качества возможен при условии:</h4>
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-4">
                         <div className="flex items-start gap-4">
-                          <div className="text-[#F53B49] font-bold text-2xl flex-shrink-0">
+                          <div className="text-[#F53B49] font-bold text-2xl flex-shrink-0 md:text-xl">
                             1
                           </div>
-                           <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                           <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                              Сохранения его потребительских свойств и товарного вида (отсутствие следов эксплуатации и носки, наличие оригинальной и неповрежденной упаковки и ярлыков).
                            </p>
                         </div>
                         
                         <div className="flex items-start gap-4">
-                          <div className="text-[#F53B49] font-bold text-2xl flex-shrink-0">
+                          <div className="text-[#F53B49] font-bold text-2xl flex-shrink-0 md:text-xl">
                             2
                           </div>
-                           <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                           <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                              Наличия документа, подтверждающего факт и условия покупки товара (кассовый чек или товарный чек)*.
                            </p>
                         </div>
@@ -897,11 +897,11 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* Разделительная линия */}
-                    <div className="h-px bg-gray-300 my-6"></div>
+                    <div className="h-px bg-gray-300 my-6 md:my-4"></div>
 
                     <div>
-                      <h4 className="text-lg font-medium mb-4">Возврат товара не надлежащего качества возможен при условии:</h4>
-                       <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      <h4 className="text-lg font-medium mb-4 md:text-base md:mb-3">Возврат товара не надлежащего качества возможен при условии:</h4>
+                       <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          Возврат товара ненадлежащего качества возможен при условии сохранения документа, подтверждающего факт и условия покупки указанного товара (кассовый чек или товарный чек)*.
                        </p>
                     </div>
@@ -913,16 +913,16 @@ const Support: React.FC = () => {
                <div className="h-px bg-gray-300"></div>
 
                {/* Сроки возврата денежных средств */}
-              <div className="flex gap-8 mb-8">
-                <div className="w-80 flex-shrink-0">
+              <div className="flex gap-8 mb-8 md:flex-col md:gap-4 md:mb-6">
+                <div className="w-80 flex-shrink-0 md:w-full">
                   <h3 style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Сроки возврата денежных средств</h3>
                 </div>
-                <div className="flex-1">
-                  <div className="bg-gray-100 p-6 rounded-lg">
-                     <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                <div className="flex-1 md:w-full">
+                  <div className="bg-gray-100 p-6 rounded-lg md:p-4">
+                     <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                        Срок возврата денежных средств зависит от способа возврата товара и составляет не более 10 дней с даты поступления возвращенного товара в интернет-магазин вместе с заполненным заявлением на возврат. По итогам проведения экспертизы товара принимается решение о возврате или не возврате денежных средств.
                      </p>
                   </div>
@@ -933,16 +933,16 @@ const Support: React.FC = () => {
                <div className="h-px bg-gray-300"></div>
 
                {/* Возврат денег при наличной форме оплаты заказа */}
-              <div className="flex gap-8">
-                <div className="w-80 flex-shrink-0">
+              <div className="flex gap-8 md:flex-col md:gap-4">
+                <div className="w-80 flex-shrink-0 md:w-full">
                   <h3 style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Возврат денег при наличной форме оплаты заказа осуществляется</h3>
                 </div>
-                <div className="flex-1">
-                  <div className="bg-gray-100 p-6 rounded-lg">
-                     <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                <div className="flex-1 md:w-full">
+                  <div className="bg-gray-100 p-6 rounded-lg md:p-4">
+                     <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                        При возврате товара через розничный магазин - наличными в розничном магазине при возврате через партнерскую курьерскую компанию - только на лицевой счет клиента. Реквизиты Вашего банковского счета и банка необходимо указать в заявлении на возврат.
                      </p>
                   </div>
@@ -953,16 +953,16 @@ const Support: React.FC = () => {
                <div className="h-px bg-gray-300"></div>
 
                {/* Важно */}
-               <div className="flex gap-8">
-                 <div className="w-80 flex-shrink-0">
+               <div className="flex gap-8 md:flex-col md:gap-4">
+                 <div className="w-80 flex-shrink-0 md:w-full">
                    <h3 style={{
                      fontFamily: 'Benzin-Medium',
                      fontSize: '20px'
                    }}>Важно:</h3>
                  </div>
-                 <div className="flex-1">
-                   <div className="bg-red-50 border-l-4 border-[#F53B49] p-6 rounded-lg">
-                     <ul className="space-y-3 text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                 <div className="flex-1 md:w-full">
+                   <div className="bg-red-50 border-l-4 border-[#F53B49] p-6 rounded-lg md:p-4">
+                     <ul className="space-y-3 text-gray-700 md:space-y-2 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                        <li>• Требования о возврате не применяются, если недостатки возникли по вашей вине (неправильная эксплуатация, механические повреждения и т.д.).</li>
                        <li>• Для технически сложных товаров действуют особые условия возврата в течение 15 дней.</li>
                        <li>• Мы гарантируем соблюдение всех ваших прав в соответствии с законодательством РФ.</li>
