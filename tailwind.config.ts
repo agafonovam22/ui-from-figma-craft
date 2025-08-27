@@ -26,6 +26,7 @@ export default {
 			'2xl': '1920px', // Full HD экраны
 			'3xl': '2560px', // 2K экраны
 			'4xl': '3840px', // 4K экраны
+			'hd': { raw: '(min-width: 1920px) and (max-width: 2559px)' }, // Full HD range
 		},
 		extend: {
 			fontFamily: {

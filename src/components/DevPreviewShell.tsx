@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Monitor, Smartphone, Tablet, RotateCcw } from 'lucide-react';
+import { Monitor, Smartphone, Tablet, RotateCcw, ExternalLink } from 'lucide-react';
 
 interface Resolution {
   name: string;
@@ -25,6 +25,27 @@ const DevPreviewShell: React.FC<DevPreviewShellProps> = ({ children }) => {
   const [isLandscape, setIsLandscape] = useState(true);
   const [scaleMode, setScaleMode] = useState<'fit' | '100%'>('fit');
   const [isVisible, setIsVisible] = useState(true);
+  const [currentBreakpoint, setCurrentBreakpoint] = useState<string>('');
+
+  // Update current breakpoint based on window width
+  useEffect(() => {
+    const updateBreakpoint = () => {
+      const width = window.innerWidth;
+      if (width >= 3840) setCurrentBreakpoint('4xl (3840px+)');
+      else if (width >= 2560) setCurrentBreakpoint('3xl (2560px+)');
+      else if (width >= 1920 && width <= 2559) setCurrentBreakpoint('HD (1920-2559px)');
+      else if (width >= 1920) setCurrentBreakpoint('2xl (1920px+)');
+      else if (width >= 1280) setCurrentBreakpoint('xl (1280px+)');
+      else if (width >= 1024) setCurrentBreakpoint('lg (1024px+)');
+      else if (width >= 768) setCurrentBreakpoint('md (768px+)');
+      else if (width >= 640) setCurrentBreakpoint('sm (640px+)');
+      else setCurrentBreakpoint('base (<640px)');
+    };
+
+    updateBreakpoint();
+    window.addEventListener('resize', updateBreakpoint);
+    return () => window.removeEventListener('resize', updateBreakpoint);
+  }, []);
 
   // Load preferences from localStorage
   useEffect(() => {
@@ -71,6 +92,10 @@ const DevPreviewShell: React.FC<DevPreviewShellProps> = ({ children }) => {
 
   const scale = getScale();
 
+  const openFullHDWindow = () => {
+    window.open(window.location.href, '_blank', 'width=1920,height=1080');
+  };
+
   if (!isVisible) {
     return <>{children}</>;
   }
@@ -81,12 +106,22 @@ const DevPreviewShell: React.FC<DevPreviewShellProps> = ({ children }) => {
       <div className="w-80 bg-background border-r border-border p-4 space-y-4 overflow-y-auto">
         <div className="flex items-center justify-between">
           <h3 className="font-semibold text-sm">Resolution Preview</h3>
-          <button
-            onClick={() => setIsVisible(false)}
-            className="text-xs text-muted-foreground hover:text-foreground"
-          >
-            Hide
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={openFullHDWindow}
+              className="flex items-center gap-1 px-2 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary/90"
+              title="Open 1920×1080 window for Full HD testing"
+            >
+              <ExternalLink size={12} />
+              Full HD
+            </button>
+            <button
+              onClick={() => setIsVisible(false)}
+              className="text-xs text-muted-foreground hover:text-foreground"
+            >
+              Hide
+            </button>
+          </div>
         </div>
         
         {/* Resolution Presets */}
@@ -148,10 +183,19 @@ const DevPreviewShell: React.FC<DevPreviewShellProps> = ({ children }) => {
         </div>
 
         {/* Current Info */}
-        <div className="pt-3 border-t border-border space-y-1 text-xs text-muted-foreground">
-          <div>Virtual: {currentWidth}×{currentHeight}</div>
-          <div>Scale: {(scale * 100).toFixed(0)}%</div>
-          <div>DPR: {window.devicePixelRatio}</div>
+        <div className="pt-3 border-t border-border space-y-2">
+          <div className="space-y-1 text-xs text-muted-foreground">
+            <div>Virtual: {currentWidth}×{currentHeight}</div>
+            <div>Scale: {(scale * 100).toFixed(0)}%</div>
+            <div>DPR: {window.devicePixelRatio}</div>
+          </div>
+          
+          <div className="space-y-1">
+            <div className="text-xs font-medium">Active Breakpoint</div>
+            <div className="text-xs px-2 py-1 bg-primary/10 text-primary rounded">
+              {currentBreakpoint}
+            </div>
+          </div>
         </div>
       </div>
 
