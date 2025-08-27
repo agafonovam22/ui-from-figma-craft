@@ -894,7 +894,7 @@ const ProductDetail: React.FC = () => {
                       backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
                     }}
                   ></div>
-                  <div className="relative z-10 p-6 h-full flex flex-col justify-end text-white">
+                  <div className="relative z-10 px-6 pt-6 pb-[10px] h-full flex flex-col justify-end text-white">
                     <div className="group-hover:mb-3 transition-all duration-300">
                       <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Доставка</h4>
                       <p className="text-sm opacity-90 font-manrope">
@@ -915,7 +915,7 @@ const ProductDetail: React.FC = () => {
                       backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
                     }}
                   ></div>
-                  <div className="relative z-10 p-6 h-full flex flex-col justify-end text-white">
+                  <div className="relative z-10 px-6 pt-6 pb-[10px] h-full flex flex-col justify-end text-white">
                     <div className="group-hover:mb-3 transition-all duration-300">
                       <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Сборка</h4>
                       <p className="text-sm opacity-90 font-manrope">
@@ -936,7 +936,7 @@ const ProductDetail: React.FC = () => {
                       backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
                     }}
                   ></div>
-                  <div className="relative z-10 p-6 h-full flex flex-col justify-end text-white">
+                  <div className="relative z-10 px-6 pt-6 pb-[10px] h-full flex flex-col justify-end text-white">
                     <div className="group-hover:mb-3 transition-all duration-300">
                       <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Различные способы оплаты</h4>
                       <p className="text-sm opacity-90 font-manrope">
@@ -960,7 +960,7 @@ const ProductDetail: React.FC = () => {
                       backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
                     }}
                   ></div>
-                  <div className="relative z-10 p-6 h-full flex flex-col justify-end text-white">
+                  <div className="relative z-10 px-6 pt-6 pb-[10px] h-full flex flex-col justify-end text-white">
                     <div className="group-hover:mb-3 transition-all duration-300">
                       <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Рассрочка</h4>
                       <p className="text-sm opacity-90 font-manrope">
@@ -981,7 +981,7 @@ const ProductDetail: React.FC = () => {
                       backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
                     }}
                   ></div>
-                  <div className="relative z-10 p-6 h-full flex flex-col justify-end text-white">
+                  <div className="relative z-10 px-6 pt-6 pb-[10px] h-full flex flex-col justify-end text-white">
                     <div className="group-hover:mb-3 transition-all duration-300">
                       <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Демонтаж и переезд</h4>
                       <p className="text-sm opacity-90 font-manrope">
