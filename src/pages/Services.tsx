@@ -70,6 +70,7 @@ const Services: React.FC = () => {
   const tabs = [
     { id: 'service-request', label: 'Заявка на сервис', active: true },
     { id: 'fitness-clubs', label: 'Обслуживание фитнес-клубов', active: false },
+    { id: 'services', label: 'Услуги', active: false },
     { id: 'instructions', label: 'Инструкции', active: false },
     { id: 'video-instructions', label: 'Видео-инструкции', active: false }
   ];
@@ -516,14 +517,18 @@ const Services: React.FC = () => {
                     >
                       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                     </div>
-                    <div className="relative h-full p-6 flex flex-col text-white">
-                      <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                      <p className="text-sm leading-relaxed mb-4 flex-grow">
-                        {service.description}
-                      </p>
-                      <button className="bg-white text-black px-4 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-colors self-start">
-                        {service.buttonText} →
-                      </button>
+                    <div className="relative h-full text-white">
+                      <div className="absolute top-6 left-6 right-6">
+                        <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                        <p className="text-sm leading-relaxed">
+                          {service.description}
+                        </p>
+                      </div>
+                      <div className="absolute bottom-[10px] left-6">
+                        <button className="bg-white text-black px-4 py-2 rounded text-sm font-medium hover:bg-gray-100 transition-colors">
+                          {service.buttonText} →
+                        </button>
+                      </div>
                     </div>
                   </div>
                 ))}
