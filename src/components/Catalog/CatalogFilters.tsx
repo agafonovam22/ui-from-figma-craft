@@ -106,16 +106,16 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
 
   return (
     <div className="w-64 flex-shrink-0 tablet-catalog-filters-container">
-      <h1 className="text-[48px] font-semibold text-[#262631] mb-6 tablet-heading-lg" style={{fontFamily: 'Benzin-Semibold'}}>Каталог</h1>
+      <h1 className="text-[48px] font-semibold text-[#262631] mb-6 tablet-filter-title" style={{fontFamily: 'Benzin-Semibold'}}>Каталог</h1>
       
       {/* Filters Container */}
       <div className="bg-[#F8F8FD] rounded-lg p-6 mb-2.5 tablet-filters-wrapper">
-        <h2 className="text-[20px] font-semibold text-[#262631] mb-6 tablet-heading-md" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h2>
+        <h2 className="text-[20px] font-semibold text-[#262631] mb-6 tablet-filter-section-title" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h2>
         
         {/* Price Filter */}
         <div className="mb-6">
           <h3 
-            className="text-[14px] text-[#262631] mb-[14px] flex items-center justify-between cursor-pointer" 
+            className="text-[14px] text-[#262631] mb-[14px] flex items-center justify-between cursor-pointer tablet-filter-item" 
             style={{fontFamily: 'Benzin-Regular'}}
             onClick={() => toggleFilter('price')}
           >
@@ -127,7 +127,7 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
             <>
               {/* Price Range Slider */}
               <div className="mb-4">
-                <div className="flex justify-between text-[14px] text-gray-600 mb-2" style={{fontFamily: 'Manrope'}}>
+                <div className="flex justify-between text-[14px] text-gray-600 mb-2 tablet-filter-item" style={{fontFamily: 'Manrope'}}>
                   <span>{priceRange[0].toLocaleString()} ₽</span>
                   <span>{priceRange[1].toLocaleString()} ₽</span>
                 </div>
@@ -141,7 +141,7 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
                 />
               </div>
               
-              <div className="space-y-[6px] text-[14px] text-gray-600" style={{fontFamily: 'Manrope'}}>
+              <div className="space-y-[6px] text-[14px] text-gray-600 tablet-filter-item" style={{fontFamily: 'Manrope'}}>
                 {['до 500', 'до 20000', 'до 50000', 'до 100000'].map(range => (
                   <label key={range} className="flex items-center">
                     <input 
@@ -327,7 +327,7 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
         {/* Apply Filters Button */}
         <Button 
           onClick={onApplyFilters}
-          className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white mb-3 h-12 rounded-lg text-[12px]" 
+          className="w-full bg-[#F53B49] hover:bg-[#e63946] text-white mb-3 h-12 rounded-lg text-[12px] tablet-filter-button" 
           style={{fontFamily: 'Benzin-Regular'}}
         >
           Применить
@@ -336,7 +336,7 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
         <Button 
           onClick={onResetFilters}
           variant="outline" 
-          className="w-full border-[#262631] text-[#262631] hover:bg-gray-50 h-12 rounded-lg text-[12px]" 
+          className="w-full border-[#262631] text-[#262631] hover:bg-gray-50 h-12 rounded-lg text-[12px] tablet-filter-button" 
           style={{fontFamily: 'Benzin-Regular'}}
         >
           Сбросить
