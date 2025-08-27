@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import ProductCard from '@/components/ProductCard.legacy';
 
 const ProductCatalog: React.FC = () => {
+  const [isFullHD, setIsFullHD] = useState(false);
   const [activeFilter, setActiveFilter] = useState<'home' | 'fitness'>('home');
+
+  useEffect(() => {
+    const checkResolution = () => {
+      const width = window.innerWidth;
+      setIsFullHD(width >= 1400);
+    };
+    
+    checkResolution();
+    window.addEventListener('resize', checkResolution);
+    
+    return () => window.removeEventListener('resize', checkResolution);
+  }, []);
 
   // Маппинг категорий к поисковым запросам
   const categoryToSearchQuery: Record<string, string> = {
@@ -201,43 +214,53 @@ const ProductCatalog: React.FC = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6"
-             style={{
-               gap: window.innerWidth >= 1920 ? '20px' : '10px',
-               maxWidth: window.innerWidth >= 1920 ? '1580px' : 'none',
-               margin: window.innerWidth >= 1920 ? '0 auto 24px auto' : 'auto'
-             }}>
+        <div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6"
+          style={{
+            gap: isFullHD ? '20px' : '10px',
+            maxWidth: isFullHD ? '1580px' : 'none',
+            margin: isFullHD ? '0 auto 24px auto' : 'auto'
+          }}
+        >
           {currentProducts.slice(0, 6).map((product) => (
-            <div key={product.id} 
-                 style={{
-                   width: window.innerWidth >= 1920 ? '228px' : 'auto',
-                   height: window.innerWidth >= 1920 ? '281px' : 'auto'
-                 }}>
+            <div 
+              key={product.id}
+              style={{
+                width: isFullHD ? '228px' : 'auto',
+                height: isFullHD ? '281px' : 'auto'
+              }}
+            >
               <ProductCard product={product} variant="grid" linkTo={product.linkTo} />
             </div>
           ))}
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px]"
-             style={{
-               gap: window.innerWidth >= 1920 ? '20px' : '10px',
-               maxWidth: window.innerWidth >= 1920 ? '1580px' : 'none',
-               margin: window.innerWidth >= 1920 ? '0 auto' : 'auto'
-             }}>
+        <div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px]"
+          style={{
+            gap: isFullHD ? '20px' : '10px',
+            maxWidth: isFullHD ? '1580px' : 'none',
+            margin: isFullHD ? '0 auto' : 'auto'
+          }}
+        >
           {currentProducts.slice(6, 10).map((product) => (
-            <div key={product.id}
-                 style={{
-                   width: window.innerWidth >= 1920 ? '228px' : 'auto',
-                   height: window.innerWidth >= 1920 ? '281px' : 'auto'
-                 }}>
+            <div 
+              key={product.id}
+              style={{
+                width: isFullHD ? '228px' : 'auto',
+                height: isFullHD ? '281px' : 'auto'
+              }}
+            >
               <ProductCard product={product} variant="grid" linkTo={product.linkTo} />
             </div>
           ))}
-          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px]"
-               style={{
-                 width: window.innerWidth >= 1920 ? '708px' : 'auto',
-                 height: window.innerWidth >= 1920 ? '281px' : '300px'
-               }}>
+          <div 
+            className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px]"
+            style={{
+              width: isFullHD ? '708px' : 'auto',
+              height: isFullHD ? '281px' : '300px'
+            }}
+          >
             <img 
               src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
               alt="Перейти в каталог"
