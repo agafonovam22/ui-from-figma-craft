@@ -147,336 +147,325 @@
   filter: brightness(0) saturate(100%) invert(28%) sepia(87%) saturate(3789%) hue-rotate(347deg) brightness(99%) contrast(94%);
 }
 
-/* Tablet-specific adaptations (768px - 1024px) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  /* Global tablet adaptations */
-  .tablet-container {
+/* =========================
+   TABLET ADAPTATIONS (768px - 1199px)
+   ========================= */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  /* Global tablet containers */
+  .max-w-\\[1800px\\], .tablet-container {
     padding-left: 24px !important;
     padding-right: 24px !important;
     max-width: 100% !important;
   }
-  
-  .tablet-section {
-    padding: 20px 24px !important;
-  }
-  
-  .tablet-grid-2 {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px !important;
-  }
-  
-  .tablet-grid-3 {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 12px !important;
-  }
-  
-  .tablet-grid-4 {
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 10px !important;
-  }
-  
-  .tablet-text-lg {
-    font-size: 18px !important;
-    line-height: 1.3 !important;
-  }
-  
-  .tablet-text-base {
-    font-size: 14px !important;
-    line-height: 1.4 !important;
-  }
-  
-  .tablet-text-sm {
-    font-size: 12px !important;
-    line-height: 1.3 !important;
-  }
-  
-  .tablet-button {
-    padding: 8px 16px !important;
-    font-size: 13px !important;
-  }
-  
-  .tablet-heading-xl {
-    font-size: 28px !important;
-    line-height: 1.2 !important;
-  }
-  
-  .tablet-heading-lg {
-    font-size: 24px !important;
-    line-height: 1.2 !important;
-  }
-  
-  .tablet-heading-md {
-    font-size: 20px !important;
-    line-height: 1.3 !important;
-  }
 
-  /* Header tablet adaptations */
-  header.tablet-header {
-    padding-left: 24px;
-    padding-right: 24px;
+  /* Header adaptations */
+  .tablet-header {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
   }
   
   .tablet-top-menu-container {
-    gap: 6px !important;
-    max-width: 100%;
-    overflow: hidden;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    gap: 8px !important;
+    height: 48px !important;
   }
   
   .tablet-top-menu-nav {
-    gap: 2px;
-    flex-wrap: wrap;
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    margin-top: 4px;
+    gap: 6px !important;
   }
   
   .tablet-top-menu-nav a {
-    font-size: 7px;
-    padding: 1px 4px;
-    white-space: nowrap;
+    font-size: 9px !important;
+    padding: 2px 6px !important;
   }
   
-  .tablet-top-menu-buttons {
-    gap: 4px;
-    order: 1;
-    flex-shrink: 0;
-  }
-  
-  .tablet-top-menu-buttons button {
-    padding: 3px 6px;
-    font-size: 7px;
-    white-space: nowrap;
-  }
-  
-  .tablet-top-menu-contact {
-    gap: 3px;
-    order: 2;
-    flex-shrink: 0;
-  }
-  
+  .tablet-top-menu-buttons button,
+  .tablet-top-menu-contact button,
   .tablet-top-menu-contact a {
-    font-size: 7px;
-    padding: 2px 4px;
-    white-space: nowrap;
-  }
-  
-  .tablet-top-menu-contact button {
-    padding: 3px 6px;
-    font-size: 7px;
-    white-space: nowrap;
+    font-size: 9px !important;
+    padding: 4px 8px !important;
   }
   
   .tablet-mid-menu {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
   }
   
   .tablet-mid-menu-container {
-    gap: 8px;
-    height: 50px !important;
-    align-items: center;
-    flex-wrap: nowrap;
+    gap: 12px !important;
+    height: 60px !important;
   }
   
   .tablet-catalog-button {
-    padding: 6px 8px;
-    height: 32px;
-    flex-shrink: 0;
-    min-width: auto;
+    padding: 8px 12px !important;
+    height: 36px !important;
   }
   
   .tablet-catalog-button span {
-    font-size: 10px;
-  }
-  
-  .tablet-catalog-button svg {
-    width: 10px;
-    height: 10px;
-  }
-  
-  .tablet-search-container {
-    max-width: 240px;
-    min-width: 180px;
-    flex: 1;
-    flex-shrink: 1;
-  }
-  
-  .tablet-search-bar {
-    height: 32px;
-  }
-  
-  .tablet-search-bar > form > div {
-    height: 32px;
-    padding: 6px 10px;
-  }
-  
-  .tablet-search-bar input {
-    font-size: 11px;
-  }
-  
-  .tablet-search-bar button {
-    padding: 2px;
-  }
-  
-  .tablet-search-bar svg {
-    width: 16px;
-    height: 16px;
-  }
-  
-  .tablet-user-actions {
-    flex-shrink: 0;
-  }
-  
-  .tablet-user-actions .flex.items-center {
-    gap: 6px;
-  }
-  
-  .tablet-user-actions .w-6.h-6 {
-    width: 18px;
-    height: 18px;
-  }
-  
-  .tablet-user-actions .w-6.h-6 svg {
-    width: 12px;
-    height: 12px;
-  }
-  
-  .tablet-user-actions button svg {
-    width: 16px;
-    height: 16px;
-  }
-  
-  .tablet-bottom-menu {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  
-  .tablet-category-button {
-    padding: 6px 10px;
-    height: 40px;
-  }
-  
-  .tablet-category-button span {
-    font-size: 12px;
-  }
-  
-  /* Footer tablet adaptations */
-  .tablet-footer-main {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  
-  .tablet-footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
-  .tablet-footer-contacts {
-    grid-column: span 2;
-    margin-top: 16px;
-  }
-  
-  .tablet-footer-contacts-inner {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .tablet-footer-bottom {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  
-  /* Page-specific tablet adaptations */
-  .tablet-product-detail {
-    padding: 16px 24px !important;
-  }
-  
-  .tablet-product-header {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-  }
-  
-  .tablet-product-tabs {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  
-  .tablet-product-tab {
-    padding: 8px 12px !important;
     font-size: 12px !important;
   }
   
-  .tablet-about-section {
-    padding: 20px 24px !important;
+  .tablet-search-container {
+    max-width: 300px !important;
   }
   
-  .tablet-about-tabs {
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 20px;
+  .tablet-search-bar input {
+    font-size: 12px !important;
   }
   
-  .tablet-about-tab {
-    padding: 8px 16px !important;
-    font-size: 13px !important;
+  .tablet-bottom-menu {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
   }
   
-  .tablet-about-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+  .tablet-category-button {
+    padding: 8px 12px !important;
+    height: 42px !important;
+  }
+  
+  .tablet-category-button span {
+    font-size: 12px !important;
+  }
+
+  /* Footer adaptations */
+  .tablet-footer-main {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  
+  .tablet-footer-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 16px !important;
   }
   
-  .tablet-services-section {
-    padding: 20px 24px !important;
+  .tablet-footer-contacts {
+    grid-column: span 3 !important;
+    margin-top: 16px !important;
   }
   
-  .tablet-services-tabs {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    gap: 8px;
+  .tablet-footer-bottom {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  /* Catalog adaptations */
+  .tablet-catalog-layout {
+    flex-direction: column !important;
+    gap: 20px !important;
   }
   
-  .tablet-services-tab {
-    white-space: nowrap;
-    padding: 8px 16px !important;
+  .tablet-catalog-filters {
+    width: 100% !important;
+    order: 2 !important;
+  }
+  
+  .tablet-catalog-main {
+    width: 100% !important;
+    margin-top: 0 !important;
+    order: 1 !important;
+  }
+
+  /* Product grid - 2 cards per row on tablets */
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  /* Product card adaptations */
+  .tablet-product-card {
+    height: 400px !important;
+  }
+  
+  .tablet-product-card-image {
+    height: 200px !important;
+  }
+  
+  .tablet-product-card-info {
+    height: 140px !important;
+    padding: 12px !important;
+  }
+  
+  .tablet-product-title {
     font-size: 13px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 8px !important;
   }
   
-  .tablet-contacts-section {
-    padding: 20px 24px !important;
+  .tablet-product-price {
+    font-size: 14px !important;
   }
   
-  .tablet-contacts-grid {
+  .tablet-buy-button {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+  }
+
+  /* General responsive adjustments */
+  .text-4xl, .text-5xl {
+    font-size: 28px !important;
+  }
+  
+  .text-3xl {
+    font-size: 24px !important;
+  }
+  
+  .text-2xl {
+    font-size: 20px !important;
+  }
+  
+  .text-xl {
+    font-size: 18px !important;
+  }
+  
+  .text-lg {
+    font-size: 16px !important;
+  }
+
+  /* Layout spacing */
+  .gap-8 {
+    gap: 16px !important;
+  }
+  
+  .gap-6 {
+    gap: 12px !important;
+  }
+  
+  .p-8 {
+    padding: 16px !important;
+  }
+  
+  .py-8 {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+}
+
+/* =========================
+   MOBILE ADAPTATIONS (<768px)
+   ========================= */
+@media screen and (max-width: 767px) {
+  /* Global mobile containers */
+  .max-w-\\[1800px\\], .mobile-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    max-width: 100% !important;
+  }
+
+  /* Header mobile adaptations */
+  .tablet-header {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  .tablet-top-menu-container {
+    flex-direction: column !important;
+    gap: 4px !important;
+    height: auto !important;
+    padding: 8px 0 !important;
+  }
+  
+  .tablet-top-menu-nav {
+    order: 3 !important;
+    width: 100% !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+  }
+  
+  .tablet-top-menu-nav a {
+    font-size: 8px !important;
+    padding: 2px 4px !important;
+  }
+  
+  .tablet-top-menu-buttons {
+    order: 1 !important;
+    gap: 4px !important;
+  }
+  
+  .tablet-top-menu-contact {
+    order: 2 !important;
+    gap: 4px !important;
+  }
+  
+  .tablet-mid-menu {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  .tablet-mid-menu-container {
+    flex-direction: column !important;
+    gap: 8px !important;
+    height: auto !important;
+    padding: 8px 0 !important;
+  }
+  
+  .tablet-search-container {
+    order: 2 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .tablet-catalog-button {
+    order: 1 !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  
+  .tablet-user-actions {
+    order: 3 !important;
+    justify-content: center !important;
+  }
+  
+  .tablet-bottom-menu {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Hide bottom menu on mobile or make it scrollable */
+  .tablet-bottom-menu {
+    overflow-x: auto !important;
+  }
+  
+  .tablet-category-button {
+    white-space: nowrap !important;
+    padding: 6px 10px !important;
+    height: 36px !important;
+  }
+  
+  .tablet-category-button span {
+    font-size: 10px !important;
+  }
+
+  /* Footer mobile adaptations */
+  .tablet-footer-main {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  .tablet-footer-grid {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
   }
   
-  .tablet-form {
-    max-width: 100% !important;
+  .tablet-footer-contacts {
+    grid-column: span 1 !important;
   }
   
-  .tablet-form-input {
-    padding: 10px 14px !important;
-    font-size: 14px !important;
-  }
-
-  /* Catalog filters tablet adaptations */
-  .tablet-catalog-filters-container {
-    width: 100% !important;
-    flex-shrink: initial !important;
-    margin-bottom: 20px;
+  .tablet-footer-contacts-inner {
+    grid-template-columns: 1fr !important;
   }
   
-  .tablet-filters-wrapper {
-    padding: 16px !important;
-    margin-bottom: 16px !important;
+  .tablet-footer-bottom {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
-  /* Catalog page tablet adaptations */
+  /* Main page mobile adaptations */
+  .max-w-\\[1800px\\] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Catalog mobile adaptations */
   .tablet-catalog-layout {
     flex-direction: column !important;
     gap: 16px !important;
@@ -484,165 +473,53 @@
   
   .tablet-catalog-filters {
     width: 100% !important;
-    margin-bottom: 20px !important;
-    margin-top: 0 !important;
+    order: 2 !important;
   }
   
   .tablet-catalog-main {
     width: 100% !important;
     margin-top: 0 !important;
-  }
-  
-  .tablet-catalog-controls {
-    margin-bottom: 16px !important;
-  }
-  
-  .tablet-catalog-seo {
-    margin-top: 60px !important;
-    margin-bottom: 40px !important;
-  }
-  
-  .tablet-catalog-seo h2 {
-    font-size: 20px !important;
-    margin-bottom: 16px !important;
+    order: 1 !important;
   }
 
-  /* ProductCard tablet adaptations */
-  .tablet-product-card {
-    height: 220px;
-  }
-  
-  .tablet-product-card img {
-    object-fit: cover;
-  }
-  
-  .tablet-product-card-button {
-    padding: 6px 12px;
-    font-size: 11px;
-    border-radius: 5px;
-    bottom: 12px;
-    left: 12px;
-  }
-  
-  .tablet-product-card-button span {
-    font-size: 11px;
-  }
-  
-  .tablet-product-card-button svg {
-    width: 12px;
-    height: 12px;
-  }
-
-  /* ProductCatalog tablet adaptations */
-  .tablet-product-catalog-container {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  
-  .tablet-product-catalog-header {
-    margin-bottom: 32px;
-  }
-  
-  .tablet-product-catalog-title {
-    font-size: 20px;
-    line-height: 1.2;
-  }
-  
-  .tablet-product-catalog-filters {
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  
-  .tablet-product-catalog-filter-btn {
-    padding: 8px 16px;
-    font-size: 13px;
-    border-radius: 6px;
-    white-space: nowrap;
-  }
-  
-  /* All pages tablet adaptations */
-  .tablet-page-container {
-    padding: 16px 24px !important;
-    max-width: 100% !important;
-  }
-  
-  .tablet-page-title {
-    font-size: 32px !important;
-    line-height: 1.2 !important;
-    margin-bottom: 20px !important;
-  }
-  
-  .tablet-form-section {
+  /* Product grid - 1 card per row on mobile */
+  .grid-cols-4 {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
   }
+
+  /* Product card mobile adaptations */
+  .tablet-product-card {
+    height: 380px !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+  }
   
-  .tablet-form-input {
-    padding: 10px 14px !important;
+  .tablet-product-card-image {
+    height: 180px !important;
+  }
+  
+  .tablet-product-card-info {
+    height: 140px !important;
+    padding: 12px !important;
+  }
+  
+  .tablet-product-title {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .tablet-product-price {
     font-size: 14px !important;
   }
   
-  .tablet-card-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
+  .tablet-buy-button {
+    padding: 6px 12px !important;
+    font-size: 10px !important;
   }
-  
-  .tablet-image-gallery {
-    max-height: 300px !important;
-  }
-  
-  .tablet-navigation-tabs {
-    overflow-x: auto !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-  }
-  
-  .tablet-content-section {
-    padding: 16px !important;
-    margin-bottom: 20px !important;
-  }
-  
-  .tablet-responsive-table {
-    overflow-x: auto !important;
-    font-size: 12px !important;
-  }
-  
-  .tablet-button-group {
-    flex-direction: column !important;
-    gap: 8px !important;
-  }
-  
-  .tablet-sidebar {
-    position: static !important;
-    width: 100% !important;
-    margin-bottom: 20px !important;
-  }
-  
-  .tablet-main-content {
-    width: 100% !important;
-    padding: 0 !important;
-  }
-  
-  /* Global container fixes */
-  .max-w-\\[1800px\\] {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-  }
-  
-  /* Responsive grid fixes */
-  .grid-cols-4 {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-  
-  .grid-cols-6 {
-    grid-template-columns: repeat(4, 1fr) !important;
-  }
-  
-  .grid-cols-3 {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  
-  /* Text size adjustments */
+
+  /* General mobile text sizes */
   .text-4xl, .text-5xl {
     font-size: 24px !important;
   }
@@ -659,35 +536,102 @@
     font-size: 16px !important;
   }
   
-  /* Spacing adjustments */
-  .gap-8 {
-    gap: 16px !important;
+  .text-lg {
+    font-size: 14px !important;
   }
-  
-  .gap-6 {
+
+  /* Mobile layout spacing */
+  .gap-8 {
     gap: 12px !important;
   }
   
-  .gap-4 {
+  .gap-6 {
     gap: 8px !important;
   }
   
-  /* Padding adjustments */
-  .p-8 {
-    padding: 16px !important;
+  .gap-4 {
+    gap: 6px !important;
   }
   
-  .p-6 {
+  .p-8 {
     padding: 12px !important;
   }
   
   .py-8 {
-    padding-top: 16px !important;
-    padding-bottom: 16px !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
   }
   
   .px-8 {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
   }
+
+  /* Hide or adjust elements that don't fit on mobile */
+  .max-sm\\:hidden {
+    display: none !important;
+  }
+  
+  .max-md\\:hidden {
+    display: none !important;
+  }
+
+  /* Ensure buttons remain clickable */
+  button {
+    min-height: 44px !important;
+  }
+
+  /* Ad banner responsive adjustments */
+  .col-span-4 {
+    grid-column: span 1 !important;
+  }
+}
+
+/* =========================
+   ADDITIONAL RESPONSIVE UTILITIES
+   ========================= */
+
+/* Ensure proper grid behavior on all screen sizes */
+@media screen and (min-width: 1200px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  /* Ad banner spans full width on tablet */
+  .col-span-4 {
+    grid-column: span 2 !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .grid-cols-4 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Ad banner spans full width on mobile */
+  .col-span-4 {
+    grid-column: span 1 !important;
+  }
+}
+
+/* Prevent horizontal scrolling */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Responsive image handling */
+img {
+  max-width: 100%;
+  height: auto;
 }

@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивная верстка - WELL.FITNESS</title>
+    <style>
+        /* =========================
+           ОСНОВНЫЕ СТИЛИ И ДИЗАЙН-СИСТЕМА
+           ========================= */
+        @font-face {
+            font-family: 'Benzin-Regular';
+            src: url('/fonts/Benzin-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Benzin-Semibold';
+            src: url('/fonts/Benzin-Semibold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Benzin-Regular', sans-serif;
+            background-color: white;
+            color: #1a1a1a;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Benzin-Semibold', sans-serif;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* =========================
+           HEADER СТИЛИ
+           ========================= */
+        .header {
+            width: 100%;
+            background-color: #17171E;
+        }
+
+        .top-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 60px;
+            border-bottom: 1px solid rgba(255,255,255,0.10);
+        }
+
+        .top-menu-container {
+            display: flex;
+            width: 100%;
+            max-width: 1800px;
+            height: 53px;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .top-menu-nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .top-menu-nav a {
+            color: #778093;
+            font-size: 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .top-menu-nav a:hover {
+            color: white;
+        }
+
+        .top-menu-buttons, .top-menu-contact {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn {
+            font-size: 10px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            color: white;
+            background: transparent;
+        }
+
+        .btn-primary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .btn-secondary {
+            color: #262631;
+            background: white;
+        }
+
+        .btn-secondary:hover {
+            background: #f0f0f0;
+        }
+
+        .btn-danger {
+            color: white;
+            background: #F53B49;
+        }
+
+        .btn-danger:hover {
+            background: #e63946;
+        }
+
+        .mid-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 60px;
+        }
+
+        .mid-menu-container {
+            display: flex;
+            width: 100%;
+            max-width: 1800px;
+            height: 65px;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo img {
+            height: 32px;
+        }
+
+        .search-catalog-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            max-width: 750px;
+        }
+
+        .catalog-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            background: #F53B49;
+            padding: 12px 20px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            white-space: nowrap;
+            height: 41px;
+            transition: background 0.3s;
+        }
+
+        .catalog-btn:hover {
+            background: #e63946;
+        }
+
+        .search-bar {
+            flex: 1;
+            display: flex;
+            height: 41px;
+            background: #262631;
+            padding: 0 20px 0 20px;
+            border-radius: 5px;
+            align-items: center;
+            max-width: 700px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .search-bar input::placeholder {
+            color: #5C6476;
+        }
+
+        .user-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .user-actions a, .user-actions button {
+            color: #5C6476;
+            text-decoration: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        /* =========================
+           ОСНОВНОЙ КОНТЕНТ
+           ========================= */
+        .container {
+            width: 100%;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        .catalog-layout {
+            display: flex;
+            gap: 32px;
+            margin-top: 24px;
+        }
+
+        .filters-sidebar {
+            width: 280px;
+            flex-shrink: 0;
+        }
+
+        .catalog-main {
+            flex: 1;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+
+        .product-card {
+            position: relative;
+            height: 460px;
+            background: #F8F8FD;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            background: linear-gradient(179deg, #3C3C50 38.62%, #262631 99.45%);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .product-info {
+            padding: 16px;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-title {
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            transition: color 0.3s;
+        }
+
+        .product-card:hover .product-title {
+            color: white;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1a1a1a;
+            transition: color 0.3s;
+        }
+
+        .product-card:hover .product-price {
+            color: white;
+        }
+
+        .buy-btn {
+            background: #F53B49;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .buy-btn:hover {
+            background: #e63946;
+        }
+
+        /* =========================
+           FOOTER СТИЛИ
+           ========================= */
+        .footer {
+            width: 100%;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .footer-main {
+            background: #262631;
+            padding: 32px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 32px;
+        }
+
+        .footer-contacts {
+            grid-column: span 2;
+        }
+
+        .footer-bottom {
+            background: #17171E;
+            padding: 24px 0;
+        }
+
+        /* =========================
+           ПЛАНШЕТЫ (768px - 1199px)
+           ========================= */
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            .top-menu {
+                padding: 0 24px;
+            }
+
+            .top-menu-container {
+                gap: 8px;
+                height: 48px;
+            }
+
+            .top-menu-nav {
+                gap: 6px;
+            }
+
+            .top-menu-nav a {
+                font-size: 9px;
+                padding: 2px 6px;
+            }
+
+            .btn {
+                font-size: 9px;
+                padding: 4px 8px;
+            }
+
+            .mid-menu {
+                padding: 12px 24px;
+            }
+
+            .mid-menu-container {
+                gap: 12px;
+                height: 60px;
+            }
+
+            .catalog-btn {
+                padding: 8px 12px;
+                height: 36px;
+                font-size: 12px;
+            }
+
+            .search-catalog-container {
+                max-width: 300px;
+            }
+
+            .search-bar input {
+                font-size: 12px;
+            }
+
+            /* Каталог - 2 карточки в ряд на планшете */
+            .catalog-layout {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .filters-sidebar {
+                width: 100%;
+                order: 2;
+            }
+
+            .catalog-main {
+                order: 1;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .product-card {
+                height: 400px;
+            }
+
+            .product-image {
+                height: 200px;
+            }
+
+            .product-info {
+                height: 140px;
+                padding: 12px;
+            }
+
+            .product-title {
+                font-size: 13px;
+                line-height: 1.3;
+                margin-bottom: 8px;
+            }
+
+            .product-price {
+                font-size: 14px;
+            }
+
+            .buy-btn {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+
+            .footer-main {
+                padding: 24px 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+            }
+
+            .footer-contacts {
+                grid-column: span 3;
+                margin-top: 16px;
+            }
+        }
+
+        /* =========================
+           МОБИЛЬНЫЕ (<768px)
+           ========================= */
+        @media screen and (max-width: 767px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .top-menu {
+                padding: 0 16px;
+            }
+
+            .top-menu-container {
+                flex-direction: column;
+                gap: 4px;
+                height: auto;
+                padding: 8px 0;
+            }
+
+            .top-menu-nav {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 4px;
+            }
+
+            .top-menu-nav a {
+                font-size: 8px;
+                padding: 2px 4px;
+            }
+
+            .top-menu-buttons {
+                order: 1;
+                gap: 4px;
+            }
+
+            .top-menu-contact {
+                order: 2;
+                gap: 4px;
+            }
+
+            .mid-menu {
+                padding: 8px 16px;
+            }
+
+            .mid-menu-container {
+                flex-direction: column;
+                gap: 8px;
+                height: auto;
+                padding: 8px 0;
+            }
+
+            .search-catalog-container {
+                order: 2;
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .catalog-btn {
+                order: 1;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .user-actions {
+                order: 3;
+                justify-content: center;
+            }
+
+            /* Каталог - 1 карточка в ряд на мобильном */
+            .catalog-layout {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .filters-sidebar {
+                width: 100%;
+                order: 2;
+            }
+
+            .catalog-main {
+                order: 1;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .product-card {
+                height: 380px;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+
+            .product-image {
+                height: 180px;
+            }
+
+            .product-info {
+                height: 140px;
+                padding: 12px;
+            }
+
+            .product-title {
+                font-size: 12px;
+                line-height: 1.2;
+                margin-bottom: 8px;
+            }
+
+            .product-price {
+                font-size: 14px;
+            }
+
+            .buy-btn {
+                padding: 6px 12px;
+                font-size: 10px;
+                min-height: 44px;
+            }
+
+            .footer-main {
+                padding: 20px 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-contacts {
+                grid-column: span 1;
+            }
+
+            /* Скрыть элементы на мобильном */
+            .max-sm-hidden {
+                display: none;
+            }
+
+            .max-md-hidden {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <!-- Top Menu -->
+        <div class="top-menu">
+            <div class="top-menu-container">
+                <div class="city-selector">
+                    <span style="color: white; font-size: 10px;">Москва</span>
+                </div>
+                
+                <nav class="top-menu-nav max-md-hidden">
+                    <a href="/about">О компании</a>
+                    <a href="/brands">Бренды</a>
+                    <a href="/services">Сервис</a>
+                    <a href="/business">Для Бизнеса</a>
+                    <a href="/support">Поддержка</a>
+                    <a href="/installment">Рассрочка</a>
+                    <a href="/where-to-buy">Где купить</a>
+                    <a href="/contacts">Контакты</a>
+                </nav>
+
+                <div class="top-menu-buttons max-sm-hidden">
+                    <button class="btn btn-primary">Для дилеров</button>
+                    <button class="btn btn-secondary">For suppliers</button>
+                </div>
+
+                <div class="top-menu-contact max-sm-hidden">
+                    <a href="tel:+74996775632" class="btn btn-primary">+7 499 677 56 32</a>
+                    <button class="btn btn-danger">Заказать звонок</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mid Menu -->
+        <div class="mid-menu">
+            <div class="mid-menu-container">
+                <div class="logo">
+                    <img src="/lovable-uploads/989588d0-dab0-48b9-9268-db2cc02cf4da.png" alt="Well Fitness">
+                </div>
+                
+                <div class="search-catalog-container">
+                    <a href="/catalog" class="catalog-btn">
+                        <span>Каталог</span>
+                    </a>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Поиск">
+                        <button>🔍</button>
+                    </div>
+                </div>
+                
+                <div class="user-actions">
+                    <a href="/account">👤</a>
+                    <button>🛒</button>
+                    <button>📊</button>
+                    <button>❤️</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <nav style="margin: 24px 0; font-size: 14px; color: #666;">
+                <a href="/" style="color: #666; text-decoration: none;">Главная</a> / 
+                <span>Каталог</span>
+            </nav>
+
+            <div class="catalog-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div style="background: #f8f8fd; padding: 20px; border-radius: 8px;">
+                        <h3 style="margin-bottom: 16px; font-size: 18px;">Фильтры</h3>
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="margin-bottom: 8px; font-size: 14px;">Цена</h4>
+                            <div style="color: #666; font-size: 12px;">от 10 000 до 500 000 ₽</div>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="margin-bottom: 8px; font-size: 14px;">Бренды</h4>
+                            <div style="color: #666; font-size: 12px;">SMITH, TRUE, Bowflex...</div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Catalog -->
+                <div class="catalog-main">
+                    <h1 style="margin-bottom: 24px; font-size: 32px;">Каталог товаров</h1>
+                    
+                    <!-- Products Grid -->
+                    <div class="products-grid">
+                        <!-- Product Card 1 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/placeholder.svg" alt="Товар 1">
+                            </div>
+                            <div class="product-info">
+                                <div>
+                                    <div style="color: green; font-size: 12px; margin-bottom: 8px;">В наличии</div>
+                                    <h3 class="product-title">Беговая дорожка CardioMaster CM100</h3>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span class="product-price">125 000 ₽</span>
+                                    <button class="buy-btn">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 2 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/placeholder.svg" alt="Товар 2">
+                            </div>
+                            <div class="product-info">
+                                <div>
+                                    <div style="color: green; font-size: 12px; margin-bottom: 8px;">В наличии</div>
+                                    <h3 class="product-title">Эллиптический тренажер ProFit E200</h3>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span class="product-price">85 000 ₽</span>
+                                    <button class="buy-btn">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 3 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/placeholder.svg" alt="Товар 3">
+                            </div>
+                            <div class="product-info">
+                                <div>
+                                    <div style="color: orange; font-size: 12px; margin-bottom: 8px;">Осталось мало</div>
+                                    <h3 class="product-title">Велотренажер SportMax B300</h3>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span class="product-price">65 000 ₽</span>
+                                    <button class="buy-btn">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 4 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/placeholder.svg" alt="Товар 4">
+                            </div>
+                            <div class="product-info">
+                                <div>
+                                    <div style="color: green; font-size: 12px; margin-bottom: 8px;">В наличии</div>
+                                    <h3 class="product-title">Силовой тренажер GymLine S400</h3>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span class="product-price">195 000 ₽</span>
+                                    <button class="buy-btn">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 5 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/placeholder.svg" alt="Товар 5">
+                            </div>
+                            <div class="product-info">
+                                <div>
+                                    <div style="color: green; font-size: 12px; margin-bottom: 8px;">В наличии</div>
+                                    <h3 class="product-title">Гребной тренажер ActiveZone R150</h3>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span class="product-price">45 000 ₽</span>
+                                    <button class="buy-btn">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 6 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/placeholder.svg" alt="Товар 6">
+                            </div>
+                            <div class="product-info">
+                                <div>
+                                    <div style="color: green; font-size: 12px; margin-bottom: 8px;">В наличии</div>
+                                    <h3 class="product-title">Массажное кресло RelaxPro M500</h3>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span class="product-price">275 000 ₽</span>
+                                    <button class="buy-btn">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 7 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/placeholder.svg" alt="Товар 7">
+                            </div>
+                            <div class="product-info">
+                                <div>
+                                    <div style="color: red; font-size: 12px; margin-bottom: 8px;">Нет в наличии</div>
+                                    <h3 class="product-title">Батут FitJump T200</h3>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span class="product-price">25 000 ₽</span>
+                                    <button class="buy-btn">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 8 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/placeholder.svg" alt="Товар 8">
+                            </div>
+                            <div class="product-info">
+                                <div>
+                                    <div style="color: green; font-size: 12px; margin-bottom: 8px;">В наличии</div>
+                                    <h3 class="product-title">Инверсионный стол HealthBack I100</h3>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span class="product-price">15 000 ₽</span>
+                                    <button class="buy-btn">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div style="display: flex; justify-content: center; margin-top: 40px; gap: 8px;">
+                        <button style="padding: 8px 12px; border: 1px solid #ddd; background: white; border-radius: 4px;">1</button>
+                        <button style="padding: 8px 12px; border: 1px solid #ddd; background: white; border-radius: 4px;">2</button>
+                        <button style="padding: 8px 12px; border: 1px solid #ddd; background: white; border-radius: 4px;">3</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <h3 style="font-size: 12px; margin-bottom: 8px;">Каталог</h3>
+                        <ul style="list-style: none; font-size: 12px; color: #778093;">
+                            <li><a href="#" style="color: #778093; text-decoration: none;">Для дома</a></li>
+                            <li><a href="#" style="color: #778093; text-decoration: none;">Для фитнес-клуба</a></li>
+                            <li><a href="#" style="color: #778093; text-decoration: none;">Наши бренды</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 12px; margin-bottom: 8px;">Поддержка</h3>
+                        <ul style="list-style: none; font-size: 12px; color: #778093;">
+                            <li><a href="#" style="color: #778093; text-decoration: none;">Доставка и оплата</a></li>
+                            <li><a href="#" style="color: #778093; text-decoration: none;">Условия возврата</a></li>
+                            <li><a href="#" style="color: #778093; text-decoration: none;">Гарантия</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 12px; margin-bottom: 8px;">О компании</h3>
+                        <ul style="list-style: none; font-size: 12px; color: #778093;">
+                            <li><a href="#" style="color: #778093; text-decoration: none;">О нас</a></li>
+                            <li><a href="#" style="color: #778093; text-decoration: none;">Миссия</a></li>
+                            <li><a href="#" style="color: #778093; text-decoration: none;">Команда</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 12px; margin-bottom: 8px;">Для Бизнеса</h3>
+                        <ul style="list-style: none; font-size: 12px; color: #778093;">
+                            <li><a href="#" style="color: #778093; text-decoration: none;">3D-проект</a></li>
+                            <li><a href="#" style="color: #778093; text-decoration: none;">Бизнес-планирование</a></li>
+                            <li><a href="#" style="color: #778093; text-decoration: none;">Готовые решения</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contacts">
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                            <div>
+                                <div style="margin-bottom: 12px;">
+                                    <p style="font-size: 10px; color: #778093;">Для Москвы</p>
+                                    <a href="tel:+74996775632" style="color: white; font-size: 10px; text-decoration: none;">+7 (499) 677-56-32</a>
+                                </div>
+                                <div style="margin-bottom: 12px;">
+                                    <p style="font-size: 10px; color: #778093;">E-mail</p>
+                                    <p style="color: white; font-size: 10px;">info@wellfitness.ru</p>
+                                </div>
+                                <button class="btn btn-danger" style="margin-top: 8px;">Заказать звонок</button>
+                            </div>
+                            <div>
+                                <div style="margin-bottom: 16px;">
+                                    <p style="font-size: 10px; color: white; margin-bottom: 8px;">Для HOME</p>
+                                    <div>🔗</div>
+                                </div>
+                                <div style="margin-bottom: 16px;">
+                                    <p style="font-size: 10px; color: white; margin-bottom: 8px;">Для PRO</p>
+                                    <div>🔗</div>
+                                </div>
+                                <div>
+                                    <p style="font-size: 8px; color: #778093; margin-bottom: 8px;">Принимаем к оплате</p>
+                                    <div style="display: flex; gap: 8px;">💳💳💳💳</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <img src="/lovable-uploads/989588d0-dab0-48b9-9268-db2cc02cf4da.png" alt="WELL.FITNESS" style="height: 32px;">
+                        <div style="display: flex; gap: 20px;">
+                            <a href="#" style="color: white; font-size: 10px; text-decoration: none;">Для дилеров</a>
+                            <button class="btn btn-secondary" style="font-size: 10px;">For suppliers</button>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 20px;">
+                        <a href="#" style="color: #778093; font-size: 10px; text-decoration: none;">Политика конфиденциальности</a>
+                        <a href="#" style="color: #778093; font-size: 10px; text-decoration: none;">Публичная оферта</a>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 16px; color: #778093; font-size: 10px;">
+                    © WellFitness, 2005-2024 Все права защищены
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

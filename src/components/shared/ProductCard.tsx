@@ -140,10 +140,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <Link 
       to={`/product/${product.id}`}
-      className="block"
+      className="block w-full"
     >
       <div 
-        className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 tablet-product-card"
+        className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 tablet-product-card w-full"
         style={{ 
           height: '460px', 
           backgroundColor: '#F8F8FD',
@@ -387,7 +387,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </span>
             
             <Button 
-              className="bg-[#F53B49] hover:bg-[#e63946] text-white px-4 py-2 tablet-buy-button"
+              className="bg-[#F53B49] hover:bg-[#e63946] text-white px-4 py-2 tablet-buy-button text-sm"
               onClick={handleBuyClick}
             >
               Купить
