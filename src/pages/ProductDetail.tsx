@@ -887,7 +887,7 @@ const ProductDetail: React.FC = () => {
               {/* Первый ряд - 3 карточки */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-[10px]">
                 {/* Доставка */}
-                <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800">
+                <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800 group">
                   <div 
                     className="absolute inset-0 bg-cover bg-center bg-gray-600"
                     style={{
@@ -901,14 +901,14 @@ const ProductDetail: React.FC = () => {
                         У нас работают высококвалифицированные сотрудники со стажем более 5 лет. Мы оперативно доставляем заказы наших клиентов в любую точку г. Москвы и Санкт-Петербурга, а также других регионов России.
                       </p>
                     </div>
-                    <button className="bg-white text-gray-800 px-4 py-2 rounded font-manrope text-sm w-fit">
+                    <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ fontFamily: 'Benzin-Regular' }}>
                       Перейти →
                     </button>
                   </div>
                 </div>
 
                 {/* Сборка */}
-                <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800">
+                <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800 group">
                   <div 
                     className="absolute inset-0 bg-cover bg-center bg-gray-600"
                     style={{
@@ -922,11 +922,14 @@ const ProductDetail: React.FC = () => {
                         Наша компания оказывает полный спектр услуг по подъему и сборке оборудования. Сотрудники оснащены всем необходимым инструментом и имеют огромный опыт.
                       </p>
                     </div>
+                    <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ fontFamily: 'Benzin-Regular' }}>
+                      Перейти →
+                    </button>
                   </div>
                 </div>
 
                 {/* Различные способы оплаты */}
-                <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800">
+                <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800 group">
                   <div 
                     className="absolute inset-0 bg-cover bg-center bg-gray-600"
                     style={{
@@ -940,6 +943,9 @@ const ProductDetail: React.FC = () => {
                         У всех филиалах нашей компании присутствуют терминалы для безналичной оплаты, вы можете оплатить свою покупку различными способами: наличными, банковской картой, через QR код или оплатить товар по счету.
                       </p>
                     </div>
+                    <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ fontFamily: 'Benzin-Regular' }}>
+                      Перейти →
+                    </button>
                   </div>
                 </div>
               </div>
@@ -947,7 +953,7 @@ const ProductDetail: React.FC = () => {
               {/* Второй ряд - 2 карточки */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px]">
                 {/* Рассрочка */}
-                <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800">
+                <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800 group">
                   <div 
                     className="absolute inset-0 bg-cover bg-center bg-gray-600"
                     style={{
@@ -961,11 +967,14 @@ const ProductDetail: React.FC = () => {
                         Вы можете оформить рассрочку сроком до 12 месяцев, без переплат, без первоначального взноса, оставьте заявку и менеджеры банков-партнеров свяжутся с Вами.
                       </p>
                     </div>
+                    </div>
+                    <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ fontFamily: 'Benzin-Regular' }}>
+                      Перейти →
+                    </button>
                   </div>
-                </div>
 
                 {/* Демонтаж и переезд */}
-                <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800">
+                <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800 group">
                   <div 
                     className="absolute inset-0 bg-cover bg-center bg-gray-600"
                     style={{
@@ -979,6 +988,9 @@ const ProductDetail: React.FC = () => {
                         Так же вы можете заказать услуги по перевозке спортивного оборудования с полным демонтажом и сборкой на новом месте. Хотите перевезти свой тренажер в новую квартиру или загородный дом - это к нам!
                       </p>
                     </div>
+                    <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ fontFamily: 'Benzin-Regular' }}>
+                      Перейти →
+                    </button>
                   </div>
                 </div>
               </div>
