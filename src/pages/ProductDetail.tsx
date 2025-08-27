@@ -337,7 +337,8 @@ const ProductDetail: React.FC = () => {
           />
             <EmailSubscription />
           </div>
-        );
+         );
+      case 'delivery':
         return (
           <div className="space-y-12">
             <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Доставка и оплата</h3>
@@ -719,7 +720,8 @@ const ProductDetail: React.FC = () => {
             </div>
             <EmailSubscription />
           </div>
-        );
+         );
+      case 'installment':
         return (
           <div className="space-y-8">
             {/* Text content */}
@@ -852,7 +854,8 @@ const ProductDetail: React.FC = () => {
             </div>
             <EmailSubscription />
           </div>
-        );
+         );
+      case 'services':
         return (
           <div>
             <h3 className="text-2xl font-semibold mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>Услуги</h3>
@@ -874,7 +877,8 @@ const ProductDetail: React.FC = () => {
             </div>
             <EmailSubscription />
           </div>
-        );
+         );
+      default:
         return null;
     }
   };
