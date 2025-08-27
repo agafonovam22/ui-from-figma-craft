@@ -21,6 +21,7 @@ import { getBrandName, isTreadmill, getUsageName, getEquipmentTypeName } from '@
 import ProductCharacteristicsTable from '@/components/product/ProductCharacteristicsTable';
 import SupportCitySelector from '@/components/SupportCitySelector';
 import { useViewedProducts } from '@/hooks/useViewedProducts';
+import { debugSpecificProducts } from '@/utils/debugProducts';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -74,6 +75,13 @@ const ProductDetail: React.FC = () => {
       addViewedProduct(id);
     }
   }, [product?.id, id, addViewedProduct]);
+
+  // Отладка: выводим информацию о конкретных товарах
+  useEffect(() => {
+    if (allProductsData?.products?.length > 0) {
+      debugSpecificProducts();
+    }
+  }, [allProductsData]);
 
   const handleBuyClick = () => {
     if (product) {
