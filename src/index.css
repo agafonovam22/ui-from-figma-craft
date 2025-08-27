@@ -212,18 +212,6 @@
     font-size: 9px !important;
   }
   
-  /* ====== СЕТКА ТОВАРОВ ====== */
-  .tablet-catalog-grid,
-  .grid.tablet-catalog-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 16px !important;
-  }
-  
-  .tablet-ad-banner {
-    grid-column: span 3 !important;
-    padding: 20px !important;
-  }
-  
   /* ====== КАРТОЧКИ ТОВАРОВ ====== */
   .tablet-product-card {
     height: 340px !important;
@@ -254,465 +242,6 @@
     height: 24px !important;
   }
   
-  .tablet-section {
-    padding: 20px 24px !important;
-  }
-  
-  .tablet-grid-2 {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px !important;
-  }
-  
-  .tablet-grid-3 {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 12px !important;
-  }
-  
-  .tablet-grid-4 {
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 10px !important;
-  }
-  
-  .tablet-text-lg {
-    font-size: 18px !important;
-    line-height: 1.3 !important;
-  }
-  
-  .tablet-text-base {
-    font-size: 14px !important;
-    line-height: 1.4 !important;
-  }
-  
-  .tablet-text-sm {
-    font-size: 12px !important;
-    line-height: 1.3 !important;
-  }
-  
-  .tablet-button {
-    padding: 8px 16px !important;
-    font-size: 13px !important;
-  }
-  
-  .tablet-heading-xl {
-    font-size: 28px !important;
-    line-height: 1.2 !important;
-  }
-  
-  .tablet-heading-lg {
-    font-size: 24px !important;
-    line-height: 1.2 !important;
-  }
-  
-  .tablet-heading-md {
-    font-size: 20px !important;
-    line-height: 1.3 !important;
-  }
-
-  /* Header tablet adaptations */
-  header.tablet-header {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  
-  .tablet-top-menu-container {
-    gap: 6px !important;
-    max-width: 100%;
-    overflow: hidden;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .tablet-top-menu-nav {
-    gap: 2px;
-    flex-wrap: wrap;
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    margin-top: 4px;
-  }
-  
-  .tablet-top-menu-nav a {
-    font-size: 7px;
-    padding: 1px 4px;
-    white-space: nowrap;
-  }
-  
-  .tablet-top-menu-buttons {
-    gap: 4px;
-    order: 1;
-    flex-shrink: 0;
-  }
-  
-  .tablet-top-menu-buttons button {
-    padding: 3px 6px;
-    font-size: 7px;
-    white-space: nowrap;
-  }
-  
-  .tablet-top-menu-contact {
-    gap: 3px;
-    order: 2;
-    flex-shrink: 0;
-  }
-  
-  .tablet-top-menu-contact a {
-    font-size: 7px;
-    padding: 2px 4px;
-    white-space: nowrap;
-  }
-  
-  .tablet-top-menu-contact button {
-    padding: 3px 6px;
-    font-size: 7px;
-    white-space: nowrap;
-  }
-  
-  .tablet-mid-menu {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  
-  .tablet-mid-menu-container {
-    gap: 8px;
-    height: 50px !important;
-    align-items: center;
-    flex-wrap: nowrap;
-  }
-  
-  .tablet-catalog-button {
-    padding: 6px 8px;
-    height: 32px;
-    flex-shrink: 0;
-    min-width: auto;
-  }
-  
-  .tablet-catalog-button span {
-    font-size: 10px;
-  }
-  
-  .tablet-catalog-button svg {
-    width: 10px;
-    height: 10px;
-  }
-  
-  .tablet-search-container {
-    max-width: 240px;
-    min-width: 180px;
-    flex: 1;
-    flex-shrink: 1;
-  }
-  
-  .tablet-search-bar {
-    height: 32px;
-  }
-  
-  .tablet-search-bar > form > div {
-    height: 32px;
-    padding: 6px 10px;
-  }
-  
-  .tablet-search-bar input {
-    font-size: 11px;
-  }
-  
-  .tablet-search-bar button {
-    padding: 2px;
-  }
-  
-  .tablet-search-bar svg {
-    width: 16px;
-    height: 16px;
-  }
-  
-  .tablet-user-actions {
-    flex-shrink: 0;
-  }
-  
-  .tablet-user-actions .flex.items-center {
-    gap: 6px;
-  }
-  
-  .tablet-user-actions .w-6.h-6 {
-    width: 18px;
-    height: 18px;
-  }
-  
-  .tablet-user-actions .w-6.h-6 svg {
-    width: 12px;
-    height: 12px;
-  }
-  
-  .tablet-user-actions button svg {
-    width: 16px;
-    height: 16px;
-  }
-  
-  .tablet-bottom-menu {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  
-  .tablet-category-button {
-    padding: 6px 10px;
-    height: 40px;
-  }
-  
-  .tablet-category-button span {
-    font-size: 12px;
-  }
-  
-  /* Footer tablet adaptations */
-  .tablet-footer-main {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  
-  .tablet-footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
-  .tablet-footer-contacts {
-    grid-column: span 2;
-    margin-top: 16px;
-  }
-  
-  .tablet-footer-contacts-inner {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .tablet-footer-bottom {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  
-  /* Page-specific tablet adaptations */
-  .tablet-product-detail {
-    padding: 16px 24px !important;
-  }
-  
-  .tablet-product-header {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-  }
-  
-  .tablet-product-tabs {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  
-  .tablet-product-tab {
-    padding: 8px 12px !important;
-    font-size: 12px !important;
-  }
-  
-  .tablet-about-section {
-    padding: 20px 24px !important;
-  }
-  
-  .tablet-about-tabs {
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .tablet-about-tab {
-    padding: 8px 16px !important;
-    font-size: 13px !important;
-  }
-  
-  .tablet-about-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px !important;
-  }
-  
-  .tablet-services-section {
-    padding: 20px 24px !important;
-  }
-  
-  .tablet-services-tabs {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    gap: 8px;
-  }
-  
-  .tablet-services-tab {
-    white-space: nowrap;
-    padding: 8px 16px !important;
-    font-size: 13px !important;
-  }
-  
-  .tablet-contacts-section {
-    padding: 20px 24px !important;
-  }
-  
-  .tablet-contacts-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-  }
-  
-  .tablet-form {
-    max-width: 100% !important;
-  }
-  
-  .tablet-form-input {
-    padding: 10px 14px !important;
-    font-size: 14px !important;
-  }
-
-  /* Catalog filters tablet adaptations */
-  .tablet-catalog-filters-container {
-    width: 180px !important;
-    flex-shrink: 0 !important;
-    margin-bottom: 0;
-  }
-  
-  .tablet-catalog-controls {
-    margin-bottom: 16px !important;
-  }
-  
-  .tablet-catalog-seo {
-    margin-top: 60px !important;
-    margin-bottom: 40px !important;
-  }
-  
-  .tablet-catalog-seo h2 {
-    font-size: 20px !important;
-    margin-bottom: 16px !important;
-  }
-
-  /* ProductCard tablet adaptations */
-  .tablet-product-card {
-    height: 340px !important;
-  }
-  
-  .tablet-product-card .h-60 {
-    height: 180px !important;
-  }
-  
-  .tablet-product-card-info {
-    height: 120px !important;
-  }
-  
-  .tablet-product-title {
-    font-size: 12px !important;
-    line-height: 1.3 !important;
-    margin-bottom: 8px !important;
-  }
-  
-  .tablet-product-price {
-    font-size: 12px !important;
-  }
-  
-  .tablet-buy-button {
-    padding: 4px 8px !important;
-    font-size: 10px !important;
-    height: 24px !important;
-  }
-
-  /* Catalog grid tablet adaptations */
-  .tablet-catalog-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 16px !important;
-  }
-  
-  .tablet-ad-banner {
-    grid-column: span 3 !important;
-    padding: 20px !important;
-  }
-
-  /* ProductCatalog tablet adaptations */
-  .tablet-product-catalog-container {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  
-  .tablet-product-catalog-header {
-    margin-bottom: 32px;
-  }
-  
-  .tablet-product-catalog-title {
-    font-size: 20px;
-    line-height: 1.2;
-  }
-  
-  .tablet-product-catalog-filters {
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  
-  .tablet-product-catalog-filter-btn {
-    padding: 8px 16px;
-    font-size: 13px;
-    border-radius: 6px;
-    white-space: nowrap;
-  }
-  
-  /* All pages tablet adaptations */
-  .tablet-page-container {
-    padding: 16px 24px !important;
-    max-width: 100% !important;
-  }
-  
-  .tablet-page-title {
-    font-size: 32px !important;
-    line-height: 1.2 !important;
-    margin-bottom: 20px !important;
-  }
-  
-  .tablet-form-section {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-  }
-  
-  .tablet-form-input {
-    padding: 10px 14px !important;
-    font-size: 14px !important;
-  }
-  
-  .tablet-card-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
-  }
-  
-  .tablet-image-gallery {
-    max-height: 300px !important;
-  }
-  
-  .tablet-navigation-tabs {
-    overflow-x: auto !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-  }
-  
-  .tablet-content-section {
-    padding: 16px !important;
-    margin-bottom: 20px !important;
-  }
-  
-  .tablet-responsive-table {
-    overflow-x: auto !important;
-    font-size: 12px !important;
-  }
-  
-  .tablet-button-group {
-    flex-direction: column !important;
-    gap: 8px !important;
-  }
-  
-  .tablet-sidebar {
-    position: static !important;
-    width: 100% !important;
-    margin-bottom: 20px !important;
-  }
-  
-  .tablet-main-content {
-    width: 100% !important;
-    padding: 0 !important;
-  }
-  
   /* Global container fixes */
   .max-w-\\[1800px\\] {
     padding-left: 24px !important;
@@ -720,12 +249,44 @@
   }
 }
 
-/* Десктопная версия - сетка по умолчанию */  
-.tablet-catalog-grid {
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+/* ========================================
+   АДАПТИВНАЯ СЕТКА КАТАЛОГА
+   ======================================== */
+
+/* Базовая сетка каталога - мобильная версия (до 768px) */
+.catalog-products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 колонки на мобильных */
+  gap: 12px;
 }
 
-.tablet-ad-banner {
-  grid-column: span 4;
+.catalog-ad-banner {
+  grid-column: span 2; /* Баннер на всю ширину (2 колонки) */
+  padding: 16px;
+}
+
+/* Планшеты (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .catalog-products-grid {
+    grid-template-columns: repeat(3, 1fr) !important; /* 3 колонки на планшетах */
+    gap: 16px !important;
+  }
+  
+  .catalog-ad-banner {
+    grid-column: span 3 !important; /* Баннер на всю ширину (3 колонки) */
+    padding: 20px !important;
+  }
+}
+
+/* Десктоп (от 1025px) */
+@media screen and (min-width: 1025px) {
+  .catalog-products-grid {
+    grid-template-columns: repeat(4, 1fr) !important; /* 4 колонки на десктопе */
+    gap: 10px !important;
+  }
+  
+  .catalog-ad-banner {
+    grid-column: span 4 !important; /* Баннер на всю ширину (4 колонки) */
+    padding: 24px !important;
+  }
 }
