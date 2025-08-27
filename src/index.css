@@ -228,16 +228,31 @@
     
     /* ====== СЕТКА ТОВАРОВ ====== */
     
+    /* Основная сетка товаров - максимальная специфичность */
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      .tablet-catalog-grid {
+        grid-template-columns: repeat(3, 1fr) !important; /* 3 колонки товаров */
+        gap: 16px !important;              /* Зазор между карточками */
+      }
+    }
+    
     /* Основная сетка товаров */
     .tablet-catalog-grid {
       grid-template-columns: repeat(3, 1fr) !important; /* 3 колонки товаров */
       gap: 16px !important;              /* Зазор между карточками */
     }
     
-    /* Рекламный баннер в сетке */
+    /* Рекламный баннер в сетке с правильным span */
     .tablet-ad-banner {
-      grid-column: span 3 !important;    /* Баннер занимает всю ширину (3 колонки) */
+      grid-column: span 3 !important;    /* Баннер занимает 3 колонки на планшете */
       padding: 20px !important;          /* Внутренние отступы баннера */
+    }
+    
+    /* Переопределение инлайн стилей для баннера на планшетах */
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      .tablet-ad-banner[style*="grid-column: span 4"] {
+        grid-column: span 3 !important;
+      }
     }
     
     /* ====== КАРТОЧКИ ТОВАРОВ ====== */
@@ -741,17 +756,19 @@
     padding-right: 24px !important;
   }
   
-  /* Responsive grid fixes */
-  .grid-cols-4 {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-  
-  .grid-cols-6 {
-    grid-template-columns: repeat(4, 1fr) !important;
-  }
-  
-  .grid-cols-3 {
-    grid-template-columns: repeat(2, 1fr) !important;
+  /* Переопределение Tailwind классов для планшетов с максимальной специфичностью */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .grid.tablet-catalog-grid {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+    
+    .tablet-product-card {
+      height: 340px !important;
+    }
+    
+    .tablet-product-card .h-60 {
+      height: 180px !important;
+    }
   }
   
   /* Text size adjustments */
