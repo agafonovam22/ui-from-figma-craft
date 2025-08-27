@@ -497,11 +497,11 @@
 
   /* Promotions and offers + Best ideas adjustments for tablet - maintain rectangular proportions */
   .w-80 {
-    width: 280px !important;
+    width: 240px !important;
   }
 
   .h-\\[444px\\] {
-    height: 380px !important;
+    height: 330px !important;
   }
 
   .flex.gap-\\[10px\\] {
