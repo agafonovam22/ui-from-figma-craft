@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { getBrandName } from '@/utils/brandMapping';
+import { getBrandName, getUsageName, getEquipmentTypeName } from '@/utils/brandMapping';
 
 interface ProductCharacteristicsTableProps {
   characteristics: any;
@@ -83,13 +83,21 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     const brandId = characteristics['Бренд (id)'];
     const brandName = getBrandName(brandId) || 'CardioPower';
 
+    // Get usage/purpose name from characteristics
+    const usageId = characteristics['Использование'];
+    const usageName = getUsageName(usageId) || 'реабилитационная';
+
+    // Get equipment type name from characteristics
+    const equipmentTypeId = characteristics['Тип оборудования'];
+    const equipmentTypeName = getEquipmentTypeName(equipmentTypeId) || 'Беговые дорожки для дома';
+
     const categories = {
       basic: {
         title: 'Основные характеристики',
         items: {
-          'Тип продукции': 'Беговые дорожки для дома',
+          'Тип продукции': equipmentTypeName,
           'Бренд': brandName,
-          'Назначение': 'реабилитационная',
+          'Назначение': usageName,
           'Тип двигателя': 'переменного тока AC',
           'Мощность двигателя, л.с.': '3.3',
           'Пиковая мощность, л.с.': '4.5',

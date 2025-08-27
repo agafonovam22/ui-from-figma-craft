@@ -18,6 +18,36 @@ export const getBrandName = (brandId: string | undefined): string => {
   return brandMapping[brandId] || `Бренд ID: ${brandId}`;
 };
 
+// Маппинг типов назначения (Использование)
+export const usageMapping: Record<string, string> = {
+  // Нужно узнать ID для каждого типа
+  // '488': 'реабилитационная', // пример ID из API
+  'домашние': 'Домашние',
+  'реабилитационная': 'Реабилитационная',
+  'профессиональные': 'Профессиональные',
+  'полупрофессиональные': 'Полупрофессиональные',
+  'профессиональные_24_7': 'Профессиональные (24/7)'
+};
+
+// Маппинг типов оборудования
+export const equipmentTypeMapping: Record<string, string> = {
+  // Нужно узнать точные ID из API
+  'беговые_дорожки': 'Беговые дорожки для дома',
+  'беговые_дорожки_профессиональные': 'Беговые дорожки профессиональные'
+};
+
+// Функция для получения названия типа использования по ID
+export const getUsageName = (usageId: string | undefined): string => {
+  if (!usageId) return 'Неизвестное назначение';
+  return usageMapping[usageId] || `Назначение ID: ${usageId}`;
+};
+
+// Функция для получения названия типа оборудования по ID  
+export const getEquipmentTypeName = (equipmentId: string | undefined): string => {
+  if (!equipmentId) return 'Неизвестный тип';
+  return equipmentTypeMapping[equipmentId] || `Тип ID: ${equipmentId}`;
+};
+
 // Функция для проверки, является ли товар беговой дорожкой
 export const isTreadmill = (productType: string | undefined): boolean => {
   // Добавьте здесь ID типов оборудования для беговых дорожек
