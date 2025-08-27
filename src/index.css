@@ -148,7 +148,7 @@
 }
 
 /* Full HD Banner Styles */
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1900px) {
   .banner-fullhd {
     width: 1660px !important;
     height: 537px !important;
@@ -158,12 +158,5 @@
   .banner-fullhd-section {
     padding-top: 50px !important;
     padding-bottom: 100px !important;
-  }
-}
-
-/* Debug - чтобы увидеть что стили работают */
-@media screen and (max-width: 1919px) {
-  .banner-fullhd {
-    border: 3px solid red !important;
   }
 }
