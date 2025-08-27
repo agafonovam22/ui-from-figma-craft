@@ -114,12 +114,12 @@ const Support: React.FC = () => {
 
         {/* Tabs Section */}
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
-          <div className="flex flex-wrap gap-2 mb-8 md:overflow-x-auto md:flex-nowrap">
+          <div className="flex flex-wrap gap-2 mb-8 md:grid md:grid-cols-2 md:gap-2">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-4 py-2 rounded transition-colors whitespace-nowrap md:text-sm ${
+                className={`px-4 py-2 rounded transition-colors md:text-sm ${
                   activeTab === tab.id
                     ? 'bg-[#F53B49] text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
