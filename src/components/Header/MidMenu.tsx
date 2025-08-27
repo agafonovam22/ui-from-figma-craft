@@ -227,7 +227,7 @@ const MidMenu: React.FC<MidMenuProps> = ({ onSearch }) => {
           <img 
             src="/lovable-uploads/989588d0-dab0-48b9-9268-db2cc02cf4da.png" 
             alt="Well Fitness" 
-            className="h-[24px] w-auto"
+            className="h-[18px] w-auto"
           />
         </Link>
         
