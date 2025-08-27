@@ -327,6 +327,37 @@
     font-size: 11px !important;
   }
 
+  /* Product detail page adaptations */
+  .tablet-product-detail {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .tablet-product-tabs {
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+  }
+  
+  .tablet-product-tab {
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    padding-bottom: 8px !important;
+    margin-right: 16px !important;
+  }
+
+  .tablet-section {
+    margin-top: 24px !important;
+  }
+
+  .tablet-text-sm {
+    font-size: 12px !important;
+  }
+
+  .tablet-button {
+    font-size: 12px !important;
+    padding: 8px 12px !important;
+  }
+
   /* General responsive adjustments */
   .text-4xl, .text-5xl {
     font-size: 28px !important;
