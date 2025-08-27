@@ -149,33 +149,131 @@
 
   /* Tablet-specific adaptations (768px - 1024px) */
   @media screen and (min-width: 768px) and (max-width: 1024px) {
-    /* Global tablet adaptations */
+    
+    /* ====== ОБЩИЕ КОНТЕЙНЕРЫ ====== */
+    
+    /* Основной контейнер страницы - адаптация отступов под планшет */
     .tablet-container {
-      padding-left: 24px !important;
-      padding-right: 24px !important;
-      max-width: 100% !important;
+      padding-left: 24px !important;     /* Уменьшенные боковые отступы */
+      padding-right: 24px !important;    /* для экономии пространства */
+      max-width: 100% !important;        /* Полная ширина экрана планшета */
     }
     
-    /* Catalog page specific tablet adaptations */
+    /* ====== LAYOUT КАТАЛОГА ====== */
+    
+    /* Основной flex-контейнер каталога (фильтры + товары) */
     .tablet-catalog-layout {
-      gap: 12px !important;
+      gap: 12px !important;              /* Уменьшенный зазор между фильтрами и товарами */
     }
     
+    /* Контейнер фильтров слева */
     .tablet-catalog-filters {
-      width: 180px !important;
-      flex-shrink: 0 !important;
-      margin-bottom: 0 !important;
-      margin-top: 0 !important;
+      width: 180px !important;           /* Компактная ширина блока фильтров */
+      flex-shrink: 0 !important;         /* Запрет сжатия фильтров */
+      margin-bottom: 0 !important;       /* Убираем нижний отступ */
+      margin-top: 0 !important;          /* Убираем верхний отступ */
     }
     
+    /* Основная область с товарами */
     .tablet-catalog-main {
-      width: auto !important;
-      flex: 1 !important;
-      margin-top: 0 !important;
+      width: auto !important;            /* Автоматическая ширина */
+      flex: 1 !important;                /* Занимает оставшееся пространство */
+      margin-top: 0 !important;          /* Убираем верхний отступ */
     }
     
+    /* Контейнер элементов управления каталогом */
     .tablet-catalog-controls {
-      margin-bottom: 16px !important;
+      margin-bottom: 16px !important;    /* Компактный отступ снизу */
+    }
+    
+    /* ====== ФИЛЬТРЫ ====== */
+    
+    /* Основной контейнер блока фильтров */
+    .tablet-catalog-filters-container {
+      width: 180px !important;           /* Фиксированная ширина */
+      flex-shrink: 0 !important;         /* Запрет сжатия */
+      margin-bottom: 0;                  /* Убираем отступ снизу */
+    }
+    
+    /* Обертка фильтров с фоном */
+    .tablet-filters-wrapper {
+      padding: 8px !important;           /* Компактные внутренние отступы */
+      margin-bottom: 8px !important;     /* Уменьшенный отступ снизу */
+    }
+    
+    /* Заголовок "Каталог" */
+    .tablet-filter-title {
+      font-size: 24px !important;        /* Уменьшенный размер заголовка */
+      line-height: 1.2 !important;       /* Компактная высота строки */
+      margin-bottom: 12px !important;    /* Уменьшенный отступ снизу */
+    }
+    
+    /* Заголовки секций фильтров */
+    .tablet-filter-section-title {
+      font-size: 12px !important;        /* Мелкий шрифт заголовков */
+      margin-bottom: 8px !important;     /* Компактный отступ */
+    }
+    
+    /* Элементы фильтров (чекбоксы, радиокнопки) */
+    .tablet-filter-item {
+      font-size: 10px !important;        /* Мелкий шрифт пунктов */
+      padding: 3px 0 !important;         /* Минимальные отступы */
+    }
+    
+    /* Кнопки в фильтрах */
+    .tablet-filter-button {
+      padding: 4px 8px !important;       /* Компактные кнопки */
+      font-size: 9px !important;         /* Мелкий шрифт кнопок */
+    }
+    
+    /* ====== СЕТКА ТОВАРОВ ====== */
+    
+    /* Основная сетка товаров */
+    .tablet-catalog-grid {
+      grid-template-columns: repeat(3, 1fr) !important; /* 3 колонки товаров */
+      gap: 16px !important;              /* Зазор между карточками */
+    }
+    
+    /* Рекламный баннер в сетке */
+    .tablet-ad-banner {
+      grid-column: span 3 !important;    /* Баннер занимает всю ширину (3 колонки) */
+      padding: 20px !important;          /* Внутренние отступы баннера */
+    }
+    
+    /* ====== КАРТОЧКИ ТОВАРОВ ====== */
+    
+    /* Основной контейнер карточки товара */
+    .tablet-product-card {
+      height: 340px !important;          /* Уменьшенная высота карточки */
+    }
+    
+    /* Область изображения в карточке (класс h-60 от Tailwind) */
+    .tablet-product-card .h-60 {
+      height: 180px !important;          /* Компактная высота изображения */
+    }
+    
+    /* Информационная часть карточки */
+    .tablet-product-card-info {
+      height: 120px !important;          /* Уменьшенная высота инфоблока */
+    }
+    
+    /* Заголовок товара */
+    .tablet-product-title {
+      font-size: 12px !important;        /* Мелкий шрифт названия */
+      line-height: 1.3 !important;       /* Компактная высота строки */
+      margin-bottom: 8px !important;     /* Уменьшенный отступ */
+    }
+    
+    /* Цена товара */
+    .tablet-product-price {
+      font-size: 12px !important;        /* Мелкий шрифт цены */
+    }
+    
+    /* Кнопка "Купить" */
+    .tablet-buy-button {
+      padding: 4px 8px !important;       /* Компактная кнопка */
+      font-size: 10px !important;        /* Мелкий шрифт кнопки */
+      height: 24px !important;           /* Фиксированная высота кнопки */
     }
   
   .tablet-section {
