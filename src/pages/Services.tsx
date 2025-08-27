@@ -200,12 +200,12 @@ const Services: React.FC = () => {
           </h1>
 
           {/* Tabs */}
-          <div className="flex gap-2 mb-8">
+          <div className="flex gap-2 mb-8 md:flex-wrap md:gap-2">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-6 h-[52px] rounded-lg font-medium transition-colors border ${
+                className={`px-6 h-[52px] rounded-lg font-medium transition-colors border md:px-4 md:h-[44px] md:text-sm ${
                   activeTab === tab.id
                     ? 'bg-[#F53B49] text-white border-[#F53B49]'
                     : 'bg-white text-gray-600 hover:bg-gray-50 border-gray-300'
