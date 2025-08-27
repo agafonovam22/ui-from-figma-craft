@@ -458,8 +458,8 @@ const Support: React.FC = () => {
                     fontSize: '20px'
                   }}>Самовывоз со склада</h3>
                 </div>
-                <div className="flex-1 md:w-full">
-                  <div className="space-y-4">
+                 <div className="flex-1 md:w-full">
+                   <div className="space-y-4 md:space-y-2">
                     {/* Main Warehouse */}
                     <div>
                       <h4 className="mb-2" style={{
