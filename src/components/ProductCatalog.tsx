@@ -172,15 +172,15 @@ const ProductCatalog: React.FC = () => {
 
   return (
     <section className="w-full py-6 bg-white">
-      <div className="max-w-[1800px] mx-auto px-[30px]">
-        <div className="flex items-center justify-between mb-12">
-          <h2 className="text-2xl font-bold text-[#262631]">
+      <div className="max-w-[1800px] mx-auto px-[30px] tablet-product-catalog-container">
+        <div className="flex items-center justify-between mb-12 tablet-product-catalog-header">
+          <h2 className="text-2xl font-bold text-[#262631] tablet-product-catalog-title">
             Каталог продукции
           </h2>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 tablet-product-catalog-filters">
             <button
               onClick={() => setActiveFilter('home')}
-              className={`px-6 py-3 rounded-lg font-medium transition-colors ${
+              className={`px-6 py-3 rounded-lg font-medium transition-colors tablet-product-catalog-filter-btn ${
                 activeFilter === 'home'
                   ? 'bg-[#F53B49] text-white'
                   : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
@@ -190,7 +190,7 @@ const ProductCatalog: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveFilter('fitness')}
-              className={`px-6 py-3 rounded-lg font-medium transition-colors ${
+              className={`px-6 py-3 rounded-lg font-medium transition-colors tablet-product-catalog-filter-btn ${
                 activeFilter === 'fitness'
                   ? 'bg-[#F53B49] text-white'
                   : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
@@ -201,38 +201,38 @@ const ProductCatalog: React.FC = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6 tablet-product-catalog-grid">
           {currentProducts.slice(0, 6).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
           ))}
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] tablet-product-catalog-bottom-grid">
           {currentProducts.slice(6, 10).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
           ))}
-          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px]">
+          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px] tablet-product-catalog-promo">
             <img 
               src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
               alt="Перейти в каталог"
               className="w-full h-full object-cover object-right"
             />
-            <div className="absolute top-4 left-4 text-white font-benzin text-lg font-normal">
+            <div className="absolute top-4 left-4 text-white font-benzin text-lg font-normal tablet-product-catalog-promo-title">
               {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
             </div>
             <Link 
               to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
-              className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2"
+              className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2 tablet-product-catalog-promo-btn tablet-product-catalog-promo-content"
             >
               Перейти в каталог <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
         
-        <div className="mt-8 flex justify-start">
+        <div className="mt-8 flex justify-start tablet-product-catalog-show-all">
           <Link 
             to={activeFilter === 'home' ? '/home-fitness-equipment' : '/gym-equipment'}
-            className="border-2 border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors font-benzin font-normal"
+            className="border-2 border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors font-benzin font-normal tablet-product-catalog-show-all-btn"
           >
             Показать все
           </Link>
