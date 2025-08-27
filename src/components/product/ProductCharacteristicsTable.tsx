@@ -85,11 +85,16 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
 
     // Get usage/purpose name from characteristics
     const usageId = characteristics['Использование'];
+    console.log('🔍 Usage ID из API:', usageId);
     const usageName = getUsageName(usageId) || 'реабилитационная';
 
     // Get equipment type name from characteristics
     const equipmentTypeId = characteristics['Тип оборудования'];
+    console.log('🔍 Equipment Type ID из API:', equipmentTypeId);
     const equipmentTypeName = getEquipmentTypeName(equipmentTypeId) || 'Беговые дорожки для дома';
+
+    // Логируем все характеристики для отладки
+    console.log('🔍 Все характеристики товара:', characteristics);
 
     const categories = {
       basic: {
