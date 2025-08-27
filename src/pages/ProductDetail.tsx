@@ -955,9 +955,9 @@ const ProductDetail: React.FC = () => {
                 {/* Рассрочка */}
                 <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800 group">
                   <div 
-                    className="absolute inset-0 bg-cover bg-center bg-gray-600"
+                    className="absolute inset-0 bg-cover bg-center"
                     style={{
-                      backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
+                      backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/lovable-uploads/86e36359-17ee-4fe6-8eab-6f69d7f46719.png')`
                     }}
                   ></div>
                   <div className="absolute bottom-[10px] left-0 right-0 px-6 text-white">
@@ -976,9 +976,9 @@ const ProductDetail: React.FC = () => {
                 {/* Демонтаж и переезд */}
                 <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800 group">
                   <div 
-                    className="absolute inset-0 bg-cover bg-center bg-gray-600"
+                    className="absolute inset-0 bg-cover bg-center"
                     style={{
-                      backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
+                      backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/lovable-uploads/8485d76a-b1a3-4a0d-affb-41108d3fc269.png')`
                     }}
                   ></div>
                   <div className="absolute bottom-[10px] left-0 right-0 px-6 text-white">
