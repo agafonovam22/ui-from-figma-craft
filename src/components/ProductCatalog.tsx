@@ -172,15 +172,15 @@ const ProductCatalog: React.FC = () => {
 
   return (
     <section className="w-full py-6 bg-white">
-      <div className="max-w-[1800px] mx-auto px-[30px] tablet-product-catalog-container">
-        <div className="flex items-center justify-between mb-12 tablet-product-catalog-header">
-          <h2 className="text-2xl font-bold text-[#262631] tablet-product-catalog-title">
+      <div className="max-w-[1800px] mx-auto px-[30px] tablet-product-catalog-container mobile:px-4">
+        <div className="flex items-center justify-between mb-12 tablet-product-catalog-header mobile:flex-col mobile:items-start mobile:gap-4 mobile:mb-6">
+          <h2 className="text-2xl font-bold text-[#262631] tablet-product-catalog-title mobile:text-xl">
             Каталог продукции
           </h2>
-          <div className="flex items-center gap-4 tablet-product-catalog-filters">
+          <div className="flex items-center gap-4 tablet-product-catalog-filters mobile:gap-2 mobile:w-full">
             <button
               onClick={() => setActiveFilter('home')}
-              className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-colors text-sm md:text-base tablet-product-catalog-filter-btn ${
+              className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-colors text-sm md:text-base tablet-product-catalog-filter-btn mobile:flex-1 mobile:px-3 mobile:py-2 mobile:text-xs ${
                 activeFilter === 'home'
                   ? 'bg-[#F53B49] text-white'
                   : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
@@ -190,7 +190,7 @@ const ProductCatalog: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveFilter('fitness')}
-              className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-colors text-sm md:text-base tablet-product-catalog-filter-btn ${
+              className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-colors text-sm md:text-base tablet-product-catalog-filter-btn mobile:flex-1 mobile:px-3 mobile:py-2 mobile:text-xs ${
                 activeFilter === 'fitness'
                   ? 'bg-[#F53B49] text-white'
                   : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
@@ -201,38 +201,38 @@ const ProductCatalog: React.FC = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6 tablet-product-catalog-grid">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6 tablet-product-catalog-grid mobile:grid-cols-2 mobile:gap-2">
           {currentProducts.slice(0, 6).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
           ))}
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] tablet-product-catalog-bottom-grid">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] tablet-product-catalog-bottom-grid mobile:grid-cols-2 mobile:gap-2">
           {currentProducts.slice(6, 10).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
           ))}
-          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px] tablet-product-catalog-promo">
+          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px] tablet-product-catalog-promo mobile:col-span-2 mobile:h-[150px]">
             <img 
               src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
               alt="Перейти в каталог"
               className="w-full h-full object-cover object-right"
             />
-            <div className="absolute top-4 left-4 text-white font-benzin text-lg font-normal tablet-product-catalog-promo-title">
+            <div className="absolute top-4 left-4 text-white font-benzin text-lg font-normal tablet-product-catalog-promo-title mobile:top-2 mobile:left-2 mobile:text-sm">
               {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
             </div>
             <Link 
               to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
-              className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2 tablet-product-catalog-promo-btn tablet-product-catalog-promo-content"
+              className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2 tablet-product-catalog-promo-btn tablet-product-catalog-promo-content mobile:bottom-2 mobile:left-2 mobile:px-2 mobile:py-1 mobile:text-xs"
             >
-              Перейти в каталог <ArrowRight className="w-4 h-4" />
+              Перейти в каталог <ArrowRight className="w-4 h-4 mobile:w-3 mobile:h-3" />
             </Link>
           </div>
         </div>
         
-        <div className="mt-8 flex justify-start tablet-product-catalog-show-all">
+        <div className="mt-8 flex justify-start tablet-product-catalog-show-all mobile:mt-4 mobile:justify-center">
           <Link 
             to={activeFilter === 'home' ? '/home-fitness-equipment' : '/gym-equipment'}
-            className="border-2 border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors font-benzin font-normal tablet-product-catalog-show-all-btn"
+            className="border-2 border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors font-benzin font-normal tablet-product-catalog-show-all-btn mobile:px-6 mobile:py-2 mobile:text-sm"
           >
             Показать все
           </Link>

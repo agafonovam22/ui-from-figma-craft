@@ -48,7 +48,7 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
   if (variant === 'grid') {
     // Simplified version for ProductCatalog
     return (
-      <div className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-[300px] tablet-product-card">
+      <div className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-[300px] tablet-product-card mobile:h-[180px]">
         <img 
           src={optimizeImageUrl(product.image, 320, 240)} 
           alt={product.name || "Категория товаров"}
@@ -61,11 +61,11 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
         />
         <Link 
           to={linkTo}
-          className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center justify-center tablet-product-card-button"
+          className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center justify-center tablet-product-card-button mobile:bottom-2 mobile:left-2 mobile:px-2 mobile:py-1 mobile:text-xs"
         >
           <span className="group-hover:hidden">{product.price || 'от 29 990₽'}</span>
-          <span className="hidden group-hover:flex items-center gap-2">
-            Перейти <ArrowRight className="w-4 h-4" />
+          <span className="hidden group-hover:flex items-center gap-2 mobile:gap-1">
+            Перейти <ArrowRight className="w-4 h-4 mobile:w-3 mobile:h-3" />
           </span>
         </Link>
       </div>
