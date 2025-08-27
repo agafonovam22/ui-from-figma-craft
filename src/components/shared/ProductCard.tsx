@@ -283,7 +283,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="mx-4 h-px bg-gray-200 mt-7"></div>
 
         {/* Информация о товаре */}
-        <div className="p-4 pb-2.5 mt-4 flex flex-col justify-between transition-colors duration-300 tablet-product-card-info" style={{ height: '160px', backgroundColor: 'transparent' }}>
+        <div className="p-4 pb-2.5 mt-4 flex flex-col justify-between transition-colors duration-300 tablet-product-card-info" style={{ height: '180px', backgroundColor: 'transparent' }}>
           <div>
             {/* Статус наличия */}
             {(() => {
@@ -366,7 +366,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               </div>
             )}
 
-            {/* Цена */}
+            {/* Цена со скидкой */}
             <div className="flex items-center gap-2 mb-3">
               {discount > 0 && (
                 <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
@@ -381,13 +381,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </div>
           </div>
 
-          <div className="flex items-center justify-between gap-2">
+          {/* Цена и кнопка - горизонтально на десктопе, вертикально на планшете */}
+          <div className="flex items-center justify-between gap-2 md:flex-col md:items-start md:gap-2">
             <span className="text-sm md:text-xs tablet-product-price font-bold text-gray-900 group-hover:text-white transition-colors duration-300 flex-shrink-0">
               {product.price.toLocaleString()}&nbsp;₽
             </span>
             
             <Button 
-              className="bg-[#F53B49] hover:bg-[#e63946] text-white px-3 py-1.5 md:px-2 md:py-1 tablet-buy-button text-sm md:text-xs flex-shrink-0"
+              className="bg-[#F53B49] hover:bg-[#e63946] text-white px-3 py-1.5 md:px-2 md:py-1 tablet-buy-button text-sm md:text-xs flex-shrink-0 md:w-full"
               onClick={handleBuyClick}
             >
               Купить
