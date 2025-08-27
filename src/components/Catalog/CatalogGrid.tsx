@@ -44,7 +44,7 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
   return (
     <>
       {/* Products Grid with Ad Banner */}
-      <div className="grid grid-cols-4 gap-2.5 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 mb-8 tablet-catalog-grid">
         {products.map((product, index) => (
           <React.Fragment key={product.id}>
             <ProductCard product={{ 
@@ -66,17 +66,17 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
             {/* Ad Banner after 8th product (between 2nd and 3rd row) */}
             {index === 7 && (
               <div 
-                className="col-span-4 text-white p-8 rounded-lg"
+                className="col-span-2 md:col-span-4 text-white p-4 md:p-8 rounded-lg tablet-catalog-banner"
                 style={{ background: 'linear-gradient(97deg, #262631 1.32%, #6F6F90 108.06%)' }}
               >
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                  <div className="text-center md:text-left">
-                    <h3 className="text-lg font-bold mb-2">Место для рекламы</h3>
-                    <p className="text-sm text-gray-300">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                <div className="flex flex-col items-center justify-between gap-4">
+                  <div className="text-center">
+                    <h3 className="text-base md:text-lg font-bold mb-2">Место для рекламы</h3>
+                    <p className="text-xs md:text-sm text-gray-300">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                   </div>
-                  <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white whitespace-nowrap">
+                  <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white whitespace-nowrap text-sm">
                     Перейти →
                   </Button>
                 </div>
