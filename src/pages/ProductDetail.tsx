@@ -187,11 +187,15 @@ const ProductDetail: React.FC = () => {
                 </div>
               )}
             </div>
-            <ViewedProducts 
-              currentProductId={id} 
-              currentProductCategoryId={product?.characteristics?.["Тип оборудования"]} 
-            />
-            <EmailSubscription />
+            <div className="mt-[100px]">
+              <ViewedProducts 
+                currentProductId={id} 
+                currentProductCategoryId={product?.characteristics?.["Тип оборудования"]} 
+              />
+            </div>
+            <div className="mt-[100px]">
+              <EmailSubscription />
+            </div>
           </div>
         );
       case 'specifications':
