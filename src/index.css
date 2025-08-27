@@ -150,6 +150,7 @@
 /* Banner base styles */
 .banner-fullhd {
   height: 400px;
+  background-color: yellow; /* debug */
 }
 
 /* Full HD Banner Styles */
@@ -158,6 +159,7 @@
     width: 1660px !important;
     height: 537px !important;
     margin: 0 auto !important;
+    background-color: green !important; /* debug - если зеленый, то медиа-запрос работает */
   }
   
   .banner-fullhd-section {
