@@ -7,6 +7,7 @@ import { CartProvider } from "@/contexts/CartContext";
 import { FavoritesProvider } from "@/contexts/FavoritesContext";
 import { ComparisonProvider } from "@/contexts/ComparisonContext";
 import ScrollToTop from "./components/ScrollToTop";
+import { DevPreviewShell } from "@/components/DevPreviewShell";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import UslugiServices from "./pages/UslugiServices";
@@ -49,47 +50,49 @@ const App = () => (
       <CartProvider>
         <FavoritesProvider>
           <ComparisonProvider>
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/services" element={<Services />} />
-            
-            <Route path="/uslugi/:category" element={<UslugiServices />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/project" element={<Project />} />
-            <Route path="/projects/:projectSlug" element={<ProjectDetail />} />
-            <Route path="/ideas" element={<Ideas />} />
-            <Route path="/brands" element={<Brands />} />
-            <Route path="/brands/:brandSlug" element={<Brand />} />
-            <Route path="/news" element={<NewsAndBlog />} />
-            <Route path="/news/:articleSlug" element={<NewsArticle />} />
-            <Route path="/account" element={<Account />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/password-reset" element={<PasswordReset />} />
-            <Route path="/support" element={<Support />} />
-            <Route path="/where-to-buy" element={<WhereToBuy />} />
-            <Route path="/contacts" element={<Contacts />} />
-            <Route path="/home-fitness-equipment" element={<HomeFitnessEquipment />} />
-            <Route path="/gym-equipment" element={<GymEquipment />} />
-            <Route path="/catalog" element={<Catalog />} />
-            <Route path="/product/:id" element={<ProductDetail />} />
-            <Route path="/product-card" element={<ProductCard />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/order-success" element={<OrderSuccess />} />
-            <Route path="/comparison" element={<Comparison />} />
-            <Route path="/favorites" element={<Favorites />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/public-offer" element={<PublicOffer />} />
-            <Route path="/company-news" element={<CompanyNews />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-        <Toaster />
-        <Sonner />
+            <DevPreviewShell>
+              <BrowserRouter>
+                <ScrollToTop />
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/services" element={<Services />} />
+                  
+                  <Route path="/uslugi/:category" element={<UslugiServices />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/project" element={<Project />} />
+                  <Route path="/projects/:projectSlug" element={<ProjectDetail />} />
+                  <Route path="/ideas" element={<Ideas />} />
+                  <Route path="/brands" element={<Brands />} />
+                  <Route path="/brands/:brandSlug" element={<Brand />} />
+                  <Route path="/news" element={<NewsAndBlog />} />
+                  <Route path="/news/:articleSlug" element={<NewsArticle />} />
+                  <Route path="/account" element={<Account />} />
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/password-reset" element={<PasswordReset />} />
+                  <Route path="/support" element={<Support />} />
+                  <Route path="/where-to-buy" element={<WhereToBuy />} />
+                  <Route path="/contacts" element={<Contacts />} />
+                  <Route path="/home-fitness-equipment" element={<HomeFitnessEquipment />} />
+                  <Route path="/gym-equipment" element={<GymEquipment />} />
+                  <Route path="/catalog" element={<Catalog />} />
+                  <Route path="/product/:id" element={<ProductDetail />} />
+                  <Route path="/product-card" element={<ProductCard />} />
+                  <Route path="/search" element={<Search />} />
+                  <Route path="/cart" element={<Cart />} />
+                  <Route path="/checkout" element={<Checkout />} />
+                  <Route path="/order-success" element={<OrderSuccess />} />
+                  <Route path="/comparison" element={<Comparison />} />
+                  <Route path="/favorites" element={<Favorites />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/public-offer" element={<PublicOffer />} />
+                  <Route path="/company-news" element={<CompanyNews />} />
+                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </BrowserRouter>
+            </DevPreviewShell>
+            <Toaster />
+            <Sonner />
           </ComparisonProvider>
         </FavoritesProvider>
       </CartProvider>
