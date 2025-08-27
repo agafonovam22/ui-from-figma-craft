@@ -156,7 +156,7 @@
   }
   
   .tablet-top-menu-container {
-    gap: 8px !important;
+    gap: 12px !important;
     max-width: 100%;
     overflow: hidden;
   }
@@ -169,17 +169,28 @@
   
   .tablet-top-menu-nav a {
     font-size: 8px;
-    padding: 2px 4px;
+    padding: 2px 6px;
     white-space: nowrap;
   }
   
+  /* Hide some navigation items on tablets to save space */
+  .tablet-top-menu-nav a:nth-child(n+6) {
+    display: none;
+  }
+  
   .tablet-top-menu-buttons {
-    gap: 4px;
+    gap: 6px;
+  }
+  
+  /* Hide supplier button on tablets */
+  .tablet-top-menu-buttons button:last-child {
+    display: none;
   }
   
   .tablet-top-menu-buttons button {
     padding: 4px 8px;
     font-size: 8px;
+    white-space: nowrap;
   }
   
   .tablet-top-menu-contact {
@@ -188,7 +199,14 @@
   
   .tablet-top-menu-contact a {
     font-size: 8px;
-    padding: 4px 6px;
+    padding: 3px 6px;
+    white-space: nowrap;
+  }
+  
+  .tablet-top-menu-contact button {
+    padding: 4px 8px;
+    font-size: 8px;
+    white-space: nowrap;
   }
   
   .tablet-mid-menu {
