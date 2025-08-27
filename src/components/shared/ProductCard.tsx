@@ -283,7 +283,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="mx-4 h-px bg-gray-200 mt-7"></div>
 
         {/* Информация о товаре */}
-        <div className="p-4 pb-2.5 mt-4 flex flex-col justify-between transition-colors duration-300 tablet-product-card-info" style={{ height: '180px', backgroundColor: 'transparent' }}>
+        <div className="p-4 pb-2 mt-2 flex flex-col justify-between transition-colors duration-300 tablet-product-card-info" style={{ height: '170px', backgroundColor: 'transparent' }}>
           <div>
             {/* Статус наличия */}
             {(() => {
