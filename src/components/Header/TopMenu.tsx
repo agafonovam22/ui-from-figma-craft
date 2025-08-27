@@ -164,22 +164,63 @@ const TopMenu: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile: compact layout */}
-      <div className="flex md:hidden w-full max-w-[1800px] h-[53px] justify-between items-center gap-2 flex-shrink-0">
-        <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
-        
-        <div className="flex items-end gap-2">
-          <a 
-            href={selectedCity === 'Москва' ? "tel:+74996775632" : "tel:88003332595"} 
-            className="text-[8px] font-normal leading-[10px] gap-2 px-2 py-1.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0"
-          >
-            {selectedCity === 'Москва' ? '+7 499 677 56 32' : '8 800 333 25 95'}
-          </a>
-          <CallRequestDialog>
-            <ActionButton variant="danger">
-              Заказать звонок
-            </ActionButton>
-          </CallRequestDialog>
+      {/* Mobile: multi-row compact layout */}
+      <div className="flex md:hidden w-full max-w-[1800px] flex-col py-2 gap-2">
+        {/* First row: City selector and phone/callback */}
+        <div className="flex justify-between items-center h-[40px]">
+          <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
+          
+          <div className="flex items-center gap-1.5">
+            <a 
+              href={selectedCity === 'Москва' ? "tel:+74996775632" : "tel:88003332595"} 
+              className="text-[8px] font-normal leading-[10px] px-2 py-1.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0"
+            >
+              {selectedCity === 'Москва' ? '+7 499 677 56 32' : '8 800 333 25 95'}
+            </a>
+            <CallRequestDialog>
+              <button className="text-[8px] font-normal leading-[10px] px-2 py-1.5 rounded-[5px] transition-colors bg-[#F53B49] text-white hover:bg-[#e63946] flex-shrink-0">
+                Звонок
+              </button>
+            </CallRequestDialog>
+          </div>
+        </div>
+
+        {/* Second row: Action buttons */}
+        <div className="flex justify-center items-center gap-2">
+          <button className="text-[8px] font-normal leading-[10px] px-2 py-1.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0">
+            Для дилеров
+          </button>
+          <button className="text-[8px] font-normal leading-[10px] px-2 py-1.5 rounded-[5px] transition-colors text-[#262631] bg-white hover:bg-gray-100 flex-shrink-0">
+            For suppliers
+          </button>
+        </div>
+
+        {/* Third row: Navigation - scrollable */}
+        <div className="overflow-x-auto">
+          <nav className="flex items-center gap-3 min-w-max px-1" role="navigation" aria-label="Основная навигация">
+            {navigationItems.map((item, index) => (
+              item.href ? (
+                <Link
+                  key={index}
+                  to={item.href}
+                  className="text-layout-grey-nav font-benzin text-[8px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap"
+                  style={{ lineHeight: '100%' }}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={index}
+                  href={item.href || '#'}
+                  className="text-layout-grey-nav font-benzin text-[8px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap"
+                  style={{ lineHeight: '100%' }}
+                  onClick={item.onClick}
+                >
+                  {item.label}
+                </a>
+              )
+            ))}
+          </nav>
         </div>
       </div>
     </header>

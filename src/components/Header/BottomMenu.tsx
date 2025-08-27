@@ -184,25 +184,38 @@ const BottomMenu: React.FC = () => {
 
   return (
     <nav 
-      className="flex w-full justify-center items-center gap-[5px] bg-[#262631] px-2 sm:px-4 lg:px-[60px] tablet-bottom-menu py-1 max-md:overflow-x-auto"
+      className="flex w-full justify-center items-center gap-[5px] bg-[#262631] px-2 sm:px-4 lg:px-[60px] tablet-bottom-menu py-1 max-md:overflow-x-auto max-md:py-0.5"
       style={{ padding: '4px 60px' }}
       role="navigation"
       aria-label="Категории товаров"
     >
-      <div className="flex w-full max-w-[1800px] h-[54px] items-center gap-[5px] relative max-md:w-auto max-md:min-w-full flex-shrink-0">
+      <div className="flex w-full max-w-[1800px] h-[54px] items-center gap-[5px] relative max-md:w-auto max-md:min-w-full max-md:h-[36px] flex-shrink-0">
         <div 
           ref={scrollContainerRef}
-          className="flex items-center gap-[5px] overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden"
+          className="flex items-center gap-[5px] overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden max-md:gap-1"
           style={{ 
             scrollbarWidth: 'none', 
             msOverflowStyle: 'none'
           }}
         >
           {duplicatedCategories.map((category, index) => (
-            <div key={`${category.id}-${Math.floor(index / categories.length)}`} className="flex items-center gap-[5px]">
-              <CategoryButton category={category} />
+            <div key={`${category.id}-${Math.floor(index / categories.length)}`} className="flex items-center gap-[5px] max-md:gap-1">
+              <Link
+                to={`/catalog?category=${category.id}`}
+                className={`flex h-[46px] items-center gap-2 bg-[#262631] px-5 py-3 tablet-category-button rounded-[5px] max-sm:whitespace-nowrap max-sm:px-3 max-sm:py-2 max-sm:h-[32px] hover:bg-[#3a3a47] transition-colors group flex-shrink-0`}
+                aria-label={`Категория: ${category.label}`}
+              >
+                {category.icon && (
+                  <span className="text-[#778093] group-hover:text-white transition-colors max-md:text-xs">
+                    {category.icon}
+                  </span>
+                )}
+                <span className="text-sm font-normal leading-[14px] text-[#778093] group-hover:text-white transition-colors whitespace-nowrap max-md:text-xs max-md:leading-[12px]">
+                  {category.label}
+                </span>
+              </Link>
               {index < duplicatedCategories.length - 1 && (
-                <div className="w-px h-9 opacity-20 bg-[#5C6476] flex-shrink-0" />
+                <div className="w-px h-9 opacity-20 bg-[#5C6476] flex-shrink-0 max-md:h-6" />
               )}
             </div>
           ))}
