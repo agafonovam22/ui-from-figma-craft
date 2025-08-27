@@ -137,21 +137,21 @@ const Services: React.FC = () => {
       id: 1,
       title: 'Доставка',
       description: 'У нас работают высококвалифицированные сотрудники со стажем более 5 лет. Мы оперативно доставляем заказы наших клиентов в любую точку г.\u00A0Москвы и Санкт-Петербурга, а также других регионов России.',
-      backgroundImage: '/lovable-uploads/adbe6bde-b066-4019-b2b1-85ea1103ee3a.png',
+      backgroundImage: '/lovable-uploads/426cf266-842c-4183-9977-37d5ac991720.png',
       buttonText: 'Перейти'
     },
     {
       id: 2,
       title: 'Сборка',
       description: 'Наша компания оказывает полный спектр услуг по подъему и сборке оборудования. Сотрудники оснащены всем необходимым инструментом и имеют огромный опыт.',
-      backgroundImage: '/lovable-uploads/87731f72-8aa4-41ee-a778-da67d561de5a.png',
+      backgroundImage: '/lovable-uploads/3826d247-ba0f-4433-8e76-a9c2be78ed10.png',
       buttonText: 'Перейти'
     },
     {
       id: 3,
       title: 'Различные способы оплаты',
       description: 'У всех экипажей нашей компании присутствуют терминалы для безналичной оплаты, вы можете оплатить свою покупку различными способами: наличными, банковской картой, через QR код или оплатить товар по счету.',
-      backgroundImage: '/lovable-uploads/60472690-a8b6-4349-a407-001fce436443.png',
+      backgroundImage: '/lovable-uploads/d631679c-6c82-4c48-acb2-a97d2dfb4d2a.png',
       buttonText: 'Перейти'
     },
     {
