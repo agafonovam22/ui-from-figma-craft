@@ -228,7 +228,7 @@
     
     /* ====== СЕТКА ТОВАРОВ ====== */
     
-    /* Основная сетка товаров */
+    /* Основная сетка товаров - 3 колонки с полноразмерными карточками */
     .tablet-catalog-grid {
       grid-template-columns: repeat(3, 1fr) !important; /* 3 колонки товаров */
       gap: 16px !important;              /* Зазор между карточками */
@@ -238,42 +238,6 @@
     .tablet-ad-banner {
       grid-column: span 3 !important;    /* Баннер занимает всю ширину (3 колонки) */
       padding: 20px !important;          /* Внутренние отступы баннера */
-    }
-    
-    /* ====== КАРТОЧКИ ТОВАРОВ ====== */
-    
-    /* Основной контейнер карточки товара */
-    .tablet-product-card {
-      height: 340px !important;          /* Уменьшенная высота карточки */
-    }
-    
-    /* Область изображения в карточке (класс h-60 от Tailwind) */
-    .tablet-product-card .h-60 {
-      height: 180px !important;          /* Компактная высота изображения */
-    }
-    
-    /* Информационная часть карточки */
-    .tablet-product-card-info {
-      height: 120px !important;          /* Уменьшенная высота инфоблока */
-    }
-    
-    /* Заголовок товара */
-    .tablet-product-title {
-      font-size: 12px !important;        /* Мелкий шрифт названия */
-      line-height: 1.3 !important;       /* Компактная высота строки */
-      margin-bottom: 8px !important;     /* Уменьшенный отступ */
-    }
-    
-    /* Цена товара */
-    .tablet-product-price {
-      font-size: 12px !important;        /* Мелкий шрифт цены */
-    }
-    
-    /* Кнопка "Купить" */
-    .tablet-buy-button {
-      padding: 4px 8px !important;       /* Компактная кнопка */
-      font-size: 10px !important;        /* Мелкий шрифт кнопки */
-      height: 24px !important;           /* Фиксированная высота кнопки */
     }
   
   .tablet-section {
@@ -603,35 +567,6 @@
   .tablet-catalog-seo h2 {
     font-size: 20px !important;
     margin-bottom: 16px !important;
-  }
-
-  /* ProductCard tablet adaptations */
-  .tablet-product-card {
-    height: 340px !important;
-  }
-  
-  .tablet-product-card .h-60 {
-    height: 180px !important;
-  }
-  
-  .tablet-product-card-info {
-    height: 120px !important;
-  }
-  
-  .tablet-product-title {
-    font-size: 12px !important;
-    line-height: 1.3 !important;
-    margin-bottom: 8px !important;
-  }
-  
-  .tablet-product-price {
-    font-size: 12px !important;
-  }
-  
-  .tablet-buy-button {
-    padding: 4px 8px !important;
-    font-size: 10px !important;
-    height: 24px !important;
   }
 
   /* Catalog grid tablet adaptations */
