@@ -365,25 +365,11 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
         <div className="bg-[#F8F8FD] rounded-lg p-4 mb-4">
           <h2 className="text-[18px] font-semibold text-[#262631] mb-4" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Price Filter */}
             <div>
               <h3 className="text-[14px] text-[#262631] mb-2" style={{fontFamily: 'Benzin-Regular'}}>Цена</h3>
-              <div className="mb-3">
-                <div className="flex justify-between text-[11px] text-gray-600 mb-1" style={{fontFamily: 'Manrope'}}>
-                  <span>{priceRange[0].toLocaleString()} ₽</span>
-                  <span>{priceRange[1].toLocaleString()} ₽</span>
-                </div>
-                <Slider
-                  value={priceRange}
-                  onValueChange={handlePriceRangeChange}
-                  max={1500000}
-                  min={0}
-                  step={1000}
-                  className="w-full"
-                />
-              </div>
-              <div className="space-y-2 text-[11px] text-gray-600" style={{fontFamily: 'Manrope'}}>
+              <div className="space-y-2 text-[12px] text-gray-600" style={{fontFamily: 'Manrope'}}>
                 {['до 500', 'до 20000', 'до 50000', 'до 100000'].map(range => (
                   <label key={range} className="flex items-center">
                     <input 
@@ -401,8 +387,8 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
             {/* Brand Filter */}
             <div>
               <h3 className="text-[14px] text-[#262631] mb-2" style={{fontFamily: 'Benzin-Regular'}}>Бренд</h3>
-              <div className="space-y-2 text-[11px] text-gray-600 max-h-32 overflow-y-auto" style={{fontFamily: 'Manrope'}}>
-                {filterOptions.brands.slice(0, 6).map(brand => (
+              <div className="space-y-2 text-[12px] text-gray-600 max-h-24 overflow-y-auto" style={{fontFamily: 'Manrope'}}>
+                {filterOptions.brands.slice(0, 4).map(brand => (
                   <label key={brand} className="flex items-center">
                     <input 
                       type="checkbox" 
@@ -419,76 +405,14 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
             {/* Purpose Type Filter */}
             <div>
               <h3 className="text-[14px] text-[#262631] mb-2" style={{fontFamily: 'Benzin-Regular'}}>Тип назначения</h3>
-              <div className="space-y-2 text-[11px] text-gray-600" style={{fontFamily: 'Manrope'}}>
-                {['Домашние', 'Профессиональные', 'Полупрофессиональные', 'Реабилитация'].map(type => (
+              <div className="space-y-2 text-[12px] text-gray-600" style={{fontFamily: 'Manrope'}}>
+                {['Домашние', 'Профессиональные'].map(type => (
                   <label key={type} className="flex items-center">
                     <input 
                       type="checkbox" 
                       className="mr-2 w-3 h-3 appearance-none border border-gray-300 rounded checked:border-black checked:bg-black checked:shadow-[inset_0_0_0_2px_white,inset_0_0_0_3px_black]"
                       checked={filters.purposeTypes.includes(type)}
                       onChange={(e) => handlePurposeTypeChange(type, e.target.checked)}
-                    />
-                    {type}
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            {/* Power Filter */}
-            <div>
-              <h3 className="text-[14px] text-[#262631] mb-2" style={{fontFamily: 'Benzin-Regular'}}>Мощность двигателя</h3>
-              <div className="space-y-2 text-[11px] text-gray-600" style={{fontFamily: 'Manrope'}}>
-                {/* Input fields for power range */}
-                <div className="flex flex-col space-y-1 mb-2">
-                  <input 
-                    type="text" 
-                    placeholder="от 1.25"
-                    value={powerMin}
-                    onChange={(e) => setPowerMin(e.target.value)}
-                    onBlur={handlePowerRangeInput}
-                    className="w-full px-2 py-1 border border-gray-300 rounded text-gray-600 text-[11px]"
-                    style={{fontFamily: 'Manrope'}}
-                  />
-                  <input 
-                    type="text" 
-                    placeholder="до 24.56"
-                    value={powerMax}
-                    onChange={(e) => setPowerMax(e.target.value)}
-                    onBlur={handlePowerRangeInput}
-                    className="w-full px-2 py-1 border border-gray-300 rounded text-gray-600 text-[11px]"
-                    style={{fontFamily: 'Manrope'}}
-                  />
-                </div>
-                
-                {/* Checkbox options */}
-                <label className="flex items-center">
-                  <input 
-                    type="checkbox" 
-                    className="mr-2 w-3 h-3 appearance-none border border-gray-300 rounded checked:border-black checked:bg-black checked:shadow-[inset_0_0_0_2px_white,inset_0_0_0_3px_black]" 
-                  />
-                  до 3 л.с.
-                </label>
-                <label className="flex items-center">
-                  <input 
-                    type="checkbox" 
-                    className="mr-2 w-3 h-3 appearance-none border border-gray-300 rounded checked:border-black checked:bg-black checked:shadow-[inset_0_0_0_2px_white,inset_0_0_0_3px_black]" 
-                  />
-                  3-4 л.с.
-                </label>
-              </div>
-            </div>
-
-            {/* Equipment Type Filter */}
-            <div>
-              <h3 className="text-[14px] text-[#262631] mb-2" style={{fontFamily: 'Benzin-Regular'}}>Тип тренажера</h3>
-              <div className="space-y-2 text-[11px] text-gray-600 max-h-32 overflow-y-auto" style={{fontFamily: 'Manrope'}}>
-                {filterOptions.equipmentTypes.slice(0, 6).map(type => (
-                  <label key={type} className="flex items-center">
-                    <input 
-                      type="checkbox" 
-                      className="mr-2 w-3 h-3 appearance-none border border-gray-300 rounded checked:border-black checked:bg-black checked:shadow-[inset_0_0_0_2px_white,inset_0_0_0_3px_black]"
-                      checked={filters.equipmentTypes.includes(type)}
-                      onChange={(e) => handleEquipmentTypeChange(type, e.target.checked)}
                     />
                     {type}
                   </label>
