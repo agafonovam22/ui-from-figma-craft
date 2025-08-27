@@ -397,92 +397,90 @@ const Catalog: React.FC = () => {
     <>
       <Header onSearch={handleSearchQuery} />
       <div className="min-h-screen bg-white">
-        {/* Unified container that matches header alignment */}
-        <div className="w-full justify-center flex bg-white">
-          <div className="w-full max-w-[1800px] px-2 sm:px-4 lg:px-[60px] tablet-header">
-            {/* Breadcrumbs */}
-            <Breadcrumb className="mb-6 py-2">
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <Link to="/">Главная</Link>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>
-                    {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
-                  </BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-container py-2">
+          {/* Breadcrumbs */}
+          <Breadcrumb className="mb-6">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/">Главная</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>
+                  {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
+                </BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
 
-            {/* Catalog Layout */}
-            <div className="flex catalog-layout gap-4 lg:gap-6 tablet-catalog-layout">
-              {/* Left Sidebar - Filters */}
-              <div className="catalog-filters">
-                <CatalogFilters
-                  filters={filters}
-                  filterOptions={filterOptions}
-                  onPriceChange={handlePriceChange}
-                  onBrandsChange={handleBrandsChange}
-                  onPurposeTypesChange={handlePurposeTypesChange}
-                  onPowerRangeChange={handlePowerRangeChange}
-                  onEquipmentTypesChange={handleEquipmentTypesChange}
-                  onApplyFilters={handleApplyFilters}
-                  onResetFilters={handleResetFilters}
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-container py-2">
+          <div className="flex gap-8 tablet-catalog-layout">
+            {/* Left Sidebar - Filters */}
+            <div className="tablet-catalog-filters">
+              <CatalogFilters
+                filters={filters}
+                filterOptions={filterOptions}
+                onPriceChange={handlePriceChange}
+                onBrandsChange={handleBrandsChange}
+                onPurposeTypesChange={handlePurposeTypesChange}
+                onPowerRangeChange={handlePowerRangeChange}
+                onEquipmentTypesChange={handleEquipmentTypesChange}
+                onApplyFilters={handleApplyFilters}
+                onResetFilters={handleResetFilters}
+              />
+            </div>
+
+            {/* Main Content */}
+            <div className="flex-1 mt-[94px] tablet-catalog-main">
+              <CatalogBanner />
+              <div className="tablet-catalog-controls">
+                <CatalogControls 
+                  sortBy={sortBy} 
+                  setSortBy={setSortBy}
+                  onSearch={handleSearchQuery}
+                  searchQuery={queryParam}
                 />
               </div>
-
-              {/* Main Content */}
-              <div className="flex-1 catalog-main-content">
-                <CatalogBanner />
-                <div className="mb-4 md:mb-6">
-                  <CatalogControls 
-                    sortBy={sortBy} 
-                    setSortBy={setSortBy}
-                    onSearch={handleSearchQuery}
-                    searchQuery={queryParam}
-                  />
+              
+              {isLoading ? (
+                <div className="space-y-6">
+                  {/* Skeleton для товаров */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    {Array.from({ length: 16 }).map((_, index) => (
+                      <div key={index} className="bg-white rounded-lg border p-4 animate-pulse">
+                        <div className="bg-gray-200 h-48 rounded-lg mb-4"></div>
+                        <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                        <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+                        <div className="h-6 bg-gray-200 rounded w-1/2"></div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                
-                {isLoading ? (
-                  <div className="space-y-6">
-                    {/* Skeleton для товаров */}
-                    <div className="catalog-grid">
-                      {Array.from({ length: 16 }).map((_, index) => (
-                        <div key={index} className="bg-white rounded-lg border p-4 animate-pulse">
-                          <div className="bg-gray-200 h-48 rounded-lg mb-4"></div>
-                          <div className="h-4 bg-gray-200 rounded mb-2"></div>
-                          <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
-                          <div className="h-6 bg-gray-200 rounded w-1/2"></div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ) : queryParam && catalogItems.length === 0 ? (
-                  <div className="text-center py-8">
-                    <p>По запросу "{queryParam}" ничего не найдено</p>
-                    <p className="text-gray-500 mt-2">Попробуйте изменить поисковый запрос или фильтры</p>
-                  </div>
-                ) : catalogItems.length === 0 ? (
-                  <div className="text-center py-8">
-                    <p>Товары не найдены</p>
-                    <p className="text-gray-500 mt-2">Попробуйте изменить фильтры</p>
-                  </div>
-                ) : (
-                  <CatalogGrid 
-                    products={catalogItems}
-                    totalPages={totalPages}
-                    currentPage={pageNumber}
-                    onPageChange={handlePageNavigation}
-                    hasNextPage={hasNextPage}
-                    hasPreviousPage={hasPrevPage}
-                    onLoadMore={() => handlePageNavigation(pageNumber + 1)}
-                    showLoadMore={hasNextPage}
-                  />
-                )}
-              </div>
+              ) : queryParam && catalogItems.length === 0 ? (
+                <div className="text-center py-8">
+                  <p>По запросу "{queryParam}" ничего не найдено</p>
+                  <p className="text-gray-500 mt-2">Попробуйте изменить поисковый запрос или фильтры</p>
+                </div>
+              ) : catalogItems.length === 0 ? (
+                <div className="text-center py-8">
+                  <p>Товары не найдены</p>
+                  <p className="text-gray-500 mt-2">Попробуйте изменить фильтры</p>
+                </div>
+              ) : (
+                <CatalogGrid 
+                  products={catalogItems}
+                  totalPages={totalPages}
+                  currentPage={pageNumber}
+                  onPageChange={handlePageNavigation}
+                  hasNextPage={hasNextPage}
+                  hasPreviousPage={hasPrevPage}
+                  onLoadMore={() => handlePageNavigation(pageNumber + 1)}
+                  showLoadMore={hasNextPage}
+                />
+              )}
             </div>
           </div>
         </div>
@@ -514,7 +512,10 @@ const Catalog: React.FC = () => {
           </div>
         </div>
       </div>
-      <EmailSubscription />
+      <div className="tablet-section">
+        <EmailSubscription />
+      </div>
+      <div className="h-[70px]"></div>
       <Footer />
     </>
   );
