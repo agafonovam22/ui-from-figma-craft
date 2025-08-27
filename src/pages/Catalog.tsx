@@ -416,10 +416,10 @@ const Catalog: React.FC = () => {
           </Breadcrumb>
         </div>
 
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-container py-2">
-          <div className="flex tablet-catalog-layout" style={{ gap: '32px' }}>
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] catalog-container py-2">
+          <div className="flex catalog-layout gap-4 lg:gap-8">
             {/* Left Sidebar - Filters */}
-            <div className="tablet-catalog-filters">
+            <div className="catalog-filters">
               <CatalogFilters
                 filters={filters}
                 filterOptions={filterOptions}
@@ -434,9 +434,9 @@ const Catalog: React.FC = () => {
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 tablet-catalog-main" style={{ marginTop: '94px' }}>
+            <div className="flex-1 mt-16 lg:mt-24">
               <CatalogBanner />
-              <div className="tablet-catalog-controls">
+              <div className="mb-4 md:mb-6">
                 <CatalogControls 
                   sortBy={sortBy} 
                   setSortBy={setSortBy}
