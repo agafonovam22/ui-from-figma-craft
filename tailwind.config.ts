@@ -19,6 +19,9 @@ export default {
 			}
 		},
 		extend: {
+			screens: {
+				'hd': { 'raw': '(min-width: 1920px) and (max-width: 2559px)' },
+			},
 			fontFamily: {
 				'benzin': ['Benzin-Regular', 'sans-serif'],
 				'benzin-semibold': ['Benzin-Semibold', 'sans-serif'],
