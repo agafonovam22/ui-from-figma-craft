@@ -588,15 +588,15 @@ const About: React.FC = () => {
             {/* Statistics Banner - updated height and image */}
             <section className="w-full">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-                <div className="overflow-hidden relative rounded-lg flex flex-col lg:block" style={{ minHeight: '408px' }}>
+                <div className="overflow-hidden relative rounded-lg" style={{ height: '408px' }}>
                   <img 
                     src="/lovable-uploads/ff32c8e2-a062-45cc-8c1e-6a6d228f6380.png"
                     alt="О компании - статистика"
-                    className="w-full h-full object-cover lg:absolute lg:inset-0"
+                    className="w-full h-full object-cover"
                     style={{ objectPosition: 'center right' }}
                   />
                   {/* Statistics content overlay */}
-                  <div className="lg:absolute lg:top-2.5 lg:right-2.5 lg:bottom-2.5 w-full lg:w-[650px] bg-white rounded-lg p-6 shadow-lg">
+                  <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-6 shadow-lg">
                     <div className="h-full flex flex-col justify-between">
                       <div className="mb-4">
                         <p className="text-gray-700 text-sm leading-snug">
