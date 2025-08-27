@@ -173,58 +173,60 @@ const ProductCatalog: React.FC = () => {
   return (
     <section className="w-full py-6 bg-white">
       <div className="max-w-[1800px] mx-auto px-[30px] tablet-product-catalog-container mobile:px-4">
-        <div className="flex items-center justify-between mb-12 tablet-product-catalog-header mobile:flex-col mobile:items-start mobile:gap-4 mobile:mb-6">
-          <h2 className="text-2xl font-bold text-[#262631] tablet-product-catalog-title mobile:text-xl">
+        <div className="flex items-center justify-between mb-12 tablet-product-catalog-header mobile:flex-col mobile:items-center mobile:gap-3 mobile:mb-4">
+          <h2 className="text-2xl font-bold text-[#262631] tablet-product-catalog-title mobile:text-lg mobile:text-center">
             Каталог продукции
           </h2>
-          <div className="flex items-center gap-4 tablet-product-catalog-filters mobile:gap-2 mobile:w-full">
+          <div className="flex items-center gap-4 tablet-product-catalog-filters mobile:gap-1 mobile:w-full mobile:max-w-xs">
             <button
               onClick={() => setActiveFilter('home')}
-              className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-colors text-sm md:text-base tablet-product-catalog-filter-btn mobile:flex-1 mobile:px-3 mobile:py-2 mobile:text-xs ${
+              className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-colors text-sm md:text-base tablet-product-catalog-filter-btn mobile:flex-1 mobile:px-2 mobile:py-1.5 mobile:text-[10px] mobile:leading-tight ${
                 activeFilter === 'home'
                   ? 'bg-[#F53B49] text-white'
                   : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
               }`}
             >
-              Тренажеры для дома
+              <span className="mobile:block">Для дома</span>
+              <span className="mobile:hidden">Тренажеры для дома</span>
             </button>
             <button
               onClick={() => setActiveFilter('fitness')}
-              className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-colors text-sm md:text-base tablet-product-catalog-filter-btn mobile:flex-1 mobile:px-3 mobile:py-2 mobile:text-xs ${
+              className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-colors text-sm md:text-base tablet-product-catalog-filter-btn mobile:flex-1 mobile:px-2 mobile:py-1.5 mobile:text-[10px] mobile:leading-tight ${
                 activeFilter === 'fitness'
                   ? 'bg-[#F53B49] text-white'
                   : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
               }`}
             >
-              Фитнес-клуба
+              <span className="mobile:block">Фитнес-клуб</span>
+              <span className="mobile:hidden">Фитнес-клуба</span>
             </button>
           </div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6 tablet-product-catalog-grid mobile:grid-cols-2 mobile:gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6 tablet-product-catalog-grid mobile:grid-cols-3 mobile:gap-1">
           {currentProducts.slice(0, 6).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
           ))}
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] tablet-product-catalog-bottom-grid mobile:grid-cols-2 mobile:gap-2">
-          {currentProducts.slice(6, 10).map((product) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] tablet-product-catalog-bottom-grid mobile:grid-cols-3 mobile:gap-1">
+          {currentProducts.slice(6, 9).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
           ))}
-          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px] tablet-product-catalog-promo mobile:col-span-2 mobile:h-[150px]">
+          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px] tablet-product-catalog-promo mobile:col-span-3 mobile:h-[120px] mobile:mt-2">
             <img 
               src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
               alt="Перейти в каталог"
               className="w-full h-full object-cover object-right"
             />
-            <div className="absolute top-4 left-4 text-white font-benzin text-lg font-normal tablet-product-catalog-promo-title mobile:top-2 mobile:left-2 mobile:text-sm">
+            <div className="absolute top-4 left-4 text-white font-benzin text-lg font-normal tablet-product-catalog-promo-title mobile:top-2 mobile:left-2 mobile:text-xs">
               {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
             </div>
             <Link 
               to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
-              className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2 tablet-product-catalog-promo-btn tablet-product-catalog-promo-content mobile:bottom-2 mobile:left-2 mobile:px-2 mobile:py-1 mobile:text-xs"
+              className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2 tablet-product-catalog-promo-btn tablet-product-catalog-promo-content mobile:bottom-1 mobile:left-2 mobile:px-2 mobile:py-1 mobile:text-[10px]"
             >
-              Перейти в каталог <ArrowRight className="w-4 h-4 mobile:w-3 mobile:h-3" />
+              Перейти в каталог <ArrowRight className="w-4 h-4 mobile:w-2 mobile:h-2" />
             </Link>
           </div>
         </div>
