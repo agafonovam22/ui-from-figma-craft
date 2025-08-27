@@ -10,7 +10,7 @@ const ProductCatalog: React.FC = () => {
   useEffect(() => {
     const checkResolution = () => {
       const width = window.innerWidth;
-      setIsFullHD(width >= 1400);
+      setIsFullHD(width >= 1800);
     };
     
     checkResolution();
