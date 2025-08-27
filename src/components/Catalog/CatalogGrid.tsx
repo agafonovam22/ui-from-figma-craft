@@ -44,7 +44,7 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
   return (
     <>
       {/* Products Grid with Ad Banner */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 mb-8">
+      <div className="catalog-grid">
         {products.map((product, index) => (
           <React.Fragment key={product.id}>
             <ProductCard product={{ 
@@ -63,10 +63,10 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
               badge_color: product.badge_color
             }} />
             
-            {/* Ad Banner after 8th product (between 2nd and 3rd row) */}
+            {/* Ad Banner after 8th product (between 2nd and 3rd row on desktop) */}
             {index === 7 && (
               <div 
-                className="col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4 text-white p-4 md:p-6 lg:p-8 rounded-lg"
+                className="catalog-grid-banner col-span-full text-white p-4 md:p-6 lg:p-8 rounded-lg"
                 style={{ background: 'linear-gradient(97deg, #262631 1.32%, #6F6F90 108.06%)' }}
               >
                 <div className="flex items-center justify-between">

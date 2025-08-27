@@ -156,22 +156,105 @@
 /* Large (lg): 1024px+ - 3 columns, larger tablet/small desktop */
 /* XL (xl): 1280px+ - 4 columns, full desktop experience */
 
-/* Clean tablet adaptations without !important */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .catalog-container {
-    padding-left: 24px;
-    padding-right: 24px;
+/* Catalog Grid System - Responsive Layout */
+.catalog-layout {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.catalog-filters {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.catalog-main-content {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+/* Ad banner spans full width in catalog grid */
+.catalog-grid-banner {
+  grid-column: 1 / -1;
+}
+
+/* Desktop (≥1200px): Banner spans all 4 columns */
+@media (min-width: 1200px) {
+  .catalog-grid-banner {
+    grid-column: 1 / 5;
+  }
+}
+
+/* Tablet (768px - 1199px): Banner spans all columns */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .catalog-grid-banner {
+    grid-column: 1 / 4; /* Spans 3 columns on larger tablets */
   }
   
+  @media (max-width: 899px) {
+    .catalog-grid-banner {
+      grid-column: 1 / 3; /* Spans 2 columns on smaller tablets */
+    }
+  }
+}
+
+/* Desktop (≥1200px): 3-4 cards per row */
+@media (min-width: 1200px) {
+  .catalog-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  
+  .catalog-layout {
+    gap: 32px;
+  }
+  
+  .catalog-filters {
+    width: 280px;
+  }
+}
+
+/* Large screens (≥1400px): Optimize spacing */
+@media (min-width: 1400px) {
+  .catalog-grid {
+    gap: 28px;
+  }
+}
+
+/* Tablet (768px - 1199px): 2-3 cards per row */
+@media (min-width: 768px) and (max-width: 1199px) {
   .catalog-layout,
   .tablet-catalog-layout {
-    gap: 12px;
+    gap: 16px;
   }
   
   .catalog-filters,
   .tablet-catalog-filters-container {
-    width: 200px;
+    width: 220px;
     flex-shrink: 0;
+  }
+  
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  /* 3 cards on larger tablets if space allows */
+  @media (min-width: 900px) {
+    .catalog-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
   }
   
   /* Reduce filter title size on tablet */
@@ -190,6 +273,35 @@
     font-size: 18px;
     margin-bottom: 16px;
   }
+}
+
+/* Mobile (<768px): 1 card per row, hide sidebar */
+@media (max-width: 767px) {
+  .catalog-layout {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .catalog-filters {
+    width: 100%;
+    order: 2;
+  }
+  
+  .catalog-main-content {
+    order: 1;
+    width: 100%;
+  }
+  
+  .catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Ensure container alignment */
+.catalog-container {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* Header responsive adaptations */
