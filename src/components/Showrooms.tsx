@@ -163,28 +163,28 @@ const Showrooms: React.FC = () => {
         </div>
 
         {/* Showroom Banner - Three Parts */}
-        <div className="w-full h-[400px] bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 flex">
+        <div className="w-full h-[400px] lg:h-[400px] md:h-[300px] sm:h-[250px] bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 flex lg:flex-row md:flex-col sm:flex-col">
           
           {/* Left Part - Showrooms List */}
-          <div className="w-[260px] bg-gray-800 flex flex-col">
+          <div className="w-[260px] lg:w-[260px] md:w-full sm:w-full lg:h-full md:h-auto sm:h-auto bg-gray-800 flex lg:flex-col md:flex-row sm:flex-row lg:overflow-visible md:overflow-x-auto sm:overflow-x-auto">
             {showroomsData.map((showroom, index) => (
               <button
                 key={showroom.id}
                 onClick={() => setActiveShowroom(index)}
-                className={`flex-1 px-6 py-4 text-left transition-colors border-b border-gray-700 last:border-b-0 ${
+                className={`flex-1 lg:px-6 lg:py-4 md:px-4 md:py-3 sm:px-3 sm:py-2 text-left transition-colors lg:border-b lg:border-gray-700 lg:last:border-b-0 md:border-r md:border-gray-700 md:last:border-r-0 sm:border-r sm:border-gray-700 sm:last:border-r-0 lg:min-w-0 md:min-w-[120px] sm:min-w-[100px] ${
                   activeShowroom === index 
                     ? 'bg-[#F53B49] text-white' 
                     : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                 }`}
               >
-                <span className="font-benzin text-lg">Шоурум {showroom.id}</span>
+                <span className="font-benzin lg:text-lg md:text-sm sm:text-xs whitespace-nowrap">Шоурум {showroom.id}</span>
               </button>
             ))}
           </div>
 
           {/* Middle Part - Showroom Info */}
           <div 
-            className="w-[400px] text-white p-8 flex flex-col justify-center relative"
+            className="w-[400px] lg:w-[400px] md:w-full sm:w-full text-white lg:p-8 md:p-6 sm:p-4 flex flex-col justify-center relative"
             style={{
               backgroundImage: `url('/lovable-uploads/e05a6eb9-c52e-47db-8538-c7a03271bb36.png')`,
               backgroundSize: 'cover',
@@ -192,7 +192,7 @@ const Showrooms: React.FC = () => {
             }}
           >
             <div className="mb-6">
-              <h3 className="text-2xl font-bold text-white mb-2 font-benzin-semibold">Шоу-рум WellFitness</h3>
+              <h3 className="lg:text-2xl md:text-xl sm:text-lg font-bold text-white mb-2 font-benzin-semibold">Шоу-рум WellFitness</h3>
             </div>
 
             <div className="space-y-4">
@@ -201,7 +201,7 @@ const Showrooms: React.FC = () => {
                   <MapPin size={16} style={{ color: '#5C6476' }} />
                   <p className="text-sm font-semibold" style={{ color: '#5C6476' }}>Адрес</p>
                 </div>
-                <p className="text-white text-sm leading-relaxed">Москва, ТЦ Капитолий, Правобережная улица, 1Б</p>
+                <p className="text-white lg:text-sm md:text-sm sm:text-xs leading-relaxed">Москва, ТЦ Капитолий, Правобережная улица, 1Б</p>
               </div>
 
               <div>
@@ -209,7 +209,7 @@ const Showrooms: React.FC = () => {
                   <Phone size={16} style={{ color: '#5C6476' }} />
                   <p className="text-sm font-semibold" style={{ color: '#5C6476' }}>Телефон</p>
                 </div>
-                <p className="text-white text-sm">+7 (499) 677-56-32 доб. 337</p>
+                <p className="text-white lg:text-sm md:text-sm sm:text-xs">+7 (499) 677-56-32 доб. 337</p>
               </div>
 
               <div>
@@ -217,19 +217,19 @@ const Showrooms: React.FC = () => {
                   <Clock size={16} style={{ color: '#5C6476' }} />
                   <p className="text-sm font-semibold" style={{ color: '#5C6476' }}>Режим работы</p>
                 </div>
-                <p className="text-white text-sm">10:00 - 22:00</p>
+                <p className="text-white lg:text-sm md:text-sm sm:text-xs">10:00 - 22:00</p>
               </div>
             </div>
 
             <div className="mt-6">
-              <button className="border border-white text-white px-6 py-2 rounded transition-colors hover:bg-white hover:text-gray-800">
+              <button className="border border-white text-white lg:px-6 lg:py-2 md:px-4 md:py-2 sm:px-3 sm:py-1 rounded transition-colors hover:bg-white hover:text-gray-800 lg:text-sm md:text-sm sm:text-xs">
                 Как проехать
               </button>
             </div>
           </div>
 
           {/* Right Part - Photo Slider */}
-          <div className="flex-1 bg-gray-100 relative overflow-hidden">
+          <div className="flex-1 bg-gray-100 relative overflow-hidden lg:block md:block sm:hidden">
             {/* Current Image */}
             <img 
               src={currentShowroom.images[activeImageIndex]} 
@@ -242,14 +242,14 @@ const Showrooms: React.FC = () => {
               <>
                 <button
                   onClick={prevImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white lg:p-2 md:p-1 rounded-full transition-colors"
                 >
                   <ChevronLeft size={20} />
                 </button>
                 
                 <button
                   onClick={nextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white lg:p-2 md:p-1 rounded-full transition-colors"
                 >
                   <ChevronRight size={20} />
                 </button>
