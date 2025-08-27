@@ -497,15 +497,16 @@
 
   /* Promotions and offers adjustments for tablet */
   .w-80 {
-    width: 240px !important;
+    width: 400px !important;
+    height: 160px !important;
   }
 
   .h-\\[444px\\] {
-    height: 300px !important;
+    height: 160px !important;
   }
 
   .flex.gap-\\[10px\\] {
-    gap: 8px !important;
+    gap: 12px !important;
   }
 
   .px-\\[30px\\] {
