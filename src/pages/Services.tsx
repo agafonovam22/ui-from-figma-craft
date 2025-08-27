@@ -374,6 +374,11 @@ const Services: React.FC = () => {
             <div className="space-y-12">
               {/* First section with image and text */}
               <div className="flex gap-8 items-start md:flex-col lg:flex-row">
+                {/* Title for tablets only */}
+                <h2 className="hidden md:block lg:hidden text-3xl font-bold text-gray-900 mb-6 md:text-2xl md:mb-4">
+                  <span style={{color: '#778093'}}>Обслуживание</span> фитнес-клубов
+                </h2>
+                
                 <div className="flex-1 md:flex-none md:w-full lg:flex-1">
                   <img 
                     src="/lovable-uploads/fcb1f59e-5de5-4faa-b202-809020318b96.png"
@@ -382,7 +387,8 @@ const Services: React.FC = () => {
                   />
                 </div>
                 <div className="flex-1 md:flex-none md:w-full lg:flex-1">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 md:text-2xl md:mb-4">
+                  {/* Title for desktop only */}
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6 md:hidden lg:block">
                     <span style={{color: '#778093'}}>Обслуживание</span> фитнес-клубов
                   </h2>
                   {/* First text container */}
