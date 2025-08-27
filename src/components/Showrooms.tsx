@@ -138,18 +138,18 @@ const Showrooms: React.FC = () => {
     <section className="w-full bg-white py-6">
       <div className="max-w-[1800px] mx-auto px-[30px]">
         {/* Header */}
-        <div className="mb-6 2xl:mb-8 4xl:mb-8">
-          <h2 className="text-2xl 2xl:text-2xl 4xl:text-2xl font-bold text-gray-900 font-benzin-semibold">Шоурумы</h2>
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 font-benzin-semibold">Шоурумы</h2>
         </div>
 
         {/* Cities Filter */}
-        <div className="mb-6 2xl:mb-8 4xl:mb-8">
-          <div className="flex flex-wrap gap-3 2xl:gap-4 4xl:gap-6 pb-4">
+        <div className="mb-8">
+          <div className="flex flex-wrap gap-6 pb-4">
             {cities.map((city) => (
               <button
                 key={city}
                 onClick={() => handleCityClick(city)}
-                className={`text-sm 2xl:text-sm 4xl:text-sm transition-colors hover:text-[#F53B49] ${
+                className={`text-sm transition-colors hover:text-[#F53B49] ${
                   selectedCity === city 
                     ? 'text-[#F53B49] font-medium' 
                     : 'text-gray-600'
@@ -163,66 +163,66 @@ const Showrooms: React.FC = () => {
         </div>
 
         {/* Showroom Banner - Three Parts */}
-        <div className="w-full h-80 2xl:h-96 4xl:h-[400px] bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 flex">
+        <div className="w-full h-[400px] bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 flex">
           
           {/* Left Part - Showrooms List */}
-          <div className="w-48 2xl:w-56 4xl:w-[260px] bg-gray-800 flex flex-col">
+          <div className="w-[260px] bg-gray-800 flex flex-col">
             {showroomsData.map((showroom, index) => (
               <button
                 key={showroom.id}
                 onClick={() => setActiveShowroom(index)}
-                className={`flex-1 px-3 2xl:px-4 4xl:px-6 py-2 2xl:py-3 4xl:py-4 text-left transition-colors border-b border-gray-700 last:border-b-0 ${
+                className={`flex-1 px-6 py-4 text-left transition-colors border-b border-gray-700 last:border-b-0 ${
                   activeShowroom === index 
                     ? 'bg-[#F53B49] text-white' 
                     : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                 }`}
               >
-                <span className="font-benzin text-base 2xl:text-base 4xl:text-lg">Шоурум {showroom.id}</span>
+                <span className="font-benzin text-lg">Шоурум {showroom.id}</span>
               </button>
             ))}
           </div>
 
           {/* Middle Part - Showroom Info */}
           <div 
-            className="w-80 2xl:w-96 4xl:w-[400px] text-white p-4 2xl:p-6 4xl:p-8 flex flex-col justify-center relative"
+            className="w-[400px] text-white p-8 flex flex-col justify-center relative"
             style={{
               backgroundImage: `url('/lovable-uploads/e05a6eb9-c52e-47db-8538-c7a03271bb36.png')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
           >
-            <div className="mb-4 2xl:mb-5 4xl:mb-6">
-              <h3 className="text-xl 2xl:text-xl 4xl:text-2xl font-bold text-white mb-2 font-benzin-semibold">Шоу-рум WellFitness</h3>
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-white mb-2 font-benzin-semibold">Шоу-рум WellFitness</h3>
             </div>
 
-            <div className="space-y-3 2xl:space-y-3 4xl:space-y-4">
+            <div className="space-y-4">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <MapPin size={14} className="2xl:w-4 2xl:h-4 4xl:w-4 4xl:h-4" style={{ color: '#5C6476' }} />
-                  <p className="text-sm 2xl:text-sm 4xl:text-sm font-semibold" style={{ color: '#5C6476' }}>Адрес</p>
+                  <MapPin size={16} style={{ color: '#5C6476' }} />
+                  <p className="text-sm font-semibold" style={{ color: '#5C6476' }}>Адрес</p>
                 </div>
-                <p className="text-white text-sm 2xl:text-sm 4xl:text-sm leading-relaxed">Москва, ТЦ Капитолий, Правобережная улица, 1Б</p>
+                <p className="text-white text-sm leading-relaxed">Москва, ТЦ Капитолий, Правобережная улица, 1Б</p>
               </div>
 
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <Phone size={14} className="2xl:w-4 2xl:h-4 4xl:w-4 4xl:h-4" style={{ color: '#5C6476' }} />
-                  <p className="text-sm 2xl:text-sm 4xl:text-sm font-semibold" style={{ color: '#5C6476' }}>Телефон</p>
+                  <Phone size={16} style={{ color: '#5C6476' }} />
+                  <p className="text-sm font-semibold" style={{ color: '#5C6476' }}>Телефон</p>
                 </div>
-                <p className="text-white text-sm 2xl:text-sm 4xl:text-sm">+7 (499) 677-56-32 доб. 337</p>
+                <p className="text-white text-sm">+7 (499) 677-56-32 доб. 337</p>
               </div>
 
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <Clock size={14} className="2xl:w-4 2xl:h-4 4xl:w-4 4xl:h-4" style={{ color: '#5C6476' }} />
-                  <p className="text-sm 2xl:text-sm 4xl:text-sm font-semibold" style={{ color: '#5C6476' }}>Режим работы</p>
+                  <Clock size={16} style={{ color: '#5C6476' }} />
+                  <p className="text-sm font-semibold" style={{ color: '#5C6476' }}>Режим работы</p>
                 </div>
-                <p className="text-white text-sm 2xl:text-sm 4xl:text-sm">10:00 - 22:00</p>
+                <p className="text-white text-sm">10:00 - 22:00</p>
               </div>
             </div>
 
-            <div className="mt-4 2xl:mt-5 4xl:mt-6">
-              <button className="border border-white text-white px-4 2xl:px-5 4xl:px-6 py-1.5 2xl:py-2 4xl:py-2 rounded transition-colors hover:bg-white hover:text-gray-800 text-sm 2xl:text-sm 4xl:text-sm">
+            <div className="mt-6">
+              <button className="border border-white text-white px-6 py-2 rounded transition-colors hover:bg-white hover:text-gray-800">
                 Как проехать
               </button>
             </div>

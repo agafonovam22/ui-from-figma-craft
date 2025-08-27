@@ -171,66 +171,68 @@ const ProductCatalog: React.FC = () => {
   const currentProducts = activeFilter === 'home' ? homeProducts : fitnessProducts;
 
   return (
-    <section className="w-full section-spacing bg-white">
-      <div className="responsive-container">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="responsive-title font-bold text-[#262631]">
+    <section className="w-full py-6 bg-white">
+      <div className="max-w-[1800px] mx-auto px-[30px]">
+        <div className="flex items-center justify-between mb-12">
+          <h2 className="text-2xl font-bold text-[#262631]">
             Каталог продукции
           </h2>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4">
             <button
               onClick={() => setActiveFilter('home')}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors text-sm ${
+              className={`px-6 py-3 rounded-lg font-medium transition-colors ${
                 activeFilter === 'home'
                   ? 'bg-[#F53B49] text-white'
                   : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
               }`}
             >
-              Для дома
+              Тренажеры для дома
             </button>
             <button
               onClick={() => setActiveFilter('fitness')}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors text-sm ${
+              className={`px-6 py-3 rounded-lg font-medium transition-colors ${
                 activeFilter === 'fitness'
                   ? 'bg-[#F53B49] text-white'
                   : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
               }`}
             >
-              Фитнес-клуб
+              Фитнес-клуба
             </button>
           </div>
         </div>
         
-        <div className="products-grid">
-          {currentProducts.slice(0, 10).map((product) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6">
+          {currentProducts.slice(0, 6).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
           ))}
-          <Link 
-            to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
-            className="relative rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 flex flex-col min-h-0"
-          >
-            <div className="relative w-full h-full min-h-[200px]">
-              <img 
-                src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
-                alt="Перейти в каталог"
-                className="absolute inset-0 w-full h-full object-cover object-right"
-              />
-              <div className="absolute top-4 left-4 text-white font-benzin responsive-text font-normal z-10">
-                {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
-              </div>
-              <div className="absolute bottom-4 left-4 z-10">
-                <button className="bg-white text-[#262631] px-3 py-1.5 rounded-lg font-benzin font-normal hover:bg-gray-100 transition-colors flex items-center gap-2 text-sm">
-                  Перейти <ArrowRight className="w-3 h-3" />
-                </button>
-              </div>
-            </div>
-          </Link>
         </div>
         
-        <div className="mt-6 flex justify-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px]">
+          {currentProducts.slice(6, 10).map((product) => (
+            <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
+          ))}
+          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px]">
+            <img 
+              src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
+              alt="Перейти в каталог"
+              className="w-full h-full object-cover object-right"
+            />
+            <div className="absolute top-4 left-4 text-white font-benzin text-lg font-normal">
+              {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
+            </div>
+            <Link 
+              to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
+              className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2"
+            >
+              Перейти в каталог <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+        
+        <div className="mt-8 flex justify-start">
           <Link 
             to={activeFilter === 'home' ? '/home-fitness-equipment' : '/gym-equipment'}
-            className="border-2 border-[#F53B49] text-[#F53B49] px-6 py-2 rounded hover:bg-[#F53B49] hover:text-white transition-colors font-benzin font-normal text-sm"
+            className="border-2 border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors font-benzin font-normal"
           >
             Показать все
           </Link>

@@ -48,11 +48,11 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
   if (variant === 'grid') {
     // Simplified version for ProductCatalog
     return (
-      <div className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+      <div className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-[300px]">
         <img 
           src={optimizeImageUrl(product.image, 320, 240)} 
           alt={product.name || "Категория товаров"}
-          className="w-full object-cover object-center"
+          className="w-full h-full object-cover object-center"
           loading="lazy"
           decoding="async"
           onError={(e) => {
@@ -80,7 +80,7 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
         <img 
           src={optimizeImageUrl(product.image, 280, 224)} 
           alt={product.name || "Товар"}
-          className="w-full object-contain bg-gray-50 rounded-lg hover:scale-105 transition-transform duration-300"
+          className="w-full h-56 object-contain bg-gray-50 rounded-lg hover:scale-105 transition-transform duration-300"
           loading="lazy"
           decoding="async"
           onError={(e) => {
@@ -130,7 +130,7 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
 
       <div className="space-y-2">
         {product.name && (
-        <h3 className="text-xs font-medium text-[#262631]">
+        <h3 className="text-xs font-medium text-[#262631] line-clamp-2">
           {product.name}
         </h3>
         )}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import {
@@ -30,13 +30,12 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ChevronUp, ChevronDown } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SupportCitySelector from '@/components/SupportCitySelector';
 
 const Support: React.FC = () => {
   const [activeTab, setActiveTab] = useState('delivery');
   const [selectedCity, setSelectedCity] = useState('Москва');
-  const location = useLocation();
 
   const tabs = [
     { id: 'delivery', label: 'Доставка и оплата' },
@@ -47,39 +46,6 @@ const Support: React.FC = () => {
     { id: 'personal', label: 'Личный кабинет' },
     { id: 'b2b', label: 'B2B кабинет' }
   ];
-
-  // Маппинг хешей URL к ID вкладок
-  const hashToTabMap: { [key: string]: string } = {
-    'delivery': 'delivery',
-    'returns': 'return',
-    'warranty': 'warranty', 
-    'faq': 'faq',
-    'instructions': 'instructions',
-    'personal': 'personal',
-    'b2b': 'b2b'
-  };
-
-  // Отслеживаем изменения в location (включая хеш)
-  useEffect(() => {
-    const hash = location.hash.replace('#', '');
-    console.log('Hash changed to:', hash);
-    if (hash && hashToTabMap[hash]) {
-      console.log('Setting active tab to:', hashToTabMap[hash]);
-      setActiveTab(hashToTabMap[hash]);
-    } else if (!hash) {
-      // Если хеша нет, показываем дефолтную вкладку
-      setActiveTab('delivery');
-    }
-  }, [location.hash]);
-
-  const handleTabChange = (tabId: string) => {
-    setActiveTab(tabId);
-    // Обновляем URL хеш при смене вкладки
-    const hashKey = Object.keys(hashToTabMap).find(key => hashToTabMap[key] === tabId);
-    if (hashKey) {
-      window.history.replaceState(null, '', `#${hashKey}`);
-    }
-  };
 
   const getActiveTabLabel = () => {
     const activeTabObject = tabs.find(tab => tab.id === activeTab);
@@ -152,7 +118,7 @@ const Support: React.FC = () => {
             {tabs.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => handleTabChange(tab.id)}
+                onClick={() => setActiveTab(tab.id)}
                 className={`px-4 py-2 rounded transition-colors ${
                   activeTab === tab.id
                     ? 'bg-[#F53B49] text-white'

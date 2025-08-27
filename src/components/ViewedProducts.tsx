@@ -131,15 +131,15 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
   }
 
   return (
-    <section className="w-full section-spacing bg-white">
-      <div className="responsive-container">
+    <section className="w-full py-6 bg-white">
+      <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-0">
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-[#262631] font-benzin-semibold">
             {showViewedTitle ? 'Вы смотрели' : 'Похожие товары'}
           </h2>
         </div>
         
-        <div className="products-grid">
+        <div className="grid grid-cols-5 gap-[10px]">
           {displayProducts.map((product) => (
             <ProductCard
               key={product.id}

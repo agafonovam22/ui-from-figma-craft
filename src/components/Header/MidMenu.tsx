@@ -15,7 +15,7 @@ const Logo: React.FC = () => (
     <img 
       src="/lovable-uploads/989588d0-dab0-48b9-9268-db2cc02cf4da.png" 
       alt="Well Fitness" 
-      className="h-[32px] 2xl:h-[35px] 3xl:h-[38px] 4xl:h-[42px] w-auto"
+      className="h-[32px] w-auto"
     />
   </Link>
 );
@@ -23,7 +23,7 @@ const Logo: React.FC = () => (
 const CatalogButton: React.FC = () => (
   <Link
     to="/catalog"
-    className="flex justify-center items-center gap-2 2xl:gap-2.5 3xl:gap-3 4xl:gap-3.5 bg-[#F53B49] px-5 2xl:px-6 3xl:px-7 4xl:px-8 py-3 2xl:py-3.5 3xl:py-4 4xl:py-4.5 rounded-[5px] hover:bg-[#e63946] transition-colors whitespace-nowrap h-[41px] 2xl:h-[44px] 3xl:h-[47px] 4xl:h-[50px] flex-shrink-0"
+    className="flex justify-center items-center gap-2 bg-[#F53B49] px-5 py-3 rounded-[5px] hover:bg-[#e63946] transition-colors whitespace-nowrap h-[41px] flex-shrink-0"
     aria-label="Открыть каталог товаров"
   >
     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +37,7 @@ const CatalogButton: React.FC = () => (
       <path d="M5 10H8V13H5V10Z" fill="white" />
       <path d="M10 10H13V13H10V10Z" fill="white" />
     </svg>
-    <span className="text-white text-base 2xl:text-base 3xl:text-lg 4xl:text-xl font-normal leading-4 2xl:leading-4 3xl:leading-5 4xl:leading-6">Каталог</span>
+    <span className="text-white text-sm font-normal leading-[14px]">Каталог</span>
   </Link>
 );
 
@@ -72,14 +72,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Поиск", onSea
   return (
     <form onSubmit={handleSubmit} className="flex-1">
       <div
-        className={`flex h-[41px] 2xl:h-[44px] 3xl:h-[47px] 4xl:h-[50px] justify-between items-center bg-[#262631] pl-5 2xl:pl-6 3xl:pl-7 4xl:pl-8 pr-4 2xl:pr-5 3xl:pr-6 4xl:pr-7 py-3.5 2xl:py-4 3xl:py-4.5 4xl:py-5 rounded-[5px] max-w-[700px] 2xl:max-w-[800px] 3xl:max-w-[900px] 4xl:max-w-[1000px] ${className}`}
+        className={`flex h-[41px] justify-between items-center bg-[#262631] pl-5 pr-4 py-3.5 rounded-[5px] max-w-[700px] ${className}`}
       >
         <input
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder={placeholder}
-          className="flex-1 bg-transparent text-white text-base 2xl:text-base 3xl:text-lg 4xl:text-xl font-normal leading-4 2xl:leading-4 3xl:leading-5 4xl:leading-6 outline-none placeholder:text-[#5C6476]"
+          className="flex-1 bg-transparent text-white text-sm font-normal leading-[14px] outline-none placeholder:text-[#5C6476]"
         />
         <button
           type="button"
@@ -101,7 +101,7 @@ const UserActions: React.FC = () => {
   const [isComparisonOpen, setIsComparisonOpen] = useState(false);
 
   return (
-    <div className="flex items-center gap-4 2xl:gap-5 3xl:gap-6 4xl:gap-7 max-sm:gap-2.5 flex-shrink-0">
+    <div className="flex items-center gap-4 max-sm:gap-2.5 flex-shrink-0">
       <Link
         to="/account"
         className="w-6 h-6 relative"
@@ -148,26 +148,18 @@ const MidMenu: React.FC<MidMenuProps> = ({ onSearch }) => {
   };
 
   return (
-    <section className="flex w-full justify-center items-center bg-[#17171E] py-3 2xl:py-3.5 3xl:py-4 4xl:py-4.5 px-4 2xl:px-6 3xl:px-7 4xl:px-8">
-      <div className="flex w-full max-w-[1200px] 2xl:max-w-[1400px] 3xl:max-w-[1600px] 4xl:max-w-[1920px] mx-auto h-[65px] 2xl:h-[70px] 3xl:h-[75px] 4xl:h-[80px] justify-between items-center gap-4 2xl:gap-5 3xl:gap-6 4xl:gap-7 min-w-0">
-        <div className="flex-shrink-0">
-          <Logo />
-        </div>
+    <section className="flex w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 lg:px-[60px] py-3 max-md:px-5 max-sm:px-4">
+      <div className="flex w-full max-w-[1800px] h-[65px] justify-between items-center gap-4 flex-shrink-0">
+        <Logo />
         
         <SearchPopup isOpen={isPopupOpen} onOpenChange={setIsPopupOpen}>
-          <div className="flex items-center gap-4 2xl:gap-5 3xl:gap-6 4xl:gap-7 flex-1 max-w-[800px] 2xl:max-w-[900px] 3xl:max-w-[1000px] 4xl:max-w-[1100px] min-w-0" onClick={handleClick}>
-            <div className="flex-shrink-0">
-              <CatalogButton />
-            </div>
-            <div className="flex-1 min-w-0">
-              <SearchBar onSearch={onSearch} />
-            </div>
+          <div className="flex items-center gap-2.5 flex-1 max-w-[750px]" onClick={handleClick}>
+            <CatalogButton />
+            <SearchBar onSearch={onSearch} />
           </div>
         </SearchPopup>
         
-        <div className="flex-shrink-0">
-          <UserActions />
-        </div>
+        <UserActions />
       </div>
     </section>
   );

@@ -53,7 +53,7 @@ const IdeasSelections: React.FC = () => {
       <div className="max-w-[1800px] mx-auto px-[30px]">
         {/* Header with navigation */}
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl 2xl:text-2xl 4xl:text-2xl font-bold text-gray-900">Лучшие предложения</h2>
+          <h2 className="text-2xl font-bold text-gray-900">Лучшие предложения</h2>
           <div className="flex items-center gap-4">
             <button 
               onClick={scrollLeft}
@@ -82,7 +82,7 @@ const IdeasSelections: React.FC = () => {
             <Link
               key={idea.id}
               to="/ideas"
-              className="group relative flex-shrink-0 w-64 2xl:w-72 4xl:w-80 rounded-lg overflow-hidden h-80 2xl:h-96 4xl:h-[444px] hover:shadow-lg transition-all duration-300 cursor-pointer"
+              className="group relative flex-shrink-0 w-80 rounded-lg overflow-hidden h-[444px] hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
               <img 
                 src={idea.image} 

@@ -41,7 +41,7 @@ const PromotionsOffers: React.FC = () => {
       <div className="max-w-[1800px] mx-auto px-[30px]">
         {/* Header with navigation */}
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl 2xl:text-2xl 4xl:text-2xl font-bold text-gray-900 font-benzin-semibold">Акции и спецпредложения</h2>
+          <h2 className="text-2xl font-bold text-gray-900 font-benzin-semibold">Акции и спецпредложения</h2>
           <div className="flex items-center gap-4">
             <button 
               onClick={scrollLeft}
@@ -70,7 +70,7 @@ const PromotionsOffers: React.FC = () => {
             <Link
               key={promo.id}
               to="/promotions"
-              className="group relative flex-shrink-0 w-64 2xl:w-72 4xl:w-80 rounded-lg overflow-hidden h-80 2xl:h-96 4xl:h-[444px] hover:shadow-lg transition-all duration-300 cursor-pointer"
+              className="group relative flex-shrink-0 w-80 rounded-lg overflow-hidden h-[444px] hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
               <img 
                 src={promo.image} 
@@ -87,7 +87,7 @@ const PromotionsOffers: React.FC = () => {
 
         {/* Show All Button */}
         <div className="flex justify-start">
-          <button className="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors font-benzin text-base 2xl:text-sm 4xl:text-sm">
+          <button className="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors font-benzin">
             Показать все
           </button>
         </div>

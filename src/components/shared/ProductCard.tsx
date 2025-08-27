@@ -143,8 +143,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
       className="block"
     >
       <div 
-        className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 product-card-responsive"
+        className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
         style={{ 
+          height: '460px', 
           backgroundColor: '#F8F8FD',
           background: 'var(--card-bg, #F8F8FD)'
         }}
@@ -210,53 +211,53 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </button>
       </div>
 
-       {/* Слайдер изображений */}
-       <div 
-         className="relative overflow-hidden transition-colors duration-300"
-         style={{ backgroundColor: 'transparent' }}
-       >
-         {/* Декоративный элемент в правом верхнем углу */}
-         <div className="absolute top-0 -right-8 w-60 z-0">
-           <img 
-             src="/lovable-uploads/5e75cf63-44ac-40f1-932d-ab5786810641.png" 
-             alt="" 
-             className="w-full object-contain"
-           />
-         </div>
+      {/* Слайдер изображений */}
+      <div 
+        className="relative h-60 overflow-hidden transition-colors duration-300"
+        style={{ backgroundColor: 'transparent' }}
+      >
+        {/* Декоративный элемент в правом верхнем углу */}
+        <div className="absolute top-0 -right-8 w-60 h-60 z-0">
+          <img 
+            src="/lovable-uploads/5e75cf63-44ac-40f1-932d-ab5786810641.png" 
+            alt="" 
+            className="w-full h-full object-contain"
+          />
+        </div>
         {showCarousel && product.gallery_images && product.gallery_images.length > 1 ? (
-           <Carousel 
-             className="group/carousel"
-             setApi={(api) => {
-               if (api) {
-                 api.on('select', () => {
-                   setCarouselIndex(api.selectedScrollSnap());
-                 });
-               }
-             }}
-           >
-             <CarouselContent>
-               {product.gallery_images.map((image: string, imageIndex: number) => (
-                 <CarouselItem key={imageIndex}>
-                   <div className="flex items-center justify-center p-4">
-                      <LazyImage 
-                        src={optimizeImageUrl(image, 400, 320)} 
-                        alt={`${product.name} - фото ${imageIndex + 1}`}
-                        className="responsive-image w-full"
-                      />
-                   </div>
-                 </CarouselItem>
-               ))}
-             </CarouselContent>
+          <Carousel 
+            className="h-full group/carousel"
+            setApi={(api) => {
+              if (api) {
+                api.on('select', () => {
+                  setCarouselIndex(api.selectedScrollSnap());
+                });
+              }
+            }}
+          >
+            <CarouselContent className="h-full">
+              {product.gallery_images.map((image: string, imageIndex: number) => (
+                <CarouselItem key={imageIndex} className="h-full">
+                  <div className="h-full flex items-center justify-center p-4">
+                    <LazyImage 
+                      src={optimizeImageUrl(image, 400, 320)} 
+                      alt={`${product.name} - фото ${imageIndex + 1}`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
             <CustomCarouselButtons />
           </Carousel>
         ) : (
-           <div className="flex items-center justify-center p-4">
-             <LazyImage 
-               src={optimizeImageUrl((product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg', 400, 320)} 
-               alt={product.name || "Товар"}
-               className="responsive-image w-full"
-             />
-           </div>
+          <div className="h-full flex items-center justify-center p-4">
+            <LazyImage 
+              src={optimizeImageUrl((product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg', 400, 320)} 
+              alt={product.name || "Товар"}
+              className="w-full h-full object-contain"
+            />
+          </div>
         )}
       </div>
 
@@ -282,7 +283,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="mx-4 h-px bg-gray-200 mt-7"></div>
 
         {/* Информация о товаре */}
-        <div className="p-4 pb-2.5 mt-4 flex flex-col justify-between transition-colors duration-300" style={{ backgroundColor: 'transparent' }}>
+        <div className="p-4 pb-2.5 mt-4 flex flex-col justify-between transition-colors duration-300" style={{ height: '160px', backgroundColor: 'transparent' }}>
           <div>
             {/* Статус наличия */}
             {(() => {
@@ -323,7 +324,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             })()}
 
             {/* Название товара */}
-            <h3 className="text-gray-900 group-hover:text-white responsive-text mb-3 leading-relaxed transition-colors duration-300">
+            <h3 className="text-gray-900 group-hover:text-white text-sm mb-3 line-clamp-2 leading-relaxed transition-colors duration-300">
               {(() => {
                 const name = product.name;
                 // Ищем бренды в названии

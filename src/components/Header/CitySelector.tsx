@@ -98,7 +98,7 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
           className="flex items-center gap-1.5 hover:opacity-80 transition-opacity"
           aria-label={`Выбрать город: ${selectedCity}`}
         >
-          <span className="text-white text-[10px] font-normal leading-[10px]">
+          <span className="text-white text-sm font-normal leading-[14px]">
             {selectedCity}
           </span>
           <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,8 +108,8 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
       </DialogTrigger>
       <DialogPortal>
         <DialogOverlay className="bg-black/30" />
-        <DialogContent className="max-w-[1000px] w-full p-0 bg-white z-50">
-          <div className="flex h-[320px]">
+        <DialogContent className="max-w-4xl w-full p-0 bg-white">
+          <div className="flex h-[280px]">
             {/* Left side - Popular cities (narrower) */}
             <div className="w-1/3 p-6 border-r border-gray-200">
               <h2 className="text-xl font-bold text-black mb-5">Популярные</h2>

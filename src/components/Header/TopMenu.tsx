@@ -54,20 +54,18 @@ const TopMenu: React.FC = () => {
   };
 
   return (
-    <header className="flex w-full justify-center items-center bg-[#17171E] py-0 border-b border-solid border-[rgba(255,255,255,0.10)]">
-      <div className="flex w-full max-w-[1200px] 2xl:max-w-[1400px] 3xl:max-w-[1600px] 4xl:max-w-[1920px] mx-auto px-4 2xl:px-6 3xl:px-7 4xl:px-8 h-[53px] 2xl:h-[55px] 3xl:h-[60px] 4xl:h-[65px] justify-between items-center min-w-0">
-        <div className="flex-shrink-0 w-auto">
-          <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
-        </div>
+    <header className="flex w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 lg:px-[60px] py-0 border-b border-solid border-[rgba(255,255,255,0.10)]">
+      <div className="flex w-full max-w-[1800px] h-[53px] justify-between items-center gap-2 lg:gap-[30px] flex-shrink-0">
+        <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
         
-        <nav className="hidden md:flex items-center justify-center flex-1 max-w-[700px] 2xl:max-w-[800px] 3xl:max-w-[900px] 4xl:max-w-[1000px] mx-auto gap-1 2xl:gap-1.5 3xl:gap-2 4xl:gap-2.5" role="navigation" aria-label="Основная навигация">
+        <nav className="flex items-start gap-2 lg:gap-[15px] max-md:hidden" role="navigation" aria-label="Основная навигация">
           {navigationItems.map((item, index) => (
             item.href ? (
               <Link
                 key={index}
                 to={item.href}
-                className="text-layout-grey-nav font-benzin text-[10px] 2xl:text-xs 3xl:text-xs 4xl:text-sm font-normal leading-[10px] 2xl:leading-3 3xl:leading-3 4xl:leading-4 hover:text-white transition-colors whitespace-nowrap inline-block px-1 2xl:px-1 3xl:px-1.5 4xl:px-2"
-                style={{ lineHeight: '100%', display: 'inline-block' }}
+                className="text-layout-grey-nav font-benzin text-[10px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap"
+                style={{ lineHeight: '100%' }}
               >
                 {item.label}
               </Link>
@@ -75,8 +73,8 @@ const TopMenu: React.FC = () => {
               <a
                 key={index}
                 href={item.href || '#'}
-                className="text-layout-grey-nav font-benzin text-[10px] 2xl:text-xs 3xl:text-xs 4xl:text-sm font-normal leading-[10px] 2xl:leading-3 3xl:leading-3 4xl:leading-4 hover:text-white transition-colors whitespace-nowrap inline-block px-1 2xl:px-1 3xl:px-1.5 4xl:px-2"
-                style={{ lineHeight: '100%', display: 'inline-block' }}
+                className="text-layout-grey-nav font-benzin text-[10px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap"
+                style={{ lineHeight: '100%' }}
                 onClick={item.onClick}
               >
                 {item.label}
@@ -85,23 +83,24 @@ const TopMenu: React.FC = () => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-0.5 2xl:gap-1 3xl:gap-1.5 4xl:gap-2 max-sm:hidden flex-shrink-0 w-auto max-w-[650px] 2xl:max-w-[700px] 3xl:max-w-[750px] 4xl:max-w-[800px]">
-          <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')} className="text-[8px] 2xl:text-[9px] 3xl:text-[9px] 4xl:text-[10px] px-2 2xl:px-2 3xl:px-2.5 4xl:px-3 py-2 2xl:py-2 3xl:py-2.5 4xl:py-3">
-            Дилеры
+        <div className="flex items-end gap-2 max-sm:hidden">
+          <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')}>
+            Для дилеров
           </ActionButton>
-          <ActionButton variant="secondary" onClick={() => console.log('Suppliers clicked')} className="text-[8px] 2xl:text-[9px] 3xl:text-[9px] 4xl:text-[10px] px-2 2xl:px-2 3xl:px-2.5 4xl:px-3 py-2 2xl:py-2 3xl:py-2.5 4xl:py-3">
+          <ActionButton variant="secondary" onClick={() => console.log('Suppliers clicked')}>
             For suppliers
           </ActionButton>
-          
+        </div>
+
+        <div className="flex items-end gap-2 max-sm:hidden">
           <a 
             href={selectedCity === 'Москва' ? "tel:+74996775632" : "tel:88003332595"} 
-            className="text-[8px] 2xl:text-[9px] 3xl:text-[9px] 4xl:text-[10px] font-normal leading-[8px] 2xl:leading-[9px] 3xl:leading-[9px] 4xl:leading-[10px] px-2 2xl:px-2 3xl:px-2.5 4xl:px-3 py-2 2xl:py-2 3xl:py-2.5 4xl:py-3 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0 whitespace-nowrap"
+            className="text-[10px] font-normal leading-[10px] gap-2 px-3 py-2.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0"
           >
             {selectedCity === 'Москва' ? '+7 499 677 56 32' : '8 800 333 25 95'}
           </a>
-          
           <CallRequestDialog>
-            <ActionButton variant="danger" className="text-[8px] 2xl:text-[9px] 3xl:text-[9px] 4xl:text-[10px] px-2 2xl:px-2 3xl:px-2.5 4xl:px-3 py-2 2xl:py-2 3xl:py-2.5 4xl:py-3">
+            <ActionButton variant="danger">
               Заказать звонок
             </ActionButton>
           </CallRequestDialog>

@@ -23,20 +23,19 @@ const Banner: React.FC = () => {
 
   return (
     <section className="w-full">
-      <div className="responsive-container">
-        <div className="overflow-hidden relative rounded-lg" style={{ height: 'clamp(250px, 25vh, 400px)' }}>
+      <div className="max-w-[1800px] mx-auto px-[30px]">
+        <div className="overflow-hidden relative rounded-lg" style={{ height: '400px' }}>
           {/* Изображение на всю ширину */}
           <div className="relative h-full">
             <img 
               src={images[currentIndex]}
               alt={`Banner slide ${currentIndex + 1}`}
-              className="responsive-image w-full h-full"
-              style={{ objectFit: 'cover' }}
+              className="w-full h-full object-cover"
             />
           </div>
           
           {/* Навигационные точки */}
-          <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
             {images.map((_, index) => (
               <div
                 key={index}
