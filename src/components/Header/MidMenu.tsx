@@ -149,19 +149,91 @@ const MidMenu: React.FC<MidMenuProps> = ({ onSearch }) => {
 
   return (
     <section className="flex w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 lg:px-[60px] tablet-mid-menu py-3 max-md:px-5 max-sm:px-4">
-      <div className="flex w-full max-w-[1800px] h-[65px] justify-between items-center gap-4 tablet-mid-menu-container flex-shrink-0">
+      {/* Desktop layout */}
+      <div className="hidden lg:flex w-full max-w-[1800px] h-[65px] justify-between items-center gap-4 flex-shrink-0">
         <Logo />
         
         <SearchPopup isOpen={isPopupOpen} onOpenChange={setIsPopupOpen}>
-          <div className="flex items-center gap-2.5 flex-1 max-w-[750px] tablet-search-container" onClick={handleClick}>
+          <div className="flex items-center gap-2.5 flex-1 max-w-[750px]" onClick={handleClick}>
             <CatalogButton />
-            <div className="tablet-search-bar flex-1">
+            <div className="flex-1">
               <SearchBar onSearch={onSearch} />
             </div>
           </div>
         </SearchPopup>
         
-        <div className="tablet-user-actions">
+        <div>
+          <UserActions />
+        </div>
+      </div>
+
+      {/* Tablet layout - all in one row */}
+      <div className="hidden md:flex lg:hidden w-full max-w-[1800px] h-[50px] justify-between items-center gap-2 flex-shrink-0">
+        <Logo />
+        
+        <SearchPopup isOpen={isPopupOpen} onOpenChange={setIsPopupOpen}>
+          <div className="flex items-center gap-2 flex-1 max-w-[400px]" onClick={handleClick}>
+            {/* Smaller catalog button for tablet */}
+            <Link
+              to="/catalog"
+              className="flex justify-center items-center gap-1 bg-[#F53B49] px-3 py-2 rounded-[5px] hover:bg-[#e63946] transition-colors whitespace-nowrap h-[32px] flex-shrink-0"
+              aria-label="Открыть каталог товаров"
+            >
+              <svg width="10" height="10" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0H3V3H0V0Z" fill="white" />
+                <path d="M5 0H8V3H5V0Z" fill="white" />
+                <path d="M10 0H13V3H10V0Z" fill="white" />
+                <path d="M0 5H3V8H0V5Z" fill="white" />
+                <path d="M5 5H8V8H5V5Z" fill="white" />
+                <path d="M10 5H13V8H10V5Z" fill="white" />
+                <path d="M0 10H3V13H0V10Z" fill="white" />
+                <path d="M5 10H8V13H5V10Z" fill="white" />
+                <path d="M10 10H13V13H10V10Z" fill="white" />
+              </svg>
+              <span className="text-white text-xs font-normal leading-[12px]">Каталог</span>
+            </Link>
+            {/* Smaller search bar for tablet */}
+            <div className="flex-1">
+              <form onSubmit={(e) => { e.preventDefault(); }} className="flex-1">
+                <div className="flex h-[32px] justify-between items-center bg-[#262631] pl-3 pr-2 py-2 rounded-[5px] max-w-[300px]">
+                  <input
+                    type="text"
+                    placeholder="Поиск"
+                    className="flex-1 bg-transparent text-white text-xs font-normal leading-[12px] outline-none placeholder:text-[#5C6476]"
+                  />
+                  <button
+                    type="button"
+                    className="p-1 hover:bg-gray-700 rounded transition-colors"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.1423 19.23L16.8993 15.987C17.8882 14.6978 18.4233 13.1179 18.4213 11.493C18.4213 9.50803 17.6483 7.64253 16.2448 6.23903C15.5565 5.54685 14.7377 4.99808 13.8358 4.62448C12.934 4.25089 11.967 4.05988 10.9908 4.06253C9.00633 4.06253 7.14083 4.83553 5.73683 6.23903C2.84033 9.13603 2.84033 13.85 5.73683 16.747C6.42515 17.4392 7.24394 17.988 8.14579 18.3616C9.04765 18.7352 10.0147 18.9262 10.9908 18.9235C12.6378 18.9235 14.1983 18.384 15.4853 17.401L18.7283 20.6445C18.9233 20.8395 19.1793 20.9375 19.4353 20.9375C19.6913 20.9375 19.9473 20.8395 20.1423 20.6445C20.2352 20.5517 20.3089 20.4414 20.3592 20.3201C20.4095 20.1987 20.4354 20.0686 20.4354 19.9373C20.4354 19.8059 20.4095 19.6759 20.3592 19.5545C20.3089 19.4331 20.2352 19.3229 20.1423 19.23ZM7.15133 15.333C5.03383 13.2155 5.03433 9.77053 7.15133 7.65303C7.65451 7.14732 8.25298 6.74641 8.9121 6.47349C9.57123 6.20057 10.2779 6.06106 10.9913 6.06303C11.7046 6.06107 12.4113 6.20058 13.0703 6.47351C13.7294 6.74643 14.3277 7.14733 14.8308 7.65303C15.3367 8.15613 15.7377 8.75458 16.0107 9.41371C16.2837 10.0728 16.4233 10.7796 16.4213 11.493C16.4213 12.9435 15.8563 14.307 14.8308 15.333C13.8053 16.359 12.4418 16.923 10.9908 16.923C9.54083 16.923 8.17683 16.358 7.15083 15.333H7.15133Z" fill="#5C6476" />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </SearchPopup>
+        
+        <div className="flex items-center gap-3">
+          <UserActions />
+        </div>
+      </div>
+
+      {/* Mobile layout */}
+      <div className="flex md:hidden w-full max-w-[1800px] h-[65px] justify-between items-center gap-4 flex-shrink-0">
+        <Logo />
+        
+        <SearchPopup isOpen={isPopupOpen} onOpenChange={setIsPopupOpen}>
+          <div className="flex items-center gap-2.5 flex-1 max-w-[750px]" onClick={handleClick}>
+            <CatalogButton />
+            <div className="flex-1">
+              <SearchBar onSearch={onSearch} />
+            </div>
+          </div>
+        </SearchPopup>
+        
+        <div>
           <UserActions />
         </div>
       </div>
