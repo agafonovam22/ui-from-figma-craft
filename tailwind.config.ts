@@ -20,7 +20,7 @@ export default {
 		},
 		extend: {
 			screens: {
-				'hd': { 'raw': '(min-width: 1920px) and (max-width: 2559px)' },
+				'hd': '1920px',
 			},
 			fontFamily: {
 				'benzin': ['Benzin-Regular', 'sans-serif'],
