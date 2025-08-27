@@ -167,18 +167,18 @@ const TopMenu: React.FC = () => {
       {/* Mobile: multi-row compact layout */}
       <div className="flex md:hidden w-full max-w-[1800px] flex-col py-2 gap-2">
         {/* First row: City selector and phone/callback */}
-        <div className="flex justify-between items-center h-[40px]">
+        <div className="flex justify-between items-center h-[32px]">
           <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
           
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1">
             <a 
               href={selectedCity === 'Москва' ? "tel:+74996775632" : "tel:88003332595"} 
-              className="text-[8px] font-normal leading-[10px] px-2 py-1.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0"
+              className="text-[8px] font-normal leading-[10px] px-1.5 py-1 rounded-[3px] transition-colors text-white hover:bg-white/10 flex-shrink-0"
             >
               {selectedCity === 'Москва' ? '+7 499 677 56 32' : '8 800 333 25 95'}
             </a>
             <CallRequestDialog>
-              <button className="text-[8px] font-normal leading-[10px] px-2 py-1.5 rounded-[5px] transition-colors bg-[#F53B49] text-white hover:bg-[#e63946] flex-shrink-0">
+              <button className="text-[8px] font-normal leading-[8px] px-2 py-1 rounded-[3px] transition-colors bg-[#F53B49] text-white hover:bg-[#e63946] flex-shrink-0 min-w-[50px]">
                 Звонок
               </button>
             </CallRequestDialog>
@@ -187,18 +187,19 @@ const TopMenu: React.FC = () => {
 
         {/* Second row: Action buttons */}
         <div className="flex justify-center items-center gap-2">
-          <button className="text-[8px] font-normal leading-[10px] px-2 py-1.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0">
+          <button className="text-[8px] font-normal leading-[8px] px-3 py-1 rounded-[3px] transition-colors text-white hover:bg-white/10 flex-shrink-0 min-w-[60px] border border-white/20">
             Для дилеров
           </button>
-          <button className="text-[8px] font-normal leading-[10px] px-2 py-1.5 rounded-[5px] transition-colors text-[#262631] bg-white hover:bg-gray-100 flex-shrink-0">
+          <button className="text-[8px] font-normal leading-[8px] px-3 py-1 rounded-[3px] transition-colors text-[#262631] bg-white hover:bg-gray-100 flex-shrink-0 min-w-[60px]">
             For suppliers
           </button>
         </div>
 
-        {/* Third row: Navigation - scrollable */}
-        <div className="overflow-x-auto">
-          <nav className="flex items-center gap-3 min-w-max px-1" role="navigation" aria-label="Основная навигация">
-            {navigationItems.map((item, index) => (
+        {/* Third row: Navigation in two rows */}
+        <div className="flex flex-col gap-1">
+          {/* First navigation row */}
+          <div className="flex justify-center items-center gap-3">
+            {navigationItems.slice(0, 4).map((item, index) => (
               item.href ? (
                 <Link
                   key={index}
@@ -220,7 +221,32 @@ const TopMenu: React.FC = () => {
                 </a>
               )
             ))}
-          </nav>
+          </div>
+          {/* Second navigation row */}
+          <div className="flex justify-center items-center gap-3">
+            {navigationItems.slice(4).map((item, index) => (
+              item.href ? (
+                <Link
+                  key={index + 4}
+                  to={item.href}
+                  className="text-layout-grey-nav font-benzin text-[8px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap"
+                  style={{ lineHeight: '100%' }}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={index + 4}
+                  href={item.href || '#'}
+                  className="text-layout-grey-nav font-benzin text-[8px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap"
+                  style={{ lineHeight: '100%' }}
+                  onClick={item.onClick}
+                >
+                  {item.label}
+                </a>
+              )
+            ))}
+          </div>
         </div>
       </div>
     </header>
