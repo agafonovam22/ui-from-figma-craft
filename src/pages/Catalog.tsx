@@ -357,16 +357,36 @@ const Catalog: React.FC = () => {
     }
   }, [filteredProducts, sortBy]);
 
-  // Пагинация отфильтрованных товаров (16 карточек на странице)
+  // Пагинация отфильтрованных товаров 
   const paginatedProducts = useMemo(() => {
-    const itemsPerPage = 16;
+    const itemsPerPage = 16; // Для десктопа
     const startIndex = (pageNumber - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     return sortedItems.slice(startIndex, endIndex);
   }, [sortedItems, pageNumber]);
+
+  // Пагинация для планшетов (кратно 3)
+  const paginatedProductsTablet = useMemo(() => {
+    const itemsPerPage = 15; // Кратно 3 для планшетов
+    const startIndex = (pageNumber - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    let slicedItems = sortedItems.slice(startIndex, endIndex);
+    
+    // Проверяем, если это не последняя страница и остался 1 товар, убираем его
+    const totalTabletPages = Math.ceil(sortedItems.length / itemsPerPage);
+    const isLastPage = pageNumber === totalTabletPages;
+    
+    if (!isLastPage && slicedItems.length % 3 === 1) {
+      slicedItems = slicedItems.slice(0, -1);
+    }
+    
+    return slicedItems;
+  }, [sortedItems, pageNumber]);
   
   const totalPages = Math.ceil(sortedItems.length / 16);
+  const totalPagesTablet = Math.ceil(sortedItems.length / 15);
   const hasNextPage = pageNumber < totalPages;
+  const hasNextPageTablet = pageNumber < totalPagesTablet;
   const hasPrevPage = pageNumber > 1;
 
   // Преобразование в формат для отображения (используем пагинированные товары)
@@ -387,6 +407,25 @@ const Catalog: React.FC = () => {
       badge_color: item.is_available ? 'green' : 'red'
     }));
   }, [paginatedProducts]);
+
+  // Преобразование для планшетов
+  const catalogItemsTablet = useMemo(() => {
+    return paginatedProductsTablet.map(item => ({
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      original_price: item.original_price,
+      discount_percentage: item.discount_percentage,
+      gallery_images: item.gallery_images,
+      rating: item.rating,
+      reviews_count: item.reviews_count,
+      in_stock: item.in_stock,
+      is_available: item.is_available,
+      quantity: item.quantity,
+      badge: item.is_available ? 'В наличии' : 'Нет в наличии',
+      badge_color: item.is_available ? 'green' : 'red'
+    }));
+  }, [paginatedProductsTablet]);
 
   // Используем пагинацию из хука
   const handlePageNavigation = (newPage: number) => {
@@ -527,17 +566,17 @@ const Catalog: React.FC = () => {
                 <p>По запросу "{queryParam}" ничего не найдено</p>
                 <p className="text-gray-500 mt-2">Попробуйте изменить поисковый запрос или фильтры</p>
               </div>
-            ) : catalogItems.length === 0 ? (
+            ) : catalogItemsTablet.length === 0 ? (
               <div className="text-center py-8">
                 <p>Товары не найдены</p>
                 <p className="text-gray-500 mt-2">Попробуйте изменить фильтры</p>
               </div>
             ) : (
               <CatalogGrid 
-                products={catalogItems}
+                products={catalogItemsTablet}
                 currentPage={pageNumber}
-                totalPages={totalPages}
-                hasNextPage={hasNextPage}
+                totalPages={totalPagesTablet}
+                hasNextPage={hasNextPageTablet}
                 hasPreviousPage={hasPrevPage}
                 onPageChange={handlePageNavigation}
                 FilterComponent={
