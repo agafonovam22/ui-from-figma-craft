@@ -27,6 +27,7 @@ interface CatalogGridProps {
   hasPreviousPage?: boolean;
   onLoadMore?: () => void;
   showLoadMore?: boolean;
+  FilterComponent?: React.ReactNode;
 }
 
 const CatalogGrid: React.FC<CatalogGridProps> = memo(({ 
@@ -37,14 +38,22 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
   hasNextPage = false,
   hasPreviousPage = false,
   onLoadMore,
-  showLoadMore = false
+  showLoadMore = false,
+  FilterComponent
 }) => {
 
 
   return (
     <>
-      {/* Products Grid with Ad Banner */}
+      {/* Products Grid with Filter Component for tablets */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 mb-8 tablet-catalog-grid">
+        {/* Filter Component - only visible on tablets */}
+        {FilterComponent && (
+          <div className="hidden md:block md:col-span-1 md:row-span-4">
+            {FilterComponent}
+          </div>
+        )}
+        
         {products.map((product, index) => (
           <React.Fragment key={product.id}>
             <ProductCard product={{ 
@@ -63,8 +72,28 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
               badge_color: product.badge_color
             }} />
             
-            {/* Ad Banner after 8th product (between 2nd and 3rd row) */}
-            {index === 7 && (
+            {/* Ad Banner after 6th product (adjusted for filter taking space) */}
+            {FilterComponent && index === 5 && (
+              <div 
+                className="col-span-2 md:col-span-3 text-white p-4 md:p-6 rounded-lg tablet-catalog-banner"
+                style={{ background: 'linear-gradient(97deg, #262631 1.32%, #6F6F90 108.06%)' }}
+              >
+                <div className="flex flex-col items-center justify-between gap-3">
+                  <div className="text-center">
+                    <h3 className="text-sm md:text-base font-bold mb-2">Место для рекламы</h3>
+                    <p className="text-xs text-gray-300">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white whitespace-nowrap text-sm">
+                    Перейти →
+                  </Button>
+                </div>
+              </div>
+            )}
+            
+            {/* Ad Banner for mobile/desktop without filter */}
+            {!FilterComponent && index === 7 && (
               <div 
                 className="col-span-2 md:col-span-4 text-white p-4 md:p-8 rounded-lg tablet-catalog-banner"
                 style={{ background: 'linear-gradient(97deg, #262631 1.32%, #6F6F90 108.06%)' }}

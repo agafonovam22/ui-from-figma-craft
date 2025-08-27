@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
 import CatalogFilters from '@/components/Catalog/CatalogFilters';
+import CatalogGridFilter from '@/components/Catalog/CatalogGridFilter';
 import CatalogBanner from '@/components/Catalog/CatalogBanner';
 import CatalogControls from '@/components/Catalog/CatalogControls';
 import CatalogGrid from '@/components/Catalog/CatalogGrid';
@@ -489,21 +490,6 @@ const Catalog: React.FC = () => {
             
             <CatalogBanner />
             
-            {/* Filters under banner for tablets */}
-            <div className="mb-4">
-              <CatalogFilters
-                filters={filters}
-                filterOptions={filterOptions}
-                onPriceChange={handlePriceChange}
-                onBrandsChange={handleBrandsChange}
-                onPurposeTypesChange={handlePurposeTypesChange}
-                onPowerRangeChange={handlePowerRangeChange}
-                onEquipmentTypesChange={handleEquipmentTypesChange}
-                onApplyFilters={handleApplyFilters}
-                onResetFilters={handleResetFilters}
-              />
-            </div>
-            
             <CatalogControls 
               sortBy={sortBy} 
               setSortBy={setSortBy}
@@ -536,6 +522,16 @@ const Catalog: React.FC = () => {
                   Попробовать снова
                 </button>
               </div>
+            ) : queryParam && catalogItems.length === 0 ? (
+              <div className="text-center py-8">
+                <p>По запросу "{queryParam}" ничего не найдено</p>
+                <p className="text-gray-500 mt-2">Попробуйте изменить поисковый запрос или фильтры</p>
+              </div>
+            ) : catalogItems.length === 0 ? (
+              <div className="text-center py-8">
+                <p>Товары не найдены</p>
+                <p className="text-gray-500 mt-2">Попробуйте изменить фильтры</p>
+              </div>
             ) : (
               <CatalogGrid 
                 products={catalogItems}
@@ -544,6 +540,19 @@ const Catalog: React.FC = () => {
                 hasNextPage={hasNextPage}
                 hasPreviousPage={hasPrevPage}
                 onPageChange={handlePageNavigation}
+                FilterComponent={
+                  <CatalogGridFilter
+                    filters={filters}
+                    filterOptions={filterOptions}
+                    onPriceChange={handlePriceChange}
+                    onBrandsChange={handleBrandsChange}
+                    onPurposeTypesChange={handlePurposeTypesChange}
+                    onPowerRangeChange={handlePowerRangeChange}
+                    onEquipmentTypesChange={handleEquipmentTypesChange}
+                    onApplyFilters={handleApplyFilters}
+                    onResetFilters={handleResetFilters}
+                  />
+                }
               />
             )}
           </div>
