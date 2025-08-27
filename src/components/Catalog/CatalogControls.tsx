@@ -36,7 +36,7 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({
   return (
     <>
       {/* Search and Filters Bar */}
-      <div className="flex items-center justify-between mb-2.5">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2.5 gap-4">
         <form onSubmit={handleSearch} className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
           <input 
@@ -45,7 +45,7 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({
             value={localSearchQuery}
             onChange={handleInputChange}
             onKeyPress={handleKeyPress}
-            className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-[470px] text-sm"
+            className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full md:w-[300px] lg:w-[470px] text-sm"
           />
         </form>
         
@@ -54,7 +54,7 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({
           <select 
             value={sortBy} 
             onChange={(e) => setSortBy(e.target.value)}
-            className="border border-gray-300 rounded px-3 py-2 text-xs"
+            className="border border-gray-300 rounded px-3 py-2 text-xs min-w-0"
           >
             <option value="popular">По популярности</option>
             <option value="price-low">По цене (по возрастанию)</option>
