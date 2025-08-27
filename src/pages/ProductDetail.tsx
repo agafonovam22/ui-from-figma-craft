@@ -227,13 +227,13 @@ const ProductDetail: React.FC = () => {
                     <div className="w-12 h-12 bg-gray-400 rounded-full flex-shrink-0"></div>
                     <div className="flex-grow">
                       <div className="flex items-center justify-between mb-1">
-                        <span className="font-medium text-foreground">Имя Фамилия</span>
+                        <span className="font-medium text-foreground" style={{ fontFamily: 'Benzin-Regular' }}>Имя Фамилия</span>
                         <div className="flex text-yellow-400">
                           <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
                         </div>
                       </div>
-                      <p className="text-sm text-gray-500 mb-2">Вчера, 22:01</p>
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                      <p className="text-sm text-gray-500 mb-2 font-manrope">Вчера, 22:01</p>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
                         dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
@@ -267,13 +267,13 @@ const ProductDetail: React.FC = () => {
                     <div className="w-12 h-12 bg-gray-400 rounded-full flex-shrink-0"></div>
                     <div className="flex-grow">
                       <div className="flex items-center justify-between mb-1">
-                        <span className="font-medium text-foreground">Имя Фамилия</span>
+                        <span className="font-medium text-foreground" style={{ fontFamily: 'Benzin-Regular' }}>Имя Фамилия</span>
                         <div className="flex text-yellow-400">
                           <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
                         </div>
                       </div>
-                      <p className="text-sm text-gray-500 mb-2">Вчера, 22:01</p>
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                      <p className="text-sm text-gray-500 mb-2 font-manrope">Вчера, 22:01</p>
+                      <p className="text-gray-600 text-sm leading-relaxed font-manrope">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
                         dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
