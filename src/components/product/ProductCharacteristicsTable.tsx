@@ -84,7 +84,7 @@ const ProductCharacteristicsTable: React.FC<ProductCharacteristicsTableProps> = 
     const brandName = getBrandName(brandId) || 'CardioPower';
 
     // Get usage/purpose name from characteristics
-    const usageId = characteristics['Использование'];
+    const usageId = characteristics['Назначение'] || characteristics['Использование'] || characteristics['Тип назначения'];
     console.log('🔍 Usage ID из API:', usageId);
     const usageName = getUsageName(usageId) || 'реабилитационная';
 
