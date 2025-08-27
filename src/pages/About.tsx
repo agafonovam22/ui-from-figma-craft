@@ -588,7 +588,7 @@ const About: React.FC = () => {
             {/* Statistics Banner - updated height and image */}
             <section className="w-full">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-                <div className="overflow-hidden relative rounded-lg" style={{ height: '408px' }}>
+                <div className="overflow-hidden relative rounded-lg tablet-about-stats-banner" style={{ height: '408px' }}>
                   <img 
                     src="/lovable-uploads/ff32c8e2-a062-45cc-8c1e-6a6d228f6380.png"
                     alt="О компании - статистика"
@@ -596,36 +596,36 @@ const About: React.FC = () => {
                     style={{ objectPosition: 'center right' }}
                   />
                   {/* Statistics content overlay */}
-                  <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-6 shadow-lg">
+                  <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] tablet-about-overlay bg-white rounded-lg p-6 shadow-lg">
                     <div className="h-full flex flex-col justify-between">
                       <div className="mb-4">
-                        <p className="text-gray-700 text-sm leading-snug">
+                        <p className="text-gray-700 text-sm tablet-about-text leading-snug">
                           За годы успешного развития нам удалось консолидировать в своем ассортименте продукцию лучших мировых брендов, собрать команду профессионалов, завоевать доверие десятков тысяч лояльных покупателей и стать настоящим лидером рынка.
                         </p>
                       </div>
                       
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-2 tablet-about-stats-grid gap-4">
                         <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-0.5 leading-none">2005</div>
-                          <div className="text-gray-600 text-sm leading-tight">Год появления на рынке</div>
+                          <div className="text-4xl tablet-about-stat-number font-bold text-[#17171E] mb-0.5 leading-none">2005</div>
+                          <div className="text-gray-600 text-sm tablet-about-stat-label leading-tight">Год появления на рынке</div>
                         </div>
                         <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-0.5 leading-none">10 000+</div>
-                          <div className="text-gray-600 text-sm leading-tight">Складских помещений</div>
+                          <div className="text-4xl tablet-about-stat-number font-bold text-[#17171E] mb-0.5 leading-none">10 000+</div>
+                          <div className="text-gray-600 text-sm tablet-about-stat-label leading-tight">Складских помещений</div>
                         </div>
                         <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-0.5 leading-none">60+</div>
-                          <div className="text-gray-600 text-sm leading-tight">Квалифицированных сотрудников</div>
+                          <div className="text-4xl tablet-about-stat-number font-bold text-[#17171E] mb-0.5 leading-none">60+</div>
+                          <div className="text-gray-600 text-sm tablet-about-stat-label leading-tight">Квалифицированных сотрудников</div>
                         </div>
                         <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-0.5 leading-none">20+</div>
-                          <div className="text-gray-600 text-sm leading-tight">Ведущих мировых брендов</div>
+                          <div className="text-4xl tablet-about-stat-number font-bold text-[#17171E] mb-0.5 leading-none">20+</div>
+                          <div className="text-gray-600 text-sm tablet-about-stat-label leading-tight">Ведущих мировых брендов</div>
                         </div>
                       </div>
                       
                       <div className="mt-2">
-                        <div className="text-4xl font-bold text-[#17171E] mb-0.5 leading-none">3000+</div>
-                        <div className="text-gray-600 text-sm leading-tight">SKU</div>
+                        <div className="text-4xl tablet-about-stat-number font-bold text-[#17171E] mb-0.5 leading-none">3000+</div>
+                        <div className="text-gray-600 text-sm tablet-about-stat-label leading-tight">SKU</div>
                       </div>
                     </div>
                   </div>
@@ -634,14 +634,14 @@ const About: React.FC = () => {
             </section>
 
             {/* География продаж */}
-            <section className="py-8">
+            <section className="py-8 tablet-about-geography">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-                <h2 className="mb-0 leading-tight" style={{ fontSize: '32px', fontFamily: 'Benzin-Semibold' }}>
+                <h2 className="mb-0 tablet-about-title leading-tight" style={{ fontSize: '32px', fontFamily: 'Benzin-Semibold' }}>
                   <span style={{ color: 'var(--Light-Grey, #778093)' }}>География </span>
                   <span style={{ color: '#262631' }}>продаж</span>
                 </h2>
                 
-                <div className="w-full bg-white rounded-lg overflow-hidden" style={{ marginTop: '-15px' }}>
+                <div className="w-full bg-white rounded-lg overflow-hidden tablet-about-map" style={{ marginTop: '-15px' }}>
                   <img 
                     src="/lovable-uploads/b06c69dd-14f1-40c1-9e8a-9b08c05e47aa.png"
                     alt="Карта России с городами присутствия"
@@ -653,83 +653,83 @@ const About: React.FC = () => {
             </section>
 
             {/* Мы сегодня - это */}
-            <section className="py-16">
+            <section className="py-16 tablet-about-today">
               <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-                <h2 className="mb-12 leading-tight" style={{ fontSize: '32px', fontFamily: 'Benzin-Semibold' }}>
+                <h2 className="mb-12 tablet-about-title leading-tight" style={{ fontSize: '32px', fontFamily: 'Benzin-Semibold' }}>
                   <span style={{ color: 'var(--Dark-Grey, #262631)' }}>Мы сегодня </span>
                   <span style={{ color: '#778093' }}>- это:</span>
                 </h2>
                 
                 {/* Шесть информационных блоков */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px] mb-16">
-                  <div className="bg-gray-100 p-6 rounded-lg">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 tablet-about-advantages gap-[10px] mb-16">
+                  <div className="bg-gray-100 tablet-about-advantage-card p-6 rounded-lg">
                     <div className="w-16 h-16 bg-[#F53B49] rounded-lg flex items-center justify-center mb-4">
                       <Users size={32} color="white" />
                     </div>
-                    <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
+                    <h3 className="text-[#17171E] text-lg tablet-about-advantage-title font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Опытная команда
                     </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed font-manrope">
+                    <p className="text-gray-700 text-sm tablet-about-text leading-relaxed font-manrope">
                       команда профессионалов, объединенных любовью к спорту и глубоким знанием фитнес-оборудования
                     </p>
                   </div>
 
-                  <div className="bg-gray-100 p-6 rounded-lg">
+                  <div className="bg-gray-100 tablet-about-advantage-card p-6 rounded-lg">
                     <div className="w-16 h-16 bg-[#F53B49] rounded-lg flex items-center justify-center mb-4">
                       <Warehouse size={32} color="white" />
                     </div>
-                    <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
+                    <h3 className="text-[#17171E] text-lg tablet-about-advantage-title font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Собственный склад запчастей
                     </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed font-manrope">
+                    <p className="text-gray-700 text-sm tablet-about-text leading-relaxed font-manrope">
                       гарантия оперативного сервиса и бесперебойной работы техники
                     </p>
                   </div>
 
-                  <div className="bg-gray-100 p-6 rounded-lg">
+                  <div className="bg-gray-100 tablet-about-advantage-card p-6 rounded-lg">
                     <div className="w-16 h-16 bg-[#F53B49] rounded-lg flex items-center justify-center mb-4">
                       <Shield size={32} color="white" />
                     </div>
-                    <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
+                    <h3 className="text-[#17171E] text-lg tablet-about-advantage-title font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Надежность
                     </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed font-manrope">
+                    <p className="text-gray-700 text-sm tablet-about-text leading-relaxed font-manrope">
                       строгое выполнение обязательств перед клиентами и партнерами
                     </p>
                   </div>
 
-                  <div className="bg-gray-100 p-6 rounded-lg">
+                  <div className="bg-gray-100 tablet-about-advantage-card p-6 rounded-lg">
                     <div className="w-16 h-16 bg-[#F53B49] rounded-lg flex items-center justify-center mb-4">
                       <Grid3x3 size={32} color="white" />
                     </div>
-                    <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
+                    <h3 className="text-[#17171E] text-lg tablet-about-advantage-title font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Широкий ассортимент
                     </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed font-manrope">
+                    <p className="text-gray-700 text-sm tablet-about-text leading-relaxed font-manrope">
                       оборудование ведущих мировых брендов в наличии и под заказ
                     </p>
                   </div>
 
-                  <div className="bg-gray-100 p-6 rounded-lg">
+                  <div className="bg-gray-100 tablet-about-advantage-card p-6 rounded-lg">
                     <div className="w-16 h-16 bg-[#F53B49] rounded-lg flex items-center justify-center mb-4">
                       <Wrench size={32} color="white" />
                     </div>
-                    <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
+                    <h3 className="text-[#17171E] text-lg tablet-about-advantage-title font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Комплексный сервис
                     </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed font-manrope">
+                    <p className="text-gray-700 text-sm tablet-about-text leading-relaxed font-manrope">
                       полное сопровождение: от выбора до послепродажного обслуживания
                     </p>
                   </div>
 
-                  <div className="bg-gray-100 p-6 rounded-lg">
+                  <div className="bg-gray-100 tablet-about-advantage-card p-6 rounded-lg">
                     <div className="w-16 h-16 bg-[#F53B49] rounded-lg flex items-center justify-center mb-4">
                       <TrendingUp size={32} color="white" />
                     </div>
-                    <h3 className="text-[#17171E] text-lg font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
+                    <h3 className="text-[#17171E] text-lg tablet-about-advantage-title font-semibold mb-2" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Выгодные условия
                     </h3>
-                    <p className="text-gray-700 text-sm leading-relaxed font-manrope">
+                    <p className="text-gray-700 text-sm tablet-about-text leading-relaxed font-manrope">
                       конкурентные цены и специальные предложения для постоянных клиентов
                     </p>
                   </div>
