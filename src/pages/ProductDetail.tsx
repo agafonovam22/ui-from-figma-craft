@@ -961,17 +961,17 @@ const ProductDetail: React.FC = () => {
                     }}
                   ></div>
                   <div className="relative z-10 p-6 h-full flex flex-col justify-end text-white">
-                    <div>
+                    <div className="group-hover:mb-3 transition-all duration-300">
                       <h4 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Benzin-Semibold' }}>Рассрочка</h4>
                       <p className="text-sm opacity-90 font-manrope">
                         Вы можете оформить рассрочку сроком до 12 месяцев, без переплат, без первоначального взноса, оставьте заявку и менеджеры банков-партнеров свяжутся с Вами.
                       </p>
                     </div>
-                    </div>
-                    <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ fontFamily: 'Benzin-Regular' }}>
+                    <button className="bg-white text-gray-800 px-4 py-2 rounded text-sm w-fit opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0" style={{ fontFamily: 'Benzin-Regular' }}>
                       Перейти →
                     </button>
                   </div>
+                </div>
 
                 {/* Демонтаж и переезд */}
                 <div className="relative h-[200px] rounded-lg overflow-hidden bg-gray-800 group">
