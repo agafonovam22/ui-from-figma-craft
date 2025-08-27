@@ -959,7 +959,19 @@ const ProductDetail: React.FC = () => {
                 </div>
               </div>
             </div>
-            <EmailSubscription />
+            
+            {/* Отступ 100px перед блоком "Вы смотрели" */}
+            <div className="mt-[100px]">
+              <ViewedProducts 
+                currentProductId={id} 
+                currentProductCategoryId={product?.characteristics?.["Тип оборудования"]} 
+              />
+            </div>
+            
+            {/* Отступ 100px до нижнего баннера */}
+            <div className="mt-[100px]">
+              <EmailSubscription />
+            </div>
           </div>
          );
       default:
