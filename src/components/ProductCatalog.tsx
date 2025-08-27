@@ -203,15 +203,19 @@ const ProductCatalog: React.FC = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6">
           {currentProducts.slice(0, 6).map((product) => (
-            <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
+            <div key={product.id} className="hd:w-[228px] hd:h-[281px]">
+              <ProductCard product={product} variant="grid" linkTo={product.linkTo} />
+            </div>
           ))}
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px]">
           {currentProducts.slice(6, 10).map((product) => (
-            <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
+            <div key={product.id} className="hd:w-[228px] hd:h-[281px]">
+              <ProductCard product={product} variant="grid" linkTo={product.linkTo} />
+            </div>
           ))}
-          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px]">
+          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px] hd:w-[708px] hd:h-[281px]">
             <img 
               src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
               alt="Перейти в каталог"
