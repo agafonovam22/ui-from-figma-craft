@@ -417,9 +417,10 @@ const Catalog: React.FC = () => {
         </div>
 
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-container mobile-container py-2">
-          <div className="flex gap-8 tablet-catalog-layout">
+          {/* Desktop Layout */}
+          <div className="hidden lg:flex gap-8">
             {/* Left Sidebar - Filters */}
-            <div className="tablet-catalog-filters">
+            <div>
               <CatalogFilters
                 filters={filters}
                 filterOptions={filterOptions}
@@ -434,16 +435,14 @@ const Catalog: React.FC = () => {
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 mt-[94px] tablet-catalog-main">
+            <div className="flex-1 mt-[94px]">
               <CatalogBanner />
-              <div className="tablet-catalog-controls">
-                <CatalogControls 
-                  sortBy={sortBy} 
-                  setSortBy={setSortBy}
-                  onSearch={handleSearchQuery}
-                  searchQuery={queryParam}
-                />
-              </div>
+              <CatalogControls 
+                sortBy={sortBy} 
+                setSortBy={setSortBy}
+                onSearch={handleSearchQuery}
+                searchQuery={queryParam}
+              />
               
               {isLoading ? (
                 <div className="space-y-6">
@@ -483,35 +482,101 @@ const Catalog: React.FC = () => {
               )}
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* SEO Section */}
-      <div className="w-full mb-[60px]">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-container">
-          <div className="mt-[100px] tablet-section">
-            <div className="w-full h-px bg-gray-300 mb-[60px]"></div>
-            <div>
-              <h2 className="text-2xl font-bold mb-6 tablet-heading-lg">Блок под сео текст</h2>
-              <div className="grid grid-cols-2 tablet-grid-2 gap-8 text-sm text-gray-600 leading-relaxed tablet-text-sm">
-                <div>
-                  <p className="mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
+          {/* Tablet Layout */}
+          <div className="lg:hidden">
+            <h1 className="text-[48px] md:text-[32px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Каталог</h1>
+            
+            <CatalogBanner />
+            
+            {/* Filters under banner for tablets */}
+            <div className="mb-4">
+              <CatalogFilters
+                filters={filters}
+                filterOptions={filterOptions}
+                onPriceChange={handlePriceChange}
+                onBrandsChange={handleBrandsChange}
+                onPurposeTypesChange={handlePurposeTypesChange}
+                onPowerRangeChange={handlePowerRangeChange}
+                onEquipmentTypesChange={handleEquipmentTypesChange}
+                onApplyFilters={handleApplyFilters}
+                onResetFilters={handleResetFilters}
+              />
+            </div>
+            
+            <CatalogControls 
+              sortBy={sortBy} 
+              setSortBy={setSortBy}
+              onSearch={handleSearchQuery}
+              searchQuery={queryParam}
+            />
+            
+            {isLoading ? (
+              <div className="space-y-6">
+                {/* Skeleton для товаров */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                  {Array.from({ length: 8 }).map((_, index) => (
+                    <div key={index} className="animate-pulse">
+                      <div className="bg-gray-200 rounded-lg aspect-square mb-4"></div>
+                      <div className="space-y-2">
+                        <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+                        <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
+              </div>
+            ) : error ? (
+              <div className="text-center py-12">
+                <p className="text-red-500 mb-4">Ошибка загрузки товаров: {String(error)}</p>
+                <button 
+                  onClick={() => window.location.reload()} 
+                  className="bg-[#F53B49] text-white px-4 py-2 rounded"
+                >
+                  Попробовать снова
+                </button>
+              </div>
+            ) : (
+              <CatalogGrid 
+                products={catalogItems}
+                currentPage={pageNumber}
+                totalPages={totalPages}
+                hasNextPage={hasNextPage}
+                hasPreviousPage={hasPrevPage}
+                onPageChange={handlePageNavigation}
+              />
+            )}
+          </div>
+        </div>
+
+        {/* SEO Section */}
+        <div className="w-full mb-[60px]">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-container">
+            <div className="mt-[100px] tablet-section">
+              <div className="w-full h-px bg-gray-300 mb-[60px]"></div>
+              <div>
+                <h2 className="text-2xl font-bold mb-6 tablet-heading-lg">Блок под сео текст</h2>
+                <div className="grid grid-cols-2 tablet-grid-2 gap-8 text-sm text-gray-600 leading-relaxed tablet-text-sm">
+                  <div>
+                    <p className="mb-4">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                  <div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div className="tablet-section">
         <EmailSubscription />
       </div>
