@@ -147,22 +147,24 @@
   filter: brightness(0) saturate(100%) invert(28%) sepia(87%) saturate(3789%) hue-rotate(347deg) brightness(99%) contrast(94%);
 }
 
-/* Banner base styles */
-.banner-fullhd {
-  height: 400px;
-  background-color: yellow; /* debug */
+/* Banner base styles - более специфичный селектор */
+section.banner-fullhd-section .banner-fullhd {
+  height: 400px !important;
+  background-color: yellow !important; /* debug */
+  border: 5px solid red !important; /* debug */
 }
 
-/* Full HD Banner Styles */
+/* Full HD Banner Styles - еще более специфичный */
 @media screen and (min-width: 1900px) {
-  .banner-fullhd {
+  section.banner-fullhd-section .banner-fullhd {
     width: 1660px !important;
     height: 537px !important;
     margin: 0 auto !important;
     background-color: green !important; /* debug - если зеленый, то медиа-запрос работает */
+    border: 5px solid blue !important; /* debug */
   }
   
-  .banner-fullhd-section {
+  section.banner-fullhd-section {
     padding-top: 50px !important;
     padding-bottom: 100px !important;
   }
