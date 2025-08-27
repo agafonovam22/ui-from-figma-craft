@@ -490,9 +490,9 @@
     grid-template-columns: repeat(3, 1fr) !important;
   }
 
-  /* Home fitness equipment grid adjustments for tablet - continuous layout */
+  /* Home fitness equipment grid adjustments for tablet - 2 columns for better spacing */
   .grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-5 {
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
   /* General responsive adjustments */
