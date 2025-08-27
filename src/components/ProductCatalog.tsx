@@ -180,7 +180,7 @@ const ProductCatalog: React.FC = () => {
           <div className="flex items-center gap-4 tablet-product-catalog-filters">
             <button
               onClick={() => setActiveFilter('home')}
-              className={`px-6 py-3 rounded-lg font-medium transition-colors tablet-product-catalog-filter-btn ${
+              className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-colors text-sm md:text-base tablet-product-catalog-filter-btn ${
                 activeFilter === 'home'
                   ? 'bg-[#F53B49] text-white'
                   : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
@@ -190,7 +190,7 @@ const ProductCatalog: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveFilter('fitness')}
-              className={`px-6 py-3 rounded-lg font-medium transition-colors tablet-product-catalog-filter-btn ${
+              className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-colors text-sm md:text-base tablet-product-catalog-filter-btn ${
                 activeFilter === 'fitness'
                   ? 'bg-[#F53B49] text-white'
                   : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
