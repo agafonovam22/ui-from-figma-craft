@@ -484,12 +484,12 @@ const Catalog: React.FC = () => {
 
       {/* SEO Section */}
       <div className="w-full mb-[60px]">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-          <div className="mt-[100px]">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-container">
+          <div className="mt-[100px] tablet-section">
             <div className="w-full h-px bg-gray-300 mb-[60px]"></div>
             <div>
-              <h2 className="text-2xl font-bold mb-6">Блок под сео текст</h2>
-              <div className="grid grid-cols-2 gap-8 text-sm text-gray-600 leading-relaxed">
+              <h2 className="text-2xl font-bold mb-6 tablet-heading-lg">Блок под сео текст</h2>
+              <div className="grid grid-cols-2 tablet-grid-2 gap-8 text-sm text-gray-600 leading-relaxed tablet-text-sm">
                 <div>
                   <p className="mb-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -508,7 +508,9 @@ const Catalog: React.FC = () => {
           </div>
         </div>
       </div>
-      <EmailSubscription />
+      <div className="tablet-section">
+        <EmailSubscription />
+      </div>
       <div className="h-[70px]"></div>
       <Footer />
     </>
