@@ -405,8 +405,8 @@ const Services: React.FC = () => {
                     </p>
                   </div>
                   
-                  {/* Moved image here */}
-                  <div className="mt-6">
+                  {/* Image for tablets only */}
+                  <div className="mt-6 md:block lg:hidden">
                     <img 
                       src="/lovable-uploads/6f3410eb-d6c6-4add-a8a2-131a6bf52736.png"
                       alt="Техник обслуживает тренажер"
@@ -416,7 +416,7 @@ const Services: React.FC = () => {
                 </div>
               </div>
 
-              {/* Second section with text */}
+              {/* Second section with text and images */}
               <div className="flex gap-8 items-center">
                 <div className="flex-1">
                   <p className="text-gray-600 mb-4 font-manrope">
@@ -428,6 +428,14 @@ const Services: React.FC = () => {
                   <p className="text-gray-600 mb-4 font-manrope">
                     Доверьте технику профессионалам — и сосредоточьтесь на развитии бизнеса!
                   </p>
+                </div>
+                {/* Image for desktop only */}
+                <div className="flex-1 hidden lg:block">
+                  <img 
+                    src="/lovable-uploads/6f3410eb-d6c6-4add-a8a2-131a6bf52736.png"
+                    alt="Техник обслуживает тренажер"
+                    className="w-full h-[295px] object-cover rounded-lg"
+                  />
                 </div>
               </div>
 
