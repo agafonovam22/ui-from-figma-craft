@@ -275,26 +275,26 @@
     padding-right: 24px !important;
   }
 
-  /* Catalog adaptations - keeping sidebar layout for tablets */
+  /* Catalog adaptations */
   .tablet-catalog-layout {
-    flex-direction: row !important;
-    gap: 8px !important;
+    flex-direction: column !important;
+    gap: 20px !important;
   }
   
   .tablet-catalog-filters {
-    width: auto !important;
-    order: 1 !important;
+    width: 100% !important;
+    order: 2 !important;
   }
   
   .tablet-catalog-main {
-    width: auto !important;
+    width: 100% !important;
     margin-top: 0 !important;
-    order: 2 !important;
+    order: 1 !important;
   }
 
-  /* Product grid - 3 cards per row on tablets */
+  /* Product grid - 2 cards per row on tablets */
   .grid-cols-4 {
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 16px !important;
   }
 
@@ -656,12 +656,12 @@
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .grid-cols-4 {
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr) !important;
   }
   
   /* Ad banner spans full width on tablet */
   .col-span-4 {
-    grid-column: span 3 !important;
+    grid-column: span 2 !important;
   }
 }
 

@@ -417,22 +417,24 @@ const Catalog: React.FC = () => {
         </div>
 
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-container mobile-container py-2">
-          <div className="flex gap-8">
+          <div className="flex gap-8 tablet-catalog-layout">
             {/* Left Sidebar - Filters */}
-            <CatalogFilters
-              filters={filters}
-              filterOptions={filterOptions}
-              onPriceChange={handlePriceChange}
-              onBrandsChange={handleBrandsChange}
-              onPurposeTypesChange={handlePurposeTypesChange}
-              onPowerRangeChange={handlePowerRangeChange}
-              onEquipmentTypesChange={handleEquipmentTypesChange}
-              onApplyFilters={handleApplyFilters}
-              onResetFilters={handleResetFilters}
-            />
+            <div className="tablet-catalog-filters">
+              <CatalogFilters
+                filters={filters}
+                filterOptions={filterOptions}
+                onPriceChange={handlePriceChange}
+                onBrandsChange={handleBrandsChange}
+                onPurposeTypesChange={handlePurposeTypesChange}
+                onPowerRangeChange={handlePowerRangeChange}
+                onEquipmentTypesChange={handleEquipmentTypesChange}
+                onApplyFilters={handleApplyFilters}
+                onResetFilters={handleResetFilters}
+              />
+            </div>
 
             {/* Main Content */}
-            <div className="flex-1">
+            <div className="flex-1 mt-[94px] tablet-catalog-main">
               <CatalogBanner />
               <div className="tablet-catalog-controls">
                 <CatalogControls 
