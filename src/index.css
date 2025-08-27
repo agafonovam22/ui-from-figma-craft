@@ -358,6 +358,36 @@
     padding: 8px 12px !important;
   }
 
+  /* Product characteristics table adaptations for tablet */
+  .font-manrope .grid.grid-cols-1.md\\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .font-manrope .grid.grid-cols-1.md\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .font-manrope .flex.justify-between.items-start {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+  }
+
+  .font-manrope .text-right {
+    text-align: left !important;
+  }
+
+  .font-manrope .flex-shrink-0 {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+  }
+
+  .font-manrope .text-sm.text-foreground {
+    font-size: 13px !important;
+  }
+
   /* General responsive adjustments */
   .text-4xl, .text-5xl {
     font-size: 28px !important;
