@@ -114,12 +114,12 @@ const Support: React.FC = () => {
 
         {/* Tabs Section */}
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
-          <div className="flex flex-wrap gap-2 mb-8 md:grid md:grid-cols-2 md:gap-2">
+          <div className="flex flex-wrap gap-2 mb-8">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-4 py-2 rounded transition-colors md:text-sm ${
+                className={`px-4 py-2 rounded transition-colors ${
                   activeTab === tab.id
                     ? 'bg-[#F53B49] text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -324,8 +324,8 @@ const Support: React.FC = () => {
           {activeTab === 'delivery' && (
             <div className="space-y-12">
               {/* Город доставки */}
-              <div className="flex gap-8 md:flex-col md:gap-4">
-                <div className="w-80 flex-shrink-0 md:w-full">
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
                   <div className="flex items-center gap-2">
                     <h3 style={{
                       fontFamily: 'Benzin-Medium',
@@ -340,8 +340,8 @@ const Support: React.FC = () => {
                     />
                   </div>
                 </div>
-                <div className="flex-1 md:w-full">
-                  <p className="text-[#262631] text-[16px] md:text-sm" style={{fontFamily: 'Manrope, sans-serif'}}>
+                <div className="flex-1">
+                  <p className="text-[#262631] text-[16px]" style={{fontFamily: 'Manrope, sans-serif'}}>
                     Доставка по {selectedCity} осуществляется в течение 1-2 дней с момента заказа.<br />
                     Ежедневно с 9:00 до 21:00
                   </p>
@@ -352,24 +352,24 @@ const Support: React.FC = () => {
               <div className="h-px bg-gray-300"></div>
 
               {/* Стоимость доставки */}
-              <div className="flex gap-8 md:flex-col md:gap-4">
-                <div className="w-80 flex-shrink-0 md:w-full">
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
                   <h3 style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Стоимость доставки</h3>
                 </div>
-                <div className="flex-1 md:w-full">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-4">
+                <div className="flex-1">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Left Column */}
-                    <div className="bg-gray-50 p-6 rounded-lg md:p-4">
-                      <h4 className="mb-4 pb-3 border-b md:mb-2 md:pb-2" style={{
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                      <h4 className="mb-4 pb-3 border-b" style={{
                         fontFamily: 'Benzin-Medium',
                         fontSize: '16px',
                         fontWeight: '500'
                       }}>Заказ от 30 001₽</h4>
-                      <div className="space-y-4 md:space-y-2">
-                        <div className="flex justify-between items-center py-3 border-b md:py-2 md:flex-col md:items-start md:gap-2">
+                      <div className="space-y-4">
+                        <div className="flex justify-between items-center py-3 border-b">
                           <span style={{
                             color: 'var(--Dark-Grey, #262631)',
                             fontFamily: 'Manrope, sans-serif',
@@ -378,13 +378,13 @@ const Support: React.FC = () => {
                             fontWeight: '400',
                             lineHeight: '120%',
                             letterSpacing: '0.32px'
-                          }} className="md:text-sm">Автомобильная доставка по г. Москве в пределах МКАД</span>
+                          }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
                           <span className="text-[#F53B49] font-semibold" style={{
                             fontFamily: 'Manrope',
                             fontSize: '16px'
                           }}>Бесплатно</span>
                         </div>
-                        <div className="flex justify-between items-center py-3 border-b md:py-2 md:flex-col md:items-start md:gap-2">
+                        <div className="flex justify-between items-center py-3 border-b">
                           <span style={{
                             color: 'var(--Dark-Grey, #262631)',
                             fontFamily: 'Manrope, sans-serif',
@@ -393,13 +393,13 @@ const Support: React.FC = () => {
                             fontWeight: '400',
                             lineHeight: '120%',
                             letterSpacing: '0.32px'
-                          }} className="md:text-sm">Автомобильная доставка по Московской Области</span>
+                          }}>Автомобильная доставка по Московской Области</span>
                           <span className="text-[#F53B49] font-semibold whitespace-nowrap" style={{
                             fontFamily: 'Manrope',
                             fontSize: '16px'
                           }}>30₽/км</span>
                         </div>
-                        <div className="flex justify-between items-center py-3 border-b md:py-2 md:flex-col md:items-start md:gap-2">
+                        <div className="flex justify-between items-center py-3 border-b">
                           <span style={{
                             color: 'var(--Dark-Grey, #262631)',
                             fontFamily: 'Manrope, sans-serif',
@@ -408,7 +408,7 @@ const Support: React.FC = () => {
                             fontWeight: '400',
                             lineHeight: '120%',
                             letterSpacing: '0.32px'
-                          }} className="md:text-sm">Курьерская доставка (вес до 3 кг)</span>
+                          }}>Курьерская доставка (вес до 3 кг)</span>
                           <span className="text-[#F53B49] font-semibold" style={{
                             fontFamily: 'Manrope',
                             fontSize: '16px'
@@ -418,14 +418,14 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* Right Column */}
-                    <div className="bg-gray-50 p-6 rounded-lg h-fit md:p-4">
-                      <h4 className="mb-4 pb-3 border-b md:mb-2 md:pb-2" style={{
+                    <div className="bg-gray-50 p-6 rounded-lg h-fit">
+                      <h4 className="mb-4 pb-3 border-b" style={{
                         fontFamily: 'Benzin-Medium',
                         fontSize: '16px',
                         fontWeight: '500'
                       }}>Заказ до 30 000₽</h4>
                       <div>
-                        <div className="flex justify-between items-center py-3 border-b md:py-2 md:flex-col md:items-start md:gap-2">
+                        <div className="flex justify-between items-center py-3 border-b">
                           <span style={{
                             color: 'var(--Dark-Grey, #262631)',
                             fontFamily: 'Manrope, sans-serif',
@@ -434,7 +434,7 @@ const Support: React.FC = () => {
                             fontWeight: '400',
                             lineHeight: '120%',
                             letterSpacing: '0.32px'
-                          }} className="md:text-sm">Автомобильная доставка по г. Москве в пределах МКАД</span>
+                          }}>Автомобильная доставка по г. Москве в пределах МКАД</span>
                           <span className="text-[#F53B49] font-semibold" style={{
                             fontFamily: 'Manrope',
                             fontSize: '16px'
@@ -451,31 +451,31 @@ const Support: React.FC = () => {
               <div className="h-px bg-gray-300"></div>
 
                {/* Самовывоз со склада */}
-              <div className="flex gap-8 md:flex-col md:gap-4">
-                <div className="w-80 flex-shrink-0 md:w-full">
-                  <h3 className="mb-6 md:mb-2" style={{
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
+                  <h3 className="mb-6" style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Самовывоз со склада</h3>
                 </div>
-                 <div className="flex-1 md:w-full">
-                   <div className="space-y-4 md:space-y-2">
+                <div className="flex-1">
+                  <div className="space-y-4">
                     {/* Main Warehouse */}
                     <div>
                       <h4 className="mb-2" style={{
                         fontFamily: 'Benzin-Medium',
                         fontSize: '16px'
                       }}>Склад</h4>
-                      <div className="grid grid-cols-[1fr_auto_1fr] gap-4 items-start md:grid-cols-1 md:gap-2">
-                        <div className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      <div className="grid grid-cols-[1fr_auto_1fr] gap-4 items-start">
+                        <div className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                           <div>Московская область, Красногорский р-н, д.</div>
                           <div>Гольево, улица Центральная ул., с44,</div>
                         </div>
-                        <div className="flex items-center gap-2 ml-8 md:ml-0">
+                        <div className="flex items-center gap-2 ml-8">
                           <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                           <div>
-                            <div className="text-sm text-green-600 font-medium md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>В наличии</div>
-                            <div className="text-sm text-gray-600 md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>пн - пт с 09:30-18:00</div>
+                            <div className="text-sm text-green-600 font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>В наличии</div>
+                            <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>пн - пт с 09:30-18:00</div>
                           </div>
                         </div>
                         <div></div>
@@ -491,19 +491,19 @@ const Support: React.FC = () => {
                         fontFamily: 'Benzin-Medium',
                         fontSize: '16px'
                       }}>Дополнительный склад</h4>
-                      <div className="grid grid-cols-[1fr_auto_1fr] gap-4 items-start md:grid-cols-1 md:gap-2">
-                        <div className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      <div className="grid grid-cols-[1fr_auto_1fr] gap-4 items-start">
+                        <div className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                           <div>Красногвардейский пер 23 лит Е, территория</div>
                           <div>завода "Ильич", заезд с Вязского переулка.</div>
                         </div>
-                        <div className="flex items-center gap-2 ml-8 md:ml-0">
+                        <div className="flex items-center gap-2 ml-8">
                           <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                           <div>
-                            <div className="text-sm text-green-600 font-medium md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>В наличии</div>
-                            <div className="text-sm text-gray-600 md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>пн - пт с 10:00-18:00</div>
+                            <div className="text-sm text-green-600 font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>В наличии</div>
+                            <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>пн - пт с 10:00-18:00</div>
                           </div>
                         </div>
-                        <div className="text-sm text-gray-600 ml-[60px] md:ml-0 md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                        <div className="text-sm text-gray-600 ml-[60px]" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                           <div>Выдача оформленных заказов осуществляется при согласовании даты</div>
                           <div>и времени приезда</div>
                         </div>
@@ -517,27 +517,27 @@ const Support: React.FC = () => {
               <div className="h-px bg-gray-300"></div>
 
               {/* Доставка по России */}
-              <div className="flex gap-8 mb-8 md:flex-col md:gap-4">
-                <div className="w-80 flex-shrink-0 md:w-full">
-                  <h4 className="mb-4 md:mb-2" style={{
+              <div className="flex gap-8 mb-8">
+                <div className="w-80 flex-shrink-0">
+                  <h4 className="mb-4" style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Доставка по России</h4>
                 </div>
-                <div className="flex-1 md:w-full">
-                  <div className="grid grid-cols-2 gap-[10px] md:grid-cols-1 md:gap-4">
-                    <div className="bg-gray-100 p-6 rounded-lg md:p-4">
-                      <p className="text-gray-700 mb-4 md:text-sm md:mb-2" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                <div className="flex-1">
+                  <div className="grid grid-cols-2 gap-[10px]">
+                    <div className="bg-gray-100 p-6 rounded-lg">
+                      <p className="text-gray-700 mb-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Определяется сроками доставки транспортной компании. Доставка товара на склад транспортной компании осуществляется в течение 1-2 дней с момента заказа, в режиме работы: Понедельник - Пятница
                       </p>
-                      <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Стоимость доставки определяется тарифами транспортных компаний, оплата за доставку осуществляется при получении товара
                       </p>
                     </div>
 
                     {/* Transport Companies */}
                     <div className="bg-gray-100 p-4 rounded-lg">
-                      <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+                      <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <div className="flex items-center justify-center py-2 h-12">
                             <img src="/lovable-uploads/a7b6a3ba-1c90-405d-8a26-02ea55f0de59.png" alt="СДЭК" className="h-8 object-contain" />
@@ -550,12 +550,12 @@ const Support: React.FC = () => {
                           <div className="flex items-center justify-center py-2 h-12">
                             <img src="/lovable-uploads/3807c83a-2401-4466-a3ca-9d11dddb84ba.png" alt="Байкал Сервис" className="h-8 object-contain" />
                           </div>
-                          <div className="h-px bg-gray-300 md:hidden"></div>
-                          <div className="flex items-center justify-center py-2 h-12 md:hidden">
+                          <div className="h-px bg-gray-300"></div>
+                          <div className="flex items-center justify-center py-2 h-12">
                             <img src="/lovable-uploads/c124b62c-d31b-4c07-95b5-a36fc92cb431.png" alt="ПЭК" className="h-8 object-contain" />
                           </div>
-                          <div className="h-px bg-gray-300 md:hidden"></div>
-                          <div className="flex items-center justify-center py-2 h-12 md:hidden">
+                          <div className="h-px bg-gray-300"></div>
+                          <div className="flex items-center justify-center py-2 h-12">
                             <img src="/lovable-uploads/0370ab41-7348-4546-9182-bd6884e3ec7a.png" alt="Транс" className="h-8 object-contain" />
                           </div>
                         </div>
@@ -570,19 +570,6 @@ const Support: React.FC = () => {
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center py-2 h-12">
                             <img src="/lovable-uploads/97da0d95-2030-46e7-a7c2-9a5f8147faaf.png" alt="Деловые Линии" className="h-8 object-contain" />
-                          </div>
-                          <div className="h-px bg-gray-300 md:hidden"></div>
-                          <div className="flex items-center justify-center py-2 h-12 md:hidden">
-                            <img src="/lovable-uploads/79627d81-cce2-4a1d-9218-e34c6a33ddc0.png" alt="Энергия" className="h-8 object-contain" />
-                          </div>
-                        </div>
-                        <div className="space-y-2 hidden md:block">
-                          <div className="flex items-center justify-center py-2 h-12">
-                            <img src="/lovable-uploads/c124b62c-d31b-4c07-95b5-a36fc92cb431.png" alt="ПЭК" className="h-8 object-contain" />
-                          </div>
-                          <div className="h-px bg-gray-300"></div>
-                          <div className="flex items-center justify-center py-2 h-12">
-                            <img src="/lovable-uploads/0370ab41-7348-4546-9182-bd6884e3ec7a.png" alt="Транс" className="h-8 object-contain" />
                           </div>
                           <div className="h-px bg-gray-300"></div>
                           <div className="flex items-center justify-center py-2 h-12">
@@ -599,93 +586,93 @@ const Support: React.FC = () => {
               <div className="h-px bg-gray-300"></div>
 
               {/* Калькулятор доставки */}
-              <div className="flex gap-8 md:flex-col md:gap-4">
-                <div className="w-80 flex-shrink-0 md:w-full">
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
                   <h4 style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Калькулятор доставки</h4>
                 </div>
-                <div className="flex-1 md:w-full">
-                  <div className="bg-gray-100 p-6 rounded-lg h-[364px] md:h-auto md:p-4">
-                    <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-6 h-full md:grid-cols-1 md:gap-4">
+                <div className="flex-1">
+                  <div className="bg-gray-100 p-6 rounded-lg h-[364px]">
+                    <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-6 h-full">
                       {/* Calculator Form */}
-                       <div className="space-y-3 flex flex-col h-full md:h-auto">
+                       <div className="space-y-3 flex flex-col h-full">
                          <input
                            type="text"
                            placeholder="Пункт отправления"
-                           className="w-full p-3 border rounded-lg bg-gray-100 benzin-placeholder md:p-2"
+                           className="w-full p-3 border rounded-lg bg-gray-100 benzin-placeholder"
                            style={{fontFamily: 'Manrope', fontSize: '16px'}}
                          />
                          <input
                            type="text"
                            placeholder="Пункт назначения"
-                           className="w-full p-3 border rounded-lg bg-gray-100 benzin-placeholder md:p-2"
+                           className="w-full p-3 border rounded-lg bg-gray-100 benzin-placeholder"
                            style={{fontFamily: 'Manrope', fontSize: '16px'}}
                          />
                          <input
                            type="text"
                            placeholder="Габариты груза, м"
-                           className="w-full p-3 border rounded-lg bg-gray-100 benzin-placeholder md:p-2"
+                           className="w-full p-3 border rounded-lg bg-gray-100 benzin-placeholder"
                            style={{fontFamily: 'Manrope', fontSize: '16px'}}
                          />
-                         <div className="grid grid-cols-2 gap-2 flex-1 md:flex-none">
+                         <div className="grid grid-cols-2 gap-2 flex-1">
                            <input
                              type="number"
                              placeholder="Вес груза, кг"
-                             className="p-3 border rounded-lg bg-gray-100 benzin-placeholder md:p-2"
+                             className="p-3 border rounded-lg bg-gray-100 benzin-placeholder"
                              style={{fontFamily: 'Manrope', fontSize: '16px'}}
                            />
                            <input
                              type="number"
                              placeholder="Объем груза, м³"
-                             className="p-3 border rounded-lg bg-gray-100 benzin-placeholder md:p-2"
+                             className="p-3 border rounded-lg bg-gray-100 benzin-placeholder"
                              style={{fontFamily: 'Manrope', fontSize: '16px'}}
                            />
                          </div>
-                           <button className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90 mt-auto md:mt-4"
+                           <button className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90 mt-auto"
                              style={{fontFamily: 'Benzin-Regular', fontSize: '16px'}}>
                              Расчет от менеджера
                            </button>
                       </div>
 
                       {/* Delivery Options */}
-                       <div className="space-y-3 overflow-y-auto md:overflow-y-visible">
+                       <div className="space-y-3 overflow-y-auto">
                         <div className="space-y-3">
-                           <div className="grid grid-cols-3 gap-4 items-center md:grid-cols-1 md:gap-2">
+                           <div className="grid grid-cols-3 gap-4 items-center">
                              <div>
-                               <div className="font-medium md:text-sm" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>СДЭК</div>
-                               <div className="text-sm text-gray-600 md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
+                               <div className="font-medium" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>СДЭК</div>
+                               <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
                              </div>
-                             <div className="text-sm text-gray-600 md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До пункта выдачи</div>
-                             <div className="font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000₽</div>
+                             <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До пункта выдачи</div>
+                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000₽</div>
                            </div>
                           <div className="h-px bg-gray-300"></div>
-                           <div className="grid grid-cols-3 gap-4 items-center md:grid-cols-1 md:gap-2">
+                           <div className="grid grid-cols-3 gap-4 items-center">
                              <div>
-                               <div className="font-medium md:text-sm" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>СДЭК</div>
-                               <div className="text-sm text-gray-600 md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
+                               <div className="font-medium" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>СДЭК</div>
+                               <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
                              </div>
-                             <div className="text-sm text-gray-600 md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До двери</div>
-                             <div className="font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000₽</div>
+                             <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До двери</div>
+                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000₽</div>
                            </div>
                           <div className="h-px bg-gray-300"></div>
-                           <div className="grid grid-cols-3 gap-4 items-center md:grid-cols-1 md:gap-2">
+                           <div className="grid grid-cols-3 gap-4 items-center">
                              <div>
-                               <div className="font-medium md:text-sm" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Деловые линии</div>
-                               <div className="text-sm text-gray-600 md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
+                               <div className="font-medium" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Деловые линии</div>
+                               <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
                              </div>
-                             <div className="text-sm text-gray-600 md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До пункта выдачи</div>
-                             <div className="font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000₽</div>
+                             <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До пункта выдачи</div>
+                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000₽</div>
                            </div>
                           <div className="h-px bg-gray-300"></div>
-                           <div className="grid grid-cols-3 gap-4 items-center md:grid-cols-1 md:gap-2">
+                           <div className="grid grid-cols-3 gap-4 items-center">
                              <div>
-                               <div className="font-medium md:text-sm" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Деловые линии</div>
-                               <div className="text-sm text-gray-600 md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
+                               <div className="font-medium" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Деловые линии</div>
+                               <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До 2 дней</div>
                              </div>
-                             <div className="text-sm text-gray-600 md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До пункта выдачи</div>
-                             <div className="font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000₽</div>
+                             <div className="text-sm text-gray-600" style={{fontFamily: 'Manrope', fontSize: '16px'}}>До пункта выдачи</div>
+                             <div className="font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 000₽</div>
                            </div>
                         </div>
                       </div>
@@ -698,61 +685,61 @@ const Support: React.FC = () => {
               <div className="h-px bg-gray-300"></div>
 
               {/* Оплата для физ. лиц */}
-              <div className="flex gap-8 md:flex-col md:gap-4">
-                <div className="w-80 flex-shrink-0 md:w-full">
-                  <h4 className="mb-6 md:mb-4" style={{
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
+                  <h4 className="mb-6" style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Оплата для физ. лиц</h4>
                 </div>
-                <div className="flex-1 md:w-full">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px] mb-[10px] md:grid-cols-2 md:gap-3 md:mb-3">
+                <div className="flex-1">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px] mb-[10px]">
                     {/* Оплата наличными */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col md:p-4 md:h-[180px]">
-                      <h5 className="text-lg font-medium mb-3 flex-shrink-0 md:text-base md:mb-2" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата наличными</h5>
-                      <p className="text-sm flex-1 overflow-hidden md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
+                      <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата наличными</h5>
+                      <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Возможна при оформлении всех способов доставки со всех субъектах РФ, где есть наши филиалы и терминалы наших партнеров, предоставляющих курьерские услуги.
                       </p>
                     </div>
 
                     {/* Оплата картой */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col md:p-4 md:h-[180px]">
-                      <h5 className="text-lg font-medium mb-3 flex-shrink-0 md:text-base md:mb-2" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата картой</h5>
-                      <p className="text-sm flex-1 overflow-hidden md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
+                      <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата картой</h5>
+                      <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Возможна при оформлении всех способов доставки, во время самовывоза, а также курьеру при получении.
                       </p>
                     </div>
 
                     {/* Оплата онлайн */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col md:p-4 md:h-[180px] md:col-span-2">
-                      <h5 className="text-lg font-medium mb-3 flex-shrink-0 md:text-base md:mb-2" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата онлайн</h5>
-                      <p className="text-sm flex-1 overflow-hidden md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
+                      <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата онлайн</h5>
+                      <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Покупателю направляется защищенная ссылка для перехода в платежную систему. Производить оплату можно всеми видами карт, электронными деньгами, а также через терминалы без комиссии.
                       </p>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px] md:grid-cols-2 md:gap-3">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px]">
                     {/* Наложенный платеж */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col md:p-4 md:h-[180px]">
-                      <h5 className="text-lg font-medium mb-3 flex-shrink-0 md:text-base md:mb-2" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Наложенный платеж</h5>
-                      <p className="text-sm flex-1 overflow-hidden md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
+                      <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Наложенный платеж</h5>
+                      <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         При отправке в регионы. Рассчитывается по тарифам транспортных компаний и осуществляется с помощью партнеров перевозчиков «ПЭК» и «Деловые линии»
                       </p>
                     </div>
 
                     {/* В рассрочку */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col md:p-4 md:h-[180px]">
-                      <h5 className="text-lg font-medium mb-3 flex-shrink-0 md:text-base md:mb-2" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>В рассрочку</h5>
-                      <p className="text-sm flex-1 overflow-hidden md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
+                      <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>В рассрочку</h5>
+                      <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         от банков партнеров ОТП, Халва, Тинькофф, Сбербанк
                       </p>
                     </div>
 
                     {/* Безналичная оплата */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col md:p-4 md:h-[180px] md:col-span-2">
-                      <h5 className="text-lg font-medium mb-3 flex-shrink-0 md:text-base md:mb-2" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Безналичная оплата</h5>
-                      <p className="text-sm flex-1 overflow-hidden md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer h-[210px] flex flex-col">
+                      <h5 className="text-lg font-medium mb-3 flex-shrink-0" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Безналичная оплата</h5>
+                      <p className="text-sm flex-1 overflow-hidden" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Выставление счета
                       </p>
                     </div>
@@ -764,27 +751,27 @@ const Support: React.FC = () => {
               <div className="h-px bg-gray-300"></div>
 
               {/* Оплата для юр. лиц */}
-              <div className="flex gap-8 md:flex-col md:gap-4">
-                <div className="w-80 flex-shrink-0 md:w-full">
-                  <h4 className="mb-6 md:mb-4" style={{
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
+                  <h4 className="mb-6" style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Оплата для юр. лиц</h4>
                 </div>
-                <div className="flex-1 md:w-full">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px] md:grid-cols-1 md:gap-3">
+                <div className="flex-1">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px]">
                     {/* Оплата онлайн */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer md:p-4">
-                      <h5 className="text-lg font-medium mb-3 md:text-base md:mb-2" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата онлайн</h5>
-                      <p className="text-sm md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
+                      <h5 className="text-lg font-medium mb-3" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Оплата онлайн</h5>
+                      <p className="text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Покупателю направляется защищенная ссылка для перехода в платежную систему. Производить оплату можно всеми видами карт, электронными деньгами, а также через терминалы без комиссии.
                       </p>
                     </div>
 
                     {/* Безналичная оплата */}
-                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer md:p-4">
-                      <h5 className="text-lg font-medium mb-3 md:text-base md:mb-2" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Безналичная оплата</h5>
-                      <p className="text-sm md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                    <div className="bg-gray-50 p-6 rounded-lg hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-600 hover:text-white transition-all duration-300 cursor-pointer">
+                      <h5 className="text-lg font-medium mb-3" style={{fontFamily: 'Benzin-Medium', fontSize: '16px'}}>Безналичная оплата</h5>
+                      <p className="text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                         Выставление счета
                       </p>
                     </div>
@@ -794,11 +781,11 @@ const Support: React.FC = () => {
             </div>
           )}
 
-           {activeTab === 'return' && (
-            <div className="space-y-8 md:space-y-6">
+          {activeTab === 'return' && (
+            <div className="space-y-8">
               {/* Город доставки */}
-              <div className="flex gap-8 md:flex-col md:gap-4">
-                <div className="w-80 flex-shrink-0 md:w-full">
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
                   <div className="flex items-center gap-1">
                     <h3 style={{
                       fontFamily: 'Benzin-Medium',
@@ -812,11 +799,11 @@ const Support: React.FC = () => {
                     />
                   </div>
                 </div>
-                 <div className="flex-1 md:w-full">
-                   <p className="text-gray-700 mb-4 md:text-sm md:mb-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                 <div className="flex-1">
+                   <p className="text-gray-700 mb-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                      Согласно Закону о защите прав потребителей, при дистанционном способе покупки обмен товара происходит через оформление возврата.
                    </p>
-                   <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                   <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                      Вы не вправе отказаться от товара надлежащего качества, имеющего индивидуально-определенные свойства, если указанный товар может быть использован исключительно приобретающим его потребителем.
                    </p>
                  </div>
@@ -826,33 +813,33 @@ const Support: React.FC = () => {
               <div className="h-px bg-gray-300"></div>
 
               {/* Возврат товара по качеству */}
-              <div className="flex gap-8 md:flex-col md:gap-4">
-                <div className="w-80 flex-shrink-0 md:w-full">
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
                   <h3 style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Возврат товара по качеству</h3>
                 </div>
-                <div className="flex-1 md:w-full">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-4">
+                <div className="flex-1">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                      {/* Возврат товара надлежащего качества */}
-                     <div className="bg-gray-50 p-6 rounded-lg md:p-4">
-                       <h4 className="text-lg font-medium mb-4 md:text-base md:mb-3">Возврат товара надлежащего качества</h4>
-                       <p className="text-gray-700 mb-4 md:text-sm md:mb-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     <div className="bg-gray-50 p-6 rounded-lg">
+                       <h4 className="text-lg font-medium mb-4">Возврат товара надлежащего качества</h4>
+                       <p className="text-gray-700 mb-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          Возврат товара надлежащего качества, если он не подходит по размеру, цвету, фасону или любой другой причине, производится на основании заявления на возврат, которое необходимо подать в течение 14 дней с момента покупки товара, не считая дня покупки.
                        </p>
-                       <p className="text-gray-700 mb-4 md:text-sm md:mb-3" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                       <p className="text-gray-700 mb-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          При возврате товара надлежащего качества возвращается только стоимость товара. Стоимость доставки, а также стоимость обратной пересылки (если она производилась за Ваш счет) не компенсируются.
                        </p>
-                       <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                       <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          Вы не вправе отказаться от товара надлежащего качества, имеющего индивидуально-определенные свойства, если указанный товар может быть использован исключительно приобретающим его потребителем.
                        </p>
                      </div>
 
                       {/* Возврат товара ненадлежащего качества */}
-                      <div className="bg-gray-50 p-6 rounded-lg md:p-4">
-                        <h4 className="text-lg font-medium mb-4 md:text-base md:mb-3">Возврат товара ненадлежащего качества (бракованного товара)</h4>
-                        <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      <div className="bg-gray-50 p-6 rounded-lg">
+                        <h4 className="text-lg font-medium mb-4">Возврат товара ненадлежащего качества (бракованного товара)</h4>
+                        <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                           Согласно Закону о защите прав потребителей, вы вправе вернуть товар ненадлежащего качества (с браком, дефектами или несоответствием заявленным характеристикам) при дистанционном способе покупки.
                         </p>
                       </div>
@@ -864,32 +851,32 @@ const Support: React.FC = () => {
               <div className="h-px bg-gray-300"></div>
 
               {/* Условия возврата товара */}
-              <div className="flex gap-8 mb-8 md:flex-col md:gap-4 md:mb-6">
-                <div className="w-80 flex-shrink-0 md:w-full">
+              <div className="flex gap-8 mb-8">
+                <div className="w-80 flex-shrink-0">
                   <h3 style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Условия возврата товара</h3>
                 </div>
-                <div className="flex-1 md:w-full">
-                  <div className="space-y-6 md:space-y-4">
+                <div className="flex-1">
+                  <div className="space-y-6">
                     <div>
-                      <h4 className="text-lg font-medium mb-4 md:text-base md:mb-3">Возврат товара надлежащего качества возможен при условии:</h4>
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-4">
+                      <h4 className="text-lg font-medium mb-4">Возврат товара надлежащего качества возможен при условии:</h4>
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div className="flex items-start gap-4">
-                          <div className="text-[#F53B49] font-bold text-2xl flex-shrink-0 md:text-xl">
+                          <div className="text-[#F53B49] font-bold text-2xl flex-shrink-0">
                             1
                           </div>
-                           <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                           <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                              Сохранения его потребительских свойств и товарного вида (отсутствие следов эксплуатации и носки, наличие оригинальной и неповрежденной упаковки и ярлыков).
                            </p>
                         </div>
                         
                         <div className="flex items-start gap-4">
-                          <div className="text-[#F53B49] font-bold text-2xl flex-shrink-0 md:text-xl">
+                          <div className="text-[#F53B49] font-bold text-2xl flex-shrink-0">
                             2
                           </div>
-                           <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                           <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                              Наличия документа, подтверждающего факт и условия покупки товара (кассовый чек или товарный чек)*.
                            </p>
                         </div>
@@ -897,11 +884,11 @@ const Support: React.FC = () => {
                     </div>
 
                     {/* Разделительная линия */}
-                    <div className="h-px bg-gray-300 my-6 md:my-4"></div>
+                    <div className="h-px bg-gray-300 my-6"></div>
 
                     <div>
-                      <h4 className="text-lg font-medium mb-4 md:text-base md:mb-3">Возврат товара не надлежащего качества возможен при условии:</h4>
-                       <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                      <h4 className="text-lg font-medium mb-4">Возврат товара не надлежащего качества возможен при условии:</h4>
+                       <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          Возврат товара ненадлежащего качества возможен при условии сохранения документа, подтверждающего факт и условия покупки указанного товара (кассовый чек или товарный чек)*.
                        </p>
                     </div>
@@ -913,16 +900,16 @@ const Support: React.FC = () => {
                <div className="h-px bg-gray-300"></div>
 
                {/* Сроки возврата денежных средств */}
-              <div className="flex gap-8 mb-8 md:flex-col md:gap-4 md:mb-6">
-                <div className="w-80 flex-shrink-0 md:w-full">
+              <div className="flex gap-8 mb-8">
+                <div className="w-80 flex-shrink-0">
                   <h3 style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Сроки возврата денежных средств</h3>
                 </div>
-                <div className="flex-1 md:w-full">
-                  <div className="bg-gray-100 p-6 rounded-lg md:p-4">
-                     <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                <div className="flex-1">
+                  <div className="bg-gray-100 p-6 rounded-lg">
+                     <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                        Срок возврата денежных средств зависит от способа возврата товара и составляет не более 10 дней с даты поступления возвращенного товара в интернет-магазин вместе с заполненным заявлением на возврат. По итогам проведения экспертизы товара принимается решение о возврате или не возврате денежных средств.
                      </p>
                   </div>
@@ -933,16 +920,16 @@ const Support: React.FC = () => {
                <div className="h-px bg-gray-300"></div>
 
                {/* Возврат денег при наличной форме оплаты заказа */}
-              <div className="flex gap-8 md:flex-col md:gap-4">
-                <div className="w-80 flex-shrink-0 md:w-full">
+              <div className="flex gap-8">
+                <div className="w-80 flex-shrink-0">
                   <h3 style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Возврат денег при наличной форме оплаты заказа осуществляется</h3>
                 </div>
-                <div className="flex-1 md:w-full">
-                  <div className="bg-gray-100 p-6 rounded-lg md:p-4">
-                     <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                <div className="flex-1">
+                  <div className="bg-gray-100 p-6 rounded-lg">
+                     <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                        При возврате товара через розничный магазин - наличными в розничном магазине при возврате через партнерскую курьерскую компанию - только на лицевой счет клиента. Реквизиты Вашего банковского счета и банка необходимо указать в заявлении на возврат.
                      </p>
                   </div>
@@ -953,16 +940,16 @@ const Support: React.FC = () => {
                <div className="h-px bg-gray-300"></div>
 
                {/* Важно */}
-               <div className="flex gap-8 md:flex-col md:gap-4">
-                 <div className="w-80 flex-shrink-0 md:w-full">
+               <div className="flex gap-8">
+                 <div className="w-80 flex-shrink-0">
                    <h3 style={{
                      fontFamily: 'Benzin-Medium',
                      fontSize: '20px'
                    }}>Важно:</h3>
                  </div>
-                 <div className="flex-1 md:w-full">
-                   <div className="bg-red-50 border-l-4 border-[#F53B49] p-6 rounded-lg md:p-4">
-                     <ul className="space-y-3 text-gray-700 md:space-y-2 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                 <div className="flex-1">
+                   <div className="bg-red-50 border-l-4 border-[#F53B49] p-6 rounded-lg">
+                     <ul className="space-y-3 text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                        <li>• Требования о возврате не применяются, если недостатки возникли по вашей вине (неправильная эксплуатация, механические повреждения и т.д.).</li>
                        <li>• Для технически сложных товаров действуют особые условия возврата в течение 15 дней.</li>
                        <li>• Мы гарантируем соблюдение всех ваших прав в соответствии с законодательством РФ.</li>
@@ -974,108 +961,108 @@ const Support: React.FC = () => {
             </div>
           )}
 
-           {activeTab === 'warranty' && (
-            <div className="space-y-8 md:space-y-6">
+          {activeTab === 'warranty' && (
+            <div className="space-y-8">
               {/* Warranty Period Section */}
               <div>
-                <div className="flex gap-8 mb-8 md:flex-col md:gap-4 md:mb-6">
-                  <div className="w-80 flex-shrink-0 md:w-full">
+                <div className="flex gap-8 mb-8">
+                  <div className="w-80 flex-shrink-0">
                     <h3 style={{
                       fontFamily: 'Benzin-Medium',
                       fontSize: '20px'
                     }}>Гарантийный период на продукцию составляет</h3>
                   </div>
-                   <div className="flex-1 md:w-full">
-                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px] mb-8 md:gap-4 md:mb-6">
+                   <div className="flex-1">
+                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px] mb-8">
                        {/* Running Equipment */}
                        <div>
-                         <div className="bg-gray-100 p-6 rounded-lg md:p-4">
-                           <h4 className="text-lg font-medium mb-6 md:text-base md:mb-4" style={{fontFamily: 'Benzin-Medium', fontSize: '18px'}}>Беговые дорожки</h4>
+                         <div className="bg-gray-100 p-6 rounded-lg">
+                           <h4 className="text-lg font-medium mb-6" style={{fontFamily: 'Benzin-Medium', fontSize: '18px'}}>Беговые дорожки</h4>
                            <div className="space-y-2">
                              <div className="flex justify-between items-center py-1">
-                               <span className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Sole Fitness</span>
-                                <span className="text-[#F53B49] font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
+                               <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Sole Fitness</span>
+                                <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                              </div>
                              <div className="h-px bg-gray-300"></div>
                              <div className="flex justify-between items-center py-1">
-                               <span className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Nautilus</span>
-                                <span className="text-[#F53B49] font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
+                               <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Nautilus</span>
+                                <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                              </div>
                              <div className="py-1">
                                <div className="flex justify-between items-center mb-1">
-                                 <span className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>на мотор</span>
-                                 <span className="text-[#F53B49] font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>3 года</span>
+                                 <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>на мотор</span>
+                                 <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>3 года</span>
                                </div>
                                <div className="flex justify-between items-center mb-1">
-                                 <span className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>беговое полотно</span>
-                                  <span className="text-[#F53B49] font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>полгода</span>
+                                 <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>беговое полотно</span>
+                                  <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>полгода</span>
                                </div>
                                <div className="flex justify-between items-center">
-                                 <span className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>рама</span>
-                                 <span className="text-[#F53B49] font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>10 лет</span>
+                                 <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>рама</span>
+                                 <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>10 лет</span>
                                </div>
                              </div>
                              <div className="h-px bg-gray-300"></div>
                              <div className="flex justify-between items-center py-1">
-                               <span className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Bowflex</span>
-                                <span className="text-[#F53B49] font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
+                               <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Bowflex</span>
+                                <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                              </div>
                              <div className="h-px bg-gray-300"></div>
                              <div className="flex justify-between items-center py-1">
-                               <span className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>CardioPower</span>
-                                <span className="text-[#F53B49] font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
+                               <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>CardioPower</span>
+                                <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                              </div>
                              <div className="h-px bg-gray-300"></div>
                              <div className="flex justify-between items-center py-1">
-                               <span className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Optima Fitness</span>
-                                <span className="text-[#F53B49] font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
+                               <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Optima Fitness</span>
+                                <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                              </div>
                            </div>
                          </div>
-                         <div className="mt-[10px] md:mt-3">
-                           <button className="w-full bg-[#F53B49] text-white px-8 py-3 rounded hover:bg-[#e63946] transition-colors font-medium md:px-4 md:py-2 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                         <div className="mt-[10px]">
+                           <button className="w-full bg-[#F53B49] text-white px-8 py-3 rounded hover:bg-[#e63946] transition-colors font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                              Скачать файлы по рекомендации тех. обслуживания
                            </button>
                          </div>
                        </div>
 
                        {/* Elliptical Equipment */}
-                       <div className="bg-gray-100 p-6 rounded-lg h-fit md:p-4">
-                         <h4 className="text-lg font-medium mb-6 md:text-base md:mb-4" style={{fontFamily: 'Benzin-Medium', fontSize: '18px'}}>Эллиптические тренажеры</h4>
+                       <div className="bg-gray-100 p-6 rounded-lg h-fit">
+                         <h4 className="text-lg font-medium mb-6" style={{fontFamily: 'Benzin-Medium', fontSize: '18px'}}>Эллиптические тренажеры</h4>
                          <div className="space-y-2">
                            <div className="flex justify-between items-center py-1">
-                             <span className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Sole Fitness</span>
-                              <span className="text-[#F53B49] font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
+                             <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Sole Fitness</span>
+                              <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                            </div>
                            <div className="h-px bg-gray-300"></div>
                            <div className="py-1">
                              <div className="flex justify-between items-center mb-1">
-                               <span className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Nautilus</span>
-                                <span className="text-[#F53B49] font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
+                               <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Nautilus</span>
+                                <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                              </div>
                              <div className="flex justify-between items-center mb-1">
-                               <span className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>на мотор</span>
-                               <span className="text-[#F53B49] font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>10 лет</span>
+                               <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>на мотор</span>
+                               <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>10 лет</span>
                              </div>
                              <div className="flex justify-between items-center">
-                               <span className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>рама</span>
-                               <span className="text-[#F53B49] font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>10 лет</span>
+                               <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>рама</span>
+                               <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>10 лет</span>
                              </div>
                            </div>
                            <div className="h-px bg-gray-300"></div>
                            <div className="flex justify-between items-center py-1">
-                             <span className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Bowflex</span>
-                              <span className="text-[#F53B49] font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
+                             <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Bowflex</span>
+                              <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                            </div>
                            <div className="h-px bg-gray-300"></div>
                            <div className="flex justify-between items-center py-1">
-                             <span className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>CardioPower</span>
-                              <span className="text-[#F53B49] font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
+                             <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>CardioPower</span>
+                              <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                            </div>
                            <div className="h-px bg-gray-300"></div>
                            <div className="flex justify-between items-center py-1">
-                             <span className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Optima Fitness</span>
-                             <span className="text-[#F53B49] font-medium md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
+                             <span className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>Optima Fitness</span>
+                             <span className="text-[#F53B49] font-medium" style={{fontFamily: 'Manrope', fontSize: '16px'}}>2 года</span>
                            </div>
                          </div>
                        </div>
@@ -1089,8 +1076,8 @@ const Support: React.FC = () => {
                <div className="h-px bg-gray-300"></div>
 
                {/* Warranty Loss Section */}
-              <div className="flex gap-8 mb-12 md:flex-col md:gap-4 md:mb-8">
-                 <div className="w-80 flex-shrink-0 md:w-full">
+              <div className="flex gap-8 mb-12">
+                 <div className="w-80 flex-shrink-0">
                    <h3 style={{
                      fontFamily: 'Benzin-Medium',
                      fontSize: '20px',
@@ -1102,40 +1089,40 @@ const Support: React.FC = () => {
                      color: '#262631'
                    }} className="mt-2">в случаях</p>
                  </div>
-                 <div className="flex-1 md:w-full">
-                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px] mb-[10px] md:gap-4 md:mb-4">
-                     <div className="bg-gray-50 p-6 rounded-lg md:p-4">
-                       <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                 <div className="flex-1">
+                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-[10px] mb-[10px]">
+                     <div className="bg-gray-50 p-6 rounded-lg">
+                       <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          Истечения гарантийного срока, указанного в гарантийном талоне
                        </p>
                      </div>
-                     <div className="bg-gray-50 p-6 rounded-lg md:p-4">
-                       <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     <div className="bg-gray-50 p-6 rounded-lg">
+                       <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          Отсутствия или неправильного заполнения гарантийного талона
                        </p>
                      </div>
-                     <div className="bg-gray-50 p-6 rounded-lg md:p-4">
-                       <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     <div className="bg-gray-50 p-6 rounded-lg">
+                       <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          При неправильной эксплуатации тренажера и не соблюдении рекомендаций по техническому обслуживанию
                        </p>
                      </div>
                    </div>
 
-                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px] mb-[10px] md:gap-4 md:mb-4">
-                     <div className="bg-gray-50 p-6 rounded-lg md:p-4">
-                       <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10px] mb-[10px]">
+                     <div className="bg-gray-50 p-6 rounded-lg">
+                       <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          На все части тренажера, подверженные естественному износу и относящиеся к расходным материалам. К расходным материалам относятся: ремни, беговые полотна, беговые деки
                        </p>
                      </div>
-                     <div className="bg-gray-50 p-6 rounded-lg md:p-4">
-                       <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                     <div className="bg-gray-50 p-6 rounded-lg">
+                       <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          Ненадлежащего ремонта, переделки или механических повреждений нанесенных изделию во время транспортировки, хранения и использования изделия покупателем или третьими лицами
                        </p>
                      </div>
                    </div>
 
-                   <div className="bg-gray-50 p-6 rounded-lg md:p-4">
-                     <p className="text-gray-700 md:text-sm" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                   <div className="bg-gray-50 p-6 rounded-lg">
+                     <p className="text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                        При появлении дефектов на поверхностях и в их структуре, вызванных внешними воздействиями (таким как: перепады напряжения в сети электропитания, повышенной влажности и сухости воздуха в помещении, нарушения температурного режима и т.д.)
                      </p>
                    </div>
@@ -1147,35 +1134,35 @@ const Support: React.FC = () => {
 
                {/* Recommendations Section */}
               <div>
-                <div className="border-2 border-[#F53B49] rounded-lg p-8 md:p-6">
-                  <h3 className="mb-6 md:mb-4" style={{
+                <div className="border-2 border-[#F53B49] rounded-lg p-8">
+                  <h3 className="mb-6" style={{
                     fontFamily: 'Benzin-Medium',
                     fontSize: '20px'
                   }}>Рекомендации по тех. обслуживанию тренажера</h3>
-                   <p className="text-gray-700 mb-6 md:text-sm md:mb-4" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                   <p className="text-gray-700 mb-6" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                      Производится покупателем самостоятельно (не реже 1 раз в полгода или чаще в случаях усиленной эксплуатации)
                    </p>
 
-                   <div className="space-y-6 md:space-y-4">
+                   <div className="space-y-6">
                      <div>
-                       <p className="font-medium text-gray-900 mb-2 md:text-sm md:mb-1" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                       <p className="font-medium text-gray-900 mb-2" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          <strong>Беговые дорожки:</strong> смазка беговой деки / регулировка натяжения бегового полотна
                        </p>
                        <div className="text-sm text-gray-700 space-y-1">
-                         <p style={{fontFamily: 'Manrope', fontSize: '16px'}} className="md:text-xs">Легкая эксплуатация (меньше 3 час/нед) — каждые 60 дней</p>
-                         <p style={{fontFamily: 'Manrope', fontSize: '16px'}} className="md:text-xs">Средняя эксплуатация (3-5 час/нед) — каждые 45 дней</p>
-                         <p style={{fontFamily: 'Manrope', fontSize: '16px'}} className="md:text-xs">Повышенная эксплуатация (больше 5 час/нед) — каждые 30 дней</p>
+                         <p style={{fontFamily: 'Manrope', fontSize: '16px'}}>Легкая эксплуатация (меньше 3 час/нед) — каждые 60 дней</p>
+                         <p style={{fontFamily: 'Manrope', fontSize: '16px'}}>Средняя эксплуатация (3-5 час/нед) — каждые 45 дней</p>
+                         <p style={{fontFamily: 'Manrope', fontSize: '16px'}}>Повышенная эксплуатация (больше 5 час/нед) — каждые 30 дней</p>
                        </div>
                      </div>
 
                      <div>
-                       <p className="font-medium text-gray-900 mb-2 md:text-sm md:mb-1" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                       <p className="font-medium text-gray-900 mb-2" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          <strong>Эллиптические тренажеры / Велотренажеры:</strong> протирка болтов соединений
                        </p>
-                       <p className="text-sm text-gray-700 mb-2 md:text-xs md:mb-1" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                       <p className="text-sm text-gray-700 mb-2" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          Рекомендована установка ИБП (источника бесперебойного питания)
                        </p>
-                       <p className="text-sm text-gray-700 md:text-xs" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
+                       <p className="text-sm text-gray-700" style={{fontFamily: 'Manrope', fontSize: '16px'}}>
                          К расходным материалам относятся: Ремни, беговые полотна, беговые деки.
                        </p>
                      </div>

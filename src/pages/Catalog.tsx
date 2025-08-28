@@ -4,7 +4,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
 import CatalogFilters from '@/components/Catalog/CatalogFilters';
-import CatalogGridFilter from '@/components/Catalog/CatalogGridFilter';
 import CatalogBanner from '@/components/Catalog/CatalogBanner';
 import CatalogControls from '@/components/Catalog/CatalogControls';
 import CatalogGrid from '@/components/Catalog/CatalogGrid';
@@ -357,36 +356,16 @@ const Catalog: React.FC = () => {
     }
   }, [filteredProducts, sortBy]);
 
-  // Пагинация отфильтрованных товаров 
+  // Пагинация отфильтрованных товаров (16 карточек на странице)
   const paginatedProducts = useMemo(() => {
-    const itemsPerPage = 16; // Для десктопа
+    const itemsPerPage = 16;
     const startIndex = (pageNumber - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     return sortedItems.slice(startIndex, endIndex);
   }, [sortedItems, pageNumber]);
-
-  // Пагинация для планшетов (кратно 3)
-  const paginatedProductsTablet = useMemo(() => {
-    const itemsPerPage = 15; // Кратно 3 для планшетов
-    const startIndex = (pageNumber - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    let slicedItems = sortedItems.slice(startIndex, endIndex);
-    
-    // Проверяем, если это не последняя страница и остался 1 товар, убираем его
-    const totalTabletPages = Math.ceil(sortedItems.length / itemsPerPage);
-    const isLastPage = pageNumber === totalTabletPages;
-    
-    if (!isLastPage && slicedItems.length % 3 === 1) {
-      slicedItems = slicedItems.slice(0, -1);
-    }
-    
-    return slicedItems;
-  }, [sortedItems, pageNumber]);
   
   const totalPages = Math.ceil(sortedItems.length / 16);
-  const totalPagesTablet = Math.ceil(sortedItems.length / 15);
   const hasNextPage = pageNumber < totalPages;
-  const hasNextPageTablet = pageNumber < totalPagesTablet;
   const hasPrevPage = pageNumber > 1;
 
   // Преобразование в формат для отображения (используем пагинированные товары)
@@ -408,25 +387,6 @@ const Catalog: React.FC = () => {
     }));
   }, [paginatedProducts]);
 
-  // Преобразование для планшетов
-  const catalogItemsTablet = useMemo(() => {
-    return paginatedProductsTablet.map(item => ({
-      id: item.id,
-      name: item.name,
-      price: item.price,
-      original_price: item.original_price,
-      discount_percentage: item.discount_percentage,
-      gallery_images: item.gallery_images,
-      rating: item.rating,
-      reviews_count: item.reviews_count,
-      in_stock: item.in_stock,
-      is_available: item.is_available,
-      quantity: item.quantity,
-      badge: item.is_available ? 'В наличии' : 'Нет в наличии',
-      badge_color: item.is_available ? 'green' : 'red'
-    }));
-  }, [paginatedProductsTablet]);
-
   // Используем пагинацию из хука
   const handlePageNavigation = (newPage: number) => {
     setPageNumber(newPage);
@@ -437,7 +397,7 @@ const Catalog: React.FC = () => {
     <>
       <Header onSearch={handleSearchQuery} />
       <div className="min-h-screen bg-white">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-container mobile-container py-2">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-2">
           {/* Breadcrumbs */}
           <Breadcrumb className="mb-6">
             <BreadcrumbList>
@@ -456,23 +416,20 @@ const Catalog: React.FC = () => {
           </Breadcrumb>
         </div>
 
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-container mobile-container py-2">
-          {/* Desktop Layout */}
-          <div className="hidden lg:flex gap-8">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-2">
+          <div className="flex gap-8">
             {/* Left Sidebar - Filters */}
-            <div>
-              <CatalogFilters
-                filters={filters}
-                filterOptions={filterOptions}
-                onPriceChange={handlePriceChange}
-                onBrandsChange={handleBrandsChange}
-                onPurposeTypesChange={handlePurposeTypesChange}
-                onPowerRangeChange={handlePowerRangeChange}
-                onEquipmentTypesChange={handleEquipmentTypesChange}
-                onApplyFilters={handleApplyFilters}
-                onResetFilters={handleResetFilters}
-              />
-            </div>
+            <CatalogFilters
+              filters={filters}
+              filterOptions={filterOptions}
+              onPriceChange={handlePriceChange}
+              onBrandsChange={handleBrandsChange}
+              onPurposeTypesChange={handlePurposeTypesChange}
+              onPowerRangeChange={handlePowerRangeChange}
+              onEquipmentTypesChange={handleEquipmentTypesChange}
+              onApplyFilters={handleApplyFilters}
+              onResetFilters={handleResetFilters}
+            />
 
             {/* Main Content */}
             <div className="flex-1 mt-[94px]">
@@ -522,112 +479,36 @@ const Catalog: React.FC = () => {
               )}
             </div>
           </div>
-
-          {/* Tablet Layout */}
-          <div className="lg:hidden">
-            <h1 className="text-[48px] md:text-[32px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Каталог</h1>
-            
-            <CatalogBanner />
-            
-            <CatalogControls 
-              sortBy={sortBy} 
-              setSortBy={setSortBy}
-              onSearch={handleSearchQuery}
-              searchQuery={queryParam}
-            />
-            
-            {isLoading ? (
-              <div className="space-y-6">
-                {/* Skeleton для товаров */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                  {Array.from({ length: 8 }).map((_, index) => (
-                    <div key={index} className="animate-pulse">
-                      <div className="bg-gray-200 rounded-lg aspect-square mb-4"></div>
-                      <div className="space-y-2">
-                        <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-                        <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ) : error ? (
-              <div className="text-center py-12">
-                <p className="text-red-500 mb-4">Ошибка загрузки товаров: {String(error)}</p>
-                <button 
-                  onClick={() => window.location.reload()} 
-                  className="bg-[#F53B49] text-white px-4 py-2 rounded"
-                >
-                  Попробовать снова
-                </button>
-              </div>
-            ) : queryParam && catalogItems.length === 0 ? (
-              <div className="text-center py-8">
-                <p>По запросу "{queryParam}" ничего не найдено</p>
-                <p className="text-gray-500 mt-2">Попробуйте изменить поисковый запрос или фильтры</p>
-              </div>
-            ) : catalogItemsTablet.length === 0 ? (
-              <div className="text-center py-8">
-                <p>Товары не найдены</p>
-                <p className="text-gray-500 mt-2">Попробуйте изменить фильтры</p>
-              </div>
-            ) : (
-              <CatalogGrid 
-                products={catalogItemsTablet}
-                currentPage={pageNumber}
-                totalPages={totalPagesTablet}
-                hasNextPage={hasNextPageTablet}
-                hasPreviousPage={hasPrevPage}
-                onPageChange={handlePageNavigation}
-                FilterComponent={
-                  <CatalogGridFilter
-                    filters={filters}
-                    filterOptions={filterOptions}
-                    onPriceChange={handlePriceChange}
-                    onBrandsChange={handleBrandsChange}
-                    onPurposeTypesChange={handlePurposeTypesChange}
-                    onPowerRangeChange={handlePowerRangeChange}
-                    onEquipmentTypesChange={handleEquipmentTypesChange}
-                    onApplyFilters={handleApplyFilters}
-                    onResetFilters={handleResetFilters}
-                  />
-                }
-              />
-            )}
-          </div>
         </div>
+      </div>
 
-        {/* SEO Section */}
-        <div className="w-full mb-[60px]">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-container">
-            <div className="mt-[100px] tablet-section">
-              <div className="w-full h-px bg-gray-300 mb-[60px]"></div>
-              <div>
-                <h2 className="text-2xl font-bold mb-6 tablet-heading-lg">Блок под сео текст</h2>
-                <div className="grid grid-cols-2 tablet-grid-2 gap-8 text-sm text-gray-600 leading-relaxed tablet-text-sm">
-                  <div>
-                    <p className="mb-4">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                  </div>
-                  <div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                  </div>
+      {/* SEO Section */}
+      <div className="w-full mb-[60px]">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+          <div className="mt-[100px]">
+            <div className="w-full h-px bg-gray-300 mb-[60px]"></div>
+            <div>
+              <h2 className="text-2xl font-bold mb-6">Блок под сео текст</h2>
+              <div className="grid grid-cols-2 gap-8 text-sm text-gray-600 leading-relaxed">
+                <div>
+                  <p className="mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className="tablet-section">
-        <EmailSubscription />
-      </div>
+      <EmailSubscription />
       <div className="h-[70px]"></div>
       <Footer />
     </>

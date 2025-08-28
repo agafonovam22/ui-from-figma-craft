@@ -1097,9 +1097,9 @@ const ProductDetail: React.FC = () => {
       
       <div className="relative z-10">
         <Header />
-        <main className="container mx-auto px-6 lg:px-12 xl:px-16 tablet-container py-8 tablet-product-detail">
+        <main className="container mx-auto px-6 lg:px-12 xl:px-16 py-8">
           {/* Breadcrumbs */}
-          <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6 flex-wrap max-w-[calc(50%-25px)] tablet-text-sm">
+          <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6 flex-wrap max-w-[calc(50%-25px)]">
             <Link to="/" className="hover:text-foreground">Главная</Link>
             <span>/</span>
             <Link to="/catalog" className="hover:text-foreground">Каталог</Link>
@@ -1118,12 +1118,12 @@ const ProductDetail: React.FC = () => {
         />
 
         {/* Product Tabs */}
-        <div className="mt-12 tablet-section">
+        <div className="mt-12">
           {/* Tabs Header with Download Button */}
-          <div className="flex justify-between items-center border-b border-gray-200 mb-6 tablet-product-tabs">
-            <div className="flex space-x-8 tablet-product-tabs">
+          <div className="flex justify-between items-center border-b border-gray-200 mb-6">
+            <div className="flex space-x-8">
               <button 
-                className={`pb-2 font-medium transition-colors tablet-product-tab ${
+                className={`pb-2 font-medium transition-colors ${
                   activeTab === 'description' 
                     ? 'text-red-600 border-b-2 border-red-600' 
                     : 'text-gray-500 hover:text-gray-700'
@@ -1133,7 +1133,7 @@ const ProductDetail: React.FC = () => {
                 Описание
               </button>
               <button 
-                className={`pb-2 font-medium transition-colors tablet-product-tab ${
+                className={`pb-2 font-medium transition-colors ${
                   activeTab === 'specifications' 
                     ? 'text-red-600 border-b-2 border-red-600' 
                     : 'text-gray-500 hover:text-gray-700'
@@ -1143,7 +1143,7 @@ const ProductDetail: React.FC = () => {
                 Характеристики
               </button>
               <button 
-                className={`pb-2 font-medium transition-colors tablet-product-tab ${
+                className={`pb-2 font-medium transition-colors ${
                   activeTab === 'reviews' 
                     ? 'text-red-600 border-b-2 border-red-600' 
                     : 'text-gray-500 hover:text-gray-700'
@@ -1153,7 +1153,7 @@ const ProductDetail: React.FC = () => {
                 Отзывы
               </button>
               <button 
-                className={`pb-2 font-medium transition-colors tablet-product-tab ${
+                className={`pb-2 font-medium transition-colors ${
                   activeTab === 'delivery' 
                     ? 'text-red-600 border-b-2 border-red-600' 
                     : 'text-gray-500 hover:text-gray-700'
@@ -1163,7 +1163,7 @@ const ProductDetail: React.FC = () => {
                 Доставка и оплата
               </button>
               <button 
-                className={`pb-2 font-medium transition-colors tablet-product-tab ${
+                className={`pb-2 font-medium transition-colors ${
                   activeTab === 'installment' 
                     ? 'text-red-600 border-b-2 border-red-600' 
                     : 'text-gray-500 hover:text-gray-700'
@@ -1173,7 +1173,7 @@ const ProductDetail: React.FC = () => {
                 Рассрочка
               </button>
               <button 
-                className={`pb-2 font-medium transition-colors tablet-product-tab ${
+                className={`pb-2 font-medium transition-colors ${
                   activeTab === 'services' 
                     ? 'text-red-600 border-b-2 border-red-600' 
                     : 'text-gray-500 hover:text-gray-700'
@@ -1187,7 +1187,7 @@ const ProductDetail: React.FC = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-red-600 text-red-600 hover:bg-red-50 tablet-button"
+                className="border-red-600 text-red-600 hover:bg-red-50"
                 onClick={handleDownloadInstruction}
               >
                 Скачать инструкцию

@@ -8,8 +8,8 @@ const Footer: React.FC = () => {
     <footer className="w-full text-white">
       {/* Main content section with #262631 background */}
       <div className="bg-[#262631] py-8">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-footer-main">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 tablet-footer-grid gap-8">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
             {/* Каталог */}
             <div>
               <h3 className="text-white text-xs font-benzin-semibold mb-2">Каталог</h3>
@@ -59,8 +59,8 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Контакты */}
-            <div className="lg:col-span-2 tablet-footer-contacts">
-              <div className="grid grid-cols-1 lg:grid-cols-2 tablet-footer-contacts-inner gap-8">
+            <div className="lg:col-span-2">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Левая часть - контакты */}
                 <div className="text-[#778093] space-y-3">
                   <div>
@@ -146,7 +146,7 @@ const Footer: React.FC = () => {
 
       {/* Bottom section with #17171E background */}
       <div className="bg-[#17171E] py-6">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] tablet-footer-bottom">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
           <div className="flex flex-col gap-6">
             {/* Top row - Logo and buttons */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">

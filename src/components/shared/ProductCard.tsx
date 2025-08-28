@@ -140,10 +140,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <Link 
       to={`/product/${product.id}`}
-      className="block w-full"
+      className="block"
     >
       <div 
-        className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 tablet-product-card w-full"
+        className="relative group rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
         style={{ 
           height: '460px', 
           backgroundColor: '#F8F8FD',
@@ -213,7 +213,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
       {/* Слайдер изображений */}
       <div 
-        className="relative h-60 tablet-product-card-image overflow-hidden transition-colors duration-300"
+        className="relative h-60 overflow-hidden transition-colors duration-300"
         style={{ backgroundColor: 'transparent' }}
       >
         {/* Декоративный элемент в правом верхнем углу */}
@@ -283,7 +283,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="mx-4 h-px bg-gray-200 mt-7"></div>
 
         {/* Информация о товаре */}
-        <div className="p-4 pb-2 mt-1 flex flex-col justify-between transition-colors duration-300 tablet-product-card-info" style={{ height: '155px', backgroundColor: 'transparent' }}>
+        <div className="p-4 pb-2.5 mt-4 flex flex-col justify-between transition-colors duration-300" style={{ height: '160px', backgroundColor: 'transparent' }}>
           <div>
             {/* Статус наличия */}
             {(() => {
@@ -324,7 +324,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             })()}
 
             {/* Название товара */}
-            <h3 className="text-gray-900 group-hover:text-white text-sm tablet-product-title mb-3 line-clamp-2 leading-relaxed transition-colors duration-300">
+            <h3 className="text-gray-900 group-hover:text-white text-sm mb-3 line-clamp-2 leading-relaxed transition-colors duration-300">
               {(() => {
                 const name = product.name;
                 // Ищем бренды в названии
@@ -366,7 +366,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               </div>
             )}
 
-            {/* Цена со скидкой */}
+            {/* Цена */}
             <div className="flex items-center gap-2 mb-3">
               {discount > 0 && (
                 <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
@@ -374,21 +374,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 </span>
               )}
               {product.original_price && product.original_price > product.price && (
-                <span className="text-gray-400 group-hover:text-white line-through text-sm md:text-xs transition-colors duration-300">
-                  {product.original_price.toLocaleString()}&nbsp;₽
+                <span className="text-gray-400 group-hover:text-white line-through text-sm transition-colors duration-300">
+                  {product.original_price.toLocaleString()} ₽
                 </span>
               )}
             </div>
           </div>
 
-          {/* Цена и кнопка - горизонтально на десктопе, вертикально на планшете */}
-          <div className="flex items-center justify-between gap-2 md:flex-col md:items-start md:gap-2">
-            <span className="text-sm md:text-xs tablet-product-price font-bold text-gray-900 group-hover:text-white transition-colors duration-300 flex-shrink-0">
-              {product.price.toLocaleString()}&nbsp;₽
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-bold text-gray-900 group-hover:text-white transition-colors duration-300">
+              {product.price.toLocaleString()} ₽
             </span>
             
             <Button 
-              className="bg-[#F53B49] hover:bg-[#e63946] text-white px-3 py-1.5 md:px-2 md:py-1 tablet-buy-button text-sm md:text-xs flex-shrink-0 md:w-full"
+              className="bg-[#F53B49] hover:bg-[#e63946] text-white px-4 py-2"
               onClick={handleBuyClick}
             >
               Купить

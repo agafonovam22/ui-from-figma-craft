@@ -21,18 +21,18 @@ const Contacts: React.FC = () => {
   return <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8 mobile:px-4 mobile:py-4">
+      <main className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
         {/* Breadcrumbs */}
-        <Breadcrumb className="mb-6 mobile:mb-4">
+        <Breadcrumb className="mb-6">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/" className="text-gray-500 hover:text-gray-700 mobile:text-xs">
+              <BreadcrumbLink href="/" className="text-gray-500 hover:text-gray-700">
                 Главная
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="text-gray-900 font-medium mobile:text-xs">
+              <BreadcrumbPage className="text-gray-900 font-medium">
                 Контакты
               </BreadcrumbPage>
             </BreadcrumbItem>
@@ -40,84 +40,84 @@ const Contacts: React.FC = () => {
         </Breadcrumb>
 
         {/* Page Title */}
-        <h1 className="font-heading text-[48px] text-layout-dark-grey mb-6 leading-none mobile:text-[24px] mobile:mb-4">
+        <h1 className="font-heading text-[48px] text-layout-dark-grey mb-6 leading-none">
           Контакты
         </h1>
 
         {/* Introductory Text */}
-        <p className="text-gray-700 text-lg leading-relaxed text-left w-full mb-2 mobile:text-sm mobile:mb-1">
+        <p className="text-gray-700 text-lg leading-relaxed text-left w-full mb-2">
           Хотите увидеть товары вживую, получить консультацию или оформить заказ?
         </p>
-        <p className="text-gray-700 text-lg leading-relaxed text-left w-full mb-8 mobile:text-sm mobile:mb-4">
+        <p className="text-gray-700 text-lg leading-relaxed text-left w-full mb-8">
           Мы всегда на связи.
         </p>
 
         {/* City Tabs */}
-        <div className="flex gap-2 mb-8 mobile:flex-col mobile:gap-2 mobile:mb-4">
-          <button onClick={() => setActiveTab('moscow')} className={`px-6 py-2 rounded-md font-medium transition-colors mobile:px-4 mobile:py-3 mobile:text-sm ${activeTab === 'moscow' ? 'bg-[#F53B49] text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}>
+        <div className="flex gap-2 mb-8">
+          <button onClick={() => setActiveTab('moscow')} className={`px-6 py-2 rounded-md font-medium transition-colors ${activeTab === 'moscow' ? 'bg-[#F53B49] text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}>
             Контакты в Москве
           </button>
-          <button onClick={() => setActiveTab('spb')} className={`px-6 py-2 rounded-md font-medium transition-colors mobile:px-4 mobile:py-3 mobile:text-sm ${activeTab === 'spb' ? 'bg-[#F53B49] text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}>
+          <button onClick={() => setActiveTab('spb')} className={`px-6 py-2 rounded-md font-medium transition-colors ${activeTab === 'spb' ? 'bg-[#F53B49] text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}>
             Контакты в Санкт-Петербурге
           </button>
         </div>
 
         {/* Company Store Section with Photo and Map */}
-        <div className="mb-12 mobile:mb-6">
-          <div className="bg-gray-50 rounded-lg flex h-[328px] overflow-hidden mobile:flex-col mobile:h-auto">
+        <div className="mb-12">
+          <div className="bg-gray-50 rounded-lg flex h-[328px] overflow-hidden">
             {/* Text Section - Left Third */}
-            <div className="flex-1 w-1/3 p-6 mobile:w-full mobile:p-4">
+            <div className="flex-1 w-1/3 p-6">
               {activeTab === 'moscow' ? <>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4 mobile:text-lg mobile:mb-3">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">
                     Шоу-рум WellFitness
                   </h2>
                   
-                  <div className="space-y-3 text-gray-700 mobile:space-y-2">
+                  <div className="space-y-3 text-gray-700">
                     <div className="flex items-start gap-2">
-                      <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-5 h-5 mt-0.5 flex-shrink-0 mobile:w-4 mobile:h-4" />
+                      <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-5 h-5 mt-0.5 flex-shrink-0" />
                       <div>
-                        <p className="font-medium mobile:text-sm">Адрес</p>
-                        <p className="text-sm mobile:text-xs">
+                        <p className="font-medium">Адрес</p>
+                        <p className="text-sm">
                           Москва, ТЦ Капитолий, Правобережная улица, 1Б
                         </p>
                       </div>
                     </div>
                     
                     <div className="flex items-center gap-2">
-                      <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-5 h-5 flex-shrink-0 mobile:w-4 mobile:h-4" />
+                      <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-5 h-5 flex-shrink-0" />
                       <div>
-                        <p className="font-medium mobile:text-sm">Телефон</p>
-                        <p className="text-sm mobile:text-xs">+7 (499) 677-56-32 доб. 337</p>
+                        <p className="font-medium">Телефон</p>
+                        <p className="text-sm">+7 (499) 677-56-32 доб. 337</p>
                       </div>
                     </div>
                     
                     <div className="flex items-center gap-2">
-                      <img src="/lovable-uploads/5303d3e6-d397-4aa6-af39-40d3dbe6d3c4.png" alt="Режим работы" className="w-5 h-5 flex-shrink-0 mobile:w-4 mobile:h-4" />
+                      <img src="/lovable-uploads/5303d3e6-d397-4aa6-af39-40d3dbe6d3c4.png" alt="Режим работы" className="w-5 h-5 flex-shrink-0" />
                       <div>
-                        <p className="font-medium mobile:text-sm">Режим работы</p>
-                        <p className="text-sm mobile:text-xs">10:00 - 22:00</p>
+                        <p className="font-medium">Режим работы</p>
+                        <p className="text-sm">10:00 - 22:00</p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex gap-3 mt-6 mobile:mt-4">
+                  <div className="flex gap-3 mt-6">
                     <CallRequestDialog>
-                      <button className="px-4 py-2 bg-[#F53B49] text-white text-sm rounded-md hover:bg-[#e63946] transition-colors mobile:px-3 mobile:py-2 mobile:text-xs">
+                      <button className="px-4 py-2 bg-[#F53B49] text-white text-sm rounded-md hover:bg-[#e63946] transition-colors">
                         Записаться на посещение
                       </button>
                     </CallRequestDialog>
                   </div>
                 </> : <>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4 mobile:text-lg mobile:mb-3">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">
                     Склад
                   </h2>
                   
-                  <div className="space-y-3 text-gray-700 mobile:space-y-2">
+                  <div className="space-y-3 text-gray-700">
                     <div className="flex items-start gap-2">
-                      <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-5 h-5 mt-0.5 flex-shrink-0 mobile:w-4 mobile:h-4" />
+                      <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-5 h-5 mt-0.5 flex-shrink-0" />
                       <div>
-                        <p className="font-medium mobile:text-sm">Адрес</p>
-                        <p className="text-sm mobile:text-xs">
+                        <p className="font-medium">Адрес</p>
+                        <p className="text-sm">
                           г.\u00A0Санкт-Петербург, Красногвардейский пер 23 лит Е,<br />
                           Территория завода "Ильич". Заезд с Вазаского переулка
                         </p>
@@ -125,10 +125,10 @@ const Contacts: React.FC = () => {
                     </div>
                     
                     <div className="flex items-center gap-2">
-                      <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-5 h-5 flex-shrink-0 mobile:w-4 mobile:h-4" />
+                      <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-5 h-5 flex-shrink-0" />
                       <div>
-                        <p className="font-medium mobile:text-sm">Телефон</p>
-                        <p className="text-sm mobile:text-xs">8 (800) 775-12-17</p>
+                        <p className="font-medium">Телефон</p>
+                        <p className="text-sm">8 (800) 775-12-17</p>
                       </div>
                     </div>
                   </div>
@@ -136,12 +136,12 @@ const Contacts: React.FC = () => {
             </div>
             
             {/* Photo Section - Middle Third */}
-            <div className="flex-1 w-1/3 h-full overflow-hidden mobile:w-full mobile:h-48 mobile:order-last">
+            <div className="flex-1 w-1/3 h-full overflow-hidden">
               <img src="/lovable-uploads/a75d40da-835e-454f-a1e4-62cb2a8a6d38.png" alt="Массажные кресла в шоуруме" className="w-full h-full object-cover" />
             </div>
             
             {/* Map Section - Right Third */}
-            <div className="flex-1 w-1/3 h-full mobile:hidden">
+            <div className="flex-1 w-1/3 h-full">
               <ShowroomMap coordinates={activeTab === 'spb' ? [30.324203737087338, 59.98157313429388] : undefined} isSpb={activeTab === 'spb'} />
             </div>
           </div>
@@ -149,27 +149,27 @@ const Contacts: React.FC = () => {
 
 
         {/* Office and Sales Departments - For both cities */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4 mobile:gap-3 mobile:mb-3">
-          <div className="bg-gray-50 rounded-lg p-6 mobile:p-4">
-            <h3 className="text-xl font-bold text-gray-900 mb-4 mobile:text-lg mobile:mb-3">Офис WellFitness</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+          <div className="bg-gray-50 rounded-lg p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Офис WellFitness</h3>
             
-            <div className="space-y-4 text-gray-700 mobile:space-y-3">
-              <div className="flex items-start gap-3 mobile:gap-2">
-                <img src="/lovable-uploads/31c0ee66-1daf-4513-8947-c2990045d4a6.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0 mobile:w-3 mobile:h-3" />
+            <div className="space-y-4 text-gray-700">
+              <div className="flex items-start gap-3">
+                <img src="/lovable-uploads/31c0ee66-1daf-4513-8947-c2990045d4a6.png" alt="Location" className="w-4 h-4 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1 mobile:text-xs">Адрес</p>
-                  <p className="text-sm mobile:text-xs">
+                  <p className="text-[16px] text-layout-grey-text mb-1">Адрес</p>
+                  <p className="text-sm">
                     Москва, ул. Маршала Прошлякова,<br />
                     д. 30, офис 407, БЦ «Зенит Плаза»
                   </p>
                 </div>
               </div>
               
-              <div className="flex items-start gap-3 mobile:gap-2">
-                <img src="/lovable-uploads/f90ab0e0-2a09-45ef-a7ac-3f95d97744c7.png" alt="Time" className="w-4 h-4 mt-1 flex-shrink-0 mobile:w-3 mobile:h-3" />
+              <div className="flex items-start gap-3">
+                <img src="/lovable-uploads/f90ab0e0-2a09-45ef-a7ac-3f95d97744c7.png" alt="Time" className="w-4 h-4 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1 mobile:text-xs">Режим работы</p>
-                  <p className="text-sm mobile:text-xs">09:30 – 17:30</p>
+                  <p className="text-[16px] text-layout-grey-text mb-1">Режим работы</p>
+                  <p className="text-sm">09:30 – 17:30</p>
                 </div>
               </div>
 
@@ -177,35 +177,35 @@ const Contacts: React.FC = () => {
               const address = "Москва, ул. Маршала Прошлякова, д. 30, офис 407, БЦ Зенит Плаза";
               const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
               window.open(googleMapsUrl, '_blank');
-            }} className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors mobile:text-xs mobile:py-2">
+            }} className="w-full py-2 border border-[#F53B49] text-[#F53B49] text-sm rounded-md hover:bg-[#F53B49]/5 transition-colors">
                 Как проехать
               </button>
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-lg p-6 mobile:p-4">
-            <h3 className="text-xl font-bold text-gray-900 mb-4 mobile:text-lg mobile:mb-3">Отдел продаж PRO</h3>
+          <div className="bg-gray-50 rounded-lg p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Отдел продаж PRO</h3>
             
-            <div className="space-y-4 text-gray-700 mobile:space-y-3">
-              <div className="flex items-start gap-3 mobile:gap-2">
-                <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0 mobile:w-3 mobile:h-3" />
+            <div className="space-y-4 text-gray-700">
+              <div className="flex items-start gap-3">
+                <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1 mobile:text-xs">Телефон</p>
-                  <p className="text-sm mobile:text-xs">{activeTab === 'spb' ? '88005553518' : '+7 (499) 677-56-32 доб. 5'}</p>
+                  <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
+                  <p className="text-sm">{activeTab === 'spb' ? '88005553518' : '+7 (499) 677-56-32 доб. 5'}</p>
                 </div>
               </div>
               
-              <div className="flex items-start gap-3 mobile:gap-2">
-                <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0 mobile:w-3 mobile:h-3" />
+              <div className="flex items-start gap-3">
+                <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1 mobile:text-xs">E-mail</p>
-                  <p className="text-sm mobile:text-xs">pro@wellfitness.ru</p>
-                   <p className="text-xs text-gray-500 mt-1 mobile:text-[10px]">
+                  <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
+                  <p className="text-sm">pro@wellfitness.ru</p>
+                   <p className="text-xs text-gray-500 mt-1">
                      для консультаций<br />
                      по профессиональному оборудованию и комплексным решениям
                    </p>
-                  <p className="text-sm mt-2 mobile:text-xs mobile:mt-1">zakaz@wellfitness.ru</p>
-                   <p className="text-xs text-gray-500 mt-1 mobile:text-[10px]">
+                  <p className="text-sm mt-2">zakaz@wellfitness.ru</p>
+                   <p className="text-xs text-gray-500 mt-1">
                      для приема дилерских заказов<br />
                      на оборудование, аксессуары, запчасти
                    </p>
@@ -214,30 +214,30 @@ const Contacts: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-lg p-6 mobile:p-4">
-            <h3 className="text-xl font-bold text-gray-900 mb-4 mobile:text-lg mobile:mb-3">Отдел продаж HOME</h3>
+          <div className="bg-gray-50 rounded-lg p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Отдел продаж HOME</h3>
             
-            <div className="space-y-4 text-gray-700 mobile:space-y-3">
-              <div className="flex items-start gap-3 mobile:gap-2">
-                <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0 mobile:w-3 mobile:h-3" />
+            <div className="space-y-4 text-gray-700">
+              <div className="flex items-start gap-3">
+                <img src="/lovable-uploads/82bf3bfd-4f25-47ab-bbce-696bba52d3bb.png" alt="Phone" className="w-4 h-4 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1 mobile:text-xs">Телефон</p>
-                   <p className="text-sm mobile:text-xs">{activeTab === 'spb' ? '88003332595' : '+7 (499) 677-56-32 доб. 1-1'}</p>
-                   {activeTab === 'moscow' && <p className="text-sm mobile:text-xs">+7 (499) 677-56-32 доб. 1-2</p>}
+                  <p className="text-[16px] text-layout-grey-text mb-1">Телефон</p>
+                   <p className="text-sm">{activeTab === 'spb' ? '88003332595' : '+7 (499) 677-56-32 доб. 1-1'}</p>
+                   {activeTab === 'moscow' && <p className="text-sm">+7 (499) 677-56-32 доб. 1-2</p>}
                 </div>
               </div>
               
-              <div className="flex items-start gap-3 mobile:gap-2">
-                <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0 mobile:w-3 mobile:h-3" />
+              <div className="flex items-start gap-3">
+                <img src="/lovable-uploads/dd9c0181-26e7-4b1e-a41c-7ef47e57e5a6.png" alt="Email" className="w-4 h-4 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-[16px] text-layout-grey-text mb-1 mobile:text-xs">E-mail</p>
-                  <p className="text-sm mobile:text-xs">info@wellfitness.ru</p>
-                   <p className="text-xs text-gray-500 mt-1 mobile:text-[10px]">
+                  <p className="text-[16px] text-layout-grey-text mb-1">E-mail</p>
+                  <p className="text-sm">info@wellfitness.ru</p>
+                   <p className="text-xs text-gray-500 mt-1">
                      по общим вопросам, вопросам сотрудничества, жалобам<br />
                      и предложениям
                    </p>
-                  <p className="text-sm mt-2 mobile:text-xs mobile:mt-1">agent@wellfitness.ru</p>
-                  <p className="text-xs text-gray-500 mt-1 mobile:text-[10px]">
+                  <p className="text-sm mt-2">agent@wellfitness.ru</p>
+                  <p className="text-xs text-gray-500 mt-1">
                     для приема агентских заказов
                   </p>
                 </div>

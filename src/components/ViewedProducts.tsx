@@ -111,7 +111,7 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-[#262631] font-benzin-semibold">Загрузка...</h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-[10px]">
+          <div className="grid grid-cols-5 gap-[10px]">
             {Array.from({ length: 5 }).map((_, index) => (
               <div key={index} className="animate-pulse">
                 <div className="bg-gray-200 h-48 rounded-lg mb-4"></div>
@@ -139,7 +139,7 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
           </h2>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-[10px]">
+        <div className="grid grid-cols-5 gap-[10px]">
           {displayProducts.map((product) => (
             <ProductCard
               key={product.id}
@@ -155,15 +155,6 @@ const ViewedProducts: React.FC<ViewedProductsProps> = ({ currentProductId, curre
               }}
             />
           ))}
-          
-          {/* Заполнители для планшетов, чтобы выравнивание было как для 4 товаров */}
-          {displayProducts.length < 4 && (
-            <>
-              {Array.from({ length: 4 - displayProducts.length }).map((_, index) => (
-                <div key={`placeholder-${index}`} className="hidden md:block lg:hidden"></div>
-              ))}
-            </>
-          )}
         </div>
       </div>
     </section>

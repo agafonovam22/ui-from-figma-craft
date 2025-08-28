@@ -192,18 +192,18 @@ const WhereToBuy: React.FC = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8 mobile:px-4 mobile:py-4">
+      <main className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
         {/* Breadcrumbs */}
-        <Breadcrumb className="mb-6 mobile:mb-4">
+        <Breadcrumb className="mb-6">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/" className="text-gray-500 hover:text-gray-700 mobile:text-xs">
+              <BreadcrumbLink href="/" className="text-gray-500 hover:text-gray-700">
                 Главная
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="text-gray-900 font-medium mobile:text-xs">
+              <BreadcrumbPage className="text-gray-900 font-medium">
                 Где купить
               </BreadcrumbPage>
             </BreadcrumbItem>
@@ -211,26 +211,26 @@ const WhereToBuy: React.FC = () => {
         </Breadcrumb>
 
         {/* Page Title */}
-        <h1 className="font-heading text-[48px] text-layout-dark-grey mb-10 leading-none md:text-[36px] md:mb-6 mobile:text-[24px] mobile:mb-4">
+        <h1 className="font-heading text-[48px] text-layout-dark-grey mb-10 leading-none">
           Где купить
         </h1>
 
         {/* City Selector and Tabs */}
-        <div className="flex flex-wrap items-center justify-between gap-4 h-[52px] mb-10 md:flex-col md:items-start md:h-auto md:mb-6 md:gap-4 mobile:flex-col mobile:items-stretch mobile:gap-3 mobile:mb-4">
+        <div className="flex flex-wrap items-center justify-between gap-4 h-[52px] mb-10">
           <select 
             value={selectedCity} 
             onChange={(e) => setSelectedCity(e.target.value)}
-            className="px-4 h-12 border border-[#CECFD7] rounded-md bg-white text-[12px] text-gray-700 md:w-full mobile:h-10"
+            className="px-4 h-12 border border-[#CECFD7] rounded-md bg-white text-[12px] text-gray-700"
           >
             <option value="Москва">Москва</option>
             <option value="Санкт-Петербург">Санкт-Петербург</option>
             <option value="Екатеринбург">Екатеринбург</option>
           </select>
 
-          <div className="flex gap-2 md:flex-wrap md:w-full mobile:flex-col mobile:gap-2">
+          <div className="flex gap-2">
             <button
               onClick={() => setActiveTab('stores')}
-              className={`px-6 h-12 rounded-md text-[12px] font-medium transition-colors md:flex-1 md:px-3 mobile:h-10 mobile:px-4 ${
+              className={`px-6 h-12 rounded-md text-[12px] font-medium transition-colors ${
                 activeTab === 'stores'
                   ? 'bg-[#F53B49] text-white'
                   : 'bg-white text-gray-700 border border-[#CECFD7] hover:bg-gray-50'
@@ -240,7 +240,7 @@ const WhereToBuy: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveTab('partners')}
-              className={`px-6 h-12 rounded-md text-[12px] font-medium transition-colors md:flex-1 md:px-3 mobile:h-10 mobile:px-4 ${
+              className={`px-6 h-12 rounded-md text-[12px] font-medium transition-colors ${
                 activeTab === 'partners'
                   ? 'bg-[#F53B49] text-white'
                   : 'bg-white text-gray-700 border border-[#CECFD7] hover:bg-gray-50'
@@ -250,7 +250,7 @@ const WhereToBuy: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveTab('online')}
-              className={`px-6 h-12 rounded-md text-[12px] font-medium transition-colors md:flex-1 md:px-3 mobile:h-10 mobile:px-4 ${
+              className={`px-6 h-12 rounded-md text-[12px] font-medium transition-colors ${
                 activeTab === 'online'
                   ? 'bg-[#F53B49] text-white'
                   : 'bg-white text-gray-700 border border-[#CECFD7] hover:bg-gray-50'
@@ -260,12 +260,12 @@ const WhereToBuy: React.FC = () => {
             </button>
           </div>
 
-          <div className="flex items-center gap-2 md:w-full md:justify-end mobile:justify-between">
-            <span className="text-gray-600 text-[12px] mobile:text-[10px]">Сортировать:</span>
+          <div className="flex items-center gap-2">
+            <span className="text-gray-600 text-[12px]">Сортировать:</span>
             <select 
               value={sortBy} 
               onChange={(e) => setSortBy(e.target.value)}
-              className="px-3 h-12 border border-[#CECFD7] rounded-md bg-white text-[12px] text-gray-700 mobile:h-10 mobile:text-[10px]"
+              className="px-3 h-12 border border-[#CECFD7] rounded-md bg-white text-[12px] text-gray-700"
             >
               <option value="list">Список</option>
               <option value="map">Карта</option>
@@ -274,20 +274,20 @@ const WhereToBuy: React.FC = () => {
         </div>
 
         {/* Intro Text */}
-        <div className="mb-8 md:mb-6 mobile:mb-4">
-          <p className="text-gray-700 text-lg leading-relaxed text-left w-full mb-2 md:text-base mobile:text-sm mobile:mb-1">
+        <div className="mb-8">
+          <p className="text-gray-700 text-lg leading-relaxed text-left w-full mb-2">
             Наши бренды представлены у партнеров и в интернет-магазинах, а также в нашем шоу-руме.
           </p>
-          <p className="text-gray-700 text-lg leading-relaxed text-left w-full md:text-base mobile:text-sm">
+          <p className="text-gray-700 text-lg leading-relaxed text-left w-full">
             Приходите, тестируйте и убедитесь: только оригиналы, высочайшее качество!
           </p>
         </div>
 
         {/* Show on Map Toggle */}
-        <div className="flex justify-end mb-6 md:justify-start mobile:justify-start mobile:mb-4">
-          <div className="flex items-center gap-3 mobile:gap-2">
-            <MapIcon className="w-5 h-5 text-gray-600 mobile:w-4 mobile:h-4" />
-            <span className="text-gray-700 font-medium text-[14px] mobile:text-xs">Показать на карте</span>
+        <div className="flex justify-end mb-6">
+          <div className="flex items-center gap-3">
+            <MapIcon className="w-5 h-5 text-gray-600" />
+            <span className="text-gray-700 font-medium text-[14px]">Показать на карте</span>
             <Switch
               checked={showMap}
               onCheckedChange={setShowMap}
@@ -298,8 +298,8 @@ const WhereToBuy: React.FC = () => {
 
         {/* Filter Checkboxes - показываются только когда включена карта */}
         {showMap && (
-          <div className="flex justify-end mb-6 md:justify-start mobile:justify-start mobile:mb-4">
-            <div className="flex items-center gap-6 md:flex-col md:items-start md:gap-3 mobile:flex-col mobile:items-start mobile:gap-2">
+          <div className="flex justify-end mb-6">
+            <div className="flex items-center gap-6">
               <div className="flex items-center space-x-2">
                 <Checkbox
                   id="partners"
@@ -307,7 +307,7 @@ const WhereToBuy: React.FC = () => {
                   onCheckedChange={(checked) => setShowPartners(checked === true)}
                   className="data-[state=checked]:bg-[#F53B49] data-[state=checked]:border-[#F53B49]"
                 />
-                <label htmlFor="partners" className="text-gray-700 font-medium text-[14px] cursor-pointer mobile:text-xs">
+                <label htmlFor="partners" className="text-gray-700 font-medium text-[14px] cursor-pointer">
                   Магазины партнеров
                 </label>
               </div>
@@ -318,7 +318,7 @@ const WhereToBuy: React.FC = () => {
                   onCheckedChange={(checked) => setShowWellFitness(checked === true)}
                   className="data-[state=checked]:bg-[#F53B49] data-[state=checked]:border-[#F53B49]"
                 />
-                <label htmlFor="wellfitness" className="text-gray-700 font-medium text-[14px] cursor-pointer mobile:text-xs">
+                <label htmlFor="wellfitness" className="text-gray-700 font-medium text-[14px] cursor-pointer">
                   Магазины WellFitness
                 </label>
               </div>
@@ -327,49 +327,49 @@ const WhereToBuy: React.FC = () => {
         )}
 
         {/* Company Store Section or Map */}
-        <div className="mb-12 md:mb-8 mobile:mb-6">
+        <div className="mb-12">
           {showMap || sortBy === 'map' ? (
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 md:text-xl md:mb-4 mobile:text-lg mobile:mb-3">Магазины на карте</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Магазины на карте</h2>
               <Map stores={getFilteredStores()} />
             </div>
           ) : (
-            <div className="bg-gray-50 rounded-lg flex h-[328px] overflow-hidden md:flex-col md:h-auto mobile:flex-col mobile:h-auto">
-              <div className="flex-1 w-1/3 p-6 md:w-full md:p-4 mobile:w-full mobile:p-3">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4 md:text-xl md:mb-3 mobile:text-lg mobile:mb-2">
+            <div className="bg-gray-50 rounded-lg flex h-[328px] overflow-hidden">
+              <div className="flex-1 w-1/3 p-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
                   Шоу-рум WellFitness
                 </h2>
                 
-                <div className="space-y-3 text-gray-700 md:space-y-2 mobile:space-y-2">
+                <div className="space-y-3 text-gray-700">
                   <div className="flex items-start gap-2">
-                    <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-5 h-5 mt-0.5 flex-shrink-0 mobile:w-4 mobile:h-4" />
+                    <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-5 h-5 mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="font-medium mobile:text-sm">Адрес</p>
-                      <p className="text-sm md:text-xs mobile:text-xs">
+                      <p className="font-medium">Адрес</p>
+                      <p className="text-sm">
                         Москва, ТЦ Капитолий, Правобережная улица, 1Б
                       </p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-2">
-                    <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-5 h-5 flex-shrink-0 mobile:w-4 mobile:h-4" />
+                    <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-5 h-5 flex-shrink-0" />
                     <div>
-                      <p className="font-medium mobile:text-sm">Телефон</p>
-                      <p className="text-sm md:text-xs mobile:text-xs">+7 (499) 677-56-32 доб. 337</p>
+                      <p className="font-medium">Телефон</p>
+                      <p className="text-sm">+7 (499) 677-56-32 доб. 337</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-2">
-                    <img src="/lovable-uploads/5303d3e6-d397-4aa6-af39-40d3dbe6d3c4.png" alt="Режим работы" className="w-5 h-5 flex-shrink-0 mobile:w-4 mobile:h-4" />
+                    <img src="/lovable-uploads/5303d3e6-d397-4aa6-af39-40d3dbe6d3c4.png" alt="Режим работы" className="w-5 h-5 flex-shrink-0" />
                     <div>
-                      <p className="font-medium mobile:text-sm">Режим работы</p>
-                      <p className="text-sm md:text-xs mobile:text-xs">10:00 - 22:00</p>
+                      <p className="font-medium">Режим работы</p>
+                      <p className="text-sm">10:00 - 22:00</p>
                     </div>
                   </div>
                 </div>
               </div>
               
-              <div className="w-2/3 h-full md:w-full md:h-48 mobile:w-full mobile:h-32">
+              <div className="w-2/3 h-full">
                 <img 
                   src="/lovable-uploads/219f6237-fb29-40ad-9b23-f60d4be8082c.png"
                   alt="Фирменный магазин Well Fitness"
@@ -382,19 +382,19 @@ const WhereToBuy: React.FC = () => {
 
         {/* Content based on active tab */}
         {activeTab === 'partners' && (
-          <section className="mb-12 md:mb-8 mobile:mb-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 md:text-xl md:mb-4 mobile:text-lg mobile:mb-3"><span style={{ color: '#778093' }}>Магазины</span> партнеров</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 mobile:grid-cols-1 mobile:gap-3">
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6"><span style={{ color: '#778093' }}>Магазины</span> партнеров</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {partnerStores.map((store, index) => (
-                <div key={index} className="bg-gray-50 rounded-lg p-6 md:p-4 mobile:p-3">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 md:text-lg md:mb-3 mobile:text-base mobile:mb-2">{store.name}</h3>
+                <div key={index} className="bg-gray-50 rounded-lg p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{store.name}</h3>
                   
-                     <div className="space-y-3 text-gray-700 md:space-y-2 mobile:space-y-2">
+                     <div className="space-y-3 text-gray-700">
                       <div className="flex items-start gap-2">
-                        <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-4 h-4 mt-1 flex-shrink-0 mobile:w-3 mobile:h-3" />
+                        <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-4 h-4 mt-1 flex-shrink-0" />
                        <div>
-                         <p className="font-medium text-sm md:text-xs mobile:text-xs">Адрес</p>
-                         <div className="text-sm md:text-xs mobile:text-xs">
+                         <p className="font-medium text-sm">Адрес</p>
+                         <div className="text-sm">
                            {formatAddress(store.address).map((line, idx) => (
                              <div key={idx}>{line}</div>
                            ))}
@@ -403,10 +403,10 @@ const WhereToBuy: React.FC = () => {
                      </div>
                     
                      <div className="flex items-center gap-2">
-                       <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-4 h-4 flex-shrink-0 mobile:w-3 mobile:h-3" />
+                       <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-4 h-4 flex-shrink-0" />
                        <div>
-                         <p className="font-medium text-sm md:text-xs mobile:text-xs">Телефон</p>
-                         <div className="text-sm md:text-xs mobile:text-xs">
+                         <p className="font-medium text-sm">Телефон</p>
+                         <div className="text-sm">
                            {store.phone.includes(',') ? (
                              store.phone.split(',').map((phone, idx) => (
                                <div key={idx}>{phone.trim()}</div>
@@ -419,10 +419,10 @@ const WhereToBuy: React.FC = () => {
                     </div>
                     
                     <div className="flex items-center gap-2">
-                      <Globe className="w-4 h-4 text-gray-500 flex-shrink-0 mobile:w-3 mobile:h-3" />
+                      <Globe className="w-4 h-4 text-gray-500 flex-shrink-0" />
                       <div>
-                        <p className="font-medium text-sm md:text-xs mobile:text-xs">Сайт</p>
-                        <p className="text-sm md:text-xs mobile:text-xs">{store.hours}</p>
+                        <p className="font-medium text-sm">Сайт</p>
+                        <p className="text-sm">{store.hours}</p>
                       </div>
                     </div>
                   </div>
@@ -433,16 +433,16 @@ const WhereToBuy: React.FC = () => {
         )}
 
         {activeTab === 'online' && (
-          <section className="mb-12 md:mb-8 mobile:mb-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 md:text-xl md:mb-4 mobile:text-lg mobile:mb-3">Интернет-магазины</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8 md:grid-cols-2 md:gap-3 md:mb-6 mobile:grid-cols-1 mobile:gap-2 mobile:mb-4">
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Интернет-магазины</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {onlineStores.map((store, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4 text-center md:p-3 mobile:p-3">
+                  <div key={index} className="bg-gray-50 rounded-lg p-4 text-center">
                     <a 
                       href={`https://${store}`} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-gray-700 hover:text-[#F53B49] transition-colors font-heading text-[16px] md:text-sm mobile:text-sm"
+                      className="text-gray-700 hover:text-[#F53B49] transition-colors font-heading text-[16px]"
                     >
                       {store}
                     </a>
@@ -456,19 +456,19 @@ const WhereToBuy: React.FC = () => {
         {activeTab === 'stores' && (
           <>
             {/* Partner Stores Section */}
-            <section className="mb-12 md:mb-8 mobile:mb-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 md:text-xl md:mb-4 mobile:text-lg mobile:mb-3"><span style={{ color: '#778093' }}>Магазины</span> партнеров</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 mobile:grid-cols-1 mobile:gap-3">
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6"><span style={{ color: '#778093' }}>Магазины</span> партнеров</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {partnerStores.map((store, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-6 md:p-4 mobile:p-3">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 md:text-lg md:mb-3 mobile:text-base mobile:mb-2">{store.name}</h3>
+                  <div key={index} className="bg-gray-50 rounded-lg p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">{store.name}</h3>
                     
-                     <div className="space-y-3 text-gray-700 md:space-y-2 mobile:space-y-2">
+                     <div className="space-y-3 text-gray-700">
                         <div className="flex items-start gap-2">
-                          <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-4 h-4 mt-1 flex-shrink-0 mobile:w-3 mobile:h-3" />
+                          <img src="/lovable-uploads/f0b02b09-ceb0-462c-a71b-75c67b2c6288.png" alt="Адрес" className="w-4 h-4 mt-1 flex-shrink-0" />
                          <div>
-                           <p className="font-medium text-sm md:text-xs mobile:text-xs">Адрес</p>
-                           <div className="text-sm md:text-xs mobile:text-xs">
+                           <p className="font-medium text-sm">Адрес</p>
+                           <div className="text-sm">
                              {formatAddress(store.address).map((line, idx) => (
                                <div key={idx}>{line}</div>
                              ))}
@@ -477,10 +477,10 @@ const WhereToBuy: React.FC = () => {
                        </div>
                       
                        <div className="flex items-center gap-2">
-                         <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-4 h-4 flex-shrink-0 mobile:w-3 mobile:h-3" />
+                         <img src="/lovable-uploads/de289cce-f010-4b2d-b0a3-3ffc885c1664.png" alt="Телефон" className="w-4 h-4 flex-shrink-0" />
                          <div>
-                           <p className="font-medium text-sm md:text-xs mobile:text-xs">Телефон</p>
-                           <div className="text-sm md:text-xs mobile:text-xs">
+                           <p className="font-medium text-sm">Телефон</p>
+                           <div className="text-sm">
                              {store.phone.includes(',') ? (
                                store.phone.split(',').map((phone, idx) => (
                                  <div key={idx}>{phone.trim()}</div>
@@ -493,10 +493,10 @@ const WhereToBuy: React.FC = () => {
                       </div>
                       
                       <div className="flex items-center gap-2">
-                        <Globe className="w-4 h-4 text-gray-500 flex-shrink-0 mobile:w-3 mobile:h-3" />
+                        <Globe className="w-4 h-4 text-gray-500 flex-shrink-0" />
                         <div>
-                          <p className="font-medium text-sm md:text-xs mobile:text-xs">Сайт</p>
-                          <p className="text-sm md:text-xs mobile:text-xs">{store.hours}</p>
+                          <p className="font-medium text-sm">Сайт</p>
+                          <p className="text-sm">{store.hours}</p>
                         </div>
                       </div>
                     </div>
@@ -506,16 +506,16 @@ const WhereToBuy: React.FC = () => {
             </section>
 
             {/* Online Stores Section */}
-            <section className="mb-12 md:mb-8 mobile:mb-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 md:text-xl md:mb-4 mobile:text-lg mobile:mb-3">Интернет-магазины</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8 md:grid-cols-2 md:gap-3 md:mb-6 mobile:grid-cols-1 mobile:gap-2 mobile:mb-4">
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Интернет-магазины</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 {onlineStores.map((store, index) => (
-                    <div key={index} className="bg-gray-50 rounded-lg p-4 text-center md:p-3 mobile:p-3">
+                    <div key={index} className="bg-gray-50 rounded-lg p-4 text-center">
                       <a 
                         href={`https://${store}`} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-gray-700 hover:text-[#F53B49] transition-colors font-heading text-[16px] md:text-sm mobile:text-sm"
+                        className="text-gray-700 hover:text-[#F53B49] transition-colors font-heading text-[16px]"
                       >
                         {store}
                       </a>

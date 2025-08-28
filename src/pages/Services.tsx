@@ -200,12 +200,12 @@ const Services: React.FC = () => {
           </h1>
 
           {/* Tabs */}
-          <div className="flex gap-2 mb-8 md:flex-wrap md:gap-2">
+          <div className="flex gap-2 mb-8">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-6 h-[52px] rounded-lg font-medium transition-colors border md:px-4 md:h-[44px] md:text-sm ${
+                className={`px-6 h-[52px] rounded-lg font-medium transition-colors border ${
                   activeTab === tab.id
                     ? 'bg-[#F53B49] text-white border-[#F53B49]'
                     : 'bg-white text-gray-600 hover:bg-gray-50 border-gray-300'
@@ -227,7 +227,7 @@ const Services: React.FC = () => {
                   Особенно важно указать серийный номер оборудования: это поможет нам оперативно обработать вашу заявку. Если номер найти не удалось, просто оставьте соответствующее поле пустым — мы обязательно вам поможем!
                 </p>
                 
-                <div className="mt-[195px] md:mt-8">
+                <div className="mt-[195px]">
                   <img 
                     src="/lovable-uploads/4d3a1c8c-b3af-493d-8190-86c1db302a56.png"
                     alt="Сервисная команда WellFitness"
@@ -373,45 +373,30 @@ const Services: React.FC = () => {
           {activeTab === 'fitness-clubs' && (
             <div className="space-y-12">
               {/* First section with image and text */}
-              <div className="flex gap-8 items-start md:flex-col lg:flex-row">
-                {/* Title for tablets only */}
-                <h2 className="hidden md:block lg:hidden text-3xl font-bold text-gray-900 mb-6 md:text-2xl md:mb-4">
-                  <span style={{color: '#778093'}}>Обслуживание</span> фитнес-клубов
-                </h2>
-                
-                <div className="flex-1 md:flex-none md:w-full lg:flex-1">
+              <div className="flex gap-8 items-start">
+                <div className="flex-1">
                   <img 
                     src="/lovable-uploads/fcb1f59e-5de5-4faa-b202-809020318b96.png"
                     alt="Техник обслуживает тренажер"
-                    className="w-full h-[295px] object-cover rounded-lg md:h-[200px]"
+                    className="w-full h-[295px] object-cover rounded-lg"
                   />
                 </div>
-                <div className="flex-1 md:flex-none md:w-full lg:flex-1">
-                  {/* Title for desktop only */}
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6 md:hidden lg:block">
+                <div className="flex-1">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
                     <span style={{color: '#778093'}}>Обслуживание</span> фитнес-клубов
                   </h2>
                   {/* First text container */}
-                  <div className="bg-gray-50 p-6 rounded-lg mb-6 md:p-4 md:mb-4">
-                    <p className="text-gray-600 font-manrope md:text-sm">
+                  <div className="bg-gray-50 p-6 rounded-lg mb-6">
+                    <p className="text-gray-600 font-manrope">
                       Для владельцев фитнес-клубов профессиональное обслуживание оборудования – это не просто формальность, а разумная инвестиция в долгосрочную экономию. В отличие от начинающих предпринимателей, крупные сети и опытные клубы хорошо знают: регулярный сервис сокращает затраты на дорогостоящий ремонт и продлевает срок службы тренажеров.
                     </p>
                   </div>
                   
                   {/* Second text container */}
-                  <div className="bg-gray-50 p-6 rounded-lg md:p-4">
-                    <p className="text-gray-600 font-manrope md:text-sm">
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <p className="text-gray-600 font-manrope">
                       Как и в автомобильной индустрии, гарантийные обязательства в фитнес-сфере строго соблюдаются ведущими производителями. Однако ответственность за правильную эксплуатацию и своевременное техническое обслуживание лежит на владельце оборудования.
                     </p>
-                  </div>
-                  
-                  {/* Image for tablets only */}
-                  <div className="mt-6 md:block lg:hidden">
-                    <img 
-                      src="/lovable-uploads/6f3410eb-d6c6-4add-a8a2-131a6bf52736.png"
-                      alt="Техник обслуживает тренажер"
-                      className="w-full h-[295px] object-cover rounded-lg"
-                    />
                   </div>
                 </div>
               </div>
@@ -429,8 +414,7 @@ const Services: React.FC = () => {
                     Доверьте технику профессионалам — и сосредоточьтесь на развитии бизнеса!
                   </p>
                 </div>
-                {/* Image for desktop only */}
-                <div className="flex-1 hidden lg:block">
+                <div className="flex-1">
                   <img 
                     src="/lovable-uploads/6f3410eb-d6c6-4add-a8a2-131a6bf52736.png"
                     alt="Техник обслуживает тренажер"
