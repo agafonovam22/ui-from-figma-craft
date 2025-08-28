@@ -172,15 +172,15 @@ const ProductCatalog: React.FC = () => {
 
   return (
     <section className="w-full py-6 bg-white">
-      <div className="max-w-[1800px] mx-auto px-[30px]">
-        <div className="flex items-center justify-between mb-12">
-          <h2 className="text-2xl font-bold text-[#262631]">
+      <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[30px]">
+        <div className="flex items-center justify-between mb-12 md:mb-8 lg:mb-12">
+          <h2 className="text-2xl md:text-xl lg:text-2xl font-bold text-[#262631]">
             Каталог продукции
           </h2>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 md:gap-3 lg:gap-4">
             <button
               onClick={() => setActiveFilter('home')}
-              className={`px-6 py-3 rounded-lg font-medium transition-colors ${
+              className={`px-6 md:px-4 lg:px-6 py-3 md:py-2 lg:py-3 rounded-lg font-medium md:text-sm lg:text-base transition-colors ${
                 activeFilter === 'home'
                   ? 'bg-[#F53B49] text-white'
                   : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
@@ -190,7 +190,7 @@ const ProductCatalog: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveFilter('fitness')}
-              className={`px-6 py-3 rounded-lg font-medium transition-colors ${
+              className={`px-6 md:px-4 lg:px-6 py-3 md:py-2 lg:py-3 rounded-lg font-medium md:text-sm lg:text-base transition-colors ${
                 activeFilter === 'fitness'
                   ? 'bg-[#F53B49] text-white'
                   : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
@@ -201,38 +201,38 @@ const ProductCatalog: React.FC = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-[10px] md:gap-[8px] lg:gap-[10px] mb-6 md:mb-4 lg:mb-6">
           {currentProducts.slice(0, 6).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
           ))}
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-[10px] md:gap-[8px] lg:gap-[10px]">
           {currentProducts.slice(6, 10).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
           ))}
-          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px]">
+          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-2 h-[300px] md:h-[250px] lg:h-[300px]">
             <img 
               src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
               alt="Перейти в каталог"
               className="w-full h-full object-cover object-right"
             />
-            <div className="absolute top-4 left-4 text-white font-benzin text-lg font-normal">
+            <div className="absolute top-4 md:top-3 lg:top-4 left-4 md:left-3 lg:left-4 text-white font-benzin text-lg md:text-base lg:text-lg font-normal">
               {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
             </div>
             <Link 
               to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
-              className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2"
+              className="absolute bottom-4 md:bottom-3 lg:bottom-4 left-4 md:left-3 lg:left-4 bg-white text-[#262631] px-4 md:px-3 lg:px-4 py-2 md:py-1.5 lg:py-2 rounded-lg font-benzin text-sm md:text-xs lg:text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2 md:gap-1.5 lg:gap-2"
             >
-              Перейти в каталог <ArrowRight className="w-4 h-4" />
+              Перейти в каталог <ArrowRight className="w-4 h-4 md:w-3 md:h-3 lg:w-4 lg:h-4" />
             </Link>
           </div>
         </div>
         
-        <div className="mt-8 flex justify-start">
+        <div className="mt-8 md:mt-6 lg:mt-8 flex justify-start">
           <Link 
             to={activeFilter === 'home' ? '/home-fitness-equipment' : '/gym-equipment'}
-            className="border-2 border-[#F53B49] text-[#F53B49] px-8 py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors font-benzin font-normal"
+            className="border-2 border-[#F53B49] text-[#F53B49] px-8 md:px-6 lg:px-8 py-3 md:py-2 lg:py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors font-benzin font-normal md:text-sm lg:text-base"
           >
             Показать все
           </Link>

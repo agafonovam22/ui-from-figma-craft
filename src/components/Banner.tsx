@@ -23,8 +23,8 @@ const Banner: React.FC = () => {
 
   return (
     <section className="w-full">
-      <div className="max-w-[1800px] mx-auto px-[30px]">
-        <div className="overflow-hidden relative rounded-lg" style={{ height: '400px' }}>
+      <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[30px]">
+        <div className="overflow-hidden relative rounded-lg h-[400px] md:h-[300px] lg:h-[400px]">
           {/* Изображение на всю ширину */}
           <div className="relative h-full">
             <img 
@@ -35,14 +35,14 @@ const Banner: React.FC = () => {
           </div>
           
           {/* Навигационные точки */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          <div className="absolute bottom-8 md:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
             {images.map((_, index) => (
               <div
                 key={index}
                 className={`h-1 rounded cursor-pointer transition-all duration-300 ${
                   index === currentIndex 
-                    ? 'w-8 bg-[#F53B49]' 
-                    : 'w-2 bg-gray-300 hover:bg-gray-400'
+                    ? 'w-8 md:w-6 lg:w-8 bg-[#F53B49]' 
+                    : 'w-2 md:w-1.5 lg:w-2 bg-gray-300 hover:bg-gray-400'
                 }`}
                 onClick={() => goToSlide(index)}
               />
@@ -52,7 +52,7 @@ const Banner: React.FC = () => {
           {/* Стрелки навигации */}
           <button 
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors z-20"
+            className="absolute right-4 md:right-3 lg:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors z-20"
           >
             <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 1L5 5L1 9" stroke="#262631" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -61,7 +61,7 @@ const Banner: React.FC = () => {
           
           <button 
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors z-20"
+            className="absolute left-4 md:left-3 lg:left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors z-20"
           >
             <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 9L1 5L5 1" stroke="#262631" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

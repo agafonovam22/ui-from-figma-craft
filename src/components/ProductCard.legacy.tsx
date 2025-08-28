@@ -48,7 +48,7 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
   if (variant === 'grid') {
     // Simplified version for ProductCatalog
     return (
-      <div className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-[300px]">
+      <div className="relative group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-[300px] md:h-[200px] lg:h-[300px]">
         <img 
           src={optimizeImageUrl(product.image, 320, 240)} 
           alt={product.name || "Категория товаров"}
@@ -61,11 +61,11 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
         />
         <Link 
           to={linkTo}
-          className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center justify-center"
+          className="absolute bottom-4 md:bottom-3 lg:bottom-4 left-4 md:left-3 lg:left-4 bg-white text-[#262631] px-4 md:px-3 lg:px-4 py-2 md:py-1.5 lg:py-2 rounded-lg font-benzin text-sm md:text-xs lg:text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center justify-center"
         >
           <span className="group-hover:hidden">{product.price || 'от 29 990₽'}</span>
-          <span className="hidden group-hover:flex items-center gap-2">
-            Перейти <ArrowRight className="w-4 h-4" />
+          <span className="hidden group-hover:flex items-center gap-2 md:gap-1.5 lg:gap-2">
+            Перейти <ArrowRight className="w-4 h-4 md:w-3 md:h-3 lg:w-4 lg:h-4" />
           </span>
         </Link>
       </div>
@@ -75,12 +75,12 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
   // Full catalog version
   return (
     <Link to={`/product/${product.id}`} className="block">
-      <div className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer">
-      <div className="relative mb-4">
+      <div className="bg-white border border-gray-200 rounded-lg p-4 md:p-3 lg:p-4 hover:shadow-lg transition-shadow cursor-pointer">
+      <div className="relative mb-4 md:mb-3 lg:mb-4">
         <img 
           src={optimizeImageUrl(product.image, 280, 224)} 
           alt={product.name || "Товар"}
-          className="w-full h-56 object-contain bg-gray-50 rounded-lg hover:scale-105 transition-transform duration-300"
+          className="w-full h-56 md:h-40 lg:h-56 object-contain bg-gray-50 rounded-lg hover:scale-105 transition-transform duration-300"
           loading="lazy"
           decoding="async"
           onError={(e) => {
@@ -130,7 +130,7 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
 
       <div className="space-y-2">
         {product.name && (
-        <h3 className="text-xs font-medium text-[#262631] line-clamp-2">
+        <h3 className="text-xs md:text-[10px] lg:text-xs font-medium text-[#262631] line-clamp-2">
           {product.name}
         </h3>
         )}
@@ -162,24 +162,24 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
         </div>
 
         {product.price ? (
-          <div className="text-sm font-bold text-[#262631]">
+          <div className="text-sm md:text-xs lg:text-sm font-bold text-[#262631]">
             {product.price}
           </div>
         ) : (
-          <div className="text-xs text-gray-500">Цена по запросу</div>
+          <div className="text-xs md:text-[10px] lg:text-xs text-gray-500">Цена по запросу</div>
         )}
 
         <div className="flex gap-2">
           {product.isAvailable ? (
             <Button 
               size="sm" 
-              className="flex-1 bg-[#F53B49] hover:bg-[#e63946] text-white text-xs py-1"
+              className="flex-1 bg-[#F53B49] hover:bg-[#e63946] text-white text-xs md:text-[10px] lg:text-xs py-1 md:py-0.5 lg:py-1"
               onClick={handleBuyClick}
             >
               Купить
             </Button>
           ) : (
-            <Button size="sm" variant="outline" className="flex-1 text-xs py-1">
+            <Button size="sm" variant="outline" className="flex-1 text-xs md:text-[10px] lg:text-xs py-1 md:py-0.5 lg:py-1">
               Запросить цену
             </Button>
           )}

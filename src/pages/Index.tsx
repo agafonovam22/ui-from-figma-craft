@@ -32,7 +32,7 @@ const Index: React.FC = () => {
     <main className="min-h-screen bg-white">
       <Header />
       <div className="w-full">
-        <div className="max-w-[1800px] mx-auto flex flex-col gap-6 pt-6 px-[30px]">
+        <div className="max-w-[1800px] mx-auto flex flex-col gap-6 md:gap-4 lg:gap-6 pt-6 md:pt-4 lg:pt-6 px-[30px] md:px-[20px] lg:px-[30px]">
           <Banner />
           <ProductCatalog />
           <NewProducts />

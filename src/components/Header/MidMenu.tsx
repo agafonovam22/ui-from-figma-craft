@@ -23,7 +23,7 @@ const Logo: React.FC = () => (
 const CatalogButton: React.FC = () => (
   <Link
     to="/catalog"
-    className="flex justify-center items-center gap-2 bg-[#F53B49] px-5 py-3 rounded-[5px] hover:bg-[#e63946] transition-colors whitespace-nowrap h-[41px] flex-shrink-0"
+    className="flex justify-center items-center gap-2 bg-[#F53B49] px-5 md:px-3 lg:px-5 py-3 md:py-2 lg:py-3 rounded-[5px] hover:bg-[#e63946] transition-colors whitespace-nowrap h-[41px] md:h-[35px] lg:h-[41px] flex-shrink-0"
     aria-label="Открыть каталог товаров"
   >
     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +37,7 @@ const CatalogButton: React.FC = () => (
       <path d="M5 10H8V13H5V10Z" fill="white" />
       <path d="M10 10H13V13H10V10Z" fill="white" />
     </svg>
-    <span className="text-white text-sm font-normal leading-[14px]">Каталог</span>
+    <span className="text-white text-sm md:text-xs lg:text-sm font-normal leading-[14px] md:leading-[12px] lg:leading-[14px]">Каталог</span>
   </Link>
 );
 
@@ -72,14 +72,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder = "Поиск", onSea
   return (
     <form onSubmit={handleSubmit} className="flex-1">
       <div
-        className={`flex h-[41px] justify-between items-center bg-[#262631] pl-5 pr-4 py-3.5 rounded-[5px] max-w-[700px] ${className}`}
+        className={`flex h-[41px] md:h-[35px] lg:h-[41px] justify-between items-center bg-[#262631] pl-5 md:pl-3 lg:pl-5 pr-4 md:pr-3 lg:pr-4 py-3.5 md:py-2 lg:py-3.5 rounded-[5px] max-w-[700px] md:max-w-[400px] lg:max-w-[700px] ${className}`}
       >
         <input
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder={placeholder}
-          className="flex-1 bg-transparent text-white text-sm font-normal leading-[14px] outline-none placeholder:text-[#5C6476]"
+          className="flex-1 bg-transparent text-white text-sm md:text-xs lg:text-sm font-normal leading-[14px] md:leading-[12px] lg:leading-[14px] outline-none placeholder:text-[#5C6476]"
         />
         <button
           type="button"
@@ -101,7 +101,7 @@ const UserActions: React.FC = () => {
   const [isComparisonOpen, setIsComparisonOpen] = useState(false);
 
   return (
-    <div className="flex items-center gap-4 max-sm:gap-2.5 flex-shrink-0">
+    <div className="flex items-center gap-4 md:gap-3 lg:gap-4 max-sm:gap-2.5 flex-shrink-0">
       <Link
         to="/account"
         className="w-6 h-6 relative"
@@ -148,12 +148,12 @@ const MidMenu: React.FC<MidMenuProps> = ({ onSearch }) => {
   };
 
   return (
-    <section className="flex w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 lg:px-[60px] py-3 max-md:px-5 max-sm:px-4">
-      <div className="flex w-full max-w-[1800px] h-[65px] justify-between items-center gap-4 flex-shrink-0">
+    <section className="flex w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 md:px-8 lg:px-[60px] py-3 max-md:px-5 max-sm:px-4">
+      <div className="flex w-full max-w-[1800px] h-[65px] md:h-[55px] lg:h-[65px] justify-between items-center gap-4 md:gap-3 lg:gap-4 flex-shrink-0">
         <Logo />
         
         <SearchPopup isOpen={isPopupOpen} onOpenChange={setIsPopupOpen}>
-          <div className="flex items-center gap-2.5 flex-1 max-w-[750px]" onClick={handleClick}>
+          <div className="flex items-center gap-2.5 md:gap-2 lg:gap-2.5 flex-1 max-w-[750px] md:max-w-[500px] lg:max-w-[750px]" onClick={handleClick}>
             <CatalogButton />
             <SearchBar onSearch={onSearch} />
           </div>
