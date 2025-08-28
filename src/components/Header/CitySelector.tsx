@@ -95,10 +95,10 @@ const CitySelector: React.FC<CitySelectorProps> = ({ selectedCity, onCitySelect 
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <button
-          className="flex items-center gap-1.5 hover:opacity-80 transition-opacity"
+          className="flex items-center gap-1.5 md:gap-1 lg:gap-1.5 hover:opacity-80 transition-opacity"
           aria-label={`Выбрать город: ${selectedCity}`}
         >
-          <span className="text-white text-sm font-normal leading-[14px]">
+          <span className="text-white text-sm md:text-xs lg:text-sm font-normal leading-[14px] md:leading-[12px] lg:leading-[14px]">
             {selectedCity}
           </span>
           <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
