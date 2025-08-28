@@ -7,13 +7,13 @@ const Footer: React.FC = () => {
   return (
     <footer className="w-full text-white">
       {/* Main content section with #262631 background */}
-      <div className="bg-[#262631] py-8 md:py-3">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] md:pl-16 md:pr-4">
-          <div className="grid grid-cols-1 md:grid-cols-7 lg:grid-cols-6 gap-8 md:gap-1">
+      <div className="bg-[#262631] py-8">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
             {/* Каталог */}
             <div>
-              <h3 className="text-white text-xs md:text-[8px] lg:text-xs font-benzin-semibold mb-2 md:mb-0.5">Каталог</h3>
-              <ul className="space-y-1 md:space-y-0 text-[#778093] text-xs md:text-[7px] lg:text-xs">
+              <h3 className="text-white text-xs font-benzin-semibold mb-2">Каталог</h3>
+              <ul className="space-y-1 text-[#778093] text-xs">
                 <li><a href="#" className="hover:text-white transition-colors">Для дома</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Для фитнес-клуба</a></li>
                 <li><Link to="/brands" className="hover:text-white transition-colors">Наши бренды</Link></li>
@@ -22,8 +22,8 @@ const Footer: React.FC = () => {
 
             {/* Поддержка */}
             <div>
-              <h3 className="text-white text-xs md:text-[8px] lg:text-xs font-benzin-semibold mb-2 md:mb-0.5">Поддержка</h3>
-              <ul className="space-y-1 md:space-y-0 text-[#778093] text-xs md:text-[7px] lg:text-xs">
+              <h3 className="text-white text-xs font-benzin-semibold mb-2">Поддержка</h3>
+              <ul className="space-y-1 text-[#778093] text-xs">
                 <li><Link to="/support#delivery" className="hover:text-white transition-colors">Доставка и оплата</Link></li>
                 <li><Link to="/support#returns" className="hover:text-white transition-colors">Условия возврата</Link></li>
                 <li><Link to="/support#warranty" className="hover:text-white transition-colors">Гарантия</Link></li>
@@ -33,8 +33,8 @@ const Footer: React.FC = () => {
 
             {/* О компании */}
             <div>
-              <h3 className="text-white text-xs md:text-[8px] lg:text-xs font-benzin-semibold mb-2 md:mb-0.5">О компании</h3>
-              <ul className="space-y-1 md:space-y-0 text-[#778093] text-xs md:text-[7px] lg:text-xs">
+              <h3 className="text-white text-xs font-benzin-semibold mb-2">О компании</h3>
+              <ul className="space-y-1 text-[#778093] text-xs">
                 <li><a href="#" className="hover:text-white transition-colors">О нас</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Миссия</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Команда</a></li>
@@ -46,8 +46,8 @@ const Footer: React.FC = () => {
 
             {/* Для Бизнеса */}
             <div>
-              <h3 className="text-white text-xs md:text-[8px] lg:text-xs font-benzin-semibold mb-2 md:mb-0.5">Для Бизнеса</h3>
-              <ul className="space-y-1 md:space-y-0 text-[#778093] text-xs md:text-[7px] lg:text-xs">
+              <h3 className="text-white text-xs font-benzin-semibold mb-2">Для Бизнеса</h3>
+              <ul className="space-y-1 text-[#778093] text-xs">
                 <li><a href="#" className="hover:text-white transition-colors">3D-проект</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Бизнес-планирование</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Готовые решения</a></li>
@@ -58,90 +58,8 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Контакты (только телефоны и email) */}
+            {/* Контакты */}
             <div className="lg:col-span-2">
-              <div className="text-[#778093] space-y-3 md:space-y-0.5">
-                <div>
-                  <p className="text-xs md:text-[7px] lg:text-xs mb-1 md:mb-0">Для Москвы</p>
-                  <a href="tel:+74996775632" className="text-xs md:text-[7px] lg:text-xs font-benzin-semibold text-white hover:text-gray-300 transition-colors">
-                    +7 (499) 677-56-32
-                  </a>
-                </div>
-                <div>
-                  <p className="text-xs md:text-[7px] lg:text-xs mb-1 md:mb-0">Для России</p>
-                  <a href="tel:+78007751217" className="text-xs md:text-[7px] lg:text-xs font-benzin-semibold text-white hover:text-gray-300 transition-colors">
-                    +7 (800) 775-12-17
-                  </a>
-                </div>
-                <div>
-                  <p className="text-xs md:text-[7px] lg:text-xs mb-1 md:mb-0">E-mail</p>
-                  <p className="text-white text-xs md:text-[7px] lg:text-xs">info@wellfitness.ru</p>
-                </div>
-                <div className="mt-4 md:mt-1">
-                  <CallRequestDialog>
-                    <button className="bg-[#F53B49] text-white px-4 py-2 md:px-1.5 md:py-0.5 rounded-[5px] hover:bg-[#e63946] transition-colors text-xs md:text-[7px] lg:text-xs font-benzin">
-                      Заказать звонок
-                    </button>
-                  </CallRequestDialog>
-                </div>
-              </div>
-            </div>
-
-            {/* Отдельная колонка для соцсетей и способов оплаты (только на планшетах) */}
-            <div className="hidden md:block lg:hidden">
-              <div className="text-[#778093] space-y-0.5">
-                <div>
-                  <p className="text-[7px] font-benzin-semibold text-white mb-0.5">Для HOME</p>
-                  <div className="flex items-center gap-1">
-                    <img 
-                      src="/lovable-uploads/f77a44b5-d6f1-40dd-a72b-634d60279421.png" 
-                      alt="Социальные сети" 
-                      className="h-3 w-auto"
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <p className="text-[7px] font-benzin-semibold text-white mb-0.5">Для PRO</p>
-                  <div className="flex items-center gap-1">
-                    <img 
-                      src="/lovable-uploads/86517d29-fc19-48bf-9048-fe2be93d3477.png" 
-                      alt="Социальные сети PRO" 
-                      className="h-3 w-auto"
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <p className="text-[6px] mb-0.5 text-[#778093]">Принимаем к оплате</p>
-                  <div className="flex gap-0.5">
-                    <img 
-                      src="/lovable-uploads/ef0b4b90-8fc2-40fd-ac2f-5de0b0bbd330.png" 
-                      alt="Visa" 
-                      className="h-2.5 w-auto"
-                    />
-                    <img 
-                      src="/lovable-uploads/24e0b3d5-be66-472f-8aad-258d2cb1596d.png" 
-                      alt="MasterCard" 
-                      className="h-2.5 w-auto"
-                    />
-                    <img 
-                      src="/lovable-uploads/5723e7db-417e-49b5-aa92-d89d628bbfcf.png" 
-                      alt="PayPal" 
-                      className="h-2.5 w-auto"
-                    />
-                    <img 
-                      src="/lovable-uploads/73d8ad89-17b1-4a62-b0ea-272f4db4e1fd.png" 
-                      alt="Способ оплаты" 
-                      className="h-2.5 w-auto"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Контакты для больших экранов (с соцсетями и способами оплаты) */}
-            <div className="hidden lg:block lg:col-span-2">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Левая часть - контакты */}
                 <div className="text-[#778093] space-y-3">
