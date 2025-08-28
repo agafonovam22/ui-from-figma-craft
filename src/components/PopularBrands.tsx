@@ -19,16 +19,18 @@ const PopularBrands: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-white py-6">
-      <div className="max-w-[1800px] mx-auto px-[30px]">
+    <section className="w-full bg-white py-6 md:py-4 lg:py-6">
+      <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[30px]">
         {/* Header */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 font-benzin-semibold">Популярные бренды</h2>
+        <div className="mb-8 md:mb-6 lg:mb-8">
+          <h2 className="text-2xl md:text-xl lg:text-2xl font-bold text-gray-900 font-benzin-semibold">Популярные бренды</h2>
         </div>
 
         {/* Brands Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-[10px] mb-8">
-          {brands.map((brand) => {
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-[10px] md:gap-[8px] lg:gap-[10px] mb-8 md:mb-6 lg:mb-8">
+          {brands.slice(0, 12).map((brand, index) => {
+            // Для планшетов показываем только первые 8 брендов (2 ряда по 4)
+            const isHiddenOnTablet = index >= 8;
             // Определяем индивидуальные размеры для каждого бренда как на странице /brands
             const getBrandImageClass = (brandName: string) => {
               switch(brandName) {
@@ -43,7 +45,9 @@ const PopularBrands: React.FC = () => {
               <Link
                 key={brand.id}
                 to={`/brands/${brand.slug}`}
-                className="bg-white rounded-lg border border-gray-200 p-6 flex items-center justify-center hover:shadow-md transition-shadow cursor-pointer min-h-[120px]"
+                className={`bg-white rounded-lg border border-gray-200 p-6 md:p-4 lg:p-6 flex items-center justify-center hover:shadow-md transition-shadow cursor-pointer min-h-[120px] md:min-h-[100px] lg:min-h-[120px] ${
+                  isHiddenOnTablet ? 'hidden md:hidden lg:block' : ''
+                }`}
               >
                 <img 
                   src={brand.logo} 
@@ -59,7 +63,7 @@ const PopularBrands: React.FC = () => {
         <div className="flex justify-start">
           <Link 
             to="/brands"
-            className="px-6 py-3 border border-[#F53B49] text-[#F53B49] rounded-lg hover:bg-[#F53B49] hover:text-white transition-colors font-benzin"
+            className="px-6 md:px-4 lg:px-6 py-3 md:py-2 lg:py-3 border border-[#F53B49] text-[#F53B49] rounded-lg hover:bg-[#F53B49] hover:text-white transition-colors font-benzin text-base md:text-sm lg:text-base"
           >
             Показать все
           </Link>
