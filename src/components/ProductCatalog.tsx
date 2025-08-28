@@ -209,12 +209,9 @@ const ProductCatalog: React.FC = () => {
         </div>
         
         {/* Второй ряд - разный для планшетов и остальных */}
-        {/* Для планшетов: 2 карточки + большая карточка */}
-        <div className="hidden md:grid lg:hidden grid-cols-4 gap-[8px]">
-          {currentProducts.slice(6, 8).map((product) => (
-            <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
-          ))}
-          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-2 h-[250px]">
+        {/* Для планшетов: только большая карточка */}
+        <div className="hidden md:block lg:hidden">
+          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-[250px]">
             <img 
               src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
               alt="Перейти в каталог"
