@@ -201,54 +201,67 @@ const ProductCatalog: React.FC = () => {
           </div>
         </div>
         
-        {/* Первый ряд - всегда одинаковый */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-[10px] md:gap-[8px] lg:gap-[10px] mb-6 md:mb-4 lg:mb-6">
-          {currentProducts.slice(0, 6).map((product) => (
-            <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
-          ))}
-        </div>
-        
-        {/* Второй ряд - разный для планшетов и остальных */}
-        {/* Для планшетов: только большая карточка */}
+        {/* Для планшетов: 2 ряда с особой раскладкой */}
         <div className="hidden md:block lg:hidden">
-          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-[250px]">
-            <img 
-              src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
-              alt="Перейти в каталог"
-              className="w-full h-full object-cover object-right"
-            />
-            <div className="absolute top-3 left-3 text-white font-benzin text-base font-normal">
-              {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
+          {/* Первый ряд - 4 карточки */}
+          <div className="grid grid-cols-4 gap-[8px] mb-4">
+            {currentProducts.slice(0, 4).map((product) => (
+              <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
+            ))}
+          </div>
+          
+          {/* Второй ряд - 2 карточки + большая карточка */}
+          <div className="grid grid-cols-4 gap-[8px]">
+            {currentProducts.slice(4, 6).map((product) => (
+              <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
+            ))}
+            <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-2 h-[200px]">
+              <img 
+                src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
+                alt="Перейти в каталог"
+                className="w-full h-full object-cover object-right"
+              />
+              <div className="absolute top-3 left-3 text-white font-benzin text-sm font-normal">
+                {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
+              </div>
+              <Link 
+                to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
+                className="absolute bottom-3 left-3 bg-white text-[#262631] px-3 py-1.5 rounded-lg font-benzin text-xs font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-1.5"
+              >
+                Перейти в каталог <ArrowRight className="w-3 h-3" />
+              </Link>
             </div>
-            <Link 
-              to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
-              className="absolute bottom-3 left-3 bg-white text-[#262631] px-3 py-1.5 rounded-lg font-benzin text-xs font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-1.5"
-            >
-              Перейти в каталог <ArrowRight className="w-3 h-3" />
-            </Link>
           </div>
         </div>
         
-        {/* Для остальных разрешений - оригинальная раскладка */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:hidden lg:grid lg:grid-cols-6 gap-[10px]">
-          {currentProducts.slice(6, 10).map((product) => (
-            <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
-          ))}
-          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px]">
-            <img 
-              src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
-              alt="Перейти в каталог"
-              className="w-full h-full object-cover object-right"
-            />
-            <div className="absolute top-4 left-4 text-white font-benzin text-lg font-normal">
-              {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
+        {/* Для мобильной и компьютерной версий - оригинальная раскладка */}
+        <div className="block md:hidden lg:block">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px] mb-6 lg:mb-6">
+            {currentProducts.slice(0, 6).map((product) => (
+              <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
+            ))}
+          </div>
+        
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[10px]">
+            {currentProducts.slice(6, 10).map((product) => (
+              <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
+            ))}
+            <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px]">
+              <img 
+                src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
+                alt="Перейти в каталог"
+                className="w-full h-full object-cover object-right"
+              />
+              <div className="absolute top-4 left-4 text-white font-benzin text-lg font-normal">
+                {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
+              </div>
+              <Link 
+                to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
+                className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2"
+              >
+                Перейти в каталог <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
-            <Link 
-              to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
-              className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2"
-            >
-              Перейти в каталог <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
         
