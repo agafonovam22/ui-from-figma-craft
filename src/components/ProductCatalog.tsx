@@ -201,30 +201,56 @@ const ProductCatalog: React.FC = () => {
           </div>
         </div>
         
+        {/* Первый ряд - всегда одинаковый */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-[10px] md:gap-[8px] lg:gap-[10px] mb-6 md:mb-4 lg:mb-6">
           {currentProducts.slice(0, 6).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
           ))}
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-[10px] md:gap-[8px] lg:gap-[10px]">
-          {currentProducts.slice(6, 10).map((product) => (
+        {/* Второй ряд - разный для планшетов и остальных */}
+        {/* Для планшетов: 2 карточки + большая карточка */}
+        <div className="hidden md:grid lg:hidden grid-cols-4 gap-[8px]">
+          {currentProducts.slice(6, 8).map((product) => (
             <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
           ))}
-          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-2 h-[300px] md:h-[250px] lg:h-[300px]">
+          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-2 h-[250px]">
             <img 
               src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
               alt="Перейти в каталог"
               className="w-full h-full object-cover object-right"
             />
-            <div className="absolute top-4 md:top-3 lg:top-4 left-4 md:left-3 lg:left-4 text-white font-benzin text-lg md:text-base lg:text-lg font-normal">
+            <div className="absolute top-3 left-3 text-white font-benzin text-base font-normal">
               {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
             </div>
             <Link 
               to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
-              className="absolute bottom-4 md:bottom-3 lg:bottom-4 left-4 md:left-3 lg:left-4 bg-white text-[#262631] px-4 md:px-3 lg:px-4 py-2 md:py-1.5 lg:py-2 rounded-lg font-benzin text-sm md:text-xs lg:text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2 md:gap-1.5 lg:gap-2"
+              className="absolute bottom-3 left-3 bg-white text-[#262631] px-3 py-1.5 rounded-lg font-benzin text-xs font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-1.5"
             >
-              Перейти в каталог <ArrowRight className="w-4 h-4 md:w-3 md:h-3 lg:w-4 lg:h-4" />
+              Перейти в каталог <ArrowRight className="w-3 h-3" />
+            </Link>
+          </div>
+        </div>
+        
+        {/* Для остальных разрешений - оригинальная раскладка */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:hidden lg:grid lg:grid-cols-6 gap-[10px]">
+          {currentProducts.slice(6, 10).map((product) => (
+            <ProductCard key={product.id} product={product} variant="grid" linkTo={product.linkTo} />
+          ))}
+          <div className="relative bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer col-span-1 sm:col-span-2 lg:col-span-2 h-[300px]">
+            <img 
+              src="/lovable-uploads/09316891-e20e-4a75-a9df-6bc5afc0bf97.png" 
+              alt="Перейти в каталог"
+              className="w-full h-full object-cover object-right"
+            />
+            <div className="absolute top-4 left-4 text-white font-benzin text-lg font-normal">
+              {activeFilter === 'home' ? 'Для дома' : 'Для фитнес-клуба'}
+            </div>
+            <Link 
+              to={activeFilter === 'home' ? '/catalog?purpose=home' : '/catalog?purpose=fitness'}
+              className="absolute bottom-4 left-4 bg-white text-[#262631] px-4 py-2 rounded-lg font-benzin text-sm font-normal hover:bg-[#262631] hover:text-white transition-colors flex items-center gap-2"
+            >
+              Перейти в каталог <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
