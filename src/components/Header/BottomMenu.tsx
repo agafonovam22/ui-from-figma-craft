@@ -25,7 +25,7 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
 }) => (
   <Link
     to={`/catalog?category=${category.id}`}
-    className={`flex h-[46px] md:h-[36px] lg:h-[46px] items-center gap-2 md:gap-1.5 lg:gap-2 bg-[#262631] px-5 md:px-3 lg:px-5 py-3 md:py-2 lg:py-3 rounded-[5px] max-sm:whitespace-nowrap max-sm:px-4 max-sm:py-3 hover:bg-[#3a3a47] transition-colors group flex-shrink-0`}
+    className={`flex h-[46px] md:h-[32px] lg:h-[46px] items-center gap-2 md:gap-1 lg:gap-2 bg-[#262631] px-5 md:px-2.5 lg:px-5 py-3 md:py-1.5 lg:py-3 rounded-[5px] max-sm:whitespace-nowrap max-sm:px-4 max-sm:py-3 hover:bg-[#3a3a47] transition-colors group flex-shrink-0`}
     aria-label={`Категория: ${category.label}`}
   >
     {category.icon && (
@@ -33,7 +33,7 @@ const CategoryButton: React.FC<{ category: CategoryItem; isActive?: boolean }> =
         {category.icon}
       </span>
     )}
-    <span className="text-sm md:text-xs lg:text-sm font-normal leading-[14px] md:leading-[12px] lg:leading-[14px] text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
+    <span className="text-sm md:text-xs lg:text-sm font-normal leading-[14px] md:leading-[10px] lg:leading-[14px] text-[#778093] group-hover:text-white transition-colors whitespace-nowrap">
       {category.label}
     </span>
   </Link>
@@ -47,16 +47,17 @@ const ScrollButton: React.FC<{ direction: 'left' | 'right'; onClick: () => void;
   <button
     onClick={onClick}
     disabled={disabled}
-    className={`w-8 h-8 md:w-6 md:h-6 lg:w-8 lg:h-8 rounded-full bg-[#5C6476] flex items-center justify-center transition-opacity ${
+    className={`w-8 h-8 md:w-5 md:h-5 lg:w-8 lg:h-8 rounded-full bg-[#5C6476] flex items-center justify-center transition-opacity ${
       disabled ? 'opacity-30 cursor-not-allowed' : 'opacity-50 hover:opacity-70'
     }`}
     aria-label={direction === 'left' ? 'Прокрутить влево' : 'Прокрутить вправо'}
   >
-    <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg" className="md:w-[6px] md:h-[4px] lg:w-[8px] lg:h-[6px]">
       <path 
         d={direction === 'left' ? "M7 1L4 4L1 1" : "M1 1L4 4L7 1"} 
         stroke="white" 
         strokeWidth="2" 
+        className="md:stroke-[1.5] lg:stroke-[2]"
         transform={direction === 'left' ? "rotate(90 4 2.5)" : "rotate(-90 4 2.5)"}
       />
     </svg>
@@ -184,25 +185,25 @@ const BottomMenu: React.FC = () => {
 
   return (
     <nav 
-      className="flex w-full justify-center items-center gap-[5px] md:gap-[3px] lg:gap-[5px] bg-[#262631] px-2 sm:px-4 md:px-6 lg:px-[60px] py-1 max-md:overflow-x-auto"
+      className="flex w-full justify-center items-center gap-[5px] md:gap-[2px] lg:gap-[5px] bg-[#262631] px-2 sm:px-4 md:px-6 lg:px-[60px] py-1 max-md:overflow-x-auto"
       style={{ padding: '4px 60px' }}
       role="navigation"
       aria-label="Категории товаров"
     >
-      <div className="flex w-full max-w-[1800px] h-[54px] md:h-[42px] lg:h-[54px] items-center gap-[5px] md:gap-[3px] lg:gap-[5px] relative max-md:w-auto max-md:min-w-full flex-shrink-0">
+      <div className="flex w-full max-w-[1800px] h-[54px] md:h-[38px] lg:h-[54px] items-center gap-[5px] md:gap-[2px] lg:gap-[5px] relative max-md:w-auto max-md:min-w-full flex-shrink-0">
         <div 
           ref={scrollContainerRef}
-          className="flex items-center gap-[5px] md:gap-[3px] lg:gap-[5px] overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden"
+          className="flex items-center gap-[5px] md:gap-[2px] lg:gap-[5px] overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden"
           style={{ 
             scrollbarWidth: 'none', 
             msOverflowStyle: 'none'
           }}
         >
           {duplicatedCategories.map((category, index) => (
-            <div key={`${category.id}-${Math.floor(index / categories.length)}`} className="flex items-center gap-[5px] md:gap-[3px] lg:gap-[5px]">
+            <div key={`${category.id}-${Math.floor(index / categories.length)}`} className="flex items-center gap-[5px] md:gap-[2px] lg:gap-[5px]">
               <CategoryButton category={category} />
               {index < duplicatedCategories.length - 1 && (
-                <div className="w-px h-9 md:h-7 lg:h-9 opacity-20 bg-[#5C6476] flex-shrink-0" />
+                <div className="w-px h-9 md:h-6 lg:h-9 opacity-20 bg-[#5C6476] flex-shrink-0" />
               )}
             </div>
           ))}
