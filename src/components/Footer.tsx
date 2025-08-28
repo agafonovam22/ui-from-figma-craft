@@ -153,31 +153,42 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom section with #17171E background */}
-      <div className="bg-[#17171E] py-6">
+      <div className="bg-[#17171E] py-6 md:py-4 lg:py-6">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-          <div className="flex flex-col gap-6">
-            {/* Top row - Logo and buttons */}
-            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+          <div className="flex flex-col gap-6 md:gap-0 lg:gap-6">
+            {/* Mobile: Two separate rows, Tablet & Desktop: Single row with two columns */}
+            <div className="flex flex-col md:flex-row lg:flex-row justify-between items-start md:items-center lg:items-center gap-6 md:gap-3 lg:gap-6">
+              {/* Left column - Logo */}
               <img 
                 src="/lovable-uploads/989588d0-dab0-48b9-9268-db2cc02cf4da.png" 
                 alt="WELL.FITNESS"
-                className="h-[32px] w-auto"
+                className="h-[32px] md:h-[24px] lg:h-[32px] w-auto"
               />
               
-              <div className="flex gap-6 items-center">
-                <a href="#" className="text-white text-[10px] hover:opacity-80 transition-opacity font-benzin">Для дилеров</a>
-                <button className="bg-white text-[#262631] px-3 py-2 rounded-[5px] text-[10px] hover:bg-gray-100 transition-colors font-benzin">
+              {/* Right column - Buttons */}
+              <div className="flex gap-6 md:gap-3 lg:gap-6 items-center">
+                <a href="#" className="text-white text-[10px] md:text-[8px] lg:text-[10px] hover:opacity-80 transition-opacity font-benzin">Для дилеров</a>
+                <button className="bg-white text-[#262631] px-3 md:px-2 lg:px-3 py-2 md:py-1 lg:py-2 rounded-[5px] text-[10px] md:text-[8px] lg:text-[10px] hover:bg-gray-100 transition-colors font-benzin">
                   For suppliers
                 </button>
               </div>
             </div>
             
-            {/* Bottom row - copyright and links aligned on same line */}
-            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3">
+            {/* Copyright and links row - only visible on mobile */}
+            <div className="flex flex-col md:hidden justify-between items-start gap-3">
               <span className="text-[#778093] text-[10px]">© WellFitness, 2005-2024 Все права защищены</span>
               <div className="flex gap-6">
                 <Link to="/privacy-policy" className="text-[#778093] text-[10px] hover:text-white transition-colors">Политика конфиденциальности</Link>
                 <Link to="/public-offer" className="text-[#778093] text-[10px] hover:text-white transition-colors">Публичная оферта</Link>
+              </div>
+            </div>
+            
+            {/* Copyright and links row - hidden on mobile, visible on tablet and desktop */}
+            <div className="hidden md:flex lg:flex justify-between items-center gap-3 md:gap-2 lg:gap-3">
+              <span className="text-[#778093] text-[10px] md:text-[8px] lg:text-[10px]">© WellFitness, 2005-2024 Все права защищены</span>
+              <div className="flex gap-6 md:gap-3 lg:gap-6">
+                <Link to="/privacy-policy" className="text-[#778093] text-[10px] md:text-[8px] lg:text-[10px] hover:text-white transition-colors">Политика конфиденциальности</Link>
+                <Link to="/public-offer" className="text-[#778093] text-[10px] md:text-[8px] lg:text-[10px] hover:text-white transition-colors">Публичная оферта</Link>
               </div>
             </div>
           </div>
