@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Контакты для планшета - разделены на 3 колонки */}
+            {/* Контакты */}
             <div className="md:col-span-3 lg:col-span-2">
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-8 md:gap-3 lg:gap-8">
                 {/* Левая часть - контакты */}
@@ -88,56 +88,61 @@ const Footer: React.FC = () => {
                   </div>
                 </div>
                 
-                {/* Средняя часть - Социальные сети */}
-                <div className="text-[#778093] space-y-4 md:space-y-2 lg:space-y-4">
-                  <div>
-                    <p className="text-xs md:text-[10px] lg:text-xs font-benzin-semibold text-white mb-2 md:mb-1 lg:mb-2">Для HOME</p>
-                    <div className="flex items-center gap-2">
-                      <img 
-                        src="/lovable-uploads/f77a44b5-d6f1-40dd-a72b-634d60279421.png" 
-                        alt="Социальные сети" 
-                        className="h-6 md:h-4 lg:h-6 w-auto"
-                      />
+                {/* Правая часть - объединенная для десктопа, разделенная для планшета */}
+                <div className="md:col-span-2 lg:col-span-1">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-2 lg:gap-4">
+                    {/* Социальные сети */}
+                    <div className="text-[#778093] space-y-4 md:space-y-2 lg:space-y-4">
+                      <div>
+                        <p className="text-xs md:text-[10px] lg:text-xs font-benzin-semibold text-white mb-2 md:mb-1 lg:mb-2">Для HOME</p>
+                        <div className="flex items-center gap-2">
+                          <img 
+                            src="/lovable-uploads/f77a44b5-d6f1-40dd-a72b-634d60279421.png" 
+                            alt="Социальные сети" 
+                            className="h-6 md:h-4 lg:h-6 w-auto"
+                          />
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <p className="text-xs md:text-[10px] lg:text-xs font-benzin-semibold text-white mb-2 md:mb-1 lg:mb-2">Для PRO</p>
+                        <div className="flex items-center gap-2">
+                          <img 
+                            src="/lovable-uploads/86517d29-fc19-48bf-9048-fe2be93d3477.png" 
+                            alt="Социальные сети PRO" 
+                            className="h-6 md:h-4 lg:h-6 w-auto"
+                          />
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div>
-                    <p className="text-xs md:text-[10px] lg:text-xs font-benzin-semibold text-white mb-2 md:mb-1 lg:mb-2">Для PRO</p>
-                    <div className="flex items-center gap-2">
-                      <img 
-                        src="/lovable-uploads/86517d29-fc19-48bf-9048-fe2be93d3477.png" 
-                        alt="Социальные сети PRO" 
-                        className="h-6 md:h-4 lg:h-6 w-auto"
-                      />
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Правая часть - Оплата */}
-                <div className="text-[#778093] space-y-4 md:space-y-2 lg:space-y-4 md:col-span-1 lg:col-span-1">
-                  <div>
-                    <p className="text-[10px] md:text-[8px] lg:text-[10px] mb-2 md:mb-1 lg:mb-2 text-[#778093]">Принимаем к оплате</p>
-                    <div className="flex gap-2 md:gap-1 lg:gap-2 flex-wrap">
-                      <img 
-                        src="/lovable-uploads/ef0b4b90-8fc2-40fd-ac2f-5de0b0bbd330.png" 
-                        alt="Visa" 
-                        className="h-4 md:h-3 lg:h-4 w-auto"
-                      />
-                      <img 
-                        src="/lovable-uploads/24e0b3d5-be66-472f-8aad-258d2cb1596d.png" 
-                        alt="MasterCard" 
-                        className="h-4 md:h-3 lg:h-4 w-auto"
-                      />
-                      <img 
-                        src="/lovable-uploads/5723e7db-417e-49b5-aa92-d89d628bbfcf.png" 
-                        alt="PayPal" 
-                        className="h-4 md:h-3 lg:h-4 w-auto"
-                      />
-                      <img 
-                        src="/lovable-uploads/73d8ad89-17b1-4a62-b0ea-272f4db4e1fd.png" 
-                        alt="Способ оплаты" 
-                        className="h-4 md:h-3 lg:h-4 w-auto"
-                      />
+                    
+                    {/* Способы оплаты */}
+                    <div className="text-[#778093] space-y-4 md:space-y-2 lg:space-y-4">
+                      <div>
+                        <p className="text-[10px] md:text-[8px] lg:text-[10px] mb-2 md:mb-1 lg:mb-2 text-[#778093]">Принимаем к оплате</p>
+                        <div className="flex gap-2 md:gap-1 lg:gap-2 flex-wrap">
+                          <img 
+                            src="/lovable-uploads/ef0b4b90-8fc2-40fd-ac2f-5de0b0bbd330.png" 
+                            alt="Visa" 
+                            className="h-4 md:h-3 lg:h-4 w-auto"
+                          />
+                          <img 
+                            src="/lovable-uploads/24e0b3d5-be66-472f-8aad-258d2cb1596d.png" 
+                            alt="MasterCard" 
+                            className="h-4 md:h-3 lg:h-4 w-auto"
+                          />
+                          <img 
+                            src="/lovable-uploads/5723e7db-417e-49b5-aa92-d89d628bbfcf.png" 
+                            alt="PayPal" 
+                            className="h-4 md:h-3 lg:h-4 w-auto"
+                          />
+                          <img 
+                            src="/lovable-uploads/73d8ad89-17b1-4a62-b0ea-272f4db4e1fd.png" 
+                            alt="Способ оплаты" 
+                            className="h-4 md:h-3 lg:h-4 w-auto"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
