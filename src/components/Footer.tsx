@@ -155,7 +155,7 @@ const Footer: React.FC = () => {
       {/* Bottom section with #17171E background */}
       <div className="bg-[#17171E] py-6 md:py-4 lg:py-6">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-          <div className="flex flex-col gap-6 md:gap-0 lg:gap-6">
+          <div className="flex flex-col gap-6 md:gap-4 lg:gap-6">
             {/* Mobile: Two separate rows, Tablet & Desktop: Single row with two columns */}
             <div className="flex flex-col md:flex-row lg:flex-row justify-between items-start md:items-center lg:items-center gap-6 md:gap-3 lg:gap-6">
               {/* Left column - Logo */}
