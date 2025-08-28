@@ -24,7 +24,7 @@ const Banner: React.FC = () => {
   return (
     <section className="w-full">
       <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[30px]">
-        <div className="overflow-hidden relative rounded-lg h-[400px] md:h-[300px] lg:h-[400px]">
+        <div className="overflow-hidden relative rounded-lg h-[400px] md:h-[250px] lg:h-[400px]">
           {/* Изображение на всю ширину */}
           <div className="relative h-full">
             <img 
