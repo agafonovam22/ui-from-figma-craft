@@ -94,7 +94,7 @@ const NewsAndBlog: React.FC = () => {
         <div className="text-left">
           <Link
             to="/news"
-            className="border border-[#F53B49] text-[#F53B49] px-8 md:px-4 py-3 md:py-2 rounded hover:bg-[#F53B49] hover:text-white transition-colors inline-block font-benzin text-sm md:text-xs"
+            className="border border-[#F53B49] text-[#F53B49] px-6 md:px-4 lg:px-6 py-3 md:py-2 lg:py-3 rounded hover:bg-[#F53B49] hover:text-white transition-colors inline-block font-benzin text-base md:text-sm lg:text-base"
           >
             Показать все
           </Link>
