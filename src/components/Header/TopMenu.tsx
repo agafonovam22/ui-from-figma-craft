@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { NavigationItem, ButtonProps } from './types';
 import CitySelector from './CitySelector';
 import CallRequestDialog from './CallRequestDialog';
+import BurgerMenu from './BurgerMenu';
 
 const ActionButton: React.FC<ButtonProps> = ({ children, variant = 'primary', onClick, className = '' }) => {
   const baseClasses = "text-[10px] md:text-[8px] lg:text-[10px] font-normal leading-[10px] md:leading-[8px] lg:leading-[10px] gap-2 md:gap-1 lg:gap-2 px-3 md:px-2 lg:px-3 py-2.5 md:py-1.5 lg:py-2.5 rounded-[5px] transition-colors flex-shrink-0";
@@ -58,13 +59,14 @@ const TopMenu: React.FC = () => {
       <div className="flex w-full max-w-[1800px] h-[53px] md:h-[40px] lg:h-[53px] justify-between items-center gap-2 md:gap-1.5 lg:gap-[30px] flex-shrink-0">
         <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
         
-        <nav className="flex items-start gap-2 md:gap-1 lg:gap-[15px] max-md:hidden" role="navigation" aria-label="Основная навигация">
+        {/* Desktop navigation - hidden on tablet */}
+        <nav className="hidden lg:flex items-start gap-[15px]" role="navigation" aria-label="Основная навигация">
           {navigationItems.map((item, index) => (
             item.href ? (
               <Link
                 key={index}
                 to={item.href}
-                className="text-layout-grey-nav font-benzin text-[10px] md:text-[8px] lg:text-[10px] font-normal leading-[10px] md:leading-[8px] lg:leading-[10px] hover:text-white transition-colors whitespace-nowrap"
+                className="text-layout-grey-nav font-benzin text-[10px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap"
                 style={{ lineHeight: '100%' }}
               >
                 {item.label}
@@ -73,7 +75,7 @@ const TopMenu: React.FC = () => {
               <a
                 key={index}
                 href={item.href || '#'}
-                className="text-layout-grey-nav font-benzin text-[10px] md:text-[8px] lg:text-[10px] font-normal leading-[10px] md:leading-[8px] lg:leading-[10px] hover:text-white transition-colors whitespace-nowrap"
+                className="text-layout-grey-nav font-benzin text-[10px] font-normal leading-[10px] hover:text-white transition-colors whitespace-nowrap"
                 style={{ lineHeight: '100%' }}
                 onClick={item.onClick}
               >
@@ -83,7 +85,8 @@ const TopMenu: React.FC = () => {
           ))}
         </nav>
 
-        <div className="flex items-end gap-2 md:gap-1 lg:gap-2 max-sm:hidden">
+        {/* Tablet & desktop buttons - adjusted for tablet */}
+        <div className="hidden md:flex lg:flex items-end gap-2 md:gap-1 lg:gap-2">
           <ActionButton variant="primary" onClick={() => console.log('Dealers clicked')}>
             Для дилеров
           </ActionButton>
@@ -92,7 +95,8 @@ const TopMenu: React.FC = () => {
           </ActionButton>
         </div>
 
-        <div className="flex items-end gap-2 md:gap-1 lg:gap-2 max-sm:hidden">
+        {/* Phone and call button - adjusted for tablet */}
+        <div className="hidden md:flex lg:flex items-end gap-2 md:gap-1 lg:gap-2">
           <a 
             href={selectedCity === 'Москва' ? "tel:+74996775632" : "tel:88003332595"} 
             className="text-[10px] md:text-[8px] lg:text-[10px] font-normal leading-[10px] md:leading-[8px] lg:leading-[10px] gap-2 md:gap-1 lg:gap-2 px-3 md:px-2 lg:px-3 py-2.5 md:py-1.5 lg:py-2.5 rounded-[5px] transition-colors text-white hover:bg-white/10 flex-shrink-0"
@@ -105,6 +109,9 @@ const TopMenu: React.FC = () => {
             </ActionButton>
           </CallRequestDialog>
         </div>
+
+        {/* Burger menu for tablet only */}
+        <BurgerMenu navigationItems={navigationItems} />
       </div>
     </header>
   );
