@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     <footer className="w-full text-white">
       {/* Main content section with #262631 background */}
       <div className="bg-[#262631] py-8 md:py-3">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] md:pl-16 md:pr-4">
           <div className="grid grid-cols-1 md:grid-cols-7 lg:grid-cols-6 gap-8 md:gap-1">
             {/* Каталог */}
             <div>
