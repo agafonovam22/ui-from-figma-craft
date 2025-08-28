@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Banner from '@/components/Banner';
 import ProductCatalog from '@/components/ProductCatalog';
@@ -12,8 +12,15 @@ import NewsAndBlog from '@/components/NewsAndBlog';
 import EmailSubscription from '@/components/EmailSubscription';
 import Footer from '@/components/Footer';
 import { useQuery } from '@tanstack/react-query';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 
 const Index: React.FC = () => {
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
+
   // Предзагружаем данные товаров сразу при загрузке главной страницы
   useQuery({
     queryKey: ['all-products'],
