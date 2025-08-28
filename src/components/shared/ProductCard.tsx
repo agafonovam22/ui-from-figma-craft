@@ -289,8 +289,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
             {(() => {
               if (!product.in_stock) {
                 return (
-                  <div className="flex items-center justify-start gap-1 mb-2">
-                    <span className="text-xs font-medium group-hover:text-white" style={{ color: '#F53B49' }}>Нет в наличии</span>
+                  <div className="flex items-center justify-start gap-1 mb-2 md:mb-1.5 lg:mb-2">
+                    <span className="text-xs md:text-[10px] lg:text-xs font-medium group-hover:text-white" style={{ color: '#F53B49' }}>Нет в наличии</span>
                     <div className="flex gap-0.5">
                       <div className="w-2 h-2 rounded-full" style={{ border: '1px solid #F53B49' }}></div>
                       <div className="w-2 h-2 rounded-full" style={{ border: '1px solid #F53B49' }}></div>
@@ -300,8 +300,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 );
               } else if (product.quantity && product.quantity <= 3) {
                 return (
-                  <div className="flex items-center justify-start gap-1 mb-2">
-                    <span className="text-xs font-medium group-hover:text-white" style={{ color: '#F99808' }}>Осталось мало</span>
+                  <div className="flex items-center justify-start gap-1 mb-2 md:mb-1.5 lg:mb-2">
+                    <span className="text-xs md:text-[10px] lg:text-xs font-medium group-hover:text-white" style={{ color: '#F99808' }}>Осталось мало</span>
                     <div className="flex gap-0.5">
                       <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#F99808' }}></div>
                       <div className="w-2 h-2 rounded-full" style={{ border: '1px solid #F99808' }}></div>
@@ -311,8 +311,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 );
               } else {
                 return (
-                  <div className="flex items-center justify-start gap-1 mb-2">
-                    <span className="text-xs text-green-600 group-hover:text-white font-medium">В наличии</span>
+                  <div className="flex items-center justify-start gap-1 mb-2 md:mb-1.5 lg:mb-2">
+                    <span className="text-xs md:text-[10px] lg:text-xs text-green-600 group-hover:text-white font-medium">В наличии</span>
                     <div className="flex gap-0.5">
                       <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                       <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -324,7 +324,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             })()}
 
             {/* Название товара */}
-            <h3 className="text-gray-900 group-hover:text-white text-sm mb-3 line-clamp-2 leading-relaxed transition-colors duration-300">
+            <h3 className="text-gray-900 group-hover:text-white text-sm md:text-xs lg:text-sm mb-3 md:mb-2 lg:mb-3 line-clamp-2 leading-relaxed transition-colors duration-300">
               {(() => {
                 const name = product.name;
                 // Ищем бренды в названии
@@ -351,15 +351,15 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
             {/* Рейтинг */}
             {(product.rating && product.rating > 0) && (
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center gap-2 md:gap-1 lg:gap-2 mb-3 md:mb-2 lg:mb-3">
                 <div className="flex items-center">
                   {renderStars(product.rating)}
                 </div>
-                <span className="text-xs group-hover:text-white transition-colors duration-300" style={{ color: '#F99808' }}>
+                <span className="text-xs md:text-[10px] lg:text-xs group-hover:text-white transition-colors duration-300" style={{ color: '#F99808' }}>
                   {product.rating}/5
                 </span>
                 {product.reviews_count && product.reviews_count > 0 && (
-                  <span className="text-xs text-gray-500 group-hover:text-white transition-colors duration-300">
+                  <span className="text-xs md:text-[10px] lg:text-xs text-gray-500 group-hover:text-white transition-colors duration-300">
                     ({product.reviews_count})
                   </span>
                 )}
@@ -367,14 +367,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
             )}
 
             {/* Цена */}
-            <div className="flex items-center gap-2 mb-3">
+            <div className="flex items-center gap-2 md:gap-1 lg:gap-2 mb-3 md:mb-2 lg:mb-3">
               {discount > 0 && (
-                <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
+                <span className="bg-red-500 text-white text-xs md:text-[10px] lg:text-xs px-2 md:px-1.5 lg:px-2 py-1 md:py-0.5 lg:py-1 rounded">
                   -{discount}%
                 </span>
               )}
               {product.original_price && product.original_price > product.price && (
-                <span className="text-gray-400 group-hover:text-white line-through text-sm transition-colors duration-300">
+                <span className="text-gray-400 group-hover:text-white line-through text-sm md:text-xs lg:text-sm transition-colors duration-300">
                   {product.original_price.toLocaleString()} ₽
                 </span>
               )}
@@ -382,12 +382,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-sm font-bold text-gray-900 group-hover:text-white transition-colors duration-300">
+            <span className="text-sm md:text-xs lg:text-sm font-bold text-gray-900 group-hover:text-white transition-colors duration-300">
               {product.price.toLocaleString()} ₽
             </span>
             
             <Button 
-              className="bg-[#F53B49] hover:bg-[#e63946] text-white px-4 py-2"
+              className="bg-[#F53B49] hover:bg-[#e63946] text-white px-4 md:px-3 lg:px-4 py-2 md:py-1.5 lg:py-2 text-sm md:text-xs lg:text-sm"
               onClick={handleBuyClick}
             >
               Купить
