@@ -220,7 +220,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
       {/* Слайдер изображений */}
       <div 
-        className={`relative ${imageSize === 'small' ? 'h-48' : 'h-60'} overflow-hidden transition-colors duration-300`}
+        className={`relative ${imageSize === 'small' ? 'h-56' : 'h-60'} overflow-hidden transition-colors duration-300`}
         style={{ backgroundColor: 'transparent' }}
       >
         {/* Декоративный элемент в правом верхнем углу */}
