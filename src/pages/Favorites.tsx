@@ -1,12 +1,13 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, BarChart3 } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import { useFavorites } from '@/contexts/FavoritesContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
 import NewProducts from '@/components/NewProducts';
+import ProductCard from '@/components/shared/ProductCard';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -61,51 +62,26 @@ const Favorites: React.FC = () => {
         ) : (
           <>
             {/* Product Grid - 5 columns, dynamic rows */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 mb-6">
               {favorites.map((product) => (
-                <div key={product.id} className="relative group">
-                  <Link 
-                    to={`/product/${product.id}`}
-                    className="block bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-                  >
-                    <div className="relative">
-                      <img 
-                        src={product.image_url} 
-                        alt={product.name}
-                        className="w-full h-48 object-cover"
-                      />
-                      
-                      {/* Action buttons - always visible */}
-                      <div className="absolute top-2 right-2 flex flex-col gap-2">
-                        <button 
-                          className="p-1 bg-white rounded shadow hover:bg-gray-50"
-                          onClick={(e) => handleRemoveFavorite(e, product.id)}
-                        >
-                          <Heart className="w-4 h-4 text-red-500 fill-current" />
-                        </button>
-                        <button 
-                          className="p-1 bg-white rounded shadow hover:bg-gray-50"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            console.log('Added to comparison:', product.id);
-                          }}
-                        >
-                          <BarChart3 className="w-4 h-4 text-gray-400" />
-                        </button>
-                      </div>
-                    </div>
-                    
-                    <div className="p-4">
-                      <h3 className="text-sm font-medium text-gray-900 line-clamp-2 mb-2">
-                        {product.name}
-                      </h3>
-                      <div className="text-lg font-bold text-gray-900">
-                        {product.price.toLocaleString()} ₽
-                      </div>
-                    </div>
-                  </Link>
-                </div>
+                <ProductCard 
+                  key={product.id}
+                  product={{
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    original_price: undefined,
+                    discount_percentage: undefined,
+                    gallery_images: [product.image_url],
+                    rating: undefined,
+                    reviews_count: undefined,
+                    in_stock: true,
+                    is_available: true,
+                    quantity: 1,
+                    badge: 'Новинка',
+                    badge_color: '#31BF00'
+                  }}
+                />
               ))}
             </div>
             
