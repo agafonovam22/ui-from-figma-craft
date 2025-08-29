@@ -123,8 +123,8 @@ const BuyerDashboard: React.FC = () => {
                 </TabsList>
 
                 {/* Overview Tab */}
-                <TabsContent value="overview" className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <TabsContent value="overview" className="space-y-0">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-[10px]">
                     <Card>
                       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <CardTitle className="text-sm font-medium">Всего заказов</CardTitle>
@@ -149,7 +149,7 @@ const BuyerDashboard: React.FC = () => {
                   </div>
 
                   {/* Recent Orders */}
-                  <Card>
+                  <Card className="mt-[10px]">
                     <CardHeader>
                       <CardTitle>Последние заказы</CardTitle>
                     </CardHeader>
