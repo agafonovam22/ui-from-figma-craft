@@ -41,36 +41,25 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
               </div>
             ) : (
               items.map((item) => (
-                <div key={item.id} className="relative group rounded-lg overflow-hidden mb-4" style={{ backgroundColor: '#F8F8FD' }}>
-                  {/* Новинка бейдж */}
-                  <div className="absolute top-3 left-3 z-10">
-                    <span className="text-white text-xs px-3 py-1 rounded-full font-medium" style={{ backgroundColor: '#31BF00' }}>
-                      НОВИНКА
-                    </span>
-                  </div>
+                <div key={item.id} className="relative group rounded-lg overflow-hidden mb-4 flex" style={{ backgroundColor: '#F8F8FD', minHeight: '120px' }}>
+                  {/* Левая часть - изображение */}
+                  <div className="relative w-32 h-full flex items-center justify-center p-3" style={{ backgroundColor: '#F8F8FD' }}>
+                    {/* Новинка бейдж */}
+                    <div className="absolute top-2 left-2 z-10">
+                      <span className="text-white text-xs px-2 py-1 rounded-full font-medium" style={{ backgroundColor: '#31BF00' }}>
+                        NEW
+                      </span>
+                    </div>
 
-                  {/* Кнопка удаления */}
-                  <div className="absolute top-3 right-3 z-10">
-                    <Button 
-                      size="sm" 
-                      variant="ghost"
-                      className="w-8 h-8 p-0 hover:bg-red-100"
-                      onClick={() => removeItem(item.id)}
-                    >
-                      <Trash2 className="w-4 h-4 text-red-600" />
-                    </Button>
-                  </div>
-
-                  {/* Изображение товара */}
-                  <div className="h-40 flex items-center justify-center p-4" style={{ backgroundColor: '#F8F8FD' }}>
-                    {/* Декоративный элемент в правом верхнем углу */}
-                    <div className="absolute top-0 -right-8 w-40 h-40 z-0">
+                    {/* Декоративный элемент */}
+                    <div className="absolute top-0 -right-4 w-20 h-20 z-0">
                       <img 
                         src="/lovable-uploads/5e75cf63-44ac-40f1-932d-ab5786810641.png" 
                         alt="" 
-                        className="w-full h-full object-contain opacity-50"
+                        className="w-full h-full object-contain opacity-30"
                       />
                     </div>
+
                     <img
                       src={item.image_url}
                       alt={item.name}
@@ -81,36 +70,53 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                     />
                   </div>
 
-                  {/* Серая разделительная полоса */}
-                  <div className="mx-4 h-px bg-gray-200"></div>
+                  {/* Вертикальная разделительная полоса */}
+                  <div className="w-px bg-gray-200 my-3"></div>
 
-                  {/* Информация о товаре */}
-                  <div className="p-4">
+                  {/* Правая часть - информация */}
+                  <div className="flex-1 p-3 pr-4 relative">
+                    {/* Кнопка удаления */}
+                    <div className="absolute top-2 right-2 z-10">
+                      <Button 
+                        size="sm" 
+                        variant="ghost"
+                        className="w-6 h-6 p-0 hover:bg-red-100"
+                        onClick={() => removeItem(item.id)}
+                      >
+                        <Trash2 className="w-3 h-3 text-red-600" />
+                      </Button>
+                    </div>
+
                     {/* Статус наличия */}
                     <div className="flex items-center justify-start gap-1 mb-2">
                       <span className="text-xs text-green-600 font-medium">В наличии</span>
                       <div className="flex gap-0.5">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <div className="w-2 h-2 border border-green-500 rounded-full"></div>
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                        <div className="w-1.5 h-1.5 border border-green-500 rounded-full"></div>
                       </div>
                     </div>
 
                     {/* Название товара */}
-                    <h3 className="text-gray-900 text-sm mb-3 line-clamp-2 leading-relaxed font-benzin">
+                    <h3 className="text-gray-900 text-sm mb-2 line-clamp-2 leading-relaxed font-benzin pr-6">
                       {item.name}
                     </h3>
 
-                    {/* Цена и количество */}
-                    <div className="flex items-center justify-between mb-4">
+                    {/* Цена за единицу */}
+                    <div className="mb-3">
                       <span className="text-sm font-bold text-gray-900">
-                        {item.price.toLocaleString()} ₽
+                        {item.price.toLocaleString()} ₽ <span className="text-xs text-gray-500 font-normal">за шт.</span>
                       </span>
+                    </div>
+
+                    {/* Нижняя часть - количество и общая стоимость */}
+                    <div className="flex items-center justify-between">
+                      {/* Количество */}
                       <div className="flex items-center space-x-2">
                         <Button 
                           size="sm" 
                           variant="outline"
-                          className="w-8 h-8 p-0"
+                          className="w-7 h-7 p-0 text-xs"
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
                         >
                           -
@@ -119,20 +125,19 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                         <Button 
                           size="sm" 
                           variant="outline"
-                          className="w-8 h-8 p-0"
+                          className="w-7 h-7 p-0 text-xs"
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
                         >
                           +
                         </Button>
                       </div>
-                    </div>
 
-                    {/* Общая стоимость */}
-                    <div className="flex justify-between items-center pt-2 border-t">
-                      <span className="text-xs text-gray-600">Общая стоимость:</span>
-                      <span className="text-sm font-bold text-[#F53B49]">
-                        {(item.price * item.quantity).toLocaleString()} ₽
-                      </span>
+                      {/* Общая стоимость */}
+                      <div className="text-right">
+                        <span className="text-sm font-bold text-[#F53B49]">
+                          {(item.price * item.quantity).toLocaleString()} ₽
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
