@@ -124,7 +124,7 @@ const Comparison: React.FC = () => {
                       <Trash2 className="w-4 h-4 text-gray-400 hover:text-red-500" />
                     </button>
                     
-                    <div style={{ transform: 'scaleY(1.05)', transformOrigin: 'top' }}>
+                    <div className="pb-[15px]">
                       <ProductCard
                         product={{
                           id: item.id,
