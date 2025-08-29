@@ -76,11 +76,11 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                    {/* Правая часть - информация */}
                    <div className="flex-1 p-3 pr-4 relative overflow-hidden">
                      {/* Декоративные точки */}
-                     <div className="absolute top-0 right-0 w-32 h-full opacity-20 pointer-events-none">
+                     <div className="absolute top-0 right-0 w-24 h-full opacity-30 pointer-events-none">
                        <div className="w-full h-full" style={{
-                         backgroundImage: `radial-gradient(circle, #E5E5E5 1px, transparent 1px)`,
-                         backgroundSize: '8px 8px',
-                         backgroundPosition: '0 0, 4px 4px'
+                         backgroundImage: `radial-gradient(circle, #D1D5DB 2px, transparent 2px)`,
+                         backgroundSize: '12px 12px',
+                         backgroundPosition: '0 0'
                        }}></div>
                      </div>
                     {/* Кнопка удаления */}
