@@ -46,9 +46,9 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                   <div className="relative w-32 h-full flex items-center justify-center p-3" style={{ backgroundColor: '#F8F8FD' }}>
                     {/* Новинка бейдж */}
                     <div className="absolute top-2 left-2 z-10">
-                      <span className="text-white text-xs px-2 py-1 rounded-full font-medium" style={{ backgroundColor: '#31BF00' }}>
-                        NEW
-                      </span>
+                       <span className="text-white text-xs px-2 py-1 rounded-full font-benzin-semibold" style={{ backgroundColor: '#31BF00' }}>
+                         NEW
+                       </span>
                     </div>
 
                     {/* Декоративный элемент */}
@@ -89,7 +89,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
 
                     {/* Статус наличия */}
                     <div className="flex items-center justify-start gap-1 mb-2">
-                      <span className="text-xs text-green-600 font-medium">В наличии</span>
+                      <span className="text-xs text-green-600 font-benzin-semibold">В наличии</span>
                       <div className="flex gap-0.5">
                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
@@ -104,9 +104,9 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
 
                     {/* Цена за единицу */}
                     <div className="mb-3">
-                      <span className="text-sm font-bold text-gray-900">
-                        {item.price.toLocaleString()} ₽ <span className="text-xs text-gray-500 font-normal">за шт.</span>
-                      </span>
+                       <span className="text-sm font-benzin-semibold text-gray-900">
+                         {item.price.toLocaleString()} ₽ <span className="text-xs text-gray-500 font-benzin">за шт.</span>
+                       </span>
                     </div>
 
                     {/* Нижняя часть - количество и общая стоимость */}
@@ -121,7 +121,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                         >
                           -
                         </Button>
-                        <span className="text-sm font-medium min-w-[20px] text-center">{item.quantity}</span>
+                        <span className="text-sm font-benzin-semibold min-w-[20px] text-center">{item.quantity}</span>
                         <Button 
                           size="sm" 
                           variant="outline"
@@ -143,8 +143,8 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
         {items.length > 0 && (
           <div className="p-6 border-t">
             <div className="flex justify-between items-center mb-4">
-              <span className="text-lg font-semibold">Итого:</span>
-              <span className="text-xl font-bold">{totalPrice.toLocaleString()} ₽</span>
+               <span className="text-lg font-benzin-semibold">Итого:</span>
+               <span className="text-xl font-benzin-semibold">{totalPrice.toLocaleString()} ₽</span>
             </div>
             <Link to="/cart">
               <Button className="w-full bg-[#F53B49] hover:bg-[#e63946]">
