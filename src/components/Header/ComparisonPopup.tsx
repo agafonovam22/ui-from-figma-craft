@@ -32,7 +32,7 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({ children, isOpen, onO
       <SheetTrigger asChild>
         {children}
       </SheetTrigger>
-      <SheetContent side="right" className="w-full sm:w-[400px] p-0">
+      <SheetContent side="right" className="w-[600px] max-w-[90vw] p-0">
         <SheetHeader className="p-6 pb-3">
           <SheetTitle className="flex items-center justify-between">
             Сравнение ({comparison.length})
@@ -47,37 +47,110 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({ children, isOpen, onO
               </div>
             ) : (
               comparison.map((item) => (
-                <div key={item.id} className="flex items-center space-x-4 py-4 border-b">
-                  <img
-                    src={item.image_url}
-                    alt={item.name}
-                    className="w-16 h-16 rounded-lg object-cover"
-                  />
-                  <div className="flex-1">
-                    <h3 className="font-medium text-sm">{item.name}</h3>
-                    <div className="flex items-center gap-2 mt-1 mb-2">
-                      {item.discount && (
-                        <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
-                          -{item.discount}%
-                        </span>
-                      )}
-                      {item.originalPrice && (
-                        <span className="text-gray-400 line-through text-sm">
-                          {item.originalPrice.toLocaleString()} ₽
-                        </span>
-                      )}
+                <div key={item.id} className="relative group rounded-lg overflow-hidden mb-4 flex" style={{ backgroundColor: '#F8F8FD', minHeight: '120px' }}>
+                  {/* Левая часть - изображение */}
+                  <div className="relative w-32 h-full flex items-center justify-center p-3" style={{ backgroundColor: '#F8F8FD' }}>
+                    {/* Новинка бейдж */}
+                    <div className="absolute top-2 left-2 z-10">
+                       <span className="text-white text-xs px-2 py-1 rounded-full font-benzin-semibold" style={{ backgroundColor: '#31BF00' }}>
+                         Новинка
+                       </span>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="font-bold">{item.price.toLocaleString()} ₽</span>
-                      <Button 
-                        size="sm" 
-                        variant="ghost"
-                        onClick={() => handleRemoveComparison(item.id)}
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </Button>
+
+                    {/* Декоративный элемент */}
+                    <div className="absolute top-0 -right-4 w-20 h-20 z-0">
+                      <img 
+                        src="/lovable-uploads/5e75cf63-44ac-40f1-932d-ab5786810641.png" 
+                        alt="" 
+                        className="w-full h-full object-contain opacity-30"
+                      />
                     </div>
+
+                    <img
+                      src={item.image_url}
+                      alt={item.name}
+                      className="w-full h-full object-contain z-10 relative"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = '/placeholder.svg';
+                      }}
+                    />
                   </div>
+
+                  {/* Вертикальная разделительная полоса */}
+                  <div className="w-px bg-gray-200 my-3"></div>
+
+                   {/* Правая часть - информация */}
+                   <div className="flex-1 p-3 pr-4 relative overflow-hidden">
+                     {/* Декоративный элемент */}
+                     <div className="absolute -top-10 -right-10 w-40 h-40 bg-gray-200 rounded-full opacity-40 pointer-events-none"></div>
+                     
+                     {/* Кнопка удаления */}
+                     <div className="absolute top-2 right-2 z-10">
+                       <Button 
+                         size="sm" 
+                         variant="ghost"
+                         className="w-12 h-12 p-0 hover:bg-red-100"
+                         onClick={() => handleRemoveComparison(item.id)}
+                       >
+                         <img src="/lovable-uploads/3098d1b2-6b04-44ea-9155-47960291a0f7.png" alt="delete" className="w-8 h-8" />
+                       </Button>
+                     </div>
+
+                     {/* Статус наличия */}
+                     <div className="flex items-center justify-start gap-1 mb-2">
+                       <span className="text-xs text-green-600 font-benzin-semibold">В наличии</span>
+                       <div className="flex gap-0.5">
+                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                         <div className="w-1.5 h-1.5 border border-green-500 rounded-full"></div>
+                       </div>
+                     </div>
+
+                     {/* Название товара */}
+                     <div className="mb-2 pr-6">
+                       {(() => {
+                         // Разделяем название на основную часть и детали
+                         const parts = item.name.split(/\s+(?=[A-Z][a-z]*\s*[A-Z0-9])|(?<=\w)\s+(?=[A-Z][a-z]*\s+Kit|(?:[A-Z]+\d*)+)/);
+                         if (parts.length > 1) {
+                           return (
+                             <>
+                               <h3 className="text-gray-900 text-sm leading-relaxed font-benzin">
+                                 {parts[0]}
+                               </h3>
+                               <p className="text-gray-900 text-sm font-benzin-semibold">
+                                 {parts.slice(1).join(' ')}
+                               </p>
+                             </>
+                           );
+                         } else {
+                           return (
+                             <h3 className="text-gray-900 text-sm line-clamp-2 leading-relaxed font-benzin">
+                               {item.name}
+                             </h3>
+                           );
+                         }
+                       })()}
+                     </div>
+
+                     {/* Цена и скидка */}
+                     <div className="mb-3">
+                       <div className="flex items-center gap-2 mb-1">
+                         {item.discount && (
+                           <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
+                             -{item.discount}%
+                           </span>
+                         )}
+                         {item.originalPrice && (
+                           <span className="text-gray-400 line-through text-sm font-benzin">
+                             {item.originalPrice.toLocaleString()} ₽
+                           </span>
+                         )}
+                       </div>
+                       <span className="text-sm font-benzin-semibold text-gray-900">
+                         {item.price.toLocaleString()} ₽
+                       </span>
+                     </div>
+                   </div>
                 </div>
               ))
             )}
@@ -87,7 +160,7 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({ children, isOpen, onO
         {comparison.length > 0 && (
           <div className="p-6 border-t">
             <Link to="/comparison" onClick={() => onOpenChange(false)}>
-              <Button className="w-full bg-[#F53B49] hover:bg-[#e63946]">
+              <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] font-benzin">
                 Перейти в сравнение
               </Button>
             </Link>
