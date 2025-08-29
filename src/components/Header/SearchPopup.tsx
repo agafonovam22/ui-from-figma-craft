@@ -152,28 +152,67 @@ const SearchPopup: React.FC<SearchPopupProps> = ({ children, isOpen, onOpenChang
                     <Link 
                       key={product.id} 
                       to={`/product/${product.id}`}
-                      className="group cursor-pointer"
+                      className="group cursor-pointer block"
                       onClick={() => onOpenChange(false)}
                     >
-                      <div className="relative bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
-                        <div className="relative mb-3">
-                           <img 
-                             src={optimizeImageUrl((product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg', 120, 80)} 
-                             alt={product.name}
-                            className="w-full h-20 object-contain"
+                      <div 
+                        className="relative rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
+                        style={{ 
+                          height: '220px', 
+                          backgroundColor: '#F8F8FD',
+                          background: 'var(--card-bg, #F8F8FD)'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.setProperty('--card-bg', 'linear-gradient(179deg, #3C3C50 38.62%, #262631 99.45%)');
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.setProperty('--card-bg', '#F8F8FD');
+                        }}
+                      >
+                        {/* Бейдж в верхнем левом углу */}
+                        <div className="absolute top-2 left-2 z-10">
+                          <span className="text-white text-xs px-2 py-1 rounded-full font-medium" style={{ backgroundColor: '#31BF00' }}>
+                            НОВИНКА
+                          </span>
+                        </div>
+
+                        {/* Декоративный элемент */}
+                        <div className="absolute top-0 -right-4 w-24 h-24 z-0">
+                          <img 
+                            src="/lovable-uploads/5e75cf63-44ac-40f1-932d-ab5786810641.png" 
+                            alt="" 
+                            className="w-full h-full object-contain opacity-30"
+                          />
+                        </div>
+
+                        {/* Изображение товара */}
+                        <div className="relative h-32 flex items-center justify-center p-3">
+                          <img 
+                            src={optimizeImageUrl((product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg', 200, 160)} 
+                            alt={product.name}
+                            className="w-full h-full object-contain z-10"
                             onError={(e) => {
                               e.currentTarget.src = "/lovable-uploads/be85c55b-4881-41b1-beb7-89b0cea7d083.png";
                             }}
                           />
-                          <Badge className="absolute top-0 right-0 bg-green-500 text-white text-xs px-2 py-1 rounded">
-                            НОВИНКА
-                          </Badge>
                         </div>
-                        <h4 className="text-xs font-medium text-[#262631] line-clamp-2 leading-tight">
-                          {product.name}
-                        </h4>
-                        <div className="mt-2 text-xs font-semibold text-[#F53B49]">
-                          {product.price.toLocaleString('ru-RU')} ₽
+
+                        {/* Серая разделительная полоса */}
+                        <div className="mx-3 h-px bg-gray-200"></div>
+
+                        {/* Информация о товаре */}
+                        <div className="p-3 flex flex-col justify-between transition-colors duration-300" style={{ height: '85px' }}>
+                          {/* Название товара */}
+                          <h4 className="text-gray-900 group-hover:text-white text-xs font-medium line-clamp-2 leading-tight mb-2 transition-colors duration-300">
+                            {product.name}
+                          </h4>
+                          
+                          {/* Цена */}
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs font-bold text-gray-900 group-hover:text-white transition-colors duration-300">
+                              {product.price.toLocaleString()} ₽
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </Link>
