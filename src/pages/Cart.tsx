@@ -143,42 +143,42 @@ const Cart: React.FC = () => {
                     </div>
 
                     {/* Quantity Controls and Price - Bottom Right */}
-                    <div className="absolute bottom-2 right-2 z-10 flex flex-col items-end space-y-1">
-                      {/* Discount Badge */}
-                      <div className="flex items-center gap-2">
-                        <span className="bg-red-500 text-white text-xs px-2 py-1 rounded font-medium">
-                          -15%
-                        </span>
-                        <span className="text-xs text-gray-500 line-through">6 000₽</span>
-                      </div>
-                      
-                      {/* Price and Quantity Row */}
-                      <div className="flex items-center space-x-4">
+                    <div className="absolute bottom-2 right-2 z-10 flex items-end space-x-4">
+                      {/* Price section with discount above */}
+                      <div className="flex flex-col items-end">
+                        {/* Discount Badge */}
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="bg-red-500 text-white text-xs px-2 py-1 rounded font-medium">
+                            -15%
+                          </span>
+                          <span className="text-xs text-gray-500 line-through">6 000₽</span>
+                        </div>
+                        
                         {/* Price */}
                         <div className="text-lg font-bold text-gray-900">
                           {item.price.toLocaleString()} ₽
                         </div>
-                        
-                        {/* Quantity Controls */}
-                        <div className="flex items-center space-x-2">
-                          <Button 
-                            size="sm" 
-                            variant="outline"
-                            className="w-8 h-8 p-0 text-xs rounded-full border-gray-300"
-                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                          >
-                            -
-                          </Button>
-                          <span className="text-sm font-benzin-semibold min-w-[20px] text-center">{item.quantity}</span>
-                          <Button 
-                            size="sm" 
-                            variant="outline"
-                            className="w-8 h-8 p-0 text-xs rounded-full border-gray-300"
-                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                          >
-                            +
-                          </Button>
-                        </div>
+                      </div>
+                      
+                      {/* Quantity Controls */}
+                      <div className="flex items-center space-x-2">
+                        <Button 
+                          size="sm" 
+                          variant="outline"
+                          className="w-8 h-8 p-0 text-xs rounded-full border-gray-300"
+                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        >
+                          -
+                        </Button>
+                        <span className="text-sm font-benzin-semibold min-w-[20px] text-center">{item.quantity}</span>
+                        <Button 
+                          size="sm" 
+                          variant="outline"
+                          className="w-8 h-8 p-0 text-xs rounded-full border-gray-300"
+                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        >
+                          +
+                        </Button>
                       </div>
                     </div>
 
