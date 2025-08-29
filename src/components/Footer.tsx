@@ -96,22 +96,54 @@ const Footer: React.FC = () => {
                       <div>
                         <p className="text-xs md:text-[10px] lg:text-xs font-benzin-semibold text-white mb-2 md:mb-1 lg:mb-2">Для HOME</p>
                         <div className="flex items-center gap-2">
-                          <img 
-                            src="/lovable-uploads/f77a44b5-d6f1-40dd-a72b-634d60279421.png" 
-                            alt="Социальные сети" 
-                            className="h-6 md:h-4 lg:h-6 w-auto"
-                          />
+                          <a href="#" className="hover:opacity-80 transition-opacity">
+                            <img 
+                              src="/lovable-uploads/ebb8653b-def9-464e-89e8-3cda175f80f4.png" 
+                              alt="Telegram" 
+                              className="h-6 md:h-4 lg:h-6 w-6 md:w-4 lg:w-6"
+                            />
+                          </a>
+                          <a href="#" className="hover:opacity-80 transition-opacity">
+                            <img 
+                              src="/lovable-uploads/a3bf4da7-b26e-465d-a4c7-0c7aa7884409.png" 
+                              alt="VK" 
+                              className="h-6 md:h-4 lg:h-6 w-6 md:w-4 lg:w-6"
+                            />
+                          </a>
+                          <a href="#" className="hover:opacity-80 transition-opacity">
+                            <img 
+                              src="/lovable-uploads/8391ba9b-bd5c-49c0-a158-c8495d36856a.png" 
+                              alt="YouTube" 
+                              className="h-6 md:h-4 lg:h-6 w-6 md:w-4 lg:w-6"
+                            />
+                          </a>
                         </div>
                       </div>
                       
                       <div>
                         <p className="text-xs md:text-[10px] lg:text-xs font-benzin-semibold text-white mb-2 md:mb-1 lg:mb-2">Для PRO</p>
                         <div className="flex items-center gap-2">
-                          <img 
-                            src="/lovable-uploads/86517d29-fc19-48bf-9048-fe2be93d3477.png" 
-                            alt="Социальные сети PRO" 
-                            className="h-6 md:h-4 lg:h-6 w-auto"
-                          />
+                          <a href="#" className="hover:opacity-80 transition-opacity">
+                            <img 
+                              src="/lovable-uploads/ebb8653b-def9-464e-89e8-3cda175f80f4.png" 
+                              alt="Telegram" 
+                              className="h-6 md:h-4 lg:h-6 w-6 md:w-4 lg:w-6"
+                            />
+                          </a>
+                          <a href="#" className="hover:opacity-80 transition-opacity">
+                            <img 
+                              src="/lovable-uploads/a3bf4da7-b26e-465d-a4c7-0c7aa7884409.png" 
+                              alt="VK" 
+                              className="h-6 md:h-4 lg:h-6 w-6 md:w-4 lg:w-6"
+                            />
+                          </a>
+                          <a href="#" className="hover:opacity-80 transition-opacity">
+                            <img 
+                              src="/lovable-uploads/8391ba9b-bd5c-49c0-a158-c8495d36856a.png" 
+                              alt="YouTube" 
+                              className="h-6 md:h-4 lg:h-6 w-6 md:w-4 lg:w-6"
+                            />
+                          </a>
                         </div>
                       </div>
                     </div>
