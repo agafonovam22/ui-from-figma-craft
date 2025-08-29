@@ -122,7 +122,11 @@ const Cart: React.FC = () => {
                         className="w-8 h-8 p-0 hover:bg-gray-100"
                         onClick={() => handleAddToComparison(item)}
                       >
-                        <BarChart3 className={`w-4 h-4 ${isInComparison(item.id) ? 'text-blue-600' : 'text-gray-400'}`} />
+                        <img 
+                          src="/lovable-uploads/7616f6a7-ed2c-4918-afe1-1f89bd82bb07.png" 
+                          alt="Сравнить" 
+                          className={`w-4 h-4 ${isInComparison(item.id) ? 'opacity-100' : 'opacity-70'}`}
+                        />
                       </Button>
                       <Button 
                         size="sm" 
@@ -130,7 +134,11 @@ const Cart: React.FC = () => {
                         className="w-8 h-8 p-0 hover:bg-gray-100"
                         onClick={() => handleAddToFavorites(item)}
                       >
-                        <Heart className={`w-4 h-4 ${isFavorite(item.id) ? 'text-red-500 fill-current' : 'text-gray-400'}`} />
+                        <img 
+                          src="/lovable-uploads/91b8611b-ef3b-4677-8de7-7e23f3243df2.png" 
+                          alt="В избранное" 
+                          className={`w-4 h-4 ${isFavorite(item.id) ? 'opacity-100' : 'opacity-70'}`}
+                        />
                       </Button>
                       <Button 
                         size="sm" 
@@ -138,7 +146,11 @@ const Cart: React.FC = () => {
                         className="w-8 h-8 p-0 hover:bg-red-100"
                         onClick={() => removeItem(item.id)}
                       >
-                        <Trash2 className="w-4 h-4 text-gray-400 hover:text-red-500" />
+                        <img 
+                          src="/lovable-uploads/1b8cb20f-4636-4d05-88f2-9444ffc041fe.png" 
+                          alt="Удалить" 
+                          className="w-4 h-4 opacity-70 hover:opacity-100"
+                        />
                       </Button>
                     </div>
 
