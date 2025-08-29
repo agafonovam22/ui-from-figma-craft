@@ -113,7 +113,7 @@ const Comparison: React.FC = () => {
         ) : (
           <>
             <div className="relative mb-8">
-              <div className={`grid gap-6 ${comparison.length === 1 ? 'grid-cols-1' : comparison.length === 2 ? 'grid-cols-2' : comparison.length === 3 ? 'grid-cols-3' : 'grid-cols-4'}`}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5">
                 {comparison.map((item, index) => (
                   <div key={item.id} className="relative">
                     {/* Кнопка удаления из сравнения */}
