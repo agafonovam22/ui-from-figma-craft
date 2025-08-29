@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import {
@@ -34,8 +35,25 @@ import { Link } from 'react-router-dom';
 import SupportCitySelector from '@/components/SupportCitySelector';
 
 const Support: React.FC = () => {
+  const location = useLocation();
   const [activeTab, setActiveTab] = useState('delivery');
   const [selectedCity, setSelectedCity] = useState('Москва');
+
+  // Маппинг якорных ссылок на ID вкладок
+  const hashToTabMapping: Record<string, string> = {
+    '#delivery': 'delivery',
+    '#returns': 'return',
+    '#warranty': 'warranty', 
+    '#faq': 'faq'
+  };
+
+  // Обработка якорных ссылок при загрузке страницы и изменении URL
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash && hashToTabMapping[hash]) {
+      setActiveTab(hashToTabMapping[hash]);
+    }
+  }, [location.hash]);
 
   const tabs = [
     { id: 'delivery', label: 'Доставка и оплата' },
