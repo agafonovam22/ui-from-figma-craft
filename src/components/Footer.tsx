@@ -48,13 +48,13 @@ const Footer: React.FC = () => {
             <div>
               <h3 className="text-white text-xs md:text-[10px] lg:text-xs font-benzin-semibold mb-2 md:mb-1 lg:mb-2">Для Бизнеса</h3>
               <ul className="space-y-1 md:space-y-0.5 lg:space-y-1 text-[#778093] text-xs md:text-[9px] lg:text-xs">
-                <li><a href="#" className="hover:text-white transition-colors">3D-проект</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Бизнес-планирование</a></li>
+                <li><Link to="/uslugi/business#3d-project" className="hover:text-white transition-colors">3D-проект</Link></li>
+                <li><Link to="/uslugi/business#business-planning" className="hover:text-white transition-colors">Бизнес-планирование</Link></li>
                 <li><a href="#" className="hover:text-white transition-colors">Готовые решения</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Обучение персонала</a></li>
+                <li><Link to="/uslugi/business#staff-training" className="hover:text-white transition-colors">Обучение персонала</Link></li>
                 <li><a href="#" className="hover:text-white transition-colors">Лизинг</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Trade-In</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">В рассрочку</a></li>
+                <li><Link to="/uslugi/business#trade-in" className="hover:text-white transition-colors">Trade-In</Link></li>
+                <li><Link to="/uslugi/individuals" className="hover:text-white transition-colors">В рассрочку</Link></li>
               </ul>
             </div>
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -11,6 +11,7 @@ import InstallmentTable from '@/components/Services/InstallmentTable';
 
 const UslugiServices: React.FC = () => {
   const { category } = useParams<{ category: string }>();
+  const location = useLocation();
   
   // Define services by category
   const servicesByCategory = {
@@ -48,6 +49,23 @@ const UslugiServices: React.FC = () => {
   };
 
   const [activeTab, setActiveTab] = useState(getInitialActiveTab());
+
+  // Маппинг якорных ссылок на ID вкладок для business категории
+  const hashToTabMapping: Record<string, string> = {
+    '#3d-project': '3d-project',
+    '#business-planning': 'business-planning',
+    '#staff-training': 'staff-training',
+    '#trade-in': 'trade-in',
+    '#leasing': 'leasing'
+  };
+
+  // Обработка якорных ссылок при загрузке страницы и изменении URL
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash && hashToTabMapping[hash] && category === 'business') {
+      setActiveTab(hashToTabMapping[hash]);
+    }
+  }, [location.hash, category]);
 
   // Update active tab when category changes
   useEffect(() => {
