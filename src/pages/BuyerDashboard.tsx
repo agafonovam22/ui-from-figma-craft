@@ -20,6 +20,7 @@ const BuyerDashboard: React.FC = () => {
   const { user, logout, updateUser } = useAuth();
   const { favorites, removeFromFavorites } = useFavorites();
   const { addItem } = useCart();
+  const [activeTab, setActiveTab] = useState('overview');
   const [isEditingProfile, setIsEditingProfile] = useState(false);
   const [editForm, setEditForm] = useState({
     email: '',
@@ -154,23 +155,29 @@ const BuyerDashboard: React.FC = () => {
                   <p className="text-sm text-gray-600">{user?.email || ''}</p>
                 </CardHeader>
                 <CardContent className="space-y-2">
-                  <Button variant="ghost" className="w-full justify-start" asChild>
-                    <Link to="#orders">
-                      <Package className="mr-2 h-4 w-4" />
-                      Мои заказы
-                    </Link>
+                  <Button 
+                    variant="ghost" 
+                    className="w-full justify-start" 
+                    onClick={() => setActiveTab('orders')}
+                  >
+                    <Package className="mr-2 h-4 w-4" />
+                    Мои заказы
                   </Button>
-                  <Button variant="ghost" className="w-full justify-start" asChild>
-                    <Link to="#favorites">
-                      <Heart className="mr-2 h-4 w-4" />
-                      Избранное
-                    </Link>
+                  <Button 
+                    variant="ghost" 
+                    className="w-full justify-start" 
+                    onClick={() => setActiveTab('favorites')}
+                  >
+                    <Heart className="mr-2 h-4 w-4" />
+                    Избранное
                   </Button>
-                  <Button variant="ghost" className="w-full justify-start" asChild>
-                    <Link to="#profile">
-                      <Settings className="mr-2 h-4 w-4" />
-                      Настройки
-                    </Link>
+                  <Button 
+                    variant="ghost" 
+                    className="w-full justify-start" 
+                    onClick={() => setActiveTab('profile')}
+                  >
+                    <Settings className="mr-2 h-4 w-4" />
+                    Настройки
                   </Button>
                   <Button 
                     variant="ghost" 
@@ -186,7 +193,7 @@ const BuyerDashboard: React.FC = () => {
 
             {/* Main Content */}
             <div className="lg:col-span-3">
-              <Tabs defaultValue="overview">
+              <Tabs value={activeTab} onValueChange={setActiveTab}>
                 <TabsList className="grid w-full grid-cols-4">
                   <TabsTrigger value="overview">Обзор</TabsTrigger>
                   <TabsTrigger value="orders">Заказы</TabsTrigger>
