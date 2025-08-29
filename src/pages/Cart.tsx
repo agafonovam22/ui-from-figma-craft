@@ -150,32 +150,33 @@ const Cart: React.FC = () => {
                       <span className="text-xs text-gray-500 line-through">6 000₽</span>
                     </div>
 
-                    {/* Price - Right Side */}
-                    <div className="absolute top-12 right-2 z-10">
+                    {/* Quantity Controls and Price - Bottom Right */}
+                    <div className="absolute bottom-2 right-2 z-10 flex items-center space-x-4">
+                      {/* Price */}
                       <div className="text-lg font-bold text-gray-900">
                         {item.price.toLocaleString()} ₽
                       </div>
-                    </div>
-
-                    {/* Quantity Controls - Bottom Right */}
-                    <div className="absolute bottom-2 right-2 z-10 flex items-center space-x-2">
-                      <Button 
-                        size="sm" 
-                        variant="outline"
-                        className="w-8 h-8 p-0 text-xs rounded-full border-gray-300"
-                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                      >
-                        -
-                      </Button>
-                      <span className="text-sm font-benzin-semibold min-w-[20px] text-center">{item.quantity}</span>
-                      <Button 
-                        size="sm" 
-                        variant="outline"
-                        className="w-8 h-8 p-0 text-xs rounded-full border-gray-300"
-                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                      >
-                        +
-                      </Button>
+                      
+                      {/* Quantity Controls */}
+                      <div className="flex items-center space-x-2">
+                        <Button 
+                          size="sm" 
+                          variant="outline"
+                          className="w-8 h-8 p-0 text-xs rounded-full border-gray-300"
+                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        >
+                          -
+                        </Button>
+                        <span className="text-sm font-benzin-semibold min-w-[20px] text-center">{item.quantity}</span>
+                        <Button 
+                          size="sm" 
+                          variant="outline"
+                          className="w-8 h-8 p-0 text-xs rounded-full border-gray-300"
+                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        >
+                          +
+                        </Button>
+                      </div>
                     </div>
 
                     {/* Rating */}
