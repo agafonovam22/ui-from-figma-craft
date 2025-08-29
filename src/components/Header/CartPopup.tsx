@@ -146,6 +146,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                <span className="text-lg font-benzin-semibold">Итого:</span>
                <span className="text-xl font-benzin-semibold">{totalPrice.toLocaleString()} ₽</span>
             </div>
+            <div className="w-full h-px bg-gray-200 my-4"></div>
             <Link to="/cart">
               <Button className="w-full bg-[#F53B49] hover:bg-[#e63946]">
                 Перейти в корзину
