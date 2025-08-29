@@ -245,11 +245,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <CarouselContent className="h-full">
               {product.gallery_images.map((image: string, imageIndex: number) => (
                 <CarouselItem key={imageIndex} className="h-full">
-                  <div className="h-full flex items-center justify-center p-4">
+                  <div className={`h-full flex items-center justify-center ${imageSize === 'small' ? 'p-8' : 'p-4'}`}>
                     <LazyImage 
                       src={optimizeImageUrl(image, 400, 320)} 
                       alt={`${product.name} - фото ${imageIndex + 1}`}
-                      className="w-full h-full object-contain"
+                      className={`${imageSize === 'small' ? 'max-w-[140px] max-h-32' : 'w-full h-full'} object-contain`}
                     />
                   </div>
                 </CarouselItem>
@@ -258,11 +258,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <CustomCarouselButtons />
           </Carousel>
         ) : (
-          <div className="h-full flex items-center justify-center p-4">
+          <div className={`h-full flex items-center justify-center ${imageSize === 'small' ? 'p-8' : 'p-4'}`}>
             <LazyImage 
               src={optimizeImageUrl((product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg', 400, 320)} 
               alt={product.name || "Товар"}
-              className="w-full h-full object-contain"
+              className={`${imageSize === 'small' ? 'max-w-[140px] max-h-32' : 'w-full h-full'} object-contain`}
             />
           </div>
         )}
