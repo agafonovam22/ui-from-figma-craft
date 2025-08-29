@@ -142,6 +142,42 @@ const Cart: React.FC = () => {
                       </Button>
                     </div>
 
+                    {/* Discount Badge - Top Right */}
+                    <div className="absolute top-2 right-20 z-10 flex items-center gap-2">
+                      <span className="bg-red-500 text-white text-xs px-2 py-1 rounded font-medium">
+                        -15%
+                      </span>
+                      <span className="text-xs text-gray-500 line-through">6 000₽</span>
+                    </div>
+
+                    {/* Price - Right Side */}
+                    <div className="absolute top-12 right-2 z-10">
+                      <div className="text-lg font-bold text-gray-900">
+                        {item.price.toLocaleString()} ₽
+                      </div>
+                    </div>
+
+                    {/* Quantity Controls - Bottom Right */}
+                    <div className="absolute bottom-2 right-2 z-10 flex items-center space-x-2">
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        className="w-8 h-8 p-0 text-xs rounded-full border-gray-300"
+                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                      >
+                        -
+                      </Button>
+                      <span className="text-sm font-benzin-semibold min-w-[20px] text-center">{item.quantity}</span>
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        className="w-8 h-8 p-0 text-xs rounded-full border-gray-300"
+                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                      >
+                        +
+                      </Button>
+                    </div>
+
                     {/* Rating */}
                     <div className="flex items-center gap-1 mb-2">
                       {Array.from({ length: 5 }, (_, i) => (
@@ -153,7 +189,7 @@ const Cart: React.FC = () => {
                     </div>
                     
                     {/* Product Name */}
-                    <div className="mb-2 pr-6">
+                    <div className="mb-2 pr-40">
                       {(() => {
                         const parts = item.name.split(/\s+(?=[A-Z][a-z]*\s*[A-Z0-9])|(?<=\w)\s+(?=[A-Z][a-z]*\s+Kit|(?:[A-Z]+\d*)+)/);
                         if (parts.length > 1) {
@@ -178,7 +214,7 @@ const Cart: React.FC = () => {
                     </div>
 
                     {/* Product Details */}
-                    <div className="text-xs text-gray-500 mb-2 font-benzin">
+                    <div className="text-xs text-gray-500 mb-2 font-benzin pr-40">
                       <span>Цвет: Зеленый</span>
                       <span className="ml-4">Диаметр, ft: 14</span>
                     </div>
@@ -191,43 +227,6 @@ const Cart: React.FC = () => {
                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
                         <div className="w-1.5 h-1.5 border border-green-500 rounded-full"></div>
                       </div>
-                    </div>
-                  </div>
-
-                  {/* Right side - Price and Quantity */}
-                  <div className="flex flex-col justify-between items-end p-3 min-w-[120px]">
-                    {/* Discount Badge */}
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="bg-red-500 text-white text-xs px-2 py-1 rounded font-medium">
-                        -15%
-                      </span>
-                      <span className="text-xs text-gray-500 line-through">6 000₽</span>
-                    </div>
-                    
-                    {/* Price */}
-                    <div className="text-lg font-bold text-gray-900 mb-4">
-                      {item.price.toLocaleString()} ₽
-                    </div>
-                    
-                    {/* Quantity Controls */}
-                    <div className="flex items-center space-x-2">
-                      <Button 
-                        size="sm" 
-                        variant="outline"
-                        className="w-8 h-8 p-0 text-xs rounded-full border-gray-300"
-                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                      >
-                        -
-                      </Button>
-                      <span className="text-sm font-benzin-semibold min-w-[20px] text-center">{item.quantity}</span>
-                      <Button 
-                        size="sm" 
-                        variant="outline"
-                        className="w-8 h-8 p-0 text-xs rounded-full border-gray-300"
-                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                      >
-                        +
-                      </Button>
                     </div>
                   </div>
                 </div>
