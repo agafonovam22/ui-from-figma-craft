@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import EmailSubscription from '../components/EmailSubscription';
@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Eye, EyeOff } from 'lucide-react';
 
 const Register: React.FC = () => {
+  const navigate = useNavigate();
   const [userType, setUserType] = useState<'buyer' | 'dealer'>('buyer');
   const [formData, setFormData] = useState({
     fullName: '',
@@ -26,7 +27,26 @@ const Register: React.FC = () => {
 
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Basic validation
+    if (formData.password !== formData.confirmPassword) {
+      alert('Пароли не совпадают');
+      return;
+    }
+    
+    if (formData.password.length < 6) {
+      alert('Пароль должен содержать минимум 6 символов');
+      return;
+    }
+    
     console.log('Registration attempt:', { userType, ...formData });
+    
+    // Simulate successful registration and redirect based on user type
+    if (userType === 'buyer') {
+      navigate('/buyer-dashboard');
+    } else {
+      navigate('/dealer-dashboard');
+    }
   };
 
   const handleSocialRegister = (provider: 'google' | 'facebook') => {
