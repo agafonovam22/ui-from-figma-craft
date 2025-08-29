@@ -132,12 +132,6 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                         </Button>
                       </div>
 
-                      {/* Общая стоимость */}
-                      <div className="text-right">
-                        <span className="text-sm font-bold text-[#F53B49]">
-                          {(item.price * item.quantity).toLocaleString()} ₽
-                        </span>
-                      </div>
                     </div>
                   </div>
                 </div>
