@@ -64,13 +64,11 @@ const UslugiServices: React.FC = () => {
     const hash = location.hash;
     if (hash && hashToTabMapping[hash] && category === 'business') {
       setActiveTab(hashToTabMapping[hash]);
+    } else {
+      // Если нет якорной ссылки, устанавливаем дефолтную вкладку
+      setActiveTab(getInitialActiveTab());
     }
   }, [location.hash, category]);
-
-  // Update active tab when category changes
-  useEffect(() => {
-    setActiveTab(getInitialActiveTab());
-  }, [category]);
 
   // Get category title
   const getCategoryTitle = () => {
