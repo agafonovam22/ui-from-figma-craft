@@ -124,7 +124,7 @@ const Footer: React.FC = () => {
                           <img 
                             src="/lovable-uploads/3e32d540-c617-404a-955b-9f5844636e3a.png" 
                             alt="Принимаем к оплате" 
-                            className="h-8 md:h-6 lg:h-8 w-auto"
+                            className="h-6 md:h-5 lg:h-6 w-auto"
                           />
                         </div>
                       </div>
