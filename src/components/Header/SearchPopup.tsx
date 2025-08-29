@@ -201,18 +201,11 @@ const SearchPopup: React.FC<SearchPopupProps> = ({ children, isOpen, onOpenChang
                         <div className="mx-3 h-px bg-gray-200"></div>
 
                         {/* Информация о товаре */}
-                        <div className="p-3 flex flex-col justify-between transition-colors duration-300" style={{ height: '85px' }}>
+                        <div className="p-3 flex flex-col justify-center transition-colors duration-300" style={{ height: '85px' }}>
                           {/* Название товара */}
-                          <h4 className="text-gray-900 group-hover:text-white text-xs font-medium line-clamp-2 leading-tight mb-2 transition-colors duration-300">
+                          <h4 className="text-gray-900 group-hover:text-white text-xs font-medium line-clamp-3 leading-tight transition-colors duration-300">
                             {product.name}
                           </h4>
-                          
-                          {/* Цена */}
-                          <div className="flex items-center justify-between">
-                            <span className="text-xs font-bold text-gray-900 group-hover:text-white transition-colors duration-300">
-                              {product.price.toLocaleString()} ₽
-                            </span>
-                          </div>
                         </div>
                       </div>
                     </Link>
