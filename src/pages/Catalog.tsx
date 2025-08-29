@@ -140,17 +140,29 @@ const Catalog: React.FC = () => {
   // Автоматическая установка фильтра по назначению из URL
   React.useEffect(() => {
     if (purposeParam) {
-      let purposeType = '';
-      if (purposeParam === 'home') {
-        purposeType = 'Домашние';
-      } else if (purposeParam === 'fitness') {
-        purposeType = 'Профессиональные';
-      }
+      const purposeTypes: string[] = [];
+      const purposeIds = purposeParam.split(',');
       
-      if (purposeType) {
+      purposeIds.forEach(id => {
+        if (id === '57') {
+          purposeTypes.push('Домашние');
+        } else if (id === '61' || id === '62') {
+          purposeTypes.push('Профессиональные');
+        } else if (id === '59') {
+          purposeTypes.push('Полупрофессиональные');
+        } else if (id === '63') {
+          purposeTypes.push('Реабилитация');
+        } else if (id === 'home') {
+          purposeTypes.push('Домашние');
+        } else if (id === 'fitness') {
+          purposeTypes.push('Профессиональные');
+        }
+      });
+      
+      if (purposeTypes.length > 0) {
         setFilters(prev => ({
           ...prev,
-          purposeTypes: [purposeType]
+          purposeTypes: purposeTypes
         }));
       }
     } else {
