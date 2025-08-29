@@ -8,11 +8,24 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
-import { User, Package, Heart, CreditCard, Settings, LogOut, Star, ShoppingBag } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { User, Package, Heart, CreditCard, Settings, LogOut, Star, ShoppingBag, Eye, EyeOff } from 'lucide-react';
 
 const BuyerDashboard: React.FC = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
+  const [isEditingProfile, setIsEditingProfile] = useState(false);
+  const [editForm, setEditForm] = useState({
+    email: '',
+    phone: '',
+    currentPassword: '',
+    newPassword: '',
+    confirmPassword: ''
+  });
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   useEffect(() => {
     // Load user data from localStorage
@@ -20,6 +33,13 @@ const BuyerDashboard: React.FC = () => {
     if (savedUserData) {
       const userData = JSON.parse(savedUserData);
       setUser(userData);
+      setEditForm({
+        email: userData.email || '',
+        phone: userData.phone || '',
+        currentPassword: '',
+        newPassword: '',
+        confirmPassword: ''
+      });
     }
   }, []);
 
@@ -41,6 +61,56 @@ const BuyerDashboard: React.FC = () => {
     // Clear user data and redirect
     localStorage.removeItem('userData');
     navigate('/account');
+  };
+
+  const handleEditFormChange = (field: string, value: string) => {
+    setEditForm(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSaveProfile = () => {
+    // Basic validation
+    if (editForm.newPassword && editForm.newPassword !== editForm.confirmPassword) {
+      alert('Новые пароли не совпадают');
+      return;
+    }
+
+    if (editForm.newPassword && editForm.newPassword.length < 6) {
+      alert('Новый пароль должен содержать минимум 6 символов');
+      return;
+    }
+
+    // Update user data in localStorage
+    const updatedUserData = {
+      ...user,
+      email: editForm.email,
+      phone: editForm.phone
+    };
+
+    localStorage.setItem('userData', JSON.stringify(updatedUserData));
+    setUser(updatedUserData);
+    setIsEditingProfile(false);
+
+    // Clear password fields
+    setEditForm(prev => ({
+      ...prev,
+      currentPassword: '',
+      newPassword: '',
+      confirmPassword: ''
+    }));
+
+    alert('Профиль успешно обновлен');
+  };
+
+  const handleCancelEdit = () => {
+    setIsEditingProfile(false);
+    // Reset form to current user data
+    setEditForm({
+      email: user?.email || '',
+      phone: user?.phone || '',
+      currentPassword: '',
+      newPassword: '',
+      confirmPassword: ''
+    });
   };
 
   return (
@@ -231,8 +301,120 @@ const BuyerDashboard: React.FC = () => {
                       <CardTitle>Настройки профиля</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <p className="text-gray-600">Здесь вы можете изменить свои личные данные, пароль и настройки уведомлений.</p>
-                      <Button>Редактировать профиль</Button>
+                      <p className="text-gray-600" style={{ fontFamily: 'Manrope' }}>
+                        Здесь вы можете изменить свои личные данные, пароль и настройки уведомлений.
+                      </p>
+                      
+                      {!isEditingProfile ? (
+                        <Button onClick={() => setIsEditingProfile(true)}>
+                          Редактировать профиль
+                        </Button>
+                      ) : (
+                        <div className="space-y-4">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                              <Label htmlFor="email">Email</Label>
+                              <Input
+                                id="email"
+                                type="email"
+                                value={editForm.email}
+                                onChange={(e) => handleEditFormChange('email', e.target.value)}
+                                placeholder="Введите новый email"
+                              />
+                            </div>
+                            
+                            <div className="space-y-2">
+                              <Label htmlFor="phone">Телефон</Label>
+                              <Input
+                                id="phone"
+                                type="tel"
+                                value={editForm.phone}
+                                onChange={(e) => handleEditFormChange('phone', e.target.value)}
+                                placeholder="Введите новый телефон"
+                              />
+                            </div>
+                          </div>
+
+                          <div className="border-t pt-4">
+                            <h4 className="font-medium mb-4">Изменить пароль (опционально)</h4>
+                            <div className="space-y-4">
+                              <div className="space-y-2">
+                                <Label htmlFor="currentPassword">Текущий пароль</Label>
+                                <div className="relative">
+                                  <Input
+                                    id="currentPassword"
+                                    type={showCurrentPassword ? "text" : "password"}
+                                    value={editForm.currentPassword}
+                                    onChange={(e) => handleEditFormChange('currentPassword', e.target.value)}
+                                    placeholder="Введите текущий пароль"
+                                    className="pr-10"
+                                  />
+                                  <button
+                                    type="button"
+                                    onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+                                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                                  >
+                                    {showCurrentPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                                  </button>
+                                </div>
+                              </div>
+
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="space-y-2">
+                                  <Label htmlFor="newPassword">Новый пароль</Label>
+                                  <div className="relative">
+                                    <Input
+                                      id="newPassword"
+                                      type={showNewPassword ? "text" : "password"}
+                                      value={editForm.newPassword}
+                                      onChange={(e) => handleEditFormChange('newPassword', e.target.value)}
+                                      placeholder="Введите новый пароль"
+                                      className="pr-10"
+                                    />
+                                    <button
+                                      type="button"
+                                      onClick={() => setShowNewPassword(!showNewPassword)}
+                                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                                    >
+                                      {showNewPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <div className="space-y-2">
+                                  <Label htmlFor="confirmPassword">Подтвердите пароль</Label>
+                                  <div className="relative">
+                                    <Input
+                                      id="confirmPassword"
+                                      type={showConfirmPassword ? "text" : "password"}
+                                      value={editForm.confirmPassword}
+                                      onChange={(e) => handleEditFormChange('confirmPassword', e.target.value)}
+                                      placeholder="Повторите новый пароль"
+                                      className="pr-10"
+                                    />
+                                    <button
+                                      type="button"
+                                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                                    >
+                                      {showConfirmPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="flex gap-3 pt-4">
+                            <Button onClick={handleSaveProfile} className="bg-[#F53B49] hover:bg-[#e63946]">
+                              Сохранить изменения
+                            </Button>
+                            <Button variant="outline" onClick={handleCancelEdit}>
+                              Отменить
+                            </Button>
+                          </div>
+                        </div>
+                      )}
                     </CardContent>
                   </Card>
                 </TabsContent>
