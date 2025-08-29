@@ -113,9 +113,9 @@ const Comparison: React.FC = () => {
         ) : (
           <>
             <div className="relative mb-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-8">
+              <div className="flex gap-2.5 justify-start">
                 {comparison.map((item, index) => (
-                  <div key={item.id} className="relative">
+                  <div key={item.id} className="relative" style={{ width: 'calc(25% - 30px)' }}>
                     {/* Кнопка удаления из сравнения */}
                     <button
                       onClick={() => handleRemoveItem(item.id)}
@@ -155,28 +155,28 @@ const Comparison: React.FC = () => {
               <h2 className="text-xl font-bold text-gray-900 mb-4">Оценка и способ получения</h2>
               <div className="space-y-4">
                 {/* Оценка покупателей */}
-                <div className="grid grid-cols-5 gap-8 md:gap-10 lg:gap-8 items-center">
-                  <div className="font-medium text-xs font-manrope">Оценка покупателей</div>
+                <div className="flex gap-2.5 items-center">
+                  <div className="font-medium text-xs font-manrope" style={{ width: '200px' }}>Оценка покупателей</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center">
+                    <div key={item.id} className="text-center" style={{ width: 'calc(25% - 30px)' }}>
                       <div className="text-blue-600 text-xs font-manrope">4/5</div>
                     </div>
                   ))}
                 </div>
                 {/* Способ получения */}
-                <div className="grid grid-cols-5 gap-8 md:gap-10 lg:gap-8 items-center">
-                  <div className="font-medium text-xs font-manrope">Способ получения</div>
+                <div className="flex gap-2.5 items-center">
+                  <div className="font-medium text-xs font-manrope" style={{ width: '200px' }}>Способ получения</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-xs font-manrope">
+                    <div key={item.id} className="text-center text-xs font-manrope" style={{ width: 'calc(25% - 30px)' }}>
                       Доставка, самовывоз
                     </div>
                   ))}
                 </div>
                 {/* Оплата */}
-                <div className="grid grid-cols-5 gap-8 md:gap-10 lg:gap-8 items-center">
-                  <div className="font-medium text-xs font-manrope">Оплата</div>
+                <div className="flex gap-2.5 items-center">
+                  <div className="font-medium text-xs font-manrope" style={{ width: '200px' }}>Оплата</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-xs font-manrope">
+                    <div key={item.id} className="text-center text-xs font-manrope" style={{ width: 'calc(25% - 30px)' }}>
                       Онлайн, рассрочка, карта
                     </div>
                   ))}
@@ -189,73 +189,73 @@ const Comparison: React.FC = () => {
               <h2 className="text-xl font-bold text-gray-900 mb-4">Основные характеристики</h2>
               <div className="space-y-4">
                 {/* Рама */}
-                <div className="grid grid-cols-5 gap-8 md:gap-10 lg:gap-8 items-center">
-                  <div className="font-medium text-xs font-manrope">Рама</div>
+                <div className="flex gap-2.5 items-center">
+                  <div className="font-medium text-xs font-manrope" style={{ width: '200px' }}>Рама</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-xs font-manrope">
+                    <div key={item.id} className="text-center text-xs font-manrope" style={{ width: 'calc(25% - 30px)' }}>
                       оцинкованная сталь
                     </div>
                   ))}
                 </div>
                 {/* Лестница */}
-                <div className="grid grid-cols-5 gap-8 md:gap-10 lg:gap-8 items-center">
-                  <div className="font-medium text-xs font-manrope">Лестница</div>
+                <div className="flex gap-2.5 items-center">
+                  <div className="font-medium text-xs font-manrope" style={{ width: '200px' }}>Лестница</div>
                   {comparison.map((item, index) => (
-                    <div key={item.id} className="text-center text-xs font-manrope">
+                    <div key={item.id} className="text-center text-xs font-manrope" style={{ width: 'calc(25% - 30px)' }}>
                       {index === 2 ? "-" : "есть"}
                     </div>
                   ))}
                 </div>
                 {/* Серия */}
-                <div className="grid grid-cols-5 gap-8 md:gap-10 lg:gap-8 items-center">
-                  <div className="font-medium text-xs font-manrope">Серия</div>
+                <div className="flex gap-2.5 items-center">
+                  <div className="font-medium text-xs font-manrope" style={{ width: '200px' }}>Серия</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-xs font-manrope">
+                    <div key={item.id} className="text-center text-xs font-manrope" style={{ width: 'calc(25% - 30px)' }}>
                       Space
                     </div>
                   ))}
                 </div>
                 {/* Цвет */}
-                <div className="grid grid-cols-5 gap-8 md:gap-10 lg:gap-8 items-center">
-                  <div className="font-medium text-xs font-manrope">Цвет</div>
+                <div className="flex gap-2.5 items-center">
+                  <div className="font-medium text-xs font-manrope" style={{ width: '200px' }}>Цвет</div>
                   {comparison.map((item, index) => (
-                    <div key={item.id} className="text-center text-xs font-manrope">
+                    <div key={item.id} className="text-center text-xs font-manrope" style={{ width: 'calc(25% - 30px)' }}>
                       {index === 3 ? "-" : "красный/синий"}
                     </div>
                   ))}
                 </div>
                 {/* Ширина защитного мата */}
-                <div className="grid grid-cols-5 gap-8 md:gap-10 lg:gap-8 items-center">
-                  <div className="font-medium text-xs font-manrope">Ширина защитного мата, см</div>
+                <div className="flex gap-2.5 items-center">
+                  <div className="font-medium text-xs font-manrope" style={{ width: '200px' }}>Ширина защитного мата, см</div>
                   {comparison.map((item, index) => (
-                    <div key={item.id} className="text-center text-xs font-manrope">
+                    <div key={item.id} className="text-center text-xs font-manrope" style={{ width: 'calc(25% - 30px)' }}>
                       {index === 2 ? "-" : "25"}
                     </div>
                   ))}
                 </div>
                 {/* Материал защитного мата */}
-                <div className="grid grid-cols-5 gap-8 md:gap-10 lg:gap-8 items-center">
-                  <div className="font-medium text-xs font-manrope">Материал защитного мата</div>
+                <div className="flex gap-2.5 items-center">
+                  <div className="font-medium text-xs font-manrope" style={{ width: '200px' }}>Материал защитного мата</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-xs font-manrope">
+                    <div key={item.id} className="text-center text-xs font-manrope" style={{ width: 'calc(25% - 30px)' }}>
                       вспененный РР
                     </div>
                   ))}
                 </div>
                 {/* Диаметр батута, ft */}
-                <div className="grid grid-cols-5 gap-8 md:gap-10 lg:gap-8 items-center">
-                  <div className="font-medium text-xs font-manrope">Диаметр батута, ft</div>
+                <div className="flex gap-2.5 items-center">
+                  <div className="font-medium text-xs font-manrope" style={{ width: '200px' }}>Диаметр батута, ft</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-xs font-manrope">
+                    <div key={item.id} className="text-center text-xs font-manrope" style={{ width: 'calc(25% - 30px)' }}>
                       8
                     </div>
                   ))}
                 </div>
                 {/* Диаметр батута, см */}
-                <div className="grid grid-cols-5 gap-8 md:gap-10 lg:gap-8 items-center">
-                  <div className="font-medium text-xs font-manrope">Диаметр батута, см</div>
+                <div className="flex gap-2.5 items-center">
+                  <div className="font-medium text-xs font-manrope" style={{ width: '200px' }}>Диаметр батута, см</div>
                   {comparison.map((item, index) => (
-                    <div key={item.id} className="text-center text-xs font-manrope">
+                    <div key={item.id} className="text-center text-xs font-manrope" style={{ width: 'calc(25% - 30px)' }}>
                       {index === 3 ? "-" : "244"}
                     </div>
                   ))}
@@ -268,28 +268,28 @@ const Comparison: React.FC = () => {
               <h2 className="text-xl font-bold text-gray-900 mb-4">Доп. характеристики</h2>
               <div className="space-y-4">
                 {/* Рама */}
-                <div className="grid grid-cols-5 gap-8 md:gap-10 lg:gap-8 items-center">
-                  <div className="font-medium text-xs font-manrope">Рама</div>
+                <div className="flex gap-2.5 items-center">
+                  <div className="font-medium text-xs font-manrope" style={{ width: '200px' }}>Рама</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-xs font-manrope">
+                    <div key={item.id} className="text-center text-xs font-manrope" style={{ width: 'calc(25% - 30px)' }}>
                       оцинкованная сталь
                     </div>
                   ))}
                 </div>
                 {/* Лестница */}
-                <div className="grid grid-cols-5 gap-8 md:gap-10 lg:gap-8 items-center">
-                  <div className="font-medium text-xs font-manrope">Лестница</div>
+                <div className="flex gap-2.5 items-center">
+                  <div className="font-medium text-xs font-manrope" style={{ width: '200px' }}>Лестница</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-xs font-manrope">
+                    <div key={item.id} className="text-center text-xs font-manrope" style={{ width: 'calc(25% - 30px)' }}>
                       есть
                     </div>
                   ))}
                 </div>
                 {/* Серия */}
-                <div className="grid grid-cols-5 gap-8 md:gap-10 lg:gap-8 items-center">
-                  <div className="font-medium text-xs font-manrope">Серия</div>
+                <div className="flex gap-2.5 items-center">
+                  <div className="font-medium text-xs font-manrope" style={{ width: '200px' }}>Серия</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-xs font-manrope">
+                    <div key={item.id} className="text-center text-xs font-manrope" style={{ width: 'calc(25% - 30px)' }}>
                       Space
                     </div>
                   ))}
