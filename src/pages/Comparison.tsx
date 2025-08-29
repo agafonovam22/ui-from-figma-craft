@@ -115,7 +115,7 @@ const Comparison: React.FC = () => {
             <div className="relative mb-8">
               <div className="flex gap-2.5 justify-start">
                 {comparison.map((item, index) => (
-                  <div key={item.id} className="relative" style={{ width: 'calc(25% - 30px)', minHeight: 'calc(100% + 15px)' }}>
+                  <div key={item.id} className="relative" style={{ width: 'calc(25% - 30px)' }}>
                     {/* Кнопка удаления из сравнения */}
                     <button
                       onClick={() => handleRemoveItem(item.id)}
@@ -124,7 +124,7 @@ const Comparison: React.FC = () => {
                       <Trash2 className="w-4 h-4 text-gray-400 hover:text-red-500" />
                     </button>
                     
-                    <div style={{ height: 'calc(100% + 15px)' }}>
+                    <div style={{ paddingBottom: '15px' }}>
                       <ProductCard
                         product={{
                           id: item.id,
