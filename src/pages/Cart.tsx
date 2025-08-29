@@ -149,7 +149,7 @@ const Cart: React.FC = () => {
                         <img 
                           src="/lovable-uploads/1b8cb20f-4636-4d05-88f2-9444ffc041fe.png" 
                           alt="Удалить" 
-                          className="w-5 h-5 opacity-70 hover:opacity-100"
+                          className="w-6 h-6 opacity-70 hover:opacity-100"
                         />
                       </Button>
                     </div>
