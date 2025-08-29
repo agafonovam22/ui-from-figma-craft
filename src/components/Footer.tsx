@@ -122,7 +122,7 @@ const Footer: React.FC = () => {
                         <p className="text-[10px] md:text-[8px] lg:text-[10px] mb-2 md:mb-1 lg:mb-2 text-[#778093]">Принимаем к оплате</p>
                         <div className="flex gap-2 md:gap-1 lg:gap-2 flex-wrap">
                           <img 
-                            src="/lovable-uploads/5d9222e9-c120-4b23-8049-5257896f3b0e.png" 
+                            src="/lovable-uploads/3e32d540-c617-404a-955b-9f5844636e3a.png" 
                             alt="Принимаем к оплате" 
                             className="h-8 md:h-6 lg:h-8 w-auto"
                           />
