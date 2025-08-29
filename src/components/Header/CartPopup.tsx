@@ -41,40 +41,98 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
               </div>
             ) : (
               items.map((item) => (
-                <div key={item.id} className="flex items-center space-x-4 py-4 border-b">
-                  <img
-                    src={item.image_url}
-                    alt={item.name}
-                    className="w-16 h-16 rounded-lg object-cover"
-                  />
-                  <div className="flex-1">
-                    <h3 className="font-medium text-sm">{item.name}</h3>
-                    <div className="flex items-center justify-between mt-2">
-                      <span className="font-bold">{(item.price * item.quantity).toLocaleString()} ₽</span>
+                <div key={item.id} className="relative group rounded-lg overflow-hidden mb-4" style={{ backgroundColor: '#F8F8FD' }}>
+                  {/* Новинка бейдж */}
+                  <div className="absolute top-3 left-3 z-10">
+                    <span className="text-white text-xs px-3 py-1 rounded-full font-medium" style={{ backgroundColor: '#31BF00' }}>
+                      НОВИНКА
+                    </span>
+                  </div>
+
+                  {/* Кнопка удаления */}
+                  <div className="absolute top-3 right-3 z-10">
+                    <Button 
+                      size="sm" 
+                      variant="ghost"
+                      className="w-8 h-8 p-0 hover:bg-red-100"
+                      onClick={() => removeItem(item.id)}
+                    >
+                      <Trash2 className="w-4 h-4 text-red-600" />
+                    </Button>
+                  </div>
+
+                  {/* Изображение товара */}
+                  <div className="h-40 flex items-center justify-center p-4" style={{ backgroundColor: '#F8F8FD' }}>
+                    {/* Декоративный элемент в правом верхнем углу */}
+                    <div className="absolute top-0 -right-8 w-40 h-40 z-0">
+                      <img 
+                        src="/lovable-uploads/5e75cf63-44ac-40f1-932d-ab5786810641.png" 
+                        alt="" 
+                        className="w-full h-full object-contain opacity-50"
+                      />
+                    </div>
+                    <img
+                      src={item.image_url}
+                      alt={item.name}
+                      className="w-full h-full object-contain z-10 relative"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = '/placeholder.svg';
+                      }}
+                    />
+                  </div>
+
+                  {/* Серая разделительная полоса */}
+                  <div className="mx-4 h-px bg-gray-200"></div>
+
+                  {/* Информация о товаре */}
+                  <div className="p-4">
+                    {/* Статус наличия */}
+                    <div className="flex items-center justify-start gap-1 mb-2">
+                      <span className="text-xs text-green-600 font-medium">В наличии</span>
+                      <div className="flex gap-0.5">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <div className="w-2 h-2 border border-green-500 rounded-full"></div>
+                      </div>
+                    </div>
+
+                    {/* Название товара */}
+                    <h3 className="text-gray-900 text-sm mb-3 line-clamp-2 leading-relaxed font-benzin">
+                      {item.name}
+                    </h3>
+
+                    {/* Цена и количество */}
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-sm font-bold text-gray-900">
+                        {item.price.toLocaleString()} ₽
+                      </span>
                       <div className="flex items-center space-x-2">
                         <Button 
                           size="sm" 
                           variant="outline"
+                          className="w-8 h-8 p-0"
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
                         >
                           -
                         </Button>
-                        <span>{item.quantity}</span>
+                        <span className="text-sm font-medium min-w-[20px] text-center">{item.quantity}</span>
                         <Button 
                           size="sm" 
                           variant="outline"
+                          className="w-8 h-8 p-0"
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
                         >
                           +
                         </Button>
-                        <Button 
-                          size="sm" 
-                          variant="ghost"
-                          onClick={() => removeItem(item.id)}
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </Button>
                       </div>
+                    </div>
+
+                    {/* Общая стоимость */}
+                    <div className="flex justify-between items-center pt-2 border-t">
+                      <span className="text-xs text-gray-600">Общая стоимость:</span>
+                      <span className="text-sm font-bold text-[#F53B49]">
+                        {(item.price * item.quantity).toLocaleString()} ₽
+                      </span>
                     </div>
                   </div>
                 </div>
