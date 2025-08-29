@@ -124,24 +124,22 @@ const Comparison: React.FC = () => {
                       <Trash2 className="w-4 h-4 text-gray-400 hover:text-red-500" />
                     </button>
                     
-                    <div className="pb-[15px]">
-                      <ProductCard
-                        product={{
-                          id: item.id,
-                          name: item.name,
-                          price: item.price,
-                          gallery_images: [item.image_url],
-                          badge: "Новинка",
-                          badge_color: "green",
-                          original_price: item.originalPrice,
-                          discount_percentage: item.discount,
-                          rating: 4.5,
-                          reviews_count: 4,
-                          in_stock: true,
-                          quantity: 5
-                        }}
-                      />
-                    </div>
+                    <ProductCard
+                      product={{
+                        id: item.id,
+                        name: item.name,
+                        price: item.price,
+                        gallery_images: [item.image_url],
+                        badge: "Новинка",
+                        badge_color: "green",
+                        original_price: item.originalPrice,
+                        discount_percentage: item.discount,
+                        rating: 4.5,
+                        reviews_count: 4,
+                        in_stock: true,
+                        quantity: 5
+                      }}
+                    />
                   </div>
                 ))}
               </div>
