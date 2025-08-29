@@ -123,21 +123,21 @@ const Footer: React.FC = () => {
                       <div>
                         <p className="text-xs md:text-[10px] lg:text-xs font-benzin-semibold text-white mb-2 md:mb-1 lg:mb-2">Для PRO</p>
                         <div className="flex items-center gap-2">
-                          <a href="#" className="hover:opacity-80 transition-opacity">
+                          <a href="https://t.me/wellfitnessPRO" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                             <img 
                               src="/lovable-uploads/ebb8653b-def9-464e-89e8-3cda175f80f4.png" 
                               alt="Telegram" 
                               className="h-6 md:h-4 lg:h-6 w-6 md:w-4 lg:w-6"
                             />
                           </a>
-                          <a href="#" className="hover:opacity-80 transition-opacity">
+                          <a href="https://vk.com/wellfitness_russia" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                             <img 
                               src="/lovable-uploads/a3bf4da7-b26e-465d-a4c7-0c7aa7884409.png" 
                               alt="VK" 
                               className="h-6 md:h-4 lg:h-6 w-6 md:w-4 lg:w-6"
                             />
                           </a>
-                          <a href="#" className="hover:opacity-80 transition-opacity">
+                          <a href="https://www.youtube.com/channel/UCRUEzmESwZuS_VB0dnhvd7w" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                             <img 
                               src="/lovable-uploads/8391ba9b-bd5c-49c0-a158-c8495d36856a.png" 
                               alt="YouTube" 
