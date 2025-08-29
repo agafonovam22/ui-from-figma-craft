@@ -115,7 +115,7 @@ const Comparison: React.FC = () => {
             <div className="relative mb-8">
               <div className="flex gap-2.5 justify-start">
                 {comparison.map((item, index) => (
-                  <div key={item.id} className="relative" style={{ width: 'calc(25% - 30px)' }}>
+                  <div key={item.id} className="relative" style={{ width: 'calc(25% - 30px)', minHeight: 'calc(100% + 15px)' }}>
                     {/* Кнопка удаления из сравнения */}
                     <button
                       onClick={() => handleRemoveItem(item.id)}
@@ -124,22 +124,24 @@ const Comparison: React.FC = () => {
                       <Trash2 className="w-4 h-4 text-gray-400 hover:text-red-500" />
                     </button>
                     
-                    <ProductCard
-                      product={{
-                        id: item.id,
-                        name: item.name,
-                        price: item.price,
-                        gallery_images: [item.image_url],
-                        badge: "Новинка",
-                        badge_color: "green",
-                        original_price: item.originalPrice,
-                        discount_percentage: item.discount,
-                        rating: 4.5,
-                        reviews_count: 4,
-                        in_stock: true,
-                        quantity: 5
-                      }}
-                    />
+                    <div style={{ height: 'calc(100% + 15px)' }}>
+                      <ProductCard
+                        product={{
+                          id: item.id,
+                          name: item.name,
+                          price: item.price,
+                          gallery_images: [item.image_url],
+                          badge: "Новинка",
+                          badge_color: "green",
+                          original_price: item.originalPrice,
+                          discount_percentage: item.discount,
+                          rating: 4.5,
+                          reviews_count: 4,
+                          in_stock: true,
+                          quantity: 5
+                        }}
+                      />
+                    </div>
                   </div>
                 ))}
               </div>
