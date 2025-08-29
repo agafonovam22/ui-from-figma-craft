@@ -47,7 +47,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                     {/* Новинка бейдж */}
                     <div className="absolute top-2 left-2 z-10">
                        <span className="text-white text-xs px-2 py-1 rounded-full font-benzin-semibold" style={{ backgroundColor: '#31BF00' }}>
-                         NEW
+                         Новинка
                        </span>
                     </div>
 
