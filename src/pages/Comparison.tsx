@@ -93,7 +93,7 @@ const Comparison: React.FC = () => {
             />
             <label 
               htmlFor="show-differences" 
-              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+              className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer font-manrope"
             >
               Показывать только различия
             </label>
@@ -103,9 +103,9 @@ const Comparison: React.FC = () => {
         {/* Products Row */}
         {comparison.length === 0 ? (
           <div className="text-center py-16">
-            <h2 className="text-xl text-gray-500 mb-4">В сравнении пока нет товаров</h2>
+            <h2 className="text-lg text-gray-500 mb-4 font-manrope">В сравнении пока нет товаров</h2>
             <Link to="/catalog">
-              <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white">
+              <Button className="bg-[#F53B49] hover:bg-[#e63946] text-white font-manrope text-xs">
                 Перейти в каталог
               </Button>
             </Link>
@@ -156,27 +156,27 @@ const Comparison: React.FC = () => {
               <div className="space-y-4">
                 {/* Оценка покупателей */}
                 <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
-                  <div className="font-medium">Оценка покупателей</div>
+                  <div className="font-medium text-xs font-manrope">Оценка покупателей</div>
                   {comparison.map((item) => (
                     <div key={item.id} className="text-center">
-                      <div className="text-blue-600 text-sm">4/5</div>
+                      <div className="text-blue-600 text-xs font-manrope">4/5</div>
                     </div>
                   ))}
                 </div>
                 {/* Способ получения */}
                 <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
-                  <div className="font-medium">Способ получения</div>
+                  <div className="font-medium text-xs font-manrope">Способ получения</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-sm">
+                    <div key={item.id} className="text-center text-xs font-manrope">
                       Доставка, самовывоз
                     </div>
                   ))}
                 </div>
                 {/* Оплата */}
                 <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
-                  <div className="font-medium">Оплата</div>
+                  <div className="font-medium text-xs font-manrope">Оплата</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-sm">
+                    <div key={item.id} className="text-center text-xs font-manrope">
                       Онлайн, рассрочка, карта
                     </div>
                   ))}
@@ -190,72 +190,72 @@ const Comparison: React.FC = () => {
               <div className="space-y-4">
                 {/* Рама */}
                 <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
-                  <div className="font-medium">Рама</div>
+                  <div className="font-medium text-xs font-manrope">Рама</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-sm">
+                    <div key={item.id} className="text-center text-xs font-manrope">
                       оцинкованная сталь
                     </div>
                   ))}
                 </div>
                 {/* Лестница */}
                 <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
-                  <div className="font-medium">Лестница</div>
+                  <div className="font-medium text-xs font-manrope">Лестница</div>
                   {comparison.map((item, index) => (
-                    <div key={item.id} className="text-center text-sm">
+                    <div key={item.id} className="text-center text-xs font-manrope">
                       {index === 2 ? "-" : "есть"}
                     </div>
                   ))}
                 </div>
                 {/* Серия */}
                 <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
-                  <div className="font-medium">Серия</div>
+                  <div className="font-medium text-xs font-manrope">Серия</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-sm">
+                    <div key={item.id} className="text-center text-xs font-manrope">
                       Space
                     </div>
                   ))}
                 </div>
                 {/* Цвет */}
                 <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
-                  <div className="font-medium">Цвет</div>
+                  <div className="font-medium text-xs font-manrope">Цвет</div>
                   {comparison.map((item, index) => (
-                    <div key={item.id} className="text-center text-sm">
+                    <div key={item.id} className="text-center text-xs font-manrope">
                       {index === 3 ? "-" : "красный/синий"}
                     </div>
                   ))}
                 </div>
                 {/* Ширина защитного мата */}
                 <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
-                  <div className="font-medium">Ширина защитного мата, см</div>
+                  <div className="font-medium text-xs font-manrope">Ширина защитного мата, см</div>
                   {comparison.map((item, index) => (
-                    <div key={item.id} className="text-center text-sm">
+                    <div key={item.id} className="text-center text-xs font-manrope">
                       {index === 2 ? "-" : "25"}
                     </div>
                   ))}
                 </div>
                 {/* Материал защитного мата */}
                 <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
-                  <div className="font-medium">Материал защитного мата</div>
+                  <div className="font-medium text-xs font-manrope">Материал защитного мата</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-sm">
+                    <div key={item.id} className="text-center text-xs font-manrope">
                       вспененный РР
                     </div>
                   ))}
                 </div>
                 {/* Диаметр батута, ft */}
                 <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
-                  <div className="font-medium">Диаметр батута, ft</div>
+                  <div className="font-medium text-xs font-manrope">Диаметр батута, ft</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-sm">
+                    <div key={item.id} className="text-center text-xs font-manrope">
                       8
                     </div>
                   ))}
                 </div>
                 {/* Диаметр батута, см */}
                 <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
-                  <div className="font-medium">Диаметр батута, см</div>
+                  <div className="font-medium text-xs font-manrope">Диаметр батута, см</div>
                   {comparison.map((item, index) => (
-                    <div key={item.id} className="text-center text-sm">
+                    <div key={item.id} className="text-center text-xs font-manrope">
                       {index === 3 ? "-" : "244"}
                     </div>
                   ))}
@@ -269,27 +269,27 @@ const Comparison: React.FC = () => {
               <div className="space-y-4">
                 {/* Рама */}
                 <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
-                  <div className="font-medium">Рама</div>
+                  <div className="font-medium text-xs font-manrope">Рама</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-sm">
+                    <div key={item.id} className="text-center text-xs font-manrope">
                       оцинкованная сталь
                     </div>
                   ))}
                 </div>
                 {/* Лестница */}
                 <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
-                  <div className="font-medium">Лестница</div>
+                  <div className="font-medium text-xs font-manrope">Лестница</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-sm">
+                    <div key={item.id} className="text-center text-xs font-manrope">
                       есть
                     </div>
                   ))}
                 </div>
                 {/* Серия */}
                 <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
-                  <div className="font-medium">Серия</div>
+                  <div className="font-medium text-xs font-manrope">Серия</div>
                   {comparison.map((item) => (
-                    <div key={item.id} className="text-center text-sm">
+                    <div key={item.id} className="text-center text-xs font-manrope">
                       Space
                     </div>
                   ))}
