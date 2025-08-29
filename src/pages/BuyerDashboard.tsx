@@ -14,12 +14,14 @@ import { User, Package, Heart, CreditCard, Settings, LogOut, Star, ShoppingBag, 
 import { useFavorites } from '@/contexts/FavoritesContext';
 import { useCart } from '@/contexts/CartContext';
 import { useAuth } from '@/contexts/AuthContext';
+import { useOrders } from '@/contexts/OrdersContext';
 
 const BuyerDashboard: React.FC = () => {
   const navigate = useNavigate();
   const { user, logout, updateUser } = useAuth();
   const { favorites, removeFromFavorites } = useFavorites();
   const { addItem } = useCart();
+  const { getUserOrders } = useOrders();
   const [activeTab, setActiveTab] = useState('overview');
   const [isEditingProfile, setIsEditingProfile] = useState(false);
   const [editForm, setEditForm] = useState({
@@ -46,12 +48,15 @@ const BuyerDashboard: React.FC = () => {
     }
   }, [user]);
 
-  // Mock data - replace with real data
-  const orders = [
-    { id: '12345', date: '2024-01-15', status: 'Доставлен', total: 125000, items: 3 },
-    { id: '12346', date: '2024-01-10', status: 'В пути', total: 89000, items: 2 },
-    { id: '12347', date: '2024-01-05', status: 'Обрабатывается', total: 45000, items: 1 },
-  ];
+  // Get real orders for current user
+  const userOrders = user ? getUserOrders(user.email) : [];
+  const orders = userOrders.map(order => ({
+    id: order.id,
+    date: order.date,
+    status: order.status,
+    total: order.total,
+    items: order.items.length
+  }));
 
   const bonusPoints = 2450;
 
@@ -211,7 +216,7 @@ const BuyerDashboard: React.FC = () => {
                         <ShoppingBag className="h-4 w-4 text-muted-foreground" />
                       </CardHeader>
                       <CardContent>
-                        <div className="text-2xl font-bold">12</div>
+                        <div className="text-2xl font-bold">{orders.length}</div>
                         <p className="text-xs text-muted-foreground">за последний год</p>
                       </CardContent>
                     </Card>
@@ -222,7 +227,7 @@ const BuyerDashboard: React.FC = () => {
                         <CreditCard className="h-4 w-4 text-muted-foreground" />
                       </CardHeader>
                       <CardContent>
-                        <div className="text-2xl font-bold">1 250 000 ₽</div>
+                        <div className="text-2xl font-bold">{userOrders.reduce((total, order) => total + order.total, 0).toLocaleString()} ₽</div>
                         <p className="text-xs text-muted-foreground">за все время</p>
                       </CardContent>
                     </Card>

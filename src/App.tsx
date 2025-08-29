@@ -7,6 +7,7 @@ import { CartProvider } from "@/contexts/CartContext";
 import { FavoritesProvider } from "@/contexts/FavoritesContext";
 import { ComparisonProvider } from "@/contexts/ComparisonContext";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { OrdersProvider } from "@/contexts/OrdersContext";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
@@ -50,9 +51,10 @@ const App = () => (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <AuthProvider>
-          <CartProvider>
-            <FavoritesProvider>
-              <ComparisonProvider>
+          <OrdersProvider>
+            <CartProvider>
+              <FavoritesProvider>
+                <ComparisonProvider>
         <BrowserRouter>
           <ScrollToTop />
           <Routes>
@@ -96,9 +98,10 @@ const App = () => (
         </BrowserRouter>
         <Toaster />
         <Sonner />
-              </ComparisonProvider>
-            </FavoritesProvider>
-          </CartProvider>
+                </ComparisonProvider>
+              </FavoritesProvider>
+            </CartProvider>
+          </OrdersProvider>
         </AuthProvider>
       </TooltipProvider>
     </QueryClientProvider>
