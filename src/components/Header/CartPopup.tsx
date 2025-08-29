@@ -26,7 +26,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
       <SheetTrigger asChild>
         {children}
       </SheetTrigger>
-      <SheetContent side="right" className="w-full sm:w-[600px] p-0">
+      <SheetContent side="right" className="w-[600px] max-w-[90vw] p-0">
         <SheetHeader className="p-6 pb-3">
           <SheetTitle className="flex items-center justify-between">
             Корзина ({totalItems})
