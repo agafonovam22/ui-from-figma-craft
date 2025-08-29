@@ -116,7 +116,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                         <Button 
                           size="sm" 
                           variant="outline"
-                          className="w-7 h-7 p-0 text-xs"
+                          className="w-7 h-7 p-0 text-xs rounded-full"
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
                         >
                           -
@@ -125,7 +125,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                         <Button 
                           size="sm" 
                           variant="outline"
-                          className="w-7 h-7 p-0 text-xs"
+                          className="w-7 h-7 p-0 text-xs rounded-full"
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
                         >
                           +
