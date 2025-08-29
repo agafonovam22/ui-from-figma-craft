@@ -9,19 +9,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Building2, Package, BarChart3, CreditCard, Settings, LogOut, TrendingUp, Users, FileText } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
 
 const DealerDashboard: React.FC = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState<any>(null);
-
-  useEffect(() => {
-    // Load user data from localStorage
-    const savedUserData = localStorage.getItem('userData');
-    if (savedUserData) {
-      const userData = JSON.parse(savedUserData);
-      setUser(userData);
-    }
-  }, []);
+  const { user, logout } = useAuth();
 
   // Mock data - replace with real data
   const sales = [
@@ -41,8 +33,7 @@ const DealerDashboard: React.FC = () => {
   const pendingOrders = 8;
 
   const handleLogout = () => {
-    // Clear user data and redirect
-    localStorage.removeItem('userData');
+    logout();
     navigate('/account');
   };
 

@@ -13,10 +13,11 @@ import { Label } from '@/components/ui/label';
 import { User, Package, Heart, CreditCard, Settings, LogOut, Star, ShoppingBag, Eye, EyeOff } from 'lucide-react';
 import { useFavorites } from '@/contexts/FavoritesContext';
 import { useCart } from '@/contexts/CartContext';
+import { useAuth } from '@/contexts/AuthContext';
 
 const BuyerDashboard: React.FC = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState<any>(null);
+  const { user, logout, updateUser } = useAuth();
   const { favorites, removeFromFavorites } = useFavorites();
   const { addItem } = useCart();
   const [isEditingProfile, setIsEditingProfile] = useState(false);
@@ -32,20 +33,17 @@ const BuyerDashboard: React.FC = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   useEffect(() => {
-    // Load user data from localStorage
-    const savedUserData = localStorage.getItem('userData');
-    if (savedUserData) {
-      const userData = JSON.parse(savedUserData);
-      setUser(userData);
+    // Set edit form data when user data is available
+    if (user) {
       setEditForm({
-        email: userData.email || '',
-        phone: userData.phone || '',
+        email: user.email || '',
+        phone: user.phone || '',
         currentPassword: '',
         newPassword: '',
         confirmPassword: ''
       });
     }
-  }, []);
+  }, [user]);
 
   // Mock data - replace with real data
   const orders = [
@@ -57,8 +55,7 @@ const BuyerDashboard: React.FC = () => {
   const bonusPoints = 2450;
 
   const handleLogout = () => {
-    // Clear user data and redirect
-    localStorage.removeItem('userData');
+    logout();
     navigate('/account');
   };
 
@@ -78,15 +75,12 @@ const BuyerDashboard: React.FC = () => {
       return;
     }
 
-    // Update user data in localStorage
-    const updatedUserData = {
-      ...user,
+    // Update user data using auth context
+    updateUser({
       email: editForm.email,
       phone: editForm.phone
-    };
+    });
 
-    localStorage.setItem('userData', JSON.stringify(updatedUserData));
-    setUser(updatedUserData);
     setIsEditingProfile(false);
 
     // Clear password fields

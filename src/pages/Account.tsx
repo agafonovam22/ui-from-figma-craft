@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -8,19 +8,44 @@ import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbS
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Eye, EyeOff } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
 
 const Account: React.FC = () => {
   const navigate = useNavigate();
+  const { user, login } = useAuth();
   const [userType, setUserType] = useState<'buyer' | 'dealer'>('buyer');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
+  // Redirect if already logged in
+  useEffect(() => {
+    if (user?.isLoggedIn) {
+      if (user.userType === 'buyer') {
+        navigate('/buyer-dashboard');
+      } else {
+        navigate('/dealer-dashboard');
+      }
+    }
+  }, [user, navigate]);
+
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Login attempt:', { userType, email, password });
     
-    // Simulate successful login and redirect based on user type
+    // Simulate successful login
+    const userData = {
+      userType,
+      fullName: userType === 'buyer' ? 'Пользователь' : 'Дилер',
+      email,
+      phone: '+7 (900) 000-00-00',
+      registrationDate: new Date().toISOString(),
+      isLoggedIn: true
+    };
+    
+    login(userData);
+    
+    // Navigate to appropriate dashboard
     if (userType === 'buyer') {
       navigate('/buyer-dashboard');
     } else {

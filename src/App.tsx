@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "@/contexts/CartContext";
 import { FavoritesProvider } from "@/contexts/FavoritesContext";
 import { ComparisonProvider } from "@/contexts/ComparisonContext";
+import { AuthProvider } from "@/contexts/AuthContext";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
@@ -46,11 +47,12 @@ import CompanyNews from "./pages/CompanyNews";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <CartProvider>
-        <FavoritesProvider>
-          <ComparisonProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <AuthProvider>
+          <CartProvider>
+            <FavoritesProvider>
+              <ComparisonProvider>
         <BrowserRouter>
           <ScrollToTop />
           <Routes>
@@ -94,11 +96,12 @@ const App = () => (
         </BrowserRouter>
         <Toaster />
         <Sonner />
-          </ComparisonProvider>
-        </FavoritesProvider>
-      </CartProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
+              </ComparisonProvider>
+            </FavoritesProvider>
+          </CartProvider>
+        </AuthProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
 );
 
 export default App;

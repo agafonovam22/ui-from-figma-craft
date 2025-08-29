@@ -7,9 +7,11 @@ import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbS
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Eye, EyeOff } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
 
 const Register: React.FC = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [userType, setUserType] = useState<'buyer' | 'dealer'>('buyer');
   const [formData, setFormData] = useState({
     fullName: '',
@@ -41,7 +43,7 @@ const Register: React.FC = () => {
     
     console.log('Registration attempt:', { userType, ...formData });
     
-    // Save user data to localStorage
+    // Save user data using auth context
     const userData = {
       userType,
       fullName: formData.fullName,
@@ -50,10 +52,10 @@ const Register: React.FC = () => {
       registrationDate: new Date().toISOString(),
       isLoggedIn: true
     };
+
+    login(userData);
     
-    localStorage.setItem('userData', JSON.stringify(userData));
-    
-    // Simulate successful registration and redirect based on user type
+    // Navigate to appropriate dashboard
     if (userType === 'buyer') {
       navigate('/buyer-dashboard');
     } else {
