@@ -108,7 +108,7 @@ const BuyerDashboard: React.FC = () => {
 
             {/* Main Content */}
             <div className="lg:col-span-3">
-              <Tabs defaultValue="overview" className="space-y-6">
+              <Tabs defaultValue="overview">
                 <TabsList className="grid w-full grid-cols-4">
                   <TabsTrigger value="overview">Обзор</TabsTrigger>
                   <TabsTrigger value="orders">Заказы</TabsTrigger>
@@ -117,8 +117,9 @@ const BuyerDashboard: React.FC = () => {
                 </TabsList>
 
                 {/* Overview Tab */}
-                <TabsContent value="overview" className="space-y-0 pt-[10px]">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="mt-[10px]">
+                  <TabsContent value="overview" className="mt-0">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card>
                       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <CardTitle className="text-sm font-medium">Всего заказов</CardTitle>
@@ -166,10 +167,11 @@ const BuyerDashboard: React.FC = () => {
                       </div>
                     </CardContent>
                   </Card>
-                </TabsContent>
+                  </TabsContent>
+                </div>
 
                 {/* Orders Tab */}
-                <TabsContent value="orders" className="space-y-6">
+                <TabsContent value="orders" className="space-y-6 mt-[10px]">
                   <Card>
                     <CardHeader>
                       <CardTitle>Все заказы</CardTitle>
@@ -200,7 +202,7 @@ const BuyerDashboard: React.FC = () => {
                 </TabsContent>
 
                 {/* Favorites Tab */}
-                <TabsContent value="favorites" className="space-y-6">
+                <TabsContent value="favorites" className="space-y-6 mt-[10px]">
                   <Card>
                     <CardHeader>
                       <CardTitle>Избранные товары</CardTitle>
@@ -223,7 +225,7 @@ const BuyerDashboard: React.FC = () => {
                 </TabsContent>
 
                 {/* Profile Tab */}
-                <TabsContent value="profile" className="space-y-6">
+                <TabsContent value="profile" className="space-y-6 mt-[10px]">
                   <Card>
                     <CardHeader>
                       <CardTitle>Настройки профиля</CardTitle>
