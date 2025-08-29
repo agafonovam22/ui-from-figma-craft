@@ -98,9 +98,30 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                     </div>
 
                     {/* Название товара */}
-                    <h3 className="text-gray-900 text-sm mb-2 line-clamp-2 leading-relaxed font-benzin pr-6">
-                      {item.name}
-                    </h3>
+                    <div className="mb-2 pr-6">
+                      {(() => {
+                        // Разделяем название на основную часть и детали
+                        const parts = item.name.split(/\s+(?=[A-Z][a-z]*\s*[A-Z0-9])|(?<=\w)\s+(?=[A-Z][a-z]*\s+Kit|(?:[A-Z]+\d*)+)/);
+                        if (parts.length > 1) {
+                          return (
+                            <>
+                              <h3 className="text-gray-900 text-sm leading-relaxed font-benzin">
+                                {parts[0]}
+                              </h3>
+                              <p className="text-gray-900 text-sm font-benzin-semibold">
+                                {parts.slice(1).join(' ')}
+                              </p>
+                            </>
+                          );
+                        } else {
+                          return (
+                            <h3 className="text-gray-900 text-sm line-clamp-2 leading-relaxed font-benzin">
+                              {item.name}
+                            </h3>
+                          );
+                        }
+                      })()}
+                    </div>
 
                     {/* Цена за единицу */}
                     <div className="mb-3">
