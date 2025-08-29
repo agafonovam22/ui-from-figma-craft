@@ -20,6 +20,8 @@ import Brand from "./pages/Brand";
 import NewsAndBlog from "./pages/NewsAndBlog";
 import NewsArticle from "./pages/NewsArticle";
 import Account from "./pages/Account";
+import BuyerDashboard from "./pages/BuyerDashboard";
+import DealerDashboard from "./pages/DealerDashboard";
 import Register from "./pages/Register";
 import PasswordReset from "./pages/PasswordReset";
 import Support from "./pages/Support";
@@ -65,6 +67,8 @@ const App = () => (
             <Route path="/news" element={<NewsAndBlog />} />
             <Route path="/news/:articleSlug" element={<NewsArticle />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/buyer-dashboard" element={<BuyerDashboard />} />
+            <Route path="/dealer-dashboard" element={<DealerDashboard />} />
             <Route path="/register" element={<Register />} />
             <Route path="/password-reset" element={<PasswordReset />} />
             <Route path="/support" element={<Support />} />

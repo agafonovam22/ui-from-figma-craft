@@ -19,6 +19,13 @@ const Account: React.FC = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Login attempt:', { userType, email, password });
+    
+    // Simulate successful login and redirect based on user type
+    if (userType === 'buyer') {
+      navigate('/buyer-dashboard');
+    } else {
+      navigate('/dealer-dashboard');
+    }
   };
 
   const handleSocialLogin = (provider: 'google' | 'facebook') => {
