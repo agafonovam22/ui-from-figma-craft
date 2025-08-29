@@ -89,12 +89,6 @@ const BuyerDashboard: React.FC = () => {
                     </Link>
                   </Button>
                   <Button variant="ghost" className="w-full justify-start" asChild>
-                    <Link to="#bonus">
-                      <Star className="mr-2 h-4 w-4" />
-                      Бонусы
-                    </Link>
-                  </Button>
-                  <Button variant="ghost" className="w-full justify-start" asChild>
                     <Link to="#profile">
                       <Settings className="mr-2 h-4 w-4" />
                       Настройки
