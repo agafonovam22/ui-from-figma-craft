@@ -76,7 +76,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                    {/* Правая часть - информация */}
                    <div className="flex-1 p-3 pr-4 relative overflow-hidden">
                      {/* Декоративный элемент */}
-                     <div className="absolute -top-10 -right-10 w-40 h-40 bg-gray-300 rounded-full opacity-60 pointer-events-none"></div>
+                     <div className="absolute -top-10 -right-10 w-40 h-40 bg-gray-200 rounded-full opacity-40 pointer-events-none"></div>
                     {/* Кнопка удаления */}
                     <div className="absolute top-2 right-2 z-10">
                       <Button 
