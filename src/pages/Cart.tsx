@@ -141,15 +141,15 @@ const Cart: React.FC = () => {
                         <Trash2 className="w-4 h-4 text-gray-400 hover:text-red-500" />
                       </Button>
                     </div>
-                    
-                    {/* Availability */}
-                    <div className="flex items-center justify-start gap-1 mb-2">
-                      <span className="text-xs text-green-600 font-benzin-semibold">В наличии</span>
-                      <div className="flex gap-0.5">
-                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                        <div className="w-1.5 h-1.5 border border-green-500 rounded-full"></div>
-                      </div>
+
+                    {/* Rating */}
+                    <div className="flex items-center gap-1 mb-2">
+                      {Array.from({ length: 5 }, (_, i) => (
+                        <svg key={i} width="12" height="12" viewBox="0 0 12 12" fill={i < 4 ? "#F99808" : "#D1D5DB"}>
+                          <path d="M6 1l1.545 3.13L11 4.635 8.5 7.07 9.09 11 6 9.385 2.91 11 3.5 7.07 1 4.635l3.455-.505L6 1z" />
+                        </svg>
+                      ))}
+                      <span className="text-xs ml-1 text-orange-400 font-benzin">4/5</span>
                     </div>
                     
                     {/* Product Name */}
@@ -176,35 +176,58 @@ const Cart: React.FC = () => {
                         }
                       })()}
                     </div>
+
+                    {/* Product Details */}
+                    <div className="text-xs text-gray-500 mb-2 font-benzin">
+                      <span>Цвет: Зеленый</span>
+                      <span className="ml-4">Диаметр, ft: 14</span>
+                    </div>
+                    
+                    {/* Availability */}
+                    <div className="flex items-center justify-start gap-1 mb-2">
+                      <span className="text-xs text-green-600 font-benzin-semibold">В наличии</span>
+                      <div className="flex gap-0.5">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                        <div className="w-1.5 h-1.5 border border-green-500 rounded-full"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right side - Price and Quantity */}
+                  <div className="flex flex-col justify-between items-end p-3 min-w-[120px]">
+                    {/* Discount Badge */}
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="bg-red-500 text-white text-xs px-2 py-1 rounded font-medium">
+                        -15%
+                      </span>
+                      <span className="text-xs text-gray-500 line-through">6 000₽</span>
+                    </div>
                     
                     {/* Price */}
-                    <div className="mb-3">
-                      <span className="text-sm font-benzin-semibold text-gray-900">
-                        {item.price.toLocaleString()} ₽ <span className="text-xs text-gray-500 font-benzin">за шт.</span>
-                      </span>
+                    <div className="text-lg font-bold text-gray-900 mb-4">
+                      {item.price.toLocaleString()} ₽
                     </div>
                     
                     {/* Quantity Controls */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <Button 
-                          size="sm" 
-                          variant="outline"
-                          className="w-7 h-7 p-0 text-xs rounded-full"
-                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                        >
-                          -
-                        </Button>
-                        <span className="text-sm font-benzin-semibold min-w-[20px] text-center">{item.quantity}</span>
-                        <Button 
-                          size="sm" 
-                          variant="outline"
-                          className="w-7 h-7 p-0 text-xs rounded-full"
-                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        >
-                          +
-                        </Button>
-                      </div>
+                    <div className="flex items-center space-x-2">
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        className="w-8 h-8 p-0 text-xs rounded-full border-gray-300"
+                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                      >
+                        -
+                      </Button>
+                      <span className="text-sm font-benzin-semibold min-w-[20px] text-center">{item.quantity}</span>
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        className="w-8 h-8 p-0 text-xs rounded-full border-gray-300"
+                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                      >
+                        +
+                      </Button>
                     </div>
                   </div>
                 </div>
