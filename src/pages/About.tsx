@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Users, Warehouse, Shield, Grid3x3, Wrench, TrendingUp } from 'lucide-react';
 import { getAboutPageNews } from '@/data/newsData';
 import Header from '@/components/Header';
@@ -21,12 +21,29 @@ import {
 } from "@/components/ui/breadcrumb";
 
 const About: React.FC = () => {
+  const location = useLocation();
   const [activeTab, setActiveTab] = useState('about');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 11;
   const allNews = getAboutPageNews();
   const totalPages = Math.ceil(allNews.length / itemsPerPage);
   const newsItems = allNews.slice(0, currentPage * itemsPerPage);
+
+  // Маппинг якорных ссылок на ID вкладок
+  const hashToTabMapping: Record<string, string> = {
+    '#about': 'about',
+    '#mission': 'mission',
+    '#projects': 'projects', 
+    '#news': 'news'
+  };
+
+  // Обработка якорных ссылок при загрузке страницы и изменении URL
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash && hashToTabMapping[hash]) {
+      setActiveTab(hashToTabMapping[hash]);
+    }
+  }, [location.hash]);
 
   const teamMembers = [
     {

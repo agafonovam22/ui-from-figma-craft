@@ -35,11 +35,11 @@ const Footer: React.FC = () => {
             <div>
               <h3 className="text-white text-xs md:text-[10px] lg:text-xs font-benzin-semibold mb-2 md:mb-1 lg:mb-2">О компании</h3>
               <ul className="space-y-1 md:space-y-0.5 lg:space-y-1 text-[#778093] text-xs md:text-[9px] lg:text-xs">
-                <li><a href="#" className="hover:text-white transition-colors">О нас</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Миссия</a></li>
+                <li><Link to="/about#about" className="hover:text-white transition-colors">О нас</Link></li>
+                <li><Link to="/about#mission" className="hover:text-white transition-colors">Миссия</Link></li>
                 <li><a href="#" className="hover:text-white transition-colors">Команда</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Проекты</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Новости</a></li>
+                <li><Link to="/about#projects" className="hover:text-white transition-colors">Проекты</Link></li>
+                <li><Link to="/about#news" className="hover:text-white transition-colors">Новости</Link></li>
                 <li><a href="#" className="hover:text-white transition-colors">Блог</a></li>
               </ul>
             </div>
