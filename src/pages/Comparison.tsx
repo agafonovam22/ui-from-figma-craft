@@ -21,6 +21,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Checkbox } from "@/components/ui/checkbox";
+import ProductCard from '@/components/shared/ProductCard';
 
 const Comparison: React.FC = () => {
   const [showOnlyDifferences, setShowOnlyDifferences] = useState(false);
@@ -83,21 +84,23 @@ const Comparison: React.FC = () => {
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Сравнение</h1>
 
         {/* Filter Option */}
-        <div className={`mb-8 p-4 rounded-lg transition-colors ${showOnlyDifferences ? 'bg-gray-100' : ''}`}>
-          <label 
-            className="flex items-center gap-3 text-gray-700 cursor-pointer"
-            onClick={() => setShowOnlyDifferences(!showOnlyDifferences)}
-          >
-            <div className="relative w-4 h-4 border border-gray-300 rounded-[3px] bg-white flex items-center justify-center">
-              {showOnlyDifferences && (
-                <div className="w-2.5 h-2.5 bg-gray-600 rounded-[2.06px]"></div>
-              )}
-            </div>
-            Показывать только различия
-          </label>
+        <div className="mb-8">
+          <div className="flex items-center space-x-2">
+            <Checkbox 
+              id="show-differences" 
+              checked={showOnlyDifferences}
+              onCheckedChange={(checked) => setShowOnlyDifferences(checked === true)}
+            />
+            <label 
+              htmlFor="show-differences" 
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+            >
+              Показывать только различия
+            </label>
+          </div>
         </div>
 
-        {/* Products Row with Vertical Dividers */}
+        {/* Products Row */}
         {comparison.length === 0 ? (
           <div className="text-center py-16">
             <h2 className="text-xl text-gray-500 mb-4">В сравнении пока нет товаров</h2>
@@ -112,80 +115,31 @@ const Comparison: React.FC = () => {
             <div className="relative mb-8">
               <div className={`grid gap-6 ${comparison.length === 1 ? 'grid-cols-1' : comparison.length === 2 ? 'grid-cols-2' : comparison.length === 3 ? 'grid-cols-3' : 'grid-cols-4'}`}>
                 {comparison.map((item, index) => (
-                  <div key={item.id} className="bg-gray-50 rounded-lg p-4 relative">
-                    <div className="absolute top-2 left-2">
-                      <span className="bg-green-500 text-white text-xs px-2 py-1 rounded">
-                        НОВИНКА
-                      </span>
-                    </div>
-                    <div className="absolute top-2 right-2 flex flex-col gap-1">
-                      <button 
-                        onClick={() => handleRemoveItem(item.id)}
-                        className="p-1 hover:bg-gray-200 rounded"
-                      >
-                        <Trash2 className="w-4 h-4 text-gray-400" />
-                      </button>
-                      <button 
-                        onClick={() => handleToggleFavorite(item)}
-                        className="p-1 hover:bg-gray-200 rounded"
-                      >
-                        <Heart 
-                          className={`w-4 h-4 ${
-                            isFavorite(item.id) 
-                              ? 'text-red-500 fill-red-500' 
-                              : 'text-gray-400'
-                          }`} 
-                        />
-                      </button>
-                    </div>
+                  <div key={item.id} className="relative">
+                    {/* Кнопка удаления из сравнения */}
+                    <button
+                      onClick={() => handleRemoveItem(item.id)}
+                      className="absolute top-2 right-2 z-20 p-1 bg-white rounded-full shadow-md hover:bg-gray-50 transition-colors"
+                    >
+                      <Trash2 className="w-4 h-4 text-gray-400 hover:text-red-500" />
+                    </button>
                     
-                    <div className="mt-6 mb-4">
-                      <img 
-                        src={item.image_url} 
-                        alt={item.name}
-                        className="w-full h-32 object-cover rounded"
-                      />
-                    </div>
-                    
-                    <div className="text-left mb-2">
-                      <div className="text-green-500 text-xs mb-1">В наличии ●●○</div>
-                    </div>
-                    
-                    <h3 className="text-sm font-medium text-gray-900 mb-2 text-left">
-                      {item.name}
-                    </h3>
-                    
-                    <div className="flex items-center gap-1 mb-2">
-                      {renderStars(4.5)}
-                      <span className="text-orange-400 text-sm ml-1">4.5</span>
-                    </div>
-                    
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="text-left">
-                        {item.discount && (
-                          <div className="flex items-center gap-2 mb-2">
-                            <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">
-                              -{item.discount}%
-                            </span>
-                            {item.originalPrice && (
-                              <span className="text-gray-400 line-through text-sm">
-                                {item.originalPrice.toLocaleString()} ₽
-                              </span>
-                            )}
-                          </div>
-                        )}
-                        <div className="text-xl font-bold text-gray-900">
-                          {item.price.toLocaleString()} ₽
-                        </div>
-                      </div>
-                      
-                      <Button 
-                        className="bg-[#F53B49] hover:bg-[#e63946] text-white px-6"
-                        onClick={() => handleBuyClick(item)}
-                      >
-                        Купить
-                      </Button>
-                    </div>
+                    <ProductCard
+                      product={{
+                        id: item.id,
+                        name: item.name,
+                        price: item.price,
+                        gallery_images: [item.image_url],
+                        badge: "Новинка",
+                        badge_color: "green",
+                        original_price: item.originalPrice,
+                        discount_percentage: item.discount,
+                        rating: 4.5,
+                        reviews_count: 4,
+                        in_stock: true,
+                        quantity: 5
+                      }}
+                    />
                   </div>
                 ))}
               </div>
@@ -193,15 +147,156 @@ const Comparison: React.FC = () => {
           </>
         )}
 
-        {/* Comparison Tables - Hide if no comparison data */}
+        {/* Comparison Tables */}
         {comparison.length > 0 && (
-          <div className="relative space-y-8">
-            {/* Simple comparison info without detailed characteristics */}
+          <div className="space-y-8">
+            {/* Оценка и способ получения */}
             <div>
-              <h2 className="text-xl font-bold text-gray-900 mb-4">Информация о товарах</h2>
-              <div className="bg-gray-50 p-4 rounded-lg text-center text-gray-600">
-                Детальное сравнение характеристик будет доступно в ближайшее время
-              </div>
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Оценка и способ получения</h2>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="w-[200px]"></TableHead>
+                    {comparison.map((item) => (
+                      <TableHead key={item.id} className="text-center">
+                        <div className="text-blue-600 text-sm">4/5</div>
+                      </TableHead>
+                    ))}
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className="font-medium">Оценка покупателей</TableCell>
+                    {comparison.map((item) => (
+                      <TableCell key={item.id} className="text-center">
+                        <div className="text-blue-600 text-sm">4/5</div>
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Способ получения</TableCell>
+                    {comparison.map((item) => (
+                      <TableCell key={item.id} className="text-center text-sm">
+                        Доставка, самовывоз
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Оплата</TableCell>
+                    {comparison.map((item) => (
+                      <TableCell key={item.id} className="text-center text-sm">
+                        Онлайн, рассрочка, карта
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </div>
+
+            {/* Основные характеристики */}
+            <div>
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Основные характеристики</h2>
+              <Table>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className="font-medium w-[200px]">Рама</TableCell>
+                    {comparison.map((item) => (
+                      <TableCell key={item.id} className="text-center text-sm">
+                        оцинкованная сталь
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Лестница</TableCell>
+                    {comparison.map((item, index) => (
+                      <TableCell key={item.id} className="text-center text-sm">
+                        {index === 2 ? "-" : "есть"}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Серия</TableCell>
+                    {comparison.map((item) => (
+                      <TableCell key={item.id} className="text-center text-sm">
+                        Space
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Цвет</TableCell>
+                    {comparison.map((item, index) => (
+                      <TableCell key={item.id} className="text-center text-sm">
+                        {index === 3 ? "-" : "красный/синий"}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Ширина защитного мата, см</TableCell>
+                    {comparison.map((item, index) => (
+                      <TableCell key={item.id} className="text-center text-sm">
+                        {index === 2 ? "-" : "25"}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Материал защитного мата</TableCell>
+                    {comparison.map((item) => (
+                      <TableCell key={item.id} className="text-center text-sm">
+                        вспененный РР
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Диаметр батута, ft</TableCell>
+                    {comparison.map((item) => (
+                      <TableCell key={item.id} className="text-center text-sm">
+                        8
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Диаметр батута, см</TableCell>
+                    {comparison.map((item, index) => (
+                      <TableCell key={item.id} className="text-center text-sm">
+                        {index === 3 ? "-" : "244"}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </div>
+
+            {/* Доп. характеристики */}
+            <div>
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Доп. характеристики</h2>
+              <Table>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className="font-medium w-[200px]">Рама</TableCell>
+                    {comparison.map((item) => (
+                      <TableCell key={item.id} className="text-center text-sm">
+                        оцинкованная сталь
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Лестница</TableCell>
+                    {comparison.map((item) => (
+                      <TableCell key={item.id} className="text-center text-sm">
+                        есть
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Серия</TableCell>
+                    {comparison.map((item) => (
+                      <TableCell key={item.id} className="text-center text-sm">
+                        Space
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                </TableBody>
+              </Table>
             </div>
           </div>
         )}
