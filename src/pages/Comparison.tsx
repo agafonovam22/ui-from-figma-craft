@@ -139,6 +139,7 @@ const Comparison: React.FC = () => {
                         in_stock: true,
                         quantity: 5
                       }}
+                      imageSize="small"
                     />
                   </div>
                 ))}

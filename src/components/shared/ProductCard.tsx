@@ -27,12 +27,14 @@ interface ProductCardProps {
   };
   variant?: 'grid' | 'list';
   showCarousel?: boolean;
+  imageSize?: 'normal' | 'small';
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ 
   product, 
   variant = 'grid',
-  showCarousel = true 
+  showCarousel = true,
+  imageSize = 'normal'
 }) => {
   const [carouselIndex, setCarouselIndex] = React.useState(0);
   const { addItem } = useCart();
@@ -218,7 +220,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
       {/* Слайдер изображений */}
       <div 
-        className="relative h-60 overflow-hidden transition-colors duration-300"
+        className={`relative ${imageSize === 'small' ? 'h-48' : 'h-60'} overflow-hidden transition-colors duration-300`}
         style={{ backgroundColor: 'transparent' }}
       >
         {/* Декоративный элемент в правом верхнем углу */}
