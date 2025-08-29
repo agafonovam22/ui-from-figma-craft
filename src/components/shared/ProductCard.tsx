@@ -249,7 +249,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                     <LazyImage 
                       src={optimizeImageUrl(image, 400, 320)} 
                       alt={`${product.name} - фото ${imageIndex + 1}`}
-                      className={`${imageSize === 'small' ? 'max-w-[140px] max-h-32' : 'w-full h-full'} object-contain`}
+                      className={`${imageSize === 'small' ? 'max-w-[120px] max-h-24' : 'w-full h-full'} object-contain`}
                     />
                   </div>
                 </CarouselItem>
@@ -262,7 +262,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <LazyImage 
               src={optimizeImageUrl((product.gallery_images && product.gallery_images.length > 0) ? product.gallery_images[0] : '/placeholder.svg', 400, 320)} 
               alt={product.name || "Товар"}
-              className={`${imageSize === 'small' ? 'max-w-[140px] max-h-32' : 'w-full h-full'} object-contain`}
+              className={`${imageSize === 'small' ? 'max-w-[120px] max-h-24' : 'w-full h-full'} object-contain`}
             />
           </div>
         )}
