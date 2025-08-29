@@ -159,12 +159,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
       {/* Овальные бейджи в верхнем левом углу */}
       <div className="absolute top-3 left-3 z-10 flex flex-row gap-2">
         {product.badge && (
-          <span className={`${
-            product.badge_color === 'green' ? 'bg-green-500' : 
-            product.badge_color === 'red' ? 'bg-destructive' : 
-            product.badge_color === 'blue' ? 'bg-blue-500' : 
-            'bg-destructive'
-          } text-white text-xs px-3 py-1 rounded-full font-medium`}>
+          <span 
+            className="text-white text-xs px-3 py-1 rounded-full font-medium"
+            style={{ 
+              backgroundColor: product.badge === 'Новинка' ? '#31BF00' :
+                              product.badge === 'Осталось мало' ? '#F99808' :
+                              product.badge_color === 'green' ? '#31BF00' : 
+                              product.badge_color === 'red' ? '#F53B49' : 
+                              product.badge_color === 'blue' ? '#3B82F6' : 
+                              '#31BF00'
+            }}
+          >
             {product.badge}
           </span>
         )}
@@ -175,13 +180,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
         )}
         {/* Показываем дополнительные бейджи если есть акция */}
         {product.original_price && product.original_price > product.price && (
-          <span className="bg-blue-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+          <span className="text-white text-xs px-3 py-1 rounded-full font-medium" style={{ backgroundColor: '#3B82F6' }}>
             АКЦИЯ
           </span>
         )}
         {/* Остались мало */}
         {product.in_stock && product.quantity && product.quantity <= 3 && (
-          <span className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+          <span className="text-white text-xs px-3 py-1 rounded-full font-medium" style={{ backgroundColor: '#F99808' }}>
             Осталось мало
           </span>
         )}
