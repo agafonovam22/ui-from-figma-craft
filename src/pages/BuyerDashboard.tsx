@@ -232,7 +232,7 @@ const BuyerDashboard: React.FC = () => {
                           <div key={order.id} className="flex items-center justify-between border-b pb-3 last:border-b-0">
                             <div>
                               <p className="font-medium">Заказ #{order.id}</p>
-                              <p className="text-sm text-gray-600">{order.date} • {order.items} товар(а)</p>
+                              <p className="text-sm text-gray-600" style={{ fontFamily: 'Manrope' }}>{order.date} • {order.items} товар(а)</p>
                             </div>
                             <div className="text-right">
                               <p className="font-medium">{order.total.toLocaleString()} ₽</p>
@@ -260,8 +260,8 @@ const BuyerDashboard: React.FC = () => {
                           <div key={order.id} className="flex items-center justify-between border-b pb-4 last:border-b-0">
                             <div className="space-y-1">
                               <p className="font-medium">Заказ #{order.id}</p>
-                              <p className="text-sm text-gray-600">{order.date}</p>
-                              <p className="text-sm text-gray-600">{order.items} товар(а)</p>
+                              <p className="text-sm text-gray-600" style={{ fontFamily: 'Manrope' }}>{order.date}</p>
+                              <p className="text-sm text-gray-600" style={{ fontFamily: 'Manrope' }}>{order.items} товар(а)</p>
                             </div>
                             <div className="text-right space-y-1">
                               <p className="font-medium">{order.total.toLocaleString()} ₽</p>
