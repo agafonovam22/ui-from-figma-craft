@@ -83,7 +83,7 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
                         className="w-6 h-6 p-0 hover:bg-red-100"
                         onClick={() => removeItem(item.id)}
                       >
-                        <img src="/lovable-uploads/3098d1b2-6b04-44ea-9155-47960291a0f7.png" alt="delete" className="w-3 h-3" />
+                        <img src="/lovable-uploads/3098d1b2-6b04-44ea-9155-47960291a0f7.png" alt="delete" className="w-4 h-4" />
                       </Button>
                     </div>
 
