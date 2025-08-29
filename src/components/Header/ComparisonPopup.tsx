@@ -32,14 +32,14 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({ children, isOpen, onO
       <SheetTrigger asChild>
         {children}
       </SheetTrigger>
-      <SheetContent side="right" className="w-[600px] max-w-[90vw] p-0">
-        <SheetHeader className="p-6 pb-3">
+      <SheetContent side="right" className="w-[600px] max-w-[90vw] p-0 flex flex-col h-full">
+        <SheetHeader className="p-6 pb-3 flex-shrink-0">
           <SheetTitle className="flex items-center justify-between">
             Сравнение ({comparison.length})
           </SheetTitle>
         </SheetHeader>
         
-        <ScrollArea className="flex-1 px-6">
+        <ScrollArea className="flex-1 px-6 h-0">
           <div className="space-y-4 pb-6">
             {comparison.length === 0 ? (
               <div className="text-center py-8">
@@ -48,7 +48,7 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({ children, isOpen, onO
             ) : (
               comparison.map((item) => (
                 <div key={item.id} className="relative group rounded-lg overflow-hidden mb-4 flex" style={{ backgroundColor: '#F8F8FD', minHeight: '120px' }}>
-                  {/* Левая часть - изображение */}
+                  {/* ... keep existing code (левая часть - изображение) */}
                   <div className="relative w-32 h-full flex items-center justify-center p-3" style={{ backgroundColor: '#F8F8FD' }}>
                     {/* Новинка бейдж */}
                     <div className="absolute top-2 left-2 z-10">
@@ -81,7 +81,7 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({ children, isOpen, onO
 
                    {/* Правая часть - информация */}
                    <div className="flex-1 p-3 pr-4 relative overflow-hidden">
-                     {/* Декоративный элемент */}
+                     {/* ... keep existing code (декоративный элемент, кнопка удаления, статус, название, цена) */}
                      <div className="absolute -top-10 -right-10 w-40 h-40 bg-gray-200 rounded-full opacity-40 pointer-events-none"></div>
                      
                      {/* Кнопка удаления */}
@@ -158,7 +158,7 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({ children, isOpen, onO
         </ScrollArea>
         
         {comparison.length > 0 && (
-          <div className="p-6 border-t">
+          <div className="p-6 border-t flex-shrink-0">
             <Link to="/comparison" onClick={() => onOpenChange(false)}>
               <Button variant="outline" className="w-full border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white font-benzin">
                 Перейти в сравнение
