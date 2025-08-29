@@ -171,9 +171,11 @@ const CartPopup: React.FC<CartPopupProps> = ({ children, isOpen, onOpenChange })
             </div>
             <div className="w-full h-px bg-gray-200 my-4"></div>
             <div className="flex gap-3">
-              <Button className="flex-1 bg-[#F53B49] hover:bg-[#e63946] font-benzin">
-                Оформить заказ
-              </Button>
+              <Link to="/cart" className="flex-1">
+                <Button className="w-full bg-[#F53B49] hover:bg-[#e63946] font-benzin">
+                  Оформить заказ
+                </Button>
+              </Link>
               <Link to="/cart" className="flex-1">
                 <Button variant="outline" className="w-full border-[#F53B49] text-[#F53B49] hover:bg-[#F53B49] hover:text-white font-benzin">
                   Перейти в корзину
