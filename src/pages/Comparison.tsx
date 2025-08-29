@@ -153,150 +153,148 @@ const Comparison: React.FC = () => {
             {/* Оценка и способ получения */}
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-4">Оценка и способ получения</h2>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="w-[200px]"></TableHead>
-                    {comparison.map((item) => (
-                      <TableHead key={item.id} className="text-center">
-                        <div className="text-blue-600 text-sm">4/5</div>
-                      </TableHead>
-                    ))}
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell className="font-medium">Оценка покупателей</TableCell>
-                    {comparison.map((item) => (
-                      <TableCell key={item.id} className="text-center">
-                        <div className="text-blue-600 text-sm">4/5</div>
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Способ получения</TableCell>
-                    {comparison.map((item) => (
-                      <TableCell key={item.id} className="text-center text-sm">
-                        Доставка, самовывоз
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Оплата</TableCell>
-                    {comparison.map((item) => (
-                      <TableCell key={item.id} className="text-center text-sm">
-                        Онлайн, рассрочка, карта
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                </TableBody>
-              </Table>
+              <div className="space-y-4">
+                {/* Оценка покупателей */}
+                <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
+                  <div className="font-medium">Оценка покупателей</div>
+                  {comparison.map((item) => (
+                    <div key={item.id} className="text-center">
+                      <div className="text-blue-600 text-sm">4/5</div>
+                    </div>
+                  ))}
+                </div>
+                {/* Способ получения */}
+                <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
+                  <div className="font-medium">Способ получения</div>
+                  {comparison.map((item) => (
+                    <div key={item.id} className="text-center text-sm">
+                      Доставка, самовывоз
+                    </div>
+                  ))}
+                </div>
+                {/* Оплата */}
+                <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
+                  <div className="font-medium">Оплата</div>
+                  {comparison.map((item) => (
+                    <div key={item.id} className="text-center text-sm">
+                      Онлайн, рассрочка, карта
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Основные характеристики */}
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-4">Основные характеристики</h2>
-              <Table>
-                <TableBody>
-                  <TableRow>
-                    <TableCell className="font-medium w-[200px]">Рама</TableCell>
-                    {comparison.map((item) => (
-                      <TableCell key={item.id} className="text-center text-sm">
-                        оцинкованная сталь
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Лестница</TableCell>
-                    {comparison.map((item, index) => (
-                      <TableCell key={item.id} className="text-center text-sm">
-                        {index === 2 ? "-" : "есть"}
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Серия</TableCell>
-                    {comparison.map((item) => (
-                      <TableCell key={item.id} className="text-center text-sm">
-                        Space
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Цвет</TableCell>
-                    {comparison.map((item, index) => (
-                      <TableCell key={item.id} className="text-center text-sm">
-                        {index === 3 ? "-" : "красный/синий"}
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Ширина защитного мата, см</TableCell>
-                    {comparison.map((item, index) => (
-                      <TableCell key={item.id} className="text-center text-sm">
-                        {index === 2 ? "-" : "25"}
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Материал защитного мата</TableCell>
-                    {comparison.map((item) => (
-                      <TableCell key={item.id} className="text-center text-sm">
-                        вспененный РР
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Диаметр батута, ft</TableCell>
-                    {comparison.map((item) => (
-                      <TableCell key={item.id} className="text-center text-sm">
-                        8
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Диаметр батута, см</TableCell>
-                    {comparison.map((item, index) => (
-                      <TableCell key={item.id} className="text-center text-sm">
-                        {index === 3 ? "-" : "244"}
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                </TableBody>
-              </Table>
+              <div className="space-y-4">
+                {/* Рама */}
+                <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
+                  <div className="font-medium">Рама</div>
+                  {comparison.map((item) => (
+                    <div key={item.id} className="text-center text-sm">
+                      оцинкованная сталь
+                    </div>
+                  ))}
+                </div>
+                {/* Лестница */}
+                <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
+                  <div className="font-medium">Лестница</div>
+                  {comparison.map((item, index) => (
+                    <div key={item.id} className="text-center text-sm">
+                      {index === 2 ? "-" : "есть"}
+                    </div>
+                  ))}
+                </div>
+                {/* Серия */}
+                <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
+                  <div className="font-medium">Серия</div>
+                  {comparison.map((item) => (
+                    <div key={item.id} className="text-center text-sm">
+                      Space
+                    </div>
+                  ))}
+                </div>
+                {/* Цвет */}
+                <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
+                  <div className="font-medium">Цвет</div>
+                  {comparison.map((item, index) => (
+                    <div key={item.id} className="text-center text-sm">
+                      {index === 3 ? "-" : "красный/синий"}
+                    </div>
+                  ))}
+                </div>
+                {/* Ширина защитного мата */}
+                <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
+                  <div className="font-medium">Ширина защитного мата, см</div>
+                  {comparison.map((item, index) => (
+                    <div key={item.id} className="text-center text-sm">
+                      {index === 2 ? "-" : "25"}
+                    </div>
+                  ))}
+                </div>
+                {/* Материал защитного мата */}
+                <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
+                  <div className="font-medium">Материал защитного мата</div>
+                  {comparison.map((item) => (
+                    <div key={item.id} className="text-center text-sm">
+                      вспененный РР
+                    </div>
+                  ))}
+                </div>
+                {/* Диаметр батута, ft */}
+                <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
+                  <div className="font-medium">Диаметр батута, ft</div>
+                  {comparison.map((item) => (
+                    <div key={item.id} className="text-center text-sm">
+                      8
+                    </div>
+                  ))}
+                </div>
+                {/* Диаметр батута, см */}
+                <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
+                  <div className="font-medium">Диаметр батута, см</div>
+                  {comparison.map((item, index) => (
+                    <div key={item.id} className="text-center text-sm">
+                      {index === 3 ? "-" : "244"}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Доп. характеристики */}
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-4">Доп. характеристики</h2>
-              <Table>
-                <TableBody>
-                  <TableRow>
-                    <TableCell className="font-medium w-[200px]">Рама</TableCell>
-                    {comparison.map((item) => (
-                      <TableCell key={item.id} className="text-center text-sm">
-                        оцинкованная сталь
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Лестница</TableCell>
-                    {comparison.map((item) => (
-                      <TableCell key={item.id} className="text-center text-sm">
-                        есть
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Серия</TableCell>
-                    {comparison.map((item) => (
-                      <TableCell key={item.id} className="text-center text-sm">
-                        Space
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                </TableBody>
-              </Table>
+              <div className="space-y-4">
+                {/* Рама */}
+                <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
+                  <div className="font-medium">Рама</div>
+                  {comparison.map((item) => (
+                    <div key={item.id} className="text-center text-sm">
+                      оцинкованная сталь
+                    </div>
+                  ))}
+                </div>
+                {/* Лестница */}
+                <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
+                  <div className="font-medium">Лестница</div>
+                  {comparison.map((item) => (
+                    <div key={item.id} className="text-center text-sm">
+                      есть
+                    </div>
+                  ))}
+                </div>
+                {/* Серия */}
+                <div className="grid grid-cols-5 gap-2.5 md:gap-4 lg:gap-2.5 items-center">
+                  <div className="font-medium">Серия</div>
+                  {comparison.map((item) => (
+                    <div key={item.id} className="text-center text-sm">
+                      Space
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         )}
