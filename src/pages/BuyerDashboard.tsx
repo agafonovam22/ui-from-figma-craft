@@ -14,6 +14,15 @@ const BuyerDashboard: React.FC = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
 
+  useEffect(() => {
+    // Load user data from localStorage
+    const savedUserData = localStorage.getItem('userData');
+    if (savedUserData) {
+      const userData = JSON.parse(savedUserData);
+      setUser(userData);
+    }
+  }, []);
+
   // Mock data - replace with real data
   const orders = [
     { id: '12345', date: '2024-01-15', status: 'Доставлен', total: 125000, items: 3 },
@@ -29,7 +38,8 @@ const BuyerDashboard: React.FC = () => {
   const bonusPoints = 2450;
 
   const handleLogout = () => {
-    // Add logout logic here
+    // Clear user data and redirect
+    localStorage.removeItem('userData');
     navigate('/account');
   };
 
@@ -62,8 +72,8 @@ const BuyerDashboard: React.FC = () => {
                   <div className="w-20 h-20 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                     <User size={32} className="text-gray-500" />
                   </div>
-                  <CardTitle className="text-lg">Иван Петров</CardTitle>
-                  <p className="text-sm text-gray-600">ivan@example.com</p>
+                  <CardTitle className="text-lg">{user?.fullName || 'Загрузка...'}</CardTitle>
+                  <p className="text-sm text-gray-600">{user?.email || ''}</p>
                 </CardHeader>
                 <CardContent className="space-y-2">
                   <Button variant="ghost" className="w-full justify-start" asChild>

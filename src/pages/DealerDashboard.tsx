@@ -14,6 +14,15 @@ const DealerDashboard: React.FC = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
 
+  useEffect(() => {
+    // Load user data from localStorage
+    const savedUserData = localStorage.getItem('userData');
+    if (savedUserData) {
+      const userData = JSON.parse(savedUserData);
+      setUser(userData);
+    }
+  }, []);
+
   // Mock data - replace with real data
   const sales = [
     { id: '98765', date: '2024-01-15', client: 'ООО "ФитнесПро"', amount: 2450000, status: 'Оплачен' },
@@ -32,7 +41,8 @@ const DealerDashboard: React.FC = () => {
   const pendingOrders = 8;
 
   const handleLogout = () => {
-    // Add logout logic here
+    // Clear user data and redirect
+    localStorage.removeItem('userData');
     navigate('/account');
   };
 
@@ -65,8 +75,8 @@ const DealerDashboard: React.FC = () => {
                   <div className="w-20 h-20 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                     <Building2 size={32} className="text-gray-500" />
                   </div>
-                  <CardTitle className="text-lg">ООО "ФитнесТрейд"</CardTitle>
-                  <p className="text-sm text-gray-600">dealer@example.com</p>
+                  <CardTitle className="text-lg">{user?.fullName || 'Загрузка...'}</CardTitle>
+                  <p className="text-sm text-gray-600">{user?.email || ''}</p>
                   <Badge variant="secondary" className="mt-2">Дилер</Badge>
                 </CardHeader>
                 <CardContent className="space-y-2">

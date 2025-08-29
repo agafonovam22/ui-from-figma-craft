@@ -41,6 +41,18 @@ const Register: React.FC = () => {
     
     console.log('Registration attempt:', { userType, ...formData });
     
+    // Save user data to localStorage
+    const userData = {
+      userType,
+      fullName: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      registrationDate: new Date().toISOString(),
+      isLoggedIn: true
+    };
+    
+    localStorage.setItem('userData', JSON.stringify(userData));
+    
     // Simulate successful registration and redirect based on user type
     if (userType === 'buyer') {
       navigate('/buyer-dashboard');
