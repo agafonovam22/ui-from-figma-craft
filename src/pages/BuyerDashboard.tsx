@@ -11,10 +11,14 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { User, Package, Heart, CreditCard, Settings, LogOut, Star, ShoppingBag, Eye, EyeOff } from 'lucide-react';
+import { useFavorites } from '@/contexts/FavoritesContext';
+import { useCart } from '@/contexts/CartContext';
 
 const BuyerDashboard: React.FC = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
+  const { favorites, removeFromFavorites } = useFavorites();
+  const { addItem } = useCart();
   const [isEditingProfile, setIsEditingProfile] = useState(false);
   const [editForm, setEditForm] = useState({
     email: '',
@@ -48,11 +52,6 @@ const BuyerDashboard: React.FC = () => {
     { id: '12345', date: '2024-01-15', status: 'Доставлен', total: 125000, items: 3 },
     { id: '12346', date: '2024-01-10', status: 'В пути', total: 89000, items: 2 },
     { id: '12347', date: '2024-01-05', status: 'Обрабатывается', total: 45000, items: 1 },
-  ];
-
-  const favorites = [
-    { id: 1, name: 'Беговая дорожка Technogym', price: 450000, image: '/lovable-uploads/treadmill.jpg' },
-    { id: 2, name: 'Силовая станция Matrix', price: 380000, image: '/lovable-uploads/strength.jpg' },
   ];
 
   const bonusPoints = 2450;
@@ -111,6 +110,21 @@ const BuyerDashboard: React.FC = () => {
       newPassword: '',
       confirmPassword: ''
     });
+  };
+
+  const handleAddToCart = (item: any) => {
+    addItem({
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      image_url: item.image_url,
+      is_available: true
+    });
+    alert('Товар добавлен в корзину');
+  };
+
+  const handleRemoveFromFavorites = (id: string) => {
+    removeFromFavorites(id);
   };
 
   return (
@@ -278,18 +292,52 @@ const BuyerDashboard: React.FC = () => {
                       <CardTitle>Избранные товары</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {favorites.map((item) => (
-                          <div key={item.id} className="border rounded-lg p-4 flex items-center space-x-4">
-                            <div className="w-16 h-16 bg-gray-200 rounded-lg"></div>
-                            <div className="flex-1">
-                              <h4 className="font-medium">{item.name}</h4>
-                              <p className="text-lg font-bold text-[#F53B49]">{item.price.toLocaleString()} ₽</p>
+                      {favorites.length === 0 ? (
+                        <div className="text-center py-8">
+                          <Heart className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+                          <p className="text-gray-500 mb-4">У вас пока нет избранных товаров</p>
+                          <Link to="/categories">
+                            <Button variant="outline">Перейти к покупкам</Button>
+                          </Link>
+                        </div>
+                      ) : (
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {favorites.map((item) => (
+                            <div key={item.id} className="border rounded-lg p-4 space-y-4">
+                              <div className="w-full h-48 bg-gray-200 rounded-lg overflow-hidden">
+                                <img 
+                                  src={item.image_url} 
+                                  alt={item.name}
+                                  className="w-full h-full object-cover"
+                                  onError={(e) => {
+                                    (e.target as HTMLImageElement).src = '/placeholder.svg';
+                                  }}
+                                />
+                              </div>
+                              <div className="space-y-2">
+                                <h4 className="font-medium text-sm">{item.name}</h4>
+                                <p className="text-lg font-bold text-[#F53B49]">{item.price.toLocaleString()} ₽</p>
+                              </div>
+                              <div className="flex gap-2">
+                                <Button 
+                                  size="sm" 
+                                  className="flex-1 bg-[#F53B49] hover:bg-[#e63946]"
+                                  onClick={() => handleAddToCart(item)}
+                                >
+                                  В корзину
+                                </Button>
+                                <Button 
+                                  size="sm" 
+                                  variant="outline"
+                                  onClick={() => handleRemoveFromFavorites(item.id)}
+                                >
+                                  <Heart className="h-4 w-4" />
+                                </Button>
+                              </div>
                             </div>
-                            <Button size="sm">В корзину</Button>
-                          </div>
-                        ))}
-                      </div>
+                          ))}
+                        </div>
+                      )}
                     </CardContent>
                   </Card>
                 </TabsContent>
