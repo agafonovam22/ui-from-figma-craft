@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import OfficeMap from '@/components/OfficeMap';
@@ -8,7 +8,13 @@ import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbS
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import CallRequestDialog from '@/components/Header/CallRequestDialog';
 import { MapPin, Phone, Clock, Mail, ChevronLeft, ChevronRight } from 'lucide-react';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 const Contacts: React.FC = () => {
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
   const [activeTab, setActiveTab] = useState('moscow');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = ['/lovable-uploads/a7a10f7b-32fb-4a8d-940d-364ba0c4a1d0.png', '/lovable-uploads/a9d600d0-b136-4d10-b09c-618bf653fa04.png', '/lovable-uploads/2b609d2f-6fc7-4781-b57a-142e817a9825.png', '/lovable-uploads/bce5f4f3-1a91-454a-b10f-92c2f907b7c1.png'];
@@ -18,7 +24,7 @@ const Contacts: React.FC = () => {
   const prevImage = () => {
     setCurrentImageIndex(prev => (prev - 1 + images.length) % images.length);
   };
-  return <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white page-container">
       <Header />
       
       <main className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -11,6 +11,7 @@ import { useSharedProducts } from '@/hooks/useSharedProducts';
 import { usePaginatedProducts } from '@/hooks/usePaginatedProducts';
 import { useDebounce } from '@/hooks/useDebounce';
 import { FilterState } from '@/types/filters';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 // Не используем API для брендов - используем фиксированный список
 import {
   Breadcrumb,
@@ -22,6 +23,12 @@ import {
 } from "@/components/ui/breadcrumb";
 
 const Catalog: React.FC = () => {
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
+
   const [searchParams, setSearchParams] = useSearchParams();
   const [sortBy, setSortBy] = useState('popular');
   const [pageNumber, setPageNumber] = useState(1);
@@ -408,7 +415,7 @@ const Catalog: React.FC = () => {
   return (
     <>
       <Header onSearch={handleSearchQuery} />
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white page-container">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-2">
           {/* Breadcrumbs */}
           <Breadcrumb className="mb-6">

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Trash2, Plus, Minus, Heart, BarChart3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 
 interface CartItem {
   id: number;
@@ -33,75 +34,52 @@ interface CartItem {
 }
 
 const Cart: React.FC = () => {
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
+
   const cartItems: CartItem[] = [
     {
       id: 1,
       name: "Гребной тренажер CardioPowe PRO CR300",
-      image: "/lovable-uploads/6d5d3486-5263-42ec-9091-5d9522a235e6.png",
-      price: 4610,
-      originalPrice: 5420,
-      discount: 15,
+      image: "/lovable-uploads/b7a65f98-ad3c-44af-87d3-8b5ac4f8b5b1.png",
+      price: 349000,
+      originalPrice: 385000,
+      discount: 10,
       quantity: 1,
       inStock: true,
-      color: "Зеленый",
-      diameter: "ft. 14",
-      rating: 4,
-      reviews: 5,
-      isNew: true
-    },
-    {
-      id: 2,
-      name: "Гребной тренажер CardioPowe PRO CR300",
-      image: "/lovable-uploads/6d5d3486-5263-42ec-9091-5d9522a235e6.png",
-      price: 4610,
-      originalPrice: 5420,
-      discount: 15,
-      quantity: 1,
-      inStock: true,
-      color: "Зеленый",
-      diameter: "ft. 14",
-      rating: 4,
-      reviews: 5,
-      isNew: true
-    },
-    {
-      id: 3,
-      name: "Гребной тренажер CardioPowe PRO CR300",
-      image: "/lovable-uploads/6d5d3486-5263-42ec-9091-5d9522a235e6.png",
-      price: 4610,
-      originalPrice: 5420,
-      discount: 15,
-      quantity: 1,
-      inStock: true,
-      color: "Зеленый",
-      diameter: "ft. 14",
-      rating: 4,
-      reviews: 5,
+      color: "Черный",
+      diameter: "95 кг",
+      rating: 4.6,
+      reviews: 12,
       isNew: true
     }
   ];
 
-  const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-  const discount = 4610;
-  const bonus = 260;
+  const totalPrice = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  const totalOriginalPrice = cartItems.reduce((sum, item) => sum + ((item.originalPrice || item.price) * item.quantity), 0);
+  const totalDiscount = totalOriginalPrice - totalPrice;
+  const bonus = Math.floor(totalPrice * 0.01); // 1% от суммы как бонусы
 
   const StarRating = ({ rating }: { rating: number }) => (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center space-x-1">
       {[1, 2, 3, 4, 5].map((star) => (
-        <svg key={star} width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path 
-            d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.5L6 8.885L2.91 10.5L3.5 7.07L1 4.635L4.455 4.13L6 1Z" 
-            fill={star <= rating ? "#FFA500" : "#E0E0E0"}
-          />
-        </svg>
+        <span 
+          key={star} 
+          className={`text-sm ${star <= rating ? 'text-yellow-400' : 'text-gray-300'}`}
+        >
+          ★
+        </span>
       ))}
-      <span className="text-sm ml-1" style={{ color: '#F99808', fontFamily: 'Benzin-Regular' }}>{rating}/5</span>
+      <span className="text-xs text-gray-600 ml-1">({rating})</span>
     </div>
   );
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white page-container">
       <Header />
       
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
@@ -242,11 +220,11 @@ const Cart: React.FC = () => {
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                   <span className="text-gray-600">Товары, {totalItems} шт</span>
-                  <span className="font-medium">{total.toLocaleString()} ₽</span>
+                  <span className="font-medium">{totalOriginalPrice.toLocaleString()} ₽</span>
                 </div>
                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                   <span className="text-gray-600">Скидка</span>
-                  <span className="text-red-500 font-medium">-{discount.toLocaleString()} ₽</span>
+                  <span className="text-red-500 font-medium">-{totalDiscount.toLocaleString()} ₽</span>
                 </div>
                 <div className="flex justify-between" style={{ fontFamily: 'Manrope', fontSize: '16px' }}>
                   <span className="text-gray-600">Бонусы</span>
@@ -254,7 +232,7 @@ const Cart: React.FC = () => {
                 </div>
                 <div className="border-t border-dashed border-gray-400 pt-4 flex justify-between" style={{ fontFamily: 'Benzin-Semibold', fontSize: '16px' }}>
                   <span>Итого</span>
-                  <span>{(total - discount).toLocaleString()} ₽</span>
+                  <span>{totalPrice.toLocaleString()} ₽</span>
                 </div>
               </div>
             </div>

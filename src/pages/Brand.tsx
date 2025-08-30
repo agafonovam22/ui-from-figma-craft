@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Slider } from "@/components/ui/slider";
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -21,6 +22,11 @@ import {
 const Brand: React.FC = () => {
   const { brandSlug } = useParams();
   
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
   // Debug log to check brandSlug value
   console.log('Brand page - brandSlug value:', brandSlug);
   
@@ -147,7 +153,7 @@ const Brand: React.FC = () => {
   const brandName = getBrandName(brandSlug || 'kernel');
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white page-container">
       <Header />
       
       

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import {
@@ -35,6 +36,12 @@ import { Link } from 'react-router-dom';
 import SupportCitySelector from '@/components/SupportCitySelector';
 
 const Support: React.FC = () => {
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
+
   const location = useLocation();
   const [activeTab, setActiveTab] = useState('delivery');
   const [selectedCity, setSelectedCity] = useState('Москва');
@@ -80,7 +87,7 @@ const Support: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white page-container">
       <Header />
       
       <main>

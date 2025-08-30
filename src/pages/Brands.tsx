@@ -1,9 +1,10 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
 import { X } from 'lucide-react';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -16,6 +17,12 @@ import { Link } from 'react-router-dom';
 
 const Brands: React.FC = () => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>(['Беговые дорожки']);
+
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
 
   const filters = [
     'Беговые дорожки',
@@ -62,7 +69,7 @@ const Brands: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white page-container">
       <Header />
       
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
