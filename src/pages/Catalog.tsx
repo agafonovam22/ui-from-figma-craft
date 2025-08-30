@@ -439,6 +439,13 @@ const Catalog: React.FC = () => {
           </div>
 
           <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-2">
+            {/* Заголовок каталога */}
+            <div className="mb-6">
+              <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">
+                {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
+              </h1>
+            </div>
+
             <div className="flex">
               {/* Mobile/Tablet Filter Sidebar - скрыто на больших экранах */}
               <div className="lg:hidden">
