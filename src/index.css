@@ -131,32 +131,7 @@
   @media (min-width: 768px) and (max-width: 1023px) {
     body {
       overflow-x: hidden;
-      width: 100%;
-      max-width: 100vw;
     }
-    
-    html {
-      overflow-x: hidden;
-      width: 100%;
-      max-width: 100vw;
-    }
-    
-    /* Принудительно ограничиваем ширину всех контейнеров */
-    * {
-      max-width: 100vw;
-      box-sizing: border-box;
-    }
-    
-    /* Исправляем возможные проблемы с flexbox */
-    .flex {
-      flex-wrap: nowrap;
-    }
-  }
-  
-  /* Специальные стили для планшетов с зафиксированной раскладкой */
-  body[data-tablet-fixed="true"] {
-    width: 100% !important;
-    max-width: 100vw !important;
   }
   
   h1, h2, h3, h4, h5, h6 {
