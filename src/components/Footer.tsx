@@ -7,8 +7,8 @@ const Footer: React.FC = () => {
   return (
     <footer className="w-full text-white">
       {/* Main content section with #262631 background */}
-      <div className="bg-[#262631] py-8 md:py-5 lg:py-8">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 md:px-4 lg:px-[60px]">
+      <div className="bg-[#262631] py-8">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
           <div className="grid grid-cols-1 md:grid-cols-7 lg:grid-cols-6 gap-8 md:gap-3">
             {/* Каталог */}
             <div>
@@ -170,8 +170,8 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom section with #17171E background */}
-      <div className="bg-[#17171E] py-6 md:py-3 lg:py-6">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 md:px-4 lg:px-[60px]">
+      <div className="bg-[#17171E] py-6 md:py-4 lg:py-6">
+        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
           <div className="flex flex-col gap-6 md:gap-4 lg:gap-6">
             {/* Mobile: Two separate rows, Tablet & Desktop: Single row with two columns */}
             <div className="flex flex-col md:flex-row lg:flex-row justify-between items-start md:items-center lg:items-center gap-6 md:gap-3 lg:gap-6">
