@@ -32,7 +32,8 @@ export function CatalogFilterSidebar(props: CatalogFilterSidebarProps) {
   return (
     <Sidebar className="border-r border-gray-200">
       <SidebarHeader className="border-b border-gray-200 p-4">
-        <div className="flex items-center justify-end">
+        <div className="flex items-center justify-between">
+          <h2 className="text-lg font-semibold">Фильтры</h2>
           <SidebarTrigger />
         </div>
       </SidebarHeader>
