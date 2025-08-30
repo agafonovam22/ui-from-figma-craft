@@ -31,14 +31,9 @@ const PopularBrands: React.FC = () => {
           {brands.slice(0, 12).map((brand, index) => {
             // Для планшетов показываем только первые 8 брендов (2 ряда по 4)
             const isHiddenOnTablet = index >= 8;
-            // Определяем индивидуальные размеры для каждого бренда как на странице /brands
+            // Унифицированные размеры для всех брендов для лучшего выравнивания
             const getBrandImageClass = (brandName: string) => {
-              switch(brandName) {
-                case 'SMITH':
-                  return 'max-h-20 max-w-full';
-                default:
-                  return 'max-w-full max-h-12';
-              }
+              return 'max-w-full max-h-16 w-auto h-auto';
             };
 
             return (
