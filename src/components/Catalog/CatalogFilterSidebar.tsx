@@ -1,5 +1,5 @@
 import React from 'react';
-import { Filter } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import {
   Sidebar,
   SidebarContent,
@@ -51,10 +51,10 @@ export function CatalogFilterSidebar(props: CatalogFilterSidebarProps) {
 export function MobileFilterTrigger() {
   return (
     <div className="lg:hidden mb-4">
-      <SidebarTrigger className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50 bg-white shadow-sm">
-        <Filter className="w-4 h-4" />
-        <span>Фильтр</span>
-      </SidebarTrigger>
+      <div className="flex items-center gap-2">
+        <SidebarTrigger className="p-2 border border-gray-300 rounded-md hover:bg-gray-50 bg-white shadow-sm" />
+        <span className="text-sm font-medium text-gray-700 md:block hidden">Фильтр</span>
+      </div>
     </div>
   );
 }
