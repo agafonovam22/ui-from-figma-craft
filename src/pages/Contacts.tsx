@@ -27,7 +27,7 @@ const Contacts: React.FC = () => {
   return <div className="min-h-screen bg-white page-container">
       <Header />
       
-      <main className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+      <main className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px] py-8">
         {/* Breadcrumbs */}
         <Breadcrumb className="mb-6">
           <BreadcrumbList>

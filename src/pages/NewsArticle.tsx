@@ -25,7 +25,7 @@ const NewsArticle: React.FC = () => {
       <main className="w-full">
         {/* Breadcrumb and Title */}
         <section className={articleSlug.startsWith('cardiopower-') ? "py-4" : "py-8"}>
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+          <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
             {/* Breadcrumb */}
             <Breadcrumb className={articleSlug.startsWith('cardiopower-') ? "mb-4" : "mb-8"}>
               <BreadcrumbList>
@@ -81,7 +81,7 @@ const NewsArticle: React.FC = () => {
 
         {/* Main Content - Text left, Large image right */}
         <section className={articleSlug.startsWith('cardiopower-') ? "py-2" : "py-8"}>
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+          <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
             <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch ${articleSlug.startsWith('cardiopower-') ? 'min-h-[500px]' : ''}`}>
               {/* Left side - Text content */}
               <div className={`space-y-4 flex flex-col justify-center ${articleSlug.startsWith('cardiopower-') ? 'h-full' : ''}`}>
@@ -219,7 +219,7 @@ const NewsArticle: React.FC = () => {
         {/* First additional section - Text left, Image right - скрыто для страницы дилеров и CardioPower T40 NEW */}
         {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-v-prodazhe' && articleSlug !== 'cardiopower-s55-v-prodazhe' && articleSlug !== 'cardiopower-s50-v-prodazhe' && articleSlug !== 'cardiopower-x48-v-prodazhe' && articleSlug !== 'cardiopower-x45-v-prodazhe' && articleSlug !== 'cardiopower-tt35-v-prodazhe' && articleSlug !== 'cardiopower-re50-v-prodazhe' && articleSlug !== 'cardiopower-b35-v-prodazhe' && (
         <section className="py-16 bg-gray-50">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+          <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left side - Text content in dotted border box */}
               <div className="border-2 border-dashed border-blue-300 p-8 bg-white">
@@ -250,7 +250,7 @@ const NewsArticle: React.FC = () => {
         {/* Second additional section - Image left, Extended text right - скрыто для страницы дилеров и CardioPower T40 NEW */}
         {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-v-prodazhe' && articleSlug !== 'cardiopower-s55-v-prodazhe' && articleSlug !== 'cardiopower-s50-v-prodazhe' && articleSlug !== 'cardiopower-x48-v-prodazhe' && articleSlug !== 'cardiopower-x45-v-prodazhe' && articleSlug !== 'cardiopower-tt35-v-prodazhe' && articleSlug !== 'cardiopower-re50-v-prodazhe' && articleSlug !== 'cardiopower-b35-v-prodazhe' && (
         <section className="py-16">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+          <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               {/* Left side - Image */}
               <div className="relative">
@@ -284,7 +284,7 @@ const NewsArticle: React.FC = () => {
         {/* Image Carousel Section - только для статей с галереей */}
         {articleSlug === 'wellfitness-pro-skolkovo-2023' && (
         <section className="pt-0 pb-16 bg-white" style={{ marginTop: '-80px' }}>
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+          <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
             {/* Photo Swiper Gallery */}
             <PhotoSwiper
               images={[
@@ -304,7 +304,7 @@ const NewsArticle: React.FC = () => {
         {/* Long Text Section - скрыто для страницы дилеров и CardioPower T40 NEW */}
         {articleSlug !== 'novost-dlya-dilerov-wellfitness' && articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-v-prodazhe' && articleSlug !== 'cardiopower-s55-v-prodazhe' && articleSlug !== 'cardiopower-b35-v-prodazhe' && (
         <section className="py-16 bg-gray-50">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+          <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
             <div className="max-w-[1200px]">
               <h2 className="text-3xl font-bold text-[#17171E] mb-8">
                 Следите за нашими новостями и новинками!
@@ -317,7 +317,7 @@ const NewsArticle: React.FC = () => {
         {/* FAQ Section - скрыто для страницы CardioPower T40 NEW */}
         {articleSlug !== 'cardiopower-t40-new-v-prodazhe' && articleSlug !== 'cardiopower-s20-new-v-prodazhe' && articleSlug !== 'cardiopower-tt30-v-prodazhe' && articleSlug !== 'cardiopower-s55-v-prodazhe' && articleSlug !== 'cardiopower-s50-v-prodazhe' && articleSlug !== 'cardiopower-x48-v-prodazhe' && articleSlug !== 'cardiopower-x45-v-prodazhe' && articleSlug !== 'cardiopower-tt35-v-prodazhe' && articleSlug !== 'cardiopower-re50-v-prodazhe' && articleSlug !== 'cardiopower-b35-v-prodazhe' && (
         <section className="py-16 bg-white">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+          <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
             <h2 className="text-3xl font-bold text-[#17171E] mb-12">
               Часто задаваемые вопросы
             </h2>

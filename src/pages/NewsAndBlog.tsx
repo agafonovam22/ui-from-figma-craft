@@ -24,7 +24,7 @@ const NewsAndBlogPage: React.FC = () => {
       <Header />
       
       <main className="w-full">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+        <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px] py-8">
           {/* Breadcrumb */}
           <Breadcrumb className="mb-6">
             <BreadcrumbList>

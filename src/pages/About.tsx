@@ -228,7 +228,7 @@ const About: React.FC = () => {
       <Header />
       
       <main className="w-full">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">
+        <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px] py-8">
           {/* Breadcrumb */}
           <Breadcrumb className="mb-6">
             <BreadcrumbList>
@@ -252,7 +252,7 @@ const About: React.FC = () => {
 
         {/* Banner */}
         <section className="w-full">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+          <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
             <div className="overflow-hidden relative rounded-lg">
               <img 
                 src="/lovable-uploads/9ca63ea8-f3af-4a3b-bbfd-b2e7b3cf78e2.png"
@@ -265,7 +265,7 @@ const About: React.FC = () => {
         
         {/* Navigation tabs */}
         <section className="pt-2.5 pb-10">
-          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+          <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
             <div className="flex gap-2.5">
               <button 
                 onClick={() => setActiveTab('about')}
@@ -326,7 +326,7 @@ const About: React.FC = () => {
         {/* Tab Content */}
         {activeTab === 'mission' && (
           <section className="py-8">
-            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
               <div className="space-y-16">
                 
                 {/* Блок 1: Только текст по центру без заголовка */}
@@ -407,7 +407,7 @@ const About: React.FC = () => {
 
         {activeTab === 'team' && (
           <section className="py-8">
-            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[10px]">
                 {teamMembers.map((member, index) => (
                   <div key={index} className="relative rounded-lg overflow-hidden h-[450px]">
@@ -449,7 +449,7 @@ const About: React.FC = () => {
 
         {activeTab === 'projects' && (
           <section className="py-8">
-            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
               <div className="space-y-[10px]">
                 {/* Первый ряд - 3 карточки */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
@@ -611,7 +611,7 @@ const About: React.FC = () => {
           <>
             {/* Statistics Banner - updated height and image */}
             <section className="w-full">
-              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
                 <div className="overflow-hidden relative rounded-lg" style={{ height: '408px' }}>
                   <img 
                     src="/lovable-uploads/ff32c8e2-a062-45cc-8c1e-6a6d228f6380.png"
@@ -659,7 +659,7 @@ const About: React.FC = () => {
 
             {/* География продаж */}
             <section className="py-8">
-              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
                 <h2 className="mb-0 leading-tight" style={{ fontSize: '32px', fontFamily: 'Benzin-Semibold' }}>
                   <span style={{ color: 'var(--Light-Grey, #778093)' }}>География </span>
                   <span style={{ color: '#262631' }}>продаж</span>
@@ -678,7 +678,7 @@ const About: React.FC = () => {
 
             {/* Мы сегодня - это */}
             <section className="py-16">
-              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
                 <h2 className="mb-12 leading-tight" style={{ fontSize: '32px', fontFamily: 'Benzin-Semibold' }}>
                   <span style={{ color: 'var(--Dark-Grey, #262631)' }}>Мы сегодня </span>
                   <span style={{ color: '#778093' }}>- это:</span>
@@ -778,7 +778,7 @@ const About: React.FC = () => {
 
             {/* В чем причина нашего успеха? */}
             <section className="pb-8 bg-white">
-              <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+              <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
                 <h2 className="mb-6 leading-tight" style={{ fontSize: '32px', fontFamily: 'Benzin-Semibold', color: 'var(--Dark-Grey, #262631)' }}>
                   В чем причина нашего успеха?
                 </h2>
@@ -825,7 +825,7 @@ const About: React.FC = () => {
 
         {activeTab === 'news' && (
           <section className="py-8">
-            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
+            <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px]">
               <h2 className="text-2xl font-bold mb-8">Новости и блог</h2>
               
               {/* News Grid - Same layout as News page */}
