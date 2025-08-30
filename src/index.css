@@ -151,6 +151,25 @@
     .flex {
       flex-wrap: nowrap;
     }
+    
+    /* Уменьшаем заголовки страниц в 2 раза */
+    h1 {
+      font-size: 0.5em !important;
+    }
+    
+    /* Уменьшаем размер вкладок страниц */
+    button[class*="px-6 py-1.5"], 
+    .tabs-trigger,
+    [role="tab"] {
+      font-size: 0.75rem !important;
+      padding: 0.375rem 0.75rem !important;
+    }
+    
+    /* Уменьшаем конкретные элементы вкладок */
+    .px-6.py-1\\.5 {
+      padding: 0.375rem 0.75rem !important;
+      font-size: 0.75rem !important;
+    }
   }
   
   /* Специальные стили для планшетов с зафиксированной раскладкой */
