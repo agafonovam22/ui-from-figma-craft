@@ -1105,7 +1105,7 @@ const ProductDetail: React.FC = () => {
         <Header />
         <main className="container mx-auto px-6 lg:px-12 xl:px-16 py-8">
           {/* Breadcrumbs */}
-          <nav className="flex items-center space-x-2 text-xs md:text-sm text-muted-foreground mb-4 md:mb-6 flex-wrap max-w-[calc(50%-25px)]">
+          <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6 flex-wrap max-w-[calc(50%-25px)]">
             <Link to="/" className="hover:text-foreground">Главная</Link>
             <span>/</span>
             <Link to="/catalog" className="hover:text-foreground">Каталог</Link>
