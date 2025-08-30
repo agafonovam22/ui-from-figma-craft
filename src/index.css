@@ -158,16 +158,16 @@
       line-height: 1.75rem !important;
     }
     
-    /* Размер вкладок как на странице /about для всех страниц кроме главной */
-    body:not([data-homepage]) button[class*="px-6 py-1.5"], 
-    body:not([data-homepage]) .tabs-trigger,
-    body:not([data-homepage]) [role="tab"] {
+    /* Размер вкладок как на странице /about для всех страниц кроме главной и кроме /about */
+    body:not([data-homepage]):not([data-about]) button[class*="px-6 py-1.5"], 
+    body:not([data-homepage]):not([data-about]) .tabs-trigger,
+    body:not([data-homepage]):not([data-about]) [role="tab"] {
       font-size: 1rem !important;
       padding: 0.75rem 1.5rem !important;
     }
     
-    /* Конкретные элементы вкладок для всех страниц кроме главной */
-    body:not([data-homepage]) .px-6.py-1\\.5 {
+    /* Конкретные элементы вкладок для всех страниц кроме главной и кроме /about */
+    body:not([data-homepage]):not([data-about]) .px-6.py-1\\.5 {
       padding: 0.75rem 1.5rem !important;
       font-size: 1rem !important;
     }
