@@ -55,8 +55,8 @@ const TopMenu: React.FC = () => {
   };
 
   return (
-    <header className="flex w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 md:px-6 lg:px-[60px] py-0 border-b border-solid border-[rgba(255,255,255,0.10)]">
-      <div className="flex w-full max-w-[1800px] h-[53px] md:h-[40px] lg:h-[53px] justify-between items-center gap-2 md:gap-1.5 lg:gap-[30px] flex-shrink-0">
+    <header className="flex w-full justify-center items-center bg-[#17171E] px-2 sm:px-4 md:px-4 lg:px-[60px] py-0 border-b border-solid border-[rgba(255,255,255,0.10)]">
+      <div className="flex w-full max-w-[1800px] h-[53px] md:h-[35px] lg:h-[53px] justify-between items-center gap-2 md:gap-1 lg:gap-[30px] flex-shrink-0">
         <CitySelector selectedCity={selectedCity} onCitySelect={handleCitySelect} />
         
         {/* Desktop navigation - hidden on tablet */}

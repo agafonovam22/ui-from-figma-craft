@@ -185,11 +185,11 @@ const BottomMenu: React.FC = () => {
 
   return (
     <nav 
-      className="flex w-full justify-center items-center gap-[5px] md:gap-[2px] lg:gap-[5px] bg-[#262631] px-2 sm:px-4 md:px-8 lg:px-[60px] py-1 max-md:overflow-x-auto"
+      className="flex w-full justify-center items-center gap-[5px] md:gap-[2px] lg:gap-[5px] bg-[#262631] px-2 sm:px-4 md:px-4 lg:px-[60px] py-1 max-md:overflow-x-auto"
       role="navigation"
       aria-label="Категории товаров"
     >
-      <div className="flex w-full max-w-[1800px] h-[54px] md:h-[38px] lg:h-[54px] items-center gap-[5px] md:gap-[2px] lg:gap-[5px] relative max-md:w-auto max-md:min-w-full flex-shrink-0">
+      <div className="flex w-full max-w-[1800px] h-[54px] md:h-[32px] lg:h-[54px] items-center gap-[5px] md:gap-[2px] lg:gap-[5px] relative max-md:w-auto max-md:min-w-full flex-shrink-0">
         <div 
           ref={scrollContainerRef}
           className="flex items-center gap-[5px] md:gap-[2px] lg:gap-[5px] overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden"
