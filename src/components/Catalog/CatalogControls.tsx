@@ -45,7 +45,7 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({
             value={localSearchQuery}
             onChange={handleInputChange}
             onKeyPress={handleKeyPress}
-            className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full md:w-[430px] text-sm"
+            className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full md:w-[350px] text-sm"
           />
         </form>
         
@@ -65,11 +65,11 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({
       </div>
 
       {/* Horizontal Filter Tags */}
-      <div className="bg-[#F8F8FD] rounded-lg p-4 mb-2.5">
-        <div className="flex flex-wrap items-center gap-3">
+      <div className="bg-[#F8F8FD] rounded-lg p-3 md:p-4 mb-2.5">
+        <div className="flex flex-wrap items-center gap-2 md:gap-3">
           {/* Show search query if active */}
           {searchQuery && (
-            <div className="flex items-center bg-[#F53B49] text-white px-4 py-2 rounded-full font-benzin" style={{ fontSize: '12px' }}>
+            <div className="flex items-center bg-[#F53B49] text-white px-3 md:px-4 py-2 rounded-full font-benzin text-xs">
               Поиск: "{searchQuery}"
               <button 
                 className="ml-2 text-white hover:text-gray-300"
@@ -81,7 +81,7 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({
           )}
           
           {/* Removable filter */}
-          <div className="flex items-center bg-[#262631] text-white px-4 py-2 rounded-full font-benzin" style={{ fontSize: '12px' }}>
+          <div className="flex items-center bg-[#262631] text-white px-3 md:px-4 py-2 rounded-full font-benzin text-xs">
             В наличии
             <button className="ml-2 text-white hover:text-gray-300">
               ×
@@ -89,38 +89,40 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({
           </div>
           
           {/* Status filters */}
-          <button className="bg-white text-[#F53B49] border border-[#F53B49] px-4 py-2 rounded-full font-benzin hover:bg-[#F53B49] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+          <button className="bg-white text-[#F53B49] border border-[#F53B49] px-3 md:px-4 py-2 rounded-full font-benzin hover:bg-[#F53B49] hover:text-white transition-colors text-xs">
             Акция
           </button>
           
-          <button className="bg-white text-[#31BF00] border border-[#31BF00] px-4 py-2 rounded-full font-benzin hover:bg-[#31BF00] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+          <button className="bg-white text-[#31BF00] border border-[#31BF00] px-3 md:px-4 py-2 rounded-full font-benzin hover:bg-[#31BF00] hover:text-white transition-colors text-xs">
             Новинка
           </button>
           
-          <button className="bg-white text-[#4B7EE8] border border-[#4B7EE8] px-4 py-2 rounded-full font-benzin hover:bg-[#4B7EE8] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
+          <button className="bg-white text-[#4B7EE8] border border-[#4B7EE8] px-3 md:px-4 py-2 rounded-full font-benzin hover:bg-[#4B7EE8] hover:text-white transition-colors text-xs">
             Хит продаж
           </button>
           
-          {/* Dropdown filters */}
-          <button className="bg-white text-[#778093] border border-[#778093] px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
-            Максимальный вес
-          </button>
-          
-          <button className="bg-white text-[#778093] border border-[#778093] px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
-            Длина полотна, см
-          </button>
-          
-          <button className="bg-white text-[#778093] border border-[#778093] px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
-            Ширина полотна, см
-          </button>
-          
-          <button className="bg-white text-[#778093] border border-[#778093] px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
-            Скорость полотна, км/ч
-          </button>
-          
-          <button className="bg-white text-[#778093] border border-[#778093] px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors" style={{ fontSize: '12px' }}>
-            Производитель
-          </button>
+          {/* Dropdown filters - hidden on small screens */}
+          <div className="hidden md:flex md:flex-wrap md:gap-2 lg:gap-3">
+            <button className="bg-white text-[#778093] border border-[#778093] px-3 md:px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors text-xs">
+              Максимальный вес
+            </button>
+            
+            <button className="bg-white text-[#778093] border border-[#778093] px-3 md:px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors text-xs">
+              Длина полотна, см
+            </button>
+            
+            <button className="bg-white text-[#778093] border border-[#778093] px-3 md:px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors text-xs">
+              Ширина полотна, см
+            </button>
+            
+            <button className="bg-white text-[#778093] border border-[#778093] px-3 md:px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors text-xs">
+              Скорость полотна, км/ч
+            </button>
+            
+            <button className="bg-white text-[#778093] border border-[#778093] px-3 md:px-4 py-2 rounded-full font-benzin hover:bg-[#778093] hover:text-white transition-colors text-xs">
+              Производитель
+            </button>
+          </div>
         </div>
       </div>
     </>

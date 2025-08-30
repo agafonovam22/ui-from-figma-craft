@@ -421,7 +421,7 @@ const Catalog: React.FC = () => {
       <div className="min-h-screen bg-white page-container">
         <SidebarProvider>
           <div className="w-full">
-            <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[30px] py-2">
+            <div className="max-w-[1200px] md:max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[30px] py-2">
               {/* Breadcrumbs */}
               <Breadcrumb className="mb-6">
                 <BreadcrumbList>
@@ -440,7 +440,7 @@ const Catalog: React.FC = () => {
               </Breadcrumb>
             </div>
 
-            <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[30px] py-2">
+            <div className="max-w-[1200px] md:max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[30px] py-2">
               <div className="flex">
                 {/* Mobile/Tablet Filter Sidebar - скрыто на больших экранах */}
                 <div className="lg:hidden">
@@ -538,7 +538,7 @@ const Catalog: React.FC = () => {
 
         {/* SEO Section */}
         <div className="w-full mb-[60px]">
-          <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[30px]">
+          <div className="max-w-[1200px] md:max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[30px]">
             <div className="mt-[100px]">
               <div className="w-full h-px bg-gray-300 mb-[60px]"></div>
               <div>
