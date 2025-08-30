@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Map from '@/components/Map';
@@ -14,8 +14,14 @@ import {
 import { Switch } from '@/components/ui/switch';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Globe, Clock, Map as MapIcon } from 'lucide-react';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 
 const WhereToBuy: React.FC = () => {
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
   const [selectedCity, setSelectedCity] = useState('Москва');
   const [activeTab, setActiveTab] = useState('stores');
   const [sortBy, setSortBy] = useState('list');
@@ -189,7 +195,7 @@ const WhereToBuy: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white page-container">
       <Header />
       
       <main className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -17,8 +17,14 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 
 const Services: React.FC = () => {
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
   const [activeTab, setActiveTab] = useState('service-request');
   const [formData, setFormData] = useState({
     fullName: '',
@@ -171,7 +177,7 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white page-container">
       <Header />
       
       <main>

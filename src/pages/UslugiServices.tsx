@@ -8,8 +8,14 @@ import ServiceTabs from '@/components/Services/ServiceTabs';
 import ServiceBenefits from '@/components/Services/ServiceBenefits';
 import ServiceProjects from '@/components/Services/ServiceProjects';
 import InstallmentTable from '@/components/Services/InstallmentTable';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 
 const UslugiServices: React.FC = () => {
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
   const { category } = useParams<{ category: string }>();
   const location = useLocation();
   
@@ -225,7 +231,7 @@ const UslugiServices: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white page-container">
       <Header />
       
       <main>
