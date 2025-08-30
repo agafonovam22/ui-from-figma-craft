@@ -152,9 +152,10 @@
       flex-wrap: nowrap;
     }
     
-    /* Увеличиваем заголовки страниц (120% от оригинала) */
+    /* Заголовки страниц как "Каталог продукции" - text-xl */
     h1 {
-      font-size: 1.2em !important;
+      font-size: 1.25rem !important;
+      line-height: 1.75rem !important;
     }
     
     /* Уменьшаем размер вкладок страниц */
