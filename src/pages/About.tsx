@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Users, Warehouse, Shield, Grid3x3, Wrench, TrendingUp } from 'lucide-react';
 import { getAboutPageNews } from '@/data/newsData';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
@@ -36,6 +37,12 @@ const About: React.FC = () => {
     '#projects': 'projects', 
     '#news': 'news'
   };
+
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
 
   // Обработка якорных ссылок при загрузке страницы и изменении URL
   useEffect(() => {
