@@ -18,6 +18,7 @@ interface CatalogFiltersProps {
   onEquipmentTypesChange: (types: string[]) => void;
   onApplyFilters: () => void;
   onResetFilters: () => void;
+  hideHeaders?: boolean;
 }
 
 const CatalogFilters: React.FC<CatalogFiltersProps> = ({
@@ -29,7 +30,8 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
   onPowerRangeChange,
   onEquipmentTypesChange,
   onApplyFilters,
-  onResetFilters
+  onResetFilters,
+  hideHeaders = false
 }) => {
   const [expandedFilters, setExpandedFilters] = useState({
     price: true,
@@ -106,11 +108,15 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
 
   return (
     <div className="w-64 flex-shrink-0">
-      <h1 className="text-[48px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Каталог</h1>
+      {!hideHeaders && (
+        <h1 className="text-[48px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Каталог</h1>
+      )}
       
       {/* Filters Container */}
       <div className="bg-[#F8F8FD] rounded-lg p-6 mb-2.5">
-        <h2 className="text-[20px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h2>
+        {!hideHeaders && (
+          <h2 className="text-[20px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h2>
+        )}
         
         {/* Price Filter */}
         <div className="mb-6">
