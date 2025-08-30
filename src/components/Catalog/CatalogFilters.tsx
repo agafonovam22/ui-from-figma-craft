@@ -107,13 +107,13 @@ const CatalogFilters: React.FC<CatalogFiltersProps> = ({
   };
 
   return (
-    <div className="w-64 flex-shrink-0">
+    <div className={hideHeaders ? "w-full" : "w-64 flex-shrink-0"}>
       {!hideHeaders && (
         <h1 className="text-[48px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Каталог</h1>
       )}
       
       {/* Filters Container */}
-      <div className="bg-[#F8F8FD] rounded-lg p-6 mb-2.5">
+      <div className={`bg-[#F8F8FD] rounded-lg mb-2.5 ${hideHeaders ? "p-4 mx-2" : "p-6"}`}>
         {!hideHeaders && (
           <h2 className="text-[20px] font-semibold text-[#262631] mb-6" style={{fontFamily: 'Benzin-Semibold'}}>Фильтр</h2>
         )}
