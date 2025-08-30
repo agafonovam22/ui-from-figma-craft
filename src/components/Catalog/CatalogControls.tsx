@@ -45,7 +45,7 @@ const CatalogControls: React.FC<CatalogControlsProps> = ({
             value={localSearchQuery}
             onChange={handleInputChange}
             onKeyPress={handleKeyPress}
-            className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full md:w-[470px] text-sm"
+            className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full md:w-[430px] text-sm"
           />
         </form>
         
