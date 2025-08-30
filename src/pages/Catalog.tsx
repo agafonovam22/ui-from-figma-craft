@@ -418,46 +418,46 @@ const Catalog: React.FC = () => {
     <>
       <Header onSearch={handleSearchQuery} />
       <SidebarProvider>
-        <div className="min-h-screen bg-white page-container w-full flex">
-          {/* Mobile Filter Sidebar - только для планшетов и мобильных */}
-          <div className="md:hidden">
-            <CatalogFilterSidebar
-              filters={filters}
-              filterOptions={filterOptions}
-              onPriceChange={handlePriceChange}
-              onBrandsChange={handleBrandsChange}
-              onPurposeTypesChange={handlePurposeTypesChange}
-              onPowerRangeChange={handlePowerRangeChange}
-              onEquipmentTypesChange={handleEquipmentTypesChange}
-              onApplyFilters={handleApplyFilters}
-              onResetFilters={handleResetFilters}
-            />
+        <div className="min-h-screen bg-white page-container w-full">
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-2">
+            {/* Breadcrumbs */}
+            <Breadcrumb className="mb-6">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/">Главная</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>
+                    {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
+                  </BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
           </div>
 
-          <main className="flex-1 w-full">
-            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-2">
-              {/* Breadcrumbs */}
-              <Breadcrumb className="mb-6">
-                <BreadcrumbList>
-                  <BreadcrumbItem>
-                    <BreadcrumbLink asChild>
-                      <Link to="/">Главная</Link>
-                    </BreadcrumbLink>
-                  </BreadcrumbItem>
-                  <BreadcrumbSeparator />
-                  <BreadcrumbItem>
-                    <BreadcrumbPage>
-                      {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
-                    </BreadcrumbPage>
-                  </BreadcrumbItem>
-                </BreadcrumbList>
-              </Breadcrumb>
-            </div>
+          <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-2">
+            <div className="flex">
+              {/* Mobile/Tablet Filter Sidebar - скрыто на больших экранах */}
+              <div className="lg:hidden">
+                <CatalogFilterSidebar
+                  filters={filters}
+                  filterOptions={filterOptions}
+                  onPriceChange={handlePriceChange}
+                  onBrandsChange={handleBrandsChange}
+                  onPurposeTypesChange={handlePurposeTypesChange}
+                  onPowerRangeChange={handlePowerRangeChange}
+                  onEquipmentTypesChange={handleEquipmentTypesChange}
+                  onApplyFilters={handleApplyFilters}
+                  onResetFilters={handleResetFilters}
+                />
+              </div>
 
-            <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-2">
-              <div className="flex gap-8">
-                {/* Desktop Filters - только для больших экранов */}
-                <div className="hidden md:block">
+              <div className="flex gap-8 w-full">
+                {/* Desktop Filters - показано только на больших экранах */}
+                <div className="hidden lg:block">
                   <CatalogFilters
                     filters={filters}
                     filterOptions={filterOptions}
@@ -472,8 +472,8 @@ const Catalog: React.FC = () => {
                 </div>
 
                 {/* Main Content */}
-                <div className="flex-1 md:mt-[94px]">
-                  {/* Mobile Filter Button */}
+                <div className="flex-1 lg:mt-[94px]">
+                  {/* Mobile/Tablet Filter Button - показано только на планшетах/мобильных */}
                   <MobileFilterTrigger />
                   
                   <CatalogBanner />
@@ -523,7 +523,7 @@ const Catalog: React.FC = () => {
                 </div>
               </div>
             </div>
-          </main>
+          </div>
         </div>
       </SidebarProvider>
 
