@@ -162,7 +162,7 @@
     height: 100vh !important;
   }
   
-  body[data-tablet-fixed="true"] main {
+  body[data-tablet-fixed="true"] .page-container {
     overflow-y: auto !important;
     height: 100vh !important;
     width: 100% !important;
