@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 import ProductCard from '@/components/shared/ProductCard';
 import { Button } from "@/components/ui/button";
 
@@ -39,6 +39,35 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
   onLoadMore,
   showLoadMore = false
 }) => {
+  const [screenSize, setScreenSize] = useState('lg');
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setScreenSize('sm');
+      } else if (window.innerWidth < 1024) {
+        setScreenSize('md');
+      } else {
+        setScreenSize('lg');
+      }
+    };
+
+    // Set initial size
+    handleResize();
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Determine when to show ad banner based on screen size
+  const getAdPosition = () => {
+    switch (screenSize) {
+      case 'sm': return 3; // Mobile: 2 cols, after 4 items (index 3)
+      case 'md': return 5; // Tablet: 3 cols, after 6 items (index 5)  
+      case 'lg': return 7; // Desktop: 4 cols, after 8 items (index 7)
+      default: return 7;
+    }
+  };
 
 
   return (
@@ -63,8 +92,8 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
               badge_color: product.badge_color
             }} />
             
-            {/* Ad Banner after 8th product (between 2nd and 3rd row) */}
-            {index === 7 && (
+            {/* Ad Banner after 2 rows based on screen size */}
+            {index === getAdPosition() && (
               <div 
                 className="col-span-2 md:col-span-3 lg:col-span-4 text-white p-4 md:p-6 lg:p-8 rounded-lg"
                 style={{ background: 'linear-gradient(97deg, #262631 1.32%, #6F6F90 108.06%)' }}
