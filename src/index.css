@@ -158,25 +158,18 @@
       line-height: 1.75rem !important;
     }
     
-    /* Размер вкладок страниц как на странице About - px-6 py-1.5 text-base */
-    /* НО исключаем саму страницу About */
-    body:not([data-page="about"]) button[class*="px-6 py-1.5"]:not(.about-page-tab), 
-    body:not([data-page="about"]) button[class*="px-4 py-2"],
-    body:not([data-page="about"]) button[class*="px-3 py-1"],
-    body:not([data-page="about"]) .tabs-trigger,
-    body:not([data-page="about"]) [role="tab"] {
-      font-size: 1rem !important;
-      padding: 0.375rem 1.5rem !important;
-      line-height: 1.5rem !important;
+    /* Уменьшаем размер вкладок страниц */
+    button[class*="px-6 py-1.5"], 
+    .tabs-trigger,
+    [role="tab"] {
+      font-size: 0.75rem !important;
+      padding: 0.375rem 0.75rem !important;
     }
     
-    /* Уменьшаем конкретные элементы вкладок до размера About (кроме страницы About) */
-    body:not([data-page="about"]) .px-6.py-1\\.5:not(.about-page-tab),
-    body:not([data-page="about"]) .px-4.py-2,
-    body:not([data-page="about"]) .px-3.py-1 {
-      padding: 0.375rem 1.5rem !important;
-      font-size: 1rem !important;
-      line-height: 1.5rem !important;
+    /* Уменьшаем конкретные элементы вкладок */
+    .px-6.py-1\\.5 {
+      padding: 0.375rem 0.75rem !important;
+      font-size: 0.75rem !important;
     }
   }
   
