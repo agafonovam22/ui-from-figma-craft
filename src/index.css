@@ -178,6 +178,66 @@
       font-size: 0.75rem !important;
       height: auto !important;
     }
+    
+    /* Уменьшаем размер фильтров на странице /catalog для планшетов */
+    .w-64 {
+      width: 12rem !important; /* уменьшаем с 16rem до 12rem */
+    }
+    
+    /* Уменьшаем заголовок "Каталог" в фильтрах */
+    .w-64 h1[style*="48px"] {
+      font-size: 1.875rem !important; /* 30px вместо 48px */
+      margin-bottom: 1rem !important;
+    }
+    
+    /* Уменьшаем заголовок "Фильтр" */
+    .w-64 h2[style*="20px"] {
+      font-size: 1rem !important; /* 16px вместо 20px */
+      margin-bottom: 1rem !important;
+    }
+    
+    /* Уменьшаем подзаголовки фильтров */
+    .w-64 h3[style*="14px"] {
+      font-size: 0.75rem !important; /* 12px вместо 14px */
+      margin-bottom: 0.5rem !important;
+    }
+    
+    /* Уменьшаем контейнер фильтров */
+    .w-64 .bg-\\[\\#F8F8FD\\] {
+      padding: 1rem !important; /* уменьшаем с 1.5rem */
+    }
+    
+    /* Уменьшаем размер текста и отступы для опций фильтров */
+    .w-64 label {
+      font-size: 0.75rem !important; /* 12px вместо 14px */
+    }
+    
+    .w-64 input[type="text"] {
+      font-size: 0.75rem !important;
+      padding: 0.25rem 0.5rem !important;
+    }
+    
+    /* Уменьшаем размер кнопок */
+    .w-64 button {
+      font-size: 0.625rem !important; /* 10px вместо 12px */
+      height: 2.5rem !important; /* уменьшаем с 3rem */
+      padding: 0.5rem 1rem !important;
+    }
+    
+    /* Уменьшаем рекламный баннер */
+    .w-64 > div:last-child {
+      padding: 1rem !important;
+    }
+    
+    .w-64 > div:last-child h3 {
+      font-size: 0.75rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .w-64 > div:last-child p {
+      font-size: 0.625rem !important;
+      margin-bottom: 0.75rem !important;
+    }
   }
   
   /* Специальные стили для планшетов с зафиксированной раскладкой */
