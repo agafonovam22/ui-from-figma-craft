@@ -256,6 +256,38 @@
     .mb-6 {
       margin-bottom: 1rem !important;
     }
+    
+    /* Стили для мобильного sidebar с фильтрами */
+    [data-sidebar="sidebar"] {
+      z-index: 50 !important;
+      background: white !important;
+    }
+    
+    /* Overlay для мобильного sidebar */
+    [data-sidebar="overlay"] {
+      z-index: 40 !important;
+      background: rgba(0, 0, 0, 0.5) !important;
+    }
+    
+    /* Уменьшаем размеры в мобильном sidebar */
+    [data-sidebar="sidebar"] .w-64 {
+      width: 280px !important;
+    }
+    
+    [data-sidebar="sidebar"] .w-64 h1 {
+      font-size: 1.5rem !important;
+      margin-bottom: 0.75rem !important;
+    }
+    
+    [data-sidebar="sidebar"] .w-64 h2 {
+      font-size: 1.125rem !important;
+      margin-bottom: 0.75rem !important;
+    }
+    
+    [data-sidebar="sidebar"] .w-64 h3 {
+      font-size: 0.875rem !important;
+      margin-bottom: 0.5rem !important;
+    }
   }
   
   /* Специальные стили для планшетов с зафиксированной раскладкой */
