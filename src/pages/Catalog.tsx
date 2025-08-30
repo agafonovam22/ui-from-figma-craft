@@ -473,6 +473,13 @@ const Catalog: React.FC = () => {
 
                 {/* Main Content */}
                 <div className="flex-1 lg:mt-[94px]">
+                  {/* Page Title for Mobile/Tablet - показано только на планшетах/мобильных */}
+                  <div className="lg:hidden mb-4">
+                    <h1 className="text-[48px] font-semibold text-[#262631]" style={{fontFamily: 'Benzin-Semibold'}}>
+                      {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
+                    </h1>
+                  </div>
+                  
                   {/* Mobile/Tablet Filter Button - показано только на планшетах/мобильных */}
                   <MobileFilterTrigger />
                   
