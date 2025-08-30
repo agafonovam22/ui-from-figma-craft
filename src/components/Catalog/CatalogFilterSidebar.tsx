@@ -51,15 +51,9 @@ export function CatalogFilterSidebar(props: CatalogFilterSidebarProps) {
 export function MobileFilterTrigger() {
   return (
     <div className="md:hidden mb-4">
-      <SidebarTrigger asChild>
-        <Button 
-          variant="outline" 
-          size="sm"
-          className="flex items-center gap-2"
-        >
-          <Filter className="w-4 h-4" />
-          Фильтры
-        </Button>
+      <SidebarTrigger className="flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50">
+        <Filter className="w-4 h-4" />
+        Фильтры
       </SidebarTrigger>
     </div>
   );
