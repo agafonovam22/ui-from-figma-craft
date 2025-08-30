@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 
 const CatalogBanner: React.FC = () => {
   return (
-    <div className="bg-gray-100 overflow-hidden relative rounded-lg h-[319px] mb-2.5">
+    <div className="bg-gray-100 overflow-hidden relative rounded-lg h-[200px] md:h-[250px] lg:h-[319px] mb-2.5">
       <div className="py-8 relative h-full">
         <div className="flex items-center justify-between h-full">
           {/* Левая часть с текстом */}
-          <div className="flex-1 max-w-lg z-10" style={{ paddingTop: '40px', paddingLeft: '60px' }}>
+          <div className="flex-1 max-w-lg z-10 px-4 md:px-8 lg:px-[60px] pt-4 md:pt-6 lg:pt-[40px]">
             <div className="mb-4">
               <span 
                 className="text-sm tracking-[3.78px] uppercase"
@@ -22,7 +22,7 @@ const CatalogBanner: React.FC = () => {
             </div>
             
             <h1 
-              className="text-3xl mb-6 leading-tight"
+              className="text-lg md:text-2xl lg:text-3xl mb-4 md:mb-6 leading-tight"
               style={{
                 color: '#262631',
                 fontWeight: 400,
@@ -40,14 +40,14 @@ const CatalogBanner: React.FC = () => {
           </div>
           
           {/* Правая часть с изображением - уменьшенный круг */}
-          <div className="absolute" style={{ right: '60px', top: '10px' }}>
+          <div className="absolute right-2 md:right-8 lg:right-[60px] top-2 md:top-4 lg:top-[10px]">
             <div className="relative">
-              <div className="w-[350px] h-[350px] bg-[#F53B49] rounded-full flex items-center justify-center">
+              <div className="w-[150px] h-[150px] md:w-[250px] md:h-[250px] lg:w-[350px] lg:h-[350px] bg-[#F53B49] rounded-full flex items-center justify-center">
                 <img 
                   src="/lovable-uploads/ace4abb2-c88d-4e87-a4f2-87e767e8dd77.png"
                   alt="Мужчина на беговой дорожке"
-                  className="w-[350px] h-[350px] object-contain"
-                  style={{ objectPosition: 'center right', transform: 'translateX(30px)' }}
+                  className="w-[150px] h-[150px] md:w-[250px] md:h-[250px] lg:w-[350px] lg:h-[350px] object-contain transform translate-x-[15px] md:translate-x-[20px] lg:translate-x-[30px]"
+                  style={{ objectPosition: 'center right' }}
                 />
               </div>
             </div>

@@ -477,7 +477,7 @@ const Catalog: React.FC = () => {
                   <div className="flex-1 lg:mt-[94px]">
                     {/* Page Title for Mobile/Tablet - показано только на планшетах/мобильных */}
                     <div className="lg:hidden mb-4">
-                      <h1 className="text-[48px] font-semibold text-[#262631]" style={{fontFamily: 'Benzin-Semibold'}}>
+                      <h1 className="text-2xl md:text-3xl lg:text-[48px] font-semibold text-[#262631]" style={{fontFamily: 'Benzin-Semibold'}}>
                         {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
                       </h1>
                     </div>
