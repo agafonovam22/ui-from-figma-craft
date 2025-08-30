@@ -69,12 +69,31 @@ const CatalogGrid: React.FC<CatalogGridProps> = memo(({
     }
   };
 
+  // Get number of columns based on screen size
+  const getColumnsCount = () => {
+    switch (screenSize) {
+      case 'sm': return 2; // Mobile: 2 cols
+      case 'md': return 3; // Tablet: 3 cols
+      case 'lg': return 4; // Desktop: 4 cols
+      default: return 4;
+    }
+  };
+
+  // Filter products to show only complete rows
+  const getProductsForCompleteRows = () => {
+    const columns = getColumnsCount();
+    const completeRowsCount = Math.floor(products.length / columns);
+    return products.slice(0, completeRowsCount * columns);
+  };
+
+  const displayedProducts = getProductsForCompleteRows();
+
 
   return (
     <>
       {/* Products Grid with Ad Banner */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 mb-8">
-        {products.map((product, index) => (
+        {displayedProducts.map((product, index) => (
           <React.Fragment key={product.id}>
             <ProductCard product={{ 
               id: product.id.toString(),
