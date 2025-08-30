@@ -8,10 +8,14 @@ export const initTabletLayoutFix = () => {
   // Применяем стили для планшетов
   const applyTabletStyles = () => {
     if (isTablet()) {
+      document.body.style.overflow = 'hidden';
       document.body.style.paddingRight = '0px';
+      document.documentElement.style.overflow = 'hidden';
       document.body.setAttribute('data-tablet-fixed', 'true');
     } else {
+      document.body.style.overflow = '';
       document.body.style.paddingRight = '';
+      document.documentElement.style.overflow = '';
       document.body.removeAttribute('data-tablet-fixed');
     }
   };
