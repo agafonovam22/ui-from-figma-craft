@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, X, Heart, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -24,6 +25,11 @@ import { Checkbox } from "@/components/ui/checkbox";
 import ProductCard from '@/components/shared/ProductCard';
 
 const Comparison: React.FC = () => {
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
   const [showOnlyDifferences, setShowOnlyDifferences] = useState(false);
   const { comparison, removeFromComparison } = useComparison();
   const { toggleFavorite, isFavorite } = useFavorites();
@@ -61,7 +67,7 @@ const Comparison: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white page-container">
       <Header />
       
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">

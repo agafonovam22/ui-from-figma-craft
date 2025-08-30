@@ -22,8 +22,14 @@ import ProductCharacteristicsTable from '@/components/product/ProductCharacteris
 import SupportCitySelector from '@/components/SupportCitySelector';
 import { useViewedProducts } from '@/hooks/useViewedProducts';
 import { debugSpecificProducts } from '@/utils/debugProducts';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 
 const ProductDetail: React.FC = () => {
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
   const { id } = useParams<{ id: string }>();
   const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState<string>('');
@@ -1087,7 +1093,7 @@ const ProductDetail: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background page-container">
       {/* Gray background for right side extending from very top */}
       <div className="absolute top-0 bg-gray-50 z-0" style={{ 
         left: 'calc(50% + 25px)', 

@@ -1,5 +1,6 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 import { Link } from 'react-router-dom';
 import { Heart } from 'lucide-react';
 import { useFavorites } from '@/contexts/FavoritesContext';
@@ -19,6 +20,12 @@ import {
 import { Button } from "@/components/ui/button";
 
 const Favorites: React.FC = () => {
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
+
   const { favorites, removeFromFavorites } = useFavorites();
 
   const handleRemoveFavorite = (e: React.MouseEvent, id: string) => {
@@ -28,7 +35,7 @@ const Favorites: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white page-container">
       <Header />
       
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px] py-8">

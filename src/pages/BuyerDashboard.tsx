@@ -15,8 +15,14 @@ import { useFavorites } from '@/contexts/FavoritesContext';
 import { useCart } from '@/contexts/CartContext';
 import { useAuth } from '@/contexts/AuthContext';
 import { useOrders } from '@/contexts/OrdersContext';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 
 const BuyerDashboard: React.FC = () => {
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
   const navigate = useNavigate();
   const { user, logout, updateUser } = useAuth();
   const { favorites, removeFromFavorites } = useFavorites();
@@ -128,7 +134,7 @@ const BuyerDashboard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white page-container">
       <Header />
       
       <main className="flex-1">

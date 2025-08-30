@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -20,6 +21,12 @@ import { Link } from 'react-router-dom';
 import { Truck, CreditCard, User } from 'lucide-react';
 
 const Checkout: React.FC = () => {
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
+
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedDelivery, setSelectedDelivery] = useState('pickup');
@@ -69,7 +76,7 @@ const Checkout: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white page-container">
       <Header />
       
       <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:pl-[60px] lg:pr-[60px] py-8">

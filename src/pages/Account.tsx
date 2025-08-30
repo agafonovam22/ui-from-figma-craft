@@ -9,8 +9,15 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
+import { initTabletLayoutFix } from '@/utils/tabletLayout';
 
 const Account: React.FC = () => {
+  // Инициализируем фикс планшетной раскладки
+  useEffect(() => {
+    const cleanup = initTabletLayoutFix();
+    return cleanup;
+  }, []);
+
   const navigate = useNavigate();
   const { user, login } = useAuth();
   const [userType, setUserType] = useState<'buyer' | 'dealer'>('buyer');
@@ -58,7 +65,7 @@ const Account: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white page-container">
       <Header />
       
       <main className="flex-1">
