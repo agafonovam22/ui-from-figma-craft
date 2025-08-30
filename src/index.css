@@ -130,13 +130,11 @@
   /* Планшетные стили для улучшения отображения */
   @media (min-width: 768px) and (max-width: 1023px) {
     body {
-      overflow-x: hidden;
       width: 100%;
       max-width: 100vw;
     }
     
     html {
-      overflow-x: hidden;
       width: 100%;
       max-width: 100vw;
     }
@@ -153,7 +151,7 @@
     }
   }
   
-  /* Специальные стили для планшетов с зафиксированной раскладкой */
+  /* Специальные стили для планшетов */
   body[data-tablet-fixed="true"] {
     width: 100% !important;
     max-width: 100vw !important;

@@ -8,10 +8,9 @@ export const initTabletLayoutFix = () => {
   // Применяем стили для планшетов
   const applyTabletStyles = () => {
     if (isTablet()) {
-      document.body.style.paddingRight = '0px';
+      // Только устанавливаем флаг для CSS стилей, не блокируем скролл
       document.body.setAttribute('data-tablet-fixed', 'true');
     } else {
-      document.body.style.paddingRight = '';
       document.body.removeAttribute('data-tablet-fixed');
     }
   };
