@@ -238,6 +238,24 @@
       font-size: 0.625rem !important;
       margin-bottom: 0.75rem !important;
     }
+    
+    /* Уменьшаем верхний контейнер на странице /catalog для планшетной версии */
+    .max-w-\\[1800px\\] {
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+      padding-top: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+    }
+    
+    /* Уменьшаем gap между фильтрами и контентом */
+    .flex.gap-8 {
+      gap: 1rem !important;
+    }
+    
+    /* Уменьшаем отступы для breadcrumb */
+    .mb-6 {
+      margin-bottom: 1rem !important;
+    }
   }
   
   /* Специальные стили для планшетов с зафиксированной раскладкой */
