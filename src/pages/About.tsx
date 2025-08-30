@@ -217,7 +217,7 @@ const About: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white about-page">
       <Header />
       
       <main className="w-full">
@@ -262,7 +262,7 @@ const About: React.FC = () => {
             <div className="flex gap-2.5">
               <button 
                 onClick={() => setActiveTab('about')}
-                className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
+                className={`tab-button px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
                   activeTab === 'about' 
                     ? 'bg-[#F53B49] text-white' 
                     : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
@@ -272,7 +272,7 @@ const About: React.FC = () => {
               </button>
               <button 
                 onClick={() => setActiveTab('mission')}
-                className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
+                className={`tab-button px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
                   activeTab === 'mission' 
                     ? 'bg-[#F53B49] text-white' 
                     : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
@@ -283,7 +283,7 @@ const About: React.FC = () => {
               {/* Временно скрыта вкладка "Наша команда"
               <button 
                 onClick={() => setActiveTab('team')}
-                className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
+                className={`tab-button px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
                   activeTab === 'team' 
                     ? 'bg-[#F53B49] text-white' 
                     : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
@@ -294,7 +294,7 @@ const About: React.FC = () => {
               */}
               <button 
                 onClick={() => setActiveTab('projects')}
-                className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
+                className={`tab-button px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
                   activeTab === 'projects' 
                     ? 'bg-[#F53B49] text-white' 
                     : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
@@ -304,7 +304,7 @@ const About: React.FC = () => {
               </button>
               <button 
                 onClick={() => setActiveTab('news')}
-                className={`px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
+                className={`tab-button px-6 py-1.5 rounded-xl text-base font-benzin transition-colors ${
                   activeTab === 'news' 
                     ? 'bg-[#F53B49] text-white' 
                     : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
@@ -318,45 +318,45 @@ const About: React.FC = () => {
 
         {/* Tab Content */}
         {activeTab === 'mission' && (
-          <section className="py-8">
+          <section className="section-spacing py-8">
             <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-[60px]">
-              <div className="space-y-16">
+              <div className="space-y-16 section-spacing">
                 
                 {/* Блок 1: Только текст по центру без заголовка */}
                 <div className="flex justify-center">
                   <div className="max-w-4xl text-center animate-fade-in">
-                    <p className="text-gray-700 text-xl leading-relaxed font-bold">
+                    <p className="mission-main-text text-gray-700 text-xl leading-relaxed font-bold">
                       Наша миссия заключается в том, чтобы стать идеальной онлайн-платформой, на которой люди смогут найти все необходимое оборудование и аксессуары для повседневных занятий фитнесом и поддержания здорового образа жизни.
                     </p>
                   </div>
                 </div>
 
                 {/* Блок 2: Изображение слева, текст справа */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 grid-gap gap-12 items-center">
                   <div className="animate-scale-in hover-scale rounded-lg overflow-hidden shadow-lg lg:order-1 order-2">
                     <img 
                       src={missionHealth} 
                       alt="Здоровый образ жизни" 
-                      className="w-full h-80 object-cover"
+                      className="mission-image w-full h-80 object-cover"
                     />
                   </div>
                   <div className="animate-fade-in lg:order-2 order-1">
-                    <h3 className="text-2xl font-semibold text-[#17171E] mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>
+                    <h3 className="mission-title text-2xl font-semibold text-[#17171E] mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Оздоровление населения
                     </h3>
-                    <p className="text-gray-700 text-base leading-relaxed font-manrope">
+                    <p className="mission-text text-gray-700 text-base leading-relaxed font-manrope">
                       Наша цель – это оздоровление населения страны при помощи доступных инструментов для улучшения физической формы, психологического состояния, повышения самооценки и улучшения качества и продолжительности жизни.
                     </p>
                   </div>
                 </div>
 
                 {/* Блок 3: Текст слева, изображение справа */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 grid-gap gap-12 items-center">
                   <div className="animate-fade-in">
-                    <h3 className="text-2xl font-semibold text-[#17171E] mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>
+                    <h3 className="mission-title text-2xl font-semibold text-[#17171E] mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Современное оборудование
                     </h3>
-                    <p className="text-gray-700 text-base leading-relaxed font-manrope">
+                    <p className="mission-text text-gray-700 text-base leading-relaxed font-manrope">
                       Мы предлагаем самое современное, функциональное и безопасное оборудование, которое обеспечивает эффективность тренировок, а также поддерживает высокую мотивацию в достижении поставленных целей.
                     </p>
                   </div>
@@ -364,29 +364,29 @@ const About: React.FC = () => {
                     <img 
                       src={missionEquipment} 
                       alt="Современное фитнес-оборудование" 
-                      className="w-full h-80 object-cover"
+                      className="mission-image w-full h-80 object-cover"
                     />
                   </div>
                 </div>
 
                 {/* Блок 4: Изображение слева, текст справа */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 grid-gap gap-12 items-center">
                   <div className="animate-scale-in hover-scale rounded-lg overflow-hidden shadow-lg lg:order-1 order-2">
                     <img 
                       src={missionService} 
                       alt="Индивидуальный подход и поддержка" 
-                      className="w-full h-80 object-cover"
+                      className="mission-image w-full h-80 object-cover"
                     />
                   </div>
                   <div className="animate-fade-in lg:order-2 order-1">
-                    <h3 className="text-2xl font-semibold text-[#17171E] mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>
+                    <h3 className="mission-title text-2xl font-semibold text-[#17171E] mb-6" style={{ fontFamily: 'Benzin-Semibold' }}>
                       Качественный сервис
                     </h3>
-                    <p className="text-gray-700 text-base leading-relaxed font-manrope mb-6">
+                    <p className="mission-text text-gray-700 text-base leading-relaxed font-manrope mb-6">
                       Преимущества компании заключаются в предоставлении качественного контента, индивидуальном подходе к каждому покупателю и обеспечении качественной информационной и технической поддержки.
                     </p>
                     <div className="bg-gradient-to-r from-[#F53B49] to-[#FF6B7A] text-white p-6 rounded-lg">
-                      <p className="text-lg font-medium" style={{ fontFamily: 'Benzin-Semibold' }}>
+                      <p className="mission-text text-lg font-medium" style={{ fontFamily: 'Benzin-Semibold' }}>
                         Мы стремимся сделать занятия фитнесом более эффективными, мотивирующими&nbsp;и&nbsp;интересными!
                       </p>
                     </div>
@@ -458,12 +458,12 @@ const About: React.FC = () => {
                         
                         {/* Content overlay */}
                         <div className="absolute inset-0 p-6 text-white">
-                          <div className="absolute bottom-6 left-6 right-6 transition-transform duration-300 group-hover:-translate-y-12">
-                            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '13px' }}>
-                              {project.description}
-                            </div>
-                          </div>
+                           <div className="absolute bottom-6 left-6 right-6 transition-transform duration-300 group-hover:-translate-y-12">
+                             <h3 className="project-card text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
+                             <div className="project-card inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '13px' }}>
+                               {project.description}
+                             </div>
+                           </div>
                           
                           <div className="absolute bottom-6 left-6 right-6">
                             <div className="flex justify-start">
@@ -497,8 +497,8 @@ const About: React.FC = () => {
                         {/* Content overlay */}
                         <div className="absolute inset-0 p-6 text-white">
                           <div className="absolute bottom-6 left-6 right-6 transition-transform duration-300 group-hover:-translate-y-12">
-                            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '13px' }}>
+                            <h3 className="project-card text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
+                            <div className="project-card inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '13px' }}>
                               {project.description}
                             </div>
                           </div>
@@ -535,8 +535,8 @@ const About: React.FC = () => {
                         {/* Content overlay */}
                         <div className="absolute inset-0 p-6 text-white">
                           <div className="absolute bottom-6 left-6 right-6 transition-transform duration-300 group-hover:-translate-y-12">
-                            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '13px' }}>
+                            <h3 className="project-card text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
+                            <div className="project-card inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '13px' }}>
                               {project.description}
                             </div>
                           </div>
@@ -573,8 +573,8 @@ const About: React.FC = () => {
                         {/* Content overlay */}
                         <div className="absolute inset-0 p-6 text-white">
                           <div className="absolute bottom-6 left-6 right-6 transition-transform duration-300 group-hover:-translate-y-12">
-                            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
-                            <div className="inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '13px' }}>
+                            <h3 className="project-card text-2xl font-bold mb-3" style={{ fontFamily: 'Benzin-Medium' }}>{project.title}</h3>
+                            <div className="project-card inline-block bg-[#F53B49] px-4 py-2 rounded-full" style={{ fontFamily: 'Benzin-Medium', fontSize: '13px' }}>
                               {project.description}
                             </div>
                           </div>
@@ -613,7 +613,7 @@ const About: React.FC = () => {
                     style={{ objectPosition: 'center right' }}
                   />
                   {/* Statistics content overlay */}
-                  <div className="absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-6 shadow-lg">
+                  <div className="stats-card absolute top-2.5 right-2.5 bottom-2.5 w-[650px] bg-white rounded-lg p-6 shadow-lg">
                     <div className="h-full flex flex-col justify-between">
                       <div className="mb-4">
                         <p className="text-gray-700 text-sm leading-snug">
@@ -623,26 +623,26 @@ const About: React.FC = () => {
                       
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-0.5 leading-none">2005</div>
-                          <div className="text-gray-600 text-sm leading-tight">Год появления на рынке</div>
+                          <div className="stats-number text-4xl font-bold text-[#17171E] mb-0.5 leading-none">2005</div>
+                          <div className="stats-text text-gray-600 text-sm leading-tight">Год появления на рынке</div>
                         </div>
                         <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-0.5 leading-none">10 000+</div>
-                          <div className="text-gray-600 text-sm leading-tight">Складских помещений</div>
+                          <div className="stats-number text-4xl font-bold text-[#17171E] mb-0.5 leading-none">10 000+</div>
+                          <div className="stats-text text-gray-600 text-sm leading-tight">Складских помещений</div>
                         </div>
                         <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-0.5 leading-none">60+</div>
-                          <div className="text-gray-600 text-sm leading-tight">Квалифицированных сотрудников</div>
+                          <div className="stats-number text-4xl font-bold text-[#17171E] mb-0.5 leading-none">60+</div>
+                          <div className="stats-text text-gray-600 text-sm leading-tight">Квалифицированных сотрудников</div>
                         </div>
                         <div>
-                          <div className="text-4xl font-bold text-[#17171E] mb-0.5 leading-none">20+</div>
-                          <div className="text-gray-600 text-sm leading-tight">Ведущих мировых брендов</div>
+                          <div className="stats-number text-4xl font-bold text-[#17171E] mb-0.5 leading-none">20+</div>
+                          <div className="stats-text text-gray-600 text-sm leading-tight">Ведущих мировых брендов</div>
                         </div>
                       </div>
                       
                       <div className="mt-2">
-                        <div className="text-4xl font-bold text-[#17171E] mb-0.5 leading-none">3000+</div>
-                        <div className="text-gray-600 text-sm leading-tight">SKU</div>
+                        <div className="stats-number text-4xl font-bold text-[#17171E] mb-0.5 leading-none">3000+</div>
+                        <div className="stats-text text-gray-600 text-sm leading-tight">SKU</div>
                       </div>
                     </div>
                   </div>
@@ -921,7 +921,7 @@ const About: React.FC = () => {
                             </div>
                           </div>
                           
-                          <h3 className="font-benzin-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                          <h3 className="news-card font-benzin-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                             {newsItems[2]?.title}
                           </h3>
                         </div>
@@ -952,7 +952,7 @@ const About: React.FC = () => {
                             </div>
                           </div>
                           
-                          <h3 className="font-benzin-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                          <h3 className="news-card font-benzin-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                             {newsItems[3]?.title}
                           </h3>
                         </div>
@@ -992,7 +992,7 @@ const About: React.FC = () => {
                                 </div>
                               </div>
                               
-                              <h3 className="font-benzin-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
+                              <h3 className="news-card font-benzin-semibold text-xs mb-1 group-hover:text-[#F53B49] transition-colors line-clamp-2 leading-tight">
                                 {item.title}
                               </h3>
                             </div>
