@@ -47,7 +47,7 @@ const PopularBrands: React.FC = () => {
                 <img 
                   src={brand.logo} 
                   alt={brand.name}
-                  className={`object-contain hover:opacity-90 transition-opacity ${getBrandImageClass(brand.name)}`}
+                  className={`object-contain hover:opacity-90 transition-opacity ${getBrandImageClass(brand.name)} mx-auto`}
                 />
               </Link>
             );
