@@ -417,48 +417,34 @@ const Catalog: React.FC = () => {
   return (
     <>
       <Header onSearch={handleSearchQuery} />
-      <SidebarProvider>
-        <div className="min-h-screen bg-white page-container w-full">
-          <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px] py-2">
-            {/* Breadcrumbs */}
-            <Breadcrumb className="mb-6">
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <Link to="/">Главная</Link>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>
-                    {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
-                  </BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
-          </div>
+      
+      <div className="min-h-screen bg-white page-container">
+        <SidebarProvider>
+          <div className="w-full">
+            <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px] py-2">
+              {/* Breadcrumbs */}
+              <Breadcrumb className="mb-6">
+                <BreadcrumbList>
+                  <BreadcrumbItem>
+                    <BreadcrumbLink asChild>
+                      <Link to="/">Главная</Link>
+                    </BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage>
+                      {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
+                    </BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+            </div>
 
-          <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px] py-2">
-            <div className="flex">
-              {/* Mobile/Tablet Filter Sidebar - скрыто на больших экранах */}
-              <div className="lg:hidden">
-                <CatalogFilterSidebar
-                  filters={filters}
-                  filterOptions={filterOptions}
-                  onPriceChange={handlePriceChange}
-                  onBrandsChange={handleBrandsChange}
-                  onPurposeTypesChange={handlePurposeTypesChange}
-                  onPowerRangeChange={handlePowerRangeChange}
-                  onEquipmentTypesChange={handleEquipmentTypesChange}
-                  onApplyFilters={handleApplyFilters}
-                  onResetFilters={handleResetFilters}
-                />
-              </div>
-
-              <div className="flex gap-8 w-full">
-                {/* Desktop Filters - показано только на больших экранах */}
-                <div className="hidden lg:block">
-                  <CatalogFilters
+            <div className="max-w-[1800px] mx-auto px-[30px] md:px-[20px] lg:px-[60px] py-2">
+              <div className="flex">
+                {/* Mobile/Tablet Filter Sidebar - скрыто на больших экранах */}
+                <div className="lg:hidden">
+                  <CatalogFilterSidebar
                     filters={filters}
                     filterOptions={filterOptions}
                     onPriceChange={handlePriceChange}
@@ -471,68 +457,85 @@ const Catalog: React.FC = () => {
                   />
                 </div>
 
-                {/* Main Content */}
-                <div className="flex-1 lg:mt-[94px]">
-                  {/* Page Title for Mobile/Tablet - показано только на планшетах/мобильных */}
-                  <div className="lg:hidden mb-4">
-                    <h1 className="text-[48px] font-semibold text-[#262631]" style={{fontFamily: 'Benzin-Semibold'}}>
-                      {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
-                    </h1>
-                  </div>
-                  
-                  {/* Mobile/Tablet Filter Button - показано только на планшетах/мобильных */}
-                  <MobileFilterTrigger />
-                  
-                  <CatalogBanner />
-                  <CatalogControls 
-                    sortBy={sortBy} 
-                    setSortBy={setSortBy}
-                    onSearch={handleSearchQuery}
-                    searchQuery={queryParam}
-                  />
-                  
-                  {isLoading ? (
-                    <div className="space-y-6">
-                      {/* Skeleton для товаров */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                        {Array.from({ length: 16 }).map((_, index) => (
-                          <div key={index} className="bg-white rounded-lg border p-4 animate-pulse">
-                            <div className="bg-gray-200 h-48 rounded-lg mb-4"></div>
-                            <div className="h-4 bg-gray-200 rounded mb-2"></div>
-                            <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
-                            <div className="h-6 bg-gray-200 rounded w-1/2"></div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ) : queryParam && catalogItems.length === 0 ? (
-                    <div className="text-center py-8">
-                      <p>По запросу "{queryParam}" ничего не найдено</p>
-                      <p className="text-gray-500 mt-2">Попробуйте изменить поисковый запрос или фильтры</p>
-                    </div>
-                  ) : catalogItems.length === 0 ? (
-                    <div className="text-center py-8">
-                      <p>Товары не найдены</p>
-                      <p className="text-gray-500 mt-2">Попробуйте изменить фильтры</p>
-                    </div>
-                  ) : (
-                    <CatalogGrid 
-                      products={catalogItems}
-                      totalPages={totalPages}
-                      currentPage={pageNumber}
-                      onPageChange={handlePageNavigation}
-                      hasNextPage={hasNextPage}
-                      hasPreviousPage={hasPrevPage}
-                      onLoadMore={() => handlePageNavigation(pageNumber + 1)}
-                      showLoadMore={hasNextPage}
+                <div className="flex gap-8 w-full">
+                  {/* Desktop Filters - показано только на больших экранах */}
+                  <div className="hidden lg:block">
+                    <CatalogFilters
+                      filters={filters}
+                      filterOptions={filterOptions}
+                      onPriceChange={handlePriceChange}
+                      onBrandsChange={handleBrandsChange}
+                      onPurposeTypesChange={handlePurposeTypesChange}
+                      onPowerRangeChange={handlePowerRangeChange}
+                      onEquipmentTypesChange={handleEquipmentTypesChange}
+                      onApplyFilters={handleApplyFilters}
+                      onResetFilters={handleResetFilters}
                     />
-                  )}
+                  </div>
+
+                  {/* Main Content */}
+                  <div className="flex-1 lg:mt-[94px]">
+                    {/* Page Title for Mobile/Tablet - показано только на планшетах/мобильных */}
+                    <div className="lg:hidden mb-4">
+                      <h1 className="text-[48px] font-semibold text-[#262631]" style={{fontFamily: 'Benzin-Semibold'}}>
+                        {queryParam ? `Поиск: ${queryParam}` : 'Каталог'}
+                      </h1>
+                    </div>
+                    
+                    {/* Mobile/Tablet Filter Button - показано только на планшетах/мобильных */}
+                    <MobileFilterTrigger />
+                    
+                    <CatalogBanner />
+                    <CatalogControls 
+                      sortBy={sortBy} 
+                      setSortBy={setSortBy}
+                      onSearch={handleSearchQuery}
+                      searchQuery={queryParam}
+                    />
+                    
+                    {isLoading ? (
+                      <div className="space-y-6">
+                        {/* Skeleton для товаров */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                          {Array.from({ length: 16 }).map((_, index) => (
+                            <div key={index} className="bg-white rounded-lg border p-4 animate-pulse">
+                              <div className="bg-gray-200 h-48 rounded-lg mb-4"></div>
+                              <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                              <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+                              <div className="h-6 bg-gray-200 rounded w-1/2"></div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ) : queryParam && catalogItems.length === 0 ? (
+                      <div className="text-center py-8">
+                        <p>По запросу "{queryParam}" ничего не найдено</p>
+                        <p className="text-gray-500 mt-2">Попробуйте изменить поисковый запрос или фильтры</p>
+                      </div>
+                    ) : catalogItems.length === 0 ? (
+                      <div className="text-center py-8">
+                        <p>Товары не найдены</p>
+                        <p className="text-gray-500 mt-2">Попробуйте изменить фильтры</p>
+                      </div>
+                    ) : (
+                      <CatalogGrid 
+                        products={catalogItems}
+                        totalPages={totalPages}
+                        currentPage={pageNumber}
+                        onPageChange={handlePageNavigation}
+                        hasNextPage={hasNextPage}
+                        hasPreviousPage={hasPrevPage}
+                        onLoadMore={() => handlePageNavigation(pageNumber + 1)}
+                        showLoadMore={hasNextPage}
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </SidebarProvider>
+        </SidebarProvider>
+      </div>
 
       {/* SEO Section */}
       <div className="w-full mb-[60px]">
@@ -560,6 +563,7 @@ const Catalog: React.FC = () => {
           </div>
         </div>
       </div>
+      
       <EmailSubscription />
       <div className="h-[70px]"></div>
       <Footer />
